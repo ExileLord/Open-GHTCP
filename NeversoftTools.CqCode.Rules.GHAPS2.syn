@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Language Name="Cq Script" Startblock="Cq Code">
+  <FileTypes>
+    <FileType Extension=".cq" Name="Cq Script code file"/>
+  </FileTypes>
+
+  <Block Name="Cq Code" Style="Cq Code" EscapeChar="" IsMultiline="true">
+    <Scope Start="{" End="}" Style="Cq Scope" Text="{...}" CauseIndent="true" />
+    <Bracket Start="(" End=")" Style="Cq Code" />
+    <Bracket Start="[" End="]" Style="Cq Code" />
+    <!-- Keywords that can exist inside this block -->
+    <Keywords>
+      <PatternGroup Name="Keywords" Style="Cq Keyword" CaseSensitive="true">
+        <Patterns>
+          namespace return
+          switch case default
+          get goto jump
+          if else
+          loop repeat break
+          random randomx
+          roundpick rangepick shuffle
+        </Patterns>
+      </PatternGroup>
+      <PatternGroup Name="Numbers" Style="Cq Number">
+        <Pattern Text="([0-9]+)" IsComplex="true" />
+      </PatternGroup>
+      <PatternGroup Name="Hex Tags" Style="Cq Hex Tag">
+        <Pattern Text="(0x[0-9a-fA-F]+)" IsComplex="true" />
+      </PatternGroup>
+      <PatternGroup Name="Functions" Style="Cq Function" NormalizeCase="true">
+        <Patterns>
+          HACK_ps2_set_saveload_successor_checksum HACK_ps2_get_saveload_successor_checksum DEBUG_set_DofZDepth DEBUG_get_DofZDepth Wait WaitOneGameFrame WaitForEvent Block PrintStruct Printf SetGlobalPrintfEnabledStatus Dump ScriptAssert SoftAssert ScriptUsageSoftAssert PrintScriptInfo FormatText ExtendCrc Push Pop CanPop StringLength StringRemove StringRemoveTrailingWhitespace GetLowerCaseString MathFloor MathCeil MathPow SetScenePermanent UnloadScene LoadScene ToggleAddScenes LoadNodeArray ReLoadNodeArray ParseNodeArray PrintNodeArrayParsingStatus NodeArrayBusy NodeArrayManLoad NodeArrayManUnload SetClippingDistances SetMovementVelocity SetRotateVelocity Debounce ResetEngine GetCurrentGeomStats GetCurrentParticleTimes GetCurrentAnimTimes ToggleMetrics GetMetricsMode CleanupOrphanEntities ProximCleanup LoadQB UnloadQB DebugRenderIgnore DebugLine GetTerrainTypeParam CastToInteger StringToInteger WideStringToInteger IntegerEquals ChecksumEquals StringEquals LocalizedStringEquals StringToCharArray ArrayContains AddArrayElement RemoveArrayElement IsInArray GetArraySize SetArrayElement AddParam AddParams RemoveComponent GlobalExists AppendSuffix Randomize ResetTimer TimeGreaterThan GetStartTime GetTrueStartTime RemoveParameter RemoveFlag GetRandomValue SetConfig PrintConfig German French Spanish Italian GetNode GetNodeName GetDistance GetTriggerNodeName GetNodeProfileInfo InitCOIM ReserveCOIMBlocksForPermObjects IsCOIMInited SetSaveFileName MemCardSystemInitialize GetMemCardSpaceAvailable GetMemCardSpaceRequired MemCardFileExists MemCardGetUniqueFileName DeleteMemCardFile FormatCard CardIsInSlot CardIsNew CardIsFormatted SaveFailedDueToInsufficientSpace OverwriteCorruptMemcardContent GetSummaryInfo SaveToMemoryCard LoadFromMemoryCard GetMemCardDirectoryListing ShowStorageSelector StorageSelectorFinished EnumContentFiles EnumContentFilesFinished GetContentFolderIndexFromFile NewShowStorageSelector MC_EnumerateFolders MC_CreateFolder MC_SetActiveFolder MC_SpaceForNewFile MC_SpaceForNewFolder MC_TestValidateDiskContents MC_LoadTOCInActiveFolder MC_WaitAsyncOpsFinished MC_FolderExists MC_GetUniqueFolderName MC_DeleteFolder MC_HasActiveFolder MC_HasValidatedFolder MC_ClearValidatedFolder MC_AsyncOpsFinished AutoListDeleteStart AutoListDeleteFinished GetMemCardFileProp ForEachIn GetElement GetNextArrayElement GetRandomArrayElement PermuteArray GotParam RequireParams Goto SetViewMode ClearViewerObject SetOutlineShaderColor SetOutlineShaderParams SetShaderOverride SetShadowRenderingFlags ToggleRenderMetrics ToggleRenderMode SetRenderMode SetWireframeMode ScreenShot GetCCallstack AllowBoneLOD SetFontProperties SetFontNonProportionalNumbers AllocateDecompressedFontBuffers DecompressFonts LoadTexture LoadParticleTexture UnloadTexture IsTextureLoaded IsTextureInDictionary CreateViewport DestroyViewport ViewportExists SetViewportProperties GetViewport2DPosFrom3D GetViewportCameraPos GetViewportCameraOrient SetViewportCameraPos SetViewportCameraOrient CreateViewportTextureOverride DestroyViewportTextureOverride PrepassViewportExists AddPrepassViewport RemovePrepassViewport InitLightManager SetShadowDir SetShadowDirFromLight SetLightFlag ClearLightFlag MoveLight CompactIntervals SetLightDirection GetLightDirection SetLightColor GetLightColor SetLightIntensity GetLightIntensity SetLightGroupIntensity GetLightGroupIntensity SetDynamicShadowIntensity KillLight EnableLight DisableLight EnableLightGroup DisableLightGroup ApplyLightGroup RemoveCurLightGroup AddLightToGroup CreateLightGroup SetModelLightsFadeTime SetEventHandler SetExceptionHandler SetException ResetEventHandlersFromTable SetEventHandlerOnObject ClearEventHandler ClearEventHandlerGroup OnExceptionRun OnExitRun VCWibblePlayFromKeyframe SetUVWibbleParams EnableExplicitUVWibble DisableExplicitUVWibble SetUVWibbleOffsets ResetTextureAnim StartTextureAnim StopTextureAnim RegisterCompositeObjectDesc PassMgr_Init ProcessorMgr_Init RegisterPassGroupDesc RegisterProcessorGroupDesc RegisterState UnregisterAllStates LoadFSB UnLoadFSB UnloadAllSFX LoadSound IsSoundLoaded LockDSP UnLockDSP PlaySound StopSound StopAllSounds SetSoundSeekPosition IsSoundSeekDone SetSoundParams IsSoundPlaying IsSoundPlayingByID AddSoundBanks ClearSoundBank RemoveAllSoundBanks CreateBussSystem SoundBussLock SoundBussUnLock PauseSoundsByBuss UnPauseSoundsByBuss AddSfxHeader HackSetEffect HackSetReverbPlease ResetWhammyPitchShift SetSoundBussParams GetSoundBussParams PushSoundBussParams PopSoundBussParams CreateSoundBussEffects DestroySoundBussEffects SetSoundBussEffects GetSoundBussEffects AddSoundEventData RequestNewSoundEvent StopSoundEvent IsSoundEventPlaying SoundEventFast AddSoundEventScript RemoveSoundEventScript EnableRemoveSoundEntry RemoveSoundGroup ClearSoundGroups SetDefaultSoundPriority SetSfxReverb SetSfxVolume SetGlobalPitchModulation SetSfxDropoff LoadTerrainSounds TerrainSoundCalculatePitchAndVolFast IsFmodEnabled EnableUserMusic SetObjectColor CompressVC NudgeVC CenterCamera SetMusicVolume SetMusicStreamVolume PlayTrack PlayMusicStream SkipMusicTrack PauseMusic StopMusic SetMusicMode SetRandomMode SetMusicLooping LoadMusicHeader LoadStreamHeader AddMusicTrack ChangeTrackState GetCurrentTrack TrackEnabled MusicIsPaused ClearMusicTrackList PlayStream StreamExists AddStream RemoveStream StopStream StopSoundsByBuss StopAudioStreams PauseStream GetIMFAdjustedTime BCSND_UpdateSound SetStereoSound PauseStreamID PauseStreamNum EnableMenuMusic LoadMoreMenuMusic MenuMusicPreloaded KeyOffAllSfx PauseAllSFX UnPauseAllSFX SetMenuMusicVolume ResetBCSND SetStreamParams IsStreamPlaying PreprocessStreamSets PlayStreamFromSet LoadSoundRAM LoadStreamFrameAmp FreeStreamFrameAmp PlayMovie KillMovie PauseMovie ResumeMovie SeekMovie PreLoadMovie StartPreLoadedMovie IsMoviePreLoaded StopLoopingAndFinishMovie IsMoviePlaying CreatePlatformMessageBox IsInNodeArray Create CreateFromStructure CallScriptOnNode Kill Visible Invisible NormalizeVector GetVectorComponents SetVectorComponents GetAngle CreateNodeFlag ChangeNodeFlag GetNodeFlag DumpNodeFlags NodeFlagExists PlayIGCCam PlaySkaterCamAnim SkaterCamAnimFinished KillSkaterCamAnim KillCamAnim GetSkaterCamAnimParams ViewportUsedByMovieCamera SetEnableMovies PlayCutscene IsMovieQueued HasMovieStarted CamDistFromPosLessThan WaitMovie MovieMembFunc DumpMovies AddToCutsceneDestroyList RemoveFromCutsceneDestroyList FlushCutsceneDestroyList CutsceneDestroyListActive CutsceneFinished IfDebugOn IfDebugOff Bootstrap CD NotCD CasArtist SendFlag ClearFlag QueryFlag SendException IsCreated SetMenuAutoRepeatTimes SetMenuPadMappings SetButtonEventMappings SetAnalogStickActiveForMenus SetPositionalSoundSilenceOverrideMode ControllerPressed ControllerMake ControllerDebounce GetAnalogueInfo RightAnalogHeld GetCurrentCameraObject SetScreenMode GetScreenMode SetProgressive SetShadowMapParams SetShadowProjectionTexture SpawnScript SpawnScriptNow SpawnScriptLater SetSpawnInstanceLimits SetSpawnedScriptNoRepeatFor UnBlockInterruptedScript SpawnSound KillSpawnedScript c_PauseGame c_UnPauseGame GameIsPaused PauseObjects UnPauseObjects PauseSpawnedScripts UnPauseSpawnedScripts UnPauseSpawnedScript PadsPluggedIn StartServer JoinServer SetNetworkMode SetServerMode StartNetworkGame SendNetMessage GetValueFromVolume MemViewToggle Change SetNetworkPreference HideObjectByType DoScreenElementMorphList SetNoteMappings GetNoteMapping ClearNoteMappings DumpNoteMappings TextOutputStart TextOutput TextOutputEnd DebugTransform CreateGemMover DestroyGem MakeDeadWhammy MakeStarWhammy MakeNormalWhammy UpdateGemMovers LaunchGemEvent ResetPulseEvents AddPulseEvent LaunchPulseEvent RunQueuedPulseEvents FillInputArray CameraCut_GetArraySize CameraCut_GetCameraIndex CameraCut_SwapLookAts GetRandomSeeds SetRandomSeeds SetNewWhammyValue SetAllWhammyValues SetButtonData ATan2 Init2DParticles Exit2DParticles Create2DParticleSystem Destroy2DParticleSystem Update2DParticleSystems ButtonCheckerInit ButtonCheckerPerFrame ButtonCheckerCleanup CrowdReset CrowdIncrease CrowdDecrease GemArrayStepperCompressedBroadcastEvent GemStep NoteFX WhammyFXOn WhammyFXOff WhammyFXOffAll GetStrumPattern CheckNoteHoldInit CheckNoteHoldWait CheckNoteHoldStart CheckNoteHoldPerFrame CheckNoteHoldEnd UpdateGuitarVolume SetLastGuitarVolume UpdateNixie KillPulsateStarPowerBulbs WriteSongDataToFile DeleteAllSongDataFromFile ClearSceneGraph ShowStencilShadow HideStencilShadow SetMasterBloom ClearMasterBloom WasMovieAborted DumpCameraGPU ShowDOF HideDOF MoviePlayerAllowController2 BlankScreen StarPowerFastTest_Initialise StarPowerFastTest_Cleanup StarPowerFastTest GuitarEvent_HitNotes_CFunc handle_hit_note_CFunc Increment fretbar_iterator_CFunc_Setup fretbar_iterator_CFunc_Cleanup fretbar_iterator_CFunc fretbar_update_hammer_on_tolerance_CFunc_Setup fretbar_update_hammer_on_tolerance_CFunc_Cleanup fretbar_update_hammer_on_tolerance_CFunc fretbar_update_tempo_CFunc_Setup fretbar_update_tempo_CFunc_Cleanup fretbar_update_tempo_CFunc FretFingers_iterator_CFunc_Setup FretFingers_iterator_CFunc_Cleanup FretFingers_iterator_CFunc Drum_iterator_CFunc_Setup Drum_iterator_CFunc_Cleanup Drum_iterator_CFunc compute_desired_drummer_twist gem_array_stepper_CFunc_Setup gem_array_stepper_CFunc_Cleanup gem_array_stepper_CFunc kill_object_later_CFunc_Setup kill_object_later_CFunc_Cleanup kill_object_later_CFunc check_for_star_power_CFunc_Setup check_for_star_power_CFunc_Cleanup check_for_star_power_CFunc GuitarEvent_Note_Window_Open_CFunc_Setup GuitarEvent_Note_Window_Open_CFunc_Cleanup GuitarEvent_Note_Window_Open_CFunc strum_iterator_CFunc_Setup strum_iterator_CFunc_Cleanup strum_iterator_CFunc wait_for_correct_frame_cfunc rock_meter_star_power_on_CFunc_Setup rock_meter_star_power_on_CFunc_Cleanup rock_meter_star_power_on_CFunc get_song_rhythm_track_cfunc GuitarEvent_MissedNote_CFunc_Setup GuitarEvent_MissedNote_CFunc_Cleanup GuitarEvent_MissedNote_CFunc GuitarEvent_UnnecessaryNote_CFunc_Setup GuitarEvent_UnnecessaryNote_CFunc_Cleanup GuitarEvent_UnnecessaryNote_CFunc event_spawner_cfunc get_song_tempo_cfunc get_anim_speed_for_tempo_cfunc hero_get_skill_level_cfunc play_stance_transition_cfunc hero_play_tempo_anim_cfunc enable_crowd_models_cfunc AnimatedTextureLoop_CFunc_Setup AnimatedTextureLoop_CFunc_Cleanup AnimatedTextureLoop_CFunc script_callback_script_cfunc update_guitar_volume_cfunc MonitorControllerStates CheckButtonsBoss CheckBossCutoff StarPowerOn ShortenUIString GotExtraMemory MemPushContext MemPopContext ProfileTasks UseNetworkPreferences LoadNetworkDrivers NeedToTestNetSetup TestNetSetup StopAllScripts FirstTimeThisIsCalled SetScriptWarningLevel VibrateController EnableActuators InNetGame DumpScripts DumpProxims DumpProximTriggers OutputFModCPUUsage DumpSounds SetSlomo GetSlomo StartRendering_C StopRendering_C RenderingEnabled DisplayLoadingScreen HideLoadingScreen ScriptCacheDeleteZeroUsage PrintMemInfo DisplayFreeMem AnalyzeHeap SetMemThreadSafe EnterSurveyorMode ExitSurveyorMode SetJoinMode SetHostMode IsHost ChangeLevelPending OnServer SkatersAreReady IsTrue AddFlag IsObserving IsSurveying LoadExecPS2 ExitDemo MarkGameOver GameIsOver GetHeapSize GetMemProfileSize DumpHeaps DumpMemStatistics DumpFragments GetNumUsedStructs DumpHavokMemStats SetLeakCheck InitNetMiscHeap ResetPS2 ResetHD PAL GetLanguage English BroadcastEvent LaunchEvent PrintEventLog ObjectExists DumpCompositeObjects TerminateObjectsScripts AssignAlias SetObjectProps CreateScreenElement DestroyScreenElement RunScriptOnScreenElement SetScreenElementProps GetScreenElementProps DoScreenElementMorph SetScreenElementLock ResolveScreenElementID ScreenElementSystemInit DumpScreenElements GetScreenElementDims GetScreenElementPosition CreateMultipleTextElements GetScreenElementChildren LaunchViewer LaunchScriptDebugger LoadDBG GetRelativePath GetFileNameFromPath ResetModelViewerCamera SetViewerModel SetViewerAnim SetViewerLODDist ReloadViewerAnim ReloadAnim MenuSelectedIndexIs ScreenElementExists SetRootScreenElement LoadAsset UnloadAsset LoadAnim LoadSkeleton UnloadAnim IsAssetLoaded SetSearchAllAssetContexts PushAssetContext PopAssetContext EngineConfig EngineCreateWaterRipple EngineWind SetLightVolumeParams EngineUpdateFXMaterial CheckFlexibleParticleStructure CheckSplineParticleStructure StructureContains MangleChecksums AppendSuffixToChecksum RotateVector IsPS2 IsNGC IsXBOX IsPS3 IsXENON IsWIN32 GetPlatform GetPlatformExt IsPal EnableScriptPrintf GetTerritory GetBuildVersion GetViewerObjectID PushMemProfile PopMemProfile TogglePass SetScreen GetDisplaySettings SetRowHeightTables GetUpperCaseString GenerateUTF16FromASCII MemInitHeap MemDeleteHeap ScriptExists ScriptIsRunning SymbolIsCFunc FlushDeadObjects ReAcquireControllers IsArray IsStructure IsPair BindFrontEndToController InitAnimCompressTable InitAnimSystem UpdateAnimCache GetAnimCacheState DrawDirectionalLightLines IsCompositeObjectManagerEnabled CreateCompositeObject CreateCompositeObjectInstance GetUniqueCompositeObjectID Orient Inside GetMetrics SetActiveCamera SetPrepassViewportCamera Sin Cos Tan ASin ACos ATan Sqrt LinearMap Clamp Mod MathMin ShowCamOffset GetCamOffset CompositeObjectExists PreLoadStream PreLoadStreamDone PauseSound PauseAllSounds StartPreLoadedStream PreLoadSoundStream PreLoadChecksumStream IsSoundStreamPlaying StopSoundStream FinishRendering CleanUpAndRemoveSymbol ConvertPippedScriptGlobalToModifiable Test EnableLookUpSymbolNotInMainThreadTest SetAsianFontScale DetectOldGlobalReferences DestroyAllParticles DestroyParticlesByGroupID DestroyAllFastParticles IsObjectScript Toggle2d VectorLength AllowAssetLoading AreAssetsLocked ScreenFX_AddFXInstance ScreenFX_UpdateFXInstanceParams ScreenFX_RemoveFXInstance ScreenFX_ClearFXInstances ScreenFX_FxInstanceExists ScreenFX_GetActiveScreenFXInstances Anim_GetAnimLength Anim_AnimExists LoadPak UnloadPak WaitUnloadPak LinkRawAsset UnlinkRawAsset AsyncLoadPakInProgress SetSaveZoneNameToCurrent GetSaveZoneName SetGSIdleProcParams AddZoneProfiles RemoveZoneProfiles SetZoneProfiles PrintLoadedProfiles CreateRandomAppearance AddEditableList RemoveEditableList ForEachInEditableList SelectFrom ShouldGameBePausedDueToSysNotification StartDelaySystemUI StopDelaySystemUI SystemUIDelayed FeelerCheck CreatePakManMap DestroyPakManMap PendingPakManLoads SetPakManCurrent ExistsPakManMap GetPakManCurrent GetPakManCurrentName RefreshPakManSizes UpdatePakManVisibility GetPakManNumFreeSlots EnablePakManStreaming DisablePakManStreaming ToggleLOD DestroyZoneEntities ReQBRAll InitFileCache CachePlatFile CacheFile IsFileCached WaitForFileCache IsFileCacheFinished ResizeFileCacheStreamBuff ToggleFileCaching GetLocalSystemTime GetDeltaTime SetDeltaTime PrintTime PrintInteractNodeUsers IsObjectDestructing ResetSongTimer IncrementSongTimer GetSongTime GetSongTimeMs TimeMarkerReached_SetParams TimeMarkerReached_ClearParams TimeMarkerReached ForEachPlayer ResumeControllerChecking GetButtonsPressed GetButtonsReleased GetButtonsHeld GuitarGetAnalogueInfo GuitarControllerMake ResetWaypoints GetWaypointPos GetWaypointDir DoesWaypointExist AllocateDataBuffer ClearDataBuffer WriteDataBuffer ReadDataBuffer DataBufferPutChecksum DataBufferPutInt DataBufferPutFloat DataBufferPutString DataBufferGetChecksum DataBufferGetInt DataBufferGetFloat DataBufferGetString GetBufferFileCount ReplayInput RecordInput SetInput EnableInput IsGuitarController UnBindGuitarControllerStatus GetHeldPattern StartWildcardSearch GetWildcardFile EndWildcardSearch InputArrayCreate InputArrayAddElement SongArraySet UpdateScoreFastInit ResetScoreUpdateReady UpdateScoreFastPerFrame CalcSongScoreInfo AddCrowdModelCam ClearCrowdModelCams GuitarInputLogicInit GuitarInputLogicPerFrame SetGemConstants Create2DGem Create2DFretbar MakeGemsVisibleOnAllViewports CalculateGemTime UpdateWhammyBarProps InitAtoms DeinitAtoms RegisterAtoms DeRegisterAtoms UpdateAtoms SetProgressionDifficulty GetProgressionDifficulty SetProgressionMaxDifficulty ClearGlobalTags GetGlobalTags SetGlobalTags PushGlobalTags PopGlobalTags GlobalTagExists OutputGlobalTags UpdateGuitarFuncs ApplyBossBattleGemMisses GetInputHandlerBotIndex DumpOpen DumpWrite DumpClose GetActiveControllers IsStandardGuitarControllerPluggedIn CreateParticleSystem_Fast LightShow_Init LightShow_BeginProcessBlock LightShow_EndProcessBlock LightShow_SetActive LightShow_SetProcessors LightShow_SetMapping LightShow_SetParams LightShow_GetParams LightShow_Update LightShow_PassEvent LightShow_WaitForNextEvent LightShow_AppendSnapshotParams LightShow_OverrideColor LightShow_SetTime LightShow_GetPyroScript LightShow_PlaySnapshot LightShow_CycleNextSnapshot LightShow_RefreshSpotlightOverrideParams LightShow_EnableSpotlights LightShow_UpdateLightingTweaks HackAddLight breakpoint PrintChecksumTableUsage EnableDuplicateSymbolWarning UpdateMaterialProperty ResetWhammyCachedRows GetMicroseconds proj_gh3c_build_gs_available_guitar_array_last_loop select_guitar_build_brand_array select_guitar_build_finish_array store_prune_guitar_finishes SetPS2DOFZ AnimLoaded AssetLoaded ChangeCameraFOV SetProps DoMorph GetProps GetParentID ApplyForce CircleAABBCollisionCheck ClearPhysicsData SetPart GetPart ClearPart SetChecksum PartGotFlag GotPart GeomModulateColor GeomSetUVOffset GeomAllocateUVMatrixParams GeomReplaceTexture GeomSetCreatedTexture ModelAddGeom ModelRemoveAsset ModelHideGeom ModelRemovePolys ModelFinalize ModelExpandBoundingSphere ModelResetScale ModelApplyBoneScale ModelApplyBodyShape ModelApplyObjectScale ModelApplyFaceTexture ModelRunScript ModelClearGeom ModelClearAllGeoms DebugPrintAppearance AppearanceAllowScalingCheat ModelPropagateHeadColor IsLocalSkater MoveToRandomRestart GetCameraId RemoveSkaterFromWorld AddSkaterToWorld KillSkater SparksOn SparksOff SetCustomRestart SkipToCustomRestart GetStat GetScriptedStat GetSkaterNumber LaunchDirtyProjectile GetNextBoardToDestroyAndIncrement ResetRigidBodyCollisionRadiusBoost PlaceBeforeCamera PlaySkaterStream Ledge Obj_MoveToNode GetCurrentTerrainType Die PlayAnim IsEmitting ApplyEnvBrightness SkaterPhysicsControl_SwitchSkatingToWalking SkaterPhysicsControl_SwitchWalkingToSkating SkaterLoopingSound_TurnOff SkaterLoopingSound_TurnOn Rotate SetOrientation SetWobbleDetails
+        </Patterns>
+        <!-- <Pattern Text="(\$[A-Za-z0-9_]+)" IsComplex="true" /> -->
+      </PatternGroup>
+      <PatternGroup Name="All Arguments" Style="Cq All Arguments">
+        <Pattern Text="(@@)" IsComplex="true" />
+      </PatternGroup>
+      <PatternGroup Name="Arguments" Style="Cq Argument">
+        <Pattern Text="(@\^?[A-Za-z0-9_]+)" IsComplex="true" />
+        <!-- <Pattern Text="(@\^?\$?[A-Za-z0-9_]+)" IsComplex="true" /> -->
+      </PatternGroup>
+      <PatternGroup Name="Global Variables" Style="Cq Global Variable">
+        <Pattern Text="(\^@?[A-Za-z0-9_]+)" IsComplex="true" />
+        <!-- <Pattern Text="(\^@?\$?[A-Za-z0-9_]+)" IsComplex="true" /> -->
+      </PatternGroup>
+      <PatternGroup Name="Jump Labels" Style="Cq Jump Label">
+        <Pattern Text="(#[A-Za-z0-9_]+)" IsComplex="true" />
+      </PatternGroup>
+      <!-- Datatypes for QB Script -->
+      <PatternGroup Name="DataTypes" Style="Cq Datatype" CaseSensitive="true">
+        <Patterns>
+          script qbfile struct vector pair strtable func
+        </Patterns>
+      </PatternGroup>
+    </Keywords>
+    <!-- Operators that can exist inside this block -->
+    <Operators>
+      <PatternGroup name="Operators" Style="Cq Operator">
+        <Pattern Text="." />
+        <Pattern Text="!" />
+        <Pattern Text=":" />
+        <Pattern Text="*" />
+        <Pattern Text="/" />
+        <Pattern Text="+" />
+        <Pattern Text="-" />
+        <Pattern Text="=" />
+        <Pattern Text="|" />
+        <Pattern Text="&amp;" />
+        <Pattern Text="&gt;" />
+        <Pattern Text="&lt;" />
+      </PatternGroup>
+    </Operators>
+    <!-- Blocks that can exist inside this block -->
+    <ChildBlocks>
+      <Child Name="Cq Multiline Comment" />
+      <Child Name="Cq Singleline Comment" />
+      <Child Name="Cq String" />
+      <Child Name="Cq Char" />
+      <Child Name="Cq Literal Variable" />
+      <Child Name="Cq Literal String" />
+      <Child Name="Cq Literal Char" />
+      <Child Name="Cq Code" />
+    </ChildBlocks>
+  </Block>
+  <Block Name="Cq Multiline Comment" Style="Cq Comment" EscapeChar="" IsMultiline="true">
+    <Scope Start="/*" End="*/" Style="Cq Comment" Text="/*...*/"/>
+    <Operators>
+      <PatternGroup name="URL" Style="Cq URL">
+        <Pattern Text="http://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?" IsComplex="true" />
+      </PatternGroup>
+    </Operators>
+  </Block>
+  <Block Name="Cq Singleline Comment" Style="Cq Comment" EscapeChar="" IsMultiline="false">
+    <Scope Start="//" End="" Style="Cq Comment" />
+  </Block>
+  <Block Name="Cq String" Style="Cq String" EscapeChar="\" IsMultiline="false">
+    <Scope Start="&quot;" End="&quot;" EscapeChar="\" Style="Cq String" />
+    <Operators>
+      <PatternGroup name="URL" Style="Cq URL">
+        <Pattern Text="http://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?" IsComplex="true" />
+      </PatternGroup>
+    </Operators>
+  </Block>
+
+  <Block Name="Cq Char" Style="Cq String" EscapeChar="" IsMultiline="false">
+    <Scope Start="'" End="'"  EscapeChar="\" Style="Cq String" />
+  </Block>
+
+  <Block Name="Cq Literal Variable" Style="Cq Variable" EscapeChar="" IsMultiline="false">
+    <Scope Start="$" End="$"  EscapeChar="" Style="Cq Variable" />
+  </Block>
+
+  <Block Name="Cq Literal String" Style="Cq String" EscapeChar="" IsMultiline="true" >
+    <Scope Start="@&quot;" End="&quot;" Style="Cq String" Text="@'...'" />
+  </Block>
+
+  <Block Name="Cq Literal Char" Style="Cq String" EscapeChar="" IsMultiline="false">
+    <Scope Start="@'" End="'" Style="Cq String" />
+  </Block>
+  <Style Name="Cq Code" ForeColor="" BackColor="" Bold="false" Italic="false" Underline="false" />
+  <Style Name="Cq Scope" ForeColor="" BackColor="" Bold="false" Italic="false" Underline="false" />
+  <Style Name="Cq Region" ForeColor="blue" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Comment" ForeColor="Green" BackColor="" Bold="false" Italic="false" Underline="false" />
+  <Style Name="Cq String" ForeColor="SteelBlue" BackColor="" Bold="false" Italic="false" Underline="false" />
+  <Style Name="Cq Number" ForeColor="Teal" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Hex Tag" ForeColor="RoyalBlue" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Function" ForeColor="BlueViolet" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Variable" ForeColor="HotPink" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq All Arguments" ForeColor="DarkSlateGray" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Argument" ForeColor="LightSlateGray" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Global Variable" ForeColor="Brown" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Jump Label" ForeColor="DeepPink" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Operator" ForeColor="Red" BackColor="" Bold="false" Italic="false" Underline="false" />
+  <Style Name="Cq Keyword" ForeColor="Blue" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Datatype" ForeColor="DarkBlue" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq URL" ForeColor="Blue" BackColor="" Bold="false" Italic="false" Underline="true" />
+</Language>

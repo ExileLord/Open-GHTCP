@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Language Name="Cq Script" Startblock="Cq Code">
+  <FileTypes>
+    <FileType Extension=".cq" Name="Cq Script code file"/>
+  </FileTypes>
+
+  <Block Name="Cq Code" Style="Cq Code" EscapeChar="" IsMultiline="true">
+    <Scope Start="{" End="}" Style="Cq Scope" Text="{...}" CauseIndent="true" />
+    <Bracket Start="(" End=")" Style="Cq Code" />
+    <Bracket Start="[" End="]" Style="Cq Code" />
+    <!-- Keywords that can exist inside this block -->
+    <Keywords>
+      <PatternGroup Name="Keywords" Style="Cq Keyword" CaseSensitive="true">
+        <Patterns>
+          namespace return
+          switch case default
+          get goto jump
+          if else
+          loop repeat break
+          random randomx
+          roundpick rangepick shuffle
+        </Patterns>
+      </PatternGroup>
+      <PatternGroup Name="Numbers" Style="Cq Number">
+        <Pattern Text="([0-9]+)" IsComplex="true" />
+      </PatternGroup>
+      <PatternGroup Name="Hex Tags" Style="Cq Hex Tag">
+        <Pattern Text="(0x[0-9a-fA-F]+)" IsComplex="true" />
+      </PatternGroup>
+      <!--<PatternGroup Name="Functions" Style="Cq Function">
+        <Pattern Text="(\$[A-Za-z0-9_]+)" IsComplex="true" />
+      </PatternGroup>-->
+      <PatternGroup Name="All Arguments" Style="Cq All Arguments">
+        <Pattern Text="(@@)" IsComplex="true" />
+      </PatternGroup>
+      <PatternGroup Name="Arguments" Style="Cq Argument">
+        <Pattern Text="(@\^?\$?[A-Za-z0-9_]+)" IsComplex="true" />
+      </PatternGroup>
+      <PatternGroup Name="Global Variables" Style="Cq Global Variable">
+        <Pattern Text="(\^@?\$?[A-Za-z0-9_]+)" IsComplex="true" />
+      </PatternGroup>
+      <PatternGroup Name="Jump Labels" Style="Cq Jump Label">
+        <Pattern Text="(#[A-Za-z0-9_]+)" IsComplex="true" />
+      </PatternGroup>
+      <!-- Datatypes for QB Script -->
+      <PatternGroup Name="DataTypes" Style="Cq Datatype" CaseSensitive="true">
+        <Patterns>
+          script qbfile struct vector pair strtable func
+        </Patterns>
+      </PatternGroup>
+    </Keywords>
+    <!-- Operators that can exist inside this block -->
+    <Operators>
+      <PatternGroup name="Operators" Style="Cq Operator">
+        <Pattern Text="." />
+        <Pattern Text="!" />
+        <Pattern Text=":" />
+        <Pattern Text="*" />
+        <Pattern Text="/" />
+        <Pattern Text="+" />
+        <Pattern Text="-" />
+        <Pattern Text="=" />
+        <Pattern Text="|" />
+        <Pattern Text="&amp;" />
+        <Pattern Text="&gt;" />
+        <Pattern Text="&lt;" />
+      </PatternGroup>
+    </Operators>
+    <!-- Blocks that can exist inside this block -->
+    <ChildBlocks>
+      <Child Name="Cq Multiline Comment" />
+      <Child Name="Cq Singleline Comment" />
+      <Child Name="Cq String" />
+      <Child Name="Cq Char" />
+      <Child Name="Cq Literal Variable" />
+      <Child Name="Cq Literal String" />
+      <Child Name="Cq Literal Char" />
+      <Child Name="Cq Code" />
+    </ChildBlocks>
+  </Block>
+  <Block Name="Cq Multiline Comment" Style="Cq Comment" EscapeChar="" IsMultiline="true">
+    <Scope Start="/*" End="*/" Style="Cq Comment" Text="/*...*/"/>
+    <Operators>
+      <PatternGroup name="URL" Style="Cq URL">
+        <Pattern Text="http://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?" IsComplex="true" />
+      </PatternGroup>
+    </Operators>
+  </Block>
+  <Block Name="Cq Singleline Comment" Style="Cq Comment" EscapeChar="" IsMultiline="false">
+    <Scope Start="//" End="" Style="Cq Comment" />
+  </Block>
+  <Block Name="Cq String" Style="Cq String" EscapeChar="\" IsMultiline="false">
+    <Scope Start="&quot;" End="&quot;" EscapeChar="\" Style="Cq String" />
+    <Operators>
+      <PatternGroup name="URL" Style="Cq URL">
+        <Pattern Text="http://([\w-]+\.)+[\w-]+(/[\w- ./?%&amp;=]*)?" IsComplex="true" />
+      </PatternGroup>
+    </Operators>
+  </Block>
+
+  <Block Name="Cq Char" Style="Cq String" EscapeChar="" IsMultiline="false">
+    <Scope Start="'" End="'"  EscapeChar="\" Style="Cq String" />
+  </Block>
+
+  <Block Name="Cq Literal Variable" Style="Cq Variable" EscapeChar="" IsMultiline="false">
+    <Scope Start="$" End="$"  EscapeChar="" Style="Cq Variable" />
+  </Block>
+
+  <Block Name="Cq Literal String" Style="Cq String" EscapeChar="" IsMultiline="true" >
+    <Scope Start="@&quot;" End="&quot;" Style="Cq String" Text="@'...'" />
+  </Block>
+
+  <Block Name="Cq Literal Char" Style="Cq String" EscapeChar="" IsMultiline="false">
+    <Scope Start="@'" End="'" Style="Cq String" />
+  </Block>
+  <Style Name="Cq Code" ForeColor="" BackColor="" Bold="false" Italic="false" Underline="false" />
+  <Style Name="Cq Scope" ForeColor="" BackColor="" Bold="false" Italic="false" Underline="false" />
+  <Style Name="Cq Region" ForeColor="blue" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Comment" ForeColor="Green" BackColor="" Bold="false" Italic="false" Underline="false" />
+  <Style Name="Cq String" ForeColor="SteelBlue" BackColor="" Bold="false" Italic="false" Underline="false" />
+  <Style Name="Cq Number" ForeColor="Teal" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Hex Tag" ForeColor="RoyalBlue" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Function" ForeColor="BlueViolet" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Variable" ForeColor="HotPink" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq All Arguments" ForeColor="DarkSlateGray" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Argument" ForeColor="LightSlateGray" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Global Variable" ForeColor="Brown" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Jump Label" ForeColor="DeepPink" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Operator" ForeColor="Red" BackColor="" Bold="false" Italic="false" Underline="false" />
+  <Style Name="Cq Keyword" ForeColor="Blue" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq Datatype" ForeColor="DarkBlue" BackColor="" Bold="true" Italic="false" Underline="false" />
+  <Style Name="Cq URL" ForeColor="Blue" BackColor="" Bold="false" Italic="false" Underline="true" />
+</Language>
