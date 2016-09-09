@@ -270,7 +270,7 @@ namespace ns2
 			1f
 		};
 
-		public override object vmethod_0(Class49 class49_0, Class38 class38_0)
+		public override object vmethod_0(OGGClass5 class49_0, OGGClass3 class38_0)
 		{
 			int num = 0;
 			int num2 = -1;
@@ -336,7 +336,7 @@ namespace ns2
 			return @class;
 		}
 
-		public override object vmethod_1(Class66 class66_0, Class27 class27_0, object object_0)
+		public override object vmethod_1(OGGClass1 class66_0, Class27 class27_0, object object_0)
 		{
 			int num = 0;
 			int[] array = new int[Class29.int_1 + 2];
@@ -427,12 +427,12 @@ namespace ns2
 		{
 		}
 
-		public override object vmethod_3(Class71 class71_0, object object_0, object object_1)
+		public override object vmethod_3(OGGClass6 class71_0, object object_0, object object_1)
 		{
 			Class32 @class = (Class32)object_0;
 			Class31 class31_ = @class.class31_0;
-			Class21[] class21_ = class71_0.class66_0.class21_0;
-			if (class71_0.class38_0.method_6(1) == 1)
+			OGGClass4[] class21_ = class71_0.oggClass1.oggClass4;
+			if (class71_0.oggClass3.method_6(1) == 1)
 			{
 				int[] array = null;
 				if (object_1 is int[])
@@ -450,8 +450,8 @@ namespace ns2
 				{
 					array = new int[@class.int_6];
 				}
-				array[0] = class71_0.class38_0.method_6(Class29.smethod_2(@class.int_8 - 1));
-				array[1] = class71_0.class38_0.method_6(Class29.smethod_2(@class.int_8 - 1));
+				array[0] = class71_0.oggClass3.method_6(Class29.smethod_2(@class.int_8 - 1));
+				array[1] = class71_0.oggClass3.method_6(Class29.smethod_2(@class.int_8 - 1));
 				int j = 0;
 				int num = 2;
 				while (j < class31_.int_0)
@@ -463,7 +463,7 @@ namespace ns2
 					int num6 = 0;
 					if (num4 != 0)
 					{
-						num6 = class21_[class31_.int_4[num2]].method_4(class71_0.class38_0);
+						num6 = class21_[class31_.int_4[num2]].method_4(class71_0.oggClass3);
 						if (num6 == -1)
 						{
 							return null;
@@ -475,7 +475,7 @@ namespace ns2
 						num6 = (int)((uint)num6 >> num4);
 						if (num7 >= 0)
 						{
-							if ((array[num + k] = class21_[num7].method_4(class71_0.class38_0)) == -1)
+							if ((array[num + k] = class21_[num7].method_4(class71_0.oggClass3)) == -1)
 							{
 								return null;
 							}
@@ -546,11 +546,11 @@ namespace ns2
 			return int_4 + num5;
 		}
 
-		public override int vmethod_4(Class71 class71_0, object object_0, object object_1, float[] float_1)
+		public override int vmethod_4(OGGClass6 class71_0, object object_0, object object_1, float[] float_1)
 		{
 			Class32 @class = (Class32)object_0;
 			Class31 class31_ = @class.class31_0;
-			int num = class71_0.class66_0.class49_0.int_13[class71_0.int_4] / 2;
+			int num = class71_0.oggClass1.oggClass5.int_13[class71_0.int_4] / 2;
 			if (object_1 != null)
 			{
 				int[] array = (int[])object_1;

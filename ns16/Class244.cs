@@ -506,20 +506,20 @@ namespace ns16
 			return Class244.smethod_16(string_0, string_1, true);
 		}
 
-		public static List<string> smethod_18(string string_0, string string_1, bool bool_2)
+		public static List<string> checkFile(string string_0, string string_1, bool bool_2)
 		{
 			string[] array = string_1.Split(new char[]
 			{
 				';'
 			}, StringSplitOptions.RemoveEmptyEntries);
-			List<string> list = new List<string>();
+			List<string> fileList = new List<string>();
 			string[] array2 = array;
 			for (int i = 0; i < array2.Length; i++)
 			{
 				string searchPattern = array2[i];
-				list.AddRange(Directory.GetFiles(string_0, searchPattern, bool_2 ? SearchOption.TopDirectoryOnly : SearchOption.AllDirectories));
+				fileList.AddRange(Directory.GetFiles(string_0, searchPattern, bool_2 ? SearchOption.TopDirectoryOnly : SearchOption.AllDirectories));
 			}
-			return list;
+			return fileList;
 		}
 
 		public static void smethod_19(string string_0, string string_1, bool bool_2)
@@ -657,7 +657,7 @@ namespace ns16
 			return BitConverter.GetBytes(int_0);
 		}
 
-		public static byte[] smethod_33(string string_0)
+		public static byte[] stringToBytes(string string_0)
 		{
 			return Encoding.Default.GetBytes(string_0);
 		}
@@ -677,9 +677,10 @@ namespace ns16
 			return text;
 		}
 
-		public static int smethod_36(string string_0, bool bool_2)
+		public static int smethod_36(string gbName, bool alwaysTrue)
 		{
-			return Class244.smethod_38(new MemoryStream(Class244.smethod_33(string_0)), bool_2, Class244.bool_0);
+            //bool_0 is always false;
+			return Class244.smethod_38(new MemoryStream(Class244.stringToBytes(gbName)), alwaysTrue, Class244.bool_0);
 		}
 
 		public static int smethod_37(byte[] byte_1, bool bool_2)
@@ -708,11 +709,11 @@ namespace ns16
 			stream_0.Position = 0L;
 			if (bool_2 && bool_3)
 			{
-				return Class244.smethod_26((int)(Class244.uint_0 ^ 4294967295u));
+                return Class244.smethod_26((int)(Class244.uint_0 ^ 4294967295u));
 			}
 			if (bool_2)
 			{
-				return (int)(Class244.uint_0 ^ 4294967295u);
+                return (int)(Class244.uint_0 ^ 4294967295u);
 			}
 			if (bool_3)
 			{

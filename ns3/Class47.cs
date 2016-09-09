@@ -24,7 +24,7 @@ namespace ns3
 			this.byte_1 = null;
 		}
 
-		public int method_1(Class38 class38_0)
+		public int method_1(OGGClass3 class38_0)
 		{
 			int num = class38_0.method_6(32);
 			if (num < 0)

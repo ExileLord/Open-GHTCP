@@ -9,7 +9,7 @@ namespace ns14
 		{
 			get
 			{
-				if (!base.ContainsKey(gparam_0))
+                if (!base.ContainsKey(gparam_0))
 				{
 					return base[base.Keys[this.method_1(gparam_0)]];
 				}
@@ -26,48 +26,57 @@ namespace ns14
 			}
 		}
 
-		private bool method_0(ref int int_0, ref int int_1, ref int int_2, TKey gparam_0)
+        private bool method_0(ref int int_0, ref int int_1, ref int int_2, TKey offset)
 		{
-			while (int_0 <= int_1)
+            while (int_0 <= int_1)
 			{
 				int_2 = (int_0 + int_1) / 2;
-				TKey tKey = base.Keys[int_2];
-				if (tKey.CompareTo(gparam_0) < 0)
+                TKey tKey = base.Keys[int_2];
+                if (tKey.CompareTo(offset) < 0)
 				{
-					int_0 = int_2 + 1;
-				}
+                    int_0 = int_2 + 1;
+                }
 				else
 				{
-					TKey tKey2 = base.Keys[int_2];
-					if (tKey2.CompareTo(gparam_0) <= 0)
+                    TKey tKey2 = base.Keys[int_2];
+                    if (tKey2.CompareTo(offset) <= 0)
 					{
-						return true;
+                        return true;
 					}
 					int_1 = int_2 - 1;
 				}
 			}
-			return false;
+            return false;
 		}
 
-		public int method_1(TKey gparam_0)
+        //Always takes a number
+        //Not the problem
+		public int method_1(TKey offset)
 		{
-			int num = 0;
+            int num = 0;
 			int num2 = base.Count - 1;
 			int num3 = 0;
-			num3 = (this.method_0(ref num, ref num2, ref num3, gparam_0) ? num3 : num2);
-			if (num3 >= 0)
+            if(this.method_0(ref num, ref num2, ref num3, offset))
+            {
+            }
+            else
+            {
+                num3 = num2;
+            }
+            //num3 = (this.method_0(ref num, ref num2, ref num3, offset) ? num3 : num2);
+            if (num3 >= 0)
 			{
-				return num3;
+                return num3;
 			}
-			return 0;
+            return 0;
 		}
 
-		public int method_2(TKey gparam_0)
+		public int method_2(TKey offset)
 		{
 			int num = 0;
 			int num2 = base.Count - 1;
 			int num3 = 0;
-			num3 = (this.method_0(ref num, ref num2, ref num3, gparam_0) ? num3 : num);
+			num3 = (this.method_0(ref num, ref num2, ref num3, offset) ? num3 : num);
 			if (num3 < base.Count)
 			{
 				return num3;

@@ -13,7 +13,7 @@ namespace ns20
 		public static long smethod_0(string string_0, Stream[] stream_0)
 		{
 			long length;
-			using (Class167 @class = new Class167())
+			using (FSBClass1 @class = new FSBClass1())
 			{
 				@class.byte_0 = Class329.byte_0;
 				@class.enum20_0 = Enum20.const_3;
@@ -22,7 +22,7 @@ namespace ns20
 				{
 					Stream stream = stream_0[i];
 					stream.Position = 0L;
-					Class16 class2 = Class170.smethod_3(stream);
+					Class16 class2 = AudioManager.smethod_3(stream);
 					Class168 class3 = new Class168();
 					class3.string_0 = i + ".mp3";
 					class3.enum22_0 = (((class2.method_0() == 1) ? Enum22.flag_6 : Enum22.flag_7) | Enum22.flag_10);

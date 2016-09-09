@@ -5,13 +5,13 @@ using System.IO;
 
 namespace ns1
 {
-	public class Stream5 : Stream1
+	public class Stream5 : GenericAudioStream
 	{
 		public override bool CanRead
 		{
 			get
 			{
-				return this.stream_0.CanRead;
+				return this.fileStream.CanRead;
 			}
 		}
 
@@ -19,7 +19,7 @@ namespace ns1
 		{
 			get
 			{
-				return this.stream_0.CanSeek;
+				return this.fileStream.CanSeek;
 			}
 		}
 
@@ -27,7 +27,7 @@ namespace ns1
 		{
 			get
 			{
-				return this.stream_0.CanWrite;
+				return this.fileStream.CanWrite;
 			}
 		}
 
@@ -35,7 +35,7 @@ namespace ns1
 		{
 			get
 			{
-				return this.stream_0.Length;
+				return this.fileStream.Length;
 			}
 		}
 
@@ -43,11 +43,11 @@ namespace ns1
 		{
 			get
 			{
-				return this.stream_0.Position;
+				return this.fileStream.Position;
 			}
 			set
 			{
-				this.stream_0.Position = value;
+				this.fileStream.Position = value;
 			}
 		}
 
@@ -57,23 +57,23 @@ namespace ns1
 
 		public Stream5(Stream stream_1, WaveFormat waveFormat_1)
 		{
-			this.stream_0 = stream_1;
+			this.fileStream = stream_1;
 			this.waveFormat_0 = waveFormat_1;
 		}
 
 		public override void SetLength(long value)
 		{
-			this.stream_0.SetLength(value);
+			this.fileStream.SetLength(value);
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
 		{
-			return this.stream_0.Seek(offset, origin);
+			return this.fileStream.Seek(offset, origin);
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			return this.stream_0.Read(buffer, offset, count);
+			return this.fileStream.Read(buffer, offset, count);
 		}
 
 		public override void Write(byte[] buffer, int offset, int count)
@@ -82,7 +82,7 @@ namespace ns1
 			{
 				throw new NotSupportedException();
 			}
-			this.stream_0.Write(buffer, offset, count);
+			this.fileStream.Write(buffer, offset, count);
 		}
 	}
 }

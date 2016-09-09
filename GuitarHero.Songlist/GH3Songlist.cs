@@ -14,7 +14,7 @@ namespace GuitarHero.Songlist
 	public class GH3Songlist : SortedDictionary<string, GH3Song>
 	{
 		[NonSerialized]
-		public Dictionary<int, GH3Setlist> dictionary_0 = new Dictionary<int, GH3Setlist>();
+		public Dictionary<int, GH3Setlist> gh3SetlistList = new Dictionary<int, GH3Setlist>();
 
 		[NonSerialized]
 		public Dictionary<int, GHLink> dictionary_1 = new Dictionary<int, GHLink>();
@@ -83,9 +83,9 @@ namespace GuitarHero.Songlist
 		public List<int> method_1(GH3Song gh3Song_0)
 		{
 			List<int> list = new List<int>();
-			foreach (int current in this.dictionary_0.Keys)
+			foreach (int current in this.gh3SetlistList.Keys)
 			{
-				foreach (GH3Tier current2 in this.dictionary_0[current].method_0())
+				foreach (GH3Tier current2 in this.gh3SetlistList[current].method_0())
 				{
 					if (current2.method_0().Contains(gh3Song_0))
 					{
@@ -101,22 +101,22 @@ namespace GuitarHero.Songlist
 			return list;
 		}
 
-		public GH3Song[] method_2()
+		public GH3Song[] getSongs()
 		{
-			List<GH3Song> list = new List<GH3Song>(base.Values);
-			if (list.Count != 0)
+			List<GH3Song> songList = new List<GH3Song>(base.Values);
+			if (songList.Count != 0)
 			{
 				if (this.HideUsed)
 				{
-					foreach (GH3Setlist current in this.dictionary_0.Values)
+					foreach (GH3Setlist current in this.gh3SetlistList.Values)
 					{
 						foreach (GH3Tier current2 in current.method_0())
 						{
 							foreach (GH3Song current3 in current2.method_0())
 							{
-								if (list.Contains(current3))
+								if (songList.Contains(current3))
 								{
-									list.Remove(current3);
+									songList.Remove(current3);
 								}
 							}
 						}
@@ -128,7 +128,7 @@ namespace GuitarHero.Songlist
 					{
 						if (!current4.vmethod_1())
 						{
-							list.Remove(current4);
+							songList.Remove(current4);
 						}
 					}
 				}
@@ -136,11 +136,11 @@ namespace GuitarHero.Songlist
 				{
 					if (!current5.method_0())
 					{
-						list.Remove(current5);
+						songList.Remove(current5);
 					}
 				}
 			}
-			return list.ToArray();
+			return songList.ToArray();
 		}
 
 		public bool method_3(string string_0)
@@ -152,7 +152,7 @@ namespace GuitarHero.Songlist
 		{
 			GH3Setlist gH3Setlist = new GH3Setlist(class266_0.method_7(), this);
 			gH3Setlist.method_3(string_0);
-			this.dictionary_0.Add(class266_0.int_0, gH3Setlist);
+			this.gh3SetlistList.Add(class266_0.int_0, gH3Setlist);
 			return gH3Setlist;
 		}
 
@@ -213,7 +213,7 @@ namespace GuitarHero.Songlist
 
 		public GH3Setlist method_11(int int_0)
 		{
-			return this.dictionary_0[this.dictionary_1[int_0].setlist];
+			return this.gh3SetlistList[this.dictionary_1[int_0].setlist];
 		}
 
 		public void method_12(Class308 class308_0, GH3Songlist gh3Songlist_0)

@@ -269,7 +269,7 @@ namespace ns21
 			Class219 @class = new Class219(bitmap);
 			@class.method_4();
 			BinaryReader binaryReader = new BinaryReader(new MemoryStream(this.byte_0));
-			UnkGfxClass1.smethod_17(binaryReader, @class, this.imgpixelFormat_0);
+			Class326.smethod_17(binaryReader, @class, this.imgpixelFormat_0);
 			binaryReader.Close();
 			@class.method_5(true);
 			MemoryStream stream2 = new MemoryStream();
@@ -294,7 +294,7 @@ namespace ns21
 				}
 				else
 				{
-					UnkGfxClass1.smethod_16(bitmap, binaryWriter, imgpixelFormat_1, bool_0);
+					Class326.smethod_16(bitmap, binaryWriter, imgpixelFormat_1, bool_0);
 				}
 			}
 			this.int_1 = int_2;

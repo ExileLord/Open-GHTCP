@@ -13,12 +13,12 @@ namespace ns2
 			new Class25()
 		};
 
-		public abstract object vmethod_0(Class49 class49_0, Class38 class38_0);
+		public abstract object vmethod_0(OGGClass5 class49_0, OGGClass3 class38_0);
 
-		public abstract object vmethod_1(Class66 class66_0, Class27 class27_0, object object_0);
+		public abstract object vmethod_1(OGGClass1 class66_0, Class27 class27_0, object object_0);
 
 		public abstract void vmethod_2(object object_0);
 
-		public abstract int vmethod_3(Class71 class71_0, object object_0, float[][] float_0, int[] int_0, int int_1);
+		public abstract int vmethod_3(OGGClass6 class71_0, object object_0, float[][] float_0, int[] int_0, int int_1);
 	}
 }

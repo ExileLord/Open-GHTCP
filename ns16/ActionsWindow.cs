@@ -12,7 +12,7 @@ namespace ns16
 	{
 		private delegate void Delegate7(object sender, EventArgs0 e);
 
-		private Class232 class232_0;
+		private ActionList actionList;
 
 		private EventHandler eventHandler_0;
 
@@ -32,11 +32,11 @@ namespace ns16
 
 		private ProgressBar progressBar;
 
-		public ActionsWindow(List<Class245> list_0)
+		public ActionsWindow(List<Class245> listOfActions)
 		{
 			this.InitializeComponent();
-			this.class232_0 = new Class232(list_0);
-			this.class232_0.method_0(new Class232.Delegate6(this.method_2));
+			this.actionList = new ActionList(listOfActions);
+			this.actionList.method_0(new ActionList.Delegate6(this.method_2));
 			this.ActionsTxt.Text = "";
 		}
 
@@ -55,7 +55,7 @@ namespace ns16
 
 		public void method_1()
 		{
-			this.thread_0 = new Thread(new ThreadStart(this.class232_0.method_1));
+			this.thread_0 = new Thread(new ThreadStart(this.actionList.method_1));
 			this.thread_0.CurrentCulture = Thread.CurrentThread.CurrentCulture;
 			this.thread_0.CurrentUICulture = Thread.CurrentThread.CurrentUICulture;
 			this.thread_0.Start();
@@ -96,7 +96,7 @@ namespace ns16
 			{
 				this.thread_0.Abort();
 			}
-			base.Close();
+            base.Close();
 			base.Dispose();
 		}
 

@@ -12,7 +12,7 @@ namespace ns5
 	{
 		private Enum1 enum1_0;
 
-		private Stream1 stream1_0;
+		private GenericAudioStream stream1_0;
 
 		private int int_0;
 
@@ -53,11 +53,11 @@ namespace ns5
 		[DllImport("user32.dll")]
 		public static extern IntPtr GetDesktopWindow();
 
-		public Class109(Stream1 stream1_1) : this(stream1_1, null, 500)
+		public Class109(GenericAudioStream stream1_1) : this(stream1_1, null, 500)
 		{
 		}
 
-		public Class109(Stream1 stream1_1, Device device_1, int int_5)
+		public Class109(GenericAudioStream stream1_1, Device device_1, int int_5)
 		{
 			this.stream1_0 = new Stream4(stream1_1, 16);
 			this.int_1 = this.stream1_0.vmethod_0().method_0(int_5);

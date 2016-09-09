@@ -2,12 +2,12 @@ using System;
 
 namespace ns9
 {
-	public enum Enum38
+	public enum Difficulty
 	{
-		const_0,
-		const_1,
-		const_2,
-		const_3,
+		easy,
+		medium,
+		hard,
+		expert,
 		const_4 = -1
 	}
 }

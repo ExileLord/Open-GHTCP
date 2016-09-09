@@ -13,9 +13,9 @@ namespace ns3
 
 		public int int_2;
 
-		public Class21[] class21_0;
+		public OGGClass4[] class21_0;
 
-		public Class21 class21_1;
+		public OGGClass4 class21_1;
 
 		public int[][] int_3;
 

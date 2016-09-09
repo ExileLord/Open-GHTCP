@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 
 namespace ns0
 {
-	public class Stream2 : Stream1
+	public class Stream2 : GenericAudioStream
 	{
-		private readonly List<Stream1> list_0;
+		private readonly List<GenericAudioStream> list_0;
 
 		private readonly Class12 class12_0;
 
@@ -74,17 +74,17 @@ namespace ns0
 			}
 		}
 
-		public Stream2(Stream1[] stream1_0) : this(Enum2.flag_26, stream1_0)
+		public Stream2(GenericAudioStream[] stream1_0) : this(Enum2.flag_26, stream1_0)
 		{
 		}
 
-		public Stream2(Enum2 enum2_1, Stream1[] stream1_0) : this(enum2_1, 0, false, stream1_0)
+		public Stream2(Enum2 enum2_1, GenericAudioStream[] stream1_0) : this(enum2_1, 0, false, stream1_0)
 		{
 		}
 
-		public Stream2(Enum2 enum2_1, ushort ushort_0, bool bool_2, Stream1[] stream1_0) : base()
+		public Stream2(Enum2 enum2_1, ushort ushort_0, bool bool_2, GenericAudioStream[] stream1_0) : base()
 		{
-			this.list_0 = new List<Stream1>();
+			this.list_0 = new List<GenericAudioStream>();
 			this.class12_0 = new Class12(new Interface5[0]);
 			//base..ctor();
 			this.enum2_0 = enum2_1;
@@ -97,7 +97,7 @@ namespace ns0
 			int num = 0;
 			for (int i = 0; i < stream1_0.Length; i++)
 			{
-				Stream1 stream = stream1_0[i];
+				GenericAudioStream stream = stream1_0[i];
 				val = Math.Max(val, stream.vmethod_0().int_0);
 				if (this.bool_1)
 				{
@@ -112,23 +112,23 @@ namespace ns0
 			this.waveFormat_0 = new WaveFormat(val, (ushort_0 != 0) ? ((int)ushort_0) : Math.Min(num, Stream2.smethod_0(this.enum2_0) * (this.bool_1 ? stream1_0.Length : 1)));
 			for (int j = 0; j < stream1_0.Length; j++)
 			{
-				Stream1 stream2 = stream1_0[j];
+				GenericAudioStream stream2 = stream1_0[j];
 				this.long_0 = Math.Max(this.long_0, Convert.ToInt64((double)(this.waveFormat_0.int_0 * (int)this.waveFormat_0.short_1) * stream2.vmethod_1().timeSpan_0.TotalSeconds));
 			}
 			this.int_2 = (int)this.waveFormat_0.short_0 << 2;
 		}
 
-		public Stream2(Stream1 stream1_0, Interface5[] interface5_0) : this(Enum2.flag_26, stream1_0, interface5_0)
+		public Stream2(GenericAudioStream stream1_0, Interface5[] interface5_0) : this(Enum2.flag_26, stream1_0, interface5_0)
 		{
 		}
 
-		public Stream2(Enum2 enum2_1, Stream1 stream1_0, Interface5[] interface5_0) : this(enum2_1, 0, stream1_0, interface5_0)
+		public Stream2(Enum2 enum2_1, GenericAudioStream stream1_0, Interface5[] interface5_0) : this(enum2_1, 0, stream1_0, interface5_0)
 		{
 		}
 
-		public Stream2(Enum2 enum2_1, ushort ushort_0, Stream1 stream1_0, Interface5[] interface5_0) : base()
+		public Stream2(Enum2 enum2_1, ushort ushort_0, GenericAudioStream stream1_0, Interface5[] interface5_0) : base()
 		{
-			this.list_0 = new List<Stream1>();
+			this.list_0 = new List<GenericAudioStream>();
 			this.class12_0 = new Class12(new Interface5[0]);
 			//base..ctor();
 			this.enum2_0 = enum2_1;
@@ -440,7 +440,7 @@ namespace ns0
 
 		public override void Close()
 		{
-			foreach (Stream1 current in this.list_0)
+			foreach (GenericAudioStream current in this.list_0)
 			{
 				current.Close();
 			}
@@ -452,7 +452,7 @@ namespace ns0
 			if (disposing)
 			{
 				this.class12_0.Clear();
-				foreach (Stream1 current in this.list_0)
+				foreach (GenericAudioStream current in this.list_0)
 				{
 					current.Dispose();
 				}

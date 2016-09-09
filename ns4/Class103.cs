@@ -135,7 +135,7 @@ namespace ns4
 			}
             bool ILE4 = false;
             for (; ; )
-            { //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            { 
                 while (ILE4 || class103_1.int_3[num, 0] != 0)
                 {
                     if (!ILE4)

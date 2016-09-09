@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 
 namespace ns0
 {
-	public abstract class Stream1 : Stream
+	public abstract class GenericAudioStream : Stream
 	{
-		public Stream stream_0;
+		public Stream fileStream;
 
 		public WaveFormat waveFormat_0;
 
@@ -28,7 +28,7 @@ namespace ns0
 
 		public virtual Stream vmethod_2()
 		{
-			return this.stream_0;
+			return this.fileStream;
 		}
 
 		public virtual int vmethod_3(IntPtr intptr_0, int int_2)
@@ -270,14 +270,14 @@ namespace ns0
 
 		public override void Flush()
 		{
-			this.stream_0.Flush();
+			this.fileStream.Flush();
 		}
 
         protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
-				this.stream_0.Close();
+				this.fileStream.Close();
 			}
 		}
 

@@ -12,7 +12,7 @@ namespace ns6
 {
 	public class Class117 : IDisposable, Interface6
 	{
-		private readonly Stream1 stream1_0;
+		private readonly GenericAudioStream stream1_0;
 
 		private readonly Class120 class120_0;
 
@@ -46,7 +46,7 @@ namespace ns6
 
 		private Thread thread_0;
 
-		public Class117(Stream1 stream1_1)
+		public Class117(GenericAudioStream stream1_1)
 		{
 			this.stream1_0 = stream1_1;
 			this.class120_0 = (Class120.smethod_2() ?? new Class120());

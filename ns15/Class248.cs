@@ -80,18 +80,18 @@ namespace ns15
 			{
 				List<string> list = new List<string>();
 				List<Stream> list2 = new List<Stream>();
-				Stream1 stream3;
+				GenericAudioStream stream3;
 				if (this.string_0.Length == 1)
 				{
 					Stream stream;
-					if (!Class248.bool_3 && Class170.smethod_1(this.string_0[0]) == Enum24.const_1)
+					if (!Class248.bool_3 && AudioManager.smethod_1(this.string_0[0]) == AudioTypeEnum.const_1)
 					{
 						stream = File.OpenRead(this.string_0[0]);
 					}
 					else
 					{
 						stream = new Stream27();
-						Stream16.smethod_0(Class170.smethod_4(this.string_0[0]), stream, 44100, 128);
+						Stream16.smethod_0(AudioManager.getAudioStream(this.string_0[0]), stream, 44100, 128);
 					}
 					stream.Position = 0L;
 					list.Add(this.string_1 + "_song");
@@ -100,18 +100,18 @@ namespace ns15
 					if (Class248.bool_2)
 					{
 						Stream stream2 = new Stream27();
-						Stream16.smethod_1(stream2, Class170.smethod_2(this.string_0[0]), 128);
+						Stream16.smethod_1(stream2, AudioManager.smethod_2(this.string_0[0]), 128);
 						list2.Add(stream2);
 					}
 					else
 					{
 						list2.Add(stream);
 					}
-					stream3 = Class170.smethod_5(stream);
+					stream3 = AudioManager.smethod_5(stream);
 				}
 				else
 				{
-					List<Stream1> list3 = new List<Stream1>();
+					List<GenericAudioStream> list3 = new List<GenericAudioStream>();
 					string[] array = new string[]
 					{
 						"_song",
@@ -126,21 +126,21 @@ namespace ns15
 						if (this.string_0[i] != null && !this.string_0[i].Equals("") && File.Exists(this.string_0[i]))
 						{
 							Stream stream4;
-							if (!Class248.bool_3 && Class170.smethod_1(this.string_0[i]) == Enum24.const_1)
+							if (!Class248.bool_3 && AudioManager.smethod_1(this.string_0[i]) == AudioTypeEnum.const_1)
 							{
 								stream4 = File.OpenRead(this.string_0[i]);
 							}
 							else
 							{
 								stream4 = new Stream27();
-								Stream16.smethod_0(Class170.smethod_4(this.string_0[i]), stream4, 44100, 128);
+								Stream16.smethod_0(AudioManager.getAudioStream(this.string_0[i]), stream4, 44100, 128);
 							}
 							stream4.Position = 0L;
 							list.Add(this.string_1 + array[i]);
 							list2.Add(stream4);
 							if ((this.string_0.Length == 6) ? (i >= 3) : (i < 3))
 							{
-								list3.Add(Class170.smethod_5(stream4));
+								list3.Add(AudioManager.smethod_5(stream4));
 							}
 						}
 					}

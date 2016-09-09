@@ -1,0 +1,12 @@
+Fixed (Hack v1.0.0):
+- Charts can have a fret mask up to 31 (basically allows for importing tap notes)
+- Songs can be exported as chart files, not just DBC/QBC
+- Fixed an issue where DBC/QBC files song info (title, artist, sections...) weren't getting added
+- Setlists can be exported as a folder of chart files
+- Mids can be imported with forced and tap notes (Uses raphaelgoulart and Mark Heaths midi2chart converter instead of maxxkillers)
+- Added option for midis to be imported with Rock Band 3s mid format ((Uses raphaelgoulart and Mark Heaths midi2chart converter as well)
+
+
+Known Issues:
+- FLAC's do not import
+- Song Editor does not display charts
