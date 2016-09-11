@@ -8,7 +8,7 @@ namespace ns2
 	{
 		private readonly object object_0 = new object();
 
-		public override object vmethod_0(Class49 class49_0, Class38 class38_0)
+		public override object vmethod_0(OGGClass5 class49_0, OGGClass3 class38_0)
 		{
 			Class36 @class = new Class36();
 			@class.int_0 = class38_0.method_6(8);
@@ -32,9 +32,9 @@ namespace ns2
 			return null;
 		}
 
-		public override object vmethod_1(Class66 class66_0, Class27 class27_0, object object_1)
+		public override object vmethod_1(OGGClass1 class66_0, Class27 class27_0, object object_1)
 		{
-			Class49 class49_ = class66_0.class49_0;
+			OGGClass5 class49_ = class66_0.oggClass5;
 			Class36 @class = (Class36)object_1;
 			Class37 class2 = new Class37();
 			class2.int_2 = @class.int_0;
@@ -68,7 +68,7 @@ namespace ns2
 		{
 		}
 
-		public override object vmethod_3(Class71 class71_0, object object_1, object object_2)
+		public override object vmethod_3(OGGClass6 class71_0, object object_1, object object_2)
 		{
 			Class37 @class = (Class37)object_1;
 			Class36 class36_ = @class.class36_0;
@@ -77,15 +77,15 @@ namespace ns2
 			{
 				array = (float[])object_2;
 			}
-			int num = class71_0.class38_0.method_6(class36_.int_3);
+			int num = class71_0.oggClass3.method_6(class36_.int_3);
 			if (num > 0)
 			{
 				int num2 = (1 << class36_.int_3) - 1;
 				float num3 = (float)num / (float)num2 * (float)class36_.int_4;
-				int num4 = class71_0.class38_0.method_6(Class30.smethod_1(class36_.int_5));
+				int num4 = class71_0.oggClass3.method_6(Class30.smethod_1(class36_.int_5));
 				if (num4 != -1 && num4 < class36_.int_5)
 				{
-					Class21 class2 = class71_0.class66_0.class21_0[class36_.int_6[num4]];
+					OGGClass4 class2 = class71_0.oggClass1.oggClass4[class36_.int_6[num4]];
 					float num5 = 0f;
 					if (array != null && array.Length >= @class.int_2 + 1)
 					{
@@ -100,7 +100,7 @@ namespace ns2
 					}
 					for (int j = 0; j < @class.int_2; j += class2.int_0)
 					{
-						if (class2.method_2(array, j, class71_0.class38_0, class2.int_0) == -1)
+						if (class2.method_2(array, j, class71_0.oggClass3, class2.int_0) == -1)
 						{
 							return null;
 						}
@@ -124,7 +124,7 @@ namespace ns2
 			return null;
 		}
 
-		public override int vmethod_4(Class71 class71_0, object object_1, object object_2, float[] float_0)
+		public override int vmethod_4(OGGClass6 class71_0, object object_1, object object_2, float[] float_0)
 		{
 			Class37 @class = (Class37)object_1;
 			Class36 class36_ = @class.class36_0;

@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 
 namespace ns1
 {
-	public class Stream4 : Stream1
+	public class Stream4 : GenericAudioStream
 	{
 		private delegate byte[] Delegate0(byte[] buffer, int index);
 
 		private delegate int Delegate1(byte[] buffer, int index, int count);
 
-		private readonly Stream1 stream1_0;
+		private readonly GenericAudioStream stream1_0;
 
 		private readonly int int_2;
 
@@ -78,10 +78,10 @@ namespace ns1
 			}
 		}
 
-		public Stream4(Stream1 stream1_1, int int_4)
+		public Stream4(GenericAudioStream stream1_1, int int_4)
 		{
 			this.stream1_0 = stream1_1;
-			this.stream_0 = stream1_1;
+			this.fileStream = stream1_1;
 			this.waveFormat_0 = stream1_1.vmethod_0();
 			this.int_3 = int_4 + 7 >> 3;
 			this.int_2 = this.waveFormat_0.short_2 + 7 >> 3;

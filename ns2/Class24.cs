@@ -9,7 +9,7 @@ namespace ns2
 	{
 		private static int[][][] int_0 = new int[2][][];
 
-		public override object vmethod_0(Class49 class49_0, Class38 class38_0)
+		public override object vmethod_0(OGGClass5 class49_0, OGGClass3 class38_0)
 		{
 			int num = 0;
 			Class40 @class = new Class40();
@@ -48,7 +48,7 @@ namespace ns2
 			return @class;
 		}
 
-		public override object vmethod_1(Class66 class66_0, Class27 class27_0, object object_0)
+		public override object vmethod_1(OGGClass1 class66_0, Class27 class27_0, object object_0)
 		{
 			Class40 @class = (Class40)object_0;
 			Class39 class2 = new Class39();
@@ -57,8 +57,8 @@ namespace ns2
 			class2.class40_0 = @class;
 			class2.int_0 = class27_0.int_3;
 			class2.int_1 = @class.int_3;
-			class2.class21_0 = class66_0.class21_0;
-			class2.class21_1 = class66_0.class21_0[@class.int_4];
+			class2.class21_0 = class66_0.oggClass4;
+			class2.class21_1 = class66_0.oggClass4[@class.int_4];
 			int num3 = class2.class21_1.int_0;
 			class2.int_3 = new int[class2.int_1][];
 			for (int i = 0; i < class2.int_1; i++)
@@ -104,7 +104,7 @@ namespace ns2
 		}
 
 		[MethodImpl(MethodImplOptions.Synchronized)]
-		public static int smethod_0(Class71 class71_0, object object_0, float[][] float_0, int int_1, int int_2)
+		public static int smethod_0(OGGClass6 class71_0, object object_0, float[][] float_0, int int_1, int int_2)
 		{
 			Class39 @class = (Class39)object_0;
 			Class40 class40_ = @class.class40_0;
@@ -141,7 +141,7 @@ namespace ns2
 					{
 						for (int i = 0; i < int_1; i++)
 						{
-							int num6 = @class.class21_1.method_4(class71_0.class38_0);
+							int num6 = @class.class21_1.method_4(class71_0.oggClass3);
 							if (num6 == -1)
 							{
 								return 0;
@@ -161,17 +161,17 @@ namespace ns2
 							int int_4 = class40_.int_0 + k * int_3;
 							if ((class40_.int_5[Class24.int_0[i][num5][num7]] & 1 << j) != 0)
 							{
-								Class21 class2 = @class.class21_0[@class.int_3[Class24.int_0[i][num5][num7]][j]];
+								OGGClass4 class2 = @class.class21_0[@class.int_3[Class24.int_0[i][num5][num7]][j]];
 								if (class2 != null)
 								{
 									if (int_2 == 0)
 									{
-										if (class2.method_0(float_0[i], int_4, class71_0.class38_0, int_3) == -1)
+										if (class2.method_0(float_0[i], int_4, class71_0.oggClass3, int_3) == -1)
 										{
 											return 0;
 										}
 									}
-									else if (int_2 == 1 && class2.method_1(float_0[i], int_4, class71_0.class38_0, int_3) == -1)
+									else if (int_2 == 1 && class2.method_1(float_0[i], int_4, class71_0.oggClass3, int_3) == -1)
 									{
 										return 0;
 									}
@@ -187,7 +187,7 @@ namespace ns2
 			return 0;
 		}
 
-		public static int smethod_1(Class71 class71_0, object object_0, float[][] float_0, int int_1)
+		public static int smethod_1(OGGClass6 class71_0, object object_0, float[][] float_0, int int_1)
 		{
 			Class39 @class = (Class39)object_0;
 			Class40 class40_ = @class.class40_0;
@@ -205,7 +205,7 @@ namespace ns2
 				{
 					if (i == 0)
 					{
-						int num6 = @class.class21_1.method_4(class71_0.class38_0);
+						int num6 = @class.class21_1.method_4(class71_0.oggClass3);
 						if (num6 == -1)
 						{
 							return 0;
@@ -222,8 +222,8 @@ namespace ns2
 						int int_3 = class40_.int_0 + j * int_2;
 						if ((class40_.int_5[array[num5][num7]] & 1 << i) != 0)
 						{
-							Class21 class2 = @class.class21_0[@class.int_3[array[num5][num7]][i]];
-							if (class2 != null && class2.method_3(float_0, int_3, int_1, class71_0.class38_0, int_2) == -1)
+							OGGClass4 class2 = @class.class21_0[@class.int_3[array[num5][num7]][i]];
+							if (class2 != null && class2.method_3(float_0, int_3, int_1, class71_0.oggClass3, int_2) == -1)
 							{
 								return 0;
 							}
@@ -237,7 +237,7 @@ namespace ns2
 			return 0;
 		}
 
-		public override int vmethod_3(Class71 class71_0, object object_0, float[][] float_0, int[] int_1, int int_2)
+		public override int vmethod_3(OGGClass6 class71_0, object object_0, float[][] float_0, int[] int_1, int int_2)
 		{
 			int num = 0;
 			for (int i = 0; i < int_2; i++)

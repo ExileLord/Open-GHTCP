@@ -22,7 +22,7 @@ namespace ns20
 			{
 				return;
 			}
-			Class327.smethod_1(new MemoryStream(Class199.smethod_5(Class244.smethod_5(Assembly.GetExecutingAssembly().GetManifestResourceStream("NeversoftTools.NSTreeView.nstags.aes"), "MinimizedNSTags1245"), "nstags.ids")));
+			Class327.smethod_1(new MemoryStream(ZIPManager.smethod_5(Class244.smethod_5(Assembly.GetExecutingAssembly().GetManifestResourceStream("NeversoftTools.NSTreeView.nstags.aes"), "MinimizedNSTags1245"), "nstags.ids")));
 			Class327.bool_0 = true;
 		}
 
@@ -112,13 +112,13 @@ namespace ns20
 			}
 		}
 
-		public static int smethod_9(string string_0)
+		public static int smethod_9(string qbName)
 		{
-			string_0 = string_0.ToLower();
-			int num = Class244.smethod_36(string_0, true);
+			qbName = qbName.ToLower();
+			int num = Class244.smethod_36(qbName, true);
 			if (!Class327.smethod_3(num))
 			{
-				Class327.dictionary_1.Add(num, string_0);
+				Class327.dictionary_1.Add(num, qbName);
 			}
 			return num;
 		}

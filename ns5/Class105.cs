@@ -8,13 +8,15 @@ namespace ns5
 
 		public static readonly Class105 class105_0 = new Class105();
 
-		private readonly float[] float_1 = new float[32];
+        public static readonly int num_1 = 32;
+
+		private readonly float[] float_1 = new float[num_1];
 
 		public float[] method_0()
 		{
-			float[] array = new float[32];
+			float[] array = new float[num_1];
 			int i = 0;
-			int num = 32;
+			int num = num_1;
 			while (i < num)
 			{
 				array[i] = Class105.smethod_1(this.float_1[i]);
@@ -26,7 +28,7 @@ namespace ns5
 		public void method_1(float[] float_2)
 		{
 			this.method_3();
-			int num = (float_2.Length > 32) ? 32 : float_2.Length;
+			int num = (float_2.Length > num_1) ? num_1 : float_2.Length;
 			for (int i = 0; i < num; i++)
 			{
 				this.float_1[i] = Class105.smethod_0(float_2[i]);
@@ -43,7 +45,7 @@ namespace ns5
 
 		public void method_3()
 		{
-			for (int i = 0; i < 32; i++)
+			for (int i = 0; i < num_1; i++)
 			{
 				this.float_1[i] = 0f;
 			}

@@ -4,9 +4,9 @@ using System.IO;
 
 namespace ns1
 {
-	public class Stream3 : Stream1
+	public class Stream3 : GenericAudioStream
 	{
-		private readonly Stream1 stream1_0;
+		private readonly GenericAudioStream stream1_0;
 
 		private readonly long long_0;
 
@@ -67,14 +67,14 @@ namespace ns1
 			return Math.Max(this.long_0 + this.long_1 - this.long_2, 0L);
 		}
 
-		private Stream3(Stream1 stream1_1)
+		private Stream3(GenericAudioStream stream1_1)
 		{
 			this.stream1_0 = stream1_1;
-			this.stream_0 = stream1_1;
+			this.fileStream = stream1_1;
 			this.waveFormat_0 = stream1_1.vmethod_0();
 		}
 
-		public Stream3(Stream1 stream1_1, long long_3, long long_4) : this(stream1_1)
+		public Stream3(GenericAudioStream stream1_1, long long_3, long long_4) : this(stream1_1)
 		{
 			if (0L > long_3)
 			{
@@ -95,7 +95,7 @@ namespace ns1
 			arg_63_0.Position = long_3;
 		}
 
-		public Stream3(Stream1 stream1_1, TimeSpan timeSpan_0, TimeSpan timeSpan_1) : this(stream1_1, (long)Convert.ToInt32((double)(stream1_1.vmethod_0().int_0 * (int)stream1_1.vmethod_0().short_1) * timeSpan_0.TotalSeconds), (long)Convert.ToInt32((double)(stream1_1.vmethod_0().int_0 * (int)stream1_1.vmethod_0().short_1) * timeSpan_1.TotalSeconds))
+		public Stream3(GenericAudioStream stream1_1, TimeSpan timeSpan_0, TimeSpan timeSpan_1) : this(stream1_1, (long)Convert.ToInt32((double)(stream1_1.vmethod_0().int_0 * (int)stream1_1.vmethod_0().short_1) * timeSpan_0.TotalSeconds), (long)Convert.ToInt32((double)(stream1_1.vmethod_0().int_0 * (int)stream1_1.vmethod_0().short_1) * timeSpan_1.TotalSeconds))
 		{
 		}
 

@@ -8,7 +8,7 @@ using System.IO;
 
 namespace ns2
 {
-	public class Stream6 : Stream1, IDisposable
+	public class Stream6 : GenericAudioStream, IDisposable
 	{
 		private readonly Class16 class16_0;
 
@@ -79,7 +79,7 @@ namespace ns2
 			this.class75_0.method_0();
 			this.class61_0.method_0();
 			Console.WriteLine("Done.");
-			this.stream_0.Close();
+			this.fileStream.Close();
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)

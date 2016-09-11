@@ -131,7 +131,7 @@ namespace ns9
 			}
 		}
 
-		public static Class16 smethod_0(Stream1 stream1_0, Stream stream_1, int int_3, int int_4)
+		public static Class16 smethod_0(GenericAudioStream stream1_0, Stream stream_1, int int_3, int int_4)
 		{
 			WaveFormat waveFormat = stream1_0.vmethod_0();
 			if (waveFormat.waveFormatTag_0 != WaveFormatTag.PCM || waveFormat.short_2 != 16)

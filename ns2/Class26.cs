@@ -5,7 +5,7 @@ namespace ns2
 {
 	public class Class26 : Class24
 	{
-		public override int vmethod_3(Class71 class71_0, object object_0, float[][] float_0, int[] int_1, int int_2)
+		public override int vmethod_3(OGGClass6 class71_0, object object_0, float[][] float_0, int[] int_1, int int_2)
 		{
 			int num = 0;
 			for (int i = 0; i < int_2; i++)

@@ -7,7 +7,7 @@ namespace ns15
 {
 	public class Class250 : Class245
 	{
-		public Class362 class362_0;
+		public QBCParser class362_0;
 
 		private Class318 class318_0;
 
@@ -15,7 +15,7 @@ namespace ns15
 
 		private string string_1;
 
-		public Class250(string string_2, Class362 class362_1, Class318 class318_1, string string_3)
+		public Class250(string string_2, QBCParser class362_1, Class318 class318_1, string string_3)
 		{
 			this.string_0 = string_2;
 			this.class318_0 = class318_1;

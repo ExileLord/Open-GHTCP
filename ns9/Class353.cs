@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ns9
 {
-	public class Class353
+	public class MIDILine
 	{
 		public string string_0;
 
@@ -12,11 +12,11 @@ namespace ns9
 
 		public List<Class335> list_0;
 
-		public Class353(int int_1) : this("", int_1, null)
+		public MIDILine(int int_1) : this("", int_1, null)
 		{
 		}
 
-		public Class353(string string_1, int int_1, IEnumerable<Class335> ienumerable_0)
+		public MIDILine(string string_1, int int_1, IEnumerable<Class335> ienumerable_0)
 		{
 			this.string_0 = string_1;
 			this.int_0 = int_1;

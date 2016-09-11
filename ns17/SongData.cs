@@ -1,4 +1,5 @@
 using GuitarHero.Songlist;
+using MidiConverter;
 using ns0;
 using ns1;
 using ns14;
@@ -175,7 +176,7 @@ namespace ns17
 
 		private Class323 class323_0;
 
-		private Class362 class362_0;
+		private QBCParser qbcParser;
 
 		private readonly GH3Songlist gh3Songlist_0;
 
@@ -190,6 +191,8 @@ namespace ns17
 		private readonly Timer timer_0;
 
 		private bool bool_5 = true;
+
+        private bool forceRB3 = false;
 
         protected override void Dispose(bool disposing)
 		{
@@ -947,7 +950,23 @@ namespace ns17
 			this.timer_0.Tick += new EventHandler(this.timer_0_Tick);
 		}
 
-		public SongData(string string_0, bool bool_6, bool bool_7)
+        public SongData(GH3Songlist gh3Songlist_1, bool forceRB3)
+        {
+            this.forceRB3 = forceRB3;
+            this.InitializeComponent();
+            Control arg_26_0 = this.Audio_CheckBox;
+            this.Chart_CheckBox.Enabled = false;
+            arg_26_0.Enabled = false;
+            this.bool_1 = true;
+            this.bool_0 = true;
+            this.method_3();
+            this.gh3Songlist_0 = gh3Songlist_1;
+            this.timer_0 = new Timer();
+            this.timer_0.Interval = 30;
+            this.timer_0.Tick += new EventHandler(this.timer_0_Tick);
+        }
+
+        public SongData(string string_0, bool bool_6, bool bool_7)
 		{
 			this.InitializeComponent();
 			this.SongNameTxt.Text = string_0;
@@ -965,33 +984,33 @@ namespace ns17
 			this.method_3();
 		}
 
-		public SongData(string string_0, Class362 class362_1, Class323 class323_1, string[] string_1)
+		public SongData(string string_0, QBCParser class362_1, Class323 class323_1, string[] string_1)
 		{
 			this.InitializeComponent();
 			this.SongNameTxt.Text = string_0;
 			this.bool_2 = true;
-			this.class362_0 = class362_1;
+			this.qbcParser = class362_1;
 			this.method_6();
 			this.method_4("No Track");
 			this.method_5("No Track");
 			this.method_8(0);
-			foreach (string current in this.class362_0.dictionary_0.Keys)
+			foreach (string current in this.qbcParser.noteList.Keys)
 			{
 				this.method_4(current);
 			}
-			if (this.class362_0.class228_2.Count != 0)
+			if (this.qbcParser.class228_2.Count != 0)
 			{
 				this.method_5("faceoffp1");
 			}
-			if (this.class362_0.class228_3.Count != 0)
+			if (this.qbcParser.class228_3.Count != 0)
 			{
 				this.method_5("faceoffp2");
 			}
-			if (this.class362_0.class228_4.Count != 0)
+			if (this.qbcParser.bpmList.Count != 0)
 			{
 				this.method_5("bossbattlep1");
 			}
-			if (this.class362_0.class228_5.Count != 0)
+			if (this.qbcParser.class228_5.Count != 0)
 			{
 				this.method_5("bossbattlep2");
 			}
@@ -1079,7 +1098,7 @@ namespace ns17
 				}
 				this.GuitarAudioTxt.Text = text;
 			}
-			this.PreviewSlider.method_18(Convert.ToInt32(Class170.smethod_4(this.GuitarAudioTxt.Text).vmethod_1().timeSpan_0.TotalSeconds));
+			this.PreviewSlider.method_18(Convert.ToInt32(AudioManager.getAudioStream(this.GuitarAudioTxt.Text).vmethod_1().timeSpan_0.TotalSeconds));
 			this.PreviewSlider.method_14(this.PreviewSlider.method_17() / 2);
 			if (this.GuitarAudioTxt.Text == "" || (!this.SingleAudioBtn.Checked && (this.BandAudioTxt.Text == "" || !this.DualAudioBtn.Checked) && (this.RhythmAudioTxt.Text == "" || !this.MultiAudioBtn.Checked) && (this.GuitarCoopTxt.Text == "" || this.RhythmCoopTxt.Text == "" || this.BandCoopTxt.Text == "" || !this.CoopAudioBtn.Checked)))
 			{
@@ -1136,100 +1155,100 @@ namespace ns17
 
 		public Class250 method_1(Class318 class318_0, string string_0)
 		{
-			Dictionary<string, Track<int, Class364>> dictionary = new Dictionary<string, Track<int, Class364>>();
+			Dictionary<string, Track<int, NotesAtOffset>> dictionary = new Dictionary<string, Track<int, NotesAtOffset>>();
 			if (!this.EasyGuitarBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("easy", this.class362_0.dictionary_0[(string)this.EasyGuitarBox.SelectedItem]);
+				dictionary.Add("easy", this.qbcParser.noteList[(string)this.EasyGuitarBox.SelectedItem]);
 			}
 			if (!this.EasyRhythmBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythm_easy", this.class362_0.dictionary_0[(string)this.EasyRhythmBox.SelectedItem]);
+				dictionary.Add("rhythm_easy", this.qbcParser.noteList[(string)this.EasyRhythmBox.SelectedItem]);
 			}
 			if (!this.EasyCoopBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("guitarcoop_easy", this.class362_0.dictionary_0[(string)this.EasyCoopBox.SelectedItem]);
+				dictionary.Add("guitarcoop_easy", this.qbcParser.noteList[(string)this.EasyCoopBox.SelectedItem]);
 			}
 			if (!this.EasyCoop2Box.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythmcoop_easy", this.class362_0.dictionary_0[(string)this.EasyCoop2Box.SelectedItem]);
+				dictionary.Add("rhythmcoop_easy", this.qbcParser.noteList[(string)this.EasyCoop2Box.SelectedItem]);
 			}
 			if (!this.MediumGuitarBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("medium", this.class362_0.dictionary_0[(string)this.MediumGuitarBox.SelectedItem]);
+				dictionary.Add("medium", this.qbcParser.noteList[(string)this.MediumGuitarBox.SelectedItem]);
 			}
 			if (!this.MediumRhythmBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythm_medium", this.class362_0.dictionary_0[(string)this.MediumRhythmBox.SelectedItem]);
+				dictionary.Add("rhythm_medium", this.qbcParser.noteList[(string)this.MediumRhythmBox.SelectedItem]);
 			}
 			if (!this.MediumCoopBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("guitarcoop_medium", this.class362_0.dictionary_0[(string)this.MediumCoopBox.SelectedItem]);
+				dictionary.Add("guitarcoop_medium", this.qbcParser.noteList[(string)this.MediumCoopBox.SelectedItem]);
 			}
 			if (!this.MediumCoop2Box.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythmcoop_medium", this.class362_0.dictionary_0[(string)this.MediumCoop2Box.SelectedItem]);
+				dictionary.Add("rhythmcoop_medium", this.qbcParser.noteList[(string)this.MediumCoop2Box.SelectedItem]);
 			}
 			if (!this.HardGuitarBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("hard", this.class362_0.dictionary_0[(string)this.HardGuitarBox.SelectedItem]);
+				dictionary.Add("hard", this.qbcParser.noteList[(string)this.HardGuitarBox.SelectedItem]);
 			}
 			if (!this.HardRhythmBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythm_hard", this.class362_0.dictionary_0[(string)this.HardRhythmBox.SelectedItem]);
+				dictionary.Add("rhythm_hard", this.qbcParser.noteList[(string)this.HardRhythmBox.SelectedItem]);
 			}
 			if (!this.HardCoopBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("guitarcoop_hard", this.class362_0.dictionary_0[(string)this.HardCoopBox.SelectedItem]);
+				dictionary.Add("guitarcoop_hard", this.qbcParser.noteList[(string)this.HardCoopBox.SelectedItem]);
 			}
 			if (!this.HardCoop2Box.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythmcoop_hard", this.class362_0.dictionary_0[(string)this.HardCoop2Box.SelectedItem]);
+				dictionary.Add("rhythmcoop_hard", this.qbcParser.noteList[(string)this.HardCoop2Box.SelectedItem]);
 			}
 			if (!this.ExpertGuitarBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("expert", this.class362_0.dictionary_0[(string)this.ExpertGuitarBox.SelectedItem]);
+				dictionary.Add("expert", this.qbcParser.noteList[(string)this.ExpertGuitarBox.SelectedItem]);
 			}
 			if (!this.ExpertRhythmBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythm_expert", this.class362_0.dictionary_0[(string)this.ExpertRhythmBox.SelectedItem]);
+				dictionary.Add("rhythm_expert", this.qbcParser.noteList[(string)this.ExpertRhythmBox.SelectedItem]);
 			}
 			if (!this.ExpertCoopBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("guitarcoop_expert", this.class362_0.dictionary_0[(string)this.ExpertCoopBox.SelectedItem]);
+				dictionary.Add("guitarcoop_expert", this.qbcParser.noteList[(string)this.ExpertCoopBox.SelectedItem]);
 			}
 			if (!this.ExpertCoop2Box.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythmcoop_expert", this.class362_0.dictionary_0[(string)this.ExpertCoop2Box.SelectedItem]);
+				dictionary.Add("rhythmcoop_expert", this.qbcParser.noteList[(string)this.ExpertCoop2Box.SelectedItem]);
 			}
 			Track<int, int> class228_ = this.method_2(this.FaceOffP1Box);
 			Track<int, int> class228_2 = this.method_2(this.FaceOffP2Box);
 			Track<int, int> class228_3 = this.method_2(this.BossBattleP1Box);
 			Track<int, int> class228_4 = this.method_2(this.BossBattleP2Box);
-			this.class362_0.dictionary_0 = dictionary;
-			this.class362_0.class228_2 = class228_;
-			this.class362_0.class228_3 = class228_2;
-			this.class362_0.class228_4 = class228_3;
-			this.class362_0.class228_5 = class228_4;
-			return new Class250(this.SongNameTxt.Text, this.class362_0, class318_0, string_0);
+			this.qbcParser.noteList = dictionary;
+			this.qbcParser.class228_2 = class228_;
+			this.qbcParser.class228_3 = class228_2;
+			this.qbcParser.bpmList = class228_3;
+			this.qbcParser.class228_5 = class228_4;
+			return new Class250(this.SongNameTxt.Text, this.qbcParser, class318_0, string_0);
 		}
 
 		private Track<int, int> method_2(ComboBox comboBox_0)
 		{
 			if (comboBox_0.SelectedItem.Equals("faceoffp1"))
 			{
-				return this.class362_0.class228_2;
+				return this.qbcParser.class228_2;
 			}
 			if (comboBox_0.SelectedItem.Equals("faceoffp2"))
 			{
-				return this.class362_0.class228_3;
+				return this.qbcParser.class228_3;
 			}
 			if (comboBox_0.SelectedItem.Equals("bossbattlep1"))
 			{
-				return this.class362_0.class228_4;
+				return this.qbcParser.bpmList;
 			}
 			if (comboBox_0.SelectedItem.Equals("bossbattlep2"))
 			{
-				return this.class362_0.class228_5;
+				return this.qbcParser.class228_5;
 			}
 			return new Track<int, int>();
 		}
@@ -1400,38 +1419,44 @@ namespace ns17
 
 		private void ChartFileBtn_Click(object sender, EventArgs e)
 		{
-			string text;
-			if (!(text = Class244.smethod_16("Select the game track file.", "Any Supported Game Track Formats|*.qbc;*.dbc;*_song.pak.xen;*.mid;*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc|GH3 Game Track file|*_song.pak.xen|GH standard Midi file|*.mid|dB standard or GH3CP Chart file|*.chart", true)).Equals(""))
+			string fileName;
+			if (!(fileName = Class244.smethod_16("Select the game track file.", "Any Supported Game Track Formats|*.qbc;*.dbc;*_song.pak.xen;*.mid;*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc|GH3 Game Track file|*_song.pak.xen|GH standard Midi file|*.mid|dB standard or GH3CP Chart file|*.chart", true)).Equals(""))
 			{
 				this.bool_4 = false;
 				try
 				{
-					if (text.EndsWith("_song.pak.xen"))
+                    //Configures paks
+                    if (fileName.EndsWith("_song.pak.xen"))
 					{
-						string text2 = Class244.smethod_13(text).Replace("_song.pak.xen", "");
-						using (Class318 @class = new Class318(text, false))
+						string text2 = Class244.smethod_13(fileName).Replace("_song.pak.xen", "");
+						using (Class318 @class = new Class318(fileName, false))
 						{
 							if (!@class.method_6("songs\\" + text2 + ".mid.qb"))
 							{
 								throw new Exception("MID.QB song file not found.");
 							}
-							this.class362_0 = new Class362(text2, @class.method_8("songs\\" + text2 + ".mid.qb"));
+							this.qbcParser = new QBCParser(text2, @class.method_8("songs\\" + text2 + ".mid.qb"));
 							goto IL_F5;
 						}
 					}
-					if (text.EndsWith(".qbc"))
+                    //Configures qbc
+					if (fileName.EndsWith(".qbc"))
 					{
-						this.class362_0 = new Class362(text);
+						this.qbcParser = new QBCParser(fileName);
 					}
-					else if (text.EndsWith(".mid"))
+                    //Configures midi
+                    else if (fileName.EndsWith(".mid"))
 					{
-						this.class362_0 = new Class367(text).method_0().method_3();
+                        ChartParser chartParser = Midi2Chart.getMidiSong(fileName, this.forceRB3);
+                        this.qbcParser = chartParser.method_3();
 					}
-					else
-					{
-						this.class362_0 = new ChartParser(text).method_3();
+                    //Configures charts
+                    else
+                    {
+                        //Crashes in this
+                        this.qbcParser = new ChartParser(fileName).method_3();
 					}
-					IL_F5:
+                    IL_F5:
 					this.method_6();
 					this.method_4("No Track");
 					this.method_5("No Track");
@@ -1439,27 +1464,27 @@ namespace ns17
 					Control arg_12B_0 = this.AutoConfigBtn;
 					this.ResetBtn.Enabled = true;
 					arg_12B_0.Enabled = true;
-					foreach (string current in this.class362_0.dictionary_0.Keys)
+					foreach (string current in this.qbcParser.noteList.Keys)
 					{
 						this.method_4(current);
 					}
-					if (this.class362_0.class228_2.Count != 0)
+					if (this.qbcParser.class228_2.Count != 0)
 					{
 						this.method_5("faceoffp1");
 					}
-					if (this.class362_0.class228_3.Count != 0)
+					if (this.qbcParser.class228_3.Count != 0)
 					{
 						this.method_5("faceoffp2");
 					}
-					if (this.class362_0.class228_4.Count != 0)
+					if (this.qbcParser.bpmList.Count != 0)
 					{
 						this.method_5("bossbattlep1");
 					}
-					if (this.class362_0.class228_5.Count != 0)
+					if (this.qbcParser.class228_5.Count != 0)
 					{
 						this.method_5("bossbattlep2");
 					}
-					this.ChartFileTxt.Text = text;
+					this.ChartFileTxt.Text = fileName;
 					this.ChartFileTxt.SelectionStart = this.ChartFileTxt.TextLength;
 					this.bool_4 = true;
 					this.method_7();
@@ -1581,16 +1606,16 @@ namespace ns17
 
 		private void GuitarAudioBtn_Click(object sender, EventArgs e)
 		{
-			string text;
-			if (this.SingleAudioBtn.Checked)
+			string fileName = Class244.smethod_16("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.dat.xen;*.mp3;*.wav;*.ogg;*.flac|GH3 Audio Header file|*.dat.xen|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true).ToLower();
+            if (this.SingleAudioBtn.Checked)
 			{
-				if (!(text = Class244.smethod_16("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.dat.xen;*.mp3;*.wav;*.ogg;*.flac|GH3 Audio Header file|*.dat.xen|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true).ToLower()).Equals(""))
+                if (!(fileName.Equals("")))
 				{
-					this.GuitarAudioTxt.Text = text;
+                    this.GuitarAudioTxt.Text = fileName;
 					this.GuitarAudioTxt.SelectionStart = this.GuitarAudioTxt.TextLength;
-					if (text.EndsWith(".dat.xen"))
+					if (fileName.EndsWith(".dat.xen"))
 					{
-						if (!File.Exists(text.Replace(".dat.xen", ".fsb.xen")))
+						if (!File.Exists(fileName.Replace(".dat.xen", ".fsb.xen")))
 						{
 							MessageBox.Show("Data file (FSB.XEN) is missing.", "Error!");
 							this.class323_0 = null;
@@ -1598,8 +1623,8 @@ namespace ns17
 						}
 						else
 						{
-							this.class323_0 = new Class323(text);
-							if ((int)new FileInfo(text.Replace(".dat.xen", ".fsb.xen")).Length != this.class323_0.int_0)
+							this.class323_0 = new Class323(fileName);
+							if ((int)new FileInfo(fileName.Replace(".dat.xen", ".fsb.xen")).Length != this.class323_0.int_0)
 							{
 								MessageBox.Show("FSB file size does not match!", "Error!");
 								this.class323_0 = null;
@@ -1617,25 +1642,25 @@ namespace ns17
 						this.method_11();
 					}
 					this.method_3();
-					return;
+                    return;
 				}
 			}
-			else if (!(text = Class244.smethod_16("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			else if (!(fileName.Equals("")))
 			{
-				this.GuitarAudioTxt.Text = text;
+				this.GuitarAudioTxt.Text = fileName;
 				this.GuitarAudioTxt.SelectionStart = this.GuitarAudioTxt.TextLength;
 				this.PreviewSlider.Enabled = true;
 				this.method_11();
 				this.method_3();
-			}
+            }
 		}
 
 		private void RhythmAudioBtn_Click(object sender, EventArgs e)
 		{
-			string text;
-			if (!(text = Class244.smethod_16("Select the Rhythm Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			string fileName;
+			if (!(fileName = Class244.smethod_16("Select the Rhythm Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
-				this.RhythmAudioTxt.Text = text;
+                this.RhythmAudioTxt.Text = fileName;
 				this.RhythmAudioTxt.SelectionStart = this.RhythmAudioTxt.TextLength;
 				this.PreviewSlider.Enabled = true;
 				this.method_11();
@@ -1645,10 +1670,10 @@ namespace ns17
 
 		private void BandAudioBtn_Click(object sender, EventArgs e)
 		{
-			string text;
-			if (!(text = Class244.smethod_16("Select the Band Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			string fileName;
+			if (!(fileName = Class244.smethod_16("Select the Band Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
-				this.BandAudioTxt.Text = text;
+                this.BandAudioTxt.Text = fileName;
 				this.BandAudioTxt.SelectionStart = this.BandAudioTxt.TextLength;
 				this.PreviewSlider.Enabled = true;
 				this.method_11();
@@ -1658,10 +1683,10 @@ namespace ns17
 
 		private void GuitarCoopBtn_Click(object sender, EventArgs e)
 		{
-			string text;
-			if (!(text = Class244.smethod_16("Select the Guitar Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			string fileName;
+			if (!(fileName = Class244.smethod_16("Select the Guitar Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
-				this.GuitarCoopTxt.Text = text;
+                this.GuitarCoopTxt.Text = fileName;
 				this.GuitarCoopTxt.SelectionStart = this.GuitarCoopTxt.TextLength;
 				this.PreviewSlider.Enabled = true;
 				this.method_11();
@@ -1671,10 +1696,10 @@ namespace ns17
 
 		private void RhythmCoopBtn_Click(object sender, EventArgs e)
 		{
-			string text;
-			if (!(text = Class244.smethod_16("Select the Rhythm Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			string fileName;
+			if (!(fileName = Class244.smethod_16("Select the Rhythm Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
-				this.RhythmCoopTxt.Text = text;
+                this.RhythmCoopTxt.Text = fileName;
 				this.RhythmCoopTxt.SelectionStart = this.RhythmCoopTxt.TextLength;
 				this.PreviewSlider.Enabled = true;
 				this.method_11();
@@ -1684,10 +1709,10 @@ namespace ns17
 
 		private void BandCoopBtn_Click(object sender, EventArgs e)
 		{
-			string text;
-			if (!(text = Class244.smethod_16("Select the Band Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			string fileName;
+			if (!(fileName = Class244.smethod_16("Select the Band Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
-				this.BandCoopTxt.Text = text;
+                this.BandCoopTxt.Text = fileName;
 				this.BandCoopTxt.SelectionStart = this.BandCoopTxt.TextLength;
 				this.PreviewSlider.Enabled = true;
 				this.method_11();
@@ -1791,39 +1816,39 @@ namespace ns17
 		{
 			try
 			{
-				List<Stream1> list = new List<Stream1>();
+				List<GenericAudioStream> list = new List<GenericAudioStream>();
 				if (!this.BandCoopTxt.Text.Equals(""))
 				{
-					list.Add(Class170.smethod_4(this.BandCoopTxt.Text));
+					list.Add(AudioManager.getAudioStream(this.BandCoopTxt.Text));
 				}
 				else if (!this.BandAudioTxt.Text.Equals(""))
 				{
-					list.Add(Class170.smethod_4(this.BandAudioTxt.Text));
+					list.Add(AudioManager.getAudioStream(this.BandAudioTxt.Text));
 				}
 				if (!this.GuitarCoopTxt.Text.Equals("") && !this.RhythmCoopTxt.Text.Equals(""))
 				{
-					list.Insert(0, Class170.smethod_4(this.RhythmCoopTxt.Text));
-					list.Insert(0, Class170.smethod_4(this.GuitarCoopTxt.Text));
+					list.Insert(0, AudioManager.getAudioStream(this.RhythmCoopTxt.Text));
+					list.Insert(0, AudioManager.getAudioStream(this.GuitarCoopTxt.Text));
 				}
 				else
 				{
 					if (!this.RhythmAudioTxt.Text.Equals(""))
 					{
-						list.Insert(0, Class170.smethod_4(this.RhythmAudioTxt.Text));
+						list.Insert(0, AudioManager.getAudioStream(this.RhythmAudioTxt.Text));
 					}
 					if (!this.GuitarAudioTxt.Text.Equals(""))
 					{
-						list.Insert(0, Class170.smethod_4(this.GuitarAudioTxt.Text));
+						list.Insert(0, AudioManager.getAudioStream(this.GuitarAudioTxt.Text));
 					}
 				}
 				if (list.Count != 0)
 				{
-					Stream1 stream = (list.Count == 1) ? list[0] : new Stream2(list.ToArray());
+					GenericAudioStream stream = (list.Count == 1) ? list[0] : new Stream2(list.ToArray());
 					if (this.interface6_0 != null)
 					{
 						this.interface6_0.Dispose();
 					}
-					this.interface6_0 = Class170.smethod_0(Enum25.const_5, stream);
+					this.interface6_0 = AudioManager.smethod_0(Enum25.const_5, stream);
 					this.PreviewSlider.method_14((int)this.interface6_0.imethod_0().TotalSeconds);
 					this.PreviewSlider.method_18((int)stream.vmethod_1().timeSpan_0.TotalSeconds);
 				}

@@ -8,7 +8,7 @@ namespace ns15
 	[CompilerGenerated]
 	public class Class369
 	{
-		[StructLayout(LayoutKind.Explicit, Pack = 1, Size = 6)]
+		[StructLayout(LayoutKind.Explicit, Pack = 1, Size = 32)]
 		public struct Struct94
 		{
 		}

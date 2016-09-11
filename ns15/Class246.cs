@@ -58,7 +58,7 @@ namespace ns15
 				{
 				}
 				this.gh3Songlist_0.CustomBitMask &= ~this.gh3Songlist_0.method_11(this.int_0).CustomBit;
-				this.gh3Songlist_0.dictionary_0.Remove(this.gh3Songlist_0.method_10(this.int_0));
+				this.gh3Songlist_0.gh3SetlistList.Remove(this.gh3Songlist_0.method_10(this.int_0));
 				this.gh3Songlist_0.dictionary_1.Remove(this.int_0);
 				this.gh3Songlist_0.class214_0.Remove(this.gh3Songlist_0.class214_0.method_0(this.int_0));
 			}

@@ -15,7 +15,7 @@ namespace ns11
 
 		private readonly Class16 class16_0;
 
-		private Stream1 stream1_0;
+		private GenericAudioStream stream1_0;
 
 		private readonly bool bool_0;
 
@@ -27,11 +27,11 @@ namespace ns11
 
 		private int int_0;
 
-		public Class155(Stream1 stream1_1) : this(stream1_1, false)
+		public Class155(GenericAudioStream stream1_1) : this(stream1_1, false)
 		{
 		}
 
-		public Class155(Stream1 stream1_1, bool bool_1)
+		public Class155(GenericAudioStream stream1_1, bool bool_1)
 		{
 			if (stream1_1.Length <= 0L)
 			{

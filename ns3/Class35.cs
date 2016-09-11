@@ -20,9 +20,9 @@ namespace ns3
 		{
 		}
 
-		public override object vmethod_1(Class66 class66_0, Class27 class27_0, object object_2)
+		public override object vmethod_1(OGGClass1 class66_0, Class27 class27_0, object object_2)
 		{
-			Class49 class49_ = class66_0.class49_0;
+			OGGClass5 class49_ = class66_0.oggClass5;
 			Class55 @class = new Class55();
 			Class54 class2 = @class.class54_0 = (Class54)object_2;
 			@class.class27_0 = class27_0;
@@ -51,7 +51,7 @@ namespace ns3
 			return @class;
 		}
 
-		public override object vmethod_0(Class49 class49_0, Class38 class38_0)
+		public override object vmethod_0(OGGClass5 class49_0, OGGClass3 class38_0)
 		{
 			Class54 @class = new Class54();
 			if (class38_0.method_6(1) != 0)
@@ -117,13 +117,13 @@ namespace ns3
 			return @class;
 		}
 
-		public override int vmethod_3(Class71 class71_0, object object_2)
+		public override int vmethod_3(OGGClass6 class71_0, object object_2)
 		{
 			int result;
 			lock (this.object_0)
 			{
-				Class66 class66_ = class71_0.class66_0;
-				Class49 class49_ = class66_.class49_0;
+				OGGClass1 class66_ = class71_0.oggClass1;
+				OGGClass5 class49_ = class66_.oggClass5;
 				Class55 @class = (Class55)object_2;
 				Class54 class54_ = @class.class54_0;
 				Class27 class27_ = @class.class27_0;

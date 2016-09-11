@@ -22,11 +22,11 @@ namespace ns11
 
 		private GCHandle gchandle_2;
 
-		private readonly Stream1 stream1_0;
+		private readonly GenericAudioStream stream1_0;
 
 		private readonly object object_0;
 
-		public Class158(IntPtr intptr_1, int int_1, Stream1 stream1_1, object object_1)
+		public Class158(IntPtr intptr_1, int int_1, GenericAudioStream stream1_1, object object_1)
 		{
 			this.int_0 = int_1;
 			this.class17_0 = new Class17(int_1);
@@ -87,7 +87,7 @@ namespace ns11
 			int num;
 			lock (this.stream1_0)
 			{
-				Stream1 arg_39_0 = this.stream1_0;
+				GenericAudioStream arg_39_0 = this.stream1_0;
 				IntPtr arg_39_1 = this.struct66_0.intptr_0;
 				int int_;
 				this.class17_0.method_4(int_ = this.class17_0.method_0().Length);

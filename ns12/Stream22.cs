@@ -9,7 +9,7 @@ namespace ns12
 {
 	public class Stream22 : Stream
 	{
-		private string string_0;
+		private string password;
 
 		private ICryptoTransform icryptoTransform_0;
 
@@ -129,17 +129,17 @@ namespace ns12
 
 		public string method_1()
 		{
-			return this.string_0;
+			return this.password;
 		}
 
-		public void method_2(string string_1)
+		public void method_2(string password)
 		{
-			if (string_1 != null && string_1.Length == 0)
+			if (password != null && password.Length == 0)
 			{
-				this.string_0 = null;
+				this.password = null;
 				return;
 			}
-			this.string_0 = string_1;
+			this.password = password;
 		}
 
 		public void method_3(byte[] byte_1, int int_0, int int_1)

@@ -1,0 +1,26 @@
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\GHTCP (Mine)\bin\Release\GHTCP.exe
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\GHTCP (Mine)\bin\Release\GHTCP.pdb
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\GHTCP (Mine)\bin\Release\Microsoft.DirectX.DirectSound.dll
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\GHTCP (Mine)\bin\Release\Microsoft.DirectX.dll
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\GHTCP (Mine)\bin\Release\Microsoft.DirectX.DirectSound.xml
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\GHTCP (Mine)\bin\Release\Microsoft.DirectX.xml
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\GHTCP (Mine)\obj\x86\Release\Properties.Resources.resources
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\GHTCP (Mine)\obj\x86\Release\GHTCP-cleaned.csproj.GenerateResource.Cache
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\GHTCP (Mine)\obj\x86\Release\GHTCP.exe
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\GHTCP (Mine)\obj\x86\Release\GHTCP.pdb
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\GHTCP (Mine)\obj\x86\Release\GHTCP-cleaned.csprojResolveAssemblyReference.cache
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\GHTCP (Mine)\obj\x86\Release\ns15.MainMenu.resources
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Release\GHTCP.exe
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Release\GHTCP.pdb
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\bin\Release\GHTCP.exe
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\bin\Release\GHTCP.pdb
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\bin\Release\Microsoft.DirectX.DirectSound.dll
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\bin\Release\Microsoft.DirectX.dll
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\bin\Release\Microsoft.DirectX.DirectSound.xml
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\bin\Release\Microsoft.DirectX.xml
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Release\GHTCP-cleaned.csprojResolveAssemblyReference.cache
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Release\ns15.MainMenu.resources
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Release\Properties.Resources.resources
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Release\GHTCP-cleaned.csproj.GenerateResource.Cache
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\bin\Release\GHTCP.exe.config
+D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\bin\Release\mid2chart.dll

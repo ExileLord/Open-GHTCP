@@ -9,6 +9,7 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -24,13 +25,13 @@ namespace ns17
 		{
 			public SongEditor songEditor_0;
 
-			public string string_0;
+			public string fileName;
 
 			public void method_0(object object_0)
 			{
-				using (Stream1 stream = Class170.smethod_4(this.string_0))
+				using (GenericAudioStream stream = AudioManager.getAudioStream(this.fileName))
 				{
-					this.songEditor_0.sbyte_0 = new sbyte[(ulong)stream.vmethod_1().uint_0 * (ulong)((long)stream.vmethod_1().method_0())];
+                    this.songEditor_0.sbyte_0 = new sbyte[(ulong)stream.vmethod_1().uint_0 * (ulong)((long)stream.vmethod_1().method_0())];
 					float[] array = new float[4096];
 					int num;
 					for (int i = 0; i < this.songEditor_0.sbyte_0.Length; i += num)
@@ -52,7 +53,7 @@ namespace ns17
 							break;
 						}
 					}
-				}
+                }
 				GC.Collect();
 			}
 		}
@@ -83,7 +84,7 @@ namespace ns17
 
 		private int int_6;
 
-		private Class362 class362_0;
+		private QBCParser class362_0;
 
 		private Interface6 interface6_0;
 
@@ -192,7 +193,7 @@ namespace ns17
 
 		public void method_1(int int_8)
 		{
-			this.size_1.Width = int_8;
+            this.size_1.Width = int_8;
 			this.decimal_0 = this.size_1.Width / this.class362_0.class239_0[1];
 			this.method_13();
 		}
@@ -247,7 +248,7 @@ namespace ns17
 
 		public void method_10(double double_3)
 		{
-			this.float_4 = Convert.ToSingle(Math.Pow(Math.Cos(this.double_1 = 3.1415926535897931 * double_3 / 180.0), 7.3890560989306495));
+			this.float_4 = Convert.ToSingle(Math.Pow(Math.Cos(this.double_1 = 3.1415926535897932 * double_3 / 180.0), 7.3890560989306495));
 			this.method_13();
 		}
 
@@ -267,12 +268,12 @@ namespace ns17
 			this.timer_0.Start();
 		}
 
-		public void method_11(Class362 class362_1)
+		public void method_11(QBCParser class362_1)
 		{
 			this.class362_0 = class362_1;
 			class362_1.class239_0[0] = 0;
 			this.int_6 = this.class362_0.class239_0[this.class362_0.class239_0.Count - 1];
-			this.decimal_0 = this.size_1.Width / this.class362_0.class239_0[1];
+            this.decimal_0 = this.size_1.Width / this.class362_0.class239_0[1];
 			this.method_10(15.0);
 			this.string_0 = "expert";
 			for (int i = 0; i < this.brush_1.Length; i++)
@@ -282,18 +283,23 @@ namespace ns17
 			this.method_13();
 		}
 
-		public void method_12(string string_1)
-		{
-			SongEditor.Class373 @class = new SongEditor.Class373();
-			@class.string_0 = string_1;
-			@class.songEditor_0 = this;
-			if (this.interface6_0 != null)
-			{
-				this.interface6_0.Dispose();
-			}
-			this.interface6_0 = Class170.smethod_0(Enum25.const_2, Class170.smethod_4(@class.string_0));
-			ThreadPool.QueueUserWorkItem(new WaitCallback(@class.method_0));
-		}
+        public void loadAudio(string fileName)
+        {
+            SongEditor.Class373 @class = new SongEditor.Class373();
+            @class.fileName = fileName;
+            @class.songEditor_0 = this;
+            if (this.interface6_0 != null)
+            {
+                this.interface6_0.Dispose();
+            }
+            GenericAudioStream audioStream = AudioManager.getAudioStream(@class.fileName);
+            if (audioStream == null)
+            {
+                return;
+            }
+            this.interface6_0 = AudioManager.smethod_0(Enum25.const_2, audioStream);
+            ThreadPool.QueueUserWorkItem(new WaitCallback(@class.method_0));
+        }
 
 		private void method_13()
 		{
@@ -417,11 +423,11 @@ namespace ns17
 			int num2 = this.class362_0.class239_0.method_7(int_9);
 			int num3 = this.class362_0.class239_0[num];
 			float num4 = (num + 1 < count) ? ((float)(int_8 - num3) / (float)(this.class362_0.class239_0[num + 1] - num3)) : 0f;
-			int count2 = this.class362_0.class228_0.Count;
-			int num5 = this.class362_0.class228_0.method_1(num3);
-			int num6 = this.class362_0.class228_0.Values[num5][0];
-			int num7 = this.class362_0.class239_0.method_7(this.class362_0.class228_0.Keys[num5]);
-			int num8 = (count2 > num5 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.class228_0.Keys[num5 + 1]) : -1;
+			int count2 = this.class362_0.tsList.Count;
+			int num5 = this.class362_0.tsList.method_1(num3);
+			int num6 = this.class362_0.tsList.Values[num5][0];
+			int num7 = this.class362_0.class239_0.method_7(this.class362_0.tsList.Keys[num5]);
+			int num8 = (count2 > num5 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.tsList.Keys[num5 + 1]) : -1;
 			float num9 = 0f;
 			float y = float_7 + (float)this.size_1.Height;
 			for (int i = num; i <= num2; i++)
@@ -443,9 +449,9 @@ namespace ns17
 				if (i == num8)
 				{
 					num5++;
-					num6 = this.class362_0.class228_0.Values[num5][0];
-					num7 = this.class362_0.class239_0.method_7(this.class362_0.class228_0.Keys[num5]);
-					num8 = ((count2 > num5 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.class228_0.Keys[num5 + 1]) : -1);
+					num6 = this.class362_0.tsList.Values[num5][0];
+					num7 = this.class362_0.class239_0.method_7(this.class362_0.tsList.Keys[num5]);
+					num8 = ((count2 > num5 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.tsList.Keys[num5 + 1]) : -1);
 					graphics_0.DrawString(string.Concat(num6), this.font_0, this.brush_0, num9 - 4f, float_7 - 3f);
 					graphics_0.DrawString(string.Concat(4), this.font_0, this.brush_0, num9 - 4f, float_7 + (float)this.size_1.Height / 2f - 3f);
 				}
@@ -483,8 +489,8 @@ namespace ns17
 		{
 			int_8 += this.class362_0.gh3Song_0.gem_offset;
 			int_9 += this.class362_0.gh3Song_0.gem_offset;
-			Track<int, Class364> @class = this.class362_0.dictionary_0.ContainsKey(this.string_0) ? this.class362_0.dictionary_0[this.string_0] : new Track<int, Class364>();
-			Track<int, int[]> class2 = this.class362_0.dictionary_1.ContainsKey(this.string_0) ? this.class362_0.dictionary_1[this.string_0] : new Track<int, int[]>();
+			Track<int, NotesAtOffset> @class = this.class362_0.noteList.ContainsKey(this.string_0) ? this.class362_0.noteList[this.string_0] : new Track<int, NotesAtOffset>();
+			Track<int, int[]> class2 = this.class362_0.spList.ContainsKey(this.string_0) ? this.class362_0.spList[this.string_0] : new Track<int, int[]>();
 			int arg_9A_0 = @class.Count;
 			int num = @class.method_1(int_8);
 			int num2 = @class.method_1(int_9);
@@ -498,10 +504,10 @@ namespace ns17
 				int num7 = (count > num4 + 1) ? @class.method_2(this.class362_0.class239_0[num4 + 1]) : -1;
 				int num8 = this.class362_0.class239_0.method_7(int_8);
 				float num9 = (float)(int_8 - this.class362_0.class239_0[num8]) / (float)(this.class362_0.class239_0[num8 + 1] - this.class362_0.class239_0[num8]);
-				int count2 = this.class362_0.class228_0.Count;
-				int num10 = this.class362_0.class228_0.method_1(num3);
-				int num11 = this.class362_0.class228_0.Values[num10][0];
-				int num12 = (count2 > num10 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.class228_0.Keys[num10 + 1]) : -1;
+				int count2 = this.class362_0.tsList.Count;
+				int num10 = this.class362_0.tsList.method_1(num3);
+				int num11 = this.class362_0.tsList.Values[num10][0];
+				int num12 = (count2 > num10 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.tsList.Keys[num10 + 1]) : -1;
 				int count3 = class2.Count;
 				int num13 = class2.method_1(num3);
 				int num14 = (class2.Count == 0 || class2.Keys[num13] > num3) ? -1 : (class2.Keys[num13] + class2.Values[num13][0]);
@@ -523,7 +529,7 @@ namespace ns17
 				for (int i = num; i <= num2; i++)
 				{
 					int num21 = @class.Keys[i];
-					Class364 class3 = @class[num21];
+					NotesAtOffset class3 = @class[num21];
 					if (i == num7)
 					{
 						num4 = this.class362_0.class239_0.method_7(num21);
@@ -534,8 +540,8 @@ namespace ns17
 					if (i == num12)
 					{
 						num10++;
-						num11 = this.class362_0.class228_0.Values[num10][0];
-						num12 = ((count2 > num10 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.class228_0.Keys[num10 + 1]) : -1);
+						num11 = this.class362_0.tsList.Values[num10][0];
+						num12 = ((count2 > num10 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.tsList.Keys[num10 + 1]) : -1);
 					}
 					if (i == num15)
 					{
@@ -549,9 +555,9 @@ namespace ns17
 					if (this.method_3())
 					{
 						num22 = Math.Max(float_6 + ((float)(num4 - num8) - num9 + (float)(num21 - num5) / (float)num6) * (float)this.size_1.Width, float_6);
-						if (class3.int_0 - this.class362_0.int_0 > this.class362_0.int_0)
+						if (class3.sustainLength - this.class362_0.int_0 > this.class362_0.int_0)
 						{
-							num23 = (float)(num21 + class3.int_0 - this.class362_0.int_0);
+							num23 = (float)(num21 + class3.sustainLength - this.class362_0.int_0);
 							int num24 = this.class362_0.class239_0.method_7((int)num23);
 							num23 = Math.Min(float_6 + ((float)(num24 - num8) - num9 + (num23 - (float)this.class362_0.class239_0[num24]) / (float)(this.class362_0.class239_0[num24 + 1] - this.class362_0.class239_0[num24])) * (float)this.size_1.Width, val);
 						}
@@ -563,15 +569,15 @@ namespace ns17
 					else
 					{
 						num22 = float_6 + this.method_14(num21 - int_8);
-						num23 = ((class3.int_0 - this.class362_0.int_0 > this.class362_0.int_0) ? Math.Min(num22 + this.method_14(class3.int_0 - this.class362_0.int_0), val) : -1f);
+						num23 = ((class3.sustainLength - this.class362_0.int_0 > this.class362_0.int_0) ? Math.Min(num22 + this.method_14(class3.sustainLength - this.class362_0.int_0), val) : -1f);
 						num22 = Math.Max(num22, float_6);
 					}
 					if (num23 == -1f || num23 >= float_6)
 					{
-						bool flag2 = this.bool_3 && ((i != 0 && SongEditor.smethod_0(@class[@class.Keys[i - 1]].bool_0, class3.bool_0) && (float)(num21 - @class.Keys[i - 1]) <= (float)num11 / 4f * (float)num6 / ((this.class362_0.gh3Song_0.hammer_on == 0f) ? Class362.float_0 : this.class362_0.gh3Song_0.hammer_on)) ^ class3.bool_0[5]);
+						bool flag2 = this.bool_3 && ((i != 0 && SongEditor.smethod_0(@class[@class.Keys[i - 1]].noteValues, class3.noteValues) && (float)(num21 - @class.Keys[i - 1]) <= (float)num11 / 4f * (float)num6 / ((this.class362_0.gh3Song_0.hammer_on == 0f) ? QBCParser.float_0 : this.class362_0.gh3Song_0.hammer_on)) ^ class3.noteValues[5]);
 						for (int j = 0; j < 6; j++)
 						{
-							if (class3.bool_0[j])
+							if (class3.noteValues[j])
 							{
 								float num25 = float_7 + num16 * (float)j;
 								if (num23 != -1f)
@@ -768,11 +774,11 @@ namespace ns17
 			int num2 = this.class362_0.class239_0.method_7(int_9);
 			int num3 = this.class362_0.class239_0[num];
 			float num4 = (num + 1 < count) ? ((float)(int_8 - num3) / (float)(this.class362_0.class239_0[num + 1] - num3)) : 0f;
-			int count2 = this.class362_0.class228_0.Count;
-			int num5 = this.class362_0.class228_0.method_1(num3);
-			int num6 = this.class362_0.class228_0.Values[num5][0];
-			int num7 = this.class362_0.class239_0.method_7(this.class362_0.class228_0.Keys[num5]);
-			int num8 = (count2 > num5 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.class228_0.Keys[num5 + 1]) : -1;
+			int count2 = this.class362_0.tsList.Count;
+			int num5 = this.class362_0.tsList.method_1(num3);
+			int num6 = this.class362_0.tsList.Values[num5][0];
+			int num7 = this.class362_0.class239_0.method_7(this.class362_0.tsList.Keys[num5]);
+			int num8 = (count2 > num5 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.tsList.Keys[num5 + 1]) : -1;
 			float num10;
 			for (int i = num; i <= num2; i++)
 			{
@@ -789,17 +795,17 @@ namespace ns17
 				{
 					float num11 = Convert.ToSingle((double)(float_7 - num10) * Math.Tan(this.double_1));
 					Font font = new Font("Verdana", Math.Max(0f, ((float)this.size_0.Height - 2f * num11) / 15f));
-					graphics_0.DrawString(num6 + "/" + this.class362_0.class228_0.Values[num5][1], font, this.brush_0, float_6 + (float)this.size_0.Height + 5f - num11, num10 - font.Size);
+					graphics_0.DrawString(num6 + "/" + this.class362_0.tsList.Values[num5][1], font, this.brush_0, float_6 + (float)this.size_0.Height + 5f - num11, num10 - font.Size);
 				}
 				if (i == num8)
 				{
 					num5++;
-					num6 = this.class362_0.class228_0.Values[num5][0];
-					num7 = this.class362_0.class239_0.method_7(this.class362_0.class228_0.Keys[num5]);
-					num8 = ((count2 > num5 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.class228_0.Keys[num5 + 1]) : -1);
+					num6 = this.class362_0.tsList.Values[num5][0];
+					num7 = this.class362_0.class239_0.method_7(this.class362_0.tsList.Keys[num5]);
+					num8 = ((count2 > num5 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.tsList.Keys[num5 + 1]) : -1);
 					float num11 = Convert.ToSingle((double)(float_7 - num10) * Math.Tan(this.double_1));
 					Font font2 = new Font("Verdana", Math.Max(0f, ((float)this.size_0.Height - 2f * num11) / 15f));
-					graphics_0.DrawString(num6 + "/" + this.class362_0.class228_0.Values[num5][1], font2, this.brush_0, float_6 + (float)this.size_0.Height + 5f - num11, num10 - font2.Size);
+					graphics_0.DrawString(num6 + "/" + this.class362_0.tsList.Values[num5][1], font2, this.brush_0, float_6 + (float)this.size_0.Height + 5f - num11, num10 - font2.Size);
 				}
 				if (num10 <= float_7)
 				{
@@ -836,8 +842,8 @@ namespace ns17
 		{
 			int_8 += this.class362_0.gh3Song_0.gem_offset;
 			int_9 += this.class362_0.gh3Song_0.gem_offset;
-			Track<int, Class364> @class = this.class362_0.dictionary_0.ContainsKey(this.string_0) ? this.class362_0.dictionary_0[this.string_0] : new Track<int, Class364>();
-			Track<int, int[]> class2 = this.class362_0.dictionary_1.ContainsKey(this.string_0) ? this.class362_0.dictionary_1[this.string_0] : new Track<int, int[]>();
+			Track<int, NotesAtOffset> @class = this.class362_0.noteList.ContainsKey(this.string_0) ? this.class362_0.noteList[this.string_0] : new Track<int, NotesAtOffset>();
+			Track<int, int[]> class2 = this.class362_0.spList.ContainsKey(this.string_0) ? this.class362_0.spList[this.string_0] : new Track<int, int[]>();
 			if (@class.Count == 0)
 			{
 				return;
@@ -856,10 +862,10 @@ namespace ns17
 				int num8 = this.class362_0.class239_0.method_7(int_8);
 				this.class362_0.class239_0.method_7(int_9);
 				float num9 = (float)(int_8 - this.class362_0.class239_0[num8]) / (float)(this.class362_0.class239_0[num8 + 1] - this.class362_0.class239_0[num8]);
-				int count2 = this.class362_0.class228_0.Count;
-				int num10 = this.class362_0.class228_0.method_1(num3);
-				int num11 = this.class362_0.class228_0.Values[num10][0];
-				int num12 = (count2 > num10 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.class228_0.Keys[num10 + 1]) : -1;
+				int count2 = this.class362_0.tsList.Count;
+				int num10 = this.class362_0.tsList.method_1(num3);
+				int num11 = this.class362_0.tsList.Values[num10][0];
+				int num12 = (count2 > num10 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.tsList.Keys[num10 + 1]) : -1;
 				int count3 = class2.Count;
 				int num13 = class2.method_1(num3);
 				int num14 = (class2.Count == 0 || class2.Keys[num13] > num3) ? -1 : (class2.Keys[num13] + class2.Values[num13][0]);
@@ -877,7 +883,7 @@ namespace ns17
 				for (int i = num; i <= num2; i++)
 				{
 					int num21 = @class.Keys[i];
-					Class364 class3 = @class[num21];
+					NotesAtOffset class3 = @class[num21];
 					if (i == num7)
 					{
 						num4 = this.class362_0.class239_0.method_7(num21);
@@ -888,8 +894,8 @@ namespace ns17
 					if (i == num12)
 					{
 						num10++;
-						num11 = this.class362_0.class228_0.Values[num10][0];
-						num12 = ((count2 > num10 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.class228_0.Keys[num10 + 1]) : -1);
+						num11 = this.class362_0.tsList.Values[num10][0];
+						num12 = ((count2 > num10 + 1) ? this.class362_0.class239_0.method_7(this.class362_0.tsList.Keys[num10 + 1]) : -1);
 					}
 					if (i == num15)
 					{
@@ -903,9 +909,9 @@ namespace ns17
 					if (this.method_3())
 					{
 						num22 = Math.Min(float_7 - Convert.ToSingle((double)this.size_0.Width * (1.0 - Math.Pow((double)this.float_4, (double)((float)(num4 - num8) - num9 + (float)(num21 - num5) / (float)num6))) / (double)(1f - this.float_4)), float_7);
-						if (class3.int_0 - this.class362_0.int_0 > this.class362_0.int_0)
+						if (class3.sustainLength - this.class362_0.int_0 > this.class362_0.int_0)
 						{
-							num23 = (float)(num21 + class3.int_0 - this.class362_0.int_0);
+							num23 = (float)(num21 + class3.sustainLength - this.class362_0.int_0);
 							int num24 = this.class362_0.class239_0.method_7((int)num23);
 							num23 = Math.Max(float_7 - Convert.ToSingle((double)this.size_0.Width * (1.0 - Math.Pow((double)this.float_4, (double)((float)(num24 - num8) - num9 + (num23 - (float)this.class362_0.class239_0[num24]) / (float)(this.class362_0.class239_0[num24 + 1] - this.class362_0.class239_0[num24])))) / (double)(1f - this.float_4)), val);
 						}
@@ -917,12 +923,12 @@ namespace ns17
 					else
 					{
 						num22 = float_7 - Convert.ToSingle((double)this.size_0.Width * (1.0 - Math.Pow((double)this.float_4, this.double_2 * (double)(num21 - int_8) / (double)this.class362_0.class239_0[1])) / (double)(1f - this.float_4));
-						num23 = ((class3.int_0 - this.class362_0.int_0 > this.class362_0.int_0) ? Math.Max(float_7 - Convert.ToSingle((double)this.size_0.Width * (1.0 - Math.Pow((double)this.float_4, this.double_2 * (double)(num21 - int_8 + class3.int_0 - this.class362_0.int_0) / (double)this.class362_0.class239_0[1])) / (double)(1f - this.float_4)), val) : -1f);
+						num23 = ((class3.sustainLength - this.class362_0.int_0 > this.class362_0.int_0) ? Math.Max(float_7 - Convert.ToSingle((double)this.size_0.Width * (1.0 - Math.Pow((double)this.float_4, this.double_2 * (double)(num21 - int_8 + class3.sustainLength - this.class362_0.int_0) / (double)this.class362_0.class239_0[1])) / (double)(1f - this.float_4)), val) : -1f);
 						num22 = Math.Min(num22, float_7);
 					}
 					if (num23 == -1f || num23 <= float_7)
 					{
-						bool flag2 = this.bool_3 && ((i != 0 && SongEditor.smethod_0(@class[@class.Keys[i - 1]].bool_0, class3.bool_0) && (float)(num21 - @class.Keys[i - 1]) <= (float)num11 / 4f * (float)num6 / ((this.class362_0.gh3Song_0.hammer_on == 0f) ? Class362.float_0 : this.class362_0.gh3Song_0.hammer_on)) ^ class3.bool_0[5]);
+						bool flag2 = this.bool_3 && ((i != 0 && SongEditor.smethod_0(@class[@class.Keys[i - 1]].noteValues, class3.noteValues) && (float)(num21 - @class.Keys[i - 1]) <= (float)num11 / 4f * (float)num6 / ((this.class362_0.gh3Song_0.hammer_on == 0f) ? QBCParser.float_0 : this.class362_0.gh3Song_0.hammer_on)) ^ class3.noteValues[5]);
 						float num25 = float_6 + Convert.ToSingle((double)(float_7 - num22) * Math.Tan(this.double_1));
 						num16 = ((float)this.size_0.Height - 2f * (num25 - float_6)) / (float)this.int_7;
 						float num26 = float_6 + Convert.ToSingle((double)(float_7 - num23) * Math.Tan(this.double_1));
@@ -944,7 +950,7 @@ namespace ns17
 						{
 							num25 += num16;
 							num26 += num27;
-							if (class3.bool_0[j])
+							if (class3.noteValues[j])
 							{
 								if (num23 != -1f)
 								{

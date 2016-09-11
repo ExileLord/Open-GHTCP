@@ -129,7 +129,7 @@ namespace ns17
 			this.tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 10f));
 			this.tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50f));
 			this.tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 10f));
-			this.tableLayoutPanel.Size = new Size(417, 265);
+			this.tableLayoutPanel.Size = new Size(487, 265);
 			this.tableLayoutPanel.TabIndex = 0;
 			this.logoPictureBox.Dock = DockStyle.Fill;
 			this.logoPictureBox.Image = (Image)componentResourceManager.GetObject("logoPictureBox.Image");

@@ -55,7 +55,7 @@ namespace ns11
 
 		private readonly Queue<Class158> queue_0;
 
-		private Stream1 stream1_0;
+		private GenericAudioStream stream1_0;
 
 		private int int_0;
 
@@ -89,11 +89,11 @@ namespace ns11
 
 		private EventHandler eventHandler_0;
 
-		public Class163(Stream1 stream1_1) : this(stream1_1, -1, 300)
+		public Class163(GenericAudioStream stream1_1) : this(stream1_1, -1, 300)
 		{
 		}
 
-		public Class163(Stream1 stream1_1, int int_4, int int_5)
+		public Class163(GenericAudioStream stream1_1, int int_4, int int_5)
 		{
 			this.stream1_0 = stream1_1;
 			this.int_1 = int_4;
@@ -110,7 +110,7 @@ namespace ns11
 			this.method_0(stream1_1);
 		}
 
-		public void method_0(Stream1 stream1_1)
+		public void method_0(GenericAudioStream stream1_1)
 		{
 			if (Thread.CurrentThread.ManagedThreadId != this.thread_0.ManagedThreadId)
 			{
@@ -156,7 +156,7 @@ namespace ns11
 							switch (@class.method_0())
 							{
 							case Class163.Enum19.const_0:
-								this.method_0((Stream1)@class.method_1());
+								this.method_0((GenericAudioStream)@class.method_1());
 								break;
 							case Class163.Enum19.const_1:
 								this.imethod_5();
