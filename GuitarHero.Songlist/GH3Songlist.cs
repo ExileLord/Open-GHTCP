@@ -30,26 +30,26 @@ namespace GuitarHero.Songlist
 
 		public static List<int> IgnoreSongs = new List<int>(new int[]
 		{
-			Class327.smethod_9("synctest"),
-			Class327.smethod_9("mutetest"),
-			Class327.smethod_9("synctestplaytoaudio"),
-			Class327.smethod_9("synctestaudioandvisual"),
-			Class327.smethod_9("tutorial_1b"),
-			Class327.smethod_9("tutorial_1c"),
-			Class327.smethod_9("tutorial_1d"),
-			Class327.smethod_9("tutorial_1e"),
-			Class327.smethod_9("tutorial_2a"),
-			Class327.smethod_9("tutorial_2b"),
-			Class327.smethod_9("tutorial_2c"),
-			Class327.smethod_9("tutorial_3a"),
-			Class327.smethod_9("tutorial_3b"),
-			Class327.smethod_9("tutorial_3c"),
-			Class327.smethod_9("tutorial_3d"),
-			Class327.smethod_9("tutorial_4c"),
-			Class327.smethod_9("tutorial_4e"),
-			Class327.smethod_9("credits"),
-			Class327.smethod_9("kingsandqueenscredits"),
-			Class327.smethod_9("timrapptest")
+			QbSongClass1.smethod_9("synctest"),
+			QbSongClass1.smethod_9("mutetest"),
+			QbSongClass1.smethod_9("synctestplaytoaudio"),
+			QbSongClass1.smethod_9("synctestaudioandvisual"),
+			QbSongClass1.smethod_9("tutorial_1b"),
+			QbSongClass1.smethod_9("tutorial_1c"),
+			QbSongClass1.smethod_9("tutorial_1d"),
+			QbSongClass1.smethod_9("tutorial_1e"),
+			QbSongClass1.smethod_9("tutorial_2a"),
+			QbSongClass1.smethod_9("tutorial_2b"),
+			QbSongClass1.smethod_9("tutorial_2c"),
+			QbSongClass1.smethod_9("tutorial_3a"),
+			QbSongClass1.smethod_9("tutorial_3b"),
+			QbSongClass1.smethod_9("tutorial_3c"),
+			QbSongClass1.smethod_9("tutorial_3d"),
+			QbSongClass1.smethod_9("tutorial_4c"),
+			QbSongClass1.smethod_9("tutorial_4e"),
+			QbSongClass1.smethod_9("credits"),
+			QbSongClass1.smethod_9("kingsandqueenscredits"),
+			QbSongClass1.smethod_9("timrapptest")
 		});
 
 		public GH3Songlist(Class308 class308_0, GH3Songlist gh3Songlist_0)
@@ -62,7 +62,7 @@ namespace GuitarHero.Songlist
 			if (!base.ContainsKey(gh3Song_0.vmethod_3()))
 			{
 				base.Add(gh3Song_0.vmethod_3(), gh3Song_0);
-				Class327.smethod_9(gh3Song_0.vmethod_3());
+				QbSongClass1.smethod_9(gh3Song_0.vmethod_3());
 			}
 		}
 
@@ -71,7 +71,7 @@ namespace GuitarHero.Songlist
 			if (!base.ContainsKey(gh3Song_0.vmethod_3()))
 			{
 				base.Add(gh3Song_0.vmethod_3(), gh3Song_0);
-				Class327.smethod_9(gh3Song_0.vmethod_3());
+				QbSongClass1.smethod_9(gh3Song_0.vmethod_3());
 				return;
 			}
 			if (base[gh3Song_0.vmethod_3()].vmethod_1() && bool_0)
@@ -239,7 +239,7 @@ namespace GuitarHero.Songlist
 			List<Class294> list2 = new List<Class294>();
 			foreach (string current in base.Keys)
 			{
-				list.Add(Class327.smethod_9(current));
+				list.Add(QbSongClass1.smethod_9(current));
 				list2.Add(base[current].vmethod_5());
 			}
 			((Class281)class308_0.method_5<Class267>(new Class267("gh3_songlist")).method_7()).method_12(list);

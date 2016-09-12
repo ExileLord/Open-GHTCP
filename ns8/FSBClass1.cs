@@ -195,7 +195,7 @@ namespace ns8
 		private Class168 method_8(BinaryReader inputBin, out uint dataSize)
 		{
 			Class168 @class = new Class168();
-			@class.string_0 = this.method_14(inputBin.ReadBytes(32));
+			@class.FileName = this.method_14(inputBin.ReadBytes(32));
 			@class.uint_0 = inputBin.ReadUInt32();
 			dataSize = inputBin.ReadUInt32();
 			@class.int_0 = inputBin.ReadInt32();
@@ -221,7 +221,7 @@ namespace ns8
 		{
 			Class168 @class = new Class168();
 			hdrSize = (uint)inputBin.ReadUInt16();
-			@class.string_0 = this.method_14(inputBin.ReadBytes(30));
+			@class.FileName = this.method_14(inputBin.ReadBytes(30));
 			@class.uint_0 = inputBin.ReadUInt32();
 			dataSize = inputBin.ReadUInt32();
 			@class.uint_1 = inputBin.ReadUInt32();
@@ -267,7 +267,7 @@ namespace ns8
 			@class.uint_0 = inputBin.ReadUInt32();
 			dataSize = inputBin.ReadUInt32();
 			Console.WriteLine(inputBin.BaseStream.Position);
-			@class.string_0 = firstFile.string_0;
+			@class.FileName = firstFile.FileName;
 			@class.uint_1 = firstFile.uint_1;
 			@class.uint_2 = firstFile.uint_2;
 			@class.enum22_0 = firstFile.enum22_0;
@@ -434,7 +434,7 @@ namespace ns8
 
 		private void method_25(BinaryWriter binaryWriter_0, Class168 class168_0)
 		{
-			binaryWriter_0.Write(FSBClass1.smethod_8(class168_0.string_0, 32));
+			binaryWriter_0.Write(FSBClass1.smethod_8(class168_0.FileName, 32));
 			binaryWriter_0.Write(class168_0.uint_0);
 			binaryWriter_0.Write((uint)class168_0.stream_1.Length);
 			binaryWriter_0.Write(class168_0.int_0);
@@ -456,7 +456,7 @@ namespace ns8
 		private void method_27(BinaryWriter binaryWriter_0, Class168 class168_0, int int_0)
 		{
 			binaryWriter_0.Write((ushort)int_0);
-			binaryWriter_0.Write(FSBClass1.smethod_8(class168_0.string_0, 30));
+			binaryWriter_0.Write(FSBClass1.smethod_8(class168_0.FileName, 30));
 			binaryWriter_0.Write(class168_0.uint_0);
 			binaryWriter_0.Write((uint)class168_0.stream_1.Length);
 			binaryWriter_0.Write(class168_0.uint_1);

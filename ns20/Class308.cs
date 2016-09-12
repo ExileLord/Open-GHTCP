@@ -87,13 +87,13 @@ namespace ns20
 
 		public Class308(string string_0, Class259 class259_0)
 		{
-			base.Text = Class244.smethod_13(string_0);
+			base.Text = KeyGenerator.smethod_13(string_0);
 			base.Nodes.Add(class259_0);
 		}
 
 		public Class308(string string_0, IEnumerable<Class259> ienumerable_0)
 		{
-			base.Text = Class244.smethod_13(string_0);
+			base.Text = KeyGenerator.smethod_13(string_0);
 			base.Nodes.AddRange(new List<Class259>(ienumerable_0).ToArray());
 		}
 
@@ -103,14 +103,14 @@ namespace ns20
 
 		public Class308(string string_0, Stream26 stream26_0)
 		{
-			base.Text = Class244.smethod_13(string_0);
+			base.Text = KeyGenerator.smethod_13(string_0);
 			stream26_0.Position = 28L;
 			base.method_4(stream26_0);
 		}
 
 		public Class308(string string_0, Stream26 stream26_0, Dictionary<int, string> dictionary_1)
 		{
-			base.Text = Class244.smethod_13(string_0);
+			base.Text = KeyGenerator.smethod_13(string_0);
 			if (dictionary_1 != null)
 			{
 				this.dictionary_0 = dictionary_1;
@@ -164,7 +164,7 @@ namespace ns20
 			{
 				this.bool_1 = false;
 			}
-			Exception ex = new Exception("No QB Node class found for : " + Class244.smethod_34(int_0));
+			Exception ex = new Exception("No QB Node class found for : " + KeyGenerator.smethod_34(int_0));
 			if (num != 32)
 			{
 				if (num != 4)

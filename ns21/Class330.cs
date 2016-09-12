@@ -283,7 +283,7 @@ namespace ns21
 			BinaryWriter binaryWriter = new BinaryWriter(memoryStream);
 			for (int i = 0; i < int_2; i++)
 			{
-				Bitmap bitmap = Class244.smethod_49(image_0, Math.Max(1, image_0.Width >> i), Math.Max(1, image_0.Height >> i));
+				Bitmap bitmap = KeyGenerator.smethod_49(image_0, Math.Max(1, image_0.Width >> i), Math.Max(1, image_0.Height >> i));
 				if (imgpixelFormat_1 == IMGPixelFormat.Bgra32)
 				{
 					BitmapData bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);

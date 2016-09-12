@@ -49,7 +49,7 @@ namespace ns17
 				"B. Wiuff",
 				"Pam D."
 			};
-			Class244.smethod_56(array);
+			KeyGenerator.smethod_56(array);
 			Console.WriteLine("Randomized Names:");
 			int num = 0;
 			while (num < 5 && !this.bool_0)
@@ -89,7 +89,7 @@ namespace ns17
 					"qb_s",
 					"qb_g",
 					"qb_k"
-				}).IndexOf(Class244.smethod_12(this.class318_0.string_0))]));
+				}).IndexOf(KeyGenerator.smethod_12(this.class318_0.string_0))]));
 			}
 			if (!this.bool_0)
 			{

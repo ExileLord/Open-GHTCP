@@ -11,34 +11,35 @@ using System.Windows.Forms;
 
 namespace ns16
 {
-	public class Class244
+	public class KeyGenerator
 	{
 		public static bool bool_0 = false;
 
 		public static bool bool_1 = false;
 
-		private static readonly byte[] byte_0 = new byte[]
+        //Who the hell is Ivan Medvedev
+		private static readonly byte[] pwByteArray = new byte[] //seed?
 		{
-			73,
-			118,
-			97,
-			110,
-			32,
-			77,
-			101,
-			100,
-			118,
-			101,
-			100,
-			101,
-			118
+			73,   //I
+			118,  //v
+			97,   //a
+			110,  //n
+			32,   // 
+			77,   //M
+			101,  //e
+			100,  //d
+			118,  //v
+			101,  //e
+			100,  //d
+			101,  //e
+			118   //v
 		};
 
 		private static uint uint_0 = 0u;
 
-		private static readonly uint uint_1 = 4294967295u;
+		private static readonly uint xorMask = 4294967295u;
 
-		public static readonly uint[] uint_2 = new uint[]
+		public static readonly uint[] crc32 = new uint[]
 		{
 			0u,
 			1996959894u,
@@ -321,14 +322,14 @@ namespace ns16
 
 		public static void smethod_1(Stream stream_0, Stream stream_1, string string_0)
 		{
-			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, Class244.byte_0);
-			Class244.smethod_0(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
+			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, KeyGenerator.pwByteArray);
+			KeyGenerator.smethod_0(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
 		public static byte[] smethod_2(Stream stream_0, string string_0)
 		{
 			MemoryStream memoryStream = new MemoryStream();
-			Class244.smethod_1(stream_0, memoryStream, string_0);
+			KeyGenerator.smethod_1(stream_0, memoryStream, string_0);
 			return memoryStream.ToArray();
 		}
 
@@ -353,26 +354,26 @@ namespace ns16
 
 		public static void smethod_4(Stream stream_0, Stream stream_1, string string_0)
 		{
-			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, Class244.byte_0);
-			Class244.smethod_3(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
+			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, KeyGenerator.pwByteArray);
+			KeyGenerator.smethod_3(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
 		public static byte[] smethod_5(Stream stream_0, string string_0)
 		{
 			MemoryStream memoryStream = new MemoryStream();
-			Class244.smethod_4(stream_0, memoryStream, string_0);
+			KeyGenerator.smethod_4(stream_0, memoryStream, string_0);
 			return memoryStream.ToArray();
 		}
 
-		public static void smethod_6(byte[] byte_1, Stream stream_0, byte[] byte_2, byte[] byte_3)
+		public static void smethod_6(byte[] byte_1, Stream stream_0, byte[] key, byte[] initializationVector)
 		{
-			if ((byte_2.Length != 16 && byte_2.Length != 24 && byte_2.Length != 32) || byte_3.Length != 16)
+			if ((key.Length != 16 && key.Length != 24 && key.Length != 32) || initializationVector.Length != 16)
 			{
 				return;
 			}
 			Rijndael rijndael = Rijndael.Create();
-			rijndael.Key = byte_2;
-			rijndael.IV = byte_3;
+			rijndael.Key = key;
+			rijndael.IV = initializationVector;
 			CryptoStream cryptoStream = new CryptoStream(stream_0, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
 			cryptoStream.Write(byte_1, 0, byte_1.Length);
 			cryptoStream.Close();
@@ -380,14 +381,14 @@ namespace ns16
 
 		public static void smethod_7(byte[] byte_1, Stream stream_0, string string_0)
 		{
-			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, Class244.byte_0);
-			Class244.smethod_6(byte_1, stream_0, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
+			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, KeyGenerator.pwByteArray);
+			KeyGenerator.smethod_6(byte_1, stream_0, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
 		public static byte[] smethod_8(byte[] byte_1, string string_0)
 		{
 			MemoryStream memoryStream = new MemoryStream();
-			Class244.smethod_7(byte_1, memoryStream, string_0);
+			KeyGenerator.smethod_7(byte_1, memoryStream, string_0);
 			return memoryStream.ToArray();
 		}
 
@@ -440,12 +441,12 @@ namespace ns16
 
 		public static string smethod_12(string string_0)
 		{
-			return Class244.smethod_11(string_0, -1);
+			return KeyGenerator.smethod_11(string_0, -1);
 		}
 
 		public static string smethod_13(string string_0)
 		{
-			return Class244.smethod_11(string_0, 0);
+			return KeyGenerator.smethod_11(string_0, 0);
 		}
 
 		public static string smethod_14(string string_0, int int_0)
@@ -498,12 +499,12 @@ namespace ns16
 
 		public static string smethod_16(string string_0, string string_1, bool bool_2)
 		{
-			return Class244.smethod_15(string_0, string_1, bool_2, "");
+			return KeyGenerator.smethod_15(string_0, string_1, bool_2, "");
 		}
 
 		public static string smethod_17(string string_0, string string_1)
 		{
-			return Class244.smethod_16(string_0, string_1, true);
+			return KeyGenerator.smethod_16(string_0, string_1, true);
 		}
 
 		public static List<string> checkFile(string string_0, string string_1, bool bool_2)
@@ -549,7 +550,7 @@ namespace ns16
 
 		public static int[] smethod_21(ICollection<byte> icollection_0)
 		{
-			return Class244.smethod_22(new List<byte>(icollection_0));
+			return KeyGenerator.smethod_22(new List<byte>(icollection_0));
 		}
 
 		public static int[] smethod_22(List<byte> list_0)
@@ -557,7 +558,7 @@ namespace ns16
 			int[] array = new int[list_0.Count / 4];
 			for (int i = 0; i < array.Length; i++)
 			{
-				array[i] = Class244.smethod_25(list_0.GetRange(i * 4, 4).ToArray());
+				array[i] = KeyGenerator.smethod_25(list_0.GetRange(i * 4, 4).ToArray());
 			}
 			return array;
 		}
@@ -571,7 +572,7 @@ namespace ns16
 		{
 			if (!(bool_2 ^ BitConverter.IsLittleEndian))
 			{
-				return Class244.smethod_28(byte_1);
+				return KeyGenerator.smethod_28(byte_1);
 			}
 			int num = byte_1.Length;
 			switch (num)
@@ -594,7 +595,7 @@ namespace ns16
 
 		public static int smethod_25(byte[] byte_1)
 		{
-			return Class244.smethod_24(byte_1, Class244.bool_0);
+			return KeyGenerator.smethod_24(byte_1, KeyGenerator.bool_0);
 		}
 
 		public static int smethod_26(int int_0)
@@ -652,7 +653,7 @@ namespace ns16
 		{
 			if (!(bool_2 ^ BitConverter.IsLittleEndian))
 			{
-				return Class244.smethod_29(int_0);
+				return KeyGenerator.smethod_29(int_0);
 			}
 			return BitConverter.GetBytes(int_0);
 		}
@@ -664,7 +665,7 @@ namespace ns16
 
 		public static string smethod_34(int int_0)
 		{
-			return Class244.smethod_35(int_0, 4);
+			return KeyGenerator.smethod_35(int_0, 4);
 		}
 
 		public static string smethod_35(int int_0, int int_1)
@@ -677,18 +678,18 @@ namespace ns16
 			return text;
 		}
 
-		public static int smethod_36(string gbName, bool alwaysTrue)
+		public static int GetQbKey(string gbName, bool alwaysTrue)
 		{
             //bool_0 is always false;
-			return Class244.smethod_38(new MemoryStream(Class244.stringToBytes(gbName)), alwaysTrue, Class244.bool_0);
+			return KeyGenerator.GetQbKey(new MemoryStream(KeyGenerator.stringToBytes(gbName)), alwaysTrue, KeyGenerator.bool_0);
 		}
 
-		public static int smethod_37(byte[] byte_1, bool bool_2)
+		public static int GetQbKey(byte[] byte_1, bool bool_2)
 		{
-			return Class244.smethod_38(new MemoryStream(byte_1), bool_2, Class244.bool_0);
+			return KeyGenerator.GetQbKey(new MemoryStream(byte_1), bool_2, KeyGenerator.bool_0);
 		}
 
-		public static int smethod_38(Stream stream_0, bool bool_2, bool bool_3)
+		public static int GetQbKey(Stream stream_0, bool bool_2, bool bool_3)
 		{
 			if (stream_0 == null)
 			{
@@ -699,40 +700,40 @@ namespace ns16
 				throw new ArgumentException("stream is not readable.");
 			}
 			stream_0.Position = 0L;
-			Class244.smethod_40();
+			KeyGenerator.smethod_40();
 			byte[] array = new byte[4096];
 			int int_;
 			while ((int_ = stream_0.Read(array, 0, array.Length)) != 0)
 			{
-				Class244.smethod_41(array, 0, int_);
+				KeyGenerator.CrcVerifyMethod1(array, 0, int_);
 			}
 			stream_0.Position = 0L;
 			if (bool_2 && bool_3)
 			{
-                return Class244.smethod_26((int)(Class244.uint_0 ^ 4294967295u));
+                return KeyGenerator.smethod_26((int)(KeyGenerator.uint_0 ^ 4294967295u));
 			}
 			if (bool_2)
 			{
-                return (int)(Class244.uint_0 ^ 4294967295u);
+                return (int)(KeyGenerator.uint_0 ^ 4294967295u);
 			}
 			if (bool_3)
 			{
-				return Class244.smethod_26((int)Class244.uint_0);
+				return KeyGenerator.smethod_26((int)KeyGenerator.uint_0);
 			}
-			return (int)Class244.uint_0;
+			return (int)KeyGenerator.uint_0;
 		}
 
-		public static int smethod_39(Stream stream_0, bool bool_2)
+		public static int GetQbKey(Stream stream_0, bool bool_2)
 		{
-			return Class244.smethod_38(stream_0, bool_2, Class244.bool_0);
+			return KeyGenerator.GetQbKey(stream_0, bool_2, KeyGenerator.bool_0);
 		}
 
 		private static void smethod_40()
 		{
-			Class244.uint_0 = 0u;
+			KeyGenerator.uint_0 = 0u;
 		}
 
-		private static void smethod_41(byte[] byte_1, int int_0, int int_1)
+		private static void CrcVerifyMethod1(byte[] byte_1, int int_0, int int_1)
 		{
 			if (byte_1 == null)
 			{
@@ -740,12 +741,12 @@ namespace ns16
 			}
 			if (int_0 >= 0 && int_1 >= 0 && int_0 + int_1 <= byte_1.Length)
 			{
-				Class244.uint_0 ^= Class244.uint_1;
+				KeyGenerator.uint_0 ^= KeyGenerator.xorMask;
 				while (--int_1 >= 0)
 				{
-					Class244.uint_0 = (Class244.uint_2[(int)((UIntPtr)((Class244.uint_0 ^ (uint)byte_1[int_0++]) & 255u))] ^ Class244.uint_0 >> 8);
+					KeyGenerator.uint_0 = (KeyGenerator.crc32[(int)((UIntPtr)((KeyGenerator.uint_0 ^ (uint)byte_1[int_0++]) & 255u))] ^ KeyGenerator.uint_0 >> 8);
 				}
-				Class244.uint_0 ^= Class244.uint_1;
+				KeyGenerator.uint_0 ^= KeyGenerator.xorMask;
 				return;
 			}
 			throw new ArgumentOutOfRangeException("Crc buffer");
@@ -753,12 +754,12 @@ namespace ns16
 
 		public static byte[] smethod_42(string string_0)
 		{
-			return Class244.smethod_43(File.OpenRead(string_0));
+			return KeyGenerator.smethod_43(File.OpenRead(string_0));
 		}
 
 		public static byte[] smethod_43(Stream stream_0)
 		{
-			return Class244.smethod_44(SHA512.Create(), stream_0);
+			return KeyGenerator.smethod_44(SHA512.Create(), stream_0);
 		}
 
 		public static byte[] smethod_44(HashAlgorithm hashAlgorithm_0, Stream stream_0)
@@ -780,7 +781,7 @@ namespace ns16
 
 		public static void smethod_46(Stream stream_0, string string_0)
 		{
-			Class244.smethod_47(stream_0, Class244.smethod_45(string_0));
+			KeyGenerator.smethod_47(stream_0, KeyGenerator.smethod_45(string_0));
 		}
 
 		public static void smethod_47(Stream stream_0, Stream stream_1)
@@ -801,18 +802,18 @@ namespace ns16
 
 		public static Bitmap smethod_48(Image image_0, Size size_0)
 		{
-			return Class244.smethod_49(image_0, size_0.Width, size_0.Height);
+			return KeyGenerator.smethod_49(image_0, size_0.Width, size_0.Height);
 		}
 
 		public static Bitmap smethod_49(Image image_0, int int_0, int int_1)
 		{
-			Size size = Class244.smethod_52(image_0.Width, image_0.Height, int_0, int_1);
-			return Class244.smethod_51(image_0, size.Width, size.Height);
+			Size size = KeyGenerator.smethod_52(image_0.Width, image_0.Height, int_0, int_1);
+			return KeyGenerator.smethod_51(image_0, size.Width, size.Height);
 		}
 
 		public static Bitmap smethod_50(Image image_0, Size size_0)
 		{
-			return Class244.smethod_51(image_0, size_0.Width, size_0.Height);
+			return KeyGenerator.smethod_51(image_0, size_0.Width, size_0.Height);
 		}
 
 		public static Bitmap smethod_51(Image image_0, int int_0, int int_1)
@@ -843,12 +844,12 @@ namespace ns16
 
 		public static bool smethod_53<T>(ICollection<T> icollection_0, ICollection<T> icollection_1) where T : IComparable
 		{
-			return Class244.smethod_54<T>(icollection_0, icollection_1, Math.Max(icollection_0.Count, icollection_1.Count));
+			return KeyGenerator.smethod_54<T>(icollection_0, icollection_1, Math.Max(icollection_0.Count, icollection_1.Count));
 		}
 
 		public static bool smethod_54<T>(ICollection<T> icollection_0, ICollection<T> icollection_1, int int_0) where T : IComparable
 		{
-			return Class244.smethod_55<T>(icollection_0, icollection_1, int_0, false);
+			return KeyGenerator.smethod_55<T>(icollection_0, icollection_1, int_0, false);
 		}
 
 		public static bool smethod_55<T>(ICollection<T> icollection_0, ICollection<T> icollection_1, int int_0, bool bool_2) where T : IComparable
@@ -880,7 +881,7 @@ namespace ns16
 			int num = 0;
 			while (arrayList.Count != 0)
 			{
-				object obj = arrayList[Class244.random_0.Next(0, arrayList.Count)];
+				object obj = arrayList[KeyGenerator.random_0.Next(0, arrayList.Count)];
 				ilist_0[num++] = obj;
 				arrayList.Remove(obj);
 			}

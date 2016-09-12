@@ -36,7 +36,7 @@ namespace ns17
 		{
 			byte[] byte_;
 			ZIPManager.smethod_3(this.string_1, out byte_, "songs.info", "TGH9ZIP2PASS4MXKR");
-			Class308 @class = new Class308("songs", Class244.smethod_8(byte_, "SNG4AES4KEY9MXKR"));
+			Class308 @class = new Class308("songs", KeyGenerator.smethod_8(byte_, "SNG4AES4KEY9MXKR"));
 			foreach (Class302 class302_ in @class.Nodes)
 			{
 				GH3Song gH3Song = new GH3Song(class302_);
@@ -44,7 +44,7 @@ namespace ns17
 				this.gh3Songlist_0.method_0(gH3Song, this.string_0 != null);
 			}
 			ZIPManager.smethod_3(this.string_1, out byte_, "tier.info", "TGH9ZIP2PASS4MXKR");
-			this.gh3Tier_0.method_1(new GH3Tier((Class286)new Class308("tier", Class244.smethod_8(byte_, "TIR4AES4KEY9MXKR")).Nodes[0], this.gh3Songlist_0));
+			this.gh3Tier_0.method_1(new GH3Tier((Class286)new Class308("tier", KeyGenerator.smethod_8(byte_, "TIR4AES4KEY9MXKR")).Nodes[0], this.gh3Songlist_0));
 			if (this.string_0 != null)
 			{
 				List<string> list = new List<string>();
@@ -69,7 +69,7 @@ namespace ns17
 		{
 			List<Stream> list = new List<Stream>();
 			Stream stream = new MemoryStream();
-			Class244.smethod_1(new Class308("tier", this.gh3Tier_0.method_3()).method_8(), stream, "TIR4AES4KEY9MXKR");
+			KeyGenerator.smethod_1(new Class308("tier", this.gh3Tier_0.method_3()).method_8(), stream, "TIR4AES4KEY9MXKR");
 			List<string> list2 = new List<string>();
 			List<Class302> list3 = new List<Class302>();
 			foreach (GH3Song current in this.gh3Tier_0.songs)
@@ -89,7 +89,7 @@ namespace ns17
 				}
 			}
 			Stream stream2 = new MemoryStream();
-			Class244.smethod_1(new Class308("songs", list3.ToArray()).method_8(), stream2, "SNG4AES4KEY9MXKR");
+			KeyGenerator.smethod_1(new Class308("songs", list3.ToArray()).method_8(), stream2, "SNG4AES4KEY9MXKR");
 			list2.Add("tier.info");
 			list.Add(stream);
 			list2.Add("songs.info");

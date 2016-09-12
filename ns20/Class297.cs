@@ -10,7 +10,7 @@ namespace ns20
 			this.vmethod_0();
 		}
 
-		public Class297(string string_0) : this(Class327.smethod_9(string_0))
+		public Class297(string string_0) : this(QbSongClass1.smethod_9(string_0))
 		{
 		}
 
@@ -20,7 +20,7 @@ namespace ns20
 			this.vmethod_0();
 		}
 
-		public Class297(string string_0, float float_0) : this(Class327.smethod_9(string_0), float_0)
+		public Class297(string string_0, float float_0) : this(QbSongClass1.smethod_9(string_0), float_0)
 		{
 		}
 

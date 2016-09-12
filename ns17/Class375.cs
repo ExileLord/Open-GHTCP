@@ -43,7 +43,7 @@ namespace ns17
 			{
 				return;
 			}
-			Class308 @class = new Class308(Class375.string_0, Class244.smethod_8(class318_0.method_12(Class375.string_0), "MaC39SubInfo1245"));
+			Class308 @class = new Class308(Class375.string_0, KeyGenerator.smethod_8(class318_0.method_12(Class375.string_0), "MaC39SubInfo1245"));
 			this.version_0 = new Version(@class.method_5<Class273>(new Class273("version")).method_7());
 			float[] array = @class.method_5<Class267>(new Class267("date")).method_7().method_7<float>();
 			this.dateTime_0 = new DateTime((int)array[0], (int)array[1], (int)array[2]);
@@ -79,7 +79,7 @@ namespace ns17
 			using (Stream26 stream = class318_0.method_17())
 			{
 				stream.Position = 0L;
-				@class.method_3(new Class267("hash", Class375.string_0, new Class280(Class244.smethod_21(Class244.smethod_43(stream.stream_0)))));
+				@class.method_3(new Class267("hash", Class375.string_0, new Class280(KeyGenerator.smethod_21(KeyGenerator.smethod_43(stream.stream_0)))));
 			}
 			GC.Collect();
 			DateTime now = DateTime.Now;
@@ -89,7 +89,7 @@ namespace ns17
 				(float)now.Month,
 				(float)now.Day
 			})));
-			class318_0.method_1<Class332>(Class375.string_0, new Class332(Class375.string_0, Class244.smethod_2(@class.method_8(), "MaC39SubInfo1245")));
+			class318_0.method_1<Class332>(Class375.string_0, new Class332(Class375.string_0, KeyGenerator.smethod_2(@class.method_8(), "MaC39SubInfo1245")));
 		}
 	}
 }

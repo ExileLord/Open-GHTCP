@@ -5,7 +5,7 @@ namespace ns8
 {
 	public class Class168 : IDisposable
 	{
-		public string string_0;
+		public string FileName;
 
 		public uint uint_0;
 
@@ -45,7 +45,7 @@ namespace ns8
 
 		public Class168()
 		{
-			this.string_0 = "";
+			this.FileName = "";
 			this.uint_0 = 0u;
 			this.uint_1 = 0u;
 			this.uint_2 = 0u;
@@ -69,7 +69,7 @@ namespace ns8
 			return string.Concat(new object[]
 			{
 				"FsbSubFile:\nName = ",
-				this.string_0,
+				this.FileName,
 				"\nNumSamples = ",
 				this.uint_0,
 				"\nLoopStartPoint = ",

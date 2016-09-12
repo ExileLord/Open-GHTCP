@@ -961,7 +961,7 @@ namespace ns9
         public Class308 method_4(string string_0)
 		{
 			Class308 @class = new Class308();
-			int int_ = Class327.smethod_9("songs\\" + string_0 + ".mid.qb");
+			int int_ = QbSongClass1.smethod_9("songs\\" + string_0 + ".mid.qb");
 			string[] array = new string[]
 			{
 				"",

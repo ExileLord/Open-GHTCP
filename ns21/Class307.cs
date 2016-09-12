@@ -13,7 +13,7 @@ namespace ns21
 			this.vmethod_0();
 		}
 
-		public Class307(string string_0) : this(Class327.smethod_9(string_0))
+		public Class307(string string_0) : this(QbSongClass1.smethod_9(string_0))
 		{
 		}
 
@@ -23,7 +23,7 @@ namespace ns21
 			this.vmethod_0();
 		}
 
-		public Class307(string string_0, string string_1) : this(Class327.smethod_9(string_0), string_1)
+		public Class307(string string_0, string string_1) : this(QbSongClass1.smethod_9(string_0), string_1)
 		{
 		}
 

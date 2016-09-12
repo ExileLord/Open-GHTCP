@@ -74,11 +74,11 @@ namespace ns18
 
 		public override string vmethod_3()
 		{
-			if (Class327.smethod_3(this.int_0))
+			if (QbSongClass1.smethod_3(this.int_0))
 			{
-				return Class327.smethod_5(this.int_0) + " (Script)";
+				return QbSongClass1.smethod_5(this.int_0) + " (Script)";
 			}
-			return Class244.smethod_34(this.int_0) + " (Script Tag)";
+			return KeyGenerator.smethod_34(this.int_0) + " (Script Tag)";
 		}
 
 		public void method_7(byte[] byte_1)

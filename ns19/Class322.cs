@@ -94,7 +94,7 @@ namespace ns19
 
 		public void method_3(int int_0, string string_1)
 		{
-			Class244.smethod_9(string_1, this.method_2(int_0));
+			KeyGenerator.smethod_9(string_1, this.method_2(int_0));
 		}
 
 		public int method_4()

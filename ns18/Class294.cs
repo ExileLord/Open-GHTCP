@@ -25,11 +25,11 @@ namespace ns18
 		public override string vmethod_3()
 		{
 			string str = (base.Nodes.Count > 0) ? base.method_2(0).vmethod_3() : "NULL";
-			if (Class327.smethod_3(this.int_0))
+			if (QbSongClass1.smethod_3(this.int_0))
 			{
-				return Class327.smethod_5(this.int_0) + " = " + str;
+				return QbSongClass1.smethod_5(this.int_0) + " = " + str;
 			}
-			return Class244.smethod_34(this.int_0) + " (Tag) = " + str;
+			return KeyGenerator.smethod_34(this.int_0) + " (Tag) = " + str;
 		}
 
 		public override Color vmethod_6()

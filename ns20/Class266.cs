@@ -11,7 +11,7 @@ namespace ns20
 			this.vmethod_0();
 		}
 
-		public Class266(string string_0) : this(Class327.smethod_9(string_0))
+		public Class266(string string_0) : this(QbSongClass1.smethod_9(string_0))
 		{
 		}
 
@@ -21,7 +21,7 @@ namespace ns20
 			this.vmethod_0();
 		}
 
-		public Class266(int int_2, string string_0, Class286 class286_0) : this(int_2, Class327.smethod_9(string_0), class286_0)
+		public Class266(int int_2, string string_0, Class286 class286_0) : this(int_2, QbSongClass1.smethod_9(string_0), class286_0)
 		{
 		}
 
