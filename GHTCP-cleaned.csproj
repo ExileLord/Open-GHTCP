@@ -1102,9 +1102,7 @@
     <EmbeddedResource Include="NeversoftTools.Properties\Resources.resources" />
     <EmbeddedResource Include="ns14\ViewLog.resources" />
     <EmbeddedResource Include="ns15\Disclaimer.resources" />
-    <EmbeddedResource Include="ns15\LoadGameSettings.resx">
-      <DependentUpon>LoadGameSettings.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="ns15\LoadGameSettings.resources" />
     <EmbeddedResource Include="ns15\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
