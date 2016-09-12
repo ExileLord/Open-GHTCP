@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ns19
 {
-	public class Class311 : Class310
+	public class Class311 : AbstractTreeNode2
 	{
 		public int int_0;
 
@@ -50,13 +50,13 @@ namespace ns19
 			this.int_0 = BitConverter.ToInt32(byte_0, 0);
 		}
 
-		public override string vmethod_3()
+		public override string GetText()
 		{
 			if (this.string_0 != null)
 			{
 				return '"' + this.string_0 + '"';
 			}
-			return "0x" + base.method_1(this.int_0);
+			return "0x" + base.IntToHex32Bit(this.int_0);
 		}
 
 		public string method_2()
@@ -75,7 +75,7 @@ namespace ns19
 			this.int_0 = QbSongClass1.smethod_6(string_1);
 		}
 
-		public override string vmethod_5()
+		public override string GetNodeText()
 		{
 			return "Text Value";
 		}

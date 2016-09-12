@@ -45,7 +45,7 @@ namespace ns9
 
 		private Track<int, int> class228_6;
 
-		private Class287 class287_0 = new Class287(true);
+		private FloatListNode class287_0 = new FloatListNode(true);
 
 		public QBCParser()
 		{
@@ -428,15 +428,15 @@ namespace ns9
 			streamReader.Close();
 		}
 
-		public QBCParser(string string_0, Class308 class308_0) : this(string_0, class308_0, null)
+		public QBCParser(string string_0, zzGenericNode1 class308_0) : this(string_0, class308_0, null)
 		{
 		}
 
-		public QBCParser(string gh3SongName, Class308 class308_0, Class308 class308_1) : this(gh3SongName, class308_0, class308_1, null)
+		public QBCParser(string gh3SongName, zzGenericNode1 class308_0, zzGenericNode1 class308_1) : this(gh3SongName, class308_0, class308_1, null)
 		{
 		}
 
-		public QBCParser(string string_0, Class308 class308_0, Class308 class308_1, Class308 class308_2)
+		public QBCParser(string string_0, zzGenericNode1 class308_0, zzGenericNode1 class308_1, zzGenericNode1 class308_2)
 		{
 			string[] array = new string[]
 			{
@@ -450,7 +450,7 @@ namespace ns9
 				"Single",
 				"Double"
 			};
-			Class267 @class;
+			ArrayPointerRootNode @class;
 			for (int i = 0; i < array2.Length; i++)
 			{
 				string a = array2[i];
@@ -467,7 +467,7 @@ namespace ns9
 					{
 						string text2 = array4[k];
 						string text3 = (text.ToLower() + ((a == "Double") ? "coop" : "") + "_" + text2.ToLower()).Replace("guitar_", "");
-						@class = class308_0.method_5<Class267>(new Class267(string_0 + "_song_" + text3));
+						@class = class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode(string_0 + "_song_" + text3));
 						if (@class != null && @class.method_7() is Class280)
 						{
 							Track<int, NotesAtOffset> class2 = new Track<int, NotesAtOffset>();
@@ -478,8 +478,8 @@ namespace ns9
 							}
 							this.noteList.Add(text3, class2);
 						}
-						@class = class308_0.method_5<Class267>(new Class267(string_0 + "_" + text3 + "_star"));
-						if (@class != null && @class.method_7() is Class291)
+						@class = class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode(string_0 + "_" + text3 + "_star"));
+						if (@class != null && @class.method_7() is ListArrayNode)
 						{
 							Track<int, int[]> class3 = new Track<int, int[]>();
 							foreach (Class280 current in @class.method_7().method_8<Class280>())
@@ -492,8 +492,8 @@ namespace ns9
 							}
 							this.spList.Add(text3, class3);
 						}
-						@class = class308_0.method_5<Class267>(new Class267(string_0 + "_" + text3 + "_starbattlemode"));
-						if (@class != null && @class.method_7() is Class291)
+						@class = class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode(string_0 + "_" + text3 + "_starbattlemode"));
+						if (@class != null && @class.method_7() is ListArrayNode)
 						{
 							Track<int, int[]> class4 = new Track<int, int[]>();
 							foreach (Class280 current2 in @class.method_7().method_8<Class280>())
@@ -509,40 +509,40 @@ namespace ns9
 					}
 				}
 			}
-			@class = class308_0.method_5<Class267>(new Class267(string_0 + "_faceoffp1"));
-			if (@class != null && @class.method_7() is Class291)
+			@class = class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode(string_0 + "_faceoffp1"));
+			if (@class != null && @class.method_7() is ListArrayNode)
 			{
 				foreach (Class280 current3 in @class.method_7().method_8<Class280>())
 				{
 					this.class228_2.Add(current3[0], current3[1]);
 				}
 			}
-			@class = class308_0.method_5<Class267>(new Class267(string_0 + "_faceoffp2"));
-			if (@class != null && @class.method_7() is Class291)
+			@class = class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode(string_0 + "_faceoffp2"));
+			if (@class != null && @class.method_7() is ListArrayNode)
 			{
 				foreach (Class280 current4 in @class.method_7().method_8<Class280>())
 				{
 					this.class228_3.Add(current4[0], current4[1]);
 				}
 			}
-			@class = class308_0.method_5<Class267>(new Class267(string_0 + "_bossbattlep1"));
-			if (@class != null && @class.method_7() is Class291)
+			@class = class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode(string_0 + "_bossbattlep1"));
+			if (@class != null && @class.method_7() is ListArrayNode)
 			{
 				foreach (Class280 current5 in @class.method_7().method_8<Class280>())
 				{
 					this.bpmList.Add(current5[0], current5[1]);
 				}
 			}
-			@class = class308_0.method_5<Class267>(new Class267(string_0 + "_bossbattlep2"));
-			if (@class != null && @class.method_7() is Class291)
+			@class = class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode(string_0 + "_bossbattlep2"));
+			if (@class != null && @class.method_7() is ListArrayNode)
 			{
 				foreach (Class280 current6 in @class.method_7().method_8<Class280>())
 				{
 					this.class228_5.Add(current6[0], current6[1]);
 				}
 			}
-			@class = class308_0.method_5<Class267>(new Class267(string_0 + "_timesig"));
-			if (@class != null && @class.method_7() is Class291)
+			@class = class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode(string_0 + "_timesig"));
+			if (@class != null && @class.method_7() is ListArrayNode)
 			{
 				foreach (Class280 current7 in @class.method_7().method_8<Class280>())
 				{
@@ -553,7 +553,7 @@ namespace ns9
 					});
 				}
 			}
-			@class = class308_0.method_5<Class267>(new Class267(string_0 + "_fretbars"));
+			@class = class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode(string_0 + "_fretbars"));
 			if (@class != null && @class.method_7() is Class280)
 			{
 				this.class239_0 = new Class239<int>(@class.method_7().method_8<int>());
@@ -561,28 +561,28 @@ namespace ns9
 				try
 				{
 					Dictionary<int, string> dictionary = new Dictionary<int, string>();
-					@class = class308_0.method_5<Class267>(new Class267(string_0 + "_markers"));
-					if (class308_1 != null && @class != null && @class.method_7() is Class292)
+					@class = class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode(string_0 + "_markers"));
+					if (class308_1 != null && @class != null && @class.method_7() is StructureArrayNode)
 					{
-						foreach (Class273 class5 in class308_1.Nodes)
+						foreach (UnicodeRootNode class5 in class308_1.Nodes)
 						{
 							dictionary.Add(class5.int_0, class5.method_7());
 						}
-						using (List<Class286>.Enumerator enumerator9 = @class.method_7().method_8<Class286>().GetEnumerator())
+						using (List<StructureHeaderNode>.Enumerator enumerator9 = @class.method_7().method_8<StructureHeaderNode>().GetEnumerator())
 						{
 							while (enumerator9.MoveNext())
 							{
-								Class286 current8 = enumerator9.Current;
-								this.class228_1.Add(((Class299)current8[0]).method_8(), dictionary[((Class298)current8[1]).method_9()]);
+								StructureHeaderNode current8 = enumerator9.Current;
+								this.class228_1.Add(((IntegerStructureNode)current8[0]).method_8(), dictionary[((FileTagStructureNode)current8[1]).method_9()]);
 							}
 							goto IL_7C2;
 						}
 					}
-					if (@class != null && @class.method_7() is Class292)
+					if (@class != null && @class.method_7() is StructureArrayNode)
 					{
-						foreach (Class286 current9 in @class.method_7().method_8<Class286>())
+						foreach (StructureHeaderNode current9 in @class.method_7().method_8<StructureHeaderNode>())
 						{
-							this.class228_1.Add(((Class299)current9[0]).method_8(), ((Class307)current9[1]).method_8());
+							this.class228_1.Add(((IntegerStructureNode)current9[0]).method_8(), ((UnicodeStructureNode)current9[1]).method_8());
 						}
 					}
 					IL_7C2:;
@@ -594,7 +594,7 @@ namespace ns9
 				{
 					if (class308_2 != null)
 					{
-						this.gh3Song_0 = new GH3Song(class308_2.method_5<Class302>(new Class302(string_0)));
+						this.gh3Song_0 = new GH3Song(class308_2.method_5<StructurePointerNode>(new StructurePointerNode(string_0)));
 					}
 					return;
 				}
@@ -958,9 +958,9 @@ namespace ns9
             streamWriter.Close();
         }
 
-        public Class308 method_4(string string_0)
+        public zzGenericNode1 method_4(string string_0)
 		{
-			Class308 @class = new Class308();
+			zzGenericNode1 @class = new zzGenericNode1();
 			int int_ = QbSongClass1.smethod_9("songs\\" + string_0 + ".mid.qb");
 			string[] array = new string[]
 			{
@@ -1036,7 +1036,7 @@ namespace ns9
 			return @class;
 		}
 
-		private void method_5(int int_2, string string_0, Class308 class308_0, Track<int, NotesAtOffset> class228_7)
+		private void method_5(int int_2, string string_0, zzGenericNode1 class308_0, Track<int, NotesAtOffset> class228_7)
 		{
 			if (class228_7.Keys.Count == 0)
 			{
@@ -1050,17 +1050,17 @@ namespace ns9
 				list.Add(class228_7[current].sustainLength);
 				list.Add(class228_7[current].method_0());
 			}
-			class308_0.method_3(new Class267(string_0, int_2, new Class280(list)));
+			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, new Class280(list)));
 		}
 
-		private void method_6(int int_2, string string_0, Class308 class308_0, Track<int, int[]> class228_7)
+		private void method_6(int int_2, string string_0, zzGenericNode1 class308_0, Track<int, int[]> class228_7)
 		{
 			if (class228_7.Keys.Count == 0)
 			{
 				this.method_11(int_2, string_0, class308_0);
 				return;
 			}
-			Class291 @class = new Class291();
+			ListArrayNode @class = new ListArrayNode();
 			foreach (int current in class228_7.Keys)
 			{
 				@class.method_3(new Class280(new int[]
@@ -1070,17 +1070,17 @@ namespace ns9
 					class228_7[current][1]
 				}));
 			}
-			class308_0.method_3(new Class267(string_0, int_2, @class));
+			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, @class));
 		}
 
-		private void method_7(int int_2, string string_0, Class308 class308_0, Track<int, int> class228_7)
+		private void method_7(int int_2, string string_0, zzGenericNode1 class308_0, Track<int, int> class228_7)
 		{
 			if (class228_7.Keys.Count == 0)
 			{
 				this.method_11(int_2, string_0, class308_0);
 				return;
 			}
-			Class291 @class = new Class291();
+			ListArrayNode @class = new ListArrayNode();
 			foreach (int current in class228_7.Keys)
 			{
 				@class.method_3(new Class280(new int[]
@@ -1089,12 +1089,12 @@ namespace ns9
 					class228_7[current]
 				}));
 			}
-			class308_0.method_3(new Class267(string_0, int_2, @class));
+			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, @class));
 		}
 
-		private void method_8(int int_2, string string_0, Class308 class308_0)
+		private void method_8(int int_2, string string_0, zzGenericNode1 class308_0)
 		{
-			Class291 @class = new Class291();
+			ListArrayNode @class = new ListArrayNode();
 			foreach (int current in this.tsList.Keys)
 			{
 				@class.method_3(new Class280(new int[]
@@ -1104,36 +1104,36 @@ namespace ns9
 					this.tsList[current][1]
 				}));
 			}
-			class308_0.method_3(new Class267(string_0, int_2, @class));
+			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, @class));
 		}
 
-		private void method_9(int int_2, string string_0, Class308 class308_0)
+		private void method_9(int int_2, string string_0, zzGenericNode1 class308_0)
 		{
-			class308_0.method_3(new Class267(string_0, int_2, new Class280(this.class239_0)));
+			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, new Class280(this.class239_0)));
 		}
 
-		private void method_10(int int_2, string string_0, Class308 class308_0)
+		private void method_10(int int_2, string string_0, zzGenericNode1 class308_0)
 		{
 			if (this.class228_1.Keys.Count == 0)
 			{
 				this.method_11(int_2, string_0, class308_0);
 				return;
 			}
-			Class292 @class = new Class292();
+			StructureArrayNode @class = new StructureArrayNode();
 			foreach (int current in this.class228_1.Keys)
 			{
-				@class.method_3(new Class286(new Class294[]
+				@class.method_3(new StructureHeaderNode(new Class294[]
 				{
-					new Class299("time", current),
-					new Class307("marker", this.class228_1[current])
+					new IntegerStructureNode("time", current),
+					new UnicodeStructureNode("marker", this.class228_1[current])
 				}));
 			}
-			class308_0.method_3(new Class267(string_0, int_2, @class));
+			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, @class));
 		}
 
-		private void method_11(int int_2, string string_0, Class308 class308_0)
+		private void method_11(int int_2, string string_0, zzGenericNode1 class308_0)
 		{
-			class308_0.method_3(new Class267(string_0, int_2, this.class287_0));
+			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, this.class287_0));
 		}
 	}
 }

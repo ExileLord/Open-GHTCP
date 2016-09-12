@@ -4,7 +4,7 @@ using System;
 
 namespace ns19
 {
-	public class Class283 : Class277<Class312>
+	public class Class283 : AbsTreeNode1_1_<Class312>
 	{
 		public string this[int int_0]
 		{
@@ -54,7 +54,7 @@ namespace ns19
 				int int_ = array2[j];
 				base.Nodes.Add(new Class312(stream26_0.method_46(int_)));
 			}
-			stream26_0.Position += (long)Class259.smethod_0(stream26_0.Position);
+			stream26_0.Position += (long)AbstractTreeNode1.smethod_0(stream26_0.Position);
 		}
 
 		public override void vmethod_14(Stream26 stream26_0)
@@ -82,7 +82,7 @@ namespace ns19
 				num += @class.string_0.Length * 2 + 2;
 			}
 			stream26_0.method_16(stream.method_1(), false);
-			stream26_0.method_4(0, Class259.smethod_0(stream26_0.Position));
+			stream26_0.method_4(0, AbstractTreeNode1.smethod_0(stream26_0.Position));
 		}
 
 		public override void vmethod_2(ref int int_0)
@@ -102,10 +102,10 @@ namespace ns19
 				@class.vmethod_2(ref int_0);
 				int_0 += 2;
 			}
-			int_0 += Class259.smethod_0((long)int_0);
+			int_0 += AbstractTreeNode1.smethod_0((long)int_0);
 		}
 
-		public override string vmethod_5()
+		public override string GetNodeText()
 		{
 			return "Unicode Array";
 		}

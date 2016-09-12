@@ -97,7 +97,7 @@ namespace ns19
 							int num4 = current.imethod_7();
 							if (current.imethod_4() == num || current.imethod_4() == num2)
 							{
-								list.Add(new TreeNode(QbSongClass1.smethod_3(num4) ? KeyGenerator.smethod_13(QbSongClass1.smethod_5(num4)) : KeyGenerator.smethod_34(num4))
+								list.Add(new TreeNode(QbSongClass1.smethod_3(num4) ? KeyGenerator.smethod_13(QbSongClass1.smethod_5(num4)) : KeyGenerator.ValToHex32bit(num4))
 								{
 									ToolTipText = text3,
 									Tag = num4

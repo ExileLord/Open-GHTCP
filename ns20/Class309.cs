@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace ns20
 {
-	public class Class309 : Class308, IDisposable, Interface12
+	public class Class309 : zzGenericNode1, IDisposable, Interface12
 	{
 		private int int_0;
 
@@ -39,9 +39,9 @@ namespace ns20
 			this.bool_3 = true;
 		}
 
-		public Class309(string string_0, Class308 class308_0) : this(string_0)
+		public Class309(string string_0, zzGenericNode1 class308_0) : this(string_0)
 		{
-			foreach (Class259 node in class308_0.Nodes)
+			foreach (AbstractTreeNode1 node in class308_0.Nodes)
 			{
 				base.Nodes.Add(node);
 			}
@@ -49,7 +49,7 @@ namespace ns20
 
 		public Class309(int int_6, int int_7, int int_8, int int_9, int int_10, int int_11, Enum35 enum35_1)
 		{
-			base.Text = (QbSongClass1.smethod_3(int_9) ? KeyGenerator.smethod_13(QbSongClass1.smethod_5(int_9)) : ("0x" + KeyGenerator.smethod_34(int_9)));
+			base.Text = (QbSongClass1.smethod_3(int_9) ? KeyGenerator.smethod_13(QbSongClass1.smethod_5(int_9)) : ("0x" + KeyGenerator.ValToHex32bit(int_9)));
 			this.int_2 = int_6;
 			this.int_0 = int_7;
 			this.int_1 = int_8;
@@ -100,7 +100,7 @@ namespace ns20
 		{
 			if (!QbSongClass1.smethod_3(this.imethod_4()))
 			{
-				return "0x" + KeyGenerator.smethod_34(this.imethod_4());
+				return "0x" + KeyGenerator.ValToHex32bit(this.imethod_4());
 			}
 			return QbSongClass1.smethod_5(this.imethod_4());
 		}
@@ -123,7 +123,7 @@ namespace ns20
 		{
 			if (!QbSongClass1.smethod_3(this.imethod_7()))
 			{
-				return "0x" + KeyGenerator.smethod_34(this.imethod_7());
+				return "0x" + KeyGenerator.ValToHex32bit(this.imethod_7());
 			}
 			return QbSongClass1.smethod_5(this.imethod_7());
 		}
@@ -166,7 +166,7 @@ namespace ns20
 		public void imethod_17(byte[] byte_1)
 		{
 			Stream26 stream26_ = new Stream26(byte_1);
-			Class308 @class;
+			zzGenericNode1 @class;
 			if (base.Parent != null && base.Parent is Class317 && !(base.Parent as Class317).bool_0)
 			{
 				TreeNode treeNode = this;
@@ -180,24 +180,24 @@ namespace ns20
 					string string_ = this.imethod_9().Contains(".qb") ? this.imethod_9().Replace(".qb", ".qs") : (this.imethod_9() + ".qs");
 					if ((treeNode as Class318).class318_0.method_6(string_))
 					{
-						@class = new Class308("TempFile", stream26_, (treeNode as Class318).class318_0.method_9(string_).dictionary_0);
+						@class = new zzGenericNode1("TempFile", stream26_, (treeNode as Class318).class318_0.method_9(string_).dictionary_0);
 					}
 					else
 					{
-						@class = new Class308("TempFile", stream26_);
+						@class = new zzGenericNode1("TempFile", stream26_);
 					}
 				}
 				else
 				{
-					@class = new Class308("TempFile", stream26_);
+					@class = new zzGenericNode1("TempFile", stream26_);
 				}
 			}
 			else
 			{
-				@class = new Class308("TempFile", stream26_);
+				@class = new zzGenericNode1("TempFile", stream26_);
 			}
 			base.Nodes.Clear();
-			foreach (Class259 node in @class.Nodes)
+			foreach (AbstractTreeNode1 node in @class.Nodes)
 			{
 				base.Nodes.Add(node);
 			}

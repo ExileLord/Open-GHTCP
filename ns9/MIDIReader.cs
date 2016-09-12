@@ -49,26 +49,26 @@ namespace ns9
 		private void method_3(Stream midiStream)
 		{
 			BinaryReader midiFile = new BinaryReader(midiStream);
-			Class348.smethod_3("MIDI", midiFile, "MThd");
-			Class348.smethod_1(midiFile.ReadUInt32());
-			Class348.smethod_0(midiFile.ReadUInt16());
-			int num = (int)Class348.smethod_0(midiFile.ReadUInt16());
-			this.method_1((int)Class348.smethod_0(midiFile.ReadUInt16()));
+			ByteFiddler.smethod_3("MIDI", midiFile, "MThd");
+			ByteFiddler.RotateLeft(midiFile.ReadUInt32());
+			ByteFiddler.RotateRight(midiFile.ReadUInt16());
+			int num = (int)ByteFiddler.RotateRight(midiFile.ReadUInt16());
+			this.method_1((int)ByteFiddler.RotateRight(midiFile.ReadUInt16()));
 			this.midiLineList.Clear();
 			for (int i = 0; i < num; i++)
 			{
 				MIDILine midiLine = new MIDILine(this.method_0());
 				this.midiLineList.Add(midiLine);
-				List<Class335> list = new List<Class335>();
-				Class348.smethod_3("MIDI", midiFile, "MTrk");
-				uint num2 = Class348.smethod_1(midiFile.ReadUInt32());
+				List<AbstractNoteClass> list = new List<AbstractNoteClass>();
+				ByteFiddler.smethod_3("MIDI", midiFile, "MTrk");
+				uint num2 = ByteFiddler.RotateLeft(midiFile.ReadUInt32());
 				long position = midiFile.BaseStream.Position;
 				int num3 = 0;
 				byte b = 0;
 				while (midiFile.BaseStream.Position < position + (long)((ulong)num2))
 				{
 					int num4 = (int)this.method_4(midiFile);
-					Class335 midiNote = null;
+					AbstractNoteClass midiNote = null;
 					num3 += num4;
 					byte b2 = midiFile.ReadByte();
 					if (b2 != 255)
@@ -109,7 +109,7 @@ namespace ns9
 						switch (b5)
 						{
 						case 1:
-							midiNote = new Class337(num3, Class337.Enum37.const_0, Encoding.ASCII.GetString(array));
+							midiNote = new zzNote1(num3, zzNote1.Enum37.const_0, Encoding.ASCII.GetString(array));
 							break;
 						case 2:
 							break;
@@ -149,7 +149,7 @@ namespace ns9
 						int num6 = (int)array[0] << 16;
 						num6 |= (int)array[1] << 8;
 						num6 |= (int)array[2];
-						midiNote = new Class339(num3, num6);
+						midiNote = new BpmNote1(num3, num6);
 					}
 					IL_298:
 					if (midiNote != null)
@@ -157,7 +157,7 @@ namespace ns9
 						list.Add(midiNote);
 					}
 				}
-				list.Sort(new Comparison<Class335>(Class335.smethod_0));
+				list.Sort(new Comparison<AbstractNoteClass>(AbstractNoteClass.smethod_0));
 				midiLine.method_1(list);
 				midiFile.BaseStream.Seek(position + (long)((ulong)num2), SeekOrigin.Begin);
 			}

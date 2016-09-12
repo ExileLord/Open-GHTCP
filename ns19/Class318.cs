@@ -194,7 +194,7 @@ namespace ns19
 				}
 				else
 				{
-					treeNode = new Class332(int_, int_2, int_3, num3, num4, int_4, enum2);
+					treeNode = new zzCocoaNode12(int_, int_2, int_3, num3, num4, int_4, enum2);
 				}
 				if (this.bool_4)
 				{

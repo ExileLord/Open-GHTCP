@@ -13,22 +13,22 @@ namespace ns18
 		public override void vmethod_13(Stream26 stream26_0)
 		{
 			this.int_0 = stream26_0.method_19();
-			if (this is Class297)
+			if (this is FloatStructureNode)
 			{
-				base.Nodes.Add(new Class313(stream26_0.method_21()));
+				base.Nodes.Add(new FloatValueNode(stream26_0.method_21()));
 			}
-			else if (this is Class299)
+			else if (this is IntegerStructureNode)
 			{
-				base.Nodes.Add(new Class314(stream26_0.method_19()));
+				base.Nodes.Add(new IntegerValueNode(stream26_0.method_19()));
 			}
-			else if (this is Class296 || this is Class298)
+			else if (this is Class296 || this is FileTagStructureNode)
 			{
-				base.Nodes.Add(new Class316(stream26_0.method_19()));
+				base.Nodes.Add(new TagValueNode(stream26_0.method_19()));
 			}
 			int num = stream26_0.method_19();
 			if (num != 0)
 			{
-				Class259 @class = (base.Parent is Class286) ? (base.Parent as Class286).method_11(stream26_0.method_41(num)) : this.vmethod_12(stream26_0.method_42(num, true));
+				AbstractTreeNode1 @class = (base.Parent is StructureHeaderNode) ? (base.Parent as StructureHeaderNode).method_11(stream26_0.method_41(num)) : this.vmethod_12(stream26_0.method_42(num, true));
 				base.method_1().Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}
@@ -57,7 +57,7 @@ namespace ns18
 				{
 					while (enumerator.MoveNext())
 					{
-						Class310 @class = (Class310)enumerator.Current;
+						AbstractTreeNode2 @class = (AbstractTreeNode2)enumerator.Current;
 						stream26_0.method_15(@class.vmethod_8());
 					}
 					goto IL_AA;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ns19
 {
-	public class Class312 : Class310
+	public class Class312 : AbstractTreeNode2
 	{
 		public string string_0 = "";
 
@@ -39,12 +39,12 @@ namespace ns19
 			this.string_0 = Encoding.Unicode.GetString(byte_0);
 		}
 
-		public override string vmethod_3()
+		public override string GetText()
 		{
 			return "\"" + this.string_0 + "\"";
 		}
 
-		public override string vmethod_5()
+		public override string GetNodeText()
 		{
 			return "Unicode Value";
 		}

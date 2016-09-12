@@ -21,11 +21,11 @@ namespace ns19
 			this.vmethod_0();
 		}
 
-		public Class301(string string_0, Class276 class276_0) : this(QbSongClass1.smethod_9(string_0), class276_0)
+		public Class301(string string_0, AbsTreeNode1_1 class276_0) : this(QbSongClass1.smethod_9(string_0), class276_0)
 		{
 		}
 
-		public Class301(int int_1, Class276 class276_0)
+		public Class301(int int_1, AbsTreeNode1_1 class276_0)
 		{
 			this.int_0 = int_1;
 			base.Nodes.Add(class276_0);
@@ -37,16 +37,16 @@ namespace ns19
 			return 28;
 		}
 
-		public Class276 method_8()
+		public AbsTreeNode1_1 method_8()
 		{
 			if (base.Nodes.Count != 0)
 			{
-				return (Class276)base.FirstNode;
+				return (AbsTreeNode1_1)base.FirstNode;
 			}
 			return null;
 		}
 
-		public override string vmethod_5()
+		public override string GetNodeText()
 		{
 			return "Array Pointer";
 		}

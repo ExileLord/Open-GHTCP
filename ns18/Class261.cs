@@ -20,7 +20,7 @@ namespace ns18
 		{
 			if (base.Nodes.Count != 0)
 			{
-				return ((Class315)base.FirstNode).string_0;
+				return ((AsciiValueNode)base.FirstNode).string_0;
 			}
 			return null;
 		}
@@ -33,8 +33,8 @@ namespace ns18
 			stream26_0.method_19();
 			if (num != 0)
 			{
-				base.Nodes.Add(new Class315(stream26_0.method_45(num)));
-				stream26_0.Position += (long)Class259.smethod_0(stream26_0.Position);
+				base.Nodes.Add(new AsciiValueNode(stream26_0.method_45(num)));
+				stream26_0.Position += (long)AbstractTreeNode1.smethod_0(stream26_0.Position);
 			}
 		}
 
@@ -52,13 +52,13 @@ namespace ns18
 				stream26_0.method_5(0);
 				stream26_0.method_13(this.method_7());
 				stream26_0.method_3(0);
-				stream26_0.method_4(0, Class259.smethod_0(stream26_0.Position));
+				stream26_0.method_4(0, AbstractTreeNode1.smethod_0(stream26_0.Position));
 				return;
 			}
 			stream26_0.method_4(0, 8);
 		}
 
-		public override string vmethod_5()
+		public override string GetNodeText()
 		{
 			return "Ascii Root";
 		}
@@ -68,9 +68,9 @@ namespace ns18
 			int_2 += 20;
 			if (base.Nodes.Count != 0)
 			{
-				((Class315)base.Nodes[0]).vmethod_2(ref int_2);
+				((AsciiValueNode)base.Nodes[0]).vmethod_2(ref int_2);
 				int_2++;
-				int_2 += Class259.smethod_0((long)int_2);
+				int_2 += AbstractTreeNode1.smethod_0((long)int_2);
 			}
 		}
 	}

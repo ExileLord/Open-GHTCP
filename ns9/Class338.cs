@@ -3,7 +3,7 @@ using System;
 
 namespace ns9
 {
-	public class Class338 : Class335
+	public class Class338 : AbstractNoteClass
 	{
 		private readonly int int_1;
 

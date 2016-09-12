@@ -43,11 +43,11 @@ namespace ns17
 			{
 				return;
 			}
-			Class308 @class = new Class308(Class375.string_0, KeyGenerator.smethod_8(class318_0.method_12(Class375.string_0), "MaC39SubInfo1245"));
-			this.version_0 = new Version(@class.method_5<Class273>(new Class273("version")).method_7());
-			float[] array = @class.method_5<Class267>(new Class267("date")).method_7().method_7<float>();
+			zzGenericNode1 @class = new zzGenericNode1(Class375.string_0, KeyGenerator.smethod_8(class318_0.method_12(Class375.string_0), "MaC39SubInfo1245"));
+			this.version_0 = new Version(@class.method_5<UnicodeRootNode>(new UnicodeRootNode("version")).method_7());
+			float[] array = @class.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("date")).method_7().method_7<float>();
 			this.dateTime_0 = new DateTime((int)array[0], (int)array[1], (int)array[2]);
-			this.int_0 = @class.method_5<Class267>(new Class267("hash")).method_7().method_7<int>();
+			this.int_0 = @class.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("hash")).method_7().method_7<int>();
 			class318_0.method_7(Class375.string_0);
 			using (Stream26 stream = class318_0.method_17())
 			{
@@ -74,22 +74,22 @@ namespace ns17
 			{
 				class318_0.method_7(Class375.string_0);
 			}
-			Class308 @class = new Class308();
-			@class.method_3(new Class273("version", Class375.string_0, Assembly.GetExecutingAssembly().GetName().Version.ToString()));
+			zzGenericNode1 @class = new zzGenericNode1();
+			@class.method_3(new UnicodeRootNode("version", Class375.string_0, Assembly.GetExecutingAssembly().GetName().Version.ToString()));
 			using (Stream26 stream = class318_0.method_17())
 			{
 				stream.Position = 0L;
-				@class.method_3(new Class267("hash", Class375.string_0, new Class280(KeyGenerator.smethod_21(KeyGenerator.smethod_43(stream.stream_0)))));
+				@class.method_3(new ArrayPointerRootNode("hash", Class375.string_0, new Class280(KeyGenerator.smethod_21(KeyGenerator.smethod_43(stream.stream_0)))));
 			}
 			GC.Collect();
 			DateTime now = DateTime.Now;
-			@class.method_3(new Class267("date", Class375.string_0, new Class279(new float[]
+			@class.method_3(new ArrayPointerRootNode("date", Class375.string_0, new Class279(new float[]
 			{
 				(float)now.Year,
 				(float)now.Month,
 				(float)now.Day
 			})));
-			class318_0.method_1<Class332>(Class375.string_0, new Class332(Class375.string_0, KeyGenerator.smethod_2(@class.method_8(), "MaC39SubInfo1245")));
+			class318_0.method_1<zzCocoaNode12>(Class375.string_0, new zzCocoaNode12(Class375.string_0, KeyGenerator.smethod_2(@class.method_8(), "MaC39SubInfo1245")));
 		}
 	}
 }

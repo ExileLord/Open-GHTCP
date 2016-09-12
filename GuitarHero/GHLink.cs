@@ -28,21 +28,21 @@ namespace GuitarHero
 			this.progression = int_1;
 		}
 
-		public GHLink(string string_0, Class286 class286_0)
+		public GHLink(string string_0, StructureHeaderNode class286_0)
 		{
 			this.path = string_0;
 			this.method_0(class286_0);
 		}
 
-		public void method_0(Class286 class286_0)
+		public void method_0(StructureHeaderNode class286_0)
 		{
 			this.setlist = class286_0.method_5<Class296>(new Class296("tier_global")).method_10();
 			this.progression = class286_0.method_5<Class296>(new Class296("progression_global")).method_10();
 		}
 
-		public Class286 method_1()
+		public StructureHeaderNode method_1()
 		{
-			Class286 @class = new Class286();
+			StructureHeaderNode @class = new StructureHeaderNode();
 			@class.method_3(new Class296("tier_global", this.setlist));
 			@class.method_3(new Class296("progression_global", this.progression));
 			return @class;

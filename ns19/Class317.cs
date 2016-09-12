@@ -30,7 +30,7 @@ namespace ns19
 			base.SelectedImageIndex = 38;
 		}
 
-		public void method_0(string string_0, Class308 class308_0)
+		public void method_0(string string_0, zzGenericNode1 class308_0)
 		{
 			this.method_1<Class309>(string_0, new Class309(string_0, class308_0));
 		}

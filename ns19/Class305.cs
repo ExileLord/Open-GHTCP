@@ -30,7 +30,7 @@ namespace ns19
 		public Class305(int int_1, string string_0)
 		{
 			this.int_0 = int_1;
-			base.Nodes.Add(new Class315(string_0));
+			base.Nodes.Add(new AsciiValueNode(string_0));
 			this.vmethod_0();
 		}
 
@@ -43,7 +43,7 @@ namespace ns19
 		{
 			if (base.Nodes.Count != 0)
 			{
-				return ((Class315)base.FirstNode).string_0;
+				return ((AsciiValueNode)base.FirstNode).string_0;
 			}
 			return null;
 		}
@@ -55,12 +55,12 @@ namespace ns19
 			int num2 = stream26_0.method_19();
 			if (num != 0)
 			{
-				base.Nodes.Add(new Class315(stream26_0.method_45(num)));
-				stream26_0.Position += (long)Class259.smethod_0(stream26_0.Position);
+				base.Nodes.Add(new AsciiValueNode(stream26_0.method_45(num)));
+				stream26_0.Position += (long)AbstractTreeNode1.smethod_0(stream26_0.Position);
 			}
 			if (num2 != 0)
 			{
-				Class259 @class = (base.Parent is Class286) ? (base.Parent as Class286).method_11(stream26_0.method_41(num2)) : this.vmethod_12(stream26_0.method_42(num2, true));
+				AbstractTreeNode1 @class = (base.Parent is StructureHeaderNode) ? (base.Parent as StructureHeaderNode).method_11(stream26_0.method_41(num2)) : this.vmethod_12(stream26_0.method_42(num2, true));
 				base.method_1().Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}
@@ -89,7 +89,7 @@ namespace ns19
 				stream26_0.method_5(0);
 				stream26_0.method_13(this.method_8());
 				stream26_0.method_3(0);
-				stream26_0.method_4(0, Class259.smethod_0(stream26_0.Position));
+				stream26_0.method_4(0, AbstractTreeNode1.smethod_0(stream26_0.Position));
 			}
 			else
 			{
@@ -107,7 +107,7 @@ namespace ns19
 			stream26_0.Position = (long)num;
 		}
 
-		public override string vmethod_5()
+		public override string GetNodeText()
 		{
 			return "Ascii Structure";
 		}
@@ -117,9 +117,9 @@ namespace ns19
 			int_1 += 16;
 			if (base.Nodes.Count != 0)
 			{
-				((Class315)base.Nodes[0]).vmethod_2(ref int_1);
+				((AsciiValueNode)base.Nodes[0]).vmethod_2(ref int_1);
 				int_1++;
-				int_1 += Class259.smethod_0((long)int_1);
+				int_1 += AbstractTreeNode1.smethod_0((long)int_1);
 			}
 		}
 	}

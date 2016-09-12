@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 namespace ns9
 {
-	public class Class357 : IDisposable, Interface13
+	public class Class357 : IDisposable, EmptyInterface1
 	{
 		private Class352[] class352_0;
 
-		private readonly List<Interface13> list_0;
+		private readonly List<EmptyInterface1> list_0;
 
 		public void Dispose()
 		{
-			foreach (Interface13 current in this.list_0)
+			foreach (EmptyInterface1 current in this.list_0)
 			{
 				current.Dispose();
 			}

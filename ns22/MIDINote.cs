@@ -3,7 +3,7 @@ using System;
 
 namespace ns22
 {
-	public class MIDINote : Class335
+	public class MIDINote : AbstractNoteClass
 	{
 		private readonly int midiMask;
 

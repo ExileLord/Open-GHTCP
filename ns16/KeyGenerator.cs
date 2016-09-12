@@ -663,15 +663,15 @@ namespace ns16
 			return Encoding.Default.GetBytes(string_0);
 		}
 
-		public static string smethod_34(int int_0)
+		public static string ValToHex32bit(int int_0)
 		{
-			return KeyGenerator.smethod_35(int_0, 4);
+			return KeyGenerator.ValToPaddedHex(int_0, 4);
 		}
 
-		public static string smethod_35(int int_0, int int_1)
+		public static string ValToPaddedHex(int val, int halfPadding)
 		{
-			string text = int_0.ToString("x");
-			while (text.Length < int_1 * 2)
+			string text = val.ToString("x");
+			while (text.Length < halfPadding * 2)
 			{
 				text = "0" + text;
 			}

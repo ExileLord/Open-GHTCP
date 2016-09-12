@@ -20,7 +20,7 @@ namespace ns15
 
 		public override void vmethod_0()
 		{
-			Class308 class308_ = this.class318_0.method_8("scripts\\guitar\\songlist.qb");
+			zzGenericNode1 class308_ = this.class318_0.method_8("scripts\\guitar\\songlist.qb");
 			this.gh3Songlist_0.method_13(class308_);
 		}
 

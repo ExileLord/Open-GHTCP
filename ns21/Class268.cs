@@ -15,17 +15,17 @@ namespace ns21
 		{
 			this.int_0 = stream26_0.method_19();
 			this.int_1 = stream26_0.method_19();
-			if (this is Class271)
+			if (this is FloatRootNode)
 			{
-				base.Nodes.Add(new Class313(stream26_0.method_21()));
+				base.Nodes.Add(new FloatValueNode(stream26_0.method_21()));
 			}
-			else if (this is Class269)
+			else if (this is IntegerRootNode)
 			{
-				base.Nodes.Add(new Class314(stream26_0.method_19()));
+				base.Nodes.Add(new IntegerValueNode(stream26_0.method_19()));
 			}
-			else if (this is Class272 || this is Class270)
+			else if (this is TagRootNode || this is FileTagRootNode)
 			{
-				base.Nodes.Add(new Class316(stream26_0.method_19()));
+				base.Nodes.Add(new TagValueNode(stream26_0.method_19()));
 			}
 			stream26_0.method_19();
 		}
@@ -45,7 +45,7 @@ namespace ns21
 				{
 					while (enumerator.MoveNext())
 					{
-						Class310 @class = (Class310)enumerator.Current;
+						AbstractTreeNode2 @class = (AbstractTreeNode2)enumerator.Current;
 						stream26_0.method_15(@class.vmethod_8());
 					}
 					goto IL_97;

@@ -5,7 +5,7 @@ using System.Drawing;
 
 namespace ns18
 {
-	public abstract class Class294 : Class259
+	public abstract class Class294 : AbstractTreeNode1
 	{
 		public int int_0;
 
@@ -22,19 +22,19 @@ namespace ns18
 			return 1;
 		}
 
-		public override string vmethod_3()
+		public override string GetText()
 		{
-			string str = (base.Nodes.Count > 0) ? base.method_2(0).vmethod_3() : "NULL";
+			string str = (base.Nodes.Count > 0) ? base.method_2(0).GetText() : "NULL";
 			if (QbSongClass1.smethod_3(this.int_0))
 			{
 				return QbSongClass1.smethod_5(this.int_0) + " = " + str;
 			}
-			return KeyGenerator.smethod_34(this.int_0) + " (Tag) = " + str;
+			return KeyGenerator.ValToHex32bit(this.int_0) + " (Tag) = " + str;
 		}
 
-		public override Color vmethod_6()
+		public override Color GetColor()
 		{
-			if (base.Parent != null && this.method_7() != null && this.method_7().vmethod_6().Equals(Color.Gold))
+			if (base.Parent != null && this.method_7() != null && this.method_7().GetColor().Equals(Color.Gold))
 			{
 				return Color.Yellow;
 			}
@@ -48,9 +48,9 @@ namespace ns18
 			return @class;
 		}
 
-		public Class259 method_7()
+		public AbstractTreeNode1 method_7()
 		{
-			return (Class259)base.PrevNode;
+			return (AbstractTreeNode1)base.PrevNode;
 		}
 	}
 }

@@ -265,7 +265,7 @@ namespace ns15
 
 		private SongEditor SongEditor_Control;
 
-		private Control0 FretAngle_EditorBar;
+		private GhtcpToolStripControlHost FretAngle_EditorBar;
 
 		private ToolStripMenuItem GameSettingsSwitch_MenuItem;
 
@@ -325,7 +325,7 @@ namespace ns15
 
 		private ToolStripMenuItem AudioView_EditorBtn;
 
-		private Control0 HyperSpeed_EditorBar;
+		private GhtcpToolStripControlHost HyperSpeed_EditorBar;
 
 		private ToolStripContainer SongEditor_Container;
 
@@ -1380,7 +1380,7 @@ namespace ns15
 		{
             //Creates GUI
 			this.InitializeComponent();
-			Class258.bool_0 = false;
+			AbstractBaseTreeNode1.bool_0 = false;
 			try
 			{
 				string text = null;
@@ -2109,8 +2109,8 @@ namespace ns15
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.BeatSize_EditorTxtBox = new System.Windows.Forms.ToolStripTextBox();
-            this.HyperSpeed_EditorBar = new ns16.Control0();
-            this.FretAngle_EditorBar = new ns16.Control0();
+            this.HyperSpeed_EditorBar = new ns16.GhtcpToolStripControlHost();
+            this.FretAngle_EditorBar = new ns16.GhtcpToolStripControlHost();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.Offset_EditorTxtBox = new System.Windows.Forms.ToolStripTextBox();

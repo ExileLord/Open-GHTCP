@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ns19
 {
-	public abstract class Class288 : Class276
+	public abstract class Class288 : AbsTreeNode1_1
 	{
 		public abstract byte vmethod_15();
 
@@ -33,7 +33,7 @@ namespace ns19
 			for (int j = 0; j < array2.Length; j++)
 			{
 				int int_ = array2[j];
-				Class259 @class = this.vmethod_12(stream26_0.method_42(int_, true));
+				AbstractTreeNode1 @class = this.vmethod_12(stream26_0.method_42(int_, true));
 				base.Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}
@@ -57,7 +57,7 @@ namespace ns19
 			int int_ = (int)stream26_0.Position;
 			List<int> list = new List<int>(base.Nodes.Count);
 			stream26_0.method_4(0, 4 * base.Nodes.Count);
-			foreach (Class259 @class in base.Nodes)
+			foreach (AbstractTreeNode1 @class in base.Nodes)
 			{
 				list.Add((int)stream26_0.Position);
 				@class.vmethod_14(stream26_0);
@@ -79,7 +79,7 @@ namespace ns19
 				int_0 += 4;
 			}
 			int_0 += 4 * base.Nodes.Count;
-			foreach (Class259 @class in base.Nodes)
+			foreach (AbstractTreeNode1 @class in base.Nodes)
 			{
 				@class.vmethod_2(ref int_0);
 			}

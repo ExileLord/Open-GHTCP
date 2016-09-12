@@ -4,17 +4,17 @@ using System.Collections.Generic;
 
 namespace ns18
 {
-	public class Class280 : Class278<Class314>
+	public class Class280 : Class278<IntegerValueNode>
 	{
 		public int this[int int_0]
 		{
 			get
 			{
-				return ((Class314)base.Nodes[int_0]).int_0;
+				return ((IntegerValueNode)base.Nodes[int_0]).int_0;
 			}
 			set
 			{
-				((Class314)base.Nodes[int_0]).int_0 = value;
+				((IntegerValueNode)base.Nodes[int_0]).int_0 = value;
 			}
 		}
 
@@ -37,7 +37,7 @@ namespace ns18
 		{
 			foreach (int current in ienumerable_0)
 			{
-				base.Nodes.Add(new Class314(current));
+				base.Nodes.Add(new IntegerValueNode(current));
 			}
 			this.vmethod_0();
 		}
@@ -53,7 +53,7 @@ namespace ns18
 			return 1;
 		}
 
-		public override string vmethod_5()
+		public override string GetNodeText()
 		{
 			return "Integer Array";
 		}

@@ -54,7 +54,7 @@ namespace ns20
 		{
 			this.encoding_0 = Encoding.Unicode;
 			//base..ctor();
-			base.Text = (QbSongClass1.smethod_3(int_9) ? KeyGenerator.smethod_13(QbSongClass1.smethod_5(int_9)) : ("0x" + KeyGenerator.smethod_34(int_9)));
+			base.Text = (QbSongClass1.smethod_3(int_9) ? KeyGenerator.smethod_13(QbSongClass1.smethod_5(int_9)) : ("0x" + KeyGenerator.ValToHex32bit(int_9)));
 			this.int_2 = int_6;
 			this.int_0 = int_7;
 			this.int_1 = int_8;
@@ -117,7 +117,7 @@ namespace ns20
 		{
 			if (!QbSongClass1.smethod_3(this.imethod_4()))
 			{
-				return "0x" + KeyGenerator.smethod_34(this.imethod_4());
+				return "0x" + KeyGenerator.ValToHex32bit(this.imethod_4());
 			}
 			return QbSongClass1.smethod_5(this.imethod_4());
 		}
@@ -140,7 +140,7 @@ namespace ns20
 		{
 			if (!QbSongClass1.smethod_3(this.imethod_7()))
 			{
-				return "0x" + KeyGenerator.smethod_34(this.imethod_7());
+				return "0x" + KeyGenerator.ValToHex32bit(this.imethod_7());
 			}
 			return QbSongClass1.smethod_5(this.imethod_7());
 		}
@@ -184,7 +184,7 @@ namespace ns20
 				{
 					foreach (int current in this.dictionary_0.Keys)
 					{
-						streamWriter.Write("{0} \"{1}\"\n", KeyGenerator.smethod_34(current), this.dictionary_0[current]);
+						streamWriter.Write("{0} \"{1}\"\n", KeyGenerator.ValToHex32bit(current), this.dictionary_0[current]);
 					}
 					streamWriter.Write("\n");
 				}

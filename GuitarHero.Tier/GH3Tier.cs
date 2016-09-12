@@ -39,7 +39,7 @@ namespace GuitarHero.Tier
 		{
 		}
 
-		public GH3Tier(Class286 class286_0, GH3Songlist gh3Songlist_0)
+		public GH3Tier(StructureHeaderNode class286_0, GH3Songlist gh3Songlist_0)
 		{
 			this.method_2(class286_0, gh3Songlist_0);
 		}
@@ -70,14 +70,14 @@ namespace GuitarHero.Tier
 			return this.title ?? "[No Title]";
 		}
 
-		public void method_2(Class286 class286_0, GH3Songlist gh3Songlist_0)
+		public void method_2(StructureHeaderNode class286_0, GH3Songlist gh3Songlist_0)
 		{
-			Class307 @class;
-			this.title = (((@class = class286_0.method_5<Class307>(new Class307("title"))) != null) ? @class.method_8() : "");
+			UnicodeStructureNode @class;
+			this.title = (((@class = class286_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("title"))) != null) ? @class.method_8() : "");
 			Class305 class2;
 			this.completion_movie = (((class2 = class286_0.method_5<Class305>(new Class305("completion_movie"))) != null) ? class2.method_8() : "");
-			Class299 class3;
-			this.defaultunlocked = (((class3 = class286_0.method_5<Class299>(new Class299("defaultunlocked"))) != null) ? class3.method_8() : 0);
+			IntegerStructureNode class3;
+			this.defaultunlocked = (((class3 = class286_0.method_5<IntegerStructureNode>(new IntegerStructureNode("defaultunlocked"))) != null) ? class3.method_8() : 0);
 			Class296 class4;
 			this.level = (((class4 = class286_0.method_5<Class296>(new Class296("level"))) != null) ? class4.method_8() : "No Preset Stage");
 			this.setlist_icon = (((class4 = class286_0.method_5<Class296>(new Class296("setlist_icon"))) != null) ? class4.method_8() : "No Icon");
@@ -88,7 +88,7 @@ namespace GuitarHero.Tier
 			this.nocash = (class286_0.method_5<Class296>(new Class296(0, "nocash")) != null);
 			this.unlockall = (class286_0.method_5<Class296>(new Class296(0, "unlockall")) != null);
 			Class301 class5 = new Class301("songs");
-			if (class286_0.method_6<Class301>(ref class5) && !(class5.method_8() is Class287))
+			if (class286_0.method_6<Class301>(ref class5) && !(class5.method_8() is FloatListNode))
 			{
 				foreach (string current in class5.method_8().method_8<string>())
 				{
@@ -104,13 +104,13 @@ namespace GuitarHero.Tier
 			}
 		}
 
-		public Class286 method_3()
+		public StructureHeaderNode method_3()
 		{
-			Class286 @class = new Class286();
-			@class.method_3(new Class307("title", this.title));
+			StructureHeaderNode @class = new StructureHeaderNode();
+			@class.method_3(new UnicodeStructureNode("title", this.title));
 			if (this.songs.Count == 0)
 			{
-				@class.method_3(new Class301("songs", new Class287(true)));
+				@class.method_3(new Class301("songs", new FloatListNode(true)));
 			}
 			else
 			{
@@ -119,7 +119,7 @@ namespace GuitarHero.Tier
 				{
 					list.Add(QbSongClass1.smethod_9(current.name));
 				}
-				@class.method_3(new Class301("songs", new Class281(list)));
+				@class.method_3(new Class301("songs", new TagArray(list)));
 			}
 			if (this.boss)
 			{
@@ -143,7 +143,7 @@ namespace GuitarHero.Tier
 			}
 			if (this.defaultunlocked != 0)
 			{
-				@class.method_3(new Class299("defaultunlocked", this.defaultunlocked));
+				@class.method_3(new IntegerStructureNode("defaultunlocked", this.defaultunlocked));
 			}
 			if (!this.completion_movie.Equals(""))
 			{

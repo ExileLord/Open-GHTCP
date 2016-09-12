@@ -37,40 +37,40 @@ namespace ns17
 				this.class318_0.method_0("scripts\\guitar\\custom_menu\\guitar_custom_menu_cutoff_viewer.qb", Class372.smethod_3("guitar_custom_menu_cutoff_viewer"));
 				this.class318_0.method_0("scripts\\guitar\\custom_menu\\guitar_custom_menu_gfx_options.qb", Class372.smethod_3("guitar_custom_menu_gfx_options"));
 				this.class318_0.method_0("scripts\\guitar\\custom_menu\\guitar_custom_menu_setlist_switcher.qb", Class372.smethod_3("guitar_custom_menu_setlist_switcher"));
-				Class308 @class = this.class318_0.method_8(this.bool_1 ? "scripts\\guitar\\menu\\menu_main.qb" : "scripts\\guitar\\guitar_menu.qb");
-				Class372.smethod_1(@class.method_5<Class274>(new Class274("create_main_menu")));
+				zzGenericNode1 @class = this.class318_0.method_8(this.bool_1 ? "scripts\\guitar\\menu\\menu_main.qb" : "scripts\\guitar\\guitar_menu.qb");
+				Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("create_main_menu")));
 				@class = this.class318_0.method_8("scripts\\guitar\\guitar_progression.qb");
-				Class372.smethod_1(@class.method_5<Class274>(new Class274("get_progression_globals")));
+				Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("get_progression_globals")));
 				@class = this.class318_0.method_8("scripts\\guitar\\guitar_gems.qb");
-				Class372.smethod_1(@class.method_5<Class274>(new Class274("load_venue")));
-				Class372.smethod_1(@class.method_5<Class274>(new Class274("start_gem_scroller")));
-				Class372.smethod_1(@class.method_5<Class274>(new Class274("kill_gem_scroller")));
+				Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("load_venue")));
+				Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("start_gem_scroller")));
+				Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("kill_gem_scroller")));
 				@class = this.class318_0.method_8("scripts\\guitar\\guitar_events.qb");
-				Class372.smethod_1(@class.method_5<Class274>(new Class274("guitarevent_songwon_spawned")));
+				Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_songwon_spawned")));
 				@class = this.class318_0.method_8("scripts\\game\\net\\guitar_net.qb");
-				Class372.smethod_1(@class.method_5<Class274>(new Class274("net_write_single_player_stats")));
+				Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("net_write_single_player_stats")));
 				@class = this.class318_0.method_8("scripts\\guitar\\guitar_globaltags.qb");
-				Class372.smethod_1(@class.method_5<Class274>(new Class274("setup_globaltags")));
-				Class372.smethod_1(@class.method_5<Class274>(new Class274("setup_songtags")));
-				Class372.smethod_1(@class.method_5<Class274>(new Class274("push_bandtags")));
+				Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("setup_globaltags")));
+				Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("setup_songtags")));
+				Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("push_bandtags")));
 				@class = this.class318_0.method_8("scripts\\guitar\\menu\\menu_credits.qb");
-				Class372.smethod_1(@class.method_5<Class274>(new Class274("scrolling_list_add_item")));
+				Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("scrolling_list_add_item")));
 				if (!this.bool_1)
 				{
-					Class372.smethod_1(@class.method_5<Class274>(new Class274("start_team_photos")));
+					Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("start_team_photos")));
 				}
 				if (this.bool_1)
 				{
 					@class = this.class318_0.method_8("scripts\\guitar\\custom_menu\\guitar_custom_menu_cutoff_viewer.qb");
-					Class372.smethod_1(@class.method_5<Class274>(new Class274("custom_menu_cutoff_viewer_create_paper")));
-					Class372.smethod_1(@class.method_5<Class274>(new Class274("custom_menu_cutoff_viewer_create_poster")));
+					Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("custom_menu_cutoff_viewer_create_paper")));
+					Class372.smethod_1(@class.method_5<ScriptRootNode>(new ScriptRootNode("custom_menu_cutoff_viewer_create_poster")));
 				}
 				@class = this.class318_0.method_8("scripts\\guitar\\menu\\main_menu_flow.qb");
-				Class286 class2 = new Class286();
+				StructureHeaderNode class2 = new StructureHeaderNode();
 				class2.method_3(new Class296("action", "select_custom_menu"));
 				class2.method_3(new Class296("flow_state", "custom_menu_fs"));
 				class2.method_3(new Class296(0, "transition_right"));
-				@class.method_5<Class266>(new Class266("main_menu_fs")).method_5<Class301>(new Class301("actions")).method_8().method_3(class2);
+				@class.method_5<StructurePointerRootNode>(new StructurePointerRootNode("main_menu_fs")).method_5<Class301>(new Class301("actions")).method_8().method_3(class2);
 			}
 		}
 

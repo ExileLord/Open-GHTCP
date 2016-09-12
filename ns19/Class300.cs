@@ -16,13 +16,13 @@ namespace ns19
 			int num2 = stream26_0.method_19();
 			if (num != 0)
 			{
-				Class259 @class = this.vmethod_12(stream26_0.method_42(num, true));
+				AbstractTreeNode1 @class = this.vmethod_12(stream26_0.method_42(num, true));
 				base.Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}
 			if (num2 != 0)
 			{
-				Class259 class2 = (base.Parent is Class286) ? (base.Parent as Class286).method_11(stream26_0.method_41(num2)) : this.vmethod_12(stream26_0.method_42(num2, true));
+				AbstractTreeNode1 class2 = (base.Parent is StructureHeaderNode) ? (base.Parent as StructureHeaderNode).method_11(stream26_0.method_41(num2)) : this.vmethod_12(stream26_0.method_42(num2, true));
 				base.method_1().Nodes.Add(class2);
 				class2.method_4(stream26_0);
 			}
@@ -47,7 +47,7 @@ namespace ns19
 			stream26_0.method_5((base.Nodes.Count != 0) ? ((int)stream26_0.Position + 8) : 0);
 			int int_ = (int)stream26_0.Position;
 			stream26_0.method_5(0);
-			foreach (Class259 @class in base.Nodes)
+			foreach (AbstractTreeNode1 @class in base.Nodes)
 			{
 				@class.vmethod_14(stream26_0);
 			}
@@ -66,7 +66,7 @@ namespace ns19
 		public override void vmethod_2(ref int int_1)
 		{
 			int_1 += 16;
-			foreach (Class259 @class in base.Nodes)
+			foreach (AbstractTreeNode1 @class in base.Nodes)
 			{
 				@class.vmethod_2(ref int_1);
 			}

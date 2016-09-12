@@ -150,7 +150,7 @@ namespace ns19
 					}
 					else
 					{
-						treeNode = new Class332(num3, num4, int_2, num5, num6, int_3, enum2);
+						treeNode = new zzCocoaNode12(num3, num4, int_2, num5, num6, int_3, enum2);
 					}
 					if (QbSongClass1.smethod_3(num5))
 					{

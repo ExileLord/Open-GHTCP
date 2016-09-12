@@ -66,7 +66,7 @@ namespace ns18
 			stream26_0.method_5(0);
 		}
 
-		public override string vmethod_5()
+		public override string GetNodeText()
 		{
 			return "Text Root";
 		}

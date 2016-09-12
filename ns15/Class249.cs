@@ -21,8 +21,8 @@ namespace ns15
 		public override void vmethod_0()
 		{
 			Console.WriteLine("-=- " + this.ToString() + " -=-");
-			Class308 @class = this.class318_0.method_8("scripts\\guitar\\menu\\menu_cheats.qb");
-			foreach (Class286 current in @class.method_5<Class267>(new Class267("guitar_hero_cheats")).method_7().method_8<Class286>())
+			zzGenericNode1 @class = this.class318_0.method_8("scripts\\guitar\\menu\\menu_cheats.qb");
+			foreach (StructureHeaderNode current in @class.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("guitar_hero_cheats")).method_7().method_8<StructureHeaderNode>())
 			{
 				bool flag = current.method_5<Class296>(new Class296("name", "unlockall")) != null;
 				bool flag2 = current.method_5<Class296>(new Class296("name", "unlockalleverything")) != null;

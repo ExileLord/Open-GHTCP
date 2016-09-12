@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace ns18
 {
-	public class Class275 : Class259
+	public class Class275 : AbstractTreeNode1
 	{
 		public byte[] byte_0;
 
@@ -42,7 +42,7 @@ namespace ns18
 			{
 				this.byte_0 = new Class320().method_4(byte_);
 			}
-			stream26_0.Position += (long)Class259.smethod_0(stream26_0.Position);
+			stream26_0.Position += (long)AbstractTreeNode1.smethod_0(stream26_0.Position);
 		}
 
 		public override void vmethod_14(Stream26 stream26_0)
@@ -56,7 +56,7 @@ namespace ns18
 			}
 			stream26_0.method_5(array.Length);
 			stream26_0.method_16(array, false);
-			stream26_0.method_4(0, Class259.smethod_0(stream26_0.Position));
+			stream26_0.method_4(0, AbstractTreeNode1.smethod_0(stream26_0.Position));
 		}
 
 		public override int CompareTo(object target)
@@ -72,13 +72,13 @@ namespace ns18
 			return 1;
 		}
 
-		public override string vmethod_3()
+		public override string GetText()
 		{
 			if (QbSongClass1.smethod_3(this.int_0))
 			{
 				return QbSongClass1.smethod_5(this.int_0) + " (Script)";
 			}
-			return KeyGenerator.smethod_34(this.int_0) + " (Script Tag)";
+			return KeyGenerator.ValToHex32bit(this.int_0) + " (Script Tag)";
 		}
 
 		public void method_7(byte[] byte_1)
@@ -86,7 +86,7 @@ namespace ns18
 			this.byte_0 = byte_1;
 		}
 
-		public override string vmethod_5()
+		public override string GetNodeText()
 		{
 			return "QB Script";
 		}
@@ -103,7 +103,7 @@ namespace ns18
 				}
 				int_1 += array.Length;
 			}
-			int_1 += Class259.smethod_0((long)int_1);
+			int_1 += AbstractTreeNode1.smethod_0((long)int_1);
 		}
 
 		public override object Clone()
@@ -115,12 +115,12 @@ namespace ns18
 			return @class;
 		}
 
-		public override Color vmethod_6()
+		public override Color GetColor()
 		{
 			return Color.Pink;
 		}
 
-		public override string vmethod_4()
+		public override string GetToolTipText()
 		{
 			if (this.byte_0 != null)
 			{

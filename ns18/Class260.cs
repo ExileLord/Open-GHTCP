@@ -5,28 +5,28 @@ using System.Drawing;
 
 namespace ns18
 {
-	public abstract class Class260 : Class259
+	public abstract class Class260 : AbstractTreeNode1
 	{
 		public int int_0;
 
 		public int int_1;
 
-		public override string vmethod_3()
+		public override string GetText()
 		{
-			string text = (base.Nodes.Count > 0) ? base.method_2(0).vmethod_3() : "NULL";
+			string text = (base.Nodes.Count > 0) ? base.method_2(0).GetText() : "NULL";
 			if (QbSongClass1.smethod_3(this.int_0))
 			{
 				return QbSongClass1.smethod_5(this.int_0) + " = " + text;
 			}
-			return "0x" + KeyGenerator.smethod_34(this.int_0) + " (Tag) = " + text;
+			return "0x" + KeyGenerator.ValToHex32bit(this.int_0) + " (Tag) = " + text;
 		}
 
 		public virtual Color vmethod_15()
 		{
-			return base.method_0(Color.Beige, Color.Lavender);
+			return base.GetColor2IfPrevNodeIsColor1(Color.Beige, Color.Lavender);
 		}
 
-		public override Color vmethod_6()
+		public override Color GetColor()
 		{
 			return this.vmethod_15();
 		}

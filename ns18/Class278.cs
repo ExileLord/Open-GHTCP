@@ -5,7 +5,7 @@ using System;
 
 namespace ns18
 {
-	public abstract class Class278<T> : Class277<T> where T : Class258
+	public abstract class Class278<T> : AbsTreeNode1_1_<T> where T : AbstractBaseTreeNode1
 	{
 		public abstract byte vmethod_15();
 
@@ -24,7 +24,7 @@ namespace ns18
 			{
 				for (int i = 0; i < num; i++)
 				{
-					base.Nodes.Add(new Class313(stream26_0.method_21()));
+					base.Nodes.Add(new FloatValueNode(stream26_0.method_21()));
 				}
 				return;
 			}
@@ -32,15 +32,15 @@ namespace ns18
 			{
 				for (int j = 0; j < num; j++)
 				{
-					base.Nodes.Add(new Class314(stream26_0.method_19()));
+					base.Nodes.Add(new IntegerValueNode(stream26_0.method_19()));
 				}
 				return;
 			}
-			if (this is Class281 || this is Class282)
+			if (this is TagArray || this is FileTagArrayNode)
 			{
 				for (int k = 0; k < num; k++)
 				{
-					base.Nodes.Add(new Class316(stream26_0.method_19()));
+					base.Nodes.Add(new TagValueNode(stream26_0.method_19()));
 				}
 			}
 		}
@@ -60,7 +60,7 @@ namespace ns18
 			{
 				stream26_0.method_5((int)stream26_0.Position + 4);
 			}
-			foreach (Class310 @class in base.Nodes)
+			foreach (AbstractTreeNode2 @class in base.Nodes)
 			{
 				stream26_0.method_15(@class.vmethod_8());
 			}

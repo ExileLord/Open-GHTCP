@@ -515,7 +515,7 @@ namespace ns20
 		{
 			if (this.ImgList.SelectedIndex >= 0)
 			{
-				Class330 @class = this.class322_0[this.ImgList.SelectedIndex];
+				DDSClass1 @class = this.class322_0[this.ImgList.SelectedIndex];
 				this.imgpixelFormat_0 = @class.imgpixelFormat_0;
 				this.BPPTxt.Text = string.Concat(@class.int_0);
 				this.FormatTxt.Text = ((@class.imgpixelFormat_0 == IMGPixelFormat.Dxt1) ? "DXT1" : ((@class.imgpixelFormat_0 == IMGPixelFormat.Dxt3) ? "DXT3" : ((@class.imgpixelFormat_0 == IMGPixelFormat.Dxt5) ? "DXT5" : "A8R8G8B8")));
@@ -545,7 +545,7 @@ namespace ns20
 			Image image;
 			if (text.EndsWith(".dds", StringComparison.OrdinalIgnoreCase))
 			{
-				image = new Class330(text).method_1();
+				image = new DDSClass1(text).method_1();
 			}
 			else
 			{

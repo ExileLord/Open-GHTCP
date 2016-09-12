@@ -3,13 +3,13 @@ using System;
 
 namespace ns19
 {
-	public class Class290 : Class289<Class287>
+	public class Class290 : Class289<FloatListNode>
 	{
-		public Class287 this[int int_0]
+		public FloatListNode this[int int_0]
 		{
 			get
 			{
-				return (Class287)base.Nodes[int_0];
+				return (FloatListNode)base.Nodes[int_0];
 			}
 			set
 			{
@@ -32,7 +32,7 @@ namespace ns19
 			return 6;
 		}
 
-		public override string vmethod_5()
+		public override string GetNodeText()
 		{
 			return "Vector Array";
 		}

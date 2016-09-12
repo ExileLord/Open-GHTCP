@@ -192,20 +192,20 @@ namespace ns15
 		private void method_1(MIDILine class353_0)
 		{
 			this.songTitle = class353_0.method_2();
-			foreach (Class335 current in class353_0.method_0())
+			foreach (AbstractNoteClass current in class353_0.method_0())
 			{
 				int num = Convert.ToInt32((double)current.method_0() * this.resolution);
-				if (current is Class337)
+				if (current is zzNote1)
 				{
-					Class337 @class = (Class337)current;
-					if (!this.isEvents && @class.method_2() == Class337.Enum37.const_0)
+					zzNote1 @class = (zzNote1)current;
+					if (!this.isEvents && @class.method_2() == zzNote1.Enum37.const_0)
 					{
 						this.method_4(4, num, "section " + @class.method_1());
 					}
 				}
-				else if (current is Class339)
+				else if (current is BpmNote1)
 				{
-					int num2 = ((Class339)current).method_1();
+					int num2 = ((BpmNote1)current).method_1();
 					this.bpmInterpreter.bpmList.Add(num, Convert.ToInt32(Math.Floor(60000000.0 / (double)num2 * 1000.0)));
 				}
 				else if (current is Class338)
@@ -218,7 +218,7 @@ namespace ns15
 		private void getNotes(MIDILine midiLine, int difficulty)
 		{
 			bool[] array = new bool[midiLine.method_0().Count];
-			List<Class335> list = midiLine.method_0();
+			List<AbstractNoteClass> list = midiLine.method_0();
 			for (int i = 0; i < list.Count; i++)
 			{
 				if (!array[i])
@@ -259,9 +259,9 @@ namespace ns15
 							this.method_3(difficulty, num, midiNote, num3);
 						}
 					}
-					else if (list[i] is Class337)
+					else if (list[i] is zzNote1)
 					{
-						Class337 class2 = (Class337)list[i];
+						zzNote1 class2 = (zzNote1)list[i];
 						List<string> list2 = this.method_5(difficulty - 4);
 						string text = class2.method_1();
 						if (text.StartsWith("["))
