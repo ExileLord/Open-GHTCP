@@ -53,3 +53,17 @@ D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Debug
 D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Debug\ns15.MainMenu.resources
 D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Debug\Properties.Resources.resources
 D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Debug\GHTCP-cleaned.csproj.GenerateResource.Cache
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\bin\Debug\GHTCP.exe.config
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\obj\x86\Debug\GHTCP.exe
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\obj\x86\Debug\GHTCP.pdb
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\bin\Debug\GHTCP.exe
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\bin\Debug\GHTCP.pdb
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\bin\Debug\Microsoft.DirectX.DirectSound.dll
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\bin\Debug\mid2chart.dll
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\bin\Debug\Microsoft.DirectX.dll
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\bin\Debug\Microsoft.DirectX.DirectSound.xml
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\bin\Debug\Microsoft.DirectX.xml
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\obj\x86\Debug\ns15.MainMenu.resources
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\obj\x86\Debug\Properties.Resources.resources
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\obj\x86\Debug\GHTCP-cleaned.csproj.GenerateResource.Cache
+D:\Guitar Hero 3 Custom Songs\GHTCP\Github Version\Open-GHTCP-1\obj\x86\Debug\ns15.LoadGameSettings.resources
