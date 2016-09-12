@@ -35,7 +35,7 @@ namespace ns19
 
 		public Class319(string string_3, string string_4, string string_5, bool bool_5)
 		{
-			base.Text = Class244.smethod_13(string_3);
+			base.Text = KeyGenerator.smethod_13(string_3);
 			this.string_0 = string_3;
 			this.string_2 = string_4;
 			this.string_1 = string_5;
@@ -63,7 +63,7 @@ namespace ns19
 					throw new Exception("Pak File is empty!");
 				}
 				int int_ = stream.method_19();
-				stream.bool_0 = (this.bool_2 = (!Class327.smethod_3(int_) || !Class327.smethod_5(int_).StartsWith(".")));
+				stream.bool_0 = (this.bool_2 = (!QbSongClass1.smethod_3(int_) || !QbSongClass1.smethod_5(int_).StartsWith(".")));
 				this.bool_3 = ((long)stream.method_19() < stream.Length);
 				Enum35 @enum = (Enum35)stream.method_41(28);
 				this.bool_1 = ((@enum & Enum35.flag_3) == Enum35.flag_0);
@@ -73,7 +73,7 @@ namespace ns19
 					Enum35 enum2 = (Enum35)stream.method_42(num + 28, false);
 					bool bool_ = this.bool_2 && (enum2 & Enum35.flag_4) == Enum35.flag_0 && (enum2 & Enum35.flag_5) == Enum35.flag_0;
 					int num3 = stream.method_42(num, bool_);
-					if (Class327.smethod_3(num3) && (Class327.smethod_5(num3).Equals(".last") || Class327.smethod_5(num3).Equals("last")))
+					if (QbSongClass1.smethod_3(num3) && (QbSongClass1.smethod_5(num3).Equals(".last") || QbSongClass1.smethod_5(num3).Equals("last")))
 					{
 						break;
 					}
@@ -100,26 +100,26 @@ namespace ns19
 						{
 							text = text.Substring(0, num7);
 						}
-						if (Class327.smethod_3(num3) && !Class327.smethod_5(num3).EndsWith(".qb.ngc") && !Class327.smethod_5(num3).EndsWith(".qb.ps2"))
+						if (QbSongClass1.smethod_3(num3) && !QbSongClass1.smethod_5(num3).EndsWith(".qb.ngc") && !QbSongClass1.smethod_5(num3).EndsWith(".qb.ps2"))
 						{
 							if (!this.bool_2)
 							{
-								if (num5 == Class244.smethod_36(text = text.Replace("/", "\\").Replace(".ps2", ""), true))
+								if (num5 == KeyGenerator.GetQbKey(text = text.Replace("/", "\\").Replace(".ps2", ""), true))
 								{
-									Class327.smethod_9(text);
+									QbSongClass1.smethod_9(text);
 								}
-								else if (num5 == Class244.smethod_36(text = text.Replace("/", "\\").Replace(".qb", ""), true))
+								else if (num5 == KeyGenerator.GetQbKey(text = text.Replace("/", "\\").Replace(".qb", ""), true))
 								{
-									Class327.smethod_9(text);
+									QbSongClass1.smethod_9(text);
 								}
 							}
-							else if (num5 == Class244.smethod_36(text = text.Replace("/", "\\").Replace(".ngc", ""), true))
+							else if (num5 == KeyGenerator.GetQbKey(text = text.Replace("/", "\\").Replace(".ngc", ""), true))
 							{
-								Class327.smethod_9(text);
+								QbSongClass1.smethod_9(text);
 							}
-							else if (num5 == Class244.smethod_36(text = text.Replace("/", "\\").Replace(".qb", ""), true))
+							else if (num5 == KeyGenerator.GetQbKey(text = text.Replace("/", "\\").Replace(".qb", ""), true))
 							{
-								Class327.smethod_9(text);
+								QbSongClass1.smethod_9(text);
 							}
 						}
 						else
@@ -128,23 +128,23 @@ namespace ns19
 							for (int i = 0; i < text2.Length; i++)
 							{
 								char c = text2[i];
-								if (num5 == Class244.smethod_36(c + text, true))
+								if (num5 == KeyGenerator.GetQbKey(c + text, true))
 								{
-									Class327.smethod_9(c + text);
+									QbSongClass1.smethod_9(c + text);
 								}
 							}
 						}
-						if (num6 == Class244.smethod_36(text = Class244.smethod_12(text), true))
+						if (num6 == KeyGenerator.GetQbKey(text = KeyGenerator.smethod_12(text), true))
 						{
-							Class327.smethod_9(text);
+							QbSongClass1.smethod_9(text);
 						}
 					}
 					TreeNode treeNode;
-					if (Class327.smethod_3(num3) && Class327.smethod_5(num3).EndsWith("qb"))
+					if (QbSongClass1.smethod_3(num3) && QbSongClass1.smethod_5(num3).EndsWith("qb"))
 					{
 						treeNode = new Class309(num3, num4, int_2, num5, num6, int_3, enum2);
 					}
-					else if (Class327.smethod_3(num3) && Class327.smethod_5(num3).Contains("qs"))
+					else if (QbSongClass1.smethod_3(num3) && QbSongClass1.smethod_5(num3).Contains("qs"))
 					{
 						treeNode = new Class328(num3, num4, int_2, num5, num6, int_3, enum2);
 					}
@@ -152,9 +152,9 @@ namespace ns19
 					{
 						treeNode = new Class332(num3, num4, int_2, num5, num6, int_3, enum2);
 					}
-					if (Class327.smethod_3(num5))
+					if (QbSongClass1.smethod_3(num5))
 					{
-						base.method_1<TreeNode>(Class327.smethod_5(num5), treeNode);
+						base.method_1<TreeNode>(QbSongClass1.smethod_5(num5), treeNode);
 					}
 					else
 					{
@@ -188,8 +188,8 @@ namespace ns19
 			{
 				this.stream26_0.Close();
 			}
-			Class244.smethod_9(string_4, stream2.method_1());
-			Class244.smethod_9(string_3, stream.method_1());
+			KeyGenerator.smethod_9(string_4, stream2.method_1());
+			KeyGenerator.smethod_9(string_3, stream.method_1());
 			stream.Dispose();
 			stream2.Dispose();
 			if (this.stream26_0 != null && this.string_0 == string_3 && this.string_2 == string_4)

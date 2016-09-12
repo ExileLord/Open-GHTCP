@@ -125,7 +125,7 @@ namespace ns19
 					stream2.WriteByte(0);
 					stream2.method_5((int)stream.Length);
 					stream.Position = 0L;
-					stream2.method_5(Class244.smethod_39(stream, true));
+					stream2.method_5(KeyGenerator.GetQbKey(stream, true));
 					stream2.method_4(0, 40);
 					stream2.WriteByte(Convert.ToByte(DateTime.Now.Minute));
 					stream2.WriteByte(0);
@@ -138,7 +138,7 @@ namespace ns19
 					stream2.method_5(756937245);
 					stream2.method_4(0, 12);
 					stream2.Position = 4L;
-					int num = Class244.smethod_39(stream2, true);
+					int num = KeyGenerator.GetQbKey(stream2, true);
 					stream2.Position = 0L;
 					stream2.method_5(num);
 					stream.Position = stream.Length;

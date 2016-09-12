@@ -78,15 +78,15 @@ namespace ns19
 					'/'
 				}, StringSplitOptions.RemoveEmptyEntries))).ToolTipText = text2;
 			}
-			int num = Class327.smethod_9(".tex");
-			int num2 = Class327.smethod_9(".img");
+			int num = QbSongClass1.smethod_9(".tex");
+			int num2 = QbSongClass1.smethod_9(".img");
 			files = Directory.GetFiles(this.string_0.Remove(this.string_0.Length - 1), "*.pak.xen", SearchOption.AllDirectories);
 			int num3 = 0;
 			string[] array3 = files;
 			for (int k = 0; k < array3.Length; k++)
 			{
 				string text3 = array3[k];
-				this.delegate9_0(1 + (int)(98.0 * (double)(++num3) / (double)files.Length), Class244.smethod_13(text3));
+				this.delegate9_0(1 + (int)(98.0 * (double)(++num3) / (double)files.Length), KeyGenerator.smethod_13(text3));
 				try
 				{
 					using (Class318 @class = File.Exists(text3.Replace(".pak.xen", ".pab.xen")) ? new Class319(text3, text3.Replace(".pak.xen", ".pab.xen"), false) : new Class318(text3, false))
@@ -97,7 +97,7 @@ namespace ns19
 							int num4 = current.imethod_7();
 							if (current.imethod_4() == num || current.imethod_4() == num2)
 							{
-								list.Add(new TreeNode(Class327.smethod_3(num4) ? Class244.smethod_13(Class327.smethod_5(num4)) : Class244.smethod_34(num4))
+								list.Add(new TreeNode(QbSongClass1.smethod_3(num4) ? KeyGenerator.smethod_13(QbSongClass1.smethod_5(num4)) : KeyGenerator.smethod_34(num4))
 								{
 									ToolTipText = text3,
 									Tag = num4

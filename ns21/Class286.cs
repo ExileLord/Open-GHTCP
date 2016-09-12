@@ -76,7 +76,7 @@ namespace ns21
 			}
 			int num = int_0 >> 16 & 255;
 			int num2 = int_0 >> 8 & 255;
-			Exception ex = new Exception("No QB Node class found for : " + Class244.smethod_34(int_0));
+			Exception ex = new Exception("No QB Node class found for : " + KeyGenerator.smethod_34(int_0));
 			if (num == 1)
 			{
 				this.vmethod_9(true);

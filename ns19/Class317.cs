@@ -37,7 +37,7 @@ namespace ns19
 
 		public void method_1<T>(string string_0, T gparam_0) where T : TreeNode
 		{
-			Class317 @class = string.IsNullOrEmpty(string_0) ? this : this.method_2(Class244.smethod_10(string_0));
+			Class317 @class = string.IsNullOrEmpty(string_0) ? this : this.method_2(KeyGenerator.smethod_10(string_0));
 			if (@class.Nodes.ContainsKey(gparam_0.Text))
 			{
 				@class.Nodes.RemoveByKey(gparam_0.Text);

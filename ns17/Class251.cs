@@ -26,24 +26,24 @@ namespace ns17
 			((Class286)@class.method_5<Class296>(new Class296("event", "star_power_on")).Parent).method_5<Class296>(new Class296("scr")).method_9(this.bool_0 ? "guitarevent_starpoweroff" : "guitarevent_starpoweron");
 			if (!this.bool_0)
 			{
-				@class.method_5<Class274>(new Class274("hit_note_fx")).int_0 = Class327.smethod_9("hit_note_fx_empty");
-				@class.method_5<Class274>(new Class274("guitarevent_starsequencebonus")).int_0 = Class327.smethod_9("guitarevent_starsequencebonus_empty");
-				@class.method_5<Class274>(new Class274("guitarevent_multiplier4xon_spawned")).int_0 = Class327.smethod_9("guitarevent_multiplier4xon_spawned_empty");
-				@class.method_5<Class274>(new Class274("first_gem_fx")).int_0 = Class327.smethod_9("first_gem_fx_empty");
-				@class.method_5<Class274>(new Class274("hit_note_fx_original")).int_0 = Class327.smethod_9("hit_note_fx");
-				@class.method_5<Class274>(new Class274("guitarevent_starsequencebonus_original")).int_0 = Class327.smethod_9("guitarevent_starsequencebonus");
-				@class.method_5<Class274>(new Class274("guitarevent_multiplier4xon_spawned_original")).int_0 = Class327.smethod_9("guitarevent_multiplier4xon_spawned");
-				@class.method_5<Class274>(new Class274("first_gem_fx_original")).int_0 = Class327.smethod_9("first_gem_fx");
+				@class.method_5<Class274>(new Class274("hit_note_fx")).int_0 = QbSongClass1.smethod_9("hit_note_fx_empty");
+				@class.method_5<Class274>(new Class274("guitarevent_starsequencebonus")).int_0 = QbSongClass1.smethod_9("guitarevent_starsequencebonus_empty");
+				@class.method_5<Class274>(new Class274("guitarevent_multiplier4xon_spawned")).int_0 = QbSongClass1.smethod_9("guitarevent_multiplier4xon_spawned_empty");
+				@class.method_5<Class274>(new Class274("first_gem_fx")).int_0 = QbSongClass1.smethod_9("first_gem_fx_empty");
+				@class.method_5<Class274>(new Class274("hit_note_fx_original")).int_0 = QbSongClass1.smethod_9("hit_note_fx");
+				@class.method_5<Class274>(new Class274("guitarevent_starsequencebonus_original")).int_0 = QbSongClass1.smethod_9("guitarevent_starsequencebonus");
+				@class.method_5<Class274>(new Class274("guitarevent_multiplier4xon_spawned_original")).int_0 = QbSongClass1.smethod_9("guitarevent_multiplier4xon_spawned");
+				@class.method_5<Class274>(new Class274("first_gem_fx_original")).int_0 = QbSongClass1.smethod_9("first_gem_fx");
 				return;
 			}
-			@class.method_5<Class274>(new Class274("hit_note_fx")).int_0 = Class327.smethod_9("hit_note_fx_original");
-			@class.method_5<Class274>(new Class274("guitarevent_starsequencebonus")).int_0 = Class327.smethod_9("guitarevent_starsequencebonus_original");
-			@class.method_5<Class274>(new Class274("guitarevent_multiplier4xon_spawned")).int_0 = Class327.smethod_9("guitarevent_multiplier4xon_spawned_original");
-			@class.method_5<Class274>(new Class274("first_gem_fx")).int_0 = Class327.smethod_9("first_gem_fx_original");
+			@class.method_5<Class274>(new Class274("hit_note_fx")).int_0 = QbSongClass1.smethod_9("hit_note_fx_original");
+			@class.method_5<Class274>(new Class274("guitarevent_starsequencebonus")).int_0 = QbSongClass1.smethod_9("guitarevent_starsequencebonus_original");
+			@class.method_5<Class274>(new Class274("guitarevent_multiplier4xon_spawned")).int_0 = QbSongClass1.smethod_9("guitarevent_multiplier4xon_spawned_original");
+			@class.method_5<Class274>(new Class274("first_gem_fx")).int_0 = QbSongClass1.smethod_9("first_gem_fx_original");
 			Class274 class2 = @class.method_5<Class274>(new Class274("hit_note_fx_empty"));
 			if (class2 != null)
 			{
-				class2.int_0 = Class327.smethod_9("hit_note_fx");
+				class2.int_0 = QbSongClass1.smethod_9("hit_note_fx");
 			}
 			else
 			{
@@ -52,7 +52,7 @@ namespace ns17
 			class2 = @class.method_5<Class274>(new Class274("guitarevent_starsequencebonus_empty"));
 			if (class2 != null)
 			{
-				class2.int_0 = Class327.smethod_9("guitarevent_starsequencebonus");
+				class2.int_0 = QbSongClass1.smethod_9("guitarevent_starsequencebonus");
 			}
 			else
 			{
@@ -61,7 +61,7 @@ namespace ns17
 			class2 = @class.method_5<Class274>(new Class274("guitarevent_multiplier4xon_spawned_empty"));
 			if (class2 != null)
 			{
-				class2.int_0 = Class327.smethod_9("guitarevent_multiplier4xon_spawned");
+				class2.int_0 = QbSongClass1.smethod_9("guitarevent_multiplier4xon_spawned");
 			}
 			else
 			{
@@ -70,7 +70,7 @@ namespace ns17
 			class2 = @class.method_5<Class274>(new Class274("first_gem_fx_empty"));
 			if (class2 != null)
 			{
-				class2.int_0 = Class327.smethod_9("first_gem_fx");
+				class2.int_0 = QbSongClass1.smethod_9("first_gem_fx");
 				return;
 			}
 			@class.method_3(new Class274("first_gem_fx", "scripts\\guitar\\guitar_events.qb", new Class275()));

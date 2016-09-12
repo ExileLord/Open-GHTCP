@@ -11,7 +11,7 @@ namespace ns19
 			this.vmethod_0();
 		}
 
-		public Class301(string string_0) : this(Class327.smethod_9(string_0))
+		public Class301(string string_0) : this(QbSongClass1.smethod_9(string_0))
 		{
 		}
 
@@ -21,7 +21,7 @@ namespace ns19
 			this.vmethod_0();
 		}
 
-		public Class301(string string_0, Class276 class276_0) : this(Class327.smethod_9(string_0), class276_0)
+		public Class301(string string_0, Class276 class276_0) : this(QbSongClass1.smethod_9(string_0), class276_0)
 		{
 		}
 

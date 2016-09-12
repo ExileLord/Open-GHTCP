@@ -790,8 +790,8 @@ namespace ns15
 			for (int i = 0; i < files.Length; i++)
 			{
 				string text = files[i];
-				string text2 = Class244.smethod_12(text);
-				if (File.Exists(this.dataFolder + "music\\" + text2 + ".fsb.xen") && File.Exists(this.dataFolder + "songs\\" + text2 + "_song.pak.xen") && !this.gh3Songlist_0.method_3(text2) && !Class327.smethod_4(text2) && !GH3Songlist.IgnoreSongs.Contains(Class327.smethod_9(text2)))
+				string text2 = KeyGenerator.smethod_12(text);
+				if (File.Exists(this.dataFolder + "music\\" + text2 + ".fsb.xen") && File.Exists(this.dataFolder + "songs\\" + text2 + "_song.pak.xen") && !this.gh3Songlist_0.method_3(text2) && !QbSongClass1.smethod_4(text2) && !GH3Songlist.IgnoreSongs.Contains(QbSongClass1.smethod_9(text2)))
 				{
 					try
 					{
@@ -823,14 +823,14 @@ namespace ns15
 		private void LoadChart_EditorBtn_Click(object sender, EventArgs e)
 		{
 			string fileName;
-			if (!(fileName = Class244.smethod_16("Select the game track file.", "Any Supported Game Track Formats|*.qbc;*.dbc;*_song.pak.xen;*.mid;*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc|GH3 Game Track file|*_song.pak.xen|GH standard Midi file|*.mid|dB standard or GH3CP Chart file|*.chart", true)).Equals(""))
+			if (!(fileName = KeyGenerator.smethod_16("Select the game track file.", "Any Supported Game Track Formats|*.qbc;*.dbc;*_song.pak.xen;*.mid;*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc|GH3 Game Track file|*_song.pak.xen|GH standard Midi file|*.mid|dB standard or GH3CP Chart file|*.chart", true)).Equals(""))
 			{
 				QBCParser qbcParser;
 				try
 				{
 					if (fileName.EndsWith("_song.pak.xen"))
 					{
-						string str = Class244.smethod_13(fileName).Replace("_song.pak.xen", "");
+						string str = KeyGenerator.smethod_13(fileName).Replace("_song.pak.xen", "");
 						using (Class318 @class = new Class318(fileName, false))
 						{
 							if (!@class.method_6("songs\\" + str + ".mid.qb"))
@@ -928,7 +928,7 @@ namespace ns15
 		private void LoadAudio_EditorBtn_Click(object sender, EventArgs e)
 		{
 			string fileName;
-			if (!(fileName = Class244.smethod_16("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio File|*.mp3|Waveform Audio File|*.wav|Ogg Vorbis Audio File|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			if (!(fileName = KeyGenerator.smethod_16("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio File|*.mp3|Waveform Audio File|*.wav|Ogg Vorbis Audio File|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
 				this.SongEditor_Control.loadAudio(fileName);
             }
@@ -1009,7 +1009,7 @@ namespace ns15
 				{
 					return;
 				}
-				string fileLocation = Class244.smethod_16("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
+				string fileLocation = KeyGenerator.smethod_16("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
 				if (!fileLocation.Equals("") && File.Exists(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen"))
 				{
 					using (Class318 @class = new Class318(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
@@ -1042,7 +1042,7 @@ namespace ns15
 		{
 			if (this.TierBox.SelectedIndex >= 0)
 			{
-				string text = Class244.smethod_15("Select where to save the tier.", "GH3CP Tier File|*.tgh", false, this.TierTitle_TxtBox.Text);
+				string text = KeyGenerator.smethod_15("Select where to save the tier.", "GH3CP Tier File|*.tgh", false, this.TierTitle_TxtBox.Text);
 				if (text.Equals(""))
 				{
 					return;
@@ -1069,7 +1069,7 @@ namespace ns15
 		{
 			if (this.TierBox.SelectedIndex >= 0)
 			{
-				string text = Class244.smethod_17("Select the tier to switch too.", "GH3CP Tier File|*.tgh");
+				string text = KeyGenerator.smethod_17("Select the tier to switch too.", "GH3CP Tier File|*.tgh");
 				if (text.Equals(""))
 				{
 					return;
@@ -1104,7 +1104,7 @@ namespace ns15
 		{
 			if (this.gh3Songlist_0.gh3SetlistList.ContainsKey(this.int_0))
 			{
-				string text = Class244.smethod_17("Select the tier to import.", "GH3CP Tier File|*.tgh");
+				string text = KeyGenerator.smethod_17("Select the tier to import.", "GH3CP Tier File|*.tgh");
 				if (text.Equals(""))
 				{
 					return;
@@ -1139,7 +1139,7 @@ namespace ns15
 		{
 			if (this.gh3Songlist_0.gh3SetlistList.ContainsKey(this.int_0))
 			{
-				string saveLocation = Class244.smethod_15("Select where to save the setlist.", "GH3CP Setlist File|*.sgh", false, this.SetlistTitle_TxtBox.Text);
+				string saveLocation = KeyGenerator.smethod_15("Select where to save the setlist.", "GH3CP Setlist File|*.sgh", false, this.SetlistTitle_TxtBox.Text);
 				if (saveLocation.Equals(""))
 				{
 					return;
@@ -1192,7 +1192,7 @@ namespace ns15
 		{
 			if (this.gh3Songlist_0.gh3SetlistList.ContainsKey(this.int_0))
 			{
-				string text = Class244.smethod_17("Select the setlist to switch too.", "GH3CP Setlist File|*.sgh");
+				string text = KeyGenerator.smethod_17("Select the setlist to switch too.", "GH3CP Setlist File|*.sgh");
 				if (text.Equals(""))
 				{
 					return;
@@ -1220,7 +1220,7 @@ namespace ns15
 					{
 						this.method_23();
 					}
-					this.SetlistTitle_TxtBox.Text = Class244.smethod_11(text, 1);
+					this.SetlistTitle_TxtBox.Text = KeyGenerator.smethod_11(text, 1);
 					this.SetlistApply_Btn.Enabled = true;
 					this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					this.method_0();
@@ -1254,21 +1254,21 @@ namespace ns15
 				string file = array[i];
 				try
 				{
-					List<string> list2 = Class244.checkFile(file, "*.mid;*.chart;*.qbc;*.dbc", true);
-					List<string> list3 = Class244.checkFile(file, "*.wav;*.mp3;*.ogg", true);
+					List<string> list2 = KeyGenerator.checkFile(file, "*.mid;*.chart;*.qbc;*.dbc", true);
+					List<string> list3 = KeyGenerator.checkFile(file, "*.wav;*.mp3;*.ogg", true);
 					string[] files = Directory.GetFiles(file, "*.dat", SearchOption.TopDirectoryOnly);
 					if (list2.Count != 0 && (list3.Count != 0 || files.Length != 0))
 					{
 						GH3Song gH3Song = this.bool_0 ? new GHASong() : new GH3Song();
-						gH3Song.name = Class244.smethod_13(file).ToLower().Replace(" ", "").Replace('.', '_');
+						gH3Song.name = KeyGenerator.smethod_13(file).ToLower().Replace(" ", "").Replace('.', '_');
 						if (gH3Song.name.Length > 30)
 						{
 							gH3Song.name = gH3Song.name.Remove(30);
 						}
-						if (Class327.smethod_4(gH3Song.name) || this.gh3Songlist_0.method_3(gH3Song.name))
+						if (QbSongClass1.smethod_4(gH3Song.name) || this.gh3Songlist_0.method_3(gH3Song.name))
 						{
 							int num = 2;
-							while (Class327.smethod_4(gH3Song.name + num) || this.gh3Songlist_0.method_3(gH3Song.name + num))
+							while (QbSongClass1.smethod_4(gH3Song.name + num) || this.gh3Songlist_0.method_3(gH3Song.name + num))
 							{
 								num++;
 							}
@@ -1370,7 +1370,7 @@ namespace ns15
 				string text4 = "The follwing songs (by folder name) failed:";
 				foreach (string current2 in list)
 				{
-					text4 = text4 + "\n" + Class244.smethod_13(current2);
+					text4 = text4 + "\n" + KeyGenerator.smethod_13(current2);
 				}
 				MessageBox.Show(text4, "Error!");
 			}
@@ -1504,7 +1504,7 @@ namespace ns15
 			{
 				throw new Exception("GH3 Language setting missing from registry!");
 			}
-			Class327.smethod_0();
+			QbSongClass1.smethod_0();
 			this.string_0 = Directory.GetCurrentDirectory() + "\\";
 			this.method_12(false);
 			RegistryKey registryKey = Registry.LocalMachine.CreateSubKey(this.string_2);
@@ -1572,12 +1572,12 @@ namespace ns15
 					MessageBox.Show("Please download the file under \"ZIP OPTION:\" and select it: libmp3lame-win-#.#.zip", "MP3 Encoding Library Missing!");
 					try
 					{
-						string text4 = Class244.smethod_16("Locate MP3 Encoding Library (file will be deleted after!)", "MP3 Lame Zip|*.zip", true);
-						string text5 = Class244.smethod_12(text4);
+						string text4 = KeyGenerator.smethod_16("Locate MP3 Encoding Library (file will be deleted after!)", "MP3 Lame Zip|*.zip", true);
+						string text5 = KeyGenerator.smethod_12(text4);
 						ZIPManager.smethod_4(text4, this.string_0 + "lame_enc.dll", "libmp3lame" + text5.Substring(text5.LastIndexOf('-')) + "/lame_enc.dll");
 						try
 						{
-							Class244.smethod_20(text4);
+							KeyGenerator.smethod_20(text4);
 						}
 						catch
 						{
@@ -1598,7 +1598,7 @@ namespace ns15
 
 		private void SaveFileControl_MenuItem_Click(object sender, EventArgs e)
 		{
-			string a = Class244.smethod_16("Select Save File to Import. Current Save File will be Overwritten!", "GH3 Save File|s000.d", true);
+			string a = KeyGenerator.smethod_16("Select Save File to Import. Current Save File will be Overwritten!", "GH3 Save File|s000.d", true);
 			if (a != "")
 			{
 				Class324 @class = new Class324(a);
@@ -1610,7 +1610,7 @@ namespace ns15
 					"C",
 					"D",
 					"E"
-				})[this.list_0.IndexOf(Class244.smethod_12(this.class319_0.string_0).Remove(0, 2))];
+				})[this.list_0.IndexOf(KeyGenerator.smethod_12(this.class319_0.string_0).Remove(0, 2))];
 				text = string.Concat(new string[]
 				{
 					Environment.GetFolderPath(Environment.SpecialFolder.Personal),
@@ -1917,9 +1917,9 @@ namespace ns15
                     IL_7E:
                     gH3Setlist.prefix = "custom" + (i + 1);
 					int num2;
-					this.gh3Songlist_0.gh3SetlistList.Add(num2 = Class327.smethod_9("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
+					this.gh3Songlist_0.gh3SetlistList.Add(num2 = QbSongClass1.smethod_9("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
 					int value;
-					this.gh3Songlist_0.dictionary_1.Add(value = Class327.smethod_9("custom" + (i + 1) + "_progression"), new GHLink(num2));
+					this.gh3Songlist_0.dictionary_1.Add(value = QbSongClass1.smethod_9("custom" + (i + 1) + "_progression"), new GHLink(num2));
 					string text;
 					this.gh3Songlist_0.class214_0.Add(text = "Custom Setlist " + (i + 1), value);
 					this.Setlist_DropBox.Items.Add(text);
@@ -3847,7 +3847,7 @@ namespace ns15
 			}
 			catch
 			{
-				string text = Class244.smethod_16("Find Guitar Hero " + (this.bool_0 ? "Aerosmith" : "3"), this.bool_0 ? "Guitar Hero Aerosmith Executable|Guitar Hero Aerosmith.exe" : "Guitar Hero 3 Executable|GH3.exe", true);
+				string text = KeyGenerator.smethod_16("Find Guitar Hero " + (this.bool_0 ? "Aerosmith" : "3"), this.bool_0 ? "Guitar Hero Aerosmith Executable|Guitar Hero Aerosmith.exe" : "Guitar Hero 3 Executable|GH3.exe", true);
 				if (string.IsNullOrEmpty(text))
 				{
 					return;
@@ -3931,7 +3931,7 @@ namespace ns15
 						{
 							return;
 						}
-						Class244.smethod_19(this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", string.Concat(new string[]
+						KeyGenerator.smethod_19(this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", string.Concat(new string[]
 						{
 							this.string_0,
 							this.string_3,
@@ -3939,7 +3939,7 @@ namespace ns15
 							text2,
 							".pab.xen"
 						}), true);
-						Class244.smethod_19(this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", string.Concat(new string[]
+						KeyGenerator.smethod_19(this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", string.Concat(new string[]
 						{
 							this.string_0,
 							this.string_3,
@@ -3947,7 +3947,7 @@ namespace ns15
 							text2,
 							".pak.xen"
 						}), true);
-						Class244.smethod_19(string.Concat(new string[]
+						KeyGenerator.smethod_19(string.Concat(new string[]
 						{
 							this.string_0,
 							this.string_3,
@@ -3955,7 +3955,7 @@ namespace ns15
 							text2,
 							".pab.xen"
 						}), this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", true);
-						Class244.smethod_19(string.Concat(new string[]
+						KeyGenerator.smethod_19(string.Concat(new string[]
 						{
 							this.string_0,
 							this.string_3,
@@ -4015,9 +4015,9 @@ namespace ns15
 												IL_666:
 												gH3Setlist.prefix = "custom" + (i + 1);
 												int num2;
-												this.gh3Songlist_0.gh3SetlistList.Add(num2 = Class327.smethod_9("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
+												this.gh3Songlist_0.gh3SetlistList.Add(num2 = QbSongClass1.smethod_9("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
 												int value;
-												this.gh3Songlist_0.dictionary_1.Add(value = Class327.smethod_9("custom" + (i + 1) + "_progression"), new GHLink(num2));
+												this.gh3Songlist_0.dictionary_1.Add(value = QbSongClass1.smethod_9("custom" + (i + 1) + "_progression"), new GHLink(num2));
 												this.gh3Songlist_0.class214_0.Add("Custom Setlist " + (i + 1), value);
 												this.method_4(new Class246(value, this.class319_0, this.gh3Songlist_0, true));
 												flag2 = true;
@@ -4063,7 +4063,7 @@ namespace ns15
 					Console.WriteLine(ex3.Message);
 					if (DialogResult.Yes == MessageBox.Show("Game Settings files are corrupt. Do you wish to start from backup? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNo) && this.method_16(int_))
 					{
-						Class244.smethod_19(string.Concat(new string[]
+						KeyGenerator.smethod_19(string.Concat(new string[]
 						{
 							this.string_0,
 							this.string_3,
@@ -4071,7 +4071,7 @@ namespace ns15
 							text2,
 							".pab.xen"
 						}), this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", true);
-						Class244.smethod_19(string.Concat(new string[]
+						KeyGenerator.smethod_19(string.Concat(new string[]
 						{
 							this.string_0,
 							this.string_3,
@@ -4142,21 +4142,21 @@ namespace ns15
 				".pab.xen"
 			});
 			int[] icollection_ = this.bool_0 ? this.int_2[int_3] : this.int_1[int_3];
-			return File.Exists(text) && File.Exists(text.Replace(".pab.xen", ".pak.xen")) && Class244.smethod_53<int>(Class244.smethod_21(Class244.smethod_42(text)), icollection_);
+			return File.Exists(text) && File.Exists(text.Replace(".pab.xen", ".pak.xen")) && KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.smethod_42(text)), icollection_);
 		}
 
 		private bool method_17(int int_3)
 		{
 			string text = this.dataFolder + "PAK\\qb" + this.list_0[int_3] + ".pab.xen";
 			int[] icollection_ = this.bool_0 ? this.int_2[int_3] : this.int_1[int_3];
-			while (!File.Exists(text) || !File.Exists(text.Replace(".pab.xen", ".pak.xen")) || !Class244.smethod_53<int>(Class244.smethod_21(Class244.smethod_42(text)), icollection_))
+			while (!File.Exists(text) || !File.Exists(text.Replace(".pab.xen", ".pak.xen")) || !KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.smethod_42(text)), icollection_))
 			{
-				if ((text = Class244.smethod_16("Find The Original V1.3 Game Settings.", "Original V1.3 Game Settings|qb" + this.list_0[int_3] + ".pab.xen", true)).Equals(""))
+				if ((text = KeyGenerator.smethod_16("Find The Original V1.3 Game Settings.", "Original V1.3 Game Settings|qb" + this.list_0[int_3] + ".pab.xen", true)).Equals(""))
 				{
 					return false;
 				}
 			}
-			Class244.smethod_19(text, string.Concat(new string[]
+			KeyGenerator.smethod_19(text, string.Concat(new string[]
 			{
 				this.string_0,
 				this.string_3,
@@ -4164,7 +4164,7 @@ namespace ns15
 				this.list_0[int_3],
 				".pab.xen"
 			}), true);
-			Class244.smethod_19(text.Replace(".pab.xen", ".pak.xen"), string.Concat(new string[]
+			KeyGenerator.smethod_19(text.Replace(".pab.xen", ".pak.xen"), string.Concat(new string[]
 			{
 				this.string_0,
 				this.string_3,
@@ -4195,7 +4195,7 @@ namespace ns15
 
 		private Class375 method_19(int int_3)
 		{
-			if (File.Exists(this.class319_0.string_0) && File.Exists(this.class319_0.string_2) && Class244.smethod_53<int>(Class244.smethod_21(Class244.smethod_42(this.class319_0.string_2)), this.bool_0 ? this.int_2[int_3] : this.int_1[int_3]))
+			if (File.Exists(this.class319_0.string_0) && File.Exists(this.class319_0.string_2) && KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.smethod_42(this.class319_0.string_2)), this.bool_0 ? this.int_2[int_3] : this.int_1[int_3]))
 			{
 				return new Class375(true);
 			}
@@ -4221,12 +4221,12 @@ namespace ns15
 			{
 				return;
 			}
-			string text = Class244.smethod_12(this.class319_0.string_0);
+			string text = KeyGenerator.smethod_12(this.class319_0.string_0);
 			int int_ = new List<string>(this.list_0).IndexOf(text.Replace("qb", ""));
 			if (this.method_16(int_))
 			{
 				this.method_15();
-				Class244.smethod_19(string.Concat(new string[]
+				KeyGenerator.smethod_19(string.Concat(new string[]
 				{
 					this.string_0,
 					this.string_3,
@@ -4234,7 +4234,7 @@ namespace ns15
 					text,
 					".pak.xen"
 				}), this.dataFolder + "PAK\\" + text + ".pak.xen", true);
-				Class244.smethod_19(string.Concat(new string[]
+				KeyGenerator.smethod_19(string.Concat(new string[]
 				{
 					this.string_0,
 					this.string_3,
@@ -4253,7 +4253,7 @@ namespace ns15
 			{
 				return;
 			}
-			string text = Class244.smethod_12(this.class319_0.string_0);
+			string text = KeyGenerator.smethod_12(this.class319_0.string_0);
 			if (File.Exists(string.Concat(new string[]
 			{
 				this.string_0,
@@ -4271,7 +4271,7 @@ namespace ns15
 			})))
 			{
 				this.method_15();
-				Class244.smethod_19(string.Concat(new string[]
+				KeyGenerator.smethod_19(string.Concat(new string[]
 				{
 					this.string_0,
 					this.string_3,
@@ -4279,7 +4279,7 @@ namespace ns15
 					text,
 					".pak.xen"
 				}), this.dataFolder + "PAK\\" + text + ".pak.xen", true);
-				Class244.smethod_19(string.Concat(new string[]
+				KeyGenerator.smethod_19(string.Concat(new string[]
 				{
 					this.string_0,
 					this.string_3,
@@ -4312,7 +4312,7 @@ namespace ns15
 				return;
 			}
 			int num = loadGameSettings.method_3();
-			string text = Class244.smethod_12(this.class319_0.string_0);
+			string text = KeyGenerator.smethod_12(this.class319_0.string_0);
 			if (!this.method_16(num) && DialogResult.Yes == MessageBox.Show("A proper backup doesn't exist. Do you wish to start backup creation? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNo) && !this.method_17(num))
 			{
 				return;

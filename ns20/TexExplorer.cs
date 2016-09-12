@@ -405,7 +405,7 @@ namespace ns20
 			base.Closed += new EventHandler(this.TexExplorer_Closed);
 			this.Text = "Texture Explorer - LOOKING FOR TEXTURES (PLEASE WAIT!)";
 			Class321 @class = new Class321(this.string_0);
-			@class.method_1(new Class321.Delegate9(this.method_0));
+			@class.method_1(new Class321.Delegate9(this.UpdateSearchText));
 			@class.method_0(new Class321.Delegate8(this.method_1));
 			this.thread_0 = new Thread(new ThreadStart(@class.method_2));
 			this.thread_0.Start();
@@ -421,24 +421,24 @@ namespace ns20
 			}
 		}
 
-		private void method_0(int int_1, string string_2)
+		private void UpdateSearchText(int percentComplete, string currentFile)
 		{
 			if (base.InvokeRequired)
 			{
-				Class321.Delegate9 method = new Class321.Delegate9(this.method_0);
+				Class321.Delegate9 method = new Class321.Delegate9(this.UpdateSearchText);
 				base.Invoke(method, new object[]
 				{
-					int_1,
-					string_2
+					percentComplete,
+					currentFile
 				});
 				return;
 			}
 			this.Text = string.Concat(new object[]
 			{
 				"Texture Explorer - LOOKING FOR TEXTURES - ",
-				int_1,
+				percentComplete,
 				"% - (",
-				string_2,
+				currentFile,
 				")"
 			});
 		}
@@ -526,7 +526,7 @@ namespace ns20
 				this.size_0 = image.Size;
 				if (image.Width > this.ImagePreviewBox.Width || image.Height > this.ImagePreviewBox.Height)
 				{
-					image = Class244.smethod_48(image, this.ImagePreviewBox.Size);
+					image = KeyGenerator.smethod_48(image, this.ImagePreviewBox.Size);
 				}
 				this.ImagePreviewBox.Image = image;
 				this.ImageInfoBox.Enabled = true;
@@ -537,7 +537,7 @@ namespace ns20
 
 		private void ReplaceImgBtn_Click(object sender, EventArgs e)
 		{
-			string text = Class244.smethod_16("Select the image file to replace the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", true);
+			string text = KeyGenerator.smethod_16("Select the image file to replace the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", true);
 			if (text == "")
 			{
 				return;
@@ -553,16 +553,16 @@ namespace ns20
 			}
 			if (!image.Size.Equals(this.size_0) && DialogResult.Yes == MessageBox.Show("The image dimensions don't match. Do you wish scale to the original dimension? (Ratio may change!)", "Replace Texture", MessageBoxButtons.YesNo))
 			{
-				image = Class244.smethod_50(image, this.size_0);
+				image = KeyGenerator.smethod_50(image, this.size_0);
 			}
 			this.class322_0.method_1(this.ImgList.SelectedIndex, image, this.imgpixelFormat_0);
 			this.RebuildBtn.Enabled = true;
 		}
 
-		public ImageFormat method_3(string string_2)
+		public ImageFormat GetImageFormat(string fileName)
 		{
 			string a;
-			if ((a = Class244.smethod_14(string_2, 1).ToLower()) != null)
+			if ((a = KeyGenerator.smethod_14(fileName, 1).ToLower()) != null)
 			{
 				if (a == "jpg")
 				{
@@ -582,7 +582,7 @@ namespace ns20
 
 		private void ExtractImgBtn_Click(object sender, EventArgs e)
 		{
-			string text = Class244.smethod_16("Select location to export the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", false);
+			string text = KeyGenerator.smethod_16("Select location to export the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", false);
 			if (text == "")
 			{
 				return;
@@ -592,7 +592,7 @@ namespace ns20
 				this.class322_0.method_3(this.ImgList.SelectedIndex, text);
 				return;
 			}
-			this.class322_0[this.ImgList.SelectedIndex].method_1().Save(text, this.method_3(text));
+			this.class322_0[this.ImgList.SelectedIndex].method_1().Save(text, this.GetImageFormat(text));
 		}
 
 		private void RebuildBtn_Click(object sender, EventArgs e)

@@ -73,8 +73,8 @@ namespace ns15
 		{
 			if (this.class323_0 != null)
 			{
-				Class244.smethod_9(this.string_2 + "music\\" + this.string_1 + ".dat.xen", this.class323_0.byte_0);
-				Class244.smethod_19(this.string_3, this.string_2 + "music\\" + this.string_1 + ".fsb.xen", true);
+				KeyGenerator.smethod_9(this.string_2 + "music\\" + this.string_1 + ".dat.xen", this.class323_0.byte_0);
+				KeyGenerator.smethod_19(this.string_3, this.string_2 + "music\\" + this.string_1 + ".fsb.xen", true);
 			}
 			else
 			{
@@ -188,7 +188,7 @@ namespace ns15
 				}), stream6, 44100, 128);
 				list.Add(this.string_1 + "_preview");
 				list2.Add(stream6);
-				new Class323((int)Class329.smethod_0(this.string_2 + "music\\" + this.string_1 + ".fsb.xen", list2.ToArray()), list.ToArray()).method_2(this.string_2 + "music\\" + this.string_1 + ".dat.xen");
+				new Class323((int)ns20.FSBClass2.smethod_0(this.string_2 + "music\\" + this.string_1 + ".fsb.xen", list2.ToArray()), list.ToArray()).method_2(this.string_2 + "music\\" + this.string_1 + ".dat.xen");
 			}
 			GC.Collect();
 		}

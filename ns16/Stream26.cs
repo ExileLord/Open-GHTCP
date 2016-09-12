@@ -127,21 +127,21 @@ namespace ns16
 			{
 				throw new Exception("Can't read from hexstream!");
 			}
-			return Class244.smethod_31(this.stream_0);
+			return KeyGenerator.smethod_31(this.stream_0);
 		}
 
 		public void method_2(string string_0)
 		{
 			if (this.stream_0 is Stream27)
 			{
-				Class244.smethod_9(string_0, ((Stream27)this.stream_0).ToArray());
+				KeyGenerator.smethod_9(string_0, ((Stream27)this.stream_0).ToArray());
 				return;
 			}
 			if (!this.CanRead)
 			{
 				throw new Exception("Can't read from hexstream!");
 			}
-			Class244.smethod_46(this.stream_0, string_0);
+			KeyGenerator.smethod_46(this.stream_0, string_0);
 		}
 
 		public void method_3(byte byte_0)
@@ -253,7 +253,7 @@ namespace ns16
 			byte[] array = this.method_32(4, false);
 			if (!(bool_2 ^ BitConverter.IsLittleEndian))
 			{
-				return Class244.smethod_28(array);
+				return KeyGenerator.smethod_28(array);
 			}
 			return BitConverter.ToInt32(array, 0);
 		}
@@ -290,7 +290,7 @@ namespace ns16
 			byte[] array = this.method_32(2, false);
 			if (!(bool_2 ^ BitConverter.IsLittleEndian))
 			{
-				return Class244.smethod_27(array);
+				return KeyGenerator.smethod_27(array);
 			}
 			return BitConverter.ToInt16(array, 0);
 		}
@@ -305,7 +305,7 @@ namespace ns16
 			byte[] array = this.method_32(2, false);
 			if (!(bool_2 ^ BitConverter.IsLittleEndian))
 			{
-				return (ushort)Class244.smethod_27(array);
+				return (ushort)KeyGenerator.smethod_27(array);
 			}
 			return BitConverter.ToUInt16(array, 0);
 		}

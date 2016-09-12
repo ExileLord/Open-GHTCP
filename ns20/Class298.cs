@@ -11,7 +11,7 @@ namespace ns20
 			this.vmethod_0();
 		}
 
-		public Class298(string string_0) : this(Class327.smethod_9(string_0))
+		public Class298(string string_0) : this(QbSongClass1.smethod_9(string_0))
 		{
 		}
 
@@ -23,7 +23,7 @@ namespace ns20
 
 		public Class298(string string_0, string string_1)
 		{
-			this.int_0 = Class327.smethod_9(string_0);
+			this.int_0 = QbSongClass1.smethod_9(string_0);
 			base.Nodes.Add(new Class316(string_1));
 			this.vmethod_0();
 		}

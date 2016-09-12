@@ -72,7 +72,7 @@ namespace ns19
 				return;
 			}
 			this.string_0 = string_1;
-			this.int_0 = Class327.smethod_6(string_1);
+			this.int_0 = QbSongClass1.smethod_6(string_1);
 		}
 
 		public override string vmethod_5()

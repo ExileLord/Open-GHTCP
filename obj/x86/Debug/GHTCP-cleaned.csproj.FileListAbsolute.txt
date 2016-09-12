@@ -53,3 +53,17 @@ D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Debug
 D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Debug\ns15.MainMenu.resources
 D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Debug\Properties.Resources.resources
 D:\Guitar Hero 3 Custom Songs\Hacker\GHTCP\GHTCP Backup\Open-GHTCP\obj\x86\Debug\GHTCP-cleaned.csproj.GenerateResource.Cache
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\bin\Debug\GHTCP.exe.config
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\bin\Debug\GHTCP.exe
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\bin\Debug\GHTCP.pdb
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\bin\Debug\Microsoft.DirectX.DirectSound.dll
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\bin\Debug\mid2chart.dll
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\bin\Debug\Microsoft.DirectX.dll
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\bin\Debug\Microsoft.DirectX.DirectSound.xml
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\bin\Debug\Microsoft.DirectX.xml
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\obj\x86\Debug\GHTCP-cleaned.csprojResolveAssemblyReference.cache
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\obj\x86\Debug\ns15.MainMenu.resources
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\obj\x86\Debug\Properties.Resources.resources
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\obj\x86\Debug\GHTCP-cleaned.csproj.GenerateResource.Cache
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\obj\x86\Debug\GHTCP.exe
+C:\Users\Dan\Documents\Visual Studio 2015\Projects\Open-GHTCP\obj\x86\Debug\GHTCP.pdb

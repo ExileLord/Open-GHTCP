@@ -681,7 +681,7 @@
     <Compile Include="ns16\Class240.cs" />
     <Compile Include="ns16\Class242.cs" />
     <Compile Include="ns16\Class243.cs" />
-    <Compile Include="ns16\Class244.cs" />
+    <Compile Include="ns16\KeyGenerator.cs" />
     <Compile Include="ns16\Class245.cs" />
     <Compile Include="ns16\Control0.cs">
       <SubType>Component</SubType>
