@@ -816,6 +816,7 @@
     <Compile Include="ns21\zzCocoaStruct12.cs" />
     <Compile Include="ns21\zzCocoaNode12.cs" />
     <Compile Include="ns21\TreeNodeTextComparer.cs" />
+    <Compile Include="ns22\StreamClass2.cs" />
     <Compile Include="ns22\TagRootNode.cs" />
     <Compile Include="ns22\StructureArrayNode.cs" />
     <Compile Include="ns22\PairArrayNode.cs" />
@@ -832,10 +833,9 @@
     <Compile Include="ns22\Class346.cs" />
     <Compile Include="ns22\ByteFiddler.cs" />
     <Compile Include="ns22\Class349.cs" />
-    <Compile Include="ns22\Class350.cs" />
-    <Compile Include="ns22\Class351.cs" />
     <Compile Include="ns22\MIDINoteMask.cs" />
     <Compile Include="ns22\EmptyInterface1.cs" />
+    <Compile Include="ns22\zzPairKeyDictionary.cs" />
     <Compile Include="ns2\Class20.cs" />
     <Compile Include="ns2\OGGClass4.cs" />
     <Compile Include="ns2\OGGData.cs" />
