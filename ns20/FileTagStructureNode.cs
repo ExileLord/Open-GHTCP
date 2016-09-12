@@ -4,7 +4,7 @@ using System;
 
 namespace ns20
 {
-	public class FileTagStructureNode : Class295
+	public class FileTagStructureNode : zzUnkNode295
 	{
 		public FileTagStructureNode()
 		{

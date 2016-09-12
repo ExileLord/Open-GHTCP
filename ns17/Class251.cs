@@ -16,14 +16,14 @@ namespace ns17
 		public Class251(Class318 class318_1)
 		{
 			this.class318_0 = class318_1;
-			Class296 @class = ((StructureHeaderNode)this.class318_0.method_8("scripts\\guitar\\guitar_events.qb").method_5<Class296>(new Class296("event", "star_power_on")).Parent).method_5<Class296>(new Class296("scr"));
+			TagStructureNode @class = ((StructureHeaderNode)this.class318_0.method_8("scripts\\guitar\\guitar_events.qb").method_5<TagStructureNode>(new TagStructureNode("event", "star_power_on")).Parent).method_5<TagStructureNode>(new TagStructureNode("scr"));
 			this.bool_0 = (@class.method_8() == "guitarevent_starpoweron");
 		}
 
 		public override void vmethod_0()
 		{
 			zzGenericNode1 @class = this.class318_0.method_8("scripts\\guitar\\guitar_events.qb");
-			((StructureHeaderNode)@class.method_5<Class296>(new Class296("event", "star_power_on")).Parent).method_5<Class296>(new Class296("scr")).method_9(this.bool_0 ? "guitarevent_starpoweroff" : "guitarevent_starpoweron");
+			((StructureHeaderNode)@class.method_5<TagStructureNode>(new TagStructureNode("event", "star_power_on")).Parent).method_5<TagStructureNode>(new TagStructureNode("scr")).method_9(this.bool_0 ? "guitarevent_starpoweroff" : "guitarevent_starpoweron");
 			if (!this.bool_0)
 			{
 				@class.method_5<ScriptRootNode>(new ScriptRootNode("hit_note_fx")).int_0 = QbSongClass1.smethod_9("hit_note_fx_empty");
@@ -47,7 +47,7 @@ namespace ns17
 			}
 			else
 			{
-				@class.method_3(new ScriptRootNode("hit_note_fx", "scripts\\guitar\\guitar_events.qb", new Class275()));
+				@class.method_3(new ScriptRootNode("hit_note_fx", "scripts\\guitar\\guitar_events.qb", new QbScriptNode()));
 			}
 			class2 = @class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_starsequencebonus_empty"));
 			if (class2 != null)
@@ -56,7 +56,7 @@ namespace ns17
 			}
 			else
 			{
-				@class.method_3(new ScriptRootNode("guitarevent_starsequencebonus", "scripts\\guitar\\guitar_events.qb", new Class275()));
+				@class.method_3(new ScriptRootNode("guitarevent_starsequencebonus", "scripts\\guitar\\guitar_events.qb", new QbScriptNode()));
 			}
 			class2 = @class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_multiplier4xon_spawned_empty"));
 			if (class2 != null)
@@ -65,7 +65,7 @@ namespace ns17
 			}
 			else
 			{
-				@class.method_3(new ScriptRootNode("guitarevent_multiplier4xon_spawned", "scripts\\guitar\\guitar_events.qb", new Class275()));
+				@class.method_3(new ScriptRootNode("guitarevent_multiplier4xon_spawned", "scripts\\guitar\\guitar_events.qb", new QbScriptNode()));
 			}
 			class2 = @class.method_5<ScriptRootNode>(new ScriptRootNode("first_gem_fx_empty"));
 			if (class2 != null)
@@ -73,7 +73,7 @@ namespace ns17
 				class2.int_0 = QbSongClass1.smethod_9("first_gem_fx");
 				return;
 			}
-			@class.method_3(new ScriptRootNode("first_gem_fx", "scripts\\guitar\\guitar_events.qb", new Class275()));
+			@class.method_3(new ScriptRootNode("first_gem_fx", "scripts\\guitar\\guitar_events.qb", new QbScriptNode()));
 		}
 
 		public override string ToString()

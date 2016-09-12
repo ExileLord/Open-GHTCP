@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace ns18
 {
-	public abstract class Class295 : Class294
+	public abstract class zzUnkNode295 : zzUnkNode294
 	{
 		public abstract byte vmethod_15();
 
@@ -21,7 +21,7 @@ namespace ns18
 			{
 				base.Nodes.Add(new IntegerValueNode(stream26_0.method_19()));
 			}
-			else if (this is Class296 || this is FileTagStructureNode)
+			else if (this is TagStructureNode || this is FileTagStructureNode)
 			{
 				base.Nodes.Add(new TagValueNode(stream26_0.method_19()));
 			}

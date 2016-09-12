@@ -5,7 +5,7 @@ using System.Drawing;
 
 namespace ns18
 {
-	public abstract class Class260 : AbstractTreeNode1
+	public abstract class zzUnkNode260 : AbstractTreeNode1
 	{
 		public int int_0;
 
@@ -33,11 +33,11 @@ namespace ns18
 
 		public override int CompareTo(object target)
 		{
-			if (!target.GetType().Equals(base.GetType()) || (((Class260)target).Nodes.Count != 0 && !((Class260)target).Nodes[0].Equals(base.Nodes[0])))
+			if (!target.GetType().Equals(base.GetType()) || (((zzUnkNode260)target).Nodes.Count != 0 && !((zzUnkNode260)target).Nodes[0].Equals(base.Nodes[0])))
 			{
 				return -1;
 			}
-			if (((Class260)target).int_0 == this.int_0)
+			if (((zzUnkNode260)target).int_0 == this.int_0)
 			{
 				return 0;
 			}
@@ -46,7 +46,7 @@ namespace ns18
 
 		public override object Clone()
 		{
-			Class260 @class = (Class260)base.Clone();
+			zzUnkNode260 @class = (zzUnkNode260)base.Clone();
 			@class.int_0 = this.int_0;
 			@class.int_1 = this.int_1;
 			return @class;

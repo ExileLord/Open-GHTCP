@@ -24,9 +24,9 @@ namespace ns15
 			zzGenericNode1 @class = this.class318_0.method_8("scripts\\guitar\\menu\\menu_cheats.qb");
 			foreach (StructureHeaderNode current in @class.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("guitar_hero_cheats")).method_7().method_8<StructureHeaderNode>())
 			{
-				bool flag = current.method_5<Class296>(new Class296("name", "unlockall")) != null;
-				bool flag2 = current.method_5<Class296>(new Class296("name", "unlockalleverything")) != null;
-				Class280 class2 = current.method_5<Class301>(new Class301("unlock_pattern")).method_8() as Class280;
+				bool flag = current.method_5<TagStructureNode>(new TagStructureNode("name", "unlockall")) != null;
+				bool flag2 = current.method_5<TagStructureNode>(new TagStructureNode("name", "unlockalleverything")) != null;
+				IntegerArrayNode class2 = current.method_5<Class301>(new Class301("unlock_pattern")).method_8() as IntegerArrayNode;
 				if (class2.Nodes.Count == 1)
 				{
 					this.bool_0 = true;

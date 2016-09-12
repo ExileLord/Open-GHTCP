@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ns18
 {
-	public class Class279 : Class278<FloatValueNode>
+	public class FloatArrayNode : zzUnkNode278<FloatValueNode>
 	{
 		public float this[int int_0]
 		{
@@ -18,12 +18,12 @@ namespace ns18
 			}
 		}
 
-		public Class279()
+		public FloatArrayNode()
 		{
 			this.vmethod_0();
 		}
 
-		public Class279(IEnumerable<float> ienumerable_0)
+		public FloatArrayNode(IEnumerable<float> ienumerable_0)
 		{
 			this.method_11(ienumerable_0);
 		}

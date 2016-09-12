@@ -5,7 +5,7 @@ using System;
 
 namespace ns18
 {
-	public abstract class Class278<T> : AbsTreeNode1_1_<T> where T : AbstractBaseTreeNode1
+	public abstract class zzUnkNode278<T> : AbsTreeNode1_1_<T> where T : AbstractBaseTreeNode1
 	{
 		public abstract byte vmethod_15();
 
@@ -20,7 +20,7 @@ namespace ns18
 			{
 				stream26_0.Position = (long)stream26_0.method_19();
 			}
-			if (this is Class279)
+			if (this is FloatArrayNode)
 			{
 				for (int i = 0; i < num; i++)
 				{
@@ -28,7 +28,7 @@ namespace ns18
 				}
 				return;
 			}
-			if (this is Class280)
+			if (this is IntegerArrayNode)
 			{
 				for (int j = 0; j < num; j++)
 				{

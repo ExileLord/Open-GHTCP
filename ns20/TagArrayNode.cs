@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ns20
 {
-	public class TagArray : Class278<TagValueNode>
+	public class TagArray : zzUnkNode278<TagValueNode>
 	{
 		public int this[int int_0]
 		{

@@ -674,7 +674,7 @@
     <Compile Include="ns16\EventHandlerClass1.cs" />
     <Compile Include="ns16\ByteList.cs" />
     <Compile Include="ns16\UnkCollection1.cs" />
-    <Compile Include="ns16\Class238.cs">
+    <Compile Include="ns16\zzListBox238.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ns16\Class239.cs" />
@@ -714,21 +714,21 @@
     <Compile Include="ns17\SongEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ns18\Class257.cs" />
+    <Compile Include="ns18\UnusedCompilerClass2.cs" />
     <Compile Include="ns18\AbstractBaseTreeNode1.cs" />
     <Compile Include="ns18\AbstractTreeNode1.cs" />
-    <Compile Include="ns18\Class260.cs" />
-    <Compile Include="ns18\Class261.cs" />
-    <Compile Include="ns18\Class262.cs" />
-    <Compile Include="ns18\Class275.cs" />
+    <Compile Include="ns18\zzUnkNode260.cs" />
+    <Compile Include="ns18\AsciiRootNode.cs" />
+    <Compile Include="ns18\TextRootNode.cs" />
+    <Compile Include="ns18\QbScriptNode.cs" />
     <Compile Include="ns18\AbsTreeNode1_1.cs" />
     <Compile Include="ns18\AbsTreeNode1_1_Gen.cs" />
-    <Compile Include="ns18\Class278.cs" />
-    <Compile Include="ns18\Class279.cs" />
-    <Compile Include="ns18\Class280.cs" />
-    <Compile Include="ns18\Class294.cs" />
-    <Compile Include="ns18\Class295.cs" />
-    <Compile Include="ns18\Class296.cs" />
+    <Compile Include="ns18\zzUnkNode278.cs" />
+    <Compile Include="ns18\FloatArrayNode.cs" />
+    <Compile Include="ns18\IntegerArrayNode.cs" />
+    <Compile Include="ns18\zzUnkNode294.cs" />
+    <Compile Include="ns18\zzUnkNode295.cs" />
+    <Compile Include="ns18\TagStructureNode.cs" />
     <Compile Include="ns18\AbstractTreeNode2.cs" />
     <Compile Include="ns18\Enum34.cs" />
     <Compile Include="ns18\EventArgs1.cs" />

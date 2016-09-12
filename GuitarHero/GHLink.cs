@@ -36,15 +36,15 @@ namespace GuitarHero
 
 		public void method_0(StructureHeaderNode class286_0)
 		{
-			this.setlist = class286_0.method_5<Class296>(new Class296("tier_global")).method_10();
-			this.progression = class286_0.method_5<Class296>(new Class296("progression_global")).method_10();
+			this.setlist = class286_0.method_5<TagStructureNode>(new TagStructureNode("tier_global")).method_10();
+			this.progression = class286_0.method_5<TagStructureNode>(new TagStructureNode("progression_global")).method_10();
 		}
 
 		public StructureHeaderNode method_1()
 		{
 			StructureHeaderNode @class = new StructureHeaderNode();
-			@class.method_3(new Class296("tier_global", this.setlist));
-			@class.method_3(new Class296("progression_global", this.progression));
+			@class.method_3(new TagStructureNode("tier_global", this.setlist));
+			@class.method_3(new TagStructureNode("progression_global", this.progression));
 			return @class;
 		}
 	}

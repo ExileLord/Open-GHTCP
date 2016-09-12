@@ -221,7 +221,7 @@ namespace ns15
 
 		private Label label11;
 
-		private Class238 TierSongs_ListBox;
+		private zzListBox238 TierSongs_ListBox;
 
 		private Button SetlistApply_Btn;
 
@@ -335,7 +335,7 @@ namespace ns15
 
 		private ToolStripButton LoadChart_EditorBtn;
 
-		private Class238 SongListBox;
+		private zzListBox238 SongListBox;
 
 		private ToolStripButton Stop_EditorBtn;
 
@@ -2089,7 +2089,7 @@ namespace ns15
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SidePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.SongListBox = new ns16.Class238();
+            this.SongListBox = new ns16.zzListBox238();
             this.notifyIcon_0 = new System.Windows.Forms.NotifyIcon(this.components);
             this.fontDialog_0 = new System.Windows.Forms.FontDialog();
             this.leftClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -2161,7 +2161,7 @@ namespace ns15
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.TierSongs_Panel = new System.Windows.Forms.TableLayoutPanel();
-            this.TierSongs_ListBox = new ns16.Class238();
+            this.TierSongs_ListBox = new ns16.zzListBox238();
             this.label11 = new System.Windows.Forms.Label();
             this.SetlistStrip = new System.Windows.Forms.ToolStrip();
             this.Setlist_Lbl = new System.Windows.Forms.ToolStripLabel();

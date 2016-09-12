@@ -59,9 +59,9 @@ namespace GuitarHero.Songlist
 			base.vmethod_4(class302_0);
 			UnicodeStructureNode @class;
 			this.covered_by = (((@class = class302_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("covered_by"))) != null) ? @class.method_8() : "");
-			Class296 class2;
-			this.band = (((class2 = class302_0.method_5<Class296>(new Class296("band"))) != null) ? class2.method_8() : "default_band");
-			this.guitarist_checksum = ((class2 = class302_0.method_5<Class296>(new Class296("guitarist_checksum"))) != null && class2.method_8() == "aerosmith");
+			TagStructureNode class2;
+			this.band = (((class2 = class302_0.method_5<TagStructureNode>(new TagStructureNode("band"))) != null) ? class2.method_8() : "default_band");
+			this.guitarist_checksum = ((class2 = class302_0.method_5<TagStructureNode>(new TagStructureNode("guitarist_checksum"))) != null && class2.method_8() == "aerosmith");
 			Class305 class3;
 			this.singer_anim_pak = (((class3 = class302_0.method_5<Class305>(new Class305("singer_anim_pak"))) != null) ? class3.method_8() : "");
 			IntegerStructureNode class4;
@@ -77,10 +77,10 @@ namespace GuitarHero.Songlist
 			{
 				class2.method_3(new UnicodeStructureNode("covered_by", this.covered_by));
 			}
-			class2.method_3(new Class296("band", this.band));
+			class2.method_3(new TagStructureNode("band", this.band));
 			if (this.guitarist_checksum)
 			{
-				class2.method_3(new Class296("guitarist_checksum", "aerosmith"));
+				class2.method_3(new TagStructureNode("guitarist_checksum", "aerosmith"));
 			}
 			if (!this.singer_anim_pak.Equals(""))
 			{

@@ -3,7 +3,7 @@ using System;
 
 namespace ns21
 {
-	public class FileTagArrayNode : Class278<TagValueNode>
+	public class FileTagArrayNode : zzUnkNode278<TagValueNode>
 	{
 		public int this[int int_0]
 		{

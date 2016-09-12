@@ -5,7 +5,7 @@ using System;
 
 namespace ns19
 {
-	public abstract class Class300 : Class294
+	public abstract class Class300 : zzUnkNode294
 	{
 		public abstract byte vmethod_15();
 

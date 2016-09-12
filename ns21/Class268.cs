@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace ns21
 {
-	public abstract class Class268 : Class260
+	public abstract class Class268 : zzUnkNode260
 	{
 		public abstract byte vmethod_16();
 

@@ -3,7 +3,7 @@ using System;
 
 namespace ns20
 {
-	public class FloatStructureNode : Class295
+	public class FloatStructureNode : zzUnkNode295
 	{
 		public FloatStructureNode()
 		{

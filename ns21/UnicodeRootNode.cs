@@ -6,7 +6,7 @@ using System;
 
 namespace ns21
 {
-	public class UnicodeRootNode : Class260
+	public class UnicodeRootNode : zzUnkNode260
 	{
 		public UnicodeRootNode()
 		{

@@ -5,7 +5,7 @@ using System.Drawing;
 
 namespace ns19
 {
-	public abstract class ProbablyRootNode : Class260
+	public abstract class ProbablyRootNode : zzUnkNode260
 	{
 		public abstract byte vmethod_16();
 

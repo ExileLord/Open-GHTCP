@@ -6,7 +6,7 @@ using System;
 
 namespace ns19
 {
-	public class Class305 : Class294
+	public class Class305 : zzUnkNode294
 	{
 		public Class305()
 		{

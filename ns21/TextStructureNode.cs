@@ -5,7 +5,7 @@ using System;
 
 namespace ns21
 {
-	public class TextStructureNode : Class294
+	public class TextStructureNode : zzUnkNode294
 	{
 		public TextStructureNode()
 		{

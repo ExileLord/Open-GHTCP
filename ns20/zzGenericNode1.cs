@@ -177,11 +177,11 @@ namespace ns20
 						}
 						if (num2 == 1)
 						{
-							return new Class280();
+							return new IntegerArrayNode();
 						}
 						if (num2 == 2)
 						{
-							return new Class279();
+							return new FloatArrayNode();
 						}
 						if (num2 == 3)
 						{
@@ -259,7 +259,7 @@ namespace ns20
 						}
 						if (num == 27)
 						{
-							return new Class296();
+							return new TagStructureNode();
 						}
 						if (num == 53)
 						{
@@ -311,7 +311,7 @@ namespace ns20
 						}
 						if (num2 == 13)
 						{
-							return new Class296();
+							return new TagStructureNode();
 						}
 						throw ex;
 					}
@@ -327,7 +327,7 @@ namespace ns20
 			}
 			if (num2 == 3)
 			{
-				return new Class261();
+				return new AsciiRootNode();
 			}
 			if (num2 == 4)
 			{
@@ -365,7 +365,7 @@ namespace ns20
 			if (num2 == 28)
 			{
 				this.bool_2 = true;
-				return new Class262();
+				return new TextRootNode();
 			}
 			throw ex;
 		}

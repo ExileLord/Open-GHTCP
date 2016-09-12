@@ -4,8 +4,11 @@ using System.Runtime.InteropServices;
 
 namespace ns18
 {
+
+    //Can probably be removed
+
 	[CompilerGenerated]
-	public class Class257
+	public class UnusedCompilerClass2
 	{
 		[StructLayout(LayoutKind.Explicit, Pack = 1, Size = 136)]
 		public struct Struct84
@@ -22,10 +25,10 @@ namespace ns18
 		{
 		}
 
-		public static Class257.Struct84 struct84_0;
+		public static UnusedCompilerClass2.Struct84 struct84_0;
 
-		public static Class257.Struct85 struct85_0;
+		public static UnusedCompilerClass2.Struct85 struct85_0;
 
-		public static Class257.Struct86 struct86_0;
+		public static UnusedCompilerClass2.Struct86 struct86_0;
 	}
 }

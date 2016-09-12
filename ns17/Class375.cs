@@ -79,11 +79,11 @@ namespace ns17
 			using (Stream26 stream = class318_0.method_17())
 			{
 				stream.Position = 0L;
-				@class.method_3(new ArrayPointerRootNode("hash", Class375.string_0, new Class280(KeyGenerator.smethod_21(KeyGenerator.smethod_43(stream.stream_0)))));
+				@class.method_3(new ArrayPointerRootNode("hash", Class375.string_0, new IntegerArrayNode(KeyGenerator.smethod_21(KeyGenerator.smethod_43(stream.stream_0)))));
 			}
 			GC.Collect();
 			DateTime now = DateTime.Now;
-			@class.method_3(new ArrayPointerRootNode("date", Class375.string_0, new Class279(new float[]
+			@class.method_3(new ArrayPointerRootNode("date", Class375.string_0, new FloatArrayNode(new float[]
 			{
 				(float)now.Year,
 				(float)now.Month,

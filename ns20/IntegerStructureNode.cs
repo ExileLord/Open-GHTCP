@@ -4,7 +4,7 @@ using System;
 
 namespace ns20
 {
-	public class IntegerStructureNode : Class295
+	public class IntegerStructureNode : zzUnkNode295
 	{
 		public IntegerStructureNode()
 		{

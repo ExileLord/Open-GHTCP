@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace ns21
 {
-	public class ScriptRootNode : Class260
+	public class ScriptRootNode : zzUnkNode260
 	{
 		public ScriptRootNode()
 		{
@@ -23,11 +23,11 @@ namespace ns21
 			this.vmethod_0();
 		}
 
-		public ScriptRootNode(string string_0, string string_1, Class275 class275_0) : this(QbSongClass1.smethod_9(string_0), QbSongClass1.smethod_9(string_1), class275_0)
+		public ScriptRootNode(string string_0, string string_1, QbScriptNode class275_0) : this(QbSongClass1.smethod_9(string_0), QbSongClass1.smethod_9(string_1), class275_0)
 		{
 		}
 
-		public ScriptRootNode(int int_2, int int_3, Class275 class275_0)
+		public ScriptRootNode(int int_2, int int_3, QbScriptNode class275_0)
 		{
 			this.int_0 = int_2;
 			this.int_1 = int_3;
@@ -49,7 +49,7 @@ namespace ns21
 			if (num != 0)
 			{
 				stream26_0.Position = (long)num;
-				Class275 @class = new Class275();
+				QbScriptNode @class = new QbScriptNode();
 				base.Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}
@@ -85,9 +85,9 @@ namespace ns21
 			return "Script Root";
 		}
 
-		public Class275 method_7()
+		public QbScriptNode method_7()
 		{
-			return (Class275)base.Nodes[0];
+			return (QbScriptNode)base.Nodes[0];
 		}
 
 		public override Color vmethod_15()

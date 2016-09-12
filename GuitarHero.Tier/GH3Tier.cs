@@ -78,15 +78,15 @@ namespace GuitarHero.Tier
 			this.completion_movie = (((class2 = class286_0.method_5<Class305>(new Class305("completion_movie"))) != null) ? class2.method_8() : "");
 			IntegerStructureNode class3;
 			this.defaultunlocked = (((class3 = class286_0.method_5<IntegerStructureNode>(new IntegerStructureNode("defaultunlocked"))) != null) ? class3.method_8() : 0);
-			Class296 class4;
-			this.level = (((class4 = class286_0.method_5<Class296>(new Class296("level"))) != null) ? class4.method_8() : "No Preset Stage");
-			this.setlist_icon = (((class4 = class286_0.method_5<Class296>(new Class296("setlist_icon"))) != null) ? class4.method_8() : "No Icon");
-			this.encorep1 = (class286_0.method_5<Class296>(new Class296(0, "encorep1")) != null);
-			this.encorep2 = (class286_0.method_5<Class296>(new Class296(0, "encorep2")) != null);
-			this.aerosmith_encore_p1 = (class286_0.method_5<Class296>(new Class296(0, "aerosmith_encore_p1")) != null);
-			this.boss = (class286_0.method_5<Class296>(new Class296(0, "boss")) != null);
-			this.nocash = (class286_0.method_5<Class296>(new Class296(0, "nocash")) != null);
-			this.unlockall = (class286_0.method_5<Class296>(new Class296(0, "unlockall")) != null);
+			TagStructureNode class4;
+			this.level = (((class4 = class286_0.method_5<TagStructureNode>(new TagStructureNode("level"))) != null) ? class4.method_8() : "No Preset Stage");
+			this.setlist_icon = (((class4 = class286_0.method_5<TagStructureNode>(new TagStructureNode("setlist_icon"))) != null) ? class4.method_8() : "No Icon");
+			this.encorep1 = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "encorep1")) != null);
+			this.encorep2 = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "encorep2")) != null);
+			this.aerosmith_encore_p1 = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "aerosmith_encore_p1")) != null);
+			this.boss = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "boss")) != null);
+			this.nocash = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "nocash")) != null);
+			this.unlockall = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "unlockall")) != null);
 			Class301 class5 = new Class301("songs");
 			if (class286_0.method_6<Class301>(ref class5) && !(class5.method_8() is FloatListNode))
 			{
@@ -123,23 +123,23 @@ namespace GuitarHero.Tier
 			}
 			if (this.boss)
 			{
-				@class.method_3(new Class296(0, "boss"));
+				@class.method_3(new TagStructureNode(0, "boss"));
 			}
 			if (this.encorep1)
 			{
-				@class.method_3(new Class296(0, "encorep1"));
+				@class.method_3(new TagStructureNode(0, "encorep1"));
 			}
 			if (this.encorep2)
 			{
-				@class.method_3(new Class296(0, "encorep2"));
+				@class.method_3(new TagStructureNode(0, "encorep2"));
 			}
 			if (this.aerosmith_encore_p1)
 			{
-				@class.method_3(new Class296(0, "aerosmith_encore_p1"));
+				@class.method_3(new TagStructureNode(0, "aerosmith_encore_p1"));
 			}
 			if (this.level != null && this.level != "No Preset Stage")
 			{
-				@class.method_3(new Class296("level", this.level));
+				@class.method_3(new TagStructureNode("level", this.level));
 			}
 			if (this.defaultunlocked != 0)
 			{
@@ -151,15 +151,15 @@ namespace GuitarHero.Tier
 			}
 			if (!this.setlist_icon.Equals("No Icon"))
 			{
-				@class.method_3(new Class296("setlist_icon", this.setlist_icon));
+				@class.method_3(new TagStructureNode("setlist_icon", this.setlist_icon));
 			}
 			if (this.nocash)
 			{
-				@class.method_3(new Class296(0, "nocash"));
+				@class.method_3(new TagStructureNode(0, "nocash"));
 			}
 			if (this.unlockall)
 			{
-				@class.method_3(new Class296(0, "unlockall"));
+				@class.method_3(new TagStructureNode(0, "unlockall"));
 			}
 			return @class;
 		}

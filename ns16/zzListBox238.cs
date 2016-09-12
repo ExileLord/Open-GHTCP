@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace ns16
 {
-	public class Class238 : ListBox, Interface11
+	public class zzListBox238 : ListBox, Interface11
 	{
 		private Rectangle rectangle_0 = Rectangle.Empty;
 
@@ -29,7 +29,7 @@ namespace ns16
 
 		private EventHandler<EventArgs2> eventHandler_0;
 
-		public Class238()
+		public zzListBox238()
 		{
 			this.AllowDrop = true;
 			this.class230_0 = new Class230(this);

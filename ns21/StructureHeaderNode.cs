@@ -8,13 +8,13 @@ using System.Collections.Generic;
 
 namespace ns21
 {
-	public class StructureHeaderNode : AbsTreeNode1_1_<Class294>
+	public class StructureHeaderNode : AbsTreeNode1_1_<zzUnkNode294>
 	{
-		public Class294 this[int int_0]
+		public zzUnkNode294 this[int int_0]
 		{
 			get
 			{
-				return (Class294)base.Nodes[int_0];
+				return (zzUnkNode294)base.Nodes[int_0];
 			}
 			set
 			{
@@ -27,7 +27,7 @@ namespace ns21
 			this.vmethod_0();
 		}
 
-		public StructureHeaderNode(IEnumerable<Class294> ienumerable_0)
+		public StructureHeaderNode(IEnumerable<zzUnkNode294> ienumerable_0)
 		{
 			base.method_10(ienumerable_0);
 		}
@@ -114,7 +114,7 @@ namespace ns21
 				}
 				if (num2 == 13)
 				{
-					return new Class296();
+					return new TagStructureNode();
 				}
 				if (num2 == 26)
 				{
@@ -162,7 +162,7 @@ namespace ns21
 				}
 				if (num == 27)
 				{
-					return new Class296();
+					return new TagStructureNode();
 				}
 				if (num == 53)
 				{
@@ -214,7 +214,7 @@ namespace ns21
 				}
 				if (num2 == 13)
 				{
-					return new Class296();
+					return new TagStructureNode();
 				}
 				throw ex;
 			}

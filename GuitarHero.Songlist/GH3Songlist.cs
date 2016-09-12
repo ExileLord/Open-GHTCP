@@ -167,7 +167,7 @@ namespace GuitarHero.Songlist
 		{
 			foreach (StructureHeaderNode @class in class292_0.Nodes)
 			{
-				int num = @class.method_5<Class296>(new Class296("tag")).method_10();
+				int num = @class.method_5<TagStructureNode>(new TagStructureNode("tag")).method_10();
 				if (this.dictionary_1.ContainsKey(num))
 				{
 					this.class214_0.Add(@class.method_5<UnicodeStructureNode>(new UnicodeStructureNode("text")).method_8(), num);
@@ -180,9 +180,9 @@ namespace GuitarHero.Songlist
 			StructureArrayNode @class = new StructureArrayNode();
 			foreach (string current in this.class214_0.Keys)
 			{
-				@class.method_3(new StructureHeaderNode(new List<Class294>
+				@class.method_3(new StructureHeaderNode(new List<zzUnkNode294>
 				{
-					new Class296("tag", this.class214_0[current]),
+					new TagStructureNode("tag", this.class214_0[current]),
 					new UnicodeStructureNode("text", current)
 				}));
 			}
@@ -219,7 +219,7 @@ namespace GuitarHero.Songlist
 		public void method_12(zzGenericNode1 class308_0, GH3Songlist gh3Songlist_0)
 		{
 			StructureHeaderNode @class = class308_0.method_5<StructurePointerRootNode>(new StructurePointerRootNode("permanent_songlist_props")).method_7();
-			bool flag = class308_0.method_5<Class296>(new Class296("band")) != null;
+			bool flag = class308_0.method_5<TagStructureNode>(new TagStructureNode("band")) != null;
 			base.Clear();
 			foreach (StructurePointerNode class2 in @class.Nodes)
 			{
@@ -236,7 +236,7 @@ namespace GuitarHero.Songlist
 		public void method_13(zzGenericNode1 class308_0)
 		{
 			List<int> list = new List<int>();
-			List<Class294> list2 = new List<Class294>();
+			List<zzUnkNode294> list2 = new List<zzUnkNode294>();
 			foreach (string current in base.Keys)
 			{
 				list.Add(QbSongClass1.smethod_9(current));

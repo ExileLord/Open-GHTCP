@@ -164,13 +164,13 @@ namespace GuitarHero.Songlist
 				this.original_artist = ((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("original_artist"))) != null && class4.method_8() == 1);
 				this.leaderboard = ((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("leaderboard"))) != null && class4.method_8() == 1);
 				this.not_bass = ((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("rhythm_track"))) != null && class4.method_8() == 1);
-				Class296 class5;
-				this.keyboard = ((class5 = class302_0.method_5<Class296>(new Class296("keyboard"))) != null && class5.method_8() == "true");
-				this.singer = (((class5 = class302_0.method_5<Class296>(new Class296("singer"))) != null) ? class5.method_8() : "");
-				this.boss = (((class5 = class302_0.method_5<Class296>(new Class296("boss"))) != null) ? class5.method_8() : "");
-				this.version = (((class5 = class302_0.method_5<Class296>(new Class296("version"))) != null) ? Convert.ToInt32(string.Concat(class5.method_8()[2])) : 3);
-				this.use_coop_notetracks = (class302_0.method_5<Class296>(new Class296(0, "use_coop_notetracks")) != null);
-				this.no_rhythm_track = (class302_0.method_5<Class296>(new Class296(0, "no_rhythm_track")) != null);
+				TagStructureNode class5;
+				this.keyboard = ((class5 = class302_0.method_5<TagStructureNode>(new TagStructureNode("keyboard"))) != null && class5.method_8() == "true");
+				this.singer = (((class5 = class302_0.method_5<TagStructureNode>(new TagStructureNode("singer"))) != null) ? class5.method_8() : "");
+				this.boss = (((class5 = class302_0.method_5<TagStructureNode>(new TagStructureNode("boss"))) != null) ? class5.method_8() : "");
+				this.version = (((class5 = class302_0.method_5<TagStructureNode>(new TagStructureNode("version"))) != null) ? Convert.ToInt32(string.Concat(class5.method_8()[2])) : 3);
+				this.use_coop_notetracks = (class302_0.method_5<TagStructureNode>(new TagStructureNode(0, "use_coop_notetracks")) != null);
+				this.no_rhythm_track = (class302_0.method_5<TagStructureNode>(new TagStructureNode(0, "no_rhythm_track")) != null);
 				try
 				{
 					this.artist_text = class302_0.method_5<FileTagStructureNode>(new FileTagStructureNode("artist_text")).method_8().Equals("artist_text_by");
@@ -188,7 +188,7 @@ namespace GuitarHero.Songlist
 		public virtual StructurePointerNode vmethod_5()
 		{
 			StructureHeaderNode @class = new StructureHeaderNode();
-			@class.method_3(new Class296("checksum", this.name));
+			@class.method_3(new TagStructureNode("checksum", this.name));
 			@class.method_3(new Class305("name", this.name));
 			@class.method_3(new UnicodeStructureNode("title", this.title));
 			@class.method_3(new UnicodeStructureNode("artist", this.artist.Equals("") ? " " : this.artist));
@@ -206,7 +206,7 @@ namespace GuitarHero.Songlist
 			{
 				this.version = 3;
 			}
-			@class.method_3(new Class296("version", "gh" + this.version));
+			@class.method_3(new TagStructureNode("version", "gh" + this.version));
 			@class.method_3(new IntegerStructureNode("leaderboard", this.leaderboard ? 1 : 0));
 			if (this.gem_offset != 0)
 			{
@@ -222,15 +222,15 @@ namespace GuitarHero.Songlist
 			}
 			if (!this.singer.Equals(""))
 			{
-				@class.method_3(new Class296("singer", this.singer));
+				@class.method_3(new TagStructureNode("singer", this.singer));
 			}
 			if (!this.boss.Equals(""))
 			{
-				@class.method_3(new Class296("boss", this.boss));
+				@class.method_3(new TagStructureNode("boss", this.boss));
 			}
 			if (!this.keyboard)
 			{
-				@class.method_3(new Class296("keyboard", "false"));
+				@class.method_3(new TagStructureNode("keyboard", "false"));
 			}
 			if (!this.bassist.Equals("Generic Bassist"))
 			{
@@ -255,11 +255,11 @@ namespace GuitarHero.Songlist
 			}
 			if (this.use_coop_notetracks)
 			{
-				@class.method_3(new Class296(0, "use_coop_notetracks"));
+				@class.method_3(new TagStructureNode(0, "use_coop_notetracks"));
 			}
 			if (this.no_rhythm_track)
 			{
-				@class.method_3(new Class296(0, "no_rhythm_track"));
+				@class.method_3(new TagStructureNode(0, "no_rhythm_track"));
 			}
 			return new StructurePointerNode(this.name, @class);
 		}

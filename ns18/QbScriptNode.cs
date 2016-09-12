@@ -6,13 +6,13 @@ using System.Drawing;
 
 namespace ns18
 {
-	public class Class275 : AbstractTreeNode1
+	public class QbScriptNode : AbstractTreeNode1
 	{
 		public byte[] byte_0;
 
 		public int int_0;
 
-		public Class275()
+		public QbScriptNode()
 		{
 			this.int_0 = -1;
 			this.byte_0 = new byte[]
@@ -61,11 +61,11 @@ namespace ns18
 
 		public override int CompareTo(object target)
 		{
-			if (!(target is Class275))
+			if (!(target is QbScriptNode))
 			{
 				return -1;
 			}
-			if (((Class275)target).int_0 == this.int_0)
+			if (((QbScriptNode)target).int_0 == this.int_0)
 			{
 				return 0;
 			}
@@ -108,7 +108,7 @@ namespace ns18
 
 		public override object Clone()
 		{
-			Class275 @class = (Class275)base.Clone();
+			QbScriptNode @class = (QbScriptNode)base.Clone();
 			@class.int_0 = this.int_0;
 			@class.byte_0 = new byte[this.byte_0.Length];
 			Buffer.BlockCopy(this.byte_0, 0, @class.byte_0, 0, this.byte_0.Length);

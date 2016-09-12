@@ -67,9 +67,9 @@ namespace ns17
 				}
 				@class = this.class318_0.method_8("scripts\\guitar\\menu\\main_menu_flow.qb");
 				StructureHeaderNode class2 = new StructureHeaderNode();
-				class2.method_3(new Class296("action", "select_custom_menu"));
-				class2.method_3(new Class296("flow_state", "custom_menu_fs"));
-				class2.method_3(new Class296(0, "transition_right"));
+				class2.method_3(new TagStructureNode("action", "select_custom_menu"));
+				class2.method_3(new TagStructureNode("flow_state", "custom_menu_fs"));
+				class2.method_3(new TagStructureNode(0, "transition_right"));
 				@class.method_5<StructurePointerRootNode>(new StructurePointerRootNode("main_menu_fs")).method_5<Class301>(new Class301("actions")).method_8().method_3(class2);
 			}
 		}
