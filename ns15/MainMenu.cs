@@ -4115,7 +4115,7 @@ namespace ns15
 			this.SongListBox.Items.Clear();
 			this.Setlist_DropBox.Items.Clear();
 			this.ActionRequests_ListBox.Items.Clear();
-            this.notifyIcon_0.Visible = false;
+            //this.notifyIcon_0.Visible = false;
 			this.method_23();
 			if (!Directory.Exists(this.string_0 + "log"))
 			{
