@@ -1026,11 +1026,6 @@ namespace ns15
 						{
 							new QBCParser(gh3Song.name, @class.method_8("songs\\" + gh3Song.name + ".mid.qb")).method_1().dbcCreator(fileLocation, gh3Song);
 						}
-                       /* string firstArg = this.dataFolder + "MUSIC\\" + gh3Song.name + ".fsb.xen";
-                        MessageBox.Show(firstArg);
-                        string secondArg = firstArg + ".fsb";
-                        System.Diagnostics.Process.Start("D:\\Guitar Hero 3 Custom Songs\\Chart Maker\\FSB Extractor\\decfsb.exe", "for %%a IN (" + firstArg + ") DO decfsb %%a %%a.fsb -x ac 86 2e ae 6c ee 2c 5e 86 ee\nfor %% b IN(" + secondArg + ") Do ren %% b\nfor %% c IN(*.fsb) Do fsbext - R %% c");
-                        */
                         return;
 					}
 				}
@@ -2073,6 +2068,7 @@ namespace ns15
             this.RebuildSong_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SilentGuitar_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ForceMp3Conversion_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forceRB3MidConversionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteSong_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoveSong_ToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.HideUnEdit_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -2173,7 +2169,6 @@ namespace ns15
             this.MainContainer = new System.Windows.Forms.ToolStripContainer();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.ToolStripStatusLbl = new System.Windows.Forms.ToolStripStatusLabel();
-            this.forceRB3MidConversionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rightClickMenu.SuspendLayout();
             this.TopMenuStrip.SuspendLayout();
             this.SidePanel.SuspendLayout();
@@ -2311,7 +2306,7 @@ namespace ns15
             // 
             this.OpenGameSettings_MenuItem.Name = "OpenGameSettings_MenuItem";
             this.OpenGameSettings_MenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.OpenGameSettings_MenuItem.Size = new System.Drawing.Size(264, 22);
+            this.OpenGameSettings_MenuItem.Size = new System.Drawing.Size(241, 22);
             this.OpenGameSettings_MenuItem.Text = "&Open Game Settings";
             this.OpenGameSettings_MenuItem.Click += new System.EventHandler(this.OpenGameSettings_MenuItem_Click);
             // 
@@ -2319,7 +2314,7 @@ namespace ns15
             // 
             this.RecoverGameSettings_MenuItem.Name = "RecoverGameSettings_MenuItem";
             this.RecoverGameSettings_MenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.RecoverGameSettings_MenuItem.Size = new System.Drawing.Size(264, 22);
+            this.RecoverGameSettings_MenuItem.Size = new System.Drawing.Size(241, 22);
             this.RecoverGameSettings_MenuItem.Text = "&Recover Game Settings";
             this.RecoverGameSettings_MenuItem.Click += new System.EventHandler(this.RecoverGameSettings_MenuItem_Click);
             // 
@@ -2327,7 +2322,7 @@ namespace ns15
             // 
             this.ClearGameSettings_MenuItem.Name = "ClearGameSettings_MenuItem";
             this.ClearGameSettings_MenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.ClearGameSettings_MenuItem.Size = new System.Drawing.Size(264, 22);
+            this.ClearGameSettings_MenuItem.Size = new System.Drawing.Size(241, 22);
             this.ClearGameSettings_MenuItem.Text = "Clear Game Settings";
             this.ClearGameSettings_MenuItem.Click += new System.EventHandler(this.ClearGameSettings_MenuItem_Click);
             // 
@@ -2336,7 +2331,7 @@ namespace ns15
             this.ExecuteActions_MenuItem.Name = "ExecuteActions_MenuItem";
             this.ExecuteActions_MenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.S)));
-            this.ExecuteActions_MenuItem.Size = new System.Drawing.Size(264, 22);
+            this.ExecuteActions_MenuItem.Size = new System.Drawing.Size(241, 22);
             this.ExecuteActions_MenuItem.Text = "Execute &Actions";
             this.ExecuteActions_MenuItem.Click += new System.EventHandler(this.ExecuteActions_MenuItem_Click);
             // 
@@ -2345,21 +2340,21 @@ namespace ns15
             this.ClearActions_MenuItem.Name = "ClearActions_MenuItem";
             this.ClearActions_MenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.Q)));
-            this.ClearActions_MenuItem.Size = new System.Drawing.Size(264, 22);
+            this.ClearActions_MenuItem.Size = new System.Drawing.Size(241, 22);
             this.ClearActions_MenuItem.Text = "&Clear Actions";
             this.ClearActions_MenuItem.Click += new System.EventHandler(this.ClearActions_MenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(261, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(238, 6);
             // 
             // SaveTGH_MenuItem
             // 
             this.SaveTGH_MenuItem.Name = "SaveTGH_MenuItem";
             this.SaveTGH_MenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.SaveTGH_MenuItem.Size = new System.Drawing.Size(264, 22);
+            this.SaveTGH_MenuItem.Size = new System.Drawing.Size(241, 22);
             this.SaveTGH_MenuItem.Text = "Export &TGH (Tier)";
             this.SaveTGH_MenuItem.Click += new System.EventHandler(this.SaveTGH_MenuItem_Click);
             // 
@@ -2367,35 +2362,35 @@ namespace ns15
             // 
             this.SaveSGH_MenuItem.Name = "SaveSGH_MenuItem";
             this.SaveSGH_MenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
-            this.SaveSGH_MenuItem.Size = new System.Drawing.Size(264, 22);
+            this.SaveSGH_MenuItem.Size = new System.Drawing.Size(241, 22);
             this.SaveSGH_MenuItem.Text = "Export &SGH (Setlist)";
             this.SaveSGH_MenuItem.Click += new System.EventHandler(this.SaveSGH_MenuItem_Click);
             // 
             // SaveChart_MenuItem
             // 
             this.SaveChart_MenuItem.Name = "SaveChart_MenuItem";
-            this.SaveChart_MenuItem.Size = new System.Drawing.Size(264, 22);
+            this.SaveChart_MenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.SaveChart_MenuItem.Size = new System.Drawing.Size(241, 22);
             this.SaveChart_MenuItem.Text = "Export Song Chart";
             this.SaveChart_MenuItem.Click += new System.EventHandler(this.SaveChart_MenuItem_Click);
             // 
             // exportSetlistAsChartsToolStripMenuItem
             // 
             this.exportSetlistAsChartsToolStripMenuItem.Name = "exportSetlistAsChartsToolStripMenuItem";
-            this.exportSetlistAsChartsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.exportSetlistAsChartsToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
+            this.exportSetlistAsChartsToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
             this.exportSetlistAsChartsToolStripMenuItem.Text = "Export Setlist as Charts";
             this.exportSetlistAsChartsToolStripMenuItem.Click += new System.EventHandler(this.exportSetlistAsChartsToolStripMenuItem_Click_1);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(261, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(238, 6);
             // 
             // Exit_MenuItem
             // 
             this.Exit_MenuItem.Name = "Exit_MenuItem";
-            this.Exit_MenuItem.Size = new System.Drawing.Size(264, 22);
+            this.Exit_MenuItem.Size = new System.Drawing.Size(241, 22);
             this.Exit_MenuItem.Text = "&Exit";
             this.Exit_MenuItem.Click += new System.EventHandler(this.Exit_MenuItem_Click);
             // 
@@ -2611,6 +2606,14 @@ namespace ns15
             this.ForceMp3Conversion_MenuItem.Size = new System.Drawing.Size(221, 22);
             this.ForceMp3Conversion_MenuItem.Text = "Force Mp3 Conversion";
             this.ForceMp3Conversion_MenuItem.Click += new System.EventHandler(this.ForceMp3Conversion_MenuItem_Click);
+            // 
+            // forceRB3MidConversionToolStripMenuItem
+            // 
+            this.forceRB3MidConversionToolStripMenuItem.CheckOnClick = true;
+            this.forceRB3MidConversionToolStripMenuItem.Name = "forceRB3MidConversionToolStripMenuItem";
+            this.forceRB3MidConversionToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.forceRB3MidConversionToolStripMenuItem.Text = "Force RB3 Mid Conversion";
+            this.forceRB3MidConversionToolStripMenuItem.Click += new System.EventHandler(this.forceRB3MidConversionToolStripMenuItem_Click);
             // 
             // DeleteSong_MenuItem
             // 
@@ -3691,14 +3694,6 @@ namespace ns15
             this.ToolStripStatusLbl.Size = new System.Drawing.Size(0, 17);
             this.ToolStripStatusLbl.Tag = "Function Description";
             // 
-            // forceRB3MidConversionToolStripMenuItem
-            // 
-            this.forceRB3MidConversionToolStripMenuItem.CheckOnClick = true;
-            this.forceRB3MidConversionToolStripMenuItem.Name = "forceRB3MidConversionToolStripMenuItem";
-            this.forceRB3MidConversionToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.forceRB3MidConversionToolStripMenuItem.Text = "Force RB3 Mid Conversion";
-            this.forceRB3MidConversionToolStripMenuItem.Click += new System.EventHandler(this.forceRB3MidConversionToolStripMenuItem_Click);
-            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4115,7 +4110,7 @@ namespace ns15
 			this.SongListBox.Items.Clear();
 			this.Setlist_DropBox.Items.Clear();
 			this.ActionRequests_ListBox.Items.Clear();
-            this.notifyIcon_0.Visible = false;
+            //this.notifyIcon_0.Visible = false;
 			this.method_23();
 			if (!Directory.Exists(this.string_0 + "log"))
 			{
