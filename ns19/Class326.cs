@@ -705,16 +705,16 @@ namespace ns19
 						}
 						for (int n = 0; n < 16; n++)
 						{
-                            Console.WriteLine("Broken");
-                            int num7 = n * 3 / 8;
-							int num8 = n * 3 % 8;
-							byte b = (byte)(array4[num7] >> num8 & 7);
-							if (num8 > 5)
+                            //Console.WriteLine("Broken");
+                            int div = (n * 3) / 8;
+							int rem = (n * 3) % 8;
+							byte b = (byte)((array4[div] >> rem) & 7);
+							if (rem > 5)
 							{
-								byte b2 = (byte)((int)array4[num7 + 1] << 8 - num8 & 255);
+								byte b2 = (byte)((array4[div + 1] << (8 - rem)) & 0xFF);
                                 b |= (byte)(b2 & 7);
 							}
-							array[n].float_0 = array5[(int)b];
+							array[n].float_0 = array5[b];
 						}
 					}
 					Class326.Struct88 @struct = Class326.Struct88.smethod_0(binaryReader_0);
@@ -758,5 +758,8 @@ namespace ns19
 				}
 			}
 		}
+
+
+
 	}
 }

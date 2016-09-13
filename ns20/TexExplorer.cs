@@ -526,7 +526,7 @@ namespace ns20
 				this.size_0 = image.Size;
 				if (image.Width > this.ImagePreviewBox.Width || image.Height > this.ImagePreviewBox.Height)
 				{
-					image = KeyGenerator.smethod_48(image, this.ImagePreviewBox.Size);
+					image = KeyGenerator.ScaleImageFixedRatio(image, ImagePreviewBox.Size);
 				}
 				this.ImagePreviewBox.Image = image;
 				this.ImageInfoBox.Enabled = true;
@@ -553,7 +553,7 @@ namespace ns20
 			}
 			if (!image.Size.Equals(this.size_0) && DialogResult.Yes == MessageBox.Show("The image dimensions don't match. Do you wish scale to the original dimension? (Ratio may change!)", "Replace Texture", MessageBoxButtons.YesNo))
 			{
-				image = KeyGenerator.smethod_50(image, this.size_0);
+				image = KeyGenerator.ScaleImage(image, this.size_0);
 			}
 			this._textureExplorer.method_1(this.ImgList.SelectedIndex, image, this.imgpixelFormat_0);
 			this.RebuildBtn.Enabled = true;

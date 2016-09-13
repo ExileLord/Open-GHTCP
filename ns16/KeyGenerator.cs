@@ -800,46 +800,46 @@ namespace ns16
 			stream_1.Close();
 		}
 
-		public static Bitmap smethod_48(Image image_0, Size size_0)
+		public static Bitmap ScaleImageFixedRatio(Image image, Size size)
 		{
-			return KeyGenerator.smethod_49(image_0, size_0.Width, size_0.Height);
+			return KeyGenerator.ScaleImageFixedRatio(image, size.Width, size.Height);
 		}
 
-		public static Bitmap smethod_49(Image image_0, int int_0, int int_1)
+		public static Bitmap ScaleImageFixedRatio(Image image, int width, int height)
 		{
-			Size size = KeyGenerator.smethod_52(image_0.Width, image_0.Height, int_0, int_1);
-			return KeyGenerator.smethod_51(image_0, size.Width, size.Height);
+			Size size = KeyGenerator.ScaleDimensions(image.Width, image.Height, width, height);
+			return KeyGenerator.ScaleImage(image, size.Width, size.Height);
 		}
 
-		public static Bitmap smethod_50(Image image_0, Size size_0)
+		public static Bitmap ScaleImage(Image image, Size size)
 		{
-			return KeyGenerator.smethod_51(image_0, size_0.Width, size_0.Height);
+			return KeyGenerator.ScaleImage(image, size.Width, size.Height);
 		}
 
-		public static Bitmap smethod_51(Image image_0, int int_0, int int_1)
+		public static Bitmap ScaleImage(Image image, int width, int height)
 		{
-			Bitmap bitmap = new Bitmap(int_0, int_1, PixelFormat.Format32bppArgb);
+			Bitmap bitmap = new Bitmap(width, height, PixelFormat.Format32bppArgb);
 			Graphics graphics = Graphics.FromImage(bitmap);
 			graphics.SmoothingMode = SmoothingMode.HighQuality;
 			graphics.CompositingQuality = CompositingQuality.HighQuality;
 			graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
 			Rectangle destRect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
-			graphics.DrawImage(image_0, destRect, 0, 0, image_0.Width, image_0.Height, GraphicsUnit.Pixel);
+			graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel);
 			return bitmap;
 		}
 
-		public static Size smethod_52(int int_0, int int_1, int int_2, int int_3)
+		private static Size ScaleDimensions(int width1, int height1, int width2, int height2)
 		{
-			decimal num = int_1 / int_0;
-			if (int_3 > int_2)
+			decimal num = ((decimal)height1) / width1;
+			if (height2 > width2)
 			{
-				int_2 = decimal.ToInt32(int_3 / num);
+				width2 = decimal.ToInt32(height2 / num);
 			}
 			else
 			{
-				int_3 = decimal.ToInt32(num * int_2);
+				height2 = decimal.ToInt32(num * width2);
 			}
-			return new Size(int_2, int_3);
+			return new Size(width2, height2);
 		}
 
 		public static bool smethod_53<T>(ICollection<T> icollection_0, ICollection<T> icollection_1) where T : IComparable
