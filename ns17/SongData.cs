@@ -174,7 +174,7 @@ namespace ns17
 
 		public bool bool_1;
 
-		private Class323 class323_0;
+		private zzQbSongObject class323_0;
 
 		private QBCParser qbcParser;
 
@@ -984,7 +984,7 @@ namespace ns17
 			this.method_3();
 		}
 
-		public SongData(string string_0, QBCParser class362_1, Class323 class323_1, string[] string_1)
+		public SongData(string string_0, QBCParser class362_1, zzQbSongObject class323_1, string[] string_1)
 		{
 			this.InitializeComponent();
 			this.SongNameTxt.Text = string_0;
@@ -1036,7 +1036,7 @@ namespace ns17
 				for (int i = 0; i < string_1.Length; i++)
 				{
 					string text7 = string_1[i];
-					string text8 = KeyGenerator.smethod_13(text7).ToLower();
+					string text8 = KeyGenerator.GetFileName(text7).ToLower();
 					if (string_1.Length > 4 && text8.Contains("coop"))
 					{
 						if (text5 == null && (text8.Contains("rhythm") || text8.Contains("bass")))
@@ -1153,7 +1153,7 @@ namespace ns17
 			return new Class248(this.SongNameTxt.Text, string_, new TimeSpan(0, 0, this.PreviewSlider.method_13()), new TimeSpan(0, 0, this.PreviewSlider.method_13() + Math.Min(this.PreviewSlider.method_17() - this.PreviewSlider.method_13(), 20)), string_0);
 		}
 
-		public Class250 method_1(Class318 class318_0, string string_0)
+		public Class250 method_1(zzPakNode2 class318_0, string string_0)
 		{
 			Dictionary<string, Track<int, NotesAtOffset>> dictionary = new Dictionary<string, Track<int, NotesAtOffset>>();
 			if (!this.EasyGuitarBox.SelectedItem.Equals("No Track"))
@@ -1428,8 +1428,8 @@ namespace ns17
                     //Configures paks
                     if (fileName.EndsWith("_song.pak.xen"))
 					{
-						string text2 = KeyGenerator.smethod_13(fileName).Replace("_song.pak.xen", "");
-						using (Class318 @class = new Class318(fileName, false))
+						string text2 = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
+						using (zzPakNode2 @class = new zzPakNode2(fileName, false))
 						{
 							if (!@class.method_6("songs\\" + text2 + ".mid.qb"))
 							{
@@ -1623,7 +1623,7 @@ namespace ns17
 						}
 						else
 						{
-							this.class323_0 = new Class323(fileName);
+							this.class323_0 = new zzQbSongObject(fileName);
 							if ((int)new FileInfo(fileName.Replace(".dat.xen", ".fsb.xen")).Length != this.class323_0.int_0)
 							{
 								MessageBox.Show("FSB file size does not match!", "Error!");

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ns14
 {
-	public class Class214<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>, ICollection<KeyValuePair<TKey, TValue>>, IDictionary<TKey, TValue>, IEnumerable
+	public class zzCollection214<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>, ICollection<KeyValuePair<TKey, TValue>>, IDictionary<TKey, TValue>, IEnumerable
 	{
 		private readonly Dictionary<TKey, TValue> dictionary_0 = new Dictionary<TKey, TValue>();
 

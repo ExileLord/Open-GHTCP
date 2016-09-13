@@ -25,24 +25,24 @@ namespace ns22
 			{
 				return (Difficulty)((this.midiMask - 60) / 12);
 			}
-			return Difficulty.const_4;
+			return Difficulty.Invalid;
 		}
 
 		public MIDINoteMask method_2()
 		{
 			if (this.midiMask == 108)
 			{
-				return MIDINoteMask.const_9;
+				return MIDINoteMask.Unk108;
 			}
             //SP
 			if (this.midiMask == 116)
 			{
-				return MIDINoteMask.SP;
+				return MIDINoteMask.StarPower;
 			}
             //I assume nothing
 			if (this.midiMask < 60 || this.midiMask > 106)
 			{
-				return MIDINoteMask.const_10;
+				return MIDINoteMask.Invalid;
 			}
             //Gets note type
 			int num = (this.midiMask - 60) % 12;
@@ -50,21 +50,21 @@ namespace ns22
 			{
 				return (MIDINoteMask)num;
 			}
-			return MIDINoteMask.const_10;
+			return MIDINoteMask.Invalid;
 		}
 
-		public Enum39 method_3()
+		public Fret method_3()
 		{
 			if (this.midiMask < 60 || this.midiMask > 106)
 			{
-				return Enum39.const_5;
+				return Fret.Invalid;
 			}
-			Enum39 @enum = (Enum39)((this.midiMask - 60) % 12);
-			if (@enum >= Enum39.const_0 && @enum <= Enum39.const_4)
+			Fret @enum = (Fret)((this.midiMask - 60) % 12);
+			if (@enum >= Fret.Green && @enum <= Fret.Orange)
 			{
 				return @enum;
 			}
-			return Enum39.const_5;
+			return Fret.Invalid;
 		}
 
 		public int method_4()

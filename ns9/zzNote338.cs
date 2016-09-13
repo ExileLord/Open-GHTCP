@@ -3,7 +3,7 @@ using System;
 
 namespace ns9
 {
-	public class Class338 : AbstractNoteClass
+	public class zzNote338 : AbstractNoteClass
 	{
 		private readonly int int_1;
 
@@ -13,7 +13,7 @@ namespace ns9
 
 		private readonly int int_4;
 
-		public Class338(int int_5, int int_6, int int_7, int int_8, int int_9)
+		public zzNote338(int int_5, int int_6, int int_7, int int_8, int int_9)
 		{
 			this.int_0 = int_5;
 			this.int_1 = int_6;

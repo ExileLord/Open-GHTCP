@@ -20,7 +20,7 @@ namespace ns18
 		{
 			if (base.Nodes.Count != 0)
 			{
-				return ((Class311)base.FirstNode).method_2();
+				return ((TextValueNode)base.FirstNode).method_2();
 			}
 			return null;
 		}
@@ -29,7 +29,7 @@ namespace ns18
 		{
 			if (base.Nodes.Count != 0)
 			{
-				return ((Class311)base.FirstNode).int_0;
+				return ((TextValueNode)base.FirstNode).int_0;
 			}
 			return 0;
 		}
@@ -38,7 +38,7 @@ namespace ns18
 		{
 			this.int_0 = stream26_0.method_19();
 			this.int_1 = stream26_0.method_19();
-			base.Nodes.Add(new Class311(stream26_0.method_19(), this.vmethod_10()));
+			base.Nodes.Add(new TextValueNode(stream26_0.method_19(), this.vmethod_10()));
 			stream26_0.method_19();
 		}
 

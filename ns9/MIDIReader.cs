@@ -137,7 +137,7 @@ namespace ns9
 							{
 								Class355.interface15_0.imethod_1(string.Format("Expected time signature event to have data length of 4, but found instead {0}", num5));
 							}
-							midiNote = new Class338(num3, (int)array[0], (int)array[1], (int)array[2], (int)array[3]);
+							midiNote = new zzNote338(num3, (int)array[0], (int)array[1], (int)array[2], (int)array[3]);
 						}
 					}
 					else

@@ -11,7 +11,7 @@ namespace ns15
 	{
 		private GH3Songlist gh3Songlist_0;
 
-		private Class318 class318_0;
+		private zzPakNode2 class318_0;
 
 		private string string_0;
 
@@ -19,7 +19,7 @@ namespace ns15
 
 		private bool bool_0;
 
-		public Class246(int int_1, Class318 class318_1, GH3Songlist gh3Songlist_1, bool bool_1)
+		public Class246(int int_1, zzPakNode2 class318_1, GH3Songlist gh3Songlist_1, bool bool_1)
 		{
 			this.string_0 = gh3Songlist_1.class214_0.method_0(int_1);
 			this.int_0 = int_1;

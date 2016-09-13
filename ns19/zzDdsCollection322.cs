@@ -8,9 +8,9 @@ using System.IO;
 
 namespace ns19
 {
-	public class Class322 : IDisposable
+	public class zzTextureExplorer1 : IDisposable
 	{
-		public List<zzCocoaStruct12> list_0 = new List<zzCocoaStruct12>();
+		public List<zzCocoaStruct12> textureList = new List<zzCocoaStruct12>();
 
 		private Stream26 stream26_0;
 
@@ -22,26 +22,26 @@ namespace ns19
 		{
 			get
 			{
-				if (this.list_0[int_0].byte_1 != null)
+				if (this.textureList[int_0].byte_1 != null)
 				{
-					return new DDSClass1(new MemoryStream(this.list_0[int_0].byte_1));
+					return new DDSClass1(new MemoryStream(this.textureList[int_0].byte_1));
 				}
-				this.stream26_0.Position = (long)this.list_0[int_0].int_1;
+				this.stream26_0.Position = (long)this.textureList[int_0].int_1;
 				return new DDSClass1(this.stream26_0.stream_0, true);
 			}
 		}
 
-		public Class322()
+		public zzTextureExplorer1()
 		{
 		}
 
-		public Class322(string string_1)
+		public zzTextureExplorer1(string string_1)
 		{
 			this.string_0 = string_1;
 			this.method_0();
 		}
 
-		public Class322(byte[] byte_0)
+		public zzTextureExplorer1(byte[] byte_0)
 		{
 			this.stream26_0 = new Stream26(byte_0, true);
 			this.method_0();
@@ -68,7 +68,7 @@ namespace ns19
 			}
 			while (num-- != 0)
 			{
-				this.list_0.Add(new zzCocoaStruct12(this.stream26_0.method_43(num3 + 2), this.stream26_0.method_19(), this.stream26_0.method_23(), this.stream26_0.method_23(), this.stream26_0.method_23(), this.stream26_0.method_40(num3 + 20), this.stream26_0.method_23(), this.stream26_0.method_41(num3 + 28), this.stream26_0.method_19()));
+				this.textureList.Add(new zzCocoaStruct12(this.stream26_0.method_43(num3 + 2), this.stream26_0.method_19(), this.stream26_0.method_23(), this.stream26_0.method_23(), this.stream26_0.method_23(), this.stream26_0.method_40(num3 + 20), this.stream26_0.method_23(), this.stream26_0.method_41(num3 + 28), this.stream26_0.method_19()));
 				num3 += 40;
 			}
 			this.stream26_0.bool_0 = false;
@@ -76,7 +76,7 @@ namespace ns19
 
 		public void method_1(int int_0, Image image_0, IMGPixelFormat imgpixelFormat_0)
 		{
-			zzCocoaStruct12 @class = this.list_0[int_0];
+			zzCocoaStruct12 @class = this.textureList[int_0];
 			@class.short_2 = (short)image_0.Height;
 			@class.short_1 = (short)image_0.Width;
 			@class.byte_1 = new DDSClass1(image_0, (int)@class.byte_0, imgpixelFormat_0).method_3();
@@ -84,12 +84,12 @@ namespace ns19
 
 		public byte[] method_2(int int_0)
 		{
-			if (this.list_0[int_0].byte_1 != null)
+			if (this.textureList[int_0].byte_1 != null)
 			{
-				return this.list_0[int_0].byte_1;
+				return this.textureList[int_0].byte_1;
 			}
-			this.stream26_0.Position = (long)this.list_0[int_0].int_1;
-			return this.stream26_0.method_31(this.list_0[int_0].int_2);
+			this.stream26_0.Position = (long)this.textureList[int_0].int_1;
+			return this.stream26_0.method_31(this.textureList[int_0].int_2);
 		}
 
 		public void method_3(int int_0, string string_1)
@@ -99,7 +99,7 @@ namespace ns19
 
 		public int method_4()
 		{
-			return this.list_0.Count;
+			return this.textureList.Count;
 		}
 
 		public bool method_5()
@@ -146,7 +146,7 @@ namespace ns19
 			stream.method_4(0, 40 * num);
 			for (int i = 0; i < num; i++)
 			{
-				zzCocoaStruct12 @class = this.list_0[i];
+				zzCocoaStruct12 @class = this.textureList[i];
 				byte[] array = this.method_2(i);
 				stream.method_35(num2 + 40 * i, 2600);
 				stream.method_11(@class.short_0);
@@ -189,7 +189,7 @@ namespace ns19
 			this.stream26_0.Close();
 			this.stream26_0.Dispose();
 			this.stream26_0 = null;
-			this.list_0.Clear();
+			this.textureList.Clear();
 		}
 	}
 }

@@ -43,7 +43,7 @@ namespace ns21
 		{
 			base.Nodes.Add(new FloatValueNode(stream26_0.method_21()));
 			base.Nodes.Add(new FloatValueNode(stream26_0.method_21()));
-			if (base.method_1() is Class290 || base.method_1() is VectorPointerRootNode || base.method_1() is VectorPointerNode)
+			if (base.method_1() is VectorArrayNode || base.method_1() is VectorPointerRootNode || base.method_1() is VectorPointerNode)
 			{
 				base.Nodes.Add(new FloatValueNode(stream26_0.method_21()));
 			}

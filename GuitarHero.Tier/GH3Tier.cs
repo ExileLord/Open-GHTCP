@@ -74,8 +74,8 @@ namespace GuitarHero.Tier
 		{
 			UnicodeStructureNode @class;
 			this.title = (((@class = class286_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("title"))) != null) ? @class.method_8() : "");
-			Class305 class2;
-			this.completion_movie = (((class2 = class286_0.method_5<Class305>(new Class305("completion_movie"))) != null) ? class2.method_8() : "");
+			AsciiStructureNode class2;
+			this.completion_movie = (((class2 = class286_0.method_5<AsciiStructureNode>(new AsciiStructureNode("completion_movie"))) != null) ? class2.method_8() : "");
 			IntegerStructureNode class3;
 			this.defaultunlocked = (((class3 = class286_0.method_5<IntegerStructureNode>(new IntegerStructureNode("defaultunlocked"))) != null) ? class3.method_8() : 0);
 			TagStructureNode class4;
@@ -87,8 +87,8 @@ namespace GuitarHero.Tier
 			this.boss = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "boss")) != null);
 			this.nocash = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "nocash")) != null);
 			this.unlockall = (class286_0.method_5<TagStructureNode>(new TagStructureNode(0, "unlockall")) != null);
-			Class301 class5 = new Class301("songs");
-			if (class286_0.method_6<Class301>(ref class5) && !(class5.method_8() is FloatListNode))
+			ArrayPointerNode class5 = new ArrayPointerNode("songs");
+			if (class286_0.method_6<ArrayPointerNode>(ref class5) && !(class5.method_8() is FloatListNode))
 			{
 				foreach (string current in class5.method_8().method_8<string>())
 				{
@@ -110,7 +110,7 @@ namespace GuitarHero.Tier
 			@class.method_3(new UnicodeStructureNode("title", this.title));
 			if (this.songs.Count == 0)
 			{
-				@class.method_3(new Class301("songs", new FloatListNode(true)));
+				@class.method_3(new ArrayPointerNode("songs", new FloatListNode(true)));
 			}
 			else
 			{
@@ -119,7 +119,7 @@ namespace GuitarHero.Tier
 				{
 					list.Add(QbSongClass1.smethod_9(current.name));
 				}
-				@class.method_3(new Class301("songs", new TagArray(list)));
+				@class.method_3(new ArrayPointerNode("songs", new TagArray(list)));
 			}
 			if (this.boss)
 			{
@@ -147,7 +147,7 @@ namespace GuitarHero.Tier
 			}
 			if (!this.completion_movie.Equals(""))
 			{
-				@class.method_3(new Class305("completion_movie", this.completion_movie));
+				@class.method_3(new AsciiStructureNode("completion_movie", this.completion_movie));
 			}
 			if (!this.setlist_icon.Equals("No Icon"))
 			{

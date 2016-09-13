@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace ns14
 {
-	public class Class230
+	public class zzDrawingClass230
 	{
-		public static class Class231
+		public static class GDI
 		{
 			[DllImport("gdi32.dll", CallingConvention = CallingConvention.StdCall)]
 			public static extern int SetROP2(IntPtr intptr_0, int int_0);
@@ -29,7 +29,7 @@ namespace ns14
 
 		private int int_0 = -1;
 
-		public Class230(ListBox listBox_1)
+		public zzDrawingClass230(ListBox listBox_1)
 		{
 			this.listBox_0 = listBox_1;
 		}
@@ -90,13 +90,13 @@ namespace ns14
 				point3 = new Point(r.Left, r.Top + 1);
 				point4 = new Point(r.Right, r.Top + 1);
 			}
-			IntPtr dC = Class230.Class231.GetDC(IntPtr.Zero);
-			Class230.Class231.SetROP2(dC, 6);
-			Class230.Class231.MoveToEx(dC, point.X, point.Y, IntPtr.Zero);
-			Class230.Class231.LineTo(dC, point2.X, point2.Y);
-			Class230.Class231.MoveToEx(dC, point3.X, point3.Y, IntPtr.Zero);
-			Class230.Class231.LineTo(dC, point4.X, point4.Y);
-			Class230.Class231.ReleaseDC(IntPtr.Zero, dC);
+			IntPtr dC = zzDrawingClass230.GDI.GetDC(IntPtr.Zero);
+			zzDrawingClass230.GDI.SetROP2(dC, 6);
+			zzDrawingClass230.GDI.MoveToEx(dC, point.X, point.Y, IntPtr.Zero);
+			zzDrawingClass230.GDI.LineTo(dC, point2.X, point2.Y);
+			zzDrawingClass230.GDI.MoveToEx(dC, point3.X, point3.Y, IntPtr.Zero);
+			zzDrawingClass230.GDI.LineTo(dC, point4.X, point4.Y);
+			zzDrawingClass230.GDI.ReleaseDC(IntPtr.Zero, dC);
 			this.int_0 = int_1;
 		}
 	}

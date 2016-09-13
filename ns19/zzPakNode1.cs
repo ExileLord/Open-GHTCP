@@ -6,24 +6,26 @@ using System.Windows.Forms;
 
 namespace ns19
 {
-	public class Class317 : TreeNode
+    //I'm not positive this has to do with pak files yet
+
+	public class zzPakNode1 : TreeNode
 	{
 		public bool bool_0;
 
-		public Class317() : this("newfolder")
+		public zzPakNode1() : this("newfolder")
 		{
 			base.ImageIndex = 38;
 			base.SelectedImageIndex = 38;
 		}
 
-		public Class317(bool bool_1) : this("(Unknown)")
+		public zzPakNode1(bool bool_1) : this("(Unknown)")
 		{
 			base.ImageIndex = 38;
 			base.SelectedImageIndex = 38;
 			this.bool_0 = bool_1;
 		}
 
-		public Class317(string string_0) : base(string_0)
+		public zzPakNode1(string string_0) : base(string_0)
 		{
 			base.Name = string_0;
 			base.ImageIndex = 38;
@@ -37,7 +39,7 @@ namespace ns19
 
 		public void method_1<T>(string string_0, T gparam_0) where T : TreeNode
 		{
-			Class317 @class = string.IsNullOrEmpty(string_0) ? this : this.method_2(KeyGenerator.smethod_10(string_0));
+			zzPakNode1 @class = string.IsNullOrEmpty(string_0) ? this : this.method_2(KeyGenerator.smethod_10(string_0));
 			if (@class.Nodes.ContainsKey(gparam_0.Text))
 			{
 				@class.Nodes.RemoveByKey(gparam_0.Text);
@@ -51,7 +53,7 @@ namespace ns19
 				{
 					treeNode = treeNode.Parent;
 				}
-				Class318 class2 = treeNode as Class318;
+				zzPakNode2 class2 = treeNode as zzPakNode2;
 				Interface12 @interface = class2.method_10(string_0);
 				if (@interface == null)
 				{
@@ -68,10 +70,10 @@ namespace ns19
 			{
 				return "";
 			}
-			return ((Class317)base.Parent).vmethod_0() + base.Text + "\\";
+			return ((zzPakNode1)base.Parent).vmethod_0() + base.Text + "\\";
 		}
 
-		public Class317 method_2(string string_0)
+		public zzPakNode1 method_2(string string_0)
 		{
 			if (string.IsNullOrEmpty(string_0))
 			{
@@ -82,16 +84,16 @@ namespace ns19
 				'\\',
 				'/'
 			}, StringSplitOptions.RemoveEmptyEntries));
-			Class317 @class;
-			if (base.Nodes.ContainsKey(list[0]) && base.Nodes[list[0]] is Class317)
+			zzPakNode1 @class;
+			if (base.Nodes.ContainsKey(list[0]) && base.Nodes[list[0]] is zzPakNode1)
 			{
-				@class = (Class317)base.Nodes[list[0]];
+				@class = (zzPakNode1)base.Nodes[list[0]];
 				list.RemoveAt(0);
 				@class = ((list.Count > 0) ? @class.method_3(list) : @class);
 			}
 			else
 			{
-				@class = new Class317(list[0]);
+				@class = new zzPakNode1(list[0]);
 				list.RemoveAt(0);
 				base.Nodes.Add(@class);
 				@class = ((list.Count > 0) ? @class.method_3(list) : @class);
@@ -99,26 +101,26 @@ namespace ns19
 			return @class;
 		}
 
-		public Class317 method_3(List<string> list_0)
+		public zzPakNode1 method_3(List<string> list_0)
 		{
 			if (list_0.Count == 0)
 			{
 				return this;
 			}
-			if (!base.Nodes.ContainsKey(list_0[0]) || !(base.Nodes[list_0[0]] is Class317))
+			if (!base.Nodes.ContainsKey(list_0[0]) || !(base.Nodes[list_0[0]] is zzPakNode1))
 			{
-				Class317 @class = new Class317(list_0[0]);
+				zzPakNode1 @class = new zzPakNode1(list_0[0]);
 				list_0.RemoveAt(0);
 				base.Nodes.Add(@class);
 				return @class.method_3(list_0);
 			}
 			if (list_0.Count == 1)
 			{
-				return (Class317)base.Nodes[list_0[0]];
+				return (zzPakNode1)base.Nodes[list_0[0]];
 			}
 			string key = list_0[0];
 			list_0.RemoveAt(0);
-			return ((Class317)base.Nodes[key]).method_3(list_0);
+			return ((zzPakNode1)base.Nodes[key]).method_3(list_0);
 		}
 	}
 }

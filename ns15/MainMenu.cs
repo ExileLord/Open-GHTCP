@@ -49,7 +49,7 @@ namespace ns15
 
 		private bool bool_0;
 
-		public Class319 class319_0;
+		public zzPabNode class319_0;
 
 		private ActionsWindow actionsWindow_0;
 
@@ -790,13 +790,13 @@ namespace ns15
 			for (int i = 0; i < files.Length; i++)
 			{
 				string text = files[i];
-				string text2 = KeyGenerator.smethod_12(text);
+				string text2 = KeyGenerator.GetFileNameNoExt(text);
 				if (File.Exists(this.dataFolder + "music\\" + text2 + ".fsb.xen") && File.Exists(this.dataFolder + "songs\\" + text2 + "_song.pak.xen") && !this.gh3Songlist_0.method_3(text2) && !QbSongClass1.smethod_4(text2) && !GH3Songlist.IgnoreSongs.Contains(QbSongClass1.smethod_9(text2)))
 				{
 					try
 					{
 						GH3Song gH3Song = this.bool_0 ? new GHASong(text2) : new GH3Song(text2);
-						List<string> list = new List<string>(new Class323(text).string_1);
+						List<string> list = new List<string>(new zzQbSongObject(text).string_1);
 						gH3Song.no_rhythm_track = !list.Contains(text2 + "_rhythm");
 						gH3Song.use_coop_notetracks = list.Contains(text2 + "_coop_song");
 						this.gh3Songlist_0.Add(text2, gH3Song);
@@ -830,8 +830,8 @@ namespace ns15
 				{
 					if (fileName.EndsWith("_song.pak.xen"))
 					{
-						string str = KeyGenerator.smethod_13(fileName).Replace("_song.pak.xen", "");
-						using (Class318 @class = new Class318(fileName, false))
+						string str = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
+						using (zzPakNode2 @class = new zzPakNode2(fileName, false))
 						{
 							if (!@class.method_6("songs\\" + str + ".mid.qb"))
 							{
@@ -1012,7 +1012,7 @@ namespace ns15
 				string fileLocation = KeyGenerator.smethod_16("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
 				if (!fileLocation.Equals("") && File.Exists(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen"))
 				{
-					using (Class318 @class = new Class318(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
+					using (zzPakNode2 @class = new zzPakNode2(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
 					{
 						if (fileLocation.EndsWith(".qbc"))
 						{
@@ -1179,7 +1179,7 @@ namespace ns15
                     foreach (GH3Song gh3Song in tier.songs)
                     {
                         string fileLocation = saveLocation + "\\" + gh3Song.name + ".chart";
-                        using (Class318 @class = new Class318(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
+                        using (zzPakNode2 @class = new zzPakNode2(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
                         {
                             new QBCParser(gh3Song.name, @class.method_8("songs\\" + gh3Song.name + ".mid.qb")).method_1().chartCreator(fileLocation, gh3Song);
                         }
@@ -1220,7 +1220,7 @@ namespace ns15
 					{
 						this.method_23();
 					}
-					this.SetlistTitle_TxtBox.Text = KeyGenerator.smethod_11(text, 1);
+					this.SetlistTitle_TxtBox.Text = KeyGenerator.GetFileName(text, 1);
 					this.SetlistApply_Btn.Enabled = true;
 					this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					this.method_0();
@@ -1260,7 +1260,7 @@ namespace ns15
 					if (list2.Count != 0 && (list3.Count != 0 || files.Length != 0))
 					{
 						GH3Song gH3Song = this.bool_0 ? new GHASong() : new GH3Song();
-						gH3Song.name = KeyGenerator.smethod_13(file).ToLower().Replace(" ", "").Replace('.', '_');
+						gH3Song.name = KeyGenerator.GetFileName(file).ToLower().Replace(" ", "").Replace('.', '_');
 						if (gH3Song.name.Length > 30)
 						{
 							gH3Song.name = gH3Song.name.Remove(30);
@@ -1301,7 +1301,7 @@ namespace ns15
 						}
 						if (qbcParser != null)
 						{
-							Class323 class2 = null;
+							zzQbSongObject class2 = null;
 							if (files.Length != 0)
 							{
 								string[] array2 = files;
@@ -1312,7 +1312,7 @@ namespace ns15
 									{
 										if (File.Exists(text2.Replace(".dat.xen", ".fsb.xen")))
 										{
-											class2 = new Class323(text2);
+											class2 = new zzQbSongObject(text2);
 											if ((int)new FileInfo(text2.Replace(".dat.xen", ".fsb.xen")).Length == class2.int_0)
 											{
 												break;
@@ -1370,7 +1370,7 @@ namespace ns15
 				string text4 = "The follwing songs (by folder name) failed:";
 				foreach (string current2 in list)
 				{
-					text4 = text4 + "\n" + KeyGenerator.smethod_13(current2);
+					text4 = text4 + "\n" + KeyGenerator.GetFileName(current2);
 				}
 				MessageBox.Show(text4, "Error!");
 			}
@@ -1573,7 +1573,7 @@ namespace ns15
 					try
 					{
 						string text4 = KeyGenerator.smethod_16("Locate MP3 Encoding Library (file will be deleted after!)", "MP3 Lame Zip|*.zip", true);
-						string text5 = KeyGenerator.smethod_12(text4);
+						string text5 = KeyGenerator.GetFileNameNoExt(text4);
 						ZIPManager.smethod_4(text4, this.string_0 + "lame_enc.dll", "libmp3lame" + text5.Substring(text5.LastIndexOf('-')) + "/lame_enc.dll");
 						try
 						{
@@ -1610,7 +1610,7 @@ namespace ns15
 					"C",
 					"D",
 					"E"
-				})[this.list_0.IndexOf(KeyGenerator.smethod_12(this.class319_0.string_0).Remove(0, 2))];
+				})[this.list_0.IndexOf(KeyGenerator.GetFileNameNoExt(this.class319_0.string_0).Remove(0, 2))];
 				text = string.Concat(new string[]
 				{
 					Environment.GetFolderPath(Environment.SpecialFolder.Personal),
@@ -3875,7 +3875,7 @@ namespace ns15
 					{
 						return;
 					}
-					Class319 class2 = new Class319(string.Concat(new string[]
+					zzPabNode class2 = new zzPabNode(string.Concat(new string[]
 					{
 						this.string_0,
 						this.string_3,
@@ -3891,7 +3891,7 @@ namespace ns15
 						".pab.xen"
 					}), false);
 					GH3Songlist gH3Songlist = null;
-					using (this.class319_0 = new Class319(this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", false))
+					using (this.class319_0 = new zzPabNode(this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", false))
 					{
 						if (this.method_19(int_).method_0())
 						{
@@ -3965,7 +3965,7 @@ namespace ns15
 						}), this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", true);
 						IL_478:;
 					}
-					this.class319_0 = new Class319(this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", false);
+					this.class319_0 = new zzPabNode(this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", false);
 					this.method_20(int_);
 					this.gh3Songlist_0 = new GH3Songlist(this.class319_0.method_8("scripts\\guitar\\songlist.qb"), new GH3Songlist(class2.method_8("scripts\\guitar\\songlist.qb"), null));
 					class2.Dispose();
@@ -4142,14 +4142,14 @@ namespace ns15
 				".pab.xen"
 			});
 			int[] icollection_ = this.bool_0 ? this.int_2[int_3] : this.int_1[int_3];
-			return File.Exists(text) && File.Exists(text.Replace(".pab.xen", ".pak.xen")) && KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.smethod_42(text)), icollection_);
+			return File.Exists(text) && File.Exists(text.Replace(".pab.xen", ".pak.xen")) && KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection_);
 		}
 
 		private bool method_17(int int_3)
 		{
 			string text = this.dataFolder + "PAK\\qb" + this.list_0[int_3] + ".pab.xen";
 			int[] icollection_ = this.bool_0 ? this.int_2[int_3] : this.int_1[int_3];
-			while (!File.Exists(text) || !File.Exists(text.Replace(".pab.xen", ".pak.xen")) || !KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.smethod_42(text)), icollection_))
+			while (!File.Exists(text) || !File.Exists(text.Replace(".pab.xen", ".pak.xen")) || !KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection_))
 			{
 				if ((text = KeyGenerator.smethod_16("Find The Original V1.3 Game Settings.", "Original V1.3 Game Settings|qb" + this.list_0[int_3] + ".pab.xen", true)).Equals(""))
 				{
@@ -4195,7 +4195,7 @@ namespace ns15
 
 		private Class375 method_19(int int_3)
 		{
-			if (File.Exists(this.class319_0.string_0) && File.Exists(this.class319_0.string_2) && KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.smethod_42(this.class319_0.string_2)), this.bool_0 ? this.int_2[int_3] : this.int_1[int_3]))
+			if (File.Exists(this.class319_0.string_0) && File.Exists(this.class319_0.string_2) && KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.HashStream(this.class319_0.string_2)), this.bool_0 ? this.int_2[int_3] : this.int_1[int_3]))
 			{
 				return new Class375(true);
 			}
@@ -4221,7 +4221,7 @@ namespace ns15
 			{
 				return;
 			}
-			string text = KeyGenerator.smethod_12(this.class319_0.string_0);
+			string text = KeyGenerator.GetFileNameNoExt(this.class319_0.string_0);
 			int int_ = new List<string>(this.list_0).IndexOf(text.Replace("qb", ""));
 			if (this.method_16(int_))
 			{
@@ -4253,7 +4253,7 @@ namespace ns15
 			{
 				return;
 			}
-			string text = KeyGenerator.smethod_12(this.class319_0.string_0);
+			string text = KeyGenerator.GetFileNameNoExt(this.class319_0.string_0);
 			if (File.Exists(string.Concat(new string[]
 			{
 				this.string_0,
@@ -4312,14 +4312,14 @@ namespace ns15
 				return;
 			}
 			int num = loadGameSettings.method_3();
-			string text = KeyGenerator.smethod_12(this.class319_0.string_0);
+			string text = KeyGenerator.GetFileNameNoExt(this.class319_0.string_0);
 			if (!this.method_16(num) && DialogResult.Yes == MessageBox.Show("A proper backup doesn't exist. Do you wish to start backup creation? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNo) && !this.method_17(num))
 			{
 				return;
 			}
 			new List<string>(this.list_0).IndexOf(text.Replace("qb", ""));
 			this.method_15();
-			using (Class319 @class = new Class319(string.Concat(new string[]
+			using (zzPabNode @class = new zzPabNode(string.Concat(new string[]
 			{
 				this.string_0,
 				this.string_3,

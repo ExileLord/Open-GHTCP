@@ -3,7 +3,7 @@ using System;
 
 namespace ns22
 {
-	public class VectorPointerNode : Class300
+	public class VectorPointerNode : zzUnkNode300
 	{
 		public VectorPointerNode()
 		{

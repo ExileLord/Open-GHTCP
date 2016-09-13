@@ -86,10 +86,10 @@ namespace ns19
 			for (int k = 0; k < array3.Length; k++)
 			{
 				string text3 = array3[k];
-				this.delegate9_0(1 + (int)(98.0 * (double)(++num3) / (double)files.Length), KeyGenerator.smethod_13(text3));
+				this.delegate9_0(1 + (int)(98.0 * (double)(++num3) / (double)files.Length), KeyGenerator.GetFileName(text3));
 				try
 				{
-					using (Class318 @class = File.Exists(text3.Replace(".pak.xen", ".pab.xen")) ? new Class319(text3, text3.Replace(".pak.xen", ".pab.xen"), false) : new Class318(text3, false))
+					using (zzPakNode2 @class = File.Exists(text3.Replace(".pak.xen", ".pab.xen")) ? new zzPabNode(text3, text3.Replace(".pak.xen", ".pab.xen"), false) : new zzPakNode2(text3, false))
 					{
 						List<TreeNode> list = new List<TreeNode>();
 						foreach (Interface12 current in @class.list_0)
@@ -97,7 +97,7 @@ namespace ns19
 							int num4 = current.imethod_7();
 							if (current.imethod_4() == num || current.imethod_4() == num2)
 							{
-								list.Add(new TreeNode(QbSongClass1.smethod_3(num4) ? KeyGenerator.smethod_13(QbSongClass1.smethod_5(num4)) : KeyGenerator.ValToHex32bit(num4))
+								list.Add(new TreeNode(QbSongClass1.smethod_3(num4) ? KeyGenerator.GetFileName(QbSongClass1.smethod_5(num4)) : KeyGenerator.ValToHex32bit(num4))
 								{
 									ToolTipText = text3,
 									Tag = num4

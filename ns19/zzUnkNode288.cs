@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ns19
 {
-	public abstract class Class288 : AbsTreeNode1_1
+	public abstract class zzUnkNode288 : AbsTreeNode1_1
 	{
 		public abstract byte vmethod_15();
 

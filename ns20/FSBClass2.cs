@@ -16,8 +16,8 @@ namespace ns20
 			using (FSBClass1 @class = new FSBClass1())
 			{
 				@class.byte_0 = FSBClass2.fsbEncryptionKey;
-				@class.enum20_0 = Enum20.const_3;
-				@class.enum21_0 = Enum21.flag_0;
+				@class.enum20_0 = FSBEnum1.const_3;
+				@class.enum21_0 = FSBFlags1.flag_0;
 				for (int i = 0; i < stream_0.Length; i++)
 				{
 					Stream stream = stream_0[i];
@@ -25,7 +25,7 @@ namespace ns20
 					Class16 class2 = AudioManager.smethod_3(stream);
 					Class168 class3 = new Class168();
 					class3.FileName = i + ".mp3";
-					class3.enum22_0 = (((class2.method_0() == 1) ? Enum22.flag_6 : Enum22.flag_7) | Enum22.flag_10);
+					class3.enum22_0 = (((class2.method_0() == 1) ? FSBFlags2.flag_6 : FSBFlags2.flag_7) | FSBFlags2.flag_10);
 					class3.int_0 = class2.method_3();
 					class3.ushort_0 = 255;
 					class3.short_0 = 0;

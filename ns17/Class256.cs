@@ -10,11 +10,11 @@ namespace ns17
 	{
 		private GH3Songlist gh3Songlist_0;
 
-		private Class318 class318_0;
+		private zzPakNode2 class318_0;
 
 		private bool bool_0;
 
-		public Class256(Class318 class318_1, GH3Songlist gh3Songlist_1, bool bool_1)
+		public Class256(zzPakNode2 class318_1, GH3Songlist gh3Songlist_1, bool bool_1)
 		{
 			this.class318_0 = class318_1;
 			this.gh3Songlist_0 = gh3Songlist_1;

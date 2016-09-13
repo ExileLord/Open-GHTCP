@@ -37,7 +37,7 @@ namespace ns17
 			this.bool_0 = bool_3;
 		}
 
-		public Class375(Class318 class318_0)
+		public Class375(zzPakNode2 class318_0)
 		{
 			if (!class318_0.method_6(Class375.string_0))
 			{
@@ -68,7 +68,7 @@ namespace ns17
 			}
 		}
 
-		public static void smethod_0(Class318 class318_0)
+		public static void smethod_0(zzPakNode2 class318_0)
 		{
 			if (class318_0.method_6(Class375.string_0))
 			{
@@ -79,7 +79,7 @@ namespace ns17
 			using (Stream26 stream = class318_0.method_17())
 			{
 				stream.Position = 0L;
-				@class.method_3(new ArrayPointerRootNode("hash", Class375.string_0, new IntegerArrayNode(KeyGenerator.smethod_21(KeyGenerator.smethod_43(stream.stream_0)))));
+				@class.method_3(new ArrayPointerRootNode("hash", Class375.string_0, new IntegerArrayNode(KeyGenerator.smethod_21(KeyGenerator.HashStream(stream.stream_0)))));
 			}
 			GC.Collect();
 			DateTime now = DateTime.Now;

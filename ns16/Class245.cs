@@ -2,6 +2,9 @@ using System;
 
 namespace ns16
 {
+
+    // Base class of some other classes that appear to edit qb files
+
 	public abstract class Class245 : IEquatable<Class245>
 	{
 		public bool method_0()

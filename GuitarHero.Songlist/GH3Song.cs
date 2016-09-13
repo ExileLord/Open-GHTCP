@@ -143,7 +143,7 @@ namespace GuitarHero.Songlist
 
 		public virtual void vmethod_4(StructurePointerNode class302_0)
 		{
-			this.name = class302_0.method_5<Class305>(new Class305("name")).method_8().ToLower();
+			this.name = class302_0.method_5<AsciiStructureNode>(new AsciiStructureNode("name")).method_8().ToLower();
 			if (this.name != null && !this.name.Equals(""))
 			{
 				UnicodeStructureNode @class;
@@ -151,8 +151,8 @@ namespace GuitarHero.Songlist
 				this.artist = (((@class = class302_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("artist"))) != null) ? @class.method_8() : "");
 				this.year = (((@class = class302_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("year"))) != null) ? @class.method_8() : "");
 				this.bassist = (((@class = class302_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("bassist"))) != null) ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(@class.method_8()) : "Generic Bassist");
-				Class305 class2;
-				this.countoff = (((class2 = class302_0.method_5<Class305>(new Class305("countoff"))) != null) ? class2.method_8() : "");
+				AsciiStructureNode class2;
+				this.countoff = (((class2 = class302_0.method_5<AsciiStructureNode>(new AsciiStructureNode("countoff"))) != null) ? class2.method_8() : "");
 				FloatStructureNode class3;
 				this.band_vol = (((class3 = class302_0.method_5<FloatStructureNode>(new FloatStructureNode("band_playback_volume"))) != null) ? class3.method_8() : 0f);
 				this.guitar_vol = (((class3 = class302_0.method_5<FloatStructureNode>(new FloatStructureNode("guitar_playback_volume"))) != null) ? class3.method_8() : 0f);
@@ -189,7 +189,7 @@ namespace GuitarHero.Songlist
 		{
 			StructureHeaderNode @class = new StructureHeaderNode();
 			@class.method_3(new TagStructureNode("checksum", this.name));
-			@class.method_3(new Class305("name", this.name));
+			@class.method_3(new AsciiStructureNode("name", this.name));
 			@class.method_3(new UnicodeStructureNode("title", this.title));
 			@class.method_3(new UnicodeStructureNode("artist", this.artist.Equals("") ? " " : this.artist));
 			@class.method_3(new UnicodeStructureNode("year", this.year.Equals("") ? " " : this.year));
@@ -238,7 +238,7 @@ namespace GuitarHero.Songlist
 			}
 			if (!this.countoff.Equals(""))
 			{
-				@class.method_3(new Class305("countoff", this.countoff));
+				@class.method_3(new AsciiStructureNode("countoff", this.countoff));
 			}
 			@class.method_3(new IntegerStructureNode("rhythm_track", this.not_bass ? 1 : 0));
 			if (this.band_vol != 0f)

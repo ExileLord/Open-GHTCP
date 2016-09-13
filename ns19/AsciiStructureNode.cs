@@ -6,28 +6,28 @@ using System;
 
 namespace ns19
 {
-	public class Class305 : zzUnkNode294
+	public class AsciiStructureNode : zzUnkNode294
 	{
-		public Class305()
+		public AsciiStructureNode()
 		{
 			this.vmethod_0();
 		}
 
-		public Class305(string string_0) : this(QbSongClass1.smethod_9(string_0))
+		public AsciiStructureNode(string string_0) : this(QbSongClass1.smethod_9(string_0))
 		{
 		}
 
-		public Class305(int int_1)
+		public AsciiStructureNode(int int_1)
 		{
 			this.int_0 = int_1;
 			this.vmethod_0();
 		}
 
-		public Class305(string string_0, string string_1) : this(QbSongClass1.smethod_9(string_0), string_1)
+		public AsciiStructureNode(string string_0, string string_1) : this(QbSongClass1.smethod_9(string_0), string_1)
 		{
 		}
 
-		public Class305(int int_1, string string_0)
+		public AsciiStructureNode(int int_1, string string_0)
 		{
 			this.int_0 = int_1;
 			base.Nodes.Add(new AsciiValueNode(string_0));

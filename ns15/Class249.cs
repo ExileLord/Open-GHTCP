@@ -9,11 +9,11 @@ namespace ns15
 {
 	public class Class249 : Class245
 	{
-		private Class318 class318_0;
+		private zzPakNode2 class318_0;
 
 		private bool bool_0;
 
-		public Class249(Class318 class318_1)
+		public Class249(zzPakNode2 class318_1)
 		{
 			this.class318_0 = class318_1;
 		}
@@ -26,7 +26,7 @@ namespace ns15
 			{
 				bool flag = current.method_5<TagStructureNode>(new TagStructureNode("name", "unlockall")) != null;
 				bool flag2 = current.method_5<TagStructureNode>(new TagStructureNode("name", "unlockalleverything")) != null;
-				IntegerArrayNode class2 = current.method_5<Class301>(new Class301("unlock_pattern")).method_8() as IntegerArrayNode;
+				IntegerArrayNode class2 = current.method_5<ArrayPointerNode>(new ArrayPointerNode("unlock_pattern")).method_8() as IntegerArrayNode;
 				if (class2.Nodes.Count == 1)
 				{
 					this.bool_0 = true;

@@ -10,13 +10,13 @@ namespace ns17
 {
 	public class Class252 : Class245
 	{
-		private Class318 class318_0;
+		private zzPakNode2 class318_0;
 
 		private GH3Songlist gh3Songlist_0;
 
 		private bool bool_0;
 
-		public Class252(Class318 class318_1, GH3Songlist gh3Songlist_1, bool bool_1)
+		public Class252(zzPakNode2 class318_1, GH3Songlist gh3Songlist_1, bool bool_1)
 		{
 			this.class318_0 = class318_1;
 			this.gh3Songlist_0 = gh3Songlist_1;

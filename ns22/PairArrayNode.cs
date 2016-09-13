@@ -4,7 +4,7 @@ using System;
 
 namespace ns22
 {
-	public class PairArrayNode : Class289<FloatListNode>
+	public class PairArrayNode : zzUnkNode289<FloatListNode>
 	{
 		public FloatListNode this[int int_0]
 		{

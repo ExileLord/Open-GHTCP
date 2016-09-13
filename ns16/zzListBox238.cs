@@ -11,7 +11,7 @@ namespace ns16
 	{
 		private Rectangle rectangle_0 = Rectangle.Empty;
 
-		private readonly Class230 class230_0;
+		private readonly zzDrawingClass230 class230_0;
 
 		private int[] int_0 = new int[0];
 
@@ -32,7 +32,7 @@ namespace ns16
 		public zzListBox238()
 		{
 			this.AllowDrop = true;
-			this.class230_0 = new Class230(this);
+			this.class230_0 = new zzDrawingClass230(this);
 		}
 
 		public string imethod_0()

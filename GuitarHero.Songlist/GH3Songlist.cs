@@ -20,7 +20,7 @@ namespace GuitarHero.Songlist
 		public Dictionary<int, GHLink> dictionary_1 = new Dictionary<int, GHLink>();
 
 		[NonSerialized]
-		public Class214<string, int> class214_0 = new Class214<string, int>();
+		public zzCollection214<string, int> class214_0 = new zzCollection214<string, int>();
 
 		public int CustomBitMask;
 

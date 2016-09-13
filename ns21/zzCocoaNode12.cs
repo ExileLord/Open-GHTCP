@@ -30,10 +30,10 @@ namespace ns21
 
 		public zzCocoaNode12(string string_0)
 		{
-			base.Text = KeyGenerator.smethod_13(string_0);
+			base.Text = KeyGenerator.GetFileName(string_0);
 			this.int_2 = QbSongClass1.smethod_9(string_0.Substring(string_0.LastIndexOf('.')));
 			this.int_3 = QbSongClass1.smethod_9(string_0);
-			this.int_4 = QbSongClass1.smethod_9(KeyGenerator.smethod_12(string_0));
+			this.int_4 = QbSongClass1.smethod_9(KeyGenerator.GetFileNameNoExt(string_0));
 			base.ImageIndex = 39;
 			base.SelectedImageIndex = 39;
 			this.byte_0 = null;
@@ -46,7 +46,7 @@ namespace ns21
 
 		public zzCocoaNode12(int int_6, int int_7, int int_8, int int_9, int int_10, int int_11, Enum35 enum35_1)
 		{
-			base.Text = (QbSongClass1.smethod_3(int_9) ? KeyGenerator.smethod_13(QbSongClass1.smethod_5(int_9)) : ("0x" + KeyGenerator.ValToHex32bit(int_9)));
+			base.Text = (QbSongClass1.smethod_3(int_9) ? KeyGenerator.GetFileName(QbSongClass1.smethod_5(int_9)) : ("0x" + KeyGenerator.ValToHex32bit(int_9)));
 			this.int_2 = int_6;
 			this.int_0 = int_7;
 			this.int_1 = int_8;
@@ -109,9 +109,9 @@ namespace ns21
 
 		public int imethod_7()
 		{
-			if (base.Parent != null && base.Parent is Class317 && !(base.Parent as Class317).bool_0)
+			if (base.Parent != null && base.Parent is zzPakNode1 && !(base.Parent as zzPakNode1).bool_0)
 			{
-				return QbSongClass1.smethod_9((base.Parent as Class317).vmethod_0() + base.Text);
+				return QbSongClass1.smethod_9((base.Parent as zzPakNode1).vmethod_0() + base.Text);
 			}
 			return this.int_3;
 		}

@@ -7,13 +7,16 @@ using System;
 
 namespace ns17
 {
+
+    //This is probably the "speed boost" part of GHTCP
+
 	public class Class251 : Class245
 	{
-		private Class318 class318_0;
+		private zzPakNode2 class318_0;
 
 		private bool bool_0;
 
-		public Class251(Class318 class318_1)
+		public Class251(zzPakNode2 class318_1)
 		{
 			this.class318_0 = class318_1;
 			TagStructureNode @class = ((StructureHeaderNode)this.class318_0.method_8("scripts\\guitar\\guitar_events.qb").method_5<TagStructureNode>(new TagStructureNode("event", "star_power_on")).Parent).method_5<TagStructureNode>(new TagStructureNode("scr"));

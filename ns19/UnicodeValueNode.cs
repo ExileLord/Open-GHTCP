@@ -4,16 +4,16 @@ using System.Text;
 
 namespace ns19
 {
-	public class Class312 : AbstractTreeNode2
+	public class UnicodeValueNode : AbstractTreeNode2
 	{
 		public string string_0 = "";
 
-		public Class312()
+		public UnicodeValueNode()
 		{
 			this.vmethod_0();
 		}
 
-		public Class312(string string_1)
+		public UnicodeValueNode(string string_1)
 		{
 			this.string_0 = string_1;
 			this.vmethod_0();

@@ -621,19 +621,19 @@
     <Compile Include="ns14\Class210.cs" />
     <Compile Include="ns14\Class211.cs" />
     <Compile Include="ns14\Class212.cs" />
-    <Compile Include="ns14\Class213.cs" />
-    <Compile Include="ns14\Class214.cs" />
+    <Compile Include="ns14\CompilerClass213.cs" />
+    <Compile Include="ns14\zzCollection214.cs" />
     <Compile Include="ns14\Class215.cs" />
     <Compile Include="ns14\Class216.cs" />
     <Compile Include="ns14\Class217.cs" />
-    <Compile Include="ns14\Class218.cs" />
+    <Compile Include="ns14\UnusedClass218.cs" />
     <Compile Include="ns14\Class219.cs" />
     <Compile Include="ns14\Class220.cs" />
     <Compile Include="ns14\Class221.cs" />
     <Compile Include="ns14\Class222.cs" />
     <Compile Include="ns14\Class225.cs" />
     <Compile Include="ns14\Track.cs" />
-    <Compile Include="ns14\Class230.cs" />
+    <Compile Include="ns14\zzDrawingClass230.cs" />
     <Compile Include="ns14\ActionList.cs" />
     <Compile Include="ns14\ViewLog.cs">
       <SubType>Form</SubType>
@@ -735,24 +735,24 @@
     <Compile Include="ns18\EventArgs2.cs" />
     <Compile Include="ns18\Struct83.cs" />
     <Compile Include="ns19\ProbablyRootNode.cs" />
-    <Compile Include="ns19\Class283.cs" />
-    <Compile Include="ns19\Class288.cs" />
-    <Compile Include="ns19\Class289.cs" />
-    <Compile Include="ns19\Class290.cs" />
-    <Compile Include="ns19\Class300.cs" />
-    <Compile Include="ns19\Class301.cs" />
-    <Compile Include="ns19\Class305.cs" />
-    <Compile Include="ns19\Class311.cs" />
-    <Compile Include="ns19\Class312.cs" />
-    <Compile Include="ns19\Class317.cs" />
-    <Compile Include="ns19\Class318.cs" />
-    <Compile Include="ns19\Class319.cs" />
+    <Compile Include="ns19\UnicodeArrayNode.cs" />
+    <Compile Include="ns19\zzUnkNode288.cs" />
+    <Compile Include="ns19\zzUnkNode289.cs" />
+    <Compile Include="ns19\VectorArrayNode.cs" />
+    <Compile Include="ns19\zzUnkNode300.cs" />
+    <Compile Include="ns19\ArrayPointerNode.cs" />
+    <Compile Include="ns19\AsciiStructureNode.cs" />
+    <Compile Include="ns19\TextValueNode.cs" />
+    <Compile Include="ns19\UnicodeValueNode.cs" />
+    <Compile Include="ns19\zzPakNode1.cs" />
+    <Compile Include="ns19\zzPakNode2.cs" />
+    <Compile Include="ns19\zzPabNode.cs" />
     <Compile Include="ns19\Class320.cs" />
     <Compile Include="ns19\Class321.cs" />
-    <Compile Include="ns19\Class322.cs" />
-    <Compile Include="ns19\Class323.cs" />
+    <Compile Include="ns19\zzDdsCollection322.cs" />
+    <Compile Include="ns19\zzQbSongObject.cs" />
     <Compile Include="ns19\Class324.cs" />
-    <Compile Include="ns19\Class325.cs" />
+    <Compile Include="ns19\zzStreamClass325.cs" />
     <Compile Include="ns19\Class326.cs" />
     <Compile Include="ns1\Class13.cs" />
     <Compile Include="ns1\Class15.cs" />
@@ -917,7 +917,7 @@
     <Compile Include="ns5\Exception2.cs" />
     <Compile Include="ns5\AC3Stream.cs" />
     <Compile Include="ns6\Class117.cs" />
-    <Compile Include="ns6\Class118.cs" />
+    <Compile Include="ns6\OpenAL.cs" />
     <Compile Include="ns6\Class119.cs" />
     <Compile Include="ns6\Class120.cs" />
     <Compile Include="ns6\Class121.cs" />
@@ -966,9 +966,9 @@
     <Compile Include="ns8\Class175.cs" />
     <Compile Include="ns8\Class176.cs" />
     <Compile Include="ns8\Class177.cs" />
-    <Compile Include="ns8\Enum20.cs" />
-    <Compile Include="ns8\Enum21.cs" />
-    <Compile Include="ns8\Enum22.cs" />
+    <Compile Include="ns8\FSBEnum1.cs" />
+    <Compile Include="ns8\FSBFlags1.cs" />
+    <Compile Include="ns8\FSBFlags2.cs" />
     <Compile Include="ns8\AudioTypeEnum.cs" />
     <Compile Include="ns8\Enum25.cs" />
     <Compile Include="ns8\Exception4.cs" />
@@ -976,7 +976,7 @@
     <Compile Include="ns8\FSBStream.cs" />
     <Compile Include="ns8\FSBClass2.cs" />
     <Compile Include="ns8\Stream18.cs" />
-    <Compile Include="ns9\Class338.cs" />
+    <Compile Include="ns9\zzNote338.cs" />
     <Compile Include="ns9\BpmNote1.cs" />
     <Compile Include="ns9\Class347.cs" />
     <Compile Include="ns9\Class352.cs" />
@@ -986,15 +986,15 @@
     <Compile Include="ns9\Class356.cs" />
     <Compile Include="ns9\Class357.cs" />
     <Compile Include="ns9\Class358.cs" />
-    <Compile Include="ns9\Class359.cs" />
-    <Compile Include="ns9\Class360.cs" />
+    <Compile Include="ns9\CompilerClass359.cs" />
+    <Compile Include="ns9\LameEncoder.cs" />
     <Compile Include="ns9\Class361.cs" />
     <Compile Include="ns9\QBCParser.cs" />
     <Compile Include="ns9\Control1.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ns9\Enum38.cs" />
-    <Compile Include="ns9\Enum39.cs" />
+    <Compile Include="ns9\Difficulty.cs" />
+    <Compile Include="ns9\Fret.cs" />
     <Compile Include="ns9\Interface14.cs" />
     <Compile Include="ns9\Interface15.cs" />
     <Compile Include="ns9\Stream16.cs" />
@@ -1142,7 +1142,6 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />

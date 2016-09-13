@@ -4,21 +4,21 @@ using System;
 
 namespace ns19
 {
-	public class Class283 : AbsTreeNode1_1_<Class312>
+	public class UnicodeArrayNode : AbsTreeNode1_1_<UnicodeValueNode>
 	{
 		public string this[int int_0]
 		{
 			get
 			{
-				return ((Class312)base.Nodes[int_0]).string_0;
+				return ((UnicodeValueNode)base.Nodes[int_0]).string_0;
 			}
 			set
 			{
-				((Class312)base.Nodes[int_0]).string_0 = value;
+				((UnicodeValueNode)base.Nodes[int_0]).string_0 = value;
 			}
 		}
 
-		public Class283()
+		public UnicodeArrayNode()
 		{
 			this.vmethod_0();
 		}
@@ -52,7 +52,7 @@ namespace ns19
 			for (int j = 0; j < array2.Length; j++)
 			{
 				int int_ = array2[j];
-				base.Nodes.Add(new Class312(stream26_0.method_46(int_)));
+				base.Nodes.Add(new UnicodeValueNode(stream26_0.method_46(int_)));
 			}
 			stream26_0.Position += (long)AbstractTreeNode1.smethod_0(stream26_0.Position);
 		}
@@ -74,7 +74,7 @@ namespace ns19
 			}
 			int num = (int)stream26_0.Position + 4 * base.Nodes.Count;
 			Stream26 stream = new Stream26();
-			foreach (Class312 @class in base.Nodes)
+			foreach (UnicodeValueNode @class in base.Nodes)
 			{
 				stream26_0.method_5(num);
 				stream.method_14(@class.string_0, stream26_0.bool_0);
@@ -97,7 +97,7 @@ namespace ns19
 				int_0 += 4;
 			}
 			int_0 += 4 * base.Nodes.Count;
-			foreach (Class312 @class in base.Nodes)
+			foreach (UnicodeValueNode @class in base.Nodes)
 			{
 				@class.vmethod_2(ref int_0);
 				int_0 += 2;

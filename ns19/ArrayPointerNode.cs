@@ -4,28 +4,28 @@ using System;
 
 namespace ns19
 {
-	public class Class301 : Class300
+	public class ArrayPointerNode : zzUnkNode300
 	{
-		public Class301()
+		public ArrayPointerNode()
 		{
 			this.vmethod_0();
 		}
 
-		public Class301(string string_0) : this(QbSongClass1.smethod_9(string_0))
+		public ArrayPointerNode(string string_0) : this(QbSongClass1.smethod_9(string_0))
 		{
 		}
 
-		public Class301(int int_1)
+		public ArrayPointerNode(int int_1)
 		{
 			this.int_0 = int_1;
 			this.vmethod_0();
 		}
 
-		public Class301(string string_0, AbsTreeNode1_1 class276_0) : this(QbSongClass1.smethod_9(string_0), class276_0)
+		public ArrayPointerNode(string string_0, AbsTreeNode1_1 class276_0) : this(QbSongClass1.smethod_9(string_0), class276_0)
 		{
 		}
 
-		public Class301(int int_1, AbsTreeNode1_1 class276_0)
+		public ArrayPointerNode(int int_1, AbsTreeNode1_1 class276_0)
 		{
 			this.int_0 = int_1;
 			base.Nodes.Add(class276_0);

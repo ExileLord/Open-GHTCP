@@ -7,19 +7,19 @@ using System.Windows.Forms;
 
 namespace ns19
 {
-	public class Class319 : Class318
+	public class zzPabNode : zzPakNode2
 	{
 		public string string_2;
 
-		public Class319() : this(true)
+		public zzPabNode() : this(true)
 		{
 		}
 
-		public Class319(bool bool_5) : this(bool_5, true, 0)
+		public zzPabNode(bool bool_5) : this(bool_5, true, 0)
 		{
 		}
 
-		public Class319(bool bool_5, bool bool_6, int int_1)
+		public zzPabNode(bool bool_5, bool bool_6, int int_1)
 		{
 			base.Text = "PabFile";
 			this.bool_2 = bool_5;
@@ -29,13 +29,13 @@ namespace ns19
 			base.SelectedImageIndex = 37;
 		}
 
-		public Class319(string string_3, string string_4, bool bool_5) : this(string_3, string_4, null, bool_5)
+		public zzPabNode(string string_3, string string_4, bool bool_5) : this(string_3, string_4, null, bool_5)
 		{
 		}
 
-		public Class319(string string_3, string string_4, string string_5, bool bool_5)
+		public zzPabNode(string string_3, string string_4, string string_5, bool bool_5)
 		{
-			base.Text = KeyGenerator.smethod_13(string_3);
+			base.Text = KeyGenerator.GetFileName(string_3);
 			this.string_0 = string_3;
 			this.string_2 = string_4;
 			this.string_1 = string_5;
@@ -52,7 +52,7 @@ namespace ns19
 		{
 			if (this.string_1 != null)
 			{
-				this.class318_0 = new Class318(this.string_1, false);
+				this.class318_0 = new zzPakNode2(this.string_1, false);
 			}
 			using (Stream26 stream = new Stream26(File.Open(this.string_0, FileMode.Open, FileAccess.Read, FileShare.Read)))
 			{
@@ -134,7 +134,7 @@ namespace ns19
 								}
 							}
 						}
-						if (num6 == KeyGenerator.GetQbKey(text = KeyGenerator.smethod_12(text), true))
+						if (num6 == KeyGenerator.GetQbKey(text = KeyGenerator.GetFileNameNoExt(text), true))
 						{
 							QbSongClass1.smethod_9(text);
 						}

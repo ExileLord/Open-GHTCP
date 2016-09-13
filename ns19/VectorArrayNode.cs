@@ -3,7 +3,7 @@ using System;
 
 namespace ns19
 {
-	public class Class290 : Class289<FloatListNode>
+	public class VectorArrayNode : zzUnkNode289<FloatListNode>
 	{
 		public FloatListNode this[int int_0]
 		{
@@ -17,7 +17,7 @@ namespace ns19
 			}
 		}
 
-		public Class290()
+		public VectorArrayNode()
 		{
 			this.vmethod_0();
 		}

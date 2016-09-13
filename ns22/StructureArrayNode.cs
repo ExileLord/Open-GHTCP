@@ -4,7 +4,7 @@ using System;
 
 namespace ns22
 {
-	public class StructureArrayNode : Class289<StructureHeaderNode>
+	public class StructureArrayNode : zzUnkNode289<StructureHeaderNode>
 	{
 		public StructureHeaderNode this[int int_0]
 		{

@@ -9,13 +9,13 @@ namespace ns17
 {
 	public class Class254 : Class245
 	{
-		private Class318 class318_0;
+		private zzPakNode2 class318_0;
 
 		private bool bool_0;
 
 		private bool bool_1;
 
-		public Class254(Class318 class318_1, bool bool_2)
+		public Class254(zzPakNode2 class318_1, bool bool_2)
 		{
 			this.class318_0 = class318_1;
 			this.bool_1 = bool_2;
@@ -70,7 +70,7 @@ namespace ns17
 				class2.method_3(new TagStructureNode("action", "select_custom_menu"));
 				class2.method_3(new TagStructureNode("flow_state", "custom_menu_fs"));
 				class2.method_3(new TagStructureNode(0, "transition_right"));
-				@class.method_5<StructurePointerRootNode>(new StructurePointerRootNode("main_menu_fs")).method_5<Class301>(new Class301("actions")).method_8().method_3(class2);
+				@class.method_5<StructurePointerRootNode>(new StructurePointerRootNode("main_menu_fs")).method_5<ArrayPointerNode>(new ArrayPointerNode("actions")).method_8().method_3(class2);
 			}
 		}
 

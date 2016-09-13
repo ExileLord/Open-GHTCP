@@ -9,13 +9,13 @@ namespace ns17
 {
 	public class Class253 : Class245
 	{
-		private Class318 class318_0;
+		private zzPakNode2 class318_0;
 
 		private bool bool_0;
 
 		private bool bool_1;
 
-		public Class253(Class318 class318_1, bool bool_2)
+		public Class253(zzPakNode2 class318_1, bool bool_2)
 		{
 			this.class318_0 = class318_1;
 			this.bool_1 = bool_2;
@@ -89,7 +89,7 @@ namespace ns17
 					"qb_s",
 					"qb_g",
 					"qb_k"
-				}).IndexOf(KeyGenerator.smethod_12(this.class318_0.string_0))]));
+				}).IndexOf(KeyGenerator.GetFileNameNoExt(this.class318_0.string_0))]));
 			}
 			if (!this.bool_0)
 			{

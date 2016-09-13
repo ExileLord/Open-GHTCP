@@ -4,36 +4,36 @@ using System.Collections.Generic;
 
 namespace ns19
 {
-	public class Class323
+	public class zzQbSongObject
 	{
-		public byte[] byte_0;
+		public byte[] data;
 
 		public int int_0;
 
-		public string string_0;
+		public string fileName;
 
 		public string[] string_1;
 
-		public Class323(string string_2) : this(KeyGenerator.smethod_11(string_2, -1).ToLower(), KeyGenerator.smethod_30(string_2))
+		public zzQbSongObject(string path) : this(KeyGenerator.GetFileName(path, -1).ToLower(), KeyGenerator.ReadBytes(path))
 		{
 		}
 
-		public Class323(string string_2, byte[] byte_1)
+		public zzQbSongObject(string newFileName, byte[] newData)
 		{
-			this.byte_0 = byte_1;
-			List<byte> list = new List<byte>(this.byte_0);
-			this.string_0 = string_2;
+			this.data = newData;
+			List<byte> list = new List<byte>(this.data);
+			this.fileName = newFileName;
 			this.string_1 = new string[KeyGenerator.smethod_24(list.GetRange(0, 4).ToArray(), true)];
 			this.int_0 = KeyGenerator.smethod_24(list.GetRange(4, 4).ToArray(), true);
 			string[] array = new string[]
 			{
-				this.string_0 + "_song",
-				this.string_0 + "_guitar",
-				this.string_0 + "_preview",
-				this.string_0 + "_rhythm",
-				this.string_0 + "_coop_song",
-				this.string_0 + "_coop_guitar",
-				this.string_0 + "_coop_rhythm"
+				this.fileName + "_song",
+				this.fileName + "_guitar",
+				this.fileName + "_preview",
+				this.fileName + "_rhythm",
+				this.fileName + "_coop_song",
+				this.fileName + "_coop_guitar",
+				this.fileName + "_coop_rhythm"
 			};
 			List<int> list2 = new List<int>();
 			string[] array2 = array;
@@ -53,7 +53,7 @@ namespace ns19
 						"Dat File Corrupted: unperdictable CRC value (",
 						num2,
 						") for song \"",
-						this.string_0,
+						this.fileName,
 						"\""
 					}));
 				}
@@ -66,17 +66,17 @@ namespace ns19
 		{
 			for (int i = 0; i < this.string_1.Length; i++)
 			{
-				this.string_1[i] = this.string_1[i].Replace(this.string_0, string_2);
+				this.string_1[i] = this.string_1[i].Replace(this.fileName, string_2);
 			}
-			this.string_0 = string_2;
+			this.fileName = string_2;
 			this.method_1();
 		}
 
-		public Class323(int int_1, string[] string_2)
+		public zzQbSongObject(int int_1, string[] string_2)
 		{
 			this.int_0 = int_1;
 			this.string_1 = string_2;
-			this.string_0 = this.string_1[0].Remove(this.string_1[0].IndexOf('_'));
+			this.fileName = this.string_1[0].Remove(this.string_1[0].IndexOf('_'));
 			this.method_1();
 		}
 
@@ -94,12 +94,12 @@ namespace ns19
 					list.Add(0);
 				}
 			}
-			this.byte_0 = list.ToArray();
+			this.data = list.ToArray();
 		}
 
 		public void method_2(string string_2)
 		{
-			KeyGenerator.smethod_9(string_2, this.byte_0);
+			KeyGenerator.smethod_9(string_2, this.data);
 		}
 	}
 }

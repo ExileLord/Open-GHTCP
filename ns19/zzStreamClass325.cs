@@ -3,7 +3,7 @@ using System;
 
 namespace ns19
 {
-	public class Class325 : Class324
+	public class zzStreamClass325 : Class324
 	{
 		public override void vmethod_0(Stream26 stream26_0)
 		{

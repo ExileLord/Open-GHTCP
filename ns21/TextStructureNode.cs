@@ -21,7 +21,7 @@ namespace ns21
 		{
 			if (base.Nodes.Count != 0)
 			{
-				return ((Class311)base.FirstNode).method_2();
+				return ((TextValueNode)base.FirstNode).method_2();
 			}
 			return null;
 		}
@@ -30,7 +30,7 @@ namespace ns21
 		{
 			if (base.Nodes.Count != 0)
 			{
-				return ((Class311)base.FirstNode).int_0;
+				return ((TextValueNode)base.FirstNode).int_0;
 			}
 			return 0;
 		}
@@ -38,7 +38,7 @@ namespace ns21
 		public override void vmethod_13(Stream26 stream26_0)
 		{
 			this.int_0 = stream26_0.method_19();
-			base.Nodes.Add(new Class311(stream26_0.method_19(), this.vmethod_10()));
+			base.Nodes.Add(new TextValueNode(stream26_0.method_19(), this.vmethod_10()));
 			int num = stream26_0.method_19();
 			if (num != 0)
 			{

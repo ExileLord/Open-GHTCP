@@ -10,7 +10,7 @@ namespace ns22
 
 		public int int_1;
 
-		public Class346() : this(65536) //I think this is the size of GH3's hash map?..
+		public Class346() : this(65536) 
 		{
 		}
 

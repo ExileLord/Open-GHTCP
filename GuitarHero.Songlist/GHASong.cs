@@ -62,8 +62,8 @@ namespace GuitarHero.Songlist
 			TagStructureNode class2;
 			this.band = (((class2 = class302_0.method_5<TagStructureNode>(new TagStructureNode("band"))) != null) ? class2.method_8() : "default_band");
 			this.guitarist_checksum = ((class2 = class302_0.method_5<TagStructureNode>(new TagStructureNode("guitarist_checksum"))) != null && class2.method_8() == "aerosmith");
-			Class305 class3;
-			this.singer_anim_pak = (((class3 = class302_0.method_5<Class305>(new Class305("singer_anim_pak"))) != null) ? class3.method_8() : "");
+			AsciiStructureNode class3;
+			this.singer_anim_pak = (((class3 = class302_0.method_5<AsciiStructureNode>(new AsciiStructureNode("singer_anim_pak"))) != null) ? class3.method_8() : "");
 			IntegerStructureNode class4;
 			this.thin_fretbar_8note_params_high_bpm = (((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("thin_fretbar_8note_params_high_bpm"))) != null) ? class4.method_8() : 0);
 			this.perry_mic_stand = ((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("perry_mic_stand"))) != null && class4.method_8() == 1);
@@ -84,7 +84,7 @@ namespace GuitarHero.Songlist
 			}
 			if (!this.singer_anim_pak.Equals(""))
 			{
-				class2.method_3(new Class305("singer_anim_pak", this.singer_anim_pak));
+				class2.method_3(new AsciiStructureNode("singer_anim_pak", this.singer_anim_pak));
 			}
 			if (this.thin_fretbar_8note_params_high_bpm != 0)
 			{

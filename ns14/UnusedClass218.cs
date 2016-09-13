@@ -2,7 +2,9 @@ using System;
 
 namespace ns14
 {
-	public class Class218 : IComparable, IConvertible, IFormattable
+    // Can probably be deleted
+
+	public class UnusedClass218 : IComparable, IConvertible, IFormattable
 	{
 		private object object_0;
 

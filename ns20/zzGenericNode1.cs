@@ -87,13 +87,13 @@ namespace ns20
 
 		public zzGenericNode1(string string_0, AbstractTreeNode1 class259_0)
 		{
-			base.Text = KeyGenerator.smethod_13(string_0);
+			base.Text = KeyGenerator.GetFileName(string_0);
 			base.Nodes.Add(class259_0);
 		}
 
 		public zzGenericNode1(string string_0, IEnumerable<AbstractTreeNode1> ienumerable_0)
 		{
-			base.Text = KeyGenerator.smethod_13(string_0);
+			base.Text = KeyGenerator.GetFileName(string_0);
 			base.Nodes.AddRange(new List<AbstractTreeNode1>(ienumerable_0).ToArray());
 		}
 
@@ -103,14 +103,14 @@ namespace ns20
 
 		public zzGenericNode1(string string_0, Stream26 stream26_0)
 		{
-			base.Text = KeyGenerator.smethod_13(string_0);
+			base.Text = KeyGenerator.GetFileName(string_0);
 			stream26_0.Position = 28L;
 			base.method_4(stream26_0);
 		}
 
 		public zzGenericNode1(string string_0, Stream26 stream26_0, Dictionary<int, string> dictionary_1)
 		{
-			base.Text = KeyGenerator.smethod_13(string_0);
+			base.Text = KeyGenerator.GetFileName(string_0);
 			if (dictionary_1 != null)
 			{
 				this.dictionary_0 = dictionary_1;
@@ -189,7 +189,7 @@ namespace ns20
 						}
 						if (num2 == 4)
 						{
-							return new Class283();
+							return new UnicodeArrayNode();
 						}
 						if (num2 == 5)
 						{
@@ -197,7 +197,7 @@ namespace ns20
 						}
 						if (num2 == 6)
 						{
-							return new Class290();
+							return new VectorArrayNode();
 						}
 						if (num2 == 10)
 						{
@@ -235,7 +235,7 @@ namespace ns20
 						}
 						if (num == 7)
 						{
-							return new Class305();
+							return new AsciiStructureNode();
 						}
 						if (num == 9)
 						{
@@ -255,7 +255,7 @@ namespace ns20
 						}
 						if (num == 25)
 						{
-							return new Class301();
+							return new ArrayPointerNode();
 						}
 						if (num == 27)
 						{
@@ -287,7 +287,7 @@ namespace ns20
 						}
 						if (num2 == 3)
 						{
-							return new Class305();
+							return new AsciiStructureNode();
 						}
 						if (num2 == 4)
 						{
@@ -307,7 +307,7 @@ namespace ns20
 						}
 						if (num2 == 12)
 						{
-							return new Class301();
+							return new ArrayPointerNode();
 						}
 						if (num2 == 13)
 						{

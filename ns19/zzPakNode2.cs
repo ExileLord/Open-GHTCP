@@ -9,17 +9,17 @@ using System.Windows.Forms;
 
 namespace ns19
 {
-	public class Class318 : Class317, IEnumerable, IDisposable, IEnumerable<Interface12>
+	public class zzPakNode2 : zzPakNode1, IEnumerable, IDisposable, IEnumerable<Interface12>
 	{
 		public string string_0;
 
 		public string string_1;
 
-		public Class317 class317_0;
+		public zzPakNode1 class317_0;  //Parent?
 
 		public List<Interface12> list_0;
 
-		public Class318 class318_0;
+		public zzPakNode2 class318_0; //Linked List?..
 
 		public Dictionary<int, int[]> dictionary_0;
 
@@ -35,17 +35,17 @@ namespace ns19
 
 		public bool bool_4;
 
-		public Class318() : this(true)
+		public zzPakNode2() : this(true)
 		{
 		}
 
-		public Class318(bool bool_5) : this(bool_5, true, 0)
+		public zzPakNode2(bool bool_5) : this(bool_5, true, 0)
 		{
 		}
 
-		public Class318(bool bool_5, bool bool_6, int int_1) : base("PakFile")
+		public zzPakNode2(bool bool_5, bool bool_6, int int_1) : base("PakFile")
 		{
-			this.class317_0 = new Class317(true);
+			this.class317_0 = new zzPakNode1(true);
 			this.list_0 = new List<Interface12>();
 			this.dictionary_0 = new Dictionary<int, int[]>();
 			this.bool_1 = true;
@@ -59,20 +59,20 @@ namespace ns19
 			base.SelectedImageIndex = 37;
 		}
 
-		public Class318(string string_2, bool bool_5) : this(string_2, null, bool_5)
+		public zzPakNode2(string string_2, bool bool_5) : this(string_2, null, bool_5)
 		{
 		}
 
-		public Class318(string string_2, string string_3, bool bool_5) : base()
+		public zzPakNode2(string string_2, string string_3, bool bool_5) : base()
 		{
-			this.class317_0 = new Class317(true);
+			this.class317_0 = new zzPakNode1(true);
 			this.list_0 = new List<Interface12>();
 			this.dictionary_0 = new Dictionary<int, int[]>();
 			this.bool_1 = true;
 			this.bool_2 = true;
 			this.bool_4 = true;
 			//base..ctor();
-			base.Text = KeyGenerator.smethod_13(string_2);
+			base.Text = KeyGenerator.GetFileName(string_2);
 			this.string_0 = string_2;
 			this.string_1 = string_3;
 			this.bool_4 = bool_5;
@@ -90,7 +90,7 @@ namespace ns19
 			{
 				this.stream26_0 = new Stream26(File.Open(this.string_0, FileMode.Open, FileAccess.Read, FileShare.Read));
 			}
-			this.class318_0 = ((this.string_1 != null) ? new Class318(this.string_1, false) : this);
+			this.class318_0 = ((this.string_1 != null) ? new zzPakNode2(this.string_1, false) : this);
 			if (this.stream26_0.Length == 0L)
 			{
 				throw new Exception("Pak File is empty!");
@@ -103,7 +103,7 @@ namespace ns19
 			this.int_0 = this.stream26_0.method_42(this.bool_1 ? 12 : 16, this.bool_2 && (@enum & Enum35.flag_4) == Enum35.flag_0 && (@enum & Enum35.flag_5) == Enum35.flag_0);
 			if (this.bool_4 && this.string_0 != null)
 			{
-				string text = KeyGenerator.smethod_13(this.string_0);
+				string text = KeyGenerator.GetFileName(this.string_0);
 				if (text.Contains("_song"))
 				{
 					QbSongClass1.smethod_10(text.Substring(0, text.LastIndexOf("_song.pak")).ToLower());
@@ -178,7 +178,7 @@ namespace ns19
 							}
 						}
 					}
-					if (num4 == KeyGenerator.GetQbKey(text2 = KeyGenerator.smethod_12(text2), true))
+					if (num4 == KeyGenerator.GetQbKey(text2 = KeyGenerator.GetFileNameNoExt(text2), true))
 					{
 						QbSongClass1.smethod_9(text2);
 					}
@@ -468,7 +468,7 @@ namespace ns19
 						stream26_1.method_6(1952304453, flag);
 					}
 				}
-				if (this is Class319 && this.bool_3)
+				if (this is zzPabNode && this.bool_3)
 				{
 					stream26_1.method_6((int)stream26_2.Length, flag);
 				}
@@ -517,12 +517,12 @@ namespace ns19
 					stream26_1.method_4(0, 160 - text2.Length);
 				}
 				stream26_2.method_15(this.method_14(current3));
-				num4 = ((this.bool_2 || this.bool_1) ? Class318.smethod_0(stream26_2.Length, 5) : Class318.smethod_0(stream26_2.Length, 4));
+				num4 = ((this.bool_2 || this.bool_1) ? zzPakNode2.smethod_0(stream26_2.Length, 5) : zzPakNode2.smethod_0(stream26_2.Length, 4));
 				stream26_2.method_4(0, num4);
 				num2 += (flag2 ? 192 : 32);
 			}
 			stream26_1.method_7(this.bool_1 ? 749989691u : 3039057503u);
-			if (this is Class319 && this.bool_3)
+			if (this is zzPabNode && this.bool_3)
 			{
 				stream26_1.method_5((int)stream26_2.Length);
 			}
@@ -544,11 +544,11 @@ namespace ns19
 				stream26_1.method_5(this.int_0);
 				stream26_1.method_4(0, 12);
 			}
-			num4 = (this.bool_1 ? Class318.smethod_0(stream26_1.Length, 12) : (this.bool_2 ? 32 : 16));
+			num4 = (this.bool_1 ? zzPakNode2.smethod_0(stream26_1.Length, 12) : (this.bool_2 ? 32 : 16));
 			stream26_1.method_4(0, num4);
 			stream26_2.method_4(171, 4);
 			stream26_2.method_4(0, 12);
-			num4 = (this.bool_1 ? Class318.smethod_0(stream26_2.Length, 12) : ((int)stream26_2.Length % (this.bool_2 ? 32 : 16)));
+			num4 = (this.bool_1 ? zzPakNode2.smethod_0(stream26_2.Length, 12) : ((int)stream26_2.Length % (this.bool_2 ? 32 : 16)));
 			stream26_2.method_4(171, num4);
 		}
 

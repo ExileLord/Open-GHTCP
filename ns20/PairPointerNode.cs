@@ -3,7 +3,7 @@ using System;
 
 namespace ns20
 {
-	public class PairPointerNode : Class300
+	public class PairPointerNode : zzUnkNode300
 	{
 		public PairPointerNode()
 		{

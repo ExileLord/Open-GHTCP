@@ -10,9 +10,9 @@ namespace ns15
 	{
 		private readonly GH3Songlist gh3Songlist_0;
 
-		private readonly Class318 class318_0;
+		private readonly zzPakNode2 class318_0;
 
-		public Class247(Class318 class318_1, GH3Songlist gh3Songlist_1)
+		public Class247(zzPakNode2 class318_1, GH3Songlist gh3Songlist_1)
 		{
 			this.class318_0 = class318_1;
 			this.gh3Songlist_0 = gh3Songlist_1;

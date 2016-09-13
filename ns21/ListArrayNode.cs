@@ -4,7 +4,7 @@ using System;
 
 namespace ns21
 {
-	public class ListArrayNode : Class289<AbsTreeNode1_1>
+	public class ListArrayNode : zzUnkNode289<AbsTreeNode1_1>
 	{
 		public AbsTreeNode1_1 this[int int_0]
 		{

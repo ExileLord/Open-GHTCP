@@ -4,7 +4,7 @@ using System;
 
 namespace ns20
 {
-	public class StructurePointerNode : Class300
+	public class StructurePointerNode : zzUnkNode300
 	{
 		public StructurePointerNode()
 		{

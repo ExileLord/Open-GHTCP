@@ -90,7 +90,7 @@ namespace ns21
 				}
 				if (num2 == 3)
 				{
-					return new Class305();
+					return new AsciiStructureNode();
 				}
 				if (num2 == 4)
 				{
@@ -110,7 +110,7 @@ namespace ns21
 				}
 				if (num2 == 12)
 				{
-					return new Class301();
+					return new ArrayPointerNode();
 				}
 				if (num2 == 13)
 				{
@@ -138,7 +138,7 @@ namespace ns21
 				}
 				if (num == 7)
 				{
-					return new Class305();
+					return new AsciiStructureNode();
 				}
 				if (num == 9)
 				{
@@ -158,7 +158,7 @@ namespace ns21
 				}
 				if (num == 25)
 				{
-					return new Class301();
+					return new ArrayPointerNode();
 				}
 				if (num == 27)
 				{
@@ -190,7 +190,7 @@ namespace ns21
 				}
 				if (num2 == 3)
 				{
-					return new Class305();
+					return new AsciiStructureNode();
 				}
 				if (num2 == 4)
 				{
@@ -210,7 +210,7 @@ namespace ns21
 				}
 				if (num2 == 12)
 				{
-					return new Class301();
+					return new ArrayPointerNode();
 				}
 				if (num2 == 13)
 				{

@@ -70,7 +70,7 @@ namespace ns19
 						break;
 					}
 					stream26_0.Position -= 1L;
-					Class325 class2 = new Class325();
+					zzStreamClass325 class2 = new zzStreamClass325();
 					class2.vmethod_0(stream26_0);
 					this.list_0.Add(class2);
 				}

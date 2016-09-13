@@ -5,17 +5,17 @@ using System;
 
 namespace ns20
 {
-	public class TextArrayNode : AbsTreeNode1_1_<Class311>
+	public class TextArrayNode : AbsTreeNode1_1_<TextValueNode>
 	{
 		public string this[int int_0]
 		{
 			get
 			{
-				return ((Class311)base.Nodes[int_0]).method_2();
+				return ((TextValueNode)base.Nodes[int_0]).method_2();
 			}
 			set
 			{
-				((Class311)base.Nodes[int_0]).method_3(value);
+				((TextValueNode)base.Nodes[int_0]).method_3(value);
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace ns20
 			}
 			for (int i = 0; i < num; i++)
 			{
-				base.Nodes.Add(new Class311(stream26_0.method_19(), this.vmethod_10()));
+				base.Nodes.Add(new TextValueNode(stream26_0.method_19(), this.vmethod_10()));
 			}
 		}
 
@@ -62,7 +62,7 @@ namespace ns20
 			{
 				stream26_0.method_5((int)stream26_0.Position + 4);
 			}
-			foreach (Class311 @class in base.Nodes)
+			foreach (TextValueNode @class in base.Nodes)
 			{
 				stream26_0.method_15(@class.vmethod_8());
 				if (@class.method_2() != null)

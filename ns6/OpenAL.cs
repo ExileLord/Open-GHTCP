@@ -8,7 +8,7 @@ using System.Text;
 
 namespace ns6
 {
-	public static class Class118
+	public static class OpenAL
 	{
 		[SuppressUnmanagedCodeSecurity]
 		[DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
@@ -48,13 +48,13 @@ namespace ns6
 
 		public static string smethod_0(IntPtr intptr_0, Enum7 enum7_0)
 		{
-			return Marshal.PtrToStringAnsi(Class118.alcGetString(intptr_0, enum7_0));
+			return Marshal.PtrToStringAnsi(OpenAL.alcGetString(intptr_0, enum7_0));
 		}
 
 		public static IList<string> smethod_1(IntPtr intptr_0, Enum8 enum8_0)
 		{
 			List<string> list = new List<string>();
-			IntPtr ptr = Class118.alcGetString(IntPtr.Zero, (Enum7)enum8_0);
+			IntPtr ptr = OpenAL.alcGetString(IntPtr.Zero, (Enum7)enum8_0);
 			StringBuilder stringBuilder = new StringBuilder();
 			int ofs = 0;
 			while (true)

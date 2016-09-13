@@ -3,7 +3,7 @@ using System;
 namespace ns8
 {
 	[Flags]
-	public enum Enum21 : uint
+	public enum FSBFlags1 : uint
 	{
 		flag_0 = 0u,
 		flag_1 = 1u,

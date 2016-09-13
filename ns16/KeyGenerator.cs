@@ -411,23 +411,23 @@ namespace ns16
 			return string_0.Substring(0, length);
 		}
 
-		public static string smethod_11(string string_0, int int_0)
+		public static string GetFileName(string path, int dotsInExtension)
 		{
-			int i = string_0.LastIndexOfAny(new char[]
+			int i = path.LastIndexOfAny(new char[]
 			{
 				'\\',
 				'/'
 			}) + 1;
-			string text = string_0.Substring(i);
+			string text = path.Substring(i);
 			try
 			{
-				if (int_0 == -1)
+				if (dotsInExtension == -1)
 				{
 					text = text.Substring(0, text.IndexOf('.'));
 				}
 				else
 				{
-					for (i = 0; i < int_0; i++)
+					for (i = 0; i < dotsInExtension; i++)
 					{
 						text = text.Substring(0, text.LastIndexOf('.'));
 					}
@@ -439,14 +439,14 @@ namespace ns16
 			return text;
 		}
 
-		public static string smethod_12(string string_0)
+		public static string GetFileNameNoExt(string path)
 		{
-			return KeyGenerator.smethod_11(string_0, -1);
+			return KeyGenerator.GetFileName(path, -1);
 		}
 
-		public static string smethod_13(string string_0)
+		public static string GetFileName(string string_0)
 		{
-			return KeyGenerator.smethod_11(string_0, 0);
+			return KeyGenerator.GetFileName(string_0, 0);
 		}
 
 		public static string smethod_14(string string_0, int int_0)
@@ -572,7 +572,7 @@ namespace ns16
 		{
 			if (!(bool_2 ^ BitConverter.IsLittleEndian))
 			{
-				return KeyGenerator.smethod_28(byte_1);
+				return KeyGenerator.BytesToInt(byte_1);
 			}
 			int num = byte_1.Length;
 			switch (num)
@@ -598,12 +598,12 @@ namespace ns16
 			return KeyGenerator.smethod_24(byte_1, KeyGenerator.bool_0);
 		}
 
-		public static int smethod_26(int int_0)
+		public static int ReverseEndianness(int int_0)
 		{
 			return (int_0 >> 24 & 255) | (int_0 >> 8 & 65280) | (int_0 << 8 & 16711680) | (int_0 << 24 & -16777216);
 		}
 
-		public static short smethod_27(byte[] byte_1)
+		public static short BytesToShort(byte[] byte_1)
 		{
 			short num = 0;
 			int num2 = Math.Min(2, byte_1.Length);
@@ -614,7 +614,7 @@ namespace ns16
 			return num;
 		}
 
-		public static int smethod_28(byte[] byte_1)
+		public static int BytesToInt(byte[] byte_1)
 		{
 			int num = 0;
 			int num2 = Math.Min(4, byte_1.Length);
@@ -625,7 +625,7 @@ namespace ns16
 			return num;
 		}
 
-		public static byte[] smethod_29(int int_0)
+		public static byte[] IntToBytes(int int_0)
 		{
 			return new byte[]
 			{
@@ -636,12 +636,12 @@ namespace ns16
 			};
 		}
 
-		public static byte[] smethod_30(string string_0)
+		public static byte[] ReadBytes(string path)
 		{
-			return File.ReadAllBytes(string_0);
+			return File.ReadAllBytes(path);
 		}
 
-		public static byte[] smethod_31(Stream stream_0)
+		public static byte[] ReadBytes(Stream stream_0)
 		{
 			BinaryReader binaryReader = new BinaryReader(stream_0);
 			byte[] result = binaryReader.ReadBytes((int)stream_0.Length);
@@ -653,7 +653,7 @@ namespace ns16
 		{
 			if (!(bool_2 ^ BitConverter.IsLittleEndian))
 			{
-				return KeyGenerator.smethod_29(int_0);
+				return KeyGenerator.IntToBytes(int_0);
 			}
 			return BitConverter.GetBytes(int_0);
 		}
@@ -710,7 +710,7 @@ namespace ns16
 			stream_0.Position = 0L;
 			if (bool_2 && bool_3)
 			{
-                return KeyGenerator.smethod_26((int)(KeyGenerator.uint_0 ^ 4294967295u));
+                return KeyGenerator.ReverseEndianness((int)(KeyGenerator.uint_0 ^ 4294967295u));
 			}
 			if (bool_2)
 			{
@@ -718,7 +718,7 @@ namespace ns16
 			}
 			if (bool_3)
 			{
-				return KeyGenerator.smethod_26((int)KeyGenerator.uint_0);
+				return KeyGenerator.ReverseEndianness((int)KeyGenerator.uint_0);
 			}
 			return (int)KeyGenerator.uint_0;
 		}
@@ -752,17 +752,17 @@ namespace ns16
 			throw new ArgumentOutOfRangeException("Crc buffer");
 		}
 
-		public static byte[] smethod_42(string string_0)
+		public static byte[] HashStream(string string_0)
 		{
-			return KeyGenerator.smethod_43(File.OpenRead(string_0));
+			return KeyGenerator.HashStream(File.OpenRead(string_0));
 		}
 
-		public static byte[] smethod_43(Stream stream_0)
+		public static byte[] HashStream(Stream stream_0)
 		{
-			return KeyGenerator.smethod_44(SHA512.Create(), stream_0);
+			return KeyGenerator.HashStream(SHA512.Create(), stream_0);
 		}
 
-		public static byte[] smethod_44(HashAlgorithm hashAlgorithm_0, Stream stream_0)
+		public static byte[] HashStream(HashAlgorithm hashAlgorithm_0, Stream stream_0)
 		{
 			byte[] result = hashAlgorithm_0.ComputeHash(stream_0);
 			hashAlgorithm_0.Clear();

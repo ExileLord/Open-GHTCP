@@ -5,18 +5,18 @@ using System.Collections.Generic;
 
 namespace ns19
 {
-	public class Class311 : AbstractTreeNode2
+	public class TextValueNode : AbstractTreeNode2
 	{
 		public int int_0;
 
 		private string string_0;
 
-		public Class311()
+		public TextValueNode()
 		{
 			this.vmethod_0();
 		}
 
-		public Class311(int int_1, Dictionary<int, string> dictionary_0)
+		public TextValueNode(int int_1, Dictionary<int, string> dictionary_0)
 		{
 			this.int_0 = int_1;
 			if (dictionary_0.ContainsKey(this.int_0))

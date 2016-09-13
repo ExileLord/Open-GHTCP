@@ -31,7 +31,7 @@ namespace ns21
 		{
 			this.int_0 = int_2;
 			this.int_1 = int_3;
-			base.Nodes.Add(new Class312(string_0));
+			base.Nodes.Add(new UnicodeValueNode(string_0));
 			this.vmethod_0();
 		}
 
@@ -44,7 +44,7 @@ namespace ns21
 		{
 			if (base.Nodes.Count != 0)
 			{
-				return ((Class312)base.FirstNode).string_0;
+				return ((UnicodeValueNode)base.FirstNode).string_0;
 			}
 			return null;
 		}
@@ -53,10 +53,10 @@ namespace ns21
 		{
 			if (base.Nodes.Count != 0)
 			{
-				((Class312)base.FirstNode).string_0 = string_0;
+				((UnicodeValueNode)base.FirstNode).string_0 = string_0;
 				return;
 			}
-			base.Nodes.Add(new Class312(string_0));
+			base.Nodes.Add(new UnicodeValueNode(string_0));
 		}
 
 		public override void vmethod_13(Stream26 stream26_0)
@@ -67,7 +67,7 @@ namespace ns21
 			stream26_0.method_19();
 			if (num != 0)
 			{
-				base.Nodes.Add(new Class312(stream26_0.method_46(num)));
+				base.Nodes.Add(new UnicodeValueNode(stream26_0.method_46(num)));
 				stream26_0.Position += (long)AbstractTreeNode1.smethod_0(stream26_0.Position);
 			}
 		}
@@ -102,7 +102,7 @@ namespace ns21
 			int_2 += 20;
 			if (base.Nodes.Count != 0)
 			{
-				((Class312)base.Nodes[0]).vmethod_2(ref int_2);
+				((UnicodeValueNode)base.Nodes[0]).vmethod_2(ref int_2);
 				int_2 += 2;
 				int_2 += AbstractTreeNode1.smethod_0((long)int_2);
 			}
