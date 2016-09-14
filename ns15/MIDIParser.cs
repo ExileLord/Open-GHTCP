@@ -192,25 +192,25 @@ namespace ns15
 		private void method_1(MIDILine class353_0)
 		{
 			this.songTitle = class353_0.method_2();
-			foreach (Class335 current in class353_0.method_0())
+			foreach (AbstractNoteClass current in class353_0.method_0())
 			{
 				int num = Convert.ToInt32((double)current.method_0() * this.resolution);
-				if (current is Class337)
+				if (current is zzNote1)
 				{
-					Class337 @class = (Class337)current;
-					if (!this.isEvents && @class.method_2() == Class337.Enum37.const_0)
+					zzNote1 @class = (zzNote1)current;
+					if (!this.isEvents && @class.method_2() == zzNote1.Enum37.const_0)
 					{
 						this.method_4(4, num, "section " + @class.method_1());
 					}
 				}
-				else if (current is Class339)
+				else if (current is BpmNote1)
 				{
-					int num2 = ((Class339)current).method_1();
+					int num2 = ((BpmNote1)current).method_1();
 					this.bpmInterpreter.bpmList.Add(num, Convert.ToInt32(Math.Floor(60000000.0 / (double)num2 * 1000.0)));
 				}
-				else if (current is Class338)
+				else if (current is zzNote338)
 				{
-					this.bpmInterpreter.TSList.Add(num, ((Class338)current).method_1());
+					this.bpmInterpreter.TSList.Add(num, ((zzNote338)current).method_1());
 				}
 			}
 		}
@@ -218,7 +218,7 @@ namespace ns15
 		private void getNotes(MIDILine midiLine, int difficulty)
 		{
 			bool[] array = new bool[midiLine.method_0().Count];
-			List<Class335> list = midiLine.method_0();
+			List<AbstractNoteClass> list = midiLine.method_0();
 			for (int i = 0; i < list.Count; i++)
 			{
 				if (!array[i])
@@ -259,9 +259,9 @@ namespace ns15
 							this.method_3(difficulty, num, midiNote, num3);
 						}
 					}
-					else if (list[i] is Class337)
+					else if (list[i] is zzNote1)
 					{
-						Class337 class2 = (Class337)list[i];
+						zzNote1 class2 = (zzNote1)list[i];
 						List<string> list2 = this.method_5(difficulty - 4);
 						string text = class2.method_1();
 						if (text.StartsWith("["))
@@ -282,7 +282,7 @@ namespace ns15
 			NoteEventInterpreter noteEvenInterpreter = null;
 			switch (midiNote.getDifficulty())
 			{
-			case Difficulty.easy:
+			case Difficulty.Easy:
 				switch (instrumentType)
 				{
 				case 0:
@@ -296,7 +296,7 @@ namespace ns15
 					break;
 				}
 				break;
-			case Difficulty.medium:
+			case Difficulty.Medium:
 				switch (instrumentType)
 				{
 				case 0:
@@ -310,7 +310,7 @@ namespace ns15
 					break;
 				}
 				break;
-			case Difficulty.hard:
+			case Difficulty.Hard:
 				switch (instrumentType)
 				{
 				case 0:
@@ -324,7 +324,7 @@ namespace ns15
 					break;
 				}
 				break;
-			case Difficulty.expert:
+			case Difficulty.Expert:
 				switch (instrumentType)
 				{
 				case 0:
@@ -339,7 +339,7 @@ namespace ns15
 				}
 				break;
 			default:
-				if (!this.bool_3 && midiNote.method_2() == MIDINoteMask.SP)
+				if (!this.bool_3 && midiNote.method_2() == MIDINoteMask.StarPower)
 				{
 					this.bool_3 = true;
 					this.expertSingle.class228_1.Clear();
@@ -353,7 +353,7 @@ namespace ns15
 				}
 				break;
 			}
-			if (midiNote.method_3() != Enum39.const_5)
+			if (midiNote.method_3() != Fret.Invalid)
 			{
 				if (noteEvenInterpreter.noteList.method_4(int_1))
 				{
@@ -367,7 +367,7 @@ namespace ns15
 			}
 			else
 			{
-				if (midiNote.method_2() == MIDINoteMask.SP && !this.expertSingle.class228_1.ContainsKey(int_1))
+				if (midiNote.method_2() == MIDINoteMask.StarPower && !this.expertSingle.class228_1.ContainsKey(int_1))
 				{
 					this.expertSingle.class228_1.Add(int_1, int_2);
 					this.hardSingle.class228_1.Add(int_1, int_2);
@@ -375,17 +375,17 @@ namespace ns15
 					this.easySingle.class228_1.Add(int_1, int_2);
 					return;
 				}
-				if (midiNote.method_2() == MIDINoteMask.const_5 && !noteEvenInterpreter.class228_1.ContainsKey(int_1) && !this.bool_3)
+				if (midiNote.method_2() == MIDINoteMask.Unk7 && !noteEvenInterpreter.class228_1.ContainsKey(int_1) && !this.bool_3)
 				{
 					noteEvenInterpreter.class228_1.Add(int_1, int_2);
 					return;
 				}
-				if (midiNote.method_2() == MIDINoteMask.const_6 && !noteEvenInterpreter.class228_2.ContainsKey(int_1))
+				if (midiNote.method_2() == MIDINoteMask.Unk9 && !noteEvenInterpreter.class228_2.ContainsKey(int_1))
 				{
 					noteEvenInterpreter.class228_2.Add(int_1, int_2);
 					return;
 				}
-				if (midiNote.method_2() == MIDINoteMask.const_7 && !noteEvenInterpreter.class228_3.ContainsKey(int_1))
+				if (midiNote.method_2() == MIDINoteMask.Unk10 && !noteEvenInterpreter.class228_3.ContainsKey(int_1))
 				{
 					noteEvenInterpreter.class228_3.Add(int_1, int_2);
 				}

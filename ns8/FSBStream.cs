@@ -91,7 +91,7 @@ namespace ns8
 
 		private static GenericAudioStream smethod_0(Class168 class168_0)
 		{
-			bool flag = (class168_0.enum22_0 & Enum22.flag_19) != Enum22.flag_0;
+			bool flag = (class168_0.enum22_0 & FSBFlags2.flag_19) != FSBFlags2.flag_0;
 			Stream stream_ = class168_0.stream_1;
 			long position = stream_.Position;
 			byte[] array = new byte[4];
@@ -99,7 +99,7 @@ namespace ns8
 			stream_.Position = position;
 			if (array[0] == 255 && array[1] >= 240)
 			{
-				if ((class168_0.enum22_0 & Enum22.flag_27) != Enum22.flag_0 && class168_0.uint_3 > 2u)
+				if ((class168_0.enum22_0 & FSBFlags2.flag_27) != FSBFlags2.flag_0 && class168_0.uint_3 > 2u)
 				{
 					return new MP3Class(class168_0.stream_1, (int)(class168_0.uint_3 / 2u), flag ? Enum4.const_3 : Enum4.const_0);
 				}
@@ -112,9 +112,9 @@ namespace ns8
 				{
 					return new OGGStream(class168_0.stream_1);
 				}
-				if ((class168_0.enum22_0 & Enum22.flag_17) != Enum22.flag_0)
+				if ((class168_0.enum22_0 & FSBFlags2.flag_17) != FSBFlags2.flag_0)
 				{
-					return new Stream5(class168_0.stream_1, new WaveFormat(class168_0.int_0, ((class168_0.enum22_0 & Enum22.flag_4) != Enum22.flag_0) ? 8 : 16, (int)class168_0.uint_3));
+					return new Stream5(class168_0.stream_1, new WaveFormat(class168_0.int_0, ((class168_0.enum22_0 & FSBFlags2.flag_4) != FSBFlags2.flag_0) ? 8 : 16, (int)class168_0.uint_3));
 				}
 				throw new Exception5("FSB SubFile: Data not supported.");
 			}

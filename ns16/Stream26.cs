@@ -127,7 +127,7 @@ namespace ns16
 			{
 				throw new Exception("Can't read from hexstream!");
 			}
-			return KeyGenerator.smethod_31(this.stream_0);
+			return KeyGenerator.ReadBytes(this.stream_0);
 		}
 
 		public void method_2(string string_0)
@@ -253,7 +253,7 @@ namespace ns16
 			byte[] array = this.method_32(4, false);
 			if (!(bool_2 ^ BitConverter.IsLittleEndian))
 			{
-				return KeyGenerator.smethod_28(array);
+				return KeyGenerator.BytesToInt(array);
 			}
 			return BitConverter.ToInt32(array, 0);
 		}
@@ -290,7 +290,7 @@ namespace ns16
 			byte[] array = this.method_32(2, false);
 			if (!(bool_2 ^ BitConverter.IsLittleEndian))
 			{
-				return KeyGenerator.smethod_27(array);
+				return KeyGenerator.BytesToShort(array);
 			}
 			return BitConverter.ToInt16(array, 0);
 		}
@@ -305,7 +305,7 @@ namespace ns16
 			byte[] array = this.method_32(2, false);
 			if (!(bool_2 ^ BitConverter.IsLittleEndian))
 			{
-				return (ushort)KeyGenerator.smethod_27(array);
+				return (ushort)KeyGenerator.BytesToShort(array);
 			}
 			return BitConverter.ToUInt16(array, 0);
 		}

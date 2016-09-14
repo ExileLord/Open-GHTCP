@@ -51,9 +51,9 @@ namespace ns4
 			131071
 		};
 
-		private readonly Class106 class106_0;
+		private readonly zzStreamClass106 class106_0;
 
-		private Class107 class107_0;
+		private zzSoundClass class107_0;
 
 		private byte[] byte_4;
 
@@ -67,14 +67,14 @@ namespace ns4
 			this.byte_4 = new byte[4];
 			this.byte_3 = new byte[1732];
 			this.int_1 = new int[433];
-			this.class107_0 = new Class107();
+			this.class107_0 = new zzSoundClass();
 		}
 
-		public Class82(Stream stream_0, int int_7) : this(new Class106(stream_0, int_7))
+		public Class82(Stream stream_0, int int_7) : this(new zzStreamClass106(stream_0, int_7))
 		{
 		}
 
-		public Class82(Class106 class106_1)
+		public Class82(zzStreamClass106 class106_1)
 		{
 			this.method_0();
 			if (class106_1 == null)
@@ -103,9 +103,9 @@ namespace ns4
 			return this.int_0;
 		}
 
-		public Class107 method_3()
+		public zzSoundClass method_3()
 		{
-			Class107 @class = null;
+			zzSoundClass @class = null;
 			try
 			{
 				@class = this.method_4();
@@ -143,7 +143,7 @@ namespace ns4
 			return @class;
 		}
 
-		private Class107 method_4()
+		private zzSoundClass method_4()
 		{
 			if (this.int_2 == -1)
 			{
@@ -163,7 +163,7 @@ namespace ns4
 			{
 				try
 				{
-					this.class106_0.method_2(this.int_2);
+					this.class106_0.IncrementSomeVariableAndCheckIfTheBackStreamIsFisted(this.int_2);
 				}
 				catch (IOException)
 				{
@@ -185,7 +185,7 @@ namespace ns4
 			int int_8 = ((int)this.byte_4[0] << 24 & -16777216) | ((int)this.byte_4[1] << 16 & 16711680) | ((int)this.byte_4[2] << 8 & 65280) | (int)(this.byte_4[3] & 255);
 			try
 			{
-				this.class106_0.method_2(num);
+				this.class106_0.IncrementSomeVariableAndCheckIfTheBackStreamIsFisted(num);
 			}
 			catch (IOException)
 			{

@@ -4,16 +4,16 @@ namespace ns22
 {
 	public enum MIDINoteMask
 	{
-		green,
-		red,
-		yellow,
-		blue,
-		orange,
-		const_5 = 7,
-		const_6 = 9,
-		const_7,
-		SP = 20,
-		const_9 = 108,
-		const_10 = -1
+		Green,
+		Red,
+		Yellow,
+		Blue,
+		Orange,
+		Unk7 = 7,
+		Unk9 = 9,   //FaceOff P1?
+		Unk10,      //FaceOff P2?
+		StarPower = 20,
+		Unk108 = 108,
+		Invalid = -1
 	}
 }

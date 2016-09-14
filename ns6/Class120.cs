@@ -61,10 +61,10 @@ namespace ns6
 				{
 					try
 					{
-						if (Class118.alcIsExtensionPresent(IntPtr.Zero, "ALC_ENUMERATION_EXT"))
+						if (OpenAL.alcIsExtensionPresent(IntPtr.Zero, "ALC_ENUMERATION_EXT"))
 						{
 							Class120.enum13_0 = Class120.Enum13.const_1;
-							Class120.list_0.AddRange(Class118.smethod_1(IntPtr.Zero, Enum8.const_1));
+							Class120.list_0.AddRange(OpenAL.smethod_1(IntPtr.Zero, Enum8.const_1));
 						}
 						else
 						{
@@ -106,19 +106,19 @@ namespace ns6
 			}
 			if (!string.IsNullOrEmpty(string_1))
 			{
-				this.intptr_0 = Class118.alcOpenDevice(string_1);
+				this.intptr_0 = OpenAL.alcOpenDevice(string_1);
 			}
 			if (this.intptr_0 == IntPtr.Zero)
 			{
-				this.intptr_0 = Class118.alcOpenDevice(null);
+				this.intptr_0 = OpenAL.alcOpenDevice(null);
 			}
 			if (this.intptr_0 == IntPtr.Zero)
 			{
-				Class118.alcOpenDevice(Class118.smethod_0(IntPtr.Zero, Enum7.const_0));
+				OpenAL.alcOpenDevice(OpenAL.smethod_0(IntPtr.Zero, Enum7.const_0));
 			}
 			if (this.intptr_0 == IntPtr.Zero && Class120.list_0.Count > 0)
 			{
-				this.intptr_0 = Class118.alcOpenDevice(Class120.list_0[0]);
+				this.intptr_0 = OpenAL.alcOpenDevice(Class120.list_0[0]);
 			}
 			if (this.intptr_0 == IntPtr.Zero)
 			{
@@ -138,18 +138,18 @@ namespace ns6
 			}
 			list.Add(4105);
 			list.Add(bool_4 ? 1 : 0);
-			if (bool_5 && Class118.alcIsExtensionPresent(this.intptr_0, "ALC_EXT_EFX"))
+			if (bool_5 && OpenAL.alcIsExtensionPresent(this.intptr_0, "ALC_EXT_EFX"))
 			{
 				int item;
-				Class118.alcGetIntegerv(this.intptr_0, Enum9.const_7, 1, out item);
+				OpenAL.alcGetIntegerv(this.intptr_0, Enum9.const_7, 1, out item);
 				list.Add(131075);
 				list.Add(item);
 			}
 			list.Add(0);
-			this.struct62_0 = Class118.alcCreateContext(this.intptr_0, list.ToArray());
+			this.struct62_0 = OpenAL.alcCreateContext(this.intptr_0, list.ToArray());
 			if (Struct62.smethod_1(this.struct62_0, Struct62.struct62_0))
 			{
-				Class118.alcCloseDevice(this.intptr_0);
+				OpenAL.alcCloseDevice(this.intptr_0);
 				throw new Exception3("The audio context could not be created with the specified parameters.");
 			}
 			this.method_1();
@@ -158,13 +158,13 @@ namespace ns6
 				this.method_4();
 			}
 			this.method_1();
-			this.string_0 = Class118.smethod_0(this.intptr_0, Enum7.const_5);
+			this.string_0 = OpenAL.smethod_0(this.intptr_0, Enum7.const_5);
 			int num;
-			Class118.alcGetIntegerv(this.intptr_0, Enum9.const_2, 4, out num);
+			OpenAL.alcGetIntegerv(this.intptr_0, Enum9.const_2, 4, out num);
 			if (num > 0)
 			{
 				int[] array = new int[num];
-				Class118.alcGetIntegerv(this.intptr_0, Enum9.const_3, array.Length * 4, out array[0]);
+				OpenAL.alcGetIntegerv(this.intptr_0, Enum9.const_3, array.Length * 4, out array[0]);
 				int[] array2 = array;
 				for (int i = 0; i < array2.Length; i++)
 				{
@@ -185,7 +185,7 @@ namespace ns6
 
 		private void method_1()
 		{
-			AlcError alcError = Class118.alcGetError(this.intptr_0);
+			AlcError alcError = OpenAL.alcGetError(this.intptr_0);
 			if (alcError != AlcError.NoError)
 			{
 				throw new Exception3(alcError.ToString());
@@ -196,11 +196,11 @@ namespace ns6
 		{
 			lock (Class120.object_0)
 			{
-				if (!Class118.alcMakeContextCurrent((class120_0 != null) ? class120_0.struct62_0 : Struct62.struct62_0))
+				if (!OpenAL.alcMakeContextCurrent((class120_0 != null) ? class120_0.struct62_0 : Struct62.struct62_0))
 				{
 					//Delegate129.delegate129_0;
 					//"ALC {0} error detected at {1}.";
-					Class118.alcGetError((class120_0 != null) ? Struct62.smethod_0(class120_0.struct62_0) : IntPtr.Zero).ToString();
+					OpenAL.alcGetError((class120_0 != null) ? Struct62.smethod_0(class120_0.struct62_0) : IntPtr.Zero).ToString();
 					if (class120_0 == null)
 					{
 						//"null";
@@ -263,7 +263,7 @@ namespace ns6
 				else
 				{
 					Class120 @class;
-					Class120.dictionary_0.TryGetValue(Class118.alcGetCurrentContext(), out @class);
+					Class120.dictionary_0.TryGetValue(OpenAL.alcGetCurrentContext(), out @class);
 					result = @class;
 				}
 			}
@@ -287,11 +287,11 @@ namespace ns6
 				if (Struct62.smethod_2(this.struct62_0, Struct62.struct62_0))
 				{
 					Class120.dictionary_0.Remove(this.struct62_0);
-					Class118.alcDestroyContext(this.struct62_0);
+					OpenAL.alcDestroyContext(this.struct62_0);
 				}
 				if (this.intptr_0 != IntPtr.Zero)
 				{
-					Class118.alcCloseDevice(this.intptr_0);
+					OpenAL.alcCloseDevice(this.intptr_0);
 				}
 				this.bool_0 = true;
 			}

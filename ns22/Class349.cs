@@ -3,9 +3,9 @@ using System;
 
 namespace ns22
 {
-	public class Class349 : IDisposable, Interface13
+	public class Class349 : IDisposable, EmptyInterface1
 	{
-		public static Interface13 interface13_0 = new Class349();
+		public static EmptyInterface1 interface13_0 = new Class349();
 
 		private static Interface14[] interface14_0;
 

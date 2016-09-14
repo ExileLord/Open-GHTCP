@@ -36,10 +36,10 @@ namespace ns20
 		{
 			this.encoding_0 = Encoding.Unicode;
 			//base..ctor();
-			base.Text = KeyGenerator.smethod_13(string_0);
+			base.Text = KeyGenerator.GetFileName(string_0);
 			this.int_2 = QbSongClass1.smethod_9(string_0.Substring(string_0.LastIndexOf('.')));
 			this.int_3 = QbSongClass1.smethod_9(string_0);
-			this.int_4 = QbSongClass1.smethod_9(KeyGenerator.smethod_12(string_0));
+			this.int_4 = QbSongClass1.smethod_9(KeyGenerator.GetFileNameNoExt(string_0));
 			base.ImageIndex = 39;
 			base.SelectedImageIndex = 39;
 			this.dictionary_0 = null;
@@ -54,7 +54,7 @@ namespace ns20
 		{
 			this.encoding_0 = Encoding.Unicode;
 			//base..ctor();
-			base.Text = (QbSongClass1.smethod_3(int_9) ? KeyGenerator.smethod_13(QbSongClass1.smethod_5(int_9)) : ("0x" + KeyGenerator.smethod_34(int_9)));
+			base.Text = (QbSongClass1.smethod_3(int_9) ? KeyGenerator.GetFileName(QbSongClass1.smethod_5(int_9)) : ("0x" + KeyGenerator.ValToHex32bit(int_9)));
 			this.int_2 = int_6;
 			this.int_0 = int_7;
 			this.int_1 = int_8;
@@ -117,16 +117,16 @@ namespace ns20
 		{
 			if (!QbSongClass1.smethod_3(this.imethod_4()))
 			{
-				return "0x" + KeyGenerator.smethod_34(this.imethod_4());
+				return "0x" + KeyGenerator.ValToHex32bit(this.imethod_4());
 			}
 			return QbSongClass1.smethod_5(this.imethod_4());
 		}
 
 		public int imethod_7()
 		{
-			if (base.Parent != null && base.Parent is Class317 && !(base.Parent as Class317).bool_0)
+			if (base.Parent != null && base.Parent is zzPakNode1 && !(base.Parent as zzPakNode1).bool_0)
 			{
-				return QbSongClass1.smethod_9((base.Parent as Class317).vmethod_0() + base.Text);
+				return QbSongClass1.smethod_9((base.Parent as zzPakNode1).vmethod_0() + base.Text);
 			}
 			return this.int_3;
 		}
@@ -140,7 +140,7 @@ namespace ns20
 		{
 			if (!QbSongClass1.smethod_3(this.imethod_7()))
 			{
-				return "0x" + KeyGenerator.smethod_34(this.imethod_7());
+				return "0x" + KeyGenerator.ValToHex32bit(this.imethod_7());
 			}
 			return QbSongClass1.smethod_5(this.imethod_7());
 		}
@@ -184,7 +184,7 @@ namespace ns20
 				{
 					foreach (int current in this.dictionary_0.Keys)
 					{
-						streamWriter.Write("{0} \"{1}\"\n", KeyGenerator.smethod_34(current), this.dictionary_0[current]);
+						streamWriter.Write("{0} \"{1}\"\n", KeyGenerator.ValToHex32bit(current), this.dictionary_0[current]);
 					}
 					streamWriter.Write("\n");
 				}
@@ -213,7 +213,7 @@ namespace ns20
 					int key;
 					try
 					{
-						key = KeyGenerator.smethod_23(array[0]);
+						key = KeyGenerator.HexStringToInt(array[0]);
 					}
 					catch (Exception)
 					{

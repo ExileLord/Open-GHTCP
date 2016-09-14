@@ -75,13 +75,13 @@ namespace ns20
 
 		private string string_0;
 
-		private Class322 class322_0;
+		private zzTextureExplorer1 _textureCache;
 
 		private Thread thread_0;
 
 		private Size size_0;
 
-		private IMGPixelFormat imgpixelFormat_0;
+		private IMGPixelFormat _currentTexturePixelFormat;
 
 		private string string_1;
 
@@ -461,10 +461,10 @@ namespace ns20
 
 		private void method_2()
 		{
-			if (this.class322_0 != null)
+			if (this._textureCache != null)
 			{
-				this.class322_0.Dispose();
-				this.class322_0 = null;
+				this._textureCache.Dispose();
+				this._textureCache = null;
 			}
 			this.ImgList.Items.Clear();
 			this.ImgList.SelectedIndex = -1;
@@ -482,17 +482,17 @@ namespace ns20
 				{
 					this.method_2();
 					string toolTipText = this.DataFolder_TreeView.SelectedNode.ToolTipText;
-					Class318 @class;
+					zzPakNode2 @class;
 					if (File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")))
 					{
-						@class = new Class319(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false);
+						@class = new zzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false);
 					}
 					else
 					{
-						@class = new Class318(toolTipText, false);
+						@class = new zzPakNode2(toolTipText, false);
 					}
-					this.class322_0 = new Class322(@class.method_13((int)this.DataFolder_TreeView.SelectedNode.Tag));
-					for (int i = 1; i <= this.class322_0.method_4(); i++)
+					this._textureCache = new zzTextureExplorer1(@class.method_13((int)this.DataFolder_TreeView.SelectedNode.Tag));
+					for (int i = 1; i <= this._textureCache.method_4(); i++)
 					{
 						this.ImgList.Items.Add("Image " + i);
 					}
@@ -502,8 +502,8 @@ namespace ns20
 				if (this.DataFolder_TreeView.SelectedNode.ToolTipText != "")
 				{
 					this.method_2();
-					this.class322_0 = new Class322(this.DataFolder_TreeView.SelectedNode.ToolTipText);
-					for (int j = 1; j <= this.class322_0.method_4(); j++)
+					this._textureCache = new zzTextureExplorer1(this.DataFolder_TreeView.SelectedNode.ToolTipText);
+					for (int j = 1; j <= this._textureCache.method_4(); j++)
 					{
 						this.ImgList.Items.Add("Image " + j);
 					}
@@ -515,18 +515,19 @@ namespace ns20
 		{
 			if (this.ImgList.SelectedIndex >= 0)
 			{
-				Class330 @class = this.class322_0[this.ImgList.SelectedIndex];
-				this.imgpixelFormat_0 = @class.imgpixelFormat_0;
-				this.BPPTxt.Text = string.Concat(@class.int_0);
-				this.FormatTxt.Text = ((@class.imgpixelFormat_0 == IMGPixelFormat.Dxt1) ? "DXT1" : ((@class.imgpixelFormat_0 == IMGPixelFormat.Dxt3) ? "DXT3" : ((@class.imgpixelFormat_0 == IMGPixelFormat.Dxt5) ? "DXT5" : "A8R8G8B8")));
-				this.MipMapTxt.Text = string.Concat(@class.int_1);
-				this.WidthTxt.Text = string.Concat(@class.size_0.Width);
-				this.HeightTxt.Text = string.Concat(@class.size_0.Height);
-				Image image = @class.method_1();
+				DDSTexture texture = _textureCache[this.ImgList.SelectedIndex];
+				_currentTexturePixelFormat = texture.PixelFormat;
+				BPPTxt.Text = string.Concat(texture.BPP);
+				FormatTxt.Text = ((texture.PixelFormat == IMGPixelFormat.Dxt1) ? "DXT1" : ((texture.PixelFormat == IMGPixelFormat.Dxt3) ? "DXT3" : ((texture.PixelFormat == IMGPixelFormat.Dxt5) ? "DXT5" : "A8R8G8B8")));
+				MipMapTxt.Text = string.Concat(texture.MipMapCount);
+				WidthTxt.Text = string.Concat(texture.Size.Width);
+				HeightTxt.Text = string.Concat(texture.Size.Height);
+
+				Image image = texture.GetImage();
 				this.size_0 = image.Size;
 				if (image.Width > this.ImagePreviewBox.Width || image.Height > this.ImagePreviewBox.Height)
 				{
-					image = KeyGenerator.smethod_48(image, this.ImagePreviewBox.Size);
+					image = KeyGenerator.ScaleImageFixedRatio(image, ImagePreviewBox.Size);
 				}
 				this.ImagePreviewBox.Image = image;
 				this.ImageInfoBox.Enabled = true;
@@ -537,7 +538,7 @@ namespace ns20
 
 		private void ReplaceImgBtn_Click(object sender, EventArgs e)
 		{
-			string text = KeyGenerator.smethod_16("Select the image file to replace the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", true);
+			string text = KeyGenerator.OpenOrSaveFile("Select the image file to replace the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", true);
 			if (text == "")
 			{
 				return;
@@ -545,7 +546,7 @@ namespace ns20
 			Image image;
 			if (text.EndsWith(".dds", StringComparison.OrdinalIgnoreCase))
 			{
-				image = new Class330(text).method_1();
+				image = new DDSTexture(text).GetImage();
 			}
 			else
 			{
@@ -553,9 +554,9 @@ namespace ns20
 			}
 			if (!image.Size.Equals(this.size_0) && DialogResult.Yes == MessageBox.Show("The image dimensions don't match. Do you wish scale to the original dimension? (Ratio may change!)", "Replace Texture", MessageBoxButtons.YesNo))
 			{
-				image = KeyGenerator.smethod_50(image, this.size_0);
+				image = KeyGenerator.ScaleImage(image, this.size_0);
 			}
-			this.class322_0.method_1(this.ImgList.SelectedIndex, image, this.imgpixelFormat_0);
+			this._textureCache.method_1(this.ImgList.SelectedIndex, image, this._currentTexturePixelFormat);
 			this.RebuildBtn.Enabled = true;
 		}
 
@@ -582,17 +583,17 @@ namespace ns20
 
 		private void ExtractImgBtn_Click(object sender, EventArgs e)
 		{
-			string text = KeyGenerator.smethod_16("Select location to export the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", false);
+			string text = KeyGenerator.OpenOrSaveFile("Select location to export the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", false);
 			if (text == "")
 			{
 				return;
 			}
 			if (text.EndsWith(".dds", StringComparison.OrdinalIgnoreCase))
 			{
-				this.class322_0.method_3(this.ImgList.SelectedIndex, text);
+				this._textureCache.method_3(this.ImgList.SelectedIndex, text);
 				return;
 			}
-			this.class322_0[this.ImgList.SelectedIndex].method_1().Save(text, this.GetImageFormat(text));
+			this._textureCache[this.ImgList.SelectedIndex].GetImage().Save(text, this.GetImageFormat(text));
 		}
 
 		private void RebuildBtn_Click(object sender, EventArgs e)
@@ -601,15 +602,15 @@ namespace ns20
 			{
 				return;
 			}
-			if (this.class322_0.method_5())
+			if (this._textureCache.method_5())
 			{
-				this.class322_0.method_6();
+				this._textureCache.method_6();
 			}
 			else
 			{
 				string toolTipText = this.DataFolder_TreeView.SelectedNode.ToolTipText;
-				Class318 @class = File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")) ? new Class319(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false) : new Class318(toolTipText, false);
-				@class.method_11((int)this.DataFolder_TreeView.SelectedNode.Tag).imethod_17(this.class322_0.method_7().method_1());
+				zzPakNode2 @class = File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")) ? new zzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false) : new zzPakNode2(toolTipText, false);
+				@class.method_11((int)this.DataFolder_TreeView.SelectedNode.Tag).imethod_17(this._textureCache.method_7().method_1());
 				@class.vmethod_1();
 				@class.Dispose();
 			}

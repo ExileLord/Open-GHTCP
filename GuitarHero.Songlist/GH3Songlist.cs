@@ -20,7 +20,7 @@ namespace GuitarHero.Songlist
 		public Dictionary<int, GHLink> dictionary_1 = new Dictionary<int, GHLink>();
 
 		[NonSerialized]
-		public Class214<string, int> class214_0 = new Class214<string, int>();
+		public zzCollection214<string, int> class214_0 = new zzCollection214<string, int>();
 
 		public int CustomBitMask;
 
@@ -52,7 +52,7 @@ namespace GuitarHero.Songlist
 			QbSongClass1.smethod_9("timrapptest")
 		});
 
-		public GH3Songlist(Class308 class308_0, GH3Songlist gh3Songlist_0)
+		public GH3Songlist(zzGenericNode1 class308_0, GH3Songlist gh3Songlist_0)
 		{
 			this.method_12(class308_0, gh3Songlist_0);
 		}
@@ -148,7 +148,7 @@ namespace GuitarHero.Songlist
 			return base.ContainsKey(string_0);
 		}
 
-		public GH3Setlist method_4(string string_0, Class266 class266_0)
+		public GH3Setlist method_4(string string_0, StructurePointerRootNode class266_0)
 		{
 			GH3Setlist gH3Setlist = new GH3Setlist(class266_0.method_7(), this);
 			gH3Setlist.method_3(string_0);
@@ -156,34 +156,34 @@ namespace GuitarHero.Songlist
 			return gH3Setlist;
 		}
 
-		public GHLink method_5(string string_0, Class266 class266_0)
+		public GHLink method_5(string string_0, StructurePointerRootNode class266_0)
 		{
 			GHLink gHLink = new GHLink(string_0, class266_0.method_7());
 			this.dictionary_1.Add(class266_0.int_0, gHLink);
 			return gHLink;
 		}
 
-		public void method_6(Class292 class292_0)
+		public void method_6(StructureArrayNode class292_0)
 		{
-			foreach (Class286 @class in class292_0.Nodes)
+			foreach (StructureHeaderNode @class in class292_0.Nodes)
 			{
-				int num = @class.method_5<Class296>(new Class296("tag")).method_10();
+				int num = @class.method_5<TagStructureNode>(new TagStructureNode("tag")).method_10();
 				if (this.dictionary_1.ContainsKey(num))
 				{
-					this.class214_0.Add(@class.method_5<Class307>(new Class307("text")).method_8(), num);
+					this.class214_0.Add(@class.method_5<UnicodeStructureNode>(new UnicodeStructureNode("text")).method_8(), num);
 				}
 			}
 		}
 
-		public Class292 method_7()
+		public StructureArrayNode method_7()
 		{
-			Class292 @class = new Class292();
+			StructureArrayNode @class = new StructureArrayNode();
 			foreach (string current in this.class214_0.Keys)
 			{
-				@class.method_3(new Class286(new List<Class294>
+				@class.method_3(new StructureHeaderNode(new List<zzUnkNode294>
 				{
-					new Class296("tag", this.class214_0[current]),
-					new Class307("text", current)
+					new TagStructureNode("tag", this.class214_0[current]),
+					new UnicodeStructureNode("text", current)
 				}));
 			}
 			return @class;
@@ -216,12 +216,12 @@ namespace GuitarHero.Songlist
 			return this.gh3SetlistList[this.dictionary_1[int_0].setlist];
 		}
 
-		public void method_12(Class308 class308_0, GH3Songlist gh3Songlist_0)
+		public void method_12(zzGenericNode1 class308_0, GH3Songlist gh3Songlist_0)
 		{
-			Class286 @class = class308_0.method_5<Class266>(new Class266("permanent_songlist_props")).method_7();
-			bool flag = class308_0.method_5<Class296>(new Class296("band")) != null;
+			StructureHeaderNode @class = class308_0.method_5<StructurePointerRootNode>(new StructurePointerRootNode("permanent_songlist_props")).method_7();
+			bool flag = class308_0.method_5<TagStructureNode>(new TagStructureNode("band")) != null;
 			base.Clear();
-			foreach (Class302 class2 in @class.Nodes)
+			foreach (StructurePointerNode class2 in @class.Nodes)
 			{
 				GH3Song gH3Song = flag ? new GHASong(class2) : new GH3Song(class2);
 				if (gh3Songlist_0 != null)
@@ -233,17 +233,17 @@ namespace GuitarHero.Songlist
 			}
 		}
 
-		public void method_13(Class308 class308_0)
+		public void method_13(zzGenericNode1 class308_0)
 		{
 			List<int> list = new List<int>();
-			List<Class294> list2 = new List<Class294>();
+			List<zzUnkNode294> list2 = new List<zzUnkNode294>();
 			foreach (string current in base.Keys)
 			{
 				list.Add(QbSongClass1.smethod_9(current));
 				list2.Add(base[current].vmethod_5());
 			}
-			((Class281)class308_0.method_5<Class267>(new Class267("gh3_songlist")).method_7()).method_12(list);
-			class308_0.method_5<Class266>(new Class266("permanent_songlist_props")).method_7().method_9(list2);
+			((TagArray)class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("gh3_songlist")).method_7()).method_12(list);
+			class308_0.method_5<StructurePointerRootNode>(new StructurePointerRootNode("permanent_songlist_props")).method_7().method_9(list2);
 		}
 	}
 }

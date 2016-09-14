@@ -25,7 +25,7 @@ namespace GuitarHero.Setlist
 		{
 		}
 
-		public GH3Setlist(Class286 class286_0, GH3Songlist gh3Songlist_0)
+		public GH3Setlist(StructureHeaderNode class286_0, GH3Songlist gh3Songlist_0)
 		{
 			this.method_5(class286_0, gh3Songlist_0);
 		}
@@ -56,18 +56,18 @@ namespace GuitarHero.Setlist
 			return this.CustomBit != 0;
 		}
 
-		public void method_5(Class286 class286_0, GH3Songlist gh3Songlist_0)
+		public void method_5(StructureHeaderNode class286_0, GH3Songlist gh3Songlist_0)
 		{
-			Class305 @class;
-			this.prefix = (((@class = class286_0.method_5<Class305>(new Class305("prefix"))) != null) ? @class.method_8() : "general");
-			this.initial_movie = (((@class = class286_0.method_5<Class305>(new Class305("initial_movie"))) != null) ? @class.method_8() : "");
-			Class299 class2;
-			int num = ((class2 = class286_0.method_5<Class299>(new Class299("num_tiers"))) != null) ? class2.method_8() : 0;
+			AsciiStructureNode @class;
+			this.prefix = (((@class = class286_0.method_5<AsciiStructureNode>(new AsciiStructureNode("prefix"))) != null) ? @class.method_8() : "general");
+			this.initial_movie = (((@class = class286_0.method_5<AsciiStructureNode>(new AsciiStructureNode("initial_movie"))) != null) ? @class.method_8() : "");
+			IntegerStructureNode class2;
+			int num = ((class2 = class286_0.method_5<IntegerStructureNode>(new IntegerStructureNode("num_tiers"))) != null) ? class2.method_8() : 0;
 			try
 			{
 				for (int i = 1; i <= num; i++)
 				{
-					this.tiers.Add(new GH3Tier(class286_0.method_5<Class302>(new Class302("tier" + i)).method_8(), gh3Songlist_0));
+					this.tiers.Add(new GH3Tier(class286_0.method_5<StructurePointerNode>(new StructurePointerNode("tier" + i)).method_8(), gh3Songlist_0));
 				}
 			}
 			catch
@@ -76,15 +76,15 @@ namespace GuitarHero.Setlist
 			}
 		}
 
-		public Class286 method_6()
+		public StructureHeaderNode method_6()
 		{
-			Class286 @class = new Class286();
-			@class.method_3(new Class305("prefix", this.prefix));
-			@class.method_3(new Class299("num_tiers", this.tiers.Count));
-			@class.method_3(new Class305("initial_movie", this.initial_movie));
+			StructureHeaderNode @class = new StructureHeaderNode();
+			@class.method_3(new AsciiStructureNode("prefix", this.prefix));
+			@class.method_3(new IntegerStructureNode("num_tiers", this.tiers.Count));
+			@class.method_3(new AsciiStructureNode("initial_movie", this.initial_movie));
 			for (int i = 0; i < this.tiers.Count; i++)
 			{
-				@class.method_3(new Class302("tier" + (i + 1), this.tiers[i].method_3()));
+				@class.method_3(new StructurePointerNode("tier" + (i + 1), this.tiers[i].method_3()));
 			}
 			return @class;
 		}

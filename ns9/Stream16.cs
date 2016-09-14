@@ -30,7 +30,7 @@ namespace ns9
 			try
 			{
 				this.be_CONFIG_0 = be_CONFIG_1;
-				uint num = Class360.beInitStream(this.be_CONFIG_0, ref this.uint_1, ref this.uint_2, ref this.uint_0);
+				uint num = LameEncoder.beInitStream(this.be_CONFIG_0, ref this.uint_1, ref this.uint_2, ref this.uint_0);
 				if (num != 0u)
 				{
 					throw new ApplicationException(string.Format("Lame_encDll.beInitStream failed with the error code {0}", num));
@@ -57,19 +57,19 @@ namespace ns9
 				try
 				{
 					uint num = 0u;
-					if (this.int_2 > 0 && Class360.smethod_0(this.uint_0, this.byte_0, 0, (uint)this.int_2, this.byte_1, ref num) == 0u && num > 0u)
+					if (this.int_2 > 0 && LameEncoder.smethod_0(this.uint_0, this.byte_0, 0, (uint)this.int_2, this.byte_1, ref num) == 0u && num > 0u)
 					{
 						base.Write(this.byte_1, 0, (int)num);
 					}
 					num = 0u;
-					if (Class360.beDeinitStream(this.uint_0, this.byte_1, ref num) == 0u && num > 0u)
+					if (LameEncoder.beDeinitStream(this.uint_0, this.byte_1, ref num) == 0u && num > 0u)
 					{
 						base.Write(this.byte_1, 0, (int)num);
 					}
 				}
 				finally
 				{
-					Class360.beCloseStream(this.uint_0);
+					LameEncoder.beCloseStream(this.uint_0);
 				}
 			}
 			this.bool_0 = true;
@@ -96,7 +96,7 @@ namespace ns9
 					if (this.int_2 >= this.byte_0.Length)
 					{
 						this.int_2 = 0;
-						uint num3 = Class360.smethod_1(this.uint_0, this.byte_0, this.byte_1, ref num);
+						uint num3 = LameEncoder.smethod_1(this.uint_0, this.byte_0, this.byte_1, ref num);
 						if (num3 != 0u)
 						{
 							throw new ApplicationException("Lame_encDll.EncodeChunk failed with the error code " + num3);
@@ -109,7 +109,7 @@ namespace ns9
 				}
 				else if (count >= this.byte_0.Length)
 				{
-					uint num3 = Class360.smethod_0(this.uint_0, buffer, offset, (uint)this.byte_0.Length, this.byte_1, ref num);
+					uint num3 = LameEncoder.smethod_0(this.uint_0, buffer, offset, (uint)this.byte_0.Length, this.byte_1, ref num);
 					if (num3 != 0u)
 					{
 						throw new ApplicationException("Lame_encDll.EncodeChunk failed with the error code " + num3);

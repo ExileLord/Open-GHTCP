@@ -4,6 +4,7 @@ namespace ns7
 {
 	public class Class150
 	{
+        //Appears to be a qb int array (like for a song)
 		private static readonly short[] short_0 = new short[]
 		{
 			0,

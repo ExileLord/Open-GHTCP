@@ -17,9 +17,9 @@ namespace ns8
 
 		private List<Class168> list_0;
 
-		public Enum20 enum20_0;
+		public FSBEnum1 enum20_0;
 
-		public Enum21 enum21_0;
+		public FSBFlags1 enum21_0;
 
 		public byte[] byte_0;
 
@@ -27,25 +27,25 @@ namespace ns8
 
 		private FSBClass1.Enum23 method_0(int int_0)
 		{
-			if (this.enum20_0 == Enum20.const_0)
+			if (this.enum20_0 == FSBEnum1.const_0)
 			{
 				return FSBClass1.Enum23.const_0;
 			}
-			if (this.enum20_0 == Enum20.const_1)
+			if (this.enum20_0 == FSBEnum1.const_1)
 			{
 				return FSBClass1.Enum23.const_1;
 			}
-			if ((this.enum21_0 & Enum21.flag_2) != Enum21.flag_0 && int_0 != 0)
+			if ((this.enum21_0 & FSBFlags1.flag_2) != FSBFlags1.flag_0 && int_0 != 0)
 			{
 				return FSBClass1.Enum23.const_3;
 			}
-			if (this.enum20_0 == Enum20.const_2)
+			if (this.enum20_0 == FSBEnum1.const_2)
 			{
 				return FSBClass1.Enum23.const_1;
 			}
-			if (this.enum20_0 != Enum20.const_3)
+			if (this.enum20_0 != FSBEnum1.const_3)
 			{
-				if (this.enum20_0 != Enum20.const_4)
+				if (this.enum20_0 != FSBEnum1.const_4)
 				{
 					throw new Exception5("Unknown version \"" + this.enum20_0 + "\"");
 				}
@@ -134,17 +134,17 @@ namespace ns8
 
 		private void method_3(BinaryReader inputBin, out int numSubFiles, out uint subFileHdrsSize, out uint allDataSize)
 		{
-			this.enum20_0 = Enum20.const_0;
+			this.enum20_0 = FSBEnum1.const_0;
 			allDataSize = inputBin.ReadUInt32();
 			numSubFiles = inputBin.ReadInt32();
 			inputBin.ReadInt32();
-			this.enum21_0 = Enum21.flag_0;
+			this.enum21_0 = FSBFlags1.flag_0;
 			subFileHdrsSize = (uint)(numSubFiles * 64);
 		}
 
 		private void method_4(BinaryReader inputBin, out int numSubFiles, out uint subFileHdrsSize, out uint allDataSize)
 		{
-			this.enum20_0 = Enum20.const_1;
+			this.enum20_0 = FSBEnum1.const_1;
 			numSubFiles = inputBin.ReadInt32();
 			subFileHdrsSize = inputBin.ReadUInt32();
 			allDataSize = inputBin.ReadUInt32();
@@ -154,7 +154,7 @@ namespace ns8
 		{
 			this.method_4(inputBin, out numSubFiles, out subFileHdrsSize, out allDataSize);
 			this.enum20_0 = this.method_15(inputBin.ReadUInt32());
-			this.enum21_0 = (Enum21)inputBin.ReadUInt32();
+			this.enum21_0 = (FSBFlags1)inputBin.ReadUInt32();
 		}
 
 		private void method_6(BinaryReader inputBin, out int numSubFiles, out uint subFileHdrsSize, out uint allDataSize)
@@ -203,7 +203,7 @@ namespace ns8
 			@class.uint_3 = (uint)inputBin.ReadUInt16();
 			@class.ushort_0 = inputBin.ReadUInt16();
 			@class.short_0 = inputBin.ReadInt16();
-			@class.enum22_0 = (Enum22)inputBin.ReadUInt32();
+			@class.enum22_0 = (FSBFlags2)inputBin.ReadUInt32();
 			@class.uint_1 = inputBin.ReadUInt32();
 			@class.uint_2 = inputBin.ReadUInt32();
 			return @class;
@@ -226,7 +226,7 @@ namespace ns8
 			dataSize = inputBin.ReadUInt32();
 			@class.uint_1 = inputBin.ReadUInt32();
 			@class.uint_2 = inputBin.ReadUInt32();
-			@class.enum22_0 = (Enum22)inputBin.ReadUInt32();
+			@class.enum22_0 = (FSBFlags2)inputBin.ReadUInt32();
 			@class.int_0 = inputBin.ReadInt32();
 			@class.ushort_0 = inputBin.ReadUInt16();
 			@class.short_0 = inputBin.ReadInt16();
@@ -295,20 +295,20 @@ namespace ns8
 			return Encoding.UTF8.GetString(byte_1, 0, num);
 		}
 
-		private Enum20 method_15(uint uint_0)
+		private FSBEnum1 method_15(uint uint_0)
 		{
 			switch (uint_0)
 			{
 			case 196608u:
-				return Enum20.const_2;
+				return FSBEnum1.const_2;
 			case 196609u:
-				return Enum20.const_3;
+				return FSBEnum1.const_3;
 			default:
 				if (uint_0 != 262144u)
 				{
 					throw new Exception5("Invalid FsbFileVersion integer.");
 				}
-				return Enum20.const_4;
+				return FSBEnum1.const_4;
 			}
 		}
 
@@ -336,20 +336,20 @@ namespace ns8
 		{
 			switch (this.enum20_0)
 			{
-			case Enum20.const_0:
+			case FSBEnum1.const_0:
 				binaryWriter_0.Write(FSBClass1.smethod_8("FSB1", 4));
 				this.method_19(binaryWriter_0);
 				return;
-			case Enum20.const_1:
+			case FSBEnum1.const_1:
 				binaryWriter_0.Write(FSBClass1.smethod_8("FSB2", 4));
 				this.method_20(binaryWriter_0);
 				return;
-			case Enum20.const_2:
-			case Enum20.const_3:
+			case FSBEnum1.const_2:
+			case FSBEnum1.const_3:
 				binaryWriter_0.Write(FSBClass1.smethod_8("FSB3", 4));
 				this.method_21(binaryWriter_0);
 				return;
-			case Enum20.const_4:
+			case FSBEnum1.const_4:
 				binaryWriter_0.Write(FSBClass1.smethod_8("FSB4", 4));
 				this.method_22(binaryWriter_0);
 				return;
@@ -392,14 +392,14 @@ namespace ns8
 		{
 			switch (this.enum20_0)
 			{
-			case Enum20.const_0:
+			case FSBEnum1.const_0:
 				return 16;
-			case Enum20.const_1:
+			case FSBEnum1.const_1:
 				return 16;
-			case Enum20.const_2:
-			case Enum20.const_3:
+			case FSBEnum1.const_2:
+			case FSBEnum1.const_3:
 				return 24;
-			case Enum20.const_4:
+			case FSBEnum1.const_4:
 				return 48;
 			default:
 				throw new Exception5("Invalid Fsb Version.");
@@ -450,7 +450,7 @@ namespace ns8
 		private void method_26(BinaryWriter binaryWriter_0, Class168 class168_0)
 		{
 			this.method_27(binaryWriter_0, class168_0, FSBClass1.smethod_5(class168_0));
-			Class166.smethod_0(binaryWriter_0.BaseStream, class168_0.stream_0);
+			StreamHelper.CopyStream(binaryWriter_0.BaseStream, class168_0.stream_0);
 		}
 
 		private void method_27(BinaryWriter binaryWriter_0, Class168 class168_0, int int_0)
@@ -472,7 +472,7 @@ namespace ns8
 		private void method_28(BinaryWriter binaryWriter_0, Class168 class168_0)
 		{
 			this.method_29(binaryWriter_0, class168_0, FSBClass1.smethod_6(class168_0));
-			Class166.smethod_0(binaryWriter_0.BaseStream, class168_0.stream_0);
+			StreamHelper.CopyStream(binaryWriter_0.BaseStream, class168_0.stream_0);
 		}
 
 		private void method_29(BinaryWriter binaryWriter_0, Class168 class168_0, int int_0)
@@ -557,15 +557,15 @@ namespace ns8
 			return bytes;
 		}
 
-		private static uint smethod_9(Enum20 enum20_1)
+		private static uint smethod_9(FSBEnum1 enum20_1)
 		{
 			switch (enum20_1)
 			{
-			case Enum20.const_2:
+			case FSBEnum1.const_2:
 				return 196608u;
-			case Enum20.const_3:
+			case FSBEnum1.const_3:
 				return 196609u;
-			case Enum20.const_4:
+			case FSBEnum1.const_4:
 				return 262144u;
 			default:
 				throw new Exception5("Invalid FsbFileVersion");
@@ -576,7 +576,7 @@ namespace ns8
 		{
 			for (int i = 0; i < this.method_33().Count; i++)
 			{
-				Class166.smethod_0(binaryWriter_0.BaseStream, this.method_33()[i].stream_1);
+				StreamHelper.CopyStream(binaryWriter_0.BaseStream, this.method_33()[i].stream_1);
 			}
 		}
 
@@ -593,8 +593,8 @@ namespace ns8
 		public FSBClass1()
 		{
 			this.method_34(new List<Class168>());
-			this.enum20_0 = Enum20.const_3;
-			this.enum21_0 = Enum21.flag_0;
+			this.enum20_0 = FSBEnum1.const_3;
+			this.enum21_0 = FSBFlags1.flag_0;
 		}
 
 		public override string ToString()

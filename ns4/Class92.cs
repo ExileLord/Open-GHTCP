@@ -76,9 +76,9 @@ namespace ns4
 				0f
 			};
 
-			public abstract void vmethod_0(Class82 class82_0, Class107 class107_0, Class101 class101_0);
+			public abstract void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0);
 
-			public abstract void vmethod_1(Class82 class82_0, Class107 class107_0);
+			public abstract void vmethod_1(Class82 class82_0, zzSoundClass class107_0);
 
 			public abstract bool vmethod_2(Class82 class82_0);
 
@@ -147,7 +147,7 @@ namespace ns4
 				this.int_1 = 0;
 			}
 
-			public override void vmethod_0(Class82 class82_0, Class107 class107_0, Class101 class101_0)
+			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
 			{
 				if ((this.int_2 = class82_0.method_13(4)) == 15)
 				{
@@ -165,7 +165,7 @@ namespace ns4
 				}
 			}
 
-			public override void vmethod_1(Class82 class82_0, Class107 class107_0)
+			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
 			{
 				if (this.int_2 != 0)
 				{
@@ -206,12 +206,12 @@ namespace ns4
 			{
 			}
 
-			public override void vmethod_0(Class82 class82_0, Class107 class107_0, Class101 class101_0)
+			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
 			{
 				base.vmethod_0(class82_0, class107_0, class101_0);
 			}
 
-			public override void vmethod_1(Class82 class82_0, Class107 class107_0)
+			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
 			{
 				if (this.int_2 == 0)
 				{
@@ -267,7 +267,7 @@ namespace ns4
 			{
 			}
 
-			public override void vmethod_0(Class82 class82_0, Class107 class107_0, Class101 class101_0)
+			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
 			{
 				this.int_2 = class82_0.method_13(4);
 				this.int_4 = class82_0.method_13(4);
@@ -290,7 +290,7 @@ namespace ns4
 				}
 			}
 
-			public override void vmethod_1(Class82 class82_0, Class107 class107_0)
+			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
 			{
 				if (this.int_2 != 0)
 				{
@@ -333,7 +333,7 @@ namespace ns4
 
 		public Class82 class82_0;
 
-		public Class107 class107_0;
+		public zzSoundClass class107_0;
 
 		public Class80 class80_0;
 
@@ -356,7 +356,7 @@ namespace ns4
 			this.class101_0 = new Class101();
 		}
 
-		public virtual void vmethod_0(Class82 class82_1, Class107 class107_1, Class80 class80_2, Class80 class80_3, Class84 class84_1, Enum4 enum4_1)
+		public virtual void vmethod_0(Class82 class82_1, zzSoundClass class107_1, Class80 class80_2, Class80 class80_3, Class84 class84_1, Enum4 enum4_1)
 		{
 			this.class82_0 = class82_1;
 			this.class107_0 = class107_1;

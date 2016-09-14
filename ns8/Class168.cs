@@ -13,7 +13,7 @@ namespace ns8
 
 		public uint uint_2;
 
-		public Enum22 enum22_0;
+		public FSBFlags2 enum22_0;
 
 		public int int_0;
 
@@ -49,7 +49,7 @@ namespace ns8
 			this.uint_0 = 0u;
 			this.uint_1 = 0u;
 			this.uint_2 = 0u;
-			this.enum22_0 = Enum22.flag_33;
+			this.enum22_0 = FSBFlags2.flag_33;
 			this.int_0 = 0;
 			this.ushort_0 = 255;
 			this.short_0 = -1;

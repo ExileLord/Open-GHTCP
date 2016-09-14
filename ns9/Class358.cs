@@ -7,13 +7,13 @@ namespace ns9
 	{
 		private readonly int int_0;
 
-		private readonly Interface13 interface13_0;
+		private readonly EmptyInterface1 interface13_0;
 
 		private readonly int int_1;
 
 		private readonly int int_2;
 
-		public Class358(Interface13 interface13_1, int int_3, int int_4, int int_5)
+		public Class358(EmptyInterface1 interface13_1, int int_3, int int_4, int int_5)
 		{
 			this.interface13_0 = interface13_1;
 			this.int_0 = int_3;

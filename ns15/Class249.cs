@@ -9,11 +9,11 @@ namespace ns15
 {
 	public class Class249 : Class245
 	{
-		private Class318 class318_0;
+		private zzPakNode2 class318_0;
 
 		private bool bool_0;
 
-		public Class249(Class318 class318_1)
+		public Class249(zzPakNode2 class318_1)
 		{
 			this.class318_0 = class318_1;
 		}
@@ -21,12 +21,12 @@ namespace ns15
 		public override void vmethod_0()
 		{
 			Console.WriteLine("-=- " + this.ToString() + " -=-");
-			Class308 @class = this.class318_0.method_8("scripts\\guitar\\menu\\menu_cheats.qb");
-			foreach (Class286 current in @class.method_5<Class267>(new Class267("guitar_hero_cheats")).method_7().method_8<Class286>())
+			zzGenericNode1 @class = this.class318_0.method_8("scripts\\guitar\\menu\\menu_cheats.qb");
+			foreach (StructureHeaderNode current in @class.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("guitar_hero_cheats")).method_7().method_8<StructureHeaderNode>())
 			{
-				bool flag = current.method_5<Class296>(new Class296("name", "unlockall")) != null;
-				bool flag2 = current.method_5<Class296>(new Class296("name", "unlockalleverything")) != null;
-				Class280 class2 = current.method_5<Class301>(new Class301("unlock_pattern")).method_8() as Class280;
+				bool flag = current.method_5<TagStructureNode>(new TagStructureNode("name", "unlockall")) != null;
+				bool flag2 = current.method_5<TagStructureNode>(new TagStructureNode("name", "unlockalleverything")) != null;
+				IntegerArrayNode class2 = current.method_5<ArrayPointerNode>(new ArrayPointerNode("unlock_pattern")).method_8() as IntegerArrayNode;
 				if (class2.Nodes.Count == 1)
 				{
 					this.bool_0 = true;

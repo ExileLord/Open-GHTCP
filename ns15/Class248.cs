@@ -15,7 +15,7 @@ namespace ns15
 {
 	public class Class248 : Class245
 	{
-		private readonly Class323 class323_0;
+		private readonly zzQbSongObject class323_0;
 
 		public bool bool_0;
 
@@ -37,21 +37,21 @@ namespace ns15
 
 		public static bool bool_3;
 
-		public Class248(Class323 class323_1, string string_4, string string_5)
+		public Class248(zzQbSongObject class323_1, string string_4, string string_5)
 		{
 			this.class323_0 = class323_1;
-			this.string_1 = this.class323_0.string_0;
+			this.string_1 = this.class323_0.fileName;
 			this.string_3 = string_4;
 			this.string_2 = string_5;
 			string[] array = this.class323_0.string_1;
 			for (int i = 0; i < array.Length; i++)
 			{
 				string text = array[i];
-				if (text.Equals(this.class323_0.string_0 + "_rhythm"))
+				if (text.Equals(this.class323_0.fileName + "_rhythm"))
 				{
 					this.bool_0 = true;
 				}
-				else if (text.Contains(this.class323_0.string_0 + "_coop_"))
+				else if (text.Contains(this.class323_0.fileName + "_coop_"))
 				{
 					this.bool_1 = true;
 				}
@@ -73,7 +73,7 @@ namespace ns15
 		{
 			if (this.class323_0 != null)
 			{
-				KeyGenerator.smethod_9(this.string_2 + "music\\" + this.string_1 + ".dat.xen", this.class323_0.byte_0);
+				KeyGenerator.smethod_9(this.string_2 + "music\\" + this.string_1 + ".dat.xen", this.class323_0.data);
 				KeyGenerator.smethod_19(this.string_3, this.string_2 + "music\\" + this.string_1 + ".fsb.xen", true);
 			}
 			else
@@ -188,7 +188,7 @@ namespace ns15
 				}), stream6, 44100, 128);
 				list.Add(this.string_1 + "_preview");
 				list2.Add(stream6);
-				new Class323((int)ns20.FSBClass2.smethod_0(this.string_2 + "music\\" + this.string_1 + ".fsb.xen", list2.ToArray()), list.ToArray()).method_2(this.string_2 + "music\\" + this.string_1 + ".dat.xen");
+				new zzQbSongObject((int)ns20.FSBClass2.smethod_0(this.string_2 + "music\\" + this.string_1 + ".fsb.xen", list2.ToArray()), list.ToArray()).method_2(this.string_2 + "music\\" + this.string_1 + ".dat.xen");
 			}
 			GC.Collect();
 		}
