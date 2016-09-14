@@ -213,7 +213,7 @@ namespace ns20
 					int key;
 					try
 					{
-						key = KeyGenerator.smethod_23(array[0]);
+						key = KeyGenerator.HexStringToInt(array[0]);
 					}
 					catch (Exception)
 					{

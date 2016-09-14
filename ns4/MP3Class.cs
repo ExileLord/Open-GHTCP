@@ -18,9 +18,9 @@ namespace ns4
 
 		private long long_1;
 
-		private Class107 class107_0;
+		private zzSoundClass class107_0;
 
-		private readonly Class81[] class81_0;
+		private readonly zzSoundClass81[] class81_0;
 
 		private readonly Class82 class82_0;
 
@@ -85,7 +85,7 @@ namespace ns4
 					if (this.long_1 != 0L)
 					{
 						long num = (long)((double)value / this.double_0 + (double)this.int_2);
-						Class107 @class = this.class82_0.method_3();
+						zzSoundClass @class = this.class82_0.method_3();
 						while (this.fileStream.Position + (long)(@class.int_12 * this.class81_0.Length) < num)
 						{
 							for (int j = 0; j < this.class81_0.Length; j++)
@@ -125,10 +125,10 @@ namespace ns4
 
 		public MP3Class(Stream stream_1, int int_5, Enum4 enum4_0, int int_6)
 		{
-			this.class81_0 = new Class81[int_5];
+			this.class81_0 = new zzSoundClass81[int_5];
 			for (int i = 0; i < this.class81_0.Length; i++)
 			{
-				this.class81_0[i] = new Class81(new Class104(enum4_0));
+				this.class81_0[i] = new zzSoundClass81(new Class104(enum4_0));
 			}
 			this.fileStream = stream_1;
 			this.class82_0 = new Class82(this.fileStream, int_6);
@@ -333,7 +333,7 @@ namespace ns4
 
 		public bool method_1(int int_5)
 		{
-			Class107 @class = this.class82_0.method_3();
+			zzSoundClass @class = this.class82_0.method_3();
 			if (@class == null)
 			{
 				return false;

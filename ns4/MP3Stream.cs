@@ -18,11 +18,11 @@ namespace ns4
 
 		private long long_1;
 
-		private Class107 class107_0;
+		private zzSoundClass class107_0;
 
 		private readonly Class83 class83_0;
 
-		private readonly Class81 class81_0;
+		private readonly zzSoundClass81 class81_0;
 
 		private readonly Class82 class82_0;
 
@@ -110,7 +110,7 @@ namespace ns4
 
 		public MP3Stream(Stream stream_1, Enum4 enum4_0, int int_5)
 		{
-            this.class81_0 = new Class81(new Class104(enum4_0));
+            this.class81_0 = new zzSoundClass81(new Class104(enum4_0));
 			this.fileStream = stream_1;
 			this.class82_0 = new Class82(this.fileStream, int_5);
 			this.int_2 = this.class82_0.method_2();
@@ -251,7 +251,7 @@ namespace ns4
 
 		public bool method_0()
 		{
-			Class107 @class = this.class82_0.method_3();
+			zzSoundClass @class = this.class82_0.method_3();
 			if (@class == null)
 			{
 				return false;

@@ -753,7 +753,7 @@
     <Compile Include="ns19\zzQbSongObject.cs" />
     <Compile Include="ns19\Class324.cs" />
     <Compile Include="ns19\zzStreamClass325.cs" />
-    <Compile Include="ns19\Class326.cs" />
+    <Compile Include="ns19\zzTextureClass.cs" />
     <Compile Include="ns1\Class13.cs" />
     <Compile Include="ns1\Class15.cs" />
     <Compile Include="ns1\Class16.cs" />
@@ -883,7 +883,7 @@
     <Compile Include="ns4\Class78.cs" />
     <Compile Include="ns4\Class79.cs" />
     <Compile Include="ns4\Class80.cs" />
-    <Compile Include="ns4\Class81.cs" />
+    <Compile Include="ns4\zzSoundClass81.cs" />
     <Compile Include="ns4\Class82.cs" />
     <Compile Include="ns4\Class83.cs" />
     <Compile Include="ns4\Class84.cs" />
@@ -898,8 +898,8 @@
     <Compile Include="ns4\MP3Stream.cs" />
     <Compile Include="ns5\Class104.cs" />
     <Compile Include="ns5\Class105.cs" />
-    <Compile Include="ns5\Class106.cs" />
-    <Compile Include="ns5\Class107.cs" />
+    <Compile Include="ns5\zzStreamClass106.cs" />
+    <Compile Include="ns5\zzSoundClass.cs" />
     <Compile Include="ns5\Class108.cs" />
     <Compile Include="ns5\Class109.cs" />
     <Compile Include="ns5\Class110.cs" />
@@ -942,7 +942,7 @@
     <Compile Include="ns7\Class129.cs" />
     <Compile Include="ns7\Class132.cs" />
     <Compile Include="ns7\Class133.cs" />
-    <Compile Include="ns7\Class139.cs" />
+    <Compile Include="ns7\BlackMagic.cs" />
     <Compile Include="ns7\Class140.cs" />
     <Compile Include="ns7\Class141.cs" />
     <Compile Include="ns7\Class142.cs" />
@@ -956,7 +956,7 @@
     <Compile Include="ns7\Class150.cs" />
     <Compile Include="ns7\Class151.cs" />
     <Compile Include="ns7\FLACStream.cs" />
-    <Compile Include="ns8\Class166.cs" />
+    <Compile Include="ns8\StreamHelper.cs" />
     <Compile Include="ns8\FSBClass1.cs" />
     <Compile Include="ns8\Class168.cs" />
     <Compile Include="ns8\Class169.cs" />

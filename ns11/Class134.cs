@@ -35,7 +35,7 @@ namespace ns11
 				@class.class143_0 = class136_0.vmethod_1();
 				@class.vmethod_0(class144_0, int_6, @class.int_0, class140_1, class136_0.vmethod_2());
 				Buffer.BlockCopy(this.int_2, 0, class136_0.vmethod_0(), 0, int_6 << 2);
-				Class139.smethod_0(this.int_3, class140_1.int_0 - int_6, int_6, class136_0.vmethod_0(), int_6);
+				BlackMagic.CopyArrayOffset(this.int_3, class140_1.int_0 - int_6, int_6, class136_0.vmethod_0(), int_6);
 				return;
 			}
 			throw new IOException("STREAM_DECODER_UNPARSEABLE_STREAM");

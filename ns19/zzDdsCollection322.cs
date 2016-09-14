@@ -18,16 +18,16 @@ namespace ns19
 
 		private bool bool_0 = true;
 
-		public DDSClass1 this[int int_0]
+		public DDSTexture this[int int_0]
 		{
 			get
 			{
 				if (this.textureList[int_0].byte_1 != null)
 				{
-					return new DDSClass1(new MemoryStream(this.textureList[int_0].byte_1));
+					return new DDSTexture(new MemoryStream(this.textureList[int_0].byte_1));
 				}
 				this.stream26_0.Position = (long)this.textureList[int_0].int_1;
-				return new DDSClass1(this.stream26_0.stream_0, true);
+				return new DDSTexture(this.stream26_0.stream_0, true);
 			}
 		}
 
@@ -79,7 +79,7 @@ namespace ns19
 			zzCocoaStruct12 @class = this.textureList[int_0];
 			@class.short_2 = (short)image_0.Height;
 			@class.short_1 = (short)image_0.Width;
-			@class.byte_1 = new DDSClass1(image_0, (int)@class.byte_0, imgpixelFormat_0).method_3();
+			@class.byte_1 = new DDSTexture(image_0, (int)@class.byte_0, imgpixelFormat_0).method_3();
 		}
 
 		public byte[] method_2(int int_0)

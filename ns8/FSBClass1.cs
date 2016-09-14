@@ -450,7 +450,7 @@ namespace ns8
 		private void method_26(BinaryWriter binaryWriter_0, Class168 class168_0)
 		{
 			this.method_27(binaryWriter_0, class168_0, FSBClass1.smethod_5(class168_0));
-			Class166.smethod_0(binaryWriter_0.BaseStream, class168_0.stream_0);
+			StreamHelper.CopyStream(binaryWriter_0.BaseStream, class168_0.stream_0);
 		}
 
 		private void method_27(BinaryWriter binaryWriter_0, Class168 class168_0, int int_0)
@@ -472,7 +472,7 @@ namespace ns8
 		private void method_28(BinaryWriter binaryWriter_0, Class168 class168_0)
 		{
 			this.method_29(binaryWriter_0, class168_0, FSBClass1.smethod_6(class168_0));
-			Class166.smethod_0(binaryWriter_0.BaseStream, class168_0.stream_0);
+			StreamHelper.CopyStream(binaryWriter_0.BaseStream, class168_0.stream_0);
 		}
 
 		private void method_29(BinaryWriter binaryWriter_0, Class168 class168_0, int int_0)
@@ -576,7 +576,7 @@ namespace ns8
 		{
 			for (int i = 0; i < this.method_33().Count; i++)
 			{
-				Class166.smethod_0(binaryWriter_0.BaseStream, this.method_33()[i].stream_1);
+				StreamHelper.CopyStream(binaryWriter_0.BaseStream, this.method_33()[i].stream_1);
 			}
 		}
 

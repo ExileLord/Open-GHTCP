@@ -13,9 +13,9 @@ namespace ns16
 {
 	public class KeyGenerator
 	{
-		public static bool bool_0 = false;
+		public static bool _flag0 = false;
 
-		public static bool bool_1 = false;
+		public static bool _flag1 = false;
 
         //Who the hell is Ivan Medvedev
 		private static readonly byte[] pwByteArray = new byte[] //seed?
@@ -35,15 +35,15 @@ namespace ns16
 			118   //v
 		};
 
-		private static uint uint_0 = 0u;
+		private static uint _key = 0u;
 
-		private static readonly uint xorMask = 4294967295u;
+		private static readonly uint _xorMask = 4294967295u;
 
 		public static readonly uint[] crc32 = new uint[]
 		{
 			0u,
-			1996959894u,
-			3993919788u,
+			1996959894u, // Magic
+			3993919788u, // Do not touch
 			2567524794u,
 			124634137u,
 			1886057615u,
@@ -333,7 +333,7 @@ namespace ns16
 			return memoryStream.ToArray();
 		}
 
-		public static void smethod_3(Stream stream_0, Stream stream_1, byte[] byte_1, byte[] byte_2)
+		private static void cryptoMethod(Stream stream_0, Stream stream_1, byte[] byte_1, byte[] byte_2)
 		{
 			if ((byte_1.Length != 16 && byte_1.Length != 24 && byte_1.Length != 32) || byte_2.Length != 16)
 			{
@@ -352,16 +352,16 @@ namespace ns16
 			cryptoStream.Close();
 		}
 
-		public static void smethod_4(Stream stream_0, Stream stream_1, string string_0)
+		private static void cryptoMethod(Stream stream_0, Stream stream_1, string string_0)
 		{
 			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, KeyGenerator.pwByteArray);
-			KeyGenerator.smethod_3(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
+			KeyGenerator.cryptoMethod(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
-		public static byte[] smethod_5(Stream stream_0, string string_0)
+		public static byte[] cryptoMethod(Stream stream_0, string string_0)
 		{
 			MemoryStream memoryStream = new MemoryStream();
-			KeyGenerator.smethod_4(stream_0, memoryStream, string_0);
+			KeyGenerator.cryptoMethod(stream_0, memoryStream, string_0);
 			return memoryStream.ToArray();
 		}
 
@@ -403,21 +403,13 @@ namespace ns16
 
 		public static string smethod_10(string string_0)
 		{
-			int length = string_0.LastIndexOfAny(new char[]
-			{
-				'\\',
-				'/'
-			}) + 1;
+			int length = string_0.LastIndexOfAny(new char[] { '\\', '/' }) + 1;
 			return string_0.Substring(0, length);
 		}
 
 		public static string GetFileName(string path, int dotsInExtension)
 		{
-			int i = path.LastIndexOfAny(new char[]
-			{
-				'\\',
-				'/'
-			}) + 1;
+			int i = path.LastIndexOfAny(new char[] { '\\', '/' }) + 1;
 			string text = path.Substring(i);
 			try
 			{
@@ -472,10 +464,10 @@ namespace ns16
 			return result;
 		}
 
-		public static string smethod_15(string string_0, string string_1, bool bool_2, string string_2)
+		public static string OpenOrSaveFile(string title, string filter, bool IsOpenDialog, string fileName = "")
 		{
 			FileDialog fileDialog;
-			if (bool_2)
+			if (IsOpenDialog)
 			{
 				fileDialog = new OpenFileDialog();
 			}
@@ -483,12 +475,12 @@ namespace ns16
 			{
 				fileDialog = new SaveFileDialog();
 			}
-			fileDialog.Title = string_0;
-			fileDialog.FileName = string_2;
+			fileDialog.Title = title;
+			fileDialog.FileName = fileName;
 			fileDialog.CheckPathExists = true;
-			if (!string_1.Equals(""))
+			if (!filter.Equals(""))
 			{
-				fileDialog.Filter = string_1;
+				fileDialog.Filter = filter;
 			}
 			if (fileDialog.ShowDialog() == DialogResult.OK)
 			{
@@ -497,14 +489,9 @@ namespace ns16
 			return "";
 		}
 
-		public static string smethod_16(string string_0, string string_1, bool bool_2)
+		public static string OpenFile(string string_0, string string_1)
 		{
-			return KeyGenerator.smethod_15(string_0, string_1, bool_2, "");
-		}
-
-		public static string smethod_17(string string_0, string string_1)
-		{
-			return KeyGenerator.smethod_16(string_0, string_1, true);
+			return KeyGenerator.OpenOrSaveFile(string_0, string_1, true);
 		}
 
 		public static List<string> checkFile(string string_0, string string_1, bool bool_2)
@@ -563,9 +550,9 @@ namespace ns16
 			return array;
 		}
 
-		public static int smethod_23(string string_0)
+		public static int HexStringToInt(string hexidecimalInteger)
 		{
-			return Convert.ToInt32(string_0.Replace(" ", ""), 16);
+			return Convert.ToInt32(hexidecimalInteger.Replace(" ", ""), 16);
 		}
 
 		public static int smethod_24(byte[] byte_1, bool bool_2)
@@ -584,7 +571,7 @@ namespace ns16
 			case 4:
 				return BitConverter.ToInt32(byte_1, 0);
 			default:
-				if (num == 8)
+				if (num == 8) //i am pretty sure this should just be another switch case but I'm not going to touch it for now
 				{
 					return (int)BitConverter.ToInt64(byte_1, 0);
 				}
@@ -595,7 +582,7 @@ namespace ns16
 
 		public static int smethod_25(byte[] byte_1)
 		{
-			return KeyGenerator.smethod_24(byte_1, KeyGenerator.bool_0);
+			return KeyGenerator.smethod_24(byte_1, KeyGenerator._flag0);
 		}
 
 		public static int ReverseEndianness(int int_0)
@@ -681,56 +668,56 @@ namespace ns16
 		public static int GetQbKey(string gbName, bool alwaysTrue)
 		{
             //bool_0 is always false;
-			return KeyGenerator.GetQbKey(new MemoryStream(KeyGenerator.stringToBytes(gbName)), alwaysTrue, KeyGenerator.bool_0);
+			return KeyGenerator.GetQbKey(new MemoryStream(KeyGenerator.stringToBytes(gbName)), alwaysTrue, KeyGenerator._flag0);
 		}
 
 		public static int GetQbKey(byte[] byte_1, bool bool_2)
 		{
-			return KeyGenerator.GetQbKey(new MemoryStream(byte_1), bool_2, KeyGenerator.bool_0);
+			return KeyGenerator.GetQbKey(new MemoryStream(byte_1), bool_2, KeyGenerator._flag0);
 		}
 
-		public static int GetQbKey(Stream stream_0, bool bool_2, bool bool_3)
+		public static int GetQbKey(Stream stream, bool NegateCrc, bool ReverseEndianness)
 		{
-			if (stream_0 == null)
+			if (stream == null)
 			{
 				throw new ArgumentNullException("stream");
 			}
-			if (!stream_0.CanRead)
+			if (!stream.CanRead)
 			{
 				throw new ArgumentException("stream is not readable.");
 			}
-			stream_0.Position = 0L;
-			KeyGenerator.smethod_40();
+			stream.Position = 0L;
+			KeyGenerator.ResetKey();
 			byte[] array = new byte[4096];
 			int int_;
-			while ((int_ = stream_0.Read(array, 0, array.Length)) != 0)
+			while ((int_ = stream.Read(array, 0, array.Length)) != 0)
 			{
 				KeyGenerator.CrcVerifyMethod1(array, 0, int_);
 			}
-			stream_0.Position = 0L;
-			if (bool_2 && bool_3)
+			stream.Position = 0L;
+			if (NegateCrc && ReverseEndianness)
 			{
-                return KeyGenerator.ReverseEndianness((int)(KeyGenerator.uint_0 ^ 4294967295u));
+                return KeyGenerator.ReverseEndianness((int)(KeyGenerator._key ^ 4294967295u));
 			}
-			if (bool_2)
+			if (NegateCrc)
 			{
-                return (int)(KeyGenerator.uint_0 ^ 4294967295u);
+                return (int)(KeyGenerator._key ^ 4294967295u);
 			}
-			if (bool_3)
+			if (ReverseEndianness)
 			{
-				return KeyGenerator.ReverseEndianness((int)KeyGenerator.uint_0);
+				return KeyGenerator.ReverseEndianness((int)KeyGenerator._key);
 			}
-			return (int)KeyGenerator.uint_0;
+			return (int)KeyGenerator._key;
 		}
 
 		public static int GetQbKey(Stream stream_0, bool bool_2)
 		{
-			return KeyGenerator.GetQbKey(stream_0, bool_2, KeyGenerator.bool_0);
+			return KeyGenerator.GetQbKey(stream_0, bool_2, KeyGenerator._flag0);
 		}
 
-		private static void smethod_40()
+		private static void ResetKey()
 		{
-			KeyGenerator.uint_0 = 0u;
+			KeyGenerator._key = 0u;
 		}
 
 		private static void CrcVerifyMethod1(byte[] byte_1, int int_0, int int_1)
@@ -741,12 +728,12 @@ namespace ns16
 			}
 			if (int_0 >= 0 && int_1 >= 0 && int_0 + int_1 <= byte_1.Length)
 			{
-				KeyGenerator.uint_0 ^= KeyGenerator.xorMask;
+				KeyGenerator._key ^= KeyGenerator._xorMask;
 				while (--int_1 >= 0)
 				{
-					KeyGenerator.uint_0 = (KeyGenerator.crc32[(int)((UIntPtr)((KeyGenerator.uint_0 ^ (uint)byte_1[int_0++]) & 255u))] ^ KeyGenerator.uint_0 >> 8);
+					KeyGenerator._key = (KeyGenerator.crc32[(int)((UIntPtr)((KeyGenerator._key ^ (uint)byte_1[int_0++]) & 255u))] ^ KeyGenerator._key >> 8);
 				}
-				KeyGenerator.uint_0 ^= KeyGenerator.xorMask;
+				KeyGenerator._key ^= KeyGenerator._xorMask;
 				return;
 			}
 			throw new ArgumentOutOfRangeException("Crc buffer");

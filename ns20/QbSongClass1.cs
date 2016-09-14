@@ -22,7 +22,7 @@ namespace ns20
 			{
 				return;
 			}
-			QbSongClass1.smethod_1(new MemoryStream(ZIPManager.smethod_5(KeyGenerator.smethod_5(Assembly.GetExecutingAssembly().GetManifestResourceStream("NeversoftTools.NSTreeView.nstags.aes"), "MinimizedNSTags1245"), "nstags.ids")));
+			QbSongClass1.smethod_1(new MemoryStream(ZIPManager.smethod_5(KeyGenerator.cryptoMethod(Assembly.GetExecutingAssembly().GetManifestResourceStream("NeversoftTools.NSTreeView.nstags.aes"), "MinimizedNSTags1245"), "nstags.ids")));
 			QbSongClass1.bool_0 = true;
 		}
 

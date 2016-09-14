@@ -75,13 +75,13 @@ namespace ns20
 
 		private string string_0;
 
-		private zzTextureExplorer1 _textureExplorer;
+		private zzTextureExplorer1 _textureCache;
 
 		private Thread thread_0;
 
 		private Size size_0;
 
-		private IMGPixelFormat imgpixelFormat_0;
+		private IMGPixelFormat _currentTexturePixelFormat;
 
 		private string string_1;
 
@@ -461,10 +461,10 @@ namespace ns20
 
 		private void method_2()
 		{
-			if (this._textureExplorer != null)
+			if (this._textureCache != null)
 			{
-				this._textureExplorer.Dispose();
-				this._textureExplorer = null;
+				this._textureCache.Dispose();
+				this._textureCache = null;
 			}
 			this.ImgList.Items.Clear();
 			this.ImgList.SelectedIndex = -1;
@@ -491,8 +491,8 @@ namespace ns20
 					{
 						@class = new zzPakNode2(toolTipText, false);
 					}
-					this._textureExplorer = new zzTextureExplorer1(@class.method_13((int)this.DataFolder_TreeView.SelectedNode.Tag));
-					for (int i = 1; i <= this._textureExplorer.method_4(); i++)
+					this._textureCache = new zzTextureExplorer1(@class.method_13((int)this.DataFolder_TreeView.SelectedNode.Tag));
+					for (int i = 1; i <= this._textureCache.method_4(); i++)
 					{
 						this.ImgList.Items.Add("Image " + i);
 					}
@@ -502,8 +502,8 @@ namespace ns20
 				if (this.DataFolder_TreeView.SelectedNode.ToolTipText != "")
 				{
 					this.method_2();
-					this._textureExplorer = new zzTextureExplorer1(this.DataFolder_TreeView.SelectedNode.ToolTipText);
-					for (int j = 1; j <= this._textureExplorer.method_4(); j++)
+					this._textureCache = new zzTextureExplorer1(this.DataFolder_TreeView.SelectedNode.ToolTipText);
+					for (int j = 1; j <= this._textureCache.method_4(); j++)
 					{
 						this.ImgList.Items.Add("Image " + j);
 					}
@@ -515,14 +515,15 @@ namespace ns20
 		{
 			if (this.ImgList.SelectedIndex >= 0)
 			{
-				DDSClass1 @class = this._textureExplorer[this.ImgList.SelectedIndex];
-				this.imgpixelFormat_0 = @class.imgpixelFormat_0;
-				this.BPPTxt.Text = string.Concat(@class.int_0);
-				this.FormatTxt.Text = ((@class.imgpixelFormat_0 == IMGPixelFormat.Dxt1) ? "DXT1" : ((@class.imgpixelFormat_0 == IMGPixelFormat.Dxt3) ? "DXT3" : ((@class.imgpixelFormat_0 == IMGPixelFormat.Dxt5) ? "DXT5" : "A8R8G8B8")));
-				this.MipMapTxt.Text = string.Concat(@class.int_1);
-				this.WidthTxt.Text = string.Concat(@class.size_0.Width);
-				this.HeightTxt.Text = string.Concat(@class.size_0.Height);
-				Image image = @class.method_1();
+				DDSTexture texture = _textureCache[this.ImgList.SelectedIndex];
+				_currentTexturePixelFormat = texture.PixelFormat;
+				BPPTxt.Text = string.Concat(texture.BPP);
+				FormatTxt.Text = ((texture.PixelFormat == IMGPixelFormat.Dxt1) ? "DXT1" : ((texture.PixelFormat == IMGPixelFormat.Dxt3) ? "DXT3" : ((texture.PixelFormat == IMGPixelFormat.Dxt5) ? "DXT5" : "A8R8G8B8")));
+				MipMapTxt.Text = string.Concat(texture.MipMapCount);
+				WidthTxt.Text = string.Concat(texture.Size.Width);
+				HeightTxt.Text = string.Concat(texture.Size.Height);
+
+				Image image = texture.GetImage();
 				this.size_0 = image.Size;
 				if (image.Width > this.ImagePreviewBox.Width || image.Height > this.ImagePreviewBox.Height)
 				{
@@ -537,7 +538,7 @@ namespace ns20
 
 		private void ReplaceImgBtn_Click(object sender, EventArgs e)
 		{
-			string text = KeyGenerator.smethod_16("Select the image file to replace the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", true);
+			string text = KeyGenerator.OpenOrSaveFile("Select the image file to replace the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", true);
 			if (text == "")
 			{
 				return;
@@ -545,7 +546,7 @@ namespace ns20
 			Image image;
 			if (text.EndsWith(".dds", StringComparison.OrdinalIgnoreCase))
 			{
-				image = new DDSClass1(text).method_1();
+				image = new DDSTexture(text).GetImage();
 			}
 			else
 			{
@@ -555,7 +556,7 @@ namespace ns20
 			{
 				image = KeyGenerator.ScaleImage(image, this.size_0);
 			}
-			this._textureExplorer.method_1(this.ImgList.SelectedIndex, image, this.imgpixelFormat_0);
+			this._textureCache.method_1(this.ImgList.SelectedIndex, image, this._currentTexturePixelFormat);
 			this.RebuildBtn.Enabled = true;
 		}
 
@@ -582,17 +583,17 @@ namespace ns20
 
 		private void ExtractImgBtn_Click(object sender, EventArgs e)
 		{
-			string text = KeyGenerator.smethod_16("Select location to export the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", false);
+			string text = KeyGenerator.OpenOrSaveFile("Select location to export the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", false);
 			if (text == "")
 			{
 				return;
 			}
 			if (text.EndsWith(".dds", StringComparison.OrdinalIgnoreCase))
 			{
-				this._textureExplorer.method_3(this.ImgList.SelectedIndex, text);
+				this._textureCache.method_3(this.ImgList.SelectedIndex, text);
 				return;
 			}
-			this._textureExplorer[this.ImgList.SelectedIndex].method_1().Save(text, this.GetImageFormat(text));
+			this._textureCache[this.ImgList.SelectedIndex].GetImage().Save(text, this.GetImageFormat(text));
 		}
 
 		private void RebuildBtn_Click(object sender, EventArgs e)
@@ -601,15 +602,15 @@ namespace ns20
 			{
 				return;
 			}
-			if (this._textureExplorer.method_5())
+			if (this._textureCache.method_5())
 			{
-				this._textureExplorer.method_6();
+				this._textureCache.method_6();
 			}
 			else
 			{
 				string toolTipText = this.DataFolder_TreeView.SelectedNode.ToolTipText;
 				zzPakNode2 @class = File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")) ? new zzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false) : new zzPakNode2(toolTipText, false);
-				@class.method_11((int)this.DataFolder_TreeView.SelectedNode.Tag).imethod_17(this._textureExplorer.method_7().method_1());
+				@class.method_11((int)this.DataFolder_TreeView.SelectedNode.Tag).imethod_17(this._textureCache.method_7().method_1());
 				@class.vmethod_1();
 				@class.Dispose();
 			}

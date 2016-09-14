@@ -4,7 +4,7 @@ using System;
 
 namespace ns4
 {
-	public class Class81
+	public class zzSoundClass81
 	{
 		private static readonly Class104 class104_0 = new Class104();
 
@@ -45,15 +45,15 @@ namespace ns4
 			return this.int_1;
 		}
 
-		public Class81() : this(null)
+		public zzSoundClass81() : this(null)
 		{
 		}
 
-		public Class81(Class104 class104_2)
+		public zzSoundClass81(Class104 class104_2)
 		{
 			if (class104_2 == null)
 			{
-				class104_2 = Class81.class104_0;
+				class104_2 = zzSoundClass81.class104_0;
 			}
 			this.class104_1 = class104_2;
 			Class105 @class = this.class104_1.method_1();
@@ -63,7 +63,7 @@ namespace ns4
 			}
 		}
 
-		private void method_3(Class107 class107_0)
+		private void method_3(zzSoundClass class107_0)
 		{
 			Enum5 @enum = class107_0.method_8();
 			class107_0.method_4();
@@ -83,7 +83,7 @@ namespace ns4
 			this.bool_0 = true;
 		}
 
-		private Interface7 method_4(Class107 class107_0, Class82 class82_0, int int_2)
+		private Interface7 method_4(zzSoundClass class107_0, Class82 class82_0, int int_2)
 		{
 			Interface7 @interface = null;
 			switch (int_2)
@@ -119,7 +119,7 @@ namespace ns4
 			return @interface;
 		}
 
-		public Class84 method_5(Class107 class107_0, Class82 class82_0)
+		public Class84 method_5(zzSoundClass class107_0, Class82 class82_0)
 		{
 			if (!this.bool_0)
 			{

@@ -148,7 +148,7 @@ namespace ns4
 
 		private readonly Class82 class82_0;
 
-		private readonly Class107 class107_0;
+		private readonly zzSoundClass class107_0;
 
 		private readonly Class80 class80_0;
 
@@ -1908,7 +1908,7 @@ namespace ns4
 			}
 		};
 
-		public Class85(Class82 class82_1, Class107 class107_1, Class80 class80_2, Class80 class80_3, Class84 class84_1, Enum4 enum4_1) : base()
+		public Class85(Class82 class82_1, zzSoundClass class107_1, Class80 class80_2, Class80 class80_3, Class84 class84_1, Enum4 enum4_1) : base()
 		{
 			int[] array = new int[1];
 			this.int_12 = array;

@@ -13,7 +13,7 @@ namespace ns17
 
 		public static byte[] smethod_0(string string_1)
 		{
-			return ZIPManager.smethod_5(KeyGenerator.smethod_5(Assembly.GetExecutingAssembly().GetManifestResourceStream(string.Concat(new object[]
+			return ZIPManager.smethod_5(KeyGenerator.cryptoMethod(Assembly.GetExecutingAssembly().GetManifestResourceStream(string.Concat(new object[]
 			{
 				"GHTCP.FileDB.QBS.",
 				Class372.string_0,
@@ -29,7 +29,7 @@ namespace ns17
 
 		public static byte[] smethod_2(string string_1)
 		{
-			return ZIPManager.smethod_5(KeyGenerator.smethod_5(Assembly.GetExecutingAssembly().GetManifestResourceStream("GHTCP.FileDB.QB." + string_1), "MinimizedQBFile4f4g9h"), string_1 + ".qb");
+			return ZIPManager.smethod_5(KeyGenerator.cryptoMethod(Assembly.GetExecutingAssembly().GetManifestResourceStream("GHTCP.FileDB.QB." + string_1), "MinimizedQBFile4f4g9h"), string_1 + ".qb");
 		}
 
 		public static zzGenericNode1 smethod_3(string string_1)

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ns5
 {
-	public class Class107
+	public class zzSoundClass
 	{
 		public static readonly int[][] int_0 = new int[][]
 		{
@@ -448,7 +448,7 @@ namespace ns5
 			this.byte_0 = Class82.byte_1;
 		}
 
-		public Class107()
+		public zzSoundClass()
 		{
 			this.method_0();
 		}
@@ -628,16 +628,16 @@ namespace ns5
 					this.int_11 = -1;
 					this.int_10 = -1;
 					byte[] array = new byte[100];
-					int num2 = Class107.smethod_0(BitConverter.ToInt32(byte_1, num + 4));
+					int num2 = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + 4));
 					int num3 = 8;
 					if ((num2 & 1) != 0)
 					{
-						this.int_9 = Class107.smethod_0(BitConverter.ToInt32(byte_1, num + num3));
+						this.int_9 = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + num3));
 						num3 += 4;
 					}
 					if ((num2 & 2) != 0)
 					{
-						this.int_11 = Class107.smethod_0(BitConverter.ToInt32(byte_1, num + num3));
+						this.int_11 = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + num3));
 						num3 += 4;
 					}
 					if ((num2 & 4) != 0)
@@ -648,7 +648,7 @@ namespace ns5
 					}
 					if ((num2 & 8) != 0)
 					{
-						this.int_10 = Class107.smethod_0(BitConverter.ToInt32(byte_1, num + num3));
+						this.int_10 = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + num3));
 						num3 += 4;
 					}
 				}
@@ -666,13 +666,13 @@ namespace ns5
 					this.int_9 = -1;
 					this.int_11 = -1;
 					this.int_10 = -1;
-					this.int_10 = (int)Class107.smethod_1(BitConverter.ToInt16(byte_1, num + 8));
-					this.int_11 = Class107.smethod_0(BitConverter.ToInt32(byte_1, num + 10));
-					this.int_9 = Class107.smethod_0(BitConverter.ToInt32(byte_1, num + 14));
-					int[] array2 = new int[(int)Class107.smethod_1(BitConverter.ToInt16(byte_1, num + 18))];
-					short num4 = Class107.smethod_1(BitConverter.ToInt16(byte_1, num + 20));
-					short num5 = Class107.smethod_1(BitConverter.ToInt16(byte_1, num + 22));
-					short num6 = Class107.smethod_1(BitConverter.ToInt16(byte_1, num + 24));
+					this.int_10 = (int)zzSoundClass.smethod_1(BitConverter.ToInt16(byte_1, num + 8));
+					this.int_11 = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + 10));
+					this.int_9 = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + 14));
+					int[] array2 = new int[(int)zzSoundClass.smethod_1(BitConverter.ToInt16(byte_1, num + 18))];
+					short num4 = zzSoundClass.smethod_1(BitConverter.ToInt16(byte_1, num + 20));
+					short num5 = zzSoundClass.smethod_1(BitConverter.ToInt16(byte_1, num + 22));
+					short num6 = zzSoundClass.smethod_1(BitConverter.ToInt16(byte_1, num + 24));
 					int num7 = 26;
 					switch (num5)
 					{
@@ -692,7 +692,7 @@ namespace ns5
 						int j = 0;
 						while (j < array2.Length)
 						{
-							array2[j] = (int)(Class107.smethod_1(BitConverter.ToInt16(byte_1, num + num7)) * num4);
+							array2[j] = (int)(zzSoundClass.smethod_1(BitConverter.ToInt16(byte_1, num + num7)) * num4);
 							j++;
 							num7 += 2;
 						}
@@ -714,7 +714,7 @@ namespace ns5
 						int l = 0;
 						while (l < array2.Length)
 						{
-							array2[l] = Class107.smethod_0(BitConverter.ToInt32(byte_1, num + num7)) * (int)num4;
+							array2[l] = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + num7)) * (int)num4;
 							l++;
 							num7 += 4;
 						}
@@ -738,7 +738,7 @@ namespace ns5
 			{
 				return int_16;
 			}
-			return ((int)Class107.smethod_1((short)int_16) & 65535) << 16 | ((int)Class107.smethod_1((short)(int_16 >> 16)) & 65535);
+			return ((int)zzSoundClass.smethod_1((short)int_16) & 65535) << 16 | ((int)zzSoundClass.smethod_1((short)(int_16 >> 16)) & 65535);
 		}
 
 		private static short smethod_1(short short_1)
@@ -772,7 +772,7 @@ namespace ns5
 
 		public int method_7()
 		{
-			return Class107.int_0[(int)this.enum3_0][this.int_6];
+			return zzSoundClass.int_0[(int)this.enum3_0][this.int_6];
 		}
 
 		public Enum5 method_8()
@@ -814,7 +814,7 @@ namespace ns5
 		{
 			if (this.int_1 == 1)
 			{
-				this.int_12 = 12 * Class107.int_15[(int)this.enum3_0, 0, this.int_3] / Class107.int_0[(int)this.enum3_0][this.int_6];
+				this.int_12 = 12 * zzSoundClass.int_15[(int)this.enum3_0, 0, this.int_3] / zzSoundClass.int_0[(int)this.enum3_0][this.int_6];
 				if (this.int_4 != 0)
 				{
 					this.int_12++;
@@ -824,7 +824,7 @@ namespace ns5
 			}
 			else
 			{
-				this.int_12 = 144 * Class107.int_15[(int)this.enum3_0, this.int_1 - 1, this.int_3] / Class107.int_0[(int)this.enum3_0][this.int_6];
+				this.int_12 = 144 * zzSoundClass.int_15[(int)this.enum3_0, this.int_1 - 1, this.int_3] / zzSoundClass.int_0[(int)this.enum3_0][this.int_6];
 				if (this.enum3_0 == Enum3.const_0 || this.enum3_0 == Enum3.const_2)
 				{
 					this.int_12 >>= 1;
@@ -924,7 +924,7 @@ namespace ns5
 			{
 				return Convert.ToString(this.method_21() / 1000) + " kb/s";
 			}
-			return Class107.string_0[(int)this.enum3_0][this.int_1 - 1][this.int_3];
+			return zzSoundClass.string_0[(int)this.enum3_0][this.int_1 - 1][this.int_3];
 		}
 
 		public int method_21()
@@ -933,7 +933,7 @@ namespace ns5
 			{
 				return (int)((double)(this.int_11 * 8) / (this.method_17() * (double)this.int_9)) * 1000;
 			}
-			return Class107.int_15[(int)this.enum3_0, this.int_1 - 1, this.int_3];
+			return zzSoundClass.int_15[(int)this.enum3_0, this.int_1 - 1, this.int_3];
 		}
 
 		public string method_22()

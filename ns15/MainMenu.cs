@@ -823,7 +823,7 @@ namespace ns15
 		private void LoadChart_EditorBtn_Click(object sender, EventArgs e)
 		{
 			string fileName;
-			if (!(fileName = KeyGenerator.smethod_16("Select the game track file.", "Any Supported Game Track Formats|*.qbc;*.dbc;*_song.pak.xen;*.mid;*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc|GH3 Game Track file|*_song.pak.xen|GH standard Midi file|*.mid|dB standard or GH3CP Chart file|*.chart", true)).Equals(""))
+			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the game track file.", "Any Supported Game Track Formats|*.qbc;*.dbc;*_song.pak.xen;*.mid;*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc|GH3 Game Track file|*_song.pak.xen|GH standard Midi file|*.mid|dB standard or GH3CP Chart file|*.chart", true)).Equals(""))
 			{
 				QBCParser qbcParser;
 				try
@@ -928,7 +928,7 @@ namespace ns15
 		private void LoadAudio_EditorBtn_Click(object sender, EventArgs e)
 		{
 			string fileName;
-			if (!(fileName = KeyGenerator.smethod_16("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio File|*.mp3|Waveform Audio File|*.wav|Ogg Vorbis Audio File|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio File|*.mp3|Waveform Audio File|*.wav|Ogg Vorbis Audio File|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
 				this.SongEditor_Control.loadAudio(fileName);
             }
@@ -1009,7 +1009,7 @@ namespace ns15
 				{
 					return;
 				}
-				string fileLocation = KeyGenerator.smethod_16("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
+				string fileLocation = KeyGenerator.OpenOrSaveFile("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
 				if (!fileLocation.Equals("") && File.Exists(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen"))
 				{
 					using (zzPakNode2 @class = new zzPakNode2(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
@@ -1042,7 +1042,7 @@ namespace ns15
 		{
 			if (this.TierBox.SelectedIndex >= 0)
 			{
-				string text = KeyGenerator.smethod_15("Select where to save the tier.", "GH3CP Tier File|*.tgh", false, this.TierTitle_TxtBox.Text);
+				string text = KeyGenerator.OpenOrSaveFile("Select where to save the tier.", "GH3CP Tier File|*.tgh", false, this.TierTitle_TxtBox.Text);
 				if (text.Equals(""))
 				{
 					return;
@@ -1069,7 +1069,7 @@ namespace ns15
 		{
 			if (this.TierBox.SelectedIndex >= 0)
 			{
-				string text = KeyGenerator.smethod_17("Select the tier to switch too.", "GH3CP Tier File|*.tgh");
+				string text = KeyGenerator.OpenFile("Select the tier to switch too.", "GH3CP Tier File|*.tgh");
 				if (text.Equals(""))
 				{
 					return;
@@ -1104,7 +1104,7 @@ namespace ns15
 		{
 			if (this.gh3Songlist_0.gh3SetlistList.ContainsKey(this.int_0))
 			{
-				string text = KeyGenerator.smethod_17("Select the tier to import.", "GH3CP Tier File|*.tgh");
+				string text = KeyGenerator.OpenFile("Select the tier to import.", "GH3CP Tier File|*.tgh");
 				if (text.Equals(""))
 				{
 					return;
@@ -1139,7 +1139,7 @@ namespace ns15
 		{
 			if (this.gh3Songlist_0.gh3SetlistList.ContainsKey(this.int_0))
 			{
-				string saveLocation = KeyGenerator.smethod_15("Select where to save the setlist.", "GH3CP Setlist File|*.sgh", false, this.SetlistTitle_TxtBox.Text);
+				string saveLocation = KeyGenerator.OpenOrSaveFile("Select where to save the setlist.", "GH3CP Setlist File|*.sgh", false, this.SetlistTitle_TxtBox.Text);
 				if (saveLocation.Equals(""))
 				{
 					return;
@@ -1192,7 +1192,7 @@ namespace ns15
 		{
 			if (this.gh3Songlist_0.gh3SetlistList.ContainsKey(this.int_0))
 			{
-				string text = KeyGenerator.smethod_17("Select the setlist to switch too.", "GH3CP Setlist File|*.sgh");
+				string text = KeyGenerator.OpenFile("Select the setlist to switch too.", "GH3CP Setlist File|*.sgh");
 				if (text.Equals(""))
 				{
 					return;
@@ -1572,7 +1572,7 @@ namespace ns15
 					MessageBox.Show("Please download the file under \"ZIP OPTION:\" and select it: libmp3lame-win-#.#.zip", "MP3 Encoding Library Missing!");
 					try
 					{
-						string text4 = KeyGenerator.smethod_16("Locate MP3 Encoding Library (file will be deleted after!)", "MP3 Lame Zip|*.zip", true);
+						string text4 = KeyGenerator.OpenOrSaveFile("Locate MP3 Encoding Library (file will be deleted after!)", "MP3 Lame Zip|*.zip", true);
 						string text5 = KeyGenerator.GetFileNameNoExt(text4);
 						ZIPManager.smethod_4(text4, this.string_0 + "lame_enc.dll", "libmp3lame" + text5.Substring(text5.LastIndexOf('-')) + "/lame_enc.dll");
 						try
@@ -1598,7 +1598,7 @@ namespace ns15
 
 		private void SaveFileControl_MenuItem_Click(object sender, EventArgs e)
 		{
-			string a = KeyGenerator.smethod_16("Select Save File to Import. Current Save File will be Overwritten!", "GH3 Save File|s000.d", true);
+			string a = KeyGenerator.OpenOrSaveFile("Select Save File to Import. Current Save File will be Overwritten!", "GH3 Save File|s000.d", true);
 			if (a != "")
 			{
 				Class324 @class = new Class324(a);
@@ -3847,7 +3847,7 @@ namespace ns15
 			}
 			catch
 			{
-				string text = KeyGenerator.smethod_16("Find Guitar Hero " + (this.bool_0 ? "Aerosmith" : "3"), this.bool_0 ? "Guitar Hero Aerosmith Executable|Guitar Hero Aerosmith.exe" : "Guitar Hero 3 Executable|GH3.exe", true);
+				string text = KeyGenerator.OpenOrSaveFile("Find Guitar Hero " + (this.bool_0 ? "Aerosmith" : "3"), this.bool_0 ? "Guitar Hero Aerosmith Executable|Guitar Hero Aerosmith.exe" : "Guitar Hero 3 Executable|GH3.exe", true);
 				if (string.IsNullOrEmpty(text))
 				{
 					return;
@@ -4151,7 +4151,7 @@ namespace ns15
 			int[] icollection_ = this.bool_0 ? this.int_2[int_3] : this.int_1[int_3];
 			while (!File.Exists(text) || !File.Exists(text.Replace(".pab.xen", ".pak.xen")) || !KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection_))
 			{
-				if ((text = KeyGenerator.smethod_16("Find The Original V1.3 Game Settings.", "Original V1.3 Game Settings|qb" + this.list_0[int_3] + ".pab.xen", true)).Equals(""))
+				if ((text = KeyGenerator.OpenOrSaveFile("Find The Original V1.3 Game Settings.", "Original V1.3 Game Settings|qb" + this.list_0[int_3] + ".pab.xen", true)).Equals(""))
 				{
 					return false;
 				}

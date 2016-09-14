@@ -105,7 +105,7 @@ namespace ns4
 				this.int_9 = 0;
 			}
 
-			public virtual int vmethod_4(Class107 class107_0)
+			public virtual int vmethod_4(zzSoundClass class107_0)
 			{
 				if (class107_0.method_3() == Enum3.const_1)
 				{
@@ -156,7 +156,7 @@ namespace ns4
 				}
 			}
 
-			public virtual void vmethod_5(Class107 class107_0, int int_11, int int_12, float[] float_30, int[] int_13, float[] float_31, float[] float_32)
+			public virtual void vmethod_5(zzSoundClass class107_0, int int_11, int int_12, float[] float_30, int[] int_13, float[] float_31, float[] float_32)
 			{
 				int num = class107_0.method_5();
 				if (class107_0.method_8() != Enum5.const_3)
@@ -214,7 +214,7 @@ namespace ns4
 				float_32[0] = Class93.Class98.float_21[int_11];
 			}
 
-			public override void vmethod_0(Class82 class82_0, Class107 class107_0, Class101 class101_0)
+			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
 			{
 				int num = this.vmethod_4(class107_0);
 				this.int_6 = class82_0.method_13(num);
@@ -237,7 +237,7 @@ namespace ns4
 				}
 			}
 
-			public override void vmethod_1(Class82 class82_0, Class107 class107_0)
+			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
 			{
 				if (this.int_6 == 0)
 				{
@@ -3310,7 +3310,7 @@ namespace ns4
 			{
 			}
 
-			public override void vmethod_0(Class82 class82_0, Class107 class107_0, Class101 class101_0)
+			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
 			{
 				base.vmethod_0(class82_0, class107_0, class101_0);
 			}
@@ -3330,7 +3330,7 @@ namespace ns4
 				}
 			}
 
-			public override void vmethod_1(Class82 class82_0, Class107 class107_0)
+			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
 			{
 				if (this.int_6 == 0)
 				{
@@ -3468,7 +3468,7 @@ namespace ns4
 				this.float_34 = new float[3];
 			}
 
-			public override void vmethod_0(Class82 class82_0, Class107 class107_0, Class101 class101_0)
+			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
 			{
 				int num = this.vmethod_4(class107_0);
 				this.int_6 = class82_0.method_13(num);
@@ -3500,7 +3500,7 @@ namespace ns4
 				}
 			}
 
-			public override void vmethod_1(Class82 class82_0, Class107 class107_0)
+			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
 			{
 				base.vmethod_1(class82_0, class107_0);
 				if (this.int_11 != 0)

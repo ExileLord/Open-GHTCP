@@ -1420,7 +1420,7 @@ namespace ns17
 		private void ChartFileBtn_Click(object sender, EventArgs e)
 		{
 			string fileName;
-			if (!(fileName = KeyGenerator.smethod_16("Select the game track file.", "Any Supported Game Track Formats|*.qbc;*.dbc;*_song.pak.xen;*.mid;*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc|GH3 Game Track file|*_song.pak.xen|GH standard Midi file|*.mid|dB standard or GH3CP Chart file|*.chart", true)).Equals(""))
+			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the game track file.", "Any Supported Game Track Formats|*.qbc;*.dbc;*_song.pak.xen;*.mid;*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc|GH3 Game Track file|*_song.pak.xen|GH standard Midi file|*.mid|dB standard or GH3CP Chart file|*.chart", true)).Equals(""))
 			{
 				this.bool_4 = false;
 				try
@@ -1606,7 +1606,7 @@ namespace ns17
 
 		private void GuitarAudioBtn_Click(object sender, EventArgs e)
 		{
-			string fileName = KeyGenerator.smethod_16("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.dat.xen;*.mp3;*.wav;*.ogg;*.flac|GH3 Audio Header file|*.dat.xen|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true).ToLower();
+			string fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.dat.xen;*.mp3;*.wav;*.ogg;*.flac|GH3 Audio Header file|*.dat.xen|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true).ToLower();
             if (this.SingleAudioBtn.Checked)
 			{
                 if (!(fileName.Equals("")))
@@ -1658,7 +1658,7 @@ namespace ns17
 		private void RhythmAudioBtn_Click(object sender, EventArgs e)
 		{
 			string fileName;
-			if (!(fileName = KeyGenerator.smethod_16("Select the Rhythm Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Rhythm Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
                 this.RhythmAudioTxt.Text = fileName;
 				this.RhythmAudioTxt.SelectionStart = this.RhythmAudioTxt.TextLength;
@@ -1671,7 +1671,7 @@ namespace ns17
 		private void BandAudioBtn_Click(object sender, EventArgs e)
 		{
 			string fileName;
-			if (!(fileName = KeyGenerator.smethod_16("Select the Band Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Band Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
                 this.BandAudioTxt.Text = fileName;
 				this.BandAudioTxt.SelectionStart = this.BandAudioTxt.TextLength;
@@ -1684,7 +1684,7 @@ namespace ns17
 		private void GuitarCoopBtn_Click(object sender, EventArgs e)
 		{
 			string fileName;
-			if (!(fileName = KeyGenerator.smethod_16("Select the Guitar Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
                 this.GuitarCoopTxt.Text = fileName;
 				this.GuitarCoopTxt.SelectionStart = this.GuitarCoopTxt.TextLength;
@@ -1697,7 +1697,7 @@ namespace ns17
 		private void RhythmCoopBtn_Click(object sender, EventArgs e)
 		{
 			string fileName;
-			if (!(fileName = KeyGenerator.smethod_16("Select the Rhythm Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Rhythm Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
                 this.RhythmCoopTxt.Text = fileName;
 				this.RhythmCoopTxt.SelectionStart = this.RhythmCoopTxt.TextLength;
@@ -1710,7 +1710,7 @@ namespace ns17
 		private void BandCoopBtn_Click(object sender, EventArgs e)
 		{
 			string fileName;
-			if (!(fileName = KeyGenerator.smethod_16("Select the Band Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
+			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Band Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
                 this.BandCoopTxt.Text = fileName;
 				this.BandCoopTxt.SelectionStart = this.BandCoopTxt.TextLength;
