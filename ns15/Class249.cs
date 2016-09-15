@@ -7,7 +7,7 @@ using System;
 
 namespace ns15
 {
-	public class Class249 : Class245
+	public class Class249 : QbEditor
 	{
 		private zzPakNode2 class318_0;
 
@@ -21,7 +21,7 @@ namespace ns15
 		public override void vmethod_0()
 		{
 			Console.WriteLine("-=- " + this.ToString() + " -=-");
-			zzGenericNode1 @class = this.class318_0.method_8("scripts\\guitar\\menu\\menu_cheats.qb");
+			zzGenericNode1 @class = this.class318_0.zzGetNode1("scripts\\guitar\\menu\\menu_cheats.qb");
 			foreach (StructureHeaderNode current in @class.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("guitar_hero_cheats")).method_7().method_8<StructureHeaderNode>())
 			{
 				bool flag = current.method_5<TagStructureNode>(new TagStructureNode("name", "unlockall")) != null;
@@ -45,7 +45,7 @@ namespace ns15
 			return "Modify Cheats";
 		}
 
-		public override bool Equals(Class245 other)
+		public override bool Equals(QbEditor other)
 		{
 			return other is Class249;
 		}

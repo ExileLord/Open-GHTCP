@@ -13,7 +13,7 @@ using System.IO;
 
 namespace ns15
 {
-	public class Class248 : Class245
+	public class Class248 : QbEditor
 	{
 		private readonly zzQbSongObject class323_0;
 
@@ -198,7 +198,7 @@ namespace ns15
 			return "Create Music Track: " + this.string_1;
 		}
 
-		public override bool Equals(Class245 other)
+		public override bool Equals(QbEditor other)
 		{
 			return other is Class248 && (other as Class248).string_1 == this.string_1;
 		}

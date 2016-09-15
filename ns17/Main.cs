@@ -22,10 +22,6 @@ namespace ns17
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ns15.MainMenu());
-			//if (new Disclaimer().ShowDialog() == DialogResult.OK)
-			//{
-		    // FUCK YOU MAX
-			//}
 			GC.KeepAlive(obj);
 		}
 	}

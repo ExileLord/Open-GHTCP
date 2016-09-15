@@ -3,7 +3,7 @@ using System;
 
 namespace ns10
 {
-	public class Class75
+	public class VorbisClass
 	{
 		private static int int_0 = -136;
 

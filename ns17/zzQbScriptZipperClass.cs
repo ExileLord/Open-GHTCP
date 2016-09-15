@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace ns17
 {
-	public static class Class372
+	public static class zzQbScriptZipperClass
 	{
 		public static string string_0 = "GH3";
 
@@ -16,7 +16,7 @@ namespace ns17
 			return ZIPManager.smethod_5(KeyGenerator.cryptoMethod(Assembly.GetExecutingAssembly().GetManifestResourceStream(string.Concat(new object[]
 			{
 				"GHTCP.FileDB.QBS.",
-				Class372.string_0,
+				zzQbScriptZipperClass.string_0,
 				'.',
 				string_1
 			})), "MinimizedScript1f2g4h"), string_1 + ".qbs");
@@ -24,7 +24,7 @@ namespace ns17
 
 		public static void smethod_1(ScriptRootNode class274_0)
 		{
-			class274_0.method_7().method_7(Class372.smethod_0(QbSongClass1.smethod_5(class274_0.int_0)));
+			class274_0.method_7().method_7(zzQbScriptZipperClass.smethod_0(QbSongClass1.smethod_5(class274_0.int_0)));
 		}
 
 		public static byte[] smethod_2(string string_1)
@@ -34,7 +34,7 @@ namespace ns17
 
 		public static zzGenericNode1 smethod_3(string string_1)
 		{
-			return new zzGenericNode1(string_1, Class372.smethod_2(string_1));
+			return new zzGenericNode1(string_1, zzQbScriptZipperClass.smethod_2(string_1));
 		}
 	}
 }

@@ -6,7 +6,7 @@ using System.Security.Permissions;
 namespace ns16
 {
 	[HostProtection(SecurityAction.LinkDemand, MayLeakOnAbort = true)]
-	public class UnkCollection1<T> : IEnumerable, ICollection<T>, IEnumerable<T>
+	public class zzCollection1<T> : IEnumerable, ICollection<T>, IEnumerable<T>
 	{
 		public struct Struct81
 		{
@@ -17,7 +17,7 @@ namespace ns16
 
 		public struct Struct82 : IEnumerator, IEnumerator<T>, IDisposable
 		{
-			private UnkCollection1<T> class236_0;
+			private zzCollection1<T> class236_0;
 
 			private int int_0;
 
@@ -46,9 +46,9 @@ namespace ns16
 				}
 			}
 
-			public Struct82(UnkCollection1<T> class236_1)
+			public Struct82(zzCollection1<T> class236_1)
 			{
-				this = default(UnkCollection1<T>.Struct82);
+				this = default(zzCollection1<T>.Struct82);
 				this.class236_0 = class236_1;
 				this.int_1 = class236_1.int_5;
 			}
@@ -158,7 +158,7 @@ namespace ns16
 			{
 				for (int i = (int_1 & -2) - 1; i < Int32.MaxValue; i += 2)
 				{
-					if (UnkCollection1<T>.Class237.smethod_0(i))
+					if (zzCollection1<T>.Class237.smethod_0(i))
 					{
 						return i;
 					}
@@ -168,20 +168,20 @@ namespace ns16
 
 			public static int smethod_2(int int_1)
 			{
-				for (int i = 0; i < UnkCollection1<T>.Class237.oddPrimeSequence.Length; i++)
+				for (int i = 0; i < zzCollection1<T>.Class237.oddPrimeSequence.Length; i++)
 				{
-					if (int_1 <= UnkCollection1<T>.Class237.oddPrimeSequence[i])
+					if (int_1 <= zzCollection1<T>.Class237.oddPrimeSequence[i])
 					{
-						return UnkCollection1<T>.Class237.oddPrimeSequence[i];
+						return zzCollection1<T>.Class237.oddPrimeSequence[i];
 					}
 				}
-				return UnkCollection1<T>.Class237.smethod_1(int_1);
+				return zzCollection1<T>.Class237.smethod_1(int_1);
 			}
 		}
 
 		private int[] int_0;
 
-		private UnkCollection1<T>.Struct81[] struct81_0;
+		private zzCollection1<T>.Struct81[] struct81_0;
 
 		private T[] gparam_0;
 
@@ -213,21 +213,21 @@ namespace ns16
 			}
 		}
 
-		public UnkCollection1()
+		public zzCollection1()
 		{
 			this.method_0(10, null);
 		}
 
-		public UnkCollection1(IEqualityComparer<T> iequalityComparer_1)
+		public zzCollection1(IEqualityComparer<T> iequalityComparer_1)
 		{
 			this.method_0(10, iequalityComparer_1);
 		}
 
-		public UnkCollection1(IEnumerable<T> ienumerable_0) : this(ienumerable_0, null)
+		public zzCollection1(IEnumerable<T> ienumerable_0) : this(ienumerable_0, null)
 		{
 		}
 
-		public UnkCollection1(IEnumerable<T> ienumerable_0, IEqualityComparer<T> iequalityComparer_1)
+		public zzCollection1(IEnumerable<T> ienumerable_0, IEqualityComparer<T> iequalityComparer_1)
 		{
 			if (ienumerable_0 == null)
 			{
@@ -265,7 +265,7 @@ namespace ns16
 		private void method_1(int int_6)
 		{
 			this.int_0 = new int[int_6];
-			this.struct81_0 = new UnkCollection1<T>.Struct81[int_6];
+			this.struct81_0 = new zzCollection1<T>.Struct81[int_6];
 			this.int_2 = -1;
 			this.gparam_0 = new T[int_6];
 			this.int_1 = 0;
@@ -329,9 +329,9 @@ namespace ns16
 
 		private void method_3()
 		{
-			int num = UnkCollection1<T>.Class237.smethod_2(this.int_0.Length << 1 | 1);
+			int num = zzCollection1<T>.Class237.smethod_2(this.int_0.Length << 1 | 1);
 			int[] array = new int[num];
-			UnkCollection1<T>.Struct81[] array2 = new UnkCollection1<T>.Struct81[num];
+			zzCollection1<T>.Struct81[] array2 = new zzCollection1<T>.Struct81[num];
 			for (int i = 0; i < this.int_0.Length; i++)
 			{
 				for (int num2 = this.int_0[i] - 1; num2 != -1; num2 = this.struct81_0[num2].int_1)
@@ -408,7 +408,7 @@ namespace ns16
 
 		private bool method_6(int int_6, int int_7, T gparam_1)
 		{
-			UnkCollection1<T>.Struct81 @struct;
+			zzCollection1<T>.Struct81 @struct;
 			for (int num = this.int_0[int_6] - 1; num != -1; num = @struct.int_1)
 			{
 				@struct = this.struct81_0[num];
@@ -432,7 +432,7 @@ namespace ns16
 			int num4 = -1;
 			do
 			{
-				UnkCollection1<T>.Struct81 @struct = this.struct81_0[num3];
+				zzCollection1<T>.Struct81 @struct = this.struct81_0[num3];
 				if (@struct.int_0 == num)
 				{
 					if ((num != -2147483648 || (item != null && this.gparam_0[num3] != null)) ? this.iequalityComparer_0.Equals(this.gparam_0[num3], item) : (item == null && null == this.gparam_0[num3]))
@@ -467,12 +467,12 @@ namespace ns16
 
 		IEnumerator<T> IEnumerable<T>.GetEnumerator()
 		{
-			return new UnkCollection1<T>.Struct82(this);
+			return new zzCollection1<T>.Struct82(this);
 		}
 
 		IEnumerator IEnumerable.GetEnumerator()
 		{
-			return new UnkCollection1<T>.Struct82(this);
+			return new zzCollection1<T>.Struct82(this);
 		}
 	}
 }

@@ -248,7 +248,7 @@ namespace ns19
 			return @interface != null && this.list_0.Remove(@interface);
 		}
 
-		public Class309 method_8(string string_2)
+		public Class309 zzGetNode1(string string_2)
 		{
 			Interface12 @interface = this.method_10(string_2);
 			if (@interface == null)

@@ -10,22 +10,22 @@ namespace ns17
 
     //This is probably the "speed boost" part of GHTCP
 
-	public class Class251 : Class245
+	public class zzFxBoost : QbEditor
 	{
 		private zzPakNode2 class318_0;
 
 		private bool bool_0;
 
-		public Class251(zzPakNode2 class318_1)
+		public zzFxBoost(zzPakNode2 class318_1)
 		{
 			this.class318_0 = class318_1;
-			TagStructureNode @class = ((StructureHeaderNode)this.class318_0.method_8("scripts\\guitar\\guitar_events.qb").method_5<TagStructureNode>(new TagStructureNode("event", "star_power_on")).Parent).method_5<TagStructureNode>(new TagStructureNode("scr"));
+			TagStructureNode @class = ((StructureHeaderNode)this.class318_0.zzGetNode1("scripts\\guitar\\guitar_events.qb").method_5<TagStructureNode>(new TagStructureNode("event", "star_power_on")).Parent).method_5<TagStructureNode>(new TagStructureNode("scr"));
 			this.bool_0 = (@class.method_8() == "guitarevent_starpoweron");
 		}
 
 		public override void vmethod_0()
 		{
-			zzGenericNode1 @class = this.class318_0.method_8("scripts\\guitar\\guitar_events.qb");
+			zzGenericNode1 @class = this.class318_0.zzGetNode1("scripts\\guitar\\guitar_events.qb");
 			((StructureHeaderNode)@class.method_5<TagStructureNode>(new TagStructureNode("event", "star_power_on")).Parent).method_5<TagStructureNode>(new TagStructureNode("scr")).method_9(this.bool_0 ? "guitarevent_starpoweroff" : "guitarevent_starpoweron");
 			if (!this.bool_0)
 			{
@@ -84,9 +84,9 @@ namespace ns17
 			return (this.bool_0 ? "Apply" : "Remove") + " Speed Boost";
 		}
 
-		public override bool Equals(Class245 other)
+		public override bool Equals(QbEditor other)
 		{
-			return other is Class251 && (other as Class251).bool_0 == this.bool_0;
+			return other is zzFxBoost && (other as zzFxBoost).bool_0 == this.bool_0;
 		}
 	}
 }

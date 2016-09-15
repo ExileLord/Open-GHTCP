@@ -7,7 +7,7 @@ using System;
 
 namespace ns15
 {
-	public class Class246 : Class245
+	public class Class246 : QbEditor
 	{
 		private GH3Songlist gh3Songlist_0;
 
@@ -35,12 +35,12 @@ namespace ns15
 			if (!this.class318_0.method_6(text = "scripts\\guitar\\custom_menu\\guitar_custom_progression.qb"))
 			{
 				this.class318_0.method_0(text, new zzGenericNode1());
-				@class = this.class318_0.method_8(text);
+				@class = this.class318_0.zzGetNode1(text);
 				@class.method_3(new IntegerRootNode("custom_setlist_bitmask", text, 0));
 			}
 			else
 			{
-				@class = this.class318_0.method_8(text);
+				@class = this.class318_0.zzGetNode1(text);
 			}
 			if (this.bool_0)
 			{
@@ -70,7 +70,7 @@ namespace ns15
 			return (this.bool_0 ? "Create" : "Delete") + " Setlist: " + this.string_0;
 		}
 
-		public override bool Equals(Class245 other)
+		public override bool Equals(QbEditor other)
 		{
 			return other is Class246 && (other as Class246).int_0 == this.int_0;
 		}

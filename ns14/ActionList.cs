@@ -11,7 +11,7 @@ namespace ns14
 
 		private ActionList.Delegate6 delegate6_0;
 
-		private List<Class245> actionList;
+		private List<QbEditor> actionList;
 
 		public void method_0(ActionList.Delegate6 delegate6_1)
 		{
@@ -26,7 +26,7 @@ namespace ns14
 			while (@delegate != delegate2);
 		}
 
-		public ActionList(List<Class245> actionList)
+		public ActionList(List<QbEditor> actionList)
 		{
 			this.actionList = actionList;
 		}
@@ -34,7 +34,7 @@ namespace ns14
 		public void method_1()
 		{
 			EventArgs0 e;
-            foreach (Class245 current in this.actionList)
+            foreach (QbEditor current in this.actionList)
 			{
 				int int_ = 100 * this.actionList.IndexOf(current) / this.actionList.Count;
 				e = new EventArgs0(current.ToString() + " Processing...", int_);

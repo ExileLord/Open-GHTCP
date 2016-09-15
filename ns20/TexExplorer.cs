@@ -75,7 +75,7 @@ namespace ns20
 
 		private string string_0;
 
-		private zzTextureExplorer1 _textureCache;
+		private TexFile _textureCache;
 
 		private Thread thread_0;
 
@@ -491,7 +491,7 @@ namespace ns20
 					{
 						@class = new zzPakNode2(toolTipText, false);
 					}
-					this._textureCache = new zzTextureExplorer1(@class.method_13((int)this.DataFolder_TreeView.SelectedNode.Tag));
+					this._textureCache = new TexFile(@class.method_13((int)this.DataFolder_TreeView.SelectedNode.Tag));
 					for (int i = 1; i <= this._textureCache.method_4(); i++)
 					{
 						this.ImgList.Items.Add("Image " + i);
@@ -502,7 +502,7 @@ namespace ns20
 				if (this.DataFolder_TreeView.SelectedNode.ToolTipText != "")
 				{
 					this.method_2();
-					this._textureCache = new zzTextureExplorer1(this.DataFolder_TreeView.SelectedNode.ToolTipText);
+					this._textureCache = new TexFile(this.DataFolder_TreeView.SelectedNode.ToolTipText);
 					for (int j = 1; j <= this._textureCache.method_4(); j++)
 					{
 						this.ImgList.Items.Add("Image " + j);
