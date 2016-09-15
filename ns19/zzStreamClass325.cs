@@ -10,16 +10,16 @@ namespace ns19
 			this.byte_0 = stream26_0.ReadByte2();
 			this.int_0 = new int[]
 			{
-				stream26_0.method_19()
+				stream26_0.ReadInt()
 			};
 			byte byte_ = this.byte_0;
 			switch (byte_)
 			{
 			case 1:
-				this.object_0 = stream26_0.method_19();
+				this.object_0 = stream26_0.ReadInt();
 				return;
 			case 2:
-				this.object_0 = stream26_0.method_21();
+				this.object_0 = stream26_0.ReadFloat();
 				return;
 			case 3:
 				break;
@@ -33,7 +33,7 @@ namespace ns19
 					this.int_0 = new int[]
 					{
 						this.int_0[0],
-						stream26_0.method_19()
+						stream26_0.ReadInt()
 					};
 					return;
 				case 14:
@@ -43,7 +43,7 @@ namespace ns19
 				case 15:
 					break;
 				case 17:
-					this.object_0 = stream26_0.method_23();
+					this.object_0 = stream26_0.ReadShort();
 					break;
 				default:
 					return;

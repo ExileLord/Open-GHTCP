@@ -37,9 +37,9 @@ namespace ns21
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			this.int_0 = stream26_0.method_19();
-			base.Nodes.Add(new TextValueNode(stream26_0.method_19(), this.vmethod_10()));
-			int num = stream26_0.method_19();
+			this.int_0 = stream26_0.ReadInt();
+			base.Nodes.Add(new TextValueNode(stream26_0.ReadInt(), this.vmethod_10()));
+			int num = stream26_0.ReadInt();
 			if (num != 0)
 			{
 				AbstractTreeNode1 @class = (base.Parent is StructureHeaderNode) ? (base.Parent as StructureHeaderNode).method_11(stream26_0.ReadIntAt(num)) : this.vmethod_12(stream26_0.ReadIntAt(num, true));

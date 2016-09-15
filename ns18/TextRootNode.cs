@@ -36,10 +36,10 @@ namespace ns18
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			this.int_0 = stream26_0.method_19();
-			this.int_1 = stream26_0.method_19();
-			base.Nodes.Add(new TextValueNode(stream26_0.method_19(), this.vmethod_10()));
-			stream26_0.method_19();
+			this.int_0 = stream26_0.ReadInt();
+			this.int_1 = stream26_0.ReadInt();
+			base.Nodes.Add(new TextValueNode(stream26_0.ReadInt(), this.vmethod_10()));
+			stream26_0.ReadInt();
 		}
 
 		public override void vmethod_14(Stream26 stream26_0)

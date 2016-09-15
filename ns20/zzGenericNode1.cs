@@ -124,7 +124,7 @@ namespace ns20
 		{
 			while (stream26_0.Length > stream26_0.Position)
 			{
-				int num = stream26_0.method_20(true);
+				int num = stream26_0.ReadInt(true);
 				if (num != 0)
 				{
 					AbstractTreeNode1 @class = this.vmethod_12(num);

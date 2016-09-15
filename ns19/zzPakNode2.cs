@@ -96,7 +96,7 @@ namespace ns19
 				throw new Exception("Pak File is empty!");
 			}
 			int num = 0;
-			int num2 = this.stream26_0.method_19();
+			int num2 = this.stream26_0.ReadInt();
 			this.stream26_0._reverseEndianness = (this.bool_2 = (!QbSongClass1.smethod_3(num2) || !QbSongClass1.smethod_5(num2).StartsWith(".")));
 			Enum35 @enum = (Enum35)this.stream26_0.ReadIntAt(28);
 			this.bool_1 = ((@enum & Enum35.flag_3) == Enum35.flag_0);
@@ -129,11 +129,11 @@ namespace ns19
 						break;
 					}
 				}
-				int int_2 = this.stream26_0.method_20(flag) + num;
-				int int_3 = this.stream26_0.method_20(flag);
+				int int_2 = this.stream26_0.ReadInt(flag) + num;
+				int int_3 = this.stream26_0.ReadInt(flag);
 				int num3 = this.stream26_0.ReadIntAt(num + (this.bool_1 ? 16 : 12), flag);
 				int num4 = this.stream26_0.ReadIntAt(num + 20, flag);
-				int int_4 = this.stream26_0.method_20(flag);
+				int int_4 = this.stream26_0.ReadInt(flag);
 				this.stream26_0.Position += 4L;
 				if ((enum2 & Enum35.flag_3) != Enum35.flag_0)
 				{
@@ -331,7 +331,7 @@ namespace ns19
 			}
 			if (interface12_0.imethod_18())
 			{
-				return this.stream26_0.method_47(interface12_0.imethod_0(), interface12_0.imethod_2(), false);
+				return this.stream26_0.ReadBytesAt(interface12_0.imethod_0(), interface12_0.imethod_2(), false);
 			}
 			return interface12_0.imethod_16();
 		}
@@ -344,7 +344,7 @@ namespace ns19
 			}
 			if (gparam_0.imethod_18())
 			{
-				gparam_0.imethod_17(this.stream26_0.method_47(gparam_0.imethod_0(), gparam_0.imethod_2(), false));
+				gparam_0.imethod_17(this.stream26_0.ReadBytesAt(gparam_0.imethod_0(), gparam_0.imethod_2(), false));
 			}
 			return gparam_0;
 		}
@@ -365,7 +365,7 @@ namespace ns19
 			{
 				this.stream26_0.Close();
 			}
-			KeyGenerator.smethod_9(string_2, stream.method_1());
+			KeyGenerator.smethod_9(string_2, stream.ReadEverything());
 			stream.Dispose();
 			if (this.stream26_0 != null && this.string_0 == string_2)
 			{
@@ -384,7 +384,7 @@ namespace ns19
 			Stream26 stream = new Stream26(this.bool_2);
 			Stream26 stream2 = new Stream26();
 			this.method_18(stream, stream2);
-			stream.WriteByteArray(stream2.method_1(), false);
+			stream.WriteByteArray(stream2.ReadEverything(), false);
 			stream2.Dispose();
 			return stream;
 		}

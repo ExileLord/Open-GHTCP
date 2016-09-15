@@ -4,19 +4,19 @@ namespace ns21
 {
 	public class TextureMetadata
 	{
-		public short short_0;
+		public short unkShort0; // Only used on loading and saving. Value of 0x200 (512) for green note
 
-		public int unkInt;
+		public int unkInt;      // Only used on loading and saving. Value of 0x151ee874 for green note
 
-		public short short_1;
+        public short Width;
 
-		public short short_2;
+		public short Height;
 
-		public short short_3;
+		public short unkShort3; // Only used on loading and saving. Value of 0x01 for green note. Maybe number of frames?
 
-		public byte byte_0;
+		public byte MipMapCount;    
 
-		public short short_4;
+		public short unkShort4; // Only used on loading and saving. Value of 0x0805 for green note
 
 		public int StartIndex;
 
@@ -26,13 +26,13 @@ namespace ns21
 
 		public TextureMetadata(short short_5, int int_3, short short_6, short short_7, short short_8, byte byte_2, short short_9, int int_4, int int_5)
 		{
-			this.short_0 = short_5;
+			this.unkShort0 = short_5;
 			this.unkInt = int_3;
-			this.short_1 = short_6;
-			this.short_2 = short_7;
-			this.short_3 = short_8;
-			this.byte_0 = byte_2;
-			this.short_4 = short_9;
+			this.Width = short_6;
+			this.Height = short_7;
+			this.unkShort3 = short_8;
+			this.MipMapCount = byte_2;
+			this.unkShort4 = short_9;
 			this.StartIndex = int_4;
 			this.Length = int_5;
 		}

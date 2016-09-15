@@ -11,20 +11,20 @@ namespace ns18
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			int num = stream26_0.method_19();
+			int num = stream26_0.ReadInt();
 			if (num == 0)
 			{
 				return;
 			}
 			if (num > 1)
 			{
-				stream26_0.Position = (long)stream26_0.method_19();
+				stream26_0.Position = (long)stream26_0.ReadInt();
 			}
 			if (this is FloatArrayNode)
 			{
 				for (int i = 0; i < num; i++)
 				{
-					base.Nodes.Add(new FloatValueNode(stream26_0.method_21()));
+					base.Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
 				}
 				return;
 			}
@@ -32,7 +32,7 @@ namespace ns18
 			{
 				for (int j = 0; j < num; j++)
 				{
-					base.Nodes.Add(new IntegerValueNode(stream26_0.method_19()));
+					base.Nodes.Add(new IntegerValueNode(stream26_0.ReadInt()));
 				}
 				return;
 			}
@@ -40,7 +40,7 @@ namespace ns18
 			{
 				for (int k = 0; k < num; k++)
 				{
-					base.Nodes.Add(new TagValueNode(stream26_0.method_19()));
+					base.Nodes.Add(new TagValueNode(stream26_0.ReadInt()));
 				}
 			}
 		}

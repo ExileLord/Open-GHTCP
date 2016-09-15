@@ -39,11 +39,11 @@ namespace ns21
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			int num = stream26_0.method_19();
+			int num = stream26_0.ReadInt();
 			if (num != 0)
 			{
 				stream26_0.Position = (long)num;
-				AbstractTreeNode1 @class = this.method_11(stream26_0.method_19());
+				AbstractTreeNode1 @class = this.method_11(stream26_0.ReadInt());
 				base.Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}

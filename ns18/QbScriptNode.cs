@@ -30,9 +30,9 @@ namespace ns18
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			this.int_0 = stream26_0.method_19();
-			int num = stream26_0.method_19();
-			int num2 = stream26_0.method_19();
+			this.int_0 = stream26_0.ReadInt();
+			int num = stream26_0.ReadInt();
+			int num2 = stream26_0.ReadInt();
 			byte[] byte_ = stream26_0.ReadBytes(num2, false);
 			if (num == num2)
 			{

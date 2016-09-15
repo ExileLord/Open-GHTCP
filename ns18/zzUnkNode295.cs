@@ -12,20 +12,20 @@ namespace ns18
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			this.int_0 = stream26_0.method_19();
+			this.int_0 = stream26_0.ReadInt();
 			if (this is FloatStructureNode)
 			{
-				base.Nodes.Add(new FloatValueNode(stream26_0.method_21()));
+				base.Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
 			}
 			else if (this is IntegerStructureNode)
 			{
-				base.Nodes.Add(new IntegerValueNode(stream26_0.method_19()));
+				base.Nodes.Add(new IntegerValueNode(stream26_0.ReadInt()));
 			}
 			else if (this is TagStructureNode || this is FileTagStructureNode)
 			{
-				base.Nodes.Add(new TagValueNode(stream26_0.method_19()));
+				base.Nodes.Add(new TagValueNode(stream26_0.ReadInt()));
 			}
-			int num = stream26_0.method_19();
+			int num = stream26_0.ReadInt();
 			if (num != 0)
 			{
 				AbstractTreeNode1 @class = (base.Parent is StructureHeaderNode) ? (base.Parent as StructureHeaderNode).method_11(stream26_0.ReadIntAt(num)) : this.vmethod_12(stream26_0.ReadIntAt(num, true));

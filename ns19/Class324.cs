@@ -51,7 +51,7 @@ namespace ns19
 			}
 			this.int_0 = new int[]
 			{
-				stream26_0.method_19()
+				stream26_0.ReadInt()
 			};
 			while (stream26_0.Length > stream26_0.Position)
 			{

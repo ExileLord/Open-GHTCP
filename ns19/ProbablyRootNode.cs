@@ -11,10 +11,10 @@ namespace ns19
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			this.int_0 = stream26_0.method_19();
-			this.int_1 = stream26_0.method_19();
-			int num = stream26_0.method_19();
-			stream26_0.method_19();
+			this.int_0 = stream26_0.ReadInt();
+			this.int_1 = stream26_0.ReadInt();
+			int num = stream26_0.ReadInt();
+			stream26_0.ReadInt();
 			if (num != 0)
 			{
 				AbstractTreeNode1 @class = this.vmethod_12(stream26_0.ReadIntAt(num, true));

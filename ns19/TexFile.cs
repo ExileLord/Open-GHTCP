@@ -54,13 +54,13 @@ namespace ns19
 				this._fileStream = new Stream26(File.Open(this._fileName, FileMode.Open, FileAccess.Read, FileShare.Read), true);
 			}
 			int num = 1;
-			ushort num2 = this._fileStream.method_25();
+			ushort num2 = this._fileStream.ReadUShort();
 			int num3 = 0;
-			if (num2 == 64206)
+			if (num2 == 0xFACE) // Hey man he was in my face
 			{
 				this._unkFlag0 = false;
 				num = (int)this._fileStream.ReadShortAt(6);
-				num3 = this._fileStream.method_19();
+				num3 = this._fileStream.ReadInt();
 			}
 			else if (num2 != 2600)
 			{
@@ -68,7 +68,17 @@ namespace ns19
 			}
 			while (num-- != 0)
 			{
-				this.textureList.Add(new TextureMetadata(this._fileStream.ReadShortAt(num3 + 2), this._fileStream.method_19(), this._fileStream.method_23(), this._fileStream.method_23(), this._fileStream.method_23(), this._fileStream.ReadByteAt(num3 + 20), this._fileStream.method_23(), this._fileStream.ReadIntAt(num3 + 28), this._fileStream.method_19()));
+				this.textureList.Add(
+                    new TextureMetadata(
+                        this._fileStream.ReadShortAt(num3 + 2), 
+                        this._fileStream.ReadInt(), 
+                        this._fileStream.ReadShort(), 
+                        this._fileStream.ReadShort(), 
+                        this._fileStream.ReadShort(), 
+                        this._fileStream.ReadByteAt(num3 + 20), 
+                        this._fileStream.ReadShort(), 
+                        this._fileStream.ReadIntAt(num3 + 28), 
+                        this._fileStream.ReadInt()));
 				num3 += 40;
 			}
 			this._fileStream._reverseEndianness = false;
@@ -77,9 +87,9 @@ namespace ns19
 		public void method_1(int int_0, Image image_0, IMGPixelFormat imgpixelFormat_0)
 		{
 			TextureMetadata @class = this.textureList[int_0];
-			@class.short_2 = (short)image_0.Height;
-			@class.short_1 = (short)image_0.Width;
-			@class.Data = new DDSTexture(image_0, (int)@class.byte_0, imgpixelFormat_0).method_3();
+			@class.Height = (short)image_0.Height;
+			@class.Width = (short)image_0.Width;
+			@class.Data = new DDSTexture(image_0, (int)@class.MipMapCount, imgpixelFormat_0).ToByteArray();
 		}
 
 		public byte[] method_2(int int_0)
@@ -97,7 +107,7 @@ namespace ns19
 			KeyGenerator.smethod_9(string_1, this.method_2(int_0));
 		}
 
-		public int method_4()
+		public int TextureCount()
 		{
 			return this.textureList.Count;
 		}
@@ -116,49 +126,51 @@ namespace ns19
 			this.method_8(this._fileName);
 		}
 
-		public Stream26 method_7()
+		public Stream26 ToStream()
 		{
 			Stream26 stream = new Stream26(true);
-			int num = this.method_4();
-			int num2 = 0;
+			int textureCount = this.TextureCount();
+			int textureMetaDataOffset = 0;
 			if (!this._unkFlag0)
 			{
-				stream.WriteUInt(4207856295u);
+				stream.WriteUInt(0xFACECAA7); //meow
 				stream.WriteShort(284);
-				stream.WriteShort((short)num);
+				stream.WriteShort((short)textureCount);
 				stream.WriteInt(0);
 				stream.WriteInt(0);
 				stream.WriteInt(-1);
+
 				int num3 = 2;
-				while ((double)num / Math.Pow(2.0, (double)(num3 - 2)) > 1.0)
+				while ((double)textureCount / Math.Pow(2.0, (double)(num3 - 2)) > 1.0)
 				{
 					num3++;
 				}
 				num3--;
-				stream.WriteInt(num3);
+				stream.WriteInt(num3); //logarithm of textureCount?..
 				stream.WriteInt(28);
-				stream.WriteNBytes(239, (int)(Math.Pow(2.0, (double)num3) * 12.0 + 28.0));
-				num2 = (int)stream.Position;
-				stream.WriteIntAt(8, num2);
-				stream.WriteInt(num2 + num * 44);
-				stream.Position = (long)num2;
+				stream.WriteNBytes(0xEF, (int)(Math.Pow(2.0, (double)num3) * 12.0 + 28.0));
+
+				textureMetaDataOffset = (int)stream.Position;
+				stream.WriteIntAt(8, textureMetaDataOffset);
+				stream.WriteInt(textureMetaDataOffset + textureCount * 44);
+				stream.Position = (long)textureMetaDataOffset;
 			}
-			stream.WriteNBytes(0, 40 * num);
-			for (int i = 0; i < num; i++)
+			stream.WriteNBytes(0, 40 * textureCount);
+			for (int i = 0; i < textureCount; i++)
 			{
 				TextureMetadata tex = this.textureList[i];
 				byte[] array = this.method_2(i);
-				stream.WriteShortAt(num2 + 40 * i, 2600);
-				stream.WriteShort(tex.short_0);
+				stream.WriteShortAt(textureMetaDataOffset + 40 * i, 2600);
+				stream.WriteShort(tex.unkShort0);
 				stream.WriteInt(tex.unkInt);
-				stream.WriteShort(tex.short_1);
-				stream.WriteShort(tex.short_2);
-				stream.WriteShort(tex.short_3);
-				stream.WriteShort(tex.short_1);
-				stream.WriteShort(tex.short_2);
-				stream.WriteShort(tex.short_3);
-				stream.WriteByte2(tex.byte_0);
-				stream.WriteShort(tex.short_4);
+				stream.WriteShort(tex.Width);
+				stream.WriteShort(tex.Height);
+				stream.WriteShort(tex.unkShort3);
+				stream.WriteShort(tex.Width);
+				stream.WriteShort(tex.Height);
+				stream.WriteShort(tex.unkShort3);
+				stream.WriteByte2(tex.MipMapCount);
+				stream.WriteShort(tex.unkShort4);
 				stream.WriteNBytes(0, 5);
 				stream.WriteInt((int)stream.Length);
 				stream.WriteInt(array.Length);
@@ -170,12 +182,12 @@ namespace ns19
 
 		public void method_8(string string_1)
 		{
-			Stream26 stream = this.method_7();
+			Stream26 stream = this.ToStream();
 			if (this._fileStream != null && this._fileName == string_1)
 			{
 				this._fileStream.Close();
 			}
-			stream.method_2(string_1);
+			stream.zzUnknownReadMethod(string_1);
 			if (this._fileStream != null && this._fileName == string_1)
 			{
 				this.Dispose();

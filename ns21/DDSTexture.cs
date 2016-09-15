@@ -304,19 +304,14 @@ namespace ns21
 			this.data = memoryStream.ToArray();
 		}
 
-		public byte[] method_3()
+		public byte[] ToByteArray()
 		{
 			MemoryStream memoryStream = new MemoryStream();
-			this.method_4(memoryStream);
+			this.WriteDDS(memoryStream);
 			return memoryStream.ToArray();
 		}
 
-		public void method_4(Stream stream_0)
-		{
-			this.WriteDDS(stream_0, false);
-		}
-
-		public void WriteDDS(Stream stream, bool leaveOpen)
+		public void WriteDDS(Stream stream, bool leaveOpen = false)
 		{
 			BinaryWriter binaryWriter = new BinaryWriter(stream);
 			binaryWriter.Write(0x20534444);           // DDS Magic word

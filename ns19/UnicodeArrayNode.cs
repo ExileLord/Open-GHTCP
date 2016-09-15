@@ -30,7 +30,7 @@ namespace ns19
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			int num = stream26_0.method_19();
+			int num = stream26_0.ReadInt();
 			if (num == 0)
 			{
 				return;
@@ -38,15 +38,15 @@ namespace ns19
 			int[] array = new int[num];
 			if (num > 1)
 			{
-				stream26_0.Position = (long)stream26_0.method_19();
+				stream26_0.Position = (long)stream26_0.ReadInt();
 				for (int i = 0; i < num; i++)
 				{
-					array[i] = stream26_0.method_19();
+					array[i] = stream26_0.ReadInt();
 				}
 			}
 			else
 			{
-				array[0] = stream26_0.method_19();
+				array[0] = stream26_0.ReadInt();
 			}
 			int[] array2 = array;
 			for (int j = 0; j < array2.Length; j++)
@@ -81,7 +81,7 @@ namespace ns19
 				stream.WriteNBytes(0, 2);
 				num += @class.string_0.Length * 2 + 2;
 			}
-			stream26_0.WriteByteArray(stream.method_1(), false);
+			stream26_0.WriteByteArray(stream.ReadEverything(), false);
 			stream26_0.WriteNBytes(0, AbstractTreeNode1.smethod_0(stream26_0.Position));
 		}
 

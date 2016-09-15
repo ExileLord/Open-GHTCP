@@ -13,21 +13,21 @@ namespace ns21
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			this.int_0 = stream26_0.method_19();
-			this.int_1 = stream26_0.method_19();
+			this.int_0 = stream26_0.ReadInt();
+			this.int_1 = stream26_0.ReadInt();
 			if (this is FloatRootNode)
 			{
-				base.Nodes.Add(new FloatValueNode(stream26_0.method_21()));
+				base.Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
 			}
 			else if (this is IntegerRootNode)
 			{
-				base.Nodes.Add(new IntegerValueNode(stream26_0.method_19()));
+				base.Nodes.Add(new IntegerValueNode(stream26_0.ReadInt()));
 			}
 			else if (this is TagRootNode || this is FileTagRootNode)
 			{
-				base.Nodes.Add(new TagValueNode(stream26_0.method_19()));
+				base.Nodes.Add(new TagValueNode(stream26_0.ReadInt()));
 			}
-			stream26_0.method_19();
+			stream26_0.ReadInt();
 		}
 
 		public override void vmethod_14(Stream26 stream26_0)
