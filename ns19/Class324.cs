@@ -38,7 +38,7 @@ namespace ns19
 
 		public virtual void vmethod_0(Stream26 stream26_0)
 		{
-			this.byte_0 = stream26_0.method_18();
+			this.byte_0 = stream26_0.ReadByte2();
 			if (this.byte_0 != 10)
 			{
 				throw new Exception(string.Concat(new object[]
@@ -55,7 +55,7 @@ namespace ns19
 			};
 			while (stream26_0.Length > stream26_0.Position)
 			{
-				int num = (int)stream26_0.method_18();
+				int num = (int)stream26_0.ReadByte2();
 				if (num == 10)
 				{
 					stream26_0.Position -= 1L;
@@ -79,13 +79,13 @@ namespace ns19
 
 		public virtual void vmethod_1(Stream26 stream26_0)
 		{
-			stream26_0.method_3(10);
-			stream26_0.method_5(this.int_0[0]);
+			stream26_0.WriteByte2(10);
+			stream26_0.WriteInt(this.int_0[0]);
 			foreach (Class324 current in this.list_0)
 			{
 				current.vmethod_1(stream26_0);
 			}
-			stream26_0.method_3(0);
+			stream26_0.WriteByte2(0);
 		}
 
 		public Class324 method_0(Class324 class324_0)
@@ -110,39 +110,39 @@ namespace ns19
 			using (Stream26 stream = new Stream26(File.Create(string_0 + "\\s000.d")))
 			{
 				this.vmethod_1(stream);
-				stream.WriteByte(0);
+				stream.WriteByte2(0);
 				using (Stream26 stream2 = new Stream26(File.Create(string_0 + "\\toc.dat")))
 				{
-					stream2.method_5(0);
-					stream2.WriteByte(4);
-					stream2.WriteByte(0);
-					stream2.WriteByte(0);
-					stream2.WriteByte(0);
-					stream2.method_7(3724414393u);
-					stream2.method_13("GH3Progress");
-					stream2.method_4(0, 7);
-					stream2.WriteByte(48);
-					stream2.WriteByte(0);
-					stream2.method_5((int)stream.Length);
+					stream2.WriteInt(0);
+					stream2.WriteByte2(4);
+					stream2.WriteByte2(0);
+					stream2.WriteByte2(0);
+					stream2.WriteByte2(0);
+					stream2.WriteUInt(3724414393u);
+					stream2.WriteString("GH3Progress");
+					stream2.WriteNBytes(0, 7);
+					stream2.WriteByte2(48);
+					stream2.WriteByte2(0);
+					stream2.WriteInt((int)stream.Length);
 					stream.Position = 0L;
-					stream2.method_5(KeyGenerator.GetQbKey(stream, true));
-					stream2.method_4(0, 40);
-					stream2.WriteByte(Convert.ToByte(DateTime.Now.Minute));
-					stream2.WriteByte(0);
-					stream2.method_11((short)DateTime.Now.Year);
-					stream2.WriteByte(Convert.ToByte(DateTime.Now.Second));
-					stream2.WriteByte(Convert.ToByte(DateTime.Now.Month - 1));
-					stream2.WriteByte(Convert.ToByte(DateTime.Now.Day));
-					stream2.WriteByte(Convert.ToByte(DateTime.Now.Hour));
-					stream2.method_4(0, 15120);
-					stream2.method_5(756937245);
-					stream2.method_4(0, 12);
+					stream2.WriteInt(KeyGenerator.GetQbKey(stream, true));
+					stream2.WriteNBytes(0, 40);
+					stream2.WriteByte2(Convert.ToByte(DateTime.Now.Minute));
+					stream2.WriteByte2(0);
+					stream2.WriteShort((short)DateTime.Now.Year);
+					stream2.WriteByte2(Convert.ToByte(DateTime.Now.Second));
+					stream2.WriteByte2(Convert.ToByte(DateTime.Now.Month - 1));
+					stream2.WriteByte2(Convert.ToByte(DateTime.Now.Day));
+					stream2.WriteByte2(Convert.ToByte(DateTime.Now.Hour));
+					stream2.WriteNBytes(0, 15120);
+					stream2.WriteInt(756937245);
+					stream2.WriteNBytes(0, 12);
 					stream2.Position = 4L;
 					int num = KeyGenerator.GetQbKey(stream2, true);
 					stream2.Position = 0L;
-					stream2.method_5(num);
+					stream2.WriteInt(num);
 					stream.Position = stream.Length;
-					stream.method_4(0, 5242880 - (int)stream.Length);
+					stream.WriteNBytes(0, 5242880 - (int)stream.Length);
 				}
 			}
 		}

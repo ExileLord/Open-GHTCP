@@ -54,10 +54,10 @@ namespace ns21
 		{
 			byte[] array = new byte[4];
 			array[1] = 1;
-			stream26_0.method_16(array, false);
+			stream26_0.WriteByteArray(array, false);
 			foreach (FloatValueNode class313_ in base.Nodes)
 			{
-				stream26_0.method_9(FloatValueNode.smethod_0(class313_));
+				stream26_0.WriteFloat(FloatValueNode.smethod_0(class313_));
 			}
 		}
 

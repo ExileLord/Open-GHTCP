@@ -2,11 +2,11 @@ using System;
 
 namespace ns21
 {
-	public class zzCocoaStruct12
+	public class TextureMetadata
 	{
 		public short short_0;
 
-		public int int_0;
+		public int unkInt;
 
 		public short short_1;
 
@@ -18,23 +18,23 @@ namespace ns21
 
 		public short short_4;
 
-		public int int_1;
+		public int StartIndex;
 
-		public int int_2;
+		public int Length; //Probably
 
-		public byte[] byte_1;
+		public byte[] Data;
 
-		public zzCocoaStruct12(short short_5, int int_3, short short_6, short short_7, short short_8, byte byte_2, short short_9, int int_4, int int_5)
+		public TextureMetadata(short short_5, int int_3, short short_6, short short_7, short short_8, byte byte_2, short short_9, int int_4, int int_5)
 		{
 			this.short_0 = short_5;
-			this.int_0 = int_3;
+			this.unkInt = int_3;
 			this.short_1 = short_6;
 			this.short_2 = short_7;
 			this.short_3 = short_8;
 			this.byte_0 = byte_2;
 			this.short_4 = short_9;
-			this.int_1 = int_4;
-			this.int_2 = int_5;
+			this.StartIndex = int_4;
+			this.Length = int_5;
 		}
 	}
 }

@@ -52,7 +52,7 @@ namespace ns21
 			for (int j = 0; j < array2.Length; j++)
 			{
 				int int_ = array2[j];
-				base.Nodes.Add(new AsciiValueNode(stream26_0.method_45(int_)));
+				base.Nodes.Add(new AsciiValueNode(stream26_0.ReadAsciiStringAt(int_)));
 			}
 			stream26_0.Position += (long)AbstractTreeNode1.smethod_0(stream26_0.Position);
 		}
@@ -62,27 +62,27 @@ namespace ns21
 			byte[] array = new byte[4];
 			array[1] = 1;
 			array[2] = 3;
-			stream26_0.method_16(array, false);
-			stream26_0.method_5(base.Nodes.Count);
+			stream26_0.WriteByteArray(array, false);
+			stream26_0.WriteInt(base.Nodes.Count);
 			if (base.Nodes.Count == 0)
 			{
 				return;
 			}
 			if (base.Nodes.Count > 1)
 			{
-				stream26_0.method_5((int)stream26_0.Position + 4);
+				stream26_0.WriteInt((int)stream26_0.Position + 4);
 			}
 			int num = (int)stream26_0.Position + 4 * base.Nodes.Count;
 			Stream26 stream = new Stream26();
 			foreach (AsciiValueNode @class in base.Nodes)
 			{
-				stream26_0.method_5(num);
-				stream.method_13(@class.string_0);
-				stream.method_3(0);
+				stream26_0.WriteInt(num);
+				stream.WriteString(@class.string_0);
+				stream.WriteByte2(0);
 				num += @class.string_0.Length + 1;
 			}
-			stream26_0.method_16(stream.method_1(), false);
-			stream26_0.method_4(0, AbstractTreeNode1.smethod_0(stream26_0.Position));
+			stream26_0.WriteByteArray(stream.method_1(), false);
+			stream26_0.WriteNBytes(0, AbstractTreeNode1.smethod_0(stream26_0.Position));
 		}
 
 		public override void vmethod_2(ref int int_0)

@@ -53,14 +53,14 @@ namespace ns21
 		{
 			byte[] array = new byte[4];
 			array[2] = 1;
-			stream26_0.method_16(array, false);
+			stream26_0.WriteByteArray(array, false);
 			if (base.Nodes.Count != 0)
 			{
-				stream26_0.method_5((int)stream26_0.Position + 4);
+				stream26_0.WriteInt((int)stream26_0.Position + 4);
 			}
 			else
 			{
-				stream26_0.method_5(0);
+				stream26_0.WriteInt(0);
 			}
 			foreach (AbstractTreeNode1 @class in base.Nodes)
 			{

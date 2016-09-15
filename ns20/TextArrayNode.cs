@@ -52,19 +52,19 @@ namespace ns20
 			byte[] array = new byte[4];
 			array[1] = 1;
 			array[2] = 28;
-			stream26_0.method_16(array, false);
-			stream26_0.method_5(base.Nodes.Count);
+			stream26_0.WriteByteArray(array, false);
+			stream26_0.WriteInt(base.Nodes.Count);
 			if (base.Nodes.Count == 0)
 			{
 				return;
 			}
 			if (base.Nodes.Count > 1)
 			{
-				stream26_0.method_5((int)stream26_0.Position + 4);
+				stream26_0.WriteInt((int)stream26_0.Position + 4);
 			}
 			foreach (TextValueNode @class in base.Nodes)
 			{
-				stream26_0.method_15(@class.vmethod_8());
+				stream26_0.WriteByteArray(@class.vmethod_8());
 				if (@class.method_2() != null)
 				{
 					this.vmethod_10()[@class.int_0] = @class.method_2();

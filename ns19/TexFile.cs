@@ -10,7 +10,7 @@ namespace ns19
 {
 	public class TexFile : IDisposable
 	{
-		public List<zzCocoaStruct12> textureList = new List<zzCocoaStruct12>();
+		public List<TextureMetadata> textureList = new List<TextureMetadata>();
 
 		private Stream26 _fileStream;
 
@@ -18,16 +18,16 @@ namespace ns19
 
 		private bool _unkFlag0 = true;
 
-		public DDSTexture this[int int_0]
+		public DDSTexture this[int index]
 		{
 			get
 			{
-				if (this.textureList[int_0].byte_1 != null)
+				if (this.textureList[index].Data != null)
 				{
-					return new DDSTexture(new MemoryStream(this.textureList[int_0].byte_1));
+					return new DDSTexture(new MemoryStream(this.textureList[index].Data));
 				}
-				this._fileStream.Position = (long)this.textureList[int_0].int_1;
-				return new DDSTexture(this._fileStream.stream_0, true);
+				this._fileStream.Position = (long)this.textureList[index].StartIndex;
+				return new DDSTexture(this._fileStream._stream, true);
 			}
 		}
 
@@ -59,7 +59,7 @@ namespace ns19
 			if (num2 == 64206)
 			{
 				this._unkFlag0 = false;
-				num = (int)this._fileStream.method_43(6);
+				num = (int)this._fileStream.ReadShortAt(6);
 				num3 = this._fileStream.method_19();
 			}
 			else if (num2 != 2600)
@@ -68,28 +68,28 @@ namespace ns19
 			}
 			while (num-- != 0)
 			{
-				this.textureList.Add(new zzCocoaStruct12(this._fileStream.method_43(num3 + 2), this._fileStream.method_19(), this._fileStream.method_23(), this._fileStream.method_23(), this._fileStream.method_23(), this._fileStream.method_40(num3 + 20), this._fileStream.method_23(), this._fileStream.method_41(num3 + 28), this._fileStream.method_19()));
+				this.textureList.Add(new TextureMetadata(this._fileStream.ReadShortAt(num3 + 2), this._fileStream.method_19(), this._fileStream.method_23(), this._fileStream.method_23(), this._fileStream.method_23(), this._fileStream.ReadByteAt(num3 + 20), this._fileStream.method_23(), this._fileStream.ReadIntAt(num3 + 28), this._fileStream.method_19()));
 				num3 += 40;
 			}
-			this._fileStream.bool_0 = false;
+			this._fileStream._reverseEndianness = false;
 		}
 
 		public void method_1(int int_0, Image image_0, IMGPixelFormat imgpixelFormat_0)
 		{
-			zzCocoaStruct12 @class = this.textureList[int_0];
+			TextureMetadata @class = this.textureList[int_0];
 			@class.short_2 = (short)image_0.Height;
 			@class.short_1 = (short)image_0.Width;
-			@class.byte_1 = new DDSTexture(image_0, (int)@class.byte_0, imgpixelFormat_0).method_3();
+			@class.Data = new DDSTexture(image_0, (int)@class.byte_0, imgpixelFormat_0).method_3();
 		}
 
 		public byte[] method_2(int int_0)
 		{
-			if (this.textureList[int_0].byte_1 != null)
+			if (this.textureList[int_0].Data != null)
 			{
-				return this.textureList[int_0].byte_1;
+				return this.textureList[int_0].Data;
 			}
-			this._fileStream.Position = (long)this.textureList[int_0].int_1;
-			return this._fileStream.method_31(this.textureList[int_0].int_2);
+			this._fileStream.Position = (long)this.textureList[int_0].StartIndex;
+			return this._fileStream.ReadBytes(this.textureList[int_0].Length);
 		}
 
 		public void method_3(int int_0, string string_1)
@@ -123,47 +123,47 @@ namespace ns19
 			int num2 = 0;
 			if (!this._unkFlag0)
 			{
-				stream.method_7(4207856295u);
-				stream.method_11(284);
-				stream.method_11((short)num);
-				stream.method_5(0);
-				stream.method_5(0);
-				stream.method_5(-1);
+				stream.WriteUInt(4207856295u);
+				stream.WriteShort(284);
+				stream.WriteShort((short)num);
+				stream.WriteInt(0);
+				stream.WriteInt(0);
+				stream.WriteInt(-1);
 				int num3 = 2;
 				while ((double)num / Math.Pow(2.0, (double)(num3 - 2)) > 1.0)
 				{
 					num3++;
 				}
 				num3--;
-				stream.method_5(num3);
-				stream.method_5(28);
-				stream.method_4(239, (int)(Math.Pow(2.0, (double)num3) * 12.0 + 28.0));
+				stream.WriteInt(num3);
+				stream.WriteInt(28);
+				stream.WriteNBytes(239, (int)(Math.Pow(2.0, (double)num3) * 12.0 + 28.0));
 				num2 = (int)stream.Position;
-				stream.method_33(8, num2);
-				stream.method_5(num2 + num * 44);
+				stream.WriteIntAt(8, num2);
+				stream.WriteInt(num2 + num * 44);
 				stream.Position = (long)num2;
 			}
-			stream.method_4(0, 40 * num);
+			stream.WriteNBytes(0, 40 * num);
 			for (int i = 0; i < num; i++)
 			{
-				zzCocoaStruct12 @class = this.textureList[i];
+				TextureMetadata tex = this.textureList[i];
 				byte[] array = this.method_2(i);
-				stream.method_35(num2 + 40 * i, 2600);
-				stream.method_11(@class.short_0);
-				stream.method_5(@class.int_0);
-				stream.method_11(@class.short_1);
-				stream.method_11(@class.short_2);
-				stream.method_11(@class.short_3);
-				stream.method_11(@class.short_1);
-				stream.method_11(@class.short_2);
-				stream.method_11(@class.short_3);
-				stream.method_3(@class.byte_0);
-				stream.method_11(@class.short_4);
-				stream.method_4(0, 5);
-				stream.method_5((int)stream.Length);
-				stream.method_5(array.Length);
-				stream.method_5(0);
-				stream.method_37((int)stream.Length, array, false);
+				stream.WriteShortAt(num2 + 40 * i, 2600);
+				stream.WriteShort(tex.short_0);
+				stream.WriteInt(tex.unkInt);
+				stream.WriteShort(tex.short_1);
+				stream.WriteShort(tex.short_2);
+				stream.WriteShort(tex.short_3);
+				stream.WriteShort(tex.short_1);
+				stream.WriteShort(tex.short_2);
+				stream.WriteShort(tex.short_3);
+				stream.WriteByte2(tex.byte_0);
+				stream.WriteShort(tex.short_4);
+				stream.WriteNBytes(0, 5);
+				stream.WriteInt((int)stream.Length);
+				stream.WriteInt(array.Length);
+				stream.WriteInt(0);
+				stream.WriteByteArrayAt((int)stream.Length, array, false);
 			}
 			return stream;
 		}

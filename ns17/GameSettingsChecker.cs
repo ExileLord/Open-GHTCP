@@ -81,7 +81,7 @@ namespace ns17
 			using (Stream26 stream = pakNode.method_17())
 			{
 				stream.Position = 0L;
-				@class.method_3(new ArrayPointerRootNode("hash", GameSettingsChecker._hashPath, new IntegerArrayNode(KeyGenerator.smethod_21(KeyGenerator.HashStream(stream.stream_0)))));
+				@class.method_3(new ArrayPointerRootNode("hash", GameSettingsChecker._hashPath, new IntegerArrayNode(KeyGenerator.smethod_21(KeyGenerator.HashStream(stream._stream)))));
 			}
 			GC.Collect();
 			DateTime now = DateTime.Now;

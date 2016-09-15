@@ -128,7 +128,7 @@ namespace ns20
 				if (num != 0)
 				{
 					AbstractTreeNode1 @class = this.vmethod_12(num);
-					stream26_0.bool_0 = this.vmethod_7();
+					stream26_0._reverseEndianness = this.vmethod_7();
 					base.Nodes.Add(@class);
 					@class.method_4(stream26_0);
 				}
@@ -141,7 +141,7 @@ namespace ns20
 
 		public override void vmethod_14(Stream26 stream26_0)
 		{
-			stream26_0.bool_0 = this.vmethod_7();
+			stream26_0._reverseEndianness = this.vmethod_7();
 			foreach (AbstractTreeNode1 @class in base.Nodes)
 			{
 				@class.vmethod_14(stream26_0);
@@ -390,9 +390,9 @@ namespace ns20
 
 		public void method_10(Stream26 stream26_0)
 		{
-			stream26_0.method_16(this.byte_0, false);
+			stream26_0.WriteByteArray(this.byte_0, false);
 			this.vmethod_14(stream26_0);
-			stream26_0.method_33(4, (int)stream26_0.Length);
+			stream26_0.WriteIntAt(4, (int)stream26_0.Length);
 			stream26_0.Position = stream26_0.Length;
 		}
 

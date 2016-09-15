@@ -97,10 +97,10 @@ namespace ns19
 			}
 			int num = 0;
 			int num2 = this.stream26_0.method_19();
-			this.stream26_0.bool_0 = (this.bool_2 = (!QbSongClass1.smethod_3(num2) || !QbSongClass1.smethod_5(num2).StartsWith(".")));
-			Enum35 @enum = (Enum35)this.stream26_0.method_41(28);
+			this.stream26_0._reverseEndianness = (this.bool_2 = (!QbSongClass1.smethod_3(num2) || !QbSongClass1.smethod_5(num2).StartsWith(".")));
+			Enum35 @enum = (Enum35)this.stream26_0.ReadIntAt(28);
 			this.bool_1 = ((@enum & Enum35.flag_3) == Enum35.flag_0);
-			this.int_0 = this.stream26_0.method_42(this.bool_1 ? 12 : 16, this.bool_2 && (@enum & Enum35.flag_4) == Enum35.flag_0 && (@enum & Enum35.flag_5) == Enum35.flag_0);
+			this.int_0 = this.stream26_0.ReadIntAt(this.bool_1 ? 12 : 16, this.bool_2 && (@enum & Enum35.flag_4) == Enum35.flag_0 && (@enum & Enum35.flag_5) == Enum35.flag_0);
 			if (this.bool_4 && this.string_0 != null)
 			{
 				string text = KeyGenerator.GetFileName(this.string_0);
@@ -115,9 +115,9 @@ namespace ns19
 			}
 			while (true)
 			{
-				Enum35 enum2 = (Enum35)this.stream26_0.method_41(num + 28);
+				Enum35 enum2 = (Enum35)this.stream26_0.ReadIntAt(num + 28);
 				bool flag = this.bool_2 && (enum2 & Enum35.flag_4) == Enum35.flag_0 && (enum2 & Enum35.flag_5) == Enum35.flag_0;
-				int int_ = this.stream26_0.method_42(num, flag);
+				int int_ = this.stream26_0.ReadIntAt(num, flag);
 				if (QbSongClass1.smethod_3(int_))
 				{
 					if (QbSongClass1.smethod_5(int_).Equals(".last"))
@@ -131,14 +131,14 @@ namespace ns19
 				}
 				int int_2 = this.stream26_0.method_20(flag) + num;
 				int int_3 = this.stream26_0.method_20(flag);
-				int num3 = this.stream26_0.method_42(num + (this.bool_1 ? 16 : 12), flag);
-				int num4 = this.stream26_0.method_42(num + 20, flag);
+				int num3 = this.stream26_0.ReadIntAt(num + (this.bool_1 ? 16 : 12), flag);
+				int num4 = this.stream26_0.ReadIntAt(num + 20, flag);
 				int int_4 = this.stream26_0.method_20(flag);
 				this.stream26_0.Position += 4L;
 				if ((enum2 & Enum35.flag_3) != Enum35.flag_0)
 				{
 					this.bool_1 = false;
-					string text2 = this.stream26_0.method_28(160);
+					string text2 = this.stream26_0.ReadString(160);
 					int num5 = text2.IndexOf('\0');
 					if (num5 >= 0)
 					{
@@ -384,7 +384,7 @@ namespace ns19
 			Stream26 stream = new Stream26(this.bool_2);
 			Stream26 stream2 = new Stream26();
 			this.method_18(stream, stream2);
-			stream.method_16(stream2.method_1(), false);
+			stream.WriteByteArray(stream2.method_1(), false);
 			stream2.Dispose();
 			return stream;
 		}
@@ -450,45 +450,45 @@ namespace ns19
 				int num3 = current3.imethod_7();
 				if (current3.imethod_4() != 0)
 				{
-					stream26_1.method_6(current3.imethod_4(), flag);
+					stream26_1.WriteInt(current3.imethod_4(), flag);
 				}
 				else
 				{
 					string text = QbSongClass1.smethod_5(num3);
 					if (!this.bool_1 && !text.EndsWith(".qb.ngc") && !text.EndsWith(".qb.ps2"))
 					{
-						stream26_1.method_6(1270999134, flag);
+						stream26_1.WriteInt(1270999134, flag);
 					}
 					else if (text.Contains(".qb"))
 					{
-						stream26_1.method_8(2817852868u, flag);
+						stream26_1.WriteUInt(2817852868u, flag);
 					}
 					else
 					{
-						stream26_1.method_6(1952304453, flag);
+						stream26_1.WriteInt(1952304453, flag);
 					}
 				}
 				if (this is zzPabNode && this.bool_3)
 				{
-					stream26_1.method_6((int)stream26_2.Length, flag);
+					stream26_1.WriteInt((int)stream26_2.Length, flag);
 				}
 				else
 				{
-					stream26_1.method_6(num - num2 + (int)stream26_2.Length, flag);
+					stream26_1.WriteInt(num - num2 + (int)stream26_2.Length, flag);
 				}
-				stream26_1.method_6(current3.imethod_2(), flag);
+				stream26_1.WriteInt(current3.imethod_2(), flag);
 				if (this.bool_1)
 				{
-					stream26_1.method_6(this.int_0, flag);
+					stream26_1.WriteInt(this.int_0, flag);
 				}
-				stream26_1.method_6(num3, flag);
+				stream26_1.WriteInt(num3, flag);
 				if (!this.bool_1)
 				{
-					stream26_1.method_6(this.int_0, flag);
+					stream26_1.WriteInt(this.int_0, flag);
 				}
-				stream26_1.method_6(current3.imethod_10(), flag);
-				stream26_1.method_6(current3.imethod_12(), flag);
-				stream26_1.method_6((int)current3.imethod_14(), false);
+				stream26_1.WriteInt(current3.imethod_10(), flag);
+				stream26_1.WriteInt(current3.imethod_12(), flag);
+				stream26_1.WriteInt((int)current3.imethod_14(), false);
 				bool flag2 = false;
 				if ((current3.imethod_14() & Enum35.flag_3) != Enum35.flag_0 && QbSongClass1.smethod_3(num3))
 				{
@@ -513,43 +513,43 @@ namespace ns19
 					{
 						text2 = text2.Substring(1);
 					}
-					stream26_1.method_13(text2);
-					stream26_1.method_4(0, 160 - text2.Length);
+					stream26_1.WriteString(text2);
+					stream26_1.WriteNBytes(0, 160 - text2.Length);
 				}
-				stream26_2.method_15(this.method_14(current3));
+				stream26_2.WriteByteArray(this.method_14(current3));
 				num4 = ((this.bool_2 || this.bool_1) ? zzPakNode2.smethod_0(stream26_2.Length, 5) : zzPakNode2.smethod_0(stream26_2.Length, 4));
-				stream26_2.method_4(0, num4);
+				stream26_2.WriteNBytes(0, num4);
 				num2 += (flag2 ? 192 : 32);
 			}
-			stream26_1.method_7(this.bool_1 ? 749989691u : 3039057503u);
+			stream26_1.WriteUInt(this.bool_1 ? 749989691u : 3039057503u);
 			if (this is zzPabNode && this.bool_3)
 			{
-				stream26_1.method_5((int)stream26_2.Length);
+				stream26_1.WriteInt((int)stream26_2.Length);
 			}
 			else
 			{
-				stream26_1.method_5(num - num2 + (int)stream26_2.Length);
+				stream26_1.WriteInt(num - num2 + (int)stream26_2.Length);
 			}
-			stream26_1.method_5(4);
+			stream26_1.WriteInt(4);
 			if (this.bool_1)
 			{
-				stream26_1.method_5(this.int_0);
-				stream26_1.method_7(2306521930u);
-				stream26_1.method_5(1794739921);
-				stream26_1.method_4(0, 8);
+				stream26_1.WriteInt(this.int_0);
+				stream26_1.WriteUInt(2306521930u);
+				stream26_1.WriteInt(1794739921);
+				stream26_1.WriteNBytes(0, 8);
 			}
 			else
 			{
-				stream26_1.method_4(0, 4);
-				stream26_1.method_5(this.int_0);
-				stream26_1.method_4(0, 12);
+				stream26_1.WriteNBytes(0, 4);
+				stream26_1.WriteInt(this.int_0);
+				stream26_1.WriteNBytes(0, 12);
 			}
 			num4 = (this.bool_1 ? zzPakNode2.smethod_0(stream26_1.Length, 12) : (this.bool_2 ? 32 : 16));
-			stream26_1.method_4(0, num4);
-			stream26_2.method_4(171, 4);
-			stream26_2.method_4(0, 12);
+			stream26_1.WriteNBytes(0, num4);
+			stream26_2.WriteNBytes(171, 4);
+			stream26_2.WriteNBytes(0, 12);
 			num4 = (this.bool_1 ? zzPakNode2.smethod_0(stream26_2.Length, 12) : ((int)stream26_2.Length % (this.bool_2 ? 32 : 16)));
-			stream26_2.method_4(171, num4);
+			stream26_2.WriteNBytes(171, num4);
 		}
 
 		public IEnumerator<Interface12> GetEnumerator()

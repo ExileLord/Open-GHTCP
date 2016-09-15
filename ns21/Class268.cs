@@ -35,9 +35,9 @@ namespace ns21
 			byte[] array = new byte[4];
             array[1] = (this.vmethod_7() ? (byte)32 : (byte)4);
 			array[2] = this.vmethod_16();
-			stream26_0.method_16(array, false);
-			stream26_0.method_5(this.int_0);
-			stream26_0.method_5(this.int_1);
+			stream26_0.WriteByteArray(array, false);
+			stream26_0.WriteInt(this.int_0);
+			stream26_0.WriteInt(this.int_1);
 			if (base.Nodes.Count != 0)
 			{
 				IEnumerator enumerator = base.Nodes.GetEnumerator();
@@ -46,7 +46,7 @@ namespace ns21
 					while (enumerator.MoveNext())
 					{
 						AbstractTreeNode2 @class = (AbstractTreeNode2)enumerator.Current;
-						stream26_0.method_15(@class.vmethod_8());
+						stream26_0.WriteByteArray(@class.vmethod_8());
 					}
 					goto IL_97;
 				}
@@ -59,9 +59,9 @@ namespace ns21
 					}
 				}
 			}
-			stream26_0.method_5(0);
+			stream26_0.WriteInt(0);
 			IL_97:
-			stream26_0.method_5(0);
+			stream26_0.WriteInt(0);
 		}
 
 		public override void vmethod_2(ref int int_2)

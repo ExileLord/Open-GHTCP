@@ -65,12 +65,12 @@ namespace ns21
 			int num2 = stream26_0.method_19();
 			if (num != 0)
 			{
-				base.Nodes.Add(new UnicodeValueNode(stream26_0.method_46(num)));
+				base.Nodes.Add(new UnicodeValueNode(stream26_0.ReadUnicodeStringAt(num)));
 				stream26_0.Position += (long)AbstractTreeNode1.smethod_0(stream26_0.Position);
 			}
 			if (num2 != 0)
 			{
-				AbstractTreeNode1 @class = (base.Parent is StructureHeaderNode) ? (base.Parent as StructureHeaderNode).method_11(stream26_0.method_41(num2)) : this.vmethod_12(stream26_0.method_42(num2, true));
+				AbstractTreeNode1 @class = (base.Parent is StructureHeaderNode) ? (base.Parent as StructureHeaderNode).method_11(stream26_0.ReadIntAt(num2)) : this.vmethod_12(stream26_0.ReadIntAt(num2, true));
 				base.method_1().Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}
@@ -83,36 +83,36 @@ namespace ns21
 				byte[] array = new byte[4];
 				array[1] = 1;
 				array[2] = 4;
-				stream26_0.method_16(array, false);
+				stream26_0.WriteByteArray(array, false);
 			}
 			else
 			{
 				byte[] array2 = new byte[4];
                 array2[1] = (this.vmethod_7() ? (byte)132 : (byte)9);
-				stream26_0.method_16(array2, false);
+				stream26_0.WriteByteArray(array2, false);
 			}
-			stream26_0.method_5(this.int_0);
+			stream26_0.WriteInt(this.int_0);
 			int int_ = (int)stream26_0.Position + 4;
 			if (base.Nodes.Count != 0)
 			{
-				stream26_0.method_5((int)stream26_0.Position + 8);
-				stream26_0.method_5(0);
-				stream26_0.method_14(this.method_8(), stream26_0.bool_0);
-				stream26_0.method_4(0, 2);
-				stream26_0.method_4(0, AbstractTreeNode1.smethod_0(stream26_0.Position));
+				stream26_0.WriteInt((int)stream26_0.Position + 8);
+				stream26_0.WriteInt(0);
+				stream26_0.WriteString(this.method_8(), stream26_0._reverseEndianness);
+				stream26_0.WriteNBytes(0, 2);
+				stream26_0.WriteNBytes(0, AbstractTreeNode1.smethod_0(stream26_0.Position));
 			}
 			else
 			{
-				stream26_0.method_5(0);
+				stream26_0.WriteInt(0);
 			}
 			int num = (int)stream26_0.Position;
 			if (base.method_1().Nodes.IndexOf(this) < base.method_1().Nodes.Count - 1)
 			{
-				stream26_0.method_33(int_, num);
+				stream26_0.WriteIntAt(int_, num);
 			}
 			else
 			{
-				stream26_0.method_33(int_, 0);
+				stream26_0.WriteIntAt(int_, 0);
 			}
 			stream26_0.Position = (long)num;
 		}

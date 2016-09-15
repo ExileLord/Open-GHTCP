@@ -63,16 +63,16 @@ namespace ns19
 					throw new Exception("Pak File is empty!");
 				}
 				int int_ = stream.method_19();
-				stream.bool_0 = (this.bool_2 = (!QbSongClass1.smethod_3(int_) || !QbSongClass1.smethod_5(int_).StartsWith(".")));
+				stream._reverseEndianness = (this.bool_2 = (!QbSongClass1.smethod_3(int_) || !QbSongClass1.smethod_5(int_).StartsWith(".")));
 				this.bool_3 = ((long)stream.method_19() < stream.Length);
-				Enum35 @enum = (Enum35)stream.method_41(28);
+				Enum35 @enum = (Enum35)stream.ReadIntAt(28);
 				this.bool_1 = ((@enum & Enum35.flag_3) == Enum35.flag_0);
-				this.int_0 = stream.method_42(this.bool_1 ? 12 : 16, this.bool_2 && (@enum & Enum35.flag_4) == Enum35.flag_0 && (@enum & Enum35.flag_5) == Enum35.flag_0);
+				this.int_0 = stream.ReadIntAt(this.bool_1 ? 12 : 16, this.bool_2 && (@enum & Enum35.flag_4) == Enum35.flag_0 && (@enum & Enum35.flag_5) == Enum35.flag_0);
 				while (true)
 				{
-					Enum35 enum2 = (Enum35)stream.method_42(num + 28, false);
+					Enum35 enum2 = (Enum35)stream.ReadIntAt(num + 28, false);
 					bool bool_ = this.bool_2 && (enum2 & Enum35.flag_4) == Enum35.flag_0 && (enum2 & Enum35.flag_5) == Enum35.flag_0;
-					int num3 = stream.method_42(num, bool_);
+					int num3 = stream.ReadIntAt(num, bool_);
 					if (QbSongClass1.smethod_3(num3) && (QbSongClass1.smethod_5(num3).Equals(".last") || QbSongClass1.smethod_5(num3).Equals("last")))
 					{
 						break;
@@ -87,14 +87,14 @@ namespace ns19
 						num4 = 0;
 					}
 					int int_2 = stream.method_20(bool_);
-					int num5 = stream.method_42(num + (this.bool_1 ? 16 : 12), bool_);
-					int num6 = stream.method_42(num + 20, bool_);
+					int num5 = stream.ReadIntAt(num + (this.bool_1 ? 16 : 12), bool_);
+					int num6 = stream.ReadIntAt(num + 20, bool_);
 					int int_3 = stream.method_20(bool_);
 					stream.Position += 4L;
 					if ((enum2 & Enum35.flag_3) != Enum35.flag_0)
 					{
 						this.bool_1 = false;
-						string text = this.stream26_0.method_28(160);
+						string text = this.stream26_0.ReadString(160);
 						int num7 = text.IndexOf('\0');
 						if (num7 >= 0)
 						{

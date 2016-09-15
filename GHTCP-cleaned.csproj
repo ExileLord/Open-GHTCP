@@ -812,8 +812,8 @@
     <Compile Include="ns21\IntegerValueNode.cs" />
     <Compile Include="ns21\AsciiValueNode.cs" />
     <Compile Include="ns21\TagValueNode.cs" />
-    <Compile Include="ns21\DDSClass1.cs" />
-    <Compile Include="ns21\zzCocoaStruct12.cs" />
+    <Compile Include="ns21\DDSTexture.cs" />
+    <Compile Include="ns21\TextureMetadata.cs" />
     <Compile Include="ns21\zzCocoaNode12.cs" />
     <Compile Include="ns21\TreeNodeTextComparer.cs" />
     <Compile Include="ns22\StreamClass2.cs" />

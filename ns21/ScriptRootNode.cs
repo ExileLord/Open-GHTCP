@@ -60,11 +60,11 @@ namespace ns21
 			byte[] array = new byte[4];
             array[1] = (byte)(this.vmethod_7() ? 32 : 4);
 			array[2] = 7;
-			stream26_0.method_16(array, false);
-			stream26_0.method_5(this.int_0);
-			stream26_0.method_5(this.int_1);
-			stream26_0.method_5((base.Nodes.Count != 0) ? ((int)stream26_0.Position + 8) : 0);
-			stream26_0.method_5(0);
+			stream26_0.WriteByteArray(array, false);
+			stream26_0.WriteInt(this.int_0);
+			stream26_0.WriteInt(this.int_1);
+			stream26_0.WriteInt((base.Nodes.Count != 0) ? ((int)stream26_0.Position + 8) : 0);
+			stream26_0.WriteInt(0);
 			foreach (AbstractTreeNode1 @class in base.Nodes)
 			{
 				@class.vmethod_14(stream26_0);
