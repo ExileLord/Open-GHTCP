@@ -55,8 +55,9 @@
     <WarningLevel>3</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="mid2chart">
-      <HintPath>.\mid2chart.dll</HintPath>
+    <Reference Include="mid2chart, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Chart Maker\Chart2Midi\c# src\bin\Release\mid2chart.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.DirectX.DirectSound" />

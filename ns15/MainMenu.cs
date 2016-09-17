@@ -847,8 +847,7 @@ namespace ns15
 					}
 					else if (fileName.EndsWith(".mid"))
 					{
-                        ChartParser chartParser = Midi2Chart.getMidiSong(fileName, this.forceRB3MidConversionToolStripMenuItem.Checked);
-                        qbcParser = chartParser.method_3();
+                        qbcParser = Midi2Chart.getMidiSong(fileName, this.forceRB3MidConversionToolStripMenuItem.Checked);
 					}
 					else
 					{
@@ -1286,8 +1285,7 @@ namespace ns15
 								}
 								else if (current.EndsWith(".mid"))
 								{
-                                    ChartParser chartParser = Midi2Chart.getMidiSong(current, this.forceRB3MidConversionToolStripMenuItem.Checked);
-                                    qbcParser = chartParser.method_3();
+                                    qbcParser = Midi2Chart.getMidiSong(current, this.forceRB3MidConversionToolStripMenuItem.Checked);
 								}
 								else
 								{
@@ -1766,6 +1764,7 @@ namespace ns15
 			registryKey.SetValue("ForceConversion", Class248.bool_3 ? 1 : 0);
 			this.method_15();
 			this.SongEditor_Control.Dispose();
+            this.notifyIcon_0.Visible = false;
             this.Dispose(true);
         }
 
@@ -2073,6 +2072,7 @@ namespace ns15
             this.RebuildSong_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SilentGuitar_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ForceMp3Conversion_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forceRB3MidConversionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteSong_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoveSong_ToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.HideUnEdit_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -2089,7 +2089,6 @@ namespace ns15
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SidePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.SongListBox = new ns16.zzListBox238();
             this.notifyIcon_0 = new System.Windows.Forms.NotifyIcon(this.components);
             this.fontDialog_0 = new System.Windows.Forms.FontDialog();
             this.leftClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -2100,32 +2099,6 @@ namespace ns15
             this.SysGerman_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SysKorean_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SongEditorTab = new System.Windows.Forms.TabPage();
-            this.SongEditor_Container = new System.Windows.Forms.ToolStripContainer();
-            this.SongEditor_BottomToolStrip = new System.Windows.Forms.ToolStrip();
-            this.ToggleElements_EditorSplitBtn = new System.Windows.Forms.ToolStripSplitButton();
-            this.StarView_EditorBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.HopoView_EditorBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.AudioView_EditorBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.BeatSize_EditorTxtBox = new System.Windows.Forms.ToolStripTextBox();
-            this.HyperSpeed_EditorBar = new ns16.GhtcpToolStripControlHost();
-            this.FretAngle_EditorBar = new ns16.GhtcpToolStripControlHost();
-            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.Offset_EditorTxtBox = new System.Windows.Forms.ToolStripTextBox();
-            this.SongEditor_Control = new ns17.SongEditor();
-            this.SongEditor_TopToolStrip = new System.Windows.Forms.ToolStrip();
-            this.GameMode_EditorBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.LoadChart_EditorBtn = new System.Windows.Forms.ToolStripButton();
-            this.SelectedTrack_EditorBox = new System.Windows.Forms.ToolStripComboBox();
-            this.SongName_EditorLbl = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.LoadAudio_EditorBtn = new System.Windows.Forms.ToolStripButton();
-            this.PlayPause_EditorBtn = new System.Windows.Forms.ToolStripButton();
-            this.Stop_EditorBtn = new System.Windows.Forms.ToolStripButton();
-            this.PlayTime_EditorLbl = new System.Windows.Forms.ToolStripLabel();
             this.SetlistTab = new System.Windows.Forms.TabPage();
             this.SetlistConfig_Container = new System.Windows.Forms.ToolStripContainer();
             this.SetlistConf_TLPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -2161,7 +2134,6 @@ namespace ns15
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.TierSongs_Panel = new System.Windows.Forms.TableLayoutPanel();
-            this.TierSongs_ListBox = new ns16.zzListBox238();
             this.label11 = new System.Windows.Forms.Label();
             this.SetlistStrip = new System.Windows.Forms.ToolStrip();
             this.Setlist_Lbl = new System.Windows.Forms.ToolStripLabel();
@@ -2173,18 +2145,39 @@ namespace ns15
             this.MainContainer = new System.Windows.Forms.ToolStripContainer();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.ToolStripStatusLbl = new System.Windows.Forms.ToolStripStatusLabel();
-            this.forceRB3MidConversionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SongEditor_Container = new System.Windows.Forms.ToolStripContainer();
+            this.SongEditor_BottomToolStrip = new System.Windows.Forms.ToolStrip();
+            this.ToggleElements_EditorSplitBtn = new System.Windows.Forms.ToolStripSplitButton();
+            this.StarView_EditorBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.HopoView_EditorBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.AudioView_EditorBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.BeatSize_EditorTxtBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.Offset_EditorTxtBox = new System.Windows.Forms.ToolStripTextBox();
+            this.SongEditor_TopToolStrip = new System.Windows.Forms.ToolStrip();
+            this.GameMode_EditorBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.LoadChart_EditorBtn = new System.Windows.Forms.ToolStripButton();
+            this.SelectedTrack_EditorBox = new System.Windows.Forms.ToolStripComboBox();
+            this.SongName_EditorLbl = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.LoadAudio_EditorBtn = new System.Windows.Forms.ToolStripButton();
+            this.PlayPause_EditorBtn = new System.Windows.Forms.ToolStripButton();
+            this.Stop_EditorBtn = new System.Windows.Forms.ToolStripButton();
+            this.PlayTime_EditorLbl = new System.Windows.Forms.ToolStripLabel();
+            this.TierSongs_ListBox = new ns16.zzListBox238();
+            this.HyperSpeed_EditorBar = new ns16.GhtcpToolStripControlHost();
+            this.FretAngle_EditorBar = new ns16.GhtcpToolStripControlHost();
+            this.SongEditor_Control = new ns17.SongEditor();
+            this.SongListBox = new ns16.zzListBox238();
             this.rightClickMenu.SuspendLayout();
             this.TopMenuStrip.SuspendLayout();
             this.SidePanel.SuspendLayout();
             this.leftClickMenu.SuspendLayout();
             this.SongEditorTab.SuspendLayout();
-            this.SongEditor_Container.BottomToolStripPanel.SuspendLayout();
-            this.SongEditor_Container.ContentPanel.SuspendLayout();
-            this.SongEditor_Container.TopToolStripPanel.SuspendLayout();
-            this.SongEditor_Container.SuspendLayout();
-            this.SongEditor_BottomToolStrip.SuspendLayout();
-            this.SongEditor_TopToolStrip.SuspendLayout();
             this.SetlistTab.SuspendLayout();
             this.SetlistConfig_Container.ContentPanel.SuspendLayout();
             this.SetlistConfig_Container.TopToolStripPanel.SuspendLayout();
@@ -2202,6 +2195,12 @@ namespace ns15
             this.MainContainer.TopToolStripPanel.SuspendLayout();
             this.MainContainer.SuspendLayout();
             this.StatusStrip.SuspendLayout();
+            this.SongEditor_Container.BottomToolStripPanel.SuspendLayout();
+            this.SongEditor_Container.ContentPanel.SuspendLayout();
+            this.SongEditor_Container.TopToolStripPanel.SuspendLayout();
+            this.SongEditor_Container.SuspendLayout();
+            this.SongEditor_BottomToolStrip.SuspendLayout();
+            this.SongEditor_TopToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // rightClickMenu
@@ -2612,6 +2611,14 @@ namespace ns15
             this.ForceMp3Conversion_MenuItem.Text = "Force Mp3 Conversion";
             this.ForceMp3Conversion_MenuItem.Click += new System.EventHandler(this.ForceMp3Conversion_MenuItem_Click);
             // 
+            // forceRB3MidConversionToolStripMenuItem
+            // 
+            this.forceRB3MidConversionToolStripMenuItem.CheckOnClick = true;
+            this.forceRB3MidConversionToolStripMenuItem.Name = "forceRB3MidConversionToolStripMenuItem";
+            this.forceRB3MidConversionToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.forceRB3MidConversionToolStripMenuItem.Text = "Force RB3 Mid Conversion";
+            this.forceRB3MidConversionToolStripMenuItem.Click += new System.EventHandler(this.forceRB3MidConversionToolStripMenuItem_Click);
+            // 
             // DeleteSong_MenuItem
             // 
             this.DeleteSong_MenuItem.Name = "DeleteSong_MenuItem";
@@ -2765,24 +2772,6 @@ namespace ns15
             this.SidePanel.Size = new System.Drawing.Size(180, 519);
             this.SidePanel.TabIndex = 7;
             // 
-            // SongListBox
-            // 
-            this.SongListBox.AllowDrop = true;
-            this.SongListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SongListBox.FormattingEnabled = true;
-            this.SongListBox.IntegralHeight = false;
-            this.SongListBox.Location = new System.Drawing.Point(0, 20);
-            this.SongListBox.Margin = new System.Windows.Forms.Padding(0);
-            this.SongListBox.Name = "SongListBox";
-            this.SongListBox.ScrollAlwaysVisible = true;
-            this.SongListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.SongListBox.Size = new System.Drawing.Size(180, 355);
-            this.SongListBox.Sorted = true;
-            this.SongListBox.TabIndex = 1;
-            this.SongListBox.SelectedIndexChanged += new System.EventHandler(this.SongListBox_SelectedIndexChanged);
-            this.SongListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SongListBox_KeyDown);
-            this.SongListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SongListBox_MouseDown);
-            // 
             // notifyIcon_0
             // 
             this.notifyIcon_0.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon_0.Icon")));
@@ -2873,248 +2862,6 @@ namespace ns15
             this.SongEditorTab.TabIndex = 1;
             this.SongEditorTab.Text = "Song Editor";
             this.SongEditorTab.UseVisualStyleBackColor = true;
-            // 
-            // SongEditor_Container
-            // 
-            // 
-            // SongEditor_Container.BottomToolStripPanel
-            // 
-            this.SongEditor_Container.BottomToolStripPanel.Controls.Add(this.SongEditor_BottomToolStrip);
-            // 
-            // SongEditor_Container.ContentPanel
-            // 
-            this.SongEditor_Container.ContentPanel.Controls.Add(this.SongEditor_Control);
-            this.SongEditor_Container.ContentPanel.Size = new System.Drawing.Size(590, 437);
-            this.SongEditor_Container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SongEditor_Container.Location = new System.Drawing.Point(3, 3);
-            this.SongEditor_Container.Name = "SongEditor_Container";
-            this.SongEditor_Container.Size = new System.Drawing.Size(590, 487);
-            this.SongEditor_Container.TabIndex = 1;
-            this.SongEditor_Container.Text = "SongEditor Container";
-            // 
-            // SongEditor_Container.TopToolStripPanel
-            // 
-            this.SongEditor_Container.TopToolStripPanel.Controls.Add(this.SongEditor_TopToolStrip);
-            // 
-            // SongEditor_BottomToolStrip
-            // 
-            this.SongEditor_BottomToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.SongEditor_BottomToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.SongEditor_BottomToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToggleElements_EditorSplitBtn,
-            this.toolStripSeparator10,
-            this.toolStripLabel1,
-            this.BeatSize_EditorTxtBox,
-            this.HyperSpeed_EditorBar,
-            this.FretAngle_EditorBar,
-            this.toolStripSeparator12,
-            this.toolStripLabel2,
-            this.Offset_EditorTxtBox});
-            this.SongEditor_BottomToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.SongEditor_BottomToolStrip.Name = "SongEditor_BottomToolStrip";
-            this.SongEditor_BottomToolStrip.Size = new System.Drawing.Size(590, 25);
-            this.SongEditor_BottomToolStrip.Stretch = true;
-            this.SongEditor_BottomToolStrip.TabIndex = 0;
-            // 
-            // ToggleElements_EditorSplitBtn
-            // 
-            this.ToggleElements_EditorSplitBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.ToggleElements_EditorSplitBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StarView_EditorBtn,
-            this.HopoView_EditorBtn,
-            this.AudioView_EditorBtn});
-            this.ToggleElements_EditorSplitBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToggleElements_EditorSplitBtn.Name = "ToggleElements_EditorSplitBtn";
-            this.ToggleElements_EditorSplitBtn.Size = new System.Drawing.Size(111, 22);
-            this.ToggleElements_EditorSplitBtn.Text = "Toggle Elements";
-            this.ToggleElements_EditorSplitBtn.ButtonClick += new System.EventHandler(this.ToggleElements_EditorSplitBtn_ButtonClick);
-            // 
-            // StarView_EditorBtn
-            // 
-            this.StarView_EditorBtn.Checked = true;
-            this.StarView_EditorBtn.CheckOnClick = true;
-            this.StarView_EditorBtn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.StarView_EditorBtn.Name = "StarView_EditorBtn";
-            this.StarView_EditorBtn.Size = new System.Drawing.Size(130, 22);
-            this.StarView_EditorBtn.Text = "Star Power";
-            this.StarView_EditorBtn.Click += new System.EventHandler(this.StarView_EditorBtn_Click);
-            // 
-            // HopoView_EditorBtn
-            // 
-            this.HopoView_EditorBtn.Checked = true;
-            this.HopoView_EditorBtn.CheckOnClick = true;
-            this.HopoView_EditorBtn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.HopoView_EditorBtn.Name = "HopoView_EditorBtn";
-            this.HopoView_EditorBtn.Size = new System.Drawing.Size(130, 22);
-            this.HopoView_EditorBtn.Text = "HoPo";
-            this.HopoView_EditorBtn.Click += new System.EventHandler(this.HopoView_EditorBtn_Click);
-            // 
-            // AudioView_EditorBtn
-            // 
-            this.AudioView_EditorBtn.Checked = true;
-            this.AudioView_EditorBtn.CheckOnClick = true;
-            this.AudioView_EditorBtn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.AudioView_EditorBtn.Name = "AudioView_EditorBtn";
-            this.AudioView_EditorBtn.Size = new System.Drawing.Size(130, 22);
-            this.AudioView_EditorBtn.Text = "Audio";
-            this.AudioView_EditorBtn.Click += new System.EventHandler(this.AudioView_EditorBtn_Click);
-            // 
-            // toolStripSeparator10
-            // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(77, 22);
-            this.toolStripLabel1.Text = "Beat Size:";
-            // 
-            // BeatSize_EditorTxtBox
-            // 
-            this.BeatSize_EditorTxtBox.Name = "BeatSize_EditorTxtBox";
-            this.BeatSize_EditorTxtBox.Size = new System.Drawing.Size(30, 25);
-            this.BeatSize_EditorTxtBox.Text = "20";
-            this.BeatSize_EditorTxtBox.TextChanged += new System.EventHandler(this.BeatSize_EditorTxtBox_TextChanged);
-            // 
-            // HyperSpeed_EditorBar
-            // 
-            this.HyperSpeed_EditorBar.Name = "HyperSpeed_EditorBar";
-            this.HyperSpeed_EditorBar.Size = new System.Drawing.Size(104, 22);
-            this.HyperSpeed_EditorBar.ToolTipText = "HyperSpeed";
-            // 
-            // FretAngle_EditorBar
-            // 
-            this.FretAngle_EditorBar.Name = "FretAngle_EditorBar";
-            this.FretAngle_EditorBar.Size = new System.Drawing.Size(104, 22);
-            this.FretAngle_EditorBar.ToolTipText = "FretBar Angle";
-            // 
-            // toolStripSeparator12
-            // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(56, 22);
-            this.toolStripLabel2.Text = "Offset:";
-            // 
-            // Offset_EditorTxtBox
-            // 
-            this.Offset_EditorTxtBox.Name = "Offset_EditorTxtBox";
-            this.Offset_EditorTxtBox.Size = new System.Drawing.Size(50, 25);
-            this.Offset_EditorTxtBox.Text = "20";
-            this.Offset_EditorTxtBox.TextChanged += new System.EventHandler(this.Offset_EditorTxtBox_TextChanged);
-            // 
-            // SongEditor_Control
-            // 
-            this.SongEditor_Control.BackColor = System.Drawing.Color.White;
-            this.SongEditor_Control.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SongEditor_Control.Location = new System.Drawing.Point(0, 0);
-            this.SongEditor_Control.Name = "SongEditor_Control";
-            this.SongEditor_Control.Size = new System.Drawing.Size(590, 437);
-            this.SongEditor_Control.TabIndex = 0;
-            // 
-            // SongEditor_TopToolStrip
-            // 
-            this.SongEditor_TopToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.SongEditor_TopToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.SongEditor_TopToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.GameMode_EditorBtn,
-            this.toolStripSeparator5,
-            this.LoadChart_EditorBtn,
-            this.SelectedTrack_EditorBox,
-            this.SongName_EditorLbl,
-            this.toolStripSeparator2,
-            this.LoadAudio_EditorBtn,
-            this.PlayPause_EditorBtn,
-            this.Stop_EditorBtn,
-            this.PlayTime_EditorLbl});
-            this.SongEditor_TopToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.SongEditor_TopToolStrip.Name = "SongEditor_TopToolStrip";
-            this.SongEditor_TopToolStrip.Size = new System.Drawing.Size(590, 25);
-            this.SongEditor_TopToolStrip.Stretch = true;
-            this.SongEditor_TopToolStrip.TabIndex = 0;
-            // 
-            // GameMode_EditorBtn
-            // 
-            this.GameMode_EditorBtn.Checked = true;
-            this.GameMode_EditorBtn.CheckOnClick = true;
-            this.GameMode_EditorBtn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.GameMode_EditorBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.GameMode_EditorBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.GameMode_EditorBtn.Name = "GameMode_EditorBtn";
-            this.GameMode_EditorBtn.Size = new System.Drawing.Size(76, 22);
-            this.GameMode_EditorBtn.Text = "Game Mode";
-            this.GameMode_EditorBtn.Click += new System.EventHandler(this.GameMode_EditorBtn_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
-            // 
-            // LoadChart_EditorBtn
-            // 
-            this.LoadChart_EditorBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.LoadChart_EditorBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.LoadChart_EditorBtn.Name = "LoadChart_EditorBtn";
-            this.LoadChart_EditorBtn.Size = new System.Drawing.Size(69, 22);
-            this.LoadChart_EditorBtn.Text = "Load Chart";
-            this.LoadChart_EditorBtn.Click += new System.EventHandler(this.LoadChart_EditorBtn_Click);
-            // 
-            // SelectedTrack_EditorBox
-            // 
-            this.SelectedTrack_EditorBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SelectedTrack_EditorBox.Name = "SelectedTrack_EditorBox";
-            this.SelectedTrack_EditorBox.Size = new System.Drawing.Size(100, 25);
-            this.SelectedTrack_EditorBox.SelectedIndexChanged += new System.EventHandler(this.SelectedTrack_EditorBox_SelectedIndexChanged);
-            // 
-            // SongName_EditorLbl
-            // 
-            this.SongName_EditorLbl.Name = "SongName_EditorLbl";
-            this.SongName_EditorLbl.Size = new System.Drawing.Size(69, 22);
-            this.SongName_EditorLbl.Text = "Song Name";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // LoadAudio_EditorBtn
-            // 
-            this.LoadAudio_EditorBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.LoadAudio_EditorBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.LoadAudio_EditorBtn.Name = "LoadAudio_EditorBtn";
-            this.LoadAudio_EditorBtn.Size = new System.Drawing.Size(72, 22);
-            this.LoadAudio_EditorBtn.Text = "Load Audio";
-            this.LoadAudio_EditorBtn.Click += new System.EventHandler(this.LoadAudio_EditorBtn_Click);
-            // 
-            // PlayPause_EditorBtn
-            // 
-            this.PlayPause_EditorBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.PlayPause_EditorBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.PlayPause_EditorBtn.Name = "PlayPause_EditorBtn";
-            this.PlayPause_EditorBtn.Size = new System.Drawing.Size(69, 22);
-            this.PlayPause_EditorBtn.Text = "Play/Pause";
-            this.PlayPause_EditorBtn.Click += new System.EventHandler(this.PlayPause_EditorBtn_Click);
-            // 
-            // Stop_EditorBtn
-            // 
-            this.Stop_EditorBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.Stop_EditorBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Stop_EditorBtn.Name = "Stop_EditorBtn";
-            this.Stop_EditorBtn.Size = new System.Drawing.Size(35, 22);
-            this.Stop_EditorBtn.Text = "Stop";
-            this.Stop_EditorBtn.Click += new System.EventHandler(this.Stop_EditorBtn_Click);
-            // 
-            // PlayTime_EditorLbl
-            // 
-            this.PlayTime_EditorLbl.Name = "PlayTime_EditorLbl";
-            this.PlayTime_EditorLbl.Size = new System.Drawing.Size(59, 22);
-            this.PlayTime_EditorLbl.Text = "Play Time";
             // 
             // SetlistTab
             // 
@@ -3404,6 +3151,11 @@ namespace ns15
             // TierUnlocked_NumBox
             // 
             this.TierUnlocked_NumBox.Location = new System.Drawing.Point(193, 55);
+            this.TierUnlocked_NumBox.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.TierUnlocked_NumBox.Name = "TierUnlocked_NumBox";
             this.TierUnlocked_NumBox.Size = new System.Drawing.Size(43, 20);
             this.TierUnlocked_NumBox.TabIndex = 9;
@@ -3547,24 +3299,6 @@ namespace ns15
             this.TierSongs_Panel.Size = new System.Drawing.Size(174, 397);
             this.TierSongs_Panel.TabIndex = 1;
             // 
-            // TierSongs_ListBox
-            // 
-            this.TierSongs_ListBox.AllowDrop = true;
-            this.TierSongs_ListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TierSongs_ListBox.FormattingEnabled = true;
-            this.TierSongs_ListBox.IntegralHeight = false;
-            this.TierSongs_ListBox.Location = new System.Drawing.Point(0, 20);
-            this.TierSongs_ListBox.Margin = new System.Windows.Forms.Padding(0);
-            this.TierSongs_ListBox.Name = "TierSongs_ListBox";
-            this.TierSongs_ListBox.ScrollAlwaysVisible = true;
-            this.TierSongs_ListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.TierSongs_ListBox.Size = new System.Drawing.Size(174, 377);
-            this.TierSongs_ListBox.TabIndex = 19;
-            this.TierSongs_ListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TierSongs_ListBox_KeyDown);
-            this.TierSongs_ListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TierSongs_ListBox_MouseDown);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -3691,13 +3425,283 @@ namespace ns15
             this.ToolStripStatusLbl.Size = new System.Drawing.Size(0, 17);
             this.ToolStripStatusLbl.Tag = "Function Description";
             // 
-            // forceRB3MidConversionToolStripMenuItem
+            // SongEditor_Container
             // 
-            this.forceRB3MidConversionToolStripMenuItem.CheckOnClick = true;
-            this.forceRB3MidConversionToolStripMenuItem.Name = "forceRB3MidConversionToolStripMenuItem";
-            this.forceRB3MidConversionToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.forceRB3MidConversionToolStripMenuItem.Text = "Force RB3 Mid Conversion";
-            this.forceRB3MidConversionToolStripMenuItem.Click += new System.EventHandler(this.forceRB3MidConversionToolStripMenuItem_Click);
+            // 
+            // SongEditor_Container.BottomToolStripPanel
+            // 
+            this.SongEditor_Container.BottomToolStripPanel.Controls.Add(this.SongEditor_BottomToolStrip);
+            // 
+            // SongEditor_Container.ContentPanel
+            // 
+            this.SongEditor_Container.ContentPanel.Controls.Add(this.SongEditor_Control);
+            this.SongEditor_Container.ContentPanel.Size = new System.Drawing.Size(590, 437);
+            this.SongEditor_Container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SongEditor_Container.Location = new System.Drawing.Point(3, 3);
+            this.SongEditor_Container.Name = "SongEditor_Container";
+            this.SongEditor_Container.Size = new System.Drawing.Size(590, 487);
+            this.SongEditor_Container.TabIndex = 1;
+            this.SongEditor_Container.Text = "SongEditor Container";
+            // 
+            // SongEditor_Container.TopToolStripPanel
+            // 
+            this.SongEditor_Container.TopToolStripPanel.Controls.Add(this.SongEditor_TopToolStrip);
+            // 
+            // SongEditor_BottomToolStrip
+            // 
+            this.SongEditor_BottomToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.SongEditor_BottomToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.SongEditor_BottomToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToggleElements_EditorSplitBtn,
+            this.toolStripSeparator10,
+            this.toolStripLabel1,
+            this.BeatSize_EditorTxtBox,
+            this.HyperSpeed_EditorBar,
+            this.FretAngle_EditorBar,
+            this.toolStripSeparator12,
+            this.toolStripLabel2,
+            this.Offset_EditorTxtBox});
+            this.SongEditor_BottomToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.SongEditor_BottomToolStrip.Name = "SongEditor_BottomToolStrip";
+            this.SongEditor_BottomToolStrip.Size = new System.Drawing.Size(590, 25);
+            this.SongEditor_BottomToolStrip.Stretch = true;
+            this.SongEditor_BottomToolStrip.TabIndex = 0;
+            // 
+            // ToggleElements_EditorSplitBtn
+            // 
+            this.ToggleElements_EditorSplitBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.ToggleElements_EditorSplitBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StarView_EditorBtn,
+            this.HopoView_EditorBtn,
+            this.AudioView_EditorBtn});
+            this.ToggleElements_EditorSplitBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ToggleElements_EditorSplitBtn.Name = "ToggleElements_EditorSplitBtn";
+            this.ToggleElements_EditorSplitBtn.Size = new System.Drawing.Size(111, 22);
+            this.ToggleElements_EditorSplitBtn.Text = "Toggle Elements";
+            this.ToggleElements_EditorSplitBtn.ButtonClick += new System.EventHandler(this.ToggleElements_EditorSplitBtn_ButtonClick);
+            // 
+            // StarView_EditorBtn
+            // 
+            this.StarView_EditorBtn.Checked = true;
+            this.StarView_EditorBtn.CheckOnClick = true;
+            this.StarView_EditorBtn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.StarView_EditorBtn.Name = "StarView_EditorBtn";
+            this.StarView_EditorBtn.Size = new System.Drawing.Size(130, 22);
+            this.StarView_EditorBtn.Text = "Star Power";
+            this.StarView_EditorBtn.Click += new System.EventHandler(this.StarView_EditorBtn_Click);
+            // 
+            // HopoView_EditorBtn
+            // 
+            this.HopoView_EditorBtn.Checked = true;
+            this.HopoView_EditorBtn.CheckOnClick = true;
+            this.HopoView_EditorBtn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.HopoView_EditorBtn.Name = "HopoView_EditorBtn";
+            this.HopoView_EditorBtn.Size = new System.Drawing.Size(130, 22);
+            this.HopoView_EditorBtn.Text = "HoPo";
+            this.HopoView_EditorBtn.Click += new System.EventHandler(this.HopoView_EditorBtn_Click);
+            // 
+            // AudioView_EditorBtn
+            // 
+            this.AudioView_EditorBtn.Checked = true;
+            this.AudioView_EditorBtn.CheckOnClick = true;
+            this.AudioView_EditorBtn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.AudioView_EditorBtn.Name = "AudioView_EditorBtn";
+            this.AudioView_EditorBtn.Size = new System.Drawing.Size(130, 22);
+            this.AudioView_EditorBtn.Text = "Audio";
+            this.AudioView_EditorBtn.Click += new System.EventHandler(this.AudioView_EditorBtn_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(77, 22);
+            this.toolStripLabel1.Text = "Beat Size:";
+            // 
+            // BeatSize_EditorTxtBox
+            // 
+            this.BeatSize_EditorTxtBox.Name = "BeatSize_EditorTxtBox";
+            this.BeatSize_EditorTxtBox.Size = new System.Drawing.Size(30, 25);
+            this.BeatSize_EditorTxtBox.Text = "20";
+            this.BeatSize_EditorTxtBox.TextChanged += new System.EventHandler(this.BeatSize_EditorTxtBox_TextChanged);
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(56, 22);
+            this.toolStripLabel2.Text = "Offset:";
+            // 
+            // Offset_EditorTxtBox
+            // 
+            this.Offset_EditorTxtBox.Name = "Offset_EditorTxtBox";
+            this.Offset_EditorTxtBox.Size = new System.Drawing.Size(50, 25);
+            this.Offset_EditorTxtBox.Text = "20";
+            this.Offset_EditorTxtBox.TextChanged += new System.EventHandler(this.Offset_EditorTxtBox_TextChanged);
+            // 
+            // SongEditor_TopToolStrip
+            // 
+            this.SongEditor_TopToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.SongEditor_TopToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.SongEditor_TopToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.GameMode_EditorBtn,
+            this.toolStripSeparator5,
+            this.LoadChart_EditorBtn,
+            this.SelectedTrack_EditorBox,
+            this.SongName_EditorLbl,
+            this.toolStripSeparator2,
+            this.LoadAudio_EditorBtn,
+            this.PlayPause_EditorBtn,
+            this.Stop_EditorBtn,
+            this.PlayTime_EditorLbl});
+            this.SongEditor_TopToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.SongEditor_TopToolStrip.Name = "SongEditor_TopToolStrip";
+            this.SongEditor_TopToolStrip.Size = new System.Drawing.Size(590, 25);
+            this.SongEditor_TopToolStrip.Stretch = true;
+            this.SongEditor_TopToolStrip.TabIndex = 0;
+            // 
+            // GameMode_EditorBtn
+            // 
+            this.GameMode_EditorBtn.Checked = true;
+            this.GameMode_EditorBtn.CheckOnClick = true;
+            this.GameMode_EditorBtn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.GameMode_EditorBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.GameMode_EditorBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GameMode_EditorBtn.Name = "GameMode_EditorBtn";
+            this.GameMode_EditorBtn.Size = new System.Drawing.Size(76, 22);
+            this.GameMode_EditorBtn.Text = "Game Mode";
+            this.GameMode_EditorBtn.Click += new System.EventHandler(this.GameMode_EditorBtn_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // LoadChart_EditorBtn
+            // 
+            this.LoadChart_EditorBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.LoadChart_EditorBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.LoadChart_EditorBtn.Name = "LoadChart_EditorBtn";
+            this.LoadChart_EditorBtn.Size = new System.Drawing.Size(69, 22);
+            this.LoadChart_EditorBtn.Text = "Load Chart";
+            this.LoadChart_EditorBtn.Click += new System.EventHandler(this.LoadChart_EditorBtn_Click);
+            // 
+            // SelectedTrack_EditorBox
+            // 
+            this.SelectedTrack_EditorBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SelectedTrack_EditorBox.Name = "SelectedTrack_EditorBox";
+            this.SelectedTrack_EditorBox.Size = new System.Drawing.Size(100, 25);
+            this.SelectedTrack_EditorBox.SelectedIndexChanged += new System.EventHandler(this.SelectedTrack_EditorBox_SelectedIndexChanged);
+            // 
+            // SongName_EditorLbl
+            // 
+            this.SongName_EditorLbl.Name = "SongName_EditorLbl";
+            this.SongName_EditorLbl.Size = new System.Drawing.Size(69, 22);
+            this.SongName_EditorLbl.Text = "Song Name";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // LoadAudio_EditorBtn
+            // 
+            this.LoadAudio_EditorBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.LoadAudio_EditorBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.LoadAudio_EditorBtn.Name = "LoadAudio_EditorBtn";
+            this.LoadAudio_EditorBtn.Size = new System.Drawing.Size(72, 22);
+            this.LoadAudio_EditorBtn.Text = "Load Audio";
+            this.LoadAudio_EditorBtn.Click += new System.EventHandler(this.LoadAudio_EditorBtn_Click);
+            // 
+            // PlayPause_EditorBtn
+            // 
+            this.PlayPause_EditorBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.PlayPause_EditorBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.PlayPause_EditorBtn.Name = "PlayPause_EditorBtn";
+            this.PlayPause_EditorBtn.Size = new System.Drawing.Size(69, 22);
+            this.PlayPause_EditorBtn.Text = "Play/Pause";
+            this.PlayPause_EditorBtn.Click += new System.EventHandler(this.PlayPause_EditorBtn_Click);
+            // 
+            // Stop_EditorBtn
+            // 
+            this.Stop_EditorBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Stop_EditorBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Stop_EditorBtn.Name = "Stop_EditorBtn";
+            this.Stop_EditorBtn.Size = new System.Drawing.Size(35, 22);
+            this.Stop_EditorBtn.Text = "Stop";
+            this.Stop_EditorBtn.Click += new System.EventHandler(this.Stop_EditorBtn_Click);
+            // 
+            // PlayTime_EditorLbl
+            // 
+            this.PlayTime_EditorLbl.Name = "PlayTime_EditorLbl";
+            this.PlayTime_EditorLbl.Size = new System.Drawing.Size(59, 22);
+            this.PlayTime_EditorLbl.Text = "Play Time";
+            // 
+            // TierSongs_ListBox
+            // 
+            this.TierSongs_ListBox.AllowDrop = true;
+            this.TierSongs_ListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TierSongs_ListBox.FormattingEnabled = true;
+            this.TierSongs_ListBox.IntegralHeight = false;
+            this.TierSongs_ListBox.Location = new System.Drawing.Point(0, 20);
+            this.TierSongs_ListBox.Margin = new System.Windows.Forms.Padding(0);
+            this.TierSongs_ListBox.Name = "TierSongs_ListBox";
+            this.TierSongs_ListBox.ScrollAlwaysVisible = true;
+            this.TierSongs_ListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.TierSongs_ListBox.Size = new System.Drawing.Size(174, 377);
+            this.TierSongs_ListBox.TabIndex = 19;
+            this.TierSongs_ListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TierSongs_ListBox_KeyDown);
+            this.TierSongs_ListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TierSongs_ListBox_MouseDown);
+            // 
+            // HyperSpeed_EditorBar
+            // 
+            this.HyperSpeed_EditorBar.Name = "HyperSpeed_EditorBar";
+            this.HyperSpeed_EditorBar.Size = new System.Drawing.Size(104, 22);
+            this.HyperSpeed_EditorBar.ToolTipText = "HyperSpeed";
+            // 
+            // FretAngle_EditorBar
+            // 
+            this.FretAngle_EditorBar.Name = "FretAngle_EditorBar";
+            this.FretAngle_EditorBar.Size = new System.Drawing.Size(104, 22);
+            this.FretAngle_EditorBar.ToolTipText = "FretBar Angle";
+            // 
+            // SongEditor_Control
+            // 
+            this.SongEditor_Control.BackColor = System.Drawing.Color.White;
+            this.SongEditor_Control.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SongEditor_Control.Location = new System.Drawing.Point(0, 0);
+            this.SongEditor_Control.Name = "SongEditor_Control";
+            this.SongEditor_Control.Size = new System.Drawing.Size(590, 437);
+            this.SongEditor_Control.TabIndex = 0;
+            // 
+            // SongListBox
+            // 
+            this.SongListBox.AllowDrop = true;
+            this.SongListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SongListBox.FormattingEnabled = true;
+            this.SongListBox.IntegralHeight = false;
+            this.SongListBox.Location = new System.Drawing.Point(0, 20);
+            this.SongListBox.Margin = new System.Windows.Forms.Padding(0);
+            this.SongListBox.Name = "SongListBox";
+            this.SongListBox.ScrollAlwaysVisible = true;
+            this.SongListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.SongListBox.Size = new System.Drawing.Size(180, 355);
+            this.SongListBox.Sorted = true;
+            this.SongListBox.TabIndex = 1;
+            this.SongListBox.SelectedIndexChanged += new System.EventHandler(this.SongListBox_SelectedIndexChanged);
+            this.SongListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SongListBox_KeyDown);
+            this.SongListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SongListBox_MouseDown);
             // 
             // MainMenu
             // 
@@ -3720,17 +3724,6 @@ namespace ns15
             this.SidePanel.PerformLayout();
             this.leftClickMenu.ResumeLayout(false);
             this.SongEditorTab.ResumeLayout(false);
-            this.SongEditor_Container.BottomToolStripPanel.ResumeLayout(false);
-            this.SongEditor_Container.BottomToolStripPanel.PerformLayout();
-            this.SongEditor_Container.ContentPanel.ResumeLayout(false);
-            this.SongEditor_Container.TopToolStripPanel.ResumeLayout(false);
-            this.SongEditor_Container.TopToolStripPanel.PerformLayout();
-            this.SongEditor_Container.ResumeLayout(false);
-            this.SongEditor_Container.PerformLayout();
-            this.SongEditor_BottomToolStrip.ResumeLayout(false);
-            this.SongEditor_BottomToolStrip.PerformLayout();
-            this.SongEditor_TopToolStrip.ResumeLayout(false);
-            this.SongEditor_TopToolStrip.PerformLayout();
             this.SetlistTab.ResumeLayout(false);
             this.SetlistConfig_Container.ContentPanel.ResumeLayout(false);
             this.SetlistConfig_Container.TopToolStripPanel.ResumeLayout(false);
@@ -3758,6 +3751,17 @@ namespace ns15
             this.MainContainer.PerformLayout();
             this.StatusStrip.ResumeLayout(false);
             this.StatusStrip.PerformLayout();
+            this.SongEditor_Container.BottomToolStripPanel.ResumeLayout(false);
+            this.SongEditor_Container.BottomToolStripPanel.PerformLayout();
+            this.SongEditor_Container.ContentPanel.ResumeLayout(false);
+            this.SongEditor_Container.TopToolStripPanel.ResumeLayout(false);
+            this.SongEditor_Container.TopToolStripPanel.PerformLayout();
+            this.SongEditor_Container.ResumeLayout(false);
+            this.SongEditor_Container.PerformLayout();
+            this.SongEditor_BottomToolStrip.ResumeLayout(false);
+            this.SongEditor_BottomToolStrip.PerformLayout();
+            this.SongEditor_TopToolStrip.ResumeLayout(false);
+            this.SongEditor_TopToolStrip.PerformLayout();
             this.ResumeLayout(false);
 
 		}
