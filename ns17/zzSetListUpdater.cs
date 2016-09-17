@@ -6,7 +6,7 @@ using System;
 
 namespace ns17
 {
-	public class Class255 : Class245
+	public class zzSetListUpdater : QbEditor
 	{
 		private GH3Songlist gh3Songlist_0;
 
@@ -16,7 +16,7 @@ namespace ns17
 
 		private int int_0;
 
-		public Class255(int int_1, zzPakNode2 class318_1, GH3Songlist gh3Songlist_1)
+		public zzSetListUpdater(int int_1, zzPakNode2 class318_1, GH3Songlist gh3Songlist_1)
 		{
 			this.string_0 = gh3Songlist_1.method_8(int_1);
 			this.int_0 = int_1;
@@ -26,7 +26,7 @@ namespace ns17
 
 		public override void vmethod_0()
 		{
-			zzGenericNode1 @class = this.class318_0.method_8(this.gh3Songlist_0.gh3SetlistList[this.int_0].method_2());
+			zzGenericNode1 @class = this.class318_0.zzGetNode1(this.gh3Songlist_0.gh3SetlistList[this.int_0].method_2());
 			@class.method_5<StructurePointerRootNode>(new StructurePointerRootNode(this.int_0)).method_8(this.gh3Songlist_0.gh3SetlistList[this.int_0].method_6());
 		}
 
@@ -35,9 +35,9 @@ namespace ns17
 			return "Update Setlist: " + this.string_0;
 		}
 
-		public override bool Equals(Class245 other)
+		public override bool Equals(QbEditor other)
 		{
-			return other is Class255 && (other as Class255).int_0 == this.int_0;
+			return other is zzSetListUpdater && (other as zzSetListUpdater).int_0 == this.int_0;
 		}
 	}
 }

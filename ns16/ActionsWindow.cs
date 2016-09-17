@@ -32,7 +32,7 @@ namespace ns16
 
 		private ProgressBar progressBar;
 
-		public ActionsWindow(List<Class245> listOfActions)
+		public ActionsWindow(List<QbEditor> listOfActions)
 		{
 			this.InitializeComponent();
 			this.actionList = new ActionList(listOfActions);

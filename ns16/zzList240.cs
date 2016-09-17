@@ -3,9 +3,9 @@ using System.Collections;
 
 namespace ns16
 {
-	public class Class240 : IEnumerable, ICloneable, ICollection, IList
+	public class zzList240 : IEnumerable, ICloneable, ICollection, IList
 	{
-		private class Class241 : IComparer
+		private class MyComparer : IComparer
 		{
 			public int Compare(object x, object y)
 			{
@@ -100,12 +100,12 @@ namespace ns16
 			}
 		}
 
-		public Class240()
+		public zzList240()
 		{
 			this.method_1(null, 0);
 		}
 
-		public Class240(IComparer icomparer_1, int int_0)
+		public zzList240(IComparer icomparer_1, int int_0)
 		{
 			this.method_1(icomparer_1, int_0);
 		}
@@ -215,7 +215,7 @@ namespace ns16
 
 		public object Clone()
 		{
-			return new Class240(this.icomparer_0, this.arrayList_0.Capacity)
+			return new zzList240(this.icomparer_0, this.arrayList_0.Capacity)
 			{
 				arrayList_0 = (ArrayList)this.arrayList_0.Clone(),
 				bool_3 = this.bool_3,
@@ -236,7 +236,7 @@ namespace ns16
 
 		public override bool Equals(object obj)
 		{
-			Class240 @class = (Class240)obj;
+			zzList240 @class = (zzList240)obj;
 			if (@class.Count != this.Count)
 			{
 				return false;
@@ -274,7 +274,7 @@ namespace ns16
 			}
 			else
 			{
-				this.icomparer_0 = new Class240.Class241();
+				this.icomparer_0 = new zzList240.MyComparer();
 				this.bool_0 = true;
 			}
 			this.arrayList_0 = ((int_0 > 0) ? new ArrayList(int_0) : new ArrayList());

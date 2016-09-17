@@ -75,7 +75,7 @@ namespace ns20
 
 		private string string_0;
 
-		private zzTextureExplorer1 _textureCache;
+		private TexFile _texFile;
 
 		private Thread thread_0;
 
@@ -461,10 +461,10 @@ namespace ns20
 
 		private void method_2()
 		{
-			if (this._textureCache != null)
+			if (this._texFile != null)
 			{
-				this._textureCache.Dispose();
-				this._textureCache = null;
+				this._texFile.Dispose();
+				this._texFile = null;
 			}
 			this.ImgList.Items.Clear();
 			this.ImgList.SelectedIndex = -1;
@@ -491,8 +491,8 @@ namespace ns20
 					{
 						@class = new zzPakNode2(toolTipText, false);
 					}
-					this._textureCache = new zzTextureExplorer1(@class.method_13((int)this.DataFolder_TreeView.SelectedNode.Tag));
-					for (int i = 1; i <= this._textureCache.method_4(); i++)
+					this._texFile = new TexFile(@class.method_13((int)this.DataFolder_TreeView.SelectedNode.Tag));
+					for (int i = 1; i <= this._texFile.TextureCount(); i++)
 					{
 						this.ImgList.Items.Add("Image " + i);
 					}
@@ -502,8 +502,8 @@ namespace ns20
 				if (this.DataFolder_TreeView.SelectedNode.ToolTipText != "")
 				{
 					this.method_2();
-					this._textureCache = new zzTextureExplorer1(this.DataFolder_TreeView.SelectedNode.ToolTipText);
-					for (int j = 1; j <= this._textureCache.method_4(); j++)
+					this._texFile = new TexFile(this.DataFolder_TreeView.SelectedNode.ToolTipText);
+					for (int j = 1; j <= this._texFile.TextureCount(); j++)
 					{
 						this.ImgList.Items.Add("Image " + j);
 					}
@@ -515,7 +515,7 @@ namespace ns20
 		{
 			if (this.ImgList.SelectedIndex >= 0)
 			{
-				DDSTexture texture = _textureCache[this.ImgList.SelectedIndex];
+				DDSTexture texture = _texFile[this.ImgList.SelectedIndex];
 				_currentTexturePixelFormat = texture.PixelFormat;
 				BPPTxt.Text = string.Concat(texture.BPP);
 				FormatTxt.Text = ((texture.PixelFormat == IMGPixelFormat.Dxt1) ? "DXT1" : ((texture.PixelFormat == IMGPixelFormat.Dxt3) ? "DXT3" : ((texture.PixelFormat == IMGPixelFormat.Dxt5) ? "DXT5" : "A8R8G8B8")));
@@ -556,7 +556,7 @@ namespace ns20
 			{
 				image = KeyGenerator.ScaleImage(image, this.size_0);
 			}
-			this._textureCache.method_1(this.ImgList.SelectedIndex, image, this._currentTexturePixelFormat);
+			this._texFile.method_1(this.ImgList.SelectedIndex, image, this._currentTexturePixelFormat);
 			this.RebuildBtn.Enabled = true;
 		}
 
@@ -590,10 +590,10 @@ namespace ns20
 			}
 			if (text.EndsWith(".dds", StringComparison.OrdinalIgnoreCase))
 			{
-				this._textureCache.method_3(this.ImgList.SelectedIndex, text);
+				this._texFile.method_3(this.ImgList.SelectedIndex, text);
 				return;
 			}
-			this._textureCache[this.ImgList.SelectedIndex].GetImage().Save(text, this.GetImageFormat(text));
+			this._texFile[this.ImgList.SelectedIndex].GetImage().Save(text, this.GetImageFormat(text));
 		}
 
 		private void RebuildBtn_Click(object sender, EventArgs e)
@@ -602,15 +602,15 @@ namespace ns20
 			{
 				return;
 			}
-			if (this._textureCache.method_5())
+			if (this._texFile.method_5())
 			{
-				this._textureCache.method_6();
+				this._texFile.method_6();
 			}
 			else
 			{
 				string toolTipText = this.DataFolder_TreeView.SelectedNode.ToolTipText;
 				zzPakNode2 @class = File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")) ? new zzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false) : new zzPakNode2(toolTipText, false);
-				@class.method_11((int)this.DataFolder_TreeView.SelectedNode.Tag).imethod_17(this._textureCache.method_7().method_1());
+				@class.method_11((int)this.DataFolder_TreeView.SelectedNode.Tag).imethod_17(this._texFile.ToStream().ReadEverything());
 				@class.vmethod_1();
 				@class.Dispose();
 			}

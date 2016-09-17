@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace ns16
 {
-	public class Class242<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>, ICollection<KeyValuePair<TKey, TValue>>, IDictionary<TKey, TValue>, IEnumerable
+	public class zzDictionary242<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>, ICollection<KeyValuePair<TKey, TValue>>, IDictionary<TKey, TValue>, IEnumerable
 	{
-		private Class243<TKey, TValue> class243_0 = new Class243<TKey, TValue>();
+		private zzMap243<TKey, TValue> class243_0 = new zzMap243<TKey, TValue>();
 
 		public TValue this[TKey key]
 		{

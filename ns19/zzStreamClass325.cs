@@ -7,24 +7,24 @@ namespace ns19
 	{
 		public override void vmethod_0(Stream26 stream26_0)
 		{
-			this.byte_0 = stream26_0.method_18();
+			this.byte_0 = stream26_0.ReadByte2();
 			this.int_0 = new int[]
 			{
-				stream26_0.method_19()
+				stream26_0.ReadInt()
 			};
 			byte byte_ = this.byte_0;
 			switch (byte_)
 			{
 			case 1:
-				this.object_0 = stream26_0.method_19();
+				this.object_0 = stream26_0.ReadInt();
 				return;
 			case 2:
-				this.object_0 = stream26_0.method_21();
+				this.object_0 = stream26_0.ReadFloat();
 				return;
 			case 3:
 				break;
 			case 4:
-				this.object_0 = stream26_0.method_29();
+				this.object_0 = stream26_0.ReadUnicodeString();
 				return;
 			default:
 				switch (byte_)
@@ -33,17 +33,17 @@ namespace ns19
 					this.int_0 = new int[]
 					{
 						this.int_0[0],
-						stream26_0.method_19()
+						stream26_0.ReadInt()
 					};
 					return;
 				case 14:
 				case 16:
-					this.object_0 = stream26_0.method_18();
+					this.object_0 = stream26_0.ReadByte2();
 					return;
 				case 15:
 					break;
 				case 17:
-					this.object_0 = stream26_0.method_23();
+					this.object_0 = stream26_0.ReadShort();
 					break;
 				default:
 					return;
@@ -54,38 +54,38 @@ namespace ns19
 
 		public override void vmethod_1(Stream26 stream26_0)
 		{
-			stream26_0.method_3(this.byte_0);
-			stream26_0.method_5(this.int_0[0]);
+			stream26_0.WriteByte2(this.byte_0);
+			stream26_0.WriteInt(this.int_0[0]);
 			byte byte_ = this.byte_0;
 			switch (byte_)
 			{
 			case 1:
-				stream26_0.method_5((int)this.object_0);
+				stream26_0.WriteInt((int)this.object_0);
 				return;
 			case 2:
-				stream26_0.method_9((float)this.object_0);
+				stream26_0.WriteFloat((float)this.object_0);
 				return;
 			case 3:
 				break;
 			case 4:
-				stream26_0.method_14((string)this.object_0, false);
-				stream26_0.WriteByte(0);
-				stream26_0.WriteByte(0);
+				stream26_0.WriteString((string)this.object_0, false);
+				stream26_0.WriteByte2(0);
+				stream26_0.WriteByte2(0);
 				return;
 			default:
 				switch (byte_)
 				{
 				case 13:
-					stream26_0.method_5(this.int_0[1]);
+					stream26_0.WriteInt(this.int_0[1]);
 					return;
 				case 14:
 				case 16:
-					stream26_0.method_3((byte)this.object_0);
+					stream26_0.WriteByte2((byte)this.object_0);
 					return;
 				case 15:
 					break;
 				case 17:
-					stream26_0.method_11((short)this.object_0);
+					stream26_0.WriteShort((short)this.object_0);
 					break;
 				default:
 					return;

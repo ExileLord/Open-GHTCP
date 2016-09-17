@@ -16,7 +16,7 @@ namespace ns2
 
 		private readonly Class78 class78_0;
 
-		private readonly Class75 class75_0;
+		private readonly VorbisClass class75_0;
 
 		private readonly Class33 class33_0;
 

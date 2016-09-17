@@ -8,7 +8,7 @@ using System;
 
 namespace ns17
 {
-	public class Class252 : Class245
+	public class zzSetListParser : QbEditor
 	{
 		private zzPakNode2 class318_0;
 
@@ -16,7 +16,7 @@ namespace ns17
 
 		private bool bool_0;
 
-		public Class252(zzPakNode2 class318_1, GH3Songlist gh3Songlist_1, bool bool_1)
+		public zzSetListParser(zzPakNode2 class318_1, GH3Songlist gh3Songlist_1, bool bool_1)
 		{
 			this.class318_0 = class318_1;
 			this.gh3Songlist_0 = gh3Songlist_1;
@@ -26,7 +26,7 @@ namespace ns17
 		public override void vmethod_0()
 		{
 			string text = "scripts\\guitar\\guitar_progression.qb";
-			zzGenericNode1 @class = this.class318_0.method_8(text);
+			zzGenericNode1 @class = this.class318_0.zzGetNode1(text);
 			this.gh3Songlist_0.method_4(text, @class.method_5<StructurePointerRootNode>(new StructurePointerRootNode("gh3_career_songs")));
 			this.gh3Songlist_0.method_4(text, @class.method_5<StructurePointerRootNode>(new StructurePointerRootNode("gh3_general_songs")));
 			if (!this.bool_0)
@@ -47,18 +47,18 @@ namespace ns17
 				this.gh3Songlist_0.method_5(text, @class.method_5<StructurePointerRootNode>(new StructurePointerRootNode("generalp2_progression")));
 				this.gh3Songlist_0.method_5(text, @class.method_5<StructurePointerRootNode>(new StructurePointerRootNode("p2_coop_progression")));
 			}
-			@class = this.class318_0.method_8(text = "scripts\\guitar\\guitar_download.qb");
+			@class = this.class318_0.zzGetNode1(text = "scripts\\guitar\\guitar_download.qb");
 			this.gh3Songlist_0.method_4(text, @class.method_5<StructurePointerRootNode>(new StructurePointerRootNode("gh3_download_songs")));
 			if (!this.bool_0)
 			{
-				@class = this.class318_0.method_8(text = "scripts\\guitar\\guitar_coop.qb");
+				@class = this.class318_0.zzGetNode1(text = "scripts\\guitar\\guitar_coop.qb");
 				this.gh3Songlist_0.method_4(text, @class.method_5<StructurePointerRootNode>(new StructurePointerRootNode("gh3_coopcareer_songs")));
 			}
-			@class = this.class318_0.method_8(text = "scripts\\guitar\\store_data.qb");
+			@class = this.class318_0.zzGetNode1(text = "scripts\\guitar\\store_data.qb");
 			this.gh3Songlist_0.method_4(text, @class.method_5<StructurePointerRootNode>(new StructurePointerRootNode("gh3_bonus_songs")));
 			if (this.class318_0.method_6(text = "scripts\\guitar\\custom_menu\\guitar_custom_progression.qb"))
 			{
-				@class = this.class318_0.method_8(text);
+				@class = this.class318_0.zzGetNode1(text);
 				int num = @class.method_5<IntegerRootNode>(new IntegerRootNode("custom_setlist_bitmask")).method_7();
 				for (int i = 0; i < 32; i++)
 				{
@@ -70,7 +70,7 @@ namespace ns17
 				}
 				this.gh3Songlist_0.CustomBitMask = num;
 			}
-			@class = this.class318_0.method_8("scripts\\guitar\\custom_menu\\guitar_custom_menu_setlist_switcher.qb");
+			@class = this.class318_0.zzGetNode1("scripts\\guitar\\custom_menu\\guitar_custom_menu_setlist_switcher.qb");
 			this.gh3Songlist_0.method_6((StructureArrayNode)@class.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("custom_menu_setlist_switcher_progressions_" + (this.bool_0 ? "gha" : "gh3"))).method_7());
 		}
 
@@ -79,9 +79,9 @@ namespace ns17
 			return "Parse Setlists";
 		}
 
-		public override bool Equals(Class245 other)
+		public override bool Equals(QbEditor other)
 		{
-			return other is Class252;
+			return other is zzSetListParser;
 		}
 	}
 }

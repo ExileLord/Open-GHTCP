@@ -1435,7 +1435,7 @@ namespace ns17
 							{
 								throw new Exception("MID.QB song file not found.");
 							}
-							this.qbcParser = new QBCParser(text2, @class.method_8("songs\\" + text2 + ".mid.qb"));
+							this.qbcParser = new QBCParser(text2, @class.zzGetNode1("songs\\" + text2 + ".mid.qb"));
 							goto IL_F5;
 						}
 					}

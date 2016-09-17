@@ -2,7 +2,7 @@ using System;
 
 namespace ns16
 {
-	public enum Enum33
+	public enum EndiannessEnum
 	{
 		const_0,
 		const_1,

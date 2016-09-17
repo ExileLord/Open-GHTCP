@@ -5,7 +5,7 @@ using System;
 
 namespace ns15
 {
-	public class Class250 : Class245
+	public class Class250 : QbEditor
 	{
 		public QBCParser class362_0;
 
@@ -37,7 +37,7 @@ namespace ns15
 			return "Create Game Track: " + this.string_0;
 		}
 
-		public override bool Equals(Class245 other)
+		public override bool Equals(QbEditor other)
 		{
 			return other is Class250 && (other as Class250).string_0 == this.string_0;
 		}

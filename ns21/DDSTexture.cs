@@ -81,12 +81,12 @@ namespace ns21
 		{
 		}
 
-		public DDSTexture(Image image_0, int int_2, IMGPixelFormat imgpixelFormat_1, bool bool_0)
+		public DDSTexture(Image image, int mipMapCount, IMGPixelFormat pixelFormat, bool unkBool1)
 		{
-			this.MipMapCount = int_2;
-			this.PixelFormat = imgpixelFormat_1;
-			this.Size = image_0.Size;
-			this.ChangeImageProbably(image_0, int_2, imgpixelFormat_1, bool_0);
+			this.MipMapCount = mipMapCount;
+			this.PixelFormat = pixelFormat;
+			this.Size = image.Size;
+			this.ChangeImageProbably(image, mipMapCount, pixelFormat, unkBool1);
 		}
 
 		private void Load(Stream stream, bool leaveOpen)
@@ -304,19 +304,14 @@ namespace ns21
 			this.data = memoryStream.ToArray();
 		}
 
-		public byte[] method_3()
+		public byte[] ToByteArray()
 		{
 			MemoryStream memoryStream = new MemoryStream();
-			this.method_4(memoryStream);
+			this.WriteDDS(memoryStream);
 			return memoryStream.ToArray();
 		}
 
-		public void method_4(Stream stream_0)
-		{
-			this.WriteDDS(stream_0, false);
-		}
-
-		public void WriteDDS(Stream stream, bool leaveOpen)
+		public void WriteDDS(Stream stream, bool leaveOpen = false)
 		{
 			BinaryWriter binaryWriter = new BinaryWriter(stream);
 			binaryWriter.Write(0x20534444);           // DDS Magic word

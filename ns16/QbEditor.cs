@@ -5,7 +5,7 @@ namespace ns16
 
     // Base class of some other classes that appear to edit qb files
 
-	public abstract class Class245 : IEquatable<Class245>
+	public abstract class QbEditor : IEquatable<QbEditor>
 	{
 		public bool method_0()
 		{
@@ -27,6 +27,6 @@ namespace ns16
 
 		public abstract override string ToString();
 
-		public abstract bool Equals(Class245 other);
+		public abstract bool Equals(QbEditor other);
 	}
 }

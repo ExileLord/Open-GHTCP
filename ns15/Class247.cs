@@ -6,7 +6,7 @@ using System;
 
 namespace ns15
 {
-	public class Class247 : Class245
+	public class Class247 : QbEditor
 	{
 		private readonly GH3Songlist gh3Songlist_0;
 
@@ -20,7 +20,7 @@ namespace ns15
 
 		public override void vmethod_0()
 		{
-			zzGenericNode1 class308_ = this.class318_0.method_8("scripts\\guitar\\songlist.qb");
+			zzGenericNode1 class308_ = this.class318_0.zzGetNode1("scripts\\guitar\\songlist.qb");
 			this.gh3Songlist_0.method_13(class308_);
 		}
 
@@ -29,7 +29,7 @@ namespace ns15
 			return "Update Songlist";
 		}
 
-		public override bool Equals(Class245 other)
+		public override bool Equals(QbEditor other)
 		{
 			return other is Class247;
 		}

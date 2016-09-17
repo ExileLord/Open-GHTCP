@@ -553,7 +553,7 @@
     <Compile Include="ns10\Class72.cs" />
     <Compile Include="ns10\Class73.cs" />
     <Compile Include="ns10\Class74.cs" />
-    <Compile Include="ns10\Class75.cs" />
+    <Compile Include="ns10\VorbisClass.cs" />
     <Compile Include="ns10\Class76.cs" />
     <Compile Include="ns10\Class77.cs" />
     <Compile Include="ns11\Class134.cs" />
@@ -673,16 +673,16 @@
     </Compile>
     <Compile Include="ns16\EventHandlerClass1.cs" />
     <Compile Include="ns16\ByteList.cs" />
-    <Compile Include="ns16\UnkCollection1.cs" />
+    <Compile Include="ns16\zzCollection1.cs" />
     <Compile Include="ns16\zzListBox238.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ns16\Class239.cs" />
-    <Compile Include="ns16\Class240.cs" />
-    <Compile Include="ns16\Class242.cs" />
-    <Compile Include="ns16\Class243.cs" />
+    <Compile Include="ns16\zzList240.cs" />
+    <Compile Include="ns16\UnusedDictionaryClass.cs" />
+    <Compile Include="ns16\zzKeyedCollection243.cs" />
     <Compile Include="ns16\KeyGenerator.cs" />
-    <Compile Include="ns16\Class245.cs" />
+    <Compile Include="ns16\QbEditor.cs" />
     <Compile Include="ns16\GhtcpToolStripControlHost.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -697,17 +697,17 @@
     <Compile Include="ns17\About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ns17\Class251.cs" />
-    <Compile Include="ns17\Class252.cs" />
-    <Compile Include="ns17\Class253.cs" />
-    <Compile Include="ns17\Class254.cs" />
-    <Compile Include="ns17\Class255.cs" />
+    <Compile Include="ns17\zzFxBoost.cs" />
+    <Compile Include="ns17\zzSetListParser.cs" />
+    <Compile Include="ns17\QbDatabaseInitialModifier.cs" />
+    <Compile Include="ns17\CustomMenuCreator.cs" />
+    <Compile Include="ns17\zzSetListUpdater.cs" />
     <Compile Include="ns17\Class256.cs" />
     <Compile Include="ns17\Main.cs" />
-    <Compile Include="ns17\Class372.cs" />
+    <Compile Include="ns17\zzQbScriptZipperClass.cs" />
     <Compile Include="ns17\TGHManager.cs" />
-    <Compile Include="ns17\Class375.cs" />
-    <Compile Include="ns17\Class376.cs" />
+    <Compile Include="ns17\GameSettingsChecker.cs" />
+    <Compile Include="ns17\CompilerClass376.cs" />
     <Compile Include="ns17\SongData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -749,7 +749,7 @@
     <Compile Include="ns19\zzPabNode.cs" />
     <Compile Include="ns19\Class320.cs" />
     <Compile Include="ns19\Class321.cs" />
-    <Compile Include="ns19\zzDdsCollection322.cs" />
+    <Compile Include="ns19\TexFile.cs" />
     <Compile Include="ns19\zzQbSongObject.cs" />
     <Compile Include="ns19\Class324.cs" />
     <Compile Include="ns19\zzStreamClass325.cs" />
@@ -812,8 +812,8 @@
     <Compile Include="ns21\IntegerValueNode.cs" />
     <Compile Include="ns21\AsciiValueNode.cs" />
     <Compile Include="ns21\TagValueNode.cs" />
-    <Compile Include="ns21\DDSClass1.cs" />
-    <Compile Include="ns21\zzCocoaStruct12.cs" />
+    <Compile Include="ns21\DDSTexture.cs" />
+    <Compile Include="ns21\TextureMetadata.cs" />
     <Compile Include="ns21\zzCocoaNode12.cs" />
     <Compile Include="ns21\TreeNodeTextComparer.cs" />
     <Compile Include="ns22\StreamClass2.cs" />

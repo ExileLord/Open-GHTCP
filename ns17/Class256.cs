@@ -6,7 +6,7 @@ using System;
 
 namespace ns17
 {
-	public class Class256 : Class245
+	public class Class256 : QbEditor
 	{
 		private GH3Songlist gh3Songlist_0;
 
@@ -23,7 +23,7 @@ namespace ns17
 
 		public override void vmethod_0()
 		{
-			zzGenericNode1 @class = this.class318_0.method_8("scripts\\guitar\\custom_menu\\guitar_custom_menu_setlist_switcher.qb");
+			zzGenericNode1 @class = this.class318_0.zzGetNode1("scripts\\guitar\\custom_menu\\guitar_custom_menu_setlist_switcher.qb");
 			@class.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("custom_menu_setlist_switcher_progressions_" + (this.bool_0 ? "gha" : "gh3"))).method_8(this.gh3Songlist_0.method_7());
 		}
 
@@ -32,7 +32,7 @@ namespace ns17
 			return "Update Setlist Switcher";
 		}
 
-		public override bool Equals(Class245 other)
+		public override bool Equals(QbEditor other)
 		{
 			return other is Class256;
 		}

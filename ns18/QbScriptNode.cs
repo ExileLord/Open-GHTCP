@@ -30,10 +30,10 @@ namespace ns18
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			this.int_0 = stream26_0.method_19();
-			int num = stream26_0.method_19();
-			int num2 = stream26_0.method_19();
-			byte[] byte_ = stream26_0.method_32(num2, false);
+			this.int_0 = stream26_0.ReadInt();
+			int num = stream26_0.ReadInt();
+			int num2 = stream26_0.ReadInt();
+			byte[] byte_ = stream26_0.ReadBytes(num2, false);
 			if (num == num2)
 			{
 				this.byte_0 = byte_;
@@ -47,16 +47,16 @@ namespace ns18
 
 		public override void vmethod_14(Stream26 stream26_0)
 		{
-			stream26_0.method_5(this.int_0);
-			stream26_0.method_5(this.byte_0.Length);
+			stream26_0.WriteInt(this.int_0);
+			stream26_0.WriteInt(this.byte_0.Length);
 			byte[] array = new Class320().method_0(this.byte_0);
 			if (this.byte_0.Length <= array.Length)
 			{
 				array = this.byte_0;
 			}
-			stream26_0.method_5(array.Length);
-			stream26_0.method_16(array, false);
-			stream26_0.method_4(0, AbstractTreeNode1.smethod_0(stream26_0.Position));
+			stream26_0.WriteInt(array.Length);
+			stream26_0.WriteByteArray(array, false);
+			stream26_0.WriteNBytes(0, AbstractTreeNode1.smethod_0(stream26_0.Position));
 		}
 
 		public override int CompareTo(object target)

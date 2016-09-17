@@ -39,11 +39,11 @@ namespace ns21
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			int num = stream26_0.method_19();
+			int num = stream26_0.ReadInt();
 			if (num != 0)
 			{
 				stream26_0.Position = (long)num;
-				AbstractTreeNode1 @class = this.method_11(stream26_0.method_19());
+				AbstractTreeNode1 @class = this.method_11(stream26_0.ReadInt());
 				base.Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}
@@ -53,14 +53,14 @@ namespace ns21
 		{
 			byte[] array = new byte[4];
 			array[2] = 1;
-			stream26_0.method_16(array, false);
+			stream26_0.WriteByteArray(array, false);
 			if (base.Nodes.Count != 0)
 			{
-				stream26_0.method_5((int)stream26_0.Position + 4);
+				stream26_0.WriteInt((int)stream26_0.Position + 4);
 			}
 			else
 			{
-				stream26_0.method_5(0);
+				stream26_0.WriteInt(0);
 			}
 			foreach (AbstractTreeNode1 @class in base.Nodes)
 			{

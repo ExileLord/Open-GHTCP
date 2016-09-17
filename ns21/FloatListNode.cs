@@ -41,11 +41,11 @@ namespace ns21
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			base.Nodes.Add(new FloatValueNode(stream26_0.method_21()));
-			base.Nodes.Add(new FloatValueNode(stream26_0.method_21()));
+			base.Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
+			base.Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
 			if (base.method_1() is VectorArrayNode || base.method_1() is VectorPointerRootNode || base.method_1() is VectorPointerNode)
 			{
-				base.Nodes.Add(new FloatValueNode(stream26_0.method_21()));
+				base.Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
 			}
 			base.method_1().BackColor = Color.Gray;
 		}
@@ -54,10 +54,10 @@ namespace ns21
 		{
 			byte[] array = new byte[4];
 			array[1] = 1;
-			stream26_0.method_16(array, false);
+			stream26_0.WriteByteArray(array, false);
 			foreach (FloatValueNode class313_ in base.Nodes)
 			{
-				stream26_0.method_9(FloatValueNode.smethod_0(class313_));
+				stream26_0.WriteFloat(FloatValueNode.smethod_0(class313_));
 			}
 		}
 

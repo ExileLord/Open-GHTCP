@@ -622,7 +622,7 @@ namespace ns15
 						this.SongListBox.Items.Remove(gH3Song);
 						foreach (int current in this.gh3Songlist_0.method_1(gH3Song))
 						{
-							this.method_4(new Class255(current, this.class319_0, this.gh3Songlist_0));
+							this.method_4(new zzSetListUpdater(current, this.class319_0, this.gh3Songlist_0));
 						}
 						this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					}
@@ -723,7 +723,7 @@ namespace ns15
 						this.SongListBox.Items.Remove(gH3Song);
 						foreach (int current in this.gh3Songlist_0.method_1(gH3Song))
 						{
-							this.method_4(new Class255(current, this.class319_0, this.gh3Songlist_0));
+							this.method_4(new zzSetListUpdater(current, this.class319_0, this.gh3Songlist_0));
 						}
 						this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					}
@@ -742,7 +742,7 @@ namespace ns15
 					this.SongListBox.Items.Remove(gH3Song);
 					foreach (int current in this.gh3Songlist_0.method_1(gH3Song))
 					{
-						this.method_4(new Class255(current, this.class319_0, this.gh3Songlist_0));
+						this.method_4(new zzSetListUpdater(current, this.class319_0, this.gh3Songlist_0));
 					}
 					this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 				}
@@ -837,7 +837,7 @@ namespace ns15
 							{
 								throw new Exception("MID.QB song file not found.");
 							}
-							qbcParser = new QBCParser(str, @class.method_8("songs\\" + str + ".mid.qb"));
+							qbcParser = new QBCParser(str, @class.zzGetNode1("songs\\" + str + ".mid.qb"));
 							goto IL_DA;
 						}
 					}
@@ -1016,15 +1016,15 @@ namespace ns15
 					{
 						if (fileLocation.EndsWith(".qbc"))
 						{
-							new QBCParser(gh3Song.name, @class.method_8("songs\\" + gh3Song.name + ".mid.qb")).qbcCreator(fileLocation, gh3Song);
+							new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).qbcCreator(fileLocation, gh3Song);
 						}
                         else if (fileLocation.EndsWith(".chart"))
                         {
-                            new QBCParser(gh3Song.name, @class.method_8("songs\\" + gh3Song.name + ".mid.qb")).method_1().chartCreator(fileLocation, gh3Song);
+                            new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).method_1().chartCreator(fileLocation, gh3Song);
                         }
                         else
 						{
-							new QBCParser(gh3Song.name, @class.method_8("songs\\" + gh3Song.name + ".mid.qb")).method_1().dbcCreator(fileLocation, gh3Song);
+							new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).method_1().dbcCreator(fileLocation, gh3Song);
 						}
                        /* string firstArg = this.dataFolder + "MUSIC\\" + gh3Song.name + ".fsb.xen";
                         MessageBox.Show(firstArg);
@@ -1181,7 +1181,7 @@ namespace ns15
                         string fileLocation = saveLocation + "\\" + gh3Song.name + ".chart";
                         using (zzPakNode2 @class = new zzPakNode2(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
                         {
-                            new QBCParser(gh3Song.name, @class.method_8("songs\\" + gh3Song.name + ".mid.qb")).method_1().chartCreator(fileLocation, gh3Song);
+                            new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).method_1().chartCreator(fileLocation, gh3Song);
                         }
                     }
                 }
@@ -1443,7 +1443,7 @@ namespace ns15
 			}
 			this.string_2 = (this.bool_0 ? "SOFTWARE\\SigmaInc\\GHTCPAero\\" : "SOFTWARE\\SigmaInc\\GHTCP\\");
 			this.string_3 = (this.bool_0 ? "backupAero\\" : "backup\\");
-			Class372.string_0 = (this.bool_0 ? "GHA" : "GH3");
+			zzQbScriptZipperClass.string_0 = (this.bool_0 ? "GHA" : "GH3");
 			if (this.bool_0)
 			{
 				this.Text += " - Aerosmith";
@@ -1627,9 +1627,9 @@ namespace ns15
 			}
 		}
 
-		private void method_4(Class245 class245_0)
+		private void method_4(QbEditor class245_0)
 		{
-			foreach (Class245 @class in this.ActionRequests_ListBox.Items)
+			foreach (QbEditor @class in this.ActionRequests_ListBox.Items)
 			{
 				if (@class.Equals(class245_0))
 				{
@@ -1655,8 +1655,8 @@ namespace ns15
 			{
 				if (DialogResult.Yes == MessageBox.Show("Are You sure you want to Execute Actions?", "Warning!", MessageBoxButtons.YesNo))
 				{
-					List<Class245> list = new List<Class245>();
-					foreach (Class245 item in this.ActionRequests_ListBox.Items)
+					List<QbEditor> list = new List<QbEditor>();
+					foreach (QbEditor item in this.ActionRequests_ListBox.Items)
 					{
 						list.Add(item);
 					}
@@ -1858,7 +1858,7 @@ namespace ns15
 
 		private void FxSpeedBoost_MenuItem_Click(object sender, EventArgs e)
 		{
-			this.method_4(new Class251(this.class319_0));
+			this.method_4(new zzFxBoost(this.class319_0));
 		}
 
 		private void ForceMp3Conversion_MenuItem_Click(object sender, EventArgs e)
@@ -1972,7 +1972,7 @@ namespace ns15
 				this.Setlist_DropBox.Items[this.Setlist_DropBox.SelectedIndex] = this.SetlistTitle_TxtBox.Text;
 			}
 			this.SetlistApply_Btn.Enabled = false;
-			this.method_4(new Class255(this.int_0, this.class319_0, this.gh3Songlist_0));
+			this.method_4(new zzSetListUpdater(this.int_0, this.class319_0, this.gh3Songlist_0));
 		}
 
 		private void NewTier_MenuItem_Click(object sender, EventArgs e)
@@ -3893,7 +3893,7 @@ namespace ns15
 					GH3Songlist gH3Songlist = null;
 					using (this.class319_0 = new zzPabNode(this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", false))
 					{
-						if (this.method_19(int_).method_0())
+						if (this.method_19(int_).GameSettingsAreValid())
 						{
 							if (!bool_1)
 							{
@@ -3902,8 +3902,8 @@ namespace ns15
 						}
 						try
 						{
-							gH3Songlist = new GH3Songlist(this.class319_0.method_8("scripts\\guitar\\songlist.qb"), new GH3Songlist(class2.method_8("scripts\\guitar\\songlist.qb"), null));
-							new Class252(this.class319_0, gH3Songlist, this.bool_0).method_0();
+							gH3Songlist = new GH3Songlist(this.class319_0.zzGetNode1("scripts\\guitar\\songlist.qb"), new GH3Songlist(class2.zzGetNode1("scripts\\guitar\\songlist.qb"), null));
+							new zzSetListParser(this.class319_0, gH3Songlist, this.bool_0).method_0();
 						}
 						catch (Exception ex)
 						{
@@ -3967,7 +3967,7 @@ namespace ns15
 					}
 					this.class319_0 = new zzPabNode(this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", false);
 					this.method_20(int_);
-					this.gh3Songlist_0 = new GH3Songlist(this.class319_0.method_8("scripts\\guitar\\songlist.qb"), new GH3Songlist(class2.method_8("scripts\\guitar\\songlist.qb"), null));
+					this.gh3Songlist_0 = new GH3Songlist(this.class319_0.zzGetNode1("scripts\\guitar\\songlist.qb"), new GH3Songlist(class2.zzGetNode1("scripts\\guitar\\songlist.qb"), null));
 					class2.Dispose();
 					bool flag = false;
 					if (gH3Songlist != null)
@@ -3985,8 +3985,8 @@ namespace ns15
 					{
 						this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					}
-					new Class254(this.class319_0, this.bool_0).method_0();
-					new Class252(this.class319_0, this.gh3Songlist_0, this.bool_0).method_0();
+					new CustomMenuCreator(this.class319_0, this.bool_0).method_0();
+					new zzSetListParser(this.class319_0, this.gh3Songlist_0, this.bool_0).method_0();
 					if (flag && gH3Songlist.gh3SetlistList.Count != 0)
 					{
 						bool flag2 = false;
@@ -4040,7 +4040,7 @@ namespace ns15
 								if (gH3Setlist.method_2() == "scripts\\guitar\\guitar_download.qb")
 								{
 									this.gh3Songlist_0.gh3SetlistList[current2].method_0().AddRange(gH3Setlist.method_0());
-									this.method_4(new Class255(current2, this.class319_0, this.gh3Songlist_0));
+									this.method_4(new zzSetListUpdater(current2, this.class319_0, this.gh3Songlist_0));
 								}
 							}
 						}
@@ -4050,7 +4050,7 @@ namespace ns15
 						}
 					}
 					new Class249(this.class319_0).method_0();
-					new Class253(this.class319_0, this.bool_0).method_0();
+					new QbDatabaseInitialModifier(this.class319_0, this.bool_0).method_0();
 					this.method_0();
 				}
 				catch (Exception ex3)
@@ -4180,7 +4180,7 @@ namespace ns15
 			bool result;
 			try
 			{
-				Class375.smethod_0(this.class319_0);
+				GameSettingsChecker.SignHash(this.class319_0);
 				this.class319_0.vmethod_1();
 				GC.Collect();
 				result = true;
@@ -4193,20 +4193,20 @@ namespace ns15
 			return result;
 		}
 
-		private Class375 method_19(int int_3)
+		private GameSettingsChecker method_19(int int_3)
 		{
 			if (File.Exists(this.class319_0.string_0) && File.Exists(this.class319_0.string_2) && KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.HashStream(this.class319_0.string_2)), this.bool_0 ? this.int_2[int_3] : this.int_1[int_3]))
 			{
-				return new Class375(true);
+				return new GameSettingsChecker(true);
 			}
-			Class375 result;
+			GameSettingsChecker result;
 			try
 			{
-				result = new Class375(this.class319_0);
+				result = new GameSettingsChecker(this.class319_0);
 			}
 			catch
 			{
-				result = new Class375(false);
+				result = new GameSettingsChecker(false);
 			}
 			return result;
 		}
@@ -4335,7 +4335,7 @@ namespace ns15
 				".pab.xen"
 			}), false))
 			{
-				Class375.smethod_0(@class);
+				GameSettingsChecker.SignHash(@class);
 				@class.method_20(this.dataFolder + "PAK\\" + text + ".pak.xen", this.dataFolder + "PAK\\" + text + ".pab.xen");
 			}
 			GC.Collect();
@@ -4445,7 +4445,7 @@ namespace ns15
 				gH3Tier.songs.Add(item);
 			}
 			this.TierApply_Btn.Enabled = false;
-			this.method_4(new Class255(this.int_0, this.class319_0, this.gh3Songlist_0));
+			this.method_4(new zzSetListUpdater(this.int_0, this.class319_0, this.gh3Songlist_0));
 			if (this.HideUsed_MenuItem.Checked)
 			{
 				this.gh3Songlist_0.HideUsed = true;
