@@ -665,14 +665,26 @@ namespace ns15
 						enabled = true;
 					}
 				}
-				this.SaveChart_MenuItem.Enabled = (this.RebuildSong_MenuItem.Enabled = (this.DeleteSong_MenuItem.Enabled = enabled));
+                this.SaveChart_MenuItem.Enabled = (this.RebuildSong_MenuItem.Enabled = true);
+                 this.DeleteSong_MenuItem.Enabled = enabled;
 			}
 		}
 
 		private void SongProps_MenuItem_Click(object sender, EventArgs e)
 		{
 			SongProperties songProperties;
-			if (this.SongListBox.SelectedIndex >= 0 && (songProperties = new SongProperties((GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex])).ShowDialog() == DialogResult.OK)
+            if (!((GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex]).isEditable())
+            {
+                DialogResult dialogResult = MessageBox.Show("Warning!: Editing default songs is dangerous. Only continue if you know what you're doing. \nContinue?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            if (this.SongListBox.SelectedIndex >= 0 && (songProperties = new SongProperties((GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex])).ShowDialog() == DialogResult.OK)
 			{
 				songProperties.method_0();
 				this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
@@ -681,9 +693,20 @@ namespace ns15
 
 		private void RebuildSong_MenuItem_Click(object sender, EventArgs e)
 		{
-			GH3Song gH3Song;
-			SongData songData;
-			if (this.SongListBox.SelectedIndex >= 0 && (gH3Song = (GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex]).editable && (songData = new SongData(gH3Song.name, false, false)).ShowDialog() == DialogResult.OK)
+			GH3Song gH3Song = (GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex];
+            SongData songData;
+            if (!gH3Song.isEditable())
+            {
+                DialogResult dialogResult = MessageBox.Show("Warning!: Editing default songs is dangerous. Only continue if you know what you're doing. \nContinue?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            if (this.SongListBox.SelectedIndex >= 0 && (songData = new SongData(gH3Song.name, false, false)).ShowDialog() == DialogResult.OK)
 			{
 				if (songData.bool_1)
 				{
@@ -1004,11 +1027,7 @@ namespace ns15
 			if (this.SongListBox.SelectedIndex >= 0)
 			{
 				GH3Song gh3Song = (GH3Song)this.SongListBox.SelectedItem;
-				if (!gh3Song.editable)
-				{
-					return;
-				}
-				string fileLocation = KeyGenerator.OpenOrSaveFile("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
+                string fileLocation = KeyGenerator.OpenOrSaveFile("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
 				if (!fileLocation.Equals("") && File.Exists(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen"))
 				{
 					using (zzPakNode2 @class = new zzPakNode2(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))

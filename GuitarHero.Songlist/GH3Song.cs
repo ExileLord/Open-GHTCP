@@ -11,7 +11,7 @@ namespace GuitarHero.Songlist
 	[Serializable]
 	public class GH3Song : Interface16
 	{
-		public bool editable = true;
+		public bool editable;
 
 		public bool visible = true;
 

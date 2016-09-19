@@ -7,6 +7,7 @@ using ns21;
 using ns22;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace GuitarHero.Songlist
 {
@@ -122,7 +123,7 @@ namespace GuitarHero.Songlist
 						}
 					}
 				}
-				if (this.HideUnEditable)
+				/*if (this.HideUnEditable)
 				{
 					foreach (GH3Song current4 in base.Values)
 					{
@@ -131,7 +132,7 @@ namespace GuitarHero.Songlist
 							songList.Remove(current4);
 						}
 					}
-				}
+				}*/
 				foreach (GH3Song current5 in base.Values)
 				{
 					if (!current5.isVisible())
@@ -226,7 +227,7 @@ namespace GuitarHero.Songlist
 				GH3Song gH3Song = flag ? new GHASong(class2) : new GH3Song(class2);
 				if (gh3Songlist_0 != null)
 				{
-					//gH3Song.setEditable(!gh3Songlist_0.method_3(gH3Song.getSongName()));
+					gH3Song.setEditable(!gh3Songlist_0.method_3(gH3Song.getSongName()));
 				}
 				gH3Song.setVisible(!GH3Songlist.IgnoreSongs.Contains(class2.int_0));
 				this.Add(gH3Song);
