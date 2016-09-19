@@ -3431,7 +3431,7 @@ namespace ns15
             // 
             this.TierUnlocked_NumBox.Location = new System.Drawing.Point(193, 55);
             this.TierUnlocked_NumBox.Maximum = new decimal(new int[] {
-            1000000000,
+            65536,
             0,
             0,
             0});
