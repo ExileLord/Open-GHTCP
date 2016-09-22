@@ -123,7 +123,7 @@ namespace GuitarHero.Songlist
 						}
 					}
 				}
-				/*if (this.HideUnEditable)
+				if (this.HideUnEditable)
 				{
 					foreach (GH3Song current4 in base.Values)
 					{
@@ -132,7 +132,7 @@ namespace GuitarHero.Songlist
 							songList.Remove(current4);
 						}
 					}
-				}*/
+				}
 				foreach (GH3Song current5 in base.Values)
 				{
 					if (!current5.isVisible())
