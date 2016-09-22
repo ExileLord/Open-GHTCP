@@ -740,11 +740,11 @@ namespace ns15
 				object[] array = this.SongListBox.imethod_3();
 				for (int i = 0; i < array.Length; i++)
 				{
-					GH3Song gH3Song = (GH3Song)array[i];
-					if (gH3Song.editable)
+					GH3Song gh3Song = (GH3Song)array[i];
+					if (gh3Song.editable)
 					{
-						this.SongListBox.Items.Remove(gH3Song);
-						foreach (int current in this.gh3Songlist_0.method_1(gH3Song))
+						this.SongListBox.Items.Remove(gh3Song);
+						foreach (int current in this.gh3Songlist_0.method_1(gh3Song))
 						{
 							this.method_4(new zzSetListUpdater(current, this.class319_0, this.gh3Songlist_0));
 						}
@@ -1943,7 +1943,7 @@ namespace ns15
 					this.Setlist_DropBox.Items.Add(text);
 					this.Setlist_DropBox.SelectedItem = text;
 					this.method_4(new Class246(value, this.class319_0, this.gh3Songlist_0, true));
-					this.method_4(new Class256(this.class319_0, this.gh3Songlist_0, this.bool_0));
+					this.method_4(new UpdateSetlistSwitcher(this.class319_0, this.gh3Songlist_0, this.bool_0));
 					return;
             SKIPIT:
                 i++;
@@ -1965,7 +1965,7 @@ namespace ns15
 			this.Setlist_DropBox.SelectedIndex--;
 			this.Setlist_DropBox.Items.Remove(text);
 			this.method_4(new Class246(this.gh3Songlist_0.class214_0[text], this.class319_0, this.gh3Songlist_0, false));
-			this.method_4(new Class256(this.class319_0, this.gh3Songlist_0, this.bool_0));
+			this.method_4(new UpdateSetlistSwitcher(this.class319_0, this.gh3Songlist_0, this.bool_0));
 		}
 
 		private void SetlistTitle_TxtBox_TextChanged(object sender, EventArgs e)
@@ -1986,7 +1986,7 @@ namespace ns15
 			{
 				this.gh3Songlist_0.class214_0.Add(this.SetlistTitle_TxtBox.Text, this.gh3Songlist_0.class214_0[(string)this.Setlist_DropBox.SelectedItem]);
 				this.gh3Songlist_0.class214_0.Remove((string)this.Setlist_DropBox.SelectedItem);
-				this.method_4(new Class256(this.class319_0, this.gh3Songlist_0, this.bool_0));
+				this.method_4(new UpdateSetlistSwitcher(this.class319_0, this.gh3Songlist_0, this.bool_0));
 				this.Setlist_DropBox.Items[this.Setlist_DropBox.SelectedIndex] = this.SetlistTitle_TxtBox.Text;
 			}
 			this.SetlistApply_Btn.Enabled = false;
@@ -4070,7 +4070,7 @@ namespace ns15
 						}
 						if (flag2)
 						{
-							this.method_4(new Class256(this.class319_0, this.gh3Songlist_0, this.bool_0));
+							this.method_4(new UpdateSetlistSwitcher(this.class319_0, this.gh3Songlist_0, this.bool_0));
 						}
 					}
 					new Class249(this.class319_0).method_0();

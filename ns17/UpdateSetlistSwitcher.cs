@@ -6,7 +6,7 @@ using System;
 
 namespace ns17
 {
-	public class Class256 : QbEditor
+	public class UpdateSetlistSwitcher : QbEditor
 	{
 		private GH3Songlist gh3Songlist_0;
 
@@ -14,7 +14,7 @@ namespace ns17
 
 		private bool bool_0;
 
-		public Class256(zzPakNode2 class318_1, GH3Songlist gh3Songlist_1, bool bool_1)
+		public UpdateSetlistSwitcher(zzPakNode2 class318_1, GH3Songlist gh3Songlist_1, bool bool_1)
 		{
 			this.class318_0 = class318_1;
 			this.gh3Songlist_0 = gh3Songlist_1;
@@ -34,7 +34,7 @@ namespace ns17
 
 		public override bool Equals(QbEditor other)
 		{
-			return other is Class256;
+			return other is UpdateSetlistSwitcher;
 		}
 	}
 }
