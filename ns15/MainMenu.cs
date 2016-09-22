@@ -353,6 +353,7 @@ namespace ns15
 
         private ToolStripMenuItem forceRB3MidConversionToolStripMenuItem;
 
+
         private List<string> list_0 = new List<string>(new string[]
 		{
 			"",
@@ -609,7 +610,7 @@ namespace ns15
 					SongProperties songProperties;
 					if ((songProperties = new SongProperties((GH3Song)this.SongListBox.Items[num])).ShowDialog() == DialogResult.OK)
 					{
-						songProperties.method_0();
+						songProperties.GetSongWithChanges();
 						this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 						return;
 					}
@@ -658,55 +659,48 @@ namespace ns15
 			if (this.SongListBox.SelectedItems.Count != 0)
 			{
 				bool enabled = false;
-				foreach (GH3Song gH3Song in this.SongListBox.SelectedItems)
+				foreach (GH3Song song in this.SongListBox.SelectedItems)
 				{
-					if (gH3Song.editable)
+					if (song.editable)
 					{
 						enabled = true;
 					}
 				}
                 this.SaveChart_MenuItem.Enabled = (this.RebuildSong_MenuItem.Enabled = true);
-                 this.DeleteSong_MenuItem.Enabled = enabled;
+                this.DeleteSong_MenuItem.Enabled = enabled;
 			}
 		}
+
+        public static DialogResult MsgBoxEditDefaultSongs()
+        {
+            return MessageBox.Show("Do you really wish to edit a default song? Editing default songs is dangerous and should only be done if you understand the consequences of doing so.", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        }
 
 		private void SongProps_MenuItem_Click(object sender, EventArgs e)
 		{
 			SongProperties songProperties;
             if (!((GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex]).isEditable())
             {
-                DialogResult dialogResult = MessageBox.Show("Warning!: Editing default songs is dangerous. Only continue if you know what you're doing. \nContinue?", "Warning", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                }
-                else if (dialogResult == DialogResult.No)
-                {
+                if (MsgBoxEditDefaultSongs() != DialogResult.Yes)
                     return;
-                }
             }
             if (this.SongListBox.SelectedIndex >= 0 && (songProperties = new SongProperties((GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex])).ShowDialog() == DialogResult.OK)
 			{
-				songProperties.method_0();
+				songProperties.GetSongWithChanges();
 				this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 			}
 		}
 
 		private void RebuildSong_MenuItem_Click(object sender, EventArgs e)
 		{
-			GH3Song gH3Song = (GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex];
+			GH3Song song = (GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex];
             SongData songData;
-            if (!gH3Song.isEditable())
+            if (!song.isEditable())
             {
-                DialogResult dialogResult = MessageBox.Show("Warning!: Editing default songs is dangerous. Only continue if you know what you're doing. \nContinue?", "Warning", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                }
-                else if (dialogResult == DialogResult.No)
-                {
+                if (MsgBoxEditDefaultSongs() != DialogResult.Yes)
                     return;
-                }
             }
-            if (this.SongListBox.SelectedIndex >= 0 && (songData = new SongData(gH3Song.name, false, false)).ShowDialog() == DialogResult.OK)
+            if (this.SongListBox.SelectedIndex >= 0 && (songData = new SongData(song.name, false, false)).ShowDialog() == DialogResult.OK)
 			{
 				if (songData.bool_1)
 				{
@@ -714,11 +708,11 @@ namespace ns15
 					this.method_4(@class);
 					if (DialogResult.Yes == MessageBox.Show("Do you wish to get the song properties from the game track? (Current properties will be overwritten | Mid files have no properties!)", "Tier Exporting", MessageBoxButtons.YesNo))
 					{
-						bool no_rhythm_track = gH3Song.no_rhythm_track;
-						bool use_coop_notetracks = gH3Song.use_coop_notetracks;
-						gH3Song.vmethod_0(@class.class362_0.gh3Song_0);
-						gH3Song.no_rhythm_track = no_rhythm_track;
-						gH3Song.use_coop_notetracks = use_coop_notetracks;
+						bool no_rhythm_track = song.no_rhythm_track;
+						bool use_coop_notetracks = song.use_coop_notetracks;
+						song.vmethod_0(@class.class362_0.gh3Song_0);
+						song.no_rhythm_track = no_rhythm_track;
+						song.use_coop_notetracks = use_coop_notetracks;
 						this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					}
 				}
@@ -726,8 +720,8 @@ namespace ns15
 				{
 					Class248 class2 = songData.method_0(this.dataFolder);
 					this.method_4(class2);
-					gH3Song.no_rhythm_track = !class2.bool_0;
-					gH3Song.use_coop_notetracks = class2.bool_1;
+					song.no_rhythm_track = !class2.bool_0;
+					song.use_coop_notetracks = class2.bool_1;
 					this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 				}
 			}
@@ -798,7 +792,7 @@ namespace ns15
 				SongProperties songProperties = new SongProperties(gH3Song);
 				if (songProperties.ShowDialog() == DialogResult.OK)
 				{
-					songProperties.method_0();
+					songProperties.GetSongWithChanges();
 				}
 				this.gh3Songlist_0.Add(gH3Song.name, gH3Song);
 				this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
@@ -1044,11 +1038,6 @@ namespace ns15
 						{
 							new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).method_1().dbcCreator(fileLocation, gh3Song);
 						}
-                       /* string firstArg = this.dataFolder + "MUSIC\\" + gh3Song.name + ".fsb.xen";
-                        MessageBox.Show(firstArg);
-                        string secondArg = firstArg + ".fsb";
-                        System.Diagnostics.Process.Start("D:\\Guitar Hero 3 Custom Songs\\Chart Maker\\FSB Extractor\\decfsb.exe", "for %%a IN (" + firstArg + ") DO decfsb %%a %%a.fsb -x ac 86 2e ae 6c ee 2c 5e 86 ee\nfor %% b IN(" + secondArg + ") Do ren %% b\nfor %% c IN(*.fsb) Do fsbext - R %% c");
-                        */
                         return;
 					}
 				}
@@ -2233,13 +2222,13 @@ namespace ns15
             this.MinToTray_MenuItem,
             this.SysExit_MenuItem});
             this.rightClickMenu.Name = "rightClickMenu";
-            this.rightClickMenu.Size = new System.Drawing.Size(167, 142);
+            this.rightClickMenu.Size = new System.Drawing.Size(165, 142);
             // 
             // SysHigh_MenuItem
             // 
             this.SysHigh_MenuItem.Name = "SysHigh_MenuItem";
             this.SysHigh_MenuItem.ShowShortcutKeys = false;
-            this.SysHigh_MenuItem.Size = new System.Drawing.Size(166, 22);
+            this.SysHigh_MenuItem.Size = new System.Drawing.Size(164, 22);
             this.SysHigh_MenuItem.Tag = "high";
             this.SysHigh_MenuItem.Text = "High";
             this.SysHigh_MenuItem.Click += new System.EventHandler(this.SysBelow_MenuItem_Click);
@@ -2248,7 +2237,7 @@ namespace ns15
             // 
             this.SysAbove_MenuItem.Name = "SysAbove_MenuItem";
             this.SysAbove_MenuItem.ShowShortcutKeys = false;
-            this.SysAbove_MenuItem.Size = new System.Drawing.Size(166, 22);
+            this.SysAbove_MenuItem.Size = new System.Drawing.Size(164, 22);
             this.SysAbove_MenuItem.Tag = "above";
             this.SysAbove_MenuItem.Text = "Above Normal";
             this.SysAbove_MenuItem.Click += new System.EventHandler(this.SysBelow_MenuItem_Click);
@@ -2257,7 +2246,7 @@ namespace ns15
             // 
             this.SysNormal_MenuItem.Name = "SysNormal_MenuItem";
             this.SysNormal_MenuItem.ShowShortcutKeys = false;
-            this.SysNormal_MenuItem.Size = new System.Drawing.Size(166, 22);
+            this.SysNormal_MenuItem.Size = new System.Drawing.Size(164, 22);
             this.SysNormal_MenuItem.Tag = "normal";
             this.SysNormal_MenuItem.Text = "Normal";
             this.SysNormal_MenuItem.Click += new System.EventHandler(this.SysBelow_MenuItem_Click);
@@ -2266,7 +2255,7 @@ namespace ns15
             // 
             this.SysBelow_MenuItem.Name = "SysBelow_MenuItem";
             this.SysBelow_MenuItem.ShowShortcutKeys = false;
-            this.SysBelow_MenuItem.Size = new System.Drawing.Size(166, 22);
+            this.SysBelow_MenuItem.Size = new System.Drawing.Size(164, 22);
             this.SysBelow_MenuItem.Tag = "below";
             this.SysBelow_MenuItem.Text = "Below Normal";
             this.SysBelow_MenuItem.Click += new System.EventHandler(this.SysBelow_MenuItem_Click);
@@ -2274,20 +2263,20 @@ namespace ns15
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(163, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(161, 6);
             // 
             // MinToTray_MenuItem
             // 
             this.MinToTray_MenuItem.CheckOnClick = true;
             this.MinToTray_MenuItem.Name = "MinToTray_MenuItem";
-            this.MinToTray_MenuItem.Size = new System.Drawing.Size(166, 22);
+            this.MinToTray_MenuItem.Size = new System.Drawing.Size(164, 22);
             this.MinToTray_MenuItem.Text = "Minimize To Tray";
             // 
             // SysExit_MenuItem
             // 
             this.SysExit_MenuItem.Name = "SysExit_MenuItem";
             this.SysExit_MenuItem.ShowShortcutKeys = false;
-            this.SysExit_MenuItem.Size = new System.Drawing.Size(166, 22);
+            this.SysExit_MenuItem.Size = new System.Drawing.Size(164, 22);
             this.SysExit_MenuItem.Text = "Exit";
             this.SysExit_MenuItem.Click += new System.EventHandler(this.Exit_MenuItem_Click);
             // 
@@ -2450,14 +2439,14 @@ namespace ns15
             // 
             this.NewTier_MenuItem.Name = "NewTier_MenuItem";
             this.NewTier_MenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
-            this.NewTier_MenuItem.Size = new System.Drawing.Size(137, 22);
+            this.NewTier_MenuItem.Size = new System.Drawing.Size(136, 22);
             this.NewTier_MenuItem.Text = "New";
             this.NewTier_MenuItem.Click += new System.EventHandler(this.NewTier_MenuItem_Click);
             // 
             // TGHImport_MenuItem
             // 
             this.TGHImport_MenuItem.Name = "TGHImport_MenuItem";
-            this.TGHImport_MenuItem.Size = new System.Drawing.Size(137, 22);
+            this.TGHImport_MenuItem.Size = new System.Drawing.Size(136, 22);
             this.TGHImport_MenuItem.Text = "TGH Import";
             this.TGHImport_MenuItem.Click += new System.EventHandler(this.TGHImport_MenuItem_Click);
             // 
@@ -2951,7 +2940,7 @@ namespace ns15
             this.AudioView_EditorBtn});
             this.ToggleElements_EditorSplitBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToggleElements_EditorSplitBtn.Name = "ToggleElements_EditorSplitBtn";
-            this.ToggleElements_EditorSplitBtn.Size = new System.Drawing.Size(111, 22);
+            this.ToggleElements_EditorSplitBtn.Size = new System.Drawing.Size(110, 22);
             this.ToggleElements_EditorSplitBtn.Text = "Toggle Elements";
             this.ToggleElements_EditorSplitBtn.ButtonClick += new System.EventHandler(this.ToggleElements_EditorSplitBtn_ButtonClick);
             // 

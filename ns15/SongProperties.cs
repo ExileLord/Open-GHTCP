@@ -8,7 +8,7 @@ namespace ns15
 {
 	public class SongProperties : Form
 	{
-		private GH3Song gh3Song_0;
+		private GH3Song Song;
 
 		private IContainer icontainer_0;
 
@@ -60,21 +60,21 @@ namespace ns15
 
 		private Label label11;
 
-		private CheckBox Original_CheckBox;
+		private CheckBox chkOriginal;
 
-		private CheckBox Rhythm_CheckBox;
+		private CheckBox chkRhythm;
 
-		private CheckBox Coop_CheckBox;
+		private CheckBox chkCoop;
 
-		private Button ApplyBtn;
+		private Button btnApply;
 
-		private Button CancelBtn;
+		private Button btnCancel;
 
-		private CheckBox Keyboard_CheckBox;
+		private CheckBox chkKeyboard;
 
-		private RadioButton BassBtn;
+		private RadioButton rBtnBass;
 
-		private RadioButton RhythmBtn;
+		private RadioButton rBtnRhythm;
 
 		private ComboBox BossBox;
 
@@ -108,21 +108,21 @@ namespace ns15
 
 		private Label label14;
 
-		public SongProperties(string string_0)
+		public SongProperties(string songName)
 		{
 			this.InitializeComponent();
-			this.gh3Song_0 = new GH3Song();
-			this.Text = this.Text + " (" + string_0 + ")";
+			this.Song = new GH3Song();
+			this.Text = this.Text + " (" + songName + ")";
 			this.SingerBox.SelectedIndex = 0;
 			this.CountOffBox.SelectedIndex = 0;
 			this.BassistBox.SelectedIndex = 0;
 			this.BossBox.SelectedIndex = 0;
 		}
 
-		public SongProperties(GH3Song gh3Song_1) : this(gh3Song_1.name)
+		public SongProperties(GH3Song song) : this(song.name)
 		{
-			this.gh3Song_0 = gh3Song_1;
-			if (this.gh3Song_0 is GHASong)
+			this.Song = song;
+			if (this.Song is GHASong)
 			{
 				this.BassistBox.Enabled = false;
 				this.BossBox.Items.Add("Joe Perry Props");
@@ -136,69 +136,69 @@ namespace ns15
 				this.BossBox.Items.Add("Slash Props");
 				this.BossBox.Items.Add("Lou Props");
 			}
-			this.ApplyBtn.Enabled = this.gh3Song_0.editable;
-			this.TitleTxt.Text = this.gh3Song_0.title;
-			this.ArtistTxt.Text = this.gh3Song_0.artist;
-			this.YearTxt.Text = this.gh3Song_0.year;
-			this.Original_CheckBox.Checked = this.gh3Song_0.original_artist;
-			this.Rhythm_CheckBox.Checked = !this.gh3Song_0.no_rhythm_track;
-			this.Keyboard_CheckBox.Checked = this.gh3Song_0.keyboard;
-			this.Coop_CheckBox.Checked = this.gh3Song_0.use_coop_notetracks;
-			this.BassBtn.Checked = !(this.RhythmBtn.Checked = this.gh3Song_0.not_bass);
-			if (this.gh3Song_0.artist_text is bool)
+            this.btnApply.Enabled = true; // this.gh3Song_0.editable;
+			this.TitleTxt.Text = this.Song.title;
+			this.ArtistTxt.Text = this.Song.artist;
+			this.YearTxt.Text = this.Song.year;
+			this.chkOriginal.Checked = this.Song.original_artist;
+			this.chkRhythm.Checked = !this.Song.no_rhythm_track;
+			this.chkKeyboard.Checked = this.Song.keyboard;
+			this.chkCoop.Checked = this.Song.use_coop_notetracks;
+			this.rBtnBass.Checked = !(this.rBtnRhythm.Checked = this.Song.not_bass);
+			if (this.Song.artist_text is bool)
 			{
-				this.FamousByBtn.Checked = !(this.ByBtn.Checked = (bool)this.gh3Song_0.artist_text);
+				this.FamousByBtn.Checked = !(this.ByBtn.Checked = (bool)this.Song.artist_text);
 			}
 			else
 			{
-				this.ArtistTextBox.Text = (string)this.gh3Song_0.artist_text;
+				this.ArtistTextBox.Text = (string)this.Song.artist_text;
 				this.CustomTxtBtn.Checked = true;
 			}
-			this.GuitarVolBox.Value = (decimal)this.gh3Song_0.guitar_vol;
-			this.BandVolBox.Value = (decimal)this.gh3Song_0.band_vol;
-			this.HammerOnBox.Value = (decimal)this.gh3Song_0.hammer_on;
-			this.OffsetBox.Value = this.gh3Song_0.gem_offset;
-			if (this.gh3Song_0.singer.Equals(""))
+			this.GuitarVolBox.Value = (decimal)this.Song.guitar_vol;
+			this.BandVolBox.Value = (decimal)this.Song.band_vol;
+			this.HammerOnBox.Value = (decimal)this.Song.hammer_on;
+			this.OffsetBox.Value = this.Song.gem_offset;
+			if (this.Song.singer.Equals(""))
 			{
 				this.SingerBox.SelectedIndex = 0;
 			}
-			else if (this.gh3Song_0.singer.Equals("male"))
+			else if (this.Song.singer.Equals("male"))
 			{
 				this.SingerBox.SelectedIndex = 1;
 			}
-			else if (this.gh3Song_0.singer.Equals("female"))
+			else if (this.Song.singer.Equals("female"))
 			{
 				this.SingerBox.SelectedIndex = 2;
 			}
-			else if (this.gh3Song_0.singer.Equals("bret"))
+			else if (this.Song.singer.Equals("bret"))
 			{
 				this.SingerBox.SelectedItem = "Bret Michaels";
 			}
-			this.CountOffBox.SelectedItem = this.gh3Song_0.countoff.ToLower();
-			this.BassistBox.SelectedItem = this.gh3Song_0.bassist;
-			if (this.gh3Song_0.boss.Equals(""))
+			this.CountOffBox.SelectedItem = this.Song.countoff.ToLower();
+			this.BassistBox.SelectedItem = this.Song.bassist;
+			if (this.Song.boss.Equals(""))
 			{
 				this.BossBox.SelectedIndex = 0;
 			}
-			else if (this.gh3Song_0.boss.Equals("boss_tommorello_props"))
+			else if (this.Song.boss.Equals("boss_tommorello_props"))
 			{
 				this.BossBox.SelectedItem = "Tom Morello Props";
 			}
-			else if (this.gh3Song_0.boss.Equals("boss_slash_props"))
+			else if (this.Song.boss.Equals("boss_slash_props"))
 			{
 				this.BossBox.SelectedItem = "Slash Props";
 			}
-			else if (this.gh3Song_0.boss.Equals("boss_devil_props"))
+			else if (this.Song.boss.Equals("boss_devil_props"))
 			{
 				this.BossBox.SelectedItem = "Lou Props";
 			}
-			else if (this.gh3Song_0.boss.Equals("boss_joe_props"))
+			else if (this.Song.boss.Equals("boss_joe_props"))
 			{
 				this.BossBox.SelectedItem = "Joe Perry Props";
 			}
 			if (this.AeroGroupBox.Enabled)
 			{
-				GHASong gHASong = (GHASong)this.gh3Song_0;
+				GHASong gHASong = (GHASong)this.Song;
 				this.CoveredTxt.Text = gHASong.covered_by;
 				this.SingAnimPakTxt.Text = gHASong.singer_anim_pak;
 				this.BandBox.SelectedItem = gHASong.band;
@@ -208,37 +208,46 @@ namespace ns15
 			}
 		}
 
-		public GH3Song method_0()
+        void btnApply_Click(Object sender, EventArgs e)
+        {
+            if ( !this.Song.isEditable() && (MainMenu.MsgBoxEditDefaultSongs() != DialogResult.Yes) )
+            {
+                this.DialogResult = DialogResult.None;
+                return;
+            }
+        }
+
+		public GH3Song GetSongWithChanges()
 		{
-			this.gh3Song_0.title = this.TitleTxt.Text;
-			this.gh3Song_0.artist = this.ArtistTxt.Text;
-			this.gh3Song_0.year = this.YearTxt.Text;
-			this.gh3Song_0.original_artist = this.Original_CheckBox.Checked;
-			this.gh3Song_0.no_rhythm_track = !this.Rhythm_CheckBox.Checked;
-			this.gh3Song_0.keyboard = this.Keyboard_CheckBox.Checked;
-			this.gh3Song_0.use_coop_notetracks = this.Coop_CheckBox.Checked;
-			this.gh3Song_0.not_bass = this.RhythmBtn.Checked;
+			this.Song.title = this.TitleTxt.Text;
+			this.Song.artist = this.ArtistTxt.Text;
+			this.Song.year = this.YearTxt.Text;
+			this.Song.original_artist = this.chkOriginal.Checked;
+			this.Song.no_rhythm_track = !this.chkRhythm.Checked;
+			this.Song.keyboard = this.chkKeyboard.Checked;
+			this.Song.use_coop_notetracks = this.chkCoop.Checked;
+			this.Song.not_bass = this.rBtnRhythm.Checked;
 			if (this.CustomTxtBtn.Checked)
 			{
-				this.gh3Song_0.artist_text = this.ArtistTextBox.Text;
+				this.Song.artist_text = this.ArtistTextBox.Text;
 			}
 			else
 			{
-				this.gh3Song_0.artist_text = this.ByBtn.Checked;
+				this.Song.artist_text = this.ByBtn.Checked;
 			}
-			this.gh3Song_0.guitar_vol = (float)this.GuitarVolBox.Value;
-			this.gh3Song_0.band_vol = (float)this.BandVolBox.Value;
-			this.gh3Song_0.hammer_on = (float)this.HammerOnBox.Value;
-			this.gh3Song_0.input_offset = (this.gh3Song_0.gem_offset = (int)this.OffsetBox.Value);
-			this.gh3Song_0.singer = (new string[]
+			this.Song.guitar_vol = (float)this.GuitarVolBox.Value;
+			this.Song.band_vol = (float)this.BandVolBox.Value;
+			this.Song.hammer_on = (float)this.HammerOnBox.Value;
+			this.Song.input_offset = (this.Song.gem_offset = (int)this.OffsetBox.Value);
+			this.Song.singer = (new string[]
 			{
 				"",
 				"male",
 				"female",
 				"bret"
 			})[this.SingerBox.SelectedIndex];
-			this.gh3Song_0.countoff = (string)this.CountOffBox.SelectedItem;
-			this.gh3Song_0.bassist = (string)this.BassistBox.SelectedItem;
+			this.Song.countoff = (string)this.CountOffBox.SelectedItem;
+			this.Song.bassist = (string)this.BassistBox.SelectedItem;
 			string a;
 			if ((a = (string)this.BossBox.SelectedItem) != null)
 			{
@@ -250,35 +259,35 @@ namespace ns15
 						{
 							if (a == "Joe Perry Props")
 							{
-								this.gh3Song_0.boss = "boss_joe_props";
+								this.Song.boss = "boss_joe_props";
 							}
 						}
 						else
 						{
-							this.gh3Song_0.boss = "boss_devil_props";
+							this.Song.boss = "boss_devil_props";
 						}
 					}
 					else
 					{
-						this.gh3Song_0.boss = "boss_slash_props";
+						this.Song.boss = "boss_slash_props";
 					}
 				}
 				else
 				{
-					this.gh3Song_0.boss = "boss_tommorello_props";
+					this.Song.boss = "boss_tommorello_props";
 				}
 			}
-			if (this.gh3Song_0 is GHASong)
+			if (this.Song is GHASong)
 			{
-				GHASong gHASong = (GHASong)this.gh3Song_0;
-				gHASong.covered_by = this.CoveredTxt.Text;
-				gHASong.singer_anim_pak = this.SingAnimPakTxt.Text;
-				gHASong.band = (string)this.BandBox.SelectedItem;
-				this.BPM8NoteBox.Value = gHASong.thin_fretbar_8note_params_high_bpm;
-				this.AeroGuitaristBox.Checked = gHASong.guitarist_checksum;
-				this.PerryMicBox.Checked = gHASong.perry_mic_stand;
+				GHASong song = (GHASong)this.Song;
+				song.covered_by = this.CoveredTxt.Text;
+				song.singer_anim_pak = this.SingAnimPakTxt.Text;
+				song.band = (string)this.BandBox.SelectedItem;
+				this.BPM8NoteBox.Value = song.thin_fretbar_8note_params_high_bpm;
+				this.AeroGuitaristBox.Checked = song.guitarist_checksum;
+				this.PerryMicBox.Checked = song.perry_mic_stand;
 			}
-			return this.gh3Song_0;
+			return this.Song;
 		}
 
 		private void ByBtn_CheckedChanged(object sender, EventArgs e)
@@ -332,14 +341,14 @@ namespace ns15
 			this.CustomTxtBtn = new RadioButton();
 			this.ArtistTextBox = new TextBox();
 			this.label11 = new Label();
-			this.Original_CheckBox = new CheckBox();
-			this.Rhythm_CheckBox = new CheckBox();
-			this.Coop_CheckBox = new CheckBox();
-			this.ApplyBtn = new Button();
-			this.CancelBtn = new Button();
-			this.Keyboard_CheckBox = new CheckBox();
-			this.BassBtn = new RadioButton();
-			this.RhythmBtn = new RadioButton();
+			this.chkOriginal = new CheckBox();
+			this.chkRhythm = new CheckBox();
+			this.chkCoop = new CheckBox();
+			this.btnApply = new Button();
+			this.btnCancel = new Button();
+			this.chkKeyboard = new CheckBox();
+			this.rBtnBass = new RadioButton();
+			this.rBtnRhythm = new RadioButton();
 			this.BossBox = new ComboBox();
 			this.label12 = new Label();
 			this.panel1 = new Panel();
@@ -635,71 +644,80 @@ namespace ns15
 			this.label11.TabIndex = 34;
 			this.label11.Text = "Artist Text:";
 			this.label11.TextAlign = ContentAlignment.MiddleCenter;
-			this.Original_CheckBox.AutoSize = true;
-			this.Original_CheckBox.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			this.Original_CheckBox.Location = new Point(16, 302);
-			this.Original_CheckBox.Name = "Original_CheckBox";
-			this.Original_CheckBox.Size = new Size(124, 23);
-			this.Original_CheckBox.TabIndex = 15;
-			this.Original_CheckBox.Text = "Original Artist";
-			this.Original_CheckBox.UseVisualStyleBackColor = true;
-			this.Rhythm_CheckBox.AutoSize = true;
-			this.Rhythm_CheckBox.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			this.Rhythm_CheckBox.Location = new Point(16, 331);
-			this.Rhythm_CheckBox.Name = "Rhythm_CheckBox";
-			this.Rhythm_CheckBox.Size = new Size(125, 23);
-			this.Rhythm_CheckBox.TabIndex = 18;
-			this.Rhythm_CheckBox.Text = "Rhythm Track";
-			this.Rhythm_CheckBox.UseVisualStyleBackColor = true;
-			this.Coop_CheckBox.AutoSize = true;
-			this.Coop_CheckBox.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			this.Coop_CheckBox.Location = new Point(246, 302);
-			this.Coop_CheckBox.Name = "Coop_CheckBox";
-			this.Coop_CheckBox.Size = new Size(63, 23);
-			this.Coop_CheckBox.TabIndex = 17;
-			this.Coop_CheckBox.Text = "Coop";
-			this.Coop_CheckBox.UseVisualStyleBackColor = true;
-			this.ApplyBtn.DialogResult = DialogResult.OK;
-			this.ApplyBtn.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			this.ApplyBtn.Location = new Point(318, 327);
-			this.ApplyBtn.Name = "ApplyBtn";
-			this.ApplyBtn.Size = new Size(65, 27);
-			this.ApplyBtn.TabIndex = 21;
-			this.ApplyBtn.Text = "Apply";
-			this.ApplyBtn.UseVisualStyleBackColor = true;
-			this.CancelBtn.DialogResult = DialogResult.Cancel;
-			this.CancelBtn.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			this.CancelBtn.Location = new Point(389, 327);
-			this.CancelBtn.Name = "CancelBtn";
-			this.CancelBtn.Size = new Size(65, 27);
-			this.CancelBtn.TabIndex = 22;
-			this.CancelBtn.Text = "Cancel";
-			this.CancelBtn.UseVisualStyleBackColor = true;
-			this.Keyboard_CheckBox.AutoSize = true;
-			this.Keyboard_CheckBox.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			this.Keyboard_CheckBox.Location = new Point(146, 302);
-			this.Keyboard_CheckBox.Name = "Keyboard_CheckBox";
-			this.Keyboard_CheckBox.Size = new Size(94, 23);
-			this.Keyboard_CheckBox.TabIndex = 16;
-			this.Keyboard_CheckBox.Text = "Keyboard";
-			this.Keyboard_CheckBox.UseVisualStyleBackColor = true;
-			this.BassBtn.AutoSize = true;
-			this.BassBtn.Checked = true;
-			this.BassBtn.Location = new Point(67, 3);
-			this.BassBtn.Name = "BassBtn";
-			this.BassBtn.Size = new Size(48, 17);
-			this.BassBtn.TabIndex = 20;
-			this.BassBtn.TabStop = true;
-			this.BassBtn.Text = "Bass";
-			this.BassBtn.UseVisualStyleBackColor = true;
-			this.RhythmBtn.AutoSize = true;
-			this.RhythmBtn.Location = new Point(0, 3);
-			this.RhythmBtn.Name = "RhythmBtn";
-			this.RhythmBtn.Size = new Size(61, 17);
-			this.RhythmBtn.TabIndex = 19;
-			this.RhythmBtn.TabStop = true;
-			this.RhythmBtn.Text = "Rhythm";
-			this.RhythmBtn.UseVisualStyleBackColor = true;
+			this.chkOriginal.AutoSize = true;
+			this.chkOriginal.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			this.chkOriginal.Location = new Point(16, 302);
+			this.chkOriginal.Name = "Original_CheckBox";
+			this.chkOriginal.Size = new Size(124, 23);
+			this.chkOriginal.TabIndex = 15;
+			this.chkOriginal.Text = "Original Artist";
+			this.chkOriginal.UseVisualStyleBackColor = true;
+
+			this.chkRhythm.AutoSize = true;
+			this.chkRhythm.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			this.chkRhythm.Location = new Point(16, 331);
+			this.chkRhythm.Name = "Rhythm_CheckBox";
+			this.chkRhythm.Size = new Size(125, 23);
+			this.chkRhythm.TabIndex = 18;
+			this.chkRhythm.Text = "Rhythm Track";
+			this.chkRhythm.UseVisualStyleBackColor = true;
+
+			this.chkCoop.AutoSize = true;
+			this.chkCoop.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			this.chkCoop.Location = new Point(246, 302);
+			this.chkCoop.Name = "Coop_CheckBox";
+			this.chkCoop.Size = new Size(63, 23);
+			this.chkCoop.TabIndex = 17;
+			this.chkCoop.Text = "Coop";
+			this.chkCoop.UseVisualStyleBackColor = true;
+
+            this.btnApply.Click += btnApply_Click;
+			this.btnApply.DialogResult = DialogResult.OK;
+			this.btnApply.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			this.btnApply.Location = new Point(318, 327);
+			this.btnApply.Name = "ApplyBtn";
+			this.btnApply.Size = new Size(65, 27);
+			this.btnApply.TabIndex = 21;
+			this.btnApply.Text = "Apply";
+			this.btnApply.UseVisualStyleBackColor = true;
+
+			this.btnCancel.DialogResult = DialogResult.Cancel;
+			this.btnCancel.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			this.btnCancel.Location = new Point(389, 327);
+			this.btnCancel.Name = "CancelBtn";
+			this.btnCancel.Size = new Size(65, 27);
+			this.btnCancel.TabIndex = 22;
+			this.btnCancel.Text = "Cancel";
+			this.btnCancel.UseVisualStyleBackColor = true;
+
+			this.chkKeyboard.AutoSize = true;
+			this.chkKeyboard.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			this.chkKeyboard.Location = new Point(146, 302);
+			this.chkKeyboard.Name = "Keyboard_CheckBox";
+			this.chkKeyboard.Size = new Size(94, 23);
+			this.chkKeyboard.TabIndex = 16;
+			this.chkKeyboard.Text = "Keyboard";
+			this.chkKeyboard.UseVisualStyleBackColor = true;
+
+			this.rBtnBass.AutoSize = true;
+			this.rBtnBass.Checked = true;
+			this.rBtnBass.Location = new Point(67, 3);
+			this.rBtnBass.Name = "BassBtn";
+			this.rBtnBass.Size = new Size(48, 17);
+			this.rBtnBass.TabIndex = 20;
+			this.rBtnBass.TabStop = true;
+			this.rBtnBass.Text = "Bass";
+			this.rBtnBass.UseVisualStyleBackColor = true;
+
+			this.rBtnRhythm.AutoSize = true;
+			this.rBtnRhythm.Location = new Point(0, 3);
+			this.rBtnRhythm.Name = "RhythmBtn";
+			this.rBtnRhythm.Size = new Size(61, 17);
+			this.rBtnRhythm.TabIndex = 19;
+			this.rBtnRhythm.TabStop = true;
+			this.rBtnRhythm.Text = "Rhythm";
+			this.rBtnRhythm.UseVisualStyleBackColor = true;
+
 			this.BossBox.DropDownStyle = ComboBoxStyle.DropDownList;
 			this.BossBox.FormattingEnabled = true;
 			this.BossBox.Items.AddRange(new object[]
@@ -710,6 +728,7 @@ namespace ns15
 			this.BossBox.Name = "BossBox";
 			this.BossBox.Size = new Size(137, 21);
 			this.BossBox.TabIndex = 10;
+
 			this.label12.AutoSize = true;
 			this.label12.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
 			this.label12.Location = new Point(189, 100);
@@ -718,6 +737,7 @@ namespace ns15
 			this.label12.TabIndex = 54;
 			this.label12.Text = "Boss Properties:";
 			this.label12.TextAlign = ContentAlignment.MiddleCenter;
+
 			this.panel1.Controls.Add(this.label11);
 			this.panel1.Controls.Add(this.ByBtn);
 			this.panel1.Controls.Add(this.FamousByBtn);
@@ -727,12 +747,14 @@ namespace ns15
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new Size(267, 68);
 			this.panel1.TabIndex = 33;
-			this.panel2.Controls.Add(this.RhythmBtn);
-			this.panel2.Controls.Add(this.BassBtn);
+
+			this.panel2.Controls.Add(this.rBtnRhythm);
+			this.panel2.Controls.Add(this.rBtnBass);
 			this.panel2.Location = new Point(146, 331);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new Size(117, 23);
 			this.panel2.TabIndex = 35;
+
 			this.AeroGroupBox.Controls.Add(this.SingAnimPakTxt);
 			this.AeroGroupBox.Controls.Add(this.label14);
 			this.AeroGroupBox.Controls.Add(this.PerryMicBox);
@@ -749,6 +771,7 @@ namespace ns15
 			this.AeroGroupBox.TabIndex = 55;
 			this.AeroGroupBox.TabStop = false;
 			this.AeroGroupBox.Text = "Aerosmith";
+
 			this.SingAnimPakTxt.Location = new Point(174, 45);
 			this.SingAnimPakTxt.Name = "SingAnimPakTxt";
 			this.SingAnimPakTxt.Size = new Size(275, 20);
@@ -868,7 +891,7 @@ namespace ns15
 			base.AutoScaleDimensions = new SizeF(6f, 13f);
 			base.AutoScaleMode = AutoScaleMode.Font;
 			base.ClientSize = new Size(466, 358);
-			base.Controls.Add(this.Rhythm_CheckBox);
+			base.Controls.Add(this.chkRhythm);
 			base.Controls.Add(this.AeroGroupBox);
 			base.Controls.Add(this.panel2);
 			base.Controls.Add(this.panel1);
@@ -882,18 +905,18 @@ namespace ns15
 			base.Controls.Add(this.label3);
 			base.Controls.Add(this.BassistBox);
 			base.Controls.Add(this.label2);
-			base.Controls.Add(this.Keyboard_CheckBox);
+			base.Controls.Add(this.chkKeyboard);
 			base.Controls.Add(this.ArtistTxt);
 			base.Controls.Add(this.label1);
-			base.Controls.Add(this.CancelBtn);
-			base.Controls.Add(this.ApplyBtn);
+			base.Controls.Add(this.btnCancel);
+			base.Controls.Add(this.btnApply);
 			base.Controls.Add(this.YearTxt);
 			base.Controls.Add(this.OffsetBox);
 			base.Controls.Add(this.TitleTxt);
 			base.Controls.Add(this.SingerBox);
 			base.Controls.Add(this.CountOffBox);
-			base.Controls.Add(this.Coop_CheckBox);
-			base.Controls.Add(this.Original_CheckBox);
+			base.Controls.Add(this.chkCoop);
+			base.Controls.Add(this.chkOriginal);
 			base.Controls.Add(this.label10);
 			base.Controls.Add(this.label9);
 			base.Controls.Add(this.label8);
@@ -918,5 +941,5 @@ namespace ns15
 			base.ResumeLayout(false);
 			base.PerformLayout();
 		}
-	}
+    }
 }
