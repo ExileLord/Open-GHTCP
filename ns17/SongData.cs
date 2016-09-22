@@ -1447,8 +1447,7 @@ namespace ns17
                     //Configures midi
                     else if (fileName.EndsWith(".mid"))
 					{
-                        ChartParser chartParser = Midi2Chart.getMidiSong(fileName, this.forceRB3);
-                        this.qbcParser = chartParser.method_3();
+                        this.qbcParser = Midi2Chart.getMidiSong(fileName, this.forceRB3);
 					}
                     //Configures charts
                     else

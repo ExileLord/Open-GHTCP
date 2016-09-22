@@ -4,18 +4,29 @@ using ns9;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace MidiConverter
 {
     class Midi2Chart
     {
 
-        public static ChartParser getMidiSong(string fileName, bool forceRB3)
+        public static QBCParser getMidiSong(string fileName, bool forceRB3)
         {
-            Song song = MidReader.ReadMidi(fileName);
-            String chartFile = ChartWriter.writeChart(song, "", false, false, forceRB3).ToString();
-            ChartParser chartParser = new ChartParser(chartFile, false);
-            return chartParser;
+            QBCParser qbc = null;
+            Song song = null;
+            try {
+                song = MidReader.ReadMidi(fileName);
+                String chartFile = ChartWriter.writeChart(song, "", false, forceRB3).ToString();
+                ChartParser chartParser = new ChartParser(chartFile, false);
+                qbc = chartParser.method_3();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Error using the new MIDI import method.\nReverting to original GHTCP method. \n\n" + e.ToString(), "MIDI Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                qbc = new MIDIParser(fileName).method_0().method_3();
+            }
+            return qbc;
         }
 
     }

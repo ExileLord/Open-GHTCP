@@ -7,6 +7,7 @@ using ns21;
 using ns22;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace GuitarHero.Songlist
 {
@@ -54,29 +55,29 @@ namespace GuitarHero.Songlist
 
 		public GH3Songlist(zzGenericNode1 class308_0, GH3Songlist gh3Songlist_0)
 		{
-			this.method_12(class308_0, gh3Songlist_0);
+			this.findEditableSongs(class308_0, gh3Songlist_0);
 		}
 
 		public void Add(GH3Song gh3Song_0)
 		{
-			if (!base.ContainsKey(gh3Song_0.vmethod_3()))
+			if (!base.ContainsKey(gh3Song_0.getSongName()))
 			{
-				base.Add(gh3Song_0.vmethod_3(), gh3Song_0);
-				QbSongClass1.smethod_9(gh3Song_0.vmethod_3());
+				base.Add(gh3Song_0.getSongName(), gh3Song_0);
+				QbSongClass1.smethod_9(gh3Song_0.getSongName());
 			}
 		}
 
 		public void method_0(GH3Song gh3Song_0, bool bool_0)
 		{
-			if (!base.ContainsKey(gh3Song_0.vmethod_3()))
+			if (!base.ContainsKey(gh3Song_0.getSongName()))
 			{
-				base.Add(gh3Song_0.vmethod_3(), gh3Song_0);
-				QbSongClass1.smethod_9(gh3Song_0.vmethod_3());
+				base.Add(gh3Song_0.getSongName(), gh3Song_0);
+				QbSongClass1.smethod_9(gh3Song_0.getSongName());
 				return;
 			}
-			if (base[gh3Song_0.vmethod_3()].vmethod_1() && bool_0)
+			if (base[gh3Song_0.getSongName()].isEditable() && bool_0)
 			{
-				base[gh3Song_0.vmethod_3()].vmethod_0(gh3Song_0);
+				base[gh3Song_0.getSongName()].vmethod_0(gh3Song_0);
 			}
 		}
 
@@ -97,7 +98,7 @@ namespace GuitarHero.Songlist
 					}
 				}
 			}
-			base.Remove(gh3Song_0.vmethod_3());
+			base.Remove(gh3Song_0.getSongName());
 			return list;
 		}
 
@@ -126,7 +127,7 @@ namespace GuitarHero.Songlist
 				{
 					foreach (GH3Song current4 in base.Values)
 					{
-						if (!current4.vmethod_1())
+						if (!current4.isEditable())
 						{
 							songList.Remove(current4);
 						}
@@ -134,7 +135,7 @@ namespace GuitarHero.Songlist
 				}
 				foreach (GH3Song current5 in base.Values)
 				{
-					if (!current5.method_0())
+					if (!current5.isVisible())
 					{
 						songList.Remove(current5);
 					}
@@ -216,7 +217,7 @@ namespace GuitarHero.Songlist
 			return this.gh3SetlistList[this.dictionary_1[int_0].setlist];
 		}
 
-		public void method_12(zzGenericNode1 class308_0, GH3Songlist gh3Songlist_0)
+		public void findEditableSongs(zzGenericNode1 class308_0, GH3Songlist gh3Songlist_0)
 		{
 			StructureHeaderNode @class = class308_0.method_5<StructurePointerRootNode>(new StructurePointerRootNode("permanent_songlist_props")).method_7();
 			bool flag = class308_0.method_5<TagStructureNode>(new TagStructureNode("band")) != null;
@@ -226,9 +227,9 @@ namespace GuitarHero.Songlist
 				GH3Song gH3Song = flag ? new GHASong(class2) : new GH3Song(class2);
 				if (gh3Songlist_0 != null)
 				{
-					gH3Song.vmethod_2(!gh3Songlist_0.method_3(gH3Song.vmethod_3()));
+					gH3Song.setEditable(!gh3Songlist_0.method_3(gH3Song.getSongName()));
 				}
-				gH3Song.method_1(!GH3Songlist.IgnoreSongs.Contains(class2.int_0));
+				gH3Song.setVisible(!GH3Songlist.IgnoreSongs.Contains(class2.int_0));
 				this.Add(gH3Song);
 			}
 		}

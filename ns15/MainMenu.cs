@@ -665,14 +665,26 @@ namespace ns15
 						enabled = true;
 					}
 				}
-				this.SaveChart_MenuItem.Enabled = (this.RebuildSong_MenuItem.Enabled = (this.DeleteSong_MenuItem.Enabled = enabled));
+                this.SaveChart_MenuItem.Enabled = (this.RebuildSong_MenuItem.Enabled = true);
+                 this.DeleteSong_MenuItem.Enabled = enabled;
 			}
 		}
 
 		private void SongProps_MenuItem_Click(object sender, EventArgs e)
 		{
 			SongProperties songProperties;
-			if (this.SongListBox.SelectedIndex >= 0 && (songProperties = new SongProperties((GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex])).ShowDialog() == DialogResult.OK)
+            if (!((GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex]).isEditable())
+            {
+                DialogResult dialogResult = MessageBox.Show("Warning!: Editing default songs is dangerous. Only continue if you know what you're doing. \nContinue?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            if (this.SongListBox.SelectedIndex >= 0 && (songProperties = new SongProperties((GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex])).ShowDialog() == DialogResult.OK)
 			{
 				songProperties.method_0();
 				this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
@@ -681,9 +693,20 @@ namespace ns15
 
 		private void RebuildSong_MenuItem_Click(object sender, EventArgs e)
 		{
-			GH3Song gH3Song;
-			SongData songData;
-			if (this.SongListBox.SelectedIndex >= 0 && (gH3Song = (GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex]).editable && (songData = new SongData(gH3Song.name, false, false)).ShowDialog() == DialogResult.OK)
+			GH3Song gH3Song = (GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex];
+            SongData songData;
+            if (!gH3Song.isEditable())
+            {
+                DialogResult dialogResult = MessageBox.Show("Warning!: Editing default songs is dangerous. Only continue if you know what you're doing. \nContinue?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            if (this.SongListBox.SelectedIndex >= 0 && (songData = new SongData(gH3Song.name, false, false)).ShowDialog() == DialogResult.OK)
 			{
 				if (songData.bool_1)
 				{
@@ -847,8 +870,7 @@ namespace ns15
 					}
 					else if (fileName.EndsWith(".mid"))
 					{
-                        ChartParser chartParser = Midi2Chart.getMidiSong(fileName, this.forceRB3MidConversionToolStripMenuItem.Checked);
-                        qbcParser = chartParser.method_3();
+                        qbcParser = Midi2Chart.getMidiSong(fileName, this.forceRB3MidConversionToolStripMenuItem.Checked);
 					}
 					else
 					{
@@ -1005,11 +1027,7 @@ namespace ns15
 			if (this.SongListBox.SelectedIndex >= 0)
 			{
 				GH3Song gh3Song = (GH3Song)this.SongListBox.SelectedItem;
-				if (!gh3Song.editable)
-				{
-					return;
-				}
-				string fileLocation = KeyGenerator.OpenOrSaveFile("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
+                string fileLocation = KeyGenerator.OpenOrSaveFile("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
 				if (!fileLocation.Equals("") && File.Exists(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen"))
 				{
 					using (zzPakNode2 @class = new zzPakNode2(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
@@ -1286,8 +1304,7 @@ namespace ns15
 								}
 								else if (current.EndsWith(".mid"))
 								{
-                                    ChartParser chartParser = Midi2Chart.getMidiSong(current, this.forceRB3MidConversionToolStripMenuItem.Checked);
-                                    qbcParser = chartParser.method_3();
+                                    qbcParser = Midi2Chart.getMidiSong(current, this.forceRB3MidConversionToolStripMenuItem.Checked);
 								}
 								else
 								{
@@ -1766,6 +1783,7 @@ namespace ns15
 			registryKey.SetValue("ForceConversion", Class248.bool_3 ? 1 : 0);
 			this.method_15();
 			this.SongEditor_Control.Dispose();
+            this.notifyIcon_0.Visible = false;
             this.Dispose(true);
         }
 
@@ -2073,6 +2091,7 @@ namespace ns15
             this.RebuildSong_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SilentGuitar_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ForceMp3Conversion_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forceRB3MidConversionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteSong_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoveSong_ToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.HideUnEdit_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -2173,7 +2192,6 @@ namespace ns15
             this.MainContainer = new System.Windows.Forms.ToolStripContainer();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.ToolStripStatusLbl = new System.Windows.Forms.ToolStripStatusLabel();
-            this.forceRB3MidConversionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rightClickMenu.SuspendLayout();
             this.TopMenuStrip.SuspendLayout();
             this.SidePanel.SuspendLayout();
@@ -2611,6 +2629,14 @@ namespace ns15
             this.ForceMp3Conversion_MenuItem.Size = new System.Drawing.Size(221, 22);
             this.ForceMp3Conversion_MenuItem.Text = "Force Mp3 Conversion";
             this.ForceMp3Conversion_MenuItem.Click += new System.EventHandler(this.ForceMp3Conversion_MenuItem_Click);
+            // 
+            // forceRB3MidConversionToolStripMenuItem
+            // 
+            this.forceRB3MidConversionToolStripMenuItem.CheckOnClick = true;
+            this.forceRB3MidConversionToolStripMenuItem.Name = "forceRB3MidConversionToolStripMenuItem";
+            this.forceRB3MidConversionToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.forceRB3MidConversionToolStripMenuItem.Text = "Force RB3 Mid Conversion";
+            this.forceRB3MidConversionToolStripMenuItem.Click += new System.EventHandler(this.forceRB3MidConversionToolStripMenuItem_Click);
             // 
             // DeleteSong_MenuItem
             // 
@@ -3404,6 +3430,11 @@ namespace ns15
             // TierUnlocked_NumBox
             // 
             this.TierUnlocked_NumBox.Location = new System.Drawing.Point(193, 55);
+            this.TierUnlocked_NumBox.Maximum = new decimal(new int[] {
+            65536,
+            0,
+            0,
+            0});
             this.TierUnlocked_NumBox.Name = "TierUnlocked_NumBox";
             this.TierUnlocked_NumBox.Size = new System.Drawing.Size(43, 20);
             this.TierUnlocked_NumBox.TabIndex = 9;
@@ -3562,6 +3593,7 @@ namespace ns15
             this.TierSongs_ListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.TierSongs_ListBox.Size = new System.Drawing.Size(174, 377);
             this.TierSongs_ListBox.TabIndex = 19;
+            this.TierSongs_ListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.TierSongs_ListBox_DragDrop);
             this.TierSongs_ListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TierSongs_ListBox_KeyDown);
             this.TierSongs_ListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TierSongs_ListBox_MouseDown);
             // 
@@ -3690,14 +3722,6 @@ namespace ns15
             this.ToolStripStatusLbl.Name = "ToolStripStatusLbl";
             this.ToolStripStatusLbl.Size = new System.Drawing.Size(0, 17);
             this.ToolStripStatusLbl.Tag = "Function Description";
-            // 
-            // forceRB3MidConversionToolStripMenuItem
-            // 
-            this.forceRB3MidConversionToolStripMenuItem.CheckOnClick = true;
-            this.forceRB3MidConversionToolStripMenuItem.Name = "forceRB3MidConversionToolStripMenuItem";
-            this.forceRB3MidConversionToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.forceRB3MidConversionToolStripMenuItem.Text = "Force RB3 Mid Conversion";
-            this.forceRB3MidConversionToolStripMenuItem.Click += new System.EventHandler(this.forceRB3MidConversionToolStripMenuItem_Click);
             // 
             // MainMenu
             // 
@@ -4346,9 +4370,13 @@ namespace ns15
 			this.TierApply_Btn.Enabled = true;
 		}
 
-		private void TierSongs_ListBox_MouseDown(object sender, MouseEventArgs e)
+        private void TierSongs_ListBox_DragDrop(object sender, DragEventArgs e) {
+            this.TierApply_Btn.Enabled = true;
+        }
+
+        private void TierSongs_ListBox_MouseDown(object sender, MouseEventArgs e)
 		{
-			int num = this.TierSongs_ListBox.IndexFromPoint(e.Location);
+            int num = this.TierSongs_ListBox.IndexFromPoint(e.Location);
 			if (num >= 0 && num < this.TierSongs_ListBox.Items.Count && e.Clicks == 2 && e.Button == MouseButtons.Right)
 			{
 				this.TierSongs_ListBox.Items.RemoveAt(num);

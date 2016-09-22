@@ -107,27 +107,27 @@ namespace GuitarHero.Songlist
 			}
 		}
 
-		public bool vmethod_1()
+		public bool isEditable()
 		{
 			return this.editable;
 		}
 
-		public void vmethod_2(bool bool_1)
+		public void setEditable(bool bool_1)
 		{
 			this.editable = bool_1;
 		}
 
-		public bool method_0()
+		public bool isVisible()
 		{
 			return this.visible;
 		}
 
-		public void method_1(bool bool_1)
+		public void setVisible(bool bool_1)
 		{
 			this.visible = bool_1;
 		}
 
-		public string vmethod_3()
+		public string getSongName()
 		{
 			return this.name;
 		}
