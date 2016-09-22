@@ -702,7 +702,7 @@
     <Compile Include="ns17\QbDatabaseInitialModifier.cs" />
     <Compile Include="ns17\CustomMenuCreator.cs" />
     <Compile Include="ns17\zzSetListUpdater.cs" />
-    <Compile Include="ns17\Class256.cs" />
+    <Compile Include="ns17\UpdateSetlistSwitcher.cs" />
     <Compile Include="ns17\Main.cs" />
     <Compile Include="ns17\zzQbScriptZipperClass.cs" />
     <Compile Include="ns17\TGHManager.cs" />
