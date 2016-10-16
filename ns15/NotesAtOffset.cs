@@ -8,7 +8,13 @@ namespace ns15
 
 		public int sustainLength;
 
-		public NotesAtOffset(bool[] bool_1, int sL)
+        public NotesAtOffset()
+        {
+            noteValues = new bool[32];
+            sustainLength = 0;
+        }
+
+        public NotesAtOffset(bool[] bool_1, int sL)
 		{
 			this.noteValues = bool_1;
 			this.sustainLength = sL;
