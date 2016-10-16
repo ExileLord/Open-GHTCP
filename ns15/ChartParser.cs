@@ -37,8 +37,7 @@ namespace ns15
 			this.gh3SongInfo = gh3Song_1;
 		}
 
-        //Only used for importing midis
-        public ChartParser(string string_0, string fileFormat)
+        public ChartParser(string string_0, bool nothing)
         {
             List<string> list = new List<string>();
             StringReader stringReader = new StringReader(string_0);
@@ -175,7 +174,7 @@ namespace ns15
                             this.instrumentList.Add(bracketItems, new InstrumentType(list.ToArray()));
                             goto IL_4D5;
                         }
-                        this.difficultyWithNotes.Add(bracketItems, new NoteEventInterpreter(list.ToArray(), this.constant480, false));
+                        this.difficultyWithNotes.Add(bracketItems, new NoteEventInterpreter(list.ToArray(), this.constant480));
                         goto IL_4D5;
                     }
                     else if (!bracketItemsWithBrackets.Equals(""))
@@ -188,8 +187,7 @@ namespace ns15
             this.removeEmptyParts();
         }
 
-        //Used for importing anything else
-        public ChartParser(string string_0, bool ConvertEvents)
+        public ChartParser(string string_0)
 		{
             List<string> list = new List<string>();
 			StreamReader streamReader = File.OpenText(string_0);
@@ -326,7 +324,7 @@ namespace ns15
 							this.instrumentList.Add(bracketItems, new InstrumentType(list.ToArray()));
 							goto IL_4D5;
 						}
-						this.difficultyWithNotes.Add(bracketItems, new NoteEventInterpreter(list.ToArray(), this.constant480, ConvertEvents));
+						this.difficultyWithNotes.Add(bracketItems, new NoteEventInterpreter(list.ToArray(), this.constant480));
                         goto IL_4D5;
 					}
 					else if (!bracketItemsWithBrackets.Equals(""))
@@ -392,7 +390,7 @@ namespace ns15
             }
         }
 
-        public void chartCreator(string fileLocation, GH3Song song, bool ConvertEvents)
+        public void chartCreator(string fileLocation, GH3Song song)
         {
             this.gh3SongInfo = song;
             StreamWriter streamWriter = new StreamWriter(fileLocation);
@@ -584,144 +582,99 @@ namespace ns15
                                 }
                             }
                             list.Sort();
-                            foreach (int offset in list)
+                            foreach (int current13 in list)
                             {
-                                if (@class.eventList.ContainsKey(offset))
+                                if (@class.eventList.ContainsKey(current13))
                                 {
-                                    List<string> list2 = @class.eventList[offset];
+                                    List<string> list2 = @class.eventList[current13];
                                     foreach (string current14 in list2)
                                     {
                                         streamWriter.WriteLine(string.Concat(new object[]
                                         {
                                             "\t",
-                                            offset,
+                                            current13,
                                             " = E ",
                                             current14
                                         }));
                                     }
                                 }
-                                if (@class.noteList.ContainsKey(offset))
+                                if (@class.noteList.ContainsKey(current13))
                                 {
-                                    NotesAtOffset class2 = @class.noteList[offset];
-                                    for (int mask = 0; mask < class2.noteValues.Length; mask++)
+                                    NotesAtOffset class2 = @class.noteList[current13];
+                                    for (int l = 0; l < class2.noteValues.Length; l++)
                                     {
-                                        if (class2.noteValues[mask])
+                                        if (class2.noteValues[l])
                                         {
-                                            if (ConvertEvents)
+                                            streamWriter.WriteLine(string.Concat(new object[]
                                             {
-                                                if (mask == 5)
-                                                {
-                                                    streamWriter.WriteLine(string.Concat(new object[]
-                                                    {
-                                                         "\t",
-                                                         offset,
-                                                         " = E *",
-                                                     }));
-                                                }
-                                                else if (mask == 6)
-                                                {
-                                                    streamWriter.WriteLine(string.Concat(new object[]
-                                                    {
-                                                         "\t",
-                                                         offset,
-                                                         " = E T",
-                                                    }));
-                                                }
-                                                else if (mask == 7)
-                                                {
-                                                    streamWriter.WriteLine(string.Concat(new object[]
-                                                    {
-                                                        "\t",
-                                                        offset,
-                                                         " = E O",
-                                                    }));
-                                                }
-                                                else
-                                                {
-                                                    streamWriter.WriteLine(string.Concat(new object[]
-                                                    {
-                                                        "\t",
-                                                        offset,
-                                                        " = N ",
-                                                        mask,
-                                                        " ",
-                                                        class2.sustainLength
-                                                    }));
-                                                }
-                                            }
-                                            else
-                                            {
-                                                streamWriter.WriteLine(string.Concat(new object[]
-                                                {
-                                                    "\t",
-                                                    offset,
-                                                    " = N ",
-                                                    mask,
-                                                    " ",
-                                                    class2.sustainLength
-                                                }));
-                                            }
+                                                "\t",
+                                                current13,
+                                                " = N ",
+                                                l,
+                                                " ",
+                                                class2.sustainLength
+                                            }));
                                         }
                                     }
                                 }
-                                if (@class.class228_2.ContainsKey(offset))
+                                if (@class.class228_2.ContainsKey(current13))
                                 {
                                     streamWriter.WriteLine(string.Concat(new object[]
                                     {
                                         "\t",
-                                        offset,
+                                        current13,
                                         " = S 0 ",
-                                        @class.class228_2[offset]
+                                        @class.class228_2[current13]
                                     }));
                                 }
-                                if (@class.class228_3.ContainsKey(offset))
+                                if (@class.class228_3.ContainsKey(current13))
                                 {
                                     streamWriter.WriteLine(string.Concat(new object[]
                                     {
                                         "\t",
-                                        offset,
+                                        current13,
                                         " = S 1 ",
-                                        @class.class228_3[offset]
+                                        @class.class228_3[current13]
                                     }));
                                 }
-                                if (@class.class228_1.ContainsKey(offset))
+                                if (@class.class228_1.ContainsKey(current13))
                                 {
                                     streamWriter.WriteLine(string.Concat(new object[]
                                     {
                                         "\t",
-                                        offset,
+                                        current13,
                                         " = S 2 ",
-                                        @class.class228_1[offset]
+                                        @class.class228_1[current13]
                                     }));
                                 }
-                                if (@class.class228_4.ContainsKey(offset))
+                                if (@class.class228_4.ContainsKey(current13))
                                 {
                                     streamWriter.WriteLine(string.Concat(new object[]
                                     {
                                         "\t",
-                                        offset,
+                                        current13,
                                         " = S 3 ",
-                                        @class.class228_4[offset]
+                                        @class.class228_4[current13]
                                     }));
                                 }
-                                if (@class.class228_5.ContainsKey(offset))
+                                if (@class.class228_5.ContainsKey(current13))
                                 {
                                     streamWriter.WriteLine(string.Concat(new object[]
                                     {
                                         "\t",
-                                        offset,
+                                        current13,
                                         " = S 4 ",
-                                        @class.class228_5[offset]
+                                        @class.class228_5[current13]
                                     }));
                                 }
-                                if (@class.class228_6.ContainsKey(offset))
+                                if (@class.class228_6.ContainsKey(current13))
                                 {
                                     streamWriter.WriteLine(string.Concat(new object[]
                                     {
                                         "\t",
-                                        offset,
+                                        current13,
                                         " = S 5 ",
-                                        @class.class228_6[offset]
+                                        @class.class228_6[current13]
                                     }));
                                 }
                             }

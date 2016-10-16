@@ -49,7 +49,7 @@ namespace ns15
 
 		private bool bool_0;
 
-		public zzPabNode ZZPabNode;
+		public zzPabNode class319_0;
 
 		private ActionsWindow actionsWindow_0;
 
@@ -482,7 +482,6 @@ namespace ns15
 			}
 		};
         private IContainer components;
-        public ToolStripMenuItem convertEvents;
         private int[][] int_2 = new int[][]
 		{
 			new int[]
@@ -612,7 +611,7 @@ namespace ns15
 					if ((songProperties = new SongProperties((GH3Song)this.SongListBox.Items[num])).ShowDialog() == DialogResult.OK)
 					{
 						songProperties.GetSongWithChanges();
-						this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+						this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 						return;
 					}
 				}
@@ -624,9 +623,9 @@ namespace ns15
 						this.SongListBox.Items.Remove(gH3Song);
 						foreach (int current in this.gh3Songlist_0.method_1(gH3Song))
 						{
-							this.AppendToActionList(new zzSetListUpdater(current, this.ZZPabNode, this.gh3Songlist_0));
+							this.method_4(new zzSetListUpdater(current, this.class319_0, this.gh3Songlist_0));
 						}
-						this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+						this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					}
 				}
 			}
@@ -688,7 +687,7 @@ namespace ns15
             if (this.SongListBox.SelectedIndex >= 0 && (songProperties = new SongProperties((GH3Song)this.SongListBox.Items[this.SongListBox.SelectedIndex])).ShowDialog() == DialogResult.OK)
 			{
 				songProperties.GetSongWithChanges();
-				this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+				this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 			}
 		}
 
@@ -705,8 +704,8 @@ namespace ns15
 			{
 				if (songData.bool_1)
 				{
-					Class250 @class = songData.method_1(this.ZZPabNode, this.dataFolder);
-					this.AppendToActionList(@class);
+					Class250 @class = songData.method_1(this.class319_0, this.dataFolder);
+					this.method_4(@class);
 					if (DialogResult.Yes == MessageBox.Show("Do you wish to get the song properties from the game track? (Current properties will be overwritten | Mid files have no properties!)", "Tier Exporting", MessageBoxButtons.YesNo))
 					{
 						bool no_rhythm_track = song.no_rhythm_track;
@@ -714,16 +713,16 @@ namespace ns15
 						song.vmethod_0(@class.class362_0.gh3Song_0);
 						song.no_rhythm_track = no_rhythm_track;
 						song.use_coop_notetracks = use_coop_notetracks;
-						this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+						this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					}
 				}
 				if (songData.bool_0)
 				{
 					Class248 class2 = songData.method_0(this.dataFolder);
-					this.AppendToActionList(class2);
+					this.method_4(class2);
 					song.no_rhythm_track = !class2.bool_0;
 					song.use_coop_notetracks = class2.bool_1;
-					this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+					this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 				}
 			}
 		}
@@ -741,9 +740,9 @@ namespace ns15
 						this.SongListBox.Items.Remove(gh3Song);
 						foreach (int current in this.gh3Songlist_0.method_1(gh3Song))
 						{
-							this.AppendToActionList(new zzSetListUpdater(current, this.ZZPabNode, this.gh3Songlist_0));
+							this.method_4(new zzSetListUpdater(current, this.class319_0, this.gh3Songlist_0));
 						}
-						this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+						this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					}
 				}
 			}
@@ -760,29 +759,29 @@ namespace ns15
 					this.SongListBox.Items.Remove(gH3Song);
 					foreach (int current in this.gh3Songlist_0.method_1(gH3Song))
 					{
-						this.AppendToActionList(new zzSetListUpdater(current, this.ZZPabNode, this.gh3Songlist_0));
+						this.method_4(new zzSetListUpdater(current, this.class319_0, this.gh3Songlist_0));
 					}
-					this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+					this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 				}
 			}
 		}
 
 		private void NewSong_MenuItem_Click(object sender, EventArgs e)
 		{
-			SongData songData = new SongData(this.gh3Songlist_0, this.forceRB3MidConversionToolStripMenuItem.Checked, this.convertEvents.Checked);
+			SongData songData = new SongData(this.gh3Songlist_0, this.forceRB3MidConversionToolStripMenuItem.Checked);
 			if (songData.ShowDialog() == DialogResult.OK)
 			{
 				GH3Song gH3Song = this.bool_0 ? new GHASong() : new GH3Song();
 				if (songData.bool_1)
 				{
-					Class250 @class = songData.method_1(this.ZZPabNode, this.dataFolder);
-					this.AppendToActionList(@class);
+					Class250 @class = songData.method_1(this.class319_0, this.dataFolder);
+					this.method_4(@class);
 					gH3Song.vmethod_0(@class.class362_0.gh3Song_0);
 				}
 				if (songData.bool_0)
 				{
 					Class248 class2 = songData.method_0(this.dataFolder);
-					this.AppendToActionList(class2);
+					this.method_4(class2);
 					gH3Song.name = class2.string_1;
 					gH3Song.no_rhythm_track = !class2.bool_0;
 					gH3Song.use_coop_notetracks = class2.bool_1;
@@ -796,7 +795,7 @@ namespace ns15
 					songProperties.GetSongWithChanges();
 				}
 				this.gh3Songlist_0.Add(gH3Song.name, gH3Song);
-				this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+				this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 				this.method_0();
 			}
 		}
@@ -827,7 +826,7 @@ namespace ns15
 			}
 			if (flag)
 			{
-				this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+				this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 				this.method_0();
 			}
 		}
@@ -869,7 +868,7 @@ namespace ns15
 					}
 					else
 					{
-						qbcParser = new ChartParser(fileName, this.convertEvents.Checked).method_3();
+						qbcParser = new ChartParser(fileName).method_3();
                     }
 					IL_DA:;
 				}
@@ -1033,7 +1032,7 @@ namespace ns15
 						}
                         else if (fileLocation.EndsWith(".chart"))
                         {
-                            new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).method_1().chartCreator(fileLocation, gh3Song, this.convertEvents.Checked);
+                            new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).method_1().chartCreator(fileLocation, gh3Song);
                         }
                         else
 						{
@@ -1098,7 +1097,7 @@ namespace ns15
 					this.TierBox.Items[this.TierBox.SelectedIndex] = gH3Tier;
 					this.TierBox.SelectedIndex = this.TierBox.SelectedIndex;
 					this.SetlistApply_Btn.Enabled = true;
-					this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+					this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					this.method_0();
 				}
 				catch
@@ -1133,7 +1132,7 @@ namespace ns15
 					this.TierBox.Items.Add(gH3Tier);
 					this.TierBox.SelectedIndex = this.TierBox.Items.Count - 1;
 					this.SetlistApply_Btn.Enabled = true;
-					this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+					this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					this.method_0();
 				}
 				catch
@@ -1189,7 +1188,7 @@ namespace ns15
                         string fileLocation = saveLocation + "\\" + gh3Song.name + ".chart";
                         using (zzPakNode2 @class = new zzPakNode2(this.dataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
                         {
-                            new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).method_1().chartCreator(fileLocation, gh3Song, this.convertEvents.Checked);
+                            new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).method_1().chartCreator(fileLocation, gh3Song);
                         }
                     }
                 }
@@ -1230,7 +1229,7 @@ namespace ns15
 					}
 					this.SetlistTitle_TxtBox.Text = KeyGenerator.GetFileName(text, 1);
 					this.SetlistApply_Btn.Enabled = true;
-					this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+					this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					this.method_0();
 				}
 				catch (Exception exception)
@@ -1298,7 +1297,7 @@ namespace ns15
 								}
 								else
 								{
-									qbcParser = new ChartParser(current, this.convertEvents.Checked).method_3();
+									qbcParser = new ChartParser(current).method_3();
 								}
 								break;
 							}
@@ -1334,7 +1333,7 @@ namespace ns15
 							if (class2 != null || list3.Count != 0)
 							{
 								SongData songData = new SongData(gH3Song.name, qbcParser, class2, list3.ToArray());
-								Class250 class3 = songData.method_1(this.ZZPabNode, this.dataFolder);
+								Class250 class3 = songData.method_1(this.class319_0, this.dataFolder);
 								Class248 class4 = songData.method_0(this.dataFolder);
 								gH3Song.vmethod_0(class3.class362_0.gh3Song_0);
 								if (File.Exists(file + "\\song.ini"))
@@ -1358,8 +1357,8 @@ namespace ns15
 								gH3Song.version = 3;
 								gH3Song.leaderboard = true;
 								gH3Song.editable = true;
-								this.AppendToActionList(class3);
-								this.AppendToActionList(class4);
+								this.method_4(class3);
+								this.method_4(class4);
 								this.gh3Songlist_0.Add(gH3Song.name, gH3Song);
 								list.Remove(file);
 							}
@@ -1370,7 +1369,7 @@ namespace ns15
 				{
 				}
 			}
-			this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+			this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 			this.method_0();
 			if (list.Count != 0)
 			{
@@ -1617,7 +1616,7 @@ namespace ns15
 					"C",
 					"D",
 					"E"
-				})[this.list_0.IndexOf(KeyGenerator.GetFileNameNoExt(this.ZZPabNode.string_0).Remove(0, 2))];
+				})[this.list_0.IndexOf(KeyGenerator.GetFileNameNoExt(this.class319_0.string_0).Remove(0, 2))];
 				text = string.Concat(new string[]
 				{
 					Environment.GetFolderPath(Environment.SpecialFolder.Personal),
@@ -1634,7 +1633,7 @@ namespace ns15
 			}
 		}
 
-		private void AppendToActionList(QbEditor class245_0)
+		private void method_4(QbEditor class245_0)
 		{
 			foreach (QbEditor @class in this.ActionRequests_ListBox.Items)
 			{
@@ -1866,7 +1865,7 @@ namespace ns15
 
 		private void FxSpeedBoost_MenuItem_Click(object sender, EventArgs e)
 		{
-			this.AppendToActionList(new zzFxBoost(this.ZZPabNode));
+			this.method_4(new zzFxBoost(this.class319_0));
 		}
 
 		private void ForceMp3Conversion_MenuItem_Click(object sender, EventArgs e)
@@ -1932,8 +1931,8 @@ namespace ns15
 					this.gh3Songlist_0.class214_0.Add(text = "Custom Setlist " + (i + 1), value);
 					this.Setlist_DropBox.Items.Add(text);
 					this.Setlist_DropBox.SelectedItem = text;
-					this.AppendToActionList(new Class246(value, this.ZZPabNode, this.gh3Songlist_0, true));
-					this.AppendToActionList(new UpdateSetlistSwitcher(this.ZZPabNode, this.gh3Songlist_0, this.bool_0));
+					this.method_4(new Class246(value, this.class319_0, this.gh3Songlist_0, true));
+					this.method_4(new UpdateSetlistSwitcher(this.class319_0, this.gh3Songlist_0, this.bool_0));
 					return;
             SKIPIT:
                 i++;
@@ -1954,8 +1953,8 @@ namespace ns15
 			string text = (string)this.Setlist_DropBox.SelectedItem;
 			this.Setlist_DropBox.SelectedIndex--;
 			this.Setlist_DropBox.Items.Remove(text);
-			this.AppendToActionList(new Class246(this.gh3Songlist_0.class214_0[text], this.ZZPabNode, this.gh3Songlist_0, false));
-			this.AppendToActionList(new UpdateSetlistSwitcher(this.ZZPabNode, this.gh3Songlist_0, this.bool_0));
+			this.method_4(new Class246(this.gh3Songlist_0.class214_0[text], this.class319_0, this.gh3Songlist_0, false));
+			this.method_4(new UpdateSetlistSwitcher(this.class319_0, this.gh3Songlist_0, this.bool_0));
 		}
 
 		private void SetlistTitle_TxtBox_TextChanged(object sender, EventArgs e)
@@ -1976,11 +1975,11 @@ namespace ns15
 			{
 				this.gh3Songlist_0.class214_0.Add(this.SetlistTitle_TxtBox.Text, this.gh3Songlist_0.class214_0[(string)this.Setlist_DropBox.SelectedItem]);
 				this.gh3Songlist_0.class214_0.Remove((string)this.Setlist_DropBox.SelectedItem);
-				this.AppendToActionList(new UpdateSetlistSwitcher(this.ZZPabNode, this.gh3Songlist_0, this.bool_0));
+				this.method_4(new UpdateSetlistSwitcher(this.class319_0, this.gh3Songlist_0, this.bool_0));
 				this.Setlist_DropBox.Items[this.Setlist_DropBox.SelectedIndex] = this.SetlistTitle_TxtBox.Text;
 			}
 			this.SetlistApply_Btn.Enabled = false;
-			this.AppendToActionList(new zzSetListUpdater(this.int_0, this.ZZPabNode, this.gh3Songlist_0));
+			this.method_4(new zzSetListUpdater(this.int_0, this.class319_0, this.gh3Songlist_0));
 		}
 
 		private void NewTier_MenuItem_Click(object sender, EventArgs e)
@@ -2098,6 +2097,7 @@ namespace ns15
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SidePanel = new System.Windows.Forms.TableLayoutPanel();
+            this.SongListBox = new ns16.zzListBox238();
             this.notifyIcon_0 = new System.Windows.Forms.NotifyIcon(this.components);
             this.fontDialog_0 = new System.Windows.Forms.FontDialog();
             this.leftClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -2117,9 +2117,12 @@ namespace ns15
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.BeatSize_EditorTxtBox = new System.Windows.Forms.ToolStripTextBox();
+            this.HyperSpeed_EditorBar = new ns16.GhtcpToolStripControlHost();
+            this.FretAngle_EditorBar = new ns16.GhtcpToolStripControlHost();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.Offset_EditorTxtBox = new System.Windows.Forms.ToolStripTextBox();
+            this.SongEditor_Control = new ns17.SongEditor();
             this.SongEditor_TopToolStrip = new System.Windows.Forms.ToolStrip();
             this.GameMode_EditorBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -2166,6 +2169,7 @@ namespace ns15
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.TierSongs_Panel = new System.Windows.Forms.TableLayoutPanel();
+            this.TierSongs_ListBox = new ns16.zzListBox238();
             this.label11 = new System.Windows.Forms.Label();
             this.SetlistStrip = new System.Windows.Forms.ToolStrip();
             this.Setlist_Lbl = new System.Windows.Forms.ToolStripLabel();
@@ -2177,12 +2181,6 @@ namespace ns15
             this.MainContainer = new System.Windows.Forms.ToolStripContainer();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.ToolStripStatusLbl = new System.Windows.Forms.ToolStripStatusLabel();
-            this.convertEvents = new System.Windows.Forms.ToolStripMenuItem();
-            this.TierSongs_ListBox = new ns16.zzListBox238();
-            this.HyperSpeed_EditorBar = new ns16.GhtcpToolStripControlHost();
-            this.FretAngle_EditorBar = new ns16.GhtcpToolStripControlHost();
-            this.SongEditor_Control = new ns17.SongEditor();
-            this.SongListBox = new ns16.zzListBox238();
             this.rightClickMenu.SuspendLayout();
             this.TopMenuStrip.SuspendLayout();
             this.SidePanel.SuspendLayout();
@@ -2224,13 +2222,13 @@ namespace ns15
             this.MinToTray_MenuItem,
             this.SysExit_MenuItem});
             this.rightClickMenu.Name = "rightClickMenu";
-            this.rightClickMenu.Size = new System.Drawing.Size(167, 142);
+            this.rightClickMenu.Size = new System.Drawing.Size(165, 142);
             // 
             // SysHigh_MenuItem
             // 
             this.SysHigh_MenuItem.Name = "SysHigh_MenuItem";
             this.SysHigh_MenuItem.ShowShortcutKeys = false;
-            this.SysHigh_MenuItem.Size = new System.Drawing.Size(166, 22);
+            this.SysHigh_MenuItem.Size = new System.Drawing.Size(164, 22);
             this.SysHigh_MenuItem.Tag = "high";
             this.SysHigh_MenuItem.Text = "High";
             this.SysHigh_MenuItem.Click += new System.EventHandler(this.SysBelow_MenuItem_Click);
@@ -2239,7 +2237,7 @@ namespace ns15
             // 
             this.SysAbove_MenuItem.Name = "SysAbove_MenuItem";
             this.SysAbove_MenuItem.ShowShortcutKeys = false;
-            this.SysAbove_MenuItem.Size = new System.Drawing.Size(166, 22);
+            this.SysAbove_MenuItem.Size = new System.Drawing.Size(164, 22);
             this.SysAbove_MenuItem.Tag = "above";
             this.SysAbove_MenuItem.Text = "Above Normal";
             this.SysAbove_MenuItem.Click += new System.EventHandler(this.SysBelow_MenuItem_Click);
@@ -2248,7 +2246,7 @@ namespace ns15
             // 
             this.SysNormal_MenuItem.Name = "SysNormal_MenuItem";
             this.SysNormal_MenuItem.ShowShortcutKeys = false;
-            this.SysNormal_MenuItem.Size = new System.Drawing.Size(166, 22);
+            this.SysNormal_MenuItem.Size = new System.Drawing.Size(164, 22);
             this.SysNormal_MenuItem.Tag = "normal";
             this.SysNormal_MenuItem.Text = "Normal";
             this.SysNormal_MenuItem.Click += new System.EventHandler(this.SysBelow_MenuItem_Click);
@@ -2257,7 +2255,7 @@ namespace ns15
             // 
             this.SysBelow_MenuItem.Name = "SysBelow_MenuItem";
             this.SysBelow_MenuItem.ShowShortcutKeys = false;
-            this.SysBelow_MenuItem.Size = new System.Drawing.Size(166, 22);
+            this.SysBelow_MenuItem.Size = new System.Drawing.Size(164, 22);
             this.SysBelow_MenuItem.Tag = "below";
             this.SysBelow_MenuItem.Text = "Below Normal";
             this.SysBelow_MenuItem.Click += new System.EventHandler(this.SysBelow_MenuItem_Click);
@@ -2265,20 +2263,20 @@ namespace ns15
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(163, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(161, 6);
             // 
             // MinToTray_MenuItem
             // 
             this.MinToTray_MenuItem.CheckOnClick = true;
             this.MinToTray_MenuItem.Name = "MinToTray_MenuItem";
-            this.MinToTray_MenuItem.Size = new System.Drawing.Size(166, 22);
+            this.MinToTray_MenuItem.Size = new System.Drawing.Size(164, 22);
             this.MinToTray_MenuItem.Text = "Minimize To Tray";
             // 
             // SysExit_MenuItem
             // 
             this.SysExit_MenuItem.Name = "SysExit_MenuItem";
             this.SysExit_MenuItem.ShowShortcutKeys = false;
-            this.SysExit_MenuItem.Size = new System.Drawing.Size(166, 22);
+            this.SysExit_MenuItem.Size = new System.Drawing.Size(164, 22);
             this.SysExit_MenuItem.Text = "Exit";
             this.SysExit_MenuItem.Click += new System.EventHandler(this.Exit_MenuItem_Click);
             // 
@@ -2441,14 +2439,14 @@ namespace ns15
             // 
             this.NewTier_MenuItem.Name = "NewTier_MenuItem";
             this.NewTier_MenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
-            this.NewTier_MenuItem.Size = new System.Drawing.Size(137, 22);
+            this.NewTier_MenuItem.Size = new System.Drawing.Size(136, 22);
             this.NewTier_MenuItem.Text = "New";
             this.NewTier_MenuItem.Click += new System.EventHandler(this.NewTier_MenuItem_Click);
             // 
             // TGHImport_MenuItem
             // 
             this.TGHImport_MenuItem.Name = "TGHImport_MenuItem";
-            this.TGHImport_MenuItem.Size = new System.Drawing.Size(137, 22);
+            this.TGHImport_MenuItem.Size = new System.Drawing.Size(136, 22);
             this.TGHImport_MenuItem.Text = "TGH Import";
             this.TGHImport_MenuItem.Click += new System.EventHandler(this.TGHImport_MenuItem_Click);
             // 
@@ -2582,7 +2580,6 @@ namespace ns15
             this.SilentGuitar_MenuItem,
             this.ForceMp3Conversion_MenuItem,
             this.forceRB3MidConversionToolStripMenuItem,
-            this.convertEvents,
             this.DeleteSong_MenuItem,
             this.RemoveSong_ToolStripMenuItem,
             this.HideUnEdit_MenuItem,
@@ -2783,6 +2780,24 @@ namespace ns15
             this.SidePanel.Size = new System.Drawing.Size(180, 519);
             this.SidePanel.TabIndex = 7;
             // 
+            // SongListBox
+            // 
+            this.SongListBox.AllowDrop = true;
+            this.SongListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SongListBox.FormattingEnabled = true;
+            this.SongListBox.IntegralHeight = false;
+            this.SongListBox.Location = new System.Drawing.Point(0, 20);
+            this.SongListBox.Margin = new System.Windows.Forms.Padding(0);
+            this.SongListBox.Name = "SongListBox";
+            this.SongListBox.ScrollAlwaysVisible = true;
+            this.SongListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.SongListBox.Size = new System.Drawing.Size(180, 355);
+            this.SongListBox.Sorted = true;
+            this.SongListBox.TabIndex = 1;
+            this.SongListBox.SelectedIndexChanged += new System.EventHandler(this.SongListBox_SelectedIndexChanged);
+            this.SongListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SongListBox_KeyDown);
+            this.SongListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SongListBox_MouseDown);
+            // 
             // notifyIcon_0
             // 
             this.notifyIcon_0.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon_0.Icon")));
@@ -2925,7 +2940,7 @@ namespace ns15
             this.AudioView_EditorBtn});
             this.ToggleElements_EditorSplitBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToggleElements_EditorSplitBtn.Name = "ToggleElements_EditorSplitBtn";
-            this.ToggleElements_EditorSplitBtn.Size = new System.Drawing.Size(111, 22);
+            this.ToggleElements_EditorSplitBtn.Size = new System.Drawing.Size(110, 22);
             this.ToggleElements_EditorSplitBtn.Text = "Toggle Elements";
             this.ToggleElements_EditorSplitBtn.ButtonClick += new System.EventHandler(this.ToggleElements_EditorSplitBtn_ButtonClick);
             // 
@@ -2978,6 +2993,18 @@ namespace ns15
             this.BeatSize_EditorTxtBox.Text = "20";
             this.BeatSize_EditorTxtBox.TextChanged += new System.EventHandler(this.BeatSize_EditorTxtBox_TextChanged);
             // 
+            // HyperSpeed_EditorBar
+            // 
+            this.HyperSpeed_EditorBar.Name = "HyperSpeed_EditorBar";
+            this.HyperSpeed_EditorBar.Size = new System.Drawing.Size(104, 22);
+            this.HyperSpeed_EditorBar.ToolTipText = "HyperSpeed";
+            // 
+            // FretAngle_EditorBar
+            // 
+            this.FretAngle_EditorBar.Name = "FretAngle_EditorBar";
+            this.FretAngle_EditorBar.Size = new System.Drawing.Size(104, 22);
+            this.FretAngle_EditorBar.ToolTipText = "FretBar Angle";
+            // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
@@ -2996,6 +3023,15 @@ namespace ns15
             this.Offset_EditorTxtBox.Size = new System.Drawing.Size(50, 25);
             this.Offset_EditorTxtBox.Text = "20";
             this.Offset_EditorTxtBox.TextChanged += new System.EventHandler(this.Offset_EditorTxtBox_TextChanged);
+            // 
+            // SongEditor_Control
+            // 
+            this.SongEditor_Control.BackColor = System.Drawing.Color.White;
+            this.SongEditor_Control.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SongEditor_Control.Location = new System.Drawing.Point(0, 0);
+            this.SongEditor_Control.Name = "SongEditor_Control";
+            this.SongEditor_Control.Size = new System.Drawing.Size(590, 437);
+            this.SongEditor_Control.TabIndex = 0;
             // 
             // SongEditor_TopToolStrip
             // 
@@ -3531,6 +3567,25 @@ namespace ns15
             this.TierSongs_Panel.Size = new System.Drawing.Size(174, 397);
             this.TierSongs_Panel.TabIndex = 1;
             // 
+            // TierSongs_ListBox
+            // 
+            this.TierSongs_ListBox.AllowDrop = true;
+            this.TierSongs_ListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TierSongs_ListBox.FormattingEnabled = true;
+            this.TierSongs_ListBox.IntegralHeight = false;
+            this.TierSongs_ListBox.Location = new System.Drawing.Point(0, 20);
+            this.TierSongs_ListBox.Margin = new System.Windows.Forms.Padding(0);
+            this.TierSongs_ListBox.Name = "TierSongs_ListBox";
+            this.TierSongs_ListBox.ScrollAlwaysVisible = true;
+            this.TierSongs_ListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            this.TierSongs_ListBox.Size = new System.Drawing.Size(174, 377);
+            this.TierSongs_ListBox.TabIndex = 19;
+            this.TierSongs_ListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.TierSongs_ListBox_DragDrop);
+            this.TierSongs_ListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TierSongs_ListBox_KeyDown);
+            this.TierSongs_ListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TierSongs_ListBox_MouseDown);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -3656,73 +3711,6 @@ namespace ns15
             this.ToolStripStatusLbl.Name = "ToolStripStatusLbl";
             this.ToolStripStatusLbl.Size = new System.Drawing.Size(0, 17);
             this.ToolStripStatusLbl.Tag = "Function Description";
-            // 
-            // convertEvents
-            // 
-            this.convertEvents.Checked = true;
-            this.convertEvents.CheckOnClick = true;
-            this.convertEvents.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.convertEvents.Name = "convertEvents";
-            this.convertEvents.Size = new System.Drawing.Size(221, 22);
-            this.convertEvents.Text = "Convert Events";
-            // 
-            // TierSongs_ListBox
-            // 
-            this.TierSongs_ListBox.AllowDrop = true;
-            this.TierSongs_ListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TierSongs_ListBox.FormattingEnabled = true;
-            this.TierSongs_ListBox.IntegralHeight = false;
-            this.TierSongs_ListBox.Location = new System.Drawing.Point(0, 20);
-            this.TierSongs_ListBox.Margin = new System.Windows.Forms.Padding(0);
-            this.TierSongs_ListBox.Name = "TierSongs_ListBox";
-            this.TierSongs_ListBox.ScrollAlwaysVisible = true;
-            this.TierSongs_ListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.TierSongs_ListBox.Size = new System.Drawing.Size(174, 377);
-            this.TierSongs_ListBox.TabIndex = 19;
-            this.TierSongs_ListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.TierSongs_ListBox_DragDrop);
-            this.TierSongs_ListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TierSongs_ListBox_KeyDown);
-            this.TierSongs_ListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TierSongs_ListBox_MouseDown);
-            // 
-            // HyperSpeed_EditorBar
-            // 
-            this.HyperSpeed_EditorBar.Name = "HyperSpeed_EditorBar";
-            this.HyperSpeed_EditorBar.Size = new System.Drawing.Size(104, 22);
-            this.HyperSpeed_EditorBar.ToolTipText = "HyperSpeed";
-            // 
-            // FretAngle_EditorBar
-            // 
-            this.FretAngle_EditorBar.Name = "FretAngle_EditorBar";
-            this.FretAngle_EditorBar.Size = new System.Drawing.Size(104, 22);
-            this.FretAngle_EditorBar.ToolTipText = "FretBar Angle";
-            // 
-            // SongEditor_Control
-            // 
-            this.SongEditor_Control.BackColor = System.Drawing.Color.White;
-            this.SongEditor_Control.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SongEditor_Control.Location = new System.Drawing.Point(0, 0);
-            this.SongEditor_Control.Name = "SongEditor_Control";
-            this.SongEditor_Control.Size = new System.Drawing.Size(590, 437);
-            this.SongEditor_Control.TabIndex = 0;
-            // 
-            // SongListBox
-            // 
-            this.SongListBox.AllowDrop = true;
-            this.SongListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SongListBox.FormattingEnabled = true;
-            this.SongListBox.IntegralHeight = false;
-            this.SongListBox.Location = new System.Drawing.Point(0, 20);
-            this.SongListBox.Margin = new System.Windows.Forms.Padding(0);
-            this.SongListBox.Name = "SongListBox";
-            this.SongListBox.ScrollAlwaysVisible = true;
-            this.SongListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.SongListBox.Size = new System.Drawing.Size(180, 355);
-            this.SongListBox.Sorted = true;
-            this.SongListBox.TabIndex = 1;
-            this.SongListBox.SelectedIndexChanged += new System.EventHandler(this.SongListBox_SelectedIndexChanged);
-            this.SongListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SongListBox_KeyDown);
-            this.SongListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SongListBox_MouseDown);
             // 
             // MainMenu
             // 
@@ -3916,7 +3904,7 @@ namespace ns15
 						".pab.xen"
 					}), false);
 					GH3Songlist gH3Songlist = null;
-					using (this.ZZPabNode = new zzPabNode(this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", false))
+					using (this.class319_0 = new zzPabNode(this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", false))
 					{
 						if (this.method_19(int_).GameSettingsAreValid())
 						{
@@ -3927,15 +3915,15 @@ namespace ns15
 						}
 						try
 						{
-							gH3Songlist = new GH3Songlist(this.ZZPabNode.zzGetNode1("scripts\\guitar\\songlist.qb"), new GH3Songlist(class2.zzGetNode1("scripts\\guitar\\songlist.qb"), null));
-							new zzSetListParser(this.ZZPabNode, gH3Songlist, this.bool_0).method_0();
+							gH3Songlist = new GH3Songlist(this.class319_0.zzGetNode1("scripts\\guitar\\songlist.qb"), new GH3Songlist(class2.zzGetNode1("scripts\\guitar\\songlist.qb"), null));
+							new zzSetListParser(this.class319_0, gH3Songlist, this.bool_0).method_0();
 						}
 						catch (Exception ex)
 						{
 							Console.WriteLine(ex.ToString());
 						}
-						this.ZZPabNode.Dispose();
-						this.ZZPabNode = null;
+						this.class319_0.Dispose();
+						this.class319_0 = null;
 						if (gH3Songlist != null)
 						{
 							DialogResult dialogResult = MessageBox.Show("Game Settings files are not compatible, but something can be recovered. Do you wish to recover when starting from backup? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNoCancel);
@@ -3990,9 +3978,9 @@ namespace ns15
 						}), this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", true);
 						IL_478:;
 					}
-					this.ZZPabNode = new zzPabNode(this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", false);
+					this.class319_0 = new zzPabNode(this.dataFolder + "PAK\\qb" + text2 + ".pak.xen", this.dataFolder + "PAK\\qb" + text2 + ".pab.xen", false);
 					this.method_20(int_);
-					this.gh3Songlist_0 = new GH3Songlist(this.ZZPabNode.zzGetNode1("scripts\\guitar\\songlist.qb"), new GH3Songlist(class2.zzGetNode1("scripts\\guitar\\songlist.qb"), null));
+					this.gh3Songlist_0 = new GH3Songlist(this.class319_0.zzGetNode1("scripts\\guitar\\songlist.qb"), new GH3Songlist(class2.zzGetNode1("scripts\\guitar\\songlist.qb"), null));
 					class2.Dispose();
 					bool flag = false;
 					if (gH3Songlist != null)
@@ -4008,10 +3996,10 @@ namespace ns15
 					}
 					if (flag)
 					{
-						this.AppendToActionList(new Class247(this.ZZPabNode, this.gh3Songlist_0));
+						this.method_4(new Class247(this.class319_0, this.gh3Songlist_0));
 					}
-					new CustomMenuCreator(this.ZZPabNode, this.bool_0).method_0();
-					new zzSetListParser(this.ZZPabNode, this.gh3Songlist_0, this.bool_0).method_0();
+					new CustomMenuCreator(this.class319_0, this.bool_0).method_0();
+					new zzSetListParser(this.class319_0, this.gh3Songlist_0, this.bool_0).method_0();
 					if (flag && gH3Songlist.gh3SetlistList.Count != 0)
 					{
 						bool flag2 = false;
@@ -4044,7 +4032,7 @@ namespace ns15
 												int value;
 												this.gh3Songlist_0.dictionary_1.Add(value = QbSongClass1.smethod_9("custom" + (i + 1) + "_progression"), new GHLink(num2));
 												this.gh3Songlist_0.class214_0.Add("Custom Setlist " + (i + 1), value);
-												this.AppendToActionList(new Class246(value, this.ZZPabNode, this.gh3Songlist_0, true));
+												this.method_4(new Class246(value, this.class319_0, this.gh3Songlist_0, true));
 												flag2 = true;
 												goto IL_78C;
 											
@@ -4065,25 +4053,25 @@ namespace ns15
 								if (gH3Setlist.method_2() == "scripts\\guitar\\guitar_download.qb")
 								{
 									this.gh3Songlist_0.gh3SetlistList[current2].method_0().AddRange(gH3Setlist.method_0());
-									this.AppendToActionList(new zzSetListUpdater(current2, this.ZZPabNode, this.gh3Songlist_0));
+									this.method_4(new zzSetListUpdater(current2, this.class319_0, this.gh3Songlist_0));
 								}
 							}
 						}
 						if (flag2)
 						{
-							this.AppendToActionList(new UpdateSetlistSwitcher(this.ZZPabNode, this.gh3Songlist_0, this.bool_0));
+							this.method_4(new UpdateSetlistSwitcher(this.class319_0, this.gh3Songlist_0, this.bool_0));
 						}
 					}
-					new Class249(this.ZZPabNode).method_0();
-					new QbDatabaseInitialModifier(this.ZZPabNode, this.bool_0).method_0();
+					new Class249(this.class319_0).method_0();
+					new QbDatabaseInitialModifier(this.class319_0, this.bool_0).method_0();
 					this.method_0();
 				}
 				catch (Exception ex3)
 				{
-					if (this.ZZPabNode != null)
+					if (this.class319_0 != null)
 					{
-						this.ZZPabNode.Dispose();
-						this.ZZPabNode = null;
+						this.class319_0.Dispose();
+						this.class319_0 = null;
 					}
 					Console.WriteLine(ex3.Message);
 					if (DialogResult.Yes == MessageBox.Show("Game Settings files are corrupt. Do you wish to start from backup? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNo) && this.method_16(int_))
@@ -4148,11 +4136,11 @@ namespace ns15
 			}
 			Class216.smethod_0(this.string_0 + "log\\");
 			Class216.smethod_2();
-			if (this.ZZPabNode != null)
+			if (this.class319_0 != null)
 			{
-				this.ZZPabNode.Dispose();
+				this.class319_0.Dispose();
 			}
-			this.ZZPabNode = null;
+			this.class319_0 = null;
 			GC.Collect();
 		}
 
@@ -4205,8 +4193,8 @@ namespace ns15
 			bool result;
 			try
 			{
-				GameSettingsChecker.SignHash(this.ZZPabNode);
-				this.ZZPabNode.vmethod_1();
+				GameSettingsChecker.SignHash(this.class319_0);
+				this.class319_0.vmethod_1();
 				GC.Collect();
 				result = true;
 			}
@@ -4220,14 +4208,14 @@ namespace ns15
 
 		private GameSettingsChecker method_19(int int_3)
 		{
-			if (File.Exists(this.ZZPabNode.string_0) && File.Exists(this.ZZPabNode.string_2) && KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.HashStream(this.ZZPabNode.string_2)), this.bool_0 ? this.int_2[int_3] : this.int_1[int_3]))
+			if (File.Exists(this.class319_0.string_0) && File.Exists(this.class319_0.string_2) && KeyGenerator.smethod_53<int>(KeyGenerator.smethod_21(KeyGenerator.HashStream(this.class319_0.string_2)), this.bool_0 ? this.int_2[int_3] : this.int_1[int_3]))
 			{
 				return new GameSettingsChecker(true);
 			}
 			GameSettingsChecker result;
 			try
 			{
-				result = new GameSettingsChecker(this.ZZPabNode);
+				result = new GameSettingsChecker(this.class319_0);
 			}
 			catch
 			{
@@ -4246,7 +4234,7 @@ namespace ns15
 			{
 				return;
 			}
-			string text = KeyGenerator.GetFileNameNoExt(this.ZZPabNode.string_0);
+			string text = KeyGenerator.GetFileNameNoExt(this.class319_0.string_0);
 			int int_ = new List<string>(this.list_0).IndexOf(text.Replace("qb", ""));
 			if (this.method_16(int_))
 			{
@@ -4278,7 +4266,7 @@ namespace ns15
 			{
 				return;
 			}
-			string text = KeyGenerator.GetFileNameNoExt(this.ZZPabNode.string_0);
+			string text = KeyGenerator.GetFileNameNoExt(this.class319_0.string_0);
 			if (File.Exists(string.Concat(new string[]
 			{
 				this.string_0,
@@ -4337,7 +4325,7 @@ namespace ns15
 				return;
 			}
 			int num = loadGameSettings.method_3();
-			string text = KeyGenerator.GetFileNameNoExt(this.ZZPabNode.string_0);
+			string text = KeyGenerator.GetFileNameNoExt(this.class319_0.string_0);
 			if (!this.method_16(num) && DialogResult.Yes == MessageBox.Show("A proper backup doesn't exist. Do you wish to start backup creation? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNo) && !this.method_17(num))
 			{
 				return;
@@ -4474,7 +4462,7 @@ namespace ns15
 				gH3Tier.songs.Add(item);
 			}
 			this.TierApply_Btn.Enabled = false;
-			this.AppendToActionList(new zzSetListUpdater(this.int_0, this.ZZPabNode, this.gh3Songlist_0));
+			this.method_4(new zzSetListUpdater(this.int_0, this.class319_0, this.gh3Songlist_0));
 			if (this.HideUsed_MenuItem.Checked)
 			{
 				this.gh3Songlist_0.HideUsed = true;

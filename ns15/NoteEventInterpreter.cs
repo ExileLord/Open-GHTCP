@@ -37,7 +37,7 @@ namespace ns15
 		{
 		}
 
-		public NoteEventInterpreter(string[] stringImported, int constant480, bool ConvertEvents)
+		public NoteEventInterpreter(string[] stringImported, int constant480)
 		{
 			if (!(this.alwaysTrue = (stringImported.Length == 0)))//If string is empty
 			{
@@ -85,25 +85,6 @@ namespace ns15
 										{
 											this.currentEventLine = this.currentEventLine + " " + NotesEventsArray[k];
 										}
-                                        if (ConvertEvents)
-                                        {
-                                            if (!this.noteList.ContainsKey(offset))
-                                            {
-                                                this.noteList.Add(offset, new NotesAtOffset());
-                                            }
-                                            if (this.currentEventLine.Equals("*") || this.currentEventLine.ToLower().Equals("f"))
-                                            {
-                                                this.noteList[offset].noteValues[5] = true;
-                                            }
-                                            else if (this.currentEventLine.Equals("t"))
-                                            {
-                                                this.noteList[offset].noteValues[6] = true;
-                                            }
-                                            else if (this.currentEventLine.Equals("o"))
-                                            {
-                                                this.noteList[offset].noteValues[7] = true;
-                                            }
-                                        }
 										this.eventList.Add(offset, new List<string>());
 										this.eventList[offset].Add(this.currentEventLine);
 									}

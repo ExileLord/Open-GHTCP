@@ -194,8 +194,6 @@ namespace ns17
 
         private bool forceRB3 = false;
 
-        private bool ConvertEvents = false;
-
         protected override void Dispose(bool disposing)
 		{
 			if (disposing && this.icontainer_0 != null)
@@ -952,9 +950,8 @@ namespace ns17
 			this.timer_0.Tick += new EventHandler(this.timer_0_Tick);
 		}
 
-        public SongData(GH3Songlist gh3Songlist_1, bool forceRB3, bool ConvertEvents)
+        public SongData(GH3Songlist gh3Songlist_1, bool forceRB3)
         {
-            this.ConvertEvents = ConvertEvents;
             this.forceRB3 = forceRB3;
             this.InitializeComponent();
             Control arg_26_0 = this.Audio_CheckBox;
@@ -1456,7 +1453,7 @@ namespace ns17
                     else
                     {
                         //Crashes in this
-                        this.qbcParser = new ChartParser(fileName, ConvertEvents).method_3();
+                        this.qbcParser = new ChartParser(fileName).method_3();
 					}
                     IL_F5:
 					this.method_6();

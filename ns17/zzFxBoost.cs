@@ -12,20 +12,20 @@ namespace ns17
 
 	public class zzFxBoost : QbEditor
 	{
-		private zzPakNode2 ZZPakNode2;
+		private zzPakNode2 class318_0;
 
 		private bool bool_0;
 
 		public zzFxBoost(zzPakNode2 class318_1)
 		{
-			this.ZZPakNode2 = class318_1;
-			TagStructureNode tagStructureNode = ((StructureHeaderNode)this.ZZPakNode2.zzGetNode1("scripts\\guitar\\guitar_events.qb").method_5<TagStructureNode>(new TagStructureNode("event", "star_power_on")).Parent).method_5<TagStructureNode>(new TagStructureNode("scr"));
-			this.bool_0 = (tagStructureNode.method_8() == "guitarevent_starpoweron");
+			this.class318_0 = class318_1;
+			TagStructureNode @class = ((StructureHeaderNode)this.class318_0.zzGetNode1("scripts\\guitar\\guitar_events.qb").method_5<TagStructureNode>(new TagStructureNode("event", "star_power_on")).Parent).method_5<TagStructureNode>(new TagStructureNode("scr"));
+			this.bool_0 = (@class.method_8() == "guitarevent_starpoweron");
 		}
 
 		public override void vmethod_0()
 		{
-			zzGenericNode1 @class = this.ZZPakNode2.zzGetNode1("scripts\\guitar\\guitar_events.qb");
+			zzGenericNode1 @class = this.class318_0.zzGetNode1("scripts\\guitar\\guitar_events.qb");
 			((StructureHeaderNode)@class.method_5<TagStructureNode>(new TagStructureNode("event", "star_power_on")).Parent).method_5<TagStructureNode>(new TagStructureNode("scr")).method_9(this.bool_0 ? "guitarevent_starpoweroff" : "guitarevent_starpoweron");
 			if (!this.bool_0)
 			{
