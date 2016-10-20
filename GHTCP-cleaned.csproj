@@ -562,13 +562,13 @@
     <Compile Include="ns11\Class152.cs" />
     <Compile Include="ns11\Class153.cs" />
     <Compile Include="ns11\Class154.cs" />
-    <Compile Include="ns11\Class155.cs" />
+    <Compile Include="ns11\MP3Output.cs" />
     <Compile Include="ns11\Class156.cs" />
     <Compile Include="ns11\Class157.cs" />
     <Compile Include="ns11\Class158.cs" />
     <Compile Include="ns11\Class159.cs" />
     <Compile Include="ns11\Class162.cs" />
-    <Compile Include="ns11\Class163.cs" />
+    <Compile Include="ns11\WaveOutput.cs" />
     <Compile Include="ns11\Class165.cs" />
     <Compile Include="ns11\Delegate2.cs" />
     <Compile Include="ns11\Delegate3.cs" />
@@ -678,7 +678,7 @@
     <Compile Include="ns16\zzListBox238.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ns16\Class239.cs" />
+    <Compile Include="ns16\Fretbar.cs" />
     <Compile Include="ns16\zzList240.cs" />
     <Compile Include="ns16\UnusedDictionaryClass.cs" />
     <Compile Include="ns16\zzKeyedCollection243.cs" />
@@ -761,11 +761,11 @@
     <Compile Include="ns1\Class17.cs" />
     <Compile Include="ns1\Class18.cs" />
     <Compile Include="ns1\Class19.cs" />
-    <Compile Include="ns1\Enum1.cs" />
+    <Compile Include="ns1\AudioStatus.cs" />
     <Compile Include="ns1\Enum2.cs" />
     <Compile Include="ns1\Form1.cs" />
     <Compile Include="ns1\Form2.cs" />
-    <Compile Include="ns1\Interface6.cs" />
+    <Compile Include="ns1\AudioInterface.cs" />
     <Compile Include="ns1\Stream14.cs" />
     <Compile Include="ns1\Stream15.cs" />
     <Compile Include="ns1\Stream3.cs" />
@@ -902,7 +902,7 @@
     <Compile Include="ns5\zzStreamClass106.cs" />
     <Compile Include="ns5\zzSoundClass.cs" />
     <Compile Include="ns5\Class108.cs" />
-    <Compile Include="ns5\Class109.cs" />
+    <Compile Include="ns5\OGGOutput.cs" />
     <Compile Include="ns5\Class110.cs" />
     <Compile Include="ns5\AC3Class1.cs" />
     <Compile Include="ns5\Class112.cs" />

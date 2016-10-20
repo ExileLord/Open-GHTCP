@@ -883,8 +883,8 @@ namespace ns15
 				{
 					this.SelectedTrack_EditorBox.Items.Add(current);
 				}
-				this.SongEditor_Control.method_11(qbcParser);
-				this.SelectedTrack_EditorBox.SelectedIndex = 0;
+                this.SongEditor_Control.LoadChart(qbcParser);
+                this.SelectedTrack_EditorBox.SelectedIndex = 0;
 				this.Offset_EditorTxtBox.Text = string.Concat(qbcParser.gh3Song_0.gem_offset);
 			}
 		}
@@ -902,7 +902,7 @@ namespace ns15
 			}
 			if (num != 0)
 			{
-				this.SongEditor_Control.method_1(num);
+				this.SongEditor_Control.SetBeatSize(num);
 			}
 		}
 
@@ -917,27 +917,27 @@ namespace ns15
 			{
 				return;
 			}
-			this.SongEditor_Control.method_2(int_);
+			this.SongEditor_Control.SetOffset(int_);
 		}
 
 		private void PlayPause_EditorBtn_Click(object sender, EventArgs e)
 		{
-			if (this.SongEditor_Control.method_24())
+			if (this.SongEditor_Control.AudioLoaded())
 			{
-				if (this.SongEditor_Control.method_0() != Enum1.const_1)
+				if (this.SongEditor_Control.GetAudioStatus() != AudioStatus.ShouldStartAudio)
 				{
-					this.SongEditor_Control.method_21();
+					this.SongEditor_Control.DifferentStartPlaying();
 					return;
 				}
-				this.SongEditor_Control.method_22();
+				this.SongEditor_Control.StartPlaying();
 			}
 		}
 
 		private void Stop_EditorBtn_Click(object sender, EventArgs e)
 		{
-			if (this.SongEditor_Control.method_24())
+			if (this.SongEditor_Control.AudioLoaded())
 			{
-				this.SongEditor_Control.method_23();
+				this.SongEditor_Control.StopAudio();
 			}
 		}
 
@@ -946,13 +946,13 @@ namespace ns15
 			string fileName;
 			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio File|*.mp3|Waveform Audio File|*.wav|Ogg Vorbis Audio File|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
-				this.SongEditor_Control.loadAudio(fileName);
+				this.SongEditor_Control.LoadAudio(fileName);
             }
 		}
 
 		private void SelectedTrack_EditorBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			this.SongEditor_Control.string_0 = (string)this.SelectedTrack_EditorBox.SelectedItem;
+			this.SongEditor_Control.Difficulty = (string)this.SelectedTrack_EditorBox.SelectedItem;
 		}
 
 		private void method_1(object sender, EventArgs e)
@@ -962,57 +962,57 @@ namespace ns15
 
 		private void GameMode_EditorBtn_Click(object sender, EventArgs e)
 		{
-			this.SongEditor_Control.method_8(this.GameMode_EditorBtn.Checked);
+			this.SongEditor_Control.SetGamemodeView(this.GameMode_EditorBtn.Checked);
 		}
 
 		private void ToggleElements_EditorSplitBtn_ButtonClick(object sender, EventArgs e)
 		{
 			SongEditor arg_1D_0 = this.SongEditor_Control;
 			ToolStripMenuItem expr_0C = this.StarView_EditorBtn;
-			arg_1D_0.bool_2 = (expr_0C.Checked = !expr_0C.Checked);
+			arg_1D_0.LoadStarpowerTextures = (expr_0C.Checked = !expr_0C.Checked);
 			SongEditor arg_3F_0 = this.SongEditor_Control;
 			ToolStripMenuItem expr_2E = this.HopoView_EditorBtn;
-			arg_3F_0.bool_3 = (expr_2E.Checked = !expr_2E.Checked);
+			arg_3F_0.LoadHopoTextures = (expr_2E.Checked = !expr_2E.Checked);
 			SongEditor arg_61_0 = this.SongEditor_Control;
 			ToolStripMenuItem expr_50 = this.AudioView_EditorBtn;
-			arg_61_0.bool_4 = (expr_50.Checked = !expr_50.Checked);
+			arg_61_0.ShowAudioOnFretboard = (expr_50.Checked = !expr_50.Checked);
 		}
 
 		private void StarView_EditorBtn_Click(object sender, EventArgs e)
 		{
-			this.SongEditor_Control.bool_2 = this.StarView_EditorBtn.Checked;
+			this.SongEditor_Control.LoadStarpowerTextures = this.StarView_EditorBtn.Checked;
 		}
 
 		private void HopoView_EditorBtn_Click(object sender, EventArgs e)
 		{
-			this.SongEditor_Control.bool_3 = this.HopoView_EditorBtn.Checked;
+			this.SongEditor_Control.LoadHopoTextures = this.HopoView_EditorBtn.Checked;
 		}
 
 		private void AudioView_EditorBtn_Click(object sender, EventArgs e)
 		{
-			this.SongEditor_Control.bool_4 = this.AudioView_EditorBtn.Checked;
+			this.SongEditor_Control.ShowAudioOnFretboard = this.AudioView_EditorBtn.Checked;
 		}
 
 		private void method_2(object sender, EventArgs e)
 		{
-			this.SongEditor_Control.method_10((double)this.FretAngle_EditorBar.method_4());
+			this.SongEditor_Control.SetFretboardAngle((double)this.FretAngle_EditorBar.method_4());
 		}
 
 		private void method_3(object sender, EventArgs e)
 		{
 			if (this.HyperSpeed_EditorBar.method_4() == 0)
 			{
-				this.SongEditor_Control.method_9(1.0);
+				this.SongEditor_Control.SetHyperspeed(1.0);
 				return;
 			}
 			if (this.HyperSpeed_EditorBar.method_4() < 0)
 			{
-				this.SongEditor_Control.method_9(1.0 - (double)this.HyperSpeed_EditorBar.method_4() / (double)(this.HyperSpeed_EditorBar.method_1() * 2));
+				this.SongEditor_Control.SetHyperspeed(1.0 - (double)this.HyperSpeed_EditorBar.method_4() / (double)(this.HyperSpeed_EditorBar.method_1() * 2));
 				return;
 			}
 			if (this.HyperSpeed_EditorBar.method_4() > 0)
 			{
-				this.SongEditor_Control.method_9(1.0 + (double)(this.HyperSpeed_EditorBar.method_4() * this.HyperSpeed_EditorBar.method_4()) / 10.0);
+				this.SongEditor_Control.SetHyperspeed(1.0 + (double)(this.HyperSpeed_EditorBar.method_4() * this.HyperSpeed_EditorBar.method_4()) / 10.0);
 			}
 		}
 
@@ -1386,6 +1386,7 @@ namespace ns15
 		{
             //Creates GUI
 			this.InitializeComponent();
+            this.LoadMore();
 			AbstractBaseTreeNode1.bool_0 = false;
 			try
 			{
@@ -2222,13 +2223,13 @@ namespace ns15
             this.MinToTray_MenuItem,
             this.SysExit_MenuItem});
             this.rightClickMenu.Name = "rightClickMenu";
-            this.rightClickMenu.Size = new System.Drawing.Size(165, 142);
+            this.rightClickMenu.Size = new System.Drawing.Size(167, 142);
             // 
             // SysHigh_MenuItem
             // 
             this.SysHigh_MenuItem.Name = "SysHigh_MenuItem";
             this.SysHigh_MenuItem.ShowShortcutKeys = false;
-            this.SysHigh_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.SysHigh_MenuItem.Size = new System.Drawing.Size(166, 22);
             this.SysHigh_MenuItem.Tag = "high";
             this.SysHigh_MenuItem.Text = "High";
             this.SysHigh_MenuItem.Click += new System.EventHandler(this.SysBelow_MenuItem_Click);
@@ -2237,7 +2238,7 @@ namespace ns15
             // 
             this.SysAbove_MenuItem.Name = "SysAbove_MenuItem";
             this.SysAbove_MenuItem.ShowShortcutKeys = false;
-            this.SysAbove_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.SysAbove_MenuItem.Size = new System.Drawing.Size(166, 22);
             this.SysAbove_MenuItem.Tag = "above";
             this.SysAbove_MenuItem.Text = "Above Normal";
             this.SysAbove_MenuItem.Click += new System.EventHandler(this.SysBelow_MenuItem_Click);
@@ -2246,7 +2247,7 @@ namespace ns15
             // 
             this.SysNormal_MenuItem.Name = "SysNormal_MenuItem";
             this.SysNormal_MenuItem.ShowShortcutKeys = false;
-            this.SysNormal_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.SysNormal_MenuItem.Size = new System.Drawing.Size(166, 22);
             this.SysNormal_MenuItem.Tag = "normal";
             this.SysNormal_MenuItem.Text = "Normal";
             this.SysNormal_MenuItem.Click += new System.EventHandler(this.SysBelow_MenuItem_Click);
@@ -2255,7 +2256,7 @@ namespace ns15
             // 
             this.SysBelow_MenuItem.Name = "SysBelow_MenuItem";
             this.SysBelow_MenuItem.ShowShortcutKeys = false;
-            this.SysBelow_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.SysBelow_MenuItem.Size = new System.Drawing.Size(166, 22);
             this.SysBelow_MenuItem.Tag = "below";
             this.SysBelow_MenuItem.Text = "Below Normal";
             this.SysBelow_MenuItem.Click += new System.EventHandler(this.SysBelow_MenuItem_Click);
@@ -2263,20 +2264,20 @@ namespace ns15
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(161, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(163, 6);
             // 
             // MinToTray_MenuItem
             // 
             this.MinToTray_MenuItem.CheckOnClick = true;
             this.MinToTray_MenuItem.Name = "MinToTray_MenuItem";
-            this.MinToTray_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.MinToTray_MenuItem.Size = new System.Drawing.Size(166, 22);
             this.MinToTray_MenuItem.Text = "Minimize To Tray";
             // 
             // SysExit_MenuItem
             // 
             this.SysExit_MenuItem.Name = "SysExit_MenuItem";
             this.SysExit_MenuItem.ShowShortcutKeys = false;
-            this.SysExit_MenuItem.Size = new System.Drawing.Size(164, 22);
+            this.SysExit_MenuItem.Size = new System.Drawing.Size(166, 22);
             this.SysExit_MenuItem.Text = "Exit";
             this.SysExit_MenuItem.Click += new System.EventHandler(this.Exit_MenuItem_Click);
             // 
@@ -2439,14 +2440,14 @@ namespace ns15
             // 
             this.NewTier_MenuItem.Name = "NewTier_MenuItem";
             this.NewTier_MenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
-            this.NewTier_MenuItem.Size = new System.Drawing.Size(136, 22);
+            this.NewTier_MenuItem.Size = new System.Drawing.Size(137, 22);
             this.NewTier_MenuItem.Text = "New";
             this.NewTier_MenuItem.Click += new System.EventHandler(this.NewTier_MenuItem_Click);
             // 
             // TGHImport_MenuItem
             // 
             this.TGHImport_MenuItem.Name = "TGHImport_MenuItem";
-            this.TGHImport_MenuItem.Size = new System.Drawing.Size(136, 22);
+            this.TGHImport_MenuItem.Size = new System.Drawing.Size(137, 22);
             this.TGHImport_MenuItem.Text = "TGH Import";
             this.TGHImport_MenuItem.Click += new System.EventHandler(this.TGHImport_MenuItem_Click);
             // 
@@ -2940,7 +2941,7 @@ namespace ns15
             this.AudioView_EditorBtn});
             this.ToggleElements_EditorSplitBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToggleElements_EditorSplitBtn.Name = "ToggleElements_EditorSplitBtn";
-            this.ToggleElements_EditorSplitBtn.Size = new System.Drawing.Size(110, 22);
+            this.ToggleElements_EditorSplitBtn.Size = new System.Drawing.Size(111, 22);
             this.ToggleElements_EditorSplitBtn.Text = "Toggle Elements";
             this.ToggleElements_EditorSplitBtn.ButtonClick += new System.EventHandler(this.ToggleElements_EditorSplitBtn_ButtonClick);
             // 
@@ -3582,7 +3583,6 @@ namespace ns15
             this.TierSongs_ListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.TierSongs_ListBox.Size = new System.Drawing.Size(174, 377);
             this.TierSongs_ListBox.TabIndex = 19;
-            this.TierSongs_ListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.TierSongs_ListBox_DragDrop);
             this.TierSongs_ListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TierSongs_ListBox_KeyDown);
             this.TierSongs_ListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TierSongs_ListBox_MouseDown);
             // 
@@ -3774,6 +3774,23 @@ namespace ns15
             this.ResumeLayout(false);
 
 		}
+
+        private void LoadMore()
+        {
+            this.TierSongs_ListBox.method_0("Songs");
+            this.TierSongs_ListBox.method_1(false);
+            this.TierSongs_ListBox.method_6(new EventHandler<EventArgs2>(this.method_21));
+            this.SongListBox.method_0("Songs");
+            this.SongListBox.method_4(false);
+            this.SongListBox.method_2(false);
+            this.SongListBox.method_5(false);
+            this.SongEditor_Control.Set5NoteLines(false);
+            this.SongEditor_Control.SetFretboardAngle(0);
+            this.SongEditor_Control.SetGamemodeView(true);
+            this.SongEditor_Control.SetHyperspeed(1);
+            this.SongEditor_Control.SetDoubleFretbarWidth(false);
+            this.SongEditor_Control.method_29(new SongEditor.Delegate10(this.method_1));
+        }
 
 		private void method_12(bool bool_1)
 		{

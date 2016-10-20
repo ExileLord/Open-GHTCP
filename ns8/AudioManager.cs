@@ -18,25 +18,25 @@ namespace ns8
 {
 	public class AudioManager : IDisposable
 	{
-		private List<Interface6> list_0;
+		private List<PlayableAudio> list_0;
 
 		public AudioManager()
 		{
-			this.list_0 = new List<Interface6>();
+			this.list_0 = new List<PlayableAudio>();
 		}
 
-		public static Interface6 smethod_0(Enum25 enum25_0, GenericAudioStream audioStream)
+		public static PlayableAudio LoadPlayableAudio(Enum25 enum25_0, GenericAudioStream audioStream)
 		{
             switch (enum25_0)
 			{
 			case Enum25.const_1:
-				return new Class163(audioStream);
+				return new WaveOutput(audioStream);
 			case Enum25.const_2:
-				return new Class155(audioStream);
+				return new MP3Output(audioStream);
 			case Enum25.const_3:
-				return new Class163(audioStream);
+				return new WaveOutput(audioStream);
 			case Enum25.const_5:
-				return new Class163(audioStream);
+				return new WaveOutput(audioStream);
 			}
             bool flag = Type.GetType("Mono.Runtime") != null;
 			int platform = (int)Environment.OSVersion.Platform;
@@ -47,14 +47,14 @@ namespace ns8
 			case 2:
 			case 3:
 			{
-				Interface6 result;
+				PlayableAudio result;
 				try
 				{
-					result = new Class163(audioStream);
+					result = new WaveOutput(audioStream);
 				}
 				catch
 				{
-					result = new Class109(audioStream);
+					result = new OGGOutput(audioStream);
 				}
 				return result;
 			}
@@ -228,7 +228,7 @@ namespace ns8
 
 		public void method_0(bool bool_0)
 		{
-			foreach (Interface6 current in this.list_0)
+			foreach (PlayableAudio current in this.list_0)
 			{
 				current.Dispose();
 			}

@@ -21,7 +21,7 @@ namespace ns9
 
 		public Dictionary<string, Track<int, int[]>> battleNoteList = new Dictionary<string, Track<int, int[]>>();
 
-		public Class239<int> class239_0;
+		public Fretbar<int> FretbarList;
 
 		public Track<int, int[]> tsList = new Track<int, int[]>();
 
@@ -49,7 +49,7 @@ namespace ns9
 
 		public QBCParser()
 		{
-			this.class239_0 = new Class239<int>();
+			this.FretbarList = new Fretbar<int>();
 		}
 
 		public QBCParser(GH3Song gh3Song_1) : this()
@@ -263,17 +263,17 @@ namespace ns9
 							}
 							goto IL_72D;
 							IL_5AE:
-							this.class239_0 = new Class239<int>();
+							this.FretbarList = new Fretbar<int>();
 							foreach (string current4 in list)
 							{
-								this.class239_0.method_1(Convert.ToInt32(current4.Trim(new char[]
+								this.FretbarList.method_1(Convert.ToInt32(current4.Trim(new char[]
 								{
 									' ',
 									'\t',
 									'='
 								})));
 							}
-							this.int_0 = (this.class239_0[1] - this.class239_0[0]) / 4;
+							this.int_0 = (this.FretbarList[1] - this.FretbarList[0]) / 4;
 							goto IL_A3C;
 							IL_514:
 							using (List<string>.Enumerator enumerator5 = list.GetEnumerator())
@@ -556,8 +556,8 @@ namespace ns9
 			@class = class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode(string_0 + "_fretbars"));
 			if (@class != null && @class.method_7() is IntegerArrayNode)
 			{
-				this.class239_0 = new Class239<int>(@class.method_7().method_8<int>());
-				this.int_0 = (this.class239_0[1] - this.class239_0[0]) / 4;
+				this.FretbarList = new Fretbar<int>(@class.method_7().method_8<int>());
+				this.int_0 = (this.FretbarList[1] - this.FretbarList[0]) / 4;
 				try
 				{
 					Dictionary<int, string> dictionary = new Dictionary<int, string>();
@@ -626,24 +626,24 @@ namespace ns9
 				@class.gh3SongInfo.vmethod_0(gh3Song_1);
 			}
 			this.class228_6 = new Track<int, int>();
-			if (this.class239_0 != null)
+			if (this.FretbarList != null)
 			{
-				int value = this.class239_0[0];
-				this.class239_0[0] = 0;
+				int value = this.FretbarList[0];
+				this.FretbarList[0] = 0;
 				int num = 0;
-				for (int i = 1; i < this.class239_0.Count; i++)
+				for (int i = 1; i < this.FretbarList.Count; i++)
 				{
-					int num2 = this.class239_0[i] - this.class239_0[i - 1];
+					int num2 = this.FretbarList[i] - this.FretbarList[i - 1];
 					int num3 = Convert.ToInt32(60000000.0 / (double)num2);
 					if (num3 != num)
 					{
 						@class.bpmInterpreter.bpmList.Add((i - 1) * this.int_1, num3);
 						num = num3;
 					}
-					this.class228_6.Add(this.class239_0[i - 1], num2);
+					this.class228_6.Add(this.FretbarList[i - 1], num2);
 				}
-				this.class239_0[0] = value;
-				@class.sectionInterpreter.otherList.Add(this.method_0(this.class239_0[this.class239_0.Count - 1]), new List<string>(new string[]
+				this.FretbarList[0] = value;
+				@class.sectionInterpreter.otherList.Add(this.method_0(this.FretbarList[this.FretbarList.Count - 1]), new List<string>(new string[]
 				{
 					"end"
 				}));
@@ -806,7 +806,7 @@ namespace ns9
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[FretBars]");
             streamWriter.WriteLine("{");
-            foreach (int current2 in this.class239_0)
+            foreach (int current2 in this.FretbarList)
             {
                 streamWriter.WriteLine("\t" + current2);
             }
@@ -1109,7 +1109,7 @@ namespace ns9
 
 		private void method_9(int int_2, string string_0, zzGenericNode1 class308_0)
 		{
-			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, new IntegerArrayNode(this.class239_0)));
+			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, new IntegerArrayNode(this.FretbarList)));
 		}
 
 		private void method_10(int int_2, string string_0, zzGenericNode1 class308_0)
