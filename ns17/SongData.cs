@@ -1447,13 +1447,13 @@ namespace ns17
                     //Configures midi
                     else if (fileName.EndsWith(".mid"))
 					{
-                        this.qbcParser = Midi2Chart.getMidiSong(fileName, this.forceRB3);
+                        this.qbcParser = Midi2Chart.LoadMidiSong(fileName, this.forceRB3);
 					}
                     //Configures charts
                     else
                     {
                         //Crashes in this
-                        this.qbcParser = new ChartParser(fileName).method_3();
+                        this.qbcParser = new ChartParser(fileName).ConvertToQBC();
 					}
                     IL_F5:
 					this.method_6();

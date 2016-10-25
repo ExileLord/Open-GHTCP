@@ -566,7 +566,7 @@
     <Compile Include="ns11\Class156.cs" />
     <Compile Include="ns11\Class157.cs" />
     <Compile Include="ns11\Class158.cs" />
-    <Compile Include="ns11\Class159.cs" />
+    <Compile Include="ns11\AudioPlayer.cs" />
     <Compile Include="ns11\Class162.cs" />
     <Compile Include="ns11\WaveOutput.cs" />
     <Compile Include="ns11\Class165.cs" />

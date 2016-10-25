@@ -7,26 +7,26 @@ using System.Threading;
 
 namespace ns11
 {
-	public class Class159 : IDisposable
+	public class AudioPlayer : IDisposable
 	{
 		[CompilerGenerated]
-		private class Class160
+		private class VolumeListener
 		{
-			public Class159 class159_0;
+			public AudioPlayer audioPlayer;
 
-			public float float_0;
+			public float Volume;
 
-			public void method_0(object object_0)
+			public void StartListener(object object_0)
 			{
 				float num = 0f;
-				float num2 = this.float_0;
+				float num2 = this.Volume;
 				while (num < num2)
 				{
-					this.class159_0.method_2(num);
+					this.audioPlayer.SetVolume(num);
 					num += 0.1f;
 					Thread.Sleep(50);
 				}
-				this.class159_0.method_2(num2);
+				this.audioPlayer.SetVolume(num2);
 			}
 		}
 
@@ -35,7 +35,7 @@ namespace ns11
 		{
 			public IntPtr intptr_0;
 
-			public Class159 class159_0;
+			public AudioPlayer class159_0;
 
 			public void method_0(object object_0)
 			{
@@ -70,26 +70,26 @@ namespace ns11
 
 		private readonly object object_0;
 
-		public Class159(int int_0, WaveFormat waveFormat_0, int int_1, float float_0, bool bool_3, Delegate3 delegate3_1) : base()
+		public AudioPlayer(int int_0, WaveFormat waveFormat_0, int int_1, float Volume, bool bool_3, Delegate3 delegate3_1) : base()
 		{
 			WaitCallback waitCallback = null;
-			Class159.Class160 @class = new Class159.Class160();
-			@class.float_0 = float_0;
-			this.delegate4_0 = new Class162.Delegate4(Class165.smethod_0);
+			AudioPlayer.VolumeListener volumeListener = new AudioPlayer.VolumeListener();
+			volumeListener.Volume = Volume;
+            this.delegate4_0 = new Class162.Delegate4(Class165.smethod_0);
 			this.object_0 = new object();
 			//base..ctor();
-			@class.class159_0 = this;
+			volumeListener.audioPlayer = this;
 			this.bool_2 = bool_3;
             this.byte_0 = (byte)((waveFormat_0.short_2 == 8) ? 128 : 0);
 			this.delegate3_0 = delegate3_1;
 			Exception4.smethod_1(Class162.waveOutOpen(out this.intptr_0, int_0, waveFormat_0, this.delegate4_0, 0, Class162.Enum17.const_3), "waveOutOpen");
 			this.method_7(waveFormat_0.method_0(int_1 / 5), 5);
 			this.thread_0 = new Thread(new ThreadStart(this.method_6));
-			this.method_2(0f);
+			this.SetVolume(0f);
 			this.thread_0.Start();
 			if (waitCallback == null)
 			{
-				waitCallback = new WaitCallback(@class.method_0);
+				waitCallback = new WaitCallback(volumeListener.StartListener);
 			}
 			ThreadPool.QueueUserWorkItem(waitCallback);
 		}
@@ -115,7 +115,7 @@ namespace ns11
 			return ((float)(num >> 16) / 65536f + (float)(num & 65535) / 65536f) / 2f;
 		}
 
-		public void method_2(float float_0)
+		public void SetVolume(float float_0)
 		{
 			int int_ = (int)(float_0 * 65535f) + ((int)(float_0 * 65535f) << 16);
 			if (this.intptr_0 != IntPtr.Zero)
@@ -139,7 +139,7 @@ namespace ns11
 			return !this.bool_2 && this.bool_1;
 		}
 
-		~Class159()
+		~AudioPlayer()
 		{
 			this.Dispose();
 		}
@@ -162,7 +162,7 @@ namespace ns11
 						this.method_8();
 						if (this.intptr_0 != IntPtr.Zero)
 						{
-							Class159.Class161 @class = new Class159.Class161();
+							AudioPlayer.Class161 @class = new AudioPlayer.Class161();
 							@class.class159_0 = this;
 							@class.intptr_0 = this.intptr_0;
 							ThreadPool.QueueUserWorkItem(new WaitCallback(@class.method_0));
@@ -193,7 +193,7 @@ namespace ns11
 				}
 				else
 				{
-					byte[] array = new byte[this.class165_1.method_0()];
+                    byte[] array = new byte[this.class165_1.method_0()];
 					if (this.byte_0 != 0)
 					{
 						for (int i = 0; i < array.Length; i++)

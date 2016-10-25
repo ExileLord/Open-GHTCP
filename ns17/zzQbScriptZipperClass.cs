@@ -9,14 +9,14 @@ namespace ns17
 {
 	public static class zzQbScriptZipperClass
 	{
-		public static string string_0 = "GH3";
+		public static string GameName = "GH3";
 
 		public static byte[] smethod_0(string string_1)
 		{
 			return ZIPManager.smethod_5(KeyGenerator.cryptoMethod(Assembly.GetExecutingAssembly().GetManifestResourceStream(string.Concat(new object[]
 			{
 				"GHTCP.FileDB.QBS.",
-				zzQbScriptZipperClass.string_0,
+				zzQbScriptZipperClass.GameName,
 				'.',
 				string_1
 			})), "MinimizedScript1f2g4h"), string_1 + ".qbs");

@@ -1072,7 +1072,7 @@ namespace ns15
             return test;
         }
 
-		public QBCParser method_3()
+		public QBCParser ConvertToQBC()
         { 
             QBCParser @class = new QBCParser(this.gh3SongInfo);
 			Track<int, int> track = null;

@@ -11,7 +11,7 @@ namespace ns11
 {
 	public class MP3Output : IDisposable, PlayableAudio
 	{
-		private Class159 class159_0;
+		private AudioPlayer class159_0;
 
 		private readonly Class16 class16_0;
 
@@ -23,7 +23,7 @@ namespace ns11
 
 		private AudioStatus enum1_0;
 
-		private float float_0 = 1f;
+		private float Volume = 1f;
 
 		private int int_0;
 
@@ -87,17 +87,17 @@ namespace ns11
 		{
 			if (this.class159_0 == null)
 			{
-				return this.float_0;
+				return this.Volume;
 			}
 			return this.class159_0.method_1();
 		}
 
 		public void SetVolume(float float_1)
 		{
-			this.float_0 = float_1;
+			this.Volume = float_1;
 			if (this.class159_0 != null)
 			{
-				this.class159_0.method_2(this.float_0);
+				this.class159_0.SetVolume(this.Volume);
 			}
 		}
 
@@ -113,27 +113,29 @@ namespace ns11
 
 		public void DifferentStartPlaying()
 		{
-			WaitCallback waitCallback = null;
-			if (this.enum1_0 == AudioStatus.ShouldStartAudio)
+            WaitCallback waitCallback = null;
+            //Error Case (Will never get called)
+            if (this.enum1_0 == AudioStatus.ShouldStartAudio)
 			{
 				return;
 			}
-			if (this.class159_0 != null && this.enum1_0 == AudioStatus.IsCurrentlyPlayingAudio && !this.class159_0.method_5())
+            //If song is already playing
+            if (this.class159_0 != null && this.enum1_0 == AudioStatus.IsCurrentlyPlayingAudio && !this.class159_0.method_5())
 			{
-				this.enum1_0 = AudioStatus.ShouldStartAudio;
-				this.class159_0.method_2(0f);
+                this.enum1_0 = AudioStatus.ShouldStartAudio;
+				this.class159_0.SetVolume(0f);
 				this.class159_0.method_3();
-				if (waitCallback == null)
+                if (waitCallback == null)
 				{
 					waitCallback = new WaitCallback(this.method_2);
 				}
 				ThreadPool.QueueUserWorkItem(waitCallback);
 				return;
 			}
-			this.StopPlaying();
+            this.StopPlaying();
 			this.enum1_0 = AudioStatus.ShouldStartAudio;
-			this.class159_0 = new Class159(-1, this.class16_0.waveFormat_0, 200, this.float_0, this.bool_0, new Delegate3(this.method_0));
-		}
+            this.class159_0 = new AudioPlayer(-1, this.class16_0.waveFormat_0, 200, this.Volume, this.bool_0, new Delegate3(this.method_0));
+        }
 
 		public void StartPlaying()
 		{
@@ -142,7 +144,7 @@ namespace ns11
 				if (this.enum1_0 == AudioStatus.ShouldStartAudio)
 				{
 					this.enum1_0 = AudioStatus.IsCurrentlyPlayingAudio;
-					this.class159_0.method_4();
+                    this.class159_0.method_4();
 					return;
 				}
 			}
@@ -165,7 +167,7 @@ namespace ns11
 			}
 		}
 
-		private void method_0(Class159 class159_1, IntPtr intptr_0, int int_1, ref bool bool_1)
+		private void method_0(AudioPlayer class159_1, IntPtr intptr_0, int int_1, ref bool bool_1)
 		{
 			WaitCallback waitCallback = null;
 			if (this.byte_0 == null || this.byte_0.Length < int_1)
@@ -174,12 +176,12 @@ namespace ns11
 			}
 			if (this.stream1_0 != null && class159_1 == this.class159_0)
 			{
-				lock (this.stream1_0)
+                lock (this.stream1_0)
 				{
 					int num = this.stream1_0.vmethod_3(intptr_0, int_1);
 					if (num < int_1)
 					{
-						bool_1 = true;
+                        bool_1 = true;
 						if (waitCallback == null)
 						{
 							waitCallback = new WaitCallback(this.method_3);
@@ -223,21 +225,21 @@ namespace ns11
 		private void method_2(object object_0)
 		{
 			float num = this.vmethod_1();
-			while (num < this.float_0)
+            while (num < this.Volume)
 			{
-				if (this.enum1_0 != AudioStatus.ShouldStartAudio)
+                if (this.enum1_0 != AudioStatus.ShouldStartAudio)
 				{
 					break;
 				}
-				this.class159_0.method_2(num);
+				this.class159_0.SetVolume(num);
 				num += 0.1f;
 				Thread.Sleep(50);
 			}
-			if (this.enum1_0 != AudioStatus.ShouldStartAudio)
+            if (this.enum1_0 != AudioStatus.ShouldStartAudio)
 			{
 				return;
 			}
-			this.class159_0.method_2(this.float_0);
+			this.class159_0.SetVolume(this.Volume);
 		}
 
 		[CompilerGenerated]

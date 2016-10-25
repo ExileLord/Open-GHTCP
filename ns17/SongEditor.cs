@@ -21,7 +21,7 @@ namespace ns17
 		public delegate void Delegate10(object sender, EventArgs e);
 
 		[CompilerGenerated]
-		private class Class373
+		private class SongData
 		{
 			public SongEditor songEditor_0;
 
@@ -60,7 +60,7 @@ namespace ns17
 
 		private IContainer icontainer_0;
 
-		private System.Windows.Forms.Timer timer_0;
+		private System.Windows.Forms.Timer timer;
 
 		private VScrollBar VerticalScrollBar = new VScrollBar();
 
@@ -270,10 +270,10 @@ namespace ns17
 			base.Resize += new EventHandler(this.SongEditor_Resize);
 			base.Controls.Add(this.VerticalScrollBar);
 			base.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
-			this.timer_0 = new System.Windows.Forms.Timer();
-			this.timer_0.Interval = 20;
-			this.timer_0.Tick += new EventHandler(this.timer_0_Tick);
-			this.timer_0.Start();
+			this.timer = new System.Windows.Forms.Timer();
+			this.timer.Interval = 20;
+			this.timer.Tick += new EventHandler(this.timer_0_Tick);
+			this.timer.Start();
 		}
 
 		public void LoadChart(QBCParser chartFile)
@@ -293,20 +293,20 @@ namespace ns17
 
         public void LoadAudio(string fileName)
         {
-            SongEditor.Class373 @class = new SongEditor.Class373();
-            @class.fileName = fileName;
-            @class.songEditor_0 = this;
+            SongEditor.SongData songData = new SongEditor.SongData();
+            songData.fileName = fileName;
+            songData.songEditor_0 = this;
             if (this.Audio != null)
             {
                 this.Audio.Dispose();
             }
-            GenericAudioStream audioStream = AudioManager.getAudioStream(@class.fileName);
+            GenericAudioStream audioStream = AudioManager.getAudioStream(songData.fileName);
             if (audioStream == null)
             {
                 return;
             }
             this.Audio = AudioManager.LoadPlayableAudio(Enum25.const_2, audioStream);
-            ThreadPool.QueueUserWorkItem(new WaitCallback(@class.LoadAudioData));
+            ThreadPool.QueueUserWorkItem(new WaitCallback(songData.LoadAudioData));
         }
 
 		private void RedrawFretboard()
