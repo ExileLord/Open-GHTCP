@@ -4524,20 +4524,22 @@ namespace ns15
                         return;
                     }
 
-                    using (StreamWriter outFile = new StreamWriter(myStream))
+                    // Get songs for this setlist
+                    List<GH3Song> songs = new List<GH3Song>();
+                    foreach (GH3Tier tier in this.gh3Songlist_0.gh3SetlistList[this.int_0].tiers)
                     {
-                        List<GH3Song> songs = new List<GH3Song>();
-                        foreach (GH3Tier tier in this.gh3Songlist_0.gh3SetlistList[this.int_0].tiers)
+                        foreach (GH3Song song in tier.songs)
                         {
-                            foreach (GH3Song song in tier.songs)
-                            {
-                                songs.Add(song);
-                            }
+                            songs.Add(song);
                         }
-                        songs.Sort(delegate (GH3Song lhs, GH3Song rhs)
-                        {
-                            return String.Format("{0} - {1}", lhs.artist, lhs.title).CompareTo(String.Format("{0} - {1}", rhs.artist, rhs.title));
-                        });
+                    }
+
+                    // Sort songs by artist and title
+                    songs = songs.OrderBy(song => song.artist).ThenBy(song => song.title).ToList();
+
+                    // Write to file
+                    using (StreamWriter outFile = new StreamWriter(myStream))
+                    {                        
                         foreach (GH3Song song in songs)
                         {
                             outFile.WriteLine(String.Format("{0} - {1}", song.artist, song.title));
