@@ -4553,6 +4553,11 @@ namespace ns15
 
         private void exportSongListToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            SortSongListForm form = new SortSongListForm();
+            form.ShowDialog();
+
+            bool sortBySetlist = form.sortBy == SortSongListForm.SortBy.Setlist;
+
             SaveFileDialog saveFileDlg = new SaveFileDialog();
             saveFileDlg.Filter = "txt files (*.txt)|*.txt";
             saveFileDlg.Title = "Please select where you would like to save the song list.";
@@ -4561,11 +4566,6 @@ namespace ns15
             {
                 return;
             }
-
-            SortSongListForm form = new SortSongListForm();
-            form.ShowDialog();
-
-            bool sortBySetlist = form.sortBy == SortSongListForm.SortBy.Setlist;
 
             // Open selected file for writing
             using (Stream myStream = saveFileDlg.OpenFile())
