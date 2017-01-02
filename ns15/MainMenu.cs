@@ -19,6 +19,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -4559,6 +4560,11 @@ namespace ns15
                 return;
             }
 
+            SortSongListForm form = new SortSongListForm();
+            form.ShowDialog();
+
+            bool sortBySetlist = form.sortBy == SortSongListForm.SortBy.Setlist;
+
             // Open selected file for writing
             using (Stream myStream = saveFileDlg.OpenFile())
             {
@@ -4568,29 +4574,44 @@ namespace ns15
                     return;
                 }
 
-                using (StreamWriter outFile = new StreamWriter(myStream))
+                // Retrieve songs and associated setlist name
+                List<KeyValuePair<string, GH3Song>> songs = new List<KeyValuePair<string, GH3Song>>();
+                // setlist contains a pair of setlist name => setlist id
+                foreach (KeyValuePair<string, int> setlist in this.gh3Songlist_0.class214_0)
                 {
-                    // setlist contains a pair of setlist name => setlist id
-                    foreach (KeyValuePair<string, int> setlist in this.gh3Songlist_0.class214_0)
+                    foreach (GH3Tier tier in this.gh3Songlist_0.gh3SetlistList[this.int_0 = this.gh3Songlist_0.method_9(setlist.Key)].tiers)
                     {
-                        List<GH3Song> songs = new List<GH3Song>();                        
-                        foreach (GH3Tier tier in this.gh3Songlist_0.gh3SetlistList[this.int_0 = this.gh3Songlist_0.method_9(setlist.Key)].tiers)
+                        foreach (GH3Song song in tier.songs)
                         {
-                            foreach (GH3Song song in tier.songs)
-                            {
-                                songs.Add(song);
-                            }
-                        }
-                        songs.Sort(delegate (GH3Song lhs, GH3Song rhs)
-                        {
-                            return String.Format("{0} - {1}", lhs.artist, lhs.title).CompareTo(String.Format("{0} - {1}", rhs.artist, rhs.title));
-                        });
-                        foreach (GH3Song song in songs)
-                        {
-                            outFile.WriteLine(String.Format("{0}: {1} - {2}", setlist.Key, song.artist, song.title));
+                            songs.Add(new KeyValuePair<string, GH3Song>(setlist.Key, song));
                         }
                     }
+                }
 
+                // Sort by setlist or artist
+                if (sortBySetlist)
+                {
+                    songs = songs.OrderBy(pair => pair.Key).ThenBy(pair => pair.Value.artist).ThenBy(pair => pair.Value.title).ToList();
+                }
+                else
+                {
+                    songs = songs.OrderBy(pair => pair.Value.artist).ThenBy(pair => pair.Value.title).ThenBy(pair => pair.Key).ToList();
+                }
+                
+                // Write results to file
+                using (StreamWriter outFile = new StreamWriter(myStream))
+                {
+                    foreach (KeyValuePair<string, GH3Song> song in songs)
+                    {
+                        if (sortBySetlist)
+                        {
+                            outFile.WriteLine(String.Format("{0}: {1} - {2}", song.Key, song.Value.artist, song.Value.title));
+                        }
+                        else
+                        {
+                            outFile.WriteLine(String.Format("{1} - {2} ({0})", song.Key, song.Value.artist, song.Value.title));
+                        }
+                    }
                 }
             }
 
