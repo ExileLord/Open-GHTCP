@@ -2056,6 +2056,7 @@ namespace ns15
             this.SaveChart_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportSetlistAsChartsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportSongListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportSongListToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.Exit_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Add_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -2185,7 +2186,6 @@ namespace ns15
             this.MainContainer = new System.Windows.Forms.ToolStripContainer();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.ToolStripStatusLbl = new System.Windows.Forms.ToolStripStatusLabel();
-            this.exportSongListToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rightClickMenu.SuspendLayout();
             this.TopMenuStrip.SuspendLayout();
             this.SidePanel.SuspendLayout();
@@ -2406,9 +2406,18 @@ namespace ns15
             this.exportSongListToolStripMenuItem.Enabled = false;
             this.exportSongListToolStripMenuItem.Name = "exportSongListToolStripMenuItem";
             this.exportSongListToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
-            this.exportSongListToolStripMenuItem.Text = "Export Setlist Song List";
-            this.exportSongListToolStripMenuItem.ToolTipText = "Export songs in the selected setlist as text file";
+            this.exportSongListToolStripMenuItem.Text = "Export Setlist as CSV";
+            this.exportSongListToolStripMenuItem.ToolTipText = "Export songs in the selected setlist as CSV";
             this.exportSongListToolStripMenuItem.Click += new System.EventHandler(this.exportSongListToolStripMenuItem_Click);
+            // 
+            // exportSongListToolStripMenuItem1
+            // 
+            this.exportSongListToolStripMenuItem1.Enabled = false;
+            this.exportSongListToolStripMenuItem1.Name = "exportSongListToolStripMenuItem1";
+            this.exportSongListToolStripMenuItem1.Size = new System.Drawing.Size(264, 22);
+            this.exportSongListToolStripMenuItem1.Text = "Export Songlist as CSV";
+            this.exportSongListToolStripMenuItem1.ToolTipText = "Export the whole songlist as CSV";
+            this.exportSongListToolStripMenuItem1.Click += new System.EventHandler(this.exportSongListToolStripMenuItem1_Click);
             // 
             // toolStripSeparator6
             // 
@@ -3728,14 +3737,7 @@ namespace ns15
             this.ToolStripStatusLbl.Size = new System.Drawing.Size(0, 17);
             this.ToolStripStatusLbl.Tag = "Function Description";
             // 
-            // exportSongListToolStripMenuItem1
             // 
-            this.exportSongListToolStripMenuItem1.Enabled = false;
-            this.exportSongListToolStripMenuItem1.Name = "exportSongListToolStripMenuItem1";
-            this.exportSongListToolStripMenuItem1.Size = new System.Drawing.Size(264, 22);
-            this.exportSongListToolStripMenuItem1.Text = "Export Song List";
-            this.exportSongListToolStripMenuItem1.ToolTipText = "Export the whole song list as text file";
-            this.exportSongListToolStripMenuItem1.Click += new System.EventHandler(this.exportSongListToolStripMenuItem1_Click);
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4507,9 +4509,9 @@ namespace ns15
             if (this.gh3Songlist_0.gh3SetlistList.ContainsKey(this.int_0))
             {
                 SaveFileDialog saveFileDlg = new SaveFileDialog();
-                saveFileDlg.Filter = "txt files (*.txt)|*.txt";
-                saveFileDlg.Title = "Please select where you would like to save the song list.";
-                saveFileDlg.FileName = String.Format("{0}.txt", this.Setlist_DropBox.Text);
+                saveFileDlg.Filter = "CSV files (*.csv)|*.csv";
+                saveFileDlg.Title = "Please select where you would like to save the songlist";
+                saveFileDlg.FileName = String.Format("{0}.csv", this.Setlist_DropBox.Text);
                 if (saveFileDlg.ShowDialog() != DialogResult.OK)
                 {
                     return;
@@ -4539,10 +4541,13 @@ namespace ns15
 
                     // Write to file
                     using (StreamWriter outFile = new StreamWriter(myStream))
-                    {                        
+                    {
+                        // Write CSV header
+                        outFile.WriteLine("\"artist\",\"song\"");
                         foreach (GH3Song song in songs)
                         {
-                            outFile.WriteLine(String.Format("{0} - {1}", song.artist, song.title));
+                            outFile.WriteLine(String.Format("\"{0}\",\"{1}\"", song.artist.Replace("\"", "\"\""), 
+                                                                               song.title.Replace("\"", "\"\"")));
                         }
                     }
                 }
@@ -4559,9 +4564,9 @@ namespace ns15
             bool sortBySetlist = form.sortBy == SortSongListForm.SortBy.Setlist;
 
             SaveFileDialog saveFileDlg = new SaveFileDialog();
-            saveFileDlg.Filter = "txt files (*.txt)|*.txt";
-            saveFileDlg.Title = "Please select where you would like to save the song list.";
-            saveFileDlg.FileName = "songlist.txt";
+            saveFileDlg.Filter = "CSV files (*.csv)|*.csv";
+            saveFileDlg.Title = "Please select where you would like to save the songlist";
+            saveFileDlg.FileName = "songlist.csv";
             if (saveFileDlg.ShowDialog() != DialogResult.OK)
             {
                 return;
@@ -4603,16 +4608,13 @@ namespace ns15
                 // Write results to file
                 using (StreamWriter outFile = new StreamWriter(myStream))
                 {
+                    // Write CSV header
+                    outFile.WriteLine("\"artist\",\"song\",\"setlist\"");
                     foreach (KeyValuePair<string, GH3Song> song in songs)
                     {
-                        if (sortBySetlist)
-                        {
-                            outFile.WriteLine(String.Format("{0}: {1} - {2}", song.Key, song.Value.artist, song.Value.title));
-                        }
-                        else
-                        {
-                            outFile.WriteLine(String.Format("{1} - {2} ({0})", song.Key, song.Value.artist, song.Value.title));
-                        }
+                        outFile.WriteLine(String.Format("\"{1}\",\"{2}\",\"{0}\"", song.Key.Replace("\"", "\"\""), 
+                                                                                   song.Value.artist.Replace("\"", "\"\""), 
+                                                                                   song.Value.title.Replace("\"", "\"\"")));
                     }
                 }
             }
