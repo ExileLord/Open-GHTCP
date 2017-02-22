@@ -29,24 +29,24 @@ namespace ns17
 			((StructureHeaderNode)@class.method_5<TagStructureNode>(new TagStructureNode("event", "star_power_on")).Parent).method_5<TagStructureNode>(new TagStructureNode("scr")).method_9(this.bool_0 ? "guitarevent_starpoweroff" : "guitarevent_starpoweron");
 			if (!this.bool_0)
 			{
-				@class.method_5<ScriptRootNode>(new ScriptRootNode("hit_note_fx")).int_0 = QbSongClass1.smethod_9("hit_note_fx_empty");
-				@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_starsequencebonus")).int_0 = QbSongClass1.smethod_9("guitarevent_starsequencebonus_empty");
-				@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_multiplier4xon_spawned")).int_0 = QbSongClass1.smethod_9("guitarevent_multiplier4xon_spawned_empty");
-				@class.method_5<ScriptRootNode>(new ScriptRootNode("first_gem_fx")).int_0 = QbSongClass1.smethod_9("first_gem_fx_empty");
-				@class.method_5<ScriptRootNode>(new ScriptRootNode("hit_note_fx_original")).int_0 = QbSongClass1.smethod_9("hit_note_fx");
-				@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_starsequencebonus_original")).int_0 = QbSongClass1.smethod_9("guitarevent_starsequencebonus");
-				@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_multiplier4xon_spawned_original")).int_0 = QbSongClass1.smethod_9("guitarevent_multiplier4xon_spawned");
-				@class.method_5<ScriptRootNode>(new ScriptRootNode("first_gem_fx_original")).int_0 = QbSongClass1.smethod_9("first_gem_fx");
+				@class.method_5<ScriptRootNode>(new ScriptRootNode("hit_note_fx")).int_0 = QbSongClass1.AddKeyToDictionary("hit_note_fx_empty");
+				@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_starsequencebonus")).int_0 = QbSongClass1.AddKeyToDictionary("guitarevent_starsequencebonus_empty");
+				@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_multiplier4xon_spawned")).int_0 = QbSongClass1.AddKeyToDictionary("guitarevent_multiplier4xon_spawned_empty");
+				@class.method_5<ScriptRootNode>(new ScriptRootNode("first_gem_fx")).int_0 = QbSongClass1.AddKeyToDictionary("first_gem_fx_empty");
+				@class.method_5<ScriptRootNode>(new ScriptRootNode("hit_note_fx_original")).int_0 = QbSongClass1.AddKeyToDictionary("hit_note_fx");
+				@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_starsequencebonus_original")).int_0 = QbSongClass1.AddKeyToDictionary("guitarevent_starsequencebonus");
+				@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_multiplier4xon_spawned_original")).int_0 = QbSongClass1.AddKeyToDictionary("guitarevent_multiplier4xon_spawned");
+				@class.method_5<ScriptRootNode>(new ScriptRootNode("first_gem_fx_original")).int_0 = QbSongClass1.AddKeyToDictionary("first_gem_fx");
 				return;
 			}
-			@class.method_5<ScriptRootNode>(new ScriptRootNode("hit_note_fx")).int_0 = QbSongClass1.smethod_9("hit_note_fx_original");
-			@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_starsequencebonus")).int_0 = QbSongClass1.smethod_9("guitarevent_starsequencebonus_original");
-			@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_multiplier4xon_spawned")).int_0 = QbSongClass1.smethod_9("guitarevent_multiplier4xon_spawned_original");
-			@class.method_5<ScriptRootNode>(new ScriptRootNode("first_gem_fx")).int_0 = QbSongClass1.smethod_9("first_gem_fx_original");
+			@class.method_5<ScriptRootNode>(new ScriptRootNode("hit_note_fx")).int_0 = QbSongClass1.AddKeyToDictionary("hit_note_fx_original");
+			@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_starsequencebonus")).int_0 = QbSongClass1.AddKeyToDictionary("guitarevent_starsequencebonus_original");
+			@class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_multiplier4xon_spawned")).int_0 = QbSongClass1.AddKeyToDictionary("guitarevent_multiplier4xon_spawned_original");
+			@class.method_5<ScriptRootNode>(new ScriptRootNode("first_gem_fx")).int_0 = QbSongClass1.AddKeyToDictionary("first_gem_fx_original");
 			ScriptRootNode class2 = @class.method_5<ScriptRootNode>(new ScriptRootNode("hit_note_fx_empty"));
 			if (class2 != null)
 			{
-				class2.int_0 = QbSongClass1.smethod_9("hit_note_fx");
+				class2.int_0 = QbSongClass1.AddKeyToDictionary("hit_note_fx");
 			}
 			else
 			{
@@ -55,7 +55,7 @@ namespace ns17
 			class2 = @class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_starsequencebonus_empty"));
 			if (class2 != null)
 			{
-				class2.int_0 = QbSongClass1.smethod_9("guitarevent_starsequencebonus");
+				class2.int_0 = QbSongClass1.AddKeyToDictionary("guitarevent_starsequencebonus");
 			}
 			else
 			{
@@ -64,7 +64,7 @@ namespace ns17
 			class2 = @class.method_5<ScriptRootNode>(new ScriptRootNode("guitarevent_multiplier4xon_spawned_empty"));
 			if (class2 != null)
 			{
-				class2.int_0 = QbSongClass1.smethod_9("guitarevent_multiplier4xon_spawned");
+				class2.int_0 = QbSongClass1.AddKeyToDictionary("guitarevent_multiplier4xon_spawned");
 			}
 			else
 			{
@@ -73,7 +73,7 @@ namespace ns17
 			class2 = @class.method_5<ScriptRootNode>(new ScriptRootNode("first_gem_fx_empty"));
 			if (class2 != null)
 			{
-				class2.int_0 = QbSongClass1.smethod_9("first_gem_fx");
+				class2.int_0 = QbSongClass1.AddKeyToDictionary("first_gem_fx");
 				return;
 			}
 			@class.method_3(new ScriptRootNode("first_gem_fx", "scripts\\guitar\\guitar_events.qb", new QbScriptNode()));

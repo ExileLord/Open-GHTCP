@@ -13,7 +13,7 @@ namespace ns21
 			this.vmethod_0();
 		}
 
-		public UnicodeStructureNode(string string_0) : this(QbSongClass1.smethod_9(string_0))
+		public UnicodeStructureNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
 		{
 		}
 
@@ -23,7 +23,7 @@ namespace ns21
 			this.vmethod_0();
 		}
 
-		public UnicodeStructureNode(string string_0, string string_1) : this(QbSongClass1.smethod_9(string_0), string_1)
+		public UnicodeStructureNode(string string_0, string string_1) : this(QbSongClass1.AddKeyToDictionary(string_0), string_1)
 		{
 		}
 

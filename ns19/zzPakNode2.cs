@@ -97,7 +97,7 @@ namespace ns19
 			}
 			int num = 0;
 			int num2 = this.stream26_0.ReadInt();
-			this.stream26_0._reverseEndianness = (this.bool_2 = (!QbSongClass1.smethod_3(num2) || !QbSongClass1.smethod_5(num2).StartsWith(".")));
+			this.stream26_0._reverseEndianness = (this.bool_2 = (!QbSongClass1.ContainsKey(num2) || !QbSongClass1.GetDictString(num2).StartsWith(".")));
 			Enum35 @enum = (Enum35)this.stream26_0.ReadIntAt(28);
 			this.bool_1 = ((@enum & Enum35.flag_3) == Enum35.flag_0);
 			this.int_0 = this.stream26_0.ReadIntAt(this.bool_1 ? 12 : 16, this.bool_2 && (@enum & Enum35.flag_4) == Enum35.flag_0 && (@enum & Enum35.flag_5) == Enum35.flag_0);
@@ -106,11 +106,11 @@ namespace ns19
 				string text = KeyGenerator.GetFileName(this.string_0);
 				if (text.Contains("_song"))
 				{
-					QbSongClass1.smethod_10(text.Substring(0, text.LastIndexOf("_song.pak")).ToLower());
+					QbSongClass1.GenerateSongTrackStuff(text.Substring(0, text.LastIndexOf("_song.pak")).ToLower());
 				}
 				else if (!this.bool_1)
 				{
-					QbSongClass1.smethod_10(text.Substring(0, text.LastIndexOf(".pak")).ToLower());
+					QbSongClass1.GenerateSongTrackStuff(text.Substring(0, text.LastIndexOf(".pak")).ToLower());
 				}
 			}
 			while (true)
@@ -118,13 +118,13 @@ namespace ns19
 				Enum35 enum2 = (Enum35)this.stream26_0.ReadIntAt(num + 28);
 				bool flag = this.bool_2 && (enum2 & Enum35.flag_4) == Enum35.flag_0 && (enum2 & Enum35.flag_5) == Enum35.flag_0;
 				int int_ = this.stream26_0.ReadIntAt(num, flag);
-				if (QbSongClass1.smethod_3(int_))
+				if (QbSongClass1.ContainsKey(int_))
 				{
-					if (QbSongClass1.smethod_5(int_).Equals(".last"))
+					if (QbSongClass1.GetDictString(int_).Equals(".last"))
 					{
 						return;
 					}
-					if (QbSongClass1.smethod_5(int_).Equals("last"))
+					if (QbSongClass1.GetDictString(int_).Equals("last"))
 					{
 						break;
 					}
@@ -144,26 +144,26 @@ namespace ns19
 					{
 						text2 = text2.Substring(0, num5);
 					}
-					if (QbSongClass1.smethod_3(int_) && !QbSongClass1.smethod_5(int_).EndsWith(".qb.ngc") && !QbSongClass1.smethod_5(int_).EndsWith(".qb.ps2"))
+					if (QbSongClass1.ContainsKey(int_) && !QbSongClass1.GetDictString(int_).EndsWith(".qb.ngc") && !QbSongClass1.GetDictString(int_).EndsWith(".qb.ps2"))
 					{
 						if (!this.bool_2)
 						{
 							if (num3 == KeyGenerator.GetQbKey(text2 = text2.Replace("/", "\\").Replace(".ps2", ""), true))
 							{
-								QbSongClass1.smethod_9(text2);
+								QbSongClass1.AddKeyToDictionary(text2);
 							}
 							else if (num3 == KeyGenerator.GetQbKey(text2 = text2.Replace("/", "\\").Replace(".qb", ""), true))
 							{
-								QbSongClass1.smethod_9(text2);
+								QbSongClass1.AddKeyToDictionary(text2);
 							}
 						}
 						else if (num3 == KeyGenerator.GetQbKey(text2 = text2.Replace("/", "\\").Replace(".ngc", ""), true))
 						{
-							QbSongClass1.smethod_9(text2);
+							QbSongClass1.AddKeyToDictionary(text2);
 						}
 						else if (num3 == KeyGenerator.GetQbKey(text2 = text2.Replace("/", "\\").Replace(".qb", ""), true))
 						{
-							QbSongClass1.smethod_9(text2);
+							QbSongClass1.AddKeyToDictionary(text2);
 						}
 					}
 					else
@@ -174,21 +174,21 @@ namespace ns19
 							char c = text3[i];
 							if (num3 == KeyGenerator.GetQbKey(c + text2, true))
 							{
-								QbSongClass1.smethod_9(c + text2);
+								QbSongClass1.AddKeyToDictionary(c + text2);
 							}
 						}
 					}
 					if (num4 == KeyGenerator.GetQbKey(text2 = KeyGenerator.GetFileNameNoExt(text2), true))
 					{
-						QbSongClass1.smethod_9(text2);
+						QbSongClass1.AddKeyToDictionary(text2);
 					}
 				}
 				TreeNode treeNode;
-				if (QbSongClass1.smethod_3(int_) && QbSongClass1.smethod_5(int_).Contains("qb"))
+				if (QbSongClass1.ContainsKey(int_) && QbSongClass1.GetDictString(int_).Contains("qb"))
 				{
 					treeNode = new Class309(int_, int_2, int_3, num3, num4, int_4, enum2);
 				}
-				else if (QbSongClass1.smethod_3(int_) && QbSongClass1.smethod_5(int_).Contains("qs"))
+				else if (QbSongClass1.ContainsKey(int_) && QbSongClass1.GetDictString(int_).Contains("qs"))
 				{
 					treeNode = new Class328(int_, int_2, int_3, num3, num4, int_4, enum2);
 				}
@@ -198,9 +198,9 @@ namespace ns19
 				}
 				if (this.bool_4)
 				{
-					if (QbSongClass1.smethod_3(num3))
+					if (QbSongClass1.ContainsKey(num3))
 					{
-						base.method_1<TreeNode>(QbSongClass1.smethod_5(num3), treeNode);
+						base.method_1<TreeNode>(QbSongClass1.GetDictString(num3), treeNode);
 					}
 					else
 					{
@@ -298,7 +298,7 @@ namespace ns19
 
 		public Interface12 method_10(string string_2)
 		{
-			return this.method_11(QbSongClass1.smethod_9(string_2));
+			return this.method_11(QbSongClass1.AddKeyToDictionary(string_2));
 		}
 
 		public Interface12 method_11(int int_1)
@@ -365,7 +365,7 @@ namespace ns19
 			{
 				this.stream26_0.Close();
 			}
-			KeyGenerator.smethod_9(string_2, stream.ReadEverything());
+			KeyGenerator.WriteAllBytes(string_2, stream.ReadEverything());
 			stream.Dispose();
 			if (this.stream26_0 != null && this.string_0 == string_2)
 			{
@@ -401,7 +401,7 @@ namespace ns19
 			int num = 0;
 			foreach (Interface12 current in this.list_0)
 			{
-				num += (((current.imethod_14() & Enum35.flag_3) == Enum35.flag_0 || !QbSongClass1.smethod_3(current.imethod_7())) ? 32 : 192);
+				num += (((current.imethod_14() & Enum35.flag_3) == Enum35.flag_0 || !QbSongClass1.ContainsKey(current.imethod_7())) ? 32 : 192);
 			}
 			if (this.bool_1)
 			{
@@ -454,7 +454,7 @@ namespace ns19
 				}
 				else
 				{
-					string text = QbSongClass1.smethod_5(num3);
+					string text = QbSongClass1.GetDictString(num3);
 					if (!this.bool_1 && !text.EndsWith(".qb.ngc") && !text.EndsWith(".qb.ps2"))
 					{
 						stream26_1.WriteInt(1270999134, flag);
@@ -490,10 +490,10 @@ namespace ns19
 				stream26_1.WriteInt(current3.imethod_12(), flag);
 				stream26_1.WriteInt((int)current3.imethod_14(), false);
 				bool flag2 = false;
-				if ((current3.imethod_14() & Enum35.flag_3) != Enum35.flag_0 && QbSongClass1.smethod_3(num3))
+				if ((current3.imethod_14() & Enum35.flag_3) != Enum35.flag_0 && QbSongClass1.ContainsKey(num3))
 				{
 					flag2 = true;
-					string text2 = QbSongClass1.smethod_5(num3);
+					string text2 = QbSongClass1.GetDictString(num3);
 					if (!current3.imethod_6().EndsWith(".qb.ngc") && !current3.imethod_6().EndsWith(".qb.ps2"))
 					{
 						if (this.bool_1)

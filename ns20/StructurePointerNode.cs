@@ -11,7 +11,7 @@ namespace ns20
 			this.vmethod_0();
 		}
 
-		public StructurePointerNode(string string_0) : this(QbSongClass1.smethod_9(string_0))
+		public StructurePointerNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
 		{
 		}
 
@@ -21,7 +21,7 @@ namespace ns20
 			this.vmethod_0();
 		}
 
-		public StructurePointerNode(string string_0, StructureHeaderNode class286_0) : this(QbSongClass1.smethod_9(string_0), class286_0)
+		public StructurePointerNode(string string_0, StructureHeaderNode class286_0) : this(QbSongClass1.AddKeyToDictionary(string_0), class286_0)
 		{
 		}
 

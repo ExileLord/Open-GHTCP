@@ -52,16 +52,16 @@ namespace ns21
 
 		public string method_2()
 		{
-			if (QbSongClass1.smethod_3(this.int_0))
+			if (QbSongClass1.ContainsKey(this.int_0))
 			{
-				return QbSongClass1.smethod_5(this.int_0);
+				return QbSongClass1.GetDictString(this.int_0);
 			}
 			return "0x" + base.IntToHex32Bit(this.int_0);
 		}
 
 		public void method_3(string string_0)
 		{
-			this.int_0 = QbSongClass1.smethod_9(string_0);
+			this.int_0 = QbSongClass1.AddKeyToDictionary(string_0);
 		}
 
 		public override string GetNodeText()

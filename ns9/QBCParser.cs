@@ -961,7 +961,7 @@ namespace ns9
         public zzGenericNode1 method_4(string string_0)
 		{
 			zzGenericNode1 @class = new zzGenericNode1();
-			int int_ = QbSongClass1.smethod_9("songs\\" + string_0 + ".mid.qb");
+			int int_ = QbSongClass1.AddKeyToDictionary("songs\\" + string_0 + ".mid.qb");
 			string[] array = new string[]
 			{
 				"",

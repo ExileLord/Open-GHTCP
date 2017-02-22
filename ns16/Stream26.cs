@@ -130,18 +130,18 @@ namespace ns16
 			return KeyGenerator.ReadBytes(this._stream);
 		}
 
-		public void zzUnknownReadMethod(string string_0)
+		public void WriteEverythingToFile(string fileName)
 		{
 			if (this._stream is Stream27)
 			{
-				KeyGenerator.smethod_9(string_0, ((Stream27)this._stream).ToArray());
+				KeyGenerator.WriteAllBytes(fileName, ((Stream27)this._stream).ToArray());
 				return;
 			}
 			if (!this.CanRead)
 			{
 				throw new Exception("Can't read from hexstream!");
 			}
-			KeyGenerator.smethod_46(this._stream, string_0);
+			KeyGenerator.smethod_46(this._stream, fileName);
 		}
 
 		public void WriteByte2(byte value)

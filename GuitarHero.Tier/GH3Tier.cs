@@ -117,7 +117,7 @@ namespace GuitarHero.Tier
 				List<int> list = new List<int>();
 				foreach (GH3Song current in this.songs)
 				{
-					list.Add(QbSongClass1.smethod_9(current.name));
+					list.Add(QbSongClass1.AddKeyToDictionary(current.name));
 				}
 				@class.method_3(new ArrayPointerNode("songs", new TagArray(list)));
 			}

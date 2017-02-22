@@ -11,7 +11,7 @@ namespace ns20
 			this.vmethod_0();
 		}
 
-		public ArrayPointerRootNode(string string_0) : this(QbSongClass1.smethod_9(string_0))
+		public ArrayPointerRootNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
 		{
 		}
 
@@ -21,11 +21,11 @@ namespace ns20
 			this.vmethod_0();
 		}
 
-		public ArrayPointerRootNode(string string_0, string string_1, AbsTreeNode1_1 class276_0) : this(QbSongClass1.smethod_9(string_0), QbSongClass1.smethod_9(string_1), class276_0)
+		public ArrayPointerRootNode(string string_0, string string_1, AbsTreeNode1_1 class276_0) : this(QbSongClass1.AddKeyToDictionary(string_0), QbSongClass1.AddKeyToDictionary(string_1), class276_0)
 		{
 		}
 
-		public ArrayPointerRootNode(string string_0, int int_2, AbsTreeNode1_1 class276_0) : this(QbSongClass1.smethod_9(string_0), int_2, class276_0)
+		public ArrayPointerRootNode(string string_0, int int_2, AbsTreeNode1_1 class276_0) : this(QbSongClass1.AddKeyToDictionary(string_0), int_2, class276_0)
 		{
 		}
 

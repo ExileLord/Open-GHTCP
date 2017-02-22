@@ -11,7 +11,7 @@ namespace ns20
 			this.vmethod_0();
 		}
 
-		public IntegerStructureNode(string string_0) : this(QbSongClass1.smethod_9(string_0))
+		public IntegerStructureNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
 		{
 		}
 
@@ -21,7 +21,7 @@ namespace ns20
 			this.vmethod_0();
 		}
 
-		public IntegerStructureNode(string string_0, int int_1) : this(QbSongClass1.smethod_9(string_0), int_1)
+		public IntegerStructureNode(string string_0, int int_1) : this(QbSongClass1.AddKeyToDictionary(string_0), int_1)
 		{
 		}
 

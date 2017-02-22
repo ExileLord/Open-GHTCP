@@ -31,26 +31,26 @@ namespace GuitarHero.Songlist
 
 		public static List<int> IgnoreSongs = new List<int>(new int[]
 		{
-			QbSongClass1.smethod_9("synctest"),
-			QbSongClass1.smethod_9("mutetest"),
-			QbSongClass1.smethod_9("synctestplaytoaudio"),
-			QbSongClass1.smethod_9("synctestaudioandvisual"),
-			QbSongClass1.smethod_9("tutorial_1b"),
-			QbSongClass1.smethod_9("tutorial_1c"),
-			QbSongClass1.smethod_9("tutorial_1d"),
-			QbSongClass1.smethod_9("tutorial_1e"),
-			QbSongClass1.smethod_9("tutorial_2a"),
-			QbSongClass1.smethod_9("tutorial_2b"),
-			QbSongClass1.smethod_9("tutorial_2c"),
-			QbSongClass1.smethod_9("tutorial_3a"),
-			QbSongClass1.smethod_9("tutorial_3b"),
-			QbSongClass1.smethod_9("tutorial_3c"),
-			QbSongClass1.smethod_9("tutorial_3d"),
-			QbSongClass1.smethod_9("tutorial_4c"),
-			QbSongClass1.smethod_9("tutorial_4e"),
-			QbSongClass1.smethod_9("credits"),
-			QbSongClass1.smethod_9("kingsandqueenscredits"),
-			QbSongClass1.smethod_9("timrapptest")
+			QbSongClass1.AddKeyToDictionary("synctest"),
+			QbSongClass1.AddKeyToDictionary("mutetest"),
+			QbSongClass1.AddKeyToDictionary("synctestplaytoaudio"),
+			QbSongClass1.AddKeyToDictionary("synctestaudioandvisual"),
+			QbSongClass1.AddKeyToDictionary("tutorial_1b"),
+			QbSongClass1.AddKeyToDictionary("tutorial_1c"),
+			QbSongClass1.AddKeyToDictionary("tutorial_1d"),
+			QbSongClass1.AddKeyToDictionary("tutorial_1e"),
+			QbSongClass1.AddKeyToDictionary("tutorial_2a"),
+			QbSongClass1.AddKeyToDictionary("tutorial_2b"),
+			QbSongClass1.AddKeyToDictionary("tutorial_2c"),
+			QbSongClass1.AddKeyToDictionary("tutorial_3a"),
+			QbSongClass1.AddKeyToDictionary("tutorial_3b"),
+			QbSongClass1.AddKeyToDictionary("tutorial_3c"),
+			QbSongClass1.AddKeyToDictionary("tutorial_3d"),
+			QbSongClass1.AddKeyToDictionary("tutorial_4c"),
+			QbSongClass1.AddKeyToDictionary("tutorial_4e"),
+			QbSongClass1.AddKeyToDictionary("credits"),
+			QbSongClass1.AddKeyToDictionary("kingsandqueenscredits"),
+			QbSongClass1.AddKeyToDictionary("timrapptest")
 		});
 
 		public GH3Songlist(zzGenericNode1 class308_0, GH3Songlist gh3Songlist_0)
@@ -63,7 +63,7 @@ namespace GuitarHero.Songlist
 			if (!base.ContainsKey(gh3Song_0.getSongName()))
 			{
 				base.Add(gh3Song_0.getSongName(), gh3Song_0);
-				QbSongClass1.smethod_9(gh3Song_0.getSongName());
+				QbSongClass1.AddKeyToDictionary(gh3Song_0.getSongName());
 			}
 		}
 
@@ -72,7 +72,7 @@ namespace GuitarHero.Songlist
 			if (!base.ContainsKey(gh3Song_0.getSongName()))
 			{
 				base.Add(gh3Song_0.getSongName(), gh3Song_0);
-				QbSongClass1.smethod_9(gh3Song_0.getSongName());
+				QbSongClass1.AddKeyToDictionary(gh3Song_0.getSongName());
 				return;
 			}
 			if (base[gh3Song_0.getSongName()].isEditable() && bool_0)
@@ -240,7 +240,7 @@ namespace GuitarHero.Songlist
 			List<zzUnkNode294> list2 = new List<zzUnkNode294>();
 			foreach (string current in base.Keys)
 			{
-				list.Add(QbSongClass1.smethod_9(current));
+				list.Add(QbSongClass1.AddKeyToDictionary(current));
 				list2.Add(base[current].vmethod_5());
 			}
 			((TagArray)class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("gh3_songlist")).method_7()).method_12(list);

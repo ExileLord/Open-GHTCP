@@ -74,9 +74,9 @@ namespace ns18
 
 		public override string GetText()
 		{
-			if (QbSongClass1.smethod_3(this.int_0))
+			if (QbSongClass1.ContainsKey(this.int_0))
 			{
-				return QbSongClass1.smethod_5(this.int_0) + " (Script)";
+				return QbSongClass1.GetDictString(this.int_0) + " (Script)";
 			}
 			return KeyGenerator.ValToHex32bit(this.int_0) + " (Script Tag)";
 		}

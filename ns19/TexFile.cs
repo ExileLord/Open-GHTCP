@@ -10,7 +10,7 @@ namespace ns19
 {
 	public class TexFile : IDisposable
 	{
-		public List<TextureMetadata> textureList = new List<TextureMetadata>();
+		public List<TextureMetadata> TextureList = new List<TextureMetadata>();
 
 		private Stream26 _fileStream;
 
@@ -22,11 +22,11 @@ namespace ns19
 		{
 			get
 			{
-				if (this.textureList[index].Data != null)
+				if (this.TextureList[index].Data != null)
 				{
-					return new DDSTexture(new MemoryStream(this.textureList[index].Data));
+					return new DDSTexture(new MemoryStream(this.TextureList[index].Data));
 				}
-				this._fileStream.Position = (long)this.textureList[index].StartIndex;
+				this._fileStream.Position = (long)this.TextureList[index].StartIndex;
 				return new DDSTexture(this._fileStream._stream, true);
 			}
 		}
@@ -62,13 +62,13 @@ namespace ns19
 				num = (int)this._fileStream.ReadShortAt(6);
 				num3 = this._fileStream.ReadInt();
 			}
-			else if (num2 != 2600)
+			else if (num2 != 2600) // Appears to be flags at the beginning of certain types of texture metadata?
 			{
 				throw new Exception();
 			}
 			while (num-- != 0)
 			{
-				this.textureList.Add(
+				this.TextureList.Add(
                     new TextureMetadata(
                         this._fileStream.ReadShortAt(num3 + 2), 
                         this._fileStream.ReadInt(), 
@@ -84,46 +84,46 @@ namespace ns19
 			this._fileStream._reverseEndianness = false;
 		}
 
-		public void method_1(int int_0, Image image_0, IMGPixelFormat imgpixelFormat_0)
+		public void ReplaceTexture(int index, Image img, IMGPixelFormat format)
 		{
-			TextureMetadata @class = this.textureList[int_0];
-			@class.Height = (short)image_0.Height;
-			@class.Width = (short)image_0.Width;
-			@class.Data = new DDSTexture(image_0, (int)@class.MipMapCount, imgpixelFormat_0).ToByteArray();
+			TextureMetadata texMetaData = this.TextureList[index];
+			texMetaData.Height = (short)img.Height;
+			texMetaData.Width = (short)img.Width;
+			texMetaData.Data = new DDSTexture(img, (int)texMetaData.MipMapCount, format).ToByteArray();
 		}
 
-		public byte[] method_2(int int_0)
+		public byte[] GetRawTextureData(int index)
 		{
-			if (this.textureList[int_0].Data != null)
+			if (this.TextureList[index].Data != null)
 			{
-				return this.textureList[int_0].Data;
+				return this.TextureList[index].Data;
 			}
-			this._fileStream.Position = (long)this.textureList[int_0].StartIndex;
-			return this._fileStream.ReadBytes(this.textureList[int_0].Length);
+			this._fileStream.Position = (long)this.TextureList[index].StartIndex;
+			return this._fileStream.ReadBytes(this.TextureList[index].Length);
 		}
 
-		public void method_3(int int_0, string string_1)
+		public void WriteBytes(int index, string fileName)
 		{
-			KeyGenerator.smethod_9(string_1, this.method_2(int_0));
+			KeyGenerator.WriteAllBytes(fileName, this.GetRawTextureData(index));
 		}
 
 		public int TextureCount()
 		{
-			return this.textureList.Count;
+			return this.TextureList.Count;
 		}
 
-		public bool method_5()
+		public bool CanWrite()
 		{
 			return this._fileStream != null && this._fileName != null;
 		}
 
-		public void method_6()
+		public void WriteEverythingToFile()
 		{
 			if (this._fileStream == null || this._fileName == null)
 			{
 				throw new IOException("Tex File was never parsed");
 			}
-			this.method_8(this._fileName);
+			this.WriteEverythingToFile(this._fileName);
 		}
 
 		public Stream26 ToStream()
@@ -158,11 +158,11 @@ namespace ns19
 			stream.WriteNBytes(0, 40 * textureCount);
 			for (int i = 0; i < textureCount; i++)
 			{
-				TextureMetadata tex = this.textureList[i];
-				byte[] array = this.method_2(i);
+				TextureMetadata tex = this.TextureList[i];
+				byte[] array = this.GetRawTextureData(i);
 				stream.WriteShortAt(textureMetaDataOffset + 40 * i, 2600);
-				stream.WriteShort(tex.unkShort0);
-				stream.WriteInt(tex.unkInt);
+				stream.WriteShort(tex.unkFlags);
+				stream.WriteInt(tex.Key);
 				stream.WriteShort(tex.Width);
 				stream.WriteShort(tex.Height);
 				stream.WriteShort(tex.unkShort3);
@@ -180,15 +180,15 @@ namespace ns19
 			return stream;
 		}
 
-		public void method_8(string string_1)
+		public void WriteEverythingToFile(string fileName)
 		{
 			Stream26 stream = this.ToStream();
-			if (this._fileStream != null && this._fileName == string_1)
+			if (this._fileStream != null && this._fileName == fileName)
 			{
 				this._fileStream.Close();
 			}
-			stream.zzUnknownReadMethod(string_1);
-			if (this._fileStream != null && this._fileName == string_1)
+			stream.WriteEverythingToFile(fileName);
+			if (this._fileStream != null && this._fileName == fileName)
 			{
 				this.Dispose();
 				this.Initialize();
@@ -201,7 +201,16 @@ namespace ns19
 			this._fileStream.Close();
 			this._fileStream.Dispose();
 			this._fileStream = null;
-			this.textureList.Clear();
+			this.TextureList.Clear();
 		}
+
+        public int CloneTextureElement(int index)
+        {
+            TextureMetadata original = TextureList[index];
+            TextureMetadata newMeta = new TextureMetadata(original.unkFlags, original.Key, original.Width, original.Height, original.unkShort3, original.MipMapCount, original.unkShort4, original.StartIndex, original.Length);
+            TextureList.Add(newMeta);
+            return TextureList.Count-1;
+        }
+
 	}
 }

@@ -99,7 +99,7 @@ namespace ns19
 
 		public void method_2(string string_2)
 		{
-			KeyGenerator.smethod_9(string_2, this.data);
+			KeyGenerator.WriteAllBytes(string_2, this.data);
 		}
 	}
 }

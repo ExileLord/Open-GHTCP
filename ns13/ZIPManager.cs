@@ -120,7 +120,7 @@ namespace ns13
 			{
 				zipManager.method_3(password);
 			}
-			byte[] array = new byte[2048];
+			byte[] buffer = new byte[2048];
 			Class193 @class;
 			while ((@class = zipManager.method_5()) != null)
 			{
@@ -129,8 +129,8 @@ namespace ns13
 					int num;
 					do
 					{
-						num = zipManager.Read(array, 0, array.Length);
-						memoryStream.Write(array, 0, num);
+						num = zipManager.Read(buffer, 0, buffer.Length);
+						memoryStream.Write(buffer, 0, num);
 					}
 					while (num > 0);
 					zipManager.Close();

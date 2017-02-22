@@ -13,7 +13,7 @@ namespace ns21
 			this.vmethod_0();
 		}
 
-		public ScriptRootNode(string string_0) : this(QbSongClass1.smethod_9(string_0))
+		public ScriptRootNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
 		{
 		}
 
@@ -23,7 +23,7 @@ namespace ns21
 			this.vmethod_0();
 		}
 
-		public ScriptRootNode(string string_0, string string_1, QbScriptNode class275_0) : this(QbSongClass1.smethod_9(string_0), QbSongClass1.smethod_9(string_1), class275_0)
+		public ScriptRootNode(string string_0, string string_1, QbScriptNode class275_0) : this(QbSongClass1.AddKeyToDictionary(string_0), QbSongClass1.AddKeyToDictionary(string_1), class275_0)
 		{
 		}
 

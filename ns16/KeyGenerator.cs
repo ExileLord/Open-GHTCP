@@ -392,13 +392,13 @@ namespace ns16
 			return memoryStream.ToArray();
 		}
 
-		public static void smethod_9(string string_0, byte[] byte_1)
+		public static void WriteAllBytes(string fileName, byte[] bytes)
 		{
-			if (File.Exists(string_0) && (File.GetAttributes(string_0) & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+			if (File.Exists(fileName) && (File.GetAttributes(fileName) & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
 			{
-				File.SetAttributes(string_0, FileAttributes.Normal);
+				File.SetAttributes(fileName, FileAttributes.Normal);
 			}
-			File.WriteAllBytes(string_0, byte_1);
+			File.WriteAllBytes(fileName, bytes);
 		}
 
 		public static string smethod_10(string string_0)
@@ -441,7 +441,7 @@ namespace ns16
 			return KeyGenerator.GetFileName(string_0, 0);
 		}
 
-		public static string smethod_14(string string_0, int int_0)
+		public static string GetExtension(string string_0, int int_0)
 		{
 			string result;
 			try
@@ -665,10 +665,10 @@ namespace ns16
 			return text;
 		}
 
-		public static int GetQbKey(string gbName, bool alwaysTrue)
+		public static int GetQbKey(string text, bool negativeCrc = true)
 		{
             //bool_0 is always false;
-			return KeyGenerator.GetQbKey(new MemoryStream(KeyGenerator.stringToBytes(gbName)), alwaysTrue, KeyGenerator._flag0);
+			return KeyGenerator.GetQbKey(new MemoryStream(KeyGenerator.stringToBytes(text)), negativeCrc, KeyGenerator._flag0);
 		}
 
 		public static int GetQbKey(byte[] byte_1, bool bool_2)

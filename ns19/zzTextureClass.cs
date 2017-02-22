@@ -653,7 +653,7 @@ namespace ns19
 			}
 		}
 
-		public static void smethod_17(BinaryReader binaryReader_0, Class219 class219_0, IMGPixelFormat imgpixelFormat_0)
+		public static void smethod_17(BinaryReader binaryReader_0, ImageRelatedClass class219_0, IMGPixelFormat imgpixelFormat_0)
 		{
 			zzTextureClass.Tom[] array = new zzTextureClass.Tom[16];
 			int num = class219_0.method_1();

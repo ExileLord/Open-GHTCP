@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace ns14
 {
-	public class Class219
+	public class ImageRelatedClass
 	{
 		private byte[] byte_0;
 
@@ -43,7 +43,7 @@ namespace ns14
 			return this.bitmap_0;
 		}
 
-		public Class219(Bitmap bitmap_1)
+		public ImageRelatedClass(Bitmap bitmap_1)
 		{
 			if (bitmap_1.PixelFormat == (bitmap_1.PixelFormat | PixelFormat.Indexed))
 			{

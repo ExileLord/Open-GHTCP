@@ -268,24 +268,41 @@ namespace ns21
 					throw new Exception("Can't decode DDS, Unknown format: " + this.PixelFormat.ToString());
 				}
 			}
-			Class219 @class = new Class219(bitmap);
-			@class.method_4();
+			ImageRelatedClass unk = new ImageRelatedClass(bitmap);
+			unk.method_4();
 			BinaryReader binaryReader = new BinaryReader(new MemoryStream(this.data));
-			zzTextureClass.smethod_17(binaryReader, @class, this.PixelFormat);
+			zzTextureClass.smethod_17(binaryReader, unk, this.PixelFormat);
 			binaryReader.Close();
-			@class.method_5(true);
+			unk.method_5(true);
 			MemoryStream stream2 = new MemoryStream();
 			bitmap.Save(stream2, ImageFormat.Bmp);
 			return Image.FromStream(stream2);
 		}
 
-		public void ChangeImageProbably(Image image_0, int int_2, IMGPixelFormat imgpixelFormat_1, bool bool_0)
+        int ClampMipMaps(int MipMapCount, int Width, int Height)
+        {
+            int minDimension = Math.Min(Width, Height);
+
+            while ((1 << MipMapCount) > minDimension)
+                --MipMapCount;
+
+            return MipMapCount;
+        }
+
+   
+
+
+		public void ChangeImageProbably(Image img, int MipMaps, IMGPixelFormat imgpixelFormat_1, bool bool_0)
 		{
 			MemoryStream memoryStream = new MemoryStream();
 			BinaryWriter binaryWriter = new BinaryWriter(memoryStream);
-			for (int i = 0; i < int_2; i++)
+
+            MipMaps = ClampMipMaps(MipMapCount, img.Width, img.Height);
+
+            //Generate mipmaps
+            for (int i = 0; i < MipMaps; i++)
 			{
-				Bitmap bitmap = KeyGenerator.ScaleImageFixedRatio(image_0, Math.Max(1, image_0.Width >> i), Math.Max(1, image_0.Height >> i));
+				Bitmap bitmap = KeyGenerator.ScaleImageFixedRatio(img, Math.Max(1, img.Width >> i), Math.Max(1, img.Height >> i));
 				if (imgpixelFormat_1 == IMGPixelFormat.Bgra32)
 				{
 					BitmapData bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
@@ -299,7 +316,7 @@ namespace ns21
 					zzTextureClass.smethod_16(bitmap, binaryWriter, imgpixelFormat_1, bool_0);
 				}
 			}
-			this.MipMapCount = int_2;
+			this.MipMapCount = MipMaps;
 			this.PixelFormat = imgpixelFormat_1;
 			this.data = memoryStream.ToArray();
 		}

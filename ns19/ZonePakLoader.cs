@@ -8,79 +8,81 @@ using System.Windows.Forms;
 
 namespace ns19
 {
-	public class Class321
+	public class ZonePakLoader
 	{
 		public delegate void Delegate8(TreeNode rootNode);
 
 		public delegate void Delegate9(int percentCompleted, string fileName);
 
-		private Class321.Delegate8 delegate8_0;
+		private ZonePakLoader.Delegate8 delegate8_0;
 
-		private Class321.Delegate9 delegate9_0;
+		private ZonePakLoader.Delegate9 delegate9_0;
 
-		private string string_0;
+		private string _dataDirectory;
 
-		public void method_0(Class321.Delegate8 delegate8_1)
+		public void method_0(ZonePakLoader.Delegate8 delegate8_1)
 		{
-			Class321.Delegate8 @delegate = this.delegate8_0;
-			Class321.Delegate8 delegate2;
+			ZonePakLoader.Delegate8 @delegate = this.delegate8_0;
+			ZonePakLoader.Delegate8 delegate2;
 			do
 			{
 				delegate2 = @delegate;
-				Class321.Delegate8 value = (Class321.Delegate8)Delegate.Combine(delegate2, delegate8_1);
-				@delegate = Interlocked.CompareExchange<Class321.Delegate8>(ref this.delegate8_0, value, delegate2);
+				ZonePakLoader.Delegate8 value = (ZonePakLoader.Delegate8)Delegate.Combine(delegate2, delegate8_1);
+				@delegate = Interlocked.CompareExchange<ZonePakLoader.Delegate8>(ref this.delegate8_0, value, delegate2);
 			}
 			while (@delegate != delegate2);
 		}
 
-		public void method_1(Class321.Delegate9 delegate9_1)
+		public void method_1(ZonePakLoader.Delegate9 delegate9_1)
 		{
-			Class321.Delegate9 @delegate = this.delegate9_0;
-			Class321.Delegate9 delegate2;
+			ZonePakLoader.Delegate9 @delegate = this.delegate9_0;
+			ZonePakLoader.Delegate9 delegate2;
 			do
 			{
 				delegate2 = @delegate;
-				Class321.Delegate9 value = (Class321.Delegate9)Delegate.Combine(delegate2, delegate9_1);
-				@delegate = Interlocked.CompareExchange<Class321.Delegate9>(ref this.delegate9_0, value, delegate2);
+				ZonePakLoader.Delegate9 value = (ZonePakLoader.Delegate9)Delegate.Combine(delegate2, delegate9_1);
+				@delegate = Interlocked.CompareExchange<ZonePakLoader.Delegate9>(ref this.delegate9_0, value, delegate2);
 			}
 			while (@delegate != delegate2);
 		}
 
-		public Class321(string string_1)
+		public ZonePakLoader(string DataDirectory)
 		{
-			this.string_0 = string_1;
+			this._dataDirectory = DataDirectory;
 		}
 
 		public void method_2()
 		{
 			this.delegate9_0(0, "*.tex.xen");
 			TreeNode treeNode = new TreeNode("Data");
-			string[] files = Directory.GetFiles(this.string_0.Remove(this.string_0.Length - 1), "*.tex.xen", SearchOption.AllDirectories);
+			string[] files = Directory.GetFiles(this._dataDirectory.Remove(this._dataDirectory.Length - 1), "*.tex.xen", SearchOption.AllDirectories);
 			string[] array = files;
 			for (int i = 0; i < array.Length; i++)
 			{
 				string text = array[i];
-				this.method_3(treeNode, new List<string>(text.Substring(this.string_0.Length).Split(new char[]
+				this.method_3(treeNode, new List<string>(text.Substring(this._dataDirectory.Length).Split(new char[]
 				{
 					'\\',
 					'/'
 				}, StringSplitOptions.RemoveEmptyEntries))).ToolTipText = text;
 			}
+
 			this.delegate9_0(1, "*.img.xen");
-			files = Directory.GetFiles(this.string_0.Remove(this.string_0.Length - 1), "*.img.xen", SearchOption.AllDirectories);
+			files = Directory.GetFiles(this._dataDirectory.Remove(this._dataDirectory.Length - 1), "*.img.xen", SearchOption.AllDirectories);
 			string[] array2 = files;
 			for (int j = 0; j < array2.Length; j++)
 			{
 				string text2 = array2[j];
-				this.method_3(treeNode, new List<string>(text2.Substring(this.string_0.Length).Split(new char[]
+				this.method_3(treeNode, new List<string>(text2.Substring(this._dataDirectory.Length).Split(new char[]
 				{
 					'\\',
 					'/'
 				}, StringSplitOptions.RemoveEmptyEntries))).ToolTipText = text2;
 			}
-			int num = QbSongClass1.smethod_9(".tex");
-			int num2 = QbSongClass1.smethod_9(".img");
-			files = Directory.GetFiles(this.string_0.Remove(this.string_0.Length - 1), "*.pak.xen", SearchOption.AllDirectories);
+
+			int num = QbSongClass1.AddKeyToDictionary(".tex");
+			int num2 = QbSongClass1.AddKeyToDictionary(".img");
+			files = Directory.GetFiles(this._dataDirectory.Remove(this._dataDirectory.Length - 1), "*.pak.xen", SearchOption.AllDirectories);
 			int num3 = 0;
 			string[] array3 = files;
 			for (int k = 0; k < array3.Length; k++)
@@ -97,7 +99,7 @@ namespace ns19
 							int num4 = current.imethod_7();
 							if (current.imethod_4() == num || current.imethod_4() == num2)
 							{
-								list.Add(new TreeNode(QbSongClass1.smethod_3(num4) ? KeyGenerator.GetFileName(QbSongClass1.smethod_5(num4)) : KeyGenerator.ValToHex32bit(num4))
+								list.Add(new TreeNode(QbSongClass1.ContainsKey(num4) ? KeyGenerator.GetFileName(QbSongClass1.GetDictString(num4)) : KeyGenerator.ValToHex32bit(num4))
 								{
 									ToolTipText = text3,
 									Tag = num4
@@ -106,7 +108,7 @@ namespace ns19
 						}
 						if (list.Count > 0)
 						{
-							this.method_3(treeNode, new List<string>(text3.Substring(this.string_0.Length).Split(new char[]
+							this.method_3(treeNode, new List<string>(text3.Substring(this._dataDirectory.Length).Split(new char[]
 							{
 								'\\',
 								'/'

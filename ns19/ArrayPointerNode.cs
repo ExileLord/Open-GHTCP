@@ -11,7 +11,7 @@ namespace ns19
 			this.vmethod_0();
 		}
 
-		public ArrayPointerNode(string string_0) : this(QbSongClass1.smethod_9(string_0))
+		public ArrayPointerNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
 		{
 		}
 
@@ -21,7 +21,7 @@ namespace ns19
 			this.vmethod_0();
 		}
 
-		public ArrayPointerNode(string string_0, AbsTreeNode1_1 class276_0) : this(QbSongClass1.smethod_9(string_0), class276_0)
+		public ArrayPointerNode(string string_0, AbsTreeNode1_1 class276_0) : this(QbSongClass1.AddKeyToDictionary(string_0), class276_0)
 		{
 		}
 

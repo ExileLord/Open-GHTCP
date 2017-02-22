@@ -24,7 +24,7 @@ namespace ns17
 
 		public static void smethod_1(ScriptRootNode class274_0)
 		{
-			class274_0.method_7().method_7(zzQbScriptZipperClass.smethod_0(QbSongClass1.smethod_5(class274_0.int_0)));
+			class274_0.method_7().method_7(zzQbScriptZipperClass.smethod_0(QbSongClass1.GetDictString(class274_0.int_0)));
 		}
 
 		public static byte[] smethod_2(string string_1)

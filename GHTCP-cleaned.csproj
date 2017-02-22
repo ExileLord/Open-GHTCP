@@ -749,7 +749,7 @@
     <Compile Include="ns19\zzPakNode2.cs" />
     <Compile Include="ns19\zzPabNode.cs" />
     <Compile Include="ns19\Class320.cs" />
-    <Compile Include="ns19\Class321.cs" />
+    <Compile Include="ns19\ZonePakLoader.cs" />
     <Compile Include="ns19\TexFile.cs" />
     <Compile Include="ns19\zzQbSongObject.cs" />
     <Compile Include="ns19\Class324.cs" />
@@ -1114,7 +1114,10 @@
     <EmbeddedResource Include="ns17\About.resources" />
     <EmbeddedResource Include="ns17\SongData.resources" />
     <EmbeddedResource Include="ns17\SongEditor.resources" />
-    <EmbeddedResource Include="ns20\TexExplorer.resources" />
+    <None Include="ns20\TexExplorer.resources" />
+    <EmbeddedResource Include="ns20\TexExplorer.resx">
+      <DependentUpon>TexExplorer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ns9\Control1.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -25,9 +25,9 @@ namespace ns18
 		public override string GetText()
 		{
 			string str = (base.Nodes.Count > 0) ? base.method_2(0).GetText() : "NULL";
-			if (QbSongClass1.smethod_3(this.int_0))
+			if (QbSongClass1.ContainsKey(this.int_0))
 			{
-				return QbSongClass1.smethod_5(this.int_0) + " = " + str;
+				return QbSongClass1.GetDictString(this.int_0) + " = " + str;
 			}
 			return KeyGenerator.ValToHex32bit(this.int_0) + " (Tag) = " + str;
 		}

@@ -11,7 +11,7 @@ namespace ns18
 			this.vmethod_0();
 		}
 
-		public TagStructureNode(string string_0) : this(QbSongClass1.smethod_9(string_0))
+		public TagStructureNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
 		{
 		}
 
@@ -30,14 +30,14 @@ namespace ns18
 
 		public TagStructureNode(string string_0, string string_1)
 		{
-			this.int_0 = QbSongClass1.smethod_9(string_0);
+			this.int_0 = QbSongClass1.AddKeyToDictionary(string_0);
 			base.Nodes.Add(new TagValueNode(string_1));
 			this.vmethod_0();
 		}
 
 		public TagStructureNode(string string_0, int int_1)
 		{
-			this.int_0 = QbSongClass1.smethod_9(string_0);
+			this.int_0 = QbSongClass1.AddKeyToDictionary(string_0);
 			base.Nodes.Add(new TagValueNode(int_1));
 			this.vmethod_0();
 		}

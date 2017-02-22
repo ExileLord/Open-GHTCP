@@ -31,9 +31,9 @@ namespace ns20
 		public Class309(string string_0)
 		{
 			base.Text = KeyGenerator.GetFileName(string_0);
-			this.int_2 = QbSongClass1.smethod_9(string_0.Substring(string_0.LastIndexOf('.')));
-			this.int_3 = QbSongClass1.smethod_9(string_0);
-			this.int_4 = QbSongClass1.smethod_9(KeyGenerator.GetFileNameNoExt(string_0));
+			this.int_2 = QbSongClass1.AddKeyToDictionary(string_0.Substring(string_0.LastIndexOf('.')));
+			this.int_3 = QbSongClass1.AddKeyToDictionary(string_0);
+			this.int_4 = QbSongClass1.AddKeyToDictionary(KeyGenerator.GetFileNameNoExt(string_0));
 			base.ImageIndex = 40;
 			base.SelectedImageIndex = 40;
 			this.bool_3 = true;
@@ -49,7 +49,7 @@ namespace ns20
 
 		public Class309(int int_6, int int_7, int int_8, int int_9, int int_10, int int_11, Enum35 enum35_1)
 		{
-			base.Text = (QbSongClass1.smethod_3(int_9) ? KeyGenerator.GetFileName(QbSongClass1.smethod_5(int_9)) : ("0x" + KeyGenerator.ValToHex32bit(int_9)));
+			base.Text = (QbSongClass1.ContainsKey(int_9) ? KeyGenerator.GetFileName(QbSongClass1.GetDictString(int_9)) : ("0x" + KeyGenerator.ValToHex32bit(int_9)));
 			this.int_2 = int_6;
 			this.int_0 = int_7;
 			this.int_1 = int_8;
@@ -98,18 +98,18 @@ namespace ns20
 
 		public string imethod_6()
 		{
-			if (!QbSongClass1.smethod_3(this.imethod_4()))
+			if (!QbSongClass1.ContainsKey(this.imethod_4()))
 			{
 				return "0x" + KeyGenerator.ValToHex32bit(this.imethod_4());
 			}
-			return QbSongClass1.smethod_5(this.imethod_4());
+			return QbSongClass1.GetDictString(this.imethod_4());
 		}
 
 		public int imethod_7()
 		{
 			if (base.Parent != null && base.Parent is zzPakNode1 && !(base.Parent as zzPakNode1).bool_0)
 			{
-				return QbSongClass1.smethod_9((base.Parent as zzPakNode1).vmethod_0() + base.Text);
+				return QbSongClass1.AddKeyToDictionary((base.Parent as zzPakNode1).vmethod_0() + base.Text);
 			}
 			return this.int_3;
 		}
@@ -121,11 +121,11 @@ namespace ns20
 
 		public string imethod_9()
 		{
-			if (!QbSongClass1.smethod_3(this.imethod_7()))
+			if (!QbSongClass1.ContainsKey(this.imethod_7()))
 			{
 				return "0x" + KeyGenerator.ValToHex32bit(this.imethod_7());
 			}
-			return QbSongClass1.smethod_5(this.imethod_7());
+			return QbSongClass1.GetDictString(this.imethod_7());
 		}
 
 		public int imethod_10()

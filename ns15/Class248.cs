@@ -73,7 +73,7 @@ namespace ns15
 		{
 			if (this.class323_0 != null)
 			{
-				KeyGenerator.smethod_9(this.string_2 + "music\\" + this.string_1 + ".dat.xen", this.class323_0.data);
+				KeyGenerator.WriteAllBytes(this.string_2 + "music\\" + this.string_1 + ".dat.xen", this.class323_0.data);
 				KeyGenerator.smethod_19(this.string_3, this.string_2 + "music\\" + this.string_1 + ".fsb.xen", true);
 			}
 			else
