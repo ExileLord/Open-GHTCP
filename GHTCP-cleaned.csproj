@@ -61,8 +61,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.DirectX.DirectSound" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AVTools.MpegUtils\FFMpegException.cs" />
@@ -666,6 +668,12 @@
     <Compile Include="ns15\SongProperties.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ns15\SortSongListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns15\SortSongListForm.Designer.cs">
+      <DependentUpon>SortSongListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ns15\TierManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1109,6 +1117,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ns15\SongProperties.resources" />
+    <EmbeddedResource Include="ns15\SortSongListForm.resx">
+      <DependentUpon>SortSongListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ns15\TierManagement.resources" />
     <EmbeddedResource Include="ns16\ActionsWindow.resources" />
     <EmbeddedResource Include="ns17\About.resources" />
