@@ -25,15 +25,9 @@ namespace ns16
 
 			private T _gparam0;
 
-			public T Current
-			{
-				get
-				{
-					return _gparam0;
-				}
-			}
+			public T Current => _gparam0;
 
-			object IEnumerator.Current
+		    object IEnumerator.Current
 			{
 				get
 				{
@@ -196,23 +190,11 @@ namespace ns16
 
 		private int _int5;
 
-		public int Count
-		{
-			get
-			{
-				return _int3;
-			}
-		}
+		public int Count => _int3;
 
-		bool ICollection<T>.IsReadOnly
-		{
-			get
-			{
-				return false;
-			}
-		}
+	    bool ICollection<T>.IsReadOnly => false;
 
-		public ZzCollection1()
+	    public ZzCollection1()
 		{
 			method_0(10, null);
 		}

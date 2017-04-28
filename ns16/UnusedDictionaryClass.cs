@@ -46,23 +46,11 @@ namespace ns16
 			}
 		}
 
-		public int Count
-		{
-			get
-			{
-				return _class2430.Count;
-			}
-		}
+		public int Count => _class2430.Count;
 
-		public bool IsReadOnly
-		{
-			get
-			{
-				return false;
-			}
-		}
+	    public bool IsReadOnly => false;
 
-		public ICollection<TKey> Keys
+	    public ICollection<TKey> Keys
 		{
 			get
 			{

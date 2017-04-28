@@ -1203,10 +1203,7 @@ namespace ns20
 
             }
 
-            get
-            {
-                return _currentImgFile;
-            }
+            get => _currentImgFile;
         }
 
         private bool MetadataReadonly

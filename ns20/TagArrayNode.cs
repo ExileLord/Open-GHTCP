@@ -8,14 +8,8 @@ namespace ns20
 	{
 		public int this[int int0]
 		{
-			get
-			{
-				return ((TagValueNode)Nodes[int0]).Int0;
-			}
-			set
-			{
-				((TagValueNode)Nodes[int0]).Int0 = value;
-			}
+			get => ((TagValueNode)Nodes[int0]).Int0;
+		    set => ((TagValueNode)Nodes[int0]).Int0 = value;
 		}
 
 		public TagArray()

@@ -9,12 +9,6 @@ namespace SharpAudio.Properties
 	{
 		private static readonly Settings2 Settings20 = (Settings2)Synchronized(new Settings2());
 
-		public static Settings2 Default
-		{
-			get
-			{
-				return Settings20;
-			}
-		}
+		public static Settings2 Default => Settings20;
 	}
 }

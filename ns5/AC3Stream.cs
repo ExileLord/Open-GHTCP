@@ -28,45 +28,18 @@ namespace ns5
 
 		private MemoryStream _memoryStream0;
 
-		public override bool CanRead
-		{
-			get
-			{
-				return FileStream.CanRead;
-			}
-		}
+		public override bool CanRead => FileStream.CanRead;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return FileStream.CanSeek;
-			}
-		}
+	    public override bool CanSeek => FileStream.CanSeek;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return FileStream.CanWrite;
-			}
-		}
+	    public override bool CanWrite => FileStream.CanWrite;
 
-		public override long Length
-		{
-			get
-			{
-				return (long)((FileStream.Length - Int2) * Double0);
-			}
-		}
+	    public override long Length => (long)((FileStream.Length - Int2) * Double0);
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return (long)((FileStream.Position - Int2) * Double0) - _memoryStream0.Length + _memoryStream0.Position;
-			}
-			set
+			get => (long)((FileStream.Position - Int2) * Double0) - _memoryStream0.Length + _memoryStream0.Position;
+	        set
 			{
 				FileStream.Position = (long)(value / Double0 + Int2);
 				_memoryStream0.Position = _memoryStream0.Length;

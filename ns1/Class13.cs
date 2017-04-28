@@ -22,23 +22,11 @@ namespace ns1
 
 			private int _int1;
 
-			public float Current
-			{
-				get
-				{
-					return _class130.Float0[_int0];
-				}
-			}
+			public float Current => _class130.Float0[_int0];
 
-			object IEnumerator.Current
-			{
-				get
-				{
-					return Current;
-				}
-			}
+		    object IEnumerator.Current => Current;
 
-			public Class14(Class13 class131)
+		    public Class14(Class13 class131)
 			{
 				_class130 = class131;
 				Reset();
@@ -87,14 +75,8 @@ namespace ns1
 
 		public float this[int int4]
 		{
-			get
-			{
-				return Float0[_int1 + int4];
-			}
-			set
-			{
-				Float0[_int1 + int4] = value;
-			}
+			get => Float0[_int1 + int4];
+		    set => Float0[_int1 + int4] = value;
 		}
 
 		public int method_0()

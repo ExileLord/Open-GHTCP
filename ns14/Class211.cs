@@ -5,39 +5,15 @@ namespace ns14
 {
 	public class Class211 : Class209, IDisposable, ICryptoTransform
 	{
-		public int InputBlockSize
-		{
-			get
-			{
-				return 1;
-			}
-		}
+		public int InputBlockSize => 1;
 
-		public int OutputBlockSize
-		{
-			get
-			{
-				return 1;
-			}
-		}
+	    public int OutputBlockSize => 1;
 
-		public bool CanTransformMultipleBlocks
-		{
-			get
-			{
-				return true;
-			}
-		}
+	    public bool CanTransformMultipleBlocks => true;
 
-		public bool CanReuseTransform
-		{
-			get
-			{
-				return true;
-			}
-		}
+	    public bool CanReuseTransform => true;
 
-		public Class211(byte[] byte0)
+	    public Class211(byte[] byte0)
 		{
 			method_1(byte0);
 		}

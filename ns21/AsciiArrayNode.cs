@@ -7,14 +7,8 @@ namespace ns21
 	{
 		public string this[int int0]
 		{
-			get
-			{
-				return ((AsciiValueNode)Nodes[int0]).String0;
-			}
-			set
-			{
-				((AsciiValueNode)Nodes[int0]).String0 = value;
-			}
+			get => ((AsciiValueNode)Nodes[int0]).String0;
+		    set => ((AsciiValueNode)Nodes[int0]).String0 = value;
 		}
 
 		public AsciiArrayNode()

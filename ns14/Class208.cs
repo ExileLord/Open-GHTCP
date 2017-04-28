@@ -47,29 +47,17 @@ namespace ns14
 			}
 		}
 
-		public override KeySizes[] LegalBlockSizes
+		public override KeySizes[] LegalBlockSizes => new[]
 		{
-			get
-			{
-				return new[]
-				{
-					new KeySizes(8, 8, 0)
-				};
-			}
-		}
+		    new KeySizes(8, 8, 0)
+		};
 
-		public override KeySizes[] LegalKeySizes
-		{
-			get
-			{
-				return new[]
-				{
-					new KeySizes(96, 96, 0)
-				};
-			}
-		}
+	    public override KeySizes[] LegalKeySizes => new[]
+	    {
+	        new KeySizes(96, 96, 0)
+	    };
 
-		public override void GenerateIV()
+	    public override void GenerateIV()
 		{
 		}
 

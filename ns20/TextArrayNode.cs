@@ -8,14 +8,8 @@ namespace ns20
 	{
 		public string this[int int0]
 		{
-			get
-			{
-				return ((TextValueNode)Nodes[int0]).method_2();
-			}
-			set
-			{
-				((TextValueNode)Nodes[int0]).method_3(value);
-			}
+			get => ((TextValueNode)Nodes[int0]).method_2();
+		    set => ((TextValueNode)Nodes[int0]).method_3(value);
 		}
 
 		public TextArrayNode()

@@ -35,15 +35,9 @@ namespace SystemTools
 				}
 			}
 
-			object IEnumerator.Current
-			{
-				get
-				{
-					return Current;
-				}
-			}
+			object IEnumerator.Current => Current;
 
-			public object Clone()
+		    public object Clone()
 			{
 				return MemberwiseClone();
 			}
@@ -114,23 +108,11 @@ namespace SystemTools
 			}
 		}
 
-		public int Count
-		{
-			get
-			{
-				return _bitLength;
-			}
-		}
+		public int Count => _bitLength;
 
-		public bool IsReadOnly
-		{
-			get
-			{
-				return false;
-			}
-		}
+	    public bool IsReadOnly => false;
 
-		public BitList()
+	    public BitList()
 		{
 		}
 

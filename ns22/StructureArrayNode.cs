@@ -7,14 +7,8 @@ namespace ns22
 	{
 		public StructureHeaderNode this[int int0]
 		{
-			get
-			{
-				return (StructureHeaderNode)Nodes[int0];
-			}
-			set
-			{
-				Nodes[int0] = value;
-			}
+			get => (StructureHeaderNode)Nodes[int0];
+		    set => Nodes[int0] = value;
 		}
 
 		public StructureArrayNode()

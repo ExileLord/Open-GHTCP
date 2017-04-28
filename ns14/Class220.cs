@@ -13,15 +13,9 @@ namespace ns14
 
 		public bool Bool0;
 
-		public object Current
-		{
-			get
-			{
-				return method_0();
-			}
-		}
+		public object Current => method_0();
 
-		public bool MoveNext()
+	    public bool MoveNext()
 		{
 			var array = vmethod_0(false);
 			return array.Length > 0;

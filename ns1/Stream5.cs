@@ -7,49 +7,19 @@ namespace ns1
 {
 	public class Stream5 : GenericAudioStream
 	{
-		public override bool CanRead
-		{
-			get
-			{
-				return FileStream.CanRead;
-			}
-		}
+		public override bool CanRead => FileStream.CanRead;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return FileStream.CanSeek;
-			}
-		}
+	    public override bool CanSeek => FileStream.CanSeek;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return FileStream.CanWrite;
-			}
-		}
+	    public override bool CanWrite => FileStream.CanWrite;
 
-		public override long Length
-		{
-			get
-			{
-				return FileStream.Length;
-			}
-		}
+	    public override long Length => FileStream.Length;
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return FileStream.Position;
-			}
-			set
-			{
-				FileStream.Position = value;
-			}
-		}
+			get => FileStream.Position;
+	        set => FileStream.Position = value;
+	    }
 
 		public Stream5()
 		{

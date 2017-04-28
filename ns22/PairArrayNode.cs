@@ -7,14 +7,8 @@ namespace ns22
 	{
 		public FloatListNode this[int int0]
 		{
-			get
-			{
-				return (FloatListNode)Nodes[int0];
-			}
-			set
-			{
-				Nodes[int0] = value;
-			}
+			get => (FloatListNode)Nodes[int0];
+		    set => Nodes[int0] = value;
 		}
 
 		public PairArrayNode()

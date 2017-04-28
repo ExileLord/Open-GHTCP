@@ -12,23 +12,11 @@ namespace ns14
 
 		private int _int0 = -1;
 
-		public KeyValuePair<TKey, TValue> Current
-		{
-			get
-			{
-				return new KeyValuePair<TKey, TValue>(_list0[_int0], _list1[_int0]);
-			}
-		}
+		public KeyValuePair<TKey, TValue> Current => new KeyValuePair<TKey, TValue>(_list0[_int0], _list1[_int0]);
 
-		object IEnumerator.Current
-		{
-			get
-			{
-				return Current;
-			}
-		}
+	    object IEnumerator.Current => Current;
 
-		public Class215(List<TKey> list2, List<TValue> list3)
+	    public Class215(List<TKey> list2, List<TValue> list3)
 		{
 			_list0 = list2;
 			_list1 = list3;

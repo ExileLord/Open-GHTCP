@@ -16,15 +16,9 @@ namespace ns14
 
 			private Stack<Class226> _stack1;
 
-			public Class226 Current
-			{
-				get
-				{
-					return _stack0.Peek();
-				}
-			}
+			public Class226 Current => _stack0.Peek();
 
-			object IEnumerator.Current
+		    object IEnumerator.Current
 			{
 				get
 				{

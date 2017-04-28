@@ -60,47 +60,17 @@ namespace ns16
 			}
 		}
 
-		public int Count
-		{
-			get
-			{
-				return _arrayList0.Count;
-			}
-		}
+		public int Count => _arrayList0.Count;
 
-		public object SyncRoot
-		{
-			get
-			{
-				return _arrayList0.SyncRoot;
-			}
-		}
+	    public object SyncRoot => _arrayList0.SyncRoot;
 
-		public bool IsSynchronized
-		{
-			get
-			{
-				return _arrayList0.IsSynchronized;
-			}
-		}
+	    public bool IsSynchronized => _arrayList0.IsSynchronized;
 
-		public bool IsReadOnly
-		{
-			get
-			{
-				return _arrayList0.IsReadOnly;
-			}
-		}
+	    public bool IsReadOnly => _arrayList0.IsReadOnly;
 
-		public bool IsFixedSize
-		{
-			get
-			{
-				return _arrayList0.IsFixedSize;
-			}
-		}
+	    public bool IsFixedSize => _arrayList0.IsFixedSize;
 
-		public ZzList240()
+	    public ZzList240()
 		{
 			method_1(null, 0);
 		}

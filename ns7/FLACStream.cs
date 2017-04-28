@@ -63,45 +63,18 @@ namespace ns7
 
 		private bool _bool0;
 
-		public override bool CanRead
-		{
-			get
-			{
-				return FileStream.CanRead;
-			}
-		}
+		public override bool CanRead => FileStream.CanRead;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return FileStream.CanSeek;
-			}
-		}
+	    public override bool CanSeek => FileStream.CanSeek;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return FileStream.CanWrite;
-			}
-		}
+	    public override bool CanWrite => FileStream.CanWrite;
 
-		public override long Length
-		{
-			get
-			{
-				return _long2;
-			}
-		}
+	    public override long Length => _long2;
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return _long1 * WaveFormat0.short_1;
-			}
-			set
+			get => _long1 * WaveFormat0.short_1;
+	        set
 			{
 				_bool0 = false;
 				if (!method_11(value / WaveFormat0.short_1))

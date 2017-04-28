@@ -59,11 +59,8 @@ namespace ns14
 
 		public TKey this[TValue gparam0]
 		{
-			get
-			{
-				return method_0(gparam0);
-			}
-			set
+			get => method_0(gparam0);
+		    set
 			{
 				if (_dictionary0.ContainsKey(value))
 				{
@@ -77,39 +74,15 @@ namespace ns14
 			}
 		}
 
-		public int Count
-		{
-			get
-			{
-				return _dictionary0.Count;
-			}
-		}
+		public int Count => _dictionary0.Count;
 
-		public bool IsReadOnly
-		{
-			get
-			{
-				return false;
-			}
-		}
+	    public bool IsReadOnly => false;
 
-		public ICollection<TKey> Keys
-		{
-			get
-			{
-				return _list0;
-			}
-		}
+	    public ICollection<TKey> Keys => _list0;
 
-		public ICollection<TValue> Values
-		{
-			get
-			{
-				return _list1;
-			}
-		}
+	    public ICollection<TValue> Values => _list1;
 
-		public bool ContainsKey(TKey key)
+	    public bool ContainsKey(TKey key)
 		{
 			return _dictionary0.ContainsKey(key);
 		}

@@ -23,49 +23,19 @@ namespace ns12
 
 		private readonly bool _bool1 = true;
 
-		public override bool CanRead
-		{
-			get
-			{
-				return false;
-			}
-		}
+		public override bool CanRead => false;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return false;
-			}
-		}
+	    public override bool CanSeek => false;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return Stream0.CanWrite;
-			}
-		}
+	    public override bool CanWrite => Stream0.CanWrite;
 
-		public override long Length
-		{
-			get
-			{
-				return Stream0.Length;
-			}
-		}
+	    public override long Length => Stream0.Length;
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return Stream0.Position;
-			}
-			set
-			{
-				throw new NotSupportedException("Position property not supported");
-			}
-		}
+			get => Stream0.Position;
+	        set => throw new NotSupportedException("Position property not supported");
+	    }
 
 		public Stream22(Stream stream1, Class194 class1941) : this(stream1, class1941, 512)
 		{

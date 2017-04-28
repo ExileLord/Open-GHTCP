@@ -17,14 +17,8 @@ namespace SharpAudio.ASC.Mp3.Decoding
 
 		public byte this[int int0]
 		{
-			get
-			{
-				return method_1(-1 - int0);
-			}
-			set
-			{
-				method_2(-1 - int0, value);
-			}
+			get => method_1(-1 - int0);
+		    set => method_2(-1 - int0, value);
 		}
 
 		public CircularByteBuffer(int int0)

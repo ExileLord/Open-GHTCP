@@ -86,15 +86,9 @@ namespace ns12
 
 			private int _int0 = -1;
 
-			public object Current
-			{
-				get
-				{
-					return _class1930[_int0];
-				}
-			}
+			public object Current => _class1930[_int0];
 
-			public Class182(Class193[] class1931)
+		    public Class182(Class193[] class1931)
 			{
 				_class1930 = class1931;
 			}
@@ -128,15 +122,9 @@ namespace ns12
 
 		private string _string0 = string.Empty;
 
-		public Class193 this[int int1]
-		{
-			get
-			{
-				return (Class193)_class1930[int1].Clone();
-			}
-		}
+		public Class193 this[int int1] => (Class193)_class1930[int1].Clone();
 
-		public Class179()
+	    public Class179()
 		{
 			_class1930 = new Class193[0];
 			_bool2 = true;

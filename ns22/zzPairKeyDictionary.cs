@@ -7,15 +7,9 @@ namespace ns22
 	{
 		private readonly Dictionary<string, EmptyAbstractClass1> _dictionary0;
 
-		public EmptyAbstractClass1 this[string string0]
-		{
-			get
-			{
-				return _dictionary0[string0.ToLower()];
-			}
-		}
+		public EmptyAbstractClass1 this[string string0] => _dictionary0[string0.ToLower()];
 
-		public IEnumerator GetEnumerator()
+	    public IEnumerator GetEnumerator()
 		{
 			return _dictionary0.GetEnumerator();
 		}

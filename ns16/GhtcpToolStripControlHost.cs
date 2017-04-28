@@ -9,15 +9,9 @@ namespace ns16
 	{
 		private EventHandler _eventHandler0;
 
-        protected override Size DefaultSize
-		{
-			get
-			{
-				return new Size(200, 16);
-			}
-		}
+        protected override Size DefaultSize => new Size(200, 16);
 
-		public GhtcpToolStripControlHost() : base(smethod_0())
+	    public GhtcpToolStripControlHost() : base(smethod_0())
 		{
 		}
 

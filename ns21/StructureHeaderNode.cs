@@ -12,14 +12,8 @@ namespace ns21
 	{
 		public ZzUnkNode294 this[int int0]
 		{
-			get
-			{
-				return (ZzUnkNode294)Nodes[int0];
-			}
-			set
-			{
-				Nodes[int0] = value;
-			}
+			get => (ZzUnkNode294)Nodes[int0];
+		    set => Nodes[int0] = value;
 		}
 
 		public StructureHeaderNode()

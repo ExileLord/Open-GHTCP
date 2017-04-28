@@ -6,49 +6,19 @@ namespace ns1
 {
 	public class Stream15 : Stream14
 	{
-		public override bool CanRead
-		{
-			get
-			{
-				return Stream0.CanRead;
-			}
-		}
+		public override bool CanRead => Stream0.CanRead;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return Stream0.CanSeek;
-			}
-		}
+	    public override bool CanSeek => Stream0.CanSeek;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return Stream0.CanWrite;
-			}
-		}
+	    public override bool CanWrite => Stream0.CanWrite;
 
-		public override long Length
-		{
-			get
-			{
-				return Stream0.Length;
-			}
-		}
+	    public override long Length => Stream0.Length;
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return Stream0.Position;
-			}
-			set
-			{
-				Stream0.Position = value;
-			}
-		}
+			get => Stream0.Position;
+	        set => Stream0.Position = value;
+	    }
 
 		public Stream15()
 		{

@@ -9,57 +9,21 @@ namespace ns13
 
 		private Stream _stream0;
 
-		public override bool CanRead
-		{
-			get
-			{
-				return _stream0.CanRead;
-			}
-		}
+		public override bool CanRead => _stream0.CanRead;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return _stream0.CanSeek;
-			}
-		}
+	    public override bool CanSeek => _stream0.CanSeek;
 
-		public override bool CanTimeout
-		{
-			get
-			{
-				return _stream0.CanTimeout;
-			}
-		}
+	    public override bool CanTimeout => _stream0.CanTimeout;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return _stream0.CanWrite;
-			}
-		}
+	    public override bool CanWrite => _stream0.CanWrite;
 
-		public override long Length
-		{
-			get
-			{
-				return _stream0.Length;
-			}
-		}
+	    public override long Length => _stream0.Length;
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return _stream0.Position;
-			}
-			set
-			{
-				_stream0.Position = value;
-			}
-		}
+			get => _stream0.Position;
+	        set => _stream0.Position = value;
+	    }
 
 		public Stream25(Stream stream1)
 		{

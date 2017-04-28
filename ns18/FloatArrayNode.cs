@@ -7,14 +7,8 @@ namespace ns18
 	{
 		public float this[int int0]
 		{
-			get
-			{
-				return ((FloatValueNode)Nodes[int0]).Float0;
-			}
-			set
-			{
-				((FloatValueNode)Nodes[int0]).Float0 = value;
-			}
+			get => ((FloatValueNode)Nodes[int0]).Float0;
+		    set => ((FloatValueNode)Nodes[int0]).Float0 = value;
 		}
 
 		public FloatArrayNode()

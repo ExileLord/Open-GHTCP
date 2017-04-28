@@ -14,45 +14,18 @@ namespace ns1
 
 		private long _long2;
 
-		public override bool CanRead
-		{
-			get
-			{
-				return _stream10.CanRead;
-			}
-		}
+		public override bool CanRead => _stream10.CanRead;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return _stream10.CanSeek;
-			}
-		}
+	    public override bool CanSeek => _stream10.CanSeek;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return _stream10.CanWrite;
-			}
-		}
+	    public override bool CanWrite => _stream10.CanWrite;
 
-		public override long Length
-		{
-			get
-			{
-				return _long1;
-			}
-		}
+	    public override long Length => _long1;
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return _long2 - _long0;
-			}
-			set
+			get => _long2 - _long0;
+	        set
 			{
 				if (value < 0L || value >= _long1)
 				{

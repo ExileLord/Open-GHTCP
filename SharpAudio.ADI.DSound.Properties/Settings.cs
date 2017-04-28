@@ -9,12 +9,6 @@ namespace SharpAudio.ADI.DSound.Properties
 	{
 		private static readonly Settings Settings0 = (Settings)Synchronized(new Settings());
 
-		public static Settings Default
-		{
-			get
-			{
-				return Settings0;
-			}
-		}
+		public static Settings Default => Settings0;
 	}
 }

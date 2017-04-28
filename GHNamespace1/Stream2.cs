@@ -24,45 +24,18 @@ namespace GHNamespace1
 
 		private readonly bool _bool1;
 
-		public override bool CanRead
-		{
-			get
-			{
-				return true;
-			}
-		}
+		public override bool CanRead => true;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return true;
-			}
-		}
+	    public override bool CanSeek => true;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return false;
-			}
-		}
+	    public override bool CanWrite => false;
 
-		public override long Length
-		{
-			get
-			{
-				return _long0;
-			}
-		}
+	    public override long Length => _long0;
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return _long1;
-			}
-			set
+			get => _long1;
+	        set
 			{
 				var num = value / (double)(WaveFormat0.int_0 * WaveFormat0.short_1);
 				for (var i = 0; i < _list0.Count; i++)

@@ -14,49 +14,19 @@ namespace ns8
 	{
 		private readonly GenericAudioStream _stream10;
 
-		public override bool CanRead
-		{
-			get
-			{
-				return _stream10.CanRead;
-			}
-		}
+		public override bool CanRead => _stream10.CanRead;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return _stream10.CanSeek;
-			}
-		}
+	    public override bool CanSeek => _stream10.CanSeek;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return _stream10.CanWrite;
-			}
-		}
+	    public override bool CanWrite => _stream10.CanWrite;
 
-		public override long Length
-		{
-			get
-			{
-				return _stream10.Length;
-			}
-		}
+	    public override long Length => _stream10.Length;
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return _stream10.Position;
-			}
-			set
-			{
-				_stream10.Position = value;
-			}
-		}
+			get => _stream10.Position;
+	        set => _stream10.Position = value;
+	    }
 
 		public FsbStream(string string0) : this(File.OpenRead(string0))
 		{

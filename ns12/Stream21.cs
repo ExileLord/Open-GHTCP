@@ -17,49 +17,19 @@ namespace ns12
 
 		private Stream _stream0;
 
-		public override bool CanRead
-		{
-			get
-			{
-				return _stream0.CanRead;
-			}
-		}
+		public override bool CanRead => _stream0.CanRead;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return false;
-			}
-		}
+	    public override bool CanSeek => false;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return false;
-			}
-		}
+	    public override bool CanWrite => false;
 
-		public override long Length
-		{
-			get
-			{
-				return _stream0.Length;
-			}
-		}
+	    public override long Length => _stream0.Length;
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return _stream0.Position;
-			}
-			set
-			{
-				throw new NotSupportedException("TarInputStream Seek not supported");
-			}
-		}
+			get => _stream0.Position;
+	        set => throw new NotSupportedException("TarInputStream Seek not supported");
+	    }
 
 		public override void Flush()
 		{

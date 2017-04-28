@@ -34,39 +34,15 @@ namespace ns4
 
 		private readonly object _object0 = new object();
 
-		public override bool CanRead
-		{
-			get
-			{
-				return FileStream.CanRead;
-			}
-		}
+		public override bool CanRead => FileStream.CanRead;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return FileStream.CanSeek;
-			}
-		}
+	    public override bool CanSeek => FileStream.CanSeek;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return FileStream.CanWrite;
-			}
-		}
+	    public override bool CanWrite => FileStream.CanWrite;
 
-		public override long Length
-		{
-			get
-			{
-				return _long0;
-			}
-		}
+	    public override long Length => _long0;
 
-		public override long Position
+	    public override long Position
 		{
 			get
 			{

@@ -20,49 +20,19 @@ namespace ns12
 
 		private readonly bool _bool1 = true;
 
-		public override bool CanRead
-		{
-			get
-			{
-				return Stream0.CanRead;
-			}
-		}
+		public override bool CanRead => Stream0.CanRead;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return false;
-			}
-		}
+	    public override bool CanSeek => false;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return false;
-			}
-		}
+	    public override bool CanWrite => false;
 
-		public override long Length
-		{
-			get
-			{
-				return Class2010.method_0();
-			}
-		}
+	    public override long Length => Class2010.method_0();
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return Stream0.Position;
-			}
-			set
-			{
-				throw new NotSupportedException("InflaterInputStream Position not supported");
-			}
-		}
+			get => Stream0.Position;
+	        set => throw new NotSupportedException("InflaterInputStream Position not supported");
+	    }
 
 		public Stream19(Stream stream1, Class196 class1961) : this(stream1, class1961, 4096)
 		{

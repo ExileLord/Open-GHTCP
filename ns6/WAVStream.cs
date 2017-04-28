@@ -12,49 +12,19 @@ namespace ns6
 
 		private long _long1;
 
-		public override bool CanRead
-		{
-			get
-			{
-				return true;
-			}
-		}
+		public override bool CanRead => true;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return true;
-			}
-		}
+	    public override bool CanSeek => true;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return FileStream.CanWrite;
-			}
-		}
+	    public override bool CanWrite => FileStream.CanWrite;
 
-		public override long Length
-		{
-			get
-			{
-				return _long1;
-			}
-		}
+	    public override long Length => _long1;
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return FileStream.Position - _long0;
-			}
-			set
-			{
-				FileStream.Position = _long0 + value;
-			}
-		}
+			get => FileStream.Position - _long0;
+	        set => FileStream.Position = _long0 + value;
+	    }
 
 		public WavStream()
 		{

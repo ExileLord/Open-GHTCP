@@ -17,15 +17,9 @@ namespace ns14
 
 			private readonly T _gparam1;
 
-			public T Current
-			{
-				get
-				{
-					return _gparam0;
-				}
-			}
+			public T Current => _gparam0;
 
-			object IEnumerator.Current
+		    object IEnumerator.Current
 			{
 				get
 				{
@@ -127,31 +121,13 @@ namespace ns14
 
 		private readonly Class223 _class2230;
 
-		public int Count
-		{
-			get
-			{
-				return vmethod_0();
-			}
-		}
+		public int Count => vmethod_0();
 
-		bool ICollection<T>.IsReadOnly
-		{
-			get
-			{
-				return false;
-			}
-		}
+	    bool ICollection<T>.IsReadOnly => false;
 
-		bool ICollection.IsSynchronized
-		{
-			get
-			{
-				return false;
-			}
-		}
+	    bool ICollection.IsSynchronized => false;
 
-		object ICollection.SyncRoot
+	    object ICollection.SyncRoot
 		{
 			get
 			{

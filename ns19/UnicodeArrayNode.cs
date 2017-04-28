@@ -7,14 +7,8 @@ namespace ns19
 	{
 		public string this[int int0]
 		{
-			get
-			{
-				return ((UnicodeValueNode)Nodes[int0]).String0;
-			}
-			set
-			{
-				((UnicodeValueNode)Nodes[int0]).String0 = value;
-			}
+			get => ((UnicodeValueNode)Nodes[int0]).String0;
+		    set => ((UnicodeValueNode)Nodes[int0]).String0 = value;
 		}
 
 		public UnicodeArrayNode()

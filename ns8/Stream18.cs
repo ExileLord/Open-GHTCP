@@ -13,45 +13,18 @@ namespace ns8
 
 		private long _long2;
 
-		public override bool CanRead
-		{
-			get
-			{
-				return method_0().CanRead;
-			}
-		}
+		public override bool CanRead => method_0().CanRead;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return method_0().CanSeek;
-			}
-		}
+	    public override bool CanSeek => method_0().CanSeek;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return method_0().CanWrite;
-			}
-		}
+	    public override bool CanWrite => method_0().CanWrite;
 
-		public override long Length
-		{
-			get
-			{
-				return _long1;
-			}
-		}
+	    public override long Length => _long1;
 
-		public override long Position
+	    public override long Position
 		{
-			get
-			{
-				return _long2 - _long0;
-			}
-			set
+			get => _long2 - _long0;
+	        set
 			{
 				if (Position < 0L)
 				{

@@ -7,14 +7,8 @@ namespace ns21
 	{
 		public AbsTreeNode11 this[int int0]
 		{
-			get
-			{
-				return (AbsTreeNode11)Nodes[int0];
-			}
-			set
-			{
-				Nodes[int0] = value;
-			}
+			get => (AbsTreeNode11)Nodes[int0];
+		    set => Nodes[int0] = value;
 		}
 
 		public ListArrayNode()

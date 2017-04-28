@@ -7,14 +7,8 @@ namespace ns18
 	{
 		public int this[int int0]
 		{
-			get
-			{
-				return ((IntegerValueNode)Nodes[int0]).Int0;
-			}
-			set
-			{
-				((IntegerValueNode)Nodes[int0]).Int0 = value;
-			}
+			get => ((IntegerValueNode)Nodes[int0]).Int0;
+		    set => ((IntegerValueNode)Nodes[int0]).Int0 = value;
 		}
 
 		public IntegerArrayNode()

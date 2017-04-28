@@ -29,39 +29,15 @@ namespace ns1
 
 		private readonly Delegate1 _delegate10;
 
-		public override bool CanRead
-		{
-			get
-			{
-				return _stream10.CanRead;
-			}
-		}
+		public override bool CanRead => _stream10.CanRead;
 
-		public override bool CanSeek
-		{
-			get
-			{
-				return _stream10.CanSeek;
-			}
-		}
+	    public override bool CanSeek => _stream10.CanSeek;
 
-		public override bool CanWrite
-		{
-			get
-			{
-				return _stream10.CanWrite;
-			}
-		}
+	    public override bool CanWrite => _stream10.CanWrite;
 
-		public override long Length
-		{
-			get
-			{
-				return _long0;
-			}
-		}
+	    public override long Length => _long0;
 
-		public override long Position
+	    public override long Position
 		{
 			get
 			{
@@ -72,11 +48,8 @@ namespace ns1
 				}
 				return (long)(position * _double0);
 			}
-			set
-			{
-				_stream10.Position = (_bool0 ? ((long)(value / _double0)) : value);
-			}
-		}
+			set => _stream10.Position = (_bool0 ? ((long)(value / _double0)) : value);
+	    }
 
 		public Stream4(GenericAudioStream stream11, int int4)
 		{
