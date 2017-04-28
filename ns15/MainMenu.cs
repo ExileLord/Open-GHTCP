@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -560,7 +561,7 @@ namespace ns15
 			var arg_1D0 = _gh3Songlist;
 			var expr_0C = _hideUnEditMenuItem;
 			arg_1D0.HideUnEditable = (expr_0C.Checked = !expr_0C.Checked);
-			method_0();
+			RefreshSongListBox();
 		}
 
 		private void HideUsed_MenuItem_Click(object sender, EventArgs e)
@@ -568,14 +569,14 @@ namespace ns15
 			var arg_1D0 = _gh3Songlist;
 			var expr_0C = _hideUsedMenuItem;
 			arg_1D0.HideUsed = (expr_0C.Checked = !expr_0C.Checked);
-			method_0();
+			RefreshSongListBox();
 		}
 
 		private void ByTitle_MenuItem_Click(object sender, EventArgs e)
 		{
 			var expr06 = _byTitleMenuItem;
 			Gh3Song.Bool0 = (expr06.Checked = !expr06.Checked);
-			method_0();
+			RefreshSongListBox();
 		}
 
 		private void SongListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -720,7 +721,7 @@ namespace ns15
 				}
 				_gh3Songlist.Add(gH3Song.Name, gH3Song);
 				method_4(new Class247(Class3190, _gh3Songlist));
-				method_0();
+				RefreshSongListBox();
 			}
 		}
 
@@ -751,11 +752,11 @@ namespace ns15
 			if (flag)
 			{
 				method_4(new Class247(Class3190, _gh3Songlist));
-				method_0();
+				RefreshSongListBox();
 			}
 		}
 
-		private void method_0()
+		private void RefreshSongListBox()
 		{
 			_songListBox.Items.Clear();
 			_songListBox.Items.AddRange(_gh3Songlist.GetSongs());
@@ -1020,7 +1021,7 @@ namespace ns15
 					_tierBox.SelectedIndex = _tierBox.SelectedIndex;
 					_setlistApplyBtn.Enabled = true;
 					method_4(new Class247(Class3190, _gh3Songlist));
-					method_0();
+					RefreshSongListBox();
 				}
 				catch
 				{
@@ -1055,7 +1056,7 @@ namespace ns15
 					_tierBox.SelectedIndex = _tierBox.Items.Count - 1;
 					_setlistApplyBtn.Enabled = true;
 					method_4(new Class247(Class3190, _gh3Songlist));
-					method_0();
+					RefreshSongListBox();
 				}
 				catch
 				{
@@ -1119,189 +1120,167 @@ namespace ns15
 
         private void SGHSwitch_MenuItem_Click(object sender, EventArgs e)
 		{
-			if (_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
-			{
-				var text = KeyGenerator.OpenFile("Select the setlist to switch too.", "GH3CP Setlist File|*.sgh");
-				if (text.Equals(""))
-				{
-					return;
-				}
-				var gH3Setlist = new Gh3Setlist();
-				try
-				{
-					SghManager sghManager;
-					if (DialogResult.Yes == MessageBox.Show("Do you wish to import all contained song data (Music & Game Tracks)? Data and properties will be overwritten!", "Setlist Switching", MessageBoxButtons.YesNo))
-					{
-						sghManager = new SghManager(_gh3Songlist, gH3Setlist, text, _dataFolder);
-					}
-					else
-					{
-						sghManager = new SghManager(_gh3Songlist, gH3Setlist, text);
-					}
-					sghManager.method_0();
-					_tierBox.Items.Clear();
-					_tierBox.Items.AddRange(gH3Setlist.Tiers.ToArray());
-					if (_tierBox.Items.Count != 0)
-					{
-						_tierBox.SelectedIndex = 0;
-					}
-					else
-					{
-						method_23();
-					}
-					_setlistTitleTxtBox.Text = KeyGenerator.GetFileName(text, 1);
-					_setlistApplyBtn.Enabled = true;
-					method_4(new Class247(Class3190, _gh3Songlist));
-					method_0();
-				}
-				catch (Exception exception)
-				{
-					MessageBox.Show("File not compatible! Setlist Switch failed.\n" + exception, "Setlist Switching");
-				}
-			}
+		    if (!_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist)) return;
+		    var text = KeyGenerator.OpenFile("Select the setlist to switch to.", "GH3CP Setlist File|*.sgh");
+		    if (text.Equals(""))
+		    {
+		        return;
+		    }
+		    Console.WriteLine("Found file: " + text);
+		    var gH3Setlist = new Gh3Setlist();
+		    try
+		    {
+		        var sghManager = DialogResult.Yes == MessageBox.Show("Do you wish to import all contained song data (Music & Game Tracks)? Data and properties will be overwritten!", "Setlist Switching", MessageBoxButtons.YesNo)
+		            ? new SghManager(_gh3Songlist, gH3Setlist, text, _dataFolder)
+		            : new SghManager(_gh3Songlist, gH3Setlist, text);
+		        sghManager.ImportSGH();
+		        _tierBox.Items.Clear();
+		        _tierBox.Items.AddRange(gH3Setlist.Tiers.ToArray());
+		        if (_tierBox.Items.Count != 0)
+		        {
+		            _tierBox.SelectedIndex = 0;
+		        }
+		        else
+		        {
+		            method_23();
+		        }
+		        _setlistTitleTxtBox.Text = KeyGenerator.GetFileName(text, 1);
+		        _setlistApplyBtn.Enabled = true;
+		        method_4(new Class247(Class3190, _gh3Songlist));
+		        RefreshSongListBox();
+		    }
+		    catch (Exception exception)
+		    {
+		        MessageBox.Show("File not compatible! Setlist Switch failed.\n" + exception, "Setlist Switching");
+		    }
 		}
 
-		private void LegacyImporter_MenuItem_Click(object sender, EventArgs e)
+		private static void LegacyImporter_MenuItem_Click(object sender, EventArgs e)
 		{
 		}
 
 		private void MassImporter_MenuItem_Click(object sender, EventArgs e)
 		{
-			var folderBrowserDialog = new FolderBrowserDialog();
-			folderBrowserDialog.ShowNewFolderButton = false;
-			folderBrowserDialog.Description = "Please select a folder that contains the folder structure for mass song importing.";
-			folderBrowserDialog.RootFolder = Environment.SpecialFolder.DesktopDirectory;
-			if (folderBrowserDialog.ShowDialog() != DialogResult.OK)
+		    var folderBrowserDialog = new FolderBrowserDialog
+		    {
+		        ShowNewFolderButton = false,
+		        Description = "Please select a folder that contains the folder structure for mass song importing.",
+		        RootFolder = Environment.SpecialFolder.DesktopDirectory
+		    };
+		    if (folderBrowserDialog.ShowDialog() != DialogResult.OK)
 			{
 				return;
 			}
 			var directories = Directory.GetDirectories(folderBrowserDialog.SelectedPath, "*", SearchOption.TopDirectoryOnly);
 			var list = new List<string>(directories);
 			var array = directories;
-			for (var i = 0; i < array.Length; i++)
+			foreach (var file in array)
 			{
-				var file = array[i];
-				try
-				{
-					var list2 = KeyGenerator.CheckFile(file, "*.mid;*.chart;*.qbc;*.dbc", true);
-					var list3 = KeyGenerator.CheckFile(file, "*.wav;*.mp3;*.ogg", true);
-					var files = Directory.GetFiles(file, "*.dat", SearchOption.TopDirectoryOnly);
-					if (list2.Count != 0 && (list3.Count != 0 || files.Length != 0))
-					{
-						var gH3Song = _isAerosmith ? new GhaSong() : new Gh3Song();
-						gH3Song.Name = KeyGenerator.GetFileName(file).ToLower().Replace(" ", "").Replace('.', '_');
-						if (gH3Song.Name.Length > 30)
-						{
-							gH3Song.Name = gH3Song.Name.Remove(30);
-						}
-						if (QbSongClass1.smethod_4(gH3Song.Name) || _gh3Songlist.method_3(gH3Song.Name))
-						{
-							var num = 2;
-							while (QbSongClass1.smethod_4(gH3Song.Name + num) || _gh3Songlist.method_3(gH3Song.Name + num))
-							{
-								num++;
-							}
-							var expr176 = gH3Song;
-							expr176.Name += num;
-						}
-						QbcParser qbcParser = null;
-						foreach (var current in list2)
-						{
-							try
-							{
-								if (current.EndsWith(".qbc"))
-								{
-									qbcParser = new QbcParser(current);
-								}
-								else if (current.EndsWith(".mid"))
-								{
-                                    qbcParser = Midi2Chart.LoadMidiSong(current, _forceRb3MidConversionToolStripMenuItem.Checked);
-								}
-								else
-								{
-									qbcParser = new ChartParser(current).ConvertToQbc();
-								}
-								break;
-							}
-							catch
-							{
-							}
-						}
-						if (qbcParser != null)
-						{
-							ZzQbSongObject class2 = null;
-							if (files.Length != 0)
-							{
-								var array2 = files;
-								for (var j = 0; j < array2.Length; j++)
-								{
-									var text2 = array2[j];
-									try
-									{
-										if (File.Exists(text2.Replace(".dat.xen", ".fsb.xen")))
-										{
-											class2 = new ZzQbSongObject(text2);
-											if ((int)new FileInfo(text2.Replace(".dat.xen", ".fsb.xen")).Length == class2.Int0)
-											{
-												break;
-											}
-										}
-									}
-									catch
-									{
-									}
-								}
-							}
-							if (class2 != null || list3.Count != 0)
-							{
-								var songData = new SongData(gH3Song.Name, qbcParser, class2, list3.ToArray());
-								var class3 = songData.method_1(Class3190, _dataFolder);
-								var class4 = songData.method_0(_dataFolder);
-								gH3Song.vmethod_0(class3.Class3620.Gh3Song0);
-								if (File.Exists(file + "\\song.ini"))
-								{
-									var array3 = File.ReadAllLines(file + "\\song.ini");
-									for (var k = 0; k < array3.Length; k++)
-									{
-										var text3 = array3[k];
-										if (text3.StartsWith("name"))
-										{
-											gH3Song.Title = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
-										}
-										else if (text3.StartsWith("artist"))
-										{
-											gH3Song.Artist = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
-										}
-									}
-								}
-								gH3Song.NoRhythmTrack = !class4.Bool0;
-								gH3Song.UseCoopNotetracks = class4.Bool1;
-								gH3Song.Version = 3;
-								gH3Song.Leaderboard = true;
-								gH3Song.Editable = true;
-								method_4(class3);
-								method_4(class4);
-								_gh3Songlist.Add(gH3Song.Name, gH3Song);
-								list.Remove(file);
-							}
-						}
-					}
-				}
-				catch
-				{
-				}
+			    try
+			    {
+			        var list2 = KeyGenerator.CheckFile(file, "*.mid;*.chart;*.qbc;*.dbc", true);
+			        var list3 = KeyGenerator.CheckFile(file, "*.wav;*.mp3;*.ogg", true);
+			        var files = Directory.GetFiles(file, "*.dat", SearchOption.TopDirectoryOnly);
+			        if (list2.Count == 0 || (list3.Count == 0 && files.Length == 0)) continue;
+			        var gH3Song = _isAerosmith ? new GhaSong() : new Gh3Song();
+			        gH3Song.Name = KeyGenerator.GetFileName(file).ToLower().Replace(" ", "").Replace('.', '_');
+			        if (gH3Song.Name.Length > 30)
+			        {
+			            gH3Song.Name = gH3Song.Name.Remove(30);
+			        }
+			        if (QbSongClass1.smethod_4(gH3Song.Name) || _gh3Songlist.method_3(gH3Song.Name))
+			        {
+			            var num = 2;
+			            while (QbSongClass1.smethod_4(gH3Song.Name + num) || _gh3Songlist.method_3(gH3Song.Name + num))
+			            {
+			                num++;
+			            }
+			            var expr176 = gH3Song;
+			            expr176.Name += num;
+			        }
+			        QbcParser qbcParser = null;
+			        foreach (var current in list2)
+			        {
+			            try
+			            {
+			                if (current.EndsWith(".qbc"))
+			                {
+			                    qbcParser = new QbcParser(current);
+			                }
+			                else if (current.EndsWith(".mid"))
+			                {
+			                    qbcParser = Midi2Chart.LoadMidiSong(current, _forceRb3MidConversionToolStripMenuItem.Checked);
+			                }
+			                else
+			                {
+			                    qbcParser = new ChartParser(current).ConvertToQbc();
+			                }
+			                break;
+			            }
+			            catch
+			            {
+			            }
+			        }
+			        if (qbcParser == null) continue;
+			        ZzQbSongObject class2 = null;
+			        if (files.Length != 0)
+			        {
+			            var array2 = files;
+			            foreach (var text2 in array2)
+			            {
+			                try
+			                {
+			                    if (!File.Exists(text2.Replace(".dat.xen", ".fsb.xen"))) continue;
+			                    class2 = new ZzQbSongObject(text2);
+			                    if ((int)new FileInfo(text2.Replace(".dat.xen", ".fsb.xen")).Length == class2.Int0)
+			                    {
+			                        break;
+			                    }
+			                }
+			                catch
+			                {
+			                }
+			            }
+			        }
+			        if (class2 == null && list3.Count == 0) continue;
+			        var songData = new SongData(gH3Song.Name, qbcParser, class2, list3.ToArray());
+			        var class3 = songData.method_1(Class3190, _dataFolder);
+			        var class4 = songData.method_0(_dataFolder);
+			        gH3Song.vmethod_0(class3.Class3620.Gh3Song0);
+			        if (File.Exists(file + "\\song.ini"))
+			        {
+			            var array3 = File.ReadAllLines(file + "\\song.ini");
+			            foreach (var text3 in array3)
+			            {
+			                if (text3.StartsWith("name"))
+			                {
+			                    gH3Song.Title = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
+			                }
+			                else if (text3.StartsWith("artist"))
+			                {
+			                    gH3Song.Artist = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
+			                }
+			            }
+			        }
+			        gH3Song.NoRhythmTrack = !class4.Bool0;
+			        gH3Song.UseCoopNotetracks = class4.Bool1;
+			        gH3Song.Version = 3;
+			        gH3Song.Leaderboard = true;
+			        gH3Song.Editable = true;
+			        method_4(class3);
+			        method_4(class4);
+			        _gh3Songlist.Add(gH3Song.Name, gH3Song);
+			        list.Remove(file);
+			    }
+			    catch
+			    {
+			    }
 			}
 			method_4(new Class247(Class3190, _gh3Songlist));
-			method_0();
-			if (list.Count != 0)
-			{
-				var text4 = "The follwing songs (by folder name) failed:";
-				foreach (var current2 in list)
-				{
-					text4 = text4 + "\n" + KeyGenerator.GetFileName(current2);
-				}
-				MessageBox.Show(text4, "Error!");
-			}
+			RefreshSongListBox();
+		    if (list.Count == 0) return;
+		    var text4 = list.Aggregate("The follwing songs (by folder name) failed:", (current, current2) => current + "\n" + KeyGenerator.GetFileName(current2));
+		    MessageBox.Show(text4, "Error!");
 		}
 
 		public MainMenu()
@@ -1830,7 +1809,7 @@ namespace ns15
 			{
                 //num = 2^numOfSetlists
 				var num = 1 << i;
-                if (!((_gh3Songlist.CustomBitMask & num) == 0)) {
+                if ((_gh3Songlist.CustomBitMask & num) != 0) {
                     goto SKIPIT;
                 }
                 //2^numOfSetlists - 1
@@ -3941,7 +3920,7 @@ namespace ns15
 					}
 					new Class249(Class3190).method_0();
 					new QbDatabaseInitialModifier(Class3190, _isAerosmith).method_0();
-					method_0();
+					RefreshSongListBox();
 				}
 				catch (Exception ex3)
 				{
@@ -4252,7 +4231,7 @@ namespace ns15
 			if (_hideUsedMenuItem.Checked)
 			{
 				_gh3Songlist.HideUsed = true;
-				method_0();
+				RefreshSongListBox();
 			}
 		}
 

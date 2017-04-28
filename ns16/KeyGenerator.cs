@@ -464,32 +464,20 @@ namespace ns16
 
 		public static string OpenOrSaveFile(string title, string filter, bool isOpenDialog, string fileName = "")
 		{
-			FileDialog fileDialog;
-			if (isOpenDialog)
-			{
-				fileDialog = new OpenFileDialog();
-			}
-			else
-			{
-				fileDialog = new SaveFileDialog();
-			}
-			fileDialog.Title = title;
+		    var fileDialog = isOpenDialog ? (FileDialog) new OpenFileDialog() : new SaveFileDialog();
+		    fileDialog.Title = title;
 			fileDialog.FileName = fileName;
 			fileDialog.CheckPathExists = true;
 			if (!filter.Equals(""))
 			{
 				fileDialog.Filter = filter;
 			}
-			if (fileDialog.ShowDialog() == DialogResult.OK)
-			{
-				return fileDialog.FileName;
-			}
-			return "";
+			return fileDialog.ShowDialog() == DialogResult.OK ? fileDialog.FileName : "";
 		}
 
-		public static string OpenFile(string string0, string string1)
+		public static string OpenFile(string title, string filter)
 		{
-			return OpenOrSaveFile(string0, string1, true);
+			return OpenOrSaveFile(title, filter, true);
 		}
 
 		public static List<string> CheckFile(string string0, string string1, bool bool2)
@@ -500,10 +488,9 @@ namespace ns16
 			}, StringSplitOptions.RemoveEmptyEntries);
 			var fileList = new List<string>();
 			var array2 = array;
-			for (var i = 0; i < array2.Length; i++)
+			foreach (var searchPattern in array2)
 			{
-				var searchPattern = array2[i];
-				fileList.AddRange(Directory.GetFiles(string0, searchPattern, bool2 ? SearchOption.TopDirectoryOnly : SearchOption.AllDirectories));
+			    fileList.AddRange(Directory.GetFiles(string0, searchPattern, bool2 ? SearchOption.TopDirectoryOnly : SearchOption.AllDirectories));
 			}
 			return fileList;
 		}

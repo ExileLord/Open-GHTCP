@@ -187,7 +187,7 @@ namespace ns15
 				}), stream6, 44100, 128);
 				list.Add(String1 + "_preview");
 				list2.Add(stream6);
-				new ZzQbSongObject((int)FsbClass2.smethod_0(_string2 + "music\\" + String1 + ".fsb.xen", list2.ToArray()), list.ToArray()).method_2(_string2 + "music\\" + String1 + ".dat.xen");
+				new ZzQbSongObject((int)ns20.FsbClass2.smethod_0(_string2 + "music\\" + String1 + ".fsb.xen", list2.ToArray()), list.ToArray()).method_2(_string2 + "music\\" + String1 + ".dat.xen");
 			}
 			GC.Collect();
 		}

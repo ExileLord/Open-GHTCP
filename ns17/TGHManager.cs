@@ -34,7 +34,7 @@ namespace ns17
 		public void method_0()
 		{
 			byte[] byte_;
-			ZipManager.smethod_3(_string1, out byte_, "songs.info", "TGH9ZIP2PASS4MXKR");
+			ZipManager.ExtractBytesFrom(_string1, out byte_, "songs.info", "TGH9ZIP2PASS4MXKR");
 			var @class = new ZzGenericNode1("songs", KeyGenerator.smethod_8(byte_, "SNG4AES4KEY9MXKR"));
 			foreach (StructurePointerNode class302 in @class.Nodes)
 			{
@@ -42,7 +42,7 @@ namespace ns17
 				gH3Song.Editable = true;
 				_gh3Songlist0.method_0(gH3Song, _string0 != null);
 			}
-			ZipManager.smethod_3(_string1, out byte_, "tier.info", "TGH9ZIP2PASS4MXKR");
+			ZipManager.ExtractBytesFrom(_string1, out byte_, "tier.info", "TGH9ZIP2PASS4MXKR");
 			Gh3Tier0.method_1(new Gh3Tier((StructureHeaderNode)new ZzGenericNode1("tier", KeyGenerator.smethod_8(byte_, "TIR4AES4KEY9MXKR")).Nodes[0], _gh3Songlist0));
 			if (_string0 != null)
 			{

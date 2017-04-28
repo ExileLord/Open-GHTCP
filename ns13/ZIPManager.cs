@@ -74,9 +74,9 @@ namespace ns13
 			throw new ArgumentException("Invalid compression rate.");
 		}
 
-		public static void smethod_3(string zipFilePath, out byte[] bytes, string fileName, string password)
+		public static void ExtractBytesFrom(string zipFilePath, out byte[] bytes, string fileName, string password)
 		{
-			smethod_7(File.OpenRead(zipFilePath), out bytes, fileName, password);
+			ExtractBytes(File.OpenRead(zipFilePath), out bytes, fileName, password);
 		}
 
 		public static void smethod_4(string string0, string string1, string string2)
@@ -96,7 +96,7 @@ namespace ns13
 			return memoryStream.ToArray();
 		}
 
-		public static void smethod_7(Stream streamIn, out byte[] bytes, string fileName, string password)
+		public static void ExtractBytes(Stream streamIn, out byte[] bytes, string fileName, string password)
 		{
 			var memoryStream = new MemoryStream();
 			smethod_10(streamIn, memoryStream, fileName, password);
