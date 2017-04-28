@@ -736,7 +736,7 @@ namespace ns15
 			{
 				string text = files[i];
 				string text2 = KeyGenerator.GetFileNameNoExt(text);
-				if (File.Exists(this.DataFolder + "music\\" + text2 + ".fsb.xen") && File.Exists(this.DataFolder + "songs\\" + text2 + "_song.pak.xen") && !this.gh3Songlist.method_3(text2) && !QbSongClass1.smethod_4(text2) && !GH3Songlist.IgnoreSongs.Contains(QbSongClass1.smethod_9(text2)))
+				if (File.Exists(this.DataFolder + "music\\" + text2 + ".fsb.xen") && File.Exists(this.DataFolder + "songs\\" + text2 + "_song.pak.xen") && !this.gh3Songlist.method_3(text2) && !QbSongClass1.smethod_4(text2) && !GH3Songlist.IgnoreSongs.Contains(QbSongClass1.AddKeyToDictionary(text2)))
 				{
 					try
 					{
@@ -1853,9 +1853,9 @@ namespace ns15
                     IL_7E:
                     gH3Setlist.prefix = "custom" + (i + 1);
 					int num2;
-					this.gh3Songlist.gh3SetlistList.Add(num2 = QbSongClass1.smethod_9("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
+					this.gh3Songlist.gh3SetlistList.Add(num2 = QbSongClass1.AddKeyToDictionary("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
 					int value;
-					this.gh3Songlist.dictionary_1.Add(value = QbSongClass1.smethod_9("custom" + (i + 1) + "_progression"), new GHLink(num2));
+					this.gh3Songlist.dictionary_1.Add(value = QbSongClass1.AddKeyToDictionary("custom" + (i + 1) + "_progression"), new GHLink(num2));
 					string text;
 					this.gh3Songlist.class214_0.Add(text = "Custom Setlist " + (i + 1), value);
 					this.Setlist_DropBox.Items.Add(text);
@@ -3961,9 +3961,9 @@ namespace ns15
 												IL_666:
 												gH3Setlist.prefix = "custom" + (i + 1);
 												int num2;
-												this.gh3Songlist.gh3SetlistList.Add(num2 = QbSongClass1.smethod_9("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
+												this.gh3Songlist.gh3SetlistList.Add(num2 = QbSongClass1.AddKeyToDictionary("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
 												int value;
-												this.gh3Songlist.dictionary_1.Add(value = QbSongClass1.smethod_9("custom" + (i + 1) + "_progression"), new GHLink(num2));
+												this.gh3Songlist.dictionary_1.Add(value = QbSongClass1.AddKeyToDictionary("custom" + (i + 1) + "_progression"), new GHLink(num2));
 												this.gh3Songlist.class214_0.Add("Custom Setlist " + (i + 1), value);
 												this.method_4(new Class246(value, this.class319_0, this.gh3Songlist, true));
 												flag2 = true;
