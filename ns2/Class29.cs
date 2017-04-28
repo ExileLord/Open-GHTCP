@@ -1,6 +1,6 @@
+using System;
 using ns10;
 using ns3;
-using System;
 
 namespace ns2
 {
@@ -10,8 +10,7 @@ namespace ns2
 
 		private static int int_1 = 63;
 
-		private static readonly float[] float_0 = new float[]
-		{
+		private static readonly float[] float_0 = {
 			1.06498632E-07f,
 			1.1341951E-07f,
 			1.20790148E-07f,
@@ -339,7 +338,7 @@ namespace ns2
 		public override object vmethod_1(OGGClass1 class66_0, Class27 class27_0, object object_0)
 		{
 			int num = 0;
-			int[] array = new int[Class29.int_1 + 2];
+			int[] array = new int[int_1 + 2];
 			Class31 @class = (Class31)object_0;
 			Class32 class2 = new Class32();
 			class2.class31_0 = @class;
@@ -450,8 +449,8 @@ namespace ns2
 				{
 					array = new int[@class.int_6];
 				}
-				array[0] = class71_0.oggClass3.method_6(Class29.smethod_2(@class.int_8 - 1));
-				array[1] = class71_0.oggClass3.method_6(Class29.smethod_2(@class.int_8 - 1));
+				array[0] = class71_0.oggClass3.method_6(smethod_2(@class.int_8 - 1));
+				array[1] = class71_0.oggClass3.method_6(smethod_2(@class.int_8 - 1));
 				int j = 0;
 				int num = 2;
 				while (j < class31_.int_0)
@@ -490,7 +489,7 @@ namespace ns2
 				}
 				for (int l = 2; l < @class.int_6; l++)
 				{
-					int num8 = Class29.smethod_0(class31_.int_7[@class.int_5[l - 2]], class31_.int_7[@class.int_4[l - 2]], array[@class.int_5[l - 2]], array[@class.int_4[l - 2]], class31_.int_7[l]);
+					int num8 = smethod_0(class31_.int_7[@class.int_5[l - 2]], class31_.int_7[@class.int_4[l - 2]], array[@class.int_5[l - 2]], array[@class.int_4[l - 2]], class31_.int_7[l]);
 					int num9 = @class.int_8 - num8;
 					int num10 = num8;
 					int num11 = ((num9 < num10) ? num9 : num10) << 1;
@@ -510,7 +509,7 @@ namespace ns2
 						}
 						else if ((num12 & 1) != 0)
 						{
-							num12 = (int)(-(int)((ulong)((uint)(num12 + 1) >> 1)));
+							num12 = -(int)((uint)(num12 + 1) >> 1);
 						}
 						else
 						{
@@ -565,7 +564,7 @@ namespace ns2
 					{
 						num4 *= class31_.int_6;
 						num2 = class31_.int_7[num3];
-						Class29.smethod_1(int_, num2, int_2, num4, float_1);
+						smethod_1(int_, num2, int_2, num4, float_1);
 						int_ = num2;
 						int_2 = num4;
 					}
@@ -594,7 +593,7 @@ namespace ns2
 			int num7 = int_4;
 			int num8 = 0;
 			num3 -= Math.Abs(num4 * num2);
-			float_1[num6] *= Class29.float_0[num7];
+			float_1[num6] *= float_0[num7];
 			while (++num6 < int_3)
 			{
 				num8 += num3;
@@ -607,7 +606,7 @@ namespace ns2
 				{
 					num7 += num4;
 				}
-				float_1[num6] *= Class29.float_0[num7];
+				float_1[num6] *= float_0[num7];
 			}
 		}
 

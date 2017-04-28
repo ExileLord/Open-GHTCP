@@ -1,5 +1,3 @@
-using System;
-
 namespace ns11
 {
 	public enum Enum18

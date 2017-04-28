@@ -1,5 +1,5 @@
-using ns12;
 using System;
+using ns12;
 
 namespace ns13
 {
@@ -15,25 +15,21 @@ namespace ns13
 
 		private bool bool_0;
 
-		public Class195()
+	    public virtual void vmethod_0(bool bool_1)
 		{
-		}
-
-		public virtual void vmethod_0(bool bool_1)
-		{
-			if (!this.bool_0)
+			if (!bool_0)
 			{
-				this.bool_0 = true;
+				bool_0 = true;
 				if (bool_1)
 				{
-					if (this.stream24_0 != null)
+					if (stream24_0 != null)
 					{
-						this.stream24_0.Flush();
-						this.stream24_0.Close();
+						stream24_0.Flush();
+						stream24_0.Close();
 					}
-					if (this.stream21_0 != null)
+					if (stream21_0 != null)
 					{
-						this.stream21_0.Close();
+						stream21_0.Close();
 					}
 				}
 			}
@@ -41,18 +37,18 @@ namespace ns13
 
 		public virtual void vmethod_1()
 		{
-			this.vmethod_0(true);
+			vmethod_0(true);
 			GC.SuppressFinalize(this);
 		}
 
 		~Class195()
 		{
-			this.vmethod_0(false);
+			vmethod_0(false);
 		}
 
 		void IDisposable.Dispose()
 		{
-			this.vmethod_1();
+			vmethod_1();
 		}
 	}
 }

@@ -17,35 +17,35 @@ namespace ns14
 		{
 			get
 			{
-				return this.method_0();
+				return method_0();
 			}
 		}
 
 		public bool MoveNext()
 		{
-			int[] array = this.vmethod_0(false);
+			int[] array = vmethod_0(false);
 			return array.Length > 0;
 		}
 
 		public void Reset()
 		{
-			this.bool_0 = false;
+			bool_0 = false;
 		}
 
 		public abstract int[] vmethod_0(bool bool_1);
 
 		public Array method_0()
 		{
-			if (!this.bool_0)
+			if (!bool_0)
 			{
 				throw new InvalidOperationException("CombinatorialBase collection must be Reset() before usage");
 			}
-			for (int i = 0; i < this.int_0.Length; i++)
+			for (int i = 0; i < int_0.Length; i++)
 			{
-				int index = this.int_0[i];
-				this.array_1.SetValue(this.array_0.GetValue(index), i);
+				int index = int_0[i];
+				array_1.SetValue(array_0.GetValue(index), i);
 			}
-			return this.array_1;
+			return array_1;
 		}
 	}
 }

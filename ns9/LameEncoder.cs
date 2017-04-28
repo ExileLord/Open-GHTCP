@@ -1,6 +1,6 @@
-using SharpAudio.ASC.Mp3.Lame;
 using System;
 using System.Runtime.InteropServices;
+using SharpAudio.ASC.Mp3.Lame;
 
 namespace ns9
 {
@@ -19,7 +19,7 @@ namespace ns9
 			try
 			{
 				IntPtr pSamples = (IntPtr)(gCHandle.AddrOfPinnedObject().ToInt32() + int_0);
-				result = LameEncoder.beEncodeChunk(uint_0, uint_1 / 2u, pSamples, byte_1, ref uint_2);
+				result = beEncodeChunk(uint_0, uint_1 / 2u, pSamples, byte_1, ref uint_2);
 			}
 			finally
 			{
@@ -30,7 +30,7 @@ namespace ns9
 
 		public static uint smethod_1(uint uint_0, byte[] byte_0, byte[] byte_1, ref uint uint_1)
 		{
-			return LameEncoder.smethod_0(uint_0, byte_0, 0, (uint)byte_0.Length, byte_1, ref uint_1);
+			return smethod_0(uint_0, byte_0, 0, (uint)byte_0.Length, byte_1, ref uint_1);
 		}
 
 		[DllImport("Lame_enc.dll")]

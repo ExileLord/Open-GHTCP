@@ -1,10 +1,10 @@
+using System;
+using System.IO;
 using ns0;
 using ns1;
 using ns10;
 using ns3;
 using ns4;
-using System;
-using System.IO;
 
 namespace ns2
 {
@@ -68,18 +68,18 @@ namespace ns2
 
 		public override Class16 vmethod_1()
 		{
-			return this.class16_0;
+			return class16_0;
 		}
 
 		public void method_0()
 		{
-			this.class78_0.method_1();
-			this.class74_0.method_0();
-			this.class33_0.method_0();
-			this.class75_0.method_0();
-			this.class61_0.method_0();
+			class78_0.method_1();
+			class74_0.method_0();
+			class33_0.method_0();
+			class75_0.method_0();
+			class61_0.method_0();
 			Console.WriteLine("Done.");
-			this.fileStream.Close();
+			fileStream.Close();
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
@@ -106,13 +106,13 @@ namespace ns2
 		{
 			if (bool_0)
 			{
-				this.method_0();
+				method_0();
 			}
 		}
 
 		public new void Dispose()
 		{
-			this.method_1(true);
+			method_1(true);
 			GC.SuppressFinalize(this);
 		}
 	}

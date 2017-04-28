@@ -1,7 +1,7 @@
-using ns9;
 using System;
 using System.IO;
 using System.Text;
+using ns9;
 
 namespace ns22
 {
@@ -9,8 +9,7 @@ namespace ns22
 	{
 		private class Class343
 		{
-			private static readonly double[,] double_0 = new double[,]
-			{
+			private static readonly double[,] double_0 = {
 				{
 					0.0,
 					0.0
@@ -37,7 +36,7 @@ namespace ns22
 
 			public long method_0()
 			{
-				return this.long_0;
+				return long_0;
 			}
 		}
 
@@ -45,25 +44,25 @@ namespace ns22
 
 		private readonly Interface14[] interface14_0;
 
-		private readonly StreamClass1.Class343[] class343_0;
+		private readonly Class343[] class343_0;
 
 		private readonly Stream stream_0;
 
 		public void Dispose()
 		{
-			if (StreamClass1.smethod_0(this.stream_0))
+			if (smethod_0(stream_0))
 			{
-				StreamClass1.UpdateFinalBlocks(this.stream_0, this.interface14_0.Length, 0L);
-				int[] array = new int[this.interface14_0.Length];
-				int[] array2 = new int[this.interface14_0.Length];
-				for (int i = 0; i < this.interface14_0.Length; i++)
+				UpdateFinalBlocks(stream_0, interface14_0.Length, 0L);
+				int[] array = new int[interface14_0.Length];
+				int[] array2 = new int[interface14_0.Length];
+				for (int i = 0; i < interface14_0.Length; i++)
 				{
-					array[i] = (int)this.class343_0[i].method_0() * 28;
-					array2[i] = this.interface14_0[i].imethod_0();
+					array[i] = (int)class343_0[i].method_0() * 28;
+					array2[i] = interface14_0[i].imethod_0();
 				}
-				StreamClass1.UpdateFinalBlocks(this.stream_0, array, array2, 0L);
+				UpdateFinalBlocks(stream_0, array, array2, 0L);
 			}
-			this.class346_0.Dispose();
+			class346_0.Dispose();
 		}
 
 		public static bool smethod_0(Stream stream_1)
@@ -73,7 +72,7 @@ namespace ns22
 
 		public static void UpdateFinalBlocks(Stream stream_1, int int_0, long long_0)
 		{
-			if (!StreamClass1.smethod_0(stream_1))
+			if (!smethod_0(stream_1))
 			{
 				throw new ApplicationException("UpdateFinalBlocks called with non-updateable stream");
 			}
@@ -82,14 +81,14 @@ namespace ns22
 			bool[] array = new bool[int_0];
 			int num2 = 0;
 			byte[] array2 = new byte[16];
-			stream_1.Seek((long)(array2.Length * -1), SeekOrigin.Current);
+			stream_1.Seek(array2.Length * -1, SeekOrigin.Current);
 			while (stream_1.Position - num >= 16L && num2 < array.Length)
 			{
 				if (stream_1.Read(array2, 0, array2.Length) != array2.Length)
 				{
 					Class355.interface15_0.imethod_1("Unexpected end of stream trying to read final blocks");
 				}
-				int num3 = (int)array2[1] & -129;
+				int num3 = array2[1] & -129;
 				if (num3 < 0 || num3 > int_0)
 				{
 					Class355.interface15_0.imethod_1(string.Format("Found reference to channel {0}, but only {1} channels expected", num3, int_0));
@@ -111,25 +110,25 @@ namespace ns22
 					byte[] expr_F6_cp_0 = array2;
 					int expr_F6_cp_1 = 1;
 					expr_F6_cp_0[expr_F6_cp_1] |= 128;
-					stream_1.Seek((long)(array2.Length * -1), SeekOrigin.Current);
+					stream_1.Seek(array2.Length * -1, SeekOrigin.Current);
 					stream_1.Write(array2, 0, array2.Length);
 					array[num3] = true;
 					num2++;
 				}
-				stream_1.Seek((long)(array2.Length * -2), SeekOrigin.Current);
+				stream_1.Seek(array2.Length * -2, SeekOrigin.Current);
 			}
 			stream_1.Seek(position, SeekOrigin.Begin);
 		}
 
 		public static void UpdateFinalBlocks(Stream stream_1, int[] int_0, int[] int_1, long long_0)
 		{
-			if (!StreamClass1.smethod_0(stream_1))
+			if (!smethod_0(stream_1))
 			{
 				throw new ApplicationException("UpdateFinalBlocks called with non-updateable stream");
 			}
 			long position = stream_1.Position;
 			stream_1.Seek(long_0, SeekOrigin.Begin);
-			StreamClass1.smethod_3(stream_1, int_0, int_1);
+			smethod_3(stream_1, int_0, int_1);
 			stream_1.Seek(position, SeekOrigin.Begin);
 		}
 
@@ -139,7 +138,7 @@ namespace ns22
 			{
 				Class355.interface15_0.imethod_1(string.Format("sampleCount length {0} does not match sampleRate length {1}", int_0.Length, int_1.Length));
 			}
-			if (!StreamClass1.smethod_0(stream_1))
+			if (!smethod_0(stream_1))
 			{
 				for (int i = 0; i < int_0.Length; i++)
 				{

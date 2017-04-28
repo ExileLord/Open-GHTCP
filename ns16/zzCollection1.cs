@@ -29,7 +29,7 @@ namespace ns16
 			{
 				get
 				{
-					return this.gparam_0;
+					return gparam_0;
 				}
 			}
 
@@ -37,60 +37,60 @@ namespace ns16
 			{
 				get
 				{
-					this.method_0();
-					if (this.int_0 <= 0)
+					method_0();
+					if (int_0 <= 0)
 					{
 						throw new InvalidOperationException("Current is not valid");
 					}
-					return this.gparam_0;
+					return gparam_0;
 				}
 			}
 
 			public Struct82(zzCollection1<T> class236_1)
 			{
-				this = default(zzCollection1<T>.Struct82);
-				this.class236_0 = class236_1;
-				this.int_1 = class236_1.int_5;
+				this = default(Struct82);
+				class236_0 = class236_1;
+				int_1 = class236_1.int_5;
 			}
 
 			public bool MoveNext()
 			{
-				this.method_0();
-				if (this.int_0 < 0)
+				method_0();
+				if (int_0 < 0)
 				{
 					return false;
 				}
-				while (this.int_0 < this.class236_0.int_1)
+				while (int_0 < class236_0.int_1)
 				{
-					int num = this.int_0++;
-					if (this.class236_0.method_4(num) != 0)
+					int num = int_0++;
+					if (class236_0.method_4(num) != 0)
 					{
-						this.gparam_0 = this.class236_0.gparam_0[num];
+						gparam_0 = class236_0.gparam_0[num];
 						return true;
 					}
 				}
-				this.int_0 = -1;
+				int_0 = -1;
 				return false;
 			}
 
 			void IEnumerator.Reset()
 			{
-				this.method_0();
-				this.int_0 = 0;
+				method_0();
+				int_0 = 0;
 			}
 
 			public void Dispose()
 			{
-				this.class236_0 = null;
+				class236_0 = null;
 			}
 
 			private void method_0()
 			{
-				if (this.class236_0 == null)
+				if (class236_0 == null)
 				{
 					throw new ObjectDisposedException(null);
 				}
-				if (this.class236_0.int_5 != this.int_1)
+				if (class236_0.int_5 != int_1)
 				{
 					throw new InvalidOperationException("HashSet have been modified while it was iterated over");
 				}
@@ -99,8 +99,7 @@ namespace ns16
 
 		private static class Class237
 		{
-			private static readonly int[] oddPrimeSequence = new int[]
-			{
+			private static readonly int[] oddPrimeSequence = {
 				11,
 				19,
 				37,
@@ -141,7 +140,7 @@ namespace ns16
 			{
 				if ((int_1 & 1) != 0)
 				{
-					int num = (int)Math.Sqrt((double)int_1);
+					int num = (int)Math.Sqrt(int_1);
 					for (int i = 3; i < num; i += 2)
 					{
 						if (int_1 % i == 0)
@@ -158,7 +157,7 @@ namespace ns16
 			{
 				for (int i = (int_1 & -2) - 1; i < Int32.MaxValue; i += 2)
 				{
-					if (zzCollection1<T>.Class237.smethod_0(i))
+					if (smethod_0(i))
 					{
 						return i;
 					}
@@ -168,20 +167,20 @@ namespace ns16
 
 			public static int smethod_2(int int_1)
 			{
-				for (int i = 0; i < zzCollection1<T>.Class237.oddPrimeSequence.Length; i++)
+				for (int i = 0; i < oddPrimeSequence.Length; i++)
 				{
-					if (int_1 <= zzCollection1<T>.Class237.oddPrimeSequence[i])
+					if (int_1 <= oddPrimeSequence[i])
 					{
-						return zzCollection1<T>.Class237.oddPrimeSequence[i];
+						return oddPrimeSequence[i];
 					}
 				}
-				return zzCollection1<T>.Class237.smethod_1(int_1);
+				return smethod_1(int_1);
 			}
 		}
 
 		private int[] int_0;
 
-		private zzCollection1<T>.Struct81[] struct81_0;
+		private Struct81[] struct81_0;
 
 		private T[] gparam_0;
 
@@ -201,7 +200,7 @@ namespace ns16
 		{
 			get
 			{
-				return this.int_3;
+				return int_3;
 			}
 		}
 
@@ -215,12 +214,12 @@ namespace ns16
 
 		public zzCollection1()
 		{
-			this.method_0(10, null);
+			method_0(10, null);
 		}
 
 		public zzCollection1(IEqualityComparer<T> iequalityComparer_1)
 		{
-			this.method_0(10, iequalityComparer_1);
+			method_0(10, iequalityComparer_1);
 		}
 
 		public zzCollection1(IEnumerable<T> ienumerable_0) : this(ienumerable_0, null)
@@ -239,10 +238,10 @@ namespace ns16
 			{
 				int_ = collection.Count;
 			}
-			this.method_0(int_, iequalityComparer_1);
+			method_0(int_, iequalityComparer_1);
 			foreach (T current in ienumerable_0)
 			{
-				this.vmethod_0(current);
+				vmethod_0(current);
 			}
 		}
 
@@ -252,38 +251,38 @@ namespace ns16
 			{
 				throw new ArgumentOutOfRangeException("capacity");
 			}
-			this.iequalityComparer_0 = (iequalityComparer_1 ?? EqualityComparer<T>.Default);
+			iequalityComparer_0 = (iequalityComparer_1 ?? EqualityComparer<T>.Default);
 			if (int_6 == 0)
 			{
 				int_6 = 10;
 			}
-			int_6 = (int)((float)int_6 / 0.9f) + 1;
-			this.method_1(int_6);
-			this.int_5 = 0;
+			int_6 = (int)(int_6 / 0.9f) + 1;
+			method_1(int_6);
+			int_5 = 0;
 		}
 
 		private void method_1(int int_6)
 		{
-			this.int_0 = new int[int_6];
-			this.struct81_0 = new zzCollection1<T>.Struct81[int_6];
-			this.int_2 = -1;
-			this.gparam_0 = new T[int_6];
-			this.int_1 = 0;
-			this.int_4 = (int)((float)this.int_0.Length * 0.9f);
-			if (this.int_4 == 0 && this.int_0.Length > 0)
+			int_0 = new int[int_6];
+			struct81_0 = new Struct81[int_6];
+			int_2 = -1;
+			gparam_0 = new T[int_6];
+			int_1 = 0;
+			int_4 = (int)(int_0.Length * 0.9f);
+			if (int_4 == 0 && int_0.Length > 0)
 			{
-				this.int_4 = 1;
+				int_4 = 1;
 			}
 		}
 
 		public void CopyTo(T[] gparam_1, int int_6)
 		{
-			this.method_2(gparam_1, int_6, this.int_3);
+			method_2(gparam_1, int_6, int_3);
 		}
 
 		void ICollection<T>.CopyTo(T[] array, int arrayIndex)
 		{
-			this.CopyTo(array, arrayIndex);
+			CopyTo(array, arrayIndex);
 		}
 
 		public void method_2(T[] gparam_1, int int_6, int int_7)
@@ -306,11 +305,11 @@ namespace ns16
 			}
 			int num = 0;
 			int num2 = int_6 + int_7;
-			while (num < this.int_1 && int_6 < num2)
+			while (num < int_1 && int_6 < num2)
 			{
-				if (this.method_4(num) != 0)
+				if (method_4(num) != 0)
 				{
-					gparam_1[int_6++] = this.gparam_0[num];
+					gparam_1[int_6++] = gparam_0[num];
 				}
 				num++;
 			}
@@ -318,101 +317,101 @@ namespace ns16
 
 		public void Clear()
 		{
-			this.int_3 = 0;
-			Array.Clear(this.int_0, 0, this.int_0.Length);
-			Array.Clear(this.gparam_0, 0, this.gparam_0.Length);
-			Array.Clear(this.struct81_0, 0, this.struct81_0.Length);
-			this.int_2 = -1;
-			this.int_1 = 0;
-			this.int_5++;
+			int_3 = 0;
+			Array.Clear(int_0, 0, int_0.Length);
+			Array.Clear(gparam_0, 0, gparam_0.Length);
+			Array.Clear(struct81_0, 0, struct81_0.Length);
+			int_2 = -1;
+			int_1 = 0;
+			int_5++;
 		}
 
 		private void method_3()
 		{
-			int num = zzCollection1<T>.Class237.smethod_2(this.int_0.Length << 1 | 1);
+			int num = Class237.smethod_2(int_0.Length << 1 | 1);
 			int[] array = new int[num];
-			zzCollection1<T>.Struct81[] array2 = new zzCollection1<T>.Struct81[num];
-			for (int i = 0; i < this.int_0.Length; i++)
+			Struct81[] array2 = new Struct81[num];
+			for (int i = 0; i < int_0.Length; i++)
 			{
-				for (int num2 = this.int_0[i] - 1; num2 != -1; num2 = this.struct81_0[num2].int_1)
+				for (int num2 = int_0[i] - 1; num2 != -1; num2 = struct81_0[num2].int_1)
 				{
-					int num3 = array2[num2].int_0 = this.method_5(this.gparam_0[num2]);
+					int num3 = array2[num2].int_0 = method_5(gparam_0[num2]);
 					int num4 = (num3 & 2147483647) % num;
 					array2[num2].int_1 = array[num4] - 1;
 					array[num4] = num2 + 1;
 				}
 			}
-			this.int_0 = array;
-			this.struct81_0 = array2;
+			int_0 = array;
+			struct81_0 = array2;
 			T[] destinationArray = new T[num];
-			Array.Copy(this.gparam_0, 0, destinationArray, 0, this.int_1);
-			this.gparam_0 = destinationArray;
-			this.int_4 = (int)((float)num * 0.9f);
+			Array.Copy(gparam_0, 0, destinationArray, 0, int_1);
+			gparam_0 = destinationArray;
+			int_4 = (int)(num * 0.9f);
 		}
 
 		public int method_4(int int_6)
 		{
-			return this.struct81_0[int_6].int_0 & -2147483648;
+			return struct81_0[int_6].int_0 & -2147483648;
 		}
 
 		public int method_5(T gparam_1)
 		{
 			if (gparam_1 != null)
 			{
-				return this.iequalityComparer_0.GetHashCode(gparam_1) | -2147483648;
+				return iequalityComparer_0.GetHashCode(gparam_1) | -2147483648;
 			}
 			return -2147483648;
 		}
 
 		void ICollection<T>.Add(T item)
 		{
-			this.vmethod_0(item);
+			vmethod_0(item);
 		}
 
 		public bool vmethod_0(T gparam_1)
 		{
-			int num = this.method_5(gparam_1);
-			int num2 = (num & 2147483647) % this.int_0.Length;
-			if (this.method_6(num2, num, gparam_1))
+			int num = method_5(gparam_1);
+			int num2 = (num & 2147483647) % int_0.Length;
+			if (method_6(num2, num, gparam_1))
 			{
 				return false;
 			}
-			if (++this.int_3 > this.int_4)
+			if (++int_3 > int_4)
 			{
-				this.method_3();
-				num2 = (num & 2147483647) % this.int_0.Length;
+				method_3();
+				num2 = (num & 2147483647) % int_0.Length;
 			}
-			int num3 = this.int_2;
+			int num3 = int_2;
 			if (num3 == -1)
 			{
-				num3 = this.int_1++;
+				num3 = int_1++;
 			}
 			else
 			{
-				this.int_2 = this.struct81_0[num3].int_1;
+				int_2 = struct81_0[num3].int_1;
 			}
-			this.struct81_0[num3].int_0 = num;
-			this.struct81_0[num3].int_1 = this.int_0[num2] - 1;
-			this.int_0[num2] = num3 + 1;
-			this.gparam_0[num3] = gparam_1;
-			this.int_5++;
+			struct81_0[num3].int_0 = num;
+			struct81_0[num3].int_1 = int_0[num2] - 1;
+			int_0[num2] = num3 + 1;
+			gparam_0[num3] = gparam_1;
+			int_5++;
 			return true;
 		}
 
 		public bool Contains(T item)
 		{
-			int num = this.method_5(item);
-			int int_ = (num & 2147483647) % this.int_0.Length;
-			return this.method_6(int_, num, item);
+			int num = method_5(item);
+			int int_ = (num & 2147483647) % int_0.Length;
+			return method_6(int_, num, item);
 		}
 
 		private bool method_6(int int_6, int int_7, T gparam_1)
 		{
-			zzCollection1<T>.Struct81 @struct;
-			for (int num = this.int_0[int_6] - 1; num != -1; num = @struct.int_1)
+			Struct81 @struct;
+			for (int num = int_0[int_6] - 1; num != -1; num = @struct.int_1)
 			{
-				@struct = this.struct81_0[num];
-				if (@struct.int_0 == int_7 && ((int_7 != -2147483648 || (gparam_1 != null && this.gparam_0[num] != null)) ? this.iequalityComparer_0.Equals(gparam_1, this.gparam_0[num]) : (gparam_1 == null && null == this.gparam_0[num])))
+				@struct = struct81_0[num];
+				if (@struct.int_0 == int_7 && ((int_7 != -2147483648 || (gparam_1 != null && gparam_0[num] != null)) ? iequalityComparer_0.Equals(gparam_1, gparam_0[num]) : (gparam_1 == null && null == gparam_0[num])))
 				{
 					return true;
 				}
@@ -422,9 +421,9 @@ namespace ns16
 
 		public bool Remove(T item)
 		{
-			int num = this.method_5(item);
-			int num2 = (num & 2147483647) % this.int_0.Length;
-			int num3 = this.int_0[num2] - 1;
+			int num = method_5(item);
+			int num2 = (num & 2147483647) % int_0.Length;
+			int num3 = int_0[num2] - 1;
 			if (num3 == -1)
 			{
 				return false;
@@ -432,10 +431,10 @@ namespace ns16
 			int num4 = -1;
 			do
 			{
-				zzCollection1<T>.Struct81 @struct = this.struct81_0[num3];
+				Struct81 @struct = struct81_0[num3];
 				if (@struct.int_0 == num)
 				{
-					if ((num != -2147483648 || (item != null && this.gparam_0[num3] != null)) ? this.iequalityComparer_0.Equals(this.gparam_0[num3], item) : (item == null && null == this.gparam_0[num3]))
+					if ((num != -2147483648 || (item != null && gparam_0[num3] != null)) ? iequalityComparer_0.Equals(gparam_0[num3], item) : (item == null && null == gparam_0[num3]))
 					{
 						break;
 					}
@@ -448,31 +447,31 @@ namespace ns16
 			{
 				return false;
 			}
-			this.int_3--;
+			int_3--;
 			if (num4 == -1)
 			{
-				this.int_0[num2] = this.struct81_0[num3].int_1 + 1;
+				int_0[num2] = struct81_0[num3].int_1 + 1;
 			}
 			else
 			{
-				this.struct81_0[num4].int_1 = this.struct81_0[num3].int_1;
+				struct81_0[num4].int_1 = struct81_0[num3].int_1;
 			}
-			this.struct81_0[num3].int_1 = this.int_2;
-			this.int_2 = num3;
-			this.struct81_0[num3].int_0 = 0;
-			this.gparam_0[num3] = default(T);
-			this.int_5++;
+			struct81_0[num3].int_1 = int_2;
+			int_2 = num3;
+			struct81_0[num3].int_0 = 0;
+			gparam_0[num3] = default(T);
+			int_5++;
 			return true;
 		}
 
 		IEnumerator<T> IEnumerable<T>.GetEnumerator()
 		{
-			return new zzCollection1<T>.Struct82(this);
+			return new Struct82(this);
 		}
 
 		IEnumerator IEnumerable.GetEnumerator()
 		{
-			return new zzCollection1<T>.Struct82(this);
+			return new Struct82(this);
 		}
 	}
 }

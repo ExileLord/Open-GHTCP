@@ -1,7 +1,7 @@
-using ns16;
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using ns16;
 
 namespace ns14
 {
@@ -9,19 +9,19 @@ namespace ns14
 	{
 		public delegate void Delegate6(object sender, EventArgs0 e);
 
-		private ActionList.Delegate6 delegate6_0;
+		private Delegate6 delegate6_0;
 
 		private List<QbEditor> actionList;
 
-		public void method_0(ActionList.Delegate6 delegate6_1)
+		public void method_0(Delegate6 delegate6_1)
 		{
-			ActionList.Delegate6 @delegate = this.delegate6_0;
-			ActionList.Delegate6 delegate2;
+			Delegate6 @delegate = delegate6_0;
+			Delegate6 delegate2;
 			do
 			{
 				delegate2 = @delegate;
-				ActionList.Delegate6 value = (ActionList.Delegate6)Delegate.Combine(delegate2, delegate6_1);
-				@delegate = Interlocked.CompareExchange<ActionList.Delegate6>(ref this.delegate6_0, value, delegate2);
+				Delegate6 value = (Delegate6)Delegate.Combine(delegate2, delegate6_1);
+				@delegate = Interlocked.CompareExchange(ref delegate6_0, value, delegate2);
 			}
 			while (@delegate != delegate2);
 		}
@@ -34,11 +34,11 @@ namespace ns14
 		public void method_1()
 		{
 			EventArgs0 e;
-            foreach (QbEditor current in this.actionList)
+            foreach (QbEditor current in actionList)
 			{
-				int int_ = 100 * this.actionList.IndexOf(current) / this.actionList.Count;
-				e = new EventArgs0(current.ToString() + " Processing...", int_);
-				this.delegate6_0(this, e);
+				int int_ = 100 * actionList.IndexOf(current) / actionList.Count;
+				e = new EventArgs0(current + " Processing...", int_);
+				delegate6_0(this, e);
                 string finalStatus;
                 using (new Class217(current.ToString()))
 				{
@@ -52,10 +52,10 @@ namespace ns14
 					}
 				}
 				e = new EventArgs0(finalStatus, int_);
-				this.delegate6_0(this, e);
+				delegate6_0(this, e);
 			}
 			e = new EventArgs0("", 100);
-            this.delegate6_0(this, e);
+            delegate6_0(this, e);
         }
 	}
 }

@@ -1,6 +1,5 @@
-using ns21;
-using System;
 using System.Collections.Generic;
+using ns21;
 
 namespace ns18
 {
@@ -10,22 +9,22 @@ namespace ns18
 		{
 			get
 			{
-				return ((IntegerValueNode)base.Nodes[int_0]).int_0;
+				return ((IntegerValueNode)Nodes[int_0]).int_0;
 			}
 			set
 			{
-				((IntegerValueNode)base.Nodes[int_0]).int_0 = value;
+				((IntegerValueNode)Nodes[int_0]).int_0 = value;
 			}
 		}
 
 		public IntegerArrayNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public IntegerArrayNode(IEnumerable<int> ienumerable_0)
 		{
-			this.method_11(ienumerable_0);
+			method_11(ienumerable_0);
 		}
 
 		public override int vmethod_1()
@@ -37,15 +36,15 @@ namespace ns18
 		{
 			foreach (int current in ienumerable_0)
 			{
-				base.Nodes.Add(new IntegerValueNode(current));
+				Nodes.Add(new IntegerValueNode(current));
 			}
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public void method_12(IEnumerable<int> ienumerable_0)
 		{
-			base.Nodes.Clear();
-			this.method_11(ienumerable_0);
+			Nodes.Clear();
+			method_11(ienumerable_0);
 		}
 
 		public override byte vmethod_15()

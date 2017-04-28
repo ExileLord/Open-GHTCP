@@ -1,5 +1,5 @@
-using ns11;
 using System;
+using ns11;
 
 namespace ns8
 {
@@ -9,10 +9,10 @@ namespace ns8
 
 		private string string_0;
 
-		public Exception4(Enum18 enum18_1, string string_1) : base(Exception4.smethod_0(enum18_1, string_1))
+		public Exception4(Enum18 enum18_1, string string_1) : base(smethod_0(enum18_1, string_1))
 		{
-			this.enum18_0 = enum18_1;
-			this.string_0 = string_1;
+			enum18_0 = enum18_1;
+			string_0 = string_1;
 		}
 
 		private static string smethod_0(Enum18 enum18_1, string string_1)
@@ -30,7 +30,7 @@ namespace ns8
 
 		public Enum18 method_0()
 		{
-			return this.enum18_0;
+			return enum18_0;
 		}
 	}
 }

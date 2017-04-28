@@ -1,7 +1,7 @@
-using Compression.Tar;
-using ns13;
 using System;
 using System.IO;
+using Compression.Tar;
+using ns13;
 
 namespace ns12
 {
@@ -21,7 +21,7 @@ namespace ns12
 		{
 			get
 			{
-				return this.stream_0.CanRead;
+				return stream_0.CanRead;
 			}
 		}
 
@@ -45,7 +45,7 @@ namespace ns12
 		{
 			get
 			{
-				return this.stream_0.Length;
+				return stream_0.Length;
 			}
 		}
 
@@ -53,7 +53,7 @@ namespace ns12
 		{
 			get
 			{
-				return this.stream_0.Position;
+				return stream_0.Position;
 			}
 			set
 			{
@@ -63,7 +63,7 @@ namespace ns12
 
 		public override void Flush()
 		{
-			this.stream_0.Flush();
+			stream_0.Flush();
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
@@ -89,12 +89,12 @@ namespace ns12
 		public override int ReadByte()
 		{
 			byte[] array = new byte[1];
-			int num = this.Read(array, 0, 1);
+			int num = Read(array, 0, 1);
 			if (num <= 0)
 			{
 				return -1;
 			}
-			return (int)array[0];
+			return array[0];
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
@@ -104,37 +104,37 @@ namespace ns12
 				throw new ArgumentNullException("buffer");
 			}
 			int num = 0;
-			if (this.long_1 >= this.long_0)
+			if (long_1 >= long_0)
 			{
 				return 0;
 			}
-			long num2 = (long)count;
-			if (num2 + this.long_1 > this.long_0)
+			long num2 = count;
+			if (num2 + long_1 > long_0)
 			{
-				num2 = this.long_0 - this.long_1;
+				num2 = long_0 - long_1;
 			}
-			if (this.byte_0 != null)
+			if (byte_0 != null)
 			{
-				int num3 = (num2 > (long)this.byte_0.Length) ? this.byte_0.Length : ((int)num2);
-				Array.Copy(this.byte_0, 0, buffer, offset, num3);
-				if (num3 >= this.byte_0.Length)
+				int num3 = (num2 > (long)byte_0.Length) ? byte_0.Length : ((int)num2);
+				Array.Copy(byte_0, 0, buffer, offset, num3);
+				if (num3 >= byte_0.Length)
 				{
-					this.byte_0 = null;
+					byte_0 = null;
 				}
 				else
 				{
-					int num4 = this.byte_0.Length - num3;
+					int num4 = byte_0.Length - num3;
 					byte[] destinationArray = new byte[num4];
-					Array.Copy(this.byte_0, num3, destinationArray, 0, num4);
-					this.byte_0 = destinationArray;
+					Array.Copy(byte_0, num3, destinationArray, 0, num4);
+					byte_0 = destinationArray;
 				}
 				num += num3;
-				num2 -= (long)num3;
+				num2 -= num3;
 				offset += num3;
 			}
 			while (num2 > 0L)
 			{
-				byte[] array = this.class206_0.method_2();
+				byte[] array = class206_0.method_2();
 				if (array == null)
 				{
 					throw new TarException("unexpected EOF with " + num2 + " bytes unread");
@@ -144,8 +144,8 @@ namespace ns12
 				if (num6 > num5)
 				{
 					Array.Copy(array, 0, buffer, offset, num5);
-					this.byte_0 = new byte[num6 - num5];
-					Array.Copy(array, num5, this.byte_0, 0, num6 - num5);
+					byte_0 = new byte[num6 - num5];
+					Array.Copy(array, num5, byte_0, 0, num6 - num5);
 				}
 				else
 				{
@@ -153,16 +153,16 @@ namespace ns12
 					Array.Copy(array, 0, buffer, offset, num6);
 				}
 				num += num5;
-				num2 -= (long)num5;
+				num2 -= num5;
 				offset += num5;
 			}
-			this.long_1 += (long)num;
+			long_1 += num;
 			return num;
 		}
 
 		public override void Close()
 		{
-			this.class206_0.method_8();
+			class206_0.method_8();
 		}
 	}
 }

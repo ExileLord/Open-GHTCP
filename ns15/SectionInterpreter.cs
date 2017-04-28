@@ -1,7 +1,7 @@
-using ns14;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using ns14;
 
 namespace ns15
 {
@@ -20,18 +20,14 @@ namespace ns15
 			for (int i = 0; i < string_0.Length; i++)
 			{
 				string text = string_0[i];
-				string[] array = text.Split(new char[]
+				string[] array = text.Split(new[]
 				{
 					'=',
 					'"'
 				}, 3, StringSplitOptions.RemoveEmptyEntries);
 				if (array.Length == 3 && !(array[1].Trim() != "E"))
 				{
-					array[2] = array[2].TrimEnd(new char[]
-					{
-						' ',
-						'\t'
-					});
+					array[2] = array[2].TrimEnd(' ', '\t');
 					if (array[2].EndsWith("\""))
 					{
 						array[2] = array[2].Substring(0, array[2].Length - 1);
@@ -39,16 +35,16 @@ namespace ns15
 					int num = ChartParser.getNoteFromResolution(array[0].Trim());
 					if (array[2].StartsWith("section "))
 					{
-						this.sectionList.Add(num, CultureInfo.CurrentCulture.TextInfo.ToTitleCase(array[2].Substring("section ".Length).Replace('_', ' ')));
+						sectionList.Add(num, CultureInfo.CurrentCulture.TextInfo.ToTitleCase(array[2].Substring("section ".Length).Replace('_', ' ')));
 					}
-					else if (this.otherList.ContainsKey(num))
+					else if (otherList.ContainsKey(num))
 					{
-						this.otherList[num].Add(array[2]);
+						otherList[num].Add(array[2]);
 					}
 					else
 					{
-						this.otherList.Add(num, new List<string>());
-						this.otherList[num].Add(array[2]);
+						otherList.Add(num, new List<string>());
+						otherList[num].Add(array[2]);
 					}
 				}
 			}

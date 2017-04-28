@@ -1,5 +1,4 @@
 using ns2;
-using System;
 
 namespace ns3
 {
@@ -19,9 +18,9 @@ namespace ns3
 
 		public void method_0()
 		{
-			this.byte_0 = null;
-			this.int_2 = 0;
-			this.byte_1 = null;
+			byte_0 = null;
+			int_2 = 0;
+			byte_1 = null;
 		}
 
 		public int method_1(OGGClass3 class38_0)
@@ -29,34 +28,34 @@ namespace ns3
 			int num = class38_0.method_6(32);
 			if (num < 0)
 			{
-				this.method_2();
+				method_2();
 				return -1;
 			}
-			this.byte_1 = new byte[num + 1];
-			class38_0.method_5(this.byte_1, num);
-			this.int_2 = class38_0.method_6(32);
-			if (this.int_2 < 0)
+			byte_1 = new byte[num + 1];
+			class38_0.method_5(byte_1, num);
+			int_2 = class38_0.method_6(32);
+			if (int_2 < 0)
 			{
-				this.method_2();
+				method_2();
 				return -1;
 			}
-			this.byte_0 = new byte[this.int_2 + 1][];
-			this.int_1 = new int[this.int_2 + 1];
-			for (int i = 0; i < this.int_2; i++)
+			byte_0 = new byte[int_2 + 1][];
+			int_1 = new int[int_2 + 1];
+			for (int i = 0; i < int_2; i++)
 			{
 				int num2 = class38_0.method_6(32);
 				if (num2 < 0)
 				{
-					this.method_2();
+					method_2();
 					return -1;
 				}
-				this.int_1[i] = num2;
-				this.byte_0[i] = new byte[num2 + 1];
-				class38_0.method_5(this.byte_0[i], num2);
+				int_1[i] = num2;
+				byte_0[i] = new byte[num2 + 1];
+				class38_0.method_5(byte_0[i], num2);
 			}
 			if (class38_0.method_6(1) != 1)
 			{
-				this.method_2();
+				method_2();
 				return -1;
 			}
 			return 0;
@@ -64,12 +63,12 @@ namespace ns3
 
 		public void method_2()
 		{
-			for (int i = 0; i < this.int_2; i++)
+			for (int i = 0; i < int_2; i++)
 			{
-				this.byte_0[i] = null;
+				byte_0[i] = null;
 			}
-			this.byte_0 = null;
-			this.byte_1 = null;
+			byte_0 = null;
+			byte_1 = null;
 		}
 	}
 }

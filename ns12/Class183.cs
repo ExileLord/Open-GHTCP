@@ -6,8 +6,7 @@ namespace ns12
 	{
 		public static int int_0 = Math.Min(65535, 65531);
 
-		public static int[] int_1 = new int[]
-		{
+		public static int[] int_1 = {
 			0,
 			4,
 			4,
@@ -20,8 +19,7 @@ namespace ns12
 			32
 		};
 
-		public static int[] int_2 = new int[]
-		{
+		public static int[] int_2 = {
 			0,
 			4,
 			5,
@@ -34,8 +32,7 @@ namespace ns12
 			258
 		};
 
-		public static int[] int_3 = new int[]
-		{
+		public static int[] int_3 = {
 			0,
 			8,
 			16,
@@ -48,8 +45,7 @@ namespace ns12
 			258
 		};
 
-		public static int[] int_4 = new int[]
-		{
+		public static int[] int_4 = {
 			0,
 			4,
 			8,
@@ -62,8 +58,7 @@ namespace ns12
 			4096
 		};
 
-		public static int[] int_5 = new int[]
-		{
+		public static int[] int_5 = {
 			0,
 			1,
 			1,

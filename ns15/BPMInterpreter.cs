@@ -1,5 +1,5 @@
-using ns14;
 using System;
+using ns14;
 
 namespace ns15
 {
@@ -18,7 +18,7 @@ namespace ns15
 			for (int i = 0; i < string_0.Length; i++)
 			{
 				string text = string_0[i];
-				string[] array = text.Split(new char[]
+				string[] array = text.Split(new[]
 				{
 					' ',
 					'\t',
@@ -31,20 +31,20 @@ namespace ns15
 				{
 					if (!(a == "TS"))
 					{
-						if (a == "B" && (this.bpmList.Count == 0 || this.bpmList[num] != num2))
+						if (a == "B" && (bpmList.Count == 0 || bpmList[num] != num2))
 						{
-							this.bpmList.Add(num, num2);
+							bpmList.Add(num, num2);
 						}
 					}
-					else if (this.TSList.Count == 0 || this.TSList[num] != num2)
+					else if (TSList.Count == 0 || TSList[num] != num2)
 					{
-						this.TSList.Add(num, num2);
+						TSList.Add(num, num2);
 					}
 				}
 			}
-			if (!this.TSList.ContainsKey(0))
+			if (!TSList.ContainsKey(0))
 			{
-				this.TSList.Add(0, 4);
+				TSList.Add(0, 4);
 			}
 		}
 	}

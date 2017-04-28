@@ -1,5 +1,3 @@
-using System;
-
 namespace ns3
 {
 	public class Class61
@@ -12,7 +10,7 @@ namespace ns3
 
 		public int method_0()
 		{
-			this.byte_0 = null;
+			byte_0 = null;
 			return 0;
 		}
 	}

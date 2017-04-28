@@ -24,82 +24,82 @@ namespace ns3
 
 		public int method_0()
 		{
-			this.byte_0 = null;
+			byte_0 = null;
 			return 0;
 		}
 
 		public int method_1(int int_6)
 		{
-			if (this.int_2 != 0)
+			if (int_2 != 0)
 			{
-				this.int_1 -= this.int_2;
-				if (this.int_1 > 0)
+				int_1 -= int_2;
+				if (int_1 > 0)
 				{
-					Buffer.BlockCopy(this.byte_0, this.int_2, this.byte_0, 0, this.int_1);
+					Buffer.BlockCopy(byte_0, int_2, byte_0, 0, int_1);
 				}
-				this.int_2 = 0;
+				int_2 = 0;
 			}
-			if (int_6 > this.int_0 - this.int_1)
+			if (int_6 > int_0 - int_1)
 			{
-				int num = int_6 + this.int_1 + 4096;
-				if (this.byte_0 != null)
+				int num = int_6 + int_1 + 4096;
+				if (byte_0 != null)
 				{
 					byte[] dst = new byte[num];
-					Buffer.BlockCopy(this.byte_0, 0, dst, 0, this.byte_0.Length);
-					this.byte_0 = dst;
+					Buffer.BlockCopy(byte_0, 0, dst, 0, byte_0.Length);
+					byte_0 = dst;
 				}
 				else
 				{
-					this.byte_0 = new byte[num];
+					byte_0 = new byte[num];
 				}
-				this.int_0 = num;
+				int_0 = num;
 			}
-			return this.int_1;
+			return int_1;
 		}
 
 		public int method_2(int int_6)
 		{
-			if (this.int_1 + int_6 > this.int_0)
+			if (int_1 + int_6 > int_0)
 			{
 				return -1;
 			}
-			this.int_1 += int_6;
+			int_1 += int_6;
 			return 0;
 		}
 
 		public int method_3(Class48 class48_1)
 		{
-			int num = this.int_2;
-			int num2 = this.int_1 - this.int_2;
-			if (this.int_4 == 0)
+			int num = int_2;
+			int num2 = int_1 - int_2;
+			if (int_4 == 0)
 			{
 				if (num2 < 27)
 				{
 					return 0;
 				}
-				if (this.byte_0[num] == 79 && this.byte_0[num + 1] == 103 && this.byte_0[num + 2] == 103)
+				if (byte_0[num] == 79 && byte_0[num + 1] == 103 && byte_0[num + 2] == 103)
 				{
-					if (this.byte_0[num + 3] == 83)
+					if (byte_0[num + 3] == 83)
 					{
-						int num3 = (int)((this.byte_0[num + 26] & 255) + 27);
+						int num3 = (byte_0[num + 26] & 255) + 27;
 						if (num2 < num3)
 						{
 							return 0;
 						}
-						for (int i = 0; i < (int)(this.byte_0[num + 26] & 255); i++)
+						for (int i = 0; i < (byte_0[num + 26] & 255); i++)
 						{
-							this.int_5 += (int)(this.byte_0[num + 27 + i] & 255);
+							int_5 += byte_0[num + 27 + i] & 255;
 						}
-						this.int_4 = num3;
+						int_4 = num3;
 						goto IL_11E;
 					}
 				}
-				this.int_4 = 0;
-				this.int_5 = 0;
+				int_4 = 0;
+				int_5 = 0;
 				int num4 = 0;
 				for (int j = 0; j < num2 - 1; j++)
 				{
-					if (this.byte_0[num + 1 + j] == 79)
+					if (byte_0[num + 1 + j] == 79)
 					{
 						num4 = num + 1 + j;
                         goto IL_108;
@@ -108,45 +108,45 @@ namespace ns3
             IL_108:
                 if (num4 == 0)
                 {
-                    num4 = this.int_1;
+                    num4 = int_1;
                 }
-                this.int_2 = num4;
+                int_2 = num4;
                 return -(num4 - num);
 			}
 			IL_11E:
-			if (this.int_5 + this.int_4 > num2)
+			if (int_5 + int_4 > num2)
 			{
 				return 0;
 			}
-			lock (this.byte_1)
+			lock (byte_1)
 			{
-				Buffer.BlockCopy(this.byte_0, num + 22, this.byte_1, 0, 4);
-				this.byte_0[num + 22] = 0;
-				this.byte_0[num + 23] = 0;
-				this.byte_0[num + 24] = 0;
-				this.byte_0[num + 25] = 0;
-				Class48 @class = this.class48_0;
-				@class.byte_0 = this.byte_0;
+				Buffer.BlockCopy(byte_0, num + 22, byte_1, 0, 4);
+				byte_0[num + 22] = 0;
+				byte_0[num + 23] = 0;
+				byte_0[num + 24] = 0;
+				byte_0[num + 25] = 0;
+				Class48 @class = class48_0;
+				@class.byte_0 = byte_0;
 				@class.int_0 = num;
-				@class.int_1 = this.int_4;
-				@class.byte_1 = this.byte_0;
-				@class.int_2 = num + this.int_4;
-				@class.int_3 = this.int_5;
+				@class.int_1 = int_4;
+				@class.byte_1 = byte_0;
+				@class.int_2 = num + int_4;
+				@class.int_3 = int_5;
 				@class.method_7();
-				if (this.byte_1[0] == this.byte_0[num + 22] && this.byte_1[1] == this.byte_0[num + 23] && this.byte_1[2] == this.byte_0[num + 24])
+				if (byte_1[0] == byte_0[num + 22] && byte_1[1] == byte_0[num + 23] && byte_1[2] == byte_0[num + 24])
 				{
-					if (this.byte_1[3] == this.byte_0[num + 25])
+					if (byte_1[3] == byte_0[num + 25])
 					{
 						goto IL_2B0;
 					}
 				}
-				Buffer.BlockCopy(this.byte_1, 0, this.byte_0, num + 22, 4);
-				this.int_4 = 0;
-				this.int_5 = 0;
+				Buffer.BlockCopy(byte_1, 0, byte_0, num + 22, 4);
+				int_4 = 0;
+				int_5 = 0;
 				int num4 = 0;
 				for (int k = 0; k < num2 - 1; k++)
 				{
-					if (this.byte_0[num + 1 + k] == 79)
+					if (byte_0[num + 1 + k] == 79)
 					{
 						num4 = num + 1 + k;
                         goto IL_28C;
@@ -155,36 +155,36 @@ namespace ns3
             IL_28C:
                 if (num4 == 0)
                 {
-                    num4 = this.int_1;
+                    num4 = int_1;
                 }
-                this.int_2 = num4;
+                int_2 = num4;
                 return -(num4 - num);
 			}
 			IL_2B0:
-			num = this.int_2;
+			num = int_2;
 			if (class48_1 != null)
 			{
-				class48_1.byte_0 = this.byte_0;
+				class48_1.byte_0 = byte_0;
 				class48_1.int_0 = num;
-				class48_1.int_1 = this.int_4;
-				class48_1.byte_1 = this.byte_0;
-				class48_1.int_2 = num + this.int_4;
-				class48_1.int_3 = this.int_5;
+				class48_1.int_1 = int_4;
+				class48_1.byte_1 = byte_0;
+				class48_1.int_2 = num + int_4;
+				class48_1.int_3 = int_5;
 			}
-			this.int_3 = 0;
-			this.int_2 += (num2 = this.int_4 + this.int_5);
-			this.int_4 = 0;
-			this.int_5 = 0;
+			int_3 = 0;
+			int_2 += (num2 = int_4 + int_5);
+			int_4 = 0;
+			int_5 = 0;
 			return num2;
 		}
 
 		public int method_4()
 		{
-			this.int_1 = 0;
-			this.int_2 = 0;
-			this.int_3 = 0;
-			this.int_4 = 0;
-			this.int_5 = 0;
+			int_1 = 0;
+			int_2 = 0;
+			int_3 = 0;
+			int_4 = 0;
+			int_5 = 0;
 			return 0;
 		}
 

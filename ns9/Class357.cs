@@ -1,6 +1,6 @@
-using ns22;
 using System;
 using System.Collections.Generic;
+using ns22;
 
 namespace ns9
 {
@@ -12,13 +12,13 @@ namespace ns9
 
 		public void Dispose()
 		{
-			foreach (EmptyInterface1 current in this.list_0)
+			foreach (EmptyInterface1 current in list_0)
 			{
 				current.Dispose();
 			}
-			for (int i = 0; i < this.class352_0.Length; i++)
+			for (int i = 0; i < class352_0.Length; i++)
 			{
-				this.class352_0[i].Dispose();
+				class352_0[i].Dispose();
 			}
 		}
 	}

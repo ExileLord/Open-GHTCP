@@ -1,5 +1,5 @@
-using ns22;
 using System;
+using ns22;
 
 namespace ns9
 {
@@ -15,32 +15,21 @@ namespace ns9
 
 		public zzNote338(int int_5, int int_6, int int_7, int int_8, int int_9)
 		{
-			this.int_0 = int_5;
-			this.int_1 = int_6;
-			this.int_2 = int_7;
-			this.int_3 = int_8;
-			this.int_4 = int_9;
+			int_0 = int_5;
+			int_1 = int_6;
+			int_2 = int_7;
+			int_3 = int_8;
+			int_4 = int_9;
 		}
 
 		public int method_1()
 		{
-			return this.int_1;
+			return int_1;
 		}
 
 		public override string ToString()
 		{
-			return string.Concat(new object[]
-			{
-				base.method_0(),
-				": ",
-				this.int_1,
-				"/",
-				Math.Pow(2.0, (double)this.int_2),
-				", ",
-				this.int_3,
-				", ",
-				this.int_4
-			});
+			return string.Concat(method_0(), ": ", int_1, "/", Math.Pow(2.0, int_2), ", ", int_3, ", ", int_4);
 		}
 	}
 }

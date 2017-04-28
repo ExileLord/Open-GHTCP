@@ -1,5 +1,5 @@
-using ns5;
 using System;
+using ns5;
 
 namespace ns4
 {
@@ -13,14 +13,14 @@ namespace ns4
 
 			public Class86()
 			{
-				this.int_0 = new int[23];
-				this.int_1 = new int[14];
+				int_0 = new int[23];
+				int_1 = new int[14];
 			}
 
 			public Class86(int[] int_2, int[] int_3)
 			{
-				this.int_0 = int_2;
-				this.int_1 = int_3;
+				int_0 = int_2;
+				int_1 = int_3;
 			}
 		}
 
@@ -56,8 +56,8 @@ namespace ns4
 
 			public Class87()
 			{
-				this.int_7 = new int[3];
-				this.int_8 = new int[3];
+				int_7 = new int[3];
+				int_8 = new int[3];
 			}
 		}
 
@@ -65,14 +65,14 @@ namespace ns4
 		{
 			public int[] int_0;
 
-			public Class85.Class87[] class87_0;
+			public Class87[] class87_0;
 
 			public Class88()
 			{
-				this.int_0 = new int[4];
-				this.class87_0 = new Class85.Class87[2];
-				this.class87_0[0] = new Class85.Class87();
-				this.class87_0[1] = new Class85.Class87();
+				int_0 = new int[4];
+				class87_0 = new Class87[2];
+				class87_0[0] = new Class87();
+				class87_0[1] = new Class87();
 			}
 		}
 
@@ -82,13 +82,13 @@ namespace ns4
 
 			public int int_1;
 
-			public Class85.Class88[] class88_0;
+			public Class88[] class88_0;
 
 			public Class89()
 			{
-				this.class88_0 = new Class85.Class88[2];
-				this.class88_0[0] = new Class85.Class88();
-				this.class88_0[1] = new Class85.Class88();
+				class88_0 = new Class88[2];
+				class88_0[0] = new Class88();
+				class88_0[1] = new Class88();
 			}
 		}
 
@@ -100,8 +100,8 @@ namespace ns4
 
 			public Class90()
 			{
-				this.int_0 = new int[23];
-				this.int_1 = new int[3, 13];
+				int_0 = new int[23];
+				int_1 = new int[3, 13];
 			}
 		}
 
@@ -115,14 +115,14 @@ namespace ns4
 
 			private void method_0(Class85 class85_1)
 			{
-				this.class85_0 = class85_1;
+				class85_0 = class85_1;
 			}
 
 			public Class91(Class85 class85_1, int[] int_2, int[] int_3)
 			{
-				this.method_0(class85_1);
-				this.int_0 = int_2;
-				this.int_1 = int_3;
+				method_0(class85_1);
+				int_0 = int_2;
+				int_1 = int_3;
 			}
 		}
 
@@ -160,11 +160,11 @@ namespace ns4
 
 		private Class102 class102_0;
 
-		private readonly Class85.Class89 class89_0;
+		private readonly Class89 class89_0;
 
-		private readonly Class85.Class90[] class90_0;
+		private readonly Class90[] class90_0;
 
-		private readonly Class85.Class90[] class90_1;
+		private readonly Class90[] class90_1;
 
 		private readonly int int_4;
 
@@ -204,8 +204,7 @@ namespace ns4
 
 		private int int_17;
 
-		private static readonly int[,] int_18 = new int[,]
-		{
+		private static readonly int[,] int_18 = {
 			{
 				0,
 				0,
@@ -244,8 +243,7 @@ namespace ns4
 			}
 		};
 
-		public static readonly int[] int_19 = new int[]
-		{
+		public static readonly int[] int_19 = {
 			0,
 			0,
 			0,
@@ -270,10 +268,9 @@ namespace ns4
 			0
 		};
 
-		private readonly Class85.Class86[] class86_0;
+		private readonly Class86[] class86_0;
 
-		public static readonly float[] float_10 = new float[]
-		{
+		public static readonly float[] float_10 = {
 			1f,
 			0.707106769f,
 			0.5f,
@@ -340,11 +337,10 @@ namespace ns4
 			3.29272248E-10f
 		};
 
-		public static readonly float[] float_11 = Class85.smethod_0();
+		public static readonly float[] float_11 = smethod_0();
 
-		public static readonly float[][] float_12 = new float[][]
-		{
-			new float[]
+		public static readonly float[][] float_12 = {
+			new[]
 			{
 				1f,
 				0.8408964f,
@@ -379,7 +375,7 @@ namespace ns4
 				0.00552427163f,
 				0.00464534f
 			},
-			new float[]
+			new[]
 			{
 				1f,
 				0.707106769f,
@@ -416,8 +412,7 @@ namespace ns4
 			}
 		};
 
-		public static readonly float[] float_13 = new float[]
-		{
+		public static readonly float[] float_13 = {
 			0f,
 			0.2679492f,
 			0.577350259f,
@@ -436,8 +431,7 @@ namespace ns4
 			1f
 		};
 
-		private static readonly int[] int_20 = new int[]
-		{
+		private static readonly int[] int_20 = {
 			0,
 			0,
 			0,
@@ -1016,8 +1010,7 @@ namespace ns4
 			31
 		};
 
-		private static readonly int[] int_21 = new int[]
-		{
+		private static readonly int[] int_21 = {
 			0,
 			1,
 			2,
@@ -1598,8 +1591,7 @@ namespace ns4
 
 		private static int[][] int_22;
 
-		private static readonly float[] float_14 = new float[]
-		{
+		private static readonly float[] float_14 = {
 			0.8574929f,
 			0.881742f,
 			0.949628651f,
@@ -1610,8 +1602,7 @@ namespace ns4
 			0.999993145f
 		};
 
-		private static readonly float[] float_15 = new float[]
-		{
+		private static readonly float[] float_15 = {
 			-0.51449573f,
 			-0.471731961f,
 			-0.31337744f,
@@ -1622,9 +1613,8 @@ namespace ns4
 			-0.00369997462f
 		};
 
-		public static readonly float[][] float_16 = new float[][]
-		{
-			new float[]
+		public static readonly float[][] float_16 = {
+			new[]
 			{
 				-0.0161412153f,
 				-0.05360318f,
@@ -1663,7 +1653,7 @@ namespace ns4
 				-0.0411311723f,
 				-0.0147907054f
 			},
-			new float[]
+			new[]
 			{
 				-0.0161412153f,
 				-0.05360318f,
@@ -1702,7 +1692,7 @@ namespace ns4
 				0f,
 				0f
 			},
-			new float[]
+			new[]
 			{
 				-0.0483008f,
 				-0.157156572f,
@@ -1741,7 +1731,7 @@ namespace ns4
 				0f,
 				0f
 			},
-			new float[]
+			new[]
 			{
 				0f,
 				0f,
@@ -1782,10 +1772,9 @@ namespace ns4
 			}
 		};
 
-		public Class85.Class91 class91_0;
+		public Class91 class91_0;
 
-		public static readonly int[,,] int_23 = new int[,,]
-		{
+		public static readonly int[,,] int_23 = {
 			{
 				{
 					6,
@@ -1908,40 +1897,39 @@ namespace ns4
 			}
 		};
 
-		public Class85(Class82 class82_1, zzSoundClass class107_1, Class80 class80_2, Class80 class80_3, Class84 class84_1, Enum4 enum4_1) : base()
+		public Class85(Class82 class82_1, zzSoundClass class107_1, Class80 class80_2, Class80 class80_3, Class84 class84_1, Enum4 enum4_1)
 		{
 			int[] array = new int[1];
-			this.int_12 = array;
+			int_12 = array;
 			int[] array2 = new int[1];
-			this.int_13 = array2;
+			int_13 = array2;
 			int[] array3 = new int[1];
-			this.int_14 = array3;
+			int_14 = array3;
 			int[] array4 = new int[1];
-			this.int_15 = array4;
-			this.int_16 = new int[576];
-			this.float_7 = new float[576];
-			this.float_8 = new float[18];
-			this.float_9 = new float[36];
+			int_15 = array4;
+			int_16 = new int[576];
+			float_7 = new float[576];
+			float_8 = new float[18];
+			float_9 = new float[36];
 			//base..ctor();
 			Class103.smethod_0();
-			this.int_2 = new int[580];
-			this.float_0 = new float[2][,];
-			this.float_0[0] = new float[32, 18];
-			this.float_0[1] = new float[32, 18];
-			this.float_1 = new float[2][,];
-			this.float_1[0] = new float[32, 18];
-			this.float_1[1] = new float[32, 18];
-			this.float_2 = new float[576];
-			this.float_3 = new float[2, 576];
-			this.float_4 = new float[2, 576];
-			this.int_3 = new int[2];
-			this.class90_0 = new Class85.Class90[2];
-			this.class90_0[0] = new Class85.Class90();
-			this.class90_0[1] = new Class85.Class90();
-			this.class90_1 = this.class90_0;
-			this.class86_0 = new Class85.Class86[9];
-			int[] array5 = new int[]
-			{
+			int_2 = new int[580];
+			float_0 = new float[2][,];
+			float_0[0] = new float[32, 18];
+			float_0[1] = new float[32, 18];
+			float_1 = new float[2][,];
+			float_1[0] = new float[32, 18];
+			float_1[1] = new float[32, 18];
+			float_2 = new float[576];
+			float_3 = new float[2, 576];
+			float_4 = new float[2, 576];
+			int_3 = new int[2];
+			class90_0 = new Class90[2];
+			class90_0[0] = new Class90();
+			class90_0[1] = new Class90();
+			class90_1 = class90_0;
+			class86_0 = new Class86[9];
+			int[] array5 = {
 				0,
 				6,
 				12,
@@ -1966,8 +1954,7 @@ namespace ns4
 				522,
 				576
 			};
-			int[] array6 = new int[]
-			{
+			int[] array6 = {
 				0,
 				4,
 				8,
@@ -1983,8 +1970,7 @@ namespace ns4
 				174,
 				192
 			};
-			int[] array7 = new int[]
-			{
+			int[] array7 = {
 				0,
 				6,
 				12,
@@ -2009,8 +1995,7 @@ namespace ns4
 				540,
 				576
 			};
-			int[] array8 = new int[]
-			{
+			int[] array8 = {
 				0,
 				4,
 				8,
@@ -2026,8 +2011,7 @@ namespace ns4
 				180,
 				192
 			};
-			int[] array9 = new int[]
-			{
+			int[] array9 = {
 				0,
 				6,
 				12,
@@ -2052,8 +2036,7 @@ namespace ns4
 				522,
 				576
 			};
-			int[] array10 = new int[]
-			{
+			int[] array10 = {
 				0,
 				4,
 				8,
@@ -2069,8 +2052,7 @@ namespace ns4
 				174,
 				192
 			};
-			int[] array11 = new int[]
-			{
+			int[] array11 = {
 				0,
 				4,
 				8,
@@ -2095,8 +2077,7 @@ namespace ns4
 				418,
 				576
 			};
-			int[] array12 = new int[]
-			{
+			int[] array12 = {
 				0,
 				4,
 				8,
@@ -2112,8 +2093,7 @@ namespace ns4
 				136,
 				192
 			};
-			int[] array13 = new int[]
-			{
+			int[] array13 = {
 				0,
 				4,
 				8,
@@ -2138,8 +2118,7 @@ namespace ns4
 				384,
 				576
 			};
-			int[] array14 = new int[]
-			{
+			int[] array14 = {
 				0,
 				4,
 				8,
@@ -2155,8 +2134,7 @@ namespace ns4
 				126,
 				192
 			};
-			int[] array15 = new int[]
-			{
+			int[] array15 = {
 				0,
 				4,
 				8,
@@ -2181,8 +2159,7 @@ namespace ns4
 				550,
 				576
 			};
-			int[] array16 = new int[]
-			{
+			int[] array16 = {
 				0,
 				4,
 				8,
@@ -2198,8 +2175,7 @@ namespace ns4
 				180,
 				192
 			};
-			int[] array17 = new int[]
-			{
+			int[] array17 = {
 				0,
 				6,
 				12,
@@ -2224,8 +2200,7 @@ namespace ns4
 				522,
 				576
 			};
-			int[] array18 = new int[]
-			{
+			int[] array18 = {
 				0,
 				4,
 				8,
@@ -2241,8 +2216,7 @@ namespace ns4
 				174,
 				192
 			};
-			int[] array19 = new int[]
-			{
+			int[] array19 = {
 				0,
 				6,
 				12,
@@ -2267,8 +2241,7 @@ namespace ns4
 				522,
 				576
 			};
-			int[] array20 = new int[]
-			{
+			int[] array20 = {
 				0,
 				4,
 				8,
@@ -2284,8 +2257,7 @@ namespace ns4
 				174,
 				192
 			};
-			int[] array21 = new int[]
-			{
+			int[] array21 = {
 				0,
 				12,
 				24,
@@ -2310,8 +2282,7 @@ namespace ns4
 				574,
 				576
 			};
-			int[] array22 = new int[]
-			{
+			int[] array22 = {
 				0,
 				8,
 				16,
@@ -2327,161 +2298,159 @@ namespace ns4
 				166,
 				192
 			};
-			this.class86_0[0] = new Class85.Class86(array5, array6);
-			this.class86_0[1] = new Class85.Class86(array7, array8);
-			this.class86_0[2] = new Class85.Class86(array9, array10);
-			this.class86_0[3] = new Class85.Class86(array11, array12);
-			this.class86_0[4] = new Class85.Class86(array13, array14);
-			this.class86_0[5] = new Class85.Class86(array15, array16);
-			this.class86_0[6] = new Class85.Class86(array17, array18);
-			this.class86_0[7] = new Class85.Class86(array19, array20);
-			this.class86_0[8] = new Class85.Class86(array21, array22);
-			if (Class85.int_22 == null)
+			class86_0[0] = new Class86(array5, array6);
+			class86_0[1] = new Class86(array7, array8);
+			class86_0[2] = new Class86(array9, array10);
+			class86_0[3] = new Class86(array11, array12);
+			class86_0[4] = new Class86(array13, array14);
+			class86_0[5] = new Class86(array15, array16);
+			class86_0[6] = new Class86(array17, array18);
+			class86_0[7] = new Class86(array19, array20);
+			class86_0[8] = new Class86(array21, array22);
+			if (int_22 == null)
 			{
-				Class85.int_22 = new int[9][];
+				int_22 = new int[9][];
 				for (int i = 0; i < 9; i++)
 				{
-					Class85.int_22[i] = Class85.smethod_1(this.class86_0[i].int_1);
+					int_22[i] = smethod_1(class86_0[i].int_1);
 				}
 			}
-			int[] array23 = new int[]
-			{
+			int[] array23 = {
 				0,
 				6,
 				11,
 				16,
 				21
 			};
-			int[] array24 = new int[]
-			{
+			int[] array24 = {
 				0,
 				6,
 				12
 			};
-			this.class91_0 = new Class85.Class91(this, array23, array24);
-			this.int_0 = new int[54];
-			this.class82_0 = class82_1;
-			this.class107_0 = class107_1;
-			this.class80_0 = class80_2;
-			this.class80_1 = class80_3;
-			this.class84_0 = class84_1;
-			this.enum4_0 = enum4_1;
-			this.int_5 = 0;
-			this.int_7 = ((this.class107_0.method_8() == Enum5.const_3) ? 1 : 2);
-			this.int_4 = ((this.class107_0.method_3() == Enum3.const_1) ? 2 : 1);
-			this.int_10 = this.class107_0.method_6() + ((this.class107_0.method_3() == Enum3.const_1) ? 3 : ((this.class107_0.method_3() == Enum3.const_2) ? 6 : 0));
-			if (this.int_7 == 2)
+			class91_0 = new Class91(this, array23, array24);
+			int_0 = new int[54];
+			class82_0 = class82_1;
+			class107_0 = class107_1;
+			class80_0 = class80_2;
+			class80_1 = class80_3;
+			class84_0 = class84_1;
+			enum4_0 = enum4_1;
+			int_5 = 0;
+			int_7 = ((class107_0.method_8() == Enum5.const_3) ? 1 : 2);
+			int_4 = ((class107_0.method_3() == Enum3.const_1) ? 2 : 1);
+			int_10 = class107_0.method_6() + ((class107_0.method_3() == Enum3.const_1) ? 3 : ((class107_0.method_3() == Enum3.const_2) ? 6 : 0));
+			if (int_7 == 2)
 			{
-				switch (this.enum4_0)
+				switch (enum4_0)
 				{
 				case Enum4.const_0:
 					IL_4E3:
-					this.int_8 = 0;
-					this.int_9 = 1;
+					int_8 = 0;
+					int_9 = 1;
 					goto IL_521;
 				case Enum4.const_1:
 				case Enum4.const_3:
-					this.int_9 = 0;
-					this.int_8 = 0;
+					int_9 = 0;
+					int_8 = 0;
 					goto IL_521;
 				case Enum4.const_2:
-					this.int_9 = 1;
-					this.int_8 = 1;
+					int_9 = 1;
+					int_8 = 1;
 					goto IL_521;
 				}
             //  goto IL_4E3
-                this.int_8 = 0;
-                this.int_9 = 1;
+                int_8 = 0;
+                int_9 = 1;
                 goto IL_521;
 			}
-			this.int_9 = 0;
-			this.int_8 = 0;
+			int_9 = 0;
+			int_8 = 0;
 			IL_521:
-			Array.Clear(this.float_3, 0, 1152);
-			int[] arg_54B_0 = this.int_3;
+			Array.Clear(float_3, 0, 1152);
+			int[] arg_54B_0 = int_3;
 			int arg_54B_1 = 0;
-			this.int_3[1] = 576;
+			int_3[1] = 576;
 			arg_54B_0[arg_54B_1] = 576;
-			this.class102_0 = new Class102();
-			this.class89_0 = new Class85.Class89();
+			class102_0 = new Class102();
+			class89_0 = new Class89();
 		}
 
 		public void imethod_0()
 		{
-			this.method_0();
+			method_0();
 		}
 
 		public void method_0()
 		{
-			int num = this.class107_0.method_13();
-			this.method_1();
+			int num = class107_0.method_13();
+			method_1();
 			for (int i = 0; i < num; i++)
 			{
-				this.class102_0.method_3(this.class82_0.method_13(8));
+				class102_0.method_3(class82_0.method_13(8));
 			}
-			int num2 = this.class102_0.method_0() >> 3;
+			int num2 = class102_0.method_0() >> 3;
 			int num3;
-			if ((num3 = (this.class102_0.method_0() & 7)) != 0)
+			if ((num3 = (class102_0.method_0() & 7)) != 0)
 			{
-				this.class102_0.method_1(8 - num3);
+				class102_0.method_1(8 - num3);
 				num2++;
 			}
-			int j = this.int_5 - num2 - this.class89_0.int_0;
-			this.int_5 += num;
+			int j = int_5 - num2 - class89_0.int_0;
+			int_5 += num;
 			if (j < 0)
 			{
 				return;
 			}
 			if (num2 > 4096)
 			{
-				this.int_5 -= 4096;
-				this.class102_0.method_5(4096);
+				int_5 -= 4096;
+				class102_0.method_5(4096);
 			}
 			while (j > 0)
 			{
-				this.class102_0.method_1(8);
+				class102_0.method_1(8);
 				j--;
 			}
-			for (int k = 0; k < this.int_4; k++)
+			for (int k = 0; k < int_4; k++)
 			{
 				int l;
-				for (l = 0; l < this.int_7; l++)
+				for (l = 0; l < int_7; l++)
 				{
-					this.int_6 = this.class102_0.method_0();
-					if (this.class107_0.method_3() == Enum3.const_1)
+					int_6 = class102_0.method_0();
+					if (class107_0.method_3() == Enum3.const_1)
 					{
-						this.method_2(l, k);
+						method_2(l, k);
 					}
 					else
 					{
-						this.method_4(l, k);
+						method_4(l, k);
 					}
-					this.method_5(l, k);
-					this.method_7(this.float_0[l], l, k);
+					method_5(l, k);
+					method_7(float_0[l], l, k);
 				}
-				this.method_9(k);
-				if (this.enum4_0 == Enum4.const_3 && this.int_7 > 1)
+				method_9(k);
+				if (enum4_0 == Enum4.const_3 && int_7 > 1)
 				{
-					this.method_12();
+					method_12();
 				}
-				l = this.int_8;
-				while (l <= this.int_9)
+				l = int_8;
+				while (l <= int_9)
 				{
-					this.method_8(this.float_1[l], l, k);
-					this.method_10(l, k);
-					this.method_11(l, k);
+					method_8(float_1[l], l, k);
+					method_10(l, k);
+					method_11(l, k);
 					for (int m = 18; m < 576; m += 36)
 					{
 						for (int n = 1; n < 18; n += 2)
 						{
-							this.float_2[m + n] = -this.float_2[m + n];
+							float_2[m + n] = -float_2[m + n];
 						}
 					}
 					if (l == 0)
 					{
 						goto IL_241;
 					}
-					if (this.enum4_0 == Enum4.const_2)
+					if (enum4_0 == Enum4.const_2)
 					{
 						goto IL_241;
 					}
@@ -2490,11 +2459,11 @@ namespace ns4
 						int num4 = 0;
 						for (int m = 0; m < 576; m += 18)
 						{
-							this.float_6[num4] = this.float_2[m + n];
+							float_6[num4] = float_2[m + n];
 							num4++;
 						}
-						this.class80_1.method_3(this.float_6);
-						this.class80_1.method_22(this.class84_0);
+						class80_1.method_3(float_6);
+						class80_1.method_22(class84_0);
 					}
 					IL_2A7:
 					l++;
@@ -2505,124 +2474,124 @@ namespace ns4
 						int num4 = 0;
 						for (int m = 0; m < 576; m += 18)
 						{
-							this.float_5[num4] = this.float_2[m + n];
+							float_5[num4] = float_2[m + n];
 							num4++;
 						}
-						this.class80_0.method_3(this.float_5);
-						this.class80_0.method_22(this.class84_0);
+						class80_0.method_3(float_5);
+						class80_0.method_22(class84_0);
 					}
 					goto IL_2A7;
 				}
 			}
-			this.int_17++;
-			this.class84_0.method_5();
+			int_17++;
+			class84_0.method_5();
 		}
 
 		private bool method_1()
 		{
-			if (this.class107_0.method_3() == Enum3.const_1)
+			if (class107_0.method_3() == Enum3.const_1)
 			{
-				this.class89_0.int_0 = this.class82_0.method_13(9);
-				this.class89_0.int_1 = ((this.int_7 == 1) ? this.class82_0.method_13(5) : this.class82_0.method_13(3));
-				for (int i = 0; i < this.int_7; i++)
+				class89_0.int_0 = class82_0.method_13(9);
+				class89_0.int_1 = ((int_7 == 1) ? class82_0.method_13(5) : class82_0.method_13(3));
+				for (int i = 0; i < int_7; i++)
 				{
-					this.class89_0.class88_0[i].int_0[0] = this.class82_0.method_13(1);
-					this.class89_0.class88_0[i].int_0[1] = this.class82_0.method_13(1);
-					this.class89_0.class88_0[i].int_0[2] = this.class82_0.method_13(1);
-					this.class89_0.class88_0[i].int_0[3] = this.class82_0.method_13(1);
+					class89_0.class88_0[i].int_0[0] = class82_0.method_13(1);
+					class89_0.class88_0[i].int_0[1] = class82_0.method_13(1);
+					class89_0.class88_0[i].int_0[2] = class82_0.method_13(1);
+					class89_0.class88_0[i].int_0[3] = class82_0.method_13(1);
 				}
 				for (int j = 0; j < 2; j++)
 				{
-					for (int i = 0; i < this.int_7; i++)
+					for (int i = 0; i < int_7; i++)
 					{
-						this.class89_0.class88_0[i].class87_0[j].int_0 = this.class82_0.method_13(12);
-						this.class89_0.class88_0[i].class87_0[j].int_1 = this.class82_0.method_13(9);
-						this.class89_0.class88_0[i].class87_0[j].int_2 = this.class82_0.method_13(8);
-						this.class89_0.class88_0[i].class87_0[j].int_3 = this.class82_0.method_13(4);
-						this.class89_0.class88_0[i].class87_0[j].int_4 = this.class82_0.method_13(1);
-						if (this.class89_0.class88_0[i].class87_0[j].int_4 != 0)
+						class89_0.class88_0[i].class87_0[j].int_0 = class82_0.method_13(12);
+						class89_0.class88_0[i].class87_0[j].int_1 = class82_0.method_13(9);
+						class89_0.class88_0[i].class87_0[j].int_2 = class82_0.method_13(8);
+						class89_0.class88_0[i].class87_0[j].int_3 = class82_0.method_13(4);
+						class89_0.class88_0[i].class87_0[j].int_4 = class82_0.method_13(1);
+						if (class89_0.class88_0[i].class87_0[j].int_4 != 0)
 						{
-							this.class89_0.class88_0[i].class87_0[j].int_5 = this.class82_0.method_13(2);
-							this.class89_0.class88_0[i].class87_0[j].int_6 = this.class82_0.method_13(1);
-							this.class89_0.class88_0[i].class87_0[j].int_7[0] = this.class82_0.method_13(5);
-							this.class89_0.class88_0[i].class87_0[j].int_7[1] = this.class82_0.method_13(5);
-							this.class89_0.class88_0[i].class87_0[j].int_8[0] = this.class82_0.method_13(3);
-							this.class89_0.class88_0[i].class87_0[j].int_8[1] = this.class82_0.method_13(3);
-							this.class89_0.class88_0[i].class87_0[j].int_8[2] = this.class82_0.method_13(3);
-							if (this.class89_0.class88_0[i].class87_0[j].int_5 == 0)
+							class89_0.class88_0[i].class87_0[j].int_5 = class82_0.method_13(2);
+							class89_0.class88_0[i].class87_0[j].int_6 = class82_0.method_13(1);
+							class89_0.class88_0[i].class87_0[j].int_7[0] = class82_0.method_13(5);
+							class89_0.class88_0[i].class87_0[j].int_7[1] = class82_0.method_13(5);
+							class89_0.class88_0[i].class87_0[j].int_8[0] = class82_0.method_13(3);
+							class89_0.class88_0[i].class87_0[j].int_8[1] = class82_0.method_13(3);
+							class89_0.class88_0[i].class87_0[j].int_8[2] = class82_0.method_13(3);
+							if (class89_0.class88_0[i].class87_0[j].int_5 == 0)
 							{
 								return false;
 							}
-							if (this.class89_0.class88_0[i].class87_0[j].int_5 == 2 && this.class89_0.class88_0[i].class87_0[j].int_6 == 0)
+							if (class89_0.class88_0[i].class87_0[j].int_5 == 2 && class89_0.class88_0[i].class87_0[j].int_6 == 0)
 							{
-								this.class89_0.class88_0[i].class87_0[j].int_9 = 8;
+								class89_0.class88_0[i].class87_0[j].int_9 = 8;
 							}
 							else
 							{
-								this.class89_0.class88_0[i].class87_0[j].int_9 = 7;
+								class89_0.class88_0[i].class87_0[j].int_9 = 7;
 							}
-							this.class89_0.class88_0[i].class87_0[j].int_10 = 20 - this.class89_0.class88_0[i].class87_0[j].int_9;
+							class89_0.class88_0[i].class87_0[j].int_10 = 20 - class89_0.class88_0[i].class87_0[j].int_9;
 						}
 						else
 						{
-							this.class89_0.class88_0[i].class87_0[j].int_7[0] = this.class82_0.method_13(5);
-							this.class89_0.class88_0[i].class87_0[j].int_7[1] = this.class82_0.method_13(5);
-							this.class89_0.class88_0[i].class87_0[j].int_7[2] = this.class82_0.method_13(5);
-							this.class89_0.class88_0[i].class87_0[j].int_9 = this.class82_0.method_13(4);
-							this.class89_0.class88_0[i].class87_0[j].int_10 = this.class82_0.method_13(3);
-							this.class89_0.class88_0[i].class87_0[j].int_5 = 0;
+							class89_0.class88_0[i].class87_0[j].int_7[0] = class82_0.method_13(5);
+							class89_0.class88_0[i].class87_0[j].int_7[1] = class82_0.method_13(5);
+							class89_0.class88_0[i].class87_0[j].int_7[2] = class82_0.method_13(5);
+							class89_0.class88_0[i].class87_0[j].int_9 = class82_0.method_13(4);
+							class89_0.class88_0[i].class87_0[j].int_10 = class82_0.method_13(3);
+							class89_0.class88_0[i].class87_0[j].int_5 = 0;
 						}
-						this.class89_0.class88_0[i].class87_0[j].int_11 = this.class82_0.method_13(1);
-						this.class89_0.class88_0[i].class87_0[j].int_12 = this.class82_0.method_13(1);
-						this.class89_0.class88_0[i].class87_0[j].int_13 = this.class82_0.method_13(1);
+						class89_0.class88_0[i].class87_0[j].int_11 = class82_0.method_13(1);
+						class89_0.class88_0[i].class87_0[j].int_12 = class82_0.method_13(1);
+						class89_0.class88_0[i].class87_0[j].int_13 = class82_0.method_13(1);
 					}
 				}
 			}
 			else
 			{
-				this.class89_0.int_0 = this.class82_0.method_13(8);
-				this.class89_0.int_1 = ((this.int_7 == 1) ? this.class82_0.method_13(1) : this.class82_0.method_13(2));
-				for (int i = 0; i < this.int_7; i++)
+				class89_0.int_0 = class82_0.method_13(8);
+				class89_0.int_1 = ((int_7 == 1) ? class82_0.method_13(1) : class82_0.method_13(2));
+				for (int i = 0; i < int_7; i++)
 				{
-					this.class89_0.class88_0[i].class87_0[0].int_0 = this.class82_0.method_13(12);
-					this.class89_0.class88_0[i].class87_0[0].int_1 = this.class82_0.method_13(9);
-					this.class89_0.class88_0[i].class87_0[0].int_2 = this.class82_0.method_13(8);
-					this.class89_0.class88_0[i].class87_0[0].int_3 = this.class82_0.method_13(9);
-					this.class89_0.class88_0[i].class87_0[0].int_4 = this.class82_0.method_13(1);
-					if (this.class89_0.class88_0[i].class87_0[0].int_4 != 0)
+					class89_0.class88_0[i].class87_0[0].int_0 = class82_0.method_13(12);
+					class89_0.class88_0[i].class87_0[0].int_1 = class82_0.method_13(9);
+					class89_0.class88_0[i].class87_0[0].int_2 = class82_0.method_13(8);
+					class89_0.class88_0[i].class87_0[0].int_3 = class82_0.method_13(9);
+					class89_0.class88_0[i].class87_0[0].int_4 = class82_0.method_13(1);
+					if (class89_0.class88_0[i].class87_0[0].int_4 != 0)
 					{
-						this.class89_0.class88_0[i].class87_0[0].int_5 = this.class82_0.method_13(2);
-						this.class89_0.class88_0[i].class87_0[0].int_6 = this.class82_0.method_13(1);
-						this.class89_0.class88_0[i].class87_0[0].int_7[0] = this.class82_0.method_13(5);
-						this.class89_0.class88_0[i].class87_0[0].int_7[1] = this.class82_0.method_13(5);
-						this.class89_0.class88_0[i].class87_0[0].int_8[0] = this.class82_0.method_13(3);
-						this.class89_0.class88_0[i].class87_0[0].int_8[1] = this.class82_0.method_13(3);
-						this.class89_0.class88_0[i].class87_0[0].int_8[2] = this.class82_0.method_13(3);
-						if (this.class89_0.class88_0[i].class87_0[0].int_5 == 0)
+						class89_0.class88_0[i].class87_0[0].int_5 = class82_0.method_13(2);
+						class89_0.class88_0[i].class87_0[0].int_6 = class82_0.method_13(1);
+						class89_0.class88_0[i].class87_0[0].int_7[0] = class82_0.method_13(5);
+						class89_0.class88_0[i].class87_0[0].int_7[1] = class82_0.method_13(5);
+						class89_0.class88_0[i].class87_0[0].int_8[0] = class82_0.method_13(3);
+						class89_0.class88_0[i].class87_0[0].int_8[1] = class82_0.method_13(3);
+						class89_0.class88_0[i].class87_0[0].int_8[2] = class82_0.method_13(3);
+						if (class89_0.class88_0[i].class87_0[0].int_5 == 0)
 						{
 							return false;
 						}
-						if (this.class89_0.class88_0[i].class87_0[0].int_5 == 2 && this.class89_0.class88_0[i].class87_0[0].int_6 == 0)
+						if (class89_0.class88_0[i].class87_0[0].int_5 == 2 && class89_0.class88_0[i].class87_0[0].int_6 == 0)
 						{
-							this.class89_0.class88_0[i].class87_0[0].int_9 = 8;
+							class89_0.class88_0[i].class87_0[0].int_9 = 8;
 						}
 						else
 						{
-							this.class89_0.class88_0[i].class87_0[0].int_9 = 7;
-							this.class89_0.class88_0[i].class87_0[0].int_10 = 20 - this.class89_0.class88_0[i].class87_0[0].int_9;
+							class89_0.class88_0[i].class87_0[0].int_9 = 7;
+							class89_0.class88_0[i].class87_0[0].int_10 = 20 - class89_0.class88_0[i].class87_0[0].int_9;
 						}
 					}
 					else
 					{
-						this.class89_0.class88_0[i].class87_0[0].int_7[0] = this.class82_0.method_13(5);
-						this.class89_0.class88_0[i].class87_0[0].int_7[1] = this.class82_0.method_13(5);
-						this.class89_0.class88_0[i].class87_0[0].int_7[2] = this.class82_0.method_13(5);
-						this.class89_0.class88_0[i].class87_0[0].int_9 = this.class82_0.method_13(4);
-						this.class89_0.class88_0[i].class87_0[0].int_10 = this.class82_0.method_13(3);
-						this.class89_0.class88_0[i].class87_0[0].int_5 = 0;
+						class89_0.class88_0[i].class87_0[0].int_7[0] = class82_0.method_13(5);
+						class89_0.class88_0[i].class87_0[0].int_7[1] = class82_0.method_13(5);
+						class89_0.class88_0[i].class87_0[0].int_7[2] = class82_0.method_13(5);
+						class89_0.class88_0[i].class87_0[0].int_9 = class82_0.method_13(4);
+						class89_0.class88_0[i].class87_0[0].int_10 = class82_0.method_13(3);
+						class89_0.class88_0[i].class87_0[0].int_5 = 0;
 					}
-					this.class89_0.class88_0[i].class87_0[0].int_12 = this.class82_0.method_13(1);
-					this.class89_0.class88_0[i].class87_0[0].int_13 = this.class82_0.method_13(1);
+					class89_0.class88_0[i].class87_0[0].int_12 = class82_0.method_13(1);
+					class89_0.class88_0[i].class87_0[0].int_13 = class82_0.method_13(1);
 				}
 			}
 			return true;
@@ -2630,47 +2599,47 @@ namespace ns4
 
 		private void method_2(int int_24, int int_25)
 		{
-			Class85.Class87 @class = this.class89_0.class88_0[int_24].class87_0[int_25];
+			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
 			int num = @class.int_3;
-			int num2 = Class85.int_18[0, num];
-			int num3 = Class85.int_18[1, num];
+			int num2 = int_18[0, num];
+			int num3 = int_18[1, num];
 			if (@class.int_4 == 0 || @class.int_5 != 2)
 			{
-				if (this.class89_0.class88_0[int_24].int_0[0] == 0 || int_25 == 0)
+				if (class89_0.class88_0[int_24].int_0[0] == 0 || int_25 == 0)
 				{
-					this.class90_1[int_24].int_0[0] = this.class102_0.method_1(num2);
-					this.class90_1[int_24].int_0[1] = this.class102_0.method_1(num2);
-					this.class90_1[int_24].int_0[2] = this.class102_0.method_1(num2);
-					this.class90_1[int_24].int_0[3] = this.class102_0.method_1(num2);
-					this.class90_1[int_24].int_0[4] = this.class102_0.method_1(num2);
-					this.class90_1[int_24].int_0[5] = this.class102_0.method_1(num2);
+					class90_1[int_24].int_0[0] = class102_0.method_1(num2);
+					class90_1[int_24].int_0[1] = class102_0.method_1(num2);
+					class90_1[int_24].int_0[2] = class102_0.method_1(num2);
+					class90_1[int_24].int_0[3] = class102_0.method_1(num2);
+					class90_1[int_24].int_0[4] = class102_0.method_1(num2);
+					class90_1[int_24].int_0[5] = class102_0.method_1(num2);
 				}
-				if (this.class89_0.class88_0[int_24].int_0[1] == 0 || int_25 == 0)
+				if (class89_0.class88_0[int_24].int_0[1] == 0 || int_25 == 0)
 				{
-					this.class90_1[int_24].int_0[6] = this.class102_0.method_1(num2);
-					this.class90_1[int_24].int_0[7] = this.class102_0.method_1(num2);
-					this.class90_1[int_24].int_0[8] = this.class102_0.method_1(num2);
-					this.class90_1[int_24].int_0[9] = this.class102_0.method_1(num2);
-					this.class90_1[int_24].int_0[10] = this.class102_0.method_1(num2);
+					class90_1[int_24].int_0[6] = class102_0.method_1(num2);
+					class90_1[int_24].int_0[7] = class102_0.method_1(num2);
+					class90_1[int_24].int_0[8] = class102_0.method_1(num2);
+					class90_1[int_24].int_0[9] = class102_0.method_1(num2);
+					class90_1[int_24].int_0[10] = class102_0.method_1(num2);
 				}
-				if (this.class89_0.class88_0[int_24].int_0[2] == 0 || int_25 == 0)
+				if (class89_0.class88_0[int_24].int_0[2] == 0 || int_25 == 0)
 				{
-					this.class90_1[int_24].int_0[11] = this.class102_0.method_1(num3);
-					this.class90_1[int_24].int_0[12] = this.class102_0.method_1(num3);
-					this.class90_1[int_24].int_0[13] = this.class102_0.method_1(num3);
-					this.class90_1[int_24].int_0[14] = this.class102_0.method_1(num3);
-					this.class90_1[int_24].int_0[15] = this.class102_0.method_1(num3);
+					class90_1[int_24].int_0[11] = class102_0.method_1(num3);
+					class90_1[int_24].int_0[12] = class102_0.method_1(num3);
+					class90_1[int_24].int_0[13] = class102_0.method_1(num3);
+					class90_1[int_24].int_0[14] = class102_0.method_1(num3);
+					class90_1[int_24].int_0[15] = class102_0.method_1(num3);
 				}
-				if (this.class89_0.class88_0[int_24].int_0[3] == 0 || int_25 == 0)
+				if (class89_0.class88_0[int_24].int_0[3] == 0 || int_25 == 0)
 				{
-					this.class90_1[int_24].int_0[16] = this.class102_0.method_1(num3);
-					this.class90_1[int_24].int_0[17] = this.class102_0.method_1(num3);
-					this.class90_1[int_24].int_0[18] = this.class102_0.method_1(num3);
-					this.class90_1[int_24].int_0[19] = this.class102_0.method_1(num3);
-					this.class90_1[int_24].int_0[20] = this.class102_0.method_1(num3);
+					class90_1[int_24].int_0[16] = class102_0.method_1(num3);
+					class90_1[int_24].int_0[17] = class102_0.method_1(num3);
+					class90_1[int_24].int_0[18] = class102_0.method_1(num3);
+					class90_1[int_24].int_0[19] = class102_0.method_1(num3);
+					class90_1[int_24].int_0[20] = class102_0.method_1(num3);
 				}
-				this.class90_1[int_24].int_0[21] = 0;
-				this.class90_1[int_24].int_0[22] = 0;
+				class90_1[int_24].int_0[21] = 0;
+				class90_1[int_24].int_0[22] = 0;
 				return;
 			}
 			if (@class.int_6 != 0)
@@ -2678,75 +2647,75 @@ namespace ns4
 				int i;
 				for (i = 0; i < 8; i++)
 				{
-					this.class90_1[int_24].int_0[i] = this.class102_0.method_1(Class85.int_18[0, @class.int_3]);
+					class90_1[int_24].int_0[i] = class102_0.method_1(int_18[0, @class.int_3]);
 				}
 				for (i = 3; i < 6; i++)
 				{
 					for (int j = 0; j < 3; j++)
 					{
-						this.class90_1[int_24].int_1[j, i] = this.class102_0.method_1(Class85.int_18[0, @class.int_3]);
+						class90_1[int_24].int_1[j, i] = class102_0.method_1(int_18[0, @class.int_3]);
 					}
 				}
 				for (i = 6; i < 12; i++)
 				{
 					for (int j = 0; j < 3; j++)
 					{
-						this.class90_1[int_24].int_1[j, i] = this.class102_0.method_1(Class85.int_18[1, @class.int_3]);
+						class90_1[int_24].int_1[j, i] = class102_0.method_1(int_18[1, @class.int_3]);
 					}
 				}
 				i = 12;
 				for (int j = 0; j < 3; j++)
 				{
-					this.class90_1[int_24].int_1[j, i] = 0;
+					class90_1[int_24].int_1[j, i] = 0;
 				}
 				return;
 			}
-			this.class90_1[int_24].int_1[0, 0] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[1, 0] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[2, 0] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[0, 1] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[1, 1] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[2, 1] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[0, 2] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[1, 2] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[2, 2] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[0, 3] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[1, 3] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[2, 3] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[0, 4] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[1, 4] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[2, 4] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[0, 5] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[1, 5] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[2, 5] = this.class102_0.method_1(num2);
-			this.class90_1[int_24].int_1[0, 6] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[1, 6] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[2, 6] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[0, 7] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[1, 7] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[2, 7] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[0, 8] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[1, 8] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[2, 8] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[0, 9] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[1, 9] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[2, 9] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[0, 10] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[1, 10] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[2, 10] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[0, 11] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[1, 11] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[2, 11] = this.class102_0.method_1(num3);
-			this.class90_1[int_24].int_1[0, 12] = 0;
-			this.class90_1[int_24].int_1[1, 12] = 0;
-			this.class90_1[int_24].int_1[2, 12] = 0;
+			class90_1[int_24].int_1[0, 0] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[1, 0] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[2, 0] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[0, 1] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[1, 1] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[2, 1] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[0, 2] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[1, 2] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[2, 2] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[0, 3] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[1, 3] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[2, 3] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[0, 4] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[1, 4] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[2, 4] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[0, 5] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[1, 5] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[2, 5] = class102_0.method_1(num2);
+			class90_1[int_24].int_1[0, 6] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[1, 6] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[2, 6] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[0, 7] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[1, 7] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[2, 7] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[0, 8] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[1, 8] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[2, 8] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[0, 9] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[1, 9] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[2, 9] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[0, 10] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[1, 10] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[2, 10] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[0, 11] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[1, 11] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[2, 11] = class102_0.method_1(num3);
+			class90_1[int_24].int_1[0, 12] = 0;
+			class90_1[int_24].int_1[1, 12] = 0;
+			class90_1[int_24].int_1[2, 12] = 0;
 		}
 
 		private void method_3(int int_24, int int_25)
 		{
-			int num = this.class107_0.method_14();
+			int num = class107_0.method_14();
 			int num2 = 0;
-			Class85.Class87 @class = this.class89_0.class88_0[int_24].class87_0[int_25];
+			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
 			int num3 = @class.int_3;
 			int num4;
 			if (@class.int_5 == 2)
@@ -2768,26 +2737,26 @@ namespace ns4
 			{
 				if (num3 < 400)
 				{
-					this.int_11[0] = Math.DivRem(num3 >> 4, 5, out this.int_11[1]);
-					this.int_11[2] = (num3 & 15) >> 2;
-					this.int_11[3] = (num3 & 3);
-					this.class89_0.class88_0[int_24].class87_0[int_25].int_11 = 0;
+					int_11[0] = Math.DivRem(num3 >> 4, 5, out int_11[1]);
+					int_11[2] = (num3 & 15) >> 2;
+					int_11[3] = (num3 & 3);
+					class89_0.class88_0[int_24].class87_0[int_25].int_11 = 0;
 					num2 = 0;
 				}
 				else if (num3 < 500)
 				{
-					this.int_11[0] = Math.DivRem(num3 - 400 >> 2, 5, out this.int_11[1]);
-					this.int_11[2] = (num3 - 400 & 3);
-					this.int_11[3] = 0;
-					this.class89_0.class88_0[int_24].class87_0[int_25].int_11 = 0;
+					int_11[0] = Math.DivRem(num3 - 400 >> 2, 5, out int_11[1]);
+					int_11[2] = (num3 - 400 & 3);
+					int_11[3] = 0;
+					class89_0.class88_0[int_24].class87_0[int_25].int_11 = 0;
 					num2 = 1;
 				}
 				else if (num3 < 512)
 				{
-					this.int_11[0] = Math.DivRem(num3 - 500, 3, out this.int_11[1]);
-					this.int_11[2] = 0;
-					this.int_11[3] = 0;
-					this.class89_0.class88_0[int_24].class87_0[int_25].int_11 = 1;
+					int_11[0] = Math.DivRem(num3 - 500, 3, out int_11[1]);
+					int_11[2] = 0;
+					int_11[3] = 0;
+					class89_0.class88_0[int_24].class87_0[int_25].int_11 = 1;
 					num2 = 2;
 				}
 			}
@@ -2797,41 +2766,41 @@ namespace ns4
 				if (num5 < 180)
 				{
 					int a;
-					this.int_11[0] = Math.DivRem(num5, 36, out a);
-					this.int_11[1] = Math.DivRem(a, 6, out this.int_11[2]);
-					this.int_11[3] = 0;
-					this.class89_0.class88_0[int_24].class87_0[int_25].int_11 = 0;
+					int_11[0] = Math.DivRem(num5, 36, out a);
+					int_11[1] = Math.DivRem(a, 6, out int_11[2]);
+					int_11[3] = 0;
+					class89_0.class88_0[int_24].class87_0[int_25].int_11 = 0;
 					num2 = 3;
 				}
 				else if (num5 < 244)
 				{
 					int num6 = num5 - 180;
-					this.int_11[0] = (num6 & 63) >> 4;
-					this.int_11[1] = (num6 & 15) >> 2;
-					this.int_11[2] = (num6 & 3);
-					this.int_11[3] = 0;
-					this.class89_0.class88_0[int_24].class87_0[int_25].int_11 = 0;
+					int_11[0] = (num6 & 63) >> 4;
+					int_11[1] = (num6 & 15) >> 2;
+					int_11[2] = (num6 & 3);
+					int_11[3] = 0;
+					class89_0.class88_0[int_24].class87_0[int_25].int_11 = 0;
 					num2 = 4;
 				}
 				else if (num5 < 255)
 				{
-					this.int_11[0] = Math.DivRem(num5 - 244, 3, out this.int_11[1]);
-					this.int_11[2] = 0;
-					this.int_11[3] = 0;
-					this.class89_0.class88_0[int_24].class87_0[int_25].int_11 = 0;
+					int_11[0] = Math.DivRem(num5 - 244, 3, out int_11[1]);
+					int_11[2] = 0;
+					int_11[3] = 0;
+					class89_0.class88_0[int_24].class87_0[int_25].int_11 = 0;
 					num2 = 5;
 				}
 			}
 			for (int i = 0; i < 45; i++)
 			{
-				this.int_0[i] = 0;
+				int_0[i] = 0;
 			}
 			int num7 = 0;
 			for (int j = 0; j < 4; j++)
 			{
-				for (int k = 0; k < Class85.int_23[num2, num4, j]; k++)
+				for (int k = 0; k < int_23[num2, num4, j]; k++)
 				{
-					this.int_0[num7++] = ((this.int_11[j] == 0) ? 0 : this.class102_0.method_1(this.int_11[j]));
+					int_0[num7++] = ((int_11[j] == 0) ? 0 : class102_0.method_1(int_11[j]));
 				}
 			}
 		}
@@ -2839,34 +2808,34 @@ namespace ns4
 		private void method_4(int int_24, int int_25)
 		{
 			int num = 0;
-			Class85.Class87 @class = this.class89_0.class88_0[int_24].class87_0[int_25];
-			this.method_3(int_24, int_25);
+			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
+			method_3(int_24, int_25);
 			if (@class.int_4 == 0 || @class.int_5 != 2)
 			{
 				for (int i = 0; i < 21; i++)
 				{
-					this.class90_1[int_24].int_0[i] = this.int_0[num++];
+					class90_1[int_24].int_0[i] = int_0[num++];
 				}
-				this.class90_1[int_24].int_0[21] = 0;
-				this.class90_1[int_24].int_0[22] = 0;
+				class90_1[int_24].int_0[21] = 0;
+				class90_1[int_24].int_0[22] = 0;
 				return;
 			}
 			if (@class.int_6 != 0)
 			{
 				for (int i = 0; i < 8; i++)
 				{
-					this.class90_1[int_24].int_0[i] = this.int_0[num++];
+					class90_1[int_24].int_0[i] = int_0[num++];
 				}
 				for (int i = 3; i < 12; i++)
 				{
 					for (int j = 0; j < 3; j++)
 					{
-						this.class90_1[int_24].int_1[j, i] = this.int_0[num++];
+						class90_1[int_24].int_1[j, i] = int_0[num++];
 					}
 				}
 				for (int j = 0; j < 3; j++)
 				{
-					this.class90_1[int_24].int_1[j, 12] = 0;
+					class90_1[int_24].int_1[j, 12] = 0;
 				}
 				return;
 			}
@@ -2874,93 +2843,93 @@ namespace ns4
 			{
 				for (int j = 0; j < 3; j++)
 				{
-					this.class90_1[int_24].int_1[j, i] = this.int_0[num++];
+					class90_1[int_24].int_1[j, i] = int_0[num++];
 				}
 			}
 			for (int j = 0; j < 3; j++)
 			{
-				this.class90_1[int_24].int_1[j, 12] = 0;
+				class90_1[int_24].int_1[j, 12] = 0;
 			}
 		}
 
 		private void method_5(int int_24, int int_25)
 		{
-			this.int_12[0] = 0;
-			this.int_13[0] = 0;
-			this.int_14[0] = 0;
-			this.int_15[0] = 0;
-			int num = this.int_6 + this.class89_0.class88_0[int_24].class87_0[int_25].int_0;
+			int_12[0] = 0;
+			int_13[0] = 0;
+			int_14[0] = 0;
+			int_15[0] = 0;
+			int num = int_6 + class89_0.class88_0[int_24].class87_0[int_25].int_0;
 			int num2;
 			int num3;
-			if (this.class89_0.class88_0[int_24].class87_0[int_25].int_4 != 0 && this.class89_0.class88_0[int_24].class87_0[int_25].int_5 == 2)
+			if (class89_0.class88_0[int_24].class87_0[int_25].int_4 != 0 && class89_0.class88_0[int_24].class87_0[int_25].int_5 == 2)
 			{
-				num2 = ((this.int_10 == 8) ? 72 : 36);
+				num2 = ((int_10 == 8) ? 72 : 36);
 				num3 = 576;
 			}
 			else
 			{
-				int num4 = this.class89_0.class88_0[int_24].class87_0[int_25].int_9 + 1;
-				int num5 = num4 + this.class89_0.class88_0[int_24].class87_0[int_25].int_10 + 1;
-				if (num5 > this.class86_0[this.int_10].int_0.Length - 1)
+				int num4 = class89_0.class88_0[int_24].class87_0[int_25].int_9 + 1;
+				int num5 = num4 + class89_0.class88_0[int_24].class87_0[int_25].int_10 + 1;
+				if (num5 > class86_0[int_10].int_0.Length - 1)
 				{
-					num5 = this.class86_0[this.int_10].int_0.Length - 1;
+					num5 = class86_0[int_10].int_0.Length - 1;
 				}
-				num2 = this.class86_0[this.int_10].int_0[num4];
-				num3 = this.class86_0[this.int_10].int_0[num5];
+				num2 = class86_0[int_10].int_0[num4];
+				num3 = class86_0[int_10].int_0[num5];
 			}
 			int i = 0;
 			int num6 = 0;
 			Class103 class103_;
-			while (num6 < this.class89_0.class88_0[int_24].class87_0[int_25].int_1 << 1 && i < this.int_2.Length)
+			while (num6 < class89_0.class88_0[int_24].class87_0[int_25].int_1 << 1 && i < int_2.Length)
 			{
 				if (num6 < num2)
 				{
-					class103_ = Class103.class103_0[this.class89_0.class88_0[int_24].class87_0[int_25].int_7[0]];
+					class103_ = Class103.class103_0[class89_0.class88_0[int_24].class87_0[int_25].int_7[0]];
 				}
 				else if (num6 < num3)
 				{
-					class103_ = Class103.class103_0[this.class89_0.class88_0[int_24].class87_0[int_25].int_7[1]];
+					class103_ = Class103.class103_0[class89_0.class88_0[int_24].class87_0[int_25].int_7[1]];
 				}
 				else
 				{
-					class103_ = Class103.class103_0[this.class89_0.class88_0[int_24].class87_0[int_25].int_7[2]];
+					class103_ = Class103.class103_0[class89_0.class88_0[int_24].class87_0[int_25].int_7[2]];
 				}
-				Class103.smethod_1(class103_, this.int_12, this.int_13, this.int_14, this.int_15, this.class102_0);
-				this.int_2[i++] = this.int_12[0];
-				this.int_2[i++] = this.int_13[0];
-				this.int_1 = this.int_1 + this.int_12[0] + this.int_13[0];
+				Class103.smethod_1(class103_, int_12, int_13, int_14, int_15, class102_0);
+				int_2[i++] = int_12[0];
+				int_2[i++] = int_13[0];
+				int_1 = int_1 + int_12[0] + int_13[0];
 				num6 += 2;
 			}
-			class103_ = Class103.class103_0[this.class89_0.class88_0[int_24].class87_0[int_25].int_13 + 32];
-			int num7 = this.class102_0.method_0();
+			class103_ = Class103.class103_0[class89_0.class88_0[int_24].class87_0[int_25].int_13 + 32];
+			int num7 = class102_0.method_0();
 			while (num7 < num && i < 576)
 			{
-				Class103.smethod_1(class103_, this.int_12, this.int_13, this.int_14, this.int_15, this.class102_0);
-				this.int_2[i++] = this.int_14[0];
-				this.int_2[i++] = this.int_15[0];
-				this.int_2[i++] = this.int_12[0];
-				this.int_2[i++] = this.int_13[0];
-				this.int_1 = this.int_1 + this.int_14[0] + this.int_15[0] + this.int_12[0] + this.int_13[0];
-				num7 = this.class102_0.method_0();
+				Class103.smethod_1(class103_, int_12, int_13, int_14, int_15, class102_0);
+				int_2[i++] = int_14[0];
+				int_2[i++] = int_15[0];
+				int_2[i++] = int_12[0];
+				int_2[i++] = int_13[0];
+				int_1 = int_1 + int_14[0] + int_15[0] + int_12[0] + int_13[0];
+				num7 = class102_0.method_0();
 			}
 			if (num7 > num)
 			{
-				this.class102_0.method_4(num7 - num);
+				class102_0.method_4(num7 - num);
 				i -= 4;
 			}
-			num7 = this.class102_0.method_0();
+			num7 = class102_0.method_0();
 			if (num7 < num)
 			{
-				this.class102_0.method_1(num - num7);
+				class102_0.method_1(num - num7);
 			}
-			this.int_3[int_24] = ((i < 576) ? i : 576);
+			int_3[int_24] = ((i < 576) ? i : 576);
 			if (i < 0)
 			{
 				i = 0;
 			}
 			while (i < 576)
 			{
-				this.int_2[i] = 0;
+				int_2[i] = 0;
 				i++;
 			}
 		}
@@ -2969,23 +2938,23 @@ namespace ns4
 		{
 			if (int_24 == 0)
 			{
-				this.float_4[0, int_26] = 1f;
-				this.float_4[1, int_26] = 1f;
+				float_4[0, int_26] = 1f;
+				float_4[1, int_26] = 1f;
 				return;
 			}
 			if ((int_24 & 1) != 0)
 			{
-				this.float_4[0, int_26] = Class85.float_12[int_25][int_24 + 1 >> 1];
-				this.float_4[1, int_26] = 1f;
+				float_4[0, int_26] = float_12[int_25][int_24 + 1 >> 1];
+				float_4[1, int_26] = 1f;
 				return;
 			}
-			this.float_4[0, int_26] = 1f;
-			this.float_4[1, int_26] = Class85.float_12[int_25][int_24 >> 1];
+			float_4[0, int_26] = 1f;
+			float_4[1, int_26] = float_12[int_25][int_24 >> 1];
 		}
 
 		private void method_7(float[,] float_17, int int_24, int int_25)
 		{
-			Class85.Class87 @class = this.class89_0.class88_0[int_24].class87_0[int_25];
+			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
 			int num = 0;
 			int num2 = 0;
 			int num3 = 0;
@@ -2995,57 +2964,57 @@ namespace ns4
 			{
 				if (@class.int_6 != 0)
 				{
-					num5 = this.class86_0[this.int_10].int_0[1];
+					num5 = class86_0[int_10].int_0[1];
 				}
 				else
 				{
-					num3 = this.class86_0[this.int_10].int_1[1];
+					num3 = class86_0[int_10].int_1[1];
 					num5 = (num3 << 2) - num3;
 					num2 = 0;
 				}
 			}
 			else
 			{
-				num5 = this.class86_0[this.int_10].int_0[1];
+				num5 = class86_0[int_10].int_0[1];
 			}
-			float num6 = (float)Math.Pow(2.0, 0.25 * ((double)@class.int_2 - 210.0));
-			for (int i = 0; i < this.int_3[int_24]; i++)
+			float num6 = (float)Math.Pow(2.0, 0.25 * (@class.int_2 - 210.0));
+			for (int i = 0; i < int_3[int_24]; i++)
 			{
 				int num7 = i % 18;
 				int num8 = (i - num7) / 18;
-				if (this.int_2[i] == 0)
+				if (int_2[i] == 0)
 				{
 					float_17[num8, num7] = 0f;
 				}
 				else
 				{
-					int num9 = this.int_2[i];
-					if (num9 < Class85.float_11.Length)
+					int num9 = int_2[i];
+					if (num9 < float_11.Length)
 					{
-						if (this.int_2[i] > 0)
+						if (int_2[i] > 0)
 						{
-							float_17[num8, num7] = num6 * Class85.float_11[num9];
+							float_17[num8, num7] = num6 * float_11[num9];
 						}
-						else if (-num9 < Class85.float_11.Length)
+						else if (-num9 < float_11.Length)
 						{
-							float_17[num8, num7] = -num6 * Class85.float_11[-num9];
+							float_17[num8, num7] = -num6 * float_11[-num9];
 						}
 						else
 						{
-							float_17[num8, num7] = -num6 * (float)Math.Pow((double)(-(double)num9), this.double_0);
+							float_17[num8, num7] = -num6 * (float)Math.Pow(-(double)num9, double_0);
 						}
 					}
-					else if (this.int_2[i] > 0)
+					else if (int_2[i] > 0)
 					{
-						float_17[num8, num7] = num6 * (float)Math.Pow((double)num9, this.double_0);
+						float_17[num8, num7] = num6 * (float)Math.Pow(num9, double_0);
 					}
 					else
 					{
-						float_17[num8, num7] = -num6 * (float)Math.Pow((double)(-(double)num9), this.double_0);
+						float_17[num8, num7] = -num6 * (float)Math.Pow(-(double)num9, double_0);
 					}
 				}
 			}
-			for (int i = 0; i < this.int_3[int_24]; i++)
+			for (int i = 0; i < int_3[int_24]; i++)
 			{
 				int num10 = i % 18;
 				int num11 = (i - num10) / 18;
@@ -3055,62 +3024,62 @@ namespace ns4
 					{
 						if (@class.int_6 != 0)
 						{
-							if (num4 == this.class86_0[this.int_10].int_0[8])
+							if (num4 == class86_0[int_10].int_0[8])
 							{
-								num5 = this.class86_0[this.int_10].int_1[4];
+								num5 = class86_0[int_10].int_1[4];
 								num5 = (num5 << 2) - num5;
 								num = 3;
-								num3 = this.class86_0[this.int_10].int_1[4] - this.class86_0[this.int_10].int_1[3];
-								num2 = this.class86_0[this.int_10].int_1[3];
+								num3 = class86_0[int_10].int_1[4] - class86_0[int_10].int_1[3];
+								num2 = class86_0[int_10].int_1[3];
 								num2 = (num2 << 2) - num2;
 							}
-							else if (num4 < this.class86_0[this.int_10].int_0[8])
+							else if (num4 < class86_0[int_10].int_0[8])
 							{
-								num5 = this.class86_0[this.int_10].int_0[++num + 1];
+								num5 = class86_0[int_10].int_0[++num + 1];
 							}
 							else
 							{
-								num5 = this.class86_0[this.int_10].int_1[++num + 1];
+								num5 = class86_0[int_10].int_1[++num + 1];
 								num5 = (num5 << 2) - num5;
-								num2 = this.class86_0[this.int_10].int_1[num];
-								num3 = this.class86_0[this.int_10].int_1[num + 1] - num2;
+								num2 = class86_0[int_10].int_1[num];
+								num3 = class86_0[int_10].int_1[num + 1] - num2;
 								num2 = (num2 << 2) - num2;
 							}
 						}
 						else
 						{
-							num5 = this.class86_0[this.int_10].int_1[++num + 1];
+							num5 = class86_0[int_10].int_1[++num + 1];
 							num5 = (num5 << 2) - num5;
-							num2 = this.class86_0[this.int_10].int_1[num];
-							num3 = this.class86_0[this.int_10].int_1[num + 1] - num2;
+							num2 = class86_0[int_10].int_1[num];
+							num3 = class86_0[int_10].int_1[num + 1] - num2;
 							num2 = (num2 << 2) - num2;
 						}
 					}
 					else
 					{
-						num5 = this.class86_0[this.int_10].int_0[++num + 1];
+						num5 = class86_0[int_10].int_0[++num + 1];
 					}
 				}
 				if (@class.int_4 != 0 && ((@class.int_5 == 2 && @class.int_6 == 0) || (@class.int_5 == 2 && @class.int_6 != 0 && i >= 36)))
 				{
 					int num12 = (num4 - num2) / num3;
-					int num13 = this.class90_1[int_24].int_1[num12, num] << @class.int_12;
+					int num13 = class90_1[int_24].int_1[num12, num] << @class.int_12;
 					num13 += @class.int_8[num12] << 2;
-					float_17[num11, num10] *= Class85.float_10[num13];
+					float_17[num11, num10] *= float_10[num13];
 				}
 				else
 				{
-					int num14 = this.class90_1[int_24].int_0[num];
+					int num14 = class90_1[int_24].int_0[num];
 					if (@class.int_11 != 0)
 					{
-						num14 += Class85.int_19[num];
+						num14 += int_19[num];
 					}
 					num14 <<= @class.int_12;
-					float_17[num11, num10] *= Class85.float_10[num14];
+					float_17[num11, num10] *= float_10[num14];
 				}
 				num4++;
 			}
-			for (int i = this.int_3[int_24]; i < 576; i++)
+			for (int i = int_3[int_24]; i < 576; i++)
 			{
 				int num15 = i % 18;
 				int num16 = (i - num15) / 18;
@@ -3128,30 +3097,30 @@ namespace ns4
 
 		private void method_8(float[,] float_17, int int_24, int int_25)
 		{
-			Class85.Class87 @class = this.class89_0.class88_0[int_24].class87_0[int_25];
+			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
 			if (@class.int_4 == 0 || @class.int_5 != 2)
 			{
 				for (int i = 0; i < 576; i++)
 				{
 					int num = i % 18;
 					int num2 = (i - num) / 18;
-					this.float_2[i] = float_17[num2, num];
+					float_2[i] = float_17[num2, num];
 				}
 				return;
 			}
-			Array.Clear(this.float_2, 0, 576);
+			Array.Clear(float_2, 0, 576);
 			if (@class.int_6 != 0)
 			{
 				for (int i = 0; i < 36; i++)
 				{
 					int num3 = i % 18;
 					int num4 = (i - num3) / 18;
-					this.float_2[i] = float_17[num4, num3];
+					float_2[i] = float_17[num4, num3];
 				}
 				for (int j = 3; j < 13; j++)
 				{
-					int num5 = this.class86_0[this.int_10].int_1[j];
-					int num6 = this.class86_0[this.int_10].int_1[j + 1] - num5;
+					int num5 = class86_0[int_10].int_1[j];
+					int num6 = class86_0[int_10].int_1[j + 1] - num5;
 					int num7 = (num5 << 2) - num5;
 					int k = 0;
 					int num8 = 0;
@@ -3161,17 +3130,17 @@ namespace ns4
 						int num10 = num7 + num8;
 						int num11 = num9 % 18;
 						int num12 = (num9 - num11) / 18;
-						this.float_2[num10] = float_17[num12, num11];
+						float_2[num10] = float_17[num12, num11];
 						num9 += num6;
 						num10++;
 						num11 = num9 % 18;
 						num12 = (num9 - num11) / 18;
-						this.float_2[num10] = float_17[num12, num11];
+						float_2[num10] = float_17[num12, num11];
 						num9 += num6;
 						num10++;
 						num11 = num9 % 18;
 						num12 = (num9 - num11) / 18;
-						this.float_2[num10] = float_17[num12, num11];
+						float_2[num10] = float_17[num12, num11];
 						k++;
 						num8 += 3;
 					}
@@ -3180,32 +3149,32 @@ namespace ns4
 			}
 			for (int i = 0; i < 576; i++)
 			{
-				int num13 = Class85.int_22[this.int_10][i];
+				int num13 = int_22[int_10][i];
 				int num14 = num13 % 18;
 				int num15 = (num13 - num14) / 18;
-				this.float_2[i] = float_17[num15, num14];
+				float_2[i] = float_17[num15, num14];
 			}
 		}
 
 		private void method_9(int int_24)
 		{
-			if (this.int_7 == 1)
+			if (int_7 == 1)
 			{
-				Array.Copy(this.float_0[0], 0, this.float_1[0], 0, 576);
+				Array.Copy(float_0[0], 0, float_1[0], 0, 576);
 				return;
 			}
-			Class85.Class87 @class = this.class89_0.class88_0[0].class87_0[int_24];
-			int num = this.class107_0.method_14();
-			bool flag = this.class107_0.method_8() == Enum5.const_1 && (num & 2) != 0;
-			bool flag2 = this.class107_0.method_8() == Enum5.const_1 && (num & 1) != 0;
-			bool flag3 = this.class107_0.method_3() == Enum3.const_0 || this.class107_0.method_3() == Enum3.const_2;
+			Class87 @class = class89_0.class88_0[0].class87_0[int_24];
+			int num = class107_0.method_14();
+			bool flag = class107_0.method_8() == Enum5.const_1 && (num & 2) != 0;
+			bool flag2 = class107_0.method_8() == Enum5.const_1 && (num & 1) != 0;
+			bool flag3 = class107_0.method_3() == Enum3.const_0 || class107_0.method_3() == Enum3.const_2;
 			int int_25 = @class.int_3 & 1;
 			int i;
 			for (i = 0; i < 576; i++)
 			{
-				this.int_16[i] = 7;
+				int_16[i] = 7;
 			}
-			Array.Clear(this.float_7, 0, 576);
+			Array.Clear(float_7, 0, 576);
 			if (flag2)
 			{
 				if (@class.int_4 != 0 && @class.int_5 == 2)
@@ -3219,12 +3188,12 @@ namespace ns4
 							int k;
 							for (k = 12; k >= 3; k--)
 							{
-								i = this.class86_0[this.int_10].int_1[k];
-								int l = this.class86_0[this.int_10].int_1[k + 1] - i;
+								i = class86_0[int_10].int_1[k];
+								int l = class86_0[int_10].int_1[k + 1] - i;
 								i = (i << 2) - i + (j + 1) * l - 1;
 								while (l > 0)
 								{
-									if (this.float_0[1][Class85.int_20[i], Class85.int_21[i]] != 0f)
+									if (float_0[1][int_20[i], int_21[i]] != 0f)
 									{
 										num3 = k;
 										k = -10;
@@ -3243,21 +3212,21 @@ namespace ns4
 							int m;
 							while (k < 12)
 							{
-								num4 = this.class86_0[this.int_10].int_1[k];
-								m = this.class86_0[this.int_10].int_1[k + 1] - num4;
+								num4 = class86_0[int_10].int_1[k];
+								m = class86_0[int_10].int_1[k + 1] - num4;
 								i = (num4 << 2) - num4 + j * m;
 								while (m > 0)
 								{
-									this.int_16[i] = this.class90_1[1].int_1[j, k];
-									if (this.int_16[i] != 7)
+									int_16[i] = class90_1[1].int_1[j, k];
+									if (int_16[i] != 7)
 									{
 										if (flag3)
 										{
-											this.method_6(this.int_16[i], int_25, i);
+											method_6(int_16[i], int_25, i);
 										}
 										else
 										{
-											this.float_7[i] = Class85.float_13[this.int_16[i]];
+											float_7[i] = float_13[int_16[i]];
 										}
 									}
 									i++;
@@ -3265,23 +3234,23 @@ namespace ns4
 								}
 								k++;
 							}
-							k = this.class86_0[this.int_10].int_1[10];
-							m = this.class86_0[this.int_10].int_1[11] - k;
+							k = class86_0[int_10].int_1[10];
+							m = class86_0[int_10].int_1[11] - k;
 							k = (k << 2) - k + j * m;
-							num4 = this.class86_0[this.int_10].int_1[11];
-							m = this.class86_0[this.int_10].int_1[12] - num4;
+							num4 = class86_0[int_10].int_1[11];
+							m = class86_0[int_10].int_1[12] - num4;
 							i = (num4 << 2) - num4 + j * m;
 							while (m > 0)
 							{
-								this.int_16[i] = this.int_16[k];
+								int_16[i] = int_16[k];
 								if (flag3)
 								{
-									this.float_4[0, i] = this.float_4[0, k];
-									this.float_4[1, i] = this.float_4[1, k];
+									float_4[0, i] = float_4[0, k];
+									float_4[1, i] = float_4[1, k];
 								}
 								else
 								{
-									this.float_7[i] = this.float_7[k];
+									float_7[i] = float_7[k];
 								}
 								i++;
 								m--;
@@ -3294,7 +3263,7 @@ namespace ns4
 							int m = -1;
 							while (i >= 0)
 							{
-								if (this.float_0[1][i, n] != 0f)
+								if (float_0[1][i, n] != 0f)
 								{
 									m = (i << 4) + (i << 1) + n;
 									i = -1;
@@ -3310,26 +3279,26 @@ namespace ns4
 								}
 							}
 							i = 0;
-							while (this.class86_0[this.int_10].int_0[i] <= m)
+							while (class86_0[int_10].int_0[i] <= m)
 							{
 								i++;
 							}
 							int k = i;
-							i = this.class86_0[this.int_10].int_0[i];
+							i = class86_0[int_10].int_0[i];
 							while (k < 8)
 							{
-								for (m = this.class86_0[this.int_10].int_0[k + 1] - this.class86_0[this.int_10].int_0[k]; m > 0; m--)
+								for (m = class86_0[int_10].int_0[k + 1] - class86_0[int_10].int_0[k]; m > 0; m--)
 								{
-									this.int_16[i] = this.class90_1[1].int_0[k];
-									if (this.int_16[i] != 7)
+									int_16[i] = class90_1[1].int_0[k];
+									if (int_16[i] != 7)
 									{
 										if (flag3)
 										{
-											this.method_6(this.int_16[i], int_25, i);
+											method_6(int_16[i], int_25, i);
 										}
 										else
 										{
-											this.float_7[i] = Class85.float_13[this.int_16[i]];
+											float_7[i] = float_13[int_16[i]];
 										}
 									}
 									i++;
@@ -3347,12 +3316,12 @@ namespace ns4
 							int num4;
 							for (k = 12; k >= 0; k--)
 							{
-								num4 = this.class86_0[this.int_10].int_1[k];
-								int l = this.class86_0[this.int_10].int_1[k + 1] - num4;
+								num4 = class86_0[int_10].int_1[k];
+								int l = class86_0[int_10].int_1[k + 1] - num4;
 								i = (num4 << 2) - num4 + (num5 + 1) * l - 1;
 								while (l > 0)
 								{
-									if (this.float_0[1][Class85.int_20[i], Class85.int_21[i]] != 0f)
+									if (float_0[1][int_20[i], int_21[i]] != 0f)
 									{
 										num6 = k;
 										k = -10;
@@ -3365,44 +3334,44 @@ namespace ns4
 							int m;
 							for (k = num6 + 1; k < 12; k++)
 							{
-								num4 = this.class86_0[this.int_10].int_1[k];
-								m = this.class86_0[this.int_10].int_1[k + 1] - num4;
+								num4 = class86_0[int_10].int_1[k];
+								m = class86_0[int_10].int_1[k + 1] - num4;
 								i = (num4 << 2) - num4 + num5 * m;
 								while (m > 0)
 								{
-									this.int_16[i] = this.class90_1[1].int_1[num5, k];
-									if (this.int_16[i] != 7)
+									int_16[i] = class90_1[1].int_1[num5, k];
+									if (int_16[i] != 7)
 									{
 										if (flag3)
 										{
-											this.method_6(this.int_16[i], int_25, i);
+											method_6(int_16[i], int_25, i);
 										}
 										else
 										{
-											this.float_7[i] = Class85.float_13[this.int_16[i]];
+											float_7[i] = float_13[int_16[i]];
 										}
 									}
 									i++;
 									m--;
 								}
 							}
-							num4 = this.class86_0[this.int_10].int_1[10];
-							int num7 = this.class86_0[this.int_10].int_1[11];
+							num4 = class86_0[int_10].int_1[10];
+							int num7 = class86_0[int_10].int_1[11];
 							m = num7 - num4;
 							k = (num4 << 2) - num4 + num5 * m;
-							m = this.class86_0[this.int_10].int_1[12] - num7;
+							m = class86_0[int_10].int_1[12] - num7;
 							i = (num7 << 2) - num7 + num5 * m;
 							while (m > 0)
 							{
-								this.int_16[i] = this.int_16[k];
+								int_16[i] = int_16[k];
 								if (flag3)
 								{
-									this.float_4[0, i] = this.float_4[0, k];
-									this.float_4[1, i] = this.float_4[1, k];
+									float_4[0, i] = float_4[0, k];
+									float_4[1, i] = float_4[1, k];
 								}
 								else
 								{
-									this.float_7[i] = this.float_7[k];
+									float_7[i] = float_7[k];
 								}
 								i++;
 								m--;
@@ -3417,7 +3386,7 @@ namespace ns4
 					int m = 0;
 					while (i >= 0)
 					{
-						if (this.float_0[1][i, n] != 0f)
+						if (float_0[1][i, n] != 0f)
 						{
 							m = (i << 4) + (i << 1) + n;
 							i = -1;
@@ -3433,45 +3402,45 @@ namespace ns4
 						}
 					}
 					i = 0;
-					while (this.class86_0[this.int_10].int_0[i] <= m)
+					while (class86_0[int_10].int_0[i] <= m)
 					{
 						i++;
 					}
 					int k = i;
-					i = this.class86_0[this.int_10].int_0[i];
+					i = class86_0[int_10].int_0[i];
 					while (k < 21)
 					{
-						for (m = this.class86_0[this.int_10].int_0[k + 1] - this.class86_0[this.int_10].int_0[k]; m > 0; m--)
+						for (m = class86_0[int_10].int_0[k + 1] - class86_0[int_10].int_0[k]; m > 0; m--)
 						{
-							this.int_16[i] = this.class90_1[1].int_0[k];
-							if (this.int_16[i] != 7)
+							int_16[i] = class90_1[1].int_0[k];
+							if (int_16[i] != 7)
 							{
 								if (flag3)
 								{
-									this.method_6(this.int_16[i], int_25, i);
+									method_6(int_16[i], int_25, i);
 								}
 								else
 								{
-									this.float_7[i] = Class85.float_13[this.int_16[i]];
+									float_7[i] = float_13[int_16[i]];
 								}
 							}
 							i++;
 						}
 						k++;
 					}
-					k = this.class86_0[this.int_10].int_0[20];
-					m = 576 - this.class86_0[this.int_10].int_0[21];
+					k = class86_0[int_10].int_0[20];
+					m = 576 - class86_0[int_10].int_0[21];
 					while (m > 0 && i < 576)
 					{
-						this.int_16[i] = this.int_16[k];
+						int_16[i] = int_16[k];
 						if (flag3)
 						{
-							this.float_4[0, i] = this.float_4[0, k];
-							this.float_4[1, i] = this.float_4[1, k];
+							float_4[0, i] = float_4[0, k];
+							float_4[1, i] = float_4[1, k];
 						}
 						else
 						{
-							this.float_7[i] = this.float_7[k];
+							float_7[i] = float_7[k];
 						}
 						i++;
 						m--;
@@ -3483,30 +3452,30 @@ namespace ns4
 			{
 				for (int n = 0; n < 18; n++)
 				{
-					if (this.int_16[i] == 7)
+					if (int_16[i] == 7)
 					{
 						if (flag)
 						{
-							this.float_1[0][m, n] = (this.float_0[0][m, n] + this.float_0[1][m, n]) * 0.707106769f;
-							this.float_1[1][m, n] = (this.float_0[0][m, n] - this.float_0[1][m, n]) * 0.707106769f;
+							float_1[0][m, n] = (float_0[0][m, n] + float_0[1][m, n]) * 0.707106769f;
+							float_1[1][m, n] = (float_0[0][m, n] - float_0[1][m, n]) * 0.707106769f;
 						}
 						else
 						{
-							this.float_1[0][m, n] = this.float_0[0][m, n];
-							this.float_1[1][m, n] = this.float_0[1][m, n];
+							float_1[0][m, n] = float_0[0][m, n];
+							float_1[1][m, n] = float_0[1][m, n];
 						}
 					}
 					else if (flag2)
 					{
 						if (flag3)
 						{
-							this.float_1[0][m, n] = this.float_0[0][m, n] * this.float_4[0, i];
-							this.float_1[1][m, n] = this.float_0[0][m, n] * this.float_4[1, i];
+							float_1[0][m, n] = float_0[0][m, n] * float_4[0, i];
+							float_1[1][m, n] = float_0[0][m, n] * float_4[1, i];
 						}
 						else
 						{
-							this.float_1[1][m, n] = this.float_0[0][m, n] / (1f + this.float_7[i]);
-							this.float_1[0][m, n] = this.float_1[1][m, n] * this.float_7[i];
+							float_1[1][m, n] = float_0[0][m, n] / (1f + float_7[i]);
+							float_1[0][m, n] = float_1[1][m, n] * float_7[i];
 						}
 					}
 					i++;
@@ -3516,7 +3485,7 @@ namespace ns4
 
 		private void method_10(int int_24, int int_25)
 		{
-			Class85.Class87 @class = this.class89_0.class88_0[int_24].class87_0[int_25];
+			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
 			if (@class.int_4 != 0 && @class.int_5 == 2 && @class.int_6 == 0)
 			{
 				return;
@@ -3536,67 +3505,67 @@ namespace ns4
 				{
 					int num2 = i + 17 - j;
 					int num3 = i + 18 + j;
-					float num4 = this.float_2[num2];
-					float num5 = this.float_2[num3];
-					this.float_2[num2] = num4 * Class85.float_14[j] - num5 * Class85.float_15[j];
-					this.float_2[num3] = num5 * Class85.float_14[j] + num4 * Class85.float_15[j];
+					float num4 = float_2[num2];
+					float num5 = float_2[num3];
+					float_2[num2] = num4 * float_14[j] - num5 * float_15[j];
+					float_2[num3] = num5 * float_14[j] + num4 * float_15[j];
 				}
 			}
 		}
 
 		private void method_11(int int_24, int int_25)
 		{
-			Class85.Class87 @class = this.class89_0.class88_0[int_24].class87_0[int_25];
+			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
 			for (int i = 0; i < 576; i += 18)
 			{
 				int int_26 = (@class.int_4 == 0 || @class.int_6 == 0 || i >= 36) ? @class.int_5 : 0;
-				float[] array = this.float_2;
+				float[] array = float_2;
 				for (int j = 0; j < 18; j++)
 				{
-					this.float_8[j] = array[j + i];
+					float_8[j] = array[j + i];
 				}
-				this.method_13(this.float_8, this.float_9, int_26);
+				method_13(float_8, float_9, int_26);
 				for (int k = 0; k < 18; k++)
 				{
-					array[k + i] = this.float_8[k];
+					array[k + i] = float_8[k];
 				}
-				float[,] array2 = this.float_3;
-				array[i] = this.float_9[0] + array2[int_24, i];
-				array2[int_24, i] = this.float_9[18];
-				array[1 + i] = this.float_9[1] + array2[int_24, i + 1];
-				array2[int_24, i + 1] = this.float_9[19];
-				array[2 + i] = this.float_9[2] + array2[int_24, i + 2];
-				array2[int_24, i + 2] = this.float_9[20];
-				array[3 + i] = this.float_9[3] + array2[int_24, i + 3];
-				array2[int_24, i + 3] = this.float_9[21];
-				array[4 + i] = this.float_9[4] + array2[int_24, i + 4];
-				array2[int_24, i + 4] = this.float_9[22];
-				array[5 + i] = this.float_9[5] + array2[int_24, i + 5];
-				array2[int_24, i + 5] = this.float_9[23];
-				array[6 + i] = this.float_9[6] + array2[int_24, i + 6];
-				array2[int_24, i + 6] = this.float_9[24];
-				array[7 + i] = this.float_9[7] + array2[int_24, i + 7];
-				array2[int_24, i + 7] = this.float_9[25];
-				array[8 + i] = this.float_9[8] + array2[int_24, i + 8];
-				array2[int_24, i + 8] = this.float_9[26];
-				array[9 + i] = this.float_9[9] + array2[int_24, i + 9];
-				array2[int_24, i + 9] = this.float_9[27];
-				array[10 + i] = this.float_9[10] + array2[int_24, i + 10];
-				array2[int_24, i + 10] = this.float_9[28];
-				array[11 + i] = this.float_9[11] + array2[int_24, i + 11];
-				array2[int_24, i + 11] = this.float_9[29];
-				array[12 + i] = this.float_9[12] + array2[int_24, i + 12];
-				array2[int_24, i + 12] = this.float_9[30];
-				array[13 + i] = this.float_9[13] + array2[int_24, i + 13];
-				array2[int_24, i + 13] = this.float_9[31];
-				array[14 + i] = this.float_9[14] + array2[int_24, i + 14];
-				array2[int_24, i + 14] = this.float_9[32];
-				array[15 + i] = this.float_9[15] + array2[int_24, i + 15];
-				array2[int_24, i + 15] = this.float_9[33];
-				array[16 + i] = this.float_9[16] + array2[int_24, i + 16];
-				array2[int_24, i + 16] = this.float_9[34];
-				array[17 + i] = this.float_9[17] + array2[int_24, i + 17];
-				array2[int_24, i + 17] = this.float_9[35];
+				float[,] array2 = float_3;
+				array[i] = float_9[0] + array2[int_24, i];
+				array2[int_24, i] = float_9[18];
+				array[1 + i] = float_9[1] + array2[int_24, i + 1];
+				array2[int_24, i + 1] = float_9[19];
+				array[2 + i] = float_9[2] + array2[int_24, i + 2];
+				array2[int_24, i + 2] = float_9[20];
+				array[3 + i] = float_9[3] + array2[int_24, i + 3];
+				array2[int_24, i + 3] = float_9[21];
+				array[4 + i] = float_9[4] + array2[int_24, i + 4];
+				array2[int_24, i + 4] = float_9[22];
+				array[5 + i] = float_9[5] + array2[int_24, i + 5];
+				array2[int_24, i + 5] = float_9[23];
+				array[6 + i] = float_9[6] + array2[int_24, i + 6];
+				array2[int_24, i + 6] = float_9[24];
+				array[7 + i] = float_9[7] + array2[int_24, i + 7];
+				array2[int_24, i + 7] = float_9[25];
+				array[8 + i] = float_9[8] + array2[int_24, i + 8];
+				array2[int_24, i + 8] = float_9[26];
+				array[9 + i] = float_9[9] + array2[int_24, i + 9];
+				array2[int_24, i + 9] = float_9[27];
+				array[10 + i] = float_9[10] + array2[int_24, i + 10];
+				array2[int_24, i + 10] = float_9[28];
+				array[11 + i] = float_9[11] + array2[int_24, i + 11];
+				array2[int_24, i + 11] = float_9[29];
+				array[12 + i] = float_9[12] + array2[int_24, i + 12];
+				array2[int_24, i + 12] = float_9[30];
+				array[13 + i] = float_9[13] + array2[int_24, i + 13];
+				array2[int_24, i + 13] = float_9[31];
+				array[14 + i] = float_9[14] + array2[int_24, i + 14];
+				array2[int_24, i + 14] = float_9[32];
+				array[15 + i] = float_9[15] + array2[int_24, i + 15];
+				array2[int_24, i + 15] = float_9[33];
+				array[16 + i] = float_9[16] + array2[int_24, i + 16];
+				array2[int_24, i + 16] = float_9[34];
+				array[17 + i] = float_9[17] + array2[int_24, i + 17];
+				array2[int_24, i + 17] = float_9[35];
 			}
 		}
 
@@ -3606,9 +3575,9 @@ namespace ns4
 			{
 				for (int j = 0; j < 18; j += 3)
 				{
-					this.float_1[0][i, j] = (this.float_1[0][i, j] + this.float_1[1][i, j]) * 0.5f;
-					this.float_1[0][i, j + 1] = (this.float_1[0][i, j + 1] + this.float_1[1][i, j + 1]) * 0.5f;
-					this.float_1[0][i, j + 2] = (this.float_1[0][i, j + 2] + this.float_1[1][i, j + 2]) * 0.5f;
+					float_1[0][i, j] = (float_1[0][i, j] + float_1[1][i, j]) * 0.5f;
+					float_1[0][i, j + 1] = (float_1[0][i, j + 1] + float_1[1][i, j + 1]) * 0.5f;
+					float_1[0][i, j + 2] = (float_1[0][i, j + 2] + float_1[1][i, j + 2]) * 0.5f;
 				}
 			}
 		}
@@ -3782,7 +3751,7 @@ namespace ns4
 			num43 = (num32 - num38) * 5.73685646f;
 			num12 = num42 + num43;
 			num13 = num42 - num43;
-			float[] array = Class85.float_16[int_24];
+			float[] array = float_16[int_24];
 			float_18[0] = -num13 * array[0];
 			float_18[1] = -num15 * array[1];
 			float_18[2] = -num17 * array[2];
@@ -3827,7 +3796,7 @@ namespace ns4
 			double y = 1.3333333333333333;
 			for (int i = 0; i < 8192; i++)
 			{
-				array[i] = (float)Math.Pow((double)i, y);
+				array[i] = (float)Math.Pow(i, y);
 			}
 			return array;
 		}

@@ -1,7 +1,6 @@
 using ns16;
 using ns18;
 using ns21;
-using System;
 
 namespace ns19
 {
@@ -11,48 +10,48 @@ namespace ns19
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			this.int_0 = stream26_0.ReadInt();
+			int_0 = stream26_0.ReadInt();
 			int num = stream26_0.ReadInt();
 			int num2 = stream26_0.ReadInt();
 			if (num != 0)
 			{
-				AbstractTreeNode1 @class = this.vmethod_12(stream26_0.ReadIntAt(num, true));
-				base.Nodes.Add(@class);
+				AbstractTreeNode1 @class = vmethod_12(stream26_0.ReadIntAt(num, true));
+				Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}
 			if (num2 != 0)
 			{
-				AbstractTreeNode1 class2 = (base.Parent is StructureHeaderNode) ? (base.Parent as StructureHeaderNode).method_11(stream26_0.ReadIntAt(num2)) : this.vmethod_12(stream26_0.ReadIntAt(num2, true));
-				base.method_1().Nodes.Add(class2);
+				AbstractTreeNode1 class2 = (Parent is StructureHeaderNode) ? (Parent as StructureHeaderNode).method_11(stream26_0.ReadIntAt(num2)) : vmethod_12(stream26_0.ReadIntAt(num2, true));
+				method_1().Nodes.Add(class2);
 				class2.method_4(stream26_0);
 			}
 		}
 
 		public override void vmethod_14(Stream26 stream26_0)
 		{
-			if (this.vmethod_8())
+			if (vmethod_8())
 			{
 				byte[] array = new byte[4];
 				array[1] = 1;
-                array[2] = (byte)(this.vmethod_15() - 128);
+                array[2] = (byte)(vmethod_15() - 128);
 				stream26_0.WriteByteArray(array, false);
 			}
 			else
 			{
 				byte[] array2 = new byte[4];
-				array2[1] = this.vmethod_15();
+				array2[1] = vmethod_15();
 				stream26_0.WriteByteArray(array2, false);
 			}
-			stream26_0.WriteInt(this.int_0);
-			stream26_0.WriteInt((base.Nodes.Count != 0) ? ((int)stream26_0.Position + 8) : 0);
+			stream26_0.WriteInt(int_0);
+			stream26_0.WriteInt((Nodes.Count != 0) ? ((int)stream26_0.Position + 8) : 0);
 			int int_ = (int)stream26_0.Position;
 			stream26_0.WriteInt(0);
-			foreach (AbstractTreeNode1 @class in base.Nodes)
+			foreach (AbstractTreeNode1 @class in Nodes)
 			{
 				@class.vmethod_14(stream26_0);
 			}
 			int num = (int)stream26_0.Position;
-			if (base.method_1().Nodes.IndexOf(this) < base.method_1().Nodes.Count - 1)
+			if (method_1().Nodes.IndexOf(this) < method_1().Nodes.Count - 1)
 			{
 				stream26_0.WriteIntAt(int_, num);
 			}
@@ -60,13 +59,13 @@ namespace ns19
 			{
 				stream26_0.WriteIntAt(int_, 0);
 			}
-			stream26_0.Position = (long)num;
+			stream26_0.Position = num;
 		}
 
 		public override void vmethod_2(ref int int_1)
 		{
 			int_1 += 16;
-			foreach (AbstractTreeNode1 @class in base.Nodes)
+			foreach (AbstractTreeNode1 @class in Nodes)
 			{
 				@class.vmethod_2(ref int_1);
 			}

@@ -1,6 +1,6 @@
-using ns14;
 using System;
 using System.Collections.Generic;
+using ns14;
 
 namespace ns15
 {
@@ -17,7 +17,7 @@ namespace ns15
 				for (int i = 0; i < string_0.Length; i++)
 				{
 					string text = string_0[i];
-					string[] array = text.Split(new char[]
+					string[] array = text.Split(new[]
 					{
 						' ',
 						'\t',
@@ -25,19 +25,19 @@ namespace ns15
 						'"',
 						'E'
 					}, StringSplitOptions.RemoveEmptyEntries);
-                    this.method_5(ChartParser.getNoteFromResolution(array[0]), array[1]);
+                    method_5(ChartParser.getNoteFromResolution(array[0]), array[1]);
 				}
 			}
 		}
 
 		public void method_5(int int_0, string string_0)
 		{
-			if (base.ContainsKey(int_0))
+			if (ContainsKey(int_0))
 			{
 				base[int_0].Add(string_0);
 				return;
 			}
-			base.Add(int_0, new List<string>(new string[]
+			Add(int_0, new List<string>(new[]
 			{
 				string_0
 			}));

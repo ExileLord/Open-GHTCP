@@ -1,5 +1,3 @@
-using System;
-
 namespace ns4
 {
 	public enum Enum3

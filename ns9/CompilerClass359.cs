@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -14,8 +13,8 @@ namespace ns9
 		{
 		}
 
-		public static CompilerClass359.Struct93 struct93_0;
+		public static Struct93 struct93_0;
 
-		public static CompilerClass359.Struct93 struct93_1;
+		public static Struct93 struct93_1;
 	}
 }

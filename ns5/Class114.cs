@@ -1,5 +1,3 @@
-using System;
-
 namespace ns5
 {
 	public class Class114
@@ -411,8 +409,7 @@ namespace ns5
 
 		public static int[] smethod_3()
 		{
-			int[] array = new int[]
-			{
+			int[] array = {
 				0,
 				40977,
 				57395,
@@ -682,7 +679,7 @@ namespace ns5
 
 		public static double[] smethod_4()
 		{
-			return new double[]
+			return new[]
 			{
 				3.0517578125E-05,
 				1.52587890625E-05,
@@ -1230,7 +1227,7 @@ namespace ns5
 
 		public static double[] smethod_11()
 		{
-			return new double[]
+			return new[]
 			{
 				-28086.857142857141,
 				-18724.571428571428,
@@ -1521,7 +1518,7 @@ namespace ns5
 
 		public static double[] smethod_14()
 		{
-			return new double[]
+			return new[]
 			{
 				-30583.466666666667,
 				-26214.4,
@@ -1544,9 +1541,9 @@ namespace ns5
 
 		public static int[][] smethod_15()
 		{
-			return new int[][]
+			return new[]
 			{
-				new int[]
+				new[]
 				{
 					1840,
 					1840,
@@ -1599,7 +1596,7 @@ namespace ns5
 					960,
 					960
 				},
-				new int[]
+				new[]
 				{
 					1808,
 					1808,
@@ -1652,7 +1649,7 @@ namespace ns5
 					960,
 					960
 				},
-				new int[]
+				new[]
 				{
 					1664,
 					1664,
@@ -2022,7 +2019,7 @@ namespace ns5
 
 		public static int[] smethod_17()
 		{
-			return new int[]
+			return new[]
 			{
 				21,
 				22,
@@ -2059,7 +2056,7 @@ namespace ns5
 
 		public static int[] smethod_18()
 		{
-			return new int[]
+			return new[]
 			{
 				-64,
 				-63,

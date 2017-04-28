@@ -1,12 +1,12 @@
-using NeversoftTools.Texture.DDS;
-using ns14;
-using ns16;
-using ns19;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
+using ns14;
+using ns16;
+using ns19;
+using NeversoftTools.Texture.DDS;
 
 namespace ns21
 {
@@ -47,7 +47,7 @@ namespace ns21
 
 			public uint mipMapCount;
 
-			public DDSTexture.DDSPixelFormat pixelFormat;
+			public DDSPixelFormat pixelFormat;
 
 			public uint unk1;
 
@@ -74,7 +74,7 @@ namespace ns21
 
 		public DDSTexture(Stream stream, bool leaveOpen)
 		{
-			this.Load(stream, leaveOpen);
+			Load(stream, leaveOpen);
 		}
 
 		public DDSTexture(Image image_0, int int_2, IMGPixelFormat imgpixelFormat_1) : this(image_0, int_2, imgpixelFormat_1, true)
@@ -83,10 +83,10 @@ namespace ns21
 
 		public DDSTexture(Image image, int mipMapCount, IMGPixelFormat pixelFormat, bool unkBool1)
 		{
-			this.MipMapCount = mipMapCount;
-			this.PixelFormat = pixelFormat;
-			this.Size = image.Size;
-			this.ChangeImageProbably(image, mipMapCount, pixelFormat, unkBool1);
+			MipMapCount = mipMapCount;
+			PixelFormat = pixelFormat;
+			Size = image.Size;
+			ChangeImageProbably(image, mipMapCount, pixelFormat, unkBool1);
 		}
 
 		private void Load(Stream stream, bool leaveOpen)
@@ -96,7 +96,7 @@ namespace ns21
 			{
 				throw new FileLoadException("Invalid DDS file");
 			}
-			DDSTexture.DDSHeader header;
+			DDSHeader header;
 			header.size = binaryReader.ReadUInt32();
 			header.flags = binaryReader.ReadUInt32();
 			header.height = binaryReader.ReadUInt32();
@@ -124,13 +124,13 @@ namespace ns21
 				{
 					if ((header.flags & 131072u) != 0u)
 					{
-						this.MipMapCount = (int)header.mipMapCount;
+						MipMapCount = (int)header.mipMapCount;
 					}
 					else
 					{
-						this.MipMapCount = 1;
+						MipMapCount = 1;
 					}
-					this.Size = new Size((int)header.width, (int)header.height);
+					Size = new Size((int)header.width, (int)header.height);
 					if ((header.pixelFormat.flags & 4u) != 0u)
 					{
 						uint uint_ = header.pixelFormat.fourCC;
@@ -140,8 +140,8 @@ namespace ns21
 							{
 								if (uint_ == 827611204u)
 								{
-									this.PixelFormat = IMGPixelFormat.Dxt1;
-									this.BPP = 8;
+									PixelFormat = IMGPixelFormat.Dxt1;
+									BPP = 8;
 									goto IL_3BE;
 								}
 								if (uint_ != 844388420u)
@@ -155,12 +155,12 @@ namespace ns21
 								{
 									goto IL_2D5;
 								}
-								this.PixelFormat = IMGPixelFormat.Dxt5;
-								this.BPP = 16;
+								PixelFormat = IMGPixelFormat.Dxt5;
+								BPP = 16;
 								goto IL_3BE;
 							}
-							this.PixelFormat = IMGPixelFormat.Dxt3;
-							this.BPP = 16;
+							PixelFormat = IMGPixelFormat.Dxt3;
+							BPP = 16;
 							goto IL_3BE;
 						}
 						if (uint_ <= 28u)
@@ -168,24 +168,24 @@ namespace ns21
 							switch (uint_)
 							{
 							case 20u:
-								this.PixelFormat = IMGPixelFormat.Bgr24;
-								this.BPP = 3;
+								PixelFormat = IMGPixelFormat.Bgr24;
+								BPP = 3;
 								goto IL_3BE;
 							case 21u:
-								this.PixelFormat = IMGPixelFormat.Bgra32;
-								this.BPP = 4;
+								PixelFormat = IMGPixelFormat.Bgra32;
+								BPP = 4;
 								goto IL_3BE;
 							case 22u:
 								break;
 							case 23u:
-								this.PixelFormat = IMGPixelFormat.Bgr16;
-								this.BPP = 2;
+								PixelFormat = IMGPixelFormat.Bgr16;
+								BPP = 2;
 								goto IL_3BE;
 							default:
 								if (uint_ == 28u)
 								{
-									this.PixelFormat = IMGPixelFormat.Alpha8;
-									this.BPP = 1;
+									PixelFormat = IMGPixelFormat.Alpha8;
+									BPP = 1;
 									goto IL_3BE;
 								}
 								break;
@@ -195,48 +195,48 @@ namespace ns21
 						{
 							if (uint_ == 50u)
 							{
-								this.PixelFormat = IMGPixelFormat.Luminance8;
-								this.BPP = 1;
+								PixelFormat = IMGPixelFormat.Luminance8;
+								BPP = 1;
 								goto IL_3BE;
 							}
 							if (uint_ == 113u)
 							{
-								this.PixelFormat = IMGPixelFormat.Rgba64Float;
-								this.BPP = 8;
+								PixelFormat = IMGPixelFormat.Rgba64Float;
+								BPP = 8;
 								goto IL_3BE;
 							}
 							if (uint_ == 116u)
 							{
-								this.PixelFormat = IMGPixelFormat.Rgba128Float;
-								this.BPP = 16;
+								PixelFormat = IMGPixelFormat.Rgba128Float;
+								BPP = 16;
 								goto IL_3BE;
 							}
 						}
 						IL_2D5:
-						this.PixelFormat = IMGPixelFormat.Bgra32;
-						this.BPP = 4;
+						PixelFormat = IMGPixelFormat.Bgra32;
+						BPP = 4;
 					}
 					else
 					{
 						if (header.pixelFormat.rgbBitCount == 8u && header.pixelFormat.AlphaBitMask == 255u)
 						{
-							this.PixelFormat = IMGPixelFormat.Alpha8;
-							this.BPP = 1;
+							PixelFormat = IMGPixelFormat.Alpha8;
+							BPP = 1;
 						}
 						if (header.pixelFormat.rgbBitCount == 32u && header.pixelFormat.redBitMask == 16711680u && header.pixelFormat.greenBitMask == 65280u && header.pixelFormat.BlueBitMask == 255u && header.pixelFormat.AlphaBitMask == 4278190080u)
 						{
-							this.PixelFormat = IMGPixelFormat.Bgra32;
-							this.BPP = 4;
+							PixelFormat = IMGPixelFormat.Bgra32;
+							BPP = 4;
 						}
-						if (this.BPP == 0)
+						if (BPP == 0)
 						{
 							throw new FileLoadException("Invalid Texture Format");
 						}
 					}
 					IL_3BE:
-					byte[] array = new byte[header.width * header.height * (uint)this.BPP];
+					byte[] array = new byte[header.width * header.height * (uint)BPP];
 					stream.Read(array, 0, array.Length);
-					this.data = array;
+					data = array;
 					if (leaveOpen)
 					{
 						return;
@@ -251,27 +251,27 @@ namespace ns21
 
 		public Image GetImage()
 		{
-            Bitmap bitmap = new Bitmap(this.Size.Width, this.Size.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-			if (this.PixelFormat == IMGPixelFormat.Bgra32)
+            Bitmap bitmap = new Bitmap(Size.Width, Size.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+			if (PixelFormat == IMGPixelFormat.Bgra32)
 			{
 				BitmapData bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
-				Marshal.Copy(this.data, 0, bitmapData.Scan0, bitmapData.Stride * bitmap.Height);
+				Marshal.Copy(data, 0, bitmapData.Scan0, bitmapData.Stride * bitmap.Height);
 				bitmap.UnlockBits(bitmapData);
 				MemoryStream stream = new MemoryStream();
 				bitmap.Save(stream, ImageFormat.Bmp);
 				return Image.FromStream(stream);
 			}
-			if (this.PixelFormat != IMGPixelFormat.Dxt1 && this.PixelFormat != IMGPixelFormat.Dxt3)
+			if (PixelFormat != IMGPixelFormat.Dxt1 && PixelFormat != IMGPixelFormat.Dxt3)
 			{
-				if (this.PixelFormat != IMGPixelFormat.Dxt5)
+				if (PixelFormat != IMGPixelFormat.Dxt5)
 				{
-					throw new Exception("Can't decode DDS, Unknown format: " + this.PixelFormat.ToString());
+					throw new Exception("Can't decode DDS, Unknown format: " + PixelFormat);
 				}
 			}
 			ImageRelatedClass unk = new ImageRelatedClass(bitmap);
 			unk.method_4();
-			BinaryReader binaryReader = new BinaryReader(new MemoryStream(this.data));
-			zzTextureClass.smethod_17(binaryReader, unk, this.PixelFormat);
+			BinaryReader binaryReader = new BinaryReader(new MemoryStream(data));
+			zzTextureClass.smethod_17(binaryReader, unk, PixelFormat);
 			binaryReader.Close();
 			unk.method_5(true);
 			MemoryStream stream2 = new MemoryStream();
@@ -316,15 +316,15 @@ namespace ns21
 					zzTextureClass.smethod_16(bitmap, binaryWriter, imgpixelFormat_1, bool_0);
 				}
 			}
-			this.MipMapCount = MipMaps;
-			this.PixelFormat = imgpixelFormat_1;
-			this.data = memoryStream.ToArray();
+			MipMapCount = MipMaps;
+			PixelFormat = imgpixelFormat_1;
+			data = memoryStream.ToArray();
 		}
 
 		public byte[] ToByteArray()
 		{
 			MemoryStream memoryStream = new MemoryStream();
-			this.WriteDDS(memoryStream);
+			WriteDDS(memoryStream);
 			return memoryStream.ToArray();
 		}
 
@@ -334,15 +334,15 @@ namespace ns21
 			binaryWriter.Write(0x20534444);           // DDS Magic word
 			binaryWriter.Write(124);                  // size (why is this a constant?..)
 			binaryWriter.Write(135175);               // flags
-			binaryWriter.Write(this.Size.Height);     // height
-			binaryWriter.Write(this.Size.Width);      // width
+			binaryWriter.Write(Size.Height);     // height
+			binaryWriter.Write(Size.Width);      // width
 			binaryWriter.Write(new byte[8]);          // pitchOrLinearSize, Depth
-			binaryWriter.Write(this.MipMapCount);     // Mip maps
+			binaryWriter.Write(MipMapCount);     // Mip maps
 			binaryWriter.Write(new byte[44]);         // reserved
 
             //Pixel Format
 			binaryWriter.Write(32); //size 
-			if (this.PixelFormat == IMGPixelFormat.Bgra32)
+			if (PixelFormat == IMGPixelFormat.Bgra32)
 			{
 				binaryWriter.Write(65);
 				binaryWriter.Write(new byte[4]);
@@ -358,7 +358,7 @@ namespace ns21
 			else
 			{
 				binaryWriter.Write(4);
-				switch (this.PixelFormat)
+				switch (PixelFormat)
 				{
 				case IMGPixelFormat.Dxt1:
 					binaryWriter.Write(827611204);
@@ -376,7 +376,7 @@ namespace ns21
 				binaryWriter.Write(4198408);
 				binaryWriter.Write(new byte[16]);
 			}
-			binaryWriter.Write(this.data);
+			binaryWriter.Write(data);
 			if (!leaveOpen)
 			{
 				binaryWriter.Close();

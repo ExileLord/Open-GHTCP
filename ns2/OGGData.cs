@@ -1,5 +1,3 @@
-using System;
-
 namespace ns2
 {
 	public class OGGData

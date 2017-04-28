@@ -24,9 +24,9 @@ namespace ns22
 
 		public void Dispose()
 		{
-			if (this.int_1 < 1)
+			if (int_1 < 1)
 			{
-				StreamClass2.smethod_0(this.stream_0, this.int_0 * 2, 0L);
+				smethod_0(stream_0, int_0 * 2, 0L);
 			}
 		}
 	}

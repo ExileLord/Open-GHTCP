@@ -1,12 +1,10 @@
-using System;
-
 namespace ns21
 {
 	public class FileTagRootNode : Class268
 	{
 		public FileTagRootNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public override int vmethod_1()

@@ -1,7 +1,3 @@
-using ns0;
-using ns1;
-using ns8;
-using SharpAudio.ASC;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,6 +5,10 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
+using ns0;
+using ns1;
+using ns8;
+using SharpAudio.ASC;
 
 namespace ns11
 {
@@ -16,24 +16,24 @@ namespace ns11
 	{
 		private class Class164
 		{
-			private readonly WaveOutput.Enum19 enum19_0;
+			private readonly Enum19 enum19_0;
 
 			private readonly object object_0;
 
-			public Class164(WaveOutput.Enum19 enum19_1, object object_1)
+			public Class164(Enum19 enum19_1, object object_1)
 			{
-				this.enum19_0 = enum19_1;
-				this.object_0 = object_1;
+				enum19_0 = enum19_1;
+				object_0 = object_1;
 			}
 
-			public WaveOutput.Enum19 method_0()
+			public Enum19 method_0()
 			{
-				return this.enum19_0;
+				return enum19_0;
 			}
 
 			public object method_1()
 			{
-				return this.object_0;
+				return object_0;
 			}
 		}
 
@@ -75,7 +75,7 @@ namespace ns11
 
 		private readonly Thread thread_0;
 
-		private readonly Queue<WaveOutput.Class164> queue_1;
+		private readonly Queue<Class164> queue_1;
 
 		private readonly AutoResetEvent autoResetEvent_0;
 
@@ -95,58 +95,58 @@ namespace ns11
 
 		public WaveOutput(GenericAudioStream stream1_1, int int_4, int int_5)
 		{
-			this.stream1_0 = stream1_1;
-			this.int_1 = int_4;
-			this.int_2 = int_5;
-			this.double_0 = (double)stream1_1.vmethod_0().int_0 * (double)stream1_1.vmethod_0().short_1 / 1000.0;
-			this.delegate4_0 = new Class162.Delegate4(this.method_2);
-			this.queue_1 = new Queue<WaveOutput.Class164>();
-			this.queue_0 = new Queue<Class158>(5);
-			this.autoResetEvent_0 = new AutoResetEvent(false);
-			this.object_0 = new object();
-			this.thread_0 = new Thread(new ThreadStart(this.method_1));
-			this.thread_0.Start();
-			this.enum1_0 = AudioStatus.ShouldStopAudio;
-			this.method_0(stream1_1);
+			stream1_0 = stream1_1;
+			int_1 = int_4;
+			int_2 = int_5;
+			double_0 = stream1_1.vmethod_0().int_0 * (double)stream1_1.vmethod_0().short_1 / 1000.0;
+			delegate4_0 = method_2;
+			queue_1 = new Queue<Class164>();
+			queue_0 = new Queue<Class158>(5);
+			autoResetEvent_0 = new AutoResetEvent(false);
+			object_0 = new object();
+			thread_0 = new Thread(method_1);
+			thread_0.Start();
+			enum1_0 = AudioStatus.ShouldStopAudio;
+			method_0(stream1_1);
 		}
 
 		public void method_0(GenericAudioStream stream1_1)
 		{
-			if (Thread.CurrentThread.ManagedThreadId != this.thread_0.ManagedThreadId)
+			if (Thread.CurrentThread.ManagedThreadId != thread_0.ManagedThreadId)
 			{
-				lock (this.queue_1)
+				lock (queue_1)
 				{
-					this.queue_1.Enqueue(new WaveOutput.Class164(WaveOutput.Enum19.const_0, this.stream1_0));
-					this.autoResetEvent_0.Set();
+					queue_1.Enqueue(new Class164(Enum19.const_0, stream1_0));
+					autoResetEvent_0.Set();
 				}
 				return;
 			}
-			this.stream1_0 = stream1_1;
-			this.int_0 = stream1_1.vmethod_0().method_0(this.int_2 / 5);
-			Exception4.smethod_1(Class162.waveOutOpen(out this.intptr_0, this.int_1, this.stream1_0.vmethod_0(), this.delegate4_0, 0, Class162.Enum17.const_3), "waveOutOpen");
-			this.stream1_0.Position = (long)this.vmethod_0();
-			this.class158_0 = new Class158[5];
+			stream1_0 = stream1_1;
+			int_0 = stream1_1.vmethod_0().method_0(int_2 / 5);
+			Exception4.smethod_1(Class162.waveOutOpen(out intptr_0, int_1, stream1_0.vmethod_0(), delegate4_0, 0, Class162.Enum17.const_3), "waveOutOpen");
+			stream1_0.Position = vmethod_0();
+			class158_0 = new Class158[5];
 			for (int i = 0; i < 5; i++)
 			{
-				this.class158_0[i] = new Class158(this.intptr_0, this.int_0, this.stream1_0, this.object_0);
+				class158_0[i] = new Class158(intptr_0, int_0, stream1_0, object_0);
 			}
-			this.bool_0 = false;
+			bool_0 = false;
 		}
 
 		private void method_1()
 		{
 			while (true)
 			{
-				this.autoResetEvent_0.WaitOne();
+				autoResetEvent_0.WaitOne();
 				bool flag = true;
 				while (flag)
 				{
-					WaveOutput.Class164 @class = null;
-					lock (this.queue_1)
+					Class164 @class = null;
+					lock (queue_1)
 					{
-						if (this.queue_1.Count > 0)
+						if (queue_1.Count > 0)
 						{
-							@class = this.queue_1.Dequeue();
+							@class = queue_1.Dequeue();
 						}
 					}
 					if (@class != null)
@@ -155,29 +155,29 @@ namespace ns11
 						{
 							switch (@class.method_0())
 							{
-							case WaveOutput.Enum19.const_0:
-								this.method_0((GenericAudioStream)@class.method_1());
+							case Enum19.const_0:
+								method_0((GenericAudioStream)@class.method_1());
 								break;
-							case WaveOutput.Enum19.const_1:
-								this.StopPlaying();
+							case Enum19.const_1:
+								StopPlaying();
 								break;
-							case WaveOutput.Enum19.const_2:
-								this.method_3((Class158)@class.method_1());
+							case Enum19.const_2:
+								method_3((Class158)@class.method_1());
 								break;
-							case WaveOutput.Enum19.const_3:
-								this.method_5();
+							case Enum19.const_3:
+								method_5();
 								break;
-							case WaveOutput.Enum19.const_4:
-								this.method_6();
+							case Enum19.const_4:
+								method_6();
 								break;
-							case WaveOutput.Enum19.const_5:
-								this.method_9((int)@class.method_1());
+							case Enum19.const_5:
+								method_9((int)@class.method_1());
 								break;
-							case WaveOutput.Enum19.const_6:
-								this.method_7();
+							case Enum19.const_6:
+								method_7();
 								return;
-							case WaveOutput.Enum19.const_7:
-								this.method_8((int)@class.method_1());
+							case Enum19.const_7:
+								method_8((int)@class.method_1());
 								break;
 							}
 							continue;
@@ -185,16 +185,16 @@ namespace ns11
 						catch (Exception4 exception)
 						{
 							exception.ToString();
-							if (@class.method_0() == WaveOutput.Enum19.const_6)
+							if (@class.method_0() == Enum19.const_6)
 							{
 								return;
 							}
 							if (exception.method_0() == Enum18.const_23)
 							{
-								this.method_7();
+								method_7();
 								GC.Collect();
-								this.method_0(this.stream1_0);
-								this.method_5();
+								method_0(stream1_0);
+								method_5();
 							}
 							continue;
 						}
@@ -209,221 +209,221 @@ namespace ns11
 			if (enum16_0 == Class162.Enum16.const_1)
 			{
 				Class158 object_ = (Class158)((GCHandle)struct66_0.intptr_1).Target;
-				lock (this.queue_1)
+				lock (queue_1)
 				{
-					this.queue_1.Enqueue(new WaveOutput.Class164(WaveOutput.Enum19.const_2, object_));
-					this.autoResetEvent_0.Set();
+					queue_1.Enqueue(new Class164(Enum19.const_2, object_));
+					autoResetEvent_0.Set();
 				}
 			}
 		}
 
 		private void method_3(Class158 class158_1)
 		{
-			if (this.enum1_0 == AudioStatus.ShouldStartAudio && !class158_1.method_1())
+			if (enum1_0 == AudioStatus.ShouldStartAudio && !class158_1.method_1())
 			{
-				this.StopPlaying();
-				this.method_4();
+				StopPlaying();
+				method_4();
 				return;
 			}
 			if (class158_1.method_2())
 			{
-				this.int_3 += class158_1.method_3().method_3();
-				this.stopwatch_0.Reset();
-				this.stopwatch_0.Start();
-				if (this.queue_0.Count == 5)
+				int_3 += class158_1.method_3().method_3();
+				stopwatch_0.Reset();
+				stopwatch_0.Start();
+				if (queue_0.Count == 5)
 				{
-					this.queue_0.Dequeue();
+					queue_0.Dequeue();
 				}
-				this.queue_0.Enqueue(class158_1);
+				queue_0.Enqueue(class158_1);
 			}
 		}
 
 		private void method_4()
 		{
-			this.SetStartingTimeBasedOnSomeValue(0);
-			this.stopwatch_0.Reset();
-			if (this.eventHandler_0 != null)
+			SetStartingTimeBasedOnSomeValue(0);
+			stopwatch_0.Reset();
+			if (eventHandler_0 != null)
 			{
-				this.eventHandler_0(this, EventArgs.Empty);
+				eventHandler_0(this, EventArgs.Empty);
 			}
 		}
 
 		public void DifferentStartPlaying()
 		{
-			if (this.enum1_0 != AudioStatus.ShouldStartAudio)
+			if (enum1_0 != AudioStatus.ShouldStartAudio)
 			{
-				this.enum1_0 = AudioStatus.ShouldStartAudio;
-				if (Thread.CurrentThread.ManagedThreadId != this.thread_0.ManagedThreadId)
+				enum1_0 = AudioStatus.ShouldStartAudio;
+				if (Thread.CurrentThread.ManagedThreadId != thread_0.ManagedThreadId)
 				{
-					lock (this.queue_1)
+					lock (queue_1)
 					{
-						this.queue_1.Enqueue(new WaveOutput.Class164(WaveOutput.Enum19.const_3, null));
-						this.autoResetEvent_0.Set();
+						queue_1.Enqueue(new Class164(Enum19.const_3, null));
+						autoResetEvent_0.Set();
 					}
 					return;
 				}
-				this.method_5();
+				method_5();
 			}
 		}
 
 		private void method_5()
 		{
-			if (!this.bool_0)
+			if (!bool_0)
 			{
-				this.enum1_0 = AudioStatus.ShouldStartAudio;
+				enum1_0 = AudioStatus.ShouldStartAudio;
 				for (int i = 0; i < 5; i++)
 				{
-					this.class158_0[i].method_1();
+					class158_0[i].method_1();
 				}
-				this.bool_0 = true;
+				bool_0 = true;
 			}
-			this.method_6();
+			method_6();
 		}
 
 		public void StartPlaying()
 		{
-			if (this.enum1_0 != AudioStatus.ShouldStartAudio)
+			if (enum1_0 != AudioStatus.ShouldStartAudio)
 			{
 				return;
 			}
-			int num = this.vmethod_0();
-			this.StopPlaying();
-			this.stream1_0.Position = (long)(this.int_3 = num);
-			this.enum1_0 = AudioStatus.IsCurrentlyPlayingAudio;
+			int num = vmethod_0();
+			StopPlaying();
+			stream1_0.Position = int_3 = num;
+			enum1_0 = AudioStatus.IsCurrentlyPlayingAudio;
 		}
 
 		public void method_6()
 		{
-			if (Thread.CurrentThread.ManagedThreadId != this.thread_0.ManagedThreadId)
+			if (Thread.CurrentThread.ManagedThreadId != thread_0.ManagedThreadId)
 			{
-				lock (this.queue_1)
+				lock (queue_1)
 				{
-					this.queue_1.Enqueue(new WaveOutput.Class164(WaveOutput.Enum19.const_4, null));
-					this.autoResetEvent_0.Set();
+					queue_1.Enqueue(new Class164(Enum19.const_4, null));
+					autoResetEvent_0.Set();
 				}
 				return;
 			}
-			this.method_9(0);
+			method_9(0);
 			Enum18 @enum;
-			lock (this.object_0)
+			lock (object_0)
 			{
-				@enum = Class162.waveOutRestart(this.intptr_0);
+				@enum = Class162.waveOutRestart(intptr_0);
 			}
 			if (@enum != Enum18.const_0)
 			{
 				throw new Exception4(@enum, "waveOutRestart");
 			}
-			if (!this.stopwatch_0.IsRunning)
+			if (!stopwatch_0.IsRunning)
 			{
-				this.stopwatch_0.Start();
+				stopwatch_0.Start();
 			}
-			if (!this.bool_1)
+			if (!bool_1)
 			{
-				ThreadPool.QueueUserWorkItem(new WaitCallback(this.method_11));
+				ThreadPool.QueueUserWorkItem(method_11);
 			}
 		}
 
 		public void method_7()
 		{
-			if (this.intptr_0 != IntPtr.Zero)
+			if (intptr_0 != IntPtr.Zero)
 			{
-				this.StopPlaying();
-				Class162.waveOutClose(this.intptr_0);
-				this.intptr_0 = IntPtr.Zero;
+				StopPlaying();
+				Class162.waveOutClose(intptr_0);
+				intptr_0 = IntPtr.Zero;
 			}
-			if (this.class158_0 != null)
+			if (class158_0 != null)
 			{
 				for (int i = 0; i < 5; i++)
 				{
-					this.class158_0[i].Dispose();
+					class158_0[i].Dispose();
 				}
-				this.class158_0 = null;
+				class158_0 = null;
 			}
 		}
 
 		public void StopPlaying()
 		{
-			if (Thread.CurrentThread.ManagedThreadId != this.thread_0.ManagedThreadId)
+			if (Thread.CurrentThread.ManagedThreadId != thread_0.ManagedThreadId)
 			{
-				lock (this.queue_1)
+				lock (queue_1)
 				{
-					this.queue_1.Enqueue(new WaveOutput.Class164(WaveOutput.Enum19.const_1, null));
-					this.autoResetEvent_0.Set();
+					queue_1.Enqueue(new Class164(Enum19.const_1, null));
+					autoResetEvent_0.Set();
 				}
 				return;
 			}
-			this.enum1_0 = AudioStatus.ShouldStopAudio;
-			this.bool_0 = false;
+			enum1_0 = AudioStatus.ShouldStopAudio;
+			bool_0 = false;
 			Enum18 @enum;
-			lock (this.object_0)
+			lock (object_0)
 			{
-				@enum = Class162.waveOutReset(this.intptr_0);
+				@enum = Class162.waveOutReset(intptr_0);
 			}
 			if (@enum != Enum18.const_0)
 			{
 				throw new Exception4(@enum, "waveOutReset");
 			}
-			this.stopwatch_0.Reset();
+			stopwatch_0.Reset();
 		}
 
 		public TimeSpan AudioLength()
 		{
-			return TimeSpan.FromMilliseconds((double)this.int_3 / this.double_0 + (double)this.stopwatch_0.ElapsedMilliseconds);
+			return TimeSpan.FromMilliseconds(int_3 / double_0 + stopwatch_0.ElapsedMilliseconds);
 		}
 
 		public void SetStartingTime(TimeSpan timeSpan_0)
 		{
-			this.SetStartingTimeBasedOnSomeValue(Convert.ToInt32(this.double_0 * timeSpan_0.TotalMilliseconds));
+			SetStartingTimeBasedOnSomeValue(Convert.ToInt32(double_0 * timeSpan_0.TotalMilliseconds));
 		}
 
 		public int vmethod_0()
 		{
-			if (this.enum1_0 != AudioStatus.ShouldStopAudio)
+			if (enum1_0 != AudioStatus.ShouldStopAudio)
 			{
-				return this.int_3 + (int)(this.double_0 * (double)this.stopwatch_0.ElapsedMilliseconds);
+				return int_3 + (int)(double_0 * stopwatch_0.ElapsedMilliseconds);
 			}
-			return this.int_3;
+			return int_3;
 		}
 
 		public void SetStartingTimeBasedOnSomeValue(int int_4)
 		{
-			this.int_3 = int_4;
-			lock (this.queue_1)
+			int_3 = int_4;
+			lock (queue_1)
 			{
-				this.queue_1.Enqueue(new WaveOutput.Class164(WaveOutput.Enum19.const_7, int_4));
-				this.autoResetEvent_0.Set();
+				queue_1.Enqueue(new Class164(Enum19.const_7, int_4));
+				autoResetEvent_0.Set();
 			}
 		}
 
 		private void method_8(int int_4)
 		{
 			WaitCallback waitCallback = null;
-			AudioStatus @enum = this.enum1_0;
+			AudioStatus @enum = enum1_0;
 			if (@enum == AudioStatus.IsCurrentlyPlayingAudio)
 			{
-				this.StopPlaying();
+				StopPlaying();
 			}
-			lock (this.object_0)
+			lock (object_0)
 			{
-				Stream arg_35_0 = this.stream1_0;
-				this.int_3 = int_4;
-				arg_35_0.Position = (long)int_4;
+				Stream arg_35_0 = stream1_0;
+				int_3 = int_4;
+				arg_35_0.Position = int_4;
 				if (@enum == AudioStatus.ShouldStartAudio)
 				{
-					int count = this.queue_0.Count;
-					float num = 1f / ((float)(this.int_0 * count) / (float)this.GetWaveFormat().short_1);
+					int count = queue_0.Count;
+					float num = 1f / (int_0 * count / (float)GetWaveFormat().short_1);
 					float num2 = 0f;
 					float num3 = 1f;
-					if (this.GetWaveFormat().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
+					if (GetWaveFormat().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
 					{
-						float[] array = new float[this.int_0 >> 2];
-						using (Queue<Class158>.Enumerator enumerator = this.queue_0.GetEnumerator())
+						float[] array = new float[int_0 >> 2];
+						using (Queue<Class158>.Enumerator enumerator = queue_0.GetEnumerator())
 						{
 							while (enumerator.MoveNext())
 							{
 								Class158 current = enumerator.Current;
 								float[] array2 = current.method_3().method_1();
-								int num4 = this.stream1_0.vmethod_4(array, 0, array.Length);
+								int num4 = stream1_0.vmethod_4(array, 0, array.Length);
 								if (num4 == 0)
 								{
 									break;
@@ -434,7 +434,7 @@ namespace ns11
 								{
 									array2[i] = num3 * array2[i] + num2 * array[i];
 									num5++;
-									if (num5 == (int)this.GetWaveFormat().short_0)
+									if (num5 == GetWaveFormat().short_0)
 									{
 										num2 += num;
 										num3 -= num;
@@ -448,15 +448,15 @@ namespace ns11
 							goto IL_27D;
 						}
 					}
-					if (this.GetWaveFormat().waveFormatTag_0 == WaveFormatTag.PCM)
+					if (GetWaveFormat().waveFormatTag_0 == WaveFormatTag.PCM)
 					{
-						using (Class19 @class = new Class19(this.int_0))
+						using (Class19 @class = new Class19(int_0))
 						{
-							foreach (Class158 current2 in this.queue_0)
+							foreach (Class158 current2 in queue_0)
 							{
 								short[] array3 = current2.method_3().method_2();
 								short[] array4 = Class19.smethod_0(@class);
-								int num6 = this.stream1_0.vmethod_3(Class19.smethod_1(@class), this.int_0) >> 1;
+								int num6 = stream1_0.vmethod_3(Class19.smethod_1(@class), int_0) >> 1;
 								if (num6 == 0)
 								{
 									break;
@@ -465,9 +465,9 @@ namespace ns11
 								int num7 = 0;
 								while (j < num6)
 								{
-									array3[j] = (short)(num3 * (float)array3[j] + num2 * (float)array4[j]);
+									array3[j] = (short)(num3 * array3[j] + num2 * array4[j]);
 									num7++;
-									if (num7 == (int)this.GetWaveFormat().short_0)
+									if (num7 == GetWaveFormat().short_0)
 									{
 										num2 += num;
 										num3 -= num;
@@ -482,13 +482,13 @@ namespace ns11
 					}
 					IL_27D:
 					GC.Collect();
-					this.stopwatch_0.Reset();
-					this.method_9(0);
-					if (!this.bool_1)
+					stopwatch_0.Reset();
+					method_9(0);
+					if (!bool_1)
 					{
 						if (waitCallback == null)
 						{
-							waitCallback = new WaitCallback(this.method_12);
+							waitCallback = method_12;
 						}
 						ThreadPool.QueueUserWorkItem(waitCallback);
 					}
@@ -498,91 +498,91 @@ namespace ns11
 
 		public AudioStatus GetStatus()
 		{
-			return this.enum1_0;
+			return enum1_0;
 		}
 
 		public WaveFormat GetWaveFormat()
 		{
-			return this.stream1_0.vmethod_0();
+			return stream1_0.vmethod_0();
 		}
 
 		public void SetVolume(float float_1)
 		{
-			this.float_0 = float_1;
-			float num = this.float_0;
-			float num2 = this.float_0;
+			float_0 = float_1;
+			float num = float_0;
+			float num2 = float_0;
 			int num3 = (int)(num * 65535f) + ((int)(num2 * 65535f) << 16);
-			lock (this.queue_1)
+			lock (queue_1)
 			{
-				this.queue_1.Enqueue(new WaveOutput.Class164(WaveOutput.Enum19.const_5, num3));
-				this.autoResetEvent_0.Set();
+				queue_1.Enqueue(new Class164(Enum19.const_5, num3));
+				autoResetEvent_0.Set();
 			}
 		}
 
 		private void method_9(int int_4)
 		{
-			lock (this.object_0)
+			lock (object_0)
 			{
-				Exception4.smethod_1(Class162.waveOutSetVolume(this.intptr_0, int_4), "waveOutSetVolume");
+				Exception4.smethod_1(Class162.waveOutSetVolume(intptr_0, int_4), "waveOutSetVolume");
 			}
 		}
 
 		public void Dispose()
 		{
-			this.method_10(true);
+			method_10(true);
 			GC.SuppressFinalize(this);
 		}
 
 		public void method_10(bool bool_2)
 		{
-			lock (this.queue_1)
+			lock (queue_1)
 			{
-				this.queue_1.Clear();
-				this.queue_1.Enqueue(new WaveOutput.Class164(WaveOutput.Enum19.const_6, null));
-				this.autoResetEvent_0.Set();
+				queue_1.Clear();
+				queue_1.Enqueue(new Class164(Enum19.const_6, null));
+				autoResetEvent_0.Set();
 			}
-			this.thread_0.Join();
+			thread_0.Join();
 			if (bool_2)
 			{
-				this.stream1_0.Dispose();
+				stream1_0.Dispose();
 			}
 		}
 
 		~WaveOutput()
 		{
-			this.method_10(false);
+			method_10(false);
 		}
 
 		[CompilerGenerated]
 		private void method_11(object object_1)
 		{
-			this.bool_1 = true;
+			bool_1 = true;
 			float num = 0f;
-			float num2 = this.float_0;
+			float num2 = float_0;
 			while (num < num2)
 			{
-				this.SetVolume(num);
+				SetVolume(num);
 				num += 0.1f;
 				Thread.Sleep(50);
 			}
-			this.SetVolume(num2);
-			this.bool_1 = false;
+			SetVolume(num2);
+			bool_1 = false;
 		}
 
 		[CompilerGenerated]
 		private void method_12(object object_1)
 		{
-			this.bool_1 = true;
+			bool_1 = true;
 			float num = 0f;
-			float num2 = this.float_0;
+			float num2 = float_0;
 			while (num < num2)
 			{
-				this.SetVolume(num);
+				SetVolume(num);
 				num += 0.1f;
 				Thread.Sleep(50);
 			}
-			this.SetVolume(num2);
-			this.bool_1 = false;
+			SetVolume(num2);
+			bool_1 = false;
 		}
 	}
 }

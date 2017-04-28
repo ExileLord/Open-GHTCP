@@ -1,5 +1,3 @@
-using System;
-
 namespace ns7
 {
 	public class Class143
@@ -12,13 +10,13 @@ namespace ns7
 
 		public virtual void vmethod_0(int int_3)
 		{
-			if (this.int_2 >= int_3)
+			if (int_2 >= int_3)
 			{
 				return;
 			}
-			this.int_0 = new int[1 << int_3];
-			this.int_1 = new int[1 << int_3];
-			this.int_2 = int_3;
+			int_0 = new int[1 << int_3];
+			int_1 = new int[1 << int_3];
+			int_2 = int_3;
 		}
 	}
 }

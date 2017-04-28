@@ -1,8 +1,8 @@
+using System;
+using System.IO;
 using ns0;
 using ns1;
 using SharpAudio.ASC;
-using System;
-using System.IO;
 
 namespace ns5
 {
@@ -32,7 +32,7 @@ namespace ns5
 		{
 			get
 			{
-				return this.fileStream.CanRead;
+				return fileStream.CanRead;
 			}
 		}
 
@@ -40,7 +40,7 @@ namespace ns5
 		{
 			get
 			{
-				return this.fileStream.CanSeek;
+				return fileStream.CanSeek;
 			}
 		}
 
@@ -48,7 +48,7 @@ namespace ns5
 		{
 			get
 			{
-				return this.fileStream.CanWrite;
+				return fileStream.CanWrite;
 			}
 		}
 
@@ -56,7 +56,7 @@ namespace ns5
 		{
 			get
 			{
-				return (long)((double)(this.fileStream.Length - (long)this.int_2) * this.double_0);
+				return (long)((fileStream.Length - int_2) * double_0);
 			}
 		}
 
@@ -64,12 +64,12 @@ namespace ns5
 		{
 			get
 			{
-				return (long)((double)(this.fileStream.Position - (long)this.int_2) * this.double_0) - this.memoryStream_0.Length + this.memoryStream_0.Position;
+				return (long)((fileStream.Position - int_2) * double_0) - memoryStream_0.Length + memoryStream_0.Position;
 			}
 			set
 			{
-				this.fileStream.Position = (long)((double)value / this.double_0 + (double)this.int_2);
-				this.memoryStream_0.Position = this.memoryStream_0.Length;
+				fileStream.Position = (long)(value / double_0 + int_2);
+				memoryStream_0.Position = memoryStream_0.Length;
 			}
 		}
 
@@ -87,32 +87,32 @@ namespace ns5
 
 		public AC3Stream(Stream stream_1, int int_6, bool bool_1)
 		{
-			this.int_3 = (bool_1 ? 2 : 4);
-			this.fileStream = stream_1;
-			this.bool_0 = bool_1;
-			this.memoryStream_0 = new MemoryStream();
-			if (!this.method_0())
+			int_3 = (bool_1 ? 2 : 4);
+			fileStream = stream_1;
+			bool_0 = bool_1;
+			memoryStream_0 = new MemoryStream();
+			if (!method_0())
 			{
 				throw new Exception("Ac3 Decoder: Cannot read header.");
 			}
-			this.int_2 = (int)stream_1.Position;
-			this.waveFormat_0 = (bool_1 ? new WaveFormat(this.int_5, 16, (int)this.short_0) : new WaveFormat(this.int_5, (int)this.short_0));
-			this.double_0 = (double)(this.waveFormat_0.int_0 * (int)this.waveFormat_0.short_1) / ((double)this.int_4 / 8.0);
+			int_2 = (int)stream_1.Position;
+			waveFormat_0 = (bool_1 ? new WaveFormat(int_5, 16, short_0) : new WaveFormat(int_5, short_0));
+			double_0 = waveFormat_0.int_0 * waveFormat_0.short_1 / (int_4 / 8.0);
 		}
 
 		public override Class16 vmethod_1()
 		{
-			return new Class16(this.waveFormat_0, (uint)this.Position, (uint)this.Length);
+			return new Class16(waveFormat_0, (uint)Position, (uint)Length);
 		}
 
 		public override void Flush()
 		{
-			this.fileStream.Flush();
+			fileStream.Flush();
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
 		{
-			return this.fileStream.Seek((long)((double)offset / this.double_0) + (long)((origin == SeekOrigin.Begin) ? this.int_2 : 0), origin);
+			return fileStream.Seek((long)(offset / double_0) + ((origin == SeekOrigin.Begin) ? int_2 : 0), origin);
 		}
 
 		public override void SetLength(long value)
@@ -128,19 +128,19 @@ namespace ns5
 		public override int Read(byte[] buffer, int offset, int count)
 		{
 			int result;
-			lock (this.object_0)
+			lock (object_0)
 			{
 				int num = 0;
 				do
 				{
-					if (this.memoryStream_0.Position == this.memoryStream_0.Length)
+					if (memoryStream_0.Position == memoryStream_0.Length)
 					{
-						if (!this.method_0())
+						if (!method_0())
 						{
 							break;
 						}
 					}
-					num += this.memoryStream_0.Read(buffer, offset + num, count - num);
+					num += memoryStream_0.Read(buffer, offset + num, count - num);
 				}
 				while (num < count);
 				result = num;
@@ -150,23 +150,23 @@ namespace ns5
 
 		public override void Close()
 		{
-			this.fileStream.Close();
+			fileStream.Close();
 		}
 
 		public bool method_0()
 		{
 			byte[] array = new byte[1792];
-			this.fileStream.Read(array, 0, 1792);
-			this.memoryStream_0 = new MemoryStream();
-			this.class111_0.vmethod_0(array, this.memoryStream_0);
-			this.short_0 = 2;
-			this.int_5 = this.class111_0.int_2;
-			this.int_4 = this.class111_0.int_3 / 1000;
-			if (this.memoryStream_0.Length == 0L)
+			fileStream.Read(array, 0, 1792);
+			memoryStream_0 = new MemoryStream();
+			class111_0.vmethod_0(array, memoryStream_0);
+			short_0 = 2;
+			int_5 = class111_0.int_2;
+			int_4 = class111_0.int_3 / 1000;
+			if (memoryStream_0.Length == 0L)
 			{
 				return false;
 			}
-			this.memoryStream_0.Position = 0L;
+			memoryStream_0.Position = 0L;
 			return true;
 		}
 
@@ -174,13 +174,13 @@ namespace ns5
 		{
 			if (disposing)
 			{
-				this.Close();
+				Close();
 			}
 		}
 
 		public override void Dispose()
 		{
-			this.Dispose(true);
+			Dispose(true);
 			GC.SuppressFinalize(this);
 		}
 	}

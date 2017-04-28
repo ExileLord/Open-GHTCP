@@ -21,7 +21,7 @@ namespace ns9
 				throw new ArgumentNullException();
 			}
 			TimeSpan timeSpan_ = (TimeSpan)arg;
-			return Class361.smethod_0(timeSpan_, format);
+			return smethod_0(timeSpan_, format);
 		}
 
 		private static string smethod_0(TimeSpan timeSpan_0, string string_0)
@@ -42,7 +42,7 @@ namespace ns9
 							break;
 						}
 					}
-					Class361.smethod_1(stringBuilder, c, j - i, timeSpan_0);
+					smethod_1(stringBuilder, c, j - i, timeSpan_0);
 					i = j;
 				}
 				else if (c == '\'')
@@ -98,12 +98,12 @@ namespace ns9
 			{
 				if (char_0 == 'S')
 				{
-					Class361.smethod_2(stringBuilder_0, timeSpan_0.Milliseconds, int_0);
+					smethod_2(stringBuilder_0, timeSpan_0.Milliseconds, int_0);
 					return true;
 				}
 				if (char_0 == 'd')
 				{
-					Class361.smethod_2(stringBuilder_0, timeSpan_0.Days, int_0);
+					smethod_2(stringBuilder_0, timeSpan_0.Days, int_0);
 					return true;
 				}
 			}
@@ -111,17 +111,17 @@ namespace ns9
 			{
 				if (char_0 == 'h')
 				{
-					Class361.smethod_2(stringBuilder_0, timeSpan_0.Hours, int_0);
+					smethod_2(stringBuilder_0, timeSpan_0.Hours, int_0);
 					return true;
 				}
 				if (char_0 == 'm')
 				{
-					Class361.smethod_2(stringBuilder_0, timeSpan_0.Minutes, int_0);
+					smethod_2(stringBuilder_0, timeSpan_0.Minutes, int_0);
 					return true;
 				}
 				if (char_0 == 's')
 				{
-					Class361.smethod_2(stringBuilder_0, timeSpan_0.Seconds, int_0);
+					smethod_2(stringBuilder_0, timeSpan_0.Seconds, int_0);
 					return true;
 				}
 			}

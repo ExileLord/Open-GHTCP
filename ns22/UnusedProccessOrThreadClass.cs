@@ -1,7 +1,7 @@
-using ns9;
 using System;
 using System.Diagnostics;
 using System.Threading;
+using ns9;
 
 namespace ns22
 {
@@ -17,17 +17,17 @@ namespace ns22
 
 		public void Dispose()
 		{
-			if (this.bool_0)
+			if (bool_0)
 			{
 				return;
 			}
-			this.bool_0 = true;
-			this.process_0.StandardInput.Close();
-			if (!this.thread_0.Join(10000))
+			bool_0 = true;
+			process_0.StandardInput.Close();
+			if (!thread_0.Join(10000))
 			{
-				Class355.interface15_0.imethod_1(string.Format("Failed to join '{0}'", this.string_0));
+				Class355.interface15_0.imethod_1(string.Format("Failed to join '{0}'", string_0));
 			}
-			this.process_0.Dispose();
+			process_0.Dispose();
 		}
 	}
 }

@@ -1,5 +1,3 @@
-using System;
-
 namespace ns22
 {
 	public abstract class AbstractNoteClass
@@ -8,7 +6,7 @@ namespace ns22
 
 		public int method_0()
 		{
-			return this.int_0;
+			return int_0;
 		}
 
 		public static int smethod_0(AbstractNoteClass class335_0, AbstractNoteClass class335_1)

@@ -1,4 +1,3 @@
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -10,14 +9,14 @@ namespace ns18
 
 		public virtual void vmethod_0()
 		{
-			if (!AbstractBaseTreeNode1.bool_0)
+			if (!bool_0)
 			{
 				return;
 			}
-			base.Text = this.GetText();
-			base.ToolTipText = this.GetToolTipText();
-			base.BackColor = this.GetColor();
-			base.SelectedImageIndex = (base.ImageIndex = this.vmethod_1());
+			Text = GetText();
+			ToolTipText = GetToolTipText();
+			BackColor = GetColor();
+			SelectedImageIndex = (ImageIndex = vmethod_1());
 		}
 
 		public abstract int vmethod_1();
@@ -26,19 +25,19 @@ namespace ns18
 
 		public virtual string GetText() 
 		{
-			return this.GetNodeText();
+			return GetNodeText();
 		}
 
 		public virtual string GetToolTipText() 
         {
-			return this.GetNodeText();
+			return GetNodeText();
 		}
 
 		public abstract string GetNodeText();
 
 		public Color GetColor2IfPrevNodeIsColor1(Color color1, Color color2)
 		{
-			if (base.Parent != null && base.PrevNode != null && base.PrevNode.BackColor.Equals(color1))
+			if (Parent != null && PrevNode != null && PrevNode.BackColor.Equals(color1))
 			{
 				return color2;
 			}

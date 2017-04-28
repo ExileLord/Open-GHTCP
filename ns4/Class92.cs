@@ -1,6 +1,5 @@
 using ns5;
 using SharpAudio.ASC.Mp3.Decoding;
-using System;
 
 namespace ns4
 {
@@ -8,8 +7,7 @@ namespace ns4
 	{
 		public abstract class Class94
 		{
-			public static readonly float[] float_0 = new float[]
-			{
+			public static readonly float[] float_0 = {
 				2f,
 				1.587401f,
 				1.25992107f,
@@ -85,10 +83,9 @@ namespace ns4
 			public abstract bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1);
 		}
 
-		public class Class95 : Class92.Class94
+		public class Class95 : Class94
 		{
-			public static readonly float[] float_1 = new float[]
-			{
+			public static readonly float[] float_1 = {
 				0f,
 				0.6666667f,
 				0.2857143f,
@@ -106,8 +103,7 @@ namespace ns4
 				6.103702E-05f
 			};
 
-			public static readonly float[] float_2 = new float[]
-			{
+			public static readonly float[] float_2 = {
 				0f,
 				-0.6666667f,
 				-0.857142866f,
@@ -143,45 +139,45 @@ namespace ns4
 
 			public Class95(int int_4)
 			{
-				this.int_0 = int_4;
-				this.int_1 = 0;
+				int_0 = int_4;
+				int_1 = 0;
 			}
 
 			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
 			{
-				if ((this.int_2 = class82_0.method_13(4)) == 15)
+				if ((int_2 = class82_0.method_13(4)) == 15)
 				{
 					throw new DecoderException(DecoderError.IllegalSubbandAllocation, null);
 				}
 				if (class101_0 != null)
 				{
-					class101_0.method_0(this.int_2, 4);
+					class101_0.method_0(int_2, 4);
 				}
-				if (this.int_2 != 0)
+				if (int_2 != 0)
 				{
-					this.int_3 = this.int_2 + 1;
-					this.float_5 = Class92.Class95.float_1[this.int_2];
-					this.float_6 = Class92.Class95.float_2[this.int_2];
+					int_3 = int_2 + 1;
+					float_5 = float_1[int_2];
+					float_6 = float_2[int_2];
 				}
 			}
 
 			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
 			{
-				if (this.int_2 != 0)
+				if (int_2 != 0)
 				{
-					this.float_3 = Class92.Class94.float_0[class82_0.method_13(6)];
+					float_3 = float_0[class82_0.method_13(6)];
 				}
 			}
 
 			public override bool vmethod_2(Class82 class82_0)
 			{
-				if (this.int_2 != 0)
+				if (int_2 != 0)
 				{
-					this.float_4 = (float)class82_0.method_13(this.int_3);
+					float_4 = class82_0.method_13(int_3);
 				}
-				if (++this.int_1 == 12)
+				if (++int_1 == 12)
 				{
-					this.int_1 = 0;
+					int_1 = 0;
 					return true;
 				}
 				return false;
@@ -189,16 +185,16 @@ namespace ns4
 
 			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
 			{
-				if (this.int_2 != 0 && enum4_0 != Enum4.const_2)
+				if (int_2 != 0 && enum4_0 != Enum4.const_2)
 				{
-					float float_ = (this.float_4 * this.float_5 + this.float_6) * this.float_3;
-					class80_0.method_2(float_, this.int_0);
+					float float_ = (float_4 * float_5 + float_6) * float_3;
+					class80_0.method_2(float_, int_0);
 				}
 				return true;
 			}
 		}
 
-		public class Class96 : Class92.Class95
+		public class Class96 : Class95
 		{
 			public float float_7;
 
@@ -213,12 +209,12 @@ namespace ns4
 
 			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
 			{
-				if (this.int_2 == 0)
+				if (int_2 == 0)
 				{
 					return;
 				}
-				this.float_3 = Class92.Class94.float_0[class82_0.method_13(6)];
-				this.float_7 = Class92.Class94.float_0[class82_0.method_13(6)];
+				float_3 = float_0[class82_0.method_13(6)];
+				float_7 = float_0[class82_0.method_13(6)];
 			}
 
 			public override bool vmethod_2(Class82 class82_0)
@@ -228,20 +224,20 @@ namespace ns4
 
 			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
 			{
-				if (this.int_2 != 0)
+				if (int_2 != 0)
 				{
-					this.float_4 = this.float_4 * this.float_5 + this.float_6;
+					float_4 = float_4 * float_5 + float_6;
 					switch (enum4_0)
 					{
 					case Enum4.const_0:
-						class80_0.method_2(this.float_4 * this.float_3, this.int_0);
-						class80_1.method_2(this.float_4 * this.float_7, this.int_0);
+						class80_0.method_2(float_4 * float_3, int_0);
+						class80_1.method_2(float_4 * float_7, int_0);
 						break;
 					case Enum4.const_1:
-						class80_0.method_2(this.float_4 * this.float_3, this.int_0);
+						class80_0.method_2(float_4 * float_3, int_0);
 						break;
 					default:
-						class80_0.method_2(this.float_4 * this.float_7, this.int_0);
+						class80_0.method_2(float_4 * float_7, int_0);
 						break;
 					}
 				}
@@ -249,7 +245,7 @@ namespace ns4
 			}
 		}
 
-		public class Class97 : Class92.Class95
+		public class Class97 : Class95
 		{
 			public int int_4;
 
@@ -269,45 +265,45 @@ namespace ns4
 
 			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
 			{
-				this.int_2 = class82_0.method_13(4);
-				this.int_4 = class82_0.method_13(4);
+				int_2 = class82_0.method_13(4);
+				int_4 = class82_0.method_13(4);
 				if (class101_0 != null)
 				{
-					class101_0.method_0(this.int_2, 4);
-					class101_0.method_0(this.int_4, 4);
+					class101_0.method_0(int_2, 4);
+					class101_0.method_0(int_4, 4);
 				}
-				if (this.int_2 != 0)
+				if (int_2 != 0)
 				{
-					this.int_3 = this.int_2 + 1;
-					this.float_5 = Class92.Class95.float_1[this.int_2];
-					this.float_6 = Class92.Class95.float_2[this.int_2];
+					int_3 = int_2 + 1;
+					float_5 = float_1[int_2];
+					float_6 = float_2[int_2];
 				}
-				if (this.int_4 != 0)
+				if (int_4 != 0)
 				{
-					this.int_5 = this.int_4 + 1;
-					this.float_9 = Class92.Class95.float_1[this.int_4];
-					this.float_10 = Class92.Class95.float_2[this.int_4];
+					int_5 = int_4 + 1;
+					float_9 = float_1[int_4];
+					float_10 = float_2[int_4];
 				}
 			}
 
 			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
 			{
-				if (this.int_2 != 0)
+				if (int_2 != 0)
 				{
-					this.float_3 = Class92.Class94.float_0[class82_0.method_13(6)];
+					float_3 = float_0[class82_0.method_13(6)];
 				}
-				if (this.int_4 != 0)
+				if (int_4 != 0)
 				{
-					this.float_7 = Class92.Class94.float_0[class82_0.method_13(6)];
+					float_7 = float_0[class82_0.method_13(6)];
 				}
 			}
 
 			public override bool vmethod_2(Class82 class82_0)
 			{
 				bool result = base.vmethod_2(class82_0);
-				if (this.int_4 != 0)
+				if (int_4 != 0)
 				{
-					this.float_8 = (float)class82_0.method_13(this.int_5);
+					float_8 = class82_0.method_13(int_5);
 				}
 				return result;
 			}
@@ -315,16 +311,16 @@ namespace ns4
 			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
 			{
 				base.vmethod_3(enum4_0, class80_0, class80_1);
-				if (this.int_4 != 0 && enum4_0 != Enum4.const_1)
+				if (int_4 != 0 && enum4_0 != Enum4.const_1)
 				{
-					float num = (this.float_8 * this.float_9 + this.float_10) * this.float_7;
+					float num = (float_8 * float_9 + float_10) * float_7;
 					if (enum4_0 == Enum4.const_0)
 					{
-						class80_1.method_2(num, this.int_0);
+						class80_1.method_2(num, int_0);
 					}
 					else
 					{
-						class80_0.method_2(num, this.int_0);
+						class80_0.method_2(num, int_0);
 					}
 				}
 				return true;
@@ -347,39 +343,39 @@ namespace ns4
 
 		public int int_0;
 
-		public Class92.Class94[] class94_0;
+		public Class94[] class94_0;
 
 		public readonly Class101 class101_0;
 
 		public Class92()
 		{
-			this.class101_0 = new Class101();
+			class101_0 = new Class101();
 		}
 
 		public virtual void vmethod_0(Class82 class82_1, zzSoundClass class107_1, Class80 class80_2, Class80 class80_3, Class84 class84_1, Enum4 enum4_1)
 		{
-			this.class82_0 = class82_1;
-			this.class107_0 = class107_1;
-			this.class80_0 = class80_2;
-			this.class80_1 = class80_3;
-			this.class84_0 = class84_1;
-			this.enum4_0 = enum4_1;
+			class82_0 = class82_1;
+			class107_0 = class107_1;
+			class80_0 = class80_2;
+			class80_1 = class80_3;
+			class84_0 = class84_1;
+			enum4_0 = enum4_1;
 		}
 
 		public virtual void imethod_0()
 		{
 			try
 			{
-				this.int_0 = this.class107_0.method_25();
-				this.class94_0 = new Class92.Class94[32];
-				this.enum5_0 = this.class107_0.method_8();
-				this.vmethod_1();
-				this.vmethod_2();
-				this.vmethod_3();
-				if (this.class101_0 != null || this.class107_0.method_12())
+				int_0 = class107_0.method_25();
+				class94_0 = new Class94[32];
+				enum5_0 = class107_0.method_8();
+				vmethod_1();
+				vmethod_2();
+				vmethod_3();
+				if (class101_0 != null || class107_0.method_12())
 				{
-					this.vmethod_4();
-					this.vmethod_5();
+					vmethod_4();
+					vmethod_5();
 				}
 			}
 			catch
@@ -389,39 +385,39 @@ namespace ns4
 
 		public virtual void vmethod_1()
 		{
-			if (this.enum5_0 == Enum5.const_3)
+			if (enum5_0 == Enum5.const_3)
 			{
-				for (int i = 0; i < this.int_0; i++)
+				for (int i = 0; i < int_0; i++)
 				{
-					this.class94_0[i] = new Class92.Class95(i);
+					class94_0[i] = new Class95(i);
 				}
 				return;
 			}
-			if (this.enum5_0 == Enum5.const_1)
+			if (enum5_0 == Enum5.const_1)
 			{
 				int i;
-				for (i = 0; i < this.class107_0.method_26(); i++)
+				for (i = 0; i < class107_0.method_26(); i++)
 				{
-					this.class94_0[i] = new Class92.Class97(i);
+					class94_0[i] = new Class97(i);
 				}
-				while (i < this.int_0)
+				while (i < int_0)
 				{
-					this.class94_0[i] = new Class92.Class96(i);
+					class94_0[i] = new Class96(i);
 					i++;
 				}
 				return;
 			}
-			for (int i = 0; i < this.int_0; i++)
+			for (int i = 0; i < int_0; i++)
 			{
-				this.class94_0[i] = new Class92.Class97(i);
+				class94_0[i] = new Class97(i);
 			}
 		}
 
 		public virtual void vmethod_2()
 		{
-			for (int i = 0; i < this.int_0; i++)
+			for (int i = 0; i < int_0; i++)
 			{
-				this.class94_0[i].vmethod_0(this.class82_0, this.class107_0, this.class101_0);
+				class94_0[i].vmethod_0(class82_0, class107_0, class101_0);
 			}
 		}
 
@@ -431,9 +427,9 @@ namespace ns4
 
 		public virtual void vmethod_4()
 		{
-			for (int i = 0; i < this.int_0; i++)
+			for (int i = 0; i < int_0; i++)
 			{
-				this.class94_0[i].vmethod_1(this.class82_0, this.class107_0);
+				class94_0[i].vmethod_1(class82_0, class107_0);
 			}
 		}
 
@@ -441,23 +437,23 @@ namespace ns4
 		{
 			bool flag = false;
 			bool flag2 = false;
-			Enum5 @enum = this.class107_0.method_8();
+			Enum5 @enum = class107_0.method_8();
 			do
 			{
-				for (int i = 0; i < this.int_0; i++)
+				for (int i = 0; i < int_0; i++)
 				{
-					flag = this.class94_0[i].vmethod_2(this.class82_0);
+					flag = class94_0[i].vmethod_2(class82_0);
 				}
 				do
 				{
-					for (int i = 0; i < this.int_0; i++)
+					for (int i = 0; i < int_0; i++)
 					{
-						flag2 = this.class94_0[i].vmethod_3(this.enum4_0, this.class80_0, this.class80_1);
+						flag2 = class94_0[i].vmethod_3(enum4_0, class80_0, class80_1);
 					}
-					this.class80_0.method_22(this.class84_0);
-					if (this.enum4_0 == Enum4.const_0 && @enum != Enum5.const_3)
+					class80_0.method_22(class84_0);
+					if (enum4_0 == Enum4.const_0 && @enum != Enum5.const_3)
 					{
-						this.class80_1.method_22(this.class84_0);
+						class80_1.method_22(class84_0);
 					}
 				}
 				while (!flag2);

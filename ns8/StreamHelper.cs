@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 
 namespace ns8
@@ -13,8 +12,8 @@ namespace ns8
 			int bytesRead;
 			do
 			{
-				bytesRead = source.Read(StreamHelper._buffer, 0, StreamHelper._buffer.Length);
-				destination.Write(StreamHelper._buffer, 0, bytesRead);
+				bytesRead = source.Read(_buffer, 0, _buffer.Length);
+				destination.Write(_buffer, 0, bytesRead);
 			}
 			while (bytesRead != 0);
 		}

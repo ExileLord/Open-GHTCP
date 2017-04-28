@@ -1,5 +1,5 @@
-using ns18;
 using System;
+using ns18;
 
 namespace ns21
 {
@@ -9,13 +9,13 @@ namespace ns21
 
 		public IntegerValueNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public IntegerValueNode(int int_1)
 		{
-			this.int_0 = int_1;
-			this.vmethod_0();
+			int_0 = int_1;
+			vmethod_0();
 		}
 
 		public override int vmethod_1()
@@ -25,22 +25,22 @@ namespace ns21
 
 		public override object vmethod_7()
 		{
-			return this.int_0;
+			return int_0;
 		}
 
 		public override byte[] vmethod_8()
 		{
-			return BitConverter.GetBytes(this.int_0);
+			return BitConverter.GetBytes(int_0);
 		}
 
 		public override void vmethod_9(byte[] byte_0)
 		{
-			this.int_0 = BitConverter.ToInt32(byte_0, 0);
+			int_0 = BitConverter.ToInt32(byte_0, 0);
 		}
 
 		public override string GetText()
 		{
-			return string.Concat(this.int_0);
+			return string.Concat(int_0);
 		}
 
 		public override string GetNodeText()

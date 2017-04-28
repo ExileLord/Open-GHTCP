@@ -1,5 +1,4 @@
 using ns7;
-using System;
 
 namespace ns6
 {
@@ -13,24 +12,24 @@ namespace ns6
 
 		public virtual int[] vmethod_0()
 		{
-			return this.int_0;
+			return int_0;
 		}
 
 		public virtual Class143 vmethod_1()
 		{
-			return this.class143_0;
+			return class143_0;
 		}
 
 		public virtual int[] vmethod_2()
 		{
-			return this.int_1;
+			return int_1;
 		}
 
 		public Class136(int int_2)
 		{
-			this.int_0 = new int[int_2];
-			this.int_1 = new int[int_2];
-			this.class143_0 = new Class143();
+			int_0 = new int[int_2];
+			int_1 = new int[int_2];
+			class143_0 = new Class143();
 		}
 	}
 }

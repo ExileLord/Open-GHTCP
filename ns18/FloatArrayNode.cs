@@ -1,6 +1,5 @@
-using ns20;
-using System;
 using System.Collections.Generic;
+using ns20;
 
 namespace ns18
 {
@@ -10,22 +9,22 @@ namespace ns18
 		{
 			get
 			{
-				return ((FloatValueNode)base.Nodes[int_0]).float_0;
+				return ((FloatValueNode)Nodes[int_0]).float_0;
 			}
 			set
 			{
-				((FloatValueNode)base.Nodes[int_0]).float_0 = value;
+				((FloatValueNode)Nodes[int_0]).float_0 = value;
 			}
 		}
 
 		public FloatArrayNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public FloatArrayNode(IEnumerable<float> ienumerable_0)
 		{
-			this.method_11(ienumerable_0);
+			method_11(ienumerable_0);
 		}
 
 		public override int vmethod_1()
@@ -37,9 +36,9 @@ namespace ns18
 		{
 			foreach (float float_ in ienumerable_0)
 			{
-				base.Nodes.Add(new FloatValueNode(float_));
+				Nodes.Add(new FloatValueNode(float_));
 			}
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public override byte vmethod_15()

@@ -1,6 +1,5 @@
 using ns20;
 using ns21;
-using System;
 
 namespace ns18
 {
@@ -8,7 +7,7 @@ namespace ns18
 	{
 		public TagStructureNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public TagStructureNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
@@ -17,29 +16,29 @@ namespace ns18
 
 		public TagStructureNode(int int_1)
 		{
-			this.int_0 = int_1;
-			this.vmethod_0();
+			int_0 = int_1;
+			vmethod_0();
 		}
 
 		public TagStructureNode(int int_1, string string_0)
 		{
-			this.int_0 = int_1;
-			base.Nodes.Add(new TagValueNode(string_0));
-			this.vmethod_0();
+			int_0 = int_1;
+			Nodes.Add(new TagValueNode(string_0));
+			vmethod_0();
 		}
 
 		public TagStructureNode(string string_0, string string_1)
 		{
-			this.int_0 = QbSongClass1.AddKeyToDictionary(string_0);
-			base.Nodes.Add(new TagValueNode(string_1));
-			this.vmethod_0();
+			int_0 = QbSongClass1.AddKeyToDictionary(string_0);
+			Nodes.Add(new TagValueNode(string_1));
+			vmethod_0();
 		}
 
 		public TagStructureNode(string string_0, int int_1)
 		{
-			this.int_0 = QbSongClass1.AddKeyToDictionary(string_0);
-			base.Nodes.Add(new TagValueNode(int_1));
-			this.vmethod_0();
+			int_0 = QbSongClass1.AddKeyToDictionary(string_0);
+			Nodes.Add(new TagValueNode(int_1));
+			vmethod_0();
 		}
 
 		public override int vmethod_1()
@@ -49,28 +48,28 @@ namespace ns18
 
 		public string method_8()
 		{
-			if (base.Nodes.Count != 0)
+			if (Nodes.Count != 0)
 			{
-				return ((TagValueNode)base.FirstNode).method_2();
+				return ((TagValueNode)FirstNode).method_2();
 			}
 			return null;
 		}
 
 		public void method_9(string string_0)
 		{
-			if (base.Nodes.Count != 0)
+			if (Nodes.Count != 0)
 			{
-				((TagValueNode)base.FirstNode).method_3(string_0);
+				((TagValueNode)FirstNode).method_3(string_0);
 				return;
 			}
-			base.Nodes.Add(new TagValueNode(string_0));
+			Nodes.Add(new TagValueNode(string_0));
 		}
 
 		public int method_10()
 		{
-			if (base.Nodes.Count != 0)
+			if (Nodes.Count != 0)
 			{
-				return ((TagValueNode)base.FirstNode).int_0;
+				return ((TagValueNode)FirstNode).int_0;
 			}
 			return 0;
 		}
@@ -82,7 +81,7 @@ namespace ns18
 
 		public override byte vmethod_15()
 		{
-			if (!this.vmethod_7())
+			if (!vmethod_7())
 			{
 				return 27;
 			}

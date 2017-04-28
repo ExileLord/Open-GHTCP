@@ -1,6 +1,5 @@
 using ns10;
 using ns2;
-using System;
 
 namespace ns3
 {
@@ -74,209 +73,209 @@ namespace ns3
 
 		public void method_0()
 		{
-			this.int_9 = 0;
+			int_9 = 0;
 		}
 
 		public void method_1()
 		{
-			for (int i = 0; i < this.int_14; i++)
+			for (int i = 0; i < int_14; i++)
 			{
-				this.class27_0[i] = null;
+				class27_0[i] = null;
 			}
-			this.class27_0 = null;
-			for (int j = 0; j < this.int_15; j++)
+			class27_0 = null;
+			for (int j = 0; j < int_15; j++)
 			{
-				Class34.class34_0[this.int_21[j]].vmethod_2(this.object_0[j]);
+				Class34.class34_0[int_21[j]].vmethod_2(object_0[j]);
 			}
-			this.object_0 = null;
-			for (int k = 0; k < this.int_16; k++)
+			object_0 = null;
+			for (int k = 0; k < int_16; k++)
 			{
-				Class50.class50_0[this.int_22[k]].vmethod_2(this.object_1[k]);
+				Class50.class50_0[int_22[k]].vmethod_2(object_1[k]);
 			}
-			this.object_1 = null;
-			for (int l = 0; l < this.int_17; l++)
+			object_1 = null;
+			for (int l = 0; l < int_17; l++)
 			{
-				Class28.class28_0[this.int_23[l]].vmethod_2(this.object_2[l]);
+				Class28.class28_0[int_23[l]].vmethod_2(object_2[l]);
 			}
-			this.object_2 = null;
-			for (int m = 0; m < this.int_18; m++)
+			object_2 = null;
+			for (int m = 0; m < int_18; m++)
 			{
-				Class23.class23_0[this.int_24[m]].vmethod_2(this.object_3[m]);
+				Class23.class23_0[int_24[m]].vmethod_2(object_3[m]);
 			}
-			this.object_3 = null;
-			for (int n = 0; n < this.int_19; n++)
+			object_3 = null;
+			for (int n = 0; n < int_19; n++)
 			{
-				if (this.oggClass2[n] != null)
+				if (oggClass2[n] != null)
 				{
-					this.oggClass2[n].method_2();
-					this.oggClass2[n] = null;
+					oggClass2[n].method_2();
+					oggClass2[n] = null;
 				}
 			}
-			this.oggClass2 = null;
-			for (int num = 0; num < this.int_20; num++)
+			oggClass2 = null;
+			for (int num = 0; num < int_20; num++)
 			{
-				this.class70_0[num].method_0();
+				class70_0[num].method_0();
 			}
 		}
 
 		private int method_2(OGGClass3 oggClass3)
 		{
-			this.int_7 = oggClass3.method_6(32);
-			if (this.int_7 != 0)
+			int_7 = oggClass3.method_6(32);
+			if (int_7 != 0)
 			{
 				return -1;
 			}
-			this.int_8 = oggClass3.method_6(8);
-			this.int_9 = oggClass3.method_6(32);
-			this.int_10 = oggClass3.method_6(32);
-			this.int_11 = oggClass3.method_6(32);
-			this.int_12 = oggClass3.method_6(32);
-			this.int_13[0] = 1 << oggClass3.method_6(4);
-			this.int_13[1] = 1 << oggClass3.method_6(4);
-			if (this.int_9 >= 1 && this.int_8 >= 1 && this.int_13[0] >= 8 && this.int_13[1] >= this.int_13[0])
+			int_8 = oggClass3.method_6(8);
+			int_9 = oggClass3.method_6(32);
+			int_10 = oggClass3.method_6(32);
+			int_11 = oggClass3.method_6(32);
+			int_12 = oggClass3.method_6(32);
+			int_13[0] = 1 << oggClass3.method_6(4);
+			int_13[1] = 1 << oggClass3.method_6(4);
+			if (int_9 >= 1 && int_8 >= 1 && int_13[0] >= 8 && int_13[1] >= int_13[0])
 			{
 				if (oggClass3.method_6(1) == 1)
 				{
 					return 0;
 				}
 			}
-			this.method_1();
+			method_1();
 			return -1;
 		}
 
 		private int method_3(OGGClass3 oggClass3)
 		{
-			this.int_19 = oggClass3.method_6(8) + 1;
-			if (this.oggClass2 == null || this.oggClass2.Length != this.int_19)
+			int_19 = oggClass3.method_6(8) + 1;
+			if (oggClass2 == null || oggClass2.Length != int_19)
 			{
-				this.oggClass2 = new OGGClass2[this.int_19];
+				oggClass2 = new OGGClass2[int_19];
 			}
-			for (int i = 0; i < this.int_19; i++)
+			for (int i = 0; i < int_19; i++)
 			{
-				this.oggClass2[i] = new OGGClass2();
-				if (this.oggClass2[i].method_0(oggClass3) != 0)
+				oggClass2[i] = new OGGClass2();
+				if (oggClass2[i].method_0(oggClass3) != 0)
 				{
-					this.method_1();
+					method_1();
 					return -1;
 				}
 			}
-			this.int_16 = oggClass3.method_6(6) + 1;
-			if (this.int_22 == null || this.int_22.Length != this.int_16)
+			int_16 = oggClass3.method_6(6) + 1;
+			if (int_22 == null || int_22.Length != int_16)
 			{
-				this.int_22 = new int[this.int_16];
+				int_22 = new int[int_16];
 			}
-			if (this.object_1 == null || this.object_1.Length != this.int_16)
+			if (object_1 == null || object_1.Length != int_16)
 			{
-				this.object_1 = new object[this.int_16];
+				object_1 = new object[int_16];
 			}
-			for (int j = 0; j < this.int_16; j++)
+			for (int j = 0; j < int_16; j++)
 			{
-				this.int_22[j] = oggClass3.method_6(16);
-				if (this.int_22[j] < 0 || this.int_22[j] >= OGGClass5.int_2)
+				int_22[j] = oggClass3.method_6(16);
+				if (int_22[j] < 0 || int_22[j] >= int_2)
 				{
-					this.method_1();
+					method_1();
 					return -1;
 				}
-				this.object_1[j] = Class50.class50_0[this.int_22[j]].vmethod_0(this, oggClass3);
-				if (this.object_1[j] == null)
+				object_1[j] = Class50.class50_0[int_22[j]].vmethod_0(this, oggClass3);
+				if (object_1[j] == null)
 				{
-					this.method_1();
-					return -1;
-				}
-			}
-			this.int_17 = oggClass3.method_6(6) + 1;
-			if (this.int_23 == null || this.int_23.Length != this.int_17)
-			{
-				this.int_23 = new int[this.int_17];
-			}
-			if (this.object_2 == null || this.object_2.Length != this.int_17)
-			{
-				this.object_2 = new object[this.int_17];
-			}
-			for (int k = 0; k < this.int_17; k++)
-			{
-				this.int_23[k] = oggClass3.method_6(16);
-				if (this.int_23[k] < 0 || this.int_23[k] >= OGGClass5.int_3)
-				{
-					this.method_1();
-					return -1;
-				}
-				this.object_2[k] = Class28.class28_0[this.int_23[k]].vmethod_0(this, oggClass3);
-				if (this.object_2[k] == null)
-				{
-					this.method_1();
+					method_1();
 					return -1;
 				}
 			}
-			this.int_18 = oggClass3.method_6(6) + 1;
-			if (this.int_24 == null || this.int_24.Length != this.int_18)
+			int_17 = oggClass3.method_6(6) + 1;
+			if (int_23 == null || int_23.Length != int_17)
 			{
-				this.int_24 = new int[this.int_18];
+				int_23 = new int[int_17];
 			}
-			if (this.object_3 == null || this.object_3.Length != this.int_18)
+			if (object_2 == null || object_2.Length != int_17)
 			{
-				this.object_3 = new object[this.int_18];
+				object_2 = new object[int_17];
 			}
-			for (int l = 0; l < this.int_18; l++)
+			for (int k = 0; k < int_17; k++)
 			{
-				this.int_24[l] = oggClass3.method_6(16);
-				if (this.int_24[l] < 0 || this.int_24[l] >= OGGClass5.int_4)
+				int_23[k] = oggClass3.method_6(16);
+				if (int_23[k] < 0 || int_23[k] >= int_3)
 				{
-					this.method_1();
+					method_1();
 					return -1;
 				}
-				this.object_3[l] = Class23.class23_0[this.int_24[l]].vmethod_0(this, oggClass3);
-				if (this.object_3[l] == null)
+				object_2[k] = Class28.class28_0[int_23[k]].vmethod_0(this, oggClass3);
+				if (object_2[k] == null)
 				{
-					this.method_1();
-					return -1;
-				}
-			}
-			this.int_15 = oggClass3.method_6(6) + 1;
-			if (this.int_21 == null || this.int_21.Length != this.int_15)
-			{
-				this.int_21 = new int[this.int_15];
-			}
-			if (this.object_0 == null || this.object_0.Length != this.int_15)
-			{
-				this.object_0 = new object[this.int_15];
-			}
-			for (int m = 0; m < this.int_15; m++)
-			{
-				this.int_21[m] = oggClass3.method_6(16);
-				if (this.int_21[m] < 0 || this.int_21[m] >= OGGClass5.int_5)
-				{
-					this.method_1();
-					return -1;
-				}
-				this.object_0[m] = Class34.class34_0[this.int_21[m]].vmethod_0(this, oggClass3);
-				if (this.object_0[m] == null)
-				{
-					this.method_1();
+					method_1();
 					return -1;
 				}
 			}
-			this.int_14 = oggClass3.method_6(6) + 1;
-			if (this.class27_0 == null || this.class27_0.Length != this.int_14)
+			int_18 = oggClass3.method_6(6) + 1;
+			if (int_24 == null || int_24.Length != int_18)
 			{
-				this.class27_0 = new Class27[this.int_14];
+				int_24 = new int[int_18];
 			}
-			for (int n = 0; n < this.int_14; n++)
+			if (object_3 == null || object_3.Length != int_18)
 			{
-				this.class27_0[n] = new Class27();
-				this.class27_0[n].int_0 = oggClass3.method_6(1);
-				this.class27_0[n].int_1 = oggClass3.method_6(16);
-				this.class27_0[n].int_2 = oggClass3.method_6(16);
-				this.class27_0[n].int_3 = oggClass3.method_6(8);
-				if (this.class27_0[n].int_1 >= OGGClass5.int_6 || this.class27_0[n].int_2 >= OGGClass5.int_6 || this.class27_0[n].int_3 >= this.int_15)
+				object_3 = new object[int_18];
+			}
+			for (int l = 0; l < int_18; l++)
+			{
+				int_24[l] = oggClass3.method_6(16);
+				if (int_24[l] < 0 || int_24[l] >= int_4)
 				{
-					this.method_1();
+					method_1();
+					return -1;
+				}
+				object_3[l] = Class23.class23_0[int_24[l]].vmethod_0(this, oggClass3);
+				if (object_3[l] == null)
+				{
+					method_1();
+					return -1;
+				}
+			}
+			int_15 = oggClass3.method_6(6) + 1;
+			if (int_21 == null || int_21.Length != int_15)
+			{
+				int_21 = new int[int_15];
+			}
+			if (object_0 == null || object_0.Length != int_15)
+			{
+				object_0 = new object[int_15];
+			}
+			for (int m = 0; m < int_15; m++)
+			{
+				int_21[m] = oggClass3.method_6(16);
+				if (int_21[m] < 0 || int_21[m] >= int_5)
+				{
+					method_1();
+					return -1;
+				}
+				object_0[m] = Class34.class34_0[int_21[m]].vmethod_0(this, oggClass3);
+				if (object_0[m] == null)
+				{
+					method_1();
+					return -1;
+				}
+			}
+			int_14 = oggClass3.method_6(6) + 1;
+			if (class27_0 == null || class27_0.Length != int_14)
+			{
+				class27_0 = new Class27[int_14];
+			}
+			for (int n = 0; n < int_14; n++)
+			{
+				class27_0[n] = new Class27();
+				class27_0[n].int_0 = oggClass3.method_6(1);
+				class27_0[n].int_1 = oggClass3.method_6(16);
+				class27_0[n].int_2 = oggClass3.method_6(16);
+				class27_0[n].int_3 = oggClass3.method_6(8);
+				if (class27_0[n].int_1 >= int_6 || class27_0[n].int_2 >= int_6 || class27_0[n].int_3 >= int_15)
+				{
+					method_1();
 					return -1;
 				}
 			}
 			if (oggClass3.method_6(1) != 1)
 			{
-				this.method_1();
+				method_1();
 				return -1;
 			}
 			return 0;
@@ -302,24 +301,24 @@ namespace ns3
 							{
 								return -1;
 							}
-							if (this.int_9 != 0)
+							if (int_9 != 0)
 							{
 								return -1;
 							}
-							return this.method_2(@class);
+							return method_2(@class);
 						case 2:
 						case 4:
 							return -1;
 						case 3:
-							if (this.int_9 == 0)
+							if (int_9 == 0)
 							{
 								return -1;
 							}
 							return class47_0.method_1(@class);
 						case 5:
-							if (this.int_9 != 0 && class47_0.byte_1 != null)
+							if (int_9 != 0 && class47_0.byte_1 != null)
 							{
-								return this.method_3(@class);
+								return method_3(@class);
 							}
 							return -1;
 						default:

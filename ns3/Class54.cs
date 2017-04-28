@@ -1,5 +1,3 @@
-using System;
-
 namespace ns3
 {
 	public class Class54
@@ -24,13 +22,13 @@ namespace ns3
 
 		public void method_0()
 		{
-			this.int_1 = null;
-			this.int_2 = null;
-			this.int_3 = null;
-			this.int_4 = null;
-			this.int_5 = null;
-			this.int_7 = null;
-			this.int_8 = null;
+			int_1 = null;
+			int_2 = null;
+			int_3 = null;
+			int_4 = null;
+			int_5 = null;
+			int_7 = null;
+			int_8 = null;
 		}
 	}
 }

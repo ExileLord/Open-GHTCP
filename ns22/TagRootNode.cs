@@ -1,5 +1,4 @@
 using ns21;
-using System;
 
 namespace ns22
 {
@@ -7,7 +6,7 @@ namespace ns22
 	{
 		public TagRootNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public override int vmethod_1()

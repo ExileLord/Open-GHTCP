@@ -1,6 +1,5 @@
 using ns18;
 using ns20;
-using System;
 
 namespace ns19
 {
@@ -8,7 +7,7 @@ namespace ns19
 	{
 		public ArrayPointerNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public ArrayPointerNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
@@ -17,8 +16,8 @@ namespace ns19
 
 		public ArrayPointerNode(int int_1)
 		{
-			this.int_0 = int_1;
-			this.vmethod_0();
+			int_0 = int_1;
+			vmethod_0();
 		}
 
 		public ArrayPointerNode(string string_0, AbsTreeNode1_1 class276_0) : this(QbSongClass1.AddKeyToDictionary(string_0), class276_0)
@@ -27,9 +26,9 @@ namespace ns19
 
 		public ArrayPointerNode(int int_1, AbsTreeNode1_1 class276_0)
 		{
-			this.int_0 = int_1;
-			base.Nodes.Add(class276_0);
-			this.vmethod_0();
+			int_0 = int_1;
+			Nodes.Add(class276_0);
+			vmethod_0();
 		}
 
 		public override int vmethod_1()
@@ -39,9 +38,9 @@ namespace ns19
 
 		public AbsTreeNode1_1 method_8()
 		{
-			if (base.Nodes.Count != 0)
+			if (Nodes.Count != 0)
 			{
-				return (AbsTreeNode1_1)base.FirstNode;
+				return (AbsTreeNode1_1)FirstNode;
 			}
 			return null;
 		}
@@ -53,7 +52,7 @@ namespace ns19
 
 		public override byte vmethod_15()
 		{
-			if (!this.vmethod_7())
+			if (!vmethod_7())
 			{
 				return 25;
 			}

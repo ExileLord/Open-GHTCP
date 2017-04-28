@@ -15,8 +15,7 @@ namespace ns13
 			{
 				throw new ArgumentException("Length is zero", "seed");
 			}
-			uint[] array = new uint[]
-			{
+			uint[] array = {
 				305419896u,
 				591751049u,
 				878082192u
@@ -24,11 +23,11 @@ namespace ns13
 			for (int i = 0; i < byte_0.Length; i++)
 			{
 				array[0] = Class192.smethod_0(array[0], byte_0[i]);
-				array[1] = array[1] + (uint)((byte)array[0]);
+				array[1] = array[1] + (byte)array[0];
 				array[1] = array[1] * 134775813u + 1u;
 				array[2] = Class192.smethod_0(array[2], (byte)(array[1] >> 24));
 			}
-			return new byte[]
+			return new[]
 			{
 				(byte)(array[0] & 255u),
 				(byte)(array[0] >> 8 & 255u),

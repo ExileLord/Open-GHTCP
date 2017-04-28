@@ -1,3 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Windows.Forms;
 using ns0;
 using ns1;
 using ns11;
@@ -6,13 +11,6 @@ using ns4;
 using ns5;
 using ns6;
 using ns7;
-using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Drawing;
-using System.IO;
-using System.Text;
-using System.Windows.Forms;
 
 namespace ns8
 {
@@ -22,7 +20,7 @@ namespace ns8
 
 		public AudioManager()
 		{
-			this.list_0 = new List<PlayableAudio>();
+			list_0 = new List<PlayableAudio>();
 		}
 
 		public static PlayableAudio LoadPlayableAudio(Enum25 enum25_0, GenericAudioStream audioStream)
@@ -70,14 +68,7 @@ namespace ns8
 				}
 				break;
 			}
-			throw new PlatformNotSupportedException(string.Concat(new object[]
-			{
-				flag ? "" : "Not ",
-				"Running Mono. PlatformID: ",
-				(int)Environment.OSVersion.Platform,
-				" | ",
-				Environment.OSVersion.Platform
-			}));
+			throw new PlatformNotSupportedException(string.Concat(flag ? "" : "Not ", "Running Mono. PlatformID: ", (int)Environment.OSVersion.Platform, " | ", Environment.OSVersion.Platform));
         IL_F4:
 			return new Class117(audioStream);
 		}
@@ -115,7 +106,7 @@ namespace ns8
 		public static Class16 smethod_2(string string_0)
 		{
 			Class16 result;
-			using (GenericAudioStream stream = AudioManager.getAudioStream(string_0))
+			using (GenericAudioStream stream = getAudioStream(string_0))
 			{
 				result = stream.vmethod_1();
 			}
@@ -128,7 +119,7 @@ namespace ns8
 			Class16 result;
 			try
 			{
-				result = AudioManager.smethod_5(stream_0).vmethod_1();
+				result = smethod_5(stream_0).vmethod_1();
 			}
 			finally
 			{
@@ -223,12 +214,12 @@ namespace ns8
 
 		~AudioManager()
 		{
-			this.method_0(false);
+			method_0(false);
 		}
 
 		public void method_0(bool bool_0)
 		{
-			foreach (PlayableAudio current in this.list_0)
+			foreach (PlayableAudio current in list_0)
 			{
 				current.Dispose();
 			}
@@ -236,7 +227,7 @@ namespace ns8
 
 		public void Dispose()
 		{
-			this.method_0(true);
+			method_0(true);
 			GC.SuppressFinalize(this);
 		}
 	}

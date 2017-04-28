@@ -1,8 +1,8 @@
-using ns16;
-using ns20;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using ns16;
+using ns20;
 
 namespace ns19
 {
@@ -14,32 +14,32 @@ namespace ns19
 
 		public zzPakNode1() : this("newfolder")
 		{
-			base.ImageIndex = 38;
-			base.SelectedImageIndex = 38;
+			ImageIndex = 38;
+			SelectedImageIndex = 38;
 		}
 
 		public zzPakNode1(bool bool_1) : this("(Unknown)")
 		{
-			base.ImageIndex = 38;
-			base.SelectedImageIndex = 38;
-			this.bool_0 = bool_1;
+			ImageIndex = 38;
+			SelectedImageIndex = 38;
+			bool_0 = bool_1;
 		}
 
 		public zzPakNode1(string string_0) : base(string_0)
 		{
-			base.Name = string_0;
-			base.ImageIndex = 38;
-			base.SelectedImageIndex = 38;
+			Name = string_0;
+			ImageIndex = 38;
+			SelectedImageIndex = 38;
 		}
 
 		public void method_0(string string_0, zzGenericNode1 class308_0)
 		{
-			this.method_1<Class309>(string_0, new Class309(string_0, class308_0));
+			method_1(string_0, new Class309(string_0, class308_0));
 		}
 
 		public void method_1<T>(string string_0, T gparam_0) where T : TreeNode
 		{
-			zzPakNode1 @class = string.IsNullOrEmpty(string_0) ? this : this.method_2(KeyGenerator.smethod_10(string_0));
+			zzPakNode1 @class = string.IsNullOrEmpty(string_0) ? this : method_2(KeyGenerator.smethod_10(string_0));
 			if (@class.Nodes.ContainsKey(gparam_0.Text))
 			{
 				@class.Nodes.RemoveByKey(gparam_0.Text);
@@ -66,11 +66,11 @@ namespace ns19
 
 		public virtual string vmethod_0()
 		{
-			if (base.Parent == null)
+			if (Parent == null)
 			{
 				return "";
 			}
-			return ((zzPakNode1)base.Parent).vmethod_0() + base.Text + "\\";
+			return ((zzPakNode1)Parent).vmethod_0() + Text + "\\";
 		}
 
 		public zzPakNode1 method_2(string string_0)
@@ -79,15 +79,15 @@ namespace ns19
 			{
 				return this;
 			}
-			List<string> list = new List<string>(string_0.Split(new char[]
+			List<string> list = new List<string>(string_0.Split(new[]
 			{
 				'\\',
 				'/'
 			}, StringSplitOptions.RemoveEmptyEntries));
 			zzPakNode1 @class;
-			if (base.Nodes.ContainsKey(list[0]) && base.Nodes[list[0]] is zzPakNode1)
+			if (Nodes.ContainsKey(list[0]) && Nodes[list[0]] is zzPakNode1)
 			{
-				@class = (zzPakNode1)base.Nodes[list[0]];
+				@class = (zzPakNode1)Nodes[list[0]];
 				list.RemoveAt(0);
 				@class = ((list.Count > 0) ? @class.method_3(list) : @class);
 			}
@@ -95,7 +95,7 @@ namespace ns19
 			{
 				@class = new zzPakNode1(list[0]);
 				list.RemoveAt(0);
-				base.Nodes.Add(@class);
+				Nodes.Add(@class);
 				@class = ((list.Count > 0) ? @class.method_3(list) : @class);
 			}
 			return @class;
@@ -107,20 +107,20 @@ namespace ns19
 			{
 				return this;
 			}
-			if (!base.Nodes.ContainsKey(list_0[0]) || !(base.Nodes[list_0[0]] is zzPakNode1))
+			if (!Nodes.ContainsKey(list_0[0]) || !(Nodes[list_0[0]] is zzPakNode1))
 			{
 				zzPakNode1 @class = new zzPakNode1(list_0[0]);
 				list_0.RemoveAt(0);
-				base.Nodes.Add(@class);
+				Nodes.Add(@class);
 				return @class.method_3(list_0);
 			}
 			if (list_0.Count == 1)
 			{
-				return (zzPakNode1)base.Nodes[list_0[0]];
+				return (zzPakNode1)Nodes[list_0[0]];
 			}
 			string key = list_0[0];
 			list_0.RemoveAt(0);
-			return ((zzPakNode1)base.Nodes[key]).method_3(list_0);
+			return ((zzPakNode1)Nodes[key]).method_3(list_0);
 		}
 	}
 }

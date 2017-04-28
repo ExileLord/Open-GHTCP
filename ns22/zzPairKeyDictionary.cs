@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -12,18 +11,18 @@ namespace ns22
 		{
 			get
 			{
-				return this.dictionary_0[string_0.ToLower()];
+				return dictionary_0[string_0.ToLower()];
 			}
 		}
 
 		public IEnumerator GetEnumerator()
 		{
-			return this.dictionary_0.GetEnumerator();
+			return dictionary_0.GetEnumerator();
 		}
 
 		IEnumerator<KeyValuePair<string, EmptyAbstractClass1>> IEnumerable<KeyValuePair<string, EmptyAbstractClass1>>.GetEnumerator()
 		{
-			return this.dictionary_0.GetEnumerator();
+			return dictionary_0.GetEnumerator();
 		}
 	}
 }

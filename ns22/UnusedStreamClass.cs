@@ -5,48 +5,42 @@ namespace ns22
 {
 	public class UnusedStreamClass : IDisposable
 	{
-		private static readonly byte[] byte_0 = new byte[]
-		{
+		private static readonly byte[] byte_0 = {
 			0,
 			0,
 			1,
 			186
 		};
 
-		private static readonly byte[] byte_1 = new byte[]
-		{
+		private static readonly byte[] byte_1 = {
 			0,
 			0,
 			1,
 			187
 		};
 
-		private static readonly byte[] byte_2 = new byte[]
-		{
+		private static readonly byte[] byte_2 = {
 			0,
 			0,
 			1,
 			224
 		};
 
-		private static readonly byte[] byte_3 = new byte[]
-		{
+		private static readonly byte[] byte_3 = {
 			0,
 			0,
 			1,
 			189
 		};
 
-		private static readonly byte[] byte_4 = new byte[]
-		{
+		private static readonly byte[] byte_4 = {
 			0,
 			0,
 			1,
 			190
 		};
 
-		private static readonly byte[] byte_5 = new byte[]
-		{
+		private static readonly byte[] byte_5 = {
 			0,
 			0,
 			1,
@@ -61,12 +55,12 @@ namespace ns22
 		{
 			try
 			{
-				this.stream_0.Close();
+				stream_0.Close();
 			}
 			catch
 			{
 			}
-			this.bool_0 = true;
+			bool_0 = true;
 		}
 	}
 }

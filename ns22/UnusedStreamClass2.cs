@@ -1,13 +1,12 @@
-using ns9;
 using System;
 using System.IO;
+using ns9;
 
 namespace ns22
 {
 	public class UnusedStreamClass2 : IDisposable, EmptyInterface1
 	{
-		private static readonly double[,] double_0 = new double[,]
-		{
+		private static readonly double[,] double_0 = {
 			{
 				0.0,
 				0.0
@@ -36,10 +35,10 @@ namespace ns22
 
 		public void Dispose()
 		{
-			this.stream_0.Dispose();
-			for (int i = 0; i < this.class352_0.Length; i++)
+			stream_0.Dispose();
+			for (int i = 0; i < class352_0.Length; i++)
 			{
-				this.class352_0[i].Dispose();
+				class352_0[i].Dispose();
 			}
 		}
 	}

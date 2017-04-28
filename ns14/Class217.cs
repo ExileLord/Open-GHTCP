@@ -13,17 +13,17 @@ namespace ns14
 
 		public Class217(string string_1)
 		{
-			this.string_0 = string_1;
-			this.textWriter_0 = Console.Out;
-			this.stringWriter_0 = new StringWriter();
-			Console.SetOut(this.stringWriter_0);
+			string_0 = string_1;
+			textWriter_0 = Console.Out;
+			stringWriter_0 = new StringWriter();
+			Console.SetOut(stringWriter_0);
 		}
 
 		public void Dispose()
 		{
-			Console.SetOut(this.textWriter_0);
-			Class216.smethod_1(this.string_0, this.stringWriter_0.GetStringBuilder().ToString());
-			this.stringWriter_0.Close();
+			Console.SetOut(textWriter_0);
+			Class216.smethod_1(string_0, stringWriter_0.GetStringBuilder().ToString());
+			stringWriter_0.Close();
 		}
 	}
 }

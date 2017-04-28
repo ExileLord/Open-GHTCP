@@ -21,7 +21,7 @@ namespace ns14
 			{
 				get
 				{
-					return this.gparam_0;
+					return gparam_0;
 				}
 			}
 
@@ -29,43 +29,43 @@ namespace ns14
 			{
 				get
 				{
-					this.struct77_0.method_1();
-					return ((Class222<T>.Class227)this.struct77_0.Current).gparam_0;
+					struct77_0.method_1();
+					return ((Class227)struct77_0.Current).gparam_0;
 				}
 			}
 
 			public Struct76(Class222<T> class222_0)
 			{
-				this = default(Class222<T>.Struct76);
-				this.struct77_0 = class222_0.class225_0.method_14();
+				this = default(Struct76);
+				struct77_0 = class222_0.class225_0.method_14();
 			}
 
 			public Struct76(Class222<T> class222_0, T gparam_2, T gparam_3)
 			{
-				this = default(Class222<T>.Struct76);
-				this.struct77_0 = class222_0.class225_0.method_15<T>(gparam_2);
-				this.icomparer_0 = class222_0.method_1();
-				this.gparam_1 = gparam_3;
+				this = default(Struct76);
+				struct77_0 = class222_0.class225_0.method_15(gparam_2);
+				icomparer_0 = class222_0.method_1();
+				gparam_1 = gparam_3;
 			}
 
 			public bool MoveNext()
 			{
-				if (!this.struct77_0.MoveNext())
+				if (!struct77_0.MoveNext())
 				{
 					return false;
 				}
-				this.gparam_0 = ((Class222<T>.Class227)this.struct77_0.Current).gparam_0;
-				return this.icomparer_0 == null || this.icomparer_0.Compare(this.gparam_1, this.gparam_0) >= 0;
+				gparam_0 = ((Class227)struct77_0.Current).gparam_0;
+				return icomparer_0 == null || icomparer_0.Compare(gparam_1, gparam_0) >= 0;
 			}
 
 			public void Dispose()
 			{
-				this.struct77_0.Dispose();
+				struct77_0.Dispose();
 			}
 
 			void IEnumerator.Reset()
 			{
-				this.struct77_0.Reset();
+				struct77_0.Reset();
 			}
 		}
 
@@ -75,49 +75,49 @@ namespace ns14
 
 			public Class227(T gparam_1)
 			{
-				this.gparam_0 = gparam_1;
+				gparam_0 = gparam_1;
 			}
 
 			public override void vmethod_0(Class225.Class226 class226_2)
 			{
-				Class222<T>.Class227 @class = (Class222<T>.Class227)class226_2;
-				T t = this.gparam_0;
-				this.gparam_0 = @class.gparam_0;
+				Class227 @class = (Class227)class226_2;
+				T t = gparam_0;
+				gparam_0 = @class.gparam_0;
 				@class.gparam_0 = t;
 			}
 		}
 
 		private class Class223 : Class225.Interface10<T>
 		{
-			private static Class222<T>.Class223 class223_0 = new Class222<T>.Class223(Comparer<T>.Default);
+			private static Class223 class223_0 = new Class223(Comparer<T>.Default);
 
 			public IComparer<T> icomparer_0;
 
 			public int imethod_0(T gparam_0, Class225.Class226 class226_0)
 			{
-				return this.icomparer_0.Compare(gparam_0, ((Class222<T>.Class227)class226_0).gparam_0);
+				return icomparer_0.Compare(gparam_0, ((Class227)class226_0).gparam_0);
 			}
 
 			public Class225.Class226 imethod_1(T gparam_0)
 			{
-				return new Class222<T>.Class227(gparam_0);
+				return new Class227(gparam_0);
 			}
 
 			private Class223(IComparer<T> icomparer_1)
 			{
-				this.icomparer_0 = icomparer_1;
+				icomparer_0 = icomparer_1;
 			}
 
-			public static Class222<T>.Class223 smethod_0(IComparer<T> icomparer_1)
+			public static Class223 smethod_0(IComparer<T> icomparer_1)
 			{
 				if (icomparer_1 != null)
 				{
 					if (icomparer_1 != Comparer<T>.Default)
 					{
-						return new Class222<T>.Class223(icomparer_1);
+						return new Class223(icomparer_1);
 					}
 				}
-				return Class222<T>.Class223.class223_0;
+				return class223_0;
 			}
 		}
 
@@ -125,13 +125,13 @@ namespace ns14
 
 		private Class225 class225_0;
 
-		private Class222<T>.Class223 class223_0;
+		private Class223 class223_0;
 
 		public int Count
 		{
 			get
 			{
-				return this.vmethod_0();
+				return vmethod_0();
 			}
 		}
 
@@ -155,11 +155,11 @@ namespace ns14
 		{
 			get
 			{
-				if (this.object_0 == null)
+				if (object_0 == null)
 				{
-					Interlocked.CompareExchange(ref this.object_0, new object(), null);
+					Interlocked.CompareExchange(ref object_0, new object(), null);
 				}
-				return this.object_0;
+				return object_0;
 			}
 		}
 
@@ -179,65 +179,65 @@ namespace ns14
 			}
 			foreach (T current in ienumerable_0)
 			{
-				this.vmethod_1(current);
+				vmethod_1(current);
 			}
 		}
 
 		public Class222(IComparer<T> icomparer_0)
 		{
-			this.class223_0 = Class222<T>.Class223.smethod_0(icomparer_0);
-			this.class225_0 = new Class225(this.class223_0);
+			class223_0 = Class223.smethod_0(icomparer_0);
+			class225_0 = new Class225(class223_0);
 		}
 
 		public virtual int vmethod_0()
 		{
-			return this.class225_0.method_4();
+			return class225_0.method_4();
 		}
 
 		private T method_0(int int_0)
 		{
-			return ((Class222<T>.Class227)this.class225_0[int_0]).gparam_0;
+			return ((Class227)class225_0[int_0]).gparam_0;
 		}
 
 		public virtual void Clear()
 		{
-			this.class225_0.method_0();
+			class225_0.method_0();
 		}
 
 		void ICollection<T>.Add(T item)
 		{
-			this.vmethod_1(item);
+			vmethod_1(item);
 		}
 
 		public bool vmethod_1(T gparam_0)
 		{
-			return this.vmethod_2(gparam_0);
+			return vmethod_2(gparam_0);
 		}
 
 		public virtual bool vmethod_2(T gparam_0)
 		{
-			Class222<T>.Class227 @class = new Class222<T>.Class227(gparam_0);
-			return this.class225_0.method_1<T>(gparam_0, @class) == @class;
+			Class227 @class = new Class227(gparam_0);
+			return class225_0.method_1(gparam_0, @class) == @class;
 		}
 
 		public virtual bool Contains(T item)
 		{
-			return this.class225_0.method_3<T>(item) != null;
+			return class225_0.method_3(item) != null;
 		}
 
 		public bool Remove(T item)
 		{
-			return this.vmethod_3(item);
+			return vmethod_3(item);
 		}
 
 		public virtual bool vmethod_3(T gparam_0)
 		{
-			return this.class225_0.method_2<T>(gparam_0) != null;
+			return class225_0.method_2(gparam_0) != null;
 		}
 
 		public IComparer<T> method_1()
 		{
-			return this.class223_0.icomparer_0;
+			return class223_0.icomparer_0;
 		}
 
 		public void method_2(T[] gparam_0, int int_0, int int_1)
@@ -258,11 +258,11 @@ namespace ns14
 			{
 				throw new ArgumentException("destination array cannot hold the requested elements");
 			}
-			using (Class225.Struct77 @struct = this.class225_0.method_14())
+			using (Class225.Struct77 @struct = class225_0.method_14())
 			{
 				while (@struct.MoveNext())
 				{
-					Class222<T>.Class227 @class = (Class222<T>.Class227)@struct.Current;
+					Class227 @class = (Class227)@struct.Current;
 					if (int_1-- == 0)
 					{
 						break;
@@ -274,12 +274,12 @@ namespace ns14
 
 		void ICollection<T>.CopyTo(T[] array, int arrayIndex)
 		{
-			this.method_2(array, arrayIndex, this.Count);
+			method_2(array, arrayIndex, Count);
 		}
 
 		void ICollection.CopyTo(Array array, int index)
 		{
-			if (this.Count == 0)
+			if (Count == 0)
 			{
 				return;
 			}
@@ -289,15 +289,15 @@ namespace ns14
 			}
 			if (index >= 0 && array.Length > index)
 			{
-				if (array.Length - index < this.Count)
+				if (array.Length - index < Count)
 				{
 					throw new ArgumentException();
 				}
-				using (Class225.Struct77 @struct = this.class225_0.method_14())
+				using (Class225.Struct77 @struct = class225_0.method_14())
 				{
 					while (@struct.MoveNext())
 					{
-						Class222<T>.Class227 @class = (Class222<T>.Class227)@struct.Current;
+						Class227 @class = (Class227)@struct.Current;
 						array.SetValue(@class.gparam_0, index++);
 					}
 					return;
@@ -306,24 +306,24 @@ namespace ns14
 			throw new ArgumentOutOfRangeException("index");
 		}
 
-		public Class222<T>.Struct76 method_3()
+		public Struct76 method_3()
 		{
-			return this.vmethod_4();
+			return vmethod_4();
 		}
 
-		public virtual Class222<T>.Struct76 vmethod_4()
+		public virtual Struct76 vmethod_4()
 		{
-			return new Class222<T>.Struct76(this);
+			return new Struct76(this);
 		}
 
 		IEnumerator<T> IEnumerable<T>.GetEnumerator()
 		{
-			return this.method_3();
+			return method_3();
 		}
 
 		IEnumerator IEnumerable.GetEnumerator()
 		{
-			return this.method_3();
+			return method_3();
 		}
 	}
 }

@@ -1,5 +1,3 @@
-using System;
-
 namespace ns4
 {
 	public class Class78
@@ -18,23 +16,23 @@ namespace ns4
 
 		public Class78()
 		{
-			this.method_0();
+			method_0();
 		}
 
 		private void method_0()
 		{
-			this.int_0 = 16384;
-			this.byte_0 = new byte[this.int_0];
-			this.int_2 = 1024;
-			this.int_1 = new int[this.int_2];
-			this.long_0 = new long[this.int_2];
+			int_0 = 16384;
+			byte_0 = new byte[int_0];
+			int_2 = 1024;
+			int_1 = new int[int_2];
+			long_0 = new long[int_2];
 		}
 
 		public void method_1()
 		{
-			this.byte_0 = null;
-			this.int_1 = null;
-			this.long_0 = null;
+			byte_0 = null;
+			int_1 = null;
+			long_0 = null;
 		}
 	}
 }

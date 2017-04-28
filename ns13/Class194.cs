@@ -1,5 +1,5 @@
-using ns12;
 using System;
+using ns12;
 
 namespace ns13
 {
@@ -31,54 +31,54 @@ namespace ns13
 			{
 				throw new ArgumentOutOfRangeException("level");
 			}
-			this.class189_0 = new Class189();
-			this.class184_0 = new Class184(this.class189_0);
-			this.bool_0 = bool_1;
-			this.method_8(Enum29.const_0);
-			this.method_7(int_2);
-			this.method_0();
+			class189_0 = new Class189();
+			class184_0 = new Class184(class189_0);
+			bool_0 = bool_1;
+			method_8(Enum29.const_0);
+			method_7(int_2);
+			method_0();
 		}
 
 		public void method_0()
 		{
-			this.int_1 = (this.bool_0 ? 16 : 0);
-			this.long_0 = 0L;
-			this.class189_0.method_0();
-			this.class184_0.method_3();
+			int_1 = (bool_0 ? 16 : 0);
+			long_0 = 0L;
+			class189_0.method_0();
+			class184_0.method_3();
 		}
 
 		public long method_1()
 		{
-			return this.long_0;
+			return long_0;
 		}
 
 		public void method_2()
 		{
-			this.int_1 |= 4;
+			int_1 |= 4;
 		}
 
 		public void method_3()
 		{
-			this.int_1 |= 12;
+			int_1 |= 12;
 		}
 
 		public bool method_4()
 		{
-			return this.int_1 == 30 && this.class189_0.method_7();
+			return int_1 == 30 && class189_0.method_7();
 		}
 
 		public bool method_5()
 		{
-			return this.class184_0.method_2();
+			return class184_0.method_2();
 		}
 
 		public void method_6(byte[] byte_0, int int_2, int int_3)
 		{
-			if ((this.int_1 & 8) != 0)
+			if ((int_1 & 8) != 0)
 			{
 				throw new InvalidOperationException("Finish() already called");
 			}
-			this.class184_0.method_1(byte_0, int_2, int_3);
+			class184_0.method_1(byte_0, int_2, int_3);
 		}
 
 		public void method_7(int int_2)
@@ -91,86 +91,86 @@ namespace ns13
 			{
 				throw new ArgumentOutOfRangeException("level");
 			}
-			if (this.int_0 != int_2)
+			if (int_0 != int_2)
 			{
-				this.int_0 = int_2;
-				this.class184_0.method_6(int_2);
+				int_0 = int_2;
+				class184_0.method_6(int_2);
 			}
 		}
 
 		public void method_8(Enum29 enum29_0)
 		{
-			this.class184_0.method_5(enum29_0);
+			class184_0.method_5(enum29_0);
 		}
 
 		public int method_9(byte[] byte_0, int int_2, int int_3)
 		{
 			int num = int_3;
-			if (this.int_1 == 127)
+			if (int_1 == 127)
 			{
 				throw new InvalidOperationException("Deflater closed");
 			}
-			if (this.int_1 < 16)
+			if (int_1 < 16)
 			{
 				int num2 = 30720;
-				int num3 = this.int_0 - 1 >> 1;
+				int num3 = int_0 - 1 >> 1;
 				if (num3 < 0 || num3 > 3)
 				{
 					num3 = 3;
 				}
 				num2 |= num3 << 6;
-				if ((this.int_1 & 1) != 0)
+				if ((int_1 & 1) != 0)
 				{
 					num2 |= 32;
 				}
 				num2 += 31 - num2 % 31;
-				this.class189_0.method_6(num2);
-				if ((this.int_1 & 1) != 0)
+				class189_0.method_6(num2);
+				if ((int_1 & 1) != 0)
 				{
-					int num4 = this.class184_0.method_4();
-					this.class184_0.ResetAdler();
-					this.class189_0.method_6(num4 >> 16);
-					this.class189_0.method_6(num4 & 65535);
+					int num4 = class184_0.method_4();
+					class184_0.ResetAdler();
+					class189_0.method_6(num4 >> 16);
+					class189_0.method_6(num4 & 65535);
 				}
-				this.int_1 = (16 | (this.int_1 & 12));
+				int_1 = (16 | (int_1 & 12));
 			}
 			while (true)
 			{
-				int num5 = this.class189_0.method_8(byte_0, int_2, int_3);
+				int num5 = class189_0.method_8(byte_0, int_2, int_3);
 				int_2 += num5;
-				this.long_0 += (long)num5;
+				long_0 += num5;
 				int_3 -= num5;
-				if (int_3 == 0 || this.int_1 == 30)
+				if (int_3 == 0 || int_1 == 30)
 				{
 					goto IL_1E2;
 				}
-				if (!this.class184_0.method_0((this.int_1 & 4) != 0, (this.int_1 & 8) != 0))
+				if (!class184_0.method_0((int_1 & 4) != 0, (int_1 & 8) != 0))
 				{
-					if (this.int_1 == 16)
+					if (int_1 == 16)
 					{
 						break;
 					}
-					if (this.int_1 == 20)
+					if (int_1 == 20)
 					{
-						if (this.int_0 != 0)
+						if (int_0 != 0)
 						{
-							for (int i = 8 + (-this.class189_0.method_3() & 7); i > 0; i -= 10)
+							for (int i = 8 + (-class189_0.method_3() & 7); i > 0; i -= 10)
 							{
-								this.class189_0.method_5(2, 10);
+								class189_0.method_5(2, 10);
 							}
 						}
-						this.int_1 = 16;
+						int_1 = 16;
 					}
-					else if (this.int_1 == 28)
+					else if (int_1 == 28)
 					{
-						this.class189_0.method_4();
-						if (!this.bool_0)
+						class189_0.method_4();
+						if (!bool_0)
 						{
-							int num6 = this.class184_0.method_4();
-							this.class189_0.method_6(num6 >> 16);
-							this.class189_0.method_6(num6 & 65535);
+							int num6 = class184_0.method_4();
+							class189_0.method_6(num6 >> 16);
+							class189_0.method_6(num6 & 65535);
 						}
-						this.int_1 = 30;
+						int_1 = 30;
 					}
 				}
 			}

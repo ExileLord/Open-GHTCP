@@ -1,8 +1,8 @@
-using ns13;
-using ns14;
 using System;
 using System.Collections;
 using System.IO;
+using ns13;
+using ns14;
 
 namespace ns12
 {
@@ -19,8 +19,8 @@ namespace ns12
 		{
 			public int Compare(object x, object y)
 			{
-				Class179.Class181 @class = x as Class179.Class181;
-				Class179.Class181 class2 = y as Class179.Class181;
+				Class181 @class = x as Class181;
+				Class181 class2 = y as Class181;
 				int num;
 				if (@class == null)
 				{
@@ -39,8 +39,8 @@ namespace ns12
 				}
 				else
 				{
-					int num2 = (@class.method_1() == Class179.Enum28.const_0 || @class.method_1() == Class179.Enum28.const_1) ? 0 : 1;
-					int num3 = (class2.method_1() == Class179.Enum28.const_0 || class2.method_1() == Class179.Enum28.const_1) ? 0 : 1;
+					int num2 = (@class.method_1() == Enum28.const_0 || @class.method_1() == Enum28.const_1) ? 0 : 1;
+					int num3 = (class2.method_1() == Enum28.const_0 || class2.method_1() == Enum28.const_1) ? 0 : 1;
 					num = num2 - num3;
 					if (num == 0)
 					{
@@ -67,16 +67,16 @@ namespace ns12
 		{
 			private Class193 class193_0;
 
-			private Class179.Enum28 enum28_0;
+			private Enum28 enum28_0;
 
 			public Class193 method_0()
 			{
-				return this.class193_0;
+				return class193_0;
 			}
 
-			public Class179.Enum28 method_1()
+			public Enum28 method_1()
 			{
-				return this.enum28_0;
+				return enum28_0;
 			}
 		}
 
@@ -90,23 +90,23 @@ namespace ns12
 			{
 				get
 				{
-					return this.class193_0[this.int_0];
+					return class193_0[int_0];
 				}
 			}
 
 			public Class182(Class193[] class193_1)
 			{
-				this.class193_0 = class193_1;
+				class193_0 = class193_1;
 			}
 
 			public void Reset()
 			{
-				this.int_0 = -1;
+				int_0 = -1;
 			}
 
 			public bool MoveNext()
 			{
-				return ++this.int_0 < this.class193_0.Length;
+				return ++int_0 < class193_0.Length;
 			}
 		}
 
@@ -132,57 +132,57 @@ namespace ns12
 		{
 			get
 			{
-				return (Class193)this.class193_0[int_1].Clone();
+				return (Class193)class193_0[int_1].Clone();
 			}
 		}
 
 		public Class179()
 		{
-			this.class193_0 = new Class193[0];
-			this.bool_2 = true;
+			class193_0 = new Class193[0];
+			bool_2 = true;
 		}
 
 		~Class179()
 		{
-			this.vmethod_0(false);
+			vmethod_0(false);
 		}
 
 		public void method_0()
 		{
-			this.method_2(true);
+			method_2(true);
 			GC.SuppressFinalize(this);
 		}
 
 		public bool method_1()
 		{
-			return this.bool_1;
+			return bool_1;
 		}
 
 		public IEnumerator GetEnumerator()
 		{
-			if (this.class193_0 == null)
+			if (class193_0 == null)
 			{
 				throw new InvalidOperationException("ZipFile has closed");
 			}
-			return new Class179.Class182(this.class193_0);
+			return new Class182(class193_0);
 		}
 
 		void IDisposable.Dispose()
 		{
-			this.method_0();
+			method_0();
 		}
 
 		private void method_2(bool bool_3)
 		{
-			if (!this.bool_0)
+			if (!bool_0)
 			{
-				this.bool_0 = true;
-				this.class193_0 = null;
-				if (this.method_1() && this.stream_0 != null)
+				bool_0 = true;
+				class193_0 = null;
+				if (method_1() && stream_0 != null)
 				{
-					lock (this.stream_0)
+					lock (stream_0)
 					{
-						this.stream_0.Close();
+						stream_0.Close();
 					}
 				}
 			}
@@ -190,7 +190,7 @@ namespace ns12
 
 		public virtual void vmethod_0(bool bool_3)
 		{
-			this.method_2(bool_3);
+			method_2(bool_3);
 		}
 	}
 }

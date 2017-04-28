@@ -1,6 +1,5 @@
-using ns18;
-using System;
 using System.Text;
+using ns18;
 
 namespace ns21
 {
@@ -10,13 +9,13 @@ namespace ns21
 
 		public AsciiValueNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public AsciiValueNode(string string_1)
 		{
-			this.string_0 = string_1;
-			this.vmethod_0();
+			string_0 = string_1;
+			vmethod_0();
 		}
 
 		public override int vmethod_1()
@@ -26,22 +25,22 @@ namespace ns21
 
 		public override object vmethod_7()
 		{
-			return this.string_0;
+			return string_0;
 		}
 
 		public override byte[] vmethod_8()
 		{
-			return Encoding.ASCII.GetBytes(this.string_0);
+			return Encoding.ASCII.GetBytes(string_0);
 		}
 
 		public override void vmethod_9(byte[] byte_0)
 		{
-			this.string_0 = Encoding.ASCII.GetString(byte_0);
+			string_0 = Encoding.ASCII.GetString(byte_0);
 		}
 
 		public override string GetText()
 		{
-			return "\"" + this.string_0 + "\"";
+			return "\"" + string_0 + "\"";
 		}
 
 		public override string GetNodeText()
@@ -51,7 +50,7 @@ namespace ns21
 
 		public override void vmethod_2(ref int int_0)
 		{
-			int_0 += Encoding.ASCII.GetByteCount(this.string_0);
+			int_0 += Encoding.ASCII.GetByteCount(string_0);
 		}
 	}
 }

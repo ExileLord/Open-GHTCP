@@ -1,5 +1,3 @@
-using System;
-
 namespace ns5
 {
 	public enum Enum6

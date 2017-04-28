@@ -1,11 +1,10 @@
 using ns5;
-using System;
 
 namespace ns4
 {
 	public class Class93 : Class92
 	{
-		public class Class98 : Class92.Class94
+		public class Class98 : Class94
 		{
 			public static readonly float[] float_1;
 
@@ -87,22 +86,22 @@ namespace ns4
 
 			public readonly float[] float_29;
 
-			public Class98(int int_11) : base()
+			public Class98(int int_11)
 			{
 				int[] array = new int[1];
-				this.int_8 = array;
-				this.float_25 = new float[2][];
+				int_8 = array;
+				float_25 = new float[2][];
 				float[] array2 = new float[1];
-				this.float_26 = array2;
-				this.float_27 = new float[3];
+				float_26 = array2;
+				float_27 = new float[3];
 				float[] array3 = new float[1];
-				this.float_28 = array3;
+				float_28 = array3;
 				float[] array4 = new float[1];
-				this.float_29 = array4;
+				float_29 = array4;
 				//base..ctor();
-				this.int_5 = int_11;
-				this.int_10 = 0;
-				this.int_9 = 0;
+				int_5 = int_11;
+				int_10 = 0;
+				int_9 = 0;
 			}
 
 			public virtual int vmethod_4(zzSoundClass class107_0)
@@ -125,35 +124,32 @@ namespace ns4
 					{
 						if (num != 2)
 						{
-							if (this.int_5 <= 10)
+							if (int_5 <= 10)
 							{
 								return 4;
 							}
-							if (this.int_5 > 22)
+							if (int_5 > 22)
 							{
 								return 2;
 							}
 							return 3;
 						}
 					}
-					if (this.int_5 > 1)
+					if (int_5 > 1)
 					{
 						return 3;
 					}
 					return 4;
 				}
-				else
-				{
-					if (this.int_5 <= 3)
-					{
-						return 4;
-					}
-					if (this.int_5 > 10)
-					{
-						return 2;
-					}
-					return 3;
-				}
+			    if (int_5 <= 3)
+			    {
+			        return 4;
+			    }
+			    if (int_5 > 10)
+			    {
+			        return 2;
+			    }
+			    return 3;
 			}
 
 			public virtual void vmethod_5(zzSoundClass class107_0, int int_11, int int_12, float[] float_30, int[] int_13, float[] float_31, float[] float_32)
@@ -174,107 +170,107 @@ namespace ns4
 				{
 					if (num != 2)
 					{
-						if (this.int_5 <= 2)
+						if (int_5 <= 2)
 						{
-							this.float_25[int_12] = Class93.Class98.float_4[int_11];
-							float_30[0] = Class93.Class98.float_5[int_11];
-							int_13[0] = Class93.Class98.int_0[int_11];
-							float_31[0] = Class93.Class98.float_6[int_11];
-							float_32[0] = Class93.Class98.float_7[int_11];
+							float_25[int_12] = float_4[int_11];
+							float_30[0] = float_5[int_11];
+							int_13[0] = int_0[int_11];
+							float_31[0] = float_6[int_11];
+							float_32[0] = float_7[int_11];
 							return;
 						}
-						this.float_25[int_12] = Class93.Class98.float_8[int_11];
-						if (this.int_5 <= 10)
+						float_25[int_12] = float_8[int_11];
+						if (int_5 <= 10)
 						{
-							float_30[0] = Class93.Class98.float_9[int_11];
-							int_13[0] = Class93.Class98.int_1[int_11];
-							float_31[0] = Class93.Class98.float_10[int_11];
-							float_32[0] = Class93.Class98.float_11[int_11];
+							float_30[0] = float_9[int_11];
+							int_13[0] = int_1[int_11];
+							float_31[0] = float_10[int_11];
+							float_32[0] = float_11[int_11];
 							return;
 						}
-						if (this.int_5 <= 22)
+						if (int_5 <= 22)
 						{
-							float_30[0] = Class93.Class98.float_12[int_11];
-							int_13[0] = Class93.Class98.int_2[int_11];
-							float_31[0] = Class93.Class98.float_13[int_11];
-							float_32[0] = Class93.Class98.float_14[int_11];
+							float_30[0] = float_12[int_11];
+							int_13[0] = int_2[int_11];
+							float_31[0] = float_13[int_11];
+							float_32[0] = float_14[int_11];
 							return;
 						}
-						float_30[0] = Class93.Class98.float_15[int_11];
-						int_13[0] = Class93.Class98.int_3[int_11];
-						float_31[0] = Class93.Class98.float_16[int_11];
-						float_32[0] = Class93.Class98.float_17[int_11];
+						float_30[0] = float_15[int_11];
+						int_13[0] = int_3[int_11];
+						float_31[0] = float_16[int_11];
+						float_32[0] = float_17[int_11];
 						return;
 					}
 				}
-				this.float_25[int_12] = Class93.Class98.float_18[int_11];
-				float_30[0] = Class93.Class98.float_19[int_11];
-				int_13[0] = Class93.Class98.int_4[int_11];
-				float_31[0] = Class93.Class98.float_20[int_11];
-				float_32[0] = Class93.Class98.float_21[int_11];
+				float_25[int_12] = float_18[int_11];
+				float_30[0] = float_19[int_11];
+				int_13[0] = int_4[int_11];
+				float_31[0] = float_20[int_11];
+				float_32[0] = float_21[int_11];
 			}
 
 			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
 			{
-				int num = this.vmethod_4(class107_0);
-				this.int_6 = class82_0.method_13(num);
+				int num = vmethod_4(class107_0);
+				int_6 = class82_0.method_13(num);
 				if (class101_0 != null)
 				{
-					class101_0.method_0(this.int_6, num);
+					class101_0.method_0(int_6, num);
 				}
 			}
 
 			public virtual void vmethod_6(Class82 class82_0, Class101 class101_0)
 			{
-				if (this.int_6 == 0)
+				if (int_6 == 0)
 				{
 					return;
 				}
-				this.int_7 = class82_0.method_13(2);
+				int_7 = class82_0.method_13(2);
 				if (class101_0 != null)
 				{
-					class101_0.method_0(this.int_7, 2);
+					class101_0.method_0(int_7, 2);
 				}
 			}
 
 			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
 			{
-				if (this.int_6 == 0)
+				if (int_6 == 0)
 				{
 					return;
 				}
-				switch (this.int_7)
+				switch (int_7)
 				{
 				case 0:
-					this.float_22 = Class92.Class94.float_0[class82_0.method_13(6)];
-					this.float_23 = Class92.Class94.float_0[class82_0.method_13(6)];
-					this.float_24 = Class92.Class94.float_0[class82_0.method_13(6)];
+					float_22 = float_0[class82_0.method_13(6)];
+					float_23 = float_0[class82_0.method_13(6)];
+					float_24 = float_0[class82_0.method_13(6)];
 					break;
 				case 1:
-					this.float_22 = (this.float_23 = Class92.Class94.float_0[class82_0.method_13(6)]);
-					this.float_24 = Class92.Class94.float_0[class82_0.method_13(6)];
+					float_22 = (float_23 = float_0[class82_0.method_13(6)]);
+					float_24 = float_0[class82_0.method_13(6)];
 					break;
 				case 2:
-					this.float_22 = (this.float_23 = (this.float_24 = Class92.Class94.float_0[class82_0.method_13(6)]));
+					float_22 = (float_23 = (float_24 = float_0[class82_0.method_13(6)]));
 					break;
 				case 3:
-					this.float_22 = Class92.Class94.float_0[class82_0.method_13(6)];
-					this.float_23 = (this.float_24 = Class92.Class94.float_0[class82_0.method_13(6)]);
+					float_22 = float_0[class82_0.method_13(6)];
+					float_23 = (float_24 = float_0[class82_0.method_13(6)]);
 					break;
 				}
-				this.vmethod_5(class107_0, this.int_6, 0, this.float_26, this.int_8, this.float_28, this.float_29);
+				vmethod_5(class107_0, int_6, 0, float_26, int_8, float_28, float_29);
 			}
 
 			public override bool vmethod_2(Class82 class82_0)
 			{
-				if (this.int_6 != 0)
+				if (int_6 != 0)
 				{
-					if (this.float_25[0] != null)
+					if (float_25[0] != null)
 					{
-						int num = class82_0.method_13(this.int_8[0]);
+						int num = class82_0.method_13(int_8[0]);
 						num += num << 1;
-						float[] array = this.float_27;
-						float[] array2 = this.float_25[0];
+						float[] array = float_27;
+						float[] array2 = float_25[0];
 						int num2 = 0;
 						int num3 = num;
 						if (num3 > array2.Length - 3)
@@ -291,44 +287,44 @@ namespace ns4
 					}
 					else
 					{
-						this.float_27[0] = (float)class82_0.method_13(this.int_8[0]) * this.float_26[0] - 1f;
-						this.float_27[1] = (float)class82_0.method_13(this.int_8[0]) * this.float_26[0] - 1f;
-						this.float_27[2] = (float)class82_0.method_13(this.int_8[0]) * this.float_26[0] - 1f;
+						float_27[0] = class82_0.method_13(int_8[0]) * float_26[0] - 1f;
+						float_27[1] = class82_0.method_13(int_8[0]) * float_26[0] - 1f;
+						float_27[2] = class82_0.method_13(int_8[0]) * float_26[0] - 1f;
 					}
 				}
-				this.int_10 = 0;
-				return ++this.int_9 == 12;
+				int_10 = 0;
+				return ++int_9 == 12;
 			}
 
 			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
 			{
-				if (this.int_6 != 0 && enum4_0 != Enum4.const_2)
+				if (int_6 != 0 && enum4_0 != Enum4.const_2)
 				{
-					float num = this.float_27[this.int_10];
-					if (this.float_25[0] == null)
+					float num = float_27[int_10];
+					if (float_25[0] == null)
 					{
-						num = (num + this.float_29[0]) * this.float_28[0];
+						num = (num + float_29[0]) * float_28[0];
 					}
-					if (this.int_9 <= 4)
+					if (int_9 <= 4)
 					{
-						num *= this.float_22;
+						num *= float_22;
 					}
-					else if (this.int_9 <= 8)
+					else if (int_9 <= 8)
 					{
-						num *= this.float_23;
+						num *= float_23;
 					}
 					else
 					{
-						num *= this.float_24;
+						num *= float_24;
 					}
-					class80_0.method_2(num, this.int_5);
+					class80_0.method_2(num, int_5);
 				}
-				return ++this.int_10 == 3;
+				return ++int_10 == 3;
 			}
 
 			static Class98()
 			{
-				Class93.Class98.float_1 = new float[]
+				float_1 = new[]
 				{
 					-0.6666667f,
 					-0.6666667f,
@@ -412,7 +408,7 @@ namespace ns4
 					0.6666667f,
 					0.6666667f
 				};
-				Class93.Class98.float_2 = new float[]
+				float_2 = new[]
 				{
 					-0.8f,
 					-0.8f,
@@ -790,7 +786,7 @@ namespace ns4
 					0.8f,
 					0.8f
 				};
-				Class93.Class98.float_3 = new float[]
+				float_3 = new[]
 				{
 					-0.8888889f,
 					-0.8888889f,
@@ -2980,7 +2976,7 @@ namespace ns4
 					0.8888889f,
 					0.8888889f
 				};
-				Class93.Class98.int_0 = new int[]
+				int_0 = new[]
 				{
 					0,
 					5,
@@ -2999,7 +2995,7 @@ namespace ns4
 					15,
 					16
 				};
-				Class93.Class98.float_5 = new float[]
+				float_5 = new[]
 				{
 					0f,
 					0.5f,
@@ -3018,7 +3014,7 @@ namespace ns4
 					6.10351563E-05f,
 					3.05175781E-05f
 				};
-				Class93.Class98.float_6 = new float[]
+				float_6 = new[]
 				{
 					0f,
 					1.33333337f,
@@ -3037,7 +3033,7 @@ namespace ns4
 					1.00003052f,
 					1.00001526f
 				};
-				Class93.Class98.float_7 = new float[]
+				float_7 = new[]
 				{
 					0f,
 					0.5f,
@@ -3056,7 +3052,7 @@ namespace ns4
 					6.103516E-05f,
 					3.051758E-05f
 				};
-				Class93.Class98.int_1 = new int[]
+				int_1 = new[]
 				{
 					0,
 					5,
@@ -3075,7 +3071,7 @@ namespace ns4
 					13,
 					16
 				};
-				Class93.Class98.float_9 = new float[]
+				float_9 = new[]
 				{
 					0f,
 					0.5f,
@@ -3094,7 +3090,7 @@ namespace ns4
 					0.000244140625f,
 					3.05175781E-05f
 				};
-				Class93.Class98.float_10 = new float[]
+				float_10 = new[]
 				{
 					0f,
 					1.33333337f,
@@ -3113,7 +3109,7 @@ namespace ns4
 					1.00012207f,
 					1.00001526f
 				};
-				Class93.Class98.float_11 = new float[]
+				float_11 = new[]
 				{
 					0f,
 					0.5f,
@@ -3132,7 +3128,7 @@ namespace ns4
 					0.000244140625f,
 					3.051758E-05f
 				};
-				Class93.Class98.int_2 = new int[]
+				int_2 = new[]
 				{
 					0,
 					5,
@@ -3143,7 +3139,7 @@ namespace ns4
 					5,
 					16
 				};
-				Class93.Class98.float_12 = new float[]
+				float_12 = new[]
 				{
 					0f,
 					0.5f,
@@ -3154,7 +3150,7 @@ namespace ns4
 					0.0625f,
 					3.05175781E-05f
 				};
-				Class93.Class98.float_13 = new float[]
+				float_13 = new[]
 				{
 					0f,
 					1.33333337f,
@@ -3165,7 +3161,7 @@ namespace ns4
 					1.032258f,
 					1.00001526f
 				};
-				Class93.Class98.float_14 = new float[]
+				float_14 = new[]
 				{
 					0f,
 					0.5f,
@@ -3176,35 +3172,35 @@ namespace ns4
 					0.0625f,
 					3.051758E-05f
 				};
-				Class93.Class98.int_3 = new int[]
+				int_3 = new[]
 				{
 					0,
 					5,
 					7,
 					16
 				};
-				Class93.Class98.float_15 = new float[]
+				float_15 = new[]
 				{
 					0f,
 					0.5f,
 					0.25f,
 					3.05175781E-05f
 				};
-				Class93.Class98.float_16 = new float[]
+				float_16 = new[]
 				{
 					0f,
 					1.33333337f,
 					1.6f,
 					1.00001526f
 				};
-				Class93.Class98.float_17 = new float[]
+				float_17 = new[]
 				{
 					0f,
 					0.5f,
 					0.5f,
 					3.051758E-05f
 				};
-				Class93.Class98.int_4 = new int[]
+				int_4 = new[]
 				{
 					0,
 					5,
@@ -3223,7 +3219,7 @@ namespace ns4
 					14,
 					15
 				};
-				Class93.Class98.float_19 = new float[]
+				float_19 = new[]
 				{
 					0f,
 					0.5f,
@@ -3242,7 +3238,7 @@ namespace ns4
 					0.000122070313f,
 					6.10351563E-05f
 				};
-				Class93.Class98.float_20 = new float[]
+				float_20 = new[]
 				{
 					0f,
 					1.33333337f,
@@ -3261,7 +3257,7 @@ namespace ns4
 					1.000061f,
 					1.00003052f
 				};
-				Class93.Class98.float_21 = new float[]
+				float_21 = new[]
 				{
 					0f,
 					0.5f,
@@ -3281,22 +3277,22 @@ namespace ns4
 					6.103516E-05f
 				};
 				float[][] array = new float[16][];
-				array[1] = Class93.Class98.float_1;
-				Class93.Class98.float_4 = array;
+				array[1] = float_1;
+				float_4 = array;
 				float[][] array2 = new float[16][];
-				array2[1] = Class93.Class98.float_1;
-				array2[2] = Class93.Class98.float_2;
-				array2[4] = Class93.Class98.float_3;
-				Class93.Class98.float_8 = array2;
+				array2[1] = float_1;
+				array2[2] = float_2;
+				array2[4] = float_3;
+				float_8 = array2;
 				float[][] array3 = new float[16][];
-				array3[1] = Class93.Class98.float_1;
-				array3[2] = Class93.Class98.float_2;
-				array3[3] = Class93.Class98.float_3;
-				Class93.Class98.float_18 = array3;
+				array3[1] = float_1;
+				array3[2] = float_2;
+				array3[3] = float_3;
+				float_18 = array3;
 			}
 		}
 
-		public class Class99 : Class93.Class98
+		public class Class99 : Class98
 		{
 			public int int_11;
 
@@ -3317,43 +3313,43 @@ namespace ns4
 
 			public override void vmethod_6(Class82 class82_0, Class101 class101_0)
 			{
-				if (this.int_6 == 0)
+				if (int_6 == 0)
 				{
 					return;
 				}
-				this.int_7 = class82_0.method_13(2);
-				this.int_11 = class82_0.method_13(2);
+				int_7 = class82_0.method_13(2);
+				int_11 = class82_0.method_13(2);
 				if (class101_0 != null)
 				{
-					class101_0.method_0(this.int_7, 2);
-					class101_0.method_0(this.int_11, 2);
+					class101_0.method_0(int_7, 2);
+					class101_0.method_0(int_11, 2);
 				}
 			}
 
 			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
 			{
-				if (this.int_6 == 0)
+				if (int_6 == 0)
 				{
 					return;
 				}
 				base.vmethod_1(class82_0, class107_0);
-				switch (this.int_11)
+				switch (int_11)
 				{
 				case 0:
-					this.float_30 = Class92.Class94.float_0[class82_0.method_13(6)];
-					this.float_31 = Class92.Class94.float_0[class82_0.method_13(6)];
-					this.float_32 = Class92.Class94.float_0[class82_0.method_13(6)];
+					float_30 = float_0[class82_0.method_13(6)];
+					float_31 = float_0[class82_0.method_13(6)];
+					float_32 = float_0[class82_0.method_13(6)];
 					return;
 				case 1:
-					this.float_30 = (this.float_31 = Class92.Class94.float_0[class82_0.method_13(6)]);
-					this.float_32 = Class92.Class94.float_0[class82_0.method_13(6)];
+					float_30 = (float_31 = float_0[class82_0.method_13(6)]);
+					float_32 = float_0[class82_0.method_13(6)];
 					return;
 				case 2:
-					this.float_30 = (this.float_31 = (this.float_32 = Class92.Class94.float_0[class82_0.method_13(6)]));
+					float_30 = (float_31 = (float_32 = float_0[class82_0.method_13(6)]));
 					return;
 				case 3:
-					this.float_30 = Class92.Class94.float_0[class82_0.method_13(6)];
-					this.float_31 = (this.float_32 = Class92.Class94.float_0[class82_0.method_13(6)]);
+					float_30 = float_0[class82_0.method_13(6)];
+					float_31 = (float_32 = float_0[class82_0.method_13(6)]);
 					return;
 				default:
 					return;
@@ -3367,72 +3363,72 @@ namespace ns4
 
 			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
 			{
-				if (this.int_6 != 0)
+				if (int_6 != 0)
 				{
-					float num = this.float_27[this.int_10];
-					if (this.float_25[0] == null)
+					float num = float_27[int_10];
+					if (float_25[0] == null)
 					{
-						num = (num + this.float_29[0]) * this.float_28[0];
+						num = (num + float_29[0]) * float_28[0];
 					}
 					if (enum4_0 == Enum4.const_0)
 					{
 						float num2 = num;
-						if (this.int_9 <= 4)
+						if (int_9 <= 4)
 						{
-							num *= this.float_22;
-							num2 *= this.float_30;
+							num *= float_22;
+							num2 *= float_30;
 						}
-						else if (this.int_9 <= 8)
+						else if (int_9 <= 8)
 						{
-							num *= this.float_23;
-							num2 *= this.float_31;
+							num *= float_23;
+							num2 *= float_31;
 						}
 						else
 						{
-							num *= this.float_24;
-							num2 *= this.float_32;
+							num *= float_24;
+							num2 *= float_32;
 						}
-						class80_0.method_2(num, this.int_5);
-						class80_1.method_2(num2, this.int_5);
+						class80_0.method_2(num, int_5);
+						class80_1.method_2(num2, int_5);
 					}
 					else if (enum4_0 == Enum4.const_1)
 					{
-						if (this.int_9 <= 4)
+						if (int_9 <= 4)
 						{
-							num *= this.float_22;
+							num *= float_22;
 						}
-						else if (this.int_9 <= 8)
+						else if (int_9 <= 8)
 						{
-							num *= this.float_23;
+							num *= float_23;
 						}
 						else
 						{
-							num *= this.float_24;
+							num *= float_24;
 						}
-						class80_0.method_2(num, this.int_5);
+						class80_0.method_2(num, int_5);
 					}
 					else
 					{
-						if (this.int_9 <= 4)
+						if (int_9 <= 4)
 						{
-							num *= this.float_30;
+							num *= float_30;
 						}
-						else if (this.int_9 <= 8)
+						else if (int_9 <= 8)
 						{
-							num *= this.float_31;
+							num *= float_31;
 						}
 						else
 						{
-							num *= this.float_32;
+							num *= float_32;
 						}
-						class80_0.method_2(num, this.int_5);
+						class80_0.method_2(num, int_5);
 					}
 				}
-				return ++this.int_10 == 3;
+				return ++int_10 == 3;
 			}
 		}
 
-		public class Class100 : Class93.Class98
+		public class Class100 : Class98
 		{
 			public int int_11;
 
@@ -3457,45 +3453,45 @@ namespace ns4
 			public Class100(int int_14) : base(int_14)
 			{
 				int[] array = new int[1];
-				this.int_13 = array;
+				int_13 = array;
 				float[] array2 = new float[1];
-				this.float_33 = array2;
+				float_33 = array2;
 				float[] array3 = new float[1];
-				this.float_35 = array3;
+				float_35 = array3;
 				float[] array4 = new float[1];
-				this.float_36 = array4;
+				float_36 = array4;
 				//base..ctor(int_14);
-				this.float_34 = new float[3];
+				float_34 = new float[3];
 			}
 
 			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
 			{
-				int num = this.vmethod_4(class107_0);
-				this.int_6 = class82_0.method_13(num);
-				this.int_11 = class82_0.method_13(num);
+				int num = vmethod_4(class107_0);
+				int_6 = class82_0.method_13(num);
+				int_11 = class82_0.method_13(num);
 				if (class101_0 != null)
 				{
-					class101_0.method_0(this.int_6, num);
-					class101_0.method_0(this.int_11, num);
+					class101_0.method_0(int_6, num);
+					class101_0.method_0(int_11, num);
 				}
 			}
 
 			public override void vmethod_6(Class82 class82_0, Class101 class101_0)
 			{
-				if (this.int_6 != 0)
+				if (int_6 != 0)
 				{
-					this.int_7 = class82_0.method_13(2);
+					int_7 = class82_0.method_13(2);
 					if (class101_0 != null)
 					{
-						class101_0.method_0(this.int_7, 2);
+						class101_0.method_0(int_7, 2);
 					}
 				}
-				if (this.int_11 != 0)
+				if (int_11 != 0)
 				{
-					this.int_12 = class82_0.method_13(2);
+					int_12 = class82_0.method_13(2);
 					if (class101_0 != null)
 					{
-						class101_0.method_0(this.int_12, 2);
+						class101_0.method_0(int_12, 2);
 					}
 				}
 			}
@@ -3503,42 +3499,42 @@ namespace ns4
 			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
 			{
 				base.vmethod_1(class82_0, class107_0);
-				if (this.int_11 != 0)
+				if (int_11 != 0)
 				{
-					switch (this.int_12)
+					switch (int_12)
 					{
 					case 0:
-						this.float_30 = Class92.Class94.float_0[class82_0.method_13(6)];
-						this.float_31 = Class92.Class94.float_0[class82_0.method_13(6)];
-						this.float_32 = Class92.Class94.float_0[class82_0.method_13(6)];
+						float_30 = float_0[class82_0.method_13(6)];
+						float_31 = float_0[class82_0.method_13(6)];
+						float_32 = float_0[class82_0.method_13(6)];
 						break;
 					case 1:
-						this.float_30 = (this.float_31 = Class92.Class94.float_0[class82_0.method_13(6)]);
-						this.float_32 = Class92.Class94.float_0[class82_0.method_13(6)];
+						float_30 = (float_31 = float_0[class82_0.method_13(6)]);
+						float_32 = float_0[class82_0.method_13(6)];
 						break;
 					case 2:
-						this.float_30 = (this.float_31 = (this.float_32 = Class92.Class94.float_0[class82_0.method_13(6)]));
+						float_30 = (float_31 = (float_32 = float_0[class82_0.method_13(6)]));
 						break;
 					case 3:
-						this.float_30 = Class92.Class94.float_0[class82_0.method_13(6)];
-						this.float_31 = (this.float_32 = Class92.Class94.float_0[class82_0.method_13(6)]);
+						float_30 = float_0[class82_0.method_13(6)];
+						float_31 = (float_32 = float_0[class82_0.method_13(6)]);
 						break;
 					}
-					this.vmethod_5(class107_0, this.int_11, 1, this.float_33, this.int_13, this.float_35, this.float_36);
+					vmethod_5(class107_0, int_11, 1, float_33, int_13, float_35, float_36);
 				}
 			}
 
 			public override bool vmethod_2(Class82 class82_0)
 			{
 				bool result = base.vmethod_2(class82_0);
-				if (this.int_11 != 0)
+				if (int_11 != 0)
 				{
-					if (this.float_25[1] != null)
+					if (float_25[1] != null)
 					{
-						int num = class82_0.method_13(this.int_13[0]);
+						int num = class82_0.method_13(int_13[0]);
 						num += num << 1;
-						float[] array = this.float_34;
-						float[] array2 = this.float_25[1];
+						float[] array = float_34;
+						float[] array2 = float_25[1];
 						int num2 = num;
 						array[0] = array2[num2++];
 						array[1] = array2[num2++];
@@ -3546,9 +3542,9 @@ namespace ns4
 					}
 					else
 					{
-						this.float_34[0] = (float)class82_0.method_13(this.int_13[0]) * this.float_33[0] - 1f;
-						this.float_34[1] = (float)class82_0.method_13(this.int_13[0]) * this.float_33[0] - 1f;
-						this.float_34[2] = (float)class82_0.method_13(this.int_13[0]) * this.float_33[0] - 1f;
+						float_34[0] = class82_0.method_13(int_13[0]) * float_33[0] - 1f;
+						float_34[1] = class82_0.method_13(int_13[0]) * float_33[0] - 1f;
+						float_34[2] = class82_0.method_13(int_13[0]) * float_33[0] - 1f;
 					}
 				}
 				return result;
@@ -3557,32 +3553,32 @@ namespace ns4
 			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
 			{
 				bool result = base.vmethod_3(enum4_0, class80_0, class80_1);
-				if (this.int_11 != 0 && enum4_0 != Enum4.const_1)
+				if (int_11 != 0 && enum4_0 != Enum4.const_1)
 				{
-					float num = this.float_34[this.int_10 - 1];
-					if (this.float_25[1] == null)
+					float num = float_34[int_10 - 1];
+					if (float_25[1] == null)
 					{
-						num = (num + this.float_36[0]) * this.float_35[0];
+						num = (num + float_36[0]) * float_35[0];
 					}
-					if (this.int_9 <= 4)
+					if (int_9 <= 4)
 					{
-						num *= this.float_30;
+						num *= float_30;
 					}
-					else if (this.int_9 <= 8)
+					else if (int_9 <= 8)
 					{
-						num *= this.float_31;
+						num *= float_31;
 					}
 					else
 					{
-						num *= this.float_32;
+						num *= float_32;
 					}
 					if (enum4_0 == Enum4.const_0)
 					{
-						class80_1.method_2(num, this.int_5);
+						class80_1.method_2(num, int_5);
 					}
 					else
 					{
-						class80_0.method_2(num, this.int_5);
+						class80_0.method_2(num, int_5);
 					}
 				}
 				return result;
@@ -3591,40 +3587,40 @@ namespace ns4
 
 		public override void vmethod_1()
 		{
-			switch (this.enum5_0)
+			switch (enum5_0)
 			{
 			case Enum5.const_1:
 			{
 				int i;
-				for (i = 0; i < this.class107_0.method_26(); i++)
+				for (i = 0; i < class107_0.method_26(); i++)
 				{
-					this.class94_0[i] = new Class93.Class100(i);
+					class94_0[i] = new Class100(i);
 				}
-				while (i < this.int_0)
+				while (i < int_0)
 				{
-					this.class94_0[i] = new Class93.Class99(i);
+					class94_0[i] = new Class99(i);
 					i++;
 				}
 				return;
 			}
 			case Enum5.const_3:
-				for (int i = 0; i < this.int_0; i++)
+				for (int i = 0; i < int_0; i++)
 				{
-					this.class94_0[i] = new Class93.Class98(i);
+					class94_0[i] = new Class98(i);
 				}
 				return;
 			}
-			for (int i = 0; i < this.int_0; i++)
+			for (int i = 0; i < int_0; i++)
 			{
-				this.class94_0[i] = new Class93.Class100(i);
+				class94_0[i] = new Class100(i);
 			}
 		}
 
 		public override void vmethod_3()
 		{
-			for (int i = 0; i < this.int_0; i++)
+			for (int i = 0; i < int_0; i++)
 			{
-				((Class93.Class98)this.class94_0[i]).vmethod_6(this.class82_0, this.class101_0);
+				((Class98)class94_0[i]).vmethod_6(class82_0, class101_0);
 			}
 		}
 	}

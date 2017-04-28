@@ -1,7 +1,6 @@
+using System.Collections.Generic;
 using ns18;
 using ns21;
-using System;
-using System.Collections.Generic;
 
 namespace ns20
 {
@@ -11,22 +10,22 @@ namespace ns20
 		{
 			get
 			{
-				return ((TagValueNode)base.Nodes[int_0]).int_0;
+				return ((TagValueNode)Nodes[int_0]).int_0;
 			}
 			set
 			{
-				((TagValueNode)base.Nodes[int_0]).int_0 = value;
+				((TagValueNode)Nodes[int_0]).int_0 = value;
 			}
 		}
 
 		public TagArray()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public TagArray(IEnumerable<int> ienumerable_0)
 		{
-			this.method_11(ienumerable_0);
+			method_11(ienumerable_0);
 		}
 
 		public override int vmethod_1()
@@ -38,15 +37,15 @@ namespace ns20
 		{
 			foreach (int current in ienumerable_0)
 			{
-				base.Nodes.Add(new TagValueNode(current));
+				Nodes.Add(new TagValueNode(current));
 			}
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public void method_12(IEnumerable<int> ienumerable_0)
 		{
-			base.Nodes.Clear();
-			this.method_11(ienumerable_0);
+			Nodes.Clear();
+			method_11(ienumerable_0);
 		}
 
 		public override byte vmethod_15()

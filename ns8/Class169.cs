@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -12,6 +11,6 @@ namespace ns8
 		{
 		}
 
-		public static Class169.Struct68 struct68_0;
+		public static Struct68 struct68_0;
 	}
 }

@@ -1,5 +1,4 @@
 using ns10;
-using System;
 
 namespace ns2
 {
@@ -17,7 +16,7 @@ namespace ns2
 			}
 			if (num != 0)
 			{
-				return Class24.smethod_0(class71_0, object_0, float_0, num, 1);
+				return smethod_0(class71_0, object_0, float_0, num, 1);
 			}
 			return 0;
 		}

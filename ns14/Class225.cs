@@ -6,21 +6,21 @@ namespace ns14
 {
 	public class Class225 : IEnumerable, IEnumerable<Class225.Class226>
 	{
-		public struct Struct77 : IEnumerator, IDisposable, IEnumerator<Class225.Class226>
+		public struct Struct77 : IEnumerator, IDisposable, IEnumerator<Class226>
 		{
 			private Class225 class225_0;
 
 			private uint uint_0;
 
-			private Stack<Class225.Class226> stack_0;
+			private Stack<Class226> stack_0;
 
-			private Stack<Class225.Class226> stack_1;
+			private Stack<Class226> stack_1;
 
-			public Class225.Class226 Current
+			public Class226 Current
 			{
 				get
 				{
-					return this.stack_0.Peek();
+					return stack_0.Peek();
 				}
 			}
 
@@ -28,79 +28,79 @@ namespace ns14
 			{
 				get
 				{
-					this.method_1();
-					return this.Current;
+					method_1();
+					return Current;
 				}
 			}
 
 			public Struct77(Class225 class225_1)
 			{
-				this = default(Class225.Struct77);
-				this.class225_0 = class225_1;
-				this.uint_0 = class225_1.uint_0;
+				this = default(Struct77);
+				class225_0 = class225_1;
+				uint_0 = class225_1.uint_0;
 			}
 
-			public Struct77(Class225 class225_1, Stack<Class225.Class226> stack_2)
+			public Struct77(Class225 class225_1, Stack<Class226> stack_2)
 			{
-				this = new Class225.Struct77(class225_1);
-				this.stack_1 = stack_2;
+				this = new Struct77(class225_1);
+				stack_1 = stack_2;
 			}
 
 			public void Reset()
 			{
-				this.method_0();
-				this.stack_0 = null;
+				method_0();
+				stack_0 = null;
 			}
 
 			public bool MoveNext()
 			{
-				this.method_0();
-				Class225.Class226 @class;
-				if (this.stack_0 == null)
+				method_0();
+				Class226 @class;
+				if (stack_0 == null)
 				{
-					if (this.class225_0.class226_0 == null)
+					if (class225_0.class226_0 == null)
 					{
 						return false;
 					}
-					if (this.stack_1 != null)
+					if (stack_1 != null)
 					{
-						this.stack_0 = this.stack_1;
-						this.stack_1 = null;
-						return this.stack_0.Count != 0;
+						stack_0 = stack_1;
+						stack_1 = null;
+						return stack_0.Count != 0;
 					}
-					this.stack_0 = new Stack<Class225.Class226>();
-					@class = this.class225_0.class226_0;
+					stack_0 = new Stack<Class226>();
+					@class = class225_0.class226_0;
 				}
 				else
 				{
-					if (this.stack_0.Count == 0)
+					if (stack_0.Count == 0)
 					{
 						return false;
 					}
-					Class225.Class226 class2 = this.stack_0.Pop();
+					Class226 class2 = stack_0.Pop();
 					@class = class2.class226_1;
 				}
 				while (@class != null)
 				{
-					this.stack_0.Push(@class);
+					stack_0.Push(@class);
 					@class = @class.class226_0;
 				}
-				return this.stack_0.Count != 0;
+				return stack_0.Count != 0;
 			}
 
 			public void Dispose()
 			{
-				this.class225_0 = null;
-				this.stack_0 = null;
+				class225_0 = null;
+				stack_0 = null;
 			}
 
 			private void method_0()
 			{
-				if (this.class225_0 == null)
+				if (class225_0 == null)
 				{
 					throw new ObjectDisposedException("enumerator");
 				}
-				if (this.uint_0 != this.class225_0.uint_0)
+				if (uint_0 != class225_0.uint_0)
 				{
 					throw new InvalidOperationException("tree modified");
 				}
@@ -108,8 +108,8 @@ namespace ns14
 
 			public void method_1()
 			{
-				this.method_0();
-				if (this.stack_0 == null)
+				method_0();
+				if (stack_0 == null)
 				{
 					throw new InvalidOperationException("state invalid before the first MoveNext()");
 				}
@@ -118,74 +118,74 @@ namespace ns14
 
 		public interface Interface10<T>
 		{
-			int imethod_0(T gparam_0, Class225.Class226 class226_0);
+			int imethod_0(T gparam_0, Class226 class226_0);
 
-			Class225.Class226 imethod_1(T gparam_0);
+			Class226 imethod_1(T gparam_0);
 		}
 
 		public abstract class Class226
 		{
-			public Class225.Class226 class226_0;
+			public Class226 class226_0;
 
-			public Class225.Class226 class226_1;
+			public Class226 class226_1;
 
 			private uint uint_0;
 
 			public bool method_0()
 			{
-				return (this.uint_0 & 1u) == 1u;
+				return (uint_0 & 1u) == 1u;
 			}
 
 			public void method_1(bool bool_0)
 			{
-				this.uint_0 = (bool_0 ? (this.uint_0 | 1u) : (this.uint_0 & 4294967294u));
+				uint_0 = (bool_0 ? (uint_0 | 1u) : (uint_0 & 4294967294u));
 			}
 
 			public uint method_2()
 			{
-				return this.uint_0 >> 1;
+				return uint_0 >> 1;
 			}
 
 			public void method_3(uint uint_1)
 			{
-				this.uint_0 = (uint_1 << 1 | (this.uint_0 & 1u));
+				uint_0 = (uint_1 << 1 | (uint_0 & 1u));
 			}
 
 			public uint method_4()
 			{
-				this.method_3(1u);
-				if (this.class226_0 != null)
+				method_3(1u);
+				if (class226_0 != null)
 				{
-					this.method_3(this.method_2() + this.class226_0.method_2());
+					method_3(method_2() + class226_0.method_2());
 				}
-				if (this.class226_1 != null)
+				if (class226_1 != null)
 				{
-					this.method_3(this.method_2() + this.class226_1.method_2());
+					method_3(method_2() + class226_1.method_2());
 				}
-				return this.method_2();
+				return method_2();
 			}
 
 			public Class226()
 			{
-				this.uint_0 = 2u;
+				uint_0 = 2u;
 			}
 
-			public abstract void vmethod_0(Class225.Class226 class226_2);
+			public abstract void vmethod_0(Class226 class226_2);
 		}
 
-		private Class225.Class226 class226_0;
+		private Class226 class226_0;
 
 		private object object_0;
 
 		private uint uint_0;
 
-		public Class225.Class226 this[int int_0]
+		public Class226 this[int int_0]
 		{
 			get
 			{
-				if (int_0 >= 0 && int_0 < this.method_4())
+				if (int_0 >= 0 && int_0 < method_4())
 				{
-					Class225.Class226 class226_ = this.class226_0;
+					Class226 class226_ = class226_0;
 					while (class226_ != null)
 					{
 						int num = (int)((class226_.class226_0 == null) ? 0u : class226_.class226_0.method_2());
@@ -209,77 +209,77 @@ namespace ns14
 			}
 		}
 
-		private static List<Class225.Class226> smethod_0()
+		private static List<Class226> smethod_0()
 		{
-			return new List<Class225.Class226>();
+			return new List<Class226>();
 		}
 
-		private static void smethod_1(List<Class225.Class226> list_0)
+		private static void smethod_1(List<Class226> list_0)
 		{
 		}
 
 		public Class225(object object_1)
 		{
-			this.object_0 = object_1;
+			object_0 = object_1;
 		}
 
 		public void method_0()
 		{
-			this.class226_0 = null;
-			this.uint_0 += 1u;
+			class226_0 = null;
+			uint_0 += 1u;
 		}
 
-		public Class225.Class226 method_1<T>(T gparam_0, Class225.Class226 class226_1)
+		public Class226 method_1<T>(T gparam_0, Class226 class226_1)
 		{
-			if (this.class226_0 == null)
+			if (class226_0 == null)
 			{
 				if (class226_1 == null)
 				{
-					class226_1 = ((Class225.Interface10<T>)this.object_0).imethod_1(gparam_0);
+					class226_1 = ((Interface10<T>)object_0).imethod_1(gparam_0);
 				}
-				this.class226_0 = class226_1;
-				this.class226_0.method_1(true);
-				this.uint_0 += 1u;
-				return this.class226_0;
+				class226_0 = class226_1;
+				class226_0.method_1(true);
+				uint_0 += 1u;
+				return class226_0;
 			}
-			List<Class225.Class226> list = Class225.smethod_0();
-			int int_ = this.method_5<T>(gparam_0, list);
-			Class225.Class226 @class = list[list.Count - 1];
+			List<Class226> list = smethod_0();
+			int int_ = method_5(gparam_0, list);
+			Class226 @class = list[list.Count - 1];
 			if (@class == null)
 			{
 				if (class226_1 == null)
 				{
-					class226_1 = ((Class225.Interface10<T>)this.object_0).imethod_1(gparam_0);
+					class226_1 = ((Interface10<T>)object_0).imethod_1(gparam_0);
 				}
-				@class = this.method_6(int_, class226_1, list);
+				@class = method_6(int_, class226_1, list);
 			}
-			Class225.smethod_1(list);
+			smethod_1(list);
 			return @class;
 		}
 
-		public Class225.Class226 method_2<T>(T gparam_0)
+		public Class226 method_2<T>(T gparam_0)
 		{
-			if (this.class226_0 == null)
+			if (class226_0 == null)
 			{
 				return null;
 			}
-			List<Class225.Class226> list_ = Class225.smethod_0();
-			int num = this.method_5<T>(gparam_0, list_);
-			Class225.Class226 result = null;
+			List<Class226> list_ = smethod_0();
+			int num = method_5(gparam_0, list_);
+			Class226 result = null;
 			if (num == 0)
 			{
-				result = this.method_7(list_);
+				result = method_7(list_);
 			}
-			Class225.smethod_1(list_);
+			smethod_1(list_);
 			return result;
 		}
 
-		public Class225.Class226 method_3<T>(T gparam_0)
+		public Class226 method_3<T>(T gparam_0)
 		{
-			Class225.Interface10<T> @interface = (Class225.Interface10<T>)this.object_0;
-			Class225.Class226 @class;
+			Interface10<T> @interface = (Interface10<T>)object_0;
+			Class226 @class;
 			int num;
-			for (@class = this.class226_0; @class != null; @class = ((num < 0) ? @class.class226_0 : @class.class226_1))
+			for (@class = class226_0; @class != null; @class = ((num < 0) ? @class.class226_0 : @class.class226_1))
 			{
 				num = @interface.imethod_0(gparam_0, @class);
 				if (num == 0)
@@ -292,21 +292,21 @@ namespace ns14
 
 		public int method_4()
 		{
-			if (this.class226_0 != null)
+			if (class226_0 != null)
 			{
-				return (int)this.class226_0.method_2();
+				return (int)class226_0.method_2();
 			}
 			return 0;
 		}
 
-		private int method_5<T>(T gparam_0, List<Class225.Class226> list_0)
+		private int method_5<T>(T gparam_0, List<Class226> list_0)
 		{
-			Class225.Interface10<T> @interface = (Class225.Interface10<T>)this.object_0;
+			Interface10<T> @interface = (Interface10<T>)object_0;
 			int num = 0;
-			Class225.Class226 class226_ = this.class226_0;
+			Class226 class226_ = class226_0;
 			if (list_0 != null)
 			{
-				list_0.Add(this.class226_0);
+				list_0.Add(class226_0);
 			}
 			while (class226_ != null)
 			{
@@ -315,7 +315,7 @@ namespace ns14
 				{
 					return num;
 				}
-				Class225.Class226 class226_2;
+				Class226 class226_2;
 				if (num < 0)
 				{
 					class226_2 = class226_.class226_1;
@@ -335,10 +335,10 @@ namespace ns14
 			return num;
 		}
 
-		private Class225.Class226 method_6(int int_0, Class225.Class226 class226_1, List<Class225.Class226> list_0)
+		private Class226 method_6(int int_0, Class226 class226_1, List<Class226> list_0)
 		{
 			list_0[list_0.Count - 1] = class226_1;
-			Class225.Class226 @class = list_0[list_0.Count - 3];
+			Class226 @class = list_0[list_0.Count - 3];
 			if (int_0 < 0)
 			{
 				@class.class226_0 = class226_1;
@@ -349,32 +349,32 @@ namespace ns14
 			}
 			for (int i = 0; i < list_0.Count - 2; i += 2)
 			{
-				Class225.Class226 expr_3D = list_0[i];
+				Class226 expr_3D = list_0[i];
 				expr_3D.method_3(expr_3D.method_2() + 1u);
 			}
 			if (!@class.method_0())
 			{
-				this.method_8(list_0);
+				method_8(list_0);
 			}
-			if (!this.class226_0.method_0())
+			if (!class226_0.method_0())
 			{
 				throw new SystemException("Internal error: root is not black");
 			}
-			this.uint_0 += 1u;
+			uint_0 += 1u;
 			return class226_1;
 		}
 
-		private Class225.Class226 method_7(List<Class225.Class226> list_0)
+		private Class226 method_7(List<Class226> list_0)
 		{
 			int num = list_0.Count - 1;
-			Class225.Class226 @class = list_0[num];
+			Class226 @class = list_0[num];
 			if (@class.class226_0 != null)
 			{
-				Class225.Class226 class2 = Class225.smethod_2(@class.class226_0, @class.class226_1, list_0);
+				Class226 class2 = smethod_2(@class.class226_0, @class.class226_1, list_0);
 				@class.vmethod_0(class2);
 				if (class2.class226_0 != null)
 				{
-					Class225.Class226 class3 = class2.class226_0;
+					Class226 class3 = class2.class226_0;
 					list_0.Add(null);
 					list_0.Add(class3);
 					class2.vmethod_0(class3);
@@ -382,7 +382,7 @@ namespace ns14
 			}
 			else if (@class.class226_1 != null)
 			{
-				Class225.Class226 class226_ = @class.class226_1;
+				Class226 class226_ = @class.class226_1;
 				list_0.Add(null);
 				list_0.Add(class226_);
 				@class.vmethod_0(class226_);
@@ -394,10 +394,10 @@ namespace ns14
 				throw new SystemException("Internal Error: red-black violation somewhere");
 			}
 			list_0[num] = null;
-			this.method_13((num == 0) ? null : list_0[num - 2], @class, 0u, null);
+			method_13((num == 0) ? null : list_0[num - 2], @class, 0u, null);
 			for (int i = 0; i < list_0.Count - 2; i += 2)
 			{
-				Class225.Class226 expr_D2 = list_0[i];
+				Class226 expr_D2 = list_0[i];
 				expr_D2.method_3(expr_D2.method_2() - 1u);
 			}
 			if (@class.method_0())
@@ -405,23 +405,23 @@ namespace ns14
 				@class.method_1(false);
 				if (num != 0)
 				{
-					this.method_9(list_0);
+					method_9(list_0);
 				}
 			}
-			if (this.class226_0 != null && !this.class226_0.method_0())
+			if (class226_0 != null && !class226_0.method_0())
 			{
 				throw new SystemException("Internal Error: root is not black");
 			}
-			this.uint_0 += 1u;
+			uint_0 += 1u;
 			return @class;
 		}
 
-		private void method_8(List<Class225.Class226> list_0)
+		private void method_8(List<Class226> list_0)
 		{
 			int num = list_0.Count - 1;
 			while (list_0[num - 3] != null && !list_0[num - 3].method_0())
 			{
-				Class225.Class226 arg_34_0 = list_0[num - 2];
+				Class226 arg_34_0 = list_0[num - 2];
 				list_0[num - 3].method_1(true);
 				arg_34_0.method_1(true);
 				num -= 4;
@@ -435,18 +435,18 @@ namespace ns14
 					return;
 				}
 			}
-			this.method_10(num, list_0);
+			method_10(num, list_0);
 		}
 
-		private void method_9(List<Class225.Class226> list_0)
+		private void method_9(List<Class226> list_0)
 		{
 			int num = list_0.Count - 1;
 			do
 			{
-				Class225.Class226 @class = list_0[num - 1];
+				Class226 @class = list_0[num - 1];
 				if (!@class.method_0())
 				{
-					num = this.method_12(num, list_0);
+					num = method_12(num, list_0);
 					@class = list_0[num - 1];
 				}
 				if ((@class.class226_0 != null && !@class.class226_0.method_0()) || (@class.class226_1 != null && !@class.class226_1.method_0()))
@@ -464,18 +464,18 @@ namespace ns14
 			list_0[num].method_1(true);
 			return;
 			IL_7C:
-			this.method_11(num, list_0);
+			method_11(num, list_0);
 		}
 
-		private void method_10(int int_0, List<Class225.Class226> list_0)
+		private void method_10(int int_0, List<Class226> list_0)
 		{
-			Class225.Class226 @class = list_0[int_0];
-			Class225.Class226 class2 = list_0[int_0 - 2];
-			Class225.Class226 class3 = list_0[int_0 - 4];
+			Class226 @class = list_0[int_0];
+			Class226 class2 = list_0[int_0 - 2];
+			Class226 class3 = list_0[int_0 - 4];
 			uint uint_ = class3.method_2();
 			bool flag = class2 == class3.class226_0;
 			bool flag2 = @class == class2.class226_0;
-			Class225.Class226 class4;
+			Class226 class4;
 			if (flag && flag2)
 			{
 				class3.class226_0 = class2.class226_1;
@@ -511,16 +511,16 @@ namespace ns14
 				class2.method_4();
 			}
 			class4.method_1(true);
-			this.method_13((int_0 == 4) ? null : list_0[int_0 - 6], class3, uint_, class4);
+			method_13((int_0 == 4) ? null : list_0[int_0 - 6], class3, uint_, class4);
 		}
 
-		private void method_11(int int_0, List<Class225.Class226> list_0)
+		private void method_11(int int_0, List<Class226> list_0)
 		{
-			Class225.Class226 @class = list_0[int_0 - 1];
-			Class225.Class226 class2 = list_0[int_0 - 2];
+			Class226 @class = list_0[int_0 - 1];
+			Class226 class2 = list_0[int_0 - 2];
 			uint uint_ = class2.method_2();
 			bool bool_ = class2.method_0();
-			Class225.Class226 class3;
+			Class226 class3;
 			if (class2.class226_1 == @class)
 			{
 				if (@class.class226_1 != null && !@class.class226_1.method_0())
@@ -532,7 +532,7 @@ namespace ns14
 				}
 				else
 				{
-					Class225.Class226 class4 = @class.class226_0;
+					Class226 class4 = @class.class226_0;
 					class2.class226_1 = class4.class226_0;
 					class4.class226_0 = class2;
 					@class.class226_0 = class4.class226_1;
@@ -549,7 +549,7 @@ namespace ns14
 			}
 			else
 			{
-				Class225.Class226 class226_ = @class.class226_1;
+				Class226 class226_ = @class.class226_1;
 				class2.class226_0 = class226_.class226_1;
 				class226_.class226_1 = class2;
 				@class.class226_1 = class226_.class226_0;
@@ -563,14 +563,14 @@ namespace ns14
 				@class.method_4();
 			}
 			class3.method_1(bool_);
-			this.method_13((int_0 == 2) ? null : list_0[int_0 - 4], class2, uint_, class3);
+			method_13((int_0 == 2) ? null : list_0[int_0 - 4], class2, uint_, class3);
 		}
 
-		private int method_12(int int_0, List<Class225.Class226> list_0)
+		private int method_12(int int_0, List<Class226> list_0)
 		{
-			Class225.Class226 value = list_0[int_0];
-			Class225.Class226 @class = list_0[int_0 - 1];
-			Class225.Class226 class2 = list_0[int_0 - 2];
+			Class226 value = list_0[int_0];
+			Class226 @class = list_0[int_0 - 1];
+			Class226 class2 = list_0[int_0 - 2];
 			uint uint_ = class2.method_2();
 			bool flag;
 			if (class2.class226_1 == @class)
@@ -588,7 +588,7 @@ namespace ns14
 			class2.method_4();
 			class2.method_1(false);
 			@class.method_1(true);
-			this.method_13((int_0 == 2) ? null : list_0[int_0 - 4], class2, uint_, @class);
+			method_13((int_0 == 2) ? null : list_0[int_0 - 4], class2, uint_, @class);
 			if (int_0 + 1 == list_0.Count)
 			{
 				list_0.Add(null);
@@ -602,15 +602,15 @@ namespace ns14
 			return int_0 + 2;
 		}
 
-		private void method_13(Class225.Class226 class226_1, Class225.Class226 class226_2, uint uint_1, Class225.Class226 class226_3)
+		private void method_13(Class226 class226_1, Class226 class226_2, uint uint_1, Class226 class226_3)
 		{
 			if (class226_3 != null && class226_3.method_4() != uint_1)
 			{
 				throw new SystemException("Internal error: rotation");
 			}
-			if (class226_2 == this.class226_0)
+			if (class226_2 == class226_0)
 			{
-				this.class226_0 = class226_3;
+				class226_0 = class226_3;
 				return;
 			}
 			if (class226_2 == class226_1.class226_0)
@@ -626,7 +626,7 @@ namespace ns14
 			throw new SystemException("Internal error: path error");
 		}
 
-		private static Class225.Class226 smethod_2(Class225.Class226 class226_1, Class225.Class226 class226_2, List<Class225.Class226> list_0)
+		private static Class226 smethod_2(Class226 class226_1, Class226 class226_2, List<Class226> list_0)
 		{
 			while (true)
 			{
@@ -642,17 +642,17 @@ namespace ns14
 			return class226_1;
 		}
 
-		public Class225.Struct77 method_14()
+		public Struct77 method_14()
 		{
-			return new Class225.Struct77(this);
+			return new Struct77(this);
 		}
 
-		public Class225.Struct77 method_15<T>(T gparam_0)
+		public Struct77 method_15<T>(T gparam_0)
 		{
-			Stack<Class225.Class226> stack = new Stack<Class225.Class226>();
-			Class225.Interface10<T> @interface = (Class225.Interface10<T>)this.object_0;
+			Stack<Class226> stack = new Stack<Class226>();
+			Interface10<T> @interface = (Interface10<T>)object_0;
 			int num;
-			for (Class225.Class226 @class = this.class226_0; @class != null; @class = ((num < 0) ? @class.class226_0 : @class.class226_1))
+			for (Class226 @class = class226_0; @class != null; @class = ((num < 0) ? @class.class226_0 : @class.class226_1))
 			{
 				num = @interface.imethod_0(gparam_0, @class);
 				if (num <= 0)
@@ -664,17 +664,17 @@ namespace ns14
 					break;
 				}
 			}
-			return new Class225.Struct77(this, stack);
+			return new Struct77(this, stack);
 		}
 
-		IEnumerator<Class225.Class226> IEnumerable<Class225.Class226>.GetEnumerator()
+		IEnumerator<Class226> IEnumerable<Class226>.GetEnumerator()
 		{
-			return this.method_14();
+			return method_14();
 		}
 
 		IEnumerator IEnumerable.GetEnumerator()
 		{
-			return this.method_14();
+			return method_14();
 		}
 	}
 }

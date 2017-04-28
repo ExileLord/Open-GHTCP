@@ -10,32 +10,32 @@ namespace ns6
 
 		public IntPtr method_0()
 		{
-			return this.intptr_0;
+			return intptr_0;
 		}
 
 		public Struct62(IntPtr intptr_1)
 		{
-			this.intptr_0 = intptr_1;
+			intptr_0 = intptr_1;
 		}
 
 		public override string ToString()
 		{
-			return this.method_0().ToString();
+			return method_0().ToString();
 		}
 
 		public override bool Equals(object obj)
 		{
-			return obj is Struct62 && this.Equals((Struct62)obj);
+			return obj is Struct62 && Equals((Struct62)obj);
 		}
 
 		public override int GetHashCode()
 		{
-			return this.method_0().GetHashCode();
+			return method_0().GetHashCode();
 		}
 
 		public static IntPtr smethod_0(Struct62 struct62_1)
 		{
-			if (!Struct62.smethod_2(struct62_1, Struct62.struct62_0))
+			if (!smethod_2(struct62_1, struct62_0))
 			{
 				return IntPtr.Zero;
 			}
@@ -54,12 +54,12 @@ namespace ns6
 
 		public int CompareTo(Struct62 other)
 		{
-			return (int)other.intptr_0 - (int)this.intptr_0;
+			return (int)other.intptr_0 - (int)intptr_0;
 		}
 
 		public bool Equals(Struct62 other)
 		{
-			return this.method_0() == other.method_0();
+			return method_0() == other.method_0();
 		}
 	}
 }

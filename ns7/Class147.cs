@@ -1,5 +1,3 @@
-using System;
-
 namespace ns7
 {
 	public class Class147
@@ -20,19 +18,19 @@ namespace ns7
 
 		public Class147(Class144 class144_0)
 		{
-			this.long_0 = class144_0.vmethod_13(64);
-			this.byte_0 = (byte)class144_0.vmethod_10(8);
-			class144_0.vmethod_15(this.byte_1, 12);
-			this.int_0 = class144_0.vmethod_10(1);
-			this.int_1 = class144_0.vmethod_10(1);
+			long_0 = class144_0.vmethod_13(64);
+			byte_0 = (byte)class144_0.vmethod_10(8);
+			class144_0.vmethod_15(byte_1, 12);
+			int_0 = class144_0.vmethod_10(1);
+			int_1 = class144_0.vmethod_10(1);
 			class144_0.vmethod_5(110);
-			this.byte_2 = (byte)class144_0.vmethod_10(8);
-			if (this.byte_2 > 0)
+			byte_2 = (byte)class144_0.vmethod_10(8);
+			if (byte_2 > 0)
 			{
-				this.class148_0 = new Class148[(int)this.byte_2];
-				for (int i = 0; i < (int)this.byte_2; i++)
+				class148_0 = new Class148[byte_2];
+				for (int i = 0; i < (int)byte_2; i++)
 				{
-					this.class148_0[i] = new Class148(class144_0);
+					class148_0[i] = new Class148(class144_0);
 				}
 			}
 		}

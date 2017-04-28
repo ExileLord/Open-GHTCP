@@ -1,12 +1,10 @@
-using System;
-
 namespace ns21
 {
 	public class FloatRootNode : Class268
 	{
 		public FloatRootNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public override int vmethod_1()

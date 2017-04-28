@@ -1,9 +1,9 @@
-using Compression;
-using ns13;
-using ns14;
 using System;
 using System.IO;
 using System.Security.Cryptography;
+using Compression;
+using ns13;
+using ns14;
 
 namespace ns12
 {
@@ -43,7 +43,7 @@ namespace ns12
 		{
 			get
 			{
-				return this.stream_0.CanWrite;
+				return stream_0.CanWrite;
 			}
 		}
 
@@ -51,7 +51,7 @@ namespace ns12
 		{
 			get
 			{
-				return this.stream_0.Length;
+				return stream_0.Length;
 			}
 		}
 
@@ -59,7 +59,7 @@ namespace ns12
 		{
 			get
 			{
-				return this.stream_0.Position;
+				return stream_0.Position;
 			}
 			set
 			{
@@ -89,47 +89,47 @@ namespace ns12
 			{
 				throw new ArgumentOutOfRangeException("bufferSize");
 			}
-			this.stream_0 = stream_1;
-			this.byte_0 = new byte[int_0];
-			this.class194_0 = class194_1;
+			stream_0 = stream_1;
+			byte_0 = new byte[int_0];
+			class194_0 = class194_1;
 		}
 
 		public virtual void vmethod_0()
 		{
-			this.class194_0.method_3();
-			while (!this.class194_0.method_4())
+			class194_0.method_3();
+			while (!class194_0.method_4())
 			{
-				int num = this.class194_0.method_9(this.byte_0, 0, this.byte_0.Length);
+				int num = class194_0.method_9(byte_0, 0, byte_0.Length);
 				if (num <= 0)
 				{
 					break;
 				}
-				if (this.icryptoTransform_0 != null)
+				if (icryptoTransform_0 != null)
 				{
-					this.method_3(this.byte_0, 0, num);
+					method_3(byte_0, 0, num);
 				}
-				this.stream_0.Write(this.byte_0, 0, num);
+				stream_0.Write(byte_0, 0, num);
 			}
-			if (!this.class194_0.method_4())
+			if (!class194_0.method_4())
 			{
 				throw new SharpZipBaseException("Can't deflate all input?");
 			}
-			this.stream_0.Flush();
-			if (this.icryptoTransform_0 != null)
+			stream_0.Flush();
+			if (icryptoTransform_0 != null)
 			{
-				this.icryptoTransform_0.Dispose();
-				this.icryptoTransform_0 = null;
+				icryptoTransform_0.Dispose();
+				icryptoTransform_0 = null;
 			}
 		}
 
 		public bool method_0()
 		{
-			return this.stream_0.CanSeek;
+			return stream_0.CanSeek;
 		}
 
 		public string method_1()
 		{
-			return this.password;
+			return password;
 		}
 
 		public void method_2(string password)
@@ -144,32 +144,32 @@ namespace ns12
 
 		public void method_3(byte[] byte_1, int int_0, int int_1)
 		{
-			this.icryptoTransform_0.TransformBlock(byte_1, 0, int_1, byte_1, 0);
+			icryptoTransform_0.TransformBlock(byte_1, 0, int_1, byte_1, 0);
 		}
 
 		public void method_4(string string_1)
 		{
 			Class208 @class = new Class208();
 			byte[] rgbKey = Class207.smethod_0(Class186.smethod_3(string_1));
-			this.icryptoTransform_0 = @class.CreateEncryptor(rgbKey, null);
+			icryptoTransform_0 = @class.CreateEncryptor(rgbKey, null);
 		}
 
 		public void method_5()
 		{
-			while (!this.class194_0.method_5())
+			while (!class194_0.method_5())
 			{
-				int num = this.class194_0.method_9(this.byte_0, 0, this.byte_0.Length);
+				int num = class194_0.method_9(byte_0, 0, byte_0.Length);
 				if (num <= 0)
 				{
 					break;
 				}
-				if (this.icryptoTransform_0 != null)
+				if (icryptoTransform_0 != null)
 				{
-					this.method_3(this.byte_0, 0, num);
+					method_3(byte_0, 0, num);
 				}
-				this.stream_0.Write(this.byte_0, 0, num);
+				stream_0.Write(byte_0, 0, num);
 			}
-			if (!this.class194_0.method_5())
+			if (!class194_0.method_5())
 			{
 				throw new SharpZipBaseException("DeflaterOutputStream can't deflate all input?");
 			}
@@ -207,30 +207,30 @@ namespace ns12
 
 		public override void Flush()
 		{
-			this.class194_0.method_2();
-			this.method_5();
-			this.stream_0.Flush();
+			class194_0.method_2();
+			method_5();
+			stream_0.Flush();
 		}
 
 		public override void Close()
 		{
-			if (!this.bool_0)
+			if (!bool_0)
 			{
-				this.bool_0 = true;
+				bool_0 = true;
 				try
 				{
-					this.vmethod_0();
-					if (this.icryptoTransform_0 != null)
+					vmethod_0();
+					if (icryptoTransform_0 != null)
 					{
-						this.icryptoTransform_0.Dispose();
-						this.icryptoTransform_0 = null;
+						icryptoTransform_0.Dispose();
+						icryptoTransform_0 = null;
 					}
 				}
 				finally
 				{
-					if (this.bool_1)
+					if (bool_1)
 					{
-						this.stream_0.Close();
+						stream_0.Close();
 					}
 				}
 			}
@@ -238,7 +238,7 @@ namespace ns12
 
 		public override void WriteByte(byte value)
 		{
-			this.Write(new byte[]
+			Write(new[]
 			{
 				value
 			}, 0, 1);
@@ -246,8 +246,8 @@ namespace ns12
 
 		public override void Write(byte[] buffer, int offset, int count)
 		{
-			this.class194_0.method_6(buffer, offset, count);
-			this.method_5();
+			class194_0.method_6(buffer, offset, count);
+			method_5();
 		}
 	}
 }

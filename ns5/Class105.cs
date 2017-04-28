@@ -19,7 +19,7 @@ namespace ns5
 			int num = num_1;
 			while (i < num)
 			{
-				array[i] = Class105.smethod_1(this.float_1[i]);
+				array[i] = smethod_1(float_1[i]);
 				i++;
 			}
 			return array;
@@ -27,11 +27,11 @@ namespace ns5
 
 		public void method_1(float[] float_2)
 		{
-			this.method_3();
+			method_3();
 			int num = (float_2.Length > num_1) ? num_1 : float_2.Length;
 			for (int i = 0; i < num; i++)
 			{
-				this.float_1[i] = Class105.smethod_0(float_2[i]);
+				float_1[i] = smethod_0(float_2[i]);
 			}
 		}
 
@@ -39,7 +39,7 @@ namespace ns5
 		{
 			if (class105_1 != this)
 			{
-				this.method_1(class105_1.float_1);
+				method_1(class105_1.float_1);
 			}
 		}
 
@@ -47,13 +47,13 @@ namespace ns5
 		{
 			for (int i = 0; i < num_1; i++)
 			{
-				this.float_1[i] = 0f;
+				float_1[i] = 0f;
 			}
 		}
 
 		private static float smethod_0(float float_2)
 		{
-			if (float_2 == Class105.float_0)
+			if (float_2 == float_0)
 			{
 				return float_2;
 			}
@@ -70,11 +70,11 @@ namespace ns5
 
 		public static float smethod_1(float float_2)
 		{
-			if (float_2 == Class105.float_0)
+			if (float_2 == float_0)
 			{
 				return 0f;
 			}
-			return (float)Math.Pow(2.0, (double)float_2);
+			return (float)Math.Pow(2.0, float_2);
 		}
 	}
 }

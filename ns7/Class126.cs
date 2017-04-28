@@ -1,5 +1,4 @@
 using ns6;
-using System;
 
 namespace ns7
 {
@@ -11,8 +10,8 @@ namespace ns7
 		{
 			if (int_0 > 0)
 			{
-				this.byte_0 = new byte[int_0];
-				class144_0.vmethod_15(this.byte_0, int_0);
+				byte_0 = new byte[int_0];
+				class144_0.vmethod_15(byte_0, int_0);
 			}
 		}
 	}

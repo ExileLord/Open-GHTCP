@@ -16,7 +16,7 @@ namespace ns14
 		{
 			get
 			{
-				return new KeyValuePair<TKey, TValue>(this.list_0[this.int_0], this.list_1[this.int_0]);
+				return new KeyValuePair<TKey, TValue>(list_0[int_0], list_1[int_0]);
 			}
 		}
 
@@ -24,31 +24,31 @@ namespace ns14
 		{
 			get
 			{
-				return this.Current;
+				return Current;
 			}
 		}
 
 		public Class215(List<TKey> list_2, List<TValue> list_3)
 		{
-			this.list_0 = list_2;
-			this.list_1 = list_3;
+			list_0 = list_2;
+			list_1 = list_3;
 		}
 
 		public void Dispose()
 		{
-			this.list_0 = null;
-			this.list_1 = null;
+			list_0 = null;
+			list_1 = null;
 		}
 
 		public bool MoveNext()
 		{
-			this.int_0++;
-			return this.int_0 < this.list_0.Count;
+			int_0++;
+			return int_0 < list_0.Count;
 		}
 
 		public void Reset()
 		{
-			this.int_0 = -1;
+			int_0 = -1;
 		}
 	}
 }

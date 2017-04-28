@@ -1,8 +1,8 @@
+using System;
+using System.IO;
 using Compression;
 using Compression.Zip;
 using ns13;
-using System;
-using System.IO;
 
 namespace ns12
 {
@@ -24,7 +24,7 @@ namespace ns12
 		{
 			get
 			{
-				return this.stream_0.CanRead;
+				return stream_0.CanRead;
 			}
 		}
 
@@ -48,7 +48,7 @@ namespace ns12
 		{
 			get
 			{
-				return (long)this.class201_0.method_0();
+				return class201_0.method_0();
 			}
 		}
 
@@ -56,7 +56,7 @@ namespace ns12
 		{
 			get
 			{
-				return this.stream_0.Position;
+				return stream_0.Position;
 			}
 			set
 			{
@@ -82,9 +82,9 @@ namespace ns12
 			{
 				throw new ArgumentOutOfRangeException("bufferSize");
 			}
-			this.stream_0 = stream_1;
-			this.class196_0 = class196_1;
-			this.class201_0 = new Class201(stream_1, int_0);
+			stream_0 = stream_1;
+			class196_0 = class196_1;
+			class201_0 = new Class201(stream_1, int_0);
 		}
 
 		public long method_0(long long_1)
@@ -93,9 +93,9 @@ namespace ns12
 			{
 				throw new ArgumentOutOfRangeException("count");
 			}
-			if (this.stream_0.CanSeek)
+			if (stream_0.CanSeek)
 			{
-				this.stream_0.Seek(long_1, SeekOrigin.Current);
+				stream_0.Seek(long_1, SeekOrigin.Current);
 				return long_1;
 			}
 			int num = 2048;
@@ -104,23 +104,23 @@ namespace ns12
 				num = (int)long_1;
 			}
 			byte[] array = new byte[num];
-			return (long)this.stream_0.Read(array, 0, array.Length);
+			return stream_0.Read(array, 0, array.Length);
 		}
 
 		public void method_1()
 		{
-			this.class201_0.method_12(null);
+			class201_0.method_12(null);
 		}
 
 		public void method_2()
 		{
-			this.class201_0.method_4();
-			this.class201_0.method_3(this.class196_0);
+			class201_0.method_4();
+			class201_0.method_3(class196_0);
 		}
 
 		public override void Flush()
 		{
-			this.stream_0.Flush();
+			stream_0.Flush();
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
@@ -150,35 +150,35 @@ namespace ns12
 
 		public override void Close()
 		{
-			if (!this.bool_0)
+			if (!bool_0)
 			{
-				this.bool_0 = true;
-				if (this.bool_1)
+				bool_0 = true;
+				if (bool_1)
 				{
-					this.stream_0.Close();
+					stream_0.Close();
 				}
 			}
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			if (this.class196_0.method_9())
+			if (class196_0.method_9())
 			{
 				throw new SharpZipBaseException("Need a dictionary");
 			}
 			int num = count;
 			while (true)
 			{
-				int num2 = this.class196_0.method_7(buffer, offset, num);
+				int num2 = class196_0.method_7(buffer, offset, num);
 				offset += num2;
 				num -= num2;
-				if (num == 0 || this.class196_0.method_10())
+				if (num == 0 || class196_0.method_10())
 				{
 					goto IL_69;
 				}
-				if (this.class196_0.method_8())
+				if (class196_0.method_8())
 				{
-					this.method_2();
+					method_2();
 				}
 				else if (num2 == 0)
 				{

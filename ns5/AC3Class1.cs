@@ -1,7 +1,6 @@
+using System.IO;
 using AVTools.MpegUtils;
 using SharpAudio.ASC.Ac3.Decoding;
-using System;
-using System.IO;
 
 namespace ns5
 {
@@ -183,68 +182,68 @@ namespace ns5
 
 		public AC3Class1()
 		{
-			this.method_0();
+			method_0();
 		}
 
 		private void method_0()
 		{
 			for (int i = 0; i < 5; i++)
 			{
-				this.double_9[i] = new double[18];
+				double_9[i] = new double[18];
 			}
 			for (int j = 0; j < 5; j++)
 			{
-				this.byte_1[j] = new byte[256];
+				byte_1[j] = new byte[256];
 			}
 			for (int k = 0; k < 5; k++)
 			{
-				this.byte_4[k] = new byte[256];
+				byte_4[k] = new byte[256];
 			}
 			for (int l = 0; l < 5; l++)
 			{
-				this.int_23[l] = new int[50];
+				int_23[l] = new int[50];
 			}
-			this.byte_6 = Class114.smethod_0();
-			this.byte_7 = Class114.smethod_1();
-			this.byte_8 = Class114.smethod_2();
-			this.int_34 = Class114.smethod_3();
-			this.double_13 = Class114.smethod_4();
-			this.double_14 = Class114.smethod_5();
-			this.double_15 = Class114.smethod_6();
-			this.double_16 = Class114.smethod_7();
-			this.double_17 = Class114.smethod_8();
-			this.double_18 = Class114.smethod_9();
-			this.double_19 = Class114.smethod_10();
-			this.double_20 = Class114.smethod_11();
-			this.double_21 = Class114.smethod_12();
-			this.double_22 = Class114.smethod_13();
-			this.double_23 = Class114.smethod_14();
+			byte_6 = Class114.smethod_0();
+			byte_7 = Class114.smethod_1();
+			byte_8 = Class114.smethod_2();
+			int_34 = Class114.smethod_3();
+			double_13 = Class114.smethod_4();
+			double_14 = Class114.smethod_5();
+			double_15 = Class114.smethod_6();
+			double_16 = Class114.smethod_7();
+			double_17 = Class114.smethod_8();
+			double_18 = Class114.smethod_9();
+			double_19 = Class114.smethod_10();
+			double_20 = Class114.smethod_11();
+			double_21 = Class114.smethod_12();
+			double_22 = Class114.smethod_13();
+			double_23 = Class114.smethod_14();
 		}
 
 		private bool method_1()
 		{
-			while (this.class115_0.method_3(16) != 2935)
+			while (class115_0.method_3(16) != 2935)
 			{
-				this.class115_0.method_2(8);
-				if (this.class115_0.method_1() <= 56)
+				class115_0.method_2(8);
+				if (class115_0.method_1() <= 56)
 				{
 					return false;
 				}
 			}
-			this.class115_0.method_2(16);
-			this.class115_0.method_2(16);
-			int num = this.class115_0.method_2(8);
-			int num2 = this.class115_0.method_2(8);
-			int num3 = this.class115_0.method_2(8);
-			int num4 = AC3Class1.int_31[num2 >> 3];
+			class115_0.method_2(16);
+			class115_0.method_2(16);
+			int num = class115_0.method_2(8);
+			int num2 = class115_0.method_2(8);
+			int num3 = class115_0.method_2(8);
+			int num4 = int_31[num2 >> 3];
 			int num5 = num3 >> 5;
-			this.int_1 = ((((num3 & 248) == 80) ? 10 : num5) | (((num3 & AC3Class1.int_33[num5]) != 0) ? 16 : 0));
+			int_1 = ((((num3 & 248) == 80) ? 10 : num5) | (((num3 & int_33[num5]) != 0) ? 16 : 0));
 			int num6 = num & 63;
 			if (num6 >= 38)
 			{
 				throw new AC3Exception("Unknown rate");
 			}
-			this.int_3 = AC3Class1.int_32[num6 >> 1] * 1000 >> num4;
+			int_3 = int_32[num6 >> 1] * 1000 >> num4;
 			int num7 = num & 192;
 			if (num7 != 0)
 			{
@@ -254,170 +253,170 @@ namespace ns5
 					{
 						throw new AC3Exception("Unrecognised sample rate multiplier");
 					}
-					this.int_2 = 32000 >> num4;
-					this.int_4 = 6 * AC3Class1.int_32[num6 >> 1];
+					int_2 = 32000 >> num4;
+					int_4 = 6 * int_32[num6 >> 1];
 				}
 				else
 				{
-					this.int_2 = 44100 >> num4;
-					this.int_4 = 2 * (320 * AC3Class1.int_32[num6 >> 1] / 147 + (num6 & 1));
+					int_2 = 44100 >> num4;
+					int_4 = 2 * (320 * int_32[num6 >> 1] / 147 + (num6 & 1));
 				}
 			}
 			else
 			{
-				this.int_2 = 48000 >> num4;
-				this.int_4 = 4 * AC3Class1.int_32[num6 >> 1];
+				int_2 = 48000 >> num4;
+				int_4 = 4 * int_32[num6 >> 1];
 			}
-			this.class115_0.vmethod_3(this.class115_0.vmethod_0() - 56);
+			class115_0.vmethod_3(class115_0.vmethod_0() - 56);
 			return true;
 		}
 
 		private void method_2()
 		{
-			this.class115_0.method_2(32);
-			this.int_5 = this.class115_0.method_2(3);
-			this.class115_0.method_2(5);
-			int num = this.class115_0.method_2(5);
-			if (num >= AC3Class1.int_31.Length)
+			class115_0.method_2(32);
+			int_5 = class115_0.method_2(3);
+			class115_0.method_2(5);
+			int num = class115_0.method_2(5);
+			if (num >= int_31.Length)
 			{
 				throw new FFMpegException("Illegal half rate");
 			}
-			this.int_6 = AC3Class1.int_31[num];
-			this.class115_0.method_2(3);
-			this.int_7 = this.class115_0.method_2(3);
-			if (this.int_7 == 2)
+			int_6 = int_31[num];
+			class115_0.method_2(3);
+			int_7 = class115_0.method_2(3);
+			if (int_7 == 2)
 			{
-				this.class115_0.method_2(2);
+				class115_0.method_2(2);
 			}
-			this.double_5 = 0.0;
-			if ((this.int_7 & 1) != 0 && this.int_7 != 1)
+			double_5 = 0.0;
+			if ((int_7 & 1) != 0 && int_7 != 1)
 			{
-				this.double_5 = AC3Class1.double_11[this.class115_0.method_2(2)];
+				double_5 = double_11[class115_0.method_2(2)];
 			}
-			this.double_6 = 0.0;
-			if ((this.int_7 & 4) != 0)
+			double_6 = 0.0;
+			if ((int_7 & 4) != 0)
 			{
-				this.double_6 = AC3Class1.double_12[this.class115_0.method_2(2)];
+				double_6 = double_12[class115_0.method_2(2)];
 			}
-			this.bool_0 = this.class115_0.vmethod_1();
-			this.double_7 = 2.0;
-			this.method_10(this.int_7);
-			this.double_7 *= 2.0;
-			this.double_8 = this.double_7;
-			this.bool_1 = false;
-			bool flag = this.int_7 == 0;
+			bool_0 = class115_0.vmethod_1();
+			double_7 = 2.0;
+			method_10(int_7);
+			double_7 *= 2.0;
+			double_8 = double_7;
+			bool_1 = false;
+			bool flag = int_7 == 0;
 			do
 			{
-				this.class115_0.method_2(5);
-				if (this.class115_0.vmethod_1())
+				class115_0.method_2(5);
+				if (class115_0.vmethod_1())
 				{
-					this.class115_0.method_2(8);
+					class115_0.method_2(8);
 				}
-				if (this.class115_0.vmethod_1())
+				if (class115_0.vmethod_1())
 				{
-					this.int_8 = this.class115_0.method_2(8);
+					int_8 = class115_0.method_2(8);
 				}
-				if (this.class115_0.vmethod_1())
+				if (class115_0.vmethod_1())
 				{
-					this.class115_0.method_2(7);
+					class115_0.method_2(7);
 				}
 			}
 			while (!(flag = !flag));
-			this.class115_0.method_2(2);
-			if (this.class115_0.vmethod_1())
+			class115_0.method_2(2);
+			if (class115_0.vmethod_1())
 			{
-				this.class115_0.method_2(14);
+				class115_0.method_2(14);
 			}
-			if (this.class115_0.vmethod_1())
+			if (class115_0.vmethod_1())
 			{
-				this.class115_0.method_2(14);
+				class115_0.method_2(14);
 			}
-			if (this.class115_0.vmethod_1())
+			if (class115_0.vmethod_1())
 			{
-				int num2 = this.class115_0.method_2(6);
-				this.class115_0.vmethod_3(this.class115_0.vmethod_0() + num2 * 8);
+				int num2 = class115_0.method_2(6);
+				class115_0.vmethod_3(class115_0.vmethod_0() + num2 * 8);
 			}
 		}
 
 		private void method_3()
 		{
-			int num = AC3Class1.int_35[this.int_7];
+			int num = int_35[int_7];
 			bool[] array = new bool[5];
 			for (int i = 0; i < num; i++)
 			{
-				array[i] = this.class115_0.vmethod_1();
+				array[i] = class115_0.vmethod_1();
 			}
 			bool[] array2 = new bool[5];
 			for (int j = 0; j < num; j++)
 			{
-				array2[j] = this.class115_0.vmethod_1();
+				array2[j] = class115_0.vmethod_1();
 			}
-			bool flag = this.int_7 == 0;
+			bool flag = int_7 == 0;
 			do
 			{
-				if (this.class115_0.vmethod_1())
+				if (class115_0.vmethod_1())
 				{
-					int num2 = this.method_8(8);
-					if (this.bool_1)
+					int num2 = method_8(8);
+					if (bool_1)
 					{
-						this.double_8 = (double)(((num2 & 31) | 32) << 13) * this.double_13[2 - (num2 >> 5)] * this.double_7;
+						double_8 = (((num2 & 31) | 32) << 13) * double_13[2 - (num2 >> 5)] * double_7;
 					}
 				}
 			}
 			while (!(flag = !flag));
-			if (this.class115_0.vmethod_1())
+			if (class115_0.vmethod_1())
 			{
-				this.int_9 = 0;
-				if (this.class115_0.vmethod_1())
+				int_9 = 0;
+				if (class115_0.vmethod_1())
 				{
 					for (int k = 0; k < num; k++)
 					{
-						this.int_9 |= this.class115_0.method_2(1) << k;
+						int_9 |= class115_0.method_2(1) << k;
 					}
-					switch (this.int_7)
+					switch (int_7)
 					{
 					case 0:
 					case 1:
 						throw new AC3Exception("Invalid mode");
 					case 2:
-						this.bool_2 = this.class115_0.vmethod_1();
+						bool_2 = class115_0.vmethod_1();
 						break;
 					}
-					int num3 = this.class115_0.method_2(4);
-					int num4 = this.class115_0.method_2(4);
+					int num3 = class115_0.method_2(4);
+					int num4 = class115_0.method_2(4);
 					if (num4 + 3 - num3 < 0)
 					{
 						throw new AC3Exception("Invalid values");
 					}
-					this.int_10 = num4 + 3 - num3;
-					this.int_11 = AC3Class1.int_36[num3];
-					this.int_12 = num3 * 12 + 37;
-					this.int_13 = num4 * 12 + 73;
-					this.int_14 = 0;
-					int num5 = this.int_10;
+					int_10 = num4 + 3 - num3;
+					int_11 = int_36[num3];
+					int_12 = num3 * 12 + 37;
+					int_13 = num4 * 12 + 73;
+					int_14 = 0;
+					int num5 = int_10;
 					for (int l = 0; l < num5 - 1; l++)
 					{
-						if (this.class115_0.vmethod_1())
+						if (class115_0.vmethod_1())
 						{
-							this.int_14 |= 1 << l;
-							this.int_10--;
+							int_14 |= 1 << l;
+							int_10--;
 						}
 					}
 				}
 			}
-			if (this.int_9 != 0)
+			if (int_9 != 0)
 			{
 				bool flag2 = false;
 				for (int m = 0; m < num; m++)
 				{
-					if ((this.int_9 >> m & 1) != 0 && this.class115_0.vmethod_1())
+					if ((int_9 >> m & 1) != 0 && class115_0.vmethod_1())
 					{
 						flag2 = true;
-						int num6 = 3 * this.class115_0.method_2(2);
-						for (int n = 0; n < this.int_10; n++)
+						int num6 = 3 * class115_0.method_2(2);
+						for (int n = 0; n < int_10; n++)
 						{
-							int num7 = this.class115_0.method_2(4);
-							int num8 = this.class115_0.method_2(4);
+							int num7 = class115_0.method_2(4);
+							int num8 = class115_0.method_2(4);
 							if (num7 == 15)
 							{
 								num8 <<= 14;
@@ -426,63 +425,63 @@ namespace ns5
 							{
 								num8 = (num8 | 16) << 13;
 							}
-							this.double_9[m][n] = (double)num8 * this.double_13[num7 + num6];
+							double_9[m][n] = num8 * double_13[num7 + num6];
 						}
 					}
 				}
-				if (this.int_7 == 2 && this.bool_2 && flag2)
+				if (int_7 == 2 && bool_2 && flag2)
 				{
-					for (int num9 = 0; num9 < this.int_10; num9++)
+					for (int num9 = 0; num9 < int_10; num9++)
 					{
-						if (this.class115_0.vmethod_1())
+						if (class115_0.vmethod_1())
 						{
-							this.double_9[1][num9] = -this.double_9[1][num9];
+							double_9[1][num9] = -double_9[1][num9];
 						}
 					}
 				}
 			}
-			if (this.int_7 == 2 && this.class115_0.vmethod_1())
+			if (int_7 == 2 && class115_0.vmethod_1())
 			{
-				this.int_15 = 0;
-				int num10 = (this.int_9 != 0) ? this.int_12 : 253;
+				int_15 = 0;
+				int num10 = (int_9 != 0) ? int_12 : 253;
 				int num11 = 0;
 				do
 				{
-					this.int_15 |= this.class115_0.method_2(1) << num11;
+					int_15 |= class115_0.method_2(1) << num11;
 				}
-				while (AC3Class1.int_37[num11++] < num10);
+				while (int_37[num11++] < num10);
 			}
 			int num12 = 0;
 			int num13 = 0;
-			if (this.int_9 != 0)
+			if (int_9 != 0)
 			{
-				num12 = this.class115_0.method_2(2);
+				num12 = class115_0.method_2(2);
 			}
 			int[] array3 = new int[5];
 			for (int num14 = 0; num14 < num; num14++)
 			{
-				array3[num14] = this.class115_0.method_2(2);
+				array3[num14] = class115_0.method_2(2);
 			}
-			if (this.bool_0)
+			if (bool_0)
 			{
-				num13 = this.class115_0.method_2(1);
+				num13 = class115_0.method_2(1);
 			}
 			for (int num15 = 0; num15 < num; num15++)
 			{
 				if (array3[num15] != 0)
 				{
-					if ((this.int_9 >> num15 & 1) != 0)
+					if ((int_9 >> num15 & 1) != 0)
 					{
-						this.int_16[num15] = this.int_12;
+						int_16[num15] = int_12;
 					}
 					else
 					{
-						int num16 = this.class115_0.method_2(6);
+						int num16 = class115_0.method_2(6);
 						if (num16 > 60)
 						{
 							throw new AC3Exception("chbwcod too large");
 						}
-						this.int_16[num15] = num16 * 3 + 73;
+						int_16[num15] = num16 * 3 + 73;
 					}
 				}
 			}
@@ -490,9 +489,9 @@ namespace ns5
 			if (num12 != 0)
 			{
 				num17 = 64;
-				int int_ = (this.int_13 - this.int_12) / (3 << num12 - 1);
-				byte byte_ = (byte)(this.class115_0.method_2(4) << 1);
-				this.method_13(num12, int_, byte_, this.byte_0, this.int_12);
+				int int_ = (int_13 - int_12) / (3 << num12 - 1);
+				byte byte_ = (byte)(class115_0.method_2(4) << 1);
+				method_13(num12, int_, byte_, byte_0, int_12);
 			}
 			for (int num18 = 0; num18 < num; num18++)
 			{
@@ -500,185 +499,185 @@ namespace ns5
 				{
 					num17 |= 1 << num18;
 					int num19 = 3 << array3[num18] - 1;
-					int int_2 = (this.int_16[num18] + num19 - 4) / num19;
-					this.byte_1[num18][0] = (byte)this.class115_0.method_2(4);
-					this.method_13(array3[num18], int_2, this.byte_1[num18][0], this.byte_1[num18], 1);
-					this.class115_0.method_2(2);
+					int int_2 = (int_16[num18] + num19 - 4) / num19;
+					byte_1[num18][0] = (byte)class115_0.method_2(4);
+					method_13(array3[num18], int_2, byte_1[num18][0], byte_1[num18], 1);
+					class115_0.method_2(2);
 				}
 			}
 			if (num13 != 0)
 			{
 				num17 |= 32;
-				this.byte_2[0] = (byte)this.class115_0.method_2(4);
-				this.method_13(num13, 2, this.byte_2[0], this.byte_2, 1);
+				byte_2[0] = (byte)class115_0.method_2(4);
+				method_13(num13, 2, byte_2[0], byte_2, 1);
 			}
-			if (this.class115_0.vmethod_1())
+			if (class115_0.vmethod_1())
 			{
 				num17 = 127;
-				this.int_17 = this.class115_0.method_2(11);
+				int_17 = class115_0.method_2(11);
 			}
-			if (this.class115_0.vmethod_1())
+			if (class115_0.vmethod_1())
 			{
 				num17 = 127;
-				this.int_27 = this.class115_0.method_2(6);
-				if (this.int_9 != 0)
+				int_27 = class115_0.method_2(6);
+				if (int_9 != 0)
 				{
-					this.int_18 = this.class115_0.method_2(7);
+					int_18 = class115_0.method_2(7);
 				}
 				for (int num20 = 0; num20 < num; num20++)
 				{
-					this.int_21[num20] = this.class115_0.method_2(7);
+					int_21[num20] = class115_0.method_2(7);
 				}
-				if (this.bool_0)
+				if (bool_0)
 				{
-					this.int_24 = this.class115_0.method_2(7);
+					int_24 = class115_0.method_2(7);
 				}
 			}
-			if (this.int_9 != 0 && this.class115_0.vmethod_1())
+			if (int_9 != 0 && class115_0.vmethod_1())
 			{
 				num17 |= 64;
-				this.int_28 = 9 - this.class115_0.method_2(3);
-				this.int_29 = 9 - this.class115_0.method_2(3);
+				int_28 = 9 - class115_0.method_2(3);
+				int_29 = 9 - class115_0.method_2(3);
 			}
-			if (this.class115_0.vmethod_1())
+			if (class115_0.vmethod_1())
 			{
 				num17 = 127;
-				if (this.int_9 != 0)
+				if (int_9 != 0)
 				{
-					this.int_19 = this.class115_0.method_2(2);
+					int_19 = class115_0.method_2(2);
 				}
 				for (int num21 = 0; num21 < num; num21++)
 				{
-					this.int_22[num21] = this.class115_0.method_2(2);
+					int_22[num21] = class115_0.method_2(2);
 				}
-				if (this.int_9 != 0 && this.int_19 == 1)
+				if (int_9 != 0 && int_19 == 1)
 				{
-					this.method_12(this.int_20);
+					method_12(int_20);
 				}
 				for (int num22 = 0; num22 < num; num22++)
 				{
-					if (this.int_22[num22] == 1)
+					if (int_22[num22] == 1)
 					{
-						this.method_12(this.int_23[num22]);
+						method_12(int_23[num22]);
 					}
 				}
 			}
 			if (num17 != 0)
 			{
-				if (this.method_5(num))
+				if (method_5(num))
 				{
-					for (int num23 = 0; num23 < this.byte_3.Length; num23++)
+					for (int num23 = 0; num23 < byte_3.Length; num23++)
 					{
-						this.byte_3[num23] = 0;
+						byte_3[num23] = 0;
 					}
 					for (int num24 = 0; num24 < num; num24++)
 					{
-						for (int num25 = 0; num25 < this.byte_4[num24].Length; num25++)
+						for (int num25 = 0; num25 < byte_4[num24].Length; num25++)
 						{
-							this.byte_4[num24][num25] = 0;
+							byte_4[num24][num25] = 0;
 						}
 					}
-					for (int num26 = 0; num26 < this.byte_5.Length; num26++)
+					for (int num26 = 0; num26 < byte_5.Length; num26++)
 					{
-						this.byte_5[num26] = 0;
+						byte_5[num26] = 0;
 					}
 				}
 				else
 				{
-					if (this.int_9 != 0 && (num17 & 64) != 0)
+					if (int_9 != 0 && (num17 & 64) != 0)
 					{
-						this.method_4(this.int_18, this.int_19, this.int_20, this.int_11, this.int_12, this.int_13, this.int_28 << 8, this.int_29 << 8, this.byte_0, this.byte_3);
+						method_4(int_18, int_19, int_20, int_11, int_12, int_13, int_28 << 8, int_29 << 8, byte_0, byte_3);
 					}
 					for (int num27 = 0; num27 < num; num27++)
 					{
 						if ((num17 & 1 << num27) != 0)
 						{
-							this.method_4(this.int_21[num27], this.int_22[num27], this.int_23[num27], 0, 0, this.int_16[num27], 0, 0, this.byte_1[num27], this.byte_4[num27]);
+							method_4(int_21[num27], int_22[num27], int_23[num27], 0, 0, int_16[num27], 0, 0, byte_1[num27], byte_4[num27]);
 						}
 					}
-					if (this.bool_0 && (num17 & 32) != 0)
+					if (bool_0 && (num17 & 32) != 0)
 					{
-						this.int_25 = 2;
-						this.method_4(this.int_24, this.int_25, this.int_26, 0, 0, 7, 0, 0, this.byte_2, this.byte_5);
+						int_25 = 2;
+						method_4(int_24, int_25, int_26, 0, 0, 7, 0, 0, byte_2, byte_5);
 					}
 				}
 			}
-			if (this.class115_0.vmethod_1())
+			if (class115_0.vmethod_1())
 			{
-				int num28 = this.class115_0.method_2(9);
-				this.class115_0.vmethod_3(this.class115_0.vmethod_0() + num28 * 8);
+				int num28 = class115_0.method_2(9);
+				class115_0.vmethod_3(class115_0.vmethod_0() + num28 * 8);
 			}
 			int num29 = 256;
 			double[] array4 = new double[5];
-			this.method_11(array4, this.int_7, this.double_8, this.double_5, this.double_6);
+			method_11(array4, int_7, double_8, double_5, double_6);
 			bool flag3 = false;
-			this.class113_0.int_0 = -1;
-			this.class113_0.int_1 = -1;
-			this.class113_0.int_2 = -1;
+			class113_0.int_0 = -1;
+			class113_0.int_1 = -1;
+			class113_0.int_2 = -1;
 			for (int num30 = 0; num30 < num; num30++)
 			{
-				this.method_7(this.double_10, num29 + 256 * num30, this.byte_1[num30], this.byte_4[num30], this.class113_0, array4[num30], array2[num30], this.int_16[num30]);
+				method_7(double_10, num29 + 256 * num30, byte_1[num30], byte_4[num30], class113_0, array4[num30], array2[num30], int_16[num30]);
 				int num31;
-				if ((this.int_9 >> num30 & 1) != 0)
+				if ((int_9 >> num30 & 1) != 0)
 				{
 					if (!flag3)
 					{
 						flag3 = true;
-						this.method_9(num, array4, this.double_10, num29, this.class113_0, array2);
+						method_9(num, array4, double_10, num29, class113_0, array2);
 					}
-					num31 = this.int_13;
+					num31 = int_13;
 				}
 				else
 				{
-					num31 = this.int_16[num30];
+					num31 = int_16[num30];
 				}
 				do
 				{
-					this.double_10[num29 + 256 * num30 + num31] = 0.0;
+					double_10[num29 + 256 * num30 + num31] = 0.0;
 				}
 				while (++num31 < 256);
 			}
-			if (this.int_7 == 2)
+			if (int_7 == 2)
 			{
 				int num32 = 0;
 				int num31 = 13;
-				int num33 = (this.int_16[0] < this.int_16[1]) ? this.int_16[0] : this.int_16[1];
-				int num34 = this.int_15;
+				int num33 = (int_16[0] < int_16[1]) ? int_16[0] : int_16[1];
+				int num34 = int_15;
 				do
 				{
 					if ((num34 & 1) == 0)
 					{
 						num34 >>= 1;
-						num31 = AC3Class1.int_37[num32++];
+						num31 = int_37[num32++];
 					}
 					else
 					{
 						num34 >>= 1;
-						int num35 = AC3Class1.int_37[num32++];
+						int num35 = int_37[num32++];
 						if (num35 > num33)
 						{
 							num35 = num33;
 						}
 						do
 						{
-							double num36 = this.double_10[num29 + num31];
-							double num37 = this.double_10[num29 + num31 + 256];
-							this.double_10[num29 + num31] = num36 + num37;
-							this.double_10[num29 + num31 + 256] = num36 - num37;
+							double num36 = double_10[num29 + num31];
+							double num37 = double_10[num29 + num31 + 256];
+							double_10[num29 + num31] = num36 + num37;
+							double_10[num29 + num31 + 256] = num36 - num37;
 						}
 						while (++num31 < num35);
 					}
 				}
 				while (num31 < num33);
 			}
-			if (this.bool_0)
+			if (bool_0)
 			{
-				this.method_7(this.double_10, num29 - 256, this.byte_2, this.byte_5, this.class113_0, 0.0, false, 7);
+				method_7(double_10, num29 - 256, byte_2, byte_5, class113_0, 0.0, false, 7);
 				for (int num38 = 7; num38 < 256; num38++)
 				{
-					this.double_10[num29 - 256 + num38] = 0.0;
+					double_10[num29 - 256 + num38] = 0.0;
 				}
-				this.class110_0.vmethod_0(this.double_10, num29 - 256, num29 - 256 + 1536, (double)this.int_0);
+				class110_0.vmethod_0(double_10, num29 - 256, num29 - 256 + 1536, int_0);
 			}
 			int num39 = 0;
 			if (2 < num)
@@ -691,9 +690,9 @@ namespace ns5
 			}
 			if (num39 < num)
 			{
-				if (this.bool_3)
+				if (bool_3)
 				{
-					this.bool_3 = false;
+					bool_3 = false;
 				}
 				for (num39 = 0; num39 < num; num39++)
 				{
@@ -701,56 +700,56 @@ namespace ns5
 					{
 						if (array[num39])
 						{
-							this.class110_0.vmethod_1(this.double_10, num29 + 256 * num39, num29 + 1536 + 256 * num39, (double)this.int_0);
+							class110_0.vmethod_1(double_10, num29 + 256 * num39, num29 + 1536 + 256 * num39, int_0);
 						}
 						else
 						{
-							this.class110_0.vmethod_0(this.double_10, num29 + 256 * num39, num29 + 1536 + 256 * num39, (double)this.int_0);
+							class110_0.vmethod_0(double_10, num29 + 256 * num39, num29 + 1536 + 256 * num39, int_0);
 						}
 					}
 					else
 					{
 						for (int num31 = 0; num31 < 256; num31++)
 						{
-							this.double_10[num29 + 256 * num39 + num31] = 0.0;
+							double_10[num29 + 256 * num39 + num31] = 0.0;
 						}
 					}
 				}
 				return;
 			}
 			int num40 = 0;
-			if (!this.bool_3)
+			if (!bool_3)
 			{
-				this.bool_3 = true;
+				bool_3 = true;
 			}
 			if (array[0])
 			{
 				for (num39 = 0; num39 < num; num39++)
 				{
-					this.class110_0.vmethod_1(this.double_10, num29 + 256 * num39, num29 + 1536 + 256 * num39, (double)num40);
+					class110_0.vmethod_1(double_10, num29 + 256 * num39, num29 + 1536 + 256 * num39, num40);
 				}
 				return;
 			}
 			for (num39 = 0; num39 < num; num39++)
 			{
-				this.class110_0.vmethod_0(this.double_10, num29 + 256 * num39, num29 + 1536 + 256 * num39, (double)num40);
+				class110_0.vmethod_0(double_10, num29 + 256 * num39, num29 + 1536 + 256 * num39, num40);
 			}
 		}
 
 		private void method_4(int int_45, int int_46, int[] int_47, int int_48, int int_49, int int_50, int int_51, int int_52, byte[] byte_10, byte[] byte_11)
 		{
-			int num = 63 + 20 * (this.int_17 >> 7 & 3) >> this.int_6;
+			int num = 63 + 20 * (int_17 >> 7 & 3) >> int_6;
 			int num2 = 128 + 128 * (int_45 & 7);
-			int num3 = 15 + 2 * (this.int_17 >> 9) >> this.int_6;
-			int num4 = AC3Class1.int_38[this.int_17 >> 5 & 3];
-			int num5 = AC3Class1.int_39[this.int_17 >> 3 & 3];
-			int[] array = AC3Class1.int_41[this.int_5];
+			int num3 = 15 + 2 * (int_17 >> 9) >> int_6;
+			int num4 = int_38[int_17 >> 5 & 3];
+			int num5 = int_39[int_17 >> 3 & 3];
+			int[] array = int_41[int_5];
 			if (int_46 == 2)
 			{
-				int_47 = AC3Class1.int_42;
+				int_47 = int_42;
 			}
-			int num6 = AC3Class1.int_40[this.int_17 & 7];
-			int num7 = 960 - 64 * this.int_27 - 4 * (int_45 >> 3) + num6;
+			int num6 = int_40[int_17 & 7];
+			int num7 = 960 - 64 * int_27 - 4 * (int_45 >> 3) + num6;
 			num6 >>= 5;
 			int i = int_48;
 			int j = int_49;
@@ -772,20 +771,20 @@ namespace ns5
 							k -= 64;
 						}
 					}
-					num8 = (int)(128 * byte_10[i]);
+					num8 = 128 * byte_10[i];
 					int num9 = num8 + num2 + k;
 					if (num8 > num5)
 					{
 						num9 -= num8 - num5 >> 2;
 					}
-					if (num9 > array[i >> this.int_6])
+					if (num9 > array[i >> int_6])
 					{
-						num9 = array[i >> this.int_6];
+						num9 = array[i >> int_6];
 					}
 					num9 -= num7 + 128 * int_47[i];
 					num9 = ((num9 > 0) ? 0 : (-num9 >> 5));
 					num9 -= num6;
-					byte_11[i] = AC3Class1.byte_9[156 + num9 + (int)(4 * byte_10[i])];
+					byte_11[i] = byte_9[156 + num9 + 4 * byte_10[i]];
 					i++;
 					if (i >= 3)
 					{
@@ -814,7 +813,7 @@ namespace ns5
 							k -= 64;
 						}
 					}
-					num8 = (int)(128 * byte_10[i]);
+					num8 = 128 * byte_10[i];
 					int_51 += num;
 					if (int_51 > num8 + num2)
 					{
@@ -830,14 +829,14 @@ namespace ns5
 					{
 						num9 -= num8 - num5 >> 2;
 					}
-					if (num9 > array[i >> this.int_6])
+					if (num9 > array[i >> int_6])
 					{
-						num9 = array[i >> this.int_6];
+						num9 = array[i >> int_6];
 					}
 					num9 -= num7 + 128 * int_47[i];
 					num9 = ((num9 > 0) ? 0 : (-num9 >> 5));
 					num9 -= num6;
-					byte_11[i] = AC3Class1.byte_9[156 + num9 + (int)(4 * byte_10[i])];
+					byte_11[i] = byte_9[156 + num9 + 4 * byte_10[i]];
 					i++;
 				}
 				if (int_50 == 7)
@@ -854,7 +853,7 @@ namespace ns5
 					{
 						k -= 64;
 					}
-					num8 = (int)(128 * byte_10[i]);
+					num8 = 128 * byte_10[i];
 					int_51 += num;
 					if (int_51 > num8 + num2)
 					{
@@ -870,21 +869,21 @@ namespace ns5
 					{
 						num9 -= num8 - num5 >> 2;
 					}
-					if (num9 > array[i >> this.int_6])
+					if (num9 > array[i >> int_6])
 					{
-						num9 = array[i >> this.int_6];
+						num9 = array[i >> int_6];
 					}
 					num9 -= num7 + 128 * int_47[i];
 					num9 = ((num9 > 0) ? 0 : (-num9 >> 5));
 					num9 -= num6;
-					byte_11[i] = AC3Class1.byte_9[156 + num9 + (int)(4 * byte_10[i])];
+					byte_11[i] = byte_9[156 + num9 + 4 * byte_10[i]];
 					i++;
 				}
 				while (i < 20);
 				while (k > 128)
 				{
 					k -= 128;
-					num8 = (int)(128 * byte_10[i]);
+					num8 = 128 * byte_10[i];
 					int_51 += num;
 					if (int_51 > num8 + num2)
 					{
@@ -900,14 +899,14 @@ namespace ns5
 					{
 						num9 -= num8 - num5 >> 2;
 					}
-					if (num9 > array[i >> this.int_6])
+					if (num9 > array[i >> int_6])
 					{
-						num9 = array[i >> this.int_6];
+						num9 = array[i >> int_6];
 					}
 					num9 -= num7 + 128 * int_47[i];
 					num9 = ((num9 > 0) ? 0 : (-num9 >> 5));
 					num9 -= num6;
-					byte_11[i] = AC3Class1.byte_9[156 + num9 + (int)(4 * byte_10[i])];
+					byte_11[i] = byte_9[156 + num9 + 4 * byte_10[i]];
 					i++;
 				}
 				j = i;
@@ -915,11 +914,11 @@ namespace ns5
 			do
 			{
 				int num10 = j;
-				int num11 = (AC3Class1.int_43[i - 20] < int_50) ? AC3Class1.int_43[i - 20] : int_50;
-				int num8 = (int)(128 * byte_10[j++]);
+				int num11 = (int_43[i - 20] < int_50) ? int_43[i - 20] : int_50;
+				int num8 = 128 * byte_10[j++];
 				while (j < num11)
 				{
-					int num12 = (int)(128 * byte_10[j++]);
+					int num12 = 128 * byte_10[j++];
 					int num13 = num12 - num8;
 					switch (num13 >> 9)
 					{
@@ -931,10 +930,10 @@ namespace ns5
 						num8 = num12;
 						break;
 					case -1:
-						num8 = num12 + AC3Class1.int_44[-num13 >> 1];
+						num8 = num12 + int_44[-num13 >> 1];
 						break;
 					case 0:
-						num8 += AC3Class1.int_44[num13 >> 1];
+						num8 += int_44[num13 >> 1];
 						break;
 					}
 				}
@@ -953,9 +952,9 @@ namespace ns5
 				{
 					num9 -= num8 - num5 >> 2;
 				}
-				if (num9 > array[i >> this.int_6])
+				if (num9 > array[i >> int_6])
 				{
-					num9 = array[i >> this.int_6];
+					num9 = array[i >> int_6];
 				}
 				num9 -= num7 + 128 * int_47[i];
 				num9 = ((num9 > 0) ? 0 : (-num9 >> 5));
@@ -964,7 +963,7 @@ namespace ns5
 				j = num10;
 				do
 				{
-					byte_11[j] = AC3Class1.byte_9[156 + num9 + (int)(4 * byte_10[j])];
+					byte_11[j] = byte_9[156 + num9 + 4 * byte_10[j]];
 				}
 				while (++j < num11);
 			}
@@ -973,11 +972,11 @@ namespace ns5
 
 		private bool method_5(int int_45)
 		{
-			if (this.int_27 == 0 && (this.int_9 == 0 || this.int_18 >> 3 == 0) && (!this.bool_0 || this.int_24 >> 3 == 0))
+			if (int_27 == 0 && (int_9 == 0 || int_18 >> 3 == 0) && (!bool_0 || int_24 >> 3 == 0))
 			{
 				for (int i = 0; i < int_45; i++)
 				{
-					if (this.int_21[i] >> 3 != 0)
+					if (int_21[i] >> 3 != 0)
 					{
 						return false;
 					}
@@ -989,7 +988,7 @@ namespace ns5
 
 		private int method_6()
 		{
-			int num = this.int_34[this.int_30 >> 8] ^ this.int_30 << 8;
+			int num = int_34[int_30 >> 8] ^ int_30 << 8;
 			if ((num & 32768) != 0)
 			{
 				num |= -65536;
@@ -998,7 +997,7 @@ namespace ns5
 			{
 				num &= 65535;
 			}
-			this.int_30 = (num & 65535);
+			int_30 = (num & 65535);
 			return num;
 		}
 
@@ -1007,63 +1006,63 @@ namespace ns5
 			double[] array = new double[25];
 			for (int i = 0; i <= 24; i++)
 			{
-				array[i] = this.double_13[i] * double_25;
+				array[i] = double_13[i] * double_25;
 			}
 			int j = 0;
 			while (j < int_46)
 			{
-				int num = (int)byte_11[j];
+				int num = byte_11[j];
 				switch (num)
 				{
 				case -3:
 					if (class113_1.int_2 == 0)
 					{
-						double_24[int_45 + j] = class113_1.vmethod_2()[0] * array[(int)byte_10[j]];
+						double_24[int_45 + j] = class113_1.vmethod_2()[0] * array[byte_10[j]];
 						class113_1.int_2 = -1;
 					}
 					else
 					{
-						int num2 = this.class115_0.method_2(7);
+						int num2 = class115_0.method_2(7);
 						class113_1.int_2 = 0;
-						class113_1.vmethod_2()[0] = this.double_22[num2];
-						double_24[int_45 + j] = this.double_21[num2] * array[(int)byte_10[j]];
+						class113_1.vmethod_2()[0] = double_22[num2];
+						double_24[int_45 + j] = double_21[num2] * array[byte_10[j]];
 					}
 					break;
 				case -2:
 					if (class113_1.int_1 >= 0)
 					{
-						double_24[int_45 + j] = class113_1.vmethod_1()[class113_1.int_1] * array[(int)byte_10[j]];
+						double_24[int_45 + j] = class113_1.vmethod_1()[class113_1.int_1] * array[byte_10[j]];
 						class113_1.int_1--;
 					}
 					else
 					{
-						int num3 = this.class115_0.method_2(7);
+						int num3 = class115_0.method_2(7);
 						class113_1.int_1 = 1;
-						class113_1.vmethod_1()[0] = this.double_19[num3];
-						class113_1.vmethod_1()[1] = this.double_18[num3];
-						double_24[int_45 + j] = this.double_17[num3] * array[(int)byte_10[j]];
+						class113_1.vmethod_1()[0] = double_19[num3];
+						class113_1.vmethod_1()[1] = double_18[num3];
+						double_24[int_45 + j] = double_17[num3] * array[byte_10[j]];
 					}
 					break;
 				case -1:
 					if (class113_1.int_0 >= 0)
 					{
-						double_24[int_45 + j] = class113_1.vmethod_0()[class113_1.int_0] * array[(int)byte_10[j]];
+						double_24[int_45 + j] = class113_1.vmethod_0()[class113_1.int_0] * array[byte_10[j]];
 						class113_1.int_0--;
 					}
 					else
 					{
-						int num4 = this.class115_0.method_2(5);
+						int num4 = class115_0.method_2(5);
 						class113_1.int_0 = 1;
-						class113_1.vmethod_0()[0] = this.double_16[num4];
-						class113_1.vmethod_0()[1] = this.double_15[num4];
-						double_24[int_45 + j] = this.double_14[num4] * array[(int)byte_10[j]];
+						class113_1.vmethod_0()[0] = double_16[num4];
+						class113_1.vmethod_0()[1] = double_15[num4];
+						double_24[int_45 + j] = double_14[num4] * array[byte_10[j]];
 					}
 					break;
 				case 0:
 					if (bool_5)
 					{
-						int num5 = this.method_6();
-						double_24[int_45 + j] = (double)num5 * array[(int)byte_10[j]] * AC3Class1.double_2;
+						int num5 = method_6();
+						double_24[int_45 + j] = num5 * array[byte_10[j]] * double_2;
 					}
 					else
 					{
@@ -1074,10 +1073,10 @@ namespace ns5
 				case 2:
 					goto IL_216;
 				case 3:
-					double_24[int_45 + j] = this.double_20[this.class115_0.method_2(3)] * array[(int)byte_10[j]];
+					double_24[int_45 + j] = double_20[class115_0.method_2(3)] * array[byte_10[j]];
 					break;
 				case 4:
-					double_24[int_45 + j] = this.double_23[this.class115_0.method_2(4)] * array[(int)byte_10[j]];
+					double_24[int_45 + j] = double_23[class115_0.method_2(4)] * array[byte_10[j]];
 					break;
 				default:
 					goto IL_216;
@@ -1086,15 +1085,15 @@ namespace ns5
 				j++;
 				continue;
 				IL_216:
-				int num6 = this.method_8(num);
-				double_24[int_45 + j] = (double)(num6 << 16 - num) * array[(int)byte_10[j]];
+				int num6 = method_8(num);
+				double_24[int_45 + j] = (num6 << 16 - num) * array[byte_10[j]];
 				goto IL_275;
 			}
 		}
 
 		private int method_8(int int_45)
 		{
-			int num = this.class115_0.method_2(int_45);
+			int num = class115_0.method_2(int_45);
 			if ((num & 1 << int_45 - 1) != 0)
 			{
 				num |= -1 << int_45;
@@ -1105,12 +1104,12 @@ namespace ns5
 		private void method_9(int int_45, double[] double_24, double[] double_25, int int_46, Class113 class113_1, bool[] bool_5)
 		{
 			double[] array = new double[5];
-			byte[] array2 = this.byte_0;
-			byte[] array3 = this.byte_3;
+			byte[] array2 = byte_0;
+			byte[] array3 = byte_3;
 			int num = 0;
-			int num2 = this.int_14;
-			int i = this.int_12;
-			while (i < this.int_13)
+			int num2 = int_14;
+			int i = int_12;
+			while (i < int_13)
 			{
 				int num3 = i + 12;
 				while ((num2 & 1) != 0)
@@ -1121,12 +1120,12 @@ namespace ns5
 				num2 >>= 1;
 				for (int j = 0; j < int_45; j++)
 				{
-					array[j] = this.double_9[j][num] * double_24[j];
+					array[j] = double_9[j][num] * double_24[j];
 				}
 				num++;
 				while (i < num3)
 				{
-					int num4 = (int)array3[i];
+					int num4 = array3[i];
 					double num5;
 					switch (num4)
 					{
@@ -1138,10 +1137,10 @@ namespace ns5
 						}
 						else
 						{
-							int num6 = this.class115_0.method_2(7);
+							int num6 = class115_0.method_2(7);
 							class113_1.int_2 = 0;
-							class113_1.vmethod_2()[0] = this.double_22[num6];
-							num5 = this.double_21[num6];
+							class113_1.vmethod_2()[0] = double_22[num6];
+							num5 = double_21[num6];
 						}
 						break;
 					case -2:
@@ -1152,11 +1151,11 @@ namespace ns5
 						}
 						else
 						{
-							int num7 = this.class115_0.method_2(7);
+							int num7 = class115_0.method_2(7);
 							class113_1.int_1 = 1;
-							class113_1.vmethod_1()[0] = this.double_19[num7];
-							class113_1.vmethod_1()[1] = this.double_18[num7];
-							num5 = this.double_17[num7];
+							class113_1.vmethod_1()[0] = double_19[num7];
+							class113_1.vmethod_1()[1] = double_18[num7];
+							num5 = double_17[num7];
 						}
 						break;
 					case -1:
@@ -1167,22 +1166,22 @@ namespace ns5
 						}
 						else
 						{
-							int num8 = this.class115_0.method_2(5);
+							int num8 = class115_0.method_2(5);
 							class113_1.int_0 = 1;
-							class113_1.vmethod_0()[0] = this.double_16[num8];
-							class113_1.vmethod_0()[1] = this.double_15[num8];
-							num5 = this.double_14[num8];
+							class113_1.vmethod_0()[0] = double_16[num8];
+							class113_1.vmethod_0()[1] = double_15[num8];
+							num5 = double_14[num8];
 						}
 						break;
 					case 0:
-						num5 = AC3Class1.double_2 * this.double_13[(int)array2[i]];
+						num5 = double_2 * double_13[array2[i]];
 						for (int k = 0; k < int_45; k++)
 						{
-							if ((this.int_9 >> k & 1) != 0)
+							if ((int_9 >> k & 1) != 0)
 							{
 								if (bool_5[k])
 								{
-									double_25[int_46 + i + k * 256] = num5 * array[k] * (double)this.method_6();
+									double_25[int_46 + i + k * 256] = num5 * array[k] * method_6();
 								}
 								else
 								{
@@ -1196,10 +1195,10 @@ namespace ns5
 					case 2:
 						goto IL_27D;
 					case 3:
-						num5 = this.double_20[this.class115_0.method_2(3)];
+						num5 = double_20[class115_0.method_2(3)];
 						break;
 					case 4:
-						num5 = this.double_23[this.class115_0.method_2(4)];
+						num5 = double_23[class115_0.method_2(4)];
 						break;
 					default:
 						goto IL_27D;
@@ -1207,20 +1206,19 @@ namespace ns5
 					IL_2BF:
 					if (num4 != 0)
 					{
-						num5 *= this.double_13[(int)array2[i]];
+						num5 *= double_13[array2[i]];
 						for (int l = 0; l < int_45; l++)
 						{
-							if ((this.int_9 >> l & 1) != 0)
+							if ((int_9 >> l & 1) != 0)
 							{
 								double_25[int_46 + i + l * 256] = num5 * array[l];
 							}
 						}
 						i++;
-						continue;
 					}
 					continue;
 					IL_27D:
-					num5 = (double)(this.method_8(num4) << 16 - num4);
+					num5 = method_8(num4) << 16 - num4;
 					goto IL_2BF;
 				}
 			}
@@ -1251,7 +1249,7 @@ namespace ns5
 			case 4:
 				double_24[0] = double_25;
 				double_24[1] = double_25;
-				double_24[2] = double_25 * double_27 * AC3Class1.double_2;
+				double_24[2] = double_25 * double_27 * double_2;
 				double_24[3] = double_25;
 				double_24[4] = double_25;
 				return;
@@ -1259,7 +1257,7 @@ namespace ns5
 				double_24[0] = double_25;
 				double_24[1] = double_25 * double_26;
 				double_24[2] = double_25;
-				double_24[3] = double_25 * double_27 * AC3Class1.double_2;
+				double_24[3] = double_25 * double_27 * double_2;
 				double_24[4] = double_25;
 				return;
 			case 6:
@@ -1287,13 +1285,13 @@ namespace ns5
 			{
 				int_45[i] = 0;
 			}
-			int num = this.class115_0.method_2(3);
+			int num = class115_0.method_2(3);
 			int num2 = 0;
 			do
 			{
-				num2 += this.class115_0.method_2(5);
-				int num3 = this.class115_0.method_2(4);
-				int num4 = this.class115_0.method_2(3);
+				num2 += class115_0.method_2(5);
+				int num3 = class115_0.method_2(4);
+				int num4 = class115_0.method_2(3);
 				num4 -= ((num4 < 4) ? 4 : 3);
 				while (num3-- != 0)
 				{
@@ -1307,8 +1305,8 @@ namespace ns5
 		{
 			while (int_46-- != 0)
 			{
-				int num = this.class115_0.method_2(7);
-				byte_10 += this.byte_6[num];
+				int num = class115_0.method_2(7);
+				byte_10 += byte_6[num];
 				if ((255 & byte_10) <= 24)
 				{
 					switch (int_45)
@@ -1323,7 +1321,7 @@ namespace ns5
 						goto IL_5C;
 					}
 					IL_72:
-					byte_10 += this.byte_7[num];
+					byte_10 += byte_7[num];
 					if ((255 & byte_10) <= 24)
 					{
 						switch (int_45)
@@ -1338,7 +1336,7 @@ namespace ns5
 							goto IL_BB;
 						}
 						IL_D1:
-						byte_10 += this.byte_8[num];
+						byte_10 += byte_8[num];
 						if ((255 & byte_10) <= 24)
 						{
 							switch (int_45)
@@ -1386,48 +1384,48 @@ namespace ns5
 			try
 			{
 				int num = byte_10.Length;
-				this.class115_0.vmethod_2(byte_10, 0, num);
-				while (this.class115_0.method_1() > 56)
+				class115_0.vmethod_2(byte_10, 0, num);
+				while (class115_0.method_1() > 56)
 				{
-					if (this.bool_4)
+					if (bool_4)
 					{
-						this.class115_0.vmethod_3(this.class115_0.vmethod_0() & -8);
-						if (!this.method_1())
+						class115_0.vmethod_3(class115_0.vmethod_0() & -8);
+						if (!method_1())
 						{
 							continue;
 						}
-						this.bool_4 = false;
+						bool_4 = false;
 					}
-					if (this.class115_0.method_1() < this.int_4 * 8)
+					if (class115_0.method_1() < int_4 * 8)
 					{
 						break;
 					}
-					int num2 = this.class115_0.vmethod_0();
-					this.method_2();
-					while (this.class115_0.vmethod_0() - num2 < (this.int_4 - 7) * 8)
+					int num2 = class115_0.vmethod_0();
+					method_2();
+					while (class115_0.vmethod_0() - num2 < (int_4 - 7) * 8)
 					{
-						this.method_3();
-						this.class110_0.vmethod_2(this.double_10, 2, stream_0);
+						method_3();
+						class110_0.vmethod_2(double_10, 2, stream_0);
 					}
-					this.bool_4 = true;
+					bool_4 = true;
 				}
 			}
 			catch
 			{
-				this.bool_4 = true;
-				this.class115_0.vmethod_3(this.class115_0.vmethod_0() + this.class115_0.method_1());
+				bool_4 = true;
+				class115_0.vmethod_3(class115_0.vmethod_0() + class115_0.method_1());
 			}
 			return 0;
 		}
 
 		static AC3Class1()
 		{
-			AC3Class1.double_0 = 2.0;
-			AC3Class1.double_1 = 1.4142135623730951;
-			AC3Class1.double_2 = 0.70710678118654757;
-			AC3Class1.double_3 = 0.59460355750136051;
-			AC3Class1.double_4 = 0.5;
-			AC3Class1.int_31 = new int[]
+			double_0 = 2.0;
+			double_1 = 1.4142135623730951;
+			double_2 = 0.70710678118654757;
+			double_3 = 0.59460355750136051;
+			double_4 = 0.5;
+			int_31 = new[]
 			{
 				0,
 				0,
@@ -1442,7 +1440,7 @@ namespace ns5
 				2,
 				3
 			};
-			AC3Class1.int_32 = new int[]
+			int_32 = new[]
 			{
 				32,
 				40,
@@ -1464,7 +1462,7 @@ namespace ns5
 				576,
 				640
 			};
-			AC3Class1.int_33 = new int[]
+			int_33 = new[]
 			{
 				16,
 				16,
@@ -1475,21 +1473,21 @@ namespace ns5
 				4,
 				1
 			};
-			AC3Class1.double_11 = new double[]
+			double_11 = new[]
 			{
-				AC3Class1.double_2,
-				AC3Class1.double_3,
-				AC3Class1.double_4,
-				AC3Class1.double_3
+				double_2,
+				double_3,
+				double_4,
+				double_3
 			};
-			AC3Class1.double_12 = new double[]
+			double_12 = new[]
 			{
-				AC3Class1.double_2,
-				AC3Class1.double_4,
+				double_2,
+				double_4,
 				0.0,
-				AC3Class1.double_4
+				double_4
 			};
-			AC3Class1.int_35 = new int[]
+			int_35 = new[]
 			{
 				2,
 				1,
@@ -1503,7 +1501,7 @@ namespace ns5
 				1,
 				2
 			};
-			AC3Class1.int_36 = new int[]
+			int_36 = new[]
 			{
 				31,
 				35,
@@ -1522,28 +1520,28 @@ namespace ns5
 				48,
 				48
 			};
-			AC3Class1.int_37 = new int[]
+			int_37 = new[]
 			{
 				25,
 				37,
 				61,
 				253
 			};
-			AC3Class1.int_38 = new int[]
+			int_38 = new[]
 			{
 				1344,
 				1240,
 				1144,
 				1040
 			};
-			AC3Class1.int_39 = new int[]
+			int_39 = new[]
 			{
 				3072,
 				1280,
 				768,
 				256
 			};
-			AC3Class1.int_40 = new int[]
+			int_40 = new[]
 			{
 				2320,
 				2384,
@@ -1554,11 +1552,11 @@ namespace ns5
 				2832,
 				5120
 			};
-			AC3Class1.int_42 = new int[50];
-			AC3Class1.int_41 = Class114.smethod_15();
-			AC3Class1.byte_9 = Class114.smethod_16();
-			AC3Class1.int_43 = Class114.smethod_17();
-			AC3Class1.int_44 = Class114.smethod_18();
+			int_42 = new int[50];
+			int_41 = Class114.smethod_15();
+			byte_9 = Class114.smethod_16();
+			int_43 = Class114.smethod_17();
+			int_44 = Class114.smethod_18();
 		}
 	}
 }

@@ -45,75 +45,38 @@ namespace ns8
 
 		public Class168()
 		{
-			this.FileName = "";
-			this.uint_0 = 0u;
-			this.uint_1 = 0u;
-			this.uint_2 = 0u;
-			this.enum22_0 = FSBFlags2.flag_33;
-			this.int_0 = 0;
-			this.ushort_0 = 255;
-			this.short_0 = -1;
-			this.ushort_1 = 128;
-			this.uint_3 = 2u;
-			this.float_2 = 1f;
-			this.float_3 = 10000f;
-			this.int_1 = 0;
-			this.short_1 = 0;
-			this.short_2 = 0;
-			this.stream_0 = Stream.Null;
-			this.stream_1 = Stream.Null;
+			FileName = "";
+			uint_0 = 0u;
+			uint_1 = 0u;
+			uint_2 = 0u;
+			enum22_0 = FSBFlags2.flag_33;
+			int_0 = 0;
+			ushort_0 = 255;
+			short_0 = -1;
+			ushort_1 = 128;
+			uint_3 = 2u;
+			float_2 = 1f;
+			float_3 = 10000f;
+			int_1 = 0;
+			short_1 = 0;
+			short_2 = 0;
+			stream_0 = Stream.Null;
+			stream_1 = Stream.Null;
 		}
 
 		public override string ToString()
 		{
-			return string.Concat(new object[]
-			{
-				"FsbSubFile:\nName = ",
-				this.FileName,
-				"\nNumSamples = ",
-				this.uint_0,
-				"\nLoopStartPoint = ",
-				this.uint_1,
-				"\nLoopEndPoint = ",
-				this.uint_2,
-				"\nFlags = ",
-				this.enum22_0,
-				"\nFrequency = ",
-				this.int_0,
-				"\nVolume = ",
-				this.ushort_0,
-				"\nPan = ",
-				this.short_0,
-				"\nPriority = ",
-				this.ushort_1,
-				"\nNumChannels = ",
-				this.uint_3,
-				"\nMinDistance = ",
-				this.float_2,
-				"\nMaxDistance = ",
-				this.float_3,
-				"\nFrequencyVariation = ",
-				this.int_1,
-				"\nVolumeVariation = ",
-				this.short_1,
-				"\nPanVariation = ",
-				this.short_2,
-				"\nExtraData.Length = ",
-				this.stream_0.Length,
-				"\nAudioData.Length = ",
-				this.stream_1.Length,
-				"\n"
-			});
+			return string.Concat("FsbSubFile:\nName = ", FileName, "\nNumSamples = ", uint_0, "\nLoopStartPoint = ", uint_1, "\nLoopEndPoint = ", uint_2, "\nFlags = ", enum22_0, "\nFrequency = ", int_0, "\nVolume = ", ushort_0, "\nPan = ", short_0, "\nPriority = ", ushort_1, "\nNumChannels = ", uint_3, "\nMinDistance = ", float_2, "\nMaxDistance = ", float_3, "\nFrequencyVariation = ", int_1, "\nVolumeVariation = ", short_1, "\nPanVariation = ", short_2, "\nExtraData.Length = ", stream_0.Length, "\nAudioData.Length = ", stream_1.Length, "\n");
 		}
 
 		~Class168()
 		{
-			this.method_0(false);
+			method_0(false);
 		}
 
 		public void Dispose()
 		{
-			this.method_0(true);
+			method_0(true);
 			GC.SuppressFinalize(this);
 		}
 
@@ -121,8 +84,8 @@ namespace ns8
 		{
 			if (bool_0)
 			{
-				this.stream_0.Dispose();
-				this.stream_1.Dispose();
+				stream_0.Dispose();
+				stream_1.Dispose();
 			}
 		}
 	}

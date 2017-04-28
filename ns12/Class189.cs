@@ -1,5 +1,3 @@
-using System;
-
 namespace ns12
 {
 	public class Class189 : Class188

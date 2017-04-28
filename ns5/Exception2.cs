@@ -1,5 +1,3 @@
-using System;
-
 namespace ns5
 {
 	public class Exception2 : Exception1

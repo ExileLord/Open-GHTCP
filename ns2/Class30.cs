@@ -1,6 +1,6 @@
+using System;
 using ns10;
 using ns3;
-using System;
 
 namespace ns2
 {
@@ -42,11 +42,11 @@ namespace ns2
 			class2.int_1 = @class.int_2;
 			class2.class36_0 = @class;
 			class2.class63_0.method_0(class2.int_1, class2.int_2);
-			float num = (float)class2.int_1 / (float)Class30.smethod_0((float)((double)@class.int_1 / 2.0));
+			float num = class2.int_1 / (float)smethod_0((float)(@class.int_1 / 2.0));
 			class2.int_3 = new int[class2.int_0];
 			for (int i = 0; i < class2.int_0; i++)
 			{
-				int num2 = (int)Math.Floor(Class30.smethod_0((float)((double)@class.int_1 / 2.0 / (double)class2.int_0 * (double)i)) * (double)num);
+				int num2 = (int)Math.Floor(smethod_0((float)(@class.int_1 / 2.0 / class2.int_0 * i)) * num);
 				if (num2 >= class2.int_1)
 				{
 					num2 = class2.int_1;
@@ -58,9 +58,9 @@ namespace ns2
 
 		private static double smethod_0(float float_0)
 		{
-			double num = 13.1 * Math.Atan(0.00074 * (double)float_0);
-			double num2 = 2.24 * Math.Atan((double)(float_0 * float_0) * 1.85E-08);
-			double num3 = 0.0001 * (double)float_0;
+			double num = 13.1 * Math.Atan(0.00074 * float_0);
+			double num2 = 2.24 * Math.Atan(float_0 * float_0 * 1.85E-08);
+			double num3 = 0.0001 * float_0;
 			return num + num2 + num3;
 		}
 
@@ -81,8 +81,8 @@ namespace ns2
 			if (num > 0)
 			{
 				int num2 = (1 << class36_.int_3) - 1;
-				float num3 = (float)num / (float)num2 * (float)class36_.int_4;
-				int num4 = class71_0.oggClass3.method_6(Class30.smethod_1(class36_.int_5));
+				float num3 = num / (float)num2 * class36_.int_4;
+				int num4 = class71_0.oggClass3.method_6(smethod_1(class36_.int_5));
 				if (num4 != -1 && num4 < class36_.int_5)
 				{
 					OGGClass4 class2 = class71_0.oggClass1.oggClass4[class36_.int_6[num4]];
@@ -132,7 +132,7 @@ namespace ns2
 			{
 				float[] array = (float[])object_2;
 				float float_ = array[@class.int_2];
-				Class77.smethod_0(float_0, @class.int_3, @class.int_0, @class.int_1, array, @class.int_2, float_, (float)class36_.int_4);
+				Class77.smethod_0(float_0, @class.int_3, @class.int_0, @class.int_1, array, @class.int_2, float_, class36_.int_4);
 				return 1;
 			}
 			for (int i = 0; i < @class.int_0; i++)

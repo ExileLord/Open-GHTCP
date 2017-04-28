@@ -8,12 +8,12 @@ namespace ns9
 
 		public int imethod_0()
 		{
-			return this.class347_0.method_0();
+			return class347_0.method_0();
 		}
 
 		public void Dispose()
 		{
-			this.class347_0.Dispose();
+			class347_0.Dispose();
 		}
 	}
 }

@@ -1,7 +1,6 @@
 using ns11;
 using ns6;
 using SharpAudio.ASC.Flac.LibFlac.frame;
-using System;
 
 namespace ns7
 {
@@ -32,7 +31,7 @@ namespace ns7
 			@class.vmethod_1(byte_0[1]);
 			if ((@class.vmethod_3(1) & 3) != 0)
 			{
-				throw new BadHeaderException("Bad Magic Number: " + (int)(@class.vmethod_3(1) & 255));
+				throw new BadHeaderException("Bad Magic Number: " + (@class.vmethod_3(1) & 255));
 			}
 			for (int i = 0; i < 2; i++)
 			{
@@ -50,16 +49,16 @@ namespace ns7
 				{
 					throw new BadHeaderException("Unknown Block Size (0)");
 				}
-				this.int_0 = class122_0.vmethod_2();
+				int_0 = class122_0.vmethod_2();
 				break;
 			case 1:
-				this.int_0 = 192;
+				int_0 = 192;
 				break;
 			case 2:
 			case 3:
 			case 4:
 			case 5:
-				this.int_0 = 576 << num3 - 2;
+				int_0 = 576 << num3 - 2;
 				break;
 			case 6:
 			case 7:
@@ -73,10 +72,10 @@ namespace ns7
 			case 13:
 			case 14:
 			case 15:
-				this.int_0 = 256 << num3 - 8;
+				int_0 = 256 << num3 - 8;
 				break;
 			}
-			int num4 = (int)(@class.vmethod_3(2) & 15);
+			int num4 = @class.vmethod_3(2) & 15;
 			switch (num4)
 			{
 			case 0:
@@ -84,35 +83,35 @@ namespace ns7
 				{
 					throw new BadHeaderException("Bad Sample Rate (0)");
 				}
-				this.int_1 = class122_0.vmethod_6();
+				int_1 = class122_0.vmethod_6();
 				break;
 			case 1:
 			case 2:
 			case 3:
 				throw new BadHeaderException("Bad Sample Rate (" + num4 + ")");
 			case 4:
-				this.int_1 = 8000;
+				int_1 = 8000;
 				break;
 			case 5:
-				this.int_1 = 16000;
+				int_1 = 16000;
 				break;
 			case 6:
-				this.int_1 = 22050;
+				int_1 = 22050;
 				break;
 			case 7:
-				this.int_1 = 24000;
+				int_1 = 24000;
 				break;
 			case 8:
-				this.int_1 = 32000;
+				int_1 = 32000;
 				break;
 			case 9:
-				this.int_1 = 44100;
+				int_1 = 44100;
 				break;
 			case 10:
-				this.int_1 = 48000;
+				int_1 = 48000;
 				break;
 			case 11:
-				this.int_1 = 96000;
+				int_1 = 96000;
 				break;
 			case 12:
 			case 13:
@@ -125,17 +124,17 @@ namespace ns7
 			int num5 = @class.vmethod_3(3) >> 4 & 15;
 			if ((num5 & 8) != 0)
 			{
-				this.int_2 = 2;
+				int_2 = 2;
 				switch (num5 & 7)
 				{
 				case 0:
-					this.int_3 = 1;
+					int_3 = 1;
 					break;
 				case 1:
-					this.int_3 = 2;
+					int_3 = 2;
 					break;
 				case 2:
-					this.int_3 = 3;
+					int_3 = 3;
 					break;
 				default:
 					throw new BadHeaderException("Bad Channel Assignment (" + num5 + ")");
@@ -143,8 +142,8 @@ namespace ns7
 			}
 			else
 			{
-				this.int_2 = num5 + 1;
-				this.int_3 = 0;
+				int_2 = num5 + 1;
+				int_3 = 0;
 			}
 			int num6 = (@class.vmethod_3(3) & 14) >> 1;
 			switch (num6)
@@ -154,25 +153,25 @@ namespace ns7
 				{
 					throw new BadHeaderException("Bad BPS (" + num6 + ")");
 				}
-				this.int_4 = class122_0.vmethod_7();
+				int_4 = class122_0.vmethod_7();
 				break;
 			case 1:
-				this.int_4 = 8;
+				int_4 = 8;
 				break;
 			case 2:
-				this.int_4 = 12;
+				int_4 = 12;
 				break;
 			case 3:
 			case 7:
 				throw new BadHeaderException("Bad BPS (" + num6 + ")");
 			case 4:
-				this.int_4 = 16;
+				int_4 = 16;
 				break;
 			case 5:
-				this.int_4 = 20;
+				int_4 = 20;
 				break;
 			case 6:
-				this.int_4 = 24;
+				int_4 = 24;
 				break;
 			}
 			if ((@class.vmethod_3(3) & 1) != 0)
@@ -181,8 +180,8 @@ namespace ns7
 			}
 			if (num != 0 && flag)
 			{
-				this.long_0 = class144_0.vmethod_19(@class);
-				if (this.long_0 == -1L)
+				long_0 = class144_0.vmethod_19(@class);
+				if (long_0 == -1L)
 				{
 					throw new BadHeaderException("Bad Sample Number");
 				}
@@ -190,11 +189,11 @@ namespace ns7
 			else
 			{
 				int num7 = class144_0.vmethod_18(@class);
-				if ((long)num7 == 4294967295L)
+				if (num7 == 4294967295L)
 				{
 					throw new BadHeaderException("Bad Last Frame");
 				}
-				this.long_0 = (long)class122_0.vmethod_2() * (long)num7;
+				long_0 = class122_0.vmethod_2() * (long)num7;
 			}
 			if (num != 0)
 			{
@@ -206,7 +205,7 @@ namespace ns7
 					@class.vmethod_1((byte)num9);
 					num8 = (num8 << 8 | num9);
 				}
-				this.int_0 = num8 + 1;
+				int_0 = num8 + 1;
 			}
 			if (num2 != 0)
 			{
@@ -220,15 +219,15 @@ namespace ns7
 				}
 				if (num2 == 12)
 				{
-					this.int_1 = num10 * 1000;
+					int_1 = num10 * 1000;
 				}
 				else if (num2 == 13)
 				{
-					this.int_1 = num10;
+					int_1 = num10;
 				}
 				else
 				{
-					this.int_1 = num10 * 10;
+					int_1 = num10 * 10;
 				}
 			}
 			byte b = (byte)class144_0.vmethod_10(8);
@@ -240,21 +239,7 @@ namespace ns7
 
 		public override string ToString()
 		{
-			return string.Concat(new object[]
-			{
-				"FrameHeader: BlockSize=",
-				this.int_0,
-				" SampleRate=",
-				this.int_1,
-				" Channels=",
-				this.int_2,
-				" ChannelAssignment=",
-				this.int_3,
-				" BPS=",
-				this.int_4,
-				" SampleNumber=",
-				this.long_0
-			});
+			return string.Concat("FrameHeader: BlockSize=", int_0, " SampleRate=", int_1, " Channels=", int_2, " ChannelAssignment=", int_3, " BPS=", int_4, " SampleNumber=", long_0);
 		}
 	}
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace ns14
@@ -19,11 +18,11 @@ namespace ns14
 
 		public virtual bool vmethod_0(T gparam_0)
 		{
-			if (base.Contains(gparam_0))
+			if (Contains(gparam_0))
 			{
 				return false;
 			}
-			base.Add(gparam_0);
+			Add(gparam_0);
 			return true;
 		}
 
@@ -34,7 +33,7 @@ namespace ns14
 			{
 				foreach (T current in icollection_0)
 				{
-					result = this.vmethod_0(current);
+					result = vmethod_0(current);
 				}
 			}
 			return result;

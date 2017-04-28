@@ -18,7 +18,7 @@ namespace ns5
 
 		public int int_2;
 
-		public long long_2 = Class112.long_3;
+		public long long_2 = long_3;
 
 		public static readonly long long_3 = 9223372036854775806L;
 
@@ -26,14 +26,14 @@ namespace ns5
 		{
 			return new Class112
 			{
-				long_1 = this.long_1,
-				int_0 = this.int_0,
-				object_1 = Class112.smethod_0(this.object_1, true),
-				int_1 = this.int_1,
-				int_2 = this.int_2,
-				long_2 = this.long_2,
-				long_0 = this.long_0,
-				object_0 = Class112.smethod_0(this.object_0, true)
+				long_1 = long_1,
+				int_0 = int_0,
+				object_1 = smethod_0(object_1, true),
+				int_1 = int_1,
+				int_2 = int_2,
+				long_2 = long_2,
+				long_0 = long_0,
+				object_0 = smethod_0(object_0, true)
 			};
 		}
 

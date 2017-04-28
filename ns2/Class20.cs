@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -17,8 +16,8 @@ namespace ns2
 		{
 		}
 
-		public static Class20.Struct13 struct13_0;
+		public static Struct13 struct13_0;
 
-		public static Class20.Struct14 struct14_0;
+		public static Struct14 struct14_0;
 	}
 }

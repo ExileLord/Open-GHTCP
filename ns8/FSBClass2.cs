@@ -9,8 +9,7 @@ namespace ns8
 
 		public byte[] byte_0;
 
-		private static readonly byte[] byte_1 = new byte[]
-		{
+		private static readonly byte[] byte_1 = {
 			0,
 			128,
 			64,
@@ -273,7 +272,7 @@ namespace ns8
 		{
 			get
 			{
-				return this.stream_0.CanRead;
+				return stream_0.CanRead;
 			}
 		}
 
@@ -281,7 +280,7 @@ namespace ns8
 		{
 			get
 			{
-				return this.stream_0.CanSeek;
+				return stream_0.CanSeek;
 			}
 		}
 
@@ -289,7 +288,7 @@ namespace ns8
 		{
 			get
 			{
-				return this.stream_0.CanWrite;
+				return stream_0.CanWrite;
 			}
 		}
 
@@ -297,7 +296,7 @@ namespace ns8
 		{
 			get
 			{
-				return this.stream_0.Length;
+				return stream_0.Length;
 			}
 		}
 
@@ -305,17 +304,17 @@ namespace ns8
 		{
 			get
 			{
-				return this.stream_0.Position;
+				return stream_0.Position;
 			}
 			set
 			{
-				this.stream_0.Position = value;
+				stream_0.Position = value;
 			}
 		}
 
 		public long method_0()
 		{
-			return this.stream_0.Position % this.byte_0.LongLength;
+			return stream_0.Position % byte_0.LongLength;
 		}
 
 		public FSBClass2(Stream stream_1, byte[] byte_2)
@@ -328,11 +327,11 @@ namespace ns8
 			{
 				throw new ArgumentNullException("Key", "Fsb Encryption");
 			}
-			this.stream_0 = stream_1;
-			this.byte_0 = byte_2;
+			stream_0 = stream_1;
+			byte_0 = byte_2;
 		}
 
-		public FSBClass2(Stream stream_1) : this(stream_1, FSBClass2.smethod_0(stream_1))
+		public FSBClass2(Stream stream_1) : this(stream_1, smethod_0(stream_1))
 		{
 		}
 
@@ -341,11 +340,11 @@ namespace ns8
 			long position = stream_1.Position;
 			byte[] array = new byte[65536];
 			int num = stream_1.Read(array, 0, array.Length);
-			Array.Resize<byte>(ref array, num);
+			Array.Resize(ref array, num);
 			int i = 2;
 			while (i < 50)
 			{
-				byte[] result = FSBClass2.smethod_1(array, i);
+				byte[] result = smethod_1(array, i);
 				stream_1.Position = position;
 				try
 				{
@@ -363,11 +362,11 @@ namespace ns8
 			}
 			if (num > 1000)
 			{
-				Array.Resize<byte>(ref array, 1000);
+				Array.Resize(ref array, 1000);
 				int j = 2;
 				while (j < 50)
 				{
-					byte[] result2 = FSBClass2.smethod_1(array, j);
+					byte[] result2 = smethod_1(array, j);
 					stream_1.Position = position;
 					try
 					{
@@ -386,11 +385,11 @@ namespace ns8
 			}
 			if (num > 500)
 			{
-				Array.Resize<byte>(ref array, 500);
+				Array.Resize(ref array, 500);
 				int k = 2;
 				while (k < 50)
 				{
-					byte[] result3 = FSBClass2.smethod_1(array, k);
+					byte[] result3 = smethod_1(array, k);
 					stream_1.Position = position;
 					try
 					{
@@ -421,7 +420,7 @@ namespace ns8
 				int num = 0;
 				while (i + num < byte_2.Length)
 				{
-					array2[(int)byte_2[i + num]] += 1u;
+					array2[byte_2[i + num]] += 1u;
 					num += int_0;
 				}
 				int num2 = 0;
@@ -440,11 +439,11 @@ namespace ns8
 		public byte method_1(byte byte_2, ref long long_0)
 		{
 			byte arg_1A_0 = byte_2;
-			byte[] arg_19_0 = this.byte_0;
+			byte[] arg_19_0 = byte_0;
 			long num;
 			long_0 = (num = long_0) + 1L;
-            byte_2 = (byte)(arg_1A_0 ^ arg_19_0[(int)(checked((IntPtr)num))]);
-			if (long_0 == this.byte_0.LongLength)
+            byte_2 = (byte)(arg_1A_0 ^ arg_19_0[(int)((IntPtr)num)]);
+			if (long_0 == byte_0.LongLength)
 			{
 				long_0 = 0L;
 			}
@@ -453,19 +452,19 @@ namespace ns8
 
 		public byte method_2(byte byte_2, ref long long_0)
 		{
-			return this.method_1(FSBClass2.byte_1[(int)byte_2], ref long_0);
+			return method_1(byte_1[byte_2], ref long_0);
 		}
 
 		public byte method_3(byte byte_2, ref long long_0)
 		{
-			return FSBClass2.byte_1[(int)this.method_1(byte_2, ref long_0)];
+			return byte_1[method_1(byte_2, ref long_0)];
 		}
 
 		public void method_4(byte[] byte_2, int int_0, int int_1, long long_0)
 		{
 			for (int i = int_0; i < int_1; i++)
 			{
-				byte_2[i] = this.method_2(byte_2[i], ref long_0);
+				byte_2[i] = method_2(byte_2[i], ref long_0);
 			}
 		}
 
@@ -473,56 +472,56 @@ namespace ns8
 		{
 			for (int i = int_0; i < int_1; i++)
 			{
-				byte_2[i] = this.method_3(byte_2[i], ref long_0);
+				byte_2[i] = method_3(byte_2[i], ref long_0);
 			}
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			long long_ = this.method_0();
-			int num = this.stream_0.Read(buffer, offset, count);
-			this.method_5(buffer, offset, num, long_);
+			long long_ = method_0();
+			int num = stream_0.Read(buffer, offset, count);
+			method_5(buffer, offset, num, long_);
 			return num;
 		}
 
 		public override int ReadByte()
 		{
-			long num = this.method_0();
-			return (int)this.method_3(this.byte_0[(int)(checked((IntPtr)this.method_0()))], ref num);
+			long num = method_0();
+			return method_3(byte_0[(int)((IntPtr)method_0())], ref num);
 		}
 
 		public override void Write(byte[] buffer, int offset, int count)
 		{
-			this.method_4(buffer, offset, count, this.method_0());
-			this.stream_0.Write(buffer, offset, count);
+			method_4(buffer, offset, count, method_0());
+			stream_0.Write(buffer, offset, count);
 		}
 
 		public override void WriteByte(byte value)
 		{
-			long num = this.method_0();
-			this.stream_0.WriteByte(this.method_2(value, ref num));
+			long num = method_0();
+			stream_0.WriteByte(method_2(value, ref num));
 		}
 
 		public override void Flush()
 		{
-			this.stream_0.Flush();
+			stream_0.Flush();
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
 		{
-			return this.stream_0.Seek(offset, origin);
+			return stream_0.Seek(offset, origin);
 		}
 
 		public override void SetLength(long value)
 		{
-			this.stream_0.SetLength(value);
+			stream_0.SetLength(value);
 		}
 
         protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
-				this.stream_0.Close();
+				stream_0.Close();
 			}
 			base.Dispose(disposing);
 		}

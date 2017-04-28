@@ -1,6 +1,5 @@
 using ns19;
 using ns21;
-using System;
 
 namespace ns20
 {
@@ -8,7 +7,7 @@ namespace ns20
 	{
 		public StructurePointerRootNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public StructurePointerRootNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
@@ -17,8 +16,8 @@ namespace ns20
 
 		public StructurePointerRootNode(int int_2)
 		{
-			this.int_0 = int_2;
-			this.vmethod_0();
+			int_0 = int_2;
+			vmethod_0();
 		}
 
 		public StructurePointerRootNode(int int_2, string string_0, StructureHeaderNode class286_0) : this(int_2, QbSongClass1.AddKeyToDictionary(string_0), class286_0)
@@ -27,10 +26,10 @@ namespace ns20
 
 		public StructurePointerRootNode(int int_2, int int_3, StructureHeaderNode class286_0)
 		{
-			this.int_0 = int_2;
-			this.int_1 = int_3;
-			base.Nodes.Add(class286_0);
-			this.vmethod_0();
+			int_0 = int_2;
+			int_1 = int_3;
+			Nodes.Add(class286_0);
+			vmethod_0();
 		}
 
 		public override int vmethod_1()
@@ -40,21 +39,21 @@ namespace ns20
 
 		public StructureHeaderNode method_7()
 		{
-			if (base.Nodes.Count != 0)
+			if (Nodes.Count != 0)
 			{
-				return (StructureHeaderNode)base.FirstNode;
+				return (StructureHeaderNode)FirstNode;
 			}
 			return null;
 		}
 
 		public void method_8(StructureHeaderNode class286_0)
 		{
-			if (base.Nodes.Count != 0)
+			if (Nodes.Count != 0)
 			{
-				base.Nodes[0] = class286_0;
+				Nodes[0] = class286_0;
 				return;
 			}
-			base.Nodes.Add(class286_0);
+			Nodes.Add(class286_0);
 		}
 
 		public override string GetNodeText()

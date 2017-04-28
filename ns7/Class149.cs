@@ -1,11 +1,8 @@
-using System;
-
 namespace ns7
 {
 	public class Class149
 	{
-		private static readonly byte[] byte_0 = new byte[]
-		{
+		private static readonly byte[] byte_0 = {
 			0,
 			7,
 			14,
@@ -269,7 +266,7 @@ namespace ns7
 			byte b = 0;
 			for (int i = 0; i < int_0; i++)
 			{
-				b = Class149.byte_0[(int)((b ^ byte_1[i]) & 255)];
+				b = byte_0[(b ^ byte_1[i]) & 255];
 			}
 			return b;
 		}

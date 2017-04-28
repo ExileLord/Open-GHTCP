@@ -1,5 +1,3 @@
-using System;
-
 namespace ns16
 {
 	public enum EndiannessEnum

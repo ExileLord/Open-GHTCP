@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using System.Text;
 
@@ -15,8 +14,8 @@ namespace ns7
 			{
 				return;
 			}
-			this.byte_0 = new byte[num];
-			class144_0.vmethod_15(this.byte_0, this.byte_0.Length);
+			byte_0 = new byte[num];
+			class144_0.vmethod_15(byte_0, byte_0.Length);
 		}
 
 		public override string ToString()
@@ -24,7 +23,7 @@ namespace ns7
 			string result;
 			try
 			{
-				result = Encoding.GetEncoding("UTF-8").GetString(this.byte_0);
+				result = Encoding.GetEncoding("UTF-8").GetString(byte_0);
 			}
 			catch (IOException)
 			{

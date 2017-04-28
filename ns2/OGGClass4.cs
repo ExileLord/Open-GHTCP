@@ -1,6 +1,6 @@
-using ns10;
 using System;
 using System.Runtime.CompilerServices;
+using ns10;
 
 namespace ns2
 {
@@ -21,28 +21,28 @@ namespace ns2
 		[MethodImpl(MethodImplOptions.Synchronized)]
 		public int method_0(float[] float_1, int int_3, OGGClass3 oggClass3, int int_4)
 		{
-			int num = int_4 / this.int_0;
-			if (this.int_2.Length < num)
+			int num = int_4 / int_0;
+			if (int_2.Length < num)
 			{
-				this.int_2 = new int[num];
+				int_2 = new int[num];
 			}
 			int i;
 			for (i = 0; i < num; i++)
 			{
-				int num2 = this.method_4(oggClass3);
+				int num2 = method_4(oggClass3);
 				if (num2 == -1)
 				{
 					return -1;
 				}
-				this.int_2[i] = num2 * this.int_0;
+				int_2[i] = num2 * int_0;
 			}
 			i = 0;
 			int num3 = 0;
-			while (i < this.int_0)
+			while (i < int_0)
 			{
 				for (int j = 0; j < num; j++)
 				{
-					float_1[int_3 + num3 + j] += this.float_0[this.int_2[j] + i];
+					float_1[int_3 + num3 + j] += float_0[int_2[j] + i];
 				}
 				i++;
 				num3 += num;
@@ -52,21 +52,21 @@ namespace ns2
 
 		public int method_1(float[] float_1, int int_3, OGGClass3 oggClass3, int int_4)
 		{
-			if (this.int_0 > 8)
+			if (int_0 > 8)
 			{
 				int i = 0;
 				while (i < int_4)
 				{
-					int num = this.method_4(oggClass3);
+					int num = method_4(oggClass3);
 					if (num == -1)
 					{
 						return -1;
 					}
-					int num2 = num * this.int_0;
+					int num2 = num * int_0;
 					int j = 0;
-					while (j < this.int_0)
+					while (j < int_0)
 					{
-						float_1[int_3 + i++] += this.float_0[num2 + j++];
+						float_1[int_3 + i++] += float_0[num2 + j++];
 					}
 				}
 			}
@@ -75,16 +75,16 @@ namespace ns2
 				int i = 0;
 				while (i < int_4)
 				{
-					int num = this.method_4(oggClass3);
+					int num = method_4(oggClass3);
 					if (num == -1)
 					{
 						return -1;
 					}
-					int num2 = num * this.int_0;
+					int num2 = num * int_0;
 					int j = 0;
-					for (int k = 0; k < this.int_0; k++)
+					for (int k = 0; k < int_0; k++)
 					{
-						float_1[int_3 + i++] += this.float_0[num2 + j++];
+						float_1[int_3 + i++] += float_0[num2 + j++];
 					}
 				}
 			}
@@ -96,16 +96,16 @@ namespace ns2
 			int i = 0;
 			while (i < int_4)
 			{
-				int num = this.method_4(oggClass3);
+				int num = method_4(oggClass3);
 				if (num == -1)
 				{
 					return -1;
 				}
-				int num2 = num * this.int_0;
+				int num2 = num * int_0;
 				int j = 0;
-				while (j < this.int_0)
+				while (j < int_0)
 				{
-					float_1[int_3 + i++] = this.float_0[num2 + j++];
+					float_1[int_3 + i++] = float_0[num2 + j++];
 				}
 			}
 			return 0;
@@ -117,15 +117,15 @@ namespace ns2
 			int i = int_3 / int_4;
 			while (i < (int_3 + int_5) / int_4)
 			{
-				int num2 = this.method_4(oggClass3);
+				int num2 = method_4(oggClass3);
 				if (num2 == -1)
 				{
 					return -1;
 				}
-				int num3 = num2 * this.int_0;
-				for (int j = 0; j < this.int_0; j++)
+				int num3 = num2 * int_0;
+				for (int j = 0; j < int_0; j++)
 				{
-					float_1[num][i] += this.float_0[num3 + j];
+					float_1[num][i] += float_0[num3 + j];
 					num++;
 					if (num == int_4)
 					{
@@ -140,7 +140,7 @@ namespace ns2
 		public int method_4(OGGClass3 oggClass3)
 		{
             int num = 0;
-			OGGData @class = this.oggData;
+			OGGData @class = oggData;
 			if (@class == null)
 			{
 				return num;
@@ -179,13 +179,13 @@ namespace ns2
 		public int method_6(OGGClass2 oggClass2)
 		{
             this.oggClass2 = oggClass2;
-			this.int_1 = oggClass2.int_1;
-			this.int_0 = oggClass2.int_0;
-            this.float_0 = oggClass2.method_3();
-            this.oggData = this.getOGGData();
-            if (this.oggData == null)
+			int_1 = oggClass2.int_1;
+			int_0 = oggClass2.int_0;
+            float_0 = oggClass2.method_3();
+            oggData = getOGGData();
+            if (oggData == null)
 			{
-                this.method_5();
+                method_5();
                 return -1;
 			}
             return 0;
@@ -213,7 +213,7 @@ namespace ns2
                         {
                             break;
                         }
-                        else if ((numArray1[num3] & 1) == 0)
+                        if ((numArray1[num3] & 1) == 0)
                         {
                             numArray1[num3] = numArray1[num3] + 1;
                             num3--;
@@ -253,21 +253,21 @@ namespace ns2
 		{
             int num = 0;
 			OGGData oggData = new OGGData();
-			int[] array = oggData.int_3 = new int[this.int_1 * 2];
-			int[] array2 = oggData.int_4 = new int[this.int_1 * 2];
-			int[] array3 = OGGClass4.smethod_0(this.oggClass2.int_2, this.oggClass2.int_1);
+			int[] array = oggData.int_3 = new int[int_1 * 2];
+			int[] array2 = oggData.int_4 = new int[int_1 * 2];
+			int[] array3 = smethod_0(oggClass2.int_2, oggClass2.int_1);
             if (array3 == null)
 			{
 				return null;
 			}
-            oggData.int_5 = this.int_1 * 2;
-            for (int i = 0; i < this.int_1; i++)
+            oggData.int_5 = int_1 * 2;
+            for (int i = 0; i < int_1; i++)
 			{
-				if (this.oggClass2.int_2[i] > 0)
+				if (oggClass2.int_2[i] > 0)
 				{
 					int num2 = 0;
 					int j;
-                    for (j = 0; j < this.oggClass2.int_2[i] - 1; j++)
+                    for (j = 0; j < oggClass2.int_2[i] - 1; j++)
 					{
                         if (((uint)array3[i] >> j & 1u) == 0u)
 						{
@@ -296,7 +296,7 @@ namespace ns2
 					}
                 }
 			}
-            oggData.int_2 = OGGClass4.smethod_1(this.int_1) - 4;
+            oggData.int_2 = smethod_1(int_1) - 4;
 			if (oggData.int_2 < 5)
 			{
 				oggData.int_2 = 5;

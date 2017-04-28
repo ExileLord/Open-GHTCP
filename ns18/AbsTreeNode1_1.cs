@@ -9,11 +9,11 @@ namespace ns18
 	{
 		public override int CompareTo(object target)
 		{
-			if (!target.GetType().Equals(base.GetType()))
+			if (!target.GetType().Equals(GetType()))
 			{
 				return -1;
 			}
-			if (((AbsTreeNode1_1)target).Text == base.Text)
+			if (((AbsTreeNode1_1)target).Text == Text)
 			{
 				return 0;
 			}
@@ -22,20 +22,20 @@ namespace ns18
 
 		public T[] method_7<T>()
 		{
-			return this.method_8<T>().ToArray();
+			return method_8<T>().ToArray();
 		}
 
 		public List<T> method_8<T>()
 		{
 			List<T> list = new List<T>();
-			if (base.Nodes[0] is AbstractTreeNode1)
+			if (Nodes[0] is AbstractTreeNode1)
 			{
-				IEnumerator enumerator = base.Nodes.GetEnumerator();
+				IEnumerator enumerator = Nodes.GetEnumerator();
 				try
 				{
 					while (enumerator.MoveNext())
 					{
-						T item = (T)((object)enumerator.Current);
+						T item = (T)enumerator.Current;
 						list.Add(item);
 					}
 					return list;
@@ -49,27 +49,21 @@ namespace ns18
 					}
 				}
 			}
-			foreach (AbstractTreeNode2 @class in base.Nodes)
+			foreach (AbstractTreeNode2 @class in Nodes)
 			{
-				list.Add((T)((object)@class.vmethod_7()));
+				list.Add((T)@class.vmethod_7());
 			}
 			return list;
 		}
 
 		public override Color GetColor()
 		{
-			return base.GetColor2IfPrevNodeIsColor1(Color.PowderBlue, Color.PaleTurquoise);
+			return GetColor2IfPrevNodeIsColor1(Color.PowderBlue, Color.PaleTurquoise);
 		}
 
 		public override string GetText()
 		{
-			return string.Concat(new object[]
-			{
-				this.GetNodeText(),
-				" (",
-				base.Nodes.Count,
-				")"
-			});
+			return string.Concat(GetNodeText(), " (", Nodes.Count, ")");
 		}
 	}
 }

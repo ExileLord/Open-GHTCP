@@ -24,8 +24,7 @@ namespace ns4
 
 		private static float[][] float_7;
 
-		private static readonly float[] float_8 = new float[]
-		{
+		private static readonly float[] float_8 = {
 			0f,
 			-0.000442505f,
 			0.003250122f,
@@ -542,16 +541,16 @@ namespace ns4
 
 		public void method_0(float[] float_9)
 		{
-			this.float_4 = float_9;
-			if (this.float_4 == null)
+			float_4 = float_9;
+			if (float_4 == null)
 			{
-				this.float_4 = new float[32];
+				float_4 = new float[32];
 				for (int i = 0; i < 32; i++)
 				{
-					this.float_4[i] = 1f;
+					float_4[i] = 1f;
 				}
 			}
-			if (this.float_4.Length < 32)
+			if (float_4.Length < 32)
 			{
 				throw new ArgumentException("Mp3 Synthesis Filter: EQ length.");
 			}
@@ -559,44 +558,44 @@ namespace ns4
 
 		public Class80(int int_2, float[] float_9)
 		{
-			if (Class80.float_6 == null)
+			if (float_6 == null)
 			{
-				Class80.float_6 = Class80.float_8;
-				Class80.float_7 = Class80.smethod_0(Class80.float_6, 16);
+				float_6 = float_8;
+				float_7 = smethod_0(float_6, 16);
 			}
-			this.float_0 = new float[512];
-			this.float_1 = new float[512];
-			this.float_3 = new float[32];
-			this.int_1 = int_2;
-			this.method_0(float_9);
-			this.method_1();
+			float_0 = new float[512];
+			float_1 = new float[512];
+			float_3 = new float[32];
+			int_1 = int_2;
+			method_0(float_9);
+			method_1();
 		}
 
 		public void method_1()
 		{
-			Array.Clear(this.float_0, 0, 512);
-			Array.Clear(this.float_1, 0, 512);
-			Array.Clear(this.float_3, 0, 32);
-			this.float_2 = this.float_0;
-			this.int_0 = 15;
+			Array.Clear(float_0, 0, 512);
+			Array.Clear(float_1, 0, 512);
+			Array.Clear(float_3, 0, 32);
+			float_2 = float_0;
+			int_0 = 15;
 		}
 
 		public void method_2(float float_9, int int_2)
 		{
-			this.float_3[int_2] = this.float_4[int_2] * float_9;
+			float_3[int_2] = float_4[int_2] * float_9;
 		}
 
 		public void method_3(float[] float_9)
 		{
 			for (int i = 31; i >= 0; i--)
 			{
-				this.float_3[i] = float_9[i] * this.float_4[i];
+				float_3[i] = float_9[i] * float_4[i];
 			}
 		}
 
 		private void method_4()
 		{
-			float[] array = this.float_3;
+			float[] array = float_3;
 			float num = array[0];
 			float num2 = array[1];
 			float num3 = array[2];
@@ -823,8 +822,8 @@ namespace ns4
 			float num95 = num75 - num45 - (num96 = num37 + num39 + num40);
 			float num97 = (num75 = -num41 - num45 - num47 - num48) - num33;
 			float num98 = num75 - num96;
-			float[] array2 = this.float_2;
-			int num99 = this.int_0;
+			float[] array2 = float_2;
+			int num99 = int_0;
 			array2[num99] = num79;
 			array2[16 + num99] = num89;
 			array2[32 + num99] = num73;
@@ -857,7 +856,7 @@ namespace ns4
 			array2[464 + num99] = -num91;
 			array2[480 + num99] = -num73;
 			array2[496 + num99] = -num89;
-			array2 = ((this.float_2 == this.float_0) ? this.float_1 : this.float_0);
+			array2 = ((float_2 == float_0) ? float_1 : float_0);
 			array2[num99] = -num79;
 			array2[16 + num99] = num88;
 			array2[32 + num99] = num72;
@@ -894,262 +893,262 @@ namespace ns4
 
 		private void method_5()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[num] * array2[0] + array[15 + num] * array2[1] + array[14 + num] * array2[2] + array[13 + num] * array2[3] + array[12 + num] * array2[4] + array[11 + num] * array2[5] + array[10 + num] * array2[6] + array[9 + num] * array2[7] + array[8 + num] * array2[8] + array[7 + num] * array2[9] + array[6 + num] * array2[10] + array[5 + num] * array2[11] + array[4 + num] * array2[12] + array[3 + num] * array2[13] + array[2 + num] * array2[14] + array[1 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[num] * array2[0] + array[15 + num] * array2[1] + array[14 + num] * array2[2] + array[13 + num] * array2[3] + array[12 + num] * array2[4] + array[11 + num] * array2[5] + array[10 + num] * array2[6] + array[9 + num] * array2[7] + array[8 + num] * array2[8] + array[7 + num] * array2[9] + array[6 + num] * array2[10] + array[5 + num] * array2[11] + array[4 + num] * array2[12] + array[3 + num] * array2[13] + array[2 + num] * array2[14] + array[1 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_6()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[1 + num] * array2[0] + array[num] * array2[1] + array[15 + num] * array2[2] + array[14 + num] * array2[3] + array[13 + num] * array2[4] + array[12 + num] * array2[5] + array[11 + num] * array2[6] + array[10 + num] * array2[7] + array[9 + num] * array2[8] + array[8 + num] * array2[9] + array[7 + num] * array2[10] + array[6 + num] * array2[11] + array[5 + num] * array2[12] + array[4 + num] * array2[13] + array[3 + num] * array2[14] + array[2 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[1 + num] * array2[0] + array[num] * array2[1] + array[15 + num] * array2[2] + array[14 + num] * array2[3] + array[13 + num] * array2[4] + array[12 + num] * array2[5] + array[11 + num] * array2[6] + array[10 + num] * array2[7] + array[9 + num] * array2[8] + array[8 + num] * array2[9] + array[7 + num] * array2[10] + array[6 + num] * array2[11] + array[5 + num] * array2[12] + array[4 + num] * array2[13] + array[3 + num] * array2[14] + array[2 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_7()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[2 + num] * array2[0] + array[1 + num] * array2[1] + array[num] * array2[2] + array[15 + num] * array2[3] + array[14 + num] * array2[4] + array[13 + num] * array2[5] + array[12 + num] * array2[6] + array[11 + num] * array2[7] + array[10 + num] * array2[8] + array[9 + num] * array2[9] + array[8 + num] * array2[10] + array[7 + num] * array2[11] + array[6 + num] * array2[12] + array[5 + num] * array2[13] + array[4 + num] * array2[14] + array[3 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[2 + num] * array2[0] + array[1 + num] * array2[1] + array[num] * array2[2] + array[15 + num] * array2[3] + array[14 + num] * array2[4] + array[13 + num] * array2[5] + array[12 + num] * array2[6] + array[11 + num] * array2[7] + array[10 + num] * array2[8] + array[9 + num] * array2[9] + array[8 + num] * array2[10] + array[7 + num] * array2[11] + array[6 + num] * array2[12] + array[5 + num] * array2[13] + array[4 + num] * array2[14] + array[3 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_8()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[3 + num] * array2[0] + array[2 + num] * array2[1] + array[1 + num] * array2[2] + array[num] * array2[3] + array[15 + num] * array2[4] + array[14 + num] * array2[5] + array[13 + num] * array2[6] + array[12 + num] * array2[7] + array[11 + num] * array2[8] + array[10 + num] * array2[9] + array[9 + num] * array2[10] + array[8 + num] * array2[11] + array[7 + num] * array2[12] + array[6 + num] * array2[13] + array[5 + num] * array2[14] + array[4 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[3 + num] * array2[0] + array[2 + num] * array2[1] + array[1 + num] * array2[2] + array[num] * array2[3] + array[15 + num] * array2[4] + array[14 + num] * array2[5] + array[13 + num] * array2[6] + array[12 + num] * array2[7] + array[11 + num] * array2[8] + array[10 + num] * array2[9] + array[9 + num] * array2[10] + array[8 + num] * array2[11] + array[7 + num] * array2[12] + array[6 + num] * array2[13] + array[5 + num] * array2[14] + array[4 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_9()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[4 + num] * array2[0] + array[3 + num] * array2[1] + array[2 + num] * array2[2] + array[1 + num] * array2[3] + array[num] * array2[4] + array[15 + num] * array2[5] + array[14 + num] * array2[6] + array[13 + num] * array2[7] + array[12 + num] * array2[8] + array[11 + num] * array2[9] + array[10 + num] * array2[10] + array[9 + num] * array2[11] + array[8 + num] * array2[12] + array[7 + num] * array2[13] + array[6 + num] * array2[14] + array[5 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[4 + num] * array2[0] + array[3 + num] * array2[1] + array[2 + num] * array2[2] + array[1 + num] * array2[3] + array[num] * array2[4] + array[15 + num] * array2[5] + array[14 + num] * array2[6] + array[13 + num] * array2[7] + array[12 + num] * array2[8] + array[11 + num] * array2[9] + array[10 + num] * array2[10] + array[9 + num] * array2[11] + array[8 + num] * array2[12] + array[7 + num] * array2[13] + array[6 + num] * array2[14] + array[5 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_10()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[5 + num] * array2[0] + array[4 + num] * array2[1] + array[3 + num] * array2[2] + array[2 + num] * array2[3] + array[1 + num] * array2[4] + array[num] * array2[5] + array[15 + num] * array2[6] + array[14 + num] * array2[7] + array[13 + num] * array2[8] + array[12 + num] * array2[9] + array[11 + num] * array2[10] + array[10 + num] * array2[11] + array[9 + num] * array2[12] + array[8 + num] * array2[13] + array[7 + num] * array2[14] + array[6 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[5 + num] * array2[0] + array[4 + num] * array2[1] + array[3 + num] * array2[2] + array[2 + num] * array2[3] + array[1 + num] * array2[4] + array[num] * array2[5] + array[15 + num] * array2[6] + array[14 + num] * array2[7] + array[13 + num] * array2[8] + array[12 + num] * array2[9] + array[11 + num] * array2[10] + array[10 + num] * array2[11] + array[9 + num] * array2[12] + array[8 + num] * array2[13] + array[7 + num] * array2[14] + array[6 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_11()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[6 + num] * array2[0] + array[5 + num] * array2[1] + array[4 + num] * array2[2] + array[3 + num] * array2[3] + array[2 + num] * array2[4] + array[1 + num] * array2[5] + array[num] * array2[6] + array[15 + num] * array2[7] + array[14 + num] * array2[8] + array[13 + num] * array2[9] + array[12 + num] * array2[10] + array[11 + num] * array2[11] + array[10 + num] * array2[12] + array[9 + num] * array2[13] + array[8 + num] * array2[14] + array[7 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[6 + num] * array2[0] + array[5 + num] * array2[1] + array[4 + num] * array2[2] + array[3 + num] * array2[3] + array[2 + num] * array2[4] + array[1 + num] * array2[5] + array[num] * array2[6] + array[15 + num] * array2[7] + array[14 + num] * array2[8] + array[13 + num] * array2[9] + array[12 + num] * array2[10] + array[11 + num] * array2[11] + array[10 + num] * array2[12] + array[9 + num] * array2[13] + array[8 + num] * array2[14] + array[7 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_12()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[7 + num] * array2[0] + array[6 + num] * array2[1] + array[5 + num] * array2[2] + array[4 + num] * array2[3] + array[3 + num] * array2[4] + array[2 + num] * array2[5] + array[1 + num] * array2[6] + array[num] * array2[7] + array[15 + num] * array2[8] + array[14 + num] * array2[9] + array[13 + num] * array2[10] + array[12 + num] * array2[11] + array[11 + num] * array2[12] + array[10 + num] * array2[13] + array[9 + num] * array2[14] + array[8 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[7 + num] * array2[0] + array[6 + num] * array2[1] + array[5 + num] * array2[2] + array[4 + num] * array2[3] + array[3 + num] * array2[4] + array[2 + num] * array2[5] + array[1 + num] * array2[6] + array[num] * array2[7] + array[15 + num] * array2[8] + array[14 + num] * array2[9] + array[13 + num] * array2[10] + array[12 + num] * array2[11] + array[11 + num] * array2[12] + array[10 + num] * array2[13] + array[9 + num] * array2[14] + array[8 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_13()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[8 + num] * array2[0] + array[7 + num] * array2[1] + array[6 + num] * array2[2] + array[5 + num] * array2[3] + array[4 + num] * array2[4] + array[3 + num] * array2[5] + array[2 + num] * array2[6] + array[1 + num] * array2[7] + array[num] * array2[8] + array[15 + num] * array2[9] + array[14 + num] * array2[10] + array[13 + num] * array2[11] + array[12 + num] * array2[12] + array[11 + num] * array2[13] + array[10 + num] * array2[14] + array[9 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[8 + num] * array2[0] + array[7 + num] * array2[1] + array[6 + num] * array2[2] + array[5 + num] * array2[3] + array[4 + num] * array2[4] + array[3 + num] * array2[5] + array[2 + num] * array2[6] + array[1 + num] * array2[7] + array[num] * array2[8] + array[15 + num] * array2[9] + array[14 + num] * array2[10] + array[13 + num] * array2[11] + array[12 + num] * array2[12] + array[11 + num] * array2[13] + array[10 + num] * array2[14] + array[9 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_14()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[9 + num] * array2[0] + array[8 + num] * array2[1] + array[7 + num] * array2[2] + array[6 + num] * array2[3] + array[5 + num] * array2[4] + array[4 + num] * array2[5] + array[3 + num] * array2[6] + array[2 + num] * array2[7] + array[1 + num] * array2[8] + array[num] * array2[9] + array[15 + num] * array2[10] + array[14 + num] * array2[11] + array[13 + num] * array2[12] + array[12 + num] * array2[13] + array[11 + num] * array2[14] + array[10 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[9 + num] * array2[0] + array[8 + num] * array2[1] + array[7 + num] * array2[2] + array[6 + num] * array2[3] + array[5 + num] * array2[4] + array[4 + num] * array2[5] + array[3 + num] * array2[6] + array[2 + num] * array2[7] + array[1 + num] * array2[8] + array[num] * array2[9] + array[15 + num] * array2[10] + array[14 + num] * array2[11] + array[13 + num] * array2[12] + array[12 + num] * array2[13] + array[11 + num] * array2[14] + array[10 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_15()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[10 + num] * array2[0] + array[9 + num] * array2[1] + array[8 + num] * array2[2] + array[7 + num] * array2[3] + array[6 + num] * array2[4] + array[5 + num] * array2[5] + array[4 + num] * array2[6] + array[3 + num] * array2[7] + array[2 + num] * array2[8] + array[1 + num] * array2[9] + array[num] * array2[10] + array[15 + num] * array2[11] + array[14 + num] * array2[12] + array[13 + num] * array2[13] + array[12 + num] * array2[14] + array[11 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[10 + num] * array2[0] + array[9 + num] * array2[1] + array[8 + num] * array2[2] + array[7 + num] * array2[3] + array[6 + num] * array2[4] + array[5 + num] * array2[5] + array[4 + num] * array2[6] + array[3 + num] * array2[7] + array[2 + num] * array2[8] + array[1 + num] * array2[9] + array[num] * array2[10] + array[15 + num] * array2[11] + array[14 + num] * array2[12] + array[13 + num] * array2[13] + array[12 + num] * array2[14] + array[11 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_16()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[11 + num] * array2[0] + array[10 + num] * array2[1] + array[9 + num] * array2[2] + array[8 + num] * array2[3] + array[7 + num] * array2[4] + array[6 + num] * array2[5] + array[5 + num] * array2[6] + array[4 + num] * array2[7] + array[3 + num] * array2[8] + array[2 + num] * array2[9] + array[1 + num] * array2[10] + array[num] * array2[11] + array[15 + num] * array2[12] + array[14 + num] * array2[13] + array[13 + num] * array2[14] + array[12 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[11 + num] * array2[0] + array[10 + num] * array2[1] + array[9 + num] * array2[2] + array[8 + num] * array2[3] + array[7 + num] * array2[4] + array[6 + num] * array2[5] + array[5 + num] * array2[6] + array[4 + num] * array2[7] + array[3 + num] * array2[8] + array[2 + num] * array2[9] + array[1 + num] * array2[10] + array[num] * array2[11] + array[15 + num] * array2[12] + array[14 + num] * array2[13] + array[13 + num] * array2[14] + array[12 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_17()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[12 + num] * array2[0] + array[11 + num] * array2[1] + array[10 + num] * array2[2] + array[9 + num] * array2[3] + array[8 + num] * array2[4] + array[7 + num] * array2[5] + array[6 + num] * array2[6] + array[5 + num] * array2[7] + array[4 + num] * array2[8] + array[3 + num] * array2[9] + array[2 + num] * array2[10] + array[1 + num] * array2[11] + array[num] * array2[12] + array[15 + num] * array2[13] + array[14 + num] * array2[14] + array[13 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[12 + num] * array2[0] + array[11 + num] * array2[1] + array[10 + num] * array2[2] + array[9 + num] * array2[3] + array[8 + num] * array2[4] + array[7 + num] * array2[5] + array[6 + num] * array2[6] + array[5 + num] * array2[7] + array[4 + num] * array2[8] + array[3 + num] * array2[9] + array[2 + num] * array2[10] + array[1 + num] * array2[11] + array[num] * array2[12] + array[15 + num] * array2[13] + array[14 + num] * array2[14] + array[13 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_18()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[13 + num] * array2[0] + array[12 + num] * array2[1] + array[11 + num] * array2[2] + array[10 + num] * array2[3] + array[9 + num] * array2[4] + array[8 + num] * array2[5] + array[7 + num] * array2[6] + array[6 + num] * array2[7] + array[5 + num] * array2[8] + array[4 + num] * array2[9] + array[3 + num] * array2[10] + array[2 + num] * array2[11] + array[1 + num] * array2[12] + array[num] * array2[13] + array[15 + num] * array2[14] + array[14 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[13 + num] * array2[0] + array[12 + num] * array2[1] + array[11 + num] * array2[2] + array[10 + num] * array2[3] + array[9 + num] * array2[4] + array[8 + num] * array2[5] + array[7 + num] * array2[6] + array[6 + num] * array2[7] + array[5 + num] * array2[8] + array[4 + num] * array2[9] + array[3 + num] * array2[10] + array[2 + num] * array2[11] + array[1 + num] * array2[12] + array[num] * array2[13] + array[15 + num] * array2[14] + array[14 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_19()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[14 + num] * array2[0] + array[13 + num] * array2[1] + array[12 + num] * array2[2] + array[11 + num] * array2[3] + array[10 + num] * array2[4] + array[9 + num] * array2[5] + array[8 + num] * array2[6] + array[7 + num] * array2[7] + array[6 + num] * array2[8] + array[5 + num] * array2[9] + array[4 + num] * array2[10] + array[3 + num] * array2[11] + array[2 + num] * array2[12] + array[1 + num] * array2[13] + array[num] * array2[14] + array[15 + num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[14 + num] * array2[0] + array[13 + num] * array2[1] + array[12 + num] * array2[2] + array[11 + num] * array2[3] + array[10 + num] * array2[4] + array[9 + num] * array2[5] + array[8 + num] * array2[6] + array[7 + num] * array2[7] + array[6 + num] * array2[8] + array[5 + num] * array2[9] + array[4 + num] * array2[10] + array[3 + num] * array2[11] + array[2 + num] * array2[12] + array[1 + num] * array2[13] + array[num] * array2[14] + array[15 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_20()
 		{
-			float[] array = this.float_2;
+			float[] array = float_2;
 			int num = 0;
 			for (int i = 0; i < 32; i++)
 			{
-				float[] array2 = Class80.float_7[i];
-				this.float_5[i] = array[15 + num] * array2[0] + array[14 + num] * array2[1] + array[13 + num] * array2[2] + array[12 + num] * array2[3] + array[11 + num] * array2[4] + array[10 + num] * array2[5] + array[9 + num] * array2[6] + array[8 + num] * array2[7] + array[7 + num] * array2[8] + array[6 + num] * array2[9] + array[5 + num] * array2[10] + array[4 + num] * array2[11] + array[3 + num] * array2[12] + array[2 + num] * array2[13] + array[1 + num] * array2[14] + array[num] * array2[15];
+				float[] array2 = float_7[i];
+				float_5[i] = array[15 + num] * array2[0] + array[14 + num] * array2[1] + array[13 + num] * array2[2] + array[12 + num] * array2[3] + array[11 + num] * array2[4] + array[10 + num] * array2[5] + array[9 + num] * array2[6] + array[8 + num] * array2[7] + array[7 + num] * array2[8] + array[6 + num] * array2[9] + array[5 + num] * array2[10] + array[4 + num] * array2[11] + array[3 + num] * array2[12] + array[2 + num] * array2[13] + array[1 + num] * array2[14] + array[num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_21(Class84 class84_0)
 		{
-			switch (this.int_0)
+			switch (int_0)
 			{
 			case 0:
-				this.method_5();
+				method_5();
 				break;
 			case 1:
-				this.method_6();
+				method_6();
 				break;
 			case 2:
-				this.method_7();
+				method_7();
 				break;
 			case 3:
-				this.method_8();
+				method_8();
 				break;
 			case 4:
-				this.method_9();
+				method_9();
 				break;
 			case 5:
-				this.method_10();
+				method_10();
 				break;
 			case 6:
-				this.method_11();
+				method_11();
 				break;
 			case 7:
-				this.method_12();
+				method_12();
 				break;
 			case 8:
-				this.method_13();
+				method_13();
 				break;
 			case 9:
-				this.method_14();
+				method_14();
 				break;
 			case 10:
-				this.method_15();
+				method_15();
 				break;
 			case 11:
-				this.method_16();
+				method_16();
 				break;
 			case 12:
-				this.method_17();
+				method_17();
 				break;
 			case 13:
-				this.method_18();
+				method_18();
 				break;
 			case 14:
-				this.method_19();
+				method_19();
 				break;
 			case 15:
-				this.method_20();
+				method_20();
 				break;
 			}
 			if (class84_0 != null)
 			{
-				class84_0.method_4(this.int_1, this.float_5);
+				class84_0.method_4(int_1, float_5);
 			}
 		}
 
 		public void method_22(Class84 class84_0)
 		{
-			this.method_4();
-			this.method_21(class84_0);
-			this.int_0 = (this.int_0 + 1 & 15);
-			this.float_2 = ((this.float_2 == this.float_0) ? this.float_1 : this.float_0);
-			Array.Clear(this.float_3, 0, 32);
+			method_4();
+			method_21(class84_0);
+			int_0 = (int_0 + 1 & 15);
+			float_2 = ((float_2 == float_0) ? float_1 : float_0);
+			Array.Clear(float_3, 0, 32);
 		}
 
 		private static float[][] smethod_0(float[] float_9, int int_2)
@@ -1158,7 +1157,7 @@ namespace ns4
 			float[][] array = new float[num][];
 			for (int i = 0; i < num; i++)
 			{
-				array[i] = Class80.smethod_1(float_9, i * int_2, int_2);
+				array[i] = smethod_1(float_9, i * int_2, int_2);
 			}
 			return array;
 		}

@@ -1,6 +1,5 @@
 using ns0;
 using ns1;
-using System;
 
 namespace ns8
 {
@@ -14,12 +13,12 @@ namespace ns8
 		{
 			if (class13_0.Length == 1)
 			{
-				this.vmethod_0(class13_0[0]);
+				vmethod_0(class13_0[0]);
 				return;
 			}
 			for (int i = 1; i < class13_0.Length; i++)
 			{
-				this.vmethod_1(class13_0[0], class13_0[i]);
+				vmethod_1(class13_0[0], class13_0[i]);
 			}
 		}
 	}

@@ -1,6 +1,5 @@
 using ns0;
 using ns1;
-using System;
 
 namespace ns12
 {
@@ -14,12 +13,12 @@ namespace ns12
 		{
 			if (class13_0.Length == 2)
 			{
-				this.vmethod_0(class13_0[0], class13_0[1]);
+				vmethod_0(class13_0[0], class13_0[1]);
 				return;
 			}
 			if (class13_0.Length == 3)
 			{
-				this.vmethod_1(class13_0[0], class13_0[1], class13_0[2]);
+				vmethod_1(class13_0[0], class13_0[1], class13_0[2]);
 			}
 		}
 	}

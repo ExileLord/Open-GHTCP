@@ -1,5 +1,4 @@
 using ns7;
-using System;
 
 namespace ns6
 {
@@ -17,17 +16,17 @@ namespace ns6
 
 		public Class125(Class144 class144_0, int int_1, bool bool_2) : base(bool_2)
 		{
-			class144_0.vmethod_15(this.byte_0, 128);
-			this.long_0 = class144_0.vmethod_13(64);
-			this.bool_1 = (class144_0.vmethod_10(1) != 0);
+			class144_0.vmethod_15(byte_0, 128);
+			long_0 = class144_0.vmethod_13(64);
+			bool_1 = (class144_0.vmethod_10(1) != 0);
 			class144_0.vmethod_5(2071);
-			this.int_0 = class144_0.vmethod_10(8);
-			if (this.int_0 > 0)
+			int_0 = class144_0.vmethod_10(8);
+			if (int_0 > 0)
 			{
-				this.class147_0 = new Class147[this.int_0];
-				for (int i = 0; i < this.int_0; i++)
+				class147_0 = new Class147[int_0];
+				for (int i = 0; i < int_0; i++)
 				{
-					this.class147_0[i] = new Class147(class144_0);
+					class147_0[i] = new Class147(class144_0);
 				}
 			}
 		}

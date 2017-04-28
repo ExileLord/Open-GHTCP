@@ -1,5 +1,5 @@
-using ns18;
 using System;
+using ns18;
 
 namespace ns20
 {
@@ -9,13 +9,13 @@ namespace ns20
 
 		public FloatValueNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public FloatValueNode(float float_1)
 		{
-			this.float_0 = float_1;
-			this.vmethod_0();
+			float_0 = float_1;
+			vmethod_0();
 		}
 
 		public override int vmethod_1()
@@ -25,22 +25,22 @@ namespace ns20
 
 		public override object vmethod_7()
 		{
-			return this.float_0;
+			return float_0;
 		}
 
 		public override byte[] vmethod_8()
 		{
-			return BitConverter.GetBytes(this.float_0);
+			return BitConverter.GetBytes(float_0);
 		}
 
 		public override void vmethod_9(byte[] byte_0)
 		{
-			this.float_0 = BitConverter.ToSingle(byte_0, 0);
+			float_0 = BitConverter.ToSingle(byte_0, 0);
 		}
 
 		public override string GetText()
 		{
-			return string.Concat((double)this.float_0);
+			return string.Concat((double)float_0);
 		}
 
 		public override string GetNodeText()

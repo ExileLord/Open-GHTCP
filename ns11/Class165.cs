@@ -1,7 +1,7 @@
-using ns8;
 using System;
 using System.Runtime.InteropServices;
 using System.Threading;
+using ns8;
 
 namespace ns11
 {
@@ -42,62 +42,62 @@ namespace ns11
 
 		public Class165(IntPtr intptr_1, int int_0)
 		{
-			this.intptr_0 = intptr_1;
-			this.gchandle_0 = GCHandle.Alloc(this.struct66_0, GCHandleType.Pinned);
-			this.struct66_0.intptr_1 = (IntPtr)GCHandle.Alloc(this);
-			this.byte_0 = new byte[int_0];
-			this.gchandle_1 = GCHandle.Alloc(this.byte_0, GCHandleType.Pinned);
-			this.struct66_0.intptr_0 = this.gchandle_1.AddrOfPinnedObject();
-			this.struct66_0.int_0 = int_0;
-			Exception4.smethod_1(Class162.waveOutPrepareHeader(this.intptr_0, ref this.struct66_0, Marshal.SizeOf(this.struct66_0)), "waveOutPrepareHeader");
+			intptr_0 = intptr_1;
+			gchandle_0 = GCHandle.Alloc(struct66_0, GCHandleType.Pinned);
+			struct66_0.intptr_1 = (IntPtr)GCHandle.Alloc(this);
+			byte_0 = new byte[int_0];
+			gchandle_1 = GCHandle.Alloc(byte_0, GCHandleType.Pinned);
+			struct66_0.intptr_0 = gchandle_1.AddrOfPinnedObject();
+			struct66_0.int_0 = int_0;
+			Exception4.smethod_1(Class162.waveOutPrepareHeader(intptr_0, ref struct66_0, Marshal.SizeOf(struct66_0)), "waveOutPrepareHeader");
 		}
 
 		~Class165()
 		{
-			this.Dispose();
+			Dispose();
 		}
 
 		public void Dispose()
 		{
-			if (this.struct66_0.intptr_0 != IntPtr.Zero)
+			if (struct66_0.intptr_0 != IntPtr.Zero)
 			{
-				Class162.waveOutUnprepareHeader(this.intptr_0, ref this.struct66_0, Marshal.SizeOf(this.struct66_0));
-				this.gchandle_0.Free();
-				this.struct66_0.intptr_0 = IntPtr.Zero;
+				Class162.waveOutUnprepareHeader(intptr_0, ref struct66_0, Marshal.SizeOf(struct66_0));
+				gchandle_0.Free();
+				struct66_0.intptr_0 = IntPtr.Zero;
 			}
-			this.autoResetEvent_0.Close();
-			if (this.gchandle_1.IsAllocated)
+			autoResetEvent_0.Close();
+			if (gchandle_1.IsAllocated)
 			{
-				this.gchandle_1.Free();
+				gchandle_1.Free();
 			}
 			GC.SuppressFinalize(this);
 		}
 
 		public int method_0()
 		{
-			return this.struct66_0.int_0;
+			return struct66_0.int_0;
 		}
 
 		public IntPtr method_1()
 		{
-			return this.struct66_0.intptr_0;
+			return struct66_0.intptr_0;
 		}
 
 		public bool method_2()
 		{
-			lock (this.object_0)
+			lock (object_0)
 			{
-				this.autoResetEvent_0.Reset();
-				this.bool_0 = (Class162.waveOutWrite(this.intptr_0, ref this.struct66_0, Marshal.SizeOf(this.struct66_0)) == Enum18.const_0);
+				autoResetEvent_0.Reset();
+				bool_0 = (Class162.waveOutWrite(intptr_0, ref struct66_0, Marshal.SizeOf(struct66_0)) == Enum18.const_0);
 			}
-			return this.bool_0;
+			return bool_0;
 		}
 
 		public void method_3()
 		{
-			if (this.bool_0)
+			if (bool_0)
 			{
-				this.bool_0 = this.autoResetEvent_0.WaitOne();
+				bool_0 = autoResetEvent_0.WaitOne();
 				return;
 			}
 			Thread.Sleep(0);
@@ -105,8 +105,8 @@ namespace ns11
 
 		public void method_4()
 		{
-			this.autoResetEvent_0.Set();
-			this.bool_0 = false;
+			autoResetEvent_0.Set();
+			bool_0 = false;
 		}
 	}
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -137,174 +136,174 @@ namespace ns5
 		{
 		}
 
-		public static Class108.Struct22 struct22_0;
+		public static Struct22 struct22_0;
 
-		public static Class108.Struct23 struct23_0;
+		public static Struct23 struct23_0;
 
-		public static Class108.Struct24 struct24_0;
+		public static Struct24 struct24_0;
 
-		public static Class108.Struct25 struct25_0;
+		public static Struct25 struct25_0;
 
-		public static Class108.Struct24 struct24_1;
+		public static Struct24 struct24_1;
 
-		public static Class108.Struct25 struct25_1;
+		public static Struct25 struct25_1;
 
-		public static Class108.Struct24 struct24_2;
+		public static Struct24 struct24_2;
 
-		public static Class108.Struct25 struct25_2;
+		public static Struct25 struct25_2;
 
-		public static Class108.Struct24 struct24_3;
+		public static Struct24 struct24_3;
 
-		public static Class108.Struct25 struct25_3;
+		public static Struct25 struct25_3;
 
-		public static Class108.Struct24 struct24_4;
+		public static Struct24 struct24_4;
 
-		public static Class108.Struct25 struct25_4;
+		public static Struct25 struct25_4;
 
-		public static Class108.Struct24 struct24_5;
+		public static Struct24 struct24_5;
 
-		public static Class108.Struct25 struct25_5;
+		public static Struct25 struct25_5;
 
-		public static Class108.Struct24 struct24_6;
+		public static Struct24 struct24_6;
 
-		public static Class108.Struct25 struct25_6;
+		public static Struct25 struct25_6;
 
-		public static Class108.Struct24 struct24_7;
+		public static Struct24 struct24_7;
 
-		public static Class108.Struct25 struct25_7;
+		public static Struct25 struct25_7;
 
-		public static Class108.Struct24 struct24_8;
+		public static Struct24 struct24_8;
 
-		public static Class108.Struct25 struct25_8;
+		public static Struct25 struct25_8;
 
-		public static Class108.Struct26 struct26_0;
+		public static Struct26 struct26_0;
 
-		public static Class108.Struct27 struct27_0;
+		public static Struct27 struct27_0;
 
-		public static Class108.Struct28 struct28_0;
+		public static Struct28 struct28_0;
 
-		public static Class108.Struct29 struct29_0;
+		public static Struct29 struct29_0;
 
-		public static Class108.Struct27 struct27_1;
+		public static Struct27 struct27_1;
 
-		public static Class108.Struct27 struct27_2;
+		public static Struct27 struct27_2;
 
-		public static Class108.Struct30 struct30_0;
+		public static Struct30 struct30_0;
 
-		public static Class108.Struct31 struct31_0;
+		public static Struct31 struct31_0;
 
-		public static Class108.Struct31 struct31_1;
+		public static Struct31 struct31_1;
 
-		public static Class108.Struct32 struct32_0;
+		public static Struct32 struct32_0;
 
-		public static Class108.Struct32 struct32_1;
+		public static Struct32 struct32_1;
 
-		public static Class108.Struct33 struct33_0;
+		public static Struct33 struct33_0;
 
-		public static Class108.Struct33 struct33_1;
+		public static Struct33 struct33_1;
 
-		public static Class108.Struct33 struct33_2;
+		public static Struct33 struct33_2;
 
-		public static Class108.Struct33 struct33_3;
+		public static Struct33 struct33_3;
 
-		public static Class108.Struct34 struct34_0;
+		public static Struct34 struct34_0;
 
-		public static Class108.Struct29 struct29_1;
+		public static Struct29 struct29_1;
 
-		public static Class108.Struct35 struct35_0;
+		public static Struct35 struct35_0;
 
-		public static Class108.Struct35 struct35_1;
+		public static Struct35 struct35_1;
 
-		public static Class108.Struct36 struct36_0;
+		public static Struct36 struct36_0;
 
-		public static Class108.Struct37 struct37_0;
+		public static Struct37 struct37_0;
 
-		public static Class108.Struct38 struct38_0;
+		public static Struct38 struct38_0;
 
-		public static Class108.Struct30 struct30_1;
+		public static Struct30 struct30_1;
 
-		public static Class108.Struct30 struct30_2;
+		public static Struct30 struct30_2;
 
-		public static Class108.Struct30 struct30_3;
+		public static Struct30 struct30_3;
 
-		public static Class108.Struct30 struct30_4;
+		public static Struct30 struct30_4;
 
-		public static Class108.Struct30 struct30_5;
+		public static Struct30 struct30_5;
 
-		public static Class108.Struct30 struct30_6;
+		public static Struct30 struct30_6;
 
-		public static Class108.Struct30 struct30_7;
+		public static Struct30 struct30_7;
 
-		public static Class108.Struct30 struct30_8;
+		public static Struct30 struct30_8;
 
-		public static Class108.Struct32 struct32_2;
+		public static Struct32 struct32_2;
 
-		public static Class108.Struct32 struct32_3;
+		public static Struct32 struct32_3;
 
-		public static Class108.Struct32 struct32_4;
+		public static Struct32 struct32_4;
 
-		public static Class108.Struct32 struct32_5;
+		public static Struct32 struct32_5;
 
-		public static Class108.Struct39 struct39_0;
+		public static Struct39 struct39_0;
 
-		public static Class108.Struct39 struct39_1;
+		public static Struct39 struct39_1;
 
-		public static Class108.Struct39 struct39_2;
+		public static Struct39 struct39_2;
 
-		public static Class108.Struct39 struct39_3;
+		public static Struct39 struct39_3;
 
-		public static Class108.Struct30 struct30_9;
+		public static Struct30 struct30_9;
 
-		public static Class108.Struct30 struct30_10;
+		public static Struct30 struct30_10;
 
-		public static Class108.Struct30 struct30_11;
+		public static Struct30 struct30_11;
 
-		public static Class108.Struct30 struct30_12;
+		public static Struct30 struct30_12;
 
-		public static Class108.Struct25 struct25_9;
+		public static Struct25 struct25_9;
 
-		public static Class108.Struct40 struct40_0;
+		public static Struct40 struct40_0;
 
-		public static Class108.Struct40 struct40_1;
+		public static Struct40 struct40_1;
 
-		public static Class108.Struct41 struct41_0;
+		public static Struct41 struct41_0;
 
-		public static Class108.Struct41 struct41_1;
+		public static Struct41 struct41_1;
 
-		public static Class108.Struct42 struct42_0;
+		public static Struct42 struct42_0;
 
-		public static Class108.Struct42 struct42_1;
+		public static Struct42 struct42_1;
 
-		public static Class108.Struct42 struct42_2;
+		public static Struct42 struct42_2;
 
-		public static Class108.Struct43 struct43_0;
+		public static Struct43 struct43_0;
 
-		public static Class108.Struct43 struct43_1;
+		public static Struct43 struct43_1;
 
-		public static Class108.Struct43 struct43_2;
+		public static Struct43 struct43_2;
 
-		public static Class108.Struct44 struct44_0;
+		public static Struct44 struct44_0;
 
-		public static Class108.Struct44 struct44_1;
+		public static Struct44 struct44_1;
 
-		public static Class108.Struct44 struct44_2;
+		public static Struct44 struct44_2;
 
-		public static Class108.Struct45 struct45_0;
+		public static Struct45 struct45_0;
 
-		public static Class108.Struct41 struct41_2;
+		public static Struct41 struct41_2;
 
-		public static Class108.Struct41 struct41_3;
+		public static Struct41 struct41_3;
 
-		public static Class108.Struct32 struct32_6;
+		public static Struct32 struct32_6;
 
-		public static Class108.Struct46 struct46_0;
+		public static Struct46 struct46_0;
 
-		public static Class108.Struct39 struct39_4;
+		public static Struct39 struct39_4;
 
-		public static Class108.Struct39 struct39_5;
+		public static Struct39 struct39_5;
 
-		public static Class108.Struct39 struct39_6;
+		public static Struct39 struct39_6;
 
-		public static Class108.Struct47 struct47_0;
+		public static Struct47 struct47_0;
 	}
 }

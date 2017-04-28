@@ -1,5 +1,5 @@
-using ns10;
 using System;
+using ns10;
 
 namespace ns3
 {
@@ -43,101 +43,101 @@ namespace ns3
 
 		public Class56()
 		{
-			this.method_0();
+			method_0();
 		}
 
 		~Class56()
 		{
-			this.method_2();
+			method_2();
 		}
 
 		private void method_0()
 		{
-			this.int_0 = 16384;
-			this.byte_0 = new byte[this.int_0];
-			this.int_4 = 1024;
-			this.int_3 = new int[this.int_4];
-			this.long_0 = new long[this.int_4];
+			int_0 = 16384;
+			byte_0 = new byte[int_0];
+			int_4 = 1024;
+			int_3 = new int[int_4];
+			long_0 = new long[int_4];
 		}
 
 		public void method_1(int int_13)
 		{
-			if (this.byte_0 == null)
+			if (byte_0 == null)
 			{
-				this.method_0();
+				method_0();
 			}
 			else
 			{
-				for (int i = 0; i < this.byte_0.Length; i++)
+				for (int i = 0; i < byte_0.Length; i++)
 				{
-					this.byte_0[i] = 0;
+					byte_0[i] = 0;
 				}
-				for (int j = 0; j < this.int_3.Length; j++)
+				for (int j = 0; j < int_3.Length; j++)
 				{
-					this.int_3[j] = 0;
+					int_3[j] = 0;
 				}
-				for (int k = 0; k < this.long_0.Length; k++)
+				for (int k = 0; k < long_0.Length; k++)
 				{
-					this.long_0[k] = 0L;
+					long_0[k] = 0L;
 				}
 			}
-			this.int_11 = int_13;
+			int_11 = int_13;
 		}
 
 		public void method_2()
 		{
-			this.byte_0 = null;
-			this.int_3 = null;
-			this.long_0 = null;
+			byte_0 = null;
+			int_3 = null;
+			long_0 = null;
 		}
 
 		private void method_3(int int_13)
 		{
-			if (this.int_0 <= this.int_1 + int_13)
+			if (int_0 <= int_1 + int_13)
 			{
-				this.int_0 += int_13 + 1024;
-				byte[] dst = new byte[this.int_0];
-				Buffer.BlockCopy(this.byte_0, 0, dst, 0, this.byte_0.Length);
-				this.byte_0 = dst;
+				int_0 += int_13 + 1024;
+				byte[] dst = new byte[int_0];
+				Buffer.BlockCopy(byte_0, 0, dst, 0, byte_0.Length);
+				byte_0 = dst;
 			}
 		}
 
 		private void method_4(int int_13)
 		{
-			if (this.int_4 <= this.int_5 + int_13)
+			if (int_4 <= int_5 + int_13)
 			{
-				this.int_4 += int_13 + 32;
-				int[] dst = new int[this.int_4];
-				Buffer.BlockCopy(this.int_3, 0, dst, 0, this.int_3.Length << 2);
-				this.int_3 = dst;
-				long[] dst2 = new long[this.int_4];
-				Buffer.BlockCopy(this.long_0, 0, dst2, 0, this.long_0.Length << 3);
-				this.long_0 = dst2;
+				int_4 += int_13 + 32;
+				int[] dst = new int[int_4];
+				Buffer.BlockCopy(int_3, 0, dst, 0, int_3.Length << 2);
+				int_3 = dst;
+				long[] dst2 = new long[int_4];
+				Buffer.BlockCopy(long_0, 0, dst2, 0, long_0.Length << 3);
+				long_0 = dst2;
 			}
 		}
 
 		public int method_5(Class67 class67_0)
 		{
-			int num = this.int_7;
-			if (this.int_6 <= num)
+			int num = int_7;
+			if (int_6 <= num)
 			{
 				return 0;
 			}
-			if ((this.int_3[num] & 1024) != 0)
+			if ((int_3[num] & 1024) != 0)
 			{
-				this.int_7++;
-				this.long_1 += 1L;
+				int_7++;
+				long_1 += 1L;
 				return -1;
 			}
-			int num2 = this.int_3[num] & 255;
-			class67_0.byte_0 = this.byte_0;
-			class67_0.int_0 = this.int_2;
-			class67_0.int_3 = (this.int_3[num] & 512);
-			class67_0.int_2 = (this.int_3[num] & 256);
+			int num2 = int_3[num] & 255;
+			class67_0.byte_0 = byte_0;
+			class67_0.int_0 = int_2;
+			class67_0.int_3 = (int_3[num] & 512);
+			class67_0.int_2 = (int_3[num] & 256);
 			int num3 = 0 + num2;
 			while (num2 == 255)
 			{
-				int num4 = this.int_3[++num];
+				int num4 = int_3[++num];
 				num2 = (num4 & 255);
 				if ((num4 & 512) != 0)
 				{
@@ -145,12 +145,12 @@ namespace ns3
 				}
 				num3 += num2;
 			}
-			class67_0.long_1 = this.long_1;
-			class67_0.long_0 = this.long_0[num];
+			class67_0.long_1 = long_1;
+			class67_0.long_0 = long_0[num];
 			class67_0.int_1 = num3;
-			this.int_2 += num3;
-			this.int_7 = num + 1;
-			this.long_1 += 1L;
+			int_2 += num3;
+			int_7 = num + 1;
+			long_1 += 1L;
 			return 1;
 		}
 
@@ -169,30 +169,30 @@ namespace ns3
 			long num8 = class48_0.method_4();
 			int num9 = class48_0.method_5();
 			int num10 = class48_0.method_6();
-			int num11 = (int)(array[num + 26] & 255);
-			int num12 = this.int_7;
-			int num13 = this.int_2;
+			int num11 = array[num + 26] & 255;
+			int num12 = int_7;
+			int num13 = int_2;
 			if (num13 != 0)
 			{
-				this.int_1 -= num13;
-				if (this.int_1 != 0)
+				int_1 -= num13;
+				if (int_1 != 0)
 				{
-					Buffer.BlockCopy(this.byte_0, num13, this.byte_0, 0, this.int_1);
+					Buffer.BlockCopy(byte_0, num13, byte_0, 0, int_1);
 				}
-				this.int_2 = 0;
+				int_2 = 0;
 			}
 			if (num12 != 0)
 			{
-				if (this.int_5 - num12 != 0)
+				if (int_5 - num12 != 0)
 				{
-					Buffer.BlockCopy(this.int_3, num12 << 2, this.int_3, 0, this.int_5 - num12 << 2);
-					Buffer.BlockCopy(this.long_0, num12 << 3, this.long_0, 0, this.int_5 - num12 << 3);
+					Buffer.BlockCopy(int_3, num12 << 2, int_3, 0, int_5 - num12 << 2);
+					Buffer.BlockCopy(long_0, num12 << 3, long_0, 0, int_5 - num12 << 3);
 				}
-				this.int_5 -= num12;
-				this.int_6 -= num12;
-				this.int_7 = 0;
+				int_5 -= num12;
+				int_6 -= num12;
+				int_7 = 0;
 			}
-			if (num9 != this.int_11)
+			if (num9 != int_11)
 			{
 				return false;
 			}
@@ -200,25 +200,25 @@ namespace ns3
 			{
 				return false;
 			}
-			this.method_4(num11 + 1);
-			if (num10 != this.int_12)
+			method_4(num11 + 1);
+			if (num10 != int_12)
 			{
-				for (int j = this.int_6; j < this.int_5; j++)
+				for (int j = int_6; j < int_5; j++)
 				{
-					this.int_1 -= (this.int_3[j] & 255);
+					int_1 -= (int_3[j] & 255);
 				}
-				this.int_5 = this.int_6;
-				if (this.int_12 != -1)
+				int_5 = int_6;
+				if (int_12 != -1)
 				{
-					this.int_3[this.int_5++] = 1024;
-					this.int_6++;
+					int_3[int_5++] = 1024;
+					int_6++;
 				}
 				if (num5 != 0)
 				{
 					num6 = 0;
 					while (i < num11)
 					{
-						int num14 = (int)(array[num + 27 + i] & 255);
+						int num14 = array[num + 27 + i] & 255;
 						num2 += num14;
 						num3 -= num14;
 						if (num14 < 255)
@@ -232,61 +232,61 @@ namespace ns3
 			}
 			if (num3 != 0)
 			{
-				this.method_3(num3);
-				Buffer.BlockCopy(src, num2, this.byte_0, this.int_1, num3);
-				this.int_1 += num3;
+				method_3(num3);
+				Buffer.BlockCopy(src, num2, byte_0, int_1, num3);
+				int_1 += num3;
 			}
 			int num15 = -1;
 			while (i < num11)
 			{
-				int num16 = (int)(array[num + 27 + i] & 255);
-				this.int_3[this.int_5] = num16;
-				this.long_0[this.int_5] = -1L;
+				int num16 = array[num + 27 + i] & 255;
+				int_3[int_5] = num16;
+				long_0[int_5] = -1L;
 				if (num6 != 0)
 				{
-					this.int_3[this.int_5] |= 256;
+					int_3[int_5] |= 256;
 					num6 = 0;
 				}
 				if (num16 < 255)
 				{
-					num15 = this.int_5;
+					num15 = int_5;
 				}
-				this.int_5++;
+				int_5++;
 				i++;
 				if (num16 < 255)
 				{
-					this.int_6 = this.int_5;
+					int_6 = int_5;
 				}
 			}
 			if (num15 != -1)
 			{
-				this.long_0[num15] = num8;
+				long_0[num15] = num8;
 			}
 			if (num7 != 0)
 			{
-				this.int_9 = 1;
-				if (this.int_5 > 0)
+				int_9 = 1;
+				if (int_5 > 0)
 				{
-					this.int_3[this.int_5 - 1] |= 512;
+					int_3[int_5 - 1] |= 512;
 				}
 			}
-			this.int_12 = num10 + 1;
+			int_12 = num10 + 1;
 			return true;
 		}
 
 		public bool method_7()
 		{
-			this.int_1 = 0;
-			this.int_2 = 0;
-			this.int_5 = 0;
-			this.int_6 = 0;
-			this.int_7 = 0;
-			this.int_8 = 0;
-			this.int_9 = 0;
-			this.int_10 = 0;
-			this.int_12 = -1;
-			this.long_1 = 0L;
-			this.long_2 = 0L;
+			int_1 = 0;
+			int_2 = 0;
+			int_5 = 0;
+			int_6 = 0;
+			int_7 = 0;
+			int_8 = 0;
+			int_9 = 0;
+			int_10 = 0;
+			int_12 = -1;
+			long_1 = 0L;
+			long_2 = 0L;
 			return true;
 		}
 	}

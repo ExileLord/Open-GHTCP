@@ -1,5 +1,3 @@
-using System;
-
 namespace ns3
 {
 	public class Class42 : Class41
@@ -8,8 +6,7 @@ namespace ns3
 
 		private static int int_1 = 63;
 
-		private static readonly float[] float_0 = new float[]
-		{
+		private static readonly float[] float_0 = {
 			1.06498632E-07f,
 			1.1341951E-07f,
 			1.20790148E-07f,

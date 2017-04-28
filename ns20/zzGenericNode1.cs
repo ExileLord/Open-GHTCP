@@ -1,12 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using ns16;
 using ns18;
 using ns19;
 using ns21;
 using ns22;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 
 namespace ns20
 {
@@ -18,8 +18,7 @@ namespace ns20
 
 		private Dictionary<int, string> dictionary_0;
 
-		public byte[] byte_0 = new byte[]
-		{
+		public byte[] byte_0 = {
 			0,
 			0,
 			0,
@@ -52,33 +51,33 @@ namespace ns20
 
 		public override bool vmethod_7()
 		{
-			return this.bool_1;
+			return bool_1;
 		}
 
 		public override bool vmethod_8()
 		{
-			return this.bool_2;
+			return bool_2;
 		}
 
 		public override void vmethod_9(bool bool_3)
 		{
-			this.bool_2 = bool_3;
+			bool_2 = bool_3;
 		}
 
 		public override Dictionary<int, string> vmethod_10()
 		{
 			Dictionary<int, string> arg_18_0;
-			if ((arg_18_0 = this.dictionary_0) == null)
+			if ((arg_18_0 = dictionary_0) == null)
 			{
-				arg_18_0 = (this.dictionary_0 = new Dictionary<int, string>());
+				arg_18_0 = (dictionary_0 = new Dictionary<int, string>());
 			}
 			return arg_18_0;
 		}
 
 		public override void vmethod_11(Dictionary<int, string> dictionary_1)
 		{
-			this.bool_2 = true;
-			this.dictionary_0 = dictionary_1;
+			bool_2 = true;
+			dictionary_0 = dictionary_1;
 		}
 
 		public zzGenericNode1()
@@ -87,14 +86,14 @@ namespace ns20
 
 		public zzGenericNode1(string string_0, AbstractTreeNode1 class259_0)
 		{
-			base.Text = KeyGenerator.GetFileName(string_0);
-			base.Nodes.Add(class259_0);
+			Text = KeyGenerator.GetFileName(string_0);
+			Nodes.Add(class259_0);
 		}
 
 		public zzGenericNode1(string string_0, IEnumerable<AbstractTreeNode1> ienumerable_0)
 		{
-			base.Text = KeyGenerator.GetFileName(string_0);
-			base.Nodes.AddRange(new List<AbstractTreeNode1>(ienumerable_0).ToArray());
+			Text = KeyGenerator.GetFileName(string_0);
+			Nodes.AddRange(new List<AbstractTreeNode1>(ienumerable_0).ToArray());
 		}
 
 		public zzGenericNode1(string string_0, byte[] byte_1) : this(string_0, new Stream26(byte_1))
@@ -103,21 +102,21 @@ namespace ns20
 
 		public zzGenericNode1(string string_0, Stream26 stream26_0)
 		{
-			base.Text = KeyGenerator.GetFileName(string_0);
+			Text = KeyGenerator.GetFileName(string_0);
 			stream26_0.Position = 28L;
-			base.method_4(stream26_0);
+			method_4(stream26_0);
 		}
 
 		public zzGenericNode1(string string_0, Stream26 stream26_0, Dictionary<int, string> dictionary_1)
 		{
-			base.Text = KeyGenerator.GetFileName(string_0);
+			Text = KeyGenerator.GetFileName(string_0);
 			if (dictionary_1 != null)
 			{
-				this.dictionary_0 = dictionary_1;
-				this.bool_2 = true;
+				dictionary_0 = dictionary_1;
+				bool_2 = true;
 			}
 			stream26_0.Position = 28L;
-			base.method_4(stream26_0);
+			method_4(stream26_0);
 		}
 
 		public override void vmethod_13(Stream26 stream26_0)
@@ -127,9 +126,9 @@ namespace ns20
 				int num = stream26_0.ReadInt(true);
 				if (num != 0)
 				{
-					AbstractTreeNode1 @class = this.vmethod_12(num);
-					stream26_0._reverseEndianness = this.vmethod_7();
-					base.Nodes.Add(@class);
+					AbstractTreeNode1 @class = vmethod_12(num);
+					stream26_0._reverseEndianness = vmethod_7();
+					Nodes.Add(@class);
 					@class.method_4(stream26_0);
 				}
 				else
@@ -141,8 +140,8 @@ namespace ns20
 
 		public override void vmethod_14(Stream26 stream26_0)
 		{
-			stream26_0._reverseEndianness = this.vmethod_7();
-			foreach (AbstractTreeNode1 @class in base.Nodes)
+			stream26_0._reverseEndianness = vmethod_7();
+			foreach (AbstractTreeNode1 @class in Nodes)
 			{
 				@class.vmethod_14(stream26_0);
 			}
@@ -158,18 +157,18 @@ namespace ns20
 			int num2 = int_0 >> 8 & 255;
 			if (num == 32)
 			{
-				this.bool_1 = true;
+				bool_1 = true;
 			}
 			else if (num == 4)
 			{
-				this.bool_1 = false;
+				bool_1 = false;
 			}
 			Exception ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32bit(int_0));
 			if (num != 32)
 			{
 				if (num != 4)
 				{
-					if (num == 1)
+				    if (num == 1)
 					{
 						if (num2 == 0)
 						{
@@ -213,108 +212,105 @@ namespace ns20
 						}
 						if (num2 == 26)
 						{
-							this.bool_2 = true;
+							bool_2 = true;
 							return new FileTagArrayNode();
 						}
 						if (num2 == 28)
 						{
-							this.bool_2 = true;
+							bool_2 = true;
 							return new TextArrayNode();
 						}
 						throw ex;
 					}
-					else if (!this.bool_1)
-					{
-						if (num == 3)
-						{
-							return new IntegerStructureNode();
-						}
-						if (num == 5)
-						{
-							return new FloatStructureNode();
-						}
-						if (num == 7)
-						{
-							return new AsciiStructureNode();
-						}
-						if (num == 9)
-						{
-							return new UnicodeStructureNode();
-						}
-						if (num == 11)
-						{
-							return new PairPointerNode();
-						}
-						if (num == 13)
-						{
-							return new VectorPointerNode();
-						}
-						if (num == 21)
-						{
-							return new StructurePointerNode();
-						}
-						if (num == 25)
-						{
-							return new ArrayPointerNode();
-						}
-						if (num == 27)
-						{
-							return new TagStructureNode();
-						}
-						if (num == 53)
-						{
-							return new FileTagStructureNode();
-						}
-						throw ex;
-					}
-					else
-					{
-						if (num == 154)
-						{
-							return new FileTagStructureNode();
-						}
-						if ((num & 240) != 128 || (num2 = (num & 15)) == 0)
-						{
-							return null;
-						}
-						if (num2 == 1)
-						{
-							return new IntegerStructureNode();
-						}
-						if (num2 == 2)
-						{
-							return new FloatStructureNode();
-						}
-						if (num2 == 3)
-						{
-							return new AsciiStructureNode();
-						}
-						if (num2 == 4)
-						{
-							return new UnicodeStructureNode();
-						}
-						if (num2 == 5)
-						{
-							return new PairPointerNode();
-						}
-						if (num2 == 6)
-						{
-							return new VectorPointerNode();
-						}
-						if (num2 == 10)
-						{
-							return new StructurePointerNode();
-						}
-						if (num2 == 12)
-						{
-							return new ArrayPointerNode();
-						}
-						if (num2 == 13)
-						{
-							return new TagStructureNode();
-						}
-						throw ex;
-					}
+				    if (!bool_1)
+				    {
+				        if (num == 3)
+				        {
+				            return new IntegerStructureNode();
+				        }
+				        if (num == 5)
+				        {
+				            return new FloatStructureNode();
+				        }
+				        if (num == 7)
+				        {
+				            return new AsciiStructureNode();
+				        }
+				        if (num == 9)
+				        {
+				            return new UnicodeStructureNode();
+				        }
+				        if (num == 11)
+				        {
+				            return new PairPointerNode();
+				        }
+				        if (num == 13)
+				        {
+				            return new VectorPointerNode();
+				        }
+				        if (num == 21)
+				        {
+				            return new StructurePointerNode();
+				        }
+				        if (num == 25)
+				        {
+				            return new ArrayPointerNode();
+				        }
+				        if (num == 27)
+				        {
+				            return new TagStructureNode();
+				        }
+				        if (num == 53)
+				        {
+				            return new FileTagStructureNode();
+				        }
+				        throw ex;
+				    }
+				    if (num == 154)
+				    {
+				        return new FileTagStructureNode();
+				    }
+				    if ((num & 240) != 128 || (num2 = (num & 15)) == 0)
+				    {
+				        return null;
+				    }
+				    if (num2 == 1)
+				    {
+				        return new IntegerStructureNode();
+				    }
+				    if (num2 == 2)
+				    {
+				        return new FloatStructureNode();
+				    }
+				    if (num2 == 3)
+				    {
+				        return new AsciiStructureNode();
+				    }
+				    if (num2 == 4)
+				    {
+				        return new UnicodeStructureNode();
+				    }
+				    if (num2 == 5)
+				    {
+				        return new PairPointerNode();
+				    }
+				    if (num2 == 6)
+				    {
+				        return new VectorPointerNode();
+				    }
+				    if (num2 == 10)
+				    {
+				        return new StructurePointerNode();
+				    }
+				    if (num2 == 12)
+				    {
+				        return new ArrayPointerNode();
+				    }
+				    if (num2 == 13)
+				    {
+				        return new TagStructureNode();
+				    }
+				    throw ex;
 				}
 			}
 			if (num2 == 1)
@@ -359,12 +355,12 @@ namespace ns20
 			}
 			if (num2 == 26)
 			{
-				this.bool_2 = true;
+				bool_2 = true;
 				return new FileTagRootNode();
 			}
 			if (num2 == 28)
 			{
-				this.bool_2 = true;
+				bool_2 = true;
 				return new TextRootNode();
 			}
 			throw ex;
@@ -372,26 +368,26 @@ namespace ns20
 
 		public byte[] method_7()
 		{
-			return this.method_8().ToArray();
+			return method_8().ToArray();
 		}
 
 		public MemoryStream method_8()
 		{
 			MemoryStream memoryStream = new MemoryStream();
-			this.method_9(memoryStream);
+			method_9(memoryStream);
 			memoryStream.Position = 0L;
 			return memoryStream;
 		}
 
 		public void method_9(Stream stream_0)
 		{
-			this.method_10(new Stream26(stream_0, this.bool_1));
+			method_10(new Stream26(stream_0, bool_1));
 		}
 
 		public void method_10(Stream26 stream26_0)
 		{
-			stream26_0.WriteByteArray(this.byte_0, false);
-			this.vmethod_14(stream26_0);
+			stream26_0.WriteByteArray(byte_0, false);
+			vmethod_14(stream26_0);
 			stream26_0.WriteIntAt(4, (int)stream26_0.Length);
 			stream26_0.Position = stream26_0.Length;
 		}
@@ -399,13 +395,13 @@ namespace ns20
 		public int method_11()
 		{
 			int result = 28;
-			this.vmethod_2(ref result);
+			vmethod_2(ref result);
 			return result;
 		}
 
 		public override void vmethod_2(ref int int_0)
 		{
-			foreach (AbstractTreeNode1 @class in base.Nodes)
+			foreach (AbstractTreeNode1 @class in Nodes)
 			{
 				@class.vmethod_2(ref int_0);
 			}
@@ -418,14 +414,14 @@ namespace ns20
 
 		public override void vmethod_0()
 		{
-			if (!AbstractBaseTreeNode1.bool_0)
+			if (!bool_0)
 			{
 				return;
 			}
-			base.ToolTipText = this.GetToolTipText();
-			base.BackColor = this.GetColor();
-			base.ImageIndex = 40;
-			base.SelectedImageIndex = 40;
+			ToolTipText = GetToolTipText();
+			BackColor = GetColor();
+			ImageIndex = 40;
+			SelectedImageIndex = 40;
 		}
 
 		public override string GetNodeText()
@@ -444,7 +440,7 @@ namespace ns20
 			{
 				return -1;
 			}
-			if (((zzGenericNode1)target).Text == base.Text)
+			if (((zzGenericNode1)target).Text == Text)
 			{
 				return 0;
 			}

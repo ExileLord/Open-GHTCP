@@ -1,5 +1,4 @@
 using ns2;
-using System;
 
 namespace ns3
 {

@@ -1,5 +1,3 @@
-using System;
-
 namespace ns21
 {
 	public class TextureMetadata
@@ -27,7 +25,7 @@ namespace ns21
 		public TextureMetadata(short unkFlags, int key, short Width, short Height, short unkShort3, byte MipMapCount, short unkShort4, int StartIndex, int Length)
 		{
 			this.unkFlags = unkFlags;
-			this.Key = key;
+			Key = key;
 			this.Width = Width;
 			this.Height = Height;
 			this.unkShort3 = unkShort3;

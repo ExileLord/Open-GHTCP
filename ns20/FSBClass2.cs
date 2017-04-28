@@ -1,8 +1,7 @@
-using ns1;
-using ns8;
-using System;
 using System.IO;
 using System.Text;
+using ns1;
+using ns8;
 
 namespace ns20
 {
@@ -15,7 +14,7 @@ namespace ns20
 			long length;
 			using (FSBClass1 @class = new FSBClass1())
 			{
-				@class.byte_0 = FSBClass2.fsbEncryptionKey;
+				@class.byte_0 = fsbEncryptionKey;
 				@class.enum20_0 = FSBEnum1.const_3;
 				@class.enum21_0 = FSBFlags1.flag_0;
 				for (int i = 0; i < stream_0.Length; i++)

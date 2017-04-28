@@ -1,7 +1,7 @@
-using ns10;
-using ns3;
 using System;
 using System.Runtime.CompilerServices;
+using ns10;
+using ns3;
 
 namespace ns2
 {
@@ -26,7 +26,7 @@ namespace ns2
 					num2 |= class38_0.method_6(5) << 3;
 				}
 				@class.int_5[i] = num2;
-				num += Class24.smethod_3(num2);
+				num += smethod_3(num2);
 			}
 			for (int j = 0; j < num; j++)
 			{
@@ -34,14 +34,14 @@ namespace ns2
 			}
 			if (@class.int_4 >= class49_0.int_19)
 			{
-				this.vmethod_2(@class);
+				vmethod_2(@class);
 				return null;
 			}
 			for (int k = 0; k < num; k++)
 			{
 				if (@class.int_6[k] >= class49_0.int_19)
 				{
-					this.vmethod_2(@class);
+					vmethod_2(@class);
 					return null;
 				}
 			}
@@ -63,7 +63,7 @@ namespace ns2
 			class2.int_3 = new int[class2.int_1][];
 			for (int i = 0; i < class2.int_1; i++)
 			{
-				int num4 = Class24.smethod_2(@class.int_5[i]);
+				int num4 = smethod_2(@class.int_5[i]);
 				if (num4 != 0)
 				{
 					if (num4 > num2)
@@ -80,7 +80,7 @@ namespace ns2
 					}
 				}
 			}
-			class2.int_4 = (int)Math.Round(Math.Pow((double)class2.int_1, (double)num3));
+			class2.int_4 = (int)Math.Round(Math.Pow(class2.int_1, num3));
 			class2.int_2 = num2;
 			class2.int_5 = new int[class2.int_4][];
 			for (int k = 0; k < class2.int_4; k++)
@@ -113,21 +113,21 @@ namespace ns2
 			int num2 = class40_.int_1 - class40_.int_0;
 			int num3 = num2 / int_3;
 			int num4 = (num3 + num - 1) / num;
-			if (Class24.int_0.Length < int_1)
+			if (int_0.Length < int_1)
 			{
-				Class24.int_0 = new int[int_1][][];
+				int_0 = new int[int_1][][];
 				for (int i = 0; i < int_1; i++)
 				{
-					Class24.int_0[i] = new int[num4][];
+					int_0[i] = new int[num4][];
 				}
 			}
 			else
 			{
 				for (int i = 0; i < int_1; i++)
 				{
-					if (Class24.int_0[i] == null || Class24.int_0[i].Length < num4)
+					if (int_0[i] == null || int_0[i].Length < num4)
 					{
-						Class24.int_0[i] = new int[num4][];
+						int_0[i] = new int[num4][];
 					}
 				}
 			}
@@ -146,8 +146,8 @@ namespace ns2
 							{
 								return 0;
 							}
-							Class24.int_0[i][num5] = @class.int_5[num6];
-							if (Class24.int_0[i][num5] == null)
+							int_0[i][num5] = @class.int_5[num6];
+							if (int_0[i][num5] == null)
 							{
 								return 0;
 							}
@@ -159,9 +159,9 @@ namespace ns2
 						for (int i = 0; i < int_1; i++)
 						{
 							int int_4 = class40_.int_0 + k * int_3;
-							if ((class40_.int_5[Class24.int_0[i][num5][num7]] & 1 << j) != 0)
+							if ((class40_.int_5[int_0[i][num5][num7]] & 1 << j) != 0)
 							{
-								OGGClass4 class2 = @class.class21_0[@class.int_3[Class24.int_0[i][num5][num7]][j]];
+								OGGClass4 class2 = @class.class21_0[@class.int_3[int_0[i][num5][num7]][j]];
 								if (class2 != null)
 								{
 									if (int_2 == 0)
@@ -249,7 +249,7 @@ namespace ns2
 			}
 			if (num != 0)
 			{
-				return Class24.smethod_0(class71_0, object_0, float_0, num, 0);
+				return smethod_0(class71_0, object_0, float_0, num, 0);
 			}
 			return 0;
 		}

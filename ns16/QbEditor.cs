@@ -12,7 +12,7 @@ namespace ns16
 			bool result;
 			try
 			{
-				this.vmethod_0();
+				vmethod_0();
 				return true;
 			}
 			catch (Exception ex)

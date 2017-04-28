@@ -1,5 +1,3 @@
-using System;
-
 namespace ns8
 {
 	public enum Enum25

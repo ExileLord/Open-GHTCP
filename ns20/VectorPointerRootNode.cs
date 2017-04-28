@@ -1,5 +1,4 @@
 using ns19;
-using System;
 
 namespace ns20
 {
@@ -7,7 +6,7 @@ namespace ns20
 	{
 		public VectorPointerRootNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public override int vmethod_1()

@@ -1,8 +1,8 @@
-using ns15;
 using System;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
+using MainMenu = ns15.MainMenu;
 
 namespace ns17
 {
@@ -21,7 +21,7 @@ namespace ns17
 			Thread.CurrentThread.CurrentUICulture = (Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US"));
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ns15.MainMenu());
+            Application.Run(new MainMenu());
 			GC.KeepAlive(obj);
 		}
 	}

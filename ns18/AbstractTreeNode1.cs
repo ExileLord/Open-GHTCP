@@ -1,7 +1,7 @@
-using ns16;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ns16;
 
 namespace ns18
 {
@@ -9,12 +9,12 @@ namespace ns18
 	{
 		public AbstractTreeNode1 method_1()
 		{
-			return (AbstractTreeNode1)base.Parent;
+			return (AbstractTreeNode1)Parent;
 		}
 
 		public virtual bool vmethod_7()
 		{
-			return this.method_1().vmethod_7();
+			return method_1().vmethod_7();
 		}
 
 		public static int smethod_0(long long_0)
@@ -24,43 +24,43 @@ namespace ns18
 
 		public virtual bool vmethod_8()
 		{
-			return this.method_1().vmethod_8();
+			return method_1().vmethod_8();
 		}
 
 		public virtual void vmethod_9(bool bool_1)
 		{
-			this.method_1().vmethod_9(bool_1);
+			method_1().vmethod_9(bool_1);
 		}
 
 		public virtual Dictionary<int, string> vmethod_10()
 		{
-			return this.method_1().vmethod_10();
+			return method_1().vmethod_10();
 		}
 
 		public virtual void vmethod_11(Dictionary<int, string> dictionary_0)
 		{
-			this.method_1().vmethod_11(dictionary_0);
+			method_1().vmethod_11(dictionary_0);
 		}
 
 		public AbstractBaseTreeNode1 method_2(int int_0)
 		{
-			return (AbstractBaseTreeNode1)base.Nodes[int_0];
+			return (AbstractBaseTreeNode1)Nodes[int_0];
 		}
 
 		public int method_3(AbstractBaseTreeNode1 class258_0)
 		{
-			return base.Nodes.Add(class258_0);
+			return Nodes.Add(class258_0);
 		}
 
 		public virtual AbstractTreeNode1 vmethod_12(int int_0)
 		{
-			return this.method_1().vmethod_12(int_0);
+			return method_1().vmethod_12(int_0);
 		}
 
 		public void method_4(Stream26 stream26_0)
 		{
-			this.vmethod_13(stream26_0);
-			this.vmethod_0();
+			vmethod_13(stream26_0);
+			vmethod_0();
 		}
 
 		public abstract void vmethod_13(Stream26 stream26_0);
@@ -69,13 +69,13 @@ namespace ns18
 
 		public T method_5<T>(T gparam_0) where T : AbstractTreeNode1
 		{
-			if (this.CompareTo(gparam_0) == 0)
+			if (CompareTo(gparam_0) == 0)
 			{
-				return (T)((object)this);
+				return (T)this;
 			}
-			if (base.Nodes.Count != 0 && base.Nodes[0] is AbstractTreeNode1)
+			if (Nodes.Count != 0 && Nodes[0] is AbstractTreeNode1)
 			{
-				IEnumerator enumerator = base.Nodes.GetEnumerator();
+				IEnumerator enumerator = Nodes.GetEnumerator();
 				T result;
 				try
 				{
@@ -83,7 +83,7 @@ namespace ns18
 					{
 						AbstractTreeNode1 @class = (AbstractTreeNode1)enumerator.Current;
 						T t;
-						if ((t = @class.method_5<T>(gparam_0)) != null)
+						if ((t = @class.method_5(gparam_0)) != null)
 						{
 							result = t;
 							return result;
@@ -107,21 +107,21 @@ namespace ns18
 
 		public bool method_6<T>(ref T gparam_0) where T : AbstractTreeNode1
 		{
-			if (this.CompareTo(gparam_0) == 0)
+			if (CompareTo(gparam_0) == 0)
 			{
-				gparam_0 = (T)((object)this);
+				gparam_0 = (T)this;
 				return true;
 			}
-			if (base.Nodes.Count != 0 && base.Nodes[0] is AbstractTreeNode1)
+			if (Nodes.Count != 0 && Nodes[0] is AbstractTreeNode1)
 			{
-				IEnumerator enumerator = base.Nodes.GetEnumerator();
+				IEnumerator enumerator = Nodes.GetEnumerator();
 				bool result;
 				try
 				{
 					while (enumerator.MoveNext())
 					{
 						AbstractTreeNode1 @class = (AbstractTreeNode1)enumerator.Current;
-						if (@class.method_6<T>(ref gparam_0))
+						if (@class.method_6(ref gparam_0))
 						{
 							result = true;
 							return result;

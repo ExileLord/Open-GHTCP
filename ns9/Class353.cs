@@ -1,6 +1,5 @@
-using ns22;
-using System;
 using System.Collections.Generic;
+using ns22;
 
 namespace ns9
 {
@@ -18,39 +17,39 @@ namespace ns9
 
 		public MIDILine(string string_1, int int_1, IEnumerable<AbstractNoteClass> ienumerable_0)
 		{
-			this.string_0 = string_1;
-			this.int_0 = int_1;
+			string_0 = string_1;
+			int_0 = int_1;
 			if (ienumerable_0 == null)
 			{
-				this.list_0 = new List<AbstractNoteClass>();
+				list_0 = new List<AbstractNoteClass>();
 				return;
 			}
-			this.list_0 = new List<AbstractNoteClass>(ienumerable_0);
+			list_0 = new List<AbstractNoteClass>(ienumerable_0);
 		}
 
 		public List<AbstractNoteClass> method_0()
 		{
-			return this.list_0;
+			return list_0;
 		}
 
 		public void method_1(List<AbstractNoteClass> list_1)
 		{
-			this.list_0 = list_1;
+			list_0 = list_1;
 		}
 
 		public string method_2()
 		{
-			return this.string_0;
+			return string_0;
 		}
 
 		public void method_3(string string_1)
 		{
-			this.string_0 = string_1;
+			string_0 = string_1;
 		}
 
 		public override string ToString()
 		{
-			return this.string_0;
+			return string_0;
 		}
 	}
 }

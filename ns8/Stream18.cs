@@ -17,7 +17,7 @@ namespace ns8
 		{
 			get
 			{
-				return this.method_0().CanRead;
+				return method_0().CanRead;
 			}
 		}
 
@@ -25,7 +25,7 @@ namespace ns8
 		{
 			get
 			{
-				return this.method_0().CanSeek;
+				return method_0().CanSeek;
 			}
 		}
 
@@ -33,7 +33,7 @@ namespace ns8
 		{
 			get
 			{
-				return this.method_0().CanWrite;
+				return method_0().CanWrite;
 			}
 		}
 
@@ -41,7 +41,7 @@ namespace ns8
 		{
 			get
 			{
-				return this.long_1;
+				return long_1;
 			}
 		}
 
@@ -49,61 +49,61 @@ namespace ns8
 		{
 			get
 			{
-				return this.long_2 - this.long_0;
+				return long_2 - long_0;
 			}
 			set
 			{
-				if (this.Position < 0L)
+				if (Position < 0L)
 				{
 					throw new ArgumentException("Position < 0");
 				}
-				this.long_2 = this.long_0 + value;
+				long_2 = long_0 + value;
 			}
 		}
 
 		public Stream method_0()
 		{
-			return this.stream_0;
+			return stream_0;
 		}
 
 		private void method_1(Stream stream_1)
 		{
-			this.stream_0 = stream_1;
+			stream_0 = stream_1;
 		}
 
 		private long method_2()
 		{
-			return Math.Max(this.long_0 + this.long_1 - this.long_2, 0L);
+			return Math.Max(long_0 + long_1 - long_2, 0L);
 		}
 
 		public Stream18(Stream stream_1, long long_3, long long_4)
 		{
-			this.method_1(stream_1);
-			this.long_0 = long_3;
-			this.long_1 = long_4;
-			this.long_2 = long_3;
+			method_1(stream_1);
+			long_0 = long_3;
+			long_1 = long_4;
+			long_2 = long_3;
 		}
 
 		public override void Flush()
 		{
-			lock (this.method_0())
+			lock (method_0())
 			{
-				this.method_0().Flush();
+				method_0().Flush();
 			}
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
 			int result;
-			lock (this.method_0())
+			lock (method_0())
 			{
-				if (this.method_0().Position != this.long_2)
+				if (method_0().Position != long_2)
 				{
-					this.method_0().Seek(this.long_2, SeekOrigin.Begin);
+					method_0().Seek(long_2, SeekOrigin.Begin);
 				}
-				count = (int)Math.Min((long)count, this.method_2());
-				int num = this.method_0().Read(buffer, offset, count);
-				this.long_2 += (long)num;
+				count = (int)Math.Min(count, method_2());
+				int num = method_0().Read(buffer, offset, count);
+				long_2 += num;
 				result = num;
 			}
 			return result;
@@ -111,18 +111,18 @@ namespace ns8
 
 		public override void Write(byte[] buffer, int offset, int count)
 		{
-			lock (this.method_0())
+			lock (method_0())
 			{
-				if (this.method_0().Position != this.long_2)
+				if (method_0().Position != long_2)
 				{
-					this.method_0().Seek(this.long_2, SeekOrigin.Begin);
+					method_0().Seek(long_2, SeekOrigin.Begin);
 				}
-				if ((long)count > this.method_2())
+				if (count > method_2())
 				{
 					throw new EndOfStreamException();
 				}
-				this.method_0().Write(buffer, offset, count);
-				this.long_2 += (long)count;
+				method_0().Write(buffer, offset, count);
+				long_2 += count;
 			}
 		}
 
@@ -131,14 +131,14 @@ namespace ns8
 			switch (origin)
 			{
 			case SeekOrigin.Current:
-				offset += this.long_2 - this.long_0;
+				offset += long_2 - long_0;
 				break;
 			case SeekOrigin.End:
-				offset += this.long_1;
+				offset += long_1;
 				break;
 			}
-			this.Position = offset;
-			return this.Position;
+			Position = offset;
+			return Position;
 		}
 
 		public override void SetLength(long value)

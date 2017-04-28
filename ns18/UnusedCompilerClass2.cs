@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -25,10 +24,10 @@ namespace ns18
 		{
 		}
 
-		public static UnusedCompilerClass2.Struct84 struct84_0;
+		public static Struct84 struct84_0;
 
-		public static UnusedCompilerClass2.Struct85 struct85_0;
+		public static Struct85 struct85_0;
 
-		public static UnusedCompilerClass2.Struct86 struct86_0;
+		public static Struct86 struct86_0;
 	}
 }

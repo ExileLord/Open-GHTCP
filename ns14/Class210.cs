@@ -39,13 +39,13 @@ namespace ns14
 
 		public Class210(byte[] byte_0)
 		{
-			base.method_1(byte_0);
+			method_1(byte_0);
 		}
 
 		public byte[] TransformFinalBlock(byte[] inputBuffer, int inputOffset, int inputCount)
 		{
 			byte[] array = new byte[inputCount];
-			this.TransformBlock(inputBuffer, inputOffset, inputCount, array, 0);
+			TransformBlock(inputBuffer, inputOffset, inputCount, array, 0);
 			return array;
 		}
 
@@ -54,15 +54,15 @@ namespace ns14
 			for (int i = inputOffset; i < inputOffset + inputCount; i++)
 			{
 				byte byte_ = inputBuffer[i];
-                outputBuffer[outputOffset++] = (byte)(inputBuffer[i] ^ base.method_0());
-				base.method_2(byte_);
+                outputBuffer[outputOffset++] = (byte)(inputBuffer[i] ^ method_0());
+				method_2(byte_);
 			}
 			return inputCount;
 		}
 
 		public void Dispose()
 		{
-			base.method_3();
+			method_3();
 		}
 	}
 }

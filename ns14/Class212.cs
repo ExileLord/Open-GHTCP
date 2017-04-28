@@ -1,5 +1,5 @@
-using ns12;
 using System;
+using ns12;
 
 namespace ns14
 {
@@ -13,7 +13,7 @@ namespace ns14
 
 		public Class212()
 		{
-			this.interface8_0 = new Class185();
+			interface8_0 = new Class185();
 		}
 	}
 }

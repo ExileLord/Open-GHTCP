@@ -1,10 +1,10 @@
-using ns14;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
+using ns14;
 
 namespace ns16
 {
@@ -34,69 +34,65 @@ namespace ns16
 
 		public ActionsWindow(List<QbEditor> listOfActions)
 		{
-			this.InitializeComponent();
-			this.actionList = new ActionList(listOfActions);
-			this.actionList.method_0(new ActionList.Delegate6(this.method_2));
-			this.ActionsTxt.Text = "";
+			InitializeComponent();
+			actionList = new ActionList(listOfActions);
+			actionList.method_0(method_2);
+			ActionsTxt.Text = "";
 		}
 
 		public void method_0(EventHandler eventHandler_1)
 		{
-			EventHandler eventHandler = this.eventHandler_0;
+			EventHandler eventHandler = eventHandler_0;
 			EventHandler eventHandler2;
 			do
 			{
 				eventHandler2 = eventHandler;
 				EventHandler value = (EventHandler)Delegate.Combine(eventHandler2, eventHandler_1);
-				eventHandler = Interlocked.CompareExchange<EventHandler>(ref this.eventHandler_0, value, eventHandler2);
+				eventHandler = Interlocked.CompareExchange(ref eventHandler_0, value, eventHandler2);
 			}
 			while (eventHandler != eventHandler2);
 		}
 
 		public void method_1()
 		{
-			this.thread_0 = new Thread(new ThreadStart(this.actionList.method_1));
-			this.thread_0.CurrentCulture = Thread.CurrentThread.CurrentCulture;
-			this.thread_0.CurrentUICulture = Thread.CurrentThread.CurrentUICulture;
-			this.thread_0.Start();
+			thread_0 = new Thread(actionList.method_1);
+			thread_0.CurrentCulture = Thread.CurrentThread.CurrentCulture;
+			thread_0.CurrentUICulture = Thread.CurrentThread.CurrentUICulture;
+			thread_0.Start();
 		}
 
 		private void method_2(object sender, EventArgs0 e)
 		{
-			if (base.InvokeRequired)
+			if (InvokeRequired)
 			{
-				ActionsWindow.Delegate7 method = new ActionsWindow.Delegate7(this.method_2);
-				base.Invoke(method, new object[]
-				{
-					sender,
-					e
-				});
+				Delegate7 method = method_2;
+				Invoke(method, sender, e);
 				return;
 			}
-			RichTextBox expr_34 = this.ActionsTxt;
+			RichTextBox expr_34 = ActionsTxt;
 			expr_34.Text += e.method_0();
-			this.ActionsTxt.ScrollToCaret();
-			this.progressBar.Value = e.method_1();
+			ActionsTxt.ScrollToCaret();
+			progressBar.Value = e.method_1();
 			if (e.method_0().StartsWith("FAILED"))
 			{
-				this.bool_0 = true;
+				bool_0 = true;
 			}
 			if (e.method_1() == 100)
 			{
-				Control arg_9C_0 = this.CloseBtn;
-				this.ViewLogBtn.Enabled = true;
+				Control arg_9C_0 = CloseBtn;
+				ViewLogBtn.Enabled = true;
 				arg_9C_0.Enabled = true;
-				this.eventHandler_0(this, EventArgs.Empty);
+				eventHandler_0(this, EventArgs.Empty);
 			}
 		}
 
 		private void CloseBtn_Click(object sender, EventArgs e)
 		{
-			if (this.thread_0 != null)
+			if (thread_0 != null)
 			{
-				this.thread_0.Abort();
+				thread_0.Abort();
 			}
-            base.Close();
+            Close();
 			base.Dispose();
 		}
 
@@ -107,74 +103,74 @@ namespace ns16
 
         protected override void Dispose(bool disposing)
 		{
-			if (disposing && this.icontainer_0 != null)
+			if (disposing && icontainer_0 != null)
 			{
-				this.icontainer_0.Dispose();
+				icontainer_0.Dispose();
 			}
 			base.Dispose(disposing);
 		}
 
 		private void InitializeComponent()
 		{
-			this.ActionsTxt = new RichTextBox();
-			this.splitContainer1 = new SplitContainer();
-			this.ViewLogBtn = new Button();
-			this.CloseBtn = new Button();
-			this.progressBar = new ProgressBar();
-			this.splitContainer1.Panel1.SuspendLayout();
-			this.splitContainer1.Panel2.SuspendLayout();
-			this.splitContainer1.SuspendLayout();
-			base.SuspendLayout();
-			this.ActionsTxt.Dock = DockStyle.Fill;
-			this.ActionsTxt.Location = new Point(0, 0);
-			this.ActionsTxt.Name = "ActionsTxt";
-			this.ActionsTxt.ReadOnly = true;
-			this.ActionsTxt.Size = new Size(338, 141);
-			this.ActionsTxt.TabIndex = 0;
-			this.ActionsTxt.Text = "";
-			this.splitContainer1.Dock = DockStyle.Fill;
-			this.splitContainer1.IsSplitterFixed = true;
-			this.splitContainer1.Location = new Point(0, 0);
-			this.splitContainer1.Name = "splitContainer1";
-			this.splitContainer1.Orientation = Orientation.Horizontal;
-			this.splitContainer1.Panel1.Controls.Add(this.ActionsTxt);
-			this.splitContainer1.Panel2.Controls.Add(this.progressBar);
-			this.splitContainer1.Panel2.Controls.Add(this.ViewLogBtn);
-			this.splitContainer1.Panel2.Controls.Add(this.CloseBtn);
-			this.splitContainer1.Size = new Size(338, 171);
-			this.splitContainer1.SplitterDistance = 141;
-			this.splitContainer1.TabIndex = 1;
-			this.ViewLogBtn.Enabled = false;
-			this.ViewLogBtn.Location = new Point(84, 2);
-			this.ViewLogBtn.Name = "ViewLogBtn";
-			this.ViewLogBtn.Size = new Size(75, 23);
-			this.ViewLogBtn.TabIndex = 1;
-			this.ViewLogBtn.Text = "View Log";
-			this.ViewLogBtn.UseVisualStyleBackColor = true;
-			this.ViewLogBtn.Click += new EventHandler(this.ViewLogBtn_Click);
-			this.CloseBtn.Enabled = false;
-			this.CloseBtn.Location = new Point(3, 2);
-			this.CloseBtn.Name = "CloseBtn";
-			this.CloseBtn.Size = new Size(75, 23);
-			this.CloseBtn.TabIndex = 0;
-			this.CloseBtn.Text = "Close";
-			this.CloseBtn.UseVisualStyleBackColor = true;
-			this.CloseBtn.Click += new EventHandler(this.CloseBtn_Click);
-			this.progressBar.Location = new Point(165, 2);
-			this.progressBar.Name = "progressBar";
-			this.progressBar.Size = new Size(170, 23);
-			this.progressBar.TabIndex = 2;
-			base.AutoScaleDimensions = new SizeF(6f, 13f);
-			base.AutoScaleMode = AutoScaleMode.Font;
-			base.ClientSize = new Size(338, 171);
-			base.Controls.Add(this.splitContainer1);
-			base.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-			base.Name = "ActionsWindow";
-			this.Text = "ExecuteActions";
-			this.splitContainer1.Panel1.ResumeLayout(false);
-			this.splitContainer1.Panel2.ResumeLayout(false);
-			this.splitContainer1.ResumeLayout(false);
-			base.ResumeLayout(false);
+			ActionsTxt = new RichTextBox();
+			splitContainer1 = new SplitContainer();
+			ViewLogBtn = new Button();
+			CloseBtn = new Button();
+			progressBar = new ProgressBar();
+			splitContainer1.Panel1.SuspendLayout();
+			splitContainer1.Panel2.SuspendLayout();
+			splitContainer1.SuspendLayout();
+			SuspendLayout();
+			ActionsTxt.Dock = DockStyle.Fill;
+			ActionsTxt.Location = new Point(0, 0);
+			ActionsTxt.Name = "ActionsTxt";
+			ActionsTxt.ReadOnly = true;
+			ActionsTxt.Size = new Size(338, 141);
+			ActionsTxt.TabIndex = 0;
+			ActionsTxt.Text = "";
+			splitContainer1.Dock = DockStyle.Fill;
+			splitContainer1.IsSplitterFixed = true;
+			splitContainer1.Location = new Point(0, 0);
+			splitContainer1.Name = "splitContainer1";
+			splitContainer1.Orientation = Orientation.Horizontal;
+			splitContainer1.Panel1.Controls.Add(ActionsTxt);
+			splitContainer1.Panel2.Controls.Add(progressBar);
+			splitContainer1.Panel2.Controls.Add(ViewLogBtn);
+			splitContainer1.Panel2.Controls.Add(CloseBtn);
+			splitContainer1.Size = new Size(338, 171);
+			splitContainer1.SplitterDistance = 141;
+			splitContainer1.TabIndex = 1;
+			ViewLogBtn.Enabled = false;
+			ViewLogBtn.Location = new Point(84, 2);
+			ViewLogBtn.Name = "ViewLogBtn";
+			ViewLogBtn.Size = new Size(75, 23);
+			ViewLogBtn.TabIndex = 1;
+			ViewLogBtn.Text = "View Log";
+			ViewLogBtn.UseVisualStyleBackColor = true;
+			ViewLogBtn.Click += ViewLogBtn_Click;
+			CloseBtn.Enabled = false;
+			CloseBtn.Location = new Point(3, 2);
+			CloseBtn.Name = "CloseBtn";
+			CloseBtn.Size = new Size(75, 23);
+			CloseBtn.TabIndex = 0;
+			CloseBtn.Text = "Close";
+			CloseBtn.UseVisualStyleBackColor = true;
+			CloseBtn.Click += CloseBtn_Click;
+			progressBar.Location = new Point(165, 2);
+			progressBar.Name = "progressBar";
+			progressBar.Size = new Size(170, 23);
+			progressBar.TabIndex = 2;
+			AutoScaleDimensions = new SizeF(6f, 13f);
+			AutoScaleMode = AutoScaleMode.Font;
+			ClientSize = new Size(338, 171);
+			Controls.Add(splitContainer1);
+			FormBorderStyle = FormBorderStyle.FixedToolWindow;
+			Name = "ActionsWindow";
+			Text = "ExecuteActions";
+			splitContainer1.Panel1.ResumeLayout(false);
+			splitContainer1.Panel2.ResumeLayout(false);
+			splitContainer1.ResumeLayout(false);
+			ResumeLayout(false);
 		}
 	}
 }

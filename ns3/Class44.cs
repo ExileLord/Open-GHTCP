@@ -26,9 +26,9 @@ namespace ns3
 		public Class44()
 		{
 			uint num = 0u;
-			while ((ulong)num < (ulong)((long)Class44.uint_0.Length))
+			while (num < (ulong)uint_0.Length)
 			{
-				Class44.uint_0[(int)((UIntPtr)num)] = Class44.smethod_0(num);
+				uint_0[(int)((UIntPtr)num)] = smethod_0(num);
 				num += 1u;
 			}
 		}

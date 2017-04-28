@@ -1,6 +1,5 @@
 using ns18;
 using ns19;
-using System;
 
 namespace ns21
 {
@@ -10,17 +9,17 @@ namespace ns21
 		{
 			get
 			{
-				return (AbsTreeNode1_1)base.Nodes[int_0];
+				return (AbsTreeNode1_1)Nodes[int_0];
 			}
 			set
 			{
-				base.Nodes[int_0] = value;
+				Nodes[int_0] = value;
 			}
 		}
 
 		public ListArrayNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public override int vmethod_1()

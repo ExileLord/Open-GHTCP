@@ -1,6 +1,6 @@
-using Compression.Tar;
 using System;
 using System.IO;
+using Compression.Tar;
 
 namespace ns13
 {
@@ -26,7 +26,7 @@ namespace ns13
 		{
 			get
 			{
-				return this.stream_0.CanRead;
+				return stream_0.CanRead;
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace ns13
 		{
 			get
 			{
-				return this.stream_0.CanSeek;
+				return stream_0.CanSeek;
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace ns13
 		{
 			get
 			{
-				return this.stream_0.CanWrite;
+				return stream_0.CanWrite;
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace ns13
 		{
 			get
 			{
-				return this.stream_0.Length;
+				return stream_0.Length;
 			}
 		}
 
@@ -58,82 +58,82 @@ namespace ns13
 		{
 			get
 			{
-				return this.stream_0.Position;
+				return stream_0.Position;
 			}
 			set
 			{
-				this.stream_0.Position = value;
+				stream_0.Position = value;
 			}
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
 		{
-			return this.stream_0.Seek(offset, origin);
+			return stream_0.Seek(offset, origin);
 		}
 
 		public override void SetLength(long value)
 		{
-			this.stream_0.SetLength(value);
+			stream_0.SetLength(value);
 		}
 
 		public override int ReadByte()
 		{
-			return this.stream_0.ReadByte();
+			return stream_0.ReadByte();
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			return this.stream_0.Read(buffer, offset, count);
+			return stream_0.Read(buffer, offset, count);
 		}
 
 		public override void Flush()
 		{
-			this.stream_0.Flush();
+			stream_0.Flush();
 		}
 
 		public void method_0()
 		{
-			if (this.method_1())
+			if (method_1())
 			{
-				this.method_2();
+				method_2();
 			}
-			this.method_3();
+			method_3();
 		}
 
 		public override void Close()
 		{
-			if (!this.bool_0)
+			if (!bool_0)
 			{
-				this.bool_0 = true;
-				this.method_0();
-				this.class206_0.method_8();
+				bool_0 = true;
+				method_0();
+				class206_0.method_8();
 			}
 		}
 
 		private bool method_1()
 		{
-			return this.long_0 < this.long_1;
+			return long_0 < long_1;
 		}
 
 		public void method_2()
 		{
-			if (this.int_0 > 0)
+			if (int_0 > 0)
 			{
-				Array.Clear(this.byte_1, this.int_0, this.byte_1.Length - this.int_0);
-				this.class206_0.method_4(this.byte_1);
-				this.long_0 += (long)this.int_0;
-				this.int_0 = 0;
+				Array.Clear(byte_1, int_0, byte_1.Length - int_0);
+				class206_0.method_4(byte_1);
+				long_0 += int_0;
+				int_0 = 0;
 			}
-			if (this.long_0 < this.long_1)
+			if (long_0 < long_1)
 			{
-				string string_ = string.Format("Entry closed at '{0}' before the '{1}' bytes specified in the header were written", this.long_0, this.long_1);
+				string string_ = string.Format("Entry closed at '{0}' before the '{1}' bytes specified in the header were written", long_0, long_1);
 				throw new TarException(string_);
 			}
 		}
 
 		public override void WriteByte(byte value)
 		{
-			this.Write(new byte[]
+			Write(new[]
 			{
 				value
 			}, 0, 1);
@@ -157,43 +157,43 @@ namespace ns13
 			{
 				throw new ArgumentOutOfRangeException("count", "Cannot be negative");
 			}
-			if (this.long_0 + (long)count > this.long_1)
+			if (long_0 + count > long_1)
 			{
-				string message = string.Format("request to write '{0}' bytes exceeds size in header of '{1}' bytes", count, this.long_1);
+				string message = string.Format("request to write '{0}' bytes exceeds size in header of '{1}' bytes", count, long_1);
 				throw new ArgumentOutOfRangeException("count", message);
 			}
-			if (this.int_0 > 0)
+			if (int_0 > 0)
 			{
-				if (this.int_0 + count >= this.byte_0.Length)
+				if (int_0 + count >= byte_0.Length)
 				{
-					int num = this.byte_0.Length - this.int_0;
-					Array.Copy(this.byte_1, 0, this.byte_0, 0, this.int_0);
-					Array.Copy(buffer, offset, this.byte_0, this.int_0, num);
-					this.class206_0.method_4(this.byte_0);
-					this.long_0 += (long)this.byte_0.Length;
+					int num = byte_0.Length - int_0;
+					Array.Copy(byte_1, 0, byte_0, 0, int_0);
+					Array.Copy(buffer, offset, byte_0, int_0, num);
+					class206_0.method_4(byte_0);
+					long_0 += byte_0.Length;
 					offset += num;
 					count -= num;
-					this.int_0 = 0;
+					int_0 = 0;
 				}
 				else
 				{
-					Array.Copy(buffer, offset, this.byte_1, this.int_0, count);
+					Array.Copy(buffer, offset, byte_1, int_0, count);
 					offset += count;
-					this.int_0 += count;
+					int_0 += count;
 					count -= count;
 				}
 			}
 			while (count > 0)
 			{
-				if (count < this.byte_0.Length)
+				if (count < byte_0.Length)
 				{
-					Array.Copy(buffer, offset, this.byte_1, this.int_0, count);
-					this.int_0 += count;
+					Array.Copy(buffer, offset, byte_1, int_0, count);
+					int_0 += count;
 					return;
 				}
-				this.class206_0.method_5(buffer, offset);
-				int num2 = this.byte_0.Length;
-				this.long_0 += (long)num2;
+				class206_0.method_5(buffer, offset);
+				int num2 = byte_0.Length;
+				long_0 += num2;
 				count -= num2;
 				offset += num2;
 			}
@@ -201,8 +201,8 @@ namespace ns13
 
 		private void method_3()
 		{
-			Array.Clear(this.byte_0, 0, this.byte_0.Length);
-			this.class206_0.method_4(this.byte_0);
+			Array.Clear(byte_0, 0, byte_0.Length);
+			class206_0.method_4(byte_0);
 		}
 	}
 }

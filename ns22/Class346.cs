@@ -16,14 +16,14 @@ namespace ns22
 
 		public Class346(int int_2)
 		{
-			this.gparam_0 = new T[int_2];
+			gparam_0 = new T[int_2];
 		}
 
 		public void Dispose()
 		{
-			this.int_0 = 0;
-			this.int_1 = 0;
-			this.gparam_0 = new T[0];
+			int_0 = 0;
+			int_1 = 0;
+			gparam_0 = new T[0];
 		}
 	}
 }

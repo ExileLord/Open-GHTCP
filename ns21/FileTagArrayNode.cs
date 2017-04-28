@@ -1,5 +1,4 @@
 using ns18;
-using System;
 
 namespace ns21
 {
@@ -9,17 +8,17 @@ namespace ns21
 		{
 			get
 			{
-				return ((TagValueNode)base.Nodes[int_0]).int_0;
+				return ((TagValueNode)Nodes[int_0]).int_0;
 			}
 			set
 			{
-				((TagValueNode)base.Nodes[int_0]).int_0 = value;
+				((TagValueNode)Nodes[int_0]).int_0 = value;
 			}
 		}
 
 		public FileTagArrayNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public override int vmethod_1()

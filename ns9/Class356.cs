@@ -25,7 +25,7 @@ namespace ns9
 			string stackTrace = Environment.StackTrace;
 			Console.WriteLine("WARNING: " + string_0);
 			Console.WriteLine(stackTrace);
-			if (this.dictionary_1.ContainsKey(stackTrace))
+			if (dictionary_1.ContainsKey(stackTrace))
 			{
 				return;
 			}
@@ -53,7 +53,7 @@ namespace ns9
 					}
 				}
 			}
-			this.dictionary_1[stackTrace] = true;
+			dictionary_1[stackTrace] = true;
 		}
 	}
 }

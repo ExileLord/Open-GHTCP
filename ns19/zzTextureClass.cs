@@ -1,8 +1,8 @@
-using NeversoftTools.Texture.DDS;
-using ns14;
 using System;
 using System.Drawing;
 using System.IO;
+using ns14;
+using NeversoftTools.Texture.DDS;
 
 namespace ns19
 {
@@ -19,14 +19,14 @@ namespace ns19
 
 			public float float_3;
 
-			public static zzTextureClass.Tom smethod_0(float float_4, zzTextureClass.Tom struct87_0)
+			public static Tom smethod_0(float float_4, Tom struct87_0)
 			{
-				return zzTextureClass.Tom.smethod_1(struct87_0, float_4);
+				return smethod_1(struct87_0, float_4);
 			}
 
-			public static zzTextureClass.Tom smethod_1(zzTextureClass.Tom struct87_0, float float_4)
+			public static Tom smethod_1(Tom struct87_0, float float_4)
 			{
-				zzTextureClass.Tom result;
+				Tom result;
 				result.float_0 = float_4 * struct87_0.float_0;
 				result.float_1 = float_4 * struct87_0.float_1;
 				result.float_2 = float_4 * struct87_0.float_2;
@@ -34,9 +34,9 @@ namespace ns19
 				return result;
 			}
 
-			public static zzTextureClass.Tom smethod_2(zzTextureClass.Tom struct87_0, zzTextureClass.Tom struct87_1)
+			public static Tom smethod_2(Tom struct87_0, Tom struct87_1)
 			{
-				zzTextureClass.Tom result;
+				Tom result;
 				result.float_0 = struct87_0.float_0 + struct87_1.float_0;
 				result.float_1 = struct87_0.float_1 + struct87_1.float_1;
 				result.float_2 = struct87_0.float_2 + struct87_1.float_2;
@@ -53,9 +53,9 @@ namespace ns19
 
 			public uint uint_0;
 
-			public static zzTextureClass.Jerry smethod_0(BinaryReader binaryReader_0)
+			public static Jerry smethod_0(BinaryReader binaryReader_0)
 			{
-				zzTextureClass.Jerry result;
+				Jerry result;
 				result.ushort_0 = binaryReader_0.ReadUInt16();
 				result.ushort_1 = binaryReader_0.ReadUInt16();
 				result.uint_0 = binaryReader_0.ReadUInt32();
@@ -64,9 +64,9 @@ namespace ns19
 
 			public void method_0(BinaryWriter binaryWriter_0)
 			{
-				binaryWriter_0.Write(this.ushort_0);
-				binaryWriter_0.Write(this.ushort_1);
-				binaryWriter_0.Write(this.uint_0);
+				binaryWriter_0.Write(ushort_0);
+				binaryWriter_0.Write(ushort_1);
+				binaryWriter_0.Write(uint_0);
 			}
 		}
 
@@ -82,27 +82,27 @@ namespace ns19
 
 		private static byte[] byte_5 = new byte[272];
 
-		private static bool bool_0 = false;
+		private static bool bool_0;
 
 		private static void smethod_0()
 		{
 			for (int i = 0; i < 32; i++)
 			{
-				zzTextureClass.byte_0[i] = (byte)(i << 3 | i >> 2);
+				byte_0[i] = (byte)(i << 3 | i >> 2);
 			}
 			for (int j = 0; j < 64; j++)
 			{
-				zzTextureClass.byte_1[j] = (byte)(j << 2 | j >> 4);
+				byte_1[j] = (byte)(j << 2 | j >> 4);
 			}
 			for (int k = 0; k < 272; k++)
 			{
-				int int_ = zzTextureClass.smethod_11(k - 8, 0, 255);
-				zzTextureClass.byte_4[k] = zzTextureClass.byte_0[zzTextureClass.smethod_2(int_, 31)];
-				zzTextureClass.byte_5[k] = zzTextureClass.byte_1[zzTextureClass.smethod_2(int_, 63)];
+				int int_ = smethod_11(k - 8, 0, 255);
+				byte_4[k] = byte_0[smethod_2(int_, 31)];
+				byte_5[k] = byte_1[smethod_2(int_, 63)];
 			}
-			zzTextureClass.smethod_1(ref zzTextureClass.byte_2, zzTextureClass.byte_0, 32);
-			zzTextureClass.smethod_1(ref zzTextureClass.byte_3, zzTextureClass.byte_1, 64);
-			zzTextureClass.bool_0 = true;
+			smethod_1(ref byte_2, byte_0, 32);
+			smethod_1(ref byte_3, byte_1, 64);
+			bool_0 = true;
 		}
 
 		private static void smethod_1(ref byte[,] byte_6, byte[] byte_7, int int_0)
@@ -114,9 +114,9 @@ namespace ns19
 				{
 					for (int k = 0; k < int_0; k++)
 					{
-						int num2 = (int)byte_7[j];
-						int num3 = (int)byte_7[k];
-						int num4 = Math.Abs(num3 + zzTextureClass.smethod_2(num2 - num3, 85) - i);
+						int num2 = byte_7[j];
+						int num3 = byte_7[k];
+						int num4 = Math.Abs(num3 + smethod_2(num2 - num3, 85) - i);
 						if (num4 < num)
 						{
 							byte_6[i, 0] = (byte)k;
@@ -138,26 +138,26 @@ namespace ns19
 		{
 			int num = (ushort_0 & 63488) >> 11;
 			int num2 = (ushort_0 & 2016) >> 5;
-			int num3 = (int)(ushort_0 & 31);
-			return Color.FromArgb(0, (int)zzTextureClass.byte_0[num], (int)zzTextureClass.byte_1[num2], (int)zzTextureClass.byte_0[num3]);
+			int num3 = ushort_0 & 31;
+			return Color.FromArgb(0, byte_0[num], byte_1[num2], byte_0[num3]);
 		}
 
 		private static ushort smethod_4(Color color_0)
 		{
-			return (ushort)((zzTextureClass.smethod_2((int)color_0.R, 31) << 11) + (zzTextureClass.smethod_2((int)color_0.G, 63) << 5) + zzTextureClass.smethod_2((int)color_0.B, 31));
+			return (ushort)((smethod_2(color_0.R, 31) << 11) + (smethod_2(color_0.G, 63) << 5) + smethod_2(color_0.B, 31));
 		}
 
 		private static Color smethod_5(Color color_0, Color color_1, int int_0)
 		{
-			return Color.FromArgb((int)color_0.R + zzTextureClass.smethod_2((int)(color_1.R - color_0.R), int_0), (int)color_0.G + zzTextureClass.smethod_2((int)(color_1.G - color_0.G), int_0), (int)color_0.B + zzTextureClass.smethod_2((int)(color_1.B - color_0.B), int_0));
+			return Color.FromArgb(color_0.R + smethod_2(color_1.R - color_0.R, int_0), color_0.G + smethod_2(color_1.G - color_0.G, int_0), color_0.B + smethod_2(color_1.B - color_0.B, int_0));
 		}
 
 		private static void smethod_6(ref Color[] color_0, ushort ushort_0, ushort ushort_1)
 		{
-			color_0[0] = zzTextureClass.smethod_3(ushort_0);
-			color_0[1] = zzTextureClass.smethod_3(ushort_1);
-			color_0[2] = zzTextureClass.smethod_5(color_0[0], color_0[1], 85);
-			color_0[3] = zzTextureClass.smethod_5(color_0[0], color_0[1], 170);
+			color_0[0] = smethod_3(ushort_0);
+			color_0[1] = smethod_3(ushort_1);
+			color_0[2] = smethod_5(color_0[0], color_0[1], 85);
+			color_0[3] = smethod_5(color_0[0], color_0[1], 170);
 		}
 
 		private static Color[] smethod_7(Color[] color_0)
@@ -168,34 +168,34 @@ namespace ns19
 			for (int i = 0; i < 4; i++)
 			{
 				int num = i * 4;
-				byte b = zzTextureClass.byte_4[(int)color_0[num].B + (3 * array3[0, 1] + 5 * array3[0, 0] >> 4) + 8];
-				array2[0, 0] = (int)(color_0[num].B - b);
-				byte b2 = zzTextureClass.byte_5[(int)color_0[num].G + (3 * array3[1, 1] + 5 * array3[1, 0] >> 4) + 8];
-				array2[1, 0] = (int)(color_0[num].G - b2);
-				byte b3 = zzTextureClass.byte_4[(int)color_0[num].R + (3 * array3[2, 1] + 5 * array3[2, 0] >> 4) + 8];
-				array2[2, 0] = (int)(color_0[num].R - b3);
-				array[num] = Color.FromArgb((int)b3, (int)b2, (int)b);
-				b = zzTextureClass.byte_4[(int)color_0[num + 1].B + (7 * array2[0, 0] + 3 * array3[0, 2] + 5 * array3[0, 1] + array3[0, 0] >> 4) + 8];
-				array2[0, 1] = (int)(color_0[num + 1].B - b);
-				b2 = zzTextureClass.byte_5[(int)color_0[num + 1].G + (7 * array2[1, 0] + 3 * array3[1, 2] + 5 * array3[1, 1] + array3[1, 0] >> 4) + 8];
-				array2[1, 1] = (int)(color_0[num + 1].G - b2);
-				b3 = zzTextureClass.byte_4[(int)color_0[num + 1].R + (7 * array2[2, 0] + 3 * array3[2, 2] + 5 * array3[2, 1] + array3[2, 0] >> 4) + 8];
-				array2[2, 1] = (int)(color_0[num + 1].R - b3);
-				array[num + 1] = Color.FromArgb((int)b3, (int)b2, (int)b);
-				b = zzTextureClass.byte_4[(int)color_0[num + 2].B + (7 * array2[0, 1] + 3 * array3[0, 3] + 5 * array3[0, 2] + array3[0, 1] >> 4) + 8];
-				array2[0, 2] = (int)(color_0[num + 2].B - b);
-				b2 = zzTextureClass.byte_5[(int)color_0[num + 2].G + (7 * array2[1, 1] + 3 * array3[1, 3] + 5 * array3[1, 2] + array3[1, 1] >> 4) + 8];
-				array2[1, 2] = (int)(color_0[num + 2].G - b2);
-				b3 = zzTextureClass.byte_4[(int)color_0[num + 2].R + (7 * array2[2, 1] + 3 * array3[2, 3] + 5 * array3[2, 2] + array3[2, 1] >> 4) + 8];
-				array2[2, 2] = (int)(color_0[num + 2].R - b3);
-				array[num + 2] = Color.FromArgb((int)b3, (int)b2, (int)b);
-				b = zzTextureClass.byte_4[(int)color_0[num + 3].B + (7 * array2[0, 2] + 5 * array3[0, 3] + array3[0, 2] >> 4) + 8];
-				array2[0, 3] = (int)(color_0[num + 3].B - b);
-				b2 = zzTextureClass.byte_5[(int)color_0[num + 3].G + (7 * array2[1, 2] + 5 * array3[1, 3] + array3[1, 2] >> 4) + 8];
-				array2[1, 3] = (int)(color_0[num + 3].G - b2);
-				b3 = zzTextureClass.byte_4[(int)color_0[num + 3].R + (7 * array2[2, 2] + 5 * array3[2, 3] + array3[2, 2] >> 4) + 8];
-				array2[2, 3] = (int)(color_0[num + 3].R - b3);
-				array[num + 3] = Color.FromArgb((int)b3, (int)b2, (int)b);
+				byte b = byte_4[color_0[num].B + (3 * array3[0, 1] + 5 * array3[0, 0] >> 4) + 8];
+				array2[0, 0] = color_0[num].B - b;
+				byte b2 = byte_5[color_0[num].G + (3 * array3[1, 1] + 5 * array3[1, 0] >> 4) + 8];
+				array2[1, 0] = color_0[num].G - b2;
+				byte b3 = byte_4[color_0[num].R + (3 * array3[2, 1] + 5 * array3[2, 0] >> 4) + 8];
+				array2[2, 0] = color_0[num].R - b3;
+				array[num] = Color.FromArgb(b3, b2, b);
+				b = byte_4[color_0[num + 1].B + (7 * array2[0, 0] + 3 * array3[0, 2] + 5 * array3[0, 1] + array3[0, 0] >> 4) + 8];
+				array2[0, 1] = color_0[num + 1].B - b;
+				b2 = byte_5[color_0[num + 1].G + (7 * array2[1, 0] + 3 * array3[1, 2] + 5 * array3[1, 1] + array3[1, 0] >> 4) + 8];
+				array2[1, 1] = color_0[num + 1].G - b2;
+				b3 = byte_4[color_0[num + 1].R + (7 * array2[2, 0] + 3 * array3[2, 2] + 5 * array3[2, 1] + array3[2, 0] >> 4) + 8];
+				array2[2, 1] = color_0[num + 1].R - b3;
+				array[num + 1] = Color.FromArgb(b3, b2, b);
+				b = byte_4[color_0[num + 2].B + (7 * array2[0, 1] + 3 * array3[0, 3] + 5 * array3[0, 2] + array3[0, 1] >> 4) + 8];
+				array2[0, 2] = color_0[num + 2].B - b;
+				b2 = byte_5[color_0[num + 2].G + (7 * array2[1, 1] + 3 * array3[1, 3] + 5 * array3[1, 2] + array3[1, 1] >> 4) + 8];
+				array2[1, 2] = color_0[num + 2].G - b2;
+				b3 = byte_4[color_0[num + 2].R + (7 * array2[2, 1] + 3 * array3[2, 3] + 5 * array3[2, 2] + array3[2, 1] >> 4) + 8];
+				array2[2, 2] = color_0[num + 2].R - b3;
+				array[num + 2] = Color.FromArgb(b3, b2, b);
+				b = byte_4[color_0[num + 3].B + (7 * array2[0, 2] + 5 * array3[0, 3] + array3[0, 2] >> 4) + 8];
+				array2[0, 3] = color_0[num + 3].B - b;
+				b2 = byte_5[color_0[num + 3].G + (7 * array2[1, 2] + 5 * array3[1, 3] + array3[1, 2] >> 4) + 8];
+				array2[1, 3] = color_0[num + 3].G - b2;
+				b3 = byte_4[color_0[num + 3].R + (7 * array2[2, 2] + 5 * array3[2, 3] + array3[2, 2] >> 4) + 8];
+				array2[2, 3] = color_0[num + 3].R - b3;
+				array[num + 3] = Color.FromArgb(b3, b2, b);
 				int[,] array4 = array2;
 				array2 = array3;
 				array3 = array4;
@@ -206,18 +206,18 @@ namespace ns19
 		private static uint smethod_8(Color[] color_0, Color[] color_1, bool bool_1)
 		{
 			uint num = 0u;
-			int num2 = (int)(color_1[0].R - color_1[1].R);
-			int num3 = (int)(color_1[0].G - color_1[1].G);
-			int num4 = (int)(color_1[0].B - color_1[1].B);
+			int num2 = color_1[0].R - color_1[1].R;
+			int num3 = color_1[0].G - color_1[1].G;
+			int num4 = color_1[0].B - color_1[1].B;
 			int[] array = new int[16];
 			for (int i = 0; i < 16; i++)
 			{
-				array[i] = (int)color_0[i].R * num2 + (int)color_0[i].G * num3 + (int)color_0[i].B * num4;
+				array[i] = color_0[i].R * num2 + color_0[i].G * num3 + color_0[i].B * num4;
 			}
 			int[] array2 = new int[4];
 			for (int j = 0; j < 4; j++)
 			{
-				array2[j] = (int)color_1[j].R * num2 + (int)color_1[j].G * num3 + (int)color_1[j].B * num4;
+				array2[j] = color_1[j].R * num2 + color_1[j].G * num3 + color_1[j].B * num4;
 			}
 			int num5 = array2[1] + array2[3] >> 1;
 			int num6 = array2[3] + array2[2] >> 1;
@@ -295,7 +295,7 @@ namespace ns19
 					int[] array5 = array3;
 					array3 = array4;
 					array4 = array5;
-					num |= (uint)((uint)num11 << l * 8);
+					num |= (uint)num11 << l * 8;
 				}
 			}
 			return num;
@@ -315,9 +315,9 @@ namespace ns19
 				for (int j = 1; j < 16; j++)
 				{
 					byte b = (byte)(block[j].ToArgb() >> i * 8 & 255);
-					num3 += (int)b;
-					num2 = Math.Min(num2, (int)b);
-					num4 = Math.Max(num4, (int)b);
+					num3 += b;
+					num2 = Math.Min(num2, b);
+					num4 = Math.Max(num4, b);
 				}
 				array[i] = num3 + 8 >> 4;
 				array2[i] = num2;
@@ -330,9 +330,9 @@ namespace ns19
 			}
 			for (int l = 0; l < 16; l++)
 			{
-				int num5 = (int)block[l].R - array[2];
-				int num6 = (int)block[l].G - array[1];
-				int num7 = (int)block[l].B - array[0];
+				int num5 = block[l].R - array[2];
+				int num6 = block[l].G - array[1];
+				int num7 = block[l].B - array[0];
 				array4[0] += num5 * num5;
 				array4[1] += num5 * num6;
 				array4[2] += num5 * num7;
@@ -343,11 +343,11 @@ namespace ns19
 			float[] array5 = new float[6];
 			for (int m = 0; m < 6; m++)
 			{
-				array5[m] = (float)array4[m] / 255f;
+				array5[m] = array4[m] / 255f;
 			}
-			float num8 = (float)(array3[2] - array2[2]);
-			float num9 = (float)(array3[1] - array2[1]);
-			float num10 = (float)(array3[0] - array2[0]);
+			float num8 = array3[2] - array2[2];
+			float num9 = array3[1] - array2[1];
+			float num10 = array3[0] - array2[0];
 			for (int n = 0; n < num; n++)
 			{
 				float num11 = num8 * array5[0] + num9 * array5[1] + num10 * array5[2];
@@ -380,7 +380,7 @@ namespace ns19
 			Color color_2 = default(Color);
 			for (int num20 = 0; num20 < 16; num20++)
 			{
-				int num21 = (int)block[num20].R * num15 + (int)block[num20].G * num16 + (int)block[num20].B * num17;
+				int num21 = block[num20].R * num15 + block[num20].G * num16 + block[num20].B * num17;
 				if (num21 < num18)
 				{
 					num18 = num21;
@@ -392,21 +392,19 @@ namespace ns19
 					color_2 = block[num20];
 				}
 			}
-			max16 = zzTextureClass.smethod_4(color_2);
-			min16 = zzTextureClass.smethod_4(color_);
+			max16 = smethod_4(color_2);
+			min16 = smethod_4(color_);
 		}
 
 		private static bool smethod_10(Color[] color_0, ref ushort ushort_0, ref ushort ushort_1, uint uint_0)
 		{
-			int[] array = new int[]
-			{
+			int[] array = {
 				3,
 				0,
 				2,
 				1
 			};
-			int[] array2 = new int[]
-			{
+			int[] array2 = {
 				589824,
 				2304,
 				262402,
@@ -427,9 +425,9 @@ namespace ns19
 			{
 				int num9 = (int)(num2 & 3u);
 				int num10 = array[num9];
-				int r = (int)color_0[i].R;
-				int g = (int)color_0[i].G;
-				int b = (int)color_0[i].B;
+				int r = color_0[i].R;
+				int g = color_0[i].G;
+				int b = color_0[i].B;
 				num += array2[num9];
 				num5 += num10 * r;
 				num4 += num10 * g;
@@ -450,16 +448,16 @@ namespace ns19
 			{
 				if (num11 * num12 != num13 * num13)
 				{
-					float num14 = 0.3647059f / (float)(num11 * num12 - num13 * num13);
+					float num14 = 0.3647059f / (num11 * num12 - num13 * num13);
 					float num15 = num14 * 63f / 31f;
 					ushort num16 = ushort_1;
 					ushort num17 = ushort_0;
-					ushort_0 = (ushort)(zzTextureClass.smethod_11(Convert.ToInt32((float)(num5 * num12 - num8 * num13) * num14 + 0.5f), 0, 31) << 11);
-					ushort_0 = (ushort)((int)ushort_0 | zzTextureClass.smethod_11(Convert.ToInt32((float)(num4 * num12 - num7 * num13) * num15 + 0.5f), 0, 63) << 5);
-					ushort_0 = (ushort)((int)ushort_0 | zzTextureClass.smethod_11(Convert.ToInt32((float)(num3 * num12 - num6 * num13) * num14 + 0.5f), 0, 31));
-					ushort_1 = (ushort)(zzTextureClass.smethod_11(Convert.ToInt32((float)(num8 * num11 - num5 * num13) * num14 + 0.5f), 0, 31) << 11);
-					ushort_1 = (ushort)((int)ushort_1 | zzTextureClass.smethod_11(Convert.ToInt32((float)(num7 * num11 - num4 * num13) * num15 + 0.5f), 0, 63) << 5);
-					ushort_1 = (ushort)((int)ushort_1 | zzTextureClass.smethod_11(Convert.ToInt32((float)(num6 * num11 - num3 * num13) * num14 + 0.5f), 0, 31));
+					ushort_0 = (ushort)(smethod_11(Convert.ToInt32((num5 * num12 - num8 * num13) * num14 + 0.5f), 0, 31) << 11);
+					ushort_0 = (ushort)(ushort_0 | smethod_11(Convert.ToInt32((num4 * num12 - num7 * num13) * num15 + 0.5f), 0, 63) << 5);
+					ushort_0 = (ushort)(ushort_0 | smethod_11(Convert.ToInt32((num3 * num12 - num6 * num13) * num14 + 0.5f), 0, 31));
+					ushort_1 = (ushort)(smethod_11(Convert.ToInt32((num8 * num11 - num5 * num13) * num14 + 0.5f), 0, 31) << 11);
+					ushort_1 = (ushort)(ushort_1 | smethod_11(Convert.ToInt32((num7 * num11 - num4 * num13) * num15 + 0.5f), 0, 63) << 5);
+					ushort_1 = (ushort)(ushort_1 | smethod_11(Convert.ToInt32((num6 * num11 - num3 * num13) * num14 + 0.5f), 0, 31));
 					return num16 != ushort_1 || num17 != ushort_0;
 				}
 			}
@@ -479,7 +477,7 @@ namespace ns19
 			return int_1;
 		}
 
-		private static zzTextureClass.Jerry smethod_12(Color[] color_0, bool bool_1)
+		private static Jerry smethod_12(Color[] color_0, bool bool_1)
 		{
 			Color[] array = new Color[16];
 			Color[] color_ = new Color[4];
@@ -497,24 +495,24 @@ namespace ns19
 			{
 				if (bool_1)
 				{
-					array = zzTextureClass.smethod_7(color_0);
+					array = smethod_7(color_0);
 				}
-				zzTextureClass.smethod_9(bool_1 ? array : color_0, out num3, out num4);
+				smethod_9(bool_1 ? array : color_0, out num3, out num4);
 				if (num3 != num4)
 				{
-					zzTextureClass.smethod_6(ref color_, num3, num4);
-					num5 = zzTextureClass.smethod_8(color_0, color_, bool_1);
+					smethod_6(ref color_, num3, num4);
+					num5 = smethod_8(color_0, color_, bool_1);
 				}
 				else
 				{
 					num5 = 0u;
 				}
-				if (zzTextureClass.smethod_10(bool_1 ? array : color_0, ref num3, ref num4, num5))
+				if (smethod_10(bool_1 ? array : color_0, ref num3, ref num4, num5))
 				{
 					if (num3 != num4)
 					{
-						zzTextureClass.smethod_6(ref color_, num3, num4);
-						num5 = zzTextureClass.smethod_8(color_0, color_, bool_1);
+						smethod_6(ref color_, num3, num4);
+						num5 = smethod_8(color_0, color_, bool_1);
 					}
 					else
 					{
@@ -524,12 +522,12 @@ namespace ns19
 			}
 			else
 			{
-				int r = (int)color_0[0].R;
-				int g = (int)color_0[0].G;
-				int b = (int)color_0[0].B;
+				int r = color_0[0].R;
+				int g = color_0[0].G;
+				int b = color_0[0].B;
 				num5 = 2863311530u;
-				num3 = Convert.ToUInt16((int)zzTextureClass.byte_2[r, 0] << 11 | (int)zzTextureClass.byte_3[g, 0] << 5 | (int)zzTextureClass.byte_2[b, 0]);
-				num4 = Convert.ToUInt16((int)zzTextureClass.byte_2[r, 1] << 11 | (int)zzTextureClass.byte_3[g, 1] << 5 | (int)zzTextureClass.byte_2[b, 1]);
+				num3 = Convert.ToUInt16(byte_2[r, 0] << 11 | byte_3[g, 0] << 5 | byte_2[b, 0]);
+				num4 = Convert.ToUInt16(byte_2[r, 1] << 11 | byte_3[g, 1] << 5 | byte_2[b, 1]);
 			}
 			if (num3 < num4)
 			{
@@ -538,7 +536,7 @@ namespace ns19
 				num4 = num6;
 				num5 ^= 1431655765u;
 			}
-			zzTextureClass.Jerry result;
+			Jerry result;
 			result.ushort_0 = num3;
 			result.ushort_1 = num4;
 			result.uint_0 = num5;
@@ -564,10 +562,10 @@ namespace ns19
 			byte[] array = new byte[8];
 			for (int i = 0; i < 8; i++)
 			{
-				float float_ = (float)color_0[2 * i].A * 0.05882353f;
-				float float_2 = (float)color_0[2 * i + 1].A * 0.05882353f;
-				int num = zzTextureClass.smethod_13(float_, 15);
-				int num2 = zzTextureClass.smethod_13(float_2, 15);
+				float float_ = color_0[2 * i].A * 0.05882353f;
+				float float_2 = color_0[2 * i + 1].A * 0.05882353f;
+				int num = smethod_13(float_, 15);
+				int num2 = smethod_13(float_2, 15);
 				array[i] = (byte)(num | num2 << 4);
 			}
 			return array;
@@ -586,15 +584,15 @@ namespace ns19
 			}
 			array[num++] = b;
 			array[num++] = b2;
-			int num2 = (int)(b - b2);
-			int num3 = (int)(b2 * 7) - (num2 >> 1);
+			int num2 = b - b2;
+			int num3 = b2 * 7 - (num2 >> 1);
 			int num4 = num2 * 4;
 			int num5 = num2 * 2;
 			int num6 = 0;
 			int num7 = 0;
 			for (int j = 0; j < 16; j++)
 			{
-				int num8 = (int)(color_0[j].A * 7) - num3;
+				int num8 = color_0[j].A * 7 - num3;
 				int num9 = num4 - num8 >> 31;
 				int num10 = num9 & 4;
 				num8 -= (num4 & num9);
@@ -620,9 +618,9 @@ namespace ns19
 		{
 			int height = bitmap_0.Height;
 			int width = bitmap_0.Width;
-			if (!zzTextureClass.bool_0)
+			if (!bool_0)
 			{
-				zzTextureClass.smethod_0();
+				smethod_0();
 			}
 			for (int i = 0; i < height; i += 4)
 			{
@@ -642,20 +640,20 @@ namespace ns19
 					}
 					if (imgpixelFormat_0 == IMGPixelFormat.Dxt3)
 					{
-						binaryWriter_0.Write(zzTextureClass.smethod_14(array));
+						binaryWriter_0.Write(smethod_14(array));
 					}
 					else if (imgpixelFormat_0 == IMGPixelFormat.Dxt5)
 					{
-						binaryWriter_0.Write(zzTextureClass.smethod_15(array));
+						binaryWriter_0.Write(smethod_15(array));
 					}
-					zzTextureClass.smethod_12(array, bool_1).method_0(binaryWriter_0);
+					smethod_12(array, bool_1).method_0(binaryWriter_0);
 				}
 			}
 		}
 
 		public static void smethod_17(BinaryReader binaryReader_0, ImageRelatedClass class219_0, IMGPixelFormat imgpixelFormat_0)
 		{
-			zzTextureClass.Tom[] array = new zzTextureClass.Tom[16];
+			Tom[] array = new Tom[16];
 			int num = class219_0.method_1();
 			int num2 = class219_0.method_0();
 			for (int i = 0; i < num; i += 4)
@@ -673,7 +671,7 @@ namespace ns19
 								{
 									array2[k] = binaryReader_0.ReadUInt16();
 								}
-								array[k * 4 + l].float_0 = (float)(array2[k] & 15) / 15f;
+								array[k * 4 + l].float_0 = (array2[k] & 15) / 15f;
 								ushort[] expr_74_cp_0 = array2;
 								int expr_74_cp_1 = k;
 								expr_74_cp_0[expr_74_cp_1] = (ushort)(expr_74_cp_0[expr_74_cp_1] >> 4);
@@ -685,8 +683,8 @@ namespace ns19
 						byte[] array3 = binaryReader_0.ReadBytes(2);
 						byte[] array4 = binaryReader_0.ReadBytes(6);
 						float[] array5 = new float[8];
-						array5[0] = (float)array3[0] / 255f;
-						array5[1] = (float)array3[1] / 255f;
+						array5[0] = array3[0] / 255f;
+						array5[1] = array3[1] / 255f;
 						int num3 = 4;
 						if (array3[0] > array3[1])
 						{
@@ -697,12 +695,12 @@ namespace ns19
 							array5[6] = 0f;
 							array5[7] = 1f;
 						}
-						float num4 = 1f / (float)(num3 + 1);
+						float num4 = 1f / (num3 + 1);
 						for (int m = 0; m < num3; m++)
 						{
-							float num5 = (float)(num3 - m) * num4;
-							float num6 = (float)(m + 1) * num4;
-							array5[m + 2] = num5 * (float)array3[0] + num6 * (float)array3[1];
+							float num5 = (num3 - m) * num4;
+							float num6 = (m + 1) * num4;
+							array5[m + 2] = num5 * array3[0] + num6 * array3[1];
 						}
 						for (int n = 0; n < 16; n++)
 						{
@@ -718,23 +716,23 @@ namespace ns19
 							array[n].float_0 = array5[b];
 						}
 					}
-					zzTextureClass.Jerry @struct = zzTextureClass.Jerry.smethod_0(binaryReader_0);
-					zzTextureClass.Tom[] array6 = new zzTextureClass.Tom[4];
-					array6[0].float_1 = (float)((@struct.ushort_0 & 63488) >> 11) / 31f;
-					array6[0].float_2 = (float)((@struct.ushort_0 & 2016) >> 5) / 63f;
-					array6[0].float_3 = (float)(@struct.ushort_0 & 31) / 31f;
-					array6[1].float_1 = (float)((@struct.ushort_1 & 63488) >> 11) / 31f;
-					array6[1].float_2 = (float)((@struct.ushort_1 & 2016) >> 5) / 63f;
-					array6[1].float_3 = (float)(@struct.ushort_1 & 31) / 31f;
+					Jerry @struct = Jerry.smethod_0(binaryReader_0);
+					Tom[] array6 = new Tom[4];
+					array6[0].float_1 = ((@struct.ushort_0 & 63488) >> 11) / 31f;
+					array6[0].float_2 = ((@struct.ushort_0 & 2016) >> 5) / 63f;
+					array6[0].float_3 = (@struct.ushort_0 & 31) / 31f;
+					array6[1].float_1 = ((@struct.ushort_1 & 63488) >> 11) / 31f;
+					array6[1].float_2 = ((@struct.ushort_1 & 2016) >> 5) / 63f;
+					array6[1].float_3 = (@struct.ushort_1 & 31) / 31f;
 					if (imgpixelFormat_0 == IMGPixelFormat.Dxt1 && @struct.ushort_0 <= @struct.ushort_1)
 					{
-						array6[2] = zzTextureClass.Tom.smethod_1(zzTextureClass.Tom.smethod_2(array6[0], array6[1]), 0.5f);
-						array6[3] = default(zzTextureClass.Tom);
+						array6[2] = Tom.smethod_1(Tom.smethod_2(array6[0], array6[1]), 0.5f);
+						array6[3] = default(Tom);
 					}
 					else
 					{
-						array6[2] = zzTextureClass.Tom.smethod_1(zzTextureClass.Tom.smethod_2(zzTextureClass.Tom.smethod_0(2f, array6[0]), array6[1]), 0.333333343f);
-						array6[3] = zzTextureClass.Tom.smethod_1(zzTextureClass.Tom.smethod_2(array6[0], zzTextureClass.Tom.smethod_0(2f, array6[1])), 0.333333343f);
+						array6[2] = Tom.smethod_1(Tom.smethod_2(Tom.smethod_0(2f, array6[0]), array6[1]), 0.333333343f);
+						array6[3] = Tom.smethod_1(Tom.smethod_2(array6[0], Tom.smethod_0(2f, array6[1])), 0.333333343f);
 					}
 					for (int num9 = 0; num9 < 4; num9++)
 					{
@@ -746,11 +744,11 @@ namespace ns19
 								uint num11 = @struct.uint_0 & 3u;
 								if (imgpixelFormat_0 == IMGPixelFormat.Dxt1)
 								{
-									class219_0.method_6(point_, Color.FromArgb((int)((byte)(array6[(int)((UIntPtr)num11)].float_0 * 255f)), (int)((byte)(array6[(int)((UIntPtr)num11)].float_1 * 255f)), (int)((byte)(array6[(int)((UIntPtr)num11)].float_2 * 255f)), (int)((byte)(array6[(int)((UIntPtr)num11)].float_3 * 255f))));
+									class219_0.method_6(point_, Color.FromArgb((byte)(array6[(int)((UIntPtr)num11)].float_0 * 255f), (byte)(array6[(int)((UIntPtr)num11)].float_1 * 255f), (byte)(array6[(int)((UIntPtr)num11)].float_2 * 255f), (byte)(array6[(int)((UIntPtr)num11)].float_3 * 255f)));
 								}
 								else
 								{
-									class219_0.method_6(point_, Color.FromArgb((int)((byte)(array[num9 * 4 + num10].float_0 * 255f)), (int)((byte)(array6[(int)((UIntPtr)num11)].float_1 * 255f)), (int)((byte)(array6[(int)((UIntPtr)num11)].float_2 * 255f)), (int)((byte)(array6[(int)((UIntPtr)num11)].float_3 * 255f))));
+									class219_0.method_6(point_, Color.FromArgb((byte)(array[num9 * 4 + num10].float_0 * 255f), (byte)(array6[(int)((UIntPtr)num11)].float_1 * 255f), (byte)(array6[(int)((UIntPtr)num11)].float_2 * 255f), (byte)(array6[(int)((UIntPtr)num11)].float_3 * 255f)));
 								}
 							}
 							@struct.uint_0 >>= 2;

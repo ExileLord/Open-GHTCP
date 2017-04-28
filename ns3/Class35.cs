@@ -1,6 +1,5 @@
 using ns10;
 using ns2;
-using System;
 
 namespace ns3
 {
@@ -67,8 +66,8 @@ namespace ns3
 				@class.int_6 = class38_0.method_6(8) + 1;
 				for (int i = 0; i < @class.int_6; i++)
 				{
-					int num = @class.int_7[i] = class38_0.method_6(Class35.smethod_0(class49_0.int_8));
-					int num2 = @class.int_8[i] = class38_0.method_6(Class35.smethod_0(class49_0.int_8));
+					int num = @class.int_7[i] = class38_0.method_6(smethod_0(class49_0.int_8));
+					int num2 = @class.int_8[i] = class38_0.method_6(smethod_0(class49_0.int_8));
 					if (num < 0 || num2 < 0 || num == num2 || num >= class49_0.int_8 || num2 >= class49_0.int_8)
 					{
 						@class.method_0();
@@ -120,7 +119,7 @@ namespace ns3
 		public override int vmethod_3(OGGClass6 class71_0, object object_2)
 		{
 			int result;
-			lock (this.object_0)
+			lock (object_0)
 			{
 				OGGClass1 class66_ = class71_0.oggClass1;
 				OGGClass5 class49_ = class66_.oggClass5;
@@ -129,25 +128,25 @@ namespace ns3
 				Class27 class27_ = @class.class27_0;
 				int num = class71_0.int_3 = class49_.int_13[class71_0.int_1];
 				float[] array = class66_.float_2[class71_0.int_1][class71_0.int_0][class71_0.int_2][class27_.int_1];
-				if (this.float_0 == null || this.float_0.Length < class49_.int_8)
+				if (float_0 == null || float_0.Length < class49_.int_8)
 				{
-					this.float_0 = new float[class49_.int_8][];
-					this.int_1 = new int[class49_.int_8];
-					this.int_0 = new int[class49_.int_8];
-					this.object_1 = new object[class49_.int_8];
+					float_0 = new float[class49_.int_8][];
+					int_1 = new int[class49_.int_8];
+					int_0 = new int[class49_.int_8];
+					object_1 = new object[class49_.int_8];
 				}
 				for (int i = 0; i < class49_.int_8; i++)
 				{
 					float[] array2 = class71_0.float_0[i];
 					int num2 = class54_.int_1[i];
-					this.object_1[i] = @class.class28_0[num2].vmethod_3(class71_0, @class.object_1[num2], this.object_1[i]);
-					if (this.object_1[i] != null)
+					object_1[i] = @class.class28_0[num2].vmethod_3(class71_0, @class.object_1[num2], object_1[i]);
+					if (object_1[i] != null)
 					{
-						this.int_1[i] = 1;
+						int_1[i] = 1;
 					}
 					else
 					{
-						this.int_1[i] = 0;
+						int_1[i] = 0;
 					}
 					for (int j = 0; j < num / 2; j++)
 					{
@@ -156,10 +155,10 @@ namespace ns3
 				}
 				for (int k = 0; k < class54_.int_6; k++)
 				{
-					if (this.int_1[class54_.int_7[k]] != 0 || this.int_1[class54_.int_8[k]] != 0)
+					if (int_1[class54_.int_7[k]] != 0 || int_1[class54_.int_8[k]] != 0)
 					{
-						this.int_1[class54_.int_7[k]] = 1;
-						this.int_1[class54_.int_8[k]] = 1;
+						int_1[class54_.int_7[k]] = 1;
+						int_1[class54_.int_8[k]] = 1;
 					}
 				}
 				for (int l = 0; l < class54_.int_0; l++)
@@ -169,18 +168,18 @@ namespace ns3
 					{
 						if (class54_.int_1[m] == l)
 						{
-							if (this.int_1[m] != 0)
+							if (int_1[m] != 0)
 							{
-								this.int_0[num3] = 1;
+								int_0[num3] = 1;
 							}
 							else
 							{
-								this.int_0[num3] = 0;
+								int_0[num3] = 0;
 							}
-							this.float_0[num3++] = class71_0.float_0[m];
+							float_0[num3++] = class71_0.float_0[m];
 						}
 					}
-					@class.class23_0[l].vmethod_3(class71_0, @class.object_2[l], this.float_0, this.int_0, num3);
+					@class.class23_0[l].vmethod_3(class71_0, @class.object_2[l], float_0, int_0, num3);
 				}
 				for (int n = class54_.int_6 - 1; n >= 0; n--)
 				{
@@ -219,7 +218,7 @@ namespace ns3
 				{
 					float[] array5 = class71_0.float_0[num7];
 					int num8 = class54_.int_1[num7];
-					@class.class28_0[num8].vmethod_4(class71_0, @class.object_1[num8], this.object_1[num7], array5);
+					@class.class28_0[num8].vmethod_4(class71_0, @class.object_1[num8], object_1[num7], array5);
 				}
 				for (int num9 = 0; num9 < class49_.int_8; num9++)
 				{
@@ -229,7 +228,7 @@ namespace ns3
 				for (int num10 = 0; num10 < class49_.int_8; num10++)
 				{
 					float[] array7 = class71_0.float_0[num10];
-					if (this.int_1[num10] != 0)
+					if (int_1[num10] != 0)
 					{
 						for (int num11 = 0; num11 < num; num11++)
 						{

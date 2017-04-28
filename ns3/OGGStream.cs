@@ -1,10 +1,10 @@
+using System;
+using System.IO;
+using System.Runtime.InteropServices;
 using ns0;
 using ns10;
 using ns2;
 using SharpAudio.ASC;
-using System;
-using System.IO;
-using System.Runtime.InteropServices;
 
 namespace ns3
 {
@@ -92,7 +92,7 @@ namespace ns3
 		{
 			get
 			{
-				return this.fileStream.CanRead;
+				return fileStream.CanRead;
 			}
 		}
 
@@ -100,7 +100,7 @@ namespace ns3
 		{
 			get
 			{
-				return this.fileStream.CanSeek;
+				return fileStream.CanSeek;
 			}
 		}
 
@@ -108,7 +108,7 @@ namespace ns3
 		{
 			get
 			{
-				return this.fileStream.CanWrite;
+				return fileStream.CanWrite;
 			}
 		}
 
@@ -116,7 +116,7 @@ namespace ns3
 		{
 			get
 			{
-				return this.long_5;
+				return long_5;
 			}
 		}
 
@@ -124,15 +124,15 @@ namespace ns3
 		{
 			get
 			{
-				return this.method_19() * (long)this.waveFormat_0.short_1;
+				return method_19() * waveFormat_0.short_1;
 			}
 			set
 			{
 				try
 				{
-					if (this.method_18(value / (long)this.waveFormat_0.short_1) < 0)
+					if (method_18(value / waveFormat_0.short_1) < 0)
 					{
-						this.method_17(Convert.ToInt32((double)value / this.double_0));
+						method_17(Convert.ToInt32(value / double_0));
 					}
 				}
 				catch
@@ -143,9 +143,9 @@ namespace ns3
 
 		private OGGStream()
 		{
-			this.class56_0 = new Class56();
-			this.oggClass1 = new OGGClass1();
-			this.oggClass6 = new OGGClass6(this.oggClass1);
+			class56_0 = new Class56();
+			oggClass1 = new OGGClass1();
+			oggClass6 = new OGGClass6(oggClass1);
 		}
 
 		public OGGStream(string fileName) : this()
@@ -159,7 +159,7 @@ namespace ns3
 			{
 				throw new Exception0("OggStream: " + ex.Message);
 			}
-            int num = this.method_9(fileData, null, 0);
+            int num = method_9(fileData, null, 0);
             if (num == -1)
 			{
 				throw new Exception0("OggStream: open return -1");
@@ -172,7 +172,7 @@ namespace ns3
 
 		public OGGStream(Stream stream_1, byte[] byte_0, int int_24) : this()
 		{
-			int num = this.method_9(stream_1, byte_0, int_24);
+			int num = method_9(stream_1, byte_0, int_24);
 			if (num == -1)
 			{
 				throw new Exception0("OggStream: open return -1");
@@ -183,60 +183,60 @@ namespace ns3
 		{
 			if (long_6 > 0L)
 			{
-				long_6 += this.long_0;
+				long_6 += long_0;
 			}
-			while (long_6 <= 0L || this.long_0 < long_6)
+			while (long_6 <= 0L || long_0 < long_6)
 			{
-				int num = this.class52_0.method_3(class48_0);
+				int num = class52_0.method_3(class48_0);
 				if (num < 0)
 				{
-					this.long_0 -= (long)num;
+					long_0 -= num;
 				}
 				else
 				{
 					if (num != 0)
 					{
-						int result = (int)this.long_0;
-						this.long_0 += (long)num;
+						int result = (int)long_0;
+						long_0 += num;
 						return result;
 					}
 					if (long_6 == 0L)
 					{
-						return OGGStream.int_6;
+						return int_6;
 					}
-					int num2 = this.method_7();
+					int num2 = method_7();
 					if (num2 == 0)
 					{
-						return OGGStream.int_7;
+						return int_7;
 					}
 					if (num2 < 0)
 					{
-						return OGGStream.int_9;
+						return int_9;
 					}
 				}
 			}
-			return OGGStream.int_6;
+			return int_6;
 		}
 
 		private int method_1(Class48 class48_0)
 		{
-			long num = this.long_0;
+			long num = long_0;
 			int num2 = -1;
 			int num3;
 			while (num2 == -1)
 			{
-				num -= (long)OGGStream.int_2;
+				num -= int_2;
 				if (num < 0L)
 				{
 					num = 0L;
 				}
-				this.method_8(num);
-				while (this.long_0 < num + (long)OGGStream.int_2)
+				method_8(num);
+				while (long_0 < num + int_2)
 				{
-					num3 = this.method_0(class48_0, num + (long)OGGStream.int_2 - this.long_0);
-					if (num3 == OGGStream.int_9)
+					num3 = method_0(class48_0, num + int_2 - long_0);
+					if (num3 == int_9)
 					{
-						return OGGStream.int_9;
+						return int_9;
 					}
 					if (num3 < 0)
 					{
@@ -245,11 +245,11 @@ namespace ns3
 					num2 = num3;
 				}
 			}
-			this.method_8((long)num2);
-			num3 = this.method_0(class48_0, (long)OGGStream.int_2);
+			method_8(num2);
+			num3 = method_0(class48_0, int_2);
 			if (num3 < 0)
 			{
-				return OGGStream.int_10;
+				return int_10;
 			}
 			return num2;
 		}
@@ -260,14 +260,14 @@ namespace ns3
 			Class67 class67_ = new Class67();
 			if (class48_0 == null)
 			{
-				int num = this.method_0(@class, (long)OGGStream.int_2);
-				if (num == OGGStream.int_9)
+				int num = method_0(@class, int_2);
+				if (num == int_9)
 				{
-					return OGGStream.int_9;
+					return int_9;
 				}
 				if (num < 0)
 				{
-					return OGGStream.int_13;
+					return int_13;
 				}
 				class48_0 = @class;
 			}
@@ -275,16 +275,16 @@ namespace ns3
 			{
 				int_24[0] = class48_0.method_5();
 			}
-			this.class56_0.method_1(class48_0.method_5());
+			class56_0.method_1(class48_0.method_5());
 			oggClass5.method_0();
 			class47_1.method_0();
 			int i = 0;
 			while (i < 3)
 			{
-				this.class56_0.method_6(class48_0);
+				class56_0.method_6(class48_0);
 				while (i < 3)
 				{
-					int num2 = this.class56_0.method_5(class67_);
+					int num2 = class56_0.method_5(class67_);
 					if (num2 == 0)
 					{
 						break;
@@ -294,7 +294,7 @@ namespace ns3
 						Console.Error.WriteLine("Corrupt header in logical bitstream.");
 						oggClass5.method_1();
 						class47_1.method_2();
-						this.class56_0.method_2();
+						class56_0.method_2();
 						return -1;
 					}
 					if (oggClass5.method_4(class47_1, class67_) != 0)
@@ -302,17 +302,17 @@ namespace ns3
 						Console.Error.WriteLine("Illegal header in logical bitstream.");
 						oggClass5.method_1();
 						class47_1.method_2();
-						this.class56_0.method_2();
+						class56_0.method_2();
 						return -1;
 					}
 					i++;
 				}
-				if (i < 3 && this.method_0(class48_0, 1L) < 0)
+				if (i < 3 && method_0(class48_0, 1L) < 0)
 				{
 					Console.Error.WriteLine("Missing header in logical bitstream.");
 					oggClass5.method_1();
 					class47_1.method_2();
-					this.class56_0.method_2();
+					class56_0.method_2();
 					return -1;
 				}
 			}
@@ -322,40 +322,40 @@ namespace ns3
 		private void method_3(OGGClass5 class49_1, Class47 class47_1, int int_24)
 		{
 			Class48 @class = new Class48();
-            this.oggClass5 = new OGGClass5[this.int_20];
-			this.class47_0 = new Class47[this.int_20];
-			this.long_2 = new long[this.int_20];
-			this.long_3 = new long[this.int_20];
-			this.int_21 = new int[this.int_20];
+            oggClass5 = new OGGClass5[int_20];
+			class47_0 = new Class47[int_20];
+			long_2 = new long[int_20];
+			long_3 = new long[int_20];
+			int_21 = new int[int_20];
 			int i = 0;
-			while (i < this.int_20)
+			while (i < int_20)
 			{
                 if (class49_1 != null && class47_1 != null && i == 0)
 				{
-					this.oggClass5[i] = class49_1;
-					this.class47_0[i] = class47_1;
-					this.long_2[i] = (long)int_24;
+					oggClass5[i] = class49_1;
+					class47_0[i] = class47_1;
+					long_2[i] = int_24;
 				}
 				else
 				{
-					this.method_8(this.long_1[i]);
-					if (this.method_2(this.oggClass5[i], this.class47_0[i], null, null) == -1)
+					method_8(long_1[i]);
+					if (method_2(oggClass5[i], class47_0[i], null, null) == -1)
 					{
 						Console.Error.WriteLine("Error opening logical bitstream #" + (i + 1) + "\n");
-						this.long_2[i] = -1L;
+						long_2[i] = -1L;
 					}
 					else
 					{
-						this.long_2[i] = this.long_0;
-						this.class56_0.method_2();
+						long_2[i] = long_0;
+						class56_0.method_2();
 					}
 				}
-                long long_ = this.long_1[i + 1];
-				this.method_8(long_);
+                long long_ = long_1[i + 1];
+				method_8(long_);
 				long num2;
                 while (true)
 				{
-                    int num = this.method_1(@class);
+                    int num = method_1(@class);
                     if (num == -1)
 					{
 						goto Block_6;
@@ -370,37 +370,37 @@ namespace ns3
 				i++;
                 continue;
 				Block_5:
-                this.int_21[i] = @class.method_5();
-                this.long_3[i] = num2;
+                int_21[i] = @class.method_5();
+                long_3[i] = num2;
 				goto IL_189;
 				Block_6:
 				Console.Error.WriteLine("Could not find last page of logical bitstream #" + i + "\n");
-                this.oggClass5[i].method_1();
-				this.class47_0[i].method_2();
+                oggClass5[i].method_1();
+				class47_0[i].method_2();
 				goto IL_189;
 			}
 		}
 
 		private int method_4()
 		{
-			if (this.bool_1)
+			if (bool_1)
 			{
 				return 1;
 			}
-            this.oggClass1.method_1(this.oggClass5[0]);
-            this.oggClass6.method_0(this.oggClass1);
-            this.bool_1 = true;
+            oggClass1.method_1(oggClass5[0]);
+            oggClass6.method_0(oggClass1);
+            bool_1 = true;
 			return 0;
 		}
 
 		private void method_5()
 		{
-			this.class56_0.method_2();
-			this.oggClass1.method_7();
-			this.oggClass6.method_1();
-			this.bool_1 = false;
-			this.float_0 = 0f;
-			this.float_1 = 0f;
+			class56_0.method_2();
+			oggClass1.method_7();
+			oggClass6.method_1();
+			bool_1 = false;
+			float_0 = 0f;
+			float_1 = 0f;
 		}
 
 		private int method_6(int int_24)
@@ -410,14 +410,14 @@ namespace ns3
 			long num2;
 			while (true)
 			{
-                if (this.bool_1)
+                if (bool_1)
 				{
                     class2 = new Class67();
-					int num = this.class56_0.method_5(class2);
+					int num = class56_0.method_5(class2);
 					if (num > 0)
 					{
 						num2 = class2.long_0;
-						if (this.oggClass6.method_2(class2) == 0)
+						if (oggClass6.method_2(class2) == 0)
 						{
 							goto Block_11;
 						}
@@ -427,64 +427,64 @@ namespace ns3
 				{
 					return 0;
 				}
-				if (this.method_0(@class, -1L) < 0)
+				if (method_0(@class, -1L) < 0)
 				{
 					return 0;
 				}
-                this.float_0 += (float)(@class.int_1 << 3);
-				if (this.bool_1 && this.int_22 != @class.method_5())
+                float_0 += @class.int_1 << 3;
+				if (bool_1 && int_22 != @class.method_5())
 				{
-                    this.method_5();
+                    method_5();
 				}
-                if (!this.bool_1)
+                if (!bool_1)
 				{
-                    if (this.bool_0)
+                    if (bool_0)
 					{
-                        this.int_22 = @class.method_5();
+                        int_22 = @class.method_5();
 						int num3 = 0;
-						while (num3 < this.int_20 && this.int_21[num3] != this.int_22)
+						while (num3 < int_20 && int_21[num3] != int_22)
 						{
 							num3++;
 						}
-						if (num3 == this.int_20)
+						if (num3 == int_20)
 						{
 							break;
 						}
-						this.int_23 = num3;
-						this.class56_0.method_1(this.int_22);
-						this.class56_0.method_7();
+						int_23 = num3;
+						class56_0.method_1(int_22);
+						class56_0.method_7();
                     }
 					else
 					{
                         int[] array = new int[1];
-						int num4 = this.method_2(this.oggClass5[0], this.class47_0[0], array, @class);
-						this.int_22 = array[0];
+						int num4 = method_2(oggClass5[0], class47_0[0], array, @class);
+						int_22 = array[0];
 						if (num4 != 0)
 						{
 							return num4;
 						}
-						this.int_23++;
+						int_23++;
                     }
-                    this.method_4();
+                    method_4();
                 }
-                this.class56_0.method_6(@class);
+                class56_0.method_6(@class);
             }
 			return -1;
 			Block_11:
-            int num5 = this.oggClass1.method_3();
-			this.oggClass1.method_2(this.oggClass6);
-			this.float_1 += (float)(this.oggClass1.method_3() - num5);
-			this.float_0 += (float)(class2.int_1 * 8);
+            int num5 = oggClass1.method_3();
+			oggClass1.method_2(oggClass6);
+			float_1 += oggClass1.method_3() - num5;
+			float_0 += class2.int_1 * 8;
             if (num2 != -1L && class2.int_3 == 0)
 			{
-				int num6 = this.bool_0 ? this.int_23 : 0;
-				int num7 = this.oggClass1.method_3();
-				num2 -= (long)num7;
+				int num6 = bool_0 ? int_23 : 0;
+				int num7 = oggClass1.method_3();
+				num2 -= num7;
 				for (int i = 0; i < num6; i++)
 				{
-					num2 += this.long_3[i];
+					num2 += long_3[i];
 				}
-				this.long_4 = num2;
+				long_4 = num2;
 			}
 			return 1;
 		}
@@ -495,11 +495,11 @@ namespace ns3
 			{
 				try
 				{
-					if (int_24 == OGGStream.int_3)
+					if (int_24 == int_3)
 					{
 						stream_1.Seek(long_6, SeekOrigin.Begin);
 					}
-					else if (int_24 == OGGStream.int_5)
+					else if (int_24 == int_5)
 					{
 						stream_1.Seek(stream_1.Length - long_6, SeekOrigin.Begin);
 					}
@@ -550,23 +550,23 @@ namespace ns3
 
 		private int method_7()
 		{
-			int offset = this.class52_0.method_1(OGGStream.int_2);
-			byte[] byte_ = this.class52_0.byte_0;
+			int offset = class52_0.method_1(int_2);
+			byte[] byte_ = class52_0.byte_0;
 			int num = 0;
 			int result;
 			try
 			{
-				num = this.fileStream.Read(byte_, offset, OGGStream.int_2);
+				num = fileStream.Read(byte_, offset, int_2);
 				goto IL_51;
 			}
 			catch (Exception ex)
 			{
 				Console.Error.WriteLine(ex.Message);
-				result = OGGStream.int_9;
+				result = int_9;
 			}
 			return result;
 			IL_51:
-			this.class52_0.method_2(num);
+			class52_0.method_2(num);
 			if (num == -1)
 			{
 				num = 0;
@@ -576,48 +576,48 @@ namespace ns3
 
 		private void method_8(long long_6)
 		{
-			OGGStream.smethod_0(this.fileStream, long_6, OGGStream.int_3);
-			this.long_0 = long_6;
-			this.class52_0.method_4();
+			smethod_0(fileStream, long_6, int_3);
+			long_0 = long_6;
+			class52_0.method_4();
 		}
 
 		private int method_9(Stream fileStream, byte[] nullArray, int zero)
 		{
-			return this.method_10(fileStream, nullArray, zero);
+			return method_10(fileStream, nullArray, zero);
 		}
 
 		private int method_10(Stream fileStream, byte[] nullArray, int zero)
 		{
             this.fileStream = fileStream;
-            this.class52_0.method_5();
+            class52_0.method_5();
             if (nullArray != null)
 			{
-                int dstOffset = this.class52_0.method_1(zero);
-                Buffer.BlockCopy(nullArray, 0, this.class52_0.byte_0, dstOffset, zero);
-				this.class52_0.method_2(zero);
+                int dstOffset = class52_0.method_1(zero);
+                Buffer.BlockCopy(nullArray, 0, class52_0.byte_0, dstOffset, zero);
+				class52_0.method_2(zero);
 			}
             int num;
             if (fileStream.CanSeek)
             {
-                num = this.method_11();
+                num = method_11();
             }
             else
             {
-                num = this.method_12();
+                num = method_12();
             }
             //int num = stream_1.CanSeek ? this.method_11() : this.method_12();
-            OGGClass5 @class = this.method_21(-1);
-            this.waveFormat_0 = new WaveFormat(@class.int_9, @class.int_8);
-			this.double_0 = (double)(this.waveFormat_0.int_0 * (int)this.waveFormat_0.short_1) / ((double)this.method_20(-1) / 8.0);
-            this.long_5 = this.method_15(-1) * (long)this.waveFormat_0.short_1;
-            if (this.long_5 <= 0L)
+            OGGClass5 @class = method_21(-1);
+            waveFormat_0 = new WaveFormat(@class.int_9, @class.int_8);
+			double_0 = waveFormat_0.int_0 * waveFormat_0.short_1 / (method_20(-1) / 8.0);
+            long_5 = method_15(-1) * waveFormat_0.short_1;
+            if (long_5 <= 0L)
 			{
-				this.long_5 = Convert.ToInt64((double)this.method_14(-1) * this.double_0);
+				long_5 = Convert.ToInt64(method_14(-1) * double_0);
 			}
             if (num != 0)
 			{
 				this.fileStream = null;
-				this.method_22();
+				method_22();
 			}
             return num;
 		}
@@ -628,50 +628,50 @@ namespace ns3
 			Class47 class47_ = new Class47();
 			Class48 @class = new Class48();
 			int[] array = new int[1];
-            int num = this.method_2(oggClass5, class47_, array, null);
+            int num = method_2(oggClass5, class47_, array, null);
             int num2 = array[0];
-			int int_ = (int)this.long_0;
-			this.class56_0.method_2();
+			int int_ = (int)long_0;
+			class56_0.method_2();
             if (num == -1)
 			{
 				return -1;
 			}
-			this.bool_0 = true;
-            OGGStream.smethod_0(this.fileStream, 0L, OGGStream.int_5);
-            this.long_0 = OGGStream.smethod_1(this.fileStream);
-			long num3 = this.long_0;
-            num3 = (long)this.method_1(@class);
+			bool_0 = true;
+            smethod_0(fileStream, 0L, int_5);
+            long_0 = smethod_1(fileStream);
+			long num3 = long_0;
+            num3 = method_1(@class);
             if (@class.method_5() != num2)
 			{
-				if (this.method_13(0L, 0L, num3 + 1L, num2, 0) < 0)
+				if (method_13(0L, 0L, num3 + 1L, num2, 0) < 0)
 				{
-					this.method_22();
-					return OGGStream.int_9;
+					method_22();
+					return int_9;
 				}
 			}
-			else if (this.method_13(0L, num3, num3 + 1L, num2, 0) < 0)
+			else if (method_13(0L, num3, num3 + 1L, num2, 0) < 0)
 			{
-				this.method_22();
-				return OGGStream.int_9;
+				method_22();
+				return int_9;
 			}
-            this.method_3(oggClass5, class47_, int_);
-            return this.method_17(0);
+            method_3(oggClass5, class47_, int_);
+            return method_17(0);
 		}
 
 		private int method_12()
 		{
-			this.int_20 = 1;
-			this.oggClass5 = new OGGClass5[this.int_20];
-			this.oggClass5[0] = new OGGClass5();
-			this.class47_0 = new Class47[this.int_20];
-			this.class47_0[0] = new Class47();
+			int_20 = 1;
+			oggClass5 = new OGGClass5[int_20];
+			oggClass5[0] = new OGGClass5();
+			class47_0 = new Class47[int_20];
+			class47_0[0] = new Class47();
 			int[] array = new int[1];
-			if (this.method_2(this.oggClass5[0], this.class47_0[0], array, null) == -1)
+			if (method_2(oggClass5[0], class47_0[0], array, null) == -1)
 			{
 				return -1;
 			}
-			this.int_22 = array[0];
-			this.method_4();
+			int_22 = array[0];
+			method_4();
 			return 0;
 		}
 
@@ -684,7 +684,7 @@ namespace ns3
 			while (long_7 < num)
 			{
 				long num2;
-				if (num - long_7 < (long)OGGStream.int_2)
+				if (num - long_7 < int_2)
 				{
 					num2 = long_7;
 				}
@@ -692,134 +692,134 @@ namespace ns3
 				{
 					num2 = (long_7 + num) / 2L;
 				}
-				this.method_8(num2);
-				num3 = this.method_0(@class, -1L);
-				if (num3 == OGGStream.int_9)
+				method_8(num2);
+				num3 = method_0(@class, -1L);
+				if (num3 == int_9)
 				{
-					return OGGStream.int_9;
+					return int_9;
 				}
 				if (num3 >= 0)
 				{
 					if (@class.method_5() == int_24)
 					{
-						long_7 = (long)(num3 + @class.int_1 + @class.int_3);
+						long_7 = num3 + @class.int_1 + @class.int_3;
 						continue;
 					}
 				}
 				num = num2;
 				if (num3 >= 0)
 				{
-					long_9 = (long)num3;
+					long_9 = num3;
 				}
 			}
-			this.method_8(long_9);
-			num3 = this.method_0(@class, -1L);
-			if (num3 == OGGStream.int_9)
+			method_8(long_9);
+			num3 = method_0(@class, -1L);
+			if (num3 == int_9)
 			{
-				return OGGStream.int_9;
+				return int_9;
 			}
 			if (long_7 < long_8)
 			{
 				if (num3 != -1)
 				{
-					num3 = this.method_13(long_9, this.long_0, long_8, @class.method_5(), int_25 + 1);
-					if (num3 == OGGStream.int_9)
+					num3 = method_13(long_9, long_0, long_8, @class.method_5(), int_25 + 1);
+					if (num3 == int_9)
 					{
-						return OGGStream.int_9;
+						return int_9;
 					}
 					goto IL_FF;
 				}
 			}
-			this.int_20 = int_25 + 1;
-			this.long_1 = new long[int_25 + 2];
-			this.long_1[int_25 + 1] = long_7;
+			int_20 = int_25 + 1;
+			long_1 = new long[int_25 + 2];
+			long_1[int_25 + 1] = long_7;
 			IL_FF:
-			this.long_1[int_25] = long_6;
+			long_1[int_25] = long_6;
 			return 0;
 		}
 
 		public long method_14(int int_24)
 		{
-			if (!this.bool_0 || int_24 >= this.int_20)
+			if (!bool_0 || int_24 >= int_20)
 			{
 				return -1L;
 			}
 			if (int_24 < 0)
 			{
 				long num = 0L;
-				for (int i = 0; i < this.int_20; i++)
+				for (int i = 0; i < int_20; i++)
 				{
-					num += this.method_14(i);
+					num += method_14(i);
 				}
 				return num;
 			}
-			return this.long_1[int_24 + 1] - this.long_1[int_24];
+			return long_1[int_24 + 1] - long_1[int_24];
 		}
 
 		public long method_15(int int_24)
 		{
-			if (!this.bool_0 || int_24 >= this.int_20)
+			if (!bool_0 || int_24 >= int_20)
 			{
 				return -1L;
 			}
 			if (int_24 < 0)
 			{
 				long num = 0L;
-				for (int i = 0; i < this.int_20; i++)
+				for (int i = 0; i < int_20; i++)
 				{
-					num += this.method_15(i);
+					num += method_15(i);
 				}
 				return num;
 			}
-			return this.long_3[int_24];
+			return long_3[int_24];
 		}
 
 		public float method_16(int int_24)
 		{
-			if (!this.bool_0 || int_24 >= this.int_20)
+			if (!bool_0 || int_24 >= int_20)
 			{
 				return -1f;
 			}
 			if (int_24 < 0)
 			{
 				float num = 0f;
-				for (int i = 0; i < this.int_20; i++)
+				for (int i = 0; i < int_20; i++)
 				{
-					num += this.method_16(i);
+					num += method_16(i);
 				}
 				return num;
 			}
-			return (float)this.long_3[int_24] / (float)this.oggClass5[int_24].int_9;
+			return long_3[int_24] / (float)oggClass5[int_24].int_9;
 		}
 
 		public int method_17(int int_24)
 		{
-            if (!this.bool_0)
+            if (!bool_0)
 			{
 				return -1;
 			}
-			if (int_24 < 0 || (long)int_24 > this.long_1[this.int_20])
+			if (int_24 < 0 || int_24 > long_1[int_20])
 			{
-				this.long_4 = -1L;
-				this.method_5();
+				long_4 = -1L;
+				method_5();
 				return -1;
 			}
-			this.long_4 = -1L;
-			this.method_5();
-			this.method_8((long)int_24);
-            switch (this.method_6(1))
+			long_4 = -1L;
+			method_5();
+			method_8(int_24);
+            switch (method_6(1))
 			{
 			case -1:
-				this.long_4 = -1L;
-				this.method_5();
+				long_4 = -1L;
+				method_5();
 				return -1;
 			case 0:
-				this.long_4 = this.method_15(-1);
+				long_4 = method_15(-1);
 				return 0;
 			default:
 				while (true)
 				{
-					switch (this.method_6(0))
+					switch (method_6(0))
 					{
 					case -1:
 						goto IL_77;
@@ -829,43 +829,43 @@ namespace ns3
 				}
 
 				IL_77:
-				this.long_4 = -1L;
-				this.method_5();
+				long_4 = -1L;
+				method_5();
 				return -1;
 			}
 		}
 
 		public int method_18(long long_6)
 		{
-			long num = this.method_15(-1);
-			if (!this.bool_0)
+			long num = method_15(-1);
+			if (!bool_0)
 			{
 				return -1;
 			}
 			if (long_6 < 0L || long_6 > num)
 			{
-				this.long_4 = -1L;
-				this.method_5();
+				long_4 = -1L;
+				method_5();
 				return -1;
 			}
 			int i;
-			for (i = this.int_20 - 1; i >= 0; i--)
+			for (i = int_20 - 1; i >= 0; i--)
 			{
-				num -= this.long_3[i];
+				num -= long_3[i];
 				if (long_6 >= num)
 				{
 					break;
 				}
 			}
 			long num2 = long_6 - num;
-			long num3 = this.long_1[i + 1];
-			long num4 = this.long_1[i];
+			long num3 = long_1[i + 1];
+			long num4 = long_1[i];
 			int int_ = (int)num4;
 			Class48 @class = new Class48();
 			while (num4 < num3)
 			{
 				long num5;
-				if (num3 - num4 < (long)OGGStream.int_2)
+				if (num3 - num4 < int_2)
 				{
 					num5 = num4;
 				}
@@ -873,8 +873,8 @@ namespace ns3
 				{
 					num5 = (num3 + num4) / 2L;
 				}
-				this.method_8(num5);
-				int num6 = this.method_0(@class, num3 - num5);
+				method_8(num5);
+				int num6 = method_0(@class, num3 - num5);
 				if (num6 == -1)
 				{
 					num3 = num5;
@@ -885,7 +885,7 @@ namespace ns3
 					if (num7 < num2)
 					{
 						int_ = num6;
-						num4 = this.long_0;
+						num4 = long_0;
 					}
 					else
 					{
@@ -893,37 +893,37 @@ namespace ns3
 					}
 				}
 			}
-			if (this.method_17(int_) != 0)
+			if (method_17(int_) != 0)
 			{
-				this.long_4 = -1L;
-				this.method_5();
+				long_4 = -1L;
+				method_5();
 				return -1;
 			}
-			if (this.long_4 >= long_6)
+			if (long_4 >= long_6)
 			{
-				this.long_4 = -1L;
-				this.method_5();
+				long_4 = -1L;
+				method_5();
 				return -1;
 			}
-			if (long_6 > this.method_15(-1))
+			if (long_6 > method_15(-1))
 			{
-				this.long_4 = -1L;
-				this.method_5();
+				long_4 = -1L;
+				method_5();
 				return -1;
 			}
-			while (this.long_4 < long_6)
+			while (long_4 < long_6)
 			{
-				int num8 = (int)(long_6 - this.long_4);
-				int num9 = this.oggClass1.method_3();
+				int num8 = (int)(long_6 - long_4);
+				int num9 = oggClass1.method_3();
 				if (num9 > num8)
 				{
 					num9 = num8;
 				}
-				this.oggClass1.method_6(num9);
-				this.long_4 += (long)num9;
-				if (num9 < num8 && this.method_6(1) == 0)
+				oggClass1.method_6(num9);
+				long_4 += num9;
+				if (num9 < num8 && method_6(1) == 0)
 				{
-					this.long_4 = this.method_15(-1);
+					long_4 = method_15(-1);
 				}
 			}
 			return 0;
@@ -931,120 +931,114 @@ namespace ns3
 
 		public long method_19()
 		{
-			if (this.long_4 >= 0L)
+			if (long_4 >= 0L)
 			{
-				return this.long_4;
+				return long_4;
 			}
 			return 0L;
 		}
 
 		public int method_20(int int_24)
 		{
-			if (int_24 >= this.int_20)
+			if (int_24 >= int_20)
 			{
 				return -1;
 			}
-			if (!this.bool_0 && int_24 != 0)
+			if (!bool_0 && int_24 != 0)
 			{
-				return this.method_20(0);
+				return method_20(0);
 			}
 			if (int_24 < 0)
 			{
 				long num = 0L;
-				for (int i = 0; i < this.int_20; i++)
+				for (int i = 0; i < int_20; i++)
 				{
-					num += (this.long_1[i + 1] - this.long_2[i]) * 8L;
+					num += (long_1[i + 1] - long_2[i]) * 8L;
 				}
-				return (int)Math.Round((double)((float)num / this.method_16(-1)));
+				return (int)Math.Round(num / method_16(-1));
 			}
-			if (this.bool_0)
+			if (bool_0)
 			{
-				return (int)Math.Round((double)((float)((this.long_1[int_24 + 1] - this.long_2[int_24]) * 8L) / this.method_16(int_24)));
+				return (int)Math.Round((long_1[int_24 + 1] - long_2[int_24]) * 8L / method_16(int_24));
 			}
-			if (this.oggClass5[int_24].int_11 > 0)
+			if (oggClass5[int_24].int_11 > 0)
 			{
-				return this.oggClass5[int_24].int_11;
+				return oggClass5[int_24].int_11;
 			}
-			if (this.oggClass5[int_24].int_10 <= 0)
+			if (oggClass5[int_24].int_10 <= 0)
 			{
 				return -1;
 			}
-			if (this.oggClass5[int_24].int_12 > 0)
+			if (oggClass5[int_24].int_12 > 0)
 			{
-				return (this.oggClass5[int_24].int_10 + this.oggClass5[int_24].int_12) / 2;
+				return (oggClass5[int_24].int_10 + oggClass5[int_24].int_12) / 2;
 			}
-			return this.oggClass5[int_24].int_10;
+			return oggClass5[int_24].int_10;
 		}
 
 		public OGGClass5 method_21(int int_24)
 		{
-			if (this.bool_0)
+			if (bool_0)
 			{
 				if (int_24 < 0)
 				{
-					if (!this.bool_1)
+					if (!bool_1)
 					{
 						return null;
 					}
-					return this.oggClass5[this.int_23];
+					return oggClass5[int_23];
 				}
-				else
-				{
-					if (int_24 >= this.int_20)
-					{
-						return null;
-					}
-					return this.oggClass5[int_24];
-				}
+			    if (int_24 >= int_20)
+			    {
+			        return null;
+			    }
+			    return oggClass5[int_24];
 			}
-			else
-			{
-				if (!this.bool_1)
-				{
-					return null;
-				}
-				return this.oggClass5[0];
-			}
+		    if (!bool_1)
+		    {
+		        return null;
+		    }
+		    return oggClass5[0];
 		}
 
 		private int method_22()
 		{
-			this.oggClass6.method_1();
-			this.oggClass1.method_7();
-			this.class56_0.method_2();
-			if (this.oggClass5 != null && this.int_20 != 0)
+			oggClass6.method_1();
+			oggClass1.method_7();
+			class56_0.method_2();
+			if (oggClass5 != null && int_20 != 0)
 			{
-				for (int i = 0; i < this.int_20; i++)
+				for (int i = 0; i < int_20; i++)
 				{
-					this.oggClass5[i].method_1();
-					this.class47_0[i].method_2();
+					oggClass5[i].method_1();
+					class47_0[i].method_2();
 				}
-				this.oggClass5 = null;
-				this.class47_0 = null;
+				oggClass5 = null;
+				class47_0 = null;
 			}
-			if (this.long_2 != null)
+			if (long_2 != null)
 			{
-				this.long_2 = null;
+				long_2 = null;
 			}
-			if (this.long_3 != null)
+			if (long_3 != null)
 			{
-				this.long_3 = null;
+				long_3 = null;
 			}
-			if (this.int_21 != null)
+			if (int_21 != null)
 			{
-				this.int_21 = null;
+				int_21 = null;
 			}
-			if (this.long_1 != null)
+			if (long_1 != null)
 			{
-				this.long_1 = null;
+				long_1 = null;
 			}
-			this.class52_0.method_0();
+			class52_0.method_0();
 			return 0;
 		}
 
 		public override void Flush()
 		{
-			this.fileStream.Flush();
+			fileStream.Flush();
 		}
 
 		public override void SetLength(long value)
@@ -1059,21 +1053,21 @@ namespace ns3
 
 		public override void Close()
 		{
-			this.method_22();
-			this.fileStream.Close();
+			method_22();
+			fileStream.Close();
 		}
 
         protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
-				this.Close();
+				Close();
 			}
 		}
 
 		public override void Dispose()
 		{
-			this.Dispose(true);
+			Dispose(true);
 			GC.SuppressFinalize(this);
 		}
 
@@ -1081,7 +1075,7 @@ namespace ns3
 		{
 			int_24 >>= 2;
 			float[] source = new float[int_24];
-			int num = this.vmethod_4(source, 0, int_24);
+			int num = vmethod_4(source, 0, int_24);
 			if (num == 0)
 			{
 				return 0;
@@ -1093,7 +1087,7 @@ namespace ns3
 		public override int Read(byte[] buffer, int offset, int count)
 		{
 			float[] array = new float[count >> 2];
-			int num = this.vmethod_4(array, 0, array.Length) << 2;
+			int num = vmethod_4(array, 0, array.Length) << 2;
 			Buffer.BlockCopy(array, 0, buffer, offset, num);
 			return num;
 		}
@@ -1102,16 +1096,16 @@ namespace ns3
 		{
 			int num = int_24;
 			int num2 = int_24 + int_25;
-			int short_ = (int)this.waveFormat_0.short_0;
+			int short_ = waveFormat_0.short_0;
 			do
 			{
-				if (this.bool_1)
+				if (bool_1)
 				{
-					int num3 = this.oggClass1.method_4(float_2, num, num2);
+					int num3 = oggClass1.method_4(float_2, num, num2);
 					if (num3 != 0)
 					{
-						this.oggClass1.method_6(num3);
-						this.long_4 += (long)num3;
+						oggClass1.method_6(num3);
+						long_4 += num3;
 						num += num3 * short_;
 						if (num >= num2)
 						{
@@ -1120,13 +1114,13 @@ namespace ns3
 					}
 				}
 			}
-			while (this.method_6(1) >= 1);
+			while (method_6(1) >= 1);
 			return num - int_24;
 		}
 
 		public override float[][] vmethod_5(int int_24)
 		{
-			float[][] array = new float[(int)this.waveFormat_0.short_0][];
+			float[][] array = new float[waveFormat_0.short_0][];
 			for (int i = 0; i < array.Length; i++)
 			{
 				array[i] = new float[int_24];
@@ -1134,14 +1128,14 @@ namespace ns3
 			int num = 0;
 			do
 			{
-				if (this.bool_1)
+				if (bool_1)
 				{
-					int num2 = this.oggClass1.method_5(array, num, int_24);
+					int num2 = oggClass1.method_5(array, num, int_24);
 					if (num2 != 0)
 					{
 						num += num2;
-						this.long_4 += (long)num2;
-						this.oggClass1.method_6(num2);
+						long_4 += num2;
+						oggClass1.method_6(num2);
 						if (num >= int_24)
 						{
 							break;
@@ -1149,7 +1143,7 @@ namespace ns3
 					}
 				}
 			}
-			while (this.method_6(1) >= 1);
+			while (method_6(1) >= 1);
 			if (num == 0)
 			{
 				return null;
@@ -1158,7 +1152,7 @@ namespace ns3
 			{
 				for (int j = 0; j < array.Length; j++)
 				{
-					Array.Resize<float>(ref array[j], num);
+					Array.Resize(ref array[j], num);
 				}
 			}
 			return array;

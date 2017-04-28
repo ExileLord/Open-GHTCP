@@ -1,6 +1,6 @@
-using ns14;
 using System;
 using System.Collections.Generic;
+using ns14;
 
 namespace ns15
 {
@@ -39,7 +39,7 @@ namespace ns15
 
 		public NoteEventInterpreter(string[] stringImported, int constant480)
 		{
-			if (!(this.alwaysTrue = (stringImported.Length == 0)))//If string is empty
+			if (!(alwaysTrue = (stringImported.Length == 0)))//If string is empty
 			{
                 //Cycles through the string array imported (All notes/SP)
 				for (int i = 0; i < stringImported.Length; i++)
@@ -52,7 +52,7 @@ namespace ns15
                     2=Note Value
                     3=Sustain Length
                     */
-					string[] NotesEventsArray = currentString.Split(new char[]
+					string[] NotesEventsArray = currentString.Split(new[]
 					{
 						' ',
 						'\t',
@@ -69,24 +69,24 @@ namespace ns15
 								if (eventType == "E")
 								{
                                     //Interprets Events
-									if (this.eventList.ContainsKey(offset))
+									if (eventList.ContainsKey(offset))
 									{
-										this.currentEventLine = NotesEventsArray[2];
+										currentEventLine = NotesEventsArray[2];
                                         for (int j = 3; j < NotesEventsArray.Length; j++)
 										{
-											this.currentEventLine = this.currentEventLine + " " + NotesEventsArray[j];
+											currentEventLine = currentEventLine + " " + NotesEventsArray[j];
 										}
-                                        this.eventList[offset].Add(this.currentEventLine);
+                                        eventList[offset].Add(currentEventLine);
 									}
 									else
 									{
-										this.currentEventLine = NotesEventsArray[2];
+										currentEventLine = NotesEventsArray[2];
 										for (int k = 3; k < NotesEventsArray.Length; k++)
 										{
-											this.currentEventLine = this.currentEventLine + " " + NotesEventsArray[k];
+											currentEventLine = currentEventLine + " " + NotesEventsArray[k];
 										}
-										this.eventList.Add(offset, new List<string>());
-										this.eventList[offset].Add(this.currentEventLine);
+										eventList.Add(offset, new List<string>());
+										eventList[offset].Add(currentEventLine);
 									}
 								}
 							}
@@ -96,39 +96,39 @@ namespace ns15
 								switch (Convert.ToInt32(NotesEventsArray[2]))
 								{
 								case 0:
-									if (!this.class228_2.ContainsKey(offset))
+									if (!class228_2.ContainsKey(offset))
 									{
-										this.class228_2.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
+										class228_2.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
 									}
 									break;
 								case 1:
-									if (!this.class228_3.ContainsKey(offset))
+									if (!class228_3.ContainsKey(offset))
 									{
-										this.class228_3.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
+										class228_3.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
 									}
 									break;
 								case 2:
-									if (!this.class228_1.ContainsKey(offset))
+									if (!class228_1.ContainsKey(offset))
 									{
-										this.class228_1.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
+										class228_1.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
 									}
 									break;
 								case 3:
-									if (!this.class228_4.ContainsKey(offset))
+									if (!class228_4.ContainsKey(offset))
 									{
-										this.class228_4.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
+										class228_4.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
 									}
 									break;
 								case 4:
-									if (!this.class228_5.ContainsKey(offset))
+									if (!class228_5.ContainsKey(offset))
 									{
-										this.class228_5.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
+										class228_5.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
 									}
 									break;
 								case 5:
-									if (!this.class228_6.ContainsKey(offset))
+									if (!class228_6.ContainsKey(offset))
 									{
-										this.class228_6.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
+										class228_6.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
 									}
 									break;
 								}
@@ -150,21 +150,21 @@ namespace ns15
 							{
 								sustainLength = 0;
 							}
-							if (!this.noteList.ContainsKey(offset))
+							if (!noteList.ContainsKey(offset))
 							{
-								this.noteList.Add(offset, new NotesAtOffset(notes, sustainLength));
+								noteList.Add(offset, new NotesAtOffset(notes, sustainLength));
 							}
 							else
 							{
-								int currentSustainLength = this.noteList[offset].sustainLength;
+								int currentSustainLength = noteList[offset].sustainLength;
                                 //Updates sustain length
 								if (currentSustainLength < sustainLength)
 								{
-									this.noteList[offset].sustainLength = sustainLength;
+									noteList[offset].sustainLength = sustainLength;
 								}
 							}
                             int note = Convert.ToInt32(NotesEventsArray[2]);
-							this.noteList[offset].noteValues[note] = true;
+							noteList[offset].noteValues[note] = true;
                         }
 					}
 				}

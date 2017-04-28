@@ -1,5 +1,3 @@
-using System;
-
 namespace ns2
 {
 	public class Class31
@@ -22,20 +20,20 @@ namespace ns2
 
 		public Class31()
 		{
-			for (int i = 0; i < this.int_5.Length; i++)
+			for (int i = 0; i < int_5.Length; i++)
 			{
-				this.int_5[i] = new int[8];
+				int_5[i] = new int[8];
 			}
 		}
 
 		public void method_0()
 		{
-			this.int_1 = null;
-			this.int_2 = null;
-			this.int_3 = null;
-			this.int_4 = null;
-			this.int_5 = null;
-			this.int_7 = null;
+			int_1 = null;
+			int_2 = null;
+			int_3 = null;
+			int_4 = null;
+			int_5 = null;
+			int_7 = null;
 		}
 	}
 }

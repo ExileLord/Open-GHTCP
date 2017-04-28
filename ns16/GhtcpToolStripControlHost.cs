@@ -17,13 +17,13 @@ namespace ns16
 			}
 		}
 
-		public GhtcpToolStripControlHost() : base(GhtcpToolStripControlHost.smethod_0())
+		public GhtcpToolStripControlHost() : base(smethod_0())
 		{
 		}
 
 		public TrackBar method_0()
 		{
-			return base.Control as TrackBar;
+			return Control as TrackBar;
 		}
 
 		private static Control smethod_0()
@@ -37,27 +37,27 @@ namespace ns16
 
 		public int method_1()
 		{
-			return this.method_0().Minimum;
+			return method_0().Minimum;
 		}
 
 		public void method_2(int int_0)
 		{
-			this.method_0().Minimum = int_0;
+			method_0().Minimum = int_0;
 		}
 
 		public void method_3(int int_0)
 		{
-			this.method_0().Maximum = int_0;
+			method_0().Maximum = int_0;
 		}
 
 		public int method_4()
 		{
-			return this.method_0().Value;
+			return method_0().Value;
 		}
 
 		public void method_5(int int_0)
 		{
-			this.method_0().Value = int_0;
+			method_0().Value = int_0;
 		}
 
         protected override void OnSubscribeControlEvents(Control control)
@@ -66,7 +66,7 @@ namespace ns16
 			TrackBar trackBar = control as TrackBar;
 			if (trackBar != null)
 			{
-				trackBar.ValueChanged += new EventHandler(this.method_6);
+				trackBar.ValueChanged += method_6;
 			}
 		}
 
@@ -76,27 +76,27 @@ namespace ns16
 			TrackBar trackBar = control as TrackBar;
 			if (trackBar != null)
 			{
-				trackBar.ValueChanged -= new EventHandler(this.method_6);
+				trackBar.ValueChanged -= method_6;
 			}
 		}
 
 		private void method_6(object sender, EventArgs e)
 		{
-			if (this.eventHandler_0 != null)
+			if (eventHandler_0 != null)
 			{
-				this.eventHandler_0(sender, e);
+				eventHandler_0(sender, e);
 			}
 		}
 
 		public void method_7(EventHandler eventHandler_1)
 		{
-			EventHandler eventHandler = this.eventHandler_0;
+			EventHandler eventHandler = eventHandler_0;
 			EventHandler eventHandler2;
 			do
 			{
 				eventHandler2 = eventHandler;
 				EventHandler value = (EventHandler)Delegate.Combine(eventHandler2, eventHandler_1);
-				eventHandler = Interlocked.CompareExchange<EventHandler>(ref this.eventHandler_0, value, eventHandler2);
+				eventHandler = Interlocked.CompareExchange(ref eventHandler_0, value, eventHandler2);
 			}
 			while (eventHandler != eventHandler2);
 		}

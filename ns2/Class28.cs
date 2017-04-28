@@ -1,13 +1,11 @@
 using ns10;
 using ns3;
-using System;
 
 namespace ns2
 {
 	public abstract class Class28
 	{
-		public static Class28[] class28_0 = new Class28[]
-		{
+		public static Class28[] class28_0 = {
 			new Class30(),
 			new Class29()
 		};

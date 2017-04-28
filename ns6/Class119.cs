@@ -1,7 +1,7 @@
-using SharpAudio.ASC;
 using System;
 using System.Runtime.InteropServices;
 using System.Security;
+using SharpAudio.ASC;
 
 namespace ns6
 {
@@ -13,12 +13,12 @@ namespace ns6
 
 		public static bool smethod_0()
 		{
-			return Class119.alIsExtensionPresent("AL_EXT_FLOAT32");
+			return alIsExtensionPresent("AL_EXT_FLOAT32");
 		}
 
 		public static bool smethod_1()
 		{
-			return Class119.alIsExtensionPresent("AL_EXT_MCFORMATS");
+			return alIsExtensionPresent("AL_EXT_MCFORMATS");
 		}
 
 		[CLSCompliant(true), SuppressUnmanagedCodeSecurity]
@@ -29,7 +29,7 @@ namespace ns6
 		public static IntPtr smethod_2()
 		{
 			IntPtr result;
-			Class119.alGenSources(1, out result);
+			alGenSources(1, out result);
 			return result;
 		}
 
@@ -40,7 +40,7 @@ namespace ns6
 		[CLSCompliant(true)]
 		public static void smethod_3(IntPtr intptr_0)
 		{
-			Class119.alDeleteSources(1, ref intptr_0);
+			alDeleteSources(1, ref intptr_0);
 		}
 
 		[CLSCompliant(false), SuppressUnmanagedCodeSecurity]
@@ -54,7 +54,7 @@ namespace ns6
 		public static int smethod_4(IntPtr intptr_0, Enum11 enum11_0)
 		{
 			int result;
-			Class119.alGetSourcei(intptr_0, enum11_0, out result);
+			alGetSourcei(intptr_0, enum11_0, out result);
 			return result;
 		}
 
@@ -80,7 +80,7 @@ namespace ns6
 
 		public static void smethod_5(IntPtr intptr_0, ref IntPtr intptr_1)
 		{
-			Class119.alSourceQueueBuffers_1(intptr_0, 1, ref intptr_1);
+			alSourceQueueBuffers_1(intptr_0, 1, ref intptr_1);
 		}
 
 		[SuppressUnmanagedCodeSecurity]
@@ -94,7 +94,7 @@ namespace ns6
 		public static IntPtr smethod_6(IntPtr intptr_0)
 		{
 			IntPtr result;
-			Class119.alSourceUnqueueBuffers_1(intptr_0, 1, out result);
+			alSourceUnqueueBuffers_1(intptr_0, 1, out result);
 			return result;
 		}
 
@@ -105,7 +105,7 @@ namespace ns6
 				throw new ArgumentOutOfRangeException("numEntries", "Must be greater than zero.");
 			}
 			IntPtr[] array = new IntPtr[int_0];
-			Class119.alSourceUnqueueBuffers(intptr_0, int_0, array);
+			alSourceUnqueueBuffers(intptr_0, int_0, array);
 			return array;
 		}
 
@@ -117,7 +117,7 @@ namespace ns6
 		public static IntPtr[] smethod_8(int int_0)
 		{
 			IntPtr[] array = new IntPtr[int_0];
-			Class119.alGenBuffers(array.Length, array);
+			alGenBuffers(array.Length, array);
 			return array;
 		}
 
@@ -136,7 +136,7 @@ namespace ns6
 			{
 				throw new ArgumentOutOfRangeException();
 			}
-			Class119.alDeleteBuffers(intptr_0.Length, intptr_0);
+			alDeleteBuffers(intptr_0.Length, intptr_0);
 		}
 
 		[SuppressUnmanagedCodeSecurity]
@@ -177,7 +177,7 @@ namespace ns6
 					break;
 				}
 				default:
-					if (Class119.smethod_1())
+					if (smethod_1())
 					{
 						switch (waveFormat_0.short_0)
 						{
@@ -272,7 +272,7 @@ namespace ns6
 				}
 				break;
 			case WaveFormatTag.IEEEFloat:
-				if (Class119.smethod_0())
+				if (smethod_0())
 				{
 					switch (waveFormat_0.short_0)
 					{
@@ -284,13 +284,7 @@ namespace ns6
 				}
 				break;
 			}
-			throw new NotSupportedException(string.Concat(new object[]
-			{
-				"OpenAL does not support this format: ",
-				waveFormat_0.waveFormatTag_0,
-				" | ",
-				(int)waveFormat_0.waveFormatTag_0
-			}));
+			throw new NotSupportedException(string.Concat("OpenAL does not support this format: ", waveFormat_0.waveFormatTag_0, " | ", (int)waveFormat_0.waveFormatTag_0));
 		}
 	}
 }

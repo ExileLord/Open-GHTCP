@@ -1,5 +1,3 @@
-using System;
-
 namespace ns4
 {
 	public class Class103
@@ -64,57 +62,57 @@ namespace ns4
 
 		private Class103(string string_0, int int_25, int int_26, int int_27, int[,] int_28, int int_29)
 		{
-			this.char_0 = string_0[0];
-			this.char_1 = string_0[1];
-			this.char_2 = string_0[2];
-			this.int_0 = int_25;
-			this.int_1 = int_26;
-			this.int_2 = int_27;
-			this.int_3 = int_28;
-			this.int_4 = int_29;
+			char_0 = string_0[0];
+			char_1 = string_0[1];
+			char_2 = string_0[2];
+			int_0 = int_25;
+			int_1 = int_26;
+			int_2 = int_27;
+			int_3 = int_28;
+			int_4 = int_29;
 		}
 
 		public static void smethod_0()
 		{
-			if (Class103.class103_0 != null)
+			if (class103_0 != null)
 			{
 				return;
 			}
-			Class103.class103_0 = new Class103[34];
-			Class103.class103_0[0] = new Class103("0  ", 0, 0, 0, Class103.int_5, 0);
-			Class103.class103_0[1] = new Class103("1  ", 2, 2, 0, Class103.int_6, 7);
-			Class103.class103_0[2] = new Class103("2  ", 3, 3, 0, Class103.int_7, 17);
-			Class103.class103_0[3] = new Class103("3  ", 3, 3, 0, Class103.int_8, 17);
-			Class103.class103_0[4] = new Class103("4  ", 0, 0, 0, Class103.int_9, 0);
-			Class103.class103_0[5] = new Class103("5  ", 4, 4, 0, Class103.int_10, 31);
-			Class103.class103_0[6] = new Class103("6  ", 4, 4, 0, Class103.int_11, 31);
-			Class103.class103_0[7] = new Class103("7  ", 6, 6, 0, Class103.int_12, 71);
-			Class103.class103_0[8] = new Class103("8  ", 6, 6, 0, Class103.int_13, 71);
-			Class103.class103_0[9] = new Class103("9  ", 6, 6, 0, Class103.int_14, 71);
-			Class103.class103_0[10] = new Class103("10 ", 8, 8, 0, Class103.int_15, 127);
-			Class103.class103_0[11] = new Class103("11 ", 8, 8, 0, Class103.int_16, 127);
-			Class103.class103_0[12] = new Class103("12 ", 8, 8, 0, Class103.int_17, 127);
-			Class103.class103_0[13] = new Class103("13 ", 16, 16, 0, Class103.int_18, 511);
-			Class103.class103_0[14] = new Class103("14 ", 0, 0, 0, Class103.int_19, 0);
-			Class103.class103_0[15] = new Class103("15 ", 16, 16, 0, Class103.int_20, 511);
-			Class103.class103_0[16] = new Class103("16 ", 16, 16, 1, Class103.int_21, 511);
-			Class103.class103_0[17] = new Class103("17 ", 16, 16, 2, Class103.int_21, 511);
-			Class103.class103_0[18] = new Class103("18 ", 16, 16, 3, Class103.int_21, 511);
-			Class103.class103_0[19] = new Class103("19 ", 16, 16, 4, Class103.int_21, 511);
-			Class103.class103_0[20] = new Class103("20 ", 16, 16, 6, Class103.int_21, 511);
-			Class103.class103_0[21] = new Class103("21 ", 16, 16, 8, Class103.int_21, 511);
-			Class103.class103_0[22] = new Class103("22 ", 16, 16, 10, Class103.int_21, 511);
-			Class103.class103_0[23] = new Class103("23 ", 16, 16, 13, Class103.int_21, 511);
-			Class103.class103_0[24] = new Class103("24 ", 16, 16, 4, Class103.int_22, 512);
-			Class103.class103_0[25] = new Class103("25 ", 16, 16, 5, Class103.int_22, 512);
-			Class103.class103_0[26] = new Class103("26 ", 16, 16, 6, Class103.int_22, 512);
-			Class103.class103_0[27] = new Class103("27 ", 16, 16, 7, Class103.int_22, 512);
-			Class103.class103_0[28] = new Class103("28 ", 16, 16, 8, Class103.int_22, 512);
-			Class103.class103_0[29] = new Class103("29 ", 16, 16, 9, Class103.int_22, 512);
-			Class103.class103_0[30] = new Class103("30 ", 16, 16, 11, Class103.int_22, 512);
-			Class103.class103_0[31] = new Class103("31 ", 16, 16, 13, Class103.int_22, 512);
-			Class103.class103_0[32] = new Class103("32 ", 1, 16, 0, Class103.int_23, 31);
-			Class103.class103_0[33] = new Class103("33 ", 1, 16, 0, Class103.int_24, 31);
+			class103_0 = new Class103[34];
+			class103_0[0] = new Class103("0  ", 0, 0, 0, int_5, 0);
+			class103_0[1] = new Class103("1  ", 2, 2, 0, int_6, 7);
+			class103_0[2] = new Class103("2  ", 3, 3, 0, int_7, 17);
+			class103_0[3] = new Class103("3  ", 3, 3, 0, int_8, 17);
+			class103_0[4] = new Class103("4  ", 0, 0, 0, int_9, 0);
+			class103_0[5] = new Class103("5  ", 4, 4, 0, int_10, 31);
+			class103_0[6] = new Class103("6  ", 4, 4, 0, int_11, 31);
+			class103_0[7] = new Class103("7  ", 6, 6, 0, int_12, 71);
+			class103_0[8] = new Class103("8  ", 6, 6, 0, int_13, 71);
+			class103_0[9] = new Class103("9  ", 6, 6, 0, int_14, 71);
+			class103_0[10] = new Class103("10 ", 8, 8, 0, int_15, 127);
+			class103_0[11] = new Class103("11 ", 8, 8, 0, int_16, 127);
+			class103_0[12] = new Class103("12 ", 8, 8, 0, int_17, 127);
+			class103_0[13] = new Class103("13 ", 16, 16, 0, int_18, 511);
+			class103_0[14] = new Class103("14 ", 0, 0, 0, int_19, 0);
+			class103_0[15] = new Class103("15 ", 16, 16, 0, int_20, 511);
+			class103_0[16] = new Class103("16 ", 16, 16, 1, int_21, 511);
+			class103_0[17] = new Class103("17 ", 16, 16, 2, int_21, 511);
+			class103_0[18] = new Class103("18 ", 16, 16, 3, int_21, 511);
+			class103_0[19] = new Class103("19 ", 16, 16, 4, int_21, 511);
+			class103_0[20] = new Class103("20 ", 16, 16, 6, int_21, 511);
+			class103_0[21] = new Class103("21 ", 16, 16, 8, int_21, 511);
+			class103_0[22] = new Class103("22 ", 16, 16, 10, int_21, 511);
+			class103_0[23] = new Class103("23 ", 16, 16, 13, int_21, 511);
+			class103_0[24] = new Class103("24 ", 16, 16, 4, int_22, 512);
+			class103_0[25] = new Class103("25 ", 16, 16, 5, int_22, 512);
+			class103_0[26] = new Class103("26 ", 16, 16, 6, int_22, 512);
+			class103_0[27] = new Class103("27 ", 16, 16, 7, int_22, 512);
+			class103_0[28] = new Class103("28 ", 16, 16, 8, int_22, 512);
+			class103_0[29] = new Class103("29 ", 16, 16, 9, int_22, 512);
+			class103_0[30] = new Class103("30 ", 16, 16, 11, int_22, 512);
+			class103_0[31] = new Class103("31 ", 16, 16, 13, int_22, 512);
+			class103_0[32] = new Class103("32 ", 1, 16, 0, int_23, 31);
+			class103_0[33] = new Class103("33 ", 1, 16, 0, int_24, 31);
 		}
 
 		public static int smethod_1(Class103 class103_1, int[] int_25, int[] int_26, int[] int_27, int[] int_28, Class102 class102_0)
@@ -220,8 +218,8 @@ namespace ns4
 		{
 			// Note: this type is marked as 'beforefieldinit'.
 			int[,] array = new int[1, 2];
-			Class103.int_5 = array;
-			Class103.int_6 = new int[,]
+			int_5 = array;
+			int_6 = new[,]
 			{
 				{
 					2,
@@ -252,7 +250,7 @@ namespace ns4
 					17
 				}
 			};
-			Class103.int_7 = new int[,]
+			int_7 = new[,]
 			{
 				{
 					2,
@@ -323,7 +321,7 @@ namespace ns4
 					34
 				}
 			};
-			Class103.int_8 = new int[,]
+			int_8 = new[,]
 			{
 				{
 					4,
@@ -395,8 +393,8 @@ namespace ns4
 				}
 			};
 			int[,] array2 = new int[1, 2];
-			Class103.int_9 = array2;
-			Class103.int_10 = new int[,]
+			int_9 = array2;
+			int_10 = new[,]
 			{
 				{
 					2,
@@ -523,7 +521,7 @@ namespace ns4
 					51
 				}
 			};
-			Class103.int_11 = new int[,]
+			int_11 = new[,]
 			{
 				{
 					6,
@@ -650,7 +648,7 @@ namespace ns4
 					51
 				}
 			};
-			Class103.int_12 = new int[,]
+			int_12 = new[,]
 			{
 				{
 					2,
@@ -937,7 +935,7 @@ namespace ns4
 					85
 				}
 			};
-			Class103.int_13 = new int[,]
+			int_13 = new[,]
 			{
 				{
 					6,
@@ -1224,7 +1222,7 @@ namespace ns4
 					85
 				}
 			};
-			Class103.int_14 = new int[,]
+			int_14 = new[,]
 			{
 				{
 					8,
@@ -1511,7 +1509,7 @@ namespace ns4
 					85
 				}
 			};
-			Class103.int_15 = new int[,]
+			int_15 = new[,]
 			{
 				{
 					2,
@@ -2022,7 +2020,7 @@ namespace ns4
 					119
 				}
 			};
-			Class103.int_16 = new int[,]
+			int_16 = new[,]
 			{
 				{
 					6,
@@ -2533,7 +2531,7 @@ namespace ns4
 					119
 				}
 			};
-			Class103.int_17 = new int[,]
+			int_17 = new[,]
 			{
 				{
 					12,
@@ -3044,7 +3042,7 @@ namespace ns4
 					119
 				}
 			};
-			Class103.int_18 = new int[,]
+			int_18 = new[,]
 			{
 				{
 					2,
@@ -5092,8 +5090,8 @@ namespace ns4
 				}
 			};
 			int[,] array3 = new int[1, 2];
-			Class103.int_19 = array3;
-			Class103.int_20 = new int[,]
+			int_19 = array3;
+			int_20 = new[,]
 			{
 				{
 					16,
@@ -7140,7 +7138,7 @@ namespace ns4
 					255
 				}
 			};
-			Class103.int_21 = new int[,]
+			int_21 = new[,]
 			{
 				{
 					2,
@@ -9187,7 +9185,7 @@ namespace ns4
 					239
 				}
 			};
-			Class103.int_22 = new int[,]
+			int_22 = new[,]
 			{
 				{
 					60,
@@ -11238,7 +11236,7 @@ namespace ns4
 					239
 				}
 			};
-			Class103.int_23 = new int[,]
+			int_23 = new[,]
 			{
 				{
 					2,
@@ -11365,7 +11363,7 @@ namespace ns4
 					11
 				}
 			};
-			Class103.int_24 = new int[,]
+			int_24 = new[,]
 			{
 				{
 					16,

@@ -1,5 +1,3 @@
-using System;
-
 namespace ns5
 {
 	public class Class113
@@ -20,17 +18,17 @@ namespace ns5
 
 		public virtual double[] vmethod_0()
 		{
-			return this.double_0;
+			return double_0;
 		}
 
 		public virtual double[] vmethod_1()
 		{
-			return this.double_1;
+			return double_1;
 		}
 
 		public virtual double[] vmethod_2()
 		{
-			return this.double_3;
+			return double_3;
 		}
 	}
 }

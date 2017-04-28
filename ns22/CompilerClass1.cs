@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -20,18 +19,18 @@ namespace ns22
 		{
 		}
 
-		public static CompilerClass1.Struct91 struct91_0;
+		public static Struct91 struct91_0;
 
-		public static CompilerClass1.Struct91 struct91_1;
+		public static Struct91 struct91_1;
 
-		public static CompilerClass1.Struct92 struct92_0;
+		public static Struct92 struct92_0;
 
-		public static CompilerClass1.Struct92 struct92_1;
+		public static Struct92 struct92_1;
 
-		public static CompilerClass1.Struct92 struct92_2;
+		public static Struct92 struct92_2;
 
-		public static CompilerClass1.Struct92 struct92_3;
+		public static Struct92 struct92_3;
 
-		public static CompilerClass1.Struct92 struct92_4;
+		public static Struct92 struct92_4;
 	}
 }

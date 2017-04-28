@@ -1,5 +1,3 @@
-using System;
-
 namespace ns6
 {
 	public class Class130
@@ -24,7 +22,7 @@ namespace ns6
 				long num = 0L;
 				for (int j = 0; j < int_3; j++)
 				{
-					num += (long)int_2[j] * (long)int_5[int_6 + i - j - 1];
+					num += int_2[j] * (long)int_5[int_6 + i - j - 1];
 				}
 				int_5[int_6 + i] = int_0[i] + (int)(num >> int_4);
 			}

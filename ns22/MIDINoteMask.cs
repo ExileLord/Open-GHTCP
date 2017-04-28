@@ -1,5 +1,3 @@
-using System;
-
 namespace ns22
 {
 	public enum MIDINoteMask

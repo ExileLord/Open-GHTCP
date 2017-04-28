@@ -6,8 +6,7 @@ namespace ns13
 	{
 		private static readonly uint uint_0 = 4294967295u;
 
-		private static readonly uint[] uint_1 = new uint[]
-		{
+		private static readonly uint[] uint_1 = {
 			0u,
 			1996959894u,
 			3993919788u,
@@ -270,17 +269,17 @@ namespace ns13
 
 		public static uint smethod_0(uint uint_3, byte byte_0)
 		{
-			return Class192.uint_1[(int)((UIntPtr)((uint_3 ^ (uint)byte_0) & 255u))] ^ uint_3 >> 8;
+			return uint_1[(int)((UIntPtr)((uint_3 ^ byte_0) & 255u))] ^ uint_3 >> 8;
 		}
 
 		public long vmethod_0()
 		{
-			return (long)((ulong)this.uint_2);
+			return uint_2;
 		}
 
 		public void vmethod_1()
 		{
-			this.uint_2 = 0u;
+			uint_2 = 0u;
 		}
 
 		public void vmethod_2(byte[] byte_0)
@@ -289,7 +288,7 @@ namespace ns13
 			{
 				throw new ArgumentNullException("buffer");
 			}
-			this.vmethod_3(byte_0, 0, byte_0.Length);
+			vmethod_3(byte_0, 0, byte_0.Length);
 		}
 
 		public void vmethod_3(byte[] byte_0, int int_0, int int_1)
@@ -304,12 +303,12 @@ namespace ns13
 			}
 			if (int_0 >= 0 && int_0 + int_1 <= byte_0.Length)
 			{
-				this.uint_2 ^= Class192.uint_0;
+				uint_2 ^= uint_0;
 				while (--int_1 >= 0)
 				{
-					this.uint_2 = (Class192.uint_1[(int)((UIntPtr)((this.uint_2 ^ (uint)byte_0[int_0++]) & 255u))] ^ this.uint_2 >> 8);
+					uint_2 = (uint_1[(int)((UIntPtr)((uint_2 ^ byte_0[int_0++]) & 255u))] ^ uint_2 >> 8);
 				}
-				this.uint_2 ^= Class192.uint_0;
+				uint_2 ^= uint_0;
 				return;
 			}
 			throw new ArgumentOutOfRangeException("offset");

@@ -1,4 +1,3 @@
-using System;
 using System.Text;
 using System.Threading;
 
@@ -10,7 +9,7 @@ namespace ns12
 
 		public static int smethod_0()
 		{
-			return Class186.int_0;
+			return int_0;
 		}
 
 		public static string smethod_1(byte[] byte_0, int int_1)
@@ -19,7 +18,7 @@ namespace ns12
 			{
 				return string.Empty;
 			}
-			return Encoding.GetEncoding(Class186.smethod_0()).GetString(byte_0, 0, int_1);
+			return Encoding.GetEncoding(smethod_0()).GetString(byte_0, 0, int_1);
 		}
 
 		public static string smethod_2(int int_1, byte[] byte_0)
@@ -32,7 +31,7 @@ namespace ns12
 			{
 				return Encoding.UTF8.GetString(byte_0, 0, byte_0.Length);
 			}
-			return Class186.smethod_1(byte_0, byte_0.Length);
+			return smethod_1(byte_0, byte_0.Length);
 		}
 
 		public static byte[] smethod_3(string string_0)
@@ -41,7 +40,7 @@ namespace ns12
 			{
 				return new byte[0];
 			}
-			return Encoding.GetEncoding(Class186.smethod_0()).GetBytes(string_0);
+			return Encoding.GetEncoding(smethod_0()).GetBytes(string_0);
 		}
 
 		public static byte[] smethod_4(int int_1, string string_0)
@@ -54,7 +53,7 @@ namespace ns12
 			{
 				return Encoding.UTF8.GetBytes(string_0);
 			}
-			return Class186.smethod_3(string_0);
+			return smethod_3(string_0);
 		}
 
 		private Class186()

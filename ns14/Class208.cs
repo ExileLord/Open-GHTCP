@@ -1,6 +1,6 @@
-using ns13;
 using System;
 using System.Security.Cryptography;
+using ns13;
 
 namespace ns14
 {
@@ -27,11 +27,11 @@ namespace ns14
 		{
 			get
 			{
-				if (this.byte_0 == null)
+				if (byte_0 == null)
 				{
-					this.GenerateKey();
+					GenerateKey();
 				}
-				return (byte[])this.byte_0.Clone();
+				return (byte[])byte_0.Clone();
 			}
 			set
 			{
@@ -43,7 +43,7 @@ namespace ns14
 				{
 					throw new CryptographicException("Key size is illegal");
 				}
-				this.byte_0 = (byte[])value.Clone();
+				byte_0 = (byte[])value.Clone();
 			}
 		}
 
@@ -51,7 +51,7 @@ namespace ns14
 		{
 			get
 			{
-				return new KeySizes[]
+				return new[]
 				{
 					new KeySizes(8, 8, 0)
 				};
@@ -62,7 +62,7 @@ namespace ns14
 		{
 			get
 			{
-				return new KeySizes[]
+				return new[]
 				{
 					new KeySizes(96, 96, 0)
 				};
@@ -75,21 +75,21 @@ namespace ns14
 
 		public override void GenerateKey()
 		{
-			this.byte_0 = new byte[12];
+			byte_0 = new byte[12];
 			Random random = new Random();
-			random.NextBytes(this.byte_0);
+			random.NextBytes(byte_0);
 		}
 
 		public override ICryptoTransform CreateEncryptor(byte[] rgbKey, byte[] rgbIV)
 		{
-			this.byte_0 = rgbKey;
-			return new Class210(this.Key);
+			byte_0 = rgbKey;
+			return new Class210(Key);
 		}
 
 		public override ICryptoTransform CreateDecryptor(byte[] rgbKey, byte[] rgbIV)
 		{
-			this.byte_0 = rgbKey;
-			return new Class211(this.Key);
+			byte_0 = rgbKey;
+			return new Class211(Key);
 		}
 	}
 }

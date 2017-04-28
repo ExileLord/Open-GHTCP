@@ -7,8 +7,7 @@ namespace ns5
 	{
 		public static readonly double double_0 = 16384.0 * Math.Sqrt(2.0);
 
-		private static readonly int[] int_0 = new int[]
-		{
+		private static readonly int[] int_0 = {
 			0,
 			64,
 			32,
@@ -139,8 +138,7 @@ namespace ns5
 			127
 		};
 
-		private static readonly int[] int_1 = new int[]
-		{
+		private static readonly int[] int_1 = {
 			0,
 			32,
 			16,
@@ -207,8 +205,7 @@ namespace ns5
 			63
 		};
 
-		private static readonly double[] double_1 = new double[]
-		{
+		private static readonly double[] double_1 = {
 			0.00014,
 			0.00024,
 			0.00037,
@@ -495,11 +492,11 @@ namespace ns5
 		{
 			for (int i = 0; i < 8; i++)
 			{
-				this.double_12[i] = new double[256];
+				double_12[i] = new double[256];
 			}
 			for (int j = 0; j < 8; j++)
 			{
-				this.double_13[j] = new double[256];
+				double_13[j] = new double[256];
 			}
 		}
 
@@ -517,15 +514,15 @@ namespace ns5
 		{
 			for (int i = 0; i < 128; i++)
 			{
-				this.double_2[i] = double_14[int_2 + 256 - 2 * i - 1] * this.double_8[i] - double_14[int_2 + 2 * i] * this.double_9[i];
-				this.double_3[i] = -1.0 * (double_14[int_2 + 2 * i] * this.double_8[i] + double_14[int_2 + 256 - 2 * i - 1] * this.double_9[i]);
+				double_2[i] = double_14[int_2 + 256 - 2 * i - 1] * double_8[i] - double_14[int_2 + 2 * i] * double_9[i];
+				double_3[i] = -1.0 * (double_14[int_2 + 2 * i] * double_8[i] + double_14[int_2 + 256 - 2 * i - 1] * double_9[i]);
 			}
 			for (int j = 0; j < 128; j++)
 			{
-				int num = Class110.int_0[j];
+				int num = int_0[j];
 				if (num < j)
 				{
-					this.method_1(this.double_2, this.double_3, j, num);
+					method_1(double_2, double_3, j, num);
 				}
 			}
 			for (int k = 0; k < 7; k++)
@@ -546,47 +543,47 @@ namespace ns5
 					{
 						int num4 = l + m;
 						int num5 = num4 + num2;
-						double num6 = this.double_2[num4];
-						double num7 = this.double_3[num4];
-						double num8 = this.double_2[num5] * this.double_12[k][l] - this.double_3[num5] * this.double_13[k][l];
-						double num9 = this.double_3[num5] * this.double_12[k][l] + this.double_2[num5] * this.double_13[k][l];
-						this.double_2[num4] = num6 + num8;
-						this.double_3[num4] = num7 + num9;
-						this.double_2[num5] = num6 - num8;
-						this.double_3[num5] = num7 - num9;
+						double num6 = double_2[num4];
+						double num7 = double_3[num4];
+						double num8 = double_2[num5] * double_12[k][l] - double_3[num5] * double_13[k][l];
+						double num9 = double_3[num5] * double_12[k][l] + double_2[num5] * double_13[k][l];
+						double_2[num4] = num6 + num8;
+						double_3[num4] = num7 + num9;
+						double_2[num5] = num6 - num8;
+						double_3[num5] = num7 - num9;
 					}
 				}
 			}
 			for (int n = 0; n < 128; n++)
 			{
-				double num6 = this.double_2[n];
-				double num7 = -1.0 * this.double_3[n];
-				this.double_2[n] = num6 * this.double_8[n] - num7 * this.double_9[n];
-				this.double_3[n] = num6 * this.double_9[n] + num7 * this.double_8[n];
+				double num6 = double_2[n];
+				double num7 = -1.0 * double_3[n];
+				double_2[n] = num6 * double_8[n] - num7 * double_9[n];
+				double_3[n] = num6 * double_9[n] + num7 * double_8[n];
 			}
 			int num10 = int_2;
 			int num11 = int_3;
 			int num12 = 0;
 			for (int num13 = 0; num13 < 64; num13++)
 			{
-				double_14[num10++] = -this.double_3[64 + num13] * Class110.double_1[num12++] + double_14[num11++] + double_15;
-				double_14[num10++] = this.double_2[64 - num13 - 1] * Class110.double_1[num12++] + double_14[num11++] + double_15;
+				double_14[num10++] = -double_3[64 + num13] * double_1[num12++] + double_14[num11++] + double_15;
+				double_14[num10++] = double_2[64 - num13 - 1] * double_1[num12++] + double_14[num11++] + double_15;
 			}
 			for (int num14 = 0; num14 < 64; num14++)
 			{
-				double_14[num10++] = -this.double_2[num14] * Class110.double_1[num12++] + double_14[num11++] + double_15;
-				double_14[num10++] = this.double_3[128 - num14 - 1] * Class110.double_1[num12++] + double_14[num11++] + double_15;
+				double_14[num10++] = -double_2[num14] * double_1[num12++] + double_14[num11++] + double_15;
+				double_14[num10++] = double_3[128 - num14 - 1] * double_1[num12++] + double_14[num11++] + double_15;
 			}
 			num11 = int_3;
 			for (int num15 = 0; num15 < 64; num15++)
 			{
-				double_14[num11++] = -this.double_2[64 + num15] * Class110.double_1[--num12];
-				double_14[num11++] = this.double_3[64 - num15 - 1] * Class110.double_1[--num12];
+				double_14[num11++] = -double_2[64 + num15] * double_1[--num12];
+				double_14[num11++] = double_3[64 - num15 - 1] * double_1[--num12];
 			}
 			for (int num16 = 0; num16 < 64; num16++)
 			{
-				double_14[num11++] = this.double_3[num16] * Class110.double_1[--num12];
-				double_14[num11++] = -this.double_2[128 - num16 - 1] * Class110.double_1[--num12];
+				double_14[num11++] = double_3[num16] * double_1[--num12];
+				double_14[num11++] = -double_2[128 - num16 - 1] * double_1[--num12];
 			}
 		}
 
@@ -596,18 +593,18 @@ namespace ns5
 			{
 				int num = 2 * (128 - 2 * i - 1);
 				int num2 = 2 * (2 * i);
-				this.double_4[i] = double_14[num] * this.double_10[i] - double_14[num2] * this.double_11[i];
-				this.double_5[i] = -1.0 * (double_14[num2] * this.double_10[i] + double_14[num] * this.double_11[i]);
-				this.double_6[i] = double_14[num + 1] * this.double_10[i] - double_14[num2 + 1] * this.double_11[i];
-				this.double_7[i] = -1.0 * (double_14[num2 + 1] * this.double_10[i] + double_14[num + 1] * this.double_11[i]);
+				double_4[i] = double_14[num] * double_10[i] - double_14[num2] * double_11[i];
+				double_5[i] = -1.0 * (double_14[num2] * double_10[i] + double_14[num] * double_11[i]);
+				double_6[i] = double_14[num + 1] * double_10[i] - double_14[num2 + 1] * double_11[i];
+				double_7[i] = -1.0 * (double_14[num2 + 1] * double_10[i] + double_14[num + 1] * double_11[i]);
 			}
 			for (int j = 0; j < 64; j++)
 			{
-				int num3 = Class110.int_1[j];
+				int num3 = int_1[j];
 				if (num3 < j)
 				{
-					this.method_1(this.double_4, this.double_5, j, num3);
-					this.method_1(this.double_6, this.double_7, j, num3);
+					method_1(double_4, double_5, j, num3);
+					method_1(double_6, double_7, j, num3);
 				}
 			}
 			for (int k = 0; k < 6; k++)
@@ -628,82 +625,82 @@ namespace ns5
 					{
 						int num6 = l + m;
 						int num7 = num6 + num4;
-						double num8 = this.double_4[num6];
-						double num9 = this.double_5[num6];
-						double num10 = this.double_4[num7] * this.double_12[k][l] - this.double_5[num7] * this.double_13[k][l];
-						double num11 = this.double_5[num7] * this.double_12[k][l] + this.double_4[num7] * this.double_13[k][l];
-						this.double_4[num6] = num8 + num10;
-						this.double_5[num6] = num9 + num11;
-						this.double_4[num7] = num8 - num10;
-						this.double_5[num7] = num9 - num11;
-						num8 = this.double_6[num6];
-						num9 = this.double_7[num6];
-						num10 = this.double_6[num7] * this.double_12[k][l] - this.double_7[num7] * this.double_13[k][l];
-						num11 = this.double_7[num7] * this.double_12[k][l] + this.double_6[num7] * this.double_13[k][l];
-						this.double_6[num6] = num8 + num10;
-						this.double_7[num6] = num9 + num11;
-						this.double_6[num7] = num8 - num10;
-						this.double_7[num7] = num9 - num11;
+						double num8 = double_4[num6];
+						double num9 = double_5[num6];
+						double num10 = double_4[num7] * double_12[k][l] - double_5[num7] * double_13[k][l];
+						double num11 = double_5[num7] * double_12[k][l] + double_4[num7] * double_13[k][l];
+						double_4[num6] = num8 + num10;
+						double_5[num6] = num9 + num11;
+						double_4[num7] = num8 - num10;
+						double_5[num7] = num9 - num11;
+						num8 = double_6[num6];
+						num9 = double_7[num6];
+						num10 = double_6[num7] * double_12[k][l] - double_7[num7] * double_13[k][l];
+						num11 = double_7[num7] * double_12[k][l] + double_6[num7] * double_13[k][l];
+						double_6[num6] = num8 + num10;
+						double_7[num6] = num9 + num11;
+						double_6[num7] = num8 - num10;
+						double_7[num7] = num9 - num11;
 					}
 				}
 			}
 			for (int n = 0; n < 64; n++)
 			{
-				double num8 = this.double_4[n];
-				double num9 = -this.double_5[n];
-				this.double_4[n] = num8 * this.double_10[n] - num9 * this.double_11[n];
-				this.double_5[n] = num8 * this.double_11[n] + num9 * this.double_10[n];
-				num8 = this.double_6[n];
-				num9 = -this.double_7[n];
-				this.double_6[n] = num8 * this.double_10[n] - num9 * this.double_11[n];
-				this.double_7[n] = num8 * this.double_11[n] + num9 * this.double_10[n];
+				double num8 = double_4[n];
+				double num9 = -double_5[n];
+				double_4[n] = num8 * double_10[n] - num9 * double_11[n];
+				double_5[n] = num8 * double_11[n] + num9 * double_10[n];
+				num8 = double_6[n];
+				num9 = -double_7[n];
+				double_6[n] = num8 * double_10[n] - num9 * double_11[n];
+				double_7[n] = num8 * double_11[n] + num9 * double_10[n];
 			}
 			int num12 = int_2;
 			int num13 = int_3;
 			int num14 = 0;
 			for (int num15 = 0; num15 < 64; num15++)
 			{
-				double_14[num12++] = -this.double_5[num15] * Class110.double_1[num14++] + double_14[num13++] + double_15;
-				double_14[num12++] = this.double_4[64 - num15 - 1] * Class110.double_1[num14++] + double_14[num13++] + double_15;
+				double_14[num12++] = -double_5[num15] * double_1[num14++] + double_14[num13++] + double_15;
+				double_14[num12++] = double_4[64 - num15 - 1] * double_1[num14++] + double_14[num13++] + double_15;
 			}
 			for (int num16 = 0; num16 < 64; num16++)
 			{
-				double_14[num12++] = -this.double_4[num16] * Class110.double_1[num14++] + double_14[num13++] + double_15;
-				double_14[num12++] = this.double_5[64 - num16 - 1] * Class110.double_1[num14++] + double_14[num13++] + double_15;
+				double_14[num12++] = -double_4[num16] * double_1[num14++] + double_14[num13++] + double_15;
+				double_14[num12++] = double_5[64 - num16 - 1] * double_1[num14++] + double_14[num13++] + double_15;
 			}
 			num13 = int_3;
 			for (int num17 = 0; num17 < 64; num17++)
 			{
-				double_14[num13++] = -this.double_6[num17] * Class110.double_1[--num14];
-				double_14[num13++] = this.double_7[64 - num17 - 1] * Class110.double_1[--num14];
+				double_14[num13++] = -double_6[num17] * double_1[--num14];
+				double_14[num13++] = double_7[64 - num17 - 1] * double_1[--num14];
 			}
 			for (int num18 = 0; num18 < 64; num18++)
 			{
-				double_14[num13++] = this.double_7[num18] * Class110.double_1[--num14];
-				double_14[num13++] = -this.double_6[64 - num18 - 1] * Class110.double_1[--num14];
+				double_14[num13++] = double_7[num18] * double_1[--num14];
+				double_14[num13++] = -double_6[64 - num18 - 1] * double_1[--num14];
 			}
 		}
 
 		public Class110()
 		{
-			this.method_0();
+			method_0();
 			for (int i = 0; i < 128; i++)
 			{
-				this.double_8[i] = -Math.Cos(0.0015339807878856412 * (double)(8 * i + 1));
-				this.double_9[i] = -Math.Sin(0.0015339807878856412 * (double)(8 * i + 1));
+				double_8[i] = -Math.Cos(0.0015339807878856412 * (8 * i + 1));
+				double_9[i] = -Math.Sin(0.0015339807878856412 * (8 * i + 1));
 			}
 			for (int i = 0; i < 64; i++)
 			{
-				this.double_10[i] = -Math.Cos(0.0030679615757712823 * (double)(8 * i + 1));
-				this.double_11[i] = -Math.Sin(0.0030679615757712823 * (double)(8 * i + 1));
+				double_10[i] = -Math.Cos(0.0030679615757712823 * (8 * i + 1));
+				double_11[i] = -Math.Sin(0.0030679615757712823 * (8 * i + 1));
 			}
 			for (int i = 0; i < 7; i++)
 			{
 				int num = 1 << i;
 				for (int j = 0; j < num; j++)
 				{
-					this.double_12[i][j] = Math.Cos(-3.1415926535897931 * (double)j / (double)num);
-					this.double_13[i][j] = Math.Sin(-3.1415926535897931 * (double)j / (double)num);
+					double_12[i][j] = Math.Cos(-3.1415926535897931 * j / num);
+					double_13[i][j] = Math.Sin(-3.1415926535897931 * j / num);
 				}
 			}
 		}
@@ -720,7 +717,7 @@ namespace ns5
 			{
 				for (int j = 0; j < int_2; j++)
 				{
-					int num2 = (int)(Class110.double_0 * double_14[i + 256 * j + 256]);
+					int num2 = (int)(double_0 * double_14[i + 256 * j + 256]);
 					if (num2 > 32767)
 					{
 						num2 = 32767;

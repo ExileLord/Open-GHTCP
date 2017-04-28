@@ -1,6 +1,6 @@
+using System;
 using Compression.Zip;
 using ns12;
-using System;
 
 namespace ns13
 {
@@ -17,7 +17,7 @@ namespace ns13
 			flag_5 = 16
 		}
 
-		private Class193.Enum32 enum32_0;
+		private Enum32 enum32_0;
 
 		private int int_0 = -1;
 
@@ -73,71 +73,71 @@ namespace ns13
 			{
 				throw new ArgumentOutOfRangeException("versionRequiredToExtract");
 			}
-			this.method_19(DateTime.Now);
-			this.string_0 = string_2;
-			this.ushort_0 = (ushort)int_3;
-			this.ushort_1 = (ushort)int_2;
-			this.enum31_0 = enum31_1;
+			method_19(DateTime.Now);
+			string_0 = string_2;
+			ushort_0 = (ushort)int_3;
+			ushort_1 = (ushort)int_2;
+			enum31_0 = enum31_1;
 		}
 
 		public bool method_0()
 		{
-			return (this.int_1 & 1) != 0;
+			return (int_1 & 1) != 0;
 		}
 
 		public void method_1(bool bool_1)
 		{
 			if (bool_1)
 			{
-				this.int_1 |= 1;
+				int_1 |= 1;
 				return;
 			}
-			this.int_1 &= -2;
+			int_1 &= -2;
 		}
 
 		public byte method_2()
 		{
-			return this.byte_1;
+			return byte_1;
 		}
 
 		public void method_3(byte byte_2)
 		{
-			this.byte_1 = byte_2;
+			byte_1 = byte_2;
 		}
 
 		public int method_4()
 		{
-			return this.int_1;
+			return int_1;
 		}
 
 		public void method_5(int int_2)
 		{
-			this.int_1 = int_2;
+			int_1 = int_2;
 		}
 
 		public long method_6()
 		{
-			return this.long_1;
+			return long_1;
 		}
 
 		public void method_7(long long_2)
 		{
-			this.long_1 = long_2;
+			long_1 = long_2;
 		}
 
 		public int method_8()
 		{
-			if ((byte)(this.enum32_0 & Class193.Enum32.flag_5) == 0)
+			if ((byte)(enum32_0 & Enum32.flag_5) == 0)
 			{
 				return -1;
 			}
-			return this.int_0;
+			return int_0;
 		}
 
 		private bool method_9(int int_2)
 		{
 			bool result = false;
-			if ((byte)(this.enum32_0 & Class193.Enum32.flag_5) != 0 && (this.method_10() == 0 || this.method_10() == 10) && (this.method_8() & int_2) == int_2)
+			if ((byte)(enum32_0 & Enum32.flag_5) != 0 && (method_10() == 0 || method_10() == 10) && (method_8() & int_2) == int_2)
 			{
 				result = true;
 			}
@@ -146,33 +146,33 @@ namespace ns13
 
 		public int method_10()
 		{
-			return this.ushort_0 >> 8 & 255;
+			return ushort_0 >> 8 & 255;
 		}
 
 		public int method_11()
 		{
-			if (this.ushort_1 != 0)
+			if (ushort_1 != 0)
 			{
-				return (int)this.ushort_1;
+				return ushort_1;
 			}
 			int result = 10;
-			if (this.method_16())
+			if (method_16())
 			{
 				result = 45;
 			}
-			else if (Enum31.const_1 == this.enum31_0)
+			else if (Enum31.const_1 == enum31_0)
 			{
 				result = 20;
 			}
-			else if (this.method_33())
+			else if (method_33())
 			{
 				result = 20;
 			}
-			else if (this.method_0())
+			else if (method_0())
 			{
 				result = 20;
 			}
-			else if (this.method_9(8))
+			else if (method_9(8))
 			{
 				result = 11;
 			}
@@ -181,52 +181,52 @@ namespace ns13
 
 		public bool method_12()
 		{
-			return this.method_11() <= 45 && (this.method_11() == 10 || this.method_11() == 11 || this.method_11() == 20 || this.method_11() == 45) && this.method_34();
+			return method_11() <= 45 && (method_11() == 10 || method_11() == 11 || method_11() == 20 || method_11() == 45) && method_34();
 		}
 
 		public void method_13()
 		{
-			this.bool_0 = true;
+			bool_0 = true;
 		}
 
 		public bool method_14()
 		{
-			return this.bool_0;
+			return bool_0;
 		}
 
 		public bool method_15()
 		{
 			bool result;
-			if (!(result = this.bool_0))
+			if (!(result = bool_0))
 			{
-				ulong num = this.ulong_1;
-				if (this.ushort_1 == 0 && this.method_0())
+				ulong num = ulong_1;
+				if (ushort_1 == 0 && method_0())
 				{
 					num += 12uL;
 				}
-				result = ((this.ulong_0 >= 4294967295uL || num >= 4294967295uL) && (this.ushort_1 == 0 || this.ushort_1 >= 45));
+				result = ((ulong_0 >= 4294967295uL || num >= 4294967295uL) && (ushort_1 == 0 || ushort_1 >= 45));
 			}
 			return result;
 		}
 
 		public bool method_16()
 		{
-			return this.method_15() || this.long_1 >= 4294967295L;
+			return method_15() || long_1 >= 4294967295L;
 		}
 
 		public long method_17()
 		{
-			if ((byte)(this.enum32_0 & Class193.Enum32.flag_4) == 0)
+			if ((byte)(enum32_0 & Enum32.flag_4) == 0)
 			{
 				return 0L;
 			}
-			return (long)((ulong)this.uint_1);
+			return uint_1;
 		}
 
 		public void method_18(long long_2)
 		{
-			this.uint_1 = (uint)long_2;
-			this.enum32_0 |= Class193.Enum32.flag_4;
+			uint_1 = (uint)long_2;
+			enum32_0 |= Enum32.flag_4;
 		}
 
 		public void method_19(DateTime dateTime_0)
@@ -255,121 +255,121 @@ namespace ns13
 				num5 = 59u;
 				num6 = 59u;
 			}
-			this.method_18((long)((ulong)((num - 1980u & 127u) << 25 | num2 << 21 | num3 << 16 | num4 << 11 | num5 << 5 | num6 >> 1)));
+			method_18((num - 1980u & 127u) << 25 | num2 << 21 | num3 << 16 | num4 << 11 | num5 << 5 | num6 >> 1);
 		}
 
 		public string method_20()
 		{
-			return this.string_0;
+			return string_0;
 		}
 
 		public long method_21()
 		{
-			if ((byte)(this.enum32_0 & Class193.Enum32.flag_1) == 0)
+			if ((byte)(enum32_0 & Enum32.flag_1) == 0)
 			{
 				return -1L;
 			}
-			return (long)this.ulong_0;
+			return (long)ulong_0;
 		}
 
 		public void method_22(long long_2)
 		{
-			this.ulong_0 = (ulong)long_2;
-			this.enum32_0 |= Class193.Enum32.flag_1;
+			ulong_0 = (ulong)long_2;
+			enum32_0 |= Enum32.flag_1;
 		}
 
 		public long method_23()
 		{
-			if ((byte)(this.enum32_0 & Class193.Enum32.flag_2) == 0)
+			if ((byte)(enum32_0 & Enum32.flag_2) == 0)
 			{
 				return -1L;
 			}
-			return (long)this.ulong_1;
+			return (long)ulong_1;
 		}
 
 		public void method_24(long long_2)
 		{
-			this.ulong_1 = (ulong)long_2;
-			this.enum32_0 |= Class193.Enum32.flag_2;
+			ulong_1 = (ulong)long_2;
+			enum32_0 |= Enum32.flag_2;
 		}
 
 		public long method_25()
 		{
-			if ((byte)(this.enum32_0 & Class193.Enum32.flag_3) == 0)
+			if ((byte)(enum32_0 & Enum32.flag_3) == 0)
 			{
 				return -1L;
 			}
-			return (long)((ulong)this.uint_0 & 4294967295uL);
+			return (long)(uint_0 & 4294967295uL);
 		}
 
 		public void method_26(long long_2)
 		{
-			this.uint_0 = (uint)long_2;
-			this.enum32_0 |= Class193.Enum32.flag_3;
+			uint_0 = (uint)long_2;
+			enum32_0 |= Enum32.flag_3;
 		}
 
 		public Enum31 method_27()
 		{
-			return this.enum31_0;
+			return enum31_0;
 		}
 
 		public void method_28(Enum31 enum31_1)
 		{
-			if (!Class193.smethod_0(enum31_1))
+			if (!smethod_0(enum31_1))
 			{
 				throw new NotSupportedException("Compression method not supported");
 			}
-			this.enum31_0 = enum31_1;
+			enum31_0 = enum31_1;
 		}
 
 		public byte[] method_29()
 		{
-			return this.byte_0;
+			return byte_0;
 		}
 
 		public void method_30(byte[] byte_2)
 		{
 			if (byte_2 == null)
 			{
-				this.byte_0 = null;
+				byte_0 = null;
 				return;
 			}
 			if (byte_2.Length > 65535)
 			{
 				throw new ArgumentOutOfRangeException("value");
 			}
-			this.byte_0 = new byte[byte_2.Length];
-			Array.Copy(byte_2, 0, this.byte_0, 0, byte_2.Length);
+			byte_0 = new byte[byte_2.Length];
+			Array.Copy(byte_2, 0, byte_0, 0, byte_2.Length);
 		}
 
 		public void method_31(bool bool_1)
 		{
-			Class202 @class = new Class202(this.byte_0);
+			Class202 @class = new Class202(byte_0);
 			if (@class.method_6(1))
 			{
-				if ((this.ushort_1 & 255) < 45)
+				if ((ushort_1 & 255) < 45)
 				{
 					throw new ZipException("Zip64 Extended information found but version is not valid");
 				}
-				this.bool_0 = true;
+				bool_0 = true;
 				if (@class.method_3() < 4)
 				{
 					throw new ZipException("Extra data extended Zip64 information length is invalid");
 				}
-				if (bool_1 || this.ulong_0 == 4294967295uL)
+				if (bool_1 || ulong_0 == 4294967295uL)
 				{
-					this.ulong_0 = (ulong)@class.method_14();
+					ulong_0 = (ulong)@class.method_14();
 				}
-				if (bool_1 || this.ulong_1 == 4294967295uL)
+				if (bool_1 || ulong_1 == 4294967295uL)
 				{
-					this.ulong_1 = (ulong)@class.method_14();
+					ulong_1 = (ulong)@class.method_14();
 				}
-				if (!bool_1 && this.long_1 == 4294967295L)
+				if (!bool_1 && long_1 == 4294967295L)
 				{
-					this.long_1 = @class.method_14();
+					long_1 = @class.method_14();
 				}
 			}
-			else if ((this.ushort_1 & 255) >= 45 && (this.ulong_0 == 4294967295uL || this.ulong_1 == 4294967295uL))
+			else if ((ushort_1 & 255) >= 45 && (ulong_0 == 4294967295uL || ulong_1 == 4294967295uL))
 			{
 				throw new ZipException("Zip64 Extended information required but is missing.");
 			}
@@ -391,17 +391,13 @@ namespace ns13
 							long fileTime = @class.method_14();
 							@class.method_14();
 							@class.method_14();
-							this.method_19(DateTime.FromFileTime(fileTime));
+							method_19(DateTime.FromFileTime(fileTime));
 							return;
 						}
 						return;
 					}
-					else
-					{
-						@class.method_18(num2);
-					}
+				    @class.method_18(num2);
 				}
-				return;
 			}
 			else if (@class.method_6(21589))
 			{
@@ -410,51 +406,51 @@ namespace ns13
 				if ((num4 & 1) != 0 && num3 >= 5)
 				{
 					int seconds = @class.method_15();
-					this.method_19((new DateTime(1970, 1, 1, 0, 0, 0).ToUniversalTime() + new TimeSpan(0, 0, 0, seconds, 0)).ToLocalTime());
+					method_19((new DateTime(1970, 1, 1, 0, 0, 0).ToUniversalTime() + new TimeSpan(0, 0, 0, seconds, 0)).ToLocalTime());
 				}
 			}
 		}
 
 		public string method_32()
 		{
-			return this.string_1;
+			return string_1;
 		}
 
 		public bool method_33()
 		{
-			int length = this.string_0.Length;
+			int length = string_0.Length;
 			int arg_41_0;
 			if (length > 0)
 			{
-				if (this.string_0[length - 1] == '/' || this.string_0[length - 1] == '\\')
+				if (string_0[length - 1] == '/' || string_0[length - 1] == '\\')
 				{
 					arg_41_0 = 1;
 					return arg_41_0 != 0;
 				}
 			}
-			arg_41_0 = (this.method_9(16) ? 1 : 0);
+			arg_41_0 = (method_9(16) ? 1 : 0);
 			return arg_41_0 != 0;
 		}
 
 		public bool method_34()
 		{
-			return Class193.smethod_0(this.method_27());
+			return smethod_0(method_27());
 		}
 
 		public object Clone()
 		{
-			Class193 @class = (Class193)base.MemberwiseClone();
-			if (this.byte_0 != null)
+			Class193 @class = (Class193)MemberwiseClone();
+			if (byte_0 != null)
 			{
-				@class.byte_0 = new byte[this.byte_0.Length];
-				Array.Copy(this.byte_0, 0, @class.byte_0, 0, this.byte_0.Length);
+				@class.byte_0 = new byte[byte_0.Length];
+				Array.Copy(byte_0, 0, @class.byte_0, 0, byte_0.Length);
 			}
 			return @class;
 		}
 
 		public override string ToString()
 		{
-			return this.string_0;
+			return string_0;
 		}
 
 		public static bool smethod_0(Enum31 enum31_1)

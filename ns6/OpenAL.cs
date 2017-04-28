@@ -1,10 +1,10 @@
-using ns5;
-using SharpAudio.ADI.OpenAL;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
+using ns5;
+using SharpAudio.ADI.OpenAL;
 
 namespace ns6
 {
@@ -48,13 +48,13 @@ namespace ns6
 
 		public static string smethod_0(IntPtr intptr_0, Enum7 enum7_0)
 		{
-			return Marshal.PtrToStringAnsi(OpenAL.alcGetString(intptr_0, enum7_0));
+			return Marshal.PtrToStringAnsi(alcGetString(intptr_0, enum7_0));
 		}
 
 		public static IList<string> smethod_1(IntPtr intptr_0, Enum8 enum8_0)
 		{
 			List<string> list = new List<string>();
-			IntPtr ptr = OpenAL.alcGetString(IntPtr.Zero, (Enum7)enum8_0);
+			IntPtr ptr = alcGetString(IntPtr.Zero, (Enum7)enum8_0);
 			StringBuilder stringBuilder = new StringBuilder();
 			int ofs = 0;
 			while (true)

@@ -1,7 +1,6 @@
+using System.Drawing;
 using ns16;
 using ns20;
-using System;
-using System.Drawing;
 
 namespace ns18
 {
@@ -11,11 +10,11 @@ namespace ns18
 
 		public override int CompareTo(object target)
 		{
-			if (!target.GetType().Equals(base.GetType()) || (((zzUnkNode294)target).Nodes.Count != 0 && !((zzUnkNode294)target).Nodes[0].Equals(base.Nodes[0])))
+			if (!target.GetType().Equals(GetType()) || (((zzUnkNode294)target).Nodes.Count != 0 && !((zzUnkNode294)target).Nodes[0].Equals(Nodes[0])))
 			{
 				return -1;
 			}
-			if (((zzUnkNode294)target).int_0 == this.int_0)
+			if (((zzUnkNode294)target).int_0 == int_0)
 			{
 				return 0;
 			}
@@ -24,17 +23,17 @@ namespace ns18
 
 		public override string GetText()
 		{
-			string str = (base.Nodes.Count > 0) ? base.method_2(0).GetText() : "NULL";
-			if (QbSongClass1.ContainsKey(this.int_0))
+			string str = (Nodes.Count > 0) ? method_2(0).GetText() : "NULL";
+			if (QbSongClass1.ContainsKey(int_0))
 			{
-				return QbSongClass1.GetDictString(this.int_0) + " = " + str;
+				return QbSongClass1.GetDictString(int_0) + " = " + str;
 			}
-			return KeyGenerator.ValToHex32bit(this.int_0) + " (Tag) = " + str;
+			return KeyGenerator.ValToHex32bit(int_0) + " (Tag) = " + str;
 		}
 
 		public override Color GetColor()
 		{
-			if (base.Parent != null && this.method_7() != null && this.method_7().GetColor().Equals(Color.Gold))
+			if (Parent != null && method_7() != null && method_7().GetColor().Equals(Color.Gold))
 			{
 				return Color.Yellow;
 			}
@@ -44,13 +43,13 @@ namespace ns18
 		public override object Clone()
 		{
 			zzUnkNode294 @class = (zzUnkNode294)base.Clone();
-			@class.int_0 = this.int_0;
+			@class.int_0 = int_0;
 			return @class;
 		}
 
 		public AbstractTreeNode1 method_7()
 		{
-			return (AbstractTreeNode1)base.PrevNode;
+			return (AbstractTreeNode1)PrevNode;
 		}
 	}
 }

@@ -21,11 +21,11 @@ namespace ns16
 				throw new ArgumentException("Value is not a SystemTools.Int24 or System.Int32");
 			}
 			int num = (int)target;
-			if (this.int_2 == num)
+			if (int_2 == num)
 			{
 				return 0;
 			}
-			if (this.int_2 <= num)
+			if (int_2 <= num)
 			{
 				return -1;
 			}
@@ -34,21 +34,21 @@ namespace ns16
 
 		public override bool Equals(object obj)
 		{
-			return (obj is Struct80 || obj is int) && (int)obj == this.int_2;
+			return (obj is Struct80 || obj is int) && (int)obj == int_2;
 		}
 
 		public override int GetHashCode()
 		{
-			return this.int_2;
+			return int_2;
 		}
 
 		public int CompareTo(int other)
 		{
-			if (this.int_2 == other)
+			if (int_2 == other)
 			{
 				return 0;
 			}
-			if (this.int_2 <= other)
+			if (int_2 <= other)
 			{
 				return -1;
 			}
@@ -57,16 +57,16 @@ namespace ns16
 
 		public bool Equals(int other)
 		{
-			return other == this.int_2;
+			return other == int_2;
 		}
 
 		public int CompareTo(Struct80 other)
 		{
-			if (this.int_2 == other.int_2)
+			if (int_2 == other.int_2)
 			{
 				return 0;
 			}
-			if (this.int_2 <= other.int_2)
+			if (int_2 <= other.int_2)
 			{
 				return -1;
 			}
@@ -75,22 +75,22 @@ namespace ns16
 
 		public bool Equals(Struct80 other)
 		{
-			return other.int_2 == this.int_2;
+			return other.int_2 == int_2;
 		}
 
 		public override string ToString()
 		{
-			return this.int_2.ToString();
+			return int_2.ToString();
 		}
 
 		public string ToString(IFormatProvider provider)
 		{
-			return this.int_2.ToString(provider);
+			return int_2.ToString(provider);
 		}
 
 		public string ToString(string format, IFormatProvider provider)
 		{
-			return this.int_2.ToString(format, provider);
+			return int_2.ToString(format, provider);
 		}
 
 		public TypeCode GetTypeCode()
@@ -100,77 +100,77 @@ namespace ns16
 
 		bool IConvertible.ToBoolean(IFormatProvider provider)
 		{
-			return Convert.ToBoolean(this.int_2);
+			return Convert.ToBoolean(int_2);
 		}
 
 		byte IConvertible.ToByte(IFormatProvider provider)
 		{
-			return Convert.ToByte(this.int_2);
+			return Convert.ToByte(int_2);
 		}
 
 		char IConvertible.ToChar(IFormatProvider provider)
 		{
-			return Convert.ToChar(this.int_2);
+			return Convert.ToChar(int_2);
 		}
 
 		DateTime IConvertible.ToDateTime(IFormatProvider provider)
 		{
-			return Convert.ToDateTime(this.int_2);
+			return Convert.ToDateTime(int_2);
 		}
 
 		decimal IConvertible.ToDecimal(IFormatProvider provider)
 		{
-			return Convert.ToDecimal(this.int_2);
+			return Convert.ToDecimal(int_2);
 		}
 
 		double IConvertible.ToDouble(IFormatProvider provider)
 		{
-			return Convert.ToDouble(this.int_2);
+			return Convert.ToDouble(int_2);
 		}
 
 		short IConvertible.ToInt16(IFormatProvider provider)
 		{
-			return Convert.ToInt16(this.int_2);
+			return Convert.ToInt16(int_2);
 		}
 
 		int IConvertible.ToInt32(IFormatProvider provider)
 		{
-			return this.int_2;
+			return int_2;
 		}
 
 		long IConvertible.ToInt64(IFormatProvider provider)
 		{
-			return Convert.ToInt64(this.int_2);
+			return Convert.ToInt64(int_2);
 		}
 
 		sbyte IConvertible.ToSByte(IFormatProvider provider)
 		{
-			return Convert.ToSByte(this.int_2);
+			return Convert.ToSByte(int_2);
 		}
 
 		float IConvertible.ToSingle(IFormatProvider provider)
 		{
-			return Convert.ToSingle(this.int_2);
+			return Convert.ToSingle(int_2);
 		}
 
 		object IConvertible.ToType(Type conversionType, IFormatProvider provider)
 		{
-			return Convert.ChangeType(this.int_2, conversionType, provider);
+			return Convert.ChangeType(int_2, conversionType, provider);
 		}
 
 		ushort IConvertible.ToUInt16(IFormatProvider provider)
 		{
-			return Convert.ToUInt16(this.int_2);
+			return Convert.ToUInt16(int_2);
 		}
 
 		uint IConvertible.ToUInt32(IFormatProvider provider)
 		{
-			return Convert.ToUInt32(this.int_2);
+			return Convert.ToUInt32(int_2);
 		}
 
 		ulong IConvertible.ToUInt64(IFormatProvider provider)
 		{
-			return Convert.ToUInt64(this.int_2);
+			return Convert.ToUInt64(int_2);
 		}
 	}
 }

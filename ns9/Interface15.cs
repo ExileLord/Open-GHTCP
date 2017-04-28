@@ -1,5 +1,3 @@
-using System;
-
 namespace ns9
 {
 	public interface Interface15

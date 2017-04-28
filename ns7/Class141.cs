@@ -1,5 +1,3 @@
-using System;
-
 namespace ns7
 {
 	public class Class141

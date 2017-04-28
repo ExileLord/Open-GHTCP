@@ -15,13 +15,13 @@ namespace ns19
 
 		private int int_4;
 
-		private int[] int_5 = new int[Class320.int_0 + 1];
+		private int[] int_5 = new int[int_0 + 1];
 
-		private int[] int_6 = new int[Class320.int_0 + 257];
+		private int[] int_6 = new int[int_0 + 257];
 
-		private int[] int_7 = new int[Class320.int_0 + 1];
+		private int[] int_7 = new int[int_0 + 1];
 
-		private byte[] byte_0 = new byte[Class320.int_0 + Class320.int_1 - 1];
+		private byte[] byte_0 = new byte[int_0 + int_1 - 1];
 
 		public byte[] method_0(byte[] byte_1)
 		{
@@ -32,7 +32,7 @@ namespace ns19
 				memoryStream2 = (memoryStream3 = new MemoryStream());
 				try
 				{
-					this.method_1(memoryStream, memoryStream2);
+					method_1(memoryStream, memoryStream2);
 				}
 				finally
 				{
@@ -55,27 +55,27 @@ namespace ns19
 			{
 				throw new IOException("Output stream is not writable.");
 			}
-			int num = Class320.int_0 - Class320.int_1;
+			int num = int_0 - int_1;
 			int num2 = 0;
 			int num3 = 1;
 			byte[] array = new byte[17];
 			byte b = 1;
 			long num4 = stream_0.Length - stream_0.Position;
-			for (int i = Class320.int_0 + 1; i <= Class320.int_0 + 256; i++)
+			for (int i = int_0 + 1; i <= int_0 + 256; i++)
 			{
-				this.int_6[i] = Class320.int_0;
+				int_6[i] = int_0;
 			}
-			for (int i = 0; i < Class320.int_0; i++)
+			for (int i = 0; i < int_0; i++)
 			{
-				this.int_7[i] = Class320.int_0;
+				int_7[i] = int_0;
 			}
 			array[0] = 0;
-			for (int i = num2; i < this.byte_0.Length; i++)
+			for (int i = num2; i < byte_0.Length; i++)
 			{
-				this.byte_0[i] = 32;
+				byte_0[i] = 32;
 			}
 			int j;
-			for (j = 0; j < Class320.int_1; j++)
+			for (j = 0; j < int_1; j++)
 			{
 				long expr_C0 = num4;
 				num4 = expr_C0 - 1L;
@@ -83,31 +83,31 @@ namespace ns19
 				{
 					break;
 				}
-				this.byte_0[num + j] = (byte)stream_0.ReadByte();
+				byte_0[num + j] = (byte)stream_0.ReadByte();
 			}
-			for (int i = 1; i <= Class320.int_1; i++)
+			for (int i = 1; i <= int_1; i++)
 			{
-				this.method_2(num - i);
+				method_2(num - i);
 			}
-			this.method_2(num);
+			method_2(num);
 			do
 			{
-				if (this.int_4 > j)
+				if (int_4 > j)
 				{
-					this.int_4 = j;
+					int_4 = j;
 				}
-				if (this.int_4 <= Class320.int_2)
+				if (int_4 <= int_2)
 				{
-					this.int_4 = 1;
+					int_4 = 1;
 					byte[] expr_136_cp_0 = array;
 					int expr_136_cp_1 = 0;
 					expr_136_cp_0[expr_136_cp_1] |= b;
-					array[num3++] = this.byte_0[num];
+					array[num3++] = byte_0[num];
 				}
 				else
 				{
-					array[num3++] = (byte)this.int_3;
-					array[num3++] = (byte)((this.int_3 >> 4 & 240) | this.int_4 - (Class320.int_2 + 1));
+					array[num3++] = (byte)int_3;
+					array[num3++] = (byte)((int_3 >> 4 & 240) | int_4 - (int_2 + 1));
 				}
 				int i;
 				if ((b = (byte)(b << 1)) == 0)
@@ -121,7 +121,7 @@ namespace ns19
 					b = 1;
 					num3 = arg_1BC_0;
 				}
-				int num5 = this.int_4;
+				int num5 = int_4;
 				for (i = 0; i < num5; i++)
 				{
 					long expr_1CC = num4;
@@ -130,24 +130,24 @@ namespace ns19
 					{
 						break;
 					}
-					this.method_3(num2);
-					this.byte_0[num2] = (byte)stream_0.ReadByte();
-					if (num2 < Class320.int_1 - 1)
+					method_3(num2);
+					byte_0[num2] = (byte)stream_0.ReadByte();
+					if (num2 < int_1 - 1)
 					{
-						this.byte_0[num2 + Class320.int_0] = this.byte_0[num2];
+						byte_0[num2 + int_0] = byte_0[num2];
 					}
-					num2 = (num2 + 1 & Class320.int_0 - 1);
-					num = (num + 1 & Class320.int_0 - 1);
-					this.method_2(num);
+					num2 = (num2 + 1 & int_0 - 1);
+					num = (num + 1 & int_0 - 1);
+					method_2(num);
 				}
 				while (i++ < num5)
 				{
-					this.method_3(num2);
-					num2 = (num2 + 1 & Class320.int_0 - 1);
-					num = (num + 1 & Class320.int_0 - 1);
+					method_3(num2);
+					num2 = (num2 + 1 & int_0 - 1);
+					num = (num + 1 & int_0 - 1);
 					if (--j != 0)
 					{
-						this.method_2(num);
+						method_2(num);
 					}
 				}
 			}
@@ -164,108 +164,108 @@ namespace ns19
 		private void method_2(int int_8)
 		{
 			int num = 1;
-			int num2 = Class320.int_0 + 1 + (int)this.byte_0[int_8];
-			this.int_6[int_8] = (this.int_5[int_8] = Class320.int_0);
-			this.int_4 = 0;
+			int num2 = int_0 + 1 + byte_0[int_8];
+			int_6[int_8] = (int_5[int_8] = int_0);
+			int_4 = 0;
 			while (true)
 			{
 				if (num >= 0)
 				{
-					if (this.int_6[num2] == Class320.int_0)
+					if (int_6[num2] == int_0)
 					{
 						goto IL_C3;
 					}
-					num2 = this.int_6[num2];
+					num2 = int_6[num2];
 				}
 				else
 				{
-					if (this.int_5[num2] == Class320.int_0)
+					if (int_5[num2] == int_0)
 					{
 						goto IL_168;
 					}
-					num2 = this.int_5[num2];
+					num2 = int_5[num2];
 				}
 				int num3 = 1;
-				while (num3 < Class320.int_1 && (num = (int)(this.byte_0[int_8 + num3] - this.byte_0[num2 + num3])) == 0)
+				while (num3 < int_1 && (num = byte_0[int_8 + num3] - byte_0[num2 + num3]) == 0)
 				{
 					num3++;
 				}
-				if (num3 > this.int_4)
+				if (num3 > int_4)
 				{
-					this.int_3 = num2;
-					if ((this.int_4 = num3) >= Class320.int_1)
+					int_3 = num2;
+					if ((int_4 = num3) >= int_1)
 					{
 						break;
 					}
 				}
 			}
-			this.int_7[int_8] = this.int_7[num2];
-			this.int_5[int_8] = this.int_5[num2];
-			this.int_6[int_8] = this.int_6[num2];
-			this.int_7[this.int_5[num2]] = int_8;
-			this.int_7[this.int_6[num2]] = int_8;
-			if (this.int_6[this.int_7[num2]] == num2)
+			int_7[int_8] = int_7[num2];
+			int_5[int_8] = int_5[num2];
+			int_6[int_8] = int_6[num2];
+			int_7[int_5[num2]] = int_8;
+			int_7[int_6[num2]] = int_8;
+			if (int_6[int_7[num2]] == num2)
 			{
-				this.int_6[this.int_7[num2]] = int_8;
+				int_6[int_7[num2]] = int_8;
 			}
 			else
 			{
-				this.int_5[this.int_7[num2]] = int_8;
+				int_5[int_7[num2]] = int_8;
 			}
-			this.int_7[num2] = Class320.int_0;
+			int_7[num2] = int_0;
 			return;
 			IL_C3:
-			this.int_6[num2] = int_8;
-			this.int_7[int_8] = num2;
+			int_6[num2] = int_8;
+			int_7[int_8] = num2;
 			return;
 			IL_168:
-			this.int_5[num2] = int_8;
-			this.int_7[int_8] = num2;
+			int_5[num2] = int_8;
+			int_7[int_8] = num2;
 		}
 
 		private void method_3(int int_8)
 		{
-			if (this.int_7[int_8] == Class320.int_0)
+			if (int_7[int_8] == int_0)
 			{
 				return;
 			}
 			int num;
-			if (this.int_6[int_8] == Class320.int_0)
+			if (int_6[int_8] == int_0)
 			{
-				num = this.int_5[int_8];
+				num = int_5[int_8];
 			}
-			else if (this.int_5[int_8] == Class320.int_0)
+			else if (int_5[int_8] == int_0)
 			{
-				num = this.int_6[int_8];
+				num = int_6[int_8];
 			}
 			else
 			{
-				num = this.int_5[int_8];
-				if (this.int_6[num] != Class320.int_0)
+				num = int_5[int_8];
+				if (int_6[num] != int_0)
 				{
 					do
 					{
-						num = this.int_6[num];
+						num = int_6[num];
 					}
-					while (this.int_6[num] != Class320.int_0);
-					this.int_6[this.int_7[num]] = this.int_5[num];
-					this.int_7[this.int_5[num]] = this.int_7[num];
-					this.int_5[num] = this.int_5[int_8];
-					this.int_7[this.int_5[int_8]] = num;
+					while (int_6[num] != int_0);
+					int_6[int_7[num]] = int_5[num];
+					int_7[int_5[num]] = int_7[num];
+					int_5[num] = int_5[int_8];
+					int_7[int_5[int_8]] = num;
 				}
-				this.int_6[num] = this.int_6[int_8];
-				this.int_7[this.int_6[int_8]] = num;
+				int_6[num] = int_6[int_8];
+				int_7[int_6[int_8]] = num;
 			}
-			this.int_7[num] = this.int_7[int_8];
-			if (this.int_6[this.int_7[int_8]] == int_8)
+			int_7[num] = int_7[int_8];
+			if (int_6[int_7[int_8]] == int_8)
 			{
-				this.int_6[this.int_7[int_8]] = num;
+				int_6[int_7[int_8]] = num;
 			}
 			else
 			{
-				this.int_5[this.int_7[int_8]] = num;
+				int_5[int_7[int_8]] = num;
 			}
-			this.int_7[int_8] = Class320.int_0;
+			int_7[int_8] = int_0;
 		}
 
 		public byte[] method_4(byte[] byte_1)
@@ -277,7 +277,7 @@ namespace ns19
 				memoryStream2 = (memoryStream3 = new MemoryStream());
 				try
 				{
-					this.method_5(memoryStream, memoryStream2);
+					method_5(memoryStream, memoryStream2);
 				}
 				finally
 				{
@@ -300,12 +300,12 @@ namespace ns19
 			{
 				throw new IOException("Output stream is not writable.");
 			}
-			int num = Class320.int_0 - Class320.int_1;
+			int num = int_0 - int_1;
 			int num2 = 0;
 			long num3 = stream_0.Length - stream_0.Position;
-			for (int i = 0; i < this.byte_0.Length; i++)
+			for (int i = 0; i < byte_0.Length; i++)
 			{
-				this.byte_0[i] = 32;
+				byte_0[i] = 32;
 			}
 			while (num3 > 0L)
 			{
@@ -317,20 +317,20 @@ namespace ns19
 				if ((num2 & 1) != 0)
 				{
 					num3 -= 1L;
-					stream_1.WriteByte(this.byte_0[num++] = (byte)stream_0.ReadByte());
-					num &= Class320.int_0 - 1;
+					stream_1.WriteByte(byte_0[num++] = (byte)stream_0.ReadByte());
+					num &= int_0 - 1;
 				}
 				else
 				{
 					num3 -= 2L;
-					int num4 = (int)((byte)stream_0.ReadByte());
-					int num5 = (int)((byte)stream_0.ReadByte());
+					int num4 = (byte)stream_0.ReadByte();
+					int num5 = (byte)stream_0.ReadByte();
 					num4 |= (num5 & 240) << 4;
-					num5 = (num5 & 15) + Class320.int_2;
+					num5 = (num5 & 15) + int_2;
 					for (int j = 0; j <= num5; j++)
 					{
-						stream_1.WriteByte(this.byte_0[num++] = this.byte_0[num4 + j & Class320.int_0 - 1]);
-						num &= Class320.int_0 - 1;
+						stream_1.WriteByte(byte_0[num++] = byte_0[num4 + j & int_0 - 1]);
+						num &= int_0 - 1;
 					}
 				}
 			}

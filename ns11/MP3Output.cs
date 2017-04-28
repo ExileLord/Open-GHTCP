@@ -1,11 +1,11 @@
-using ns0;
-using ns1;
-using SharpAudio.ASC;
 using System;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
+using ns0;
+using ns1;
+using SharpAudio.ASC;
 
 namespace ns11
 {
@@ -37,222 +37,220 @@ namespace ns11
 			{
 				throw new Exception("WinMM2Player: Invalid Stream.");
 			}
-			this.class16_0 = stream1_1.vmethod_1();
-			if (this.class16_0.waveFormat_0.waveFormatTag_0 != WaveFormatTag.PCM && this.class16_0.waveFormat_0.waveFormatTag_0 != WaveFormatTag.IEEEFloat)
+			class16_0 = stream1_1.vmethod_1();
+			if (class16_0.waveFormat_0.waveFormatTag_0 != WaveFormatTag.PCM && class16_0.waveFormat_0.waveFormatTag_0 != WaveFormatTag.IEEEFloat)
 			{
 				throw new Exception("WinMM2Player: Only PCM is supported.");
 			}
-			this.stream1_0 = stream1_1;
-			this.bool_0 = bool_1;
-			this.SetStartingTimeBasedOnSomeValue(0);
-			this.enum1_0 = AudioStatus.ShouldStopAudio;
+			stream1_0 = stream1_1;
+			bool_0 = bool_1;
+			SetStartingTimeBasedOnSomeValue(0);
+			enum1_0 = AudioStatus.ShouldStopAudio;
 		}
 
 		public TimeSpan AudioLength()
 		{
-			return TimeSpan.FromSeconds((double)this.vmethod_0() / (double)(this.class16_0.method_3() * (int)this.class16_0.method_1()));
+			return TimeSpan.FromSeconds(vmethod_0() / (double)(class16_0.method_3() * class16_0.method_1()));
 		}
 
 		public void SetStartingTime(TimeSpan timeSpan_0)
 		{
-			this.SetStartingTimeBasedOnSomeValue(Convert.ToInt32((double)(this.class16_0.method_3() * (int)this.class16_0.method_1()) * timeSpan_0.TotalSeconds));
+			SetStartingTimeBasedOnSomeValue(Convert.ToInt32(class16_0.method_3() * class16_0.method_1() * timeSpan_0.TotalSeconds));
 		}
 
 		public int vmethod_0()
 		{
-			if (this.enum1_0 != AudioStatus.ShouldStopAudio)
+			if (enum1_0 != AudioStatus.ShouldStopAudio)
 			{
-				return this.int_0 + this.class159_0.method_0();
+				return int_0 + class159_0.method_0();
 			}
-			return (int)this.stream1_0.Position;
+			return (int)stream1_0.Position;
 		}
 
 		public void SetStartingTimeBasedOnSomeValue(int int_1)
 		{
-			AudioStatus @enum = this.enum1_0;
+			AudioStatus @enum = enum1_0;
 			if (@enum != AudioStatus.ShouldStopAudio)
 			{
-				this.StopPlaying();
+				StopPlaying();
 			}
-			Stream arg_21_0 = this.stream1_0;
-			this.int_0 = int_1;
-			arg_21_0.Position = (long)int_1;
+			Stream arg_21_0 = stream1_0;
+			int_0 = int_1;
+			arg_21_0.Position = int_1;
 			if (@enum == AudioStatus.ShouldStartAudio)
 			{
-				this.DifferentStartPlaying();
+				DifferentStartPlaying();
 			}
 		}
 
 		public float vmethod_1()
 		{
-			if (this.class159_0 == null)
+			if (class159_0 == null)
 			{
-				return this.Volume;
+				return Volume;
 			}
-			return this.class159_0.method_1();
+			return class159_0.method_1();
 		}
 
 		public void SetVolume(float float_1)
 		{
-			this.Volume = float_1;
-			if (this.class159_0 != null)
+			Volume = float_1;
+			if (class159_0 != null)
 			{
-				this.class159_0.SetVolume(this.Volume);
+				class159_0.SetVolume(Volume);
 			}
 		}
 
 		public AudioStatus GetStatus()
 		{
-			return this.enum1_0;
+			return enum1_0;
 		}
 
 		public WaveFormat GetWaveFormat()
 		{
-			return this.class16_0.waveFormat_0;
+			return class16_0.waveFormat_0;
 		}
 
 		public void DifferentStartPlaying()
 		{
             WaitCallback waitCallback = null;
             //Error Case (Will never get called)
-            if (this.enum1_0 == AudioStatus.ShouldStartAudio)
+            if (enum1_0 == AudioStatus.ShouldStartAudio)
 			{
 				return;
 			}
             //If song is already playing
-            if (this.class159_0 != null && this.enum1_0 == AudioStatus.IsCurrentlyPlayingAudio && !this.class159_0.method_5())
+            if (class159_0 != null && enum1_0 == AudioStatus.IsCurrentlyPlayingAudio && !class159_0.method_5())
 			{
-                this.enum1_0 = AudioStatus.ShouldStartAudio;
-				this.class159_0.SetVolume(0f);
-				this.class159_0.method_3();
+                enum1_0 = AudioStatus.ShouldStartAudio;
+				class159_0.SetVolume(0f);
+				class159_0.method_3();
                 if (waitCallback == null)
 				{
-					waitCallback = new WaitCallback(this.method_2);
+					waitCallback = method_2;
 				}
 				ThreadPool.QueueUserWorkItem(waitCallback);
 				return;
 			}
-            this.StopPlaying();
-			this.enum1_0 = AudioStatus.ShouldStartAudio;
-            this.class159_0 = new AudioPlayer(-1, this.class16_0.waveFormat_0, 200, this.Volume, this.bool_0, new Delegate3(this.method_0));
+            StopPlaying();
+			enum1_0 = AudioStatus.ShouldStartAudio;
+            class159_0 = new AudioPlayer(-1, class16_0.waveFormat_0, 200, Volume, bool_0, method_0);
         }
 
 		public void StartPlaying()
 		{
-			if (this.class159_0 != null)
+			if (class159_0 != null)
 			{
-				if (this.enum1_0 == AudioStatus.ShouldStartAudio)
+				if (enum1_0 == AudioStatus.ShouldStartAudio)
 				{
-					this.enum1_0 = AudioStatus.IsCurrentlyPlayingAudio;
-                    this.class159_0.method_4();
-					return;
+					enum1_0 = AudioStatus.IsCurrentlyPlayingAudio;
+                    class159_0.method_4();
 				}
 			}
 		}
 
 		public void StopPlaying()
 		{
-			if (this.class159_0 != null && this.enum1_0 != AudioStatus.ShouldStopAudio)
+			if (class159_0 != null && enum1_0 != AudioStatus.ShouldStopAudio)
 			{
-				this.enum1_0 = AudioStatus.ShouldStopAudio;
+				enum1_0 = AudioStatus.ShouldStopAudio;
 				try
 				{
-					this.class159_0.Dispose();
+					class159_0.Dispose();
 				}
 				finally
 				{
-					this.class159_0 = null;
+					class159_0 = null;
 				}
-				return;
 			}
 		}
 
 		private void method_0(AudioPlayer class159_1, IntPtr intptr_0, int int_1, ref bool bool_1)
 		{
 			WaitCallback waitCallback = null;
-			if (this.byte_0 == null || this.byte_0.Length < int_1)
+			if (byte_0 == null || byte_0.Length < int_1)
 			{
-				this.byte_0 = new byte[int_1];
+				byte_0 = new byte[int_1];
 			}
-			if (this.stream1_0 != null && class159_1 == this.class159_0)
+			if (stream1_0 != null && class159_1 == class159_0)
 			{
-                lock (this.stream1_0)
+                lock (stream1_0)
 				{
-					int num = this.stream1_0.vmethod_3(intptr_0, int_1);
+					int num = stream1_0.vmethod_3(intptr_0, int_1);
 					if (num < int_1)
 					{
                         bool_1 = true;
 						if (waitCallback == null)
 						{
-							waitCallback = new WaitCallback(this.method_3);
+							waitCallback = method_3;
 						}
 						ThreadPool.QueueUserWorkItem(waitCallback);
 					}
 					return;
 				}
 			}
-			Marshal.Copy(this.byte_0, 0, intptr_0, int_1);
+			Marshal.Copy(byte_0, 0, intptr_0, int_1);
 		}
 
 		public void method_1(bool bool_1)
 		{
-			this.StopPlaying();
-			if (bool_1 && this.stream1_0 != null)
+			StopPlaying();
+			if (bool_1 && stream1_0 != null)
 			{
 				try
 				{
-					this.stream1_0.Dispose();
+					stream1_0.Dispose();
 				}
 				finally
 				{
-					this.stream1_0 = null;
+					stream1_0 = null;
 				}
 			}
 		}
 
 		public void Dispose()
 		{
-			this.method_1(true);
+			method_1(true);
 			GC.SuppressFinalize(this);
 		}
 
 		~MP3Output()
 		{
-			this.method_1(false);
+			method_1(false);
 		}
 
 		[CompilerGenerated]
 		private void method_2(object object_0)
 		{
-			float num = this.vmethod_1();
-            while (num < this.Volume)
+			float num = vmethod_1();
+            while (num < Volume)
 			{
-                if (this.enum1_0 != AudioStatus.ShouldStartAudio)
+                if (enum1_0 != AudioStatus.ShouldStartAudio)
 				{
 					break;
 				}
-				this.class159_0.SetVolume(num);
+				class159_0.SetVolume(num);
 				num += 0.1f;
 				Thread.Sleep(50);
 			}
-            if (this.enum1_0 != AudioStatus.ShouldStartAudio)
+            if (enum1_0 != AudioStatus.ShouldStartAudio)
 			{
 				return;
 			}
-			this.class159_0.SetVolume(this.Volume);
+			class159_0.SetVolume(Volume);
 		}
 
 		[CompilerGenerated]
 		private void method_3(object object_0)
 		{
-			if (this.class159_0 != null)
+			if (class159_0 != null)
 			{
-				while (!this.class159_0.method_5())
+				while (!class159_0.method_5())
 				{
 				}
 			}
-			this.StopPlaying();
-			this.SetStartingTimeBasedOnSomeValue(0);
+			StopPlaying();
+			SetStartingTimeBasedOnSomeValue(0);
 		}
 	}
 }

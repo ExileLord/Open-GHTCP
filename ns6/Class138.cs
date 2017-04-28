@@ -1,5 +1,5 @@
-using ns7;
 using System;
+using ns7;
 
 namespace ns6
 {
@@ -14,12 +14,12 @@ namespace ns6
 			int num = 0;
 			int num2 = 1 << int_2;
 			int num3 = (int_2 > 0) ? (class140_0.int_0 >> int_2) : (class140_0.int_0 - int_1);
-			this.class143_0.vmethod_0(Math.Max(6, int_2));
-			this.class143_0.int_0 = new int[num2];
+			class143_0.vmethod_0(Math.Max(6, int_2));
+			class143_0.int_0 = new int[num2];
 			for (int i = 0; i < num2; i++)
 			{
 				int num4 = class144_0.vmethod_10(4);
-				this.class143_0.int_0[i] = num4;
+				class143_0.int_0[i] = num4;
 				if (num4 < 15)
 				{
 					int num5 = (int_2 == 0 || i > 0) ? num3 : (num3 - int_1);
@@ -29,7 +29,7 @@ namespace ns6
 				else
 				{
 					num4 = class144_0.vmethod_10(5);
-					this.class143_0.int_1[i] = num4;
+					class143_0.int_1[i] = num4;
 					int j = (int_2 == 0 || i > 0) ? 0 : int_1;
 					while (j < num3)
 					{

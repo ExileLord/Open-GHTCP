@@ -1,5 +1,4 @@
 using ns22;
-using System;
 
 namespace ns9
 {
@@ -9,7 +8,7 @@ namespace ns9
 
 		public int method_0()
 		{
-			return this.int_2;
+			return int_2;
 		}
 	}
 }

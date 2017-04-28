@@ -1,7 +1,6 @@
 using ns16;
 using ns20;
 using ns21;
-using System;
 
 namespace ns18
 {
@@ -18,13 +17,13 @@ namespace ns18
 			}
 			if (num > 1)
 			{
-				stream26_0.Position = (long)stream26_0.ReadInt();
+				stream26_0.Position = stream26_0.ReadInt();
 			}
 			if (this is FloatArrayNode)
 			{
 				for (int i = 0; i < num; i++)
 				{
-					base.Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
+					Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
 				}
 				return;
 			}
@@ -32,7 +31,7 @@ namespace ns18
 			{
 				for (int j = 0; j < num; j++)
 				{
-					base.Nodes.Add(new IntegerValueNode(stream26_0.ReadInt()));
+					Nodes.Add(new IntegerValueNode(stream26_0.ReadInt()));
 				}
 				return;
 			}
@@ -40,7 +39,7 @@ namespace ns18
 			{
 				for (int k = 0; k < num; k++)
 				{
-					base.Nodes.Add(new TagValueNode(stream26_0.ReadInt()));
+					Nodes.Add(new TagValueNode(stream26_0.ReadInt()));
 				}
 			}
 		}
@@ -49,18 +48,18 @@ namespace ns18
 		{
 			byte[] array = new byte[4];
 			array[1] = 1;
-			array[2] = this.vmethod_15();
+			array[2] = vmethod_15();
 			stream26_0.WriteByteArray(array, false);
-			stream26_0.WriteInt(base.Nodes.Count);
-			if (base.Nodes.Count == 0)
+			stream26_0.WriteInt(Nodes.Count);
+			if (Nodes.Count == 0)
 			{
 				return;
 			}
-			if (base.Nodes.Count > 1)
+			if (Nodes.Count > 1)
 			{
 				stream26_0.WriteInt((int)stream26_0.Position + 4);
 			}
-			foreach (AbstractTreeNode2 @class in base.Nodes)
+			foreach (AbstractTreeNode2 @class in Nodes)
 			{
 				stream26_0.WriteByteArray(@class.vmethod_8());
 			}
@@ -69,11 +68,11 @@ namespace ns18
 		public override void vmethod_2(ref int int_0)
 		{
 			int_0 += 8;
-			if (base.Nodes.Count > 1)
+			if (Nodes.Count > 1)
 			{
 				int_0 += 4;
 			}
-			int_0 += 4 * base.Nodes.Count;
+			int_0 += 4 * Nodes.Count;
 		}
 	}
 }

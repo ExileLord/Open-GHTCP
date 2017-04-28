@@ -1,4 +1,3 @@
-using System;
 using System.Drawing;
 
 namespace ns18
@@ -25,7 +24,7 @@ namespace ns18
 
 		public override Color GetColor()
 		{
-			if (AbstractTreeNode2.colorFlipFlopper = !AbstractTreeNode2.colorFlipFlopper) //why would you do this max
+			if (colorFlipFlopper = !colorFlipFlopper) //why would you do this max
 			{
 				return Color.Ivory;
 			}
@@ -35,13 +34,13 @@ namespace ns18
 		public override object Clone()
 		{
 			AbstractTreeNode2 @class = (AbstractTreeNode2)base.Clone();
-			@class.vmethod_9(this.vmethod_8());
+			@class.vmethod_9(vmethod_8());
 			return @class;
 		}
 
 		public override bool Equals(object obj)
 		{
-			return obj is AbstractTreeNode2 && ((AbstractTreeNode2)obj).vmethod_7().Equals(this.vmethod_7());
+			return obj is AbstractTreeNode2 && ((AbstractTreeNode2)obj).vmethod_7().Equals(vmethod_7());
 		}
 
 		public override int GetHashCode()

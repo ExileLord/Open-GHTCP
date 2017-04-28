@@ -18,8 +18,7 @@ namespace ns16
 		public static bool _flag1 = false;
 
         //Who the hell is Ivan Medvedev
-		private static readonly byte[] pwByteArray = new byte[] //seed?
-		{
+		private static readonly byte[] pwByteArray = {
 			73,   //I
 			118,  //v
 			97,   //a
@@ -35,12 +34,11 @@ namespace ns16
 			118   //v
 		};
 
-		private static uint _key = 0u;
+		private static uint _key;
 
 		private static readonly uint _xorMask = 4294967295u;
 
-		public static readonly uint[] crc32 = new uint[]
-		{
+		public static readonly uint[] crc32 = {
 			0u,
 			1996959894u, // Magic
 			3993919788u, // Do not touch
@@ -322,14 +320,14 @@ namespace ns16
 
 		public static void smethod_1(Stream stream_0, Stream stream_1, string string_0)
 		{
-			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, KeyGenerator.pwByteArray);
-			KeyGenerator.smethod_0(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
+			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, pwByteArray);
+			smethod_0(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
 		public static byte[] smethod_2(Stream stream_0, string string_0)
 		{
 			MemoryStream memoryStream = new MemoryStream();
-			KeyGenerator.smethod_1(stream_0, memoryStream, string_0);
+			smethod_1(stream_0, memoryStream, string_0);
 			return memoryStream.ToArray();
 		}
 
@@ -354,14 +352,14 @@ namespace ns16
 
 		private static void cryptoMethod(Stream stream_0, Stream stream_1, string string_0)
 		{
-			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, KeyGenerator.pwByteArray);
-			KeyGenerator.cryptoMethod(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
+			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, pwByteArray);
+			cryptoMethod(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
 		public static byte[] cryptoMethod(Stream stream_0, string string_0)
 		{
 			MemoryStream memoryStream = new MemoryStream();
-			KeyGenerator.cryptoMethod(stream_0, memoryStream, string_0);
+			cryptoMethod(stream_0, memoryStream, string_0);
 			return memoryStream.ToArray();
 		}
 
@@ -381,14 +379,14 @@ namespace ns16
 
 		public static void smethod_7(byte[] byte_1, Stream stream_0, string string_0)
 		{
-			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, KeyGenerator.pwByteArray);
-			KeyGenerator.smethod_6(byte_1, stream_0, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
+			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, pwByteArray);
+			smethod_6(byte_1, stream_0, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
 		public static byte[] smethod_8(byte[] byte_1, string string_0)
 		{
 			MemoryStream memoryStream = new MemoryStream();
-			KeyGenerator.smethod_7(byte_1, memoryStream, string_0);
+			smethod_7(byte_1, memoryStream, string_0);
 			return memoryStream.ToArray();
 		}
 
@@ -403,13 +401,13 @@ namespace ns16
 
 		public static string smethod_10(string string_0)
 		{
-			int length = string_0.LastIndexOfAny(new char[] { '\\', '/' }) + 1;
+			int length = string_0.LastIndexOfAny(new[] { '\\', '/' }) + 1;
 			return string_0.Substring(0, length);
 		}
 
 		public static string GetFileName(string path, int dotsInExtension)
 		{
-			int i = path.LastIndexOfAny(new char[] { '\\', '/' }) + 1;
+			int i = path.LastIndexOfAny(new[] { '\\', '/' }) + 1;
 			string text = path.Substring(i);
 			try
 			{
@@ -433,12 +431,12 @@ namespace ns16
 
 		public static string GetFileNameNoExt(string path)
 		{
-			return KeyGenerator.GetFileName(path, -1);
+			return GetFileName(path, -1);
 		}
 
 		public static string GetFileName(string string_0)
 		{
-			return KeyGenerator.GetFileName(string_0, 0);
+			return GetFileName(string_0, 0);
 		}
 
 		public static string GetExtension(string string_0, int int_0)
@@ -449,7 +447,7 @@ namespace ns16
 				string text = string_0.Substring(string_0.IndexOf('.') + 1);
 				if (int_0 != 0)
 				{
-					string[] array = text.Split(new char[]
+					string[] array = text.Split(new[]
 					{
 						'.'
 					}, StringSplitOptions.RemoveEmptyEntries);
@@ -491,12 +489,12 @@ namespace ns16
 
 		public static string OpenFile(string string_0, string string_1)
 		{
-			return KeyGenerator.OpenOrSaveFile(string_0, string_1, true);
+			return OpenOrSaveFile(string_0, string_1, true);
 		}
 
 		public static List<string> checkFile(string string_0, string string_1, bool bool_2)
 		{
-			string[] array = string_1.Split(new char[]
+			string[] array = string_1.Split(new[]
 			{
 				';'
 			}, StringSplitOptions.RemoveEmptyEntries);
@@ -537,7 +535,7 @@ namespace ns16
 
 		public static int[] smethod_21(ICollection<byte> icollection_0)
 		{
-			return KeyGenerator.smethod_22(new List<byte>(icollection_0));
+			return smethod_22(new List<byte>(icollection_0));
 		}
 
 		public static int[] smethod_22(List<byte> list_0)
@@ -545,7 +543,7 @@ namespace ns16
 			int[] array = new int[list_0.Count / 4];
 			for (int i = 0; i < array.Length; i++)
 			{
-				array[i] = KeyGenerator.smethod_25(list_0.GetRange(i * 4, 4).ToArray());
+				array[i] = smethod_25(list_0.GetRange(i * 4, 4).ToArray());
 			}
 			return array;
 		}
@@ -559,13 +557,13 @@ namespace ns16
 		{
 			if (!(bool_2 ^ BitConverter.IsLittleEndian))
 			{
-				return KeyGenerator.BytesToInt(byte_1);
+				return BytesToInt(byte_1);
 			}
 			int num = byte_1.Length;
 			switch (num)
 			{
 			case 2:
-				return (int)BitConverter.ToInt16(byte_1, 0);
+				return BitConverter.ToInt16(byte_1, 0);
 			case 3:
 				break;
 			case 4:
@@ -582,7 +580,7 @@ namespace ns16
 
 		public static int smethod_25(byte[] byte_1)
 		{
-			return KeyGenerator.smethod_24(byte_1, KeyGenerator._flag0);
+			return smethod_24(byte_1, _flag0);
 		}
 
 		public static int ReverseEndianness(int int_0)
@@ -607,14 +605,14 @@ namespace ns16
 			int num2 = Math.Min(4, byte_1.Length);
 			for (int i = 0; i < num2; i++)
 			{
-				num |= (int)byte_1[i] << 24 - 8 * i;
+				num |= byte_1[i] << 24 - 8 * i;
 			}
 			return num;
 		}
 
 		public static byte[] IntToBytes(int int_0)
 		{
-			return new byte[]
+			return new[]
 			{
 				(byte)(int_0 >> 24 & 255),
 				(byte)(int_0 >> 16 & 255),
@@ -640,7 +638,7 @@ namespace ns16
 		{
 			if (!(bool_2 ^ BitConverter.IsLittleEndian))
 			{
-				return KeyGenerator.IntToBytes(int_0);
+				return IntToBytes(int_0);
 			}
 			return BitConverter.GetBytes(int_0);
 		}
@@ -652,7 +650,7 @@ namespace ns16
 
 		public static string ValToHex32bit(int int_0)
 		{
-			return KeyGenerator.ValToPaddedHex(int_0, 4);
+			return ValToPaddedHex(int_0, 4);
 		}
 
 		public static string ValToPaddedHex(int val, int halfPadding)
@@ -668,12 +666,12 @@ namespace ns16
 		public static int GetQbKey(string text, bool negativeCrc = true)
 		{
             //bool_0 is always false;
-			return KeyGenerator.GetQbKey(new MemoryStream(KeyGenerator.stringToBytes(text)), negativeCrc, KeyGenerator._flag0);
+			return GetQbKey(new MemoryStream(stringToBytes(text)), negativeCrc, _flag0);
 		}
 
 		public static int GetQbKey(byte[] byte_1, bool bool_2)
 		{
-			return KeyGenerator.GetQbKey(new MemoryStream(byte_1), bool_2, KeyGenerator._flag0);
+			return GetQbKey(new MemoryStream(byte_1), bool_2, _flag0);
 		}
 
 		public static int GetQbKey(Stream stream, bool NegateCrc, bool ReverseEndianness)
@@ -687,37 +685,37 @@ namespace ns16
 				throw new ArgumentException("stream is not readable.");
 			}
 			stream.Position = 0L;
-			KeyGenerator.ResetKey();
+			ResetKey();
 			byte[] array = new byte[4096];
 			int int_;
 			while ((int_ = stream.Read(array, 0, array.Length)) != 0)
 			{
-				KeyGenerator.CrcVerifyMethod1(array, 0, int_);
+				CrcVerifyMethod1(array, 0, int_);
 			}
 			stream.Position = 0L;
 			if (NegateCrc && ReverseEndianness)
 			{
-                return KeyGenerator.ReverseEndianness((int)(KeyGenerator._key ^ 4294967295u));
+                return KeyGenerator.ReverseEndianness((int)(_key ^ 4294967295u));
 			}
 			if (NegateCrc)
 			{
-                return (int)(KeyGenerator._key ^ 4294967295u);
+                return (int)(_key ^ 4294967295u);
 			}
 			if (ReverseEndianness)
 			{
-				return KeyGenerator.ReverseEndianness((int)KeyGenerator._key);
+				return KeyGenerator.ReverseEndianness((int)_key);
 			}
-			return (int)KeyGenerator._key;
+			return (int)_key;
 		}
 
 		public static int GetQbKey(Stream stream_0, bool bool_2)
 		{
-			return KeyGenerator.GetQbKey(stream_0, bool_2, KeyGenerator._flag0);
+			return GetQbKey(stream_0, bool_2, _flag0);
 		}
 
 		private static void ResetKey()
 		{
-			KeyGenerator._key = 0u;
+			_key = 0u;
 		}
 
 		private static void CrcVerifyMethod1(byte[] byte_1, int int_0, int int_1)
@@ -728,12 +726,12 @@ namespace ns16
 			}
 			if (int_0 >= 0 && int_1 >= 0 && int_0 + int_1 <= byte_1.Length)
 			{
-				KeyGenerator._key ^= KeyGenerator._xorMask;
+				_key ^= _xorMask;
 				while (--int_1 >= 0)
 				{
-					KeyGenerator._key = (KeyGenerator.crc32[(int)((UIntPtr)((KeyGenerator._key ^ (uint)byte_1[int_0++]) & 255u))] ^ KeyGenerator._key >> 8);
+					_key = (crc32[(int)((UIntPtr)((_key ^ byte_1[int_0++]) & 255u))] ^ _key >> 8);
 				}
-				KeyGenerator._key ^= KeyGenerator._xorMask;
+				_key ^= _xorMask;
 				return;
 			}
 			throw new ArgumentOutOfRangeException("Crc buffer");
@@ -741,12 +739,12 @@ namespace ns16
 
 		public static byte[] HashStream(string string_0)
 		{
-			return KeyGenerator.HashStream(File.OpenRead(string_0));
+			return HashStream(File.OpenRead(string_0));
 		}
 
 		public static byte[] HashStream(Stream stream_0)
 		{
-			return KeyGenerator.HashStream(SHA512.Create(), stream_0);
+			return HashStream(SHA512.Create(), stream_0);
 		}
 
 		public static byte[] HashStream(HashAlgorithm hashAlgorithm_0, Stream stream_0)
@@ -768,7 +766,7 @@ namespace ns16
 
 		public static void smethod_46(Stream stream_0, string string_0)
 		{
-			KeyGenerator.smethod_47(stream_0, KeyGenerator.smethod_45(string_0));
+			smethod_47(stream_0, smethod_45(string_0));
 		}
 
 		public static void smethod_47(Stream stream_0, Stream stream_1)
@@ -789,18 +787,18 @@ namespace ns16
 
 		public static Bitmap ScaleImageFixedRatio(Image image, Size size)
 		{
-			return KeyGenerator.ScaleImageFixedRatio(image, size.Width, size.Height);
+			return ScaleImageFixedRatio(image, size.Width, size.Height);
 		}
 
 		public static Bitmap ScaleImageFixedRatio(Image image, int width, int height)
 		{
-			Size size = KeyGenerator.ScaleDimensions(image.Width, image.Height, width, height);
-			return KeyGenerator.ScaleImage(image, size.Width, size.Height);
+			Size size = ScaleDimensions(image.Width, image.Height, width, height);
+			return ScaleImage(image, size.Width, size.Height);
 		}
 
 		public static Bitmap ScaleImage(Image image, Size size)
 		{
-			return KeyGenerator.ScaleImage(image, size.Width, size.Height);
+			return ScaleImage(image, size.Width, size.Height);
 		}
 
 		public static Bitmap ScaleImage(Image image, int width, int height)
@@ -831,12 +829,12 @@ namespace ns16
 
 		public static bool smethod_53<T>(ICollection<T> icollection_0, ICollection<T> icollection_1) where T : IComparable
 		{
-			return KeyGenerator.smethod_54<T>(icollection_0, icollection_1, Math.Max(icollection_0.Count, icollection_1.Count));
+			return smethod_54(icollection_0, icollection_1, Math.Max(icollection_0.Count, icollection_1.Count));
 		}
 
 		public static bool smethod_54<T>(ICollection<T> icollection_0, ICollection<T> icollection_1, int int_0) where T : IComparable
 		{
-			return KeyGenerator.smethod_55<T>(icollection_0, icollection_1, int_0, false);
+			return smethod_55(icollection_0, icollection_1, int_0, false);
 		}
 
 		public static bool smethod_55<T>(ICollection<T> icollection_0, ICollection<T> icollection_1, int int_0, bool bool_2) where T : IComparable
@@ -868,7 +866,7 @@ namespace ns16
 			int num = 0;
 			while (arrayList.Count != 0)
 			{
-				object obj = arrayList[KeyGenerator.random_0.Next(0, arrayList.Count)];
+				object obj = arrayList[random_0.Next(0, arrayList.Count)];
 				ilist_0[num++] = obj;
 				arrayList.Remove(obj);
 			}

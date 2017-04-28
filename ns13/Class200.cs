@@ -8,17 +8,17 @@ namespace ns13
 
 		public long vmethod_0()
 		{
-			return (long)((ulong)this.uint_0);
+			return uint_0;
 		}
 
 		public Class200()
 		{
-			this.vmethod_1();
+			vmethod_1();
 		}
 
 		public void vmethod_1()
 		{
-			this.uint_0 = 1u;
+			uint_0 = 1u;
 		}
 
 		public void vmethod_2(byte[] byte_0, int int_0, int int_1)
@@ -43,8 +43,8 @@ namespace ns13
 			{
 				throw new ArgumentOutOfRangeException("count", "exceeds buffer size");
 			}
-			uint num = this.uint_0 & 65535u;
-			uint num2 = this.uint_0 >> 16;
+			uint num = uint_0 & 65535u;
+			uint num2 = uint_0 >> 16;
 			while (int_1 > 0)
 			{
 				int num3 = 3800;
@@ -61,7 +61,7 @@ namespace ns13
 				num %= 65521u;
 				num2 %= 65521u;
 			}
-			this.uint_0 = (num2 << 16 | num);
+			uint_0 = (num2 << 16 | num);
 		}
 	}
 }

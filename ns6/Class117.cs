@@ -1,12 +1,12 @@
-using ns0;
-using ns1;
-using SharpAudio.ASC;
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
+using ns0;
+using ns1;
+using SharpAudio.ASC;
 
 namespace ns6
 {
@@ -48,46 +48,46 @@ namespace ns6
 
 		public Class117(GenericAudioStream stream1_1)
 		{
-			this.stream1_0 = stream1_1;
-			this.class120_0 = (Class120.smethod_2() ?? new Class120());
-			this.enum12_0 = Class119.smethod_10(stream1_1.vmethod_0());
-			this.int_0 = stream1_1.vmethod_0().int_0;
-			this.double_0 = (double)stream1_1.vmethod_0().int_0 * (double)stream1_1.vmethod_0().short_1 / 1000.0;
-			this.int_1 = stream1_1.vmethod_0().method_0(80);
-			this.int_2 = 5;
-			this.intptr_0 = Marshal.AllocHGlobal(this.int_1);
-			this.intptr_1 = Class119.smethod_2();
-			this.intptr_2 = Class119.smethod_8(this.int_2);
-			this.enum1_0 = AudioStatus.ShouldStopAudio;
+			stream1_0 = stream1_1;
+			class120_0 = (Class120.smethod_2() ?? new Class120());
+			enum12_0 = Class119.smethod_10(stream1_1.vmethod_0());
+			int_0 = stream1_1.vmethod_0().int_0;
+			double_0 = stream1_1.vmethod_0().int_0 * (double)stream1_1.vmethod_0().short_1 / 1000.0;
+			int_1 = stream1_1.vmethod_0().method_0(80);
+			int_2 = 5;
+			intptr_0 = Marshal.AllocHGlobal(int_1);
+			intptr_1 = Class119.smethod_2();
+			intptr_2 = Class119.smethod_8(int_2);
+			enum1_0 = AudioStatus.ShouldStopAudio;
 		}
 
 		public void method_0()
 		{
-			if (this.thread_0 != null)
+			if (thread_0 != null)
 			{
-				this.thread_0.Abort();
+				thread_0.Abort();
 			}
-			this.thread_0 = new Thread(new ThreadStart(this.method_1));
-			this.thread_0.Start();
+			thread_0 = new Thread(method_1);
+			thread_0.Start();
 		}
 
 		private void method_1()
 		{
 			bool flag = false;
-			while (this.enum1_0 != AudioStatus.ShouldStopAudio && !flag)
+			while (enum1_0 != AudioStatus.ShouldStopAudio && !flag)
 			{
-				if (this.bool_0)
+				if (bool_0)
 				{
-					this.bool_0 = false;
-					Class119.alSourcef(this.intptr_1, Enum10.const_4, this.float_0);
+					bool_0 = false;
+					Class119.alSourcef(intptr_1, Enum10.const_4, float_0);
 				}
-				if (this.enum1_0 != AudioStatus.IsCurrentlyPlayingAudio)
+				if (enum1_0 != AudioStatus.IsCurrentlyPlayingAudio)
 				{
 					int num = 0;
 					int num2;
 					do
 					{
-						Class119.alGetSourcei(this.intptr_1, Enum11.const_6, out num2);
+						Class119.alGetSourcei(intptr_1, Enum11.const_6, out num2);
 						if (num > 50)
 						{
 							Thread.Sleep(1);
@@ -100,31 +100,31 @@ namespace ns6
 					while (num2 == 0);
 					while (num2-- != 0)
 					{
-						IntPtr intPtr = Class119.smethod_6(this.intptr_1);
+						IntPtr intPtr = Class119.smethod_6(intptr_1);
 						int num3;
-						lock (this.stream1_0)
+						lock (stream1_0)
 						{
-							num3 = this.stream1_0.vmethod_3(this.intptr_0, this.int_1);
+							num3 = stream1_0.vmethod_3(intptr_0, int_1);
 						}
-						if (num3 < this.int_1)
+						if (num3 < int_1)
 						{
 							flag = true;
 						}
-						Class119.alBufferData(intPtr, this.enum12_0, this.intptr_0, num3, this.int_0);
-						Class119.smethod_5(this.intptr_1, ref intPtr);
-						this.int_3 += this.int_1;
-						this.stopwatch_0.Reset();
-						this.stopwatch_0.Start();
+						Class119.alBufferData(intPtr, enum12_0, intptr_0, num3, int_0);
+						Class119.smethod_5(intptr_1, ref intPtr);
+						int_3 += int_1;
+						stopwatch_0.Reset();
+						stopwatch_0.Start();
 					}
 					int num4;
-					Class119.alGetSourcei(this.intptr_1, Enum11.const_5, out num4);
+					Class119.alGetSourcei(intptr_1, Enum11.const_5, out num4);
 					if (num4 <= 0)
 					{
 						break;
 					}
-					if (Class119.smethod_4(this.intptr_1, Enum11.const_4) != 4114)
+					if (Class119.smethod_4(intptr_1, Enum11.const_4) != 4114)
 					{
-						Class119.alSourcePlay(this.intptr_1);
+						Class119.alSourcePlay(intptr_1);
 					}
 				}
 			}
@@ -132,100 +132,100 @@ namespace ns6
 			{
 				return;
 			}
-			while (Class119.smethod_4(this.intptr_1, Enum11.const_6) != this.int_2)
+			while (Class119.smethod_4(intptr_1, Enum11.const_6) != int_2)
 			{
 			}
-			Stream arg_188_0 = this.stream1_0;
-			this.int_3 = 0;
+			Stream arg_188_0 = stream1_0;
+			int_3 = 0;
 			arg_188_0.Position = 0L;
-			this.enum1_0 = AudioStatus.ShouldStopAudio;
-			Class119.alSourceStop(this.intptr_1);
-			this.stopwatch_0.Reset();
-			Class119.smethod_7(this.intptr_1, this.intptr_2.Length);
+			enum1_0 = AudioStatus.ShouldStopAudio;
+			Class119.alSourceStop(intptr_1);
+			stopwatch_0.Reset();
+			Class119.smethod_7(intptr_1, intptr_2.Length);
 		}
 
 		public TimeSpan AudioLength()
 		{
-			return TimeSpan.FromMilliseconds((double)this.int_3 / this.double_0 + (double)this.stopwatch_0.ElapsedMilliseconds);
+			return TimeSpan.FromMilliseconds(int_3 / double_0 + stopwatch_0.ElapsedMilliseconds);
 		}
 
 		public void SetStartingTime(TimeSpan timeSpan_0)
 		{
-			this.SetStartingTimeBasedOnSomeValue(Convert.ToInt32(this.double_0 * timeSpan_0.TotalMilliseconds));
+			SetStartingTimeBasedOnSomeValue(Convert.ToInt32(double_0 * timeSpan_0.TotalMilliseconds));
 		}
 
 		public void SetStartingTimeBasedOnSomeValue(int int_4)
 		{
-			AudioStatus @enum = this.enum1_0;
+			AudioStatus @enum = enum1_0;
 			if (@enum != AudioStatus.ShouldStopAudio)
 			{
-				this.StopPlaying();
+				StopPlaying();
 			}
-			Stream arg_21_0 = this.stream1_0;
-			this.int_3 = int_4;
-			arg_21_0.Position = (long)int_4;
-			this.stopwatch_0.Reset();
+			Stream arg_21_0 = stream1_0;
+			int_3 = int_4;
+			arg_21_0.Position = int_4;
+			stopwatch_0.Reset();
 			if (@enum == AudioStatus.ShouldStartAudio)
 			{
-				this.DifferentStartPlaying();
+				DifferentStartPlaying();
 			}
 			GC.Collect();
 		}
 
 		public WaveFormat GetWaveFormat()
 		{
-			return this.stream1_0.vmethod_0();
+			return stream1_0.vmethod_0();
 		}
 
 		public void SetVolume(float float_1)
 		{
-			this.bool_0 = true;
-			this.float_0 = float_1;
+			bool_0 = true;
+			float_0 = float_1;
 		}
 
 		public AudioStatus GetStatus()
 		{
-			return this.enum1_0;
+			return enum1_0;
 		}
 
 		public void DifferentStartPlaying()
 		{
-			switch (this.enum1_0)
+			switch (enum1_0)
 			{
 			case AudioStatus.ShouldStartAudio:
 				return;
 			case AudioStatus.IsCurrentlyPlayingAudio:
-				Class119.alSourcePlay(this.intptr_1);
-				this.stopwatch_0.Start();
-				this.enum1_0 = AudioStatus.ShouldStartAudio;
+				Class119.alSourcePlay(intptr_1);
+				stopwatch_0.Start();
+				enum1_0 = AudioStatus.ShouldStartAudio;
 				return;
 			default:
 			{
-				while (Class119.smethod_4(this.intptr_1, Enum11.const_5) > 0)
+				while (Class119.smethod_4(intptr_1, Enum11.const_5) > 0)
 				{
-					Class119.smethod_6(this.intptr_1);
+					Class119.smethod_6(intptr_1);
 				}
-				IntPtr[] array = this.intptr_2;
+				IntPtr[] array = intptr_2;
 				for (int i = 0; i < array.Length; i++)
 				{
 					IntPtr intPtr = array[i];
 					int num;
-					lock (this.stream1_0)
+					lock (stream1_0)
 					{
-						num = this.stream1_0.vmethod_3(this.intptr_0, this.int_1);
+						num = stream1_0.vmethod_3(intptr_0, int_1);
 					}
-					Class119.alBufferData(intPtr, this.enum12_0, this.intptr_0, num, this.int_0);
+					Class119.alBufferData(intPtr, enum12_0, intptr_0, num, int_0);
 				}
-				Class119.alSourceQueueBuffers(this.intptr_1, this.intptr_2.Length, this.intptr_2);
-				if (!this.bool_1)
+				Class119.alSourceQueueBuffers(intptr_1, intptr_2.Length, intptr_2);
+				if (!bool_1)
 				{
-					ThreadPool.QueueUserWorkItem(new WaitCallback(this.method_3));
+					ThreadPool.QueueUserWorkItem(method_3);
 				}
-				Class119.alSourcef(this.intptr_1, Enum10.const_4, 0f);
-				Class119.alSourcePlay(this.intptr_1);
-				this.stopwatch_0.Start();
-				this.enum1_0 = AudioStatus.ShouldStartAudio;
-				this.method_0();
+				Class119.alSourcef(intptr_1, Enum10.const_4, 0f);
+				Class119.alSourcePlay(intptr_1);
+				stopwatch_0.Start();
+				enum1_0 = AudioStatus.ShouldStartAudio;
+				method_0();
 				return;
 			}
 			}
@@ -233,23 +233,23 @@ namespace ns6
 
 		public void StartPlaying()
 		{
-			Class119.alSourcePause(this.intptr_1);
-			this.stopwatch_0.Stop();
-			this.enum1_0 = AudioStatus.IsCurrentlyPlayingAudio;
+			Class119.alSourcePause(intptr_1);
+			stopwatch_0.Stop();
+			enum1_0 = AudioStatus.IsCurrentlyPlayingAudio;
 		}
 
 		public void StopPlaying()
 		{
-			this.thread_0.Abort();
-			this.enum1_0 = AudioStatus.ShouldStopAudio;
-			Class119.alSourceStop(this.intptr_1);
-			this.stopwatch_0.Reset();
-			Class119.smethod_7(this.intptr_1, this.intptr_2.Length);
+			thread_0.Abort();
+			enum1_0 = AudioStatus.ShouldStopAudio;
+			Class119.alSourceStop(intptr_1);
+			stopwatch_0.Reset();
+			Class119.smethod_7(intptr_1, intptr_2.Length);
 		}
 
 		public void Dispose()
 		{
-			this.method_2(true);
+			method_2(true);
 			GC.SuppressFinalize(this);
 		}
 
@@ -257,44 +257,44 @@ namespace ns6
 		{
 			if (bool_2)
 			{
-				this.stream1_0.Dispose();
+				stream1_0.Dispose();
 			}
-			if (this.thread_0 != null)
+			if (thread_0 != null)
 			{
-				this.thread_0.Abort();
+				thread_0.Abort();
 			}
 			try
 			{
-				Marshal.FreeHGlobal(this.intptr_0);
+				Marshal.FreeHGlobal(intptr_0);
 			}
 			catch
 			{
 			}
-			Class119.alSourceStop(this.intptr_1);
-			Class119.smethod_3(this.intptr_1);
-			Class119.smethod_9(this.intptr_2);
-			this.class120_0.Dispose();
+			Class119.alSourceStop(intptr_1);
+			Class119.smethod_3(intptr_1);
+			Class119.smethod_9(intptr_2);
+			class120_0.Dispose();
 		}
 
 		~Class117()
 		{
-			this.method_2(false);
+			method_2(false);
 		}
 
 		[CompilerGenerated]
 		private void method_3(object object_0)
 		{
-			this.bool_1 = true;
+			bool_1 = true;
 			float num = 0f;
-			float num2 = this.float_0;
+			float num2 = float_0;
 			while (num < num2)
 			{
-				this.SetVolume(num);
+				SetVolume(num);
 				num += 0.1f;
 				Thread.Sleep(50);
 			}
-			this.SetVolume(num2);
-			this.bool_1 = false;
+			SetVolume(num2);
+			bool_1 = false;
 		}
 	}
 }

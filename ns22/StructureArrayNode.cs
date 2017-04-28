@@ -1,6 +1,5 @@
 using ns19;
 using ns21;
-using System;
 
 namespace ns22
 {
@@ -10,17 +9,17 @@ namespace ns22
 		{
 			get
 			{
-				return (StructureHeaderNode)base.Nodes[int_0];
+				return (StructureHeaderNode)Nodes[int_0];
 			}
 			set
 			{
-				base.Nodes[int_0] = value;
+				Nodes[int_0] = value;
 			}
 		}
 
 		public StructureArrayNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public override int vmethod_1()

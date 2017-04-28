@@ -17,7 +17,7 @@ namespace ns16
 		{
 			get
 			{
-				return this._stream.CanRead;
+				return _stream.CanRead;
 			}
 		}
 
@@ -25,7 +25,7 @@ namespace ns16
 		{
 			get
 			{
-				return this._stream.CanSeek;
+				return _stream.CanSeek;
 			}
 		}
 
@@ -33,7 +33,7 @@ namespace ns16
 		{
 			get
 			{
-				return this._stream.CanWrite;
+				return _stream.CanWrite;
 			}
 		}
 
@@ -41,7 +41,7 @@ namespace ns16
 		{
 			get
 			{
-				return this._stream.Length;
+				return _stream.Length;
 			}
 		}
 
@@ -49,11 +49,11 @@ namespace ns16
 		{
 			get
 			{
-				return this._stream.Position;
+				return _stream.Position;
 			}
 			set
 			{
-				this._stream.Position = value;
+				_stream.Position = value;
 			}
 		}
 
@@ -62,14 +62,14 @@ namespace ns16
 			switch (enum33_0)
 			{
 			case EndiannessEnum.const_1:
-				this._reverseEndianness = false;
+				_reverseEndianness = false;
 				return;
 			case EndiannessEnum.const_2:
-				this._reverseEndianness = true;
+				_reverseEndianness = true;
 				return;
 			default:
-				this._reverseEndianness = false;
-				this.bool_1 = true;
+				_reverseEndianness = false;
+				bool_1 = true;
 				return;
 			}
 		}
@@ -84,9 +84,9 @@ namespace ns16
 
 		public Stream26(EndiannessEnum enum33_0)
 		{
-			this._stream = new Stream27();
-			this.bool_1 = false;
-			this.SetEndianness(enum33_0);
+			_stream = new Stream27();
+			bool_1 = false;
+			SetEndianness(enum33_0);
 		}
 
 		public Stream26(Stream stream_1) : this(stream_1, EndiannessEnum.const_0)
@@ -99,8 +99,8 @@ namespace ns16
 
 		public Stream26(Stream stream_1, EndiannessEnum enum33_0)
 		{
-			this._stream = stream_1;
-			this.SetEndianness(enum33_0);
+			_stream = stream_1;
+			SetEndianness(enum33_0);
 		}
 
 		public Stream26(byte[] byte_0) : this(byte_0, EndiannessEnum.const_0)
@@ -113,108 +113,108 @@ namespace ns16
 
 		public Stream26(byte[] byte_0, EndiannessEnum enum33_0)
 		{
-			this._stream = new Stream27(byte_0);
-			this.SetEndianness(enum33_0);
+			_stream = new Stream27(byte_0);
+			SetEndianness(enum33_0);
 		}
 
 		public byte[] ReadEverything()
 		{
-			if (this._stream is Stream27)
+			if (_stream is Stream27)
 			{
-				return ((Stream27)this._stream).ToArray();
+				return ((Stream27)_stream).ToArray();
 			}
-			if (!this.CanRead)
+			if (!CanRead)
 			{
 				throw new Exception("Can't read from hexstream!");
 			}
-			return KeyGenerator.ReadBytes(this._stream);
+			return KeyGenerator.ReadBytes(_stream);
 		}
 
 		public void WriteEverythingToFile(string fileName)
 		{
-			if (this._stream is Stream27)
+			if (_stream is Stream27)
 			{
-				KeyGenerator.WriteAllBytes(fileName, ((Stream27)this._stream).ToArray());
+				KeyGenerator.WriteAllBytes(fileName, ((Stream27)_stream).ToArray());
 				return;
 			}
-			if (!this.CanRead)
+			if (!CanRead)
 			{
 				throw new Exception("Can't read from hexstream!");
 			}
-			KeyGenerator.smethod_46(this._stream, fileName);
+			KeyGenerator.smethod_46(_stream, fileName);
 		}
 
 		public void WriteByte2(byte value)
 		{
-			this._stream.WriteByte(value);
+			_stream.WriteByte(value);
 		}
 
 		public void WriteNBytes(byte value, int count)
 		{
 			while (count-- != 0)
 			{
-				this._stream.WriteByte(value);
+				_stream.WriteByte(value);
 			}
 		}
 
 		public void WriteInt(int value)
 		{
-			this.WriteInt(value, this._reverseEndianness);
+			WriteInt(value, _reverseEndianness);
 		}
 
 		public void WriteInt(int value, bool ReverseEndianness)
 		{
-			this.WriteByteArray(BitConverter.GetBytes(value), !(ReverseEndianness ^ BitConverter.IsLittleEndian));
+			WriteByteArray(BitConverter.GetBytes(value), !(ReverseEndianness ^ BitConverter.IsLittleEndian));
 		}
 
 		public void WriteUInt(uint value)
 		{
-			this.WriteUInt(value, this._reverseEndianness);
+			WriteUInt(value, _reverseEndianness);
 		}
 
 		public void WriteUInt(uint value, bool ReverseEndianness)
 		{
-			this.WriteByteArray(BitConverter.GetBytes(value), !(ReverseEndianness ^ BitConverter.IsLittleEndian));
+			WriteByteArray(BitConverter.GetBytes(value), !(ReverseEndianness ^ BitConverter.IsLittleEndian));
 		}
 
 		public void WriteFloat(float value)
 		{
-			this.WriteFloat(value, this._reverseEndianness);
+			WriteFloat(value, _reverseEndianness);
 		}
 
 		public void WriteFloat(float value, bool ReverseEndianness)
 		{
-			this.WriteByteArray(BitConverter.GetBytes(value), !(ReverseEndianness ^ BitConverter.IsLittleEndian));
+			WriteByteArray(BitConverter.GetBytes(value), !(ReverseEndianness ^ BitConverter.IsLittleEndian));
 		}
 
 		public void WriteShort(short value)
 		{
-			this.WriteShort(value, this._reverseEndianness);
+			WriteShort(value, _reverseEndianness);
 		}
 
 		public void WriteShort(short value, bool ReverseEndianness)
 		{
-			this.WriteByteArray(BitConverter.GetBytes(value), !(ReverseEndianness ^ BitConverter.IsLittleEndian));
+			WriteByteArray(BitConverter.GetBytes(value), !(ReverseEndianness ^ BitConverter.IsLittleEndian));
 		}
 
 		public void WriteString(string value)
 		{
-			this.WriteByteArray(Encoding.ASCII.GetBytes(value), false);
+			WriteByteArray(Encoding.ASCII.GetBytes(value), false);
 		}
 
 		public void WriteString(string value, bool ReverseEndianness)
 		{
 			if (ReverseEndianness)
 			{
-				this.WriteByteArray(Encoding.BigEndianUnicode.GetBytes(value), false);
+				WriteByteArray(Encoding.BigEndianUnicode.GetBytes(value), false);
 				return;
 			}
-			this.WriteByteArray(Encoding.Unicode.GetBytes(value), false);
+			WriteByteArray(Encoding.Unicode.GetBytes(value), false);
 		}
 
 		public void WriteByteArray(byte[] byte_0)
 		{
-			this.WriteByteArray(byte_0, this._reverseEndianness);
+			WriteByteArray(byte_0, _reverseEndianness);
 		}
 
 		public void WriteByteArray(byte[] array, bool WriteBackwards)
@@ -223,34 +223,34 @@ namespace ns16
 			{
 				for (int i = array.Length - 1; i >= 0; i--)
 				{
-					this._stream.WriteByte(array[i]);
+					_stream.WriteByte(array[i]);
 				}
 				return;
 			}
-			this._stream.Write(array, 0, array.Length);
+			_stream.Write(array, 0, array.Length);
 		}
 
 		public void WriteEnumerableInts(IEnumerable<int> values, bool ReverseEndianness)
 		{
 			foreach (int current in values)
 			{
-				this.WriteInt(current, ReverseEndianness);
+				WriteInt(current, ReverseEndianness);
 			}
 		}
 
 		public byte ReadByte2()
 		{
-			return (byte)this.ReadByte();
+			return (byte)ReadByte();
 		}
 
 		public int ReadInt()
 		{
-			return this.ReadInt(this._reverseEndianness);
+			return ReadInt(_reverseEndianness);
 		}
 
 		public int ReadInt(bool ReverseEndianness)
 		{
-			byte[] array = this.ReadBytes(4, false);
+			byte[] array = ReadBytes(4, false);
 			if (!(ReverseEndianness ^ BitConverter.IsLittleEndian))
 			{
 				return KeyGenerator.BytesToInt(array);
@@ -260,16 +260,16 @@ namespace ns16
 
 		public float ReadFloat()
 		{
-			return this.ReadFloat(this._reverseEndianness);
+			return ReadFloat(_reverseEndianness);
 		}
 
 		public float ReadFloat(bool ReverseEndianness)
 		{
-			byte[] array = this.ReadBytes(4, false);
+			byte[] array = ReadBytes(4, false);
 			if (!(ReverseEndianness ^ BitConverter.IsLittleEndian))
 			{
 				byte[] array2 = array;
-				array = new byte[]
+				array = new[]
 				{
 					array2[3],
 					array2[2],
@@ -282,12 +282,12 @@ namespace ns16
 
 		public short ReadShort()
 		{
-			return this.ReadShort(this._reverseEndianness);
+			return ReadShort(_reverseEndianness);
 		}
 
 		public short ReadShort(bool ReverseEndianness)
 		{
-			byte[] array = this.ReadBytes(2, false);
+			byte[] array = ReadBytes(2, false);
 			if (!(ReverseEndianness ^ BitConverter.IsLittleEndian))
 			{
 				return KeyGenerator.BytesToShort(array);
@@ -297,12 +297,12 @@ namespace ns16
 
 		public ushort ReadUShort()
 		{
-			return this.ReadUShort(this._reverseEndianness);
+			return ReadUShort(_reverseEndianness);
 		}
 
 		public ushort ReadUShort(bool ReverseEndianness)
 		{
-			byte[] array = this.ReadBytes(2, false);
+			byte[] array = ReadBytes(2, false);
 			if (!(ReverseEndianness ^ BitConverter.IsLittleEndian))
 			{
 				return (ushort)KeyGenerator.BytesToShort(array);
@@ -313,7 +313,7 @@ namespace ns16
 		public string ReadAsciiString()
 		{
 			List<byte> list = new List<byte>();
-			for (byte item = this.ReadByte2(); item != 0; item = this.ReadByte2())
+			for (byte item = ReadByte2(); item != 0; item = ReadByte2())
 			{
 				list.Add(item);
 			}
@@ -322,25 +322,25 @@ namespace ns16
 
 		public string ReadString(int length)
 		{
-			return Encoding.ASCII.GetString(this.ReadBytes(length, false));
+			return Encoding.ASCII.GetString(ReadBytes(length, false));
 		}
 
 		public string ReadUnicodeString()
 		{
-			return this.ReadUnicodeString(this._reverseEndianness);
+			return ReadUnicodeString(_reverseEndianness);
 		}
 
 		public string ReadUnicodeString(bool ReverseEndianness)
 		{
 			List<byte> list = new List<byte>();
-			byte b = this.ReadByte2();
-			byte b2 = this.ReadByte2();
+			byte b = ReadByte2();
+			byte b2 = ReadByte2();
 			while (b != 0 || b2 != 0)
 			{
 				list.Add(b);
 				list.Add(b2);
-				b = this.ReadByte2();
-				b2 = this.ReadByte2();
+				b = ReadByte2();
+				b2 = ReadByte2();
 			}
 			if (!ReverseEndianness)
 			{
@@ -351,13 +351,13 @@ namespace ns16
 
 		public byte[] ReadBytes(int count)
 		{
-			return this.ReadBytes(count, this._reverseEndianness);
+			return ReadBytes(count, _reverseEndianness);
 		}
 
 		public byte[] ReadBytes(int count, bool ReverseEndianness)
 		{
 			byte[] array = new byte[count];
-			if (this._stream.Read(array, 0, count) == 0)
+			if (_stream.Read(array, 0, count) == 0)
 			{
 				throw new EndOfStreamException();
 			}
@@ -370,142 +370,142 @@ namespace ns16
 
 		public void WriteIntAt(int int_0, int int_1)
 		{
-			this.WriteIntAt(int_0, int_1, this._reverseEndianness);
+			WriteIntAt(int_0, int_1, _reverseEndianness);
 		}
 
 		public void WriteIntAt(int int_0, int int_1, bool bool_2)
 		{
-			this._stream.Seek((long)int_0, SeekOrigin.Begin);
-			this.WriteInt(int_1, bool_2);
+			_stream.Seek(int_0, SeekOrigin.Begin);
+			WriteInt(int_1, bool_2);
 		}
 
 		public void WriteShortAt(int int_0, short short_0)
 		{
-			this.WriteShortAt(int_0, short_0, this._reverseEndianness);
+			WriteShortAt(int_0, short_0, _reverseEndianness);
 		}
 
 		public void WriteShortAt(int int_0, short short_0, bool bool_2)
 		{
-			this._stream.Seek((long)int_0, SeekOrigin.Begin);
-			this.WriteShort(short_0, bool_2);
+			_stream.Seek(int_0, SeekOrigin.Begin);
+			WriteShort(short_0, bool_2);
 		}
 
 		public void WriteByteArrayAt(int int_0, byte[] byte_0, bool bool_2)
 		{
-			this._stream.Seek((long)int_0, SeekOrigin.Begin);
-			this.WriteByteArray(byte_0, bool_2);
+			_stream.Seek(int_0, SeekOrigin.Begin);
+			WriteByteArray(byte_0, bool_2);
 		}
 
 		public void WriteEnumerableIntsAt(int int_0, IEnumerable<int> ienumerable_0)
 		{
-			this.WriteEnumerableIntsAt(int_0, ienumerable_0, this._reverseEndianness);
+			WriteEnumerableIntsAt(int_0, ienumerable_0, _reverseEndianness);
 		}
 
 		public void WriteEnumerableIntsAt(int int_0, IEnumerable<int> ienumerable_0, bool bool_2)
 		{
-			this._stream.Seek((long)int_0, SeekOrigin.Begin);
-			this.WriteEnumerableInts(ienumerable_0, bool_2);
+			_stream.Seek(int_0, SeekOrigin.Begin);
+			WriteEnumerableInts(ienumerable_0, bool_2);
 		}
 
 		public byte ReadByteAt(int int_0)
 		{
-			this._stream.Seek((long)int_0, SeekOrigin.Begin);
-			return this.ReadByte2();
+			_stream.Seek(int_0, SeekOrigin.Begin);
+			return ReadByte2();
 		}
 
 		public int ReadIntAt(int int_0)
 		{
-			return this.ReadIntAt(int_0, this._reverseEndianness);
+			return ReadIntAt(int_0, _reverseEndianness);
 		}
 
 		public int ReadIntAt(int int_0, bool bool_2)
 		{
-			this._stream.Seek((long)int_0, SeekOrigin.Begin);
-			return this.ReadInt(bool_2);
+			_stream.Seek(int_0, SeekOrigin.Begin);
+			return ReadInt(bool_2);
 		}
 
 		public short ReadShortAt(int int_0)
 		{
-			return this.ReadShortAt(int_0, this._reverseEndianness);
+			return ReadShortAt(int_0, _reverseEndianness);
 		}
 
 		public short ReadShortAt(int int_0, bool bool_2)
 		{
-			this._stream.Seek((long)int_0, SeekOrigin.Begin);
-			return this.ReadShort(bool_2);
+			_stream.Seek(int_0, SeekOrigin.Begin);
+			return ReadShort(bool_2);
 		}
 
 		public string ReadAsciiStringAt(int int_0)
 		{
-			this._stream.Seek((long)int_0, SeekOrigin.Begin);
-			return this.ReadAsciiString();
+			_stream.Seek(int_0, SeekOrigin.Begin);
+			return ReadAsciiString();
 		}
 
 		public string ReadUnicodeStringAt(int int_0)
 		{
-			this._stream.Seek((long)int_0, SeekOrigin.Begin);
-			return this.ReadUnicodeString();
+			_stream.Seek(int_0, SeekOrigin.Begin);
+			return ReadUnicodeString();
 		}
 
 		public byte[] ReadBytesAt(int position, int count, bool ReverseEndianness)
 		{
-			this._stream.Seek((long)position, SeekOrigin.Begin);
-			return this.ReadBytes(count, ReverseEndianness);
+			_stream.Seek(position, SeekOrigin.Begin);
+			return ReadBytes(count, ReverseEndianness);
 		}
 
 		public override void Flush()
 		{
-			this._stream.Flush();
+			_stream.Flush();
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			return this._stream.Read(buffer, offset, count);
+			return _stream.Read(buffer, offset, count);
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
 		{
-			return this._stream.Seek(offset, origin);
+			return _stream.Seek(offset, origin);
 		}
 
 		public override void SetLength(long value)
 		{
-			this._stream.SetLength(value);
+			_stream.SetLength(value);
 		}
 
 		public override int ReadByte()
 		{
-			return this._stream.ReadByte();
+			return _stream.ReadByte();
 		}
 
 		public override void WriteByte(byte value)
 		{
-			this._stream.WriteByte(value);
+			_stream.WriteByte(value);
 		}
 
 		public override void Write(byte[] buffer, int offset, int count)
 		{
-			this._stream.Write(buffer, offset, count);
+			_stream.Write(buffer, offset, count);
 		}
 
 		public override void Close()
 		{
-			this._stream.Close();
+			_stream.Close();
 		}
 
         protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
-				this._stream.Dispose();
+				_stream.Dispose();
 			}
 		}
 
 		public new void Dispose()
 		{
-			this.Close();
-			this.Dispose(true);
-			this._stream = null;
+			Close();
+			Dispose(true);
+			_stream = null;
 		}
 	}
 }

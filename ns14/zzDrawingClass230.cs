@@ -31,20 +31,20 @@ namespace ns14
 
 		public zzDrawingClass230(ListBox listBox_1)
 		{
-			this.listBox_0 = listBox_1;
+			listBox_0 = listBox_1;
 		}
 
 		public int method_0()
 		{
-			return this.int_0;
+			return int_0;
 		}
 
 		public void method_1()
 		{
-			if (this.int_0 != -1)
+			if (int_0 != -1)
 			{
-				this.method_2(this.int_0);
-				this.int_0 = -1;
+				method_2(int_0);
+				int_0 = -1;
 			}
 		}
 
@@ -54,10 +54,10 @@ namespace ns14
 			Point point2;
 			Point point3;
 			Point point4;
-			if (this.listBox_0.Sorted)
+			if (listBox_0.Sorted)
 			{
-				Rectangle r = this.listBox_0.ClientRectangle;
-				r = this.listBox_0.RectangleToScreen(r);
+				Rectangle r = listBox_0.ClientRectangle;
+				r = listBox_0.RectangleToScreen(r);
 				point = new Point(r.Left, r.Top);
 				point2 = new Point(r.Left, r.Bottom);
 				point3 = new Point(r.Left + 1, r.Top);
@@ -66,38 +66,38 @@ namespace ns14
 			else
 			{
 				Rectangle r;
-				if (this.listBox_0.Items.Count == 0)
+				if (listBox_0.Items.Count == 0)
 				{
-					r = this.listBox_0.ClientRectangle;
+					r = listBox_0.ClientRectangle;
 				}
-				else if (int_1 < this.listBox_0.Items.Count)
+				else if (int_1 < listBox_0.Items.Count)
 				{
-					r = this.listBox_0.GetItemRectangle(int_1);
+					r = listBox_0.GetItemRectangle(int_1);
 				}
 				else
 				{
-					r = this.listBox_0.GetItemRectangle(this.listBox_0.Items.Count - 1);
+					r = listBox_0.GetItemRectangle(listBox_0.Items.Count - 1);
 					r.Y += r.Height;
 				}
 				r.Y--;
-				if (r.Y < this.listBox_0.ClientRectangle.Y)
+				if (r.Y < listBox_0.ClientRectangle.Y)
 				{
-					r.Y = this.listBox_0.ClientRectangle.Y;
+					r.Y = listBox_0.ClientRectangle.Y;
 				}
-				r = this.listBox_0.RectangleToScreen(r);
+				r = listBox_0.RectangleToScreen(r);
 				point = new Point(r.Left, r.Top);
 				point2 = new Point(r.Right, r.Top);
 				point3 = new Point(r.Left, r.Top + 1);
 				point4 = new Point(r.Right, r.Top + 1);
 			}
-			IntPtr dC = zzDrawingClass230.GDI.GetDC(IntPtr.Zero);
-			zzDrawingClass230.GDI.SetROP2(dC, 6);
-			zzDrawingClass230.GDI.MoveToEx(dC, point.X, point.Y, IntPtr.Zero);
-			zzDrawingClass230.GDI.LineTo(dC, point2.X, point2.Y);
-			zzDrawingClass230.GDI.MoveToEx(dC, point3.X, point3.Y, IntPtr.Zero);
-			zzDrawingClass230.GDI.LineTo(dC, point4.X, point4.Y);
-			zzDrawingClass230.GDI.ReleaseDC(IntPtr.Zero, dC);
-			this.int_0 = int_1;
+			IntPtr dC = GDI.GetDC(IntPtr.Zero);
+			GDI.SetROP2(dC, 6);
+			GDI.MoveToEx(dC, point.X, point.Y, IntPtr.Zero);
+			GDI.LineTo(dC, point2.X, point2.Y);
+			GDI.MoveToEx(dC, point3.X, point3.Y, IntPtr.Zero);
+			GDI.LineTo(dC, point4.X, point4.Y);
+			GDI.ReleaseDC(IntPtr.Zero, dC);
+			int_0 = int_1;
 		}
 	}
 }

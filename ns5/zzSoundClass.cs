@@ -1,30 +1,29 @@
+using System;
+using System.Text;
 using ns0;
 using ns4;
 using SharpAudio.ASC.Mp3.Decoding;
-using System;
-using System.Text;
 
 namespace ns5
 {
 	public class zzSoundClass
 	{
-		public static readonly int[][] int_0 = new int[][]
-		{
-			new int[]
+		public static readonly int[][] int_0 = {
+			new[]
 			{
 				22050,
 				24000,
 				16000,
 				1
 			},
-			new int[]
+			new[]
 			{
 				44100,
 				48000,
 				32000,
 				1
 			},
-			new int[]
+			new[]
 			{
 				11025,
 				12000,
@@ -57,8 +56,7 @@ namespace ns5
 
 		private bool bool_1;
 
-		private readonly double[] double_0 = new double[]
-		{
+		private readonly double[] double_0 = {
 			-1.0,
 			384.0,
 			1152.0,
@@ -87,8 +85,7 @@ namespace ns5
 
 		private int int_14 = -1;
 
-		public static readonly int[,,] int_15 = new int[,,]
-		{
+		public static readonly int[,,] int_15 = {
 			{
 				{
 					0,
@@ -259,11 +256,10 @@ namespace ns5
 			}
 		};
 
-		public static readonly string[][][] string_0 = new string[][][]
-		{
-			new string[][]
+		public static readonly string[][][] string_0 = {
+			new[]
 			{
-				new string[]
+				new[]
 				{
 					"free format",
 					"32 kbit/s",
@@ -282,7 +278,7 @@ namespace ns5
 					"256 kbit/s",
 					"forbidden"
 				},
-				new string[]
+				new[]
 				{
 					"free format",
 					"8 kbit/s",
@@ -301,7 +297,7 @@ namespace ns5
 					"160 kbit/s",
 					"forbidden"
 				},
-				new string[]
+				new[]
 				{
 					"free format",
 					"8 kbit/s",
@@ -321,9 +317,9 @@ namespace ns5
 					"forbidden"
 				}
 			},
-			new string[][]
+			new[]
 			{
-				new string[]
+				new[]
 				{
 					"free format",
 					"32 kbit/s",
@@ -342,7 +338,7 @@ namespace ns5
 					"448 kbit/s",
 					"forbidden"
 				},
-				new string[]
+				new[]
 				{
 					"free format",
 					"32 kbit/s",
@@ -361,7 +357,7 @@ namespace ns5
 					"384 kbit/s",
 					"forbidden"
 				},
-				new string[]
+				new[]
 				{
 					"free format",
 					"32 kbit/s",
@@ -381,9 +377,9 @@ namespace ns5
 					"forbidden"
 				}
 			},
-			new string[][]
+			new[]
 			{
-				new string[]
+				new[]
 				{
 					"free format",
 					"32 kbit/s",
@@ -402,7 +398,7 @@ namespace ns5
 					"256 kbit/s",
 					"forbidden"
 				},
-				new string[]
+				new[]
 				{
 					"free format",
 					"8 kbit/s",
@@ -421,7 +417,7 @@ namespace ns5
 					"160 kbit/s",
 					"forbidden"
 				},
-				new string[]
+				new[]
 				{
 					"free format",
 					"8 kbit/s",
@@ -445,33 +441,33 @@ namespace ns5
 
 		private void method_0()
 		{
-			this.byte_0 = Class82.byte_1;
+			byte_0 = Class82.byte_1;
 		}
 
 		public zzSoundClass()
 		{
-			this.method_0();
+			method_0();
 		}
 
 		public override string ToString()
 		{
 			StringBuilder stringBuilder = new StringBuilder(200);
 			stringBuilder.Append("Layer ");
-			stringBuilder.Append(this.method_19());
+			stringBuilder.Append(method_19());
 			stringBuilder.Append(" frame ");
-			stringBuilder.Append(this.method_23());
+			stringBuilder.Append(method_23());
 			stringBuilder.Append(' ');
-			stringBuilder.Append(this.method_24());
-			if (!this.method_9())
+			stringBuilder.Append(method_24());
+			if (!method_9())
 			{
 				stringBuilder.Append(" no");
 			}
 			stringBuilder.Append(" checksums");
 			stringBuilder.Append(' ');
-			stringBuilder.Append(this.method_22());
+			stringBuilder.Append(method_22());
 			stringBuilder.Append(',');
 			stringBuilder.Append(' ');
-			stringBuilder.Append(this.method_20());
+			stringBuilder.Append(method_20());
 			return stringBuilder.ToString();
 		}
 
@@ -480,54 +476,54 @@ namespace ns5
 			bool flag = false;
 			while (true)
 			{
-				int num = class82_0.method_9(this.byte_0);
-				this.int_14 = num;
-				if (this.byte_0 == Class82.byte_1)
+				int num = class82_0.method_9(byte_0);
+				int_14 = num;
+				if (byte_0 == Class82.byte_1)
 				{
-					this.enum3_0 = (Enum3)(num >> 19 & 1);
+					enum3_0 = (Enum3)(num >> 19 & 1);
 					if ((num >> 20 & 1) == 0)
 					{
-						if (this.enum3_0 != Enum3.const_0)
+						if (enum3_0 != Enum3.const_0)
 						{
 							goto IL_1EE;
 						}
-						this.enum3_0 = Enum3.const_2;
+						enum3_0 = Enum3.const_2;
 					}
-					if ((this.int_6 = (num >> 10 & 3)) == 3)
+					if ((int_6 = (num >> 10 & 3)) == 3)
 					{
 						goto Block_20;
 					}
 				}
-				this.int_1 = (4 - (num >> 17) & 3);
-				this.int_2 = (num >> 16 & 1);
-				this.int_3 = (num >> 12 & 15);
-				this.int_4 = (num >> 9 & 1);
-				this.enum5_0 = (Enum5)(num >> 6 & 3);
-				this.int_5 = (num >> 4 & 3);
-				if (this.enum5_0 == Enum5.const_1)
+				int_1 = (4 - (num >> 17) & 3);
+				int_2 = (num >> 16 & 1);
+				int_3 = (num >> 12 & 15);
+				int_4 = (num >> 9 & 1);
+				enum5_0 = (Enum5)(num >> 6 & 3);
+				int_5 = (num >> 4 & 3);
+				if (enum5_0 == Enum5.const_1)
 				{
-					this.int_8 = (this.int_5 << 2) + 4;
+					int_8 = (int_5 << 2) + 4;
 				}
 				else
 				{
-					this.int_8 = 0;
+					int_8 = 0;
 				}
 				if ((num >> 3 & 1) == 1)
 				{
-					this.bool_0 = true;
+					bool_0 = true;
 				}
 				if ((num >> 2 & 1) == 1)
 				{
-					this.bool_1 = true;
+					bool_1 = true;
 				}
-				if (this.int_1 == 1)
+				if (int_1 == 1)
 				{
-					this.int_7 = 32;
+					int_7 = 32;
 				}
 				else
 				{
-					int num2 = this.int_3;
-					if (this.enum5_0 != Enum5.const_3)
+					int num2 = int_3;
+					if (enum5_0 != Enum5.const_3)
 					{
 						if (num2 == 4)
 						{
@@ -542,33 +538,33 @@ namespace ns5
 					{
 						if (num2 != 2)
 						{
-							if (this.int_6 != 1 && (num2 < 3 || num2 > 5))
+							if (int_6 != 1 && (num2 < 3 || num2 > 5))
 							{
-								this.int_7 = 30;
+								int_7 = 30;
 								goto IL_102;
 							}
-							this.int_7 = 27;
+							int_7 = 27;
 							goto IL_102;
 						}
 					}
-					this.int_7 = ((this.int_6 == 2) ? 12 : 8);
+					int_7 = ((int_6 == 2) ? 12 : 8);
 				}
 				IL_102:
-				if (this.int_8 > this.int_7)
+				if (int_8 > int_7)
 				{
-					this.int_8 = this.int_7;
+					int_8 = int_7;
 				}
-				this.method_15();
-				int num3 = class82_0.method_11(this.int_12);
-				if (this.int_12 >= 0 && num3 != this.int_12)
+				method_15();
+				int num3 = class82_0.method_11(int_12);
+				if (int_12 >= 0 && num3 != int_12)
 				{
 					break;
 				}
-				if (class82_0.method_8((int)this.byte_0))
+				if (class82_0.method_8(byte_0))
 				{
-					if (this.byte_0 == Class82.byte_1)
+					if (byte_0 == Class82.byte_1)
 					{
-						this.byte_0 = Class82.byte_2;
+						byte_0 = Class82.byte_2;
 						class82_0.method_14(num & -521024);
 					}
 					flag = true;
@@ -585,16 +581,16 @@ namespace ns5
 			throw new BitstreamException(BitstreamError.InvalidFrame);
 			Block_17:
 			class82_0.method_12();
-			if (this.int_2 == 0)
+			if (int_2 == 0)
 			{
-				this.short_0 = (short)class82_0.method_13(16);
-				if (this.class101_0 == null)
+				short_0 = (short)class82_0.method_13(16);
+				if (class101_0 == null)
 				{
-					this.class101_0 = new Class101();
+					class101_0 = new Class101();
 				}
 				int num=0;
-				this.class101_0.method_0(num, 16);
-				class101_1[0] = this.class101_0;
+				class101_0.method_0(num, 16);
+				class101_1[0] = class101_0;
 			}
 			else
 			{
@@ -610,45 +606,45 @@ namespace ns5
 		public void method_2(byte[] byte_1)
 		{
 			int num;
-			if (this.enum3_0 == Enum3.const_1)
+			if (enum3_0 == Enum3.const_1)
 			{
-				num = ((this.enum5_0 == Enum5.const_3) ? 17 : 32);
+				num = ((enum5_0 == Enum5.const_3) ? 17 : 32);
 			}
 			else
 			{
-				num = ((this.enum5_0 == Enum5.const_3) ? 9 : 17);
+				num = ((enum5_0 == Enum5.const_3) ? 9 : 17);
 			}
 			try
 			{
 				string @string = Encoding.UTF8.GetString(byte_1, num, 4);
 				if (@string.Equals("Xing") || @string.Equals("Info"))
 				{
-					this.bool_2 = true;
-					this.int_9 = -1;
-					this.int_11 = -1;
-					this.int_10 = -1;
+					bool_2 = true;
+					int_9 = -1;
+					int_11 = -1;
+					int_10 = -1;
 					byte[] array = new byte[100];
-					int num2 = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + 4));
+					int num2 = smethod_0(BitConverter.ToInt32(byte_1, num + 4));
 					int num3 = 8;
 					if ((num2 & 1) != 0)
 					{
-						this.int_9 = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + num3));
+						int_9 = smethod_0(BitConverter.ToInt32(byte_1, num + num3));
 						num3 += 4;
 					}
 					if ((num2 & 2) != 0)
 					{
-						this.int_11 = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + num3));
+						int_11 = smethod_0(BitConverter.ToInt32(byte_1, num + num3));
 						num3 += 4;
 					}
 					if ((num2 & 4) != 0)
 					{
 						Buffer.BlockCopy(byte_1, num + num3, array, 0, array.Length);
 						num3 += array.Length;
-						this.class83_0 = new Class83(array, this.int_11);
+						class83_0 = new Class83(array, int_11);
 					}
 					if ((num2 & 8) != 0)
 					{
-						this.int_10 = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + num3));
+						int_10 = smethod_0(BitConverter.ToInt32(byte_1, num + num3));
 						num3 += 4;
 					}
 				}
@@ -662,17 +658,17 @@ namespace ns5
 			{
 				if (Encoding.UTF8.GetString(byte_1, num, 4).Equals("VBRI"))
 				{
-					this.bool_2 = true;
-					this.int_9 = -1;
-					this.int_11 = -1;
-					this.int_10 = -1;
-					this.int_10 = (int)zzSoundClass.smethod_1(BitConverter.ToInt16(byte_1, num + 8));
-					this.int_11 = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + 10));
-					this.int_9 = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + 14));
-					int[] array2 = new int[(int)zzSoundClass.smethod_1(BitConverter.ToInt16(byte_1, num + 18))];
-					short num4 = zzSoundClass.smethod_1(BitConverter.ToInt16(byte_1, num + 20));
-					short num5 = zzSoundClass.smethod_1(BitConverter.ToInt16(byte_1, num + 22));
-					short num6 = zzSoundClass.smethod_1(BitConverter.ToInt16(byte_1, num + 24));
+					bool_2 = true;
+					int_9 = -1;
+					int_11 = -1;
+					int_10 = -1;
+					int_10 = smethod_1(BitConverter.ToInt16(byte_1, num + 8));
+					int_11 = smethod_0(BitConverter.ToInt32(byte_1, num + 10));
+					int_9 = smethod_0(BitConverter.ToInt32(byte_1, num + 14));
+					int[] array2 = new int[smethod_1(BitConverter.ToInt16(byte_1, num + 18))];
+					short num4 = smethod_1(BitConverter.ToInt16(byte_1, num + 20));
+					short num5 = smethod_1(BitConverter.ToInt16(byte_1, num + 22));
+					short num6 = smethod_1(BitConverter.ToInt16(byte_1, num + 24));
 					int num7 = 26;
 					switch (num5)
 					{
@@ -681,7 +677,7 @@ namespace ns5
 						int i = 0;
 						while (i < array2.Length)
 						{
-							array2[i] = (int)((short)byte_1[num + num7] * num4);
+							array2[i] = byte_1[num + num7] * num4;
 							i++;
 							num7++;
 						}
@@ -692,7 +688,7 @@ namespace ns5
 						int j = 0;
 						while (j < array2.Length)
 						{
-							array2[j] = (int)(zzSoundClass.smethod_1(BitConverter.ToInt16(byte_1, num + num7)) * num4);
+							array2[j] = smethod_1(BitConverter.ToInt16(byte_1, num + num7)) * num4;
 							j++;
 							num7 += 2;
 						}
@@ -703,7 +699,7 @@ namespace ns5
 						int k = 0;
 						while (k < array2.Length)
 						{
-							array2[k] = Struct8.smethod_0(Struct8.smethod_3(byte_1, num + num7, true)) * (int)num4;
+							array2[k] = Struct8.smethod_0(Struct8.smethod_3(byte_1, num + num7, true)) * num4;
 							k++;
 							num7 += 3;
 						}
@@ -714,7 +710,7 @@ namespace ns5
 						int l = 0;
 						while (l < array2.Length)
 						{
-							array2[l] = zzSoundClass.smethod_0(BitConverter.ToInt32(byte_1, num + num7)) * (int)num4;
+							array2[l] = smethod_0(BitConverter.ToInt32(byte_1, num + num7)) * num4;
 							l++;
 							num7 += 4;
 						}
@@ -723,7 +719,7 @@ namespace ns5
 					default:
 						throw new Exception("Size per table entry in bytes - is bigger then 4: " + num5);
 					}
-					this.class83_0 = new Class83(array2, num6);
+					class83_0 = new Class83(array2, num6);
 				}
 			}
 			catch (IndexOutOfRangeException exception_2)
@@ -738,7 +734,7 @@ namespace ns5
 			{
 				return int_16;
 			}
-			return ((int)zzSoundClass.smethod_1((short)int_16) & 65535) << 16 | ((int)zzSoundClass.smethod_1((short)(int_16 >> 16)) & 65535);
+			return (smethod_1((short)int_16) & 65535) << 16 | (smethod_1((short)(int_16 >> 16)) & 65535);
 		}
 
 		private static short smethod_1(short short_1)
@@ -747,138 +743,137 @@ namespace ns5
 			{
 				return short_1;
 			}
-			return (short)((int)(short_1 & 255) << 8 | (short_1 >> 8 & 255));
+			return (short)((short_1 & 255) << 8 | (short_1 >> 8 & 255));
 		}
 
 		public Enum3 method_3()
 		{
-			return this.enum3_0;
+			return enum3_0;
 		}
 
 		public int method_4()
 		{
-			return this.int_1;
+			return int_1;
 		}
 
 		public int method_5()
 		{
-			return this.int_3;
+			return int_3;
 		}
 
 		public int method_6()
 		{
-			return this.int_6;
+			return int_6;
 		}
 
 		public int method_7()
 		{
-			return zzSoundClass.int_0[(int)this.enum3_0][this.int_6];
+			return int_0[(int)enum3_0][int_6];
 		}
 
 		public Enum5 method_8()
 		{
-			return this.enum5_0;
+			return enum5_0;
 		}
 
 		public bool method_9()
 		{
-			return this.int_2 == 0;
+			return int_2 == 0;
 		}
 
 		public bool method_10()
 		{
-			return this.bool_2;
+			return bool_2;
 		}
 
 		public Class83 method_11()
 		{
-			return this.class83_0;
+			return class83_0;
 		}
 
 		public bool method_12()
 		{
-			return this.short_0 == this.class101_0.method_1();
+			return short_0 == class101_0.method_1();
 		}
 
 		public int method_13()
 		{
-			return this.int_13;
+			return int_13;
 		}
 
 		public int method_14()
 		{
-			return this.int_5;
+			return int_5;
 		}
 
 		public int method_15()
 		{
-			if (this.int_1 == 1)
+			if (int_1 == 1)
 			{
-				this.int_12 = 12 * zzSoundClass.int_15[(int)this.enum3_0, 0, this.int_3] / zzSoundClass.int_0[(int)this.enum3_0][this.int_6];
-				if (this.int_4 != 0)
+				int_12 = 12 * int_15[(int)enum3_0, 0, int_3] / int_0[(int)enum3_0][int_6];
+				if (int_4 != 0)
 				{
-					this.int_12++;
+					int_12++;
 				}
-				this.int_12 <<= 2;
-				this.int_13 = 0;
+				int_12 <<= 2;
+				int_13 = 0;
 			}
 			else
 			{
-				this.int_12 = 144 * zzSoundClass.int_15[(int)this.enum3_0, this.int_1 - 1, this.int_3] / zzSoundClass.int_0[(int)this.enum3_0][this.int_6];
-				if (this.enum3_0 == Enum3.const_0 || this.enum3_0 == Enum3.const_2)
+				int_12 = 144 * int_15[(int)enum3_0, int_1 - 1, int_3] / int_0[(int)enum3_0][int_6];
+				if (enum3_0 == Enum3.const_0 || enum3_0 == Enum3.const_2)
 				{
-					this.int_12 >>= 1;
+					int_12 >>= 1;
 				}
-				if (this.int_4 != 0)
+				if (int_4 != 0)
 				{
-					this.int_12++;
+					int_12++;
 				}
-				if (this.int_1 == 3)
+				if (int_1 == 3)
 				{
-					if (this.enum3_0 == Enum3.const_1)
+					if (enum3_0 == Enum3.const_1)
 					{
-						this.int_13 = this.int_12 - ((this.enum5_0 == Enum5.const_3) ? 17 : 32) - ((this.int_2 != 0) ? 0 : 2) - 4;
+						int_13 = int_12 - ((enum5_0 == Enum5.const_3) ? 17 : 32) - ((int_2 != 0) ? 0 : 2) - 4;
 					}
 					else
 					{
-						this.int_13 = this.int_12 - ((this.enum5_0 == Enum5.const_3) ? 9 : 17) - ((this.int_2 != 0) ? 0 : 2) - 4;
+						int_13 = int_12 - ((enum5_0 == Enum5.const_3) ? 9 : 17) - ((int_2 != 0) ? 0 : 2) - 4;
 					}
 				}
 				else
 				{
-					this.int_13 = 0;
+					int_13 = 0;
 				}
 			}
-			this.int_12 -= 4;
-			return this.int_12;
+			int_12 -= 4;
+			return int_12;
 		}
 
 		public int method_16(int int_16)
 		{
-			if (this.bool_2)
+			if (bool_2)
 			{
-				return this.int_9;
+				return int_9;
 			}
-			if (this.int_12 + 4 - this.int_4 == 0)
+			if (int_12 + 4 - int_4 == 0)
 			{
 				return 0;
 			}
-			return int_16 / (this.int_12 + 4 - this.int_4);
+			return int_16 / (int_12 + 4 - int_4);
 		}
 
 		public double method_17()
 		{
-			if (this.bool_2)
+			if (bool_2)
 			{
-				double num = this.double_0[this.method_4()] / (double)this.method_7();
-				if (this.enum3_0 == Enum3.const_0 || this.enum3_0 == Enum3.const_2)
+				double num = double_0[method_4()] / method_7();
+				if (enum3_0 == Enum3.const_0 || enum3_0 == Enum3.const_2)
 				{
 					num /= 2.0;
 				}
 				return num * 1000.0;
 			}
-			float[,] array = new float[,]
-			{
+			float[,] array = {
 				{
 					8.707483f,
 					8f,
@@ -895,17 +890,17 @@ namespace ns5
 					36f
 				}
 			};
-			return (double)array[this.int_1 - 1, this.int_6];
+			return array[int_1 - 1, int_6];
 		}
 
 		public double method_18(int int_16)
 		{
-			return (double)this.method_16(int_16) * this.method_17();
+			return method_16(int_16) * method_17();
 		}
 
 		public string method_19()
 		{
-			switch (this.int_1)
+			switch (int_1)
 			{
 			case 1:
 				return "I";
@@ -920,52 +915,52 @@ namespace ns5
 
 		public string method_20()
 		{
-			if (this.bool_2)
+			if (bool_2)
 			{
-				return Convert.ToString(this.method_21() / 1000) + " kb/s";
+				return Convert.ToString(method_21() / 1000) + " kb/s";
 			}
-			return zzSoundClass.string_0[(int)this.enum3_0][this.int_1 - 1][this.int_3];
+			return string_0[(int)enum3_0][int_1 - 1][int_3];
 		}
 
 		public int method_21()
 		{
-			if (this.bool_2)
+			if (bool_2)
 			{
-				return (int)((double)(this.int_11 * 8) / (this.method_17() * (double)this.int_9)) * 1000;
+				return (int)(int_11 * 8 / (method_17() * int_9)) * 1000;
 			}
-			return zzSoundClass.int_15[(int)this.enum3_0, this.int_1 - 1, this.int_3];
+			return int_15[(int)enum3_0, int_1 - 1, int_3];
 		}
 
 		public string method_22()
 		{
-			switch (this.int_6)
+			switch (int_6)
 			{
 			case 0:
-				if (this.enum3_0 == Enum3.const_1)
+				if (enum3_0 == Enum3.const_1)
 				{
 					return "44.1 kHz";
 				}
-				if (this.enum3_0 == Enum3.const_0)
+				if (enum3_0 == Enum3.const_0)
 				{
 					return "22.05 kHz";
 				}
 				return "11.025 kHz";
 			case 1:
-				if (this.enum3_0 == Enum3.const_1)
+				if (enum3_0 == Enum3.const_1)
 				{
 					return "48 kHz";
 				}
-				if (this.enum3_0 == Enum3.const_0)
+				if (enum3_0 == Enum3.const_0)
 				{
 					return "24 kHz";
 				}
 				return "12 kHz";
 			case 2:
-				if (this.enum3_0 == Enum3.const_1)
+				if (enum3_0 == Enum3.const_1)
 				{
 					return "32 kHz";
 				}
-				if (this.enum3_0 == Enum3.const_0)
+				if (enum3_0 == Enum3.const_0)
 				{
 					return "16 kHz";
 				}
@@ -977,7 +972,7 @@ namespace ns5
 
 		public string method_23()
 		{
-			switch (this.enum5_0)
+			switch (enum5_0)
 			{
 			case Enum5.const_0:
 				return "Stereo";
@@ -994,7 +989,7 @@ namespace ns5
 
 		public string method_24()
 		{
-			switch (this.enum3_0)
+			switch (enum3_0)
 			{
 			case Enum3.const_0:
 				return "MPEG-2 LSF";
@@ -1009,12 +1004,12 @@ namespace ns5
 
 		public int method_25()
 		{
-			return this.int_7;
+			return int_7;
 		}
 
 		public int method_26()
 		{
-			return this.int_8;
+			return int_8;
 		}
 	}
 }

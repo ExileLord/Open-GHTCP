@@ -1,5 +1,5 @@
-using ns9;
 using System;
+using ns9;
 
 namespace ns22
 {
@@ -11,7 +11,7 @@ namespace ns22
 
 		public Class349(int int_0)
 		{
-			Class349.interface14_0 = new Interface14[]
+			interface14_0 = new Interface14[]
 			{
 				new Class358(this, 0, 0, int_0)
 			};

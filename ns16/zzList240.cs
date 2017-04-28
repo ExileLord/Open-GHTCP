@@ -30,29 +30,29 @@ namespace ns16
 		{
 			get
 			{
-				if (index >= this.arrayList_0.Count || index < 0)
+				if (index >= arrayList_0.Count || index < 0)
 				{
 					throw new ArgumentOutOfRangeException("Index is less than zero or Index is greater than Count.");
 				}
-				return this.arrayList_0[index];
+				return arrayList_0[index];
 			}
 			set
 			{
-				if (this.bool_2)
+				if (bool_2)
 				{
 					throw new InvalidOperationException("[] operator cannot be used to set a value if KeepSorted property is set to true.");
 				}
-				if (index < this.arrayList_0.Count && index >= 0)
+				if (index < arrayList_0.Count && index >= 0)
 				{
-					if (this.method_0(value))
+					if (method_0(value))
 					{
-						object obj = (index > 0) ? this.arrayList_0[index - 1] : null;
-						object obj2 = (index < this.Count - 1) ? this.arrayList_0[index + 1] : null;
-						if ((obj != null && this.icomparer_0.Compare(obj, value) > 0) || (obj2 != null && this.icomparer_0.Compare(value, obj2) > 0))
+						object obj = (index > 0) ? arrayList_0[index - 1] : null;
+						object obj2 = (index < Count - 1) ? arrayList_0[index + 1] : null;
+						if ((obj != null && icomparer_0.Compare(obj, value) > 0) || (obj2 != null && icomparer_0.Compare(value, obj2) > 0))
 						{
-							this.bool_1 = false;
+							bool_1 = false;
 						}
-						this.arrayList_0[index] = value;
+						arrayList_0[index] = value;
 					}
 					return;
 				}
@@ -64,7 +64,7 @@ namespace ns16
 		{
 			get
 			{
-				return this.arrayList_0.Count;
+				return arrayList_0.Count;
 			}
 		}
 
@@ -72,7 +72,7 @@ namespace ns16
 		{
 			get
 			{
-				return this.arrayList_0.SyncRoot;
+				return arrayList_0.SyncRoot;
 			}
 		}
 
@@ -80,7 +80,7 @@ namespace ns16
 		{
 			get
 			{
-				return this.arrayList_0.IsSynchronized;
+				return arrayList_0.IsSynchronized;
 			}
 		}
 
@@ -88,7 +88,7 @@ namespace ns16
 		{
 			get
 			{
-				return this.arrayList_0.IsReadOnly;
+				return arrayList_0.IsReadOnly;
 			}
 		}
 
@@ -96,43 +96,43 @@ namespace ns16
 		{
 			get
 			{
-				return this.arrayList_0.IsFixedSize;
+				return arrayList_0.IsFixedSize;
 			}
 		}
 
 		public zzList240()
 		{
-			this.method_1(null, 0);
+			method_1(null, 0);
 		}
 
 		public zzList240(IComparer icomparer_1, int int_0)
 		{
-			this.method_1(icomparer_1, int_0);
+			method_1(icomparer_1, int_0);
 		}
 
 		public int Add(object value)
 		{
 			int result = -1;
-			if (this.method_0(value))
+			if (method_0(value))
 			{
-				if (this.bool_2)
+				if (bool_2)
 				{
-					int num = this.IndexOf(value);
+					int num = IndexOf(value);
 					int num2 = (num >= 0) ? num : (-num - 1);
-					if (num2 >= this.Count)
+					if (num2 >= Count)
 					{
-						this.arrayList_0.Add(value);
+						arrayList_0.Add(value);
 					}
 					else
 					{
-						this.arrayList_0.Insert(num2, value);
+						arrayList_0.Insert(num2, value);
 					}
 					result = num2;
 				}
 				else
 				{
-					this.bool_1 = false;
-					result = this.arrayList_0.Add(value);
+					bool_1 = false;
+					result = arrayList_0.Add(value);
 				}
 			}
 			return result;
@@ -140,48 +140,48 @@ namespace ns16
 
 		public bool Contains(object value)
 		{
-			if (!this.bool_1)
+			if (!bool_1)
 			{
-				return this.arrayList_0.Contains(value);
+				return arrayList_0.Contains(value);
 			}
-			return this.arrayList_0.BinarySearch(value, this.icomparer_0) >= 0;
+			return arrayList_0.BinarySearch(value, icomparer_0) >= 0;
 		}
 
 		public int IndexOf(object value)
 		{
 			int num;
-			if (this.bool_1)
+			if (bool_1)
 			{
-				num = this.arrayList_0.BinarySearch(value, this.icomparer_0);
-				while (num > 0 && this.arrayList_0[num - 1].Equals(value))
+				num = arrayList_0.BinarySearch(value, icomparer_0);
+				while (num > 0 && arrayList_0[num - 1].Equals(value))
 				{
 					num--;
 				}
 			}
 			else
 			{
-				num = this.arrayList_0.IndexOf(value);
+				num = arrayList_0.IndexOf(value);
 			}
 			return num;
 		}
 
 		public void Insert(int index, object value)
 		{
-			if (this.bool_2)
+			if (bool_2)
 			{
 				throw new InvalidOperationException("Insert method cannot be called if KeepSorted property is set to true.");
 			}
-			if (index < this.arrayList_0.Count && index >= 0)
+			if (index < arrayList_0.Count && index >= 0)
 			{
-				if (this.method_0(value))
+				if (method_0(value))
 				{
-					object obj = this.arrayList_0[index];
-					object obj2 = (index > 0) ? this.arrayList_0[index - 1] : null;
-					if ((obj2 != null && this.icomparer_0.Compare(obj2, value) > 0) || (obj != null && this.icomparer_0.Compare(value, obj) > 0))
+					object obj = arrayList_0[index];
+					object obj2 = (index > 0) ? arrayList_0[index - 1] : null;
+					if ((obj2 != null && icomparer_0.Compare(obj2, value) > 0) || (obj != null && icomparer_0.Compare(value, obj) > 0))
 					{
-						this.bool_1 = false;
+						bool_1 = false;
 					}
-					this.arrayList_0.Insert(index, value);
+					arrayList_0.Insert(index, value);
 				}
 				return;
 			}
@@ -190,46 +190,46 @@ namespace ns16
 
 		public void Remove(object value)
 		{
-			this.arrayList_0.Remove(value);
+			arrayList_0.Remove(value);
 		}
 
 		public void RemoveAt(int index)
 		{
-			this.arrayList_0.RemoveAt(index);
+			arrayList_0.RemoveAt(index);
 		}
 
 		public void CopyTo(Array array, int index)
 		{
-			this.arrayList_0.CopyTo(array, index);
+			arrayList_0.CopyTo(array, index);
 		}
 
 		public IEnumerator GetEnumerator()
 		{
-			return this.arrayList_0.GetEnumerator();
+			return arrayList_0.GetEnumerator();
 		}
 
 		public void Clear()
 		{
-			this.arrayList_0.Clear();
+			arrayList_0.Clear();
 		}
 
 		public object Clone()
 		{
-			return new zzList240(this.icomparer_0, this.arrayList_0.Capacity)
+			return new zzList240(icomparer_0, arrayList_0.Capacity)
 			{
-				arrayList_0 = (ArrayList)this.arrayList_0.Clone(),
-				bool_3 = this.bool_3,
-				bool_1 = this.bool_1,
-				bool_2 = this.bool_2
+				arrayList_0 = (ArrayList)arrayList_0.Clone(),
+				bool_3 = bool_3,
+				bool_1 = bool_1,
+				bool_2 = bool_2
 			};
 		}
 
 		public override string ToString()
 		{
 			string text = "{";
-			for (int i = 0; i < this.arrayList_0.Count; i++)
+			for (int i = 0; i < arrayList_0.Count; i++)
 			{
-				text = text + this.arrayList_0[i].ToString() + ((i != this.arrayList_0.Count - 1) ? "; " : "}");
+				text = text + arrayList_0[i] + ((i != arrayList_0.Count - 1) ? "; " : "}");
 			}
 			return text;
 		}
@@ -237,11 +237,11 @@ namespace ns16
 		public override bool Equals(object obj)
 		{
 			zzList240 @class = (zzList240)obj;
-			if (@class.Count != this.Count)
+			if (@class.Count != Count)
 			{
 				return false;
 			}
-			for (int i = 0; i < this.Count; i++)
+			for (int i = 0; i < Count; i++)
 			{
 				if (!@class[i].Equals(this[i]))
 				{
@@ -253,34 +253,34 @@ namespace ns16
 
 		public override int GetHashCode()
 		{
-			return this.arrayList_0.GetHashCode();
+			return arrayList_0.GetHashCode();
 		}
 
 		private bool method_0(object object_0)
 		{
-			if (this.bool_0 && !(object_0 is IComparable))
+			if (bool_0 && !(object_0 is IComparable))
 			{
 				throw new ArgumentException("The SortableArrayList is set to use the IComparable interface of objects, and the object to add does not implement the IComparable interface.");
 			}
-			return this.bool_3 || !this.Contains(object_0);
+			return bool_3 || !Contains(object_0);
 		}
 
 		private void method_1(IComparer icomparer_1, int int_0)
 		{
 			if (icomparer_1 != null)
 			{
-				this.icomparer_0 = icomparer_1;
-				this.bool_0 = false;
+				icomparer_0 = icomparer_1;
+				bool_0 = false;
 			}
 			else
 			{
-				this.icomparer_0 = new zzList240.MyComparer();
-				this.bool_0 = true;
+				icomparer_0 = new MyComparer();
+				bool_0 = true;
 			}
-			this.arrayList_0 = ((int_0 > 0) ? new ArrayList(int_0) : new ArrayList());
-			this.bool_1 = true;
-			this.bool_2 = true;
-			this.bool_3 = true;
+			arrayList_0 = ((int_0 > 0) ? new ArrayList(int_0) : new ArrayList());
+			bool_1 = true;
+			bool_2 = true;
+			bool_3 = true;
 		}
 	}
 }

@@ -1,11 +1,10 @@
+using System.Collections.Generic;
+using System.Drawing;
 using ns16;
 using ns18;
 using ns19;
 using ns20;
 using ns22;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
 
 namespace ns21
 {
@@ -13,7 +12,7 @@ namespace ns21
 	{
 		public FloatListNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public FloatListNode(bool bool_1) : this()
@@ -21,7 +20,7 @@ namespace ns21
 			if (bool_1)
 			{
 				float[] ienumerable_ = new float[2];
-				this.method_11(ienumerable_);
+				method_11(ienumerable_);
 			}
 		}
 
@@ -34,20 +33,20 @@ namespace ns21
 		{
 			foreach (float float_ in ienumerable_0)
 			{
-				base.Nodes.Add(new FloatValueNode(float_));
+				Nodes.Add(new FloatValueNode(float_));
 			}
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			base.Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
-			base.Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
-			if (base.method_1() is VectorArrayNode || base.method_1() is VectorPointerRootNode || base.method_1() is VectorPointerNode)
+			Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
+			Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
+			if (method_1() is VectorArrayNode || method_1() is VectorPointerRootNode || method_1() is VectorPointerNode)
 			{
-				base.Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
+				Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
 			}
-			base.method_1().BackColor = Color.Gray;
+			method_1().BackColor = Color.Gray;
 		}
 
 		public override void vmethod_14(Stream26 stream26_0)
@@ -55,7 +54,7 @@ namespace ns21
 			byte[] array = new byte[4];
 			array[1] = 1;
 			stream26_0.WriteByteArray(array, false);
-			foreach (FloatValueNode class313_ in base.Nodes)
+			foreach (FloatValueNode class313_ in Nodes)
 			{
 				stream26_0.WriteFloat(FloatValueNode.smethod_0(class313_));
 			}
@@ -63,7 +62,7 @@ namespace ns21
 
 		public override void vmethod_2(ref int int_0)
 		{
-			int_0 += 4 + 4 * base.Nodes.Count;
+			int_0 += 4 + 4 * Nodes.Count;
 		}
 
 		public override string GetNodeText()

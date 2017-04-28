@@ -7,7 +7,7 @@ namespace ns16
 	{
 		public void Dispose()
 		{
-			base.Clear();
+			Clear();
 		}
 	}
 }

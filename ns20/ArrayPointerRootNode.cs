@@ -1,6 +1,5 @@
 using ns18;
 using ns19;
-using System;
 
 namespace ns20
 {
@@ -8,7 +7,7 @@ namespace ns20
 	{
 		public ArrayPointerRootNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public ArrayPointerRootNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
@@ -17,8 +16,8 @@ namespace ns20
 
 		public ArrayPointerRootNode(int int_2)
 		{
-			this.int_0 = int_2;
-			this.vmethod_0();
+			int_0 = int_2;
+			vmethod_0();
 		}
 
 		public ArrayPointerRootNode(string string_0, string string_1, AbsTreeNode1_1 class276_0) : this(QbSongClass1.AddKeyToDictionary(string_0), QbSongClass1.AddKeyToDictionary(string_1), class276_0)
@@ -31,10 +30,10 @@ namespace ns20
 
 		public ArrayPointerRootNode(int int_2, int int_3, AbsTreeNode1_1 class276_0)
 		{
-			this.int_0 = int_2;
-			this.int_1 = int_3;
-			base.Nodes.Add(class276_0);
-			this.vmethod_0();
+			int_0 = int_2;
+			int_1 = int_3;
+			Nodes.Add(class276_0);
+			vmethod_0();
 		}
 
 		public override int vmethod_1()
@@ -44,21 +43,21 @@ namespace ns20
 
 		public AbsTreeNode1_1 method_7()
 		{
-			if (base.Nodes.Count != 0)
+			if (Nodes.Count != 0)
 			{
-				return (AbsTreeNode1_1)base.FirstNode;
+				return (AbsTreeNode1_1)FirstNode;
 			}
 			return null;
 		}
 
 		public void method_8(AbsTreeNode1_1 class276_0)
 		{
-			if (base.Nodes.Count != 0)
+			if (Nodes.Count != 0)
 			{
-				base.Nodes[0] = class276_0;
+				Nodes[0] = class276_0;
 				return;
 			}
-			base.Nodes.Add(class276_0);
+			Nodes.Add(class276_0);
 		}
 
 		public override string GetNodeText()

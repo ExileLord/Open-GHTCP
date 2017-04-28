@@ -1,12 +1,9 @@
-using System;
-
 namespace ns7
 {
 	public class Class150
 	{
         //Appears to be a qb int array (like for a song)
-		private static readonly short[] short_0 = new short[]
-		{
+		private static readonly short[] short_0 = {
 			0,
 			-32763,
 			-32753,
@@ -267,7 +264,7 @@ namespace ns7
 
 		public static short smethod_0(byte byte_0, short short_1)
 		{
-			short_1 = (short)((int)short_1 << 8 ^ (int)Class150.short_0[(short_1 >> 8 ^ (int)byte_0) & 255]);
+			short_1 = (short)(short_1 << 8 ^ short_0[(short_1 >> 8 ^ byte_0) & 255]);
 			return short_1;
 		}
 	}

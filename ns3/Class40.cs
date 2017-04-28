@@ -1,5 +1,3 @@
-using System;
-
 namespace ns3
 {
 	public class Class40

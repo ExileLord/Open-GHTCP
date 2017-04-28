@@ -1,5 +1,4 @@
 using ns21;
-using System;
 
 namespace ns19
 {
@@ -9,17 +8,17 @@ namespace ns19
 		{
 			get
 			{
-				return (FloatListNode)base.Nodes[int_0];
+				return (FloatListNode)Nodes[int_0];
 			}
 			set
 			{
-				base.Nodes[int_0] = value;
+				Nodes[int_0] = value;
 			}
 		}
 
 		public VectorArrayNode()
 		{
-			this.vmethod_0();
+			vmethod_0();
 		}
 
 		public override int vmethod_1()
