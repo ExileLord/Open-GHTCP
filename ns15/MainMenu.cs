@@ -1334,10 +1334,11 @@ namespace ns15
 					Process.Start(text2);
 				}
 			}
-			catch
-			{
-			}
-			if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero III\\") != null)
+		    catch
+		    {
+		        // ignored
+		    }
+		    if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero III\\") != null)
 			{
 				GameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero III\\";
 				if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\") != null && MessageBox.Show("Do you wish to load GH3 Aerosmith?", "GH3 Aerosmith found!", MessageBoxButtons.YesNo) == DialogResult.Yes)
