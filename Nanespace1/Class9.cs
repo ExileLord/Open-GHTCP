@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace ns0
+namespace GHNamespace1
 {
 	public class Class9
 	{

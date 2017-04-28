@@ -2,7 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Microsoft.DirectX.DirectSound;
-using ns0;
+using GHNamespace1;
 using ns1;
 
 namespace ns5

@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using ns0;
+using GHNamespace1;
 using ns1;
 using SharpAudio.ASC;
 using SharpAudio.ASC.Mp3.Lame;

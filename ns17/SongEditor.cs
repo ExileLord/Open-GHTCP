@@ -5,7 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
-using ns0;
+using GHNamespace1;
 using ns1;
 using ns14;
 using ns15;

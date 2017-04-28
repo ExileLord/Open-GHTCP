@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 
-namespace ns0
+namespace GHNamespace1
 {
 	public class Class2
 	{

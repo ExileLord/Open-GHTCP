@@ -1,6 +1,6 @@
 using System;
 
-namespace ns0
+namespace GHNamespace1
 {
 	public static class Class11
 	{

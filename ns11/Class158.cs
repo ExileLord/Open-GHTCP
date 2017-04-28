@@ -1,6 +1,6 @@
 using System;
 using System.Runtime.InteropServices;
-using ns0;
+using GHNamespace1;
 using ns1;
 using ns8;
 

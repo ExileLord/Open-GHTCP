@@ -5,7 +5,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
-using ns0;
+using GHNamespace1;
 using ns1;
 using ns8;
 using SharpAudio.ASC;

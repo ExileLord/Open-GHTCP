@@ -1,4 +1,4 @@
-using ns0;
+using GHNamespace1;
 using ns1;
 
 namespace ns12

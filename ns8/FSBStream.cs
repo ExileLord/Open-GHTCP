@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using ns0;
+using GHNamespace1;
 using ns1;
 using ns3;
 using ns4;

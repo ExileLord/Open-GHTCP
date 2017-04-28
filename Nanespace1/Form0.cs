@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using SharpAudio.ASC;
 
-namespace ns0
+namespace GHNamespace1
 {
 	[StructLayout(LayoutKind.Sequential)]
 	public class Form0 : WaveFormat

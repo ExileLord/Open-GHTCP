@@ -1,6 +1,6 @@
 using ns1;
 
-namespace ns0
+namespace GHNamespace1
 {
 	public interface INterface5
 	{

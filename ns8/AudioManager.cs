@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using ns0;
+using GHNamespace1;
 using ns1;
 using ns11;
 using ns3;

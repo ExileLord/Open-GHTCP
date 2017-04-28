@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace ns0
+namespace GHNamespace1
 {
 	[StructLayout(LayoutKind.Explicit, Size = 3)]
 	public struct Struct8

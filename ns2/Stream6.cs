@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using ns0;
+using GHNamespace1;
 using ns1;
 using ns10;
 using ns3;

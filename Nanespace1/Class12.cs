@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using ns1;
 
-namespace ns0
+namespace GHNamespace1
 {
 	public class Class12 : List<INterface5>, INterface5
 	{

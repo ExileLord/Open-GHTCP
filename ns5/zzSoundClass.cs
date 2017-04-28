@@ -1,6 +1,6 @@
 using System;
 using System.Text;
-using ns0;
+using GHNamespace1;
 using ns4;
 using SharpAudio.ASC.Mp3.Decoding;
 

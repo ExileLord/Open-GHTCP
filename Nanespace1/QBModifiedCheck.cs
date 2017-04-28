@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace ns0
+namespace GHNamespace1
 {
 	public static class QbModifiedCheck
 	{

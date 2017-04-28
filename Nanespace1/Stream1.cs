@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using ns1;
 using SharpAudio.ASC;
 
-namespace ns0
+namespace GHNamespace1
 {
 	public abstract class GenericAudioStream : Stream
 	{

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
-using ns0;
+using GHNamespace1;
 using ns11;
 using ns6;
 using SharpAudio.ASC;

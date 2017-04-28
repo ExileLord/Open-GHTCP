@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
-using ns0;
+using GHNamespace1;
 using ns5;
 using SharpAudio.ASC;
 using SharpAudio.ASC.Mp3.Decoding;

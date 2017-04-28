@@ -6,7 +6,7 @@ using System.IO;
 using System.Windows.Forms;
 using GuitarHero.Songlist;
 using MidiConverter;
-using ns0;
+using GHNamespace1;
 using ns1;
 using ns14;
 using ns15;
