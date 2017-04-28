@@ -7,15 +7,15 @@ namespace ns13
 	{
 		private int int_0;
 
-		private bool bool_0;
+		private readonly bool bool_0;
 
 		private int int_1;
 
 		private long long_0;
 
-		private Class189 class189_0;
+		private readonly Class189 class189_0;
 
-		private Class184 class184_0;
+		private readonly Class184 class184_0;
 
 		public Class194() : this(-1, false)
 		{

@@ -8,17 +8,17 @@ namespace ns11
 {
 	public class Class135 : Class131
 	{
-		private Class137 class137_0;
+		private readonly Class137 class137_0;
 
-		private int int_1;
+		private readonly int int_1;
 
-		private int int_2;
+		private readonly int int_2;
 
-		private int int_3;
+		private readonly int int_3;
 
-		private int[] int_4 = new int[32];
+		private readonly int[] int_4 = new int[32];
 
-		private int[] int_5 = new int[32];
+		private readonly int[] int_5 = new int[32];
 
 		private int[] int_6;
 

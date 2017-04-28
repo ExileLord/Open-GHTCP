@@ -11,7 +11,7 @@ namespace ns14
 
 		private Delegate6 delegate6_0;
 
-		private List<QbEditor> actionList;
+		private readonly List<QbEditor> actionList;
 
 		public void method_0(Delegate6 delegate6_1)
 		{

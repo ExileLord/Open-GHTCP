@@ -10,29 +10,29 @@ namespace ns3
 {
 	public class OGGStream : GenericAudioStream
 	{
-		private static int int_2 = 8500;
+		private static readonly int int_2 = 8500;
 
 		private static int int_3;
 
 		private static int int_4 = 1;
 
-		private static int int_5 = 2;
+		private static readonly int int_5 = 2;
 
-		private static int int_6 = -1;
+		private static readonly int int_6 = -1;
 
-		private static int int_7 = -2;
+		private static readonly int int_7 = -2;
 
 		private static int int_8 = -3;
 
-		private static int int_9 = -128;
+		private static readonly int int_9 = -128;
 
-		private static int int_10 = -129;
+		private static readonly int int_10 = -129;
 
 		private static int int_11 = -130;
 
 		private static int int_12 = -131;
 
-		private static int int_13 = -132;
+		private static readonly int int_13 = -132;
 
 		private static int int_14 = -133;
 

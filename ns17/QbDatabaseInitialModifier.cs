@@ -11,11 +11,11 @@ namespace ns17
 
 	public class QbDatabaseInitialModifier : QbEditor
 	{
-		private zzPakNode2 _pakNode;
+		private readonly zzPakNode2 _pakNode;
 
 		private bool QbDatabaseAlreadyEdited;
 
-		private bool bool_1;
+		private readonly bool bool_1;
 
 		public QbDatabaseInitialModifier(zzPakNode2 class318_1, bool bool_2)
 		{

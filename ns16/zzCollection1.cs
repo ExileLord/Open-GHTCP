@@ -21,7 +21,7 @@ namespace ns16
 
 			private int int_0;
 
-			private int int_1;
+			private readonly int int_1;
 
 			private T gparam_0;
 

@@ -46,7 +46,7 @@ namespace ns15
 
 		private int SelectedSetlist;
 
-		private bool IsAerosmith;
+		private readonly bool IsAerosmith;
 
 		public zzPabNode class319_0;
 
@@ -211,7 +211,7 @@ namespace ns15
         private ToolStripMenuItem forceRB3MidConversionToolStripMenuItem;
 
 
-        private List<string> list_0 = new List<string>(new[]
+        private readonly List<string> list_0 = new List<string>(new[]
 		{
 			"",
 			"_f",
@@ -221,7 +221,7 @@ namespace ns15
 			"_k"
 		});
 
-		private int[][] int_1 = {
+		private readonly int[][] int_1 = {
 			new[]
 			{
 				829593536,
@@ -408,7 +408,7 @@ namespace ns15
         private ToolStripButton PlayPause_EditorBtn;
         private ToolStripButton Stop_EditorBtn;
         private ToolStripLabel PlayTime_EditorLbl;
-        private int[][] int_2 = {
+        private readonly int[][] int_2 = {
 			new[]
 			{
 				1437566472,

@@ -11,13 +11,13 @@ namespace ns17
 {
 	public class TGHManager
 	{
-		private GH3Songlist gh3Songlist_0;
+		private readonly GH3Songlist gh3Songlist_0;
 
 		public GH3Tier gh3Tier_0;
 
-		private string string_0;
+		private readonly string string_0;
 
-		private string string_1;
+		private readonly string string_1;
 
 		public TGHManager(GH3Songlist gh3Songlist_1, GH3Tier gh3Tier_1, string string_2) : this(gh3Songlist_1, gh3Tier_1, string_2, null)
 		{

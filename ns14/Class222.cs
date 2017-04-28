@@ -11,11 +11,11 @@ namespace ns14
 		{
 			private Class225.Struct77 struct77_0;
 
-			private IComparer<T> icomparer_0;
+			private readonly IComparer<T> icomparer_0;
 
 			private T gparam_0;
 
-			private T gparam_1;
+			private readonly T gparam_1;
 
 			public T Current
 			{
@@ -89,9 +89,9 @@ namespace ns14
 
 		private class Class223 : Class225.Interface10<T>
 		{
-			private static Class223 class223_0 = new Class223(Comparer<T>.Default);
+			private static readonly Class223 class223_0 = new Class223(Comparer<T>.Default);
 
-			public IComparer<T> icomparer_0;
+			public readonly IComparer<T> icomparer_0;
 
 			public int imethod_0(T gparam_0, Class225.Class226 class226_0)
 			{
@@ -123,9 +123,9 @@ namespace ns14
 
 		private object object_0;
 
-		private Class225 class225_0;
+		private readonly Class225 class225_0;
 
-		private Class223 class223_0;
+		private readonly Class223 class223_0;
 
 		public int Count
 		{

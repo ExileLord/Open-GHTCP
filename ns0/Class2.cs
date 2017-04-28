@@ -8,7 +8,7 @@ namespace ns0
 	{
 		public class Class3
 		{
-			private static int[] int_0 = {
+			private static readonly int[] int_0 = {
 				3,
 				4,
 				5,
@@ -40,7 +40,7 @@ namespace ns0
 				258
 			};
 
-			private static int[] int_1 = {
+			private static readonly int[] int_1 = {
 				0,
 				0,
 				0,
@@ -72,7 +72,7 @@ namespace ns0
 				0
 			};
 
-			private static int[] int_2 = {
+			private static readonly int[] int_2 = {
 				1,
 				2,
 				3,
@@ -105,7 +105,7 @@ namespace ns0
 				24577
 			};
 
-			private static int[] int_3 = {
+			private static readonly int[] int_3 = {
 				0,
 				0,
 				0,
@@ -150,9 +150,9 @@ namespace ns0
 
 			private bool bool_0;
 
-			private Class4 class4_0;
+			private readonly Class4 class4_0;
 
-			private Class5 class5_0;
+			private readonly Class5 class5_0;
 
 			private Class7 class7_0;
 
@@ -483,11 +483,11 @@ namespace ns0
 
 		public class Class5
 		{
-			private static int int_0 = 32768;
+			private static readonly int int_0 = 32768;
 
-			private static int int_1 = int_0 - 1;
+			private static readonly int int_1 = int_0 - 1;
 
-			private byte[] byte_0 = new byte[int_0];
+			private readonly byte[] byte_0 = new byte[int_0];
 
 			private int int_2;
 
@@ -601,7 +601,7 @@ namespace ns0
 
 		public class Class6
 		{
-			private static int int_0;
+			private static readonly int int_0;
 
 			private short[] short_0;
 
@@ -951,9 +951,9 @@ namespace ns0
 		{
 			private static int int_0;
 
-			private static int int_1;
+			private static readonly int int_1;
 
-			private static int int_2;
+			private static readonly int int_2;
 
 			private static int int_3;
 
@@ -967,15 +967,15 @@ namespace ns0
 
 			private static int[] int_8;
 
-			private static byte[] byte_0;
+			private static readonly byte[] byte_0;
 
-			private static short[] short_0;
+			private static readonly short[] short_0;
 
-			private static byte[] byte_1;
+			private static readonly byte[] byte_1;
 
-			private static short[] short_1;
+			private static readonly short[] short_1;
 
-			private static byte[] byte_2;
+			private static readonly byte[] byte_2;
 
 			public static short smethod_0(int int_9)
 			{

@@ -8,47 +8,47 @@ namespace ns15
 {
 	public class MIDIParser
 	{
-		private string fileLocation;
+		private readonly string fileLocation;
 
-		private NoteEventInterpreter expertSingle = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter expertSingle = new NoteEventInterpreter();
 
-		private NoteEventInterpreter hardSingle = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter hardSingle = new NoteEventInterpreter();
 
-		private NoteEventInterpreter mediumSingle = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter mediumSingle = new NoteEventInterpreter();
 
-		private NoteEventInterpreter easySingle = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter easySingle = new NoteEventInterpreter();
 
-		private NoteEventInterpreter expertDoubleGuitar = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter expertDoubleGuitar = new NoteEventInterpreter();
 
-		private NoteEventInterpreter hardDoubleGuitar = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter hardDoubleGuitar = new NoteEventInterpreter();
 
-		private NoteEventInterpreter mediumDoubleGuitar = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter mediumDoubleGuitar = new NoteEventInterpreter();
 
-		private NoteEventInterpreter easyDoubleGuitar = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter easyDoubleGuitar = new NoteEventInterpreter();
 
-		private NoteEventInterpreter expertDoubleBass = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter expertDoubleBass = new NoteEventInterpreter();
 
-		private NoteEventInterpreter hardDoubleBass = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter hardDoubleBass = new NoteEventInterpreter();
 
-		private NoteEventInterpreter mediumDoubleBass = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter mediumDoubleBass = new NoteEventInterpreter();
 
-		private NoteEventInterpreter easyDoubleBass = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter easyDoubleBass = new NoteEventInterpreter();
 
-		private InstrumentType expertDrums = new InstrumentType();
+		private readonly InstrumentType expertDrums = new InstrumentType();
 
-		private InstrumentType hardDrums = new InstrumentType();
+		private readonly InstrumentType hardDrums = new InstrumentType();
 
-		private InstrumentType mediumDrums = new InstrumentType();
+		private readonly InstrumentType mediumDrums = new InstrumentType();
 
-		private InstrumentType easyDrums = new InstrumentType();
+		private readonly InstrumentType easyDrums = new InstrumentType();
 
-		private InstrumentType expertKeyboard = new InstrumentType();
+		private readonly InstrumentType expertKeyboard = new InstrumentType();
 
-		private InstrumentType hardKeyboard = new InstrumentType();
+		private readonly InstrumentType hardKeyboard = new InstrumentType();
 
-		private InstrumentType mediumKeyboard = new InstrumentType();
+		private readonly InstrumentType mediumKeyboard = new InstrumentType();
 
-		private InstrumentType easyKeyboard = new InstrumentType();
+		private readonly InstrumentType easyKeyboard = new InstrumentType();
 
 		private BPMInterpreter bpmInterpreter;
 
@@ -68,7 +68,7 @@ namespace ns15
 
 		private MIDIReader midiReader;
 
-		private List<string> uselessEvents = new List<string>();
+		private readonly List<string> uselessEvents = new List<string>();
 
 		public MIDIParser(string fileLocation)
 		{

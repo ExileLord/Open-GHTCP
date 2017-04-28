@@ -297,7 +297,7 @@ namespace ns16
 			755167117u
 		};
 
-		private static Random random_0 = new Random();
+		private static readonly Random random_0 = new Random();
 
 		public static void smethod_0(Stream stream_0, Stream stream_1, byte[] byte_1, byte[] byte_2)
 		{

@@ -4,7 +4,7 @@ namespace ns12
 {
 	public class Class188
 	{
-		private byte[] byte_0;
+		private readonly byte[] byte_0;
 
 		private int int_0;
 

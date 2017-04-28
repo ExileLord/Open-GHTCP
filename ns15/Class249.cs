@@ -9,7 +9,7 @@ namespace ns15
 {
 	public class Class249 : QbEditor
 	{
-		private zzPakNode2 class318_0;
+		private readonly zzPakNode2 class318_0;
 
 		private bool bool_0;
 

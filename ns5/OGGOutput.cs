@@ -11,15 +11,15 @@ namespace ns5
 	{
 		private AudioStatus enum1_0;
 
-		private GenericAudioStream stream1_0;
+		private readonly GenericAudioStream stream1_0;
 
-		private int int_0;
+		private readonly int int_0;
 
-		private int int_1;
+		private readonly int int_1;
 
 		private Device device_0;
 
-		private bool bool_0;
+		private readonly bool bool_0;
 
 		private SecondaryBuffer secondaryBuffer_0;
 
@@ -31,11 +31,11 @@ namespace ns5
 
 		private long long_0;
 
-		private BufferPositionNotify[] bufferPositionNotify_0 = new BufferPositionNotify[5];
+		private readonly BufferPositionNotify[] bufferPositionNotify_0 = new BufferPositionNotify[5];
 
-		private AutoResetEvent autoResetEvent_0;
+		private readonly AutoResetEvent autoResetEvent_0;
 
-		private BufferPositionNotify[] bufferPositionNotify_1 = new BufferPositionNotify[1];
+		private readonly BufferPositionNotify[] bufferPositionNotify_1 = new BufferPositionNotify[1];
 
 		private Notify notify_0;
 
@@ -47,7 +47,7 @@ namespace ns5
 
 		private int int_4;
 
-		private byte[] byte_0;
+		private readonly byte[] byte_0;
 
 		[DllImport("user32.dll")]
 		public static extern IntPtr GetDesktopWindow();

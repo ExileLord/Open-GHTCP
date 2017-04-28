@@ -11,9 +11,9 @@ namespace ns17
 
 	public class zzFxBoost : QbEditor
 	{
-		private zzPakNode2 class318_0;
+		private readonly zzPakNode2 class318_0;
 
-		private bool bool_0;
+		private readonly bool bool_0;
 
 		public zzFxBoost(zzPakNode2 class318_1)
 		{

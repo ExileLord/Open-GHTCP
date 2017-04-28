@@ -12,13 +12,13 @@ namespace ns15
 {
 	public class SGHManager
 	{
-		private GH3Songlist gh3SongList;
+		private readonly GH3Songlist gh3SongList;
 
 		public GH3Setlist setlistToExport;
 
-		private string string_0;
+		private readonly string string_0;
 
-		private string saveLocation;
+		private readonly string saveLocation;
 
 		public SGHManager(GH3Songlist gh3Songlist_1, GH3Setlist gh3Setlist_1, string string_2) : this(gh3Songlist_1, gh3Setlist_1, string_2, null)
 		{

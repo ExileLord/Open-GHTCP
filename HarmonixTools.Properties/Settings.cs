@@ -7,7 +7,7 @@ namespace HarmonixTools.Properties
 	[GeneratedCode("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0"), CompilerGenerated]
 	public class Settings : ApplicationSettingsBase
 	{
-		private static Settings settings_0 = (Settings)Synchronized(new Settings());
+		private static readonly Settings settings_0 = (Settings)Synchronized(new Settings());
 
 		public static Settings Default
 		{

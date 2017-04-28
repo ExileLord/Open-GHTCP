@@ -10,7 +10,7 @@ namespace ns13
 	{
 		private ArrayList arrayList_0 = new ArrayList();
 
-		private Class192 class192_0 = new Class192();
+		private readonly Class192 class192_0 = new Class192();
 
 		private Class193 class193_0;
 
@@ -22,7 +22,7 @@ namespace ns13
 
 		private long long_1;
 
-		private byte[] byte_1 = new byte[0];
+		private readonly byte[] byte_1 = new byte[0];
 
 		private bool bool_2;
 
@@ -30,7 +30,7 @@ namespace ns13
 
 		private long long_3 = -1L;
 
-		private Enum30 enum30_0 = Enum30.const_2;
+		private readonly Enum30 enum30_0 = Enum30.const_2;
 
 		public Stream23(Stream stream_1) : base(stream_1, new Class194(-1, true))
 		{

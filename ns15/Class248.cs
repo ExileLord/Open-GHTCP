@@ -21,11 +21,11 @@ namespace ns15
 
 		public bool bool_1;
 
-		private string[] string_0;
+		private readonly string[] string_0;
 
-		private TimeSpan timeSpan_0;
+		private readonly TimeSpan timeSpan_0;
 
-		private TimeSpan timeSpan_1;
+		private readonly TimeSpan timeSpan_1;
 
 		public string string_1;
 

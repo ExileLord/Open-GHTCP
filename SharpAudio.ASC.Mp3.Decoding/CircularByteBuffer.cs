@@ -5,9 +5,9 @@ namespace SharpAudio.ASC.Mp3.Decoding
 	[Serializable]
 	public class CircularByteBuffer
 	{
-		private byte[] dataArray;
+		private readonly byte[] dataArray;
 
-		private int length = 1;
+		private readonly int length = 1;
 
 		private int index;
 

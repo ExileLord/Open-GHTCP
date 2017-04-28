@@ -4,7 +4,7 @@ namespace ns8
 {
 	public static class StreamHelper
 	{
-		private static byte[] _buffer = new byte[16384];
+		private static readonly byte[] _buffer = new byte[16384];
 
 		public static void CopyStream(Stream destination, Stream source)
 		{

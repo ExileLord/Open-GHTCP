@@ -13,7 +13,7 @@ namespace ns16
 	{
 		private class HandlerBuddy : NativeWindow, IDisposable
 		{
-			private static int int_0 = 786;
+			private static readonly int int_0 = 786;
 
 			private EventHandler<EventArgs1> eventHandler_0;
 
@@ -55,9 +55,9 @@ namespace ns16
 			}
 		}
 
-		private HandlerBuddy class234_0 = new HandlerBuddy();
+		private readonly HandlerBuddy class234_0 = new HandlerBuddy();
 
-		private Dictionary<EventArgs1, int> dictionary_0 = new Dictionary<EventArgs1, int>();
+		private readonly Dictionary<EventArgs1, int> dictionary_0 = new Dictionary<EventArgs1, int>();
 
 		private EventHandler<EventArgs1> eventHandler_0;
 

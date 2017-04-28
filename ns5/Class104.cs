@@ -4,7 +4,7 @@ namespace ns5
 {
 	public class Class104
 	{
-		private Enum4 enum4_0;
+		private readonly Enum4 enum4_0;
 
 		private readonly Class105 class105_0;
 

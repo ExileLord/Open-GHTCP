@@ -23,7 +23,7 @@ namespace ns17
 
 		public readonly bool _LoadedSuccessfully;
 
-		private static string _hashPath = "script\\ghtcp\\ghtcp.hash";
+		private static readonly string _hashPath = "script\\ghtcp\\ghtcp.hash";
 
 		public bool GameSettingsAreValid()
 		{

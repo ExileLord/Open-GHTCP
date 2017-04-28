@@ -8,13 +8,13 @@ namespace ns11
 {
 	public class Class134 : Class131
 	{
-		private Class137 class137_0;
+		private readonly Class137 class137_0;
 
-		private int int_1;
+		private readonly int int_1;
 
-		private int[] int_2 = new int[4];
+		private readonly int[] int_2 = new int[4];
 
-		private int[] int_3;
+		private readonly int[] int_3;
 
 		public Class134(Class144 class144_0, Class140 class140_1, Class136 class136_0, int int_4, int int_5, int int_6) : base(class140_1, int_5)
 		{

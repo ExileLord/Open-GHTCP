@@ -14,7 +14,7 @@ namespace ns19
 
 		private Stream26 _fileStream;
 
-		private string _fileName;
+		private readonly string _fileName;
 
 		private bool _unkFlag0 = true;
 

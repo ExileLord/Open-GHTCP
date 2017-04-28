@@ -19,17 +19,17 @@ namespace ns13
 
 		private Enum32 enum32_0;
 
-		private int int_0 = -1;
+		private readonly int int_0 = -1;
 
-		private ushort ushort_0;
+		private readonly ushort ushort_0;
 
-		private string string_0;
+		private readonly string string_0;
 
 		private ulong ulong_0;
 
 		private ulong ulong_1;
 
-		private ushort ushort_1;
+		private readonly ushort ushort_1;
 
 		private uint uint_0;
 

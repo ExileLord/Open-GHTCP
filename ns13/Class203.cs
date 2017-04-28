@@ -5,7 +5,7 @@ namespace ns13
 {
 	public class Class203
 	{
-		private byte[] byte_0 = new byte[32768];
+		private readonly byte[] byte_0 = new byte[32768];
 
 		private int int_0;
 

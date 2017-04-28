@@ -8,7 +8,7 @@ namespace ns2
 	{
 		private static int int_0 = 140;
 
-		private static int int_1 = 63;
+		private static readonly int int_1 = 63;
 
 		private static readonly float[] float_0 = {
 			1.06498632E-07f,

@@ -9,9 +9,9 @@ namespace ns20
 {
 	public static class QbSongClass1
 	{
-		private static Dictionary<int, string> _keyDict1 = new Dictionary<int, string>();
+		private static readonly Dictionary<int, string> _keyDict1 = new Dictionary<int, string>();
 
-		private static Dictionary<int, string> _keyDict2 = new Dictionary<int, string>();
+		private static readonly Dictionary<int, string> _keyDict2 = new Dictionary<int, string>();
 
 		public static bool Dirty; //This hasn't been saved yet?..
 

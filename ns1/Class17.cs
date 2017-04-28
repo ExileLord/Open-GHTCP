@@ -10,7 +10,7 @@ namespace ns1
 		private int int_0;
 
 		[FieldOffset(4)]
-		private byte[] byte_0;
+		private readonly byte[] byte_0;
 
 		[FieldOffset(4)]
 		private float[] float_0;

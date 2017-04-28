@@ -10,7 +10,7 @@ namespace ns14
 		{
 			private Class225 class225_0;
 
-			private uint uint_0;
+			private readonly uint uint_0;
 
 			private Stack<Class226> stack_0;
 
@@ -175,7 +175,7 @@ namespace ns14
 
 		private Class226 class226_0;
 
-		private object object_0;
+		private readonly object object_0;
 
 		private uint uint_0;
 

@@ -5,7 +5,7 @@ namespace ns12
 {
 	public class Class186
 	{
-		private static int int_0 = Thread.CurrentThread.CurrentCulture.TextInfo.OEMCodePage;
+		private static readonly int int_0 = Thread.CurrentThread.CurrentCulture.TextInfo.OEMCodePage;
 
 		public static int smethod_0()
 		{

@@ -19,9 +19,9 @@ namespace ns7
 			51
 		};
 
-		private Class144 class144_0;
+		private readonly Class144 class144_0;
 
-		private Class136[] class136_0;
+		private readonly Class136[] class136_0;
 
 		private int int_2;
 
@@ -33,9 +33,9 @@ namespace ns7
 
 		private Class122 class122_0;
 
-		private Class151 class151_0 = new Class151();
+		private readonly Class151 class151_0 = new Class151();
 
-		private byte[] byte_1 = new byte[2];
+		private readonly byte[] byte_1 = new byte[2];
 
 		private int int_5;
 

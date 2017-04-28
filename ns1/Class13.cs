@@ -83,7 +83,7 @@ namespace ns1
 
 		private bool bool_2;
 
-		private static Enum0 enum0_0 = Enum0.const_0;
+		private static readonly Enum0 enum0_0 = Enum0.const_0;
 
 		public float this[int int_4]
 		{

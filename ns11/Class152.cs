@@ -2,7 +2,7 @@ namespace ns11
 {
 	public class Class152
 	{
-		private byte[] byte_0;
+		private readonly byte[] byte_0;
 
 		private int int_0;
 

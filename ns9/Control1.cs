@@ -35,7 +35,7 @@ namespace ns9
 
 		private bool bool_3;
 
-		private bool bool_4 = true;
+		private readonly bool bool_4 = true;
 
 		private int int_0 = 10;
 
@@ -55,7 +55,7 @@ namespace ns9
 
 		private SizeF sizeF_0 = new SizeF(50f, 50f);
 
-		private bool bool_5 = true;
+		private readonly bool bool_5 = true;
 
 		private Image image_0;
 

@@ -60,9 +60,9 @@ namespace ns17
 
 		private IContainer icontainer_0;
 
-		private Timer timer;
+		private readonly Timer timer;
 
-		private VScrollBar VerticalScrollBar = new VScrollBar();
+		private readonly VScrollBar VerticalScrollBar = new VScrollBar();
 
 		private int Width;
 
@@ -90,11 +90,11 @@ namespace ns17
 
 		private sbyte[] AudioData;
 
-		private Pen Pen_Black = Pens.Black;
+		private readonly Pen Pen_Black = Pens.Black;
 
-		private Pen Pen_Gray = Pens.Gray;
+		private readonly Pen Pen_Gray = Pens.Gray;
 
-		private Pen Pen_LightGray = Pens.LightGray;
+		private readonly Pen Pen_LightGray = Pens.LightGray;
 
 		private bool DoubleFretbarWidth;
 
@@ -102,11 +102,11 @@ namespace ns17
 
 		public decimal FretbarWidth;
 
-		private Brush Brush_GrayText = SystemBrushes.GrayText;
+		private readonly Brush Brush_GrayText = SystemBrushes.GrayText;
 
-		private Font Font_Verdana = new Font("Verdana", 24f);
+		private readonly Font Font_Verdana = new Font("Verdana", 24f);
 
-		private Brush[] NoteBrush = {
+		private readonly Brush[] NoteBrush = {
 			Brushes.Green,
 			Brushes.Red,
 			Brushes.Yellow,
@@ -124,17 +124,17 @@ namespace ns17
 			Pens.LightGray
 		};
 
-		private Pen[] pen_4 = new Pen[6];
+		private readonly Pen[] pen_4 = new Pen[6];
 
-		private Brush Brush_Black = Brushes.Black;
+		private readonly Brush Brush_Black = Brushes.Black;
 
-		private Brush Brush_White = Brushes.White;
+		private readonly Brush Brush_White = Brushes.White;
 
-		private Pen Pen_Black2 = Pens.Black;
+		private readonly Pen Pen_Black2 = Pens.Black;
 
-		private Pen Pen_TransparentBlue = new Pen(Color.FromArgb(30, Color.Blue));
+		private readonly Pen Pen_TransparentBlue = new Pen(Color.FromArgb(30, Color.Blue));
 
-		private double double_0 = 2.5132741228718345;
+		private readonly double double_0 = 2.5132741228718345;
 
 		private bool GamemodeView = true;
 

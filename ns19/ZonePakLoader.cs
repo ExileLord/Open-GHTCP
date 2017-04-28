@@ -18,7 +18,7 @@ namespace ns19
 
 		private Delegate9 delegate9_0;
 
-		private string _dataDirectory;
+		private readonly string _dataDirectory;
 
 		public void method_0(Delegate8 delegate8_1)
 		{

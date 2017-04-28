@@ -9,11 +9,11 @@ namespace ns17
 {
 	public class zzSetListParser : QbEditor
 	{
-		private zzPakNode2 class318_0;
+		private readonly zzPakNode2 class318_0;
 
-		private GH3Songlist gh3Songlist_0;
+		private readonly GH3Songlist gh3Songlist_0;
 
-		private bool bool_0;
+		private readonly bool bool_0;
 
 		public zzSetListParser(zzPakNode2 class318_1, GH3Songlist gh3Songlist_1, bool bool_1)
 		{

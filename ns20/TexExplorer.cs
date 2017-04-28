@@ -74,7 +74,7 @@ namespace ns20
 
 		private ToolStripButton Search_Btn;
 
-		private string string_0;
+		private readonly string string_0;
 
 		private TexFile _currentTexFile;
 
@@ -88,7 +88,7 @@ namespace ns20
 
 		private string string_1;
 
-		private List<TreeNode> nodeList = new List<TreeNode>();
+		private readonly List<TreeNode> nodeList = new List<TreeNode>();
         private GroupBox groupBox1;
         private Label label1;
         private Label label6;

@@ -16,9 +16,9 @@ namespace ns13
 
 		private int int_1;
 
-		private int int_2 = 10240;
+		private readonly int int_2 = 10240;
 
-		private int int_3 = 20;
+		private readonly int int_3 = 20;
 
 		public int method_0()
 		{

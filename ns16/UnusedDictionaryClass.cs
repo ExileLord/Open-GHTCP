@@ -5,7 +5,7 @@ namespace ns16
 {
 	public class zzDictionary242<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>, ICollection<KeyValuePair<TKey, TValue>>, IDictionary<TKey, TValue>, IEnumerable
 	{
-		private zzMap243<TKey, TValue> class243_0 = new zzMap243<TKey, TValue>();
+		private readonly zzMap243<TKey, TValue> class243_0 = new zzMap243<TKey, TValue>();
 
 		public TValue this[TKey key]
 		{

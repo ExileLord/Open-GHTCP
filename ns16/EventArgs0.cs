@@ -4,9 +4,9 @@ namespace ns16
 {
 	public class EventArgs0 : EventArgs
 	{
-		private string string_0;
+		private readonly string string_0;
 
-		private int int_0;
+		private readonly int int_0;
 
 		public EventArgs0(string string_1, int int_1)
 		{

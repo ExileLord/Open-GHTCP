@@ -9,11 +9,11 @@ namespace ns17
 {
 	public class CustomMenuCreator : QbEditor
 	{
-		private zzPakNode2 class318_0;
+		private readonly zzPakNode2 class318_0;
 
 		private bool bool_0;
 
-		private bool bool_1;
+		private readonly bool bool_1;
 
 		public CustomMenuCreator(zzPakNode2 class318_1, bool bool_2)
 		{

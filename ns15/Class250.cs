@@ -10,9 +10,9 @@ namespace ns15
 
 		private zzPakNode2 class318_0;
 
-		private string string_0;
+		private readonly string string_0;
 
-		private string string_1;
+		private readonly string string_1;
 
 		public Class250(string string_2, QBCParser class362_1, zzPakNode2 class318_1, string string_3)
 		{

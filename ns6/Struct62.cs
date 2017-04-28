@@ -4,7 +4,7 @@ namespace ns6
 {
 	public struct Struct62 : IEquatable<Struct62>, IComparable<Struct62>
 	{
-		private IntPtr intptr_0;
+		private readonly IntPtr intptr_0;
 
 		public static readonly Struct62 struct62_0 = new Struct62(IntPtr.Zero);
 

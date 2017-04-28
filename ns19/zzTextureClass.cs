@@ -70,17 +70,17 @@ namespace ns19
 			}
 		}
 
-		private static byte[] byte_0 = new byte[32];
+		private static readonly byte[] byte_0 = new byte[32];
 
-		private static byte[] byte_1 = new byte[64];
+		private static readonly byte[] byte_1 = new byte[64];
 
 		private static byte[,] byte_2 = new byte[256, 2];
 
 		private static byte[,] byte_3 = new byte[256, 2];
 
-		private static byte[] byte_4 = new byte[272];
+		private static readonly byte[] byte_4 = new byte[272];
 
-		private static byte[] byte_5 = new byte[272];
+		private static readonly byte[] byte_5 = new byte[272];
 
 		private static bool bool_0;
 

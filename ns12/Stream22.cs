@@ -13,7 +13,7 @@ namespace ns12
 
 		private ICryptoTransform icryptoTransform_0;
 
-		private byte[] byte_0;
+		private readonly byte[] byte_0;
 
 		public Class194 class194_0;
 
@@ -21,7 +21,7 @@ namespace ns12
 
 		private bool bool_0;
 
-		private bool bool_1 = true;
+		private readonly bool bool_1 = true;
 
 		public override bool CanRead
 		{

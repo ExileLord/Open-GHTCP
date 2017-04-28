@@ -8,7 +8,7 @@ namespace ns15
 {
 	public class SongProperties : Form
 	{
-		private GH3Song Song;
+		private readonly GH3Song Song;
 
 		private IContainer icontainer_0;
 

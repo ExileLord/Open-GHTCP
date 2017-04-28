@@ -12,7 +12,7 @@ namespace ns16
 	{
 		private delegate void Delegate7(object sender, EventArgs0 e);
 
-		private ActionList actionList;
+		private readonly ActionList actionList;
 
 		private EventHandler eventHandler_0;
 

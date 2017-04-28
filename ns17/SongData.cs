@@ -192,7 +192,7 @@ namespace ns17
 
 		private bool bool_5 = true;
 
-        private bool forceRB3;
+        private readonly bool forceRB3;
 
         protected override void Dispose(bool disposing)
 		{

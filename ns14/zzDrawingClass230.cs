@@ -25,7 +25,7 @@ namespace ns14
 			public static extern bool LineTo(IntPtr intptr_0, int int_0, int int_1);
 		}
 
-		private ListBox listBox_0;
+		private readonly ListBox listBox_0;
 
 		private int int_0 = -1;
 

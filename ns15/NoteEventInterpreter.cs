@@ -31,7 +31,7 @@ namespace ns15
 
 		public bool alwaysTrue = true;
 
-		private string currentEventLine;
+		private readonly string currentEventLine;
 
 		public NoteEventInterpreter()
 		{

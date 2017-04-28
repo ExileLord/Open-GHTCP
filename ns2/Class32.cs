@@ -2,7 +2,7 @@ namespace ns2
 {
 	public class Class32
 	{
-		private static int int_0 = 63;
+		private static readonly int int_0 = 63;
 
 		public int[] int_1 = new int[int_0 + 2];
 

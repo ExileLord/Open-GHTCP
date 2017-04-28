@@ -82,7 +82,7 @@ namespace ns12
 
 		private class Class182 : IEnumerator
 		{
-			private Class193[] class193_0;
+			private readonly Class193[] class193_0;
 
 			private int int_0 = -1;
 

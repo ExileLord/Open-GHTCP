@@ -16,7 +16,7 @@ namespace ns8
 {
 	public class AudioManager : IDisposable
 	{
-		private List<PlayableAudio> list_0;
+		private readonly List<PlayableAudio> list_0;
 
 		public AudioManager()
 		{

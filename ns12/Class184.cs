@@ -7,9 +7,9 @@ namespace ns12
 	{
 		private int int_6;
 
-		private short[] short_0;
+		private readonly short[] short_0;
 
-		private short[] short_1;
+		private readonly short[] short_1;
 
 		private int int_7;
 
@@ -23,7 +23,7 @@ namespace ns12
 
 		private int int_11;
 
-		private byte[] byte_0;
+		private readonly byte[] byte_0;
 
 		private Enum29 enum29_0;
 
@@ -45,11 +45,11 @@ namespace ns12
 
 		private int int_19;
 
-		private Class189 class189_0;
+		private readonly Class189 class189_0;
 
-		private Class190 class190_0;
+		private readonly Class190 class190_0;
 
-		private Class200 class200_0;
+		private readonly Class200 class200_0;
 
 		public Class184(Class189 class189_1)
 		{

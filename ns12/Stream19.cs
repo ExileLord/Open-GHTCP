@@ -18,7 +18,7 @@ namespace ns12
 
 		private bool bool_0;
 
-		private bool bool_1 = true;
+		private readonly bool bool_1 = true;
 
 		public override bool CanRead
 		{

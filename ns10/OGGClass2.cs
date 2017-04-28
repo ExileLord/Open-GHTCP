@@ -23,9 +23,9 @@ namespace ns10
 
 		public int[] int_8;
 
-		private static int int_9 = 21;
+		private static readonly int int_9 = 21;
 
-		private static int int_10 = 768;
+		private static readonly int int_10 = 768;
 
 	    public int method_0(OGGClass3 oggClass3)
 		{

@@ -6,11 +6,11 @@ namespace ns10
 {
 	public class OGGClass1
 	{
-		private static float float_0 = 3.14159274f;
+		private static readonly float float_0 = 3.14159274f;
 
-		private static int int_0 = 1;
+		private static readonly int int_0 = 1;
 
-		private static int int_1 = 1;
+		private static readonly int int_1 = 1;
 
 		public int int_2;
 

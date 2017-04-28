@@ -7,13 +7,13 @@ namespace ns17
 {
 	public class zzSetListUpdater : QbEditor
 	{
-		private GH3Songlist gh3Songlist_0;
+		private readonly GH3Songlist gh3Songlist_0;
 
-		private zzPakNode2 class318_0;
+		private readonly zzPakNode2 class318_0;
 
-		private string string_0;
+		private readonly string string_0;
 
-		private int int_0;
+		private readonly int int_0;
 
 		public zzSetListUpdater(int int_1, zzPakNode2 class318_1, GH3Songlist gh3Songlist_1)
 		{

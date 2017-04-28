@@ -4,7 +4,7 @@ namespace ns10
 {
 	public class Class69
 	{
-		private static int int_0 = 128;
+		private static readonly int int_0 = 128;
 
 		private static readonly float[] float_0 = {
 			1f,
@@ -138,7 +138,7 @@ namespace ns10
 			-1f
 		};
 
-		private static int int_1 = 32;
+		private static readonly int int_1 = 32;
 
 		private static readonly float[] float_1 = {
 			1.41421354f,
@@ -176,7 +176,7 @@ namespace ns10
 			1f
 		};
 
-		private static int int_2 = -32;
+		private static readonly int int_2 = -32;
 
 		private static readonly float[] float_2 = {
 			65536f,

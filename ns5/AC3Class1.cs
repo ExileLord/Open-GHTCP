@@ -12,11 +12,11 @@ namespace ns5
 
 		private static double double_1;
 
-		private static double double_2;
+		private static readonly double double_2;
 
-		private static double double_3;
+		private static readonly double double_3;
 
-		private static double double_4;
+		private static readonly double double_4;
 
 		public int int_1;
 

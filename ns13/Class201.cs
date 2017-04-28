@@ -10,7 +10,7 @@ namespace ns13
 	{
 		private int int_0;
 
-		private byte[] byte_0;
+		private readonly byte[] byte_0;
 
 		private int int_1;
 
@@ -22,7 +22,7 @@ namespace ns13
 
 		private ICryptoTransform icryptoTransform_0;
 
-		private Stream stream_0;
+		private readonly Stream stream_0;
 
 		public Class201(Stream stream_1, int int_3)
 		{

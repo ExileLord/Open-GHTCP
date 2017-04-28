@@ -4,7 +4,7 @@ namespace ns7
 {
 	public class Class128 : Class121
 	{
-		private int int_0;
+		private readonly int int_0;
 
 		public Class128(Class144 class144_0, int int_1, bool bool_1) : base(bool_1)
 		{

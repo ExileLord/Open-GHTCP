@@ -11,15 +11,15 @@ namespace ns3
 
 		private static string string_0 = "vorbis";
 
-		private static int int_2 = 1;
+		private static readonly int int_2 = 1;
 
-		private static int int_3 = 2;
+		private static readonly int int_3 = 2;
 
-		private static int int_4 = 3;
+		private static readonly int int_4 = 3;
 
-		private static int int_5 = 1;
+		private static readonly int int_5 = 1;
 
-		private static int int_6 = 1;
+		private static readonly int int_6 = 1;
 
 		public int int_7;
 

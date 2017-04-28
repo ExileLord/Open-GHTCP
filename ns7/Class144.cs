@@ -6,9 +6,9 @@ namespace ns7
 {
 	public class Class144
 	{
-		private static byte byte_0 = 128;
+		private static readonly byte byte_0 = 128;
 
-		private byte[] byte_1 = new byte[1024];
+		private readonly byte[] byte_1 = new byte[1024];
 
 		private int int_0;
 
@@ -22,7 +22,7 @@ namespace ns7
 
 		private short short_0;
 
-		private Stream stream_0;
+		private readonly Stream stream_0;
 
 		public virtual short vmethod_0()
 		{

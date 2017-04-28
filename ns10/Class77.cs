@@ -14,7 +14,7 @@ namespace ns10
 			public int int_0;
 		}
 
-		private static float float_0 = 3.14159274f;
+		private static readonly float float_0 = 3.14159274f;
 
 		public static void smethod_0(float[] float_1, int[] int_0, int int_1, int int_2, float[] float_2, int int_3, float float_3, float float_4)
 		{

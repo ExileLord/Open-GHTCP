@@ -45,7 +45,7 @@ namespace ns9
 
 		private Track<int, int> class228_6;
 
-		private FloatListNode class287_0 = new FloatListNode(true);
+		private readonly FloatListNode class287_0 = new FloatListNode(true);
 
 		public QBCParser()
 		{

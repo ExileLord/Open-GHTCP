@@ -64,7 +64,7 @@ namespace ns11
 
 		private readonly byte byte_0;
 
-		private bool bool_2;
+		private readonly bool bool_2;
 
 		private readonly Class162.Delegate4 delegate4_0;
 

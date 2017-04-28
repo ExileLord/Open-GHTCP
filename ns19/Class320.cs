@@ -5,23 +5,23 @@ namespace ns19
 {
 	public class Class320
 	{
-		private static int int_0 = 4096;
+		private static readonly int int_0 = 4096;
 
-		private static int int_1 = 18;
+		private static readonly int int_1 = 18;
 
-		private static int int_2 = 2;
+		private static readonly int int_2 = 2;
 
 		private int int_3;
 
 		private int int_4;
 
-		private int[] int_5 = new int[int_0 + 1];
+		private readonly int[] int_5 = new int[int_0 + 1];
 
-		private int[] int_6 = new int[int_0 + 257];
+		private readonly int[] int_6 = new int[int_0 + 257];
 
-		private int[] int_7 = new int[int_0 + 1];
+		private readonly int[] int_7 = new int[int_0 + 1];
 
-		private byte[] byte_0 = new byte[int_0 + int_1 - 1];
+		private readonly byte[] byte_0 = new byte[int_0 + int_1 - 1];
 
 		public byte[] method_0(byte[] byte_1)
 		{

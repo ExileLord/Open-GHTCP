@@ -154,11 +154,11 @@ namespace ns13
 
 		private long long_1;
 
-		private bool bool_1;
+		private readonly bool bool_1;
 
-		private Class187 class187_0;
+		private readonly Class187 class187_0;
 
-		private Class203 class203_0;
+		private readonly Class203 class203_0;
 
 		private Class198 class198_0;
 
@@ -166,7 +166,7 @@ namespace ns13
 
 		private Class197 class197_1;
 
-		private Class200 class200_0;
+		private readonly Class200 class200_0;
 
 		public Class196() : this(false)
 		{

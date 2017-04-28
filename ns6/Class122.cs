@@ -4,23 +4,23 @@ namespace ns6
 {
 	public class Class122 : Class121
 	{
-		private byte[] byte_0 = new byte[16];
+		private readonly byte[] byte_0 = new byte[16];
 
-		private int int_0;
+		private readonly int int_0;
 
-		private int int_1;
+		private readonly int int_1;
 
-		private int int_2;
+		private readonly int int_2;
 
-		private int int_3;
+		private readonly int int_3;
 
-		private int int_4;
+		private readonly int int_4;
 
-		private int int_5;
+		private readonly int int_5;
 
-		private int int_6;
+		private readonly int int_6;
 
-		private long long_0;
+		private readonly long long_0;
 
 		public virtual int vmethod_1()
 		{

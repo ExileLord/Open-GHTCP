@@ -158,7 +158,7 @@ namespace ns4
 
 		private readonly Enum4 enum4_0;
 
-		private Class102 class102_0;
+		private readonly Class102 class102_0;
 
 		private readonly Class89 class89_0;
 

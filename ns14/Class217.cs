@@ -5,11 +5,11 @@ namespace ns14
 {
 	public class Class217 : IDisposable
 	{
-		private StringWriter stringWriter_0;
+		private readonly StringWriter stringWriter_0;
 
-		private TextWriter textWriter_0;
+		private readonly TextWriter textWriter_0;
 
-		private string string_0;
+		private readonly string string_0;
 
 		public Class217(string string_1)
 		{

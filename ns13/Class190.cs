@@ -8,21 +8,21 @@ namespace ns13
 	{
 		private class Class191
 		{
-			public short[] short_0;
+			public readonly short[] short_0;
 
 			public byte[] byte_0;
 
-			public int int_0;
+			public readonly int int_0;
 
 			public int int_1;
 
 			private short[] short_1;
 
-			private int[] int_2;
+			private readonly int[] int_2;
 
-			private int int_3;
+			private readonly int int_3;
 
-			private Class190 class190_0;
+			private readonly Class190 class190_0;
 
 			public Class191(Class190 class190_1, int int_4, int int_5, int int_6)
 			{
@@ -384,25 +384,25 @@ namespace ns13
 
 		private static readonly byte[] byte_0;
 
-		private static short[] short_0;
+		private static readonly short[] short_0;
 
-		private static byte[] byte_1;
+		private static readonly byte[] byte_1;
 
-		private static short[] short_1;
+		private static readonly short[] short_1;
 
-		private static byte[] byte_2;
+		private static readonly byte[] byte_2;
 
 		public Class189 class189_0;
 
-		private Class191 class191_0;
+		private readonly Class191 class191_0;
 
-		private Class191 class191_1;
+		private readonly Class191 class191_1;
 
-		private Class191 class191_2;
+		private readonly Class191 class191_2;
 
-		private short[] short_2;
+		private readonly short[] short_2;
 
-		private byte[] byte_3;
+		private readonly byte[] byte_3;
 
 		private int int_1;
 

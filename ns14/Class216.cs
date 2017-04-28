@@ -8,11 +8,11 @@ namespace ns14
 	{
 		public static SortedDictionary<string, string> sortedDictionary_0 = new SortedDictionary<string, string>();
 
-		private static string string_0 = "MM/dd/yyyy hh:mm:ss tt";
+		private static readonly string string_0 = "MM/dd/yyyy hh:mm:ss tt";
 
-		private static string string_1 = "MM_dd_yy hh_mm_ss tt";
+		private static readonly string string_1 = "MM_dd_yy hh_mm_ss tt";
 
-		private static bool bool_0 = true;
+		private static readonly bool bool_0 = true;
 
 		public static void smethod_0(string string_2)
 		{

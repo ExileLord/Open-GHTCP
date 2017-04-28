@@ -13,7 +13,7 @@ namespace ns9
 
 		private Dictionary<string, bool> dictionary_0 = new Dictionary<string, bool>();
 
-		private Dictionary<string, bool> dictionary_1 = new Dictionary<string, bool>();
+		private readonly Dictionary<string, bool> dictionary_1 = new Dictionary<string, bool>();
 
 		public void imethod_0(string string_0)
 		{
