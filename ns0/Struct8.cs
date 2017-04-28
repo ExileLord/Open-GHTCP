@@ -21,7 +21,7 @@ namespace ns0
 
 		public static int smethod_0(Struct8 struct8_0)
 		{
-			return BitConverter.ToInt32(new byte[]
+			return BitConverter.ToInt32(new[]
 			{
 				struct8_0.byte_0,
 				struct8_0.byte_1,
@@ -42,7 +42,7 @@ namespace ns0
 
 		public static Struct8 smethod_2(byte[] byte_3, int int_2)
 		{
-			return Struct8.smethod_3(byte_3, int_2, false);
+			return smethod_3(byte_3, int_2, false);
 		}
 
 		public static Struct8 smethod_3(byte[] byte_3, int int_2, bool bool_0)
@@ -51,7 +51,7 @@ namespace ns0
 			{
 				throw new ArgumentNullException();
 			}
-			if ((ulong)int_2 >= (ulong)((long)byte_3.Length))
+			if ((ulong)int_2 >= (ulong)byte_3.Length)
 			{
 				throw new ArgumentOutOfRangeException();
 			}
@@ -77,7 +77,7 @@ namespace ns0
 
 		public static byte[] smethod_4(Struct8 struct8_0)
 		{
-			return new byte[]
+			return new[]
 			{
 				struct8_0.byte_0,
 				struct8_0.byte_1,
@@ -93,7 +93,7 @@ namespace ns0
 			array[2] = struct8_0.byte_2;
 			int num = BitConverter.ToInt32(array, 0);
 			num >>= int_2;
-			return Struct8.smethod_1(num);
+			return smethod_1(num);
 		}
 
 		public static Struct8 smethod_6(Struct8 struct8_0, int int_2)
@@ -104,7 +104,7 @@ namespace ns0
 			array[2] = struct8_0.byte_2;
 			int num = BitConverter.ToInt32(array, 0);
 			num <<= int_2;
-			return Struct8.smethod_1(num);
+			return smethod_1(num);
 		}
 	}
 }

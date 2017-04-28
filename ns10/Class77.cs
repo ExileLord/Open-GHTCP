@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.InteropServices;
 
 namespace ns10
@@ -19,7 +18,7 @@ namespace ns10
 
 		public static void smethod_0(float[] float_1, int[] int_0, int int_1, int int_2, float[] float_2, int int_3, float float_3, float float_4)
 		{
-			float num = Class77.float_0 / (float)int_2;
+			float num = float_0 / int_2;
 			int i;
 			for (i = 0; i < int_3; i++)
 			{
@@ -29,11 +28,11 @@ namespace ns10
 			i = 0;
 			while (i < int_1)
 			{
-				Class77.Struct15 @struct = default(Class77.Struct15);
+				Struct15 @struct = default(Struct15);
 				int num3 = int_0[i];
 				float num4 = 0.707106769f;
 				float num5 = 0.707106769f;
-				float num6 = Class69.smethod_0(num * (float)num3);
+				float num6 = Class69.smethod_0(num * num3);
 				for (int j = 0; j < num2; j += 2)
 				{
 					num5 *= float_2[j] - num6;
@@ -66,7 +65,7 @@ namespace ns10
 						num9 = -25;
 					}
 					num9 += (int)(((uint)num8 >> 23) - 126u);
-					num7 = (int)(((long)num7 & 2155872255L) | 1056964608L);
+					num7 = (int)((num7 & 2155872255L) | 1056964608L);
 					@struct.int_0 = num7;
 					num5 = @struct.float_0;
 				}

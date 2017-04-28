@@ -1,6 +1,6 @@
-using SharpAudio.ASC;
 using System;
 using System.IO;
+using SharpAudio.ASC;
 
 namespace ns1
 {
@@ -16,41 +16,41 @@ namespace ns1
 
 		public virtual int vmethod_0()
 		{
-			return this.waveFormat_0.int_1 / 10;
+			return waveFormat_0.int_1 / 10;
 		}
 
 		public int method_0()
 		{
-			return this.vmethod_0();
+			return vmethod_0();
 		}
 
 		public virtual Stream vmethod_1()
 		{
-			this.Flush();
-			return this.stream_0;
+			Flush();
+			return stream_0;
 		}
 
 		public override void Close()
 		{
-			this.Dispose(true);
+			Dispose(true);
 		}
 
 		public override void Flush()
 		{
-			this.stream_0.Flush();
+			stream_0.Flush();
 		}
 
         protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
-				this.stream_0.Close();
+				stream_0.Close();
 			}
 		}
 
 		public new virtual void Dispose()
 		{
-			this.Dispose(true);
+			Dispose(true);
 		}
 	}
 }

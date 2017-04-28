@@ -1,7 +1,7 @@
-using ns0;
-using ns1;
 using System;
 using System.Runtime.InteropServices;
+using ns0;
+using ns1;
 
 namespace SharpAudio.ASC
 {
@@ -32,48 +32,48 @@ namespace SharpAudio.ASC
 			{
 				throw new ArgumentOutOfRangeException("Channels must be 1 or greater.", "channels");
 			}
-			this.waveFormatTag_0 = WaveFormatTag.PCM;
-			this.short_0 = (short)int_4;
-			this.int_0 = int_2;
-			this.short_2 = (short)int_3;
-			this.short_3 = 0;
-			this.short_1 = (short)(int_4 * (int_3 / 8));
-			this.int_1 = this.int_0 * (int)this.short_1;
+			waveFormatTag_0 = WaveFormatTag.PCM;
+			short_0 = (short)int_4;
+			int_0 = int_2;
+			short_2 = (short)int_3;
+			short_3 = 0;
+			short_1 = (short)(int_4 * (int_3 / 8));
+			int_1 = int_0 * short_1;
 		}
 
 		public WaveFormat(int int_2, int int_3)
 		{
-			this.waveFormatTag_0 = WaveFormatTag.IEEEFloat;
-			this.short_0 = (short)int_3;
-			this.short_2 = 32;
-			this.int_0 = int_2;
-			this.short_1 = (short)(4 * int_3);
-			this.int_1 = int_2 * (int)this.short_1;
-			this.short_3 = 0;
+			waveFormatTag_0 = WaveFormatTag.IEEEFloat;
+			short_0 = (short)int_3;
+			short_2 = 32;
+			int_0 = int_2;
+			short_1 = (short)(4 * int_3);
+			int_1 = int_2 * short_1;
+			short_3 = 0;
 		}
 
 		public override string ToString()
 		{
-			WaveFormatTag waveFormatTag = this.waveFormatTag_0;
+			WaveFormatTag waveFormatTag = waveFormatTag_0;
 			if (waveFormatTag != WaveFormatTag.PCM)
 			{
 				if (waveFormatTag != WaveFormatTag.Extensible)
 				{
-					return this.waveFormatTag_0.ToString();
+					return waveFormatTag_0.ToString();
 				}
 			}
-			return string.Format("{0} bit PCM: {1}kHz {2} channels", this.short_2, this.int_0 / 1000, this.short_0);
+			return string.Format("{0} bit PCM: {1}kHz {2} channels", short_2, int_0 / 1000, short_0);
 		}
 
 		public override bool Equals(object obj)
 		{
 			WaveFormat waveFormat = obj as WaveFormat;
-			return waveFormat != null && (this.waveFormatTag_0 == waveFormat.waveFormatTag_0 && this.short_0 == waveFormat.short_0 && this.int_0 == waveFormat.int_0 && this.int_1 == waveFormat.int_1 && this.short_1 == waveFormat.short_1) && this.short_2 == waveFormat.short_2;
+			return waveFormat != null && (waveFormatTag_0 == waveFormat.waveFormatTag_0 && short_0 == waveFormat.short_0 && int_0 == waveFormat.int_0 && int_1 == waveFormat.int_1 && short_1 == waveFormat.short_1) && short_2 == waveFormat.short_2;
 		}
 
 		public override int GetHashCode()
 		{
-			return (int)(this.waveFormatTag_0 ^ (WaveFormatTag)this.short_0) ^ this.int_0 ^ this.int_1 ^ (int)this.short_1 ^ (int)this.short_2;
+			return (int)(waveFormatTag_0 ^ (WaveFormatTag)short_0) ^ int_0 ^ int_1 ^ short_1 ^ short_2;
 		}
 
 		public static WaveFormat smethod_0(IntPtr intptr_0)
@@ -115,17 +115,17 @@ namespace SharpAudio.ASC
 
 		public int method_0(int int_2)
 		{
-			int num = (int)((double)this.int_1 / 1000.0 * (double)int_2);
-			if (num % (int)this.short_1 != 0)
+			int num = (int)(int_1 / 1000.0 * int_2);
+			if (num % short_1 != 0)
 			{
-				return num + (int)this.short_1 - num % (int)this.short_1;
+				return num + short_1 - num % short_1;
 			}
 			return num;
 		}
 
 		public int method_1(TimeSpan timeSpan_0)
 		{
-			return (int)((double)this.int_0 * timeSpan_0.TotalSeconds);
+			return (int)(int_0 * timeSpan_0.TotalSeconds);
 		}
 	}
 }

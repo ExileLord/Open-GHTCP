@@ -1,5 +1,4 @@
 using ns3;
-using System;
 
 namespace ns10
 {
@@ -61,43 +60,43 @@ namespace ns10
 
 		public void method_0()
 		{
-			for (int i = 0; i < this.int_8; i++)
+			for (int i = 0; i < int_8; i++)
 			{
-				this.class64_0[i] = null;
+				class64_0[i] = null;
 			}
-			this.class64_0 = null;
-			for (int j = 0; j < this.int_9; j++)
+			class64_0 = null;
+			for (int j = 0; j < int_9; j++)
 			{
-				Class45.class45_0[this.int_15[j]].vmethod_0(this.object_0[j]);
+				Class45.class45_0[int_15[j]].vmethod_0(object_0[j]);
 			}
-			this.object_0 = null;
-			for (int k = 0; k < this.int_10; k++)
+			object_0 = null;
+			for (int k = 0; k < int_10; k++)
 			{
-				Class72.class72_0[this.int_16[k]].vmethod_0(this.object_1[k]);
+				Class72.class72_0[int_16[k]].vmethod_0(object_1[k]);
 			}
-			this.object_1 = null;
-			for (int l = 0; l < this.int_11; l++)
+			object_1 = null;
+			for (int l = 0; l < int_11; l++)
 			{
-				Class41.class41_0[this.int_17[l]].vmethod_0(this.object_2[l]);
+				Class41.class41_0[int_17[l]].vmethod_0(object_2[l]);
 			}
-			this.object_2 = null;
-			for (int m = 0; m < this.int_12; m++)
+			object_2 = null;
+			for (int m = 0; m < int_12; m++)
 			{
-				Class57.class57_0[this.int_18[m]].vmethod_0(this.object_3[m]);
+				Class57.class57_0[int_18[m]].vmethod_0(object_3[m]);
 			}
-			this.object_3 = null;
-			for (int n = 0; n < this.int_13; n++)
+			object_3 = null;
+			for (int n = 0; n < int_13; n++)
 			{
-				if (this.class76_0[n] != null)
+				if (class76_0[n] != null)
 				{
-					this.class76_0[n].method_0();
-					this.class76_0[n] = null;
+					class76_0[n].method_0();
+					class76_0[n] = null;
 				}
 			}
-			this.class76_0 = null;
-			for (int num = 0; num < this.int_14; num++)
+			class76_0 = null;
+			for (int num = 0; num < int_14; num++)
 			{
-				this.class53_0[num].method_0();
+				class53_0[num].method_0();
 			}
 		}
 	}

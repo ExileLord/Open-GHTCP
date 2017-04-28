@@ -11,17 +11,17 @@ namespace ns0
 
 		public static Struct8 smethod_1(byte byte_0)
 		{
-			return Struct8.smethod_1((int)(byte_0 - 128) << 16);
+			return Struct8.smethod_1(byte_0 - 128 << 16);
 		}
 
 		public static int smethod_2(byte byte_0)
 		{
-			return (int)(byte_0 - 128) << 24;
+			return byte_0 - 128 << 24;
 		}
 
 		public static float smethod_3(byte byte_0)
 		{
-			return (float)(byte_0 - 128) * 1f / 128f;
+			return (byte_0 - 128) * 1f / 128f;
 		}
 
 		public static byte smethod_4(short short_0)
@@ -31,17 +31,17 @@ namespace ns0
 
 		public static Struct8 smethod_5(short short_0)
 		{
-			return Struct8.smethod_1((int)short_0 << 8);
+			return Struct8.smethod_1(short_0 << 8);
 		}
 
 		public static int smethod_6(short short_0)
 		{
-			return (int)short_0 << 16;
+			return short_0 << 16;
 		}
 
 		public static float smethod_7(short short_0)
 		{
-			return (float)short_0 * 1f / 32768f;
+			return short_0 * 1f / 32768f;
 		}
 
 		public static byte smethod_8(Struct8 struct8_0)
@@ -61,7 +61,7 @@ namespace ns0
 
 		public static float smethod_11(Struct8 struct8_0)
 		{
-			return (float)Struct8.smethod_0(struct8_0) * 1f / 8388608f;
+			return Struct8.smethod_0(struct8_0) * 1f / 8388608f;
 		}
 
 		public static byte smethod_12(int int_0)
@@ -81,7 +81,7 @@ namespace ns0
 
 		public static float smethod_15(int int_0)
 		{
-			return (float)int_0 * 1f / 2.14748365E+09f;
+			return int_0 * 1f / 2.14748365E+09f;
 		}
 
 		public static byte smethod_16(double double_0)
@@ -100,7 +100,7 @@ namespace ns0
 
 		public static byte smethod_17(float float_0)
 		{
-			return Class11.smethod_16((double)float_0);
+			return smethod_16(float_0);
 		}
 
 		public static sbyte smethod_18(double double_0)
@@ -119,7 +119,7 @@ namespace ns0
 
 		public static sbyte smethod_19(float float_0)
 		{
-			return Class11.smethod_18((double)float_0);
+			return smethod_18(float_0);
 		}
 
 		public static short smethod_20(double double_0)
@@ -138,7 +138,7 @@ namespace ns0
 
 		public static short smethod_21(float float_0)
 		{
-			return Class11.smethod_20((double)float_0);
+			return smethod_20(float_0);
 		}
 
 		public static Struct8 smethod_22(double double_0)
@@ -149,7 +149,7 @@ namespace ns0
 
 		public static Struct8 smethod_23(float float_0)
 		{
-			return Class11.smethod_22((double)float_0);
+			return smethod_22(float_0);
 		}
 
 		public static int smethod_24(double double_0)
@@ -168,7 +168,7 @@ namespace ns0
 
 		public static int smethod_25(float float_0)
 		{
-			return Class11.smethod_24((double)float_0);
+			return smethod_24(float_0);
 		}
 
 		public static float smethod_26(double double_0)

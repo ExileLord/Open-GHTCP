@@ -1,5 +1,5 @@
-using SharpAudio.ASC;
 using System;
+using SharpAudio.ASC;
 
 namespace ns1
 {

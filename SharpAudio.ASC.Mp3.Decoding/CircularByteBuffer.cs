@@ -19,34 +19,34 @@ namespace SharpAudio.ASC.Mp3.Decoding
 		{
 			get
 			{
-				return this.method_1(-1 - int_0);
+				return method_1(-1 - int_0);
 			}
 			set
 			{
-				this.method_2(-1 - int_0, value);
+				method_2(-1 - int_0, value);
 			}
 		}
 
 		public CircularByteBuffer(int int_0)
 		{
-			this.dataArray = new byte[int_0];
-			this.length = int_0;
+			dataArray = new byte[int_0];
+			length = int_0;
 		}
 
 		public byte method_0(byte byte_0)
 		{
 			byte result;
-			lock (this.lockObj)
+			lock (lockObj)
 			{
-				result = this.method_1(this.length);
-				this.dataArray[this.index] = byte_0;
-				this.numValid++;
-				if (this.numValid > this.length)
+				result = method_1(length);
+				dataArray[index] = byte_0;
+				numValid++;
+				if (numValid > length)
 				{
-					this.numValid = this.length;
+					numValid = length;
 				}
-				this.index++;
-				this.index %= this.length;
+				index++;
+				index %= length;
 			}
 			return result;
 		}
@@ -54,50 +54,43 @@ namespace SharpAudio.ASC.Mp3.Decoding
 		private byte method_1(int int_0)
 		{
 			int i;
-			for (i = this.index + int_0; i >= this.length; i -= this.length)
+			for (i = index + int_0; i >= length; i -= length)
 			{
 			}
 			while (i < 0)
 			{
-				i += this.length;
+				i += length;
 			}
-			return this.dataArray[i];
+			return dataArray[i];
 		}
 
 		private void method_2(int int_0, byte byte_0)
 		{
 			int i;
-			for (i = this.index + int_0; i > this.length; i -= this.length)
+			for (i = index + int_0; i > length; i -= length)
 			{
 			}
 			while (i < 0)
 			{
-				i += this.length;
+				i += length;
 			}
-			this.dataArray[i] = byte_0;
+			dataArray[i] = byte_0;
 		}
 
 		public int method_3()
 		{
-			return this.numValid;
+			return numValid;
 		}
 
 		public override string ToString()
 		{
 			string text = "";
-			for (int i = 0; i < this.dataArray.Length; i++)
+			for (int i = 0; i < dataArray.Length; i++)
 			{
-				text = text + this.dataArray[i] + " ";
+				text = text + dataArray[i] + " ";
 			}
 			object obj = text;
-			return string.Concat(new object[]
-			{
-				obj,
-				"\n index = ",
-				this.index,
-				" numValid = ",
-				this.method_3()
-			});
+			return string.Concat(obj, "\n index = ", index, " numValid = ", method_3());
 		}
 	}
 }

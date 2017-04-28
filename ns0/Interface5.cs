@@ -1,5 +1,4 @@
 using ns1;
-using System;
 
 namespace ns0
 {

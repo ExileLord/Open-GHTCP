@@ -6,8 +6,7 @@ namespace ns10
 	{
 		private static int int_0 = 128;
 
-		private static readonly float[] float_0 = new float[]
-		{
+		private static readonly float[] float_0 = {
 			1f,
 			0.9996988f,
 			0.99879545f,
@@ -141,8 +140,7 @@ namespace ns10
 
 		private static int int_1 = 32;
 
-		private static readonly float[] float_1 = new float[]
-		{
+		private static readonly float[] float_1 = {
 			1.41421354f,
 			1.39262128f,
 			1.37198865f,
@@ -180,8 +178,7 @@ namespace ns10
 
 		private static int int_2 = -32;
 
-		private static readonly float[] float_2 = new float[]
-		{
+		private static readonly float[] float_2 = {
 			65536f,
 			46340.95f,
 			32768f,
@@ -249,8 +246,7 @@ namespace ns10
 			1.52587891E-05f
 		};
 
-		private static readonly float[] float_3 = new float[]
-		{
+		private static readonly float[] float_3 = {
 			1f,
 			0.630957365f,
 			0.398107171f,
@@ -288,8 +284,7 @@ namespace ns10
 			1.58489314E-07f
 		};
 
-		private static readonly float[] float_4 = new float[]
-		{
+		private static readonly float[] float_4 = {
 			0.9928303f,
 			0.9786446f,
 			0.9646616f,
@@ -326,21 +321,21 @@ namespace ns10
 
 		public static float smethod_0(float float_5)
 		{
-			double num = (double)float_5 * (0.31830989 * (double)Class69.int_0);
+			double num = float_5 * (0.31830989 * int_0);
 			int num2 = (int)num;
-			return Class69.float_0[num2] + (float)(num - (double)num2) * (Class69.float_0[num2 + 1] - Class69.float_0[num2]);
+			return float_0[num2] + (float)(num - num2) * (float_0[num2 + 1] - float_0[num2]);
 		}
 
 		public static float smethod_1(float float_5)
 		{
-			double num = (double)(float_5 * (2f * (float)Class69.int_1) - (float)Class69.int_1);
+			double num = float_5 * (2f * int_1) - int_1;
 			int num2 = (int)num;
-			return Class69.float_1[num2] + (float)(num - (double)num2) * (Class69.float_1[num2 + 1] - Class69.float_1[num2]);
+			return float_1[num2] + (float)(num - num2) * (float_1[num2 + 1] - float_1[num2]);
 		}
 
 		public static float smethod_2(int int_3)
 		{
-			return Class69.float_2[int_3 - Class69.int_2];
+			return float_2[int_3 - int_2];
 		}
 
 		public static float smethod_3(float float_5)
@@ -352,7 +347,7 @@ namespace ns10
 			}
 			if (num < 1120)
 			{
-				return Class69.float_3[(int)((UIntPtr)((uint)num >> 5))] * Class69.float_4[num & 31];
+				return float_3[(int)((UIntPtr)((uint)num >> 5))] * float_4[num & 31];
 			}
 			return 0f;
 		}

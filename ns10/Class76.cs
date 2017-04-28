@@ -1,5 +1,3 @@
-using System;
-
 namespace ns10
 {
 	public class Class76
@@ -8,11 +6,7 @@ namespace ns10
 
 		private static int int_1 = 768;
 
-		public Class76()
-		{
-		}
-
-		public void method_0()
+	    public void method_0()
 		{
 		}
 	}

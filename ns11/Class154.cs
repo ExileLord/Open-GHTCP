@@ -19,33 +19,33 @@ namespace ns11
 
 		~Class154()
 		{
-			this.Dispose();
+			Dispose();
 		}
 
 		public void Dispose()
 		{
-			if (this.thread_0 != null)
+			if (thread_0 != null)
 			{
 				try
 				{
-					this.bool_0 = true;
-					if (this.intptr_0 != IntPtr.Zero)
+					bool_0 = true;
+					if (intptr_0 != IntPtr.Zero)
 					{
-						Class162.waveInReset(this.intptr_0);
+						Class162.waveInReset(intptr_0);
 					}
-					this.method_1();
-					this.thread_0.Join();
-					this.delegate2_0 = null;
-					this.method_0();
-					if (this.intptr_0 != IntPtr.Zero)
+					method_1();
+					thread_0.Join();
+					delegate2_0 = null;
+					method_0();
+					if (intptr_0 != IntPtr.Zero)
 					{
-						Class162.waveInClose(this.intptr_0);
+						Class162.waveInClose(intptr_0);
 					}
 				}
 				finally
 				{
-					this.thread_0 = null;
-					this.intptr_0 = IntPtr.Zero;
+					thread_0 = null;
+					intptr_0 = IntPtr.Zero;
 				}
 			}
 			GC.SuppressFinalize(this);
@@ -53,11 +53,11 @@ namespace ns11
 
 		private void method_0()
 		{
-			this.class156_1 = null;
-			if (this.class156_0 != null)
+			class156_1 = null;
+			if (class156_0 != null)
 			{
-				Class156 @class = this.class156_0;
-				this.class156_0 = null;
+				Class156 @class = class156_0;
+				class156_0 = null;
 				Class156 class2 = @class;
 				do
 				{
@@ -71,8 +71,8 @@ namespace ns11
 
 		private void method_1()
 		{
-			Class156 @class = this.class156_0;
-			while (@class.class156_0 != this.class156_0)
+			Class156 @class = class156_0;
+			while (@class.class156_0 != class156_0)
 			{
 				@class.method_0();
 				@class = @class.class156_0;

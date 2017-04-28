@@ -72,33 +72,33 @@ namespace SharpAudio.ASC.Mp3.Lame
 			{
 				throw new ArgumentOutOfRangeException("format", "Only 16 bits samples supported");
 			}
-			this.dwStructVersion = 1u;
-			this.dwStructSize = (uint)Marshal.SizeOf(typeof(BE_CONFIG));
+			dwStructVersion = 1u;
+			dwStructSize = (uint)Marshal.SizeOf(typeof(BE_CONFIG));
 			uint num = (uint)((uint_1 == 0u) ? waveFormat_0.int_0 : ((int)uint_1));
 			if (num <= 24000u)
 			{
 				if (num == 16000u || num == 22050u || num == 24000u)
 				{
-					this.dwMpegVersion = 0u;
+					dwMpegVersion = 0u;
 					goto IL_B6;
 				}
 			}
 			else if (num == 32000u || num == 44100u || num == 48000u)
 			{
-				this.dwMpegVersion = 1u;
+				dwMpegVersion = 1u;
 				goto IL_B6;
 			}
 			throw new ArgumentOutOfRangeException("format", "Unsupported sample rate");
 			IL_B6:
-			this.dwSampleRate = (uint)waveFormat_0.int_0;
-			this.dwReSampleRate = uint_1;
+			dwSampleRate = (uint)waveFormat_0.int_0;
+			dwReSampleRate = uint_1;
 			switch (waveFormat_0.short_0)
 			{
 			case 1:
-				this.nMode = MpegMode.Mono;
+				nMode = MpegMode.Mono;
 				break;
 			case 2:
-				this.nMode = MpegMode.Stereo;
+				nMode = MpegMode.Stereo;
 				break;
 			default:
 				throw new ArgumentOutOfRangeException("format", "Invalid number of channels");
@@ -150,17 +150,14 @@ namespace SharpAudio.ASC.Mp3.Lame
 					}
 					goto IL_20E;
 				}
-				else
-				{
-					if (uint_0 == 128u)
-					{
-						goto IL_20E;
-					}
-					if (uint_0 != 144u)
-					{
-						goto IL_1E5;
-					}
-				}
+			    if (uint_0 == 128u)
+			    {
+			        goto IL_20E;
+			    }
+			    if (uint_0 != 144u)
+			    {
+			        goto IL_1E5;
+			    }
 			}
 			else
 			{
@@ -182,13 +179,13 @@ namespace SharpAudio.ASC.Mp3.Lame
 						goto IL_1E5;
 					}
 				}
-				if (this.dwMpegVersion != 1u)
+				if (dwMpegVersion != 1u)
 				{
 					throw new ArgumentOutOfRangeException("MpsBitRate", "Bit rate not compatible with input format");
 				}
 				goto IL_20E;
 			}
-			if (this.dwMpegVersion != 0u)
+			if (dwMpegVersion != 0u)
 			{
 				throw new ArgumentOutOfRangeException("MpsBitRate", "Bit rate not compatible with input format");
 			}
@@ -196,23 +193,23 @@ namespace SharpAudio.ASC.Mp3.Lame
 			IL_1E5:
 			throw new ArgumentOutOfRangeException("MpsBitRate", "Unsupported bit rate");
 			IL_20E:
-			this.dwBitrate = uint_0;
-			this.nPreset = LameQualityPreset.LqpNormalQuality;
-			this.dwPsyModel = 0u;
-			this.dwEmphasis = 0u;
-			this.bOriginal = 1;
-			this.bWriteVBRHeader = 0;
-			this.bNoRes = 0;
-			this.bCopyright = 0;
-			this.bCRC = 0;
-			this.bEnableVBR = 0;
-			this.bPrivate = 0;
-			this.bStrictIso = 0;
-			this.dwMaxBitrate = 0u;
-			this.dwVbrAbr_bps = 0u;
-			this.nQuality = 0;
-			this.nVbrMethod = VbrMethod.None;
-			this.nVBRQuality = 0;
+			dwBitrate = uint_0;
+			nPreset = LameQualityPreset.LqpNormalQuality;
+			dwPsyModel = 0u;
+			dwEmphasis = 0u;
+			bOriginal = 1;
+			bWriteVBRHeader = 0;
+			bNoRes = 0;
+			bCopyright = 0;
+			bCRC = 0;
+			bEnableVBR = 0;
+			bPrivate = 0;
+			bStrictIso = 0;
+			dwMaxBitrate = 0u;
+			dwVbrAbr_bps = 0u;
+			nQuality = 0;
+			nVbrMethod = VbrMethod.None;
+			nVBRQuality = 0;
 		}
 	}
 }

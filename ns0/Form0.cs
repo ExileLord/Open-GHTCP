@@ -1,6 +1,5 @@
-using SharpAudio.ASC;
-using System;
 using System.Runtime.InteropServices;
+using SharpAudio.ASC;
 
 namespace ns0
 {

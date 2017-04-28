@@ -17,7 +17,7 @@ namespace SharpAudio.ASC.Mp3.Decoding
 
 		public Mp3Exception(string string_0, Exception exception_0) : base(string_0)
 		{
-			this.exception = exception_0;
+			exception = exception_0;
 		}
 	}
 }

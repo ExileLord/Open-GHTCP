@@ -1,10 +1,10 @@
+using System;
+using System.Globalization;
 using ns15;
 using ns18;
 using ns19;
 using ns20;
 using ns21;
-using System;
-using System.Globalization;
 
 namespace GuitarHero.Songlist
 {
@@ -68,15 +68,15 @@ namespace GuitarHero.Songlist
 
 		public GH3Song(StructurePointerNode class302_0)
 		{
-			this.vmethod_4(class302_0);
+			vmethod_4(class302_0);
 		}
 
 		public GH3Song(string string_0)
 		{
-			this.title = string_0;
-			this.name = string_0;
-			this.leaderboard = true;
-			this.editable = true;
+			title = string_0;
+			name = string_0;
+			leaderboard = true;
+			editable = true;
 		}
 
 		public virtual void vmethod_0(Interface16 interface16_0)
@@ -84,101 +84,101 @@ namespace GuitarHero.Songlist
 			if (interface16_0 is GH3Song)
 			{
 				GH3Song gH3Song = interface16_0 as GH3Song;
-				this.original_artist = gH3Song.original_artist;
-				this.not_bass = gH3Song.not_bass;
-				this.no_rhythm_track = gH3Song.no_rhythm_track;
-				this.use_coop_notetracks = gH3Song.use_coop_notetracks;
-				this.keyboard = gH3Song.keyboard;
-				this.band_vol = gH3Song.band_vol;
-				this.guitar_vol = gH3Song.guitar_vol;
-				this.hammer_on = gH3Song.hammer_on;
-				this.gem_offset = gH3Song.gem_offset;
-				this.fretbar_offset = gH3Song.fretbar_offset;
-				this.input_offset = gH3Song.input_offset;
-				this.version = gH3Song.version;
-				this.title = gH3Song.title;
-				this.artist = gH3Song.artist;
-				this.year = gH3Song.year;
-				this.countoff = gH3Song.countoff;
-				this.bassist = gH3Song.bassist;
-				this.singer = gH3Song.singer;
-				this.boss = gH3Song.boss;
-				this.artist_text = gH3Song.artist_text;
+				original_artist = gH3Song.original_artist;
+				not_bass = gH3Song.not_bass;
+				no_rhythm_track = gH3Song.no_rhythm_track;
+				use_coop_notetracks = gH3Song.use_coop_notetracks;
+				keyboard = gH3Song.keyboard;
+				band_vol = gH3Song.band_vol;
+				guitar_vol = gH3Song.guitar_vol;
+				hammer_on = gH3Song.hammer_on;
+				gem_offset = gH3Song.gem_offset;
+				fretbar_offset = gH3Song.fretbar_offset;
+				input_offset = gH3Song.input_offset;
+				version = gH3Song.version;
+				title = gH3Song.title;
+				artist = gH3Song.artist;
+				year = gH3Song.year;
+				countoff = gH3Song.countoff;
+				bassist = gH3Song.bassist;
+				singer = gH3Song.singer;
+				boss = gH3Song.boss;
+				artist_text = gH3Song.artist_text;
 			}
 		}
 
 		public bool isEditable()
 		{
-			return this.editable;
+			return editable;
 		}
 
 		public void setEditable(bool bool_1)
 		{
-			this.editable = bool_1;
+			editable = bool_1;
 		}
 
 		public bool isVisible()
 		{
-			return this.visible;
+			return visible;
 		}
 
 		public void setVisible(bool bool_1)
 		{
-			this.visible = bool_1;
+			visible = bool_1;
 		}
 
 		public string getSongName()
 		{
-			return this.name;
+			return name;
 		}
 
 		public override string ToString()
 		{
-			if (GH3Song.bool_0 && this.title != null)
+			if (bool_0 && title != null)
 			{
-				return this.title;
+				return title;
 			}
-			return this.name;
+			return name;
 		}
 
 		public virtual void vmethod_4(StructurePointerNode class302_0)
 		{
-			this.name = class302_0.method_5<AsciiStructureNode>(new AsciiStructureNode("name")).method_8().ToLower();
-			if (this.name != null && !this.name.Equals(""))
+			name = class302_0.method_5(new AsciiStructureNode("name")).method_8().ToLower();
+			if (name != null && !name.Equals(""))
 			{
 				UnicodeStructureNode @class;
-				this.title = (((@class = class302_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("title"))) != null) ? @class.method_8() : "");
-				this.artist = (((@class = class302_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("artist"))) != null) ? @class.method_8() : "");
-				this.year = (((@class = class302_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("year"))) != null) ? @class.method_8() : "");
-				this.bassist = (((@class = class302_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("bassist"))) != null) ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(@class.method_8()) : "Generic Bassist");
+				title = (((@class = class302_0.method_5(new UnicodeStructureNode("title"))) != null) ? @class.method_8() : "");
+				artist = (((@class = class302_0.method_5(new UnicodeStructureNode("artist"))) != null) ? @class.method_8() : "");
+				year = (((@class = class302_0.method_5(new UnicodeStructureNode("year"))) != null) ? @class.method_8() : "");
+				bassist = (((@class = class302_0.method_5(new UnicodeStructureNode("bassist"))) != null) ? CultureInfo.CurrentCulture.TextInfo.ToTitleCase(@class.method_8()) : "Generic Bassist");
 				AsciiStructureNode class2;
-				this.countoff = (((class2 = class302_0.method_5<AsciiStructureNode>(new AsciiStructureNode("countoff"))) != null) ? class2.method_8() : "");
+				countoff = (((class2 = class302_0.method_5(new AsciiStructureNode("countoff"))) != null) ? class2.method_8() : "");
 				FloatStructureNode class3;
-				this.band_vol = (((class3 = class302_0.method_5<FloatStructureNode>(new FloatStructureNode("band_playback_volume"))) != null) ? class3.method_8() : 0f);
-				this.guitar_vol = (((class3 = class302_0.method_5<FloatStructureNode>(new FloatStructureNode("guitar_playback_volume"))) != null) ? class3.method_8() : 0f);
-				this.hammer_on = (((class3 = class302_0.method_5<FloatStructureNode>(new FloatStructureNode("hammer_on_measure_scale"))) != null) ? class3.method_8() : 0f);
+				band_vol = (((class3 = class302_0.method_5(new FloatStructureNode("band_playback_volume"))) != null) ? class3.method_8() : 0f);
+				guitar_vol = (((class3 = class302_0.method_5(new FloatStructureNode("guitar_playback_volume"))) != null) ? class3.method_8() : 0f);
+				hammer_on = (((class3 = class302_0.method_5(new FloatStructureNode("hammer_on_measure_scale"))) != null) ? class3.method_8() : 0f);
 				IntegerStructureNode class4;
-				this.gem_offset = (((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("gem_offset"))) != null) ? class4.method_8() : 0);
-				this.fretbar_offset = (((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("fretbar_offset"))) != null) ? class4.method_8() : 0);
-				this.input_offset = (((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("input_offset"))) != null) ? class4.method_8() : 0);
-				this.original_artist = ((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("original_artist"))) != null && class4.method_8() == 1);
-				this.leaderboard = ((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("leaderboard"))) != null && class4.method_8() == 1);
-				this.not_bass = ((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("rhythm_track"))) != null && class4.method_8() == 1);
+				gem_offset = (((class4 = class302_0.method_5(new IntegerStructureNode("gem_offset"))) != null) ? class4.method_8() : 0);
+				fretbar_offset = (((class4 = class302_0.method_5(new IntegerStructureNode("fretbar_offset"))) != null) ? class4.method_8() : 0);
+				input_offset = (((class4 = class302_0.method_5(new IntegerStructureNode("input_offset"))) != null) ? class4.method_8() : 0);
+				original_artist = ((class4 = class302_0.method_5(new IntegerStructureNode("original_artist"))) != null && class4.method_8() == 1);
+				leaderboard = ((class4 = class302_0.method_5(new IntegerStructureNode("leaderboard"))) != null && class4.method_8() == 1);
+				not_bass = ((class4 = class302_0.method_5(new IntegerStructureNode("rhythm_track"))) != null && class4.method_8() == 1);
 				TagStructureNode class5;
-				this.keyboard = ((class5 = class302_0.method_5<TagStructureNode>(new TagStructureNode("keyboard"))) != null && class5.method_8() == "true");
-				this.singer = (((class5 = class302_0.method_5<TagStructureNode>(new TagStructureNode("singer"))) != null) ? class5.method_8() : "");
-				this.boss = (((class5 = class302_0.method_5<TagStructureNode>(new TagStructureNode("boss"))) != null) ? class5.method_8() : "");
-				this.version = (((class5 = class302_0.method_5<TagStructureNode>(new TagStructureNode("version"))) != null) ? Convert.ToInt32(string.Concat(class5.method_8()[2])) : 3);
-				this.use_coop_notetracks = (class302_0.method_5<TagStructureNode>(new TagStructureNode(0, "use_coop_notetracks")) != null);
-				this.no_rhythm_track = (class302_0.method_5<TagStructureNode>(new TagStructureNode(0, "no_rhythm_track")) != null);
+				keyboard = ((class5 = class302_0.method_5(new TagStructureNode("keyboard"))) != null && class5.method_8() == "true");
+				singer = (((class5 = class302_0.method_5(new TagStructureNode("singer"))) != null) ? class5.method_8() : "");
+				boss = (((class5 = class302_0.method_5(new TagStructureNode("boss"))) != null) ? class5.method_8() : "");
+				version = (((class5 = class302_0.method_5(new TagStructureNode("version"))) != null) ? Convert.ToInt32(string.Concat(class5.method_8()[2])) : 3);
+				use_coop_notetracks = (class302_0.method_5(new TagStructureNode(0, "use_coop_notetracks")) != null);
+				no_rhythm_track = (class302_0.method_5(new TagStructureNode(0, "no_rhythm_track")) != null);
 				try
 				{
-					this.artist_text = class302_0.method_5<FileTagStructureNode>(new FileTagStructureNode("artist_text")).method_8().Equals("artist_text_by");
+					artist_text = class302_0.method_5(new FileTagStructureNode("artist_text")).method_8().Equals("artist_text_by");
 					return;
 				}
 				catch
 				{
-					this.artist_text = (((@class = class302_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("artist_text"))) != null) ? @class.method_8() : "by");
+					artist_text = (((@class = class302_0.method_5(new UnicodeStructureNode("artist_text"))) != null) ? @class.method_8() : "by");
 					return;
 				}
 			}
@@ -188,80 +188,80 @@ namespace GuitarHero.Songlist
 		public virtual StructurePointerNode vmethod_5()
 		{
 			StructureHeaderNode @class = new StructureHeaderNode();
-			@class.method_3(new TagStructureNode("checksum", this.name));
-			@class.method_3(new AsciiStructureNode("name", this.name));
-			@class.method_3(new UnicodeStructureNode("title", this.title));
-			@class.method_3(new UnicodeStructureNode("artist", this.artist.Equals("") ? " " : this.artist));
-			@class.method_3(new UnicodeStructureNode("year", this.year.Equals("") ? " " : this.year));
-			if (this.artist_text is bool)
+			@class.method_3(new TagStructureNode("checksum", name));
+			@class.method_3(new AsciiStructureNode("name", name));
+			@class.method_3(new UnicodeStructureNode("title", title));
+			@class.method_3(new UnicodeStructureNode("artist", artist.Equals("") ? " " : artist));
+			@class.method_3(new UnicodeStructureNode("year", year.Equals("") ? " " : year));
+			if (artist_text is bool)
 			{
-				@class.method_3(new FileTagStructureNode("artist_text", ((bool)this.artist_text) ? "artist_text_by" : "artist_text_as_made_famous_by"));
+				@class.method_3(new FileTagStructureNode("artist_text", ((bool)artist_text) ? "artist_text_by" : "artist_text_as_made_famous_by"));
 			}
-			else if (this.artist_text is string)
+			else if (artist_text is string)
 			{
-				@class.method_3(new UnicodeStructureNode("artist_text", (string)this.artist_text));
+				@class.method_3(new UnicodeStructureNode("artist_text", (string)artist_text));
 			}
-			@class.method_3(new IntegerStructureNode("original_artist", this.original_artist ? 1 : 0));
-			if (this.version == 0)
+			@class.method_3(new IntegerStructureNode("original_artist", original_artist ? 1 : 0));
+			if (version == 0)
 			{
-				this.version = 3;
+				version = 3;
 			}
-			@class.method_3(new TagStructureNode("version", "gh" + this.version));
-			@class.method_3(new IntegerStructureNode("leaderboard", this.leaderboard ? 1 : 0));
-			if (this.gem_offset != 0)
+			@class.method_3(new TagStructureNode("version", "gh" + version));
+			@class.method_3(new IntegerStructureNode("leaderboard", leaderboard ? 1 : 0));
+			if (gem_offset != 0)
 			{
-				@class.method_3(new IntegerStructureNode("gem_offset", this.gem_offset));
+				@class.method_3(new IntegerStructureNode("gem_offset", gem_offset));
 			}
-			if (this.fretbar_offset != 0)
+			if (fretbar_offset != 0)
 			{
-				@class.method_3(new IntegerStructureNode("fretbar_offset", this.fretbar_offset));
+				@class.method_3(new IntegerStructureNode("fretbar_offset", fretbar_offset));
 			}
-			if (this.input_offset != 0)
+			if (input_offset != 0)
 			{
-				@class.method_3(new IntegerStructureNode("input_offset", this.input_offset));
+				@class.method_3(new IntegerStructureNode("input_offset", input_offset));
 			}
-			if (!this.singer.Equals(""))
+			if (!singer.Equals(""))
 			{
-				@class.method_3(new TagStructureNode("singer", this.singer));
+				@class.method_3(new TagStructureNode("singer", singer));
 			}
-			if (!this.boss.Equals(""))
+			if (!boss.Equals(""))
 			{
-				@class.method_3(new TagStructureNode("boss", this.boss));
+				@class.method_3(new TagStructureNode("boss", boss));
 			}
-			if (!this.keyboard)
+			if (!keyboard)
 			{
 				@class.method_3(new TagStructureNode("keyboard", "false"));
 			}
-			if (!this.bassist.Equals("Generic Bassist"))
+			if (!bassist.Equals("Generic Bassist"))
 			{
-				@class.method_3(new UnicodeStructureNode("bassist", this.bassist));
+				@class.method_3(new UnicodeStructureNode("bassist", bassist));
 			}
-			if (!this.countoff.Equals(""))
+			if (!countoff.Equals(""))
 			{
-				@class.method_3(new AsciiStructureNode("countoff", this.countoff));
+				@class.method_3(new AsciiStructureNode("countoff", countoff));
 			}
-			@class.method_3(new IntegerStructureNode("rhythm_track", this.not_bass ? 1 : 0));
-			if (this.band_vol != 0f)
+			@class.method_3(new IntegerStructureNode("rhythm_track", not_bass ? 1 : 0));
+			if (band_vol != 0f)
 			{
-				@class.method_3(new FloatStructureNode("band_playback_volume", this.band_vol));
+				@class.method_3(new FloatStructureNode("band_playback_volume", band_vol));
 			}
-			if (this.guitar_vol != 0f)
+			if (guitar_vol != 0f)
 			{
-				@class.method_3(new FloatStructureNode("guitar_playback_volume", this.guitar_vol));
+				@class.method_3(new FloatStructureNode("guitar_playback_volume", guitar_vol));
 			}
-			if (this.hammer_on != 0f)
+			if (hammer_on != 0f)
 			{
-				@class.method_3(new FloatStructureNode("hammer_on_measure_scale", this.hammer_on));
+				@class.method_3(new FloatStructureNode("hammer_on_measure_scale", hammer_on));
 			}
-			if (this.use_coop_notetracks)
+			if (use_coop_notetracks)
 			{
 				@class.method_3(new TagStructureNode(0, "use_coop_notetracks"));
 			}
-			if (this.no_rhythm_track)
+			if (no_rhythm_track)
 			{
 				@class.method_3(new TagStructureNode(0, "no_rhythm_track"));
 			}
-			return new StructurePointerNode(this.name, @class);
+			return new StructurePointerNode(name, @class);
 		}
 	}
 }

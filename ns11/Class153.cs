@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,10 +23,10 @@ namespace ns11
 
 		public static int int_0;
 
-		public static Class153.Struct64 struct64_0;
+		public static Struct64 struct64_0;
 
-		public static Class153.Struct63 struct63_0;
+		public static Struct63 struct63_0;
 
-		public static Class153.Struct65 struct65_0;
+		public static Struct65 struct65_0;
 	}
 }

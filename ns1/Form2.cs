@@ -1,6 +1,5 @@
-using SharpAudio.ASC;
-using System;
 using System.Runtime.InteropServices;
+using SharpAudio.ASC;
 
 namespace ns1
 {
@@ -20,14 +19,14 @@ namespace ns1
 
 		public Form2(int int_2, int int_3) : base(int_2, 0, int_3)
 		{
-			this.waveFormatTag_0 = WaveFormatTag.Adpcm;
-			this.short_3 = 32;
-			int int_4 = this.int_0;
+			waveFormatTag_0 = WaveFormatTag.Adpcm;
+			short_3 = 32;
+			int int_4 = int_0;
 			if (int_4 <= 11025)
 			{
 				if (int_4 == 8000 || int_4 == 11025)
 				{
-					this.short_1 = 256;
+					short_1 = 256;
 					goto IL_6E;
 				}
 			}
@@ -35,20 +34,20 @@ namespace ns1
 			{
 				if (int_4 == 22050)
 				{
-					this.short_1 = 512;
+					short_1 = 512;
 					goto IL_6E;
 				}
 				if (int_4 != 44100)
 				{
 				}
 			}
-			this.short_1 = 1024;
+			short_1 = 1024;
 			IL_6E:
-			this.short_2 = 4;
-			this.short_4 = (short)(((int)this.short_1 - 7 * int_3) * 8 / ((int)this.short_2 * int_3) + 2);
-			this.int_1 = this.int_0 * (int)this.short_1 / (int)this.short_4;
-			this.short_5 = 7;
-			this.short_6 = new short[]
+			short_2 = 4;
+			short_4 = (short)((short_1 - 7 * int_3) * 8 / (short_2 * int_3) + 2);
+			int_1 = int_0 * short_1 / short_4;
+			short_5 = 7;
+			short_6 = new short[]
 			{
 				256,
 				0,
@@ -69,13 +68,7 @@ namespace ns1
 
 		public override string ToString()
 		{
-			return string.Format("Microsoft ADPCM {0} Hz {1} channels {2} bits per sample {3} samples per block", new object[]
-			{
-				this.int_0,
-				this.short_0,
-				this.short_2,
-				this.short_4
-			});
+			return string.Format("Microsoft ADPCM {0} Hz {1} channels {2} bits per sample {3} samples per block", int_0, short_0, short_2, short_4);
 		}
 	}
 }

@@ -1,6 +1,6 @@
-using SharpAudio.ASC;
 using System;
 using System.IO;
+using SharpAudio.ASC;
 
 namespace ns1
 {
@@ -10,7 +10,7 @@ namespace ns1
 		{
 			get
 			{
-				return this.stream_0.CanRead;
+				return stream_0.CanRead;
 			}
 		}
 
@@ -18,7 +18,7 @@ namespace ns1
 		{
 			get
 			{
-				return this.stream_0.CanSeek;
+				return stream_0.CanSeek;
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace ns1
 		{
 			get
 			{
-				return this.stream_0.CanWrite;
+				return stream_0.CanWrite;
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace ns1
 		{
 			get
 			{
-				return this.stream_0.Length;
+				return stream_0.Length;
 			}
 		}
 
@@ -42,11 +42,11 @@ namespace ns1
 		{
 			get
 			{
-				return this.stream_0.Position;
+				return stream_0.Position;
 			}
 			set
 			{
-				this.stream_0.Position = value;
+				stream_0.Position = value;
 			}
 		}
 
@@ -56,32 +56,32 @@ namespace ns1
 
 		public Stream15(Stream stream_1, WaveFormat waveFormat_1)
 		{
-			this.stream_0 = stream_1;
-			this.waveFormat_0 = waveFormat_1;
+			stream_0 = stream_1;
+			waveFormat_0 = waveFormat_1;
 		}
 
 		public override void SetLength(long value)
 		{
-			this.stream_0.SetLength(value);
+			stream_0.SetLength(value);
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
 		{
-			return this.stream_0.Seek(offset, origin);
+			return stream_0.Seek(offset, origin);
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			if (!this.CanRead)
+			if (!CanRead)
 			{
 				throw new NotSupportedException();
 			}
-			return this.stream_0.Read(buffer, offset, count);
+			return stream_0.Read(buffer, offset, count);
 		}
 
 		public override void Write(byte[] buffer, int offset, int count)
 		{
-			this.stream_0.Write(buffer, offset, count);
+			stream_0.Write(buffer, offset, count);
 		}
 	}
 }

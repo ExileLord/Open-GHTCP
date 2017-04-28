@@ -1,5 +1,5 @@
-using SharpAudio.ASC;
 using System;
+using SharpAudio.ASC;
 
 namespace ns1
 {
@@ -23,46 +23,46 @@ namespace ns1
 
 		public short method_0()
 		{
-			return this.waveFormat_0.short_0;
+			return waveFormat_0.short_0;
 		}
 
 		public short method_1()
 		{
-			return this.waveFormat_0.short_1;
+			return waveFormat_0.short_1;
 		}
 
 		public short method_2()
 		{
-			return this.waveFormat_0.short_2;
+			return waveFormat_0.short_2;
 		}
 
 		public int method_3()
 		{
-			return this.waveFormat_0.int_0;
+			return waveFormat_0.int_0;
 		}
 
 		public Class16(WaveFormat waveFormat_1, uint uint_4, uint uint_5, int int_1)
 		{
-			this.waveFormat_0 = waveFormat_1;
-			this.short_0 = (short)(this.method_1() / this.method_0());
-			this.int_0 = int_1;
-			this.timeSpan_0 = TimeSpan.FromSeconds((uint_5 - uint_4) / ((double)int_1 / 8.0));
-			this.uint_0 = Convert.ToUInt32((double)this.method_3() * this.timeSpan_0.TotalSeconds);
-			this.uint_1 = uint_4;
-			this.uint_3 = this.uint_0 * (uint)this.method_1();
-			this.uint_2 = uint_5 - this.uint_1;
+			waveFormat_0 = waveFormat_1;
+			short_0 = (short)(method_1() / method_0());
+			int_0 = int_1;
+			timeSpan_0 = TimeSpan.FromSeconds((uint_5 - uint_4) / (int_1 / 8.0));
+			uint_0 = Convert.ToUInt32(method_3() * timeSpan_0.TotalSeconds);
+			uint_1 = uint_4;
+			uint_3 = uint_0 * (uint)method_1();
+			uint_2 = uint_5 - uint_1;
 		}
 
 		public Class16(WaveFormat waveFormat_1, uint uint_4, uint uint_5)
 		{
-			this.waveFormat_0 = waveFormat_1;
-			this.short_0 = (short)(this.method_1() / this.method_0());
-			this.int_0 = (int)this.method_0() * this.method_3() * (int)this.method_2();
-			this.uint_0 = Convert.ToUInt32((long)((ulong)uint_5 / (ulong)((long)this.method_1())));
-			this.timeSpan_0 = TimeSpan.FromSeconds(this.uint_0 / (double)this.method_3());
-			this.uint_1 = uint_4;
-			this.uint_3 = uint_5 - this.uint_1;
-			this.uint_2 = 0u;
+			waveFormat_0 = waveFormat_1;
+			short_0 = (short)(method_1() / method_0());
+			int_0 = method_0() * method_3() * method_2();
+			uint_0 = Convert.ToUInt32((long)(uint_5 / (ulong)method_1()));
+			timeSpan_0 = TimeSpan.FromSeconds(uint_0 / (double)method_3());
+			uint_1 = uint_4;
+			uint_3 = uint_5 - uint_1;
+			uint_2 = 0u;
 		}
 	}
 }

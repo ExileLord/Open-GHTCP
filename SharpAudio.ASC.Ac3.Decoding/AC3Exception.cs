@@ -1,5 +1,5 @@
-using AVTools.MpegUtils;
 using System;
+using AVTools.MpegUtils;
 
 namespace SharpAudio.ASC.Ac3.Decoding
 {

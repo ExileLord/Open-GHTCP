@@ -17,14 +17,14 @@ namespace SharpAudio.ASC.Mp3.Lame
 
 		public BE_CONFIG(WaveFormat waveFormat_0, uint uint_0, uint uint_1)
 		{
-			this.dwConfig = 256u;
-			this.format = new Format(waveFormat_0, uint_0, uint_1);
+			dwConfig = 256u;
+			format = new Format(waveFormat_0, uint_0, uint_1);
 		}
 
 		public BE_CONFIG(WaveFormat waveFormat_0, uint uint_0)
 		{
-			this.dwConfig = 256u;
-			this.format = new Format(waveFormat_0, uint_0);
+			dwConfig = 256u;
+			format = new Format(waveFormat_0, uint_0);
 		}
 	}
 }

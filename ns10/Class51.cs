@@ -1,6 +1,5 @@
 using ns2;
 using ns3;
-using System;
 
 namespace ns10
 {

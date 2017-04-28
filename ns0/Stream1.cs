@@ -1,8 +1,8 @@
-using ns1;
-using SharpAudio.ASC;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
+using ns1;
+using SharpAudio.ASC;
 
 namespace ns0
 {
@@ -18,34 +18,34 @@ namespace ns0
 
 		public virtual WaveFormat vmethod_0()
 		{
-			return this.waveFormat_0;
+			return waveFormat_0;
 		}
 
 		public virtual Class16 vmethod_1()
 		{
-			return new Class16(this.waveFormat_0, (uint)this.Position, (uint)this.Length);
+			return new Class16(waveFormat_0, (uint)Position, (uint)Length);
 		}
 
 		public virtual Stream vmethod_2()
 		{
-			return this.fileStream;
+			return fileStream;
 		}
 
 		public virtual int vmethod_3(IntPtr intptr_0, int int_2)
 		{
 			byte[] array = new byte[int_2];
-			int num = this.Read(array, 0, int_2);
+			int num = Read(array, 0, int_2);
 			Marshal.Copy(array, 0, intptr_0, num);
 			return num;
 		}
 
 		public virtual int vmethod_4(float[] float_0, int int_2, int int_3)
 		{
-			int num = this.vmethod_0().short_2 + 7 >> 3;
+			int num = vmethod_0().short_2 + 7 >> 3;
 			byte[] array = new byte[num * int_3];
-			int num2 = this.Read(array, num * int_2, array.Length) / num;
+			int num2 = Read(array, num * int_2, array.Length) / num;
 			int num3 = int_2 + num2;
-			short short_ = this.vmethod_0().short_2;
+			short short_ = vmethod_0().short_2;
 			if (short_ <= 16)
 			{
 				if (short_ == 8)
@@ -85,7 +85,7 @@ namespace ns0
 				{
 					if (short_ == 64)
 					{
-						if (this.vmethod_0().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
+						if (vmethod_0().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
 						{
 							int num6 = 0;
 							while (int_2 < num3)
@@ -100,7 +100,7 @@ namespace ns0
 				}
 				else
 				{
-					if (this.vmethod_0().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
+					if (vmethod_0().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
 					{
 						Buffer.BlockCopy(array, 0, float_0, int_2 << 2, num2);
 						return num2;
@@ -120,17 +120,17 @@ namespace ns0
 
 		public virtual float[][] vmethod_5(int int_2)
 		{
-			int num = this.vmethod_0().short_2 + 7 >> 3;
-			byte[] array = new byte[num * int_2 * (int)this.waveFormat_0.short_0];
-			int num2 = this.Read(array, 0, array.Length) / num / (int)this.waveFormat_0.short_0;
+			int num = vmethod_0().short_2 + 7 >> 3;
+			byte[] array = new byte[num * int_2 * waveFormat_0.short_0];
+			int num2 = Read(array, 0, array.Length) / num / waveFormat_0.short_0;
 			if (num2 <= 0)
 			{
 				return null;
 			}
-			int short_ = (int)this.waveFormat_0.short_0;
+			int short_ = waveFormat_0.short_0;
 			int num3 = num * short_;
 			float[][] array2 = new float[short_][];
-			short short_2 = this.vmethod_0().short_2;
+			short short_2 = vmethod_0().short_2;
 			if (short_2 <= 16)
 			{
 				if (short_2 == 8)
@@ -188,7 +188,7 @@ namespace ns0
 				{
 					if (short_2 == 64)
 					{
-						if (this.vmethod_0().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
+						if (vmethod_0().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
 						{
 							for (int num7 = 0; num7 < short_; num7++)
 							{
@@ -208,7 +208,7 @@ namespace ns0
 				}
 				else
 				{
-					if (this.vmethod_0().waveFormatTag_0 != WaveFormatTag.IEEEFloat)
+					if (vmethod_0().waveFormatTag_0 != WaveFormatTag.IEEEFloat)
 					{
 						for (int num10 = 0; num10 < short_; num10++)
 						{
@@ -252,12 +252,12 @@ namespace ns0
 			switch (origin)
 			{
 			case SeekOrigin.Begin:
-				this.Position = offset;
+				Position = offset;
 				return offset;
 			case SeekOrigin.Current:
-				return this.Position += offset;
+				return Position += offset;
 			case SeekOrigin.End:
-				return this.Position = this.Length + offset;
+				return Position = Length + offset;
 			default:
 				throw new NotSupportedException();
 			}
@@ -265,25 +265,25 @@ namespace ns0
 
 		public override void Close()
 		{
-			this.Dispose();
+			Dispose();
 		}
 
 		public override void Flush()
 		{
-			this.fileStream.Flush();
+			fileStream.Flush();
 		}
 
         protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
-				this.fileStream.Close();
+				fileStream.Close();
 			}
 		}
 
 		public new virtual void Dispose()
 		{
-			this.Dispose(true);
+			Dispose(true);
 			GC.SuppressFinalize(this);
 		}
 	}

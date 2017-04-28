@@ -1,10 +1,8 @@
-﻿using mid2chart;
+﻿using System;
+using System.Windows.Forms;
+using mid2chart;
 using ns15;
 using ns9;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
 
 namespace MidiConverter
 {
@@ -23,7 +21,7 @@ namespace MidiConverter
             }
             catch(Exception e)
             {
-                MessageBox.Show("Error using the new MIDI importer.\nReverting to original GHTCP method. \n\n" + e.ToString(), "MIDI Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Error using the new MIDI importer.\nReverting to original GHTCP method. \n\n" + e, "MIDI Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 qbc = new MIDIParser(fileName).LoadMidi().ConvertToQBC();
             }
             return qbc;

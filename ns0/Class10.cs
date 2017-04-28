@@ -14,13 +14,13 @@ namespace ns0
 
 		public struct Struct7
 		{
-			public Class10.Struct6 struct6_0;
+			public Struct6 struct6_0;
 
 			public long long_0;
 
 			public Guid guid_0;
 
-			public Class10.Struct6 struct6_1;
+			public Struct6 struct6_1;
 
 			public int int_0;
 
@@ -28,7 +28,7 @@ namespace ns0
 
 			public int int_2;
 
-			public Class10.Struct6 struct6_2;
+			public Struct6 struct6_2;
 
 			public string string_0;
 
@@ -49,7 +49,7 @@ namespace ns0
 
 			void imethod_3(ulong libNewSize);
 
-			void imethod_4(Class10.Interface0 pstm, ulong cb, out ulong pcbRead, out ulong pcbWritten);
+			void imethod_4(Interface0 pstm, ulong cb, out ulong pcbRead, out ulong pcbWritten);
 
 			void imethod_5(uint grfCommitFlags);
 
@@ -59,18 +59,18 @@ namespace ns0
 
 			void imethod_8(ulong libOffset, ulong cb, uint dwLockType);
 
-			void imethod_9(out Class10.Struct7 pstatstg, uint grfStatFlag);
+			void imethod_9(out Struct7 pstatstg, uint grfStatFlag);
 
-			void imethod_10(out Class10.Interface0 ppstm);
+			void imethod_10(out Interface0 ppstm);
 		}
 
 		[Guid("7c23ff90-33af-11d3-95da-00a024a85b51"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 		[ComImport]
 		public interface Interface1
 		{
-			void imethod_0(Class10.Interface2 pName);
+			void imethod_0(Interface2 pName);
 
-			void imethod_1(out Class10.Interface2 ppName);
+			void imethod_1(out Interface2 ppName);
 
 			void imethod_2([MarshalAs(UnmanagedType.LPWStr)] string szName, int pvValue, uint cbValue, uint dwFlags);
 
@@ -96,7 +96,7 @@ namespace ns0
 			int imethod_3(IntPtr szDisplayName, ref uint pccDisplayName, uint dwDisplayFlags);
 
 			[PreserveSig]
-			int imethod_4(object refIID, object pAsmBindSink, Class10.Interface1 pApplicationContext, [MarshalAs(UnmanagedType.LPWStr)] string szCodeBase, long llFlags, int pvReserved, uint cbReserved, out int ppv);
+			int imethod_4(object refIID, object pAsmBindSink, Interface1 pApplicationContext, [MarshalAs(UnmanagedType.LPWStr)] string szCodeBase, long llFlags, int pvReserved, uint cbReserved, out int ppv);
 
 			[PreserveSig]
 			int imethod_5(out uint lpcwBuffer, out int pwzName);
@@ -105,19 +105,19 @@ namespace ns0
 			int imethod_6(out uint pdwVersionHi, out uint pdwVersionLow);
 
 			[PreserveSig]
-			int imethod_7(Class10.Interface2 pName, uint dwCmpFlags);
+			int imethod_7(Interface2 pName, uint dwCmpFlags);
 
 			[PreserveSig]
-			int imethod_8(out Class10.Interface2 pName);
+			int imethod_8(out Interface2 pName);
 		}
 
 		[Guid("9e3aaeb4-d1cd-11d2-bab9-00c04f8eceae"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 		[ComImport]
 		public interface Interface3
 		{
-			void imethod_0([MarshalAs(UnmanagedType.LPWStr)] string pszName, uint dwFormat, uint dwFlags, uint dwMaxSize, out Class10.Interface0 ppStream);
+			void imethod_0([MarshalAs(UnmanagedType.LPWStr)] string pszName, uint dwFormat, uint dwFlags, uint dwMaxSize, out Interface0 ppStream);
 
-			void imethod_1(Class10.Interface2 pName);
+			void imethod_1(Interface2 pName);
 
 			void imethod_2(uint dwFlags);
 
@@ -135,7 +135,7 @@ namespace ns0
 			int imethod_1(uint dwFlags, [MarshalAs(UnmanagedType.LPWStr)] string pszAssemblyName, IntPtr pAsmInfo);
 
 			[PreserveSig]
-			int imethod_2(uint dwFlags, IntPtr pvReserved, out Class10.Interface3 ppAsmItem, [MarshalAs(UnmanagedType.LPWStr)] string pszAssemblyName);
+			int imethod_2(uint dwFlags, IntPtr pvReserved, out Interface3 ppAsmItem, [MarshalAs(UnmanagedType.LPWStr)] string pszAssemblyName);
 
 			[PreserveSig]
 			int imethod_3(out object ppAsmScavenger);
@@ -145,12 +145,12 @@ namespace ns0
 		}
 
 		[DllImport("fusion", CharSet = CharSet.Auto)]
-		public static extern int CreateAssemblyCache(out Class10.Interface4 ppAsmCache, uint dwReserved);
+		public static extern int CreateAssemblyCache(out Interface4 ppAsmCache, uint dwReserved);
 
 		public static bool smethod_0(string string_0)
 		{
-			Class10.Interface4 @interface = null;
-			int num = Class10.CreateAssemblyCache(out @interface, 0u);
+			Interface4 @interface = null;
+			int num = CreateAssemblyCache(out @interface, 0u);
 			if (num != 0)
 			{
 				return false;

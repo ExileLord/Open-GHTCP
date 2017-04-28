@@ -13,28 +13,28 @@ namespace ns1
 
 		public Class19(int int_0)
 		{
-			this.class17_0 = new Class17(int_0);
-			this.class17_0.method_4(int_0);
-			this.gchandle_0 = GCHandle.Alloc(this.class17_0.method_0(), GCHandleType.Pinned);
-			this.intptr_0 = this.gchandle_0.AddrOfPinnedObject();
+			class17_0 = new Class17(int_0);
+			class17_0.method_4(int_0);
+			gchandle_0 = GCHandle.Alloc(class17_0.method_0(), GCHandleType.Pinned);
+			intptr_0 = gchandle_0.AddrOfPinnedObject();
 		}
 
 		~Class19()
 		{
-			this.method_0(false);
+			method_0(false);
 		}
 
 		public void Dispose()
 		{
 			GC.SuppressFinalize(this);
-			this.method_0(true);
+			method_0(true);
 		}
 
 		public void method_0(bool bool_0)
 		{
-			if (this.gchandle_0.IsAllocated)
+			if (gchandle_0.IsAllocated)
 			{
-				this.gchandle_0.Free();
+				gchandle_0.Free();
 			}
 		}
 

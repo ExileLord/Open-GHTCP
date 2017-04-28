@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using GuitarHero.Setlist;
 using GuitarHero.Tier;
 using ns14;
@@ -5,9 +7,6 @@ using ns18;
 using ns20;
 using ns21;
 using ns22;
-using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace GuitarHero.Songlist
 {
@@ -29,7 +28,7 @@ namespace GuitarHero.Songlist
 
 		public bool HideUnEditable;
 
-		public static List<int> IgnoreSongs = new List<int>(new int[]
+		public static List<int> IgnoreSongs = new List<int>(new[]
 		{
 			QbSongClass1.AddKeyToDictionary("synctest"),
 			QbSongClass1.AddKeyToDictionary("mutetest"),
@@ -55,12 +54,12 @@ namespace GuitarHero.Songlist
 
 		public GH3Songlist(zzGenericNode1 class308_0, GH3Songlist gh3Songlist_0)
 		{
-			this.findEditableSongs(class308_0, gh3Songlist_0);
+			findEditableSongs(class308_0, gh3Songlist_0);
 		}
 
 		public void Add(GH3Song gh3Song_0)
 		{
-			if (!base.ContainsKey(gh3Song_0.getSongName()))
+			if (!ContainsKey(gh3Song_0.getSongName()))
 			{
 				base.Add(gh3Song_0.getSongName(), gh3Song_0);
 				QbSongClass1.AddKeyToDictionary(gh3Song_0.getSongName());
@@ -69,7 +68,7 @@ namespace GuitarHero.Songlist
 
 		public void method_0(GH3Song gh3Song_0, bool bool_0)
 		{
-			if (!base.ContainsKey(gh3Song_0.getSongName()))
+			if (!ContainsKey(gh3Song_0.getSongName()))
 			{
 				base.Add(gh3Song_0.getSongName(), gh3Song_0);
 				QbSongClass1.AddKeyToDictionary(gh3Song_0.getSongName());
@@ -84,9 +83,9 @@ namespace GuitarHero.Songlist
 		public List<int> method_1(GH3Song gh3Song_0)
 		{
 			List<int> list = new List<int>();
-			foreach (int current in this.gh3SetlistList.Keys)
+			foreach (int current in gh3SetlistList.Keys)
 			{
-				foreach (GH3Tier current2 in this.gh3SetlistList[current].method_0())
+				foreach (GH3Tier current2 in gh3SetlistList[current].method_0())
 				{
 					if (current2.method_0().Contains(gh3Song_0))
 					{
@@ -98,18 +97,18 @@ namespace GuitarHero.Songlist
 					}
 				}
 			}
-			base.Remove(gh3Song_0.getSongName());
+			Remove(gh3Song_0.getSongName());
 			return list;
 		}
 
 		public GH3Song[] getSongs()
 		{
-			List<GH3Song> songList = new List<GH3Song>(base.Values);
+			List<GH3Song> songList = new List<GH3Song>(Values);
 			if (songList.Count != 0)
 			{
-				if (this.HideUsed)
+				if (HideUsed)
 				{
-					foreach (GH3Setlist current in this.gh3SetlistList.Values)
+					foreach (GH3Setlist current in gh3SetlistList.Values)
 					{
 						foreach (GH3Tier current2 in current.method_0())
 						{
@@ -123,9 +122,9 @@ namespace GuitarHero.Songlist
 						}
 					}
 				}
-				if (this.HideUnEditable)
+				if (HideUnEditable)
 				{
-					foreach (GH3Song current4 in base.Values)
+					foreach (GH3Song current4 in Values)
 					{
 						if (!current4.isEditable())
 						{
@@ -133,7 +132,7 @@ namespace GuitarHero.Songlist
 						}
 					}
 				}
-				foreach (GH3Song current5 in base.Values)
+				foreach (GH3Song current5 in Values)
 				{
 					if (!current5.isVisible())
 					{
@@ -146,21 +145,21 @@ namespace GuitarHero.Songlist
 
 		public bool method_3(string string_0)
 		{
-			return base.ContainsKey(string_0);
+			return ContainsKey(string_0);
 		}
 
 		public GH3Setlist method_4(string string_0, StructurePointerRootNode class266_0)
 		{
 			GH3Setlist gH3Setlist = new GH3Setlist(class266_0.method_7(), this);
 			gH3Setlist.method_3(string_0);
-			this.gh3SetlistList.Add(class266_0.int_0, gH3Setlist);
+			gh3SetlistList.Add(class266_0.int_0, gH3Setlist);
 			return gH3Setlist;
 		}
 
 		public GHLink method_5(string string_0, StructurePointerRootNode class266_0)
 		{
 			GHLink gHLink = new GHLink(string_0, class266_0.method_7());
-			this.dictionary_1.Add(class266_0.int_0, gHLink);
+			dictionary_1.Add(class266_0.int_0, gHLink);
 			return gHLink;
 		}
 
@@ -168,10 +167,10 @@ namespace GuitarHero.Songlist
 		{
 			foreach (StructureHeaderNode @class in class292_0.Nodes)
 			{
-				int num = @class.method_5<TagStructureNode>(new TagStructureNode("tag")).method_10();
-				if (this.dictionary_1.ContainsKey(num))
+				int num = @class.method_5(new TagStructureNode("tag")).method_10();
+				if (dictionary_1.ContainsKey(num))
 				{
-					this.class214_0.Add(@class.method_5<UnicodeStructureNode>(new UnicodeStructureNode("text")).method_8(), num);
+					class214_0.Add(@class.method_5(new UnicodeStructureNode("text")).method_8(), num);
 				}
 			}
 		}
@@ -179,11 +178,11 @@ namespace GuitarHero.Songlist
 		public StructureArrayNode method_7()
 		{
 			StructureArrayNode @class = new StructureArrayNode();
-			foreach (string current in this.class214_0.Keys)
+			foreach (string current in class214_0.Keys)
 			{
 				@class.method_3(new StructureHeaderNode(new List<zzUnkNode294>
 				{
-					new TagStructureNode("tag", this.class214_0[current]),
+					new TagStructureNode("tag", class214_0[current]),
 					new UnicodeStructureNode("text", current)
 				}));
 			}
@@ -192,11 +191,11 @@ namespace GuitarHero.Songlist
 
 		public string method_8(int int_0)
 		{
-			foreach (int current in this.dictionary_1.Keys)
+			foreach (int current in dictionary_1.Keys)
 			{
-				if (this.dictionary_1[current].setlist == int_0)
+				if (dictionary_1[current].setlist == int_0)
 				{
-					return this.class214_0.method_0(current);
+					return class214_0.method_0(current);
 				}
 			}
 			return "No Name";
@@ -204,24 +203,24 @@ namespace GuitarHero.Songlist
 
 		public int method_9(string string_0)
 		{
-			return this.dictionary_1[this.class214_0[string_0]].setlist;
+			return dictionary_1[class214_0[string_0]].setlist;
 		}
 
 		public int method_10(int int_0)
 		{
-			return this.dictionary_1[int_0].setlist;
+			return dictionary_1[int_0].setlist;
 		}
 
 		public GH3Setlist method_11(int int_0)
 		{
-			return this.gh3SetlistList[this.dictionary_1[int_0].setlist];
+			return gh3SetlistList[dictionary_1[int_0].setlist];
 		}
 
 		public void findEditableSongs(zzGenericNode1 class308_0, GH3Songlist gh3Songlist_0)
 		{
-			StructureHeaderNode @class = class308_0.method_5<StructurePointerRootNode>(new StructurePointerRootNode("permanent_songlist_props")).method_7();
-			bool flag = class308_0.method_5<TagStructureNode>(new TagStructureNode("band")) != null;
-			base.Clear();
+			StructureHeaderNode @class = class308_0.method_5(new StructurePointerRootNode("permanent_songlist_props")).method_7();
+			bool flag = class308_0.method_5(new TagStructureNode("band")) != null;
+			Clear();
 			foreach (StructurePointerNode class2 in @class.Nodes)
 			{
 				GH3Song gH3Song = flag ? new GHASong(class2) : new GH3Song(class2);
@@ -229,8 +228,8 @@ namespace GuitarHero.Songlist
 				{
 					gH3Song.setEditable(!gh3Songlist_0.method_3(gH3Song.getSongName()));
 				}
-				gH3Song.setVisible(!GH3Songlist.IgnoreSongs.Contains(class2.int_0));
-				this.Add(gH3Song);
+				gH3Song.setVisible(!IgnoreSongs.Contains(class2.int_0));
+				Add(gH3Song);
 			}
 		}
 
@@ -238,13 +237,13 @@ namespace GuitarHero.Songlist
 		{
 			List<int> list = new List<int>();
 			List<zzUnkNode294> list2 = new List<zzUnkNode294>();
-			foreach (string current in base.Keys)
+			foreach (string current in Keys)
 			{
 				list.Add(QbSongClass1.AddKeyToDictionary(current));
 				list2.Add(base[current].vmethod_5());
 			}
-			((TagArray)class308_0.method_5<ArrayPointerRootNode>(new ArrayPointerRootNode("gh3_songlist")).method_7()).method_12(list);
-			class308_0.method_5<StructurePointerRootNode>(new StructurePointerRootNode("permanent_songlist_props")).method_7().method_9(list2);
+			((TagArray)class308_0.method_5(new ArrayPointerRootNode("gh3_songlist")).method_7()).method_12(list);
+			class308_0.method_5(new StructurePointerRootNode("permanent_songlist_props")).method_7().method_9(list2);
 		}
 	}
 }

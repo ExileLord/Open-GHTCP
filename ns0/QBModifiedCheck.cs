@@ -1,6 +1,5 @@
 using System;
 using System.Reflection;
-using System.Reflection.Emit;
 
 namespace ns0
 {
@@ -150,7 +149,7 @@ namespace ns0
 
 		static QBModifiedCheck()
 		{
-			QBModifiedCheck.char_0 = new char[]
+			char_0 = new[]
 			{
 				'\u0001',
 				'\u0002',
@@ -214,7 +213,7 @@ namespace ns0
 			Type typeFromHandle = typeof(MulticastDelegate);
 			if (typeFromHandle != null)
 			{
-				QBModifiedCheck.moduleHandle_0 = Assembly.GetExecutingAssembly().GetModules()[0].ModuleHandle;
+				moduleHandle_0 = Assembly.GetExecutingAssembly().GetModules()[0].ModuleHandle;
 			}
 		}
 	}

@@ -10,8 +10,7 @@ namespace ns1
 
 		public static int int_0 = 64;
 
-		private static readonly int[] int_1 = new int[]
-		{
+		private static readonly int[] int_1 = {
 			0,
 			100,
 			200,
@@ -27,7 +26,7 @@ namespace ns1
 
 		public static float smethod_0(float float_0)
 		{
-			return (float)Class15.smethod_1((double)float_0);
+			return (float)smethod_1(float_0);
 		}
 
 		public static double smethod_1(double double_2)
@@ -74,7 +73,7 @@ namespace ns1
 			{
 				num += float_0[int_3 + i] * float_0[int_3 + i];
 			}
-			return (float)Math.Sqrt((double)(num / (float)int_4));
+			return (float)Math.Sqrt(num / int_4);
 		}
 
 		public static float smethod_5(float float_0, float float_1, float float_2)
@@ -87,13 +86,13 @@ namespace ns1
 			float num = float_0[int_3];
 			for (int i = int_3; i < int_3 + int_4; i++)
 			{
-				num = Class15.smethod_5(num, float_0[i], float_1);
+				num = smethod_5(num, float_0[i], float_1);
 				float_0[i] = num;
 			}
 			num = float_0[int_3 + int_4 - 1];
 			for (int j = int_3 + int_4 - 1; j >= int_3; j--)
 			{
-				num = Class15.smethod_5(num, float_0[j], float_1);
+				num = smethod_5(num, float_0[j], float_1);
 				float_0[j] = num;
 			}
 		}
@@ -102,7 +101,7 @@ namespace ns1
 		{
 			try
 			{
-				Class15.smethod_6(float_0, int_3 - int_4 / 2, int_4, 1.5f);
+				smethod_6(float_0, int_3 - int_4 / 2, int_4, 1.5f);
 			}
 			catch (Exception)
 			{
@@ -111,7 +110,7 @@ namespace ns1
 
 		public static void smethod_8(float[] float_0, int int_3)
 		{
-			Class15.smethod_7(float_0, int_3, Class15.int_2);
+			smethod_7(float_0, int_3, int_2);
 		}
 
 		public static float smethod_9(float[] float_0, int int_3, int int_4)

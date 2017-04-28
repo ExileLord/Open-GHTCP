@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.InteropServices;
 
 namespace ns0
@@ -34,22 +33,22 @@ namespace ns0
 
 		public static long long_1;
 
-		public static Class9.Struct1 struct1_0;
+		public static Struct1 struct1_0;
 
-		public static Class9.Struct1 struct1_1;
+		public static Struct1 struct1_1;
 
-		public static Class9.Struct2 struct2_0;
+		public static Struct2 struct2_0;
 
-		public static Class9.Struct2 struct2_1;
+		public static Struct2 struct2_1;
 
-		public static Class9.Struct3 struct3_0;
+		public static Struct3 struct3_0;
 
-		public static Class9.Struct3 struct3_1;
+		public static Struct3 struct3_1;
 
-		public static Class9.Struct4 struct4_0;
+		public static Struct4 struct4_0;
 
-		public static Class9.Struct4 struct4_1;
+		public static Struct4 struct4_1;
 
-		public static Class9.Struct5 struct5_0;
+		public static Struct5 struct5_0;
 	}
 }

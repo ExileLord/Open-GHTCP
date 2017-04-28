@@ -1,6 +1,6 @@
+using System;
 using ns18;
 using ns21;
-using System;
 
 namespace GuitarHero
 {
@@ -23,28 +23,28 @@ namespace GuitarHero
 
 		public GHLink(string string_0, int int_0, int int_1)
 		{
-			this.path = string_0;
-			this.setlist = int_0;
-			this.progression = int_1;
+			path = string_0;
+			setlist = int_0;
+			progression = int_1;
 		}
 
 		public GHLink(string string_0, StructureHeaderNode class286_0)
 		{
-			this.path = string_0;
-			this.method_0(class286_0);
+			path = string_0;
+			method_0(class286_0);
 		}
 
 		public void method_0(StructureHeaderNode class286_0)
 		{
-			this.setlist = class286_0.method_5<TagStructureNode>(new TagStructureNode("tier_global")).method_10();
-			this.progression = class286_0.method_5<TagStructureNode>(new TagStructureNode("progression_global")).method_10();
+			setlist = class286_0.method_5(new TagStructureNode("tier_global")).method_10();
+			progression = class286_0.method_5(new TagStructureNode("progression_global")).method_10();
 		}
 
 		public StructureHeaderNode method_1()
 		{
 			StructureHeaderNode @class = new StructureHeaderNode();
-			@class.method_3(new TagStructureNode("tier_global", this.setlist));
-			@class.method_3(new TagStructureNode("progression_global", this.progression));
+			@class.method_3(new TagStructureNode("tier_global", setlist));
+			@class.method_3(new TagStructureNode("progression_global", progression));
 			return @class;
 		}
 	}

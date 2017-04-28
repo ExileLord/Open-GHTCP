@@ -10,8 +10,8 @@ namespace ns1
 
 		public Struct12(Struct12 struct12_0)
 		{
-			this.double_0 = struct12_0.double_0;
-			this.double_1 = struct12_0.double_1;
+			double_0 = struct12_0.double_0;
+			double_1 = struct12_0.double_1;
 		}
 
 		object ICloneable.Clone()
@@ -21,8 +21,8 @@ namespace ns1
 
 		public double method_0()
 		{
-			double num = this.double_0;
-			double num2 = this.double_1;
+			double num = double_0;
+			double num2 = double_1;
 			return Math.Sqrt(num * num + num2 * num2);
 		}
 
@@ -33,7 +33,7 @@ namespace ns1
 
 		public override int GetHashCode()
 		{
-			return this.double_0.GetHashCode() ^ this.double_1.GetHashCode();
+			return double_0.GetHashCode() ^ double_1.GetHashCode();
 		}
 
 		public override bool Equals(object obj)
@@ -41,7 +41,7 @@ namespace ns1
 			if (obj is Struct12)
 			{
 				Struct12 struct12_ = (Struct12)obj;
-				return Struct12.smethod_0(this, struct12_);
+				return smethod_0(this, struct12_);
 			}
 			return false;
 		}
@@ -54,26 +54,26 @@ namespace ns1
 			}
 			if (target is Struct12)
 			{
-				return this.method_0().CompareTo(((Struct12)target).method_0());
+				return method_0().CompareTo(((Struct12)target).method_0());
 			}
 			if (target is double)
 			{
-				return this.method_0().CompareTo((double)target);
+				return method_0().CompareTo((double)target);
 			}
 			if (target is Struct10)
 			{
-				return this.method_0().CompareTo((double)((Struct10)target).method_0());
+				return method_0().CompareTo(((Struct10)target).method_0());
 			}
 			if (!(target is float))
 			{
 				throw new ArgumentException();
 			}
-			return this.method_0().CompareTo((double)((float)target));
+			return method_0().CompareTo((float)target);
 		}
 
 		public override string ToString()
 		{
-			return string.Format("( {0}, {1}i )", this.double_0, this.double_1);
+			return string.Format("( {0}, {1}i )", double_0, double_1);
 		}
 	}
 }

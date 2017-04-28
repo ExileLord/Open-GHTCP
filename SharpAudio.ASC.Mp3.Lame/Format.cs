@@ -18,12 +18,12 @@ namespace SharpAudio.ASC.Mp3.Lame
 
 		public Format(WaveFormat waveFormat_0, uint uint_0)
 		{
-			this.lhv1 = new LHV1(waveFormat_0, uint_0);
+			lhv1 = new LHV1(waveFormat_0, uint_0);
 		}
 
 		public Format(WaveFormat waveFormat_0, uint uint_0, uint uint_1)
 		{
-			this.lhv1 = new LHV1(waveFormat_0, uint_0, uint_1);
+			lhv1 = new LHV1(waveFormat_0, uint_0, uint_1);
 		}
 	}
 }

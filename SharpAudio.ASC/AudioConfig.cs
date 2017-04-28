@@ -13,12 +13,12 @@ namespace SharpAudio.ASC
 			int @int = serializationInfo_0.GetInt32("Format.Rate");
 			int int2 = serializationInfo_0.GetInt32("Format.Bits");
 			int int3 = serializationInfo_0.GetInt32("Format.Channels");
-			this.m_Format = new WaveFormat(@int, int2, int3);
+			m_Format = new WaveFormat(@int, int2, int3);
 		}
 
 		public AudioConfig(WaveFormat waveFormat_0)
 		{
-			this.m_Format = new WaveFormat(waveFormat_0.int_0, (int)waveFormat_0.short_2, (int)waveFormat_0.short_0);
+			m_Format = new WaveFormat(waveFormat_0.int_0, waveFormat_0.short_2, waveFormat_0.short_0);
 		}
 
 		public AudioConfig() : this(new WaveFormat(44100, 16, 2))
@@ -27,9 +27,9 @@ namespace SharpAudio.ASC
 
 		public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
 		{
-			info.AddValue("Format.Rate", this.m_Format.int_0);
-			info.AddValue("Format.Bits", this.m_Format.short_2);
-			info.AddValue("Format.Channels", this.m_Format.short_0);
+			info.AddValue("Format.Rate", m_Format.int_0);
+			info.AddValue("Format.Bits", m_Format.short_2);
+			info.AddValue("Format.Channels", m_Format.short_0);
 		}
 	}
 }

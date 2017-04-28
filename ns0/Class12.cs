@@ -1,6 +1,5 @@
-using ns1;
-using System;
 using System.Collections.Generic;
+using ns1;
 
 namespace ns0
 {
@@ -8,7 +7,7 @@ namespace ns0
 	{
 		public Class12(Interface5[] interface5_0)
 		{
-			base.AddRange(interface5_0);
+			AddRange(interface5_0);
 		}
 
 		public virtual void imethod_0(Class13[] class13_0)

@@ -1,5 +1,5 @@
-using ns1;
 using System;
+using ns1;
 
 namespace ns11
 {
@@ -11,36 +11,36 @@ namespace ns11
 
 		~Class157()
 		{
-			this.Dispose();
+			Dispose();
 		}
 
 		public void method_0()
 		{
-			if (this.class154_0 != null)
+			if (class154_0 != null)
 			{
 				try
 				{
-					this.class154_0.Dispose();
+					class154_0.Dispose();
 				}
 				finally
 				{
-					this.class154_0 = null;
+					class154_0 = null;
 				}
 			}
 		}
 
 		public void Dispose()
 		{
-			this.method_0();
-			if (this.stream14_0 != null)
+			method_0();
+			if (stream14_0 != null)
 			{
 				try
 				{
-					this.stream14_0.Close();
+					stream14_0.Close();
 				}
 				finally
 				{
-					this.stream14_0 = null;
+					stream14_0 = null;
 				}
 			}
 		}

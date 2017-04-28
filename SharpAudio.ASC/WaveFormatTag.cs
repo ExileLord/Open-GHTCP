@@ -1,5 +1,3 @@
-using System;
-
 namespace SharpAudio.ASC
 {
 	public enum WaveFormatTag : ushort

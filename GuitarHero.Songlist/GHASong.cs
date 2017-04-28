@@ -1,9 +1,9 @@
+using System;
 using ns15;
 using ns18;
 using ns19;
 using ns20;
 using ns21;
-using System;
 
 namespace GuitarHero.Songlist
 {
@@ -28,15 +28,15 @@ namespace GuitarHero.Songlist
 
 		public GHASong(StructurePointerNode class302_0)
 		{
-			this.vmethod_4(class302_0);
+			vmethod_4(class302_0);
 		}
 
 		public GHASong(string string_0)
 		{
-			this.title = string_0;
-			this.name = string_0;
-			this.leaderboard = true;
-			this.editable = true;
+			title = string_0;
+			name = string_0;
+			leaderboard = true;
+			editable = true;
 		}
 
 		public override void vmethod_0(Interface16 interface16_0)
@@ -45,12 +45,12 @@ namespace GuitarHero.Songlist
 			if (interface16_0 is GHASong)
 			{
 				GHASong gHASong = interface16_0 as GHASong;
-				gHASong.covered_by = this.covered_by;
-				gHASong.band = this.band;
-				gHASong.guitarist_checksum = this.guitarist_checksum;
-				gHASong.singer_anim_pak = this.singer_anim_pak;
-				gHASong.thin_fretbar_8note_params_high_bpm = this.thin_fretbar_8note_params_high_bpm;
-				gHASong.perry_mic_stand = this.perry_mic_stand;
+				gHASong.covered_by = covered_by;
+				gHASong.band = band;
+				gHASong.guitarist_checksum = guitarist_checksum;
+				gHASong.singer_anim_pak = singer_anim_pak;
+				gHASong.thin_fretbar_8note_params_high_bpm = thin_fretbar_8note_params_high_bpm;
+				gHASong.perry_mic_stand = perry_mic_stand;
 			}
 		}
 
@@ -58,39 +58,39 @@ namespace GuitarHero.Songlist
 		{
 			base.vmethod_4(class302_0);
 			UnicodeStructureNode @class;
-			this.covered_by = (((@class = class302_0.method_5<UnicodeStructureNode>(new UnicodeStructureNode("covered_by"))) != null) ? @class.method_8() : "");
+			covered_by = (((@class = class302_0.method_5(new UnicodeStructureNode("covered_by"))) != null) ? @class.method_8() : "");
 			TagStructureNode class2;
-			this.band = (((class2 = class302_0.method_5<TagStructureNode>(new TagStructureNode("band"))) != null) ? class2.method_8() : "default_band");
-			this.guitarist_checksum = ((class2 = class302_0.method_5<TagStructureNode>(new TagStructureNode("guitarist_checksum"))) != null && class2.method_8() == "aerosmith");
+			band = (((class2 = class302_0.method_5(new TagStructureNode("band"))) != null) ? class2.method_8() : "default_band");
+			guitarist_checksum = ((class2 = class302_0.method_5(new TagStructureNode("guitarist_checksum"))) != null && class2.method_8() == "aerosmith");
 			AsciiStructureNode class3;
-			this.singer_anim_pak = (((class3 = class302_0.method_5<AsciiStructureNode>(new AsciiStructureNode("singer_anim_pak"))) != null) ? class3.method_8() : "");
+			singer_anim_pak = (((class3 = class302_0.method_5(new AsciiStructureNode("singer_anim_pak"))) != null) ? class3.method_8() : "");
 			IntegerStructureNode class4;
-			this.thin_fretbar_8note_params_high_bpm = (((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("thin_fretbar_8note_params_high_bpm"))) != null) ? class4.method_8() : 0);
-			this.perry_mic_stand = ((class4 = class302_0.method_5<IntegerStructureNode>(new IntegerStructureNode("perry_mic_stand"))) != null && class4.method_8() == 1);
+			thin_fretbar_8note_params_high_bpm = (((class4 = class302_0.method_5(new IntegerStructureNode("thin_fretbar_8note_params_high_bpm"))) != null) ? class4.method_8() : 0);
+			perry_mic_stand = ((class4 = class302_0.method_5(new IntegerStructureNode("perry_mic_stand"))) != null && class4.method_8() == 1);
 		}
 
 		public override StructurePointerNode vmethod_5()
 		{
 			StructurePointerNode @class = base.vmethod_5();
 			StructureHeaderNode class2 = @class.method_8();
-			if (!this.covered_by.Equals(""))
+			if (!covered_by.Equals(""))
 			{
-				class2.method_3(new UnicodeStructureNode("covered_by", this.covered_by));
+				class2.method_3(new UnicodeStructureNode("covered_by", covered_by));
 			}
-			class2.method_3(new TagStructureNode("band", this.band));
-			if (this.guitarist_checksum)
+			class2.method_3(new TagStructureNode("band", band));
+			if (guitarist_checksum)
 			{
 				class2.method_3(new TagStructureNode("guitarist_checksum", "aerosmith"));
 			}
-			if (!this.singer_anim_pak.Equals(""))
+			if (!singer_anim_pak.Equals(""))
 			{
-				class2.method_3(new AsciiStructureNode("singer_anim_pak", this.singer_anim_pak));
+				class2.method_3(new AsciiStructureNode("singer_anim_pak", singer_anim_pak));
 			}
-			if (this.thin_fretbar_8note_params_high_bpm != 0)
+			if (thin_fretbar_8note_params_high_bpm != 0)
 			{
-				class2.method_3(new IntegerStructureNode("band_playback_volume", this.thin_fretbar_8note_params_high_bpm));
+				class2.method_3(new IntegerStructureNode("band_playback_volume", thin_fretbar_8note_params_high_bpm));
 			}
-			if (this.perry_mic_stand)
+			if (perry_mic_stand)
 			{
 				class2.method_3(new IntegerStructureNode("band_playback_volume", 1));
 			}

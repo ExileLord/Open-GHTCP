@@ -1,7 +1,7 @@
-using ns0;
-using SharpAudio.ASC;
 using System;
 using System.IO;
+using ns0;
+using SharpAudio.ASC;
 
 namespace ns1
 {
@@ -11,7 +11,7 @@ namespace ns1
 		{
 			get
 			{
-				return this.fileStream.CanRead;
+				return fileStream.CanRead;
 			}
 		}
 
@@ -19,7 +19,7 @@ namespace ns1
 		{
 			get
 			{
-				return this.fileStream.CanSeek;
+				return fileStream.CanSeek;
 			}
 		}
 
@@ -27,7 +27,7 @@ namespace ns1
 		{
 			get
 			{
-				return this.fileStream.CanWrite;
+				return fileStream.CanWrite;
 			}
 		}
 
@@ -35,7 +35,7 @@ namespace ns1
 		{
 			get
 			{
-				return this.fileStream.Length;
+				return fileStream.Length;
 			}
 		}
 
@@ -43,11 +43,11 @@ namespace ns1
 		{
 			get
 			{
-				return this.fileStream.Position;
+				return fileStream.Position;
 			}
 			set
 			{
-				this.fileStream.Position = value;
+				fileStream.Position = value;
 			}
 		}
 
@@ -57,32 +57,32 @@ namespace ns1
 
 		public Stream5(Stream stream_1, WaveFormat waveFormat_1)
 		{
-			this.fileStream = stream_1;
-			this.waveFormat_0 = waveFormat_1;
+			fileStream = stream_1;
+			waveFormat_0 = waveFormat_1;
 		}
 
 		public override void SetLength(long value)
 		{
-			this.fileStream.SetLength(value);
+			fileStream.SetLength(value);
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
 		{
-			return this.fileStream.Seek(offset, origin);
+			return fileStream.Seek(offset, origin);
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			return this.fileStream.Read(buffer, offset, count);
+			return fileStream.Read(buffer, offset, count);
 		}
 
 		public override void Write(byte[] buffer, int offset, int count)
 		{
-			if (!this.CanWrite)
+			if (!CanWrite)
 			{
 				throw new NotSupportedException();
 			}
-			this.fileStream.Write(buffer, offset, count);
+			fileStream.Write(buffer, offset, count);
 		}
 	}
 }

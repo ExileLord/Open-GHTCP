@@ -1,5 +1,3 @@
-using System;
-
 namespace SharpAudio.ASC.Mp3.Decoding
 {
 	public enum BitstreamError

@@ -1,13 +1,10 @@
-using System;
-
 namespace ns10
 {
 	public class Class62
 	{
 		private static int int_0 = 256;
 
-		private static readonly uint[] uint_0 = new uint[]
-		{
+		private static readonly uint[] uint_0 = {
 			0u,
 			1u,
 			3u,
@@ -47,7 +44,7 @@ namespace ns10
 
 		public void method_0()
 		{
-			this.byte_0 = null;
+			byte_0 = null;
 		}
 	}
 }

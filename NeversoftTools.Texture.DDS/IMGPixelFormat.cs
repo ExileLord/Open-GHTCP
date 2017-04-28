@@ -1,5 +1,3 @@
-using System;
-
 namespace NeversoftTools.Texture.DDS
 {
 	public enum IMGPixelFormat

@@ -1,4 +1,3 @@
-using System;
 using System.Runtime.InteropServices;
 
 namespace ns0
@@ -10,6 +9,6 @@ namespace ns0
 		{
 		}
 
-		public static Class1.Struct0 struct0_0;
+		public static Struct0 struct0_0;
 	}
 }

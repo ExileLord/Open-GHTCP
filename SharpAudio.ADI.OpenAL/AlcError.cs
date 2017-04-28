@@ -1,5 +1,3 @@
-using System;
-
 namespace SharpAudio.ADI.OpenAL
 {
 	public enum AlcError

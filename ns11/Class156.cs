@@ -22,30 +22,30 @@ namespace ns11
 
 		~Class156()
 		{
-			this.Dispose();
+			Dispose();
 		}
 
 		public void Dispose()
 		{
-			if (this.struct66_0.intptr_0 != IntPtr.Zero)
+			if (struct66_0.intptr_0 != IntPtr.Zero)
 			{
-				Class162.waveInUnprepareHeader(this.intptr_0, ref this.struct66_0, Marshal.SizeOf(this.struct66_0));
-				this.gchandle_0.Free();
-				this.struct66_0.intptr_0 = IntPtr.Zero;
+				Class162.waveInUnprepareHeader(intptr_0, ref struct66_0, Marshal.SizeOf(struct66_0));
+				gchandle_0.Free();
+				struct66_0.intptr_0 = IntPtr.Zero;
 			}
-			this.autoResetEvent_0.Close();
-			if (this.gchandle_1.IsAllocated)
+			autoResetEvent_0.Close();
+			if (gchandle_1.IsAllocated)
 			{
-				this.gchandle_1.Free();
+				gchandle_1.Free();
 			}
 			GC.SuppressFinalize(this);
 		}
 
 		public void method_0()
 		{
-			if (this.bool_0)
+			if (bool_0)
 			{
-				this.bool_0 = this.autoResetEvent_0.WaitOne();
+				bool_0 = autoResetEvent_0.WaitOne();
 				return;
 			}
 			Thread.Sleep(0);

@@ -24,29 +24,29 @@ namespace SharpAudio.ADI.OpenAL
 
 		public Vector3(float float_0, float float_1, float float_2)
 		{
-			this.X = float_0;
-			this.Y = float_1;
-			this.Z = float_2;
+			X = float_0;
+			Y = float_1;
+			Z = float_2;
 		}
 
 		public override string ToString()
 		{
-			return string.Format("({0}, {1}, {2})", this.X, this.Y, this.Z);
+			return string.Format("({0}, {1}, {2})", X, Y, Z);
 		}
 
 		public override int GetHashCode()
 		{
-			return this.X.GetHashCode() ^ this.Y.GetHashCode() ^ this.Z.GetHashCode();
+			return X.GetHashCode() ^ Y.GetHashCode() ^ Z.GetHashCode();
 		}
 
 		public override bool Equals(object obj)
 		{
-			return obj is Vector3 && this.Equals((Vector3)obj);
+			return obj is Vector3 && Equals((Vector3)obj);
 		}
 
 		public bool Equals(Vector3 other)
 		{
-			return this.X == other.X && this.Y == other.Y && this.Z == other.Z;
+			return X == other.X && Y == other.Y && Z == other.Z;
 		}
 	}
 }
