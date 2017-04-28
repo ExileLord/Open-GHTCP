@@ -186,7 +186,7 @@ namespace ns17
 
 		private bool bool_4;
 
-		private Interface6 interface6_0;
+		private PlayableAudio Audio;
 
 		private readonly Timer timer_0;
 
@@ -943,7 +943,7 @@ namespace ns17
 			arg_26_0.Enabled = false;
 			this.bool_1 = true;
 			this.bool_0 = true;
-			this.method_3();
+			this.EnableAudioButtons();
 			this.gh3Songlist_0 = gh3Songlist_1;
 			this.timer_0 = new Timer();
 			this.timer_0.Interval = 30;
@@ -959,7 +959,7 @@ namespace ns17
             arg_26_0.Enabled = false;
             this.bool_1 = true;
             this.bool_0 = true;
-            this.method_3();
+            this.EnableAudioButtons();
             this.gh3Songlist_0 = gh3Songlist_1;
             this.timer_0 = new Timer();
             this.timer_0.Interval = 30;
@@ -981,7 +981,7 @@ namespace ns17
 			CheckBox arg_86_0 = this.Chart_CheckBox;
 			this.bool_1 = bool_7;
 			arg_86_0.Checked = bool_7;
-			this.method_3();
+			this.EnableAudioButtons();
 		}
 
 		public SongData(string string_0, QBCParser class362_1, zzQbSongObject class323_1, string[] string_1)
@@ -1253,7 +1253,7 @@ namespace ns17
 			return new Track<int, int>();
 		}
 
-		private void method_3()
+		private void EnableAudioButtons()
 		{
 			if (this.bool_0)
 			{
@@ -1447,13 +1447,13 @@ namespace ns17
                     //Configures midi
                     else if (fileName.EndsWith(".mid"))
 					{
-                        this.qbcParser = Midi2Chart.getMidiSong(fileName, this.forceRB3);
+                        this.qbcParser = Midi2Chart.LoadMidiSong(fileName, this.forceRB3);
 					}
                     //Configures charts
                     else
                     {
                         //Crashes in this
-                        this.qbcParser = new ChartParser(fileName).method_3();
+                        this.qbcParser = new ChartParser(fileName).ConvertToQBC();
 					}
                     IL_F5:
 					this.method_6();
@@ -1492,7 +1492,7 @@ namespace ns17
 				{
 					MessageBox.Show("Game Track cannot be parsed.\n" + ex.Message);
 				}
-				this.method_3();
+				this.EnableAudioButtons();
 			}
 		}
 
@@ -1502,10 +1502,10 @@ namespace ns17
 			this.PreviewSlider.method_18(1);
 			this.PreviewSlider.method_14(0);
 			this.PreviewSlider.Enabled = false;
-			if (this.interface6_0 != null)
+			if (this.Audio != null)
 			{
-				this.interface6_0.Dispose();
-				this.interface6_0 = null;
+				this.Audio.Dispose();
+				this.Audio = null;
 			}
 		}
 
@@ -1638,9 +1638,9 @@ namespace ns17
 					else
 					{
 						this.PreviewSlider.Enabled = true;
-						this.method_11();
+						this.LoadAudio();
 					}
-					this.method_3();
+					this.EnableAudioButtons();
                     return;
 				}
 			}
@@ -1649,8 +1649,8 @@ namespace ns17
 				this.GuitarAudioTxt.Text = fileName;
 				this.GuitarAudioTxt.SelectionStart = this.GuitarAudioTxt.TextLength;
 				this.PreviewSlider.Enabled = true;
-				this.method_11();
-				this.method_3();
+				this.LoadAudio();
+				this.EnableAudioButtons();
             }
 		}
 
@@ -1662,8 +1662,8 @@ namespace ns17
                 this.RhythmAudioTxt.Text = fileName;
 				this.RhythmAudioTxt.SelectionStart = this.RhythmAudioTxt.TextLength;
 				this.PreviewSlider.Enabled = true;
-				this.method_11();
-				this.method_3();
+				this.LoadAudio();
+				this.EnableAudioButtons();
 			}
 		}
 
@@ -1675,8 +1675,8 @@ namespace ns17
                 this.BandAudioTxt.Text = fileName;
 				this.BandAudioTxt.SelectionStart = this.BandAudioTxt.TextLength;
 				this.PreviewSlider.Enabled = true;
-				this.method_11();
-				this.method_3();
+				this.LoadAudio();
+				this.EnableAudioButtons();
 			}
 		}
 
@@ -1688,8 +1688,8 @@ namespace ns17
                 this.GuitarCoopTxt.Text = fileName;
 				this.GuitarCoopTxt.SelectionStart = this.GuitarCoopTxt.TextLength;
 				this.PreviewSlider.Enabled = true;
-				this.method_11();
-				this.method_3();
+				this.LoadAudio();
+				this.EnableAudioButtons();
 			}
 		}
 
@@ -1701,8 +1701,8 @@ namespace ns17
                 this.RhythmCoopTxt.Text = fileName;
 				this.RhythmCoopTxt.SelectionStart = this.RhythmCoopTxt.TextLength;
 				this.PreviewSlider.Enabled = true;
-				this.method_11();
-				this.method_3();
+				this.LoadAudio();
+				this.EnableAudioButtons();
 			}
 		}
 
@@ -1714,8 +1714,8 @@ namespace ns17
                 this.BandCoopTxt.Text = fileName;
 				this.BandCoopTxt.SelectionStart = this.BandCoopTxt.TextLength;
 				this.PreviewSlider.Enabled = true;
-				this.method_11();
-				this.method_3();
+				this.LoadAudio();
+				this.EnableAudioButtons();
 			}
 		}
 
@@ -1725,7 +1725,7 @@ namespace ns17
 			{
 				this.bool_2 = (this.SongNameTxt.Text != "" && !QbSongClass1.smethod_4(this.SongNameTxt.Text) && !this.gh3Songlist_0.method_3(this.SongNameTxt.Text));
 			}
-			this.method_3();
+			this.EnableAudioButtons();
 		}
 
 		private void SongNameTxt_KeyPress(object sender, KeyPressEventArgs e)
@@ -1738,64 +1738,64 @@ namespace ns17
 
 		private void SongData_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (this.interface6_0 != null)
+			if (this.Audio != null)
 			{
-				this.interface6_0.Dispose();
+				this.Audio.Dispose();
 			}
 		}
 
 		~SongData()
 		{
-			if (this.interface6_0 != null)
+			if (this.Audio != null)
 			{
-				this.interface6_0.Dispose();
+				this.Audio.Dispose();
 			}
 		}
 
 		private void timer_0_Tick(object sender, EventArgs e)
 		{
-			if (this.interface6_0 != null && this.bool_5)
+			if (this.Audio != null && this.bool_5)
 			{
-				this.PreviewSlider.method_14((int)this.interface6_0.imethod_0().TotalSeconds);
+				this.PreviewSlider.method_14((int)this.Audio.AudioLength().TotalSeconds);
 			}
 		}
 
 		private void Play_Btn_Click(object sender, EventArgs e)
 		{
-			if (this.interface6_0 == null)
+			if (this.Audio == null)
 			{
 				return;
 			}
-			this.interface6_0.imethod_3();
+			this.Audio.DifferentStartPlaying();
 			this.timer_0.Start();
 		}
 
 		private void Pause_Btn_Click(object sender, EventArgs e)
 		{
-			if (this.interface6_0 == null)
+			if (this.Audio == null)
 			{
 				return;
 			}
-			this.interface6_0.imethod_4();
+			this.Audio.StartPlaying();
 			this.timer_0.Stop();
 		}
 
 		private void Stop_Btn_Click(object sender, EventArgs e)
 		{
-			if (this.interface6_0 == null)
+			if (this.Audio == null)
 			{
 				return;
 			}
-			this.interface6_0.imethod_5();
+			this.Audio.StopPlaying();
 			this.timer_0.Stop();
 			this.PreviewSlider.method_14(this.PreviewSlider.method_15());
-			this.interface6_0.imethod_2(0);
+			this.Audio.SetStartingTimeBasedOnSomeValue(0);
 		}
 
 		private void PreviewSlider_MouseUp(object sender, MouseEventArgs e)
 		{
 			this.bool_5 = true;
-			this.interface6_0.imethod_1(TimeSpan.FromSeconds((double)this.PreviewSlider.method_13()));
+			this.Audio.SetStartingTime(TimeSpan.FromSeconds((double)this.PreviewSlider.method_13()));
 		}
 
 		private void PreviewSlider_MouseDown(object sender, MouseEventArgs e)
@@ -1805,13 +1805,13 @@ namespace ns17
 
 		private void method_10(object sender, EventArgs e)
 		{
-			if (this.interface6_0 != null)
+			if (this.Audio != null)
 			{
-				this.interface6_0.imethod_8((float)this.VolumeSlider.method_13() / 100f);
+				this.Audio.SetVolume((float)this.VolumeSlider.method_13() / 100f);
 			}
 		}
 
-		private void method_11()
+		private void LoadAudio()
 		{
 			try
 			{
@@ -1843,12 +1843,12 @@ namespace ns17
 				if (list.Count != 0)
 				{
 					GenericAudioStream stream = (list.Count == 1) ? list[0] : new Stream2(list.ToArray());
-					if (this.interface6_0 != null)
+					if (this.Audio != null)
 					{
-						this.interface6_0.Dispose();
+						this.Audio.Dispose();
 					}
-					this.interface6_0 = AudioManager.smethod_0(Enum25.const_5, stream);
-					this.PreviewSlider.method_14((int)this.interface6_0.imethod_0().TotalSeconds);
+					this.Audio = AudioManager.LoadPlayableAudio(Enum25.const_5, stream);
+					this.PreviewSlider.method_14((int)this.Audio.AudioLength().TotalSeconds);
 					this.PreviewSlider.method_18((int)stream.vmethod_1().timeSpan_0.TotalSeconds);
 				}
 			}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ns16
 {
-	public class Class239<T> : List<T>, ICloneable where T : IComparable<T>
+	public class Fretbar<T> : List<T>, ICloneable where T : IComparable<T>
 	{
 		private bool bool_0;
 
@@ -40,17 +40,17 @@ namespace ns16
 			}
 		}
 
-		public Class239()
+		public Fretbar()
 		{
 			this.method_0();
 		}
 
-		public Class239(int int_0) : base(int_0)
+		public Fretbar(int int_0) : base(int_0)
 		{
 			this.method_0();
 		}
 
-		public Class239(IEnumerable<T> ienumerable_0) : base(ienumerable_0)
+		public Fretbar(IEnumerable<T> ienumerable_0) : base(ienumerable_0)
 		{
 			base.Sort();
 			this.method_0();
@@ -131,7 +131,7 @@ namespace ns16
 
 		public override bool Equals(object obj)
 		{
-			Class239<T> @class = (Class239<T>)obj;
+			Fretbar<T> @class = (Fretbar<T>)obj;
 			if (@class.Count != base.Count)
 			{
 				return false;
@@ -169,7 +169,7 @@ namespace ns16
 
 		public object Clone()
 		{
-			return new Class239<T>(this)
+			return new Fretbar<T>(this)
 			{
 				bool_2 = this.bool_2,
 				bool_0 = this.bool_0,

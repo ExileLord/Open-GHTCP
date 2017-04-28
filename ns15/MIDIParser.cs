@@ -75,7 +75,7 @@ namespace ns15
 			this.fileLocation = fileLocation;
 		}
 
-		public ChartParser method_0()
+		public ChartParser LoadMidi()
 		{
 			string name = "";
 			name = name + new FileInfo(this.fileLocation).Name + ":\n";

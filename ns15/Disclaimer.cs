@@ -59,6 +59,7 @@ namespace ns15
 			this.AcceptBtn.Size = new Size(198, 25);
 			this.AcceptBtn.TabIndex = 1;
 			this.AcceptBtn.Text = "I ACCEPT";
+            this.AcceptBtn.Enabled = true;
 			this.AcceptBtn.UseVisualStyleBackColor = true;
 			this.tableLayoutPanel1.ColumnCount = 1;
 			this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50f));
@@ -112,10 +113,10 @@ namespace ns15
 		public Disclaimer()
 		{
 			this.InitializeComponent();
-			this.AcceptBtn.Enabled = false;
-			this.AcceptBtn.Text = "Read Agreement First! (" + this.int_0 + ")";
-			this.timer_0.Enabled = true;
-			this.timer_0.Start();
+			this.AcceptBtn.Enabled = true;
+			this.AcceptBtn.Text = "I ACCEPT";
+			//this.timer_0.Enabled = true;
+			//this.timer_0.Start();
 		}
 
 		private void timer_0_Tick(object sender, EventArgs e)

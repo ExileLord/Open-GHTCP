@@ -8,9 +8,9 @@ using System.Threading;
 
 namespace ns5
 {
-	public class Class109 : Interface6
+	public class OGGOutput : PlayableAudio
 	{
-		private Enum1 enum1_0;
+		private AudioStatus enum1_0;
 
 		private GenericAudioStream stream1_0;
 
@@ -53,11 +53,11 @@ namespace ns5
 		[DllImport("user32.dll")]
 		public static extern IntPtr GetDesktopWindow();
 
-		public Class109(GenericAudioStream stream1_1) : this(stream1_1, null, 500)
+		public OGGOutput(GenericAudioStream stream1_1) : this(stream1_1, null, 500)
 		{
 		}
 
-		public Class109(GenericAudioStream stream1_1, Device device_1, int int_5)
+		public OGGOutput(GenericAudioStream stream1_1, Device device_1, int int_5)
 		{
 			this.stream1_0 = new Stream4(stream1_1, 16);
 			this.int_1 = this.stream1_0.vmethod_0().method_0(int_5);
@@ -69,7 +69,7 @@ namespace ns5
 			if (this.device_0 == null)
 			{
 				this.device_0 = new Device();
-				this.device_0.SetCooperativeLevel(Class109.GetDesktopWindow(), CooperativeLevel.Normal);
+				this.device_0.SetCooperativeLevel(OGGOutput.GetDesktopWindow(), CooperativeLevel.Normal);
 				this.bool_0 = true;
 			}
 			this.secondaryBuffer_0 = new SecondaryBuffer(new BufferDescription
@@ -80,14 +80,14 @@ namespace ns5
 				ControlVolume = true,
 				GlobalFocus = true,
 				StickyFocus = true,
-				Format = Class109.smethod_0(this.stream1_0.vmethod_0())
+				Format = OGGOutput.smethod_0(this.stream1_0.vmethod_0())
 			}, this.device_0);
 			this.secondaryBuffer_0.SetCurrentPosition(0);
 			this.int_2 = 0;
 			this.secondaryBuffer_0.Volume = 0;
 			this.autoResetEvent_0 = new AutoResetEvent(false);
 			this.bufferPositionNotify_1[0].EventNotifyHandle = this.autoResetEvent_0.Handle;
-			this.enum1_0 = Enum1.const_0;
+			this.enum1_0 = AudioStatus.ShouldStopAudio;
 		}
 
 		private static Microsoft.DirectX.DirectSound.WaveFormat smethod_0(SharpAudio.ASC.WaveFormat waveFormat_0)
@@ -103,14 +103,14 @@ namespace ns5
 			};
 		}
 
-		public void imethod_3()
+		public void DifferentStartPlaying()
 		{
-			if (this.enum1_0 == Enum1.const_2)
+			if (this.enum1_0 == AudioStatus.IsCurrentlyPlayingAudio)
 			{
 				this.method_0();
 				return;
 			}
-			if (this.enum1_0 == Enum1.const_0)
+			if (this.enum1_0 == AudioStatus.ShouldStopAudio)
 			{
 				this.method_9();
 				this.method_2(5);
@@ -125,59 +125,59 @@ namespace ns5
 				this.secondaryBuffer_0.SetCurrentPosition(0);
 				this.secondaryBuffer_0.Volume = 0;
 				this.secondaryBuffer_0.Play(0, BufferPlayFlags.Looping);
-				this.enum1_0 = Enum1.const_1;
+				this.enum1_0 = AudioStatus.ShouldStartAudio;
 			}
 		}
 
-		public void imethod_4()
+		public void StartPlaying()
 		{
-			if (this.enum1_0 == Enum1.const_1)
+			if (this.enum1_0 == AudioStatus.ShouldStartAudio)
 			{
 				this.secondaryBuffer_0.Stop();
-				this.enum1_0 = Enum1.const_2;
+				this.enum1_0 = AudioStatus.IsCurrentlyPlayingAudio;
 			}
 		}
 
 		private void method_0()
 		{
-			if (this.enum1_0 == Enum1.const_2)
+			if (this.enum1_0 == AudioStatus.IsCurrentlyPlayingAudio)
 			{
 				this.secondaryBuffer_0.Play(0, BufferPlayFlags.Looping);
-				this.enum1_0 = Enum1.const_1;
+				this.enum1_0 = AudioStatus.ShouldStartAudio;
 			}
 		}
 
-		public void imethod_5()
+		public void StopPlaying()
 		{
 			this.secondaryBuffer_0.Volume = -10000;
 			this.method_0();
 			this.method_9();
 			this.secondaryBuffer_0.Stop();
-			this.enum1_0 = Enum1.const_0;
+			this.enum1_0 = AudioStatus.ShouldStopAudio;
 		}
 
-		public TimeSpan imethod_0()
+		public TimeSpan AudioLength()
 		{
 			return TimeSpan.FromMilliseconds((double)this.vmethod_0() / this.double_0);
 		}
 
-		public void imethod_1(TimeSpan timeSpan_0)
+		public void SetStartingTime(TimeSpan timeSpan_0)
 		{
-			this.imethod_2(Convert.ToInt32(this.double_0 * timeSpan_0.TotalMilliseconds));
+			this.SetStartingTimeBasedOnSomeValue(Convert.ToInt32(this.double_0 * timeSpan_0.TotalMilliseconds));
 		}
 
 		public int vmethod_0()
 		{
-			if (this.enum1_0 != Enum1.const_0)
+			if (this.enum1_0 != AudioStatus.ShouldStopAudio)
 			{
 				return (int)(this.long_0 - (long)this.int_1 + (long)this.method_1());
 			}
 			return (int)this.long_0;
 		}
 
-		public void imethod_2(int int_5)
+		public void SetStartingTimeBasedOnSomeValue(int int_5)
 		{
-			this.imethod_4();
+			this.StartPlaying();
 			this.stream1_0.Position = (this.long_0 = (long)int_5);
 			this.method_0();
 		}
@@ -192,17 +192,17 @@ namespace ns5
 			return playPosition + this.int_1 - this.int_2;
 		}
 
-		public Enum1 imethod_6()
+		public AudioStatus GetStatus()
 		{
 			return this.enum1_0;
 		}
 
-		public SharpAudio.ASC.WaveFormat imethod_7()
+		public SharpAudio.ASC.WaveFormat GetWaveFormat()
 		{
 			return this.stream1_0.vmethod_0();
 		}
 
-		public void imethod_8(float float_0)
+		public void SetVolume(float float_0)
 		{
 			this.secondaryBuffer_0.Volume = (int)(50f * Class15.smethod_0(float_0));
 		}
@@ -279,7 +279,7 @@ namespace ns5
 				}
 			}
 			this.secondaryBuffer_0.Stop();
-			this.enum1_0 = Enum1.const_0;
+			this.enum1_0 = AudioStatus.ShouldStopAudio;
 		}
 
 		private bool method_6()
@@ -333,7 +333,7 @@ namespace ns5
 
 		public void method_10(bool bool_3)
 		{
-			this.imethod_5();
+			this.StopPlaying();
 			this.method_9();
 			if (this.autoResetEvent_0 != null)
 			{
@@ -355,7 +355,7 @@ namespace ns5
 			}
 		}
 
-		~Class109()
+		~OGGOutput()
 		{
 			this.method_10(false);
 		}

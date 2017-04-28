@@ -10,7 +10,7 @@ using System.Threading;
 
 namespace ns6
 {
-	public class Class117 : IDisposable, Interface6
+	public class Class117 : IDisposable, PlayableAudio
 	{
 		private readonly GenericAudioStream stream1_0;
 
@@ -32,7 +32,7 @@ namespace ns6
 
 		private readonly IntPtr[] intptr_2;
 
-		private Enum1 enum1_0;
+		private AudioStatus enum1_0;
 
 		private bool bool_0;
 
@@ -58,7 +58,7 @@ namespace ns6
 			this.intptr_0 = Marshal.AllocHGlobal(this.int_1);
 			this.intptr_1 = Class119.smethod_2();
 			this.intptr_2 = Class119.smethod_8(this.int_2);
-			this.enum1_0 = Enum1.const_0;
+			this.enum1_0 = AudioStatus.ShouldStopAudio;
 		}
 
 		public void method_0()
@@ -74,14 +74,14 @@ namespace ns6
 		private void method_1()
 		{
 			bool flag = false;
-			while (this.enum1_0 != Enum1.const_0 && !flag)
+			while (this.enum1_0 != AudioStatus.ShouldStopAudio && !flag)
 			{
 				if (this.bool_0)
 				{
 					this.bool_0 = false;
 					Class119.alSourcef(this.intptr_1, Enum10.const_4, this.float_0);
 				}
-				if (this.enum1_0 != Enum1.const_2)
+				if (this.enum1_0 != AudioStatus.IsCurrentlyPlayingAudio)
 				{
 					int num = 0;
 					int num2;
@@ -138,66 +138,66 @@ namespace ns6
 			Stream arg_188_0 = this.stream1_0;
 			this.int_3 = 0;
 			arg_188_0.Position = 0L;
-			this.enum1_0 = Enum1.const_0;
+			this.enum1_0 = AudioStatus.ShouldStopAudio;
 			Class119.alSourceStop(this.intptr_1);
 			this.stopwatch_0.Reset();
 			Class119.smethod_7(this.intptr_1, this.intptr_2.Length);
 		}
 
-		public TimeSpan imethod_0()
+		public TimeSpan AudioLength()
 		{
 			return TimeSpan.FromMilliseconds((double)this.int_3 / this.double_0 + (double)this.stopwatch_0.ElapsedMilliseconds);
 		}
 
-		public void imethod_1(TimeSpan timeSpan_0)
+		public void SetStartingTime(TimeSpan timeSpan_0)
 		{
-			this.imethod_2(Convert.ToInt32(this.double_0 * timeSpan_0.TotalMilliseconds));
+			this.SetStartingTimeBasedOnSomeValue(Convert.ToInt32(this.double_0 * timeSpan_0.TotalMilliseconds));
 		}
 
-		public void imethod_2(int int_4)
+		public void SetStartingTimeBasedOnSomeValue(int int_4)
 		{
-			Enum1 @enum = this.enum1_0;
-			if (@enum != Enum1.const_0)
+			AudioStatus @enum = this.enum1_0;
+			if (@enum != AudioStatus.ShouldStopAudio)
 			{
-				this.imethod_5();
+				this.StopPlaying();
 			}
 			Stream arg_21_0 = this.stream1_0;
 			this.int_3 = int_4;
 			arg_21_0.Position = (long)int_4;
 			this.stopwatch_0.Reset();
-			if (@enum == Enum1.const_1)
+			if (@enum == AudioStatus.ShouldStartAudio)
 			{
-				this.imethod_3();
+				this.DifferentStartPlaying();
 			}
 			GC.Collect();
 		}
 
-		public WaveFormat imethod_7()
+		public WaveFormat GetWaveFormat()
 		{
 			return this.stream1_0.vmethod_0();
 		}
 
-		public void imethod_8(float float_1)
+		public void SetVolume(float float_1)
 		{
 			this.bool_0 = true;
 			this.float_0 = float_1;
 		}
 
-		public Enum1 imethod_6()
+		public AudioStatus GetStatus()
 		{
 			return this.enum1_0;
 		}
 
-		public void imethod_3()
+		public void DifferentStartPlaying()
 		{
 			switch (this.enum1_0)
 			{
-			case Enum1.const_1:
+			case AudioStatus.ShouldStartAudio:
 				return;
-			case Enum1.const_2:
+			case AudioStatus.IsCurrentlyPlayingAudio:
 				Class119.alSourcePlay(this.intptr_1);
 				this.stopwatch_0.Start();
-				this.enum1_0 = Enum1.const_1;
+				this.enum1_0 = AudioStatus.ShouldStartAudio;
 				return;
 			default:
 			{
@@ -224,24 +224,24 @@ namespace ns6
 				Class119.alSourcef(this.intptr_1, Enum10.const_4, 0f);
 				Class119.alSourcePlay(this.intptr_1);
 				this.stopwatch_0.Start();
-				this.enum1_0 = Enum1.const_1;
+				this.enum1_0 = AudioStatus.ShouldStartAudio;
 				this.method_0();
 				return;
 			}
 			}
 		}
 
-		public void imethod_4()
+		public void StartPlaying()
 		{
 			Class119.alSourcePause(this.intptr_1);
 			this.stopwatch_0.Stop();
-			this.enum1_0 = Enum1.const_2;
+			this.enum1_0 = AudioStatus.IsCurrentlyPlayingAudio;
 		}
 
-		public void imethod_5()
+		public void StopPlaying()
 		{
 			this.thread_0.Abort();
-			this.enum1_0 = Enum1.const_0;
+			this.enum1_0 = AudioStatus.ShouldStopAudio;
 			Class119.alSourceStop(this.intptr_1);
 			this.stopwatch_0.Reset();
 			Class119.smethod_7(this.intptr_1, this.intptr_2.Length);
@@ -289,11 +289,11 @@ namespace ns6
 			float num2 = this.float_0;
 			while (num < num2)
 			{
-				this.imethod_8(num);
+				this.SetVolume(num);
 				num += 0.1f;
 				Thread.Sleep(50);
 			}
-			this.imethod_8(num2);
+			this.SetVolume(num2);
 			this.bool_1 = false;
 		}
 	}

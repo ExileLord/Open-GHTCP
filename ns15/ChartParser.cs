@@ -1072,7 +1072,7 @@ namespace ns15
             return test;
         }
 
-		public QBCParser method_3()
+		public QBCParser ConvertToQBC()
         { 
             QBCParser @class = new QBCParser(this.gh3SongInfo);
 			Track<int, int> track = null;
@@ -1166,9 +1166,9 @@ namespace ns15
             int num2 = (int)Math.Ceiling((double)largestOffset / (double)this.constant480);
             for (int m = 0; m <= num2; m++)
 			{
-				@class.class239_0.method_1(this.calculateOffset(m * this.constant480));
+				@class.FretbarList.method_1(this.calculateOffset(m * this.constant480));
 			}
-            @class.class239_0[0] = @class.class239_0[1] - 4;
+            @class.FretbarList[0] = @class.FretbarList[1] - 4;
 			@class.int_0 = 1;
             foreach (int current3 in this.sectionInterpreter.sectionList.Keys)
 			{

@@ -11,7 +11,7 @@ namespace MidiConverter
     class Midi2Chart
     {
 
-        public static QBCParser getMidiSong(string fileName, bool forceRB3)
+        public static QBCParser LoadMidiSong(string fileName, bool forceRB3)
         {
             QBCParser qbc = null;
             Song song = null;
@@ -19,12 +19,12 @@ namespace MidiConverter
                 song = MidReader.ReadMidi(fileName);
                 String chartFile = ChartWriter.writeChart(song, "", false, forceRB3).ToString();
                 ChartParser chartParser = new ChartParser(chartFile, false);
-                qbc = chartParser.method_3();
+                qbc = chartParser.ConvertToQBC();
             }
             catch(Exception e)
             {
-                MessageBox.Show("Error using the new MIDI import method.\nReverting to original GHTCP method. \n\n" + e.ToString(), "MIDI Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                qbc = new MIDIParser(fileName).method_0().method_3();
+                MessageBox.Show("Error using the new MIDI importer.\nReverting to original GHTCP method. \n\n" + e.ToString(), "MIDI Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                qbc = new MIDIParser(fileName).LoadMidi().ConvertToQBC();
             }
             return qbc;
         }
