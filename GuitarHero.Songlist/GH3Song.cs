@@ -1,10 +1,10 @@
 using System;
 using System.Globalization;
-using ns15;
-using ns18;
-using ns19;
-using ns20;
-using ns21;
+using GHNamespace8;
+using GHNamespaceB;
+using GHNamespaceC;
+using GHNamespaceE;
+using GHNamespaceF;
 
 namespace GuitarHero.Songlist
 {

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using ns1;
+using GHNamespace2;
 
 namespace GHNamespace1
 {

@@ -1,6 +1,6 @@
 using System;
-using ns18;
-using ns21;
+using GHNamespaceB;
+using GHNamespaceF;
 
 namespace GuitarHero
 {

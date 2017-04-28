@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
+using GHNamespaceC;
+using GHNamespaceE;
+using GHNamespaceF;
 using GuitarHero.Songlist;
 using GuitarHero.Tier;
-using ns19;
-using ns20;
-using ns21;
 
 namespace GuitarHero.Setlist
 {

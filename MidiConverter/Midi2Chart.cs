@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using GHNamespace8;
+using GHNamespaceN;
 using mid2chart;
-using ns15;
-using ns9;
 
 namespace MidiConverter
 {

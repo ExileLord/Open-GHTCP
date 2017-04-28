@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
-using ns1;
+using GHNamespace2;
 using SharpAudio.ASC;
 
 namespace GHNamespace1
