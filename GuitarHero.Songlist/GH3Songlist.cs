@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using GuitarHero.Setlist;
-using GuitarHero.Tier;
 using ns14;
 using ns18;
 using ns20;

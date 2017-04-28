@@ -682,7 +682,7 @@ namespace ns16
 			stream.Position = 0L;
 			if (negateCrc && reverseEndianness)
 			{
-                return KeyGenerator.ReverseEndianness((int)(_key ^ 4294967295u));
+                return ReverseEndianness((int)(_key ^ 4294967295u));
 			}
 			if (negateCrc)
 			{
@@ -690,7 +690,7 @@ namespace ns16
 			}
 			if (reverseEndianness)
 			{
-				return KeyGenerator.ReverseEndianness((int)_key);
+				return ReverseEndianness((int)_key);
 			}
 			return (int)_key;
 		}

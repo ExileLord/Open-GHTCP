@@ -791,7 +791,7 @@
     <Compile Include="ns20\FloatValueNode.cs" />
     <Compile Include="ns20\QbSongClass1.cs" />
     <Compile Include="ns20\Class328.cs" />
-    <Compile Include="ns20\FSBClass2.cs" />
+    <Compile Include="ns20\FsbClass3.cs" />
     <Compile Include="ns20\Enum35.cs" />
     <Compile Include="ns20\Interface12.cs" />
     <Compile Include="ns20\TexExplorer.cs">

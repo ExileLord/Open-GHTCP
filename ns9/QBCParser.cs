@@ -363,7 +363,7 @@ namespace ns9
 						continue;
 						IL_8AA:
 						text = text.ToLower();
-						if (!this.NoteList.ContainsKey(text))
+						if (!NoteList.ContainsKey(text))
 						{
 							var noteList = new Track<int, NotesAtOffset>();
 							var spList = new Track<int, int[]>();
@@ -407,8 +407,8 @@ namespace ns9
 									}
 								}
 							}
-							this.NoteList.Add(text, noteList);
-							this.SpList.Add(text, spList);
+							NoteList.Add(text, noteList);
+							SpList.Add(text, spList);
 							BattleNoteList.Add(text, battleNote);
 						}
 						goto IL_A3C;

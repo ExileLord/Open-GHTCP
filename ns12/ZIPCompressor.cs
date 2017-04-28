@@ -47,7 +47,7 @@ namespace ns12
 
 		public void method_3(string password)
 		{
-			this._password = password;
+			_password = password;
 		}
 
 		public bool method_4()

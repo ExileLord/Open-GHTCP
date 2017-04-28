@@ -24,15 +24,15 @@ namespace ns21
 
 		public TextureMetadata(short unkFlags, int key, short width, short height, short unkShort3, byte mipMapCount, short unkShort4, int startIndex, int length)
 		{
-			this.UnkFlags = unkFlags;
+			UnkFlags = unkFlags;
 			Key = key;
-			this.Width = width;
-			this.Height = height;
-			this.UnkShort3 = unkShort3;
-			this.MipMapCount = mipMapCount;
-			this.UnkShort4 = unkShort4;
-			this.StartIndex = startIndex;
-			this.Length = length;
+			Width = width;
+			Height = height;
+			UnkShort3 = unkShort3;
+			MipMapCount = mipMapCount;
+			UnkShort4 = unkShort4;
+			StartIndex = startIndex;
+			Length = length;
 		}
 	}
 }

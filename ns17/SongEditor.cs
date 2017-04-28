@@ -5,7 +5,6 @@ using System.Drawing.Drawing2D;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
-using GuitarHero.Songlist;
 using ns0;
 using ns1;
 using ns14;
@@ -313,8 +312,8 @@ namespace ns17
 			{
 				return;
 			}
-			_verticalScrollBar.Height = (_height = base.Height);
-			_width = (_verticalScrollBar.Left = base.Width - _verticalScrollBar.Width);
+			_verticalScrollBar.Height = (_height = Height);
+			_width = (_verticalScrollBar.Left = Width - _verticalScrollBar.Width);
 			_verticalScrollBar.Top = 0;
 			_editorSize.Height = _width / 2;
 			_editorSize.Width = _editorSize.Height / 3;
@@ -354,9 +353,9 @@ namespace ns17
 				_float2 = 0f;
 				return;
 			}
-			if (_float2 > base.Width - Float5 * 2f)
+			if (_float2 > Width - Float5 * 2f)
 			{
-				_float2 = base.Width - Float5 * 2f;
+				_float2 = Width - Float5 * 2f;
 			}
 		}
 

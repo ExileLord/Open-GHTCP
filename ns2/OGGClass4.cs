@@ -178,7 +178,7 @@ namespace ns2
 		}
 		public int method_6(OggClass2 oggClass2)
 		{
-            this.OggClass2 = oggClass2;
+            OggClass2 = oggClass2;
 			Int1 = oggClass2.Int1;
 			Int0 = oggClass2.Int0;
             Float0 = oggClass2.method_3();

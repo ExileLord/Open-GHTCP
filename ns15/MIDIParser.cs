@@ -72,7 +72,7 @@ namespace ns15
 
 		public MidiParser(string fileLocation)
 		{
-			this._fileLocation = fileLocation;
+			_fileLocation = fileLocation;
 		}
 
 		public ChartParser LoadMidi()

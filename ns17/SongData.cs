@@ -952,7 +952,7 @@ namespace ns17
 
         public SongData(Gh3Songlist gh3Songlist1, bool forceRb3)
         {
-            this._forceRb3 = forceRb3;
+            _forceRb3 = forceRb3;
             InitializeComponent();
             Control arg260 = _audioCheckBox;
             _chartCheckBox.Enabled = false;

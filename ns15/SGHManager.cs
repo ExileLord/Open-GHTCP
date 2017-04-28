@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.IO;
 using GuitarHero.Setlist;
 using GuitarHero.Songlist;
-using GuitarHero.Tier;
 using ns13;
 using ns16;
 using ns20;
@@ -29,7 +28,7 @@ namespace ns15
 			_gh3SongList = gh3Songlist1;
 			SetlistToExport = gh3Setlist1;
 			_string0 = string3;
-			this._saveLocation = saveLocation;
+			_saveLocation = saveLocation;
 		}
 
 		public void ImportSGH()

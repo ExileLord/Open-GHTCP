@@ -1,5 +1,4 @@
 using ns2;
-using ns3;
 
 namespace ns10
 {
@@ -37,7 +36,7 @@ namespace ns10
 
 		public OggClass6(OggClass1 oggClass1)
 		{
-			this.OggClass1 = oggClass1;
+			OggClass1 = oggClass1;
 			if (oggClass1.Int2 != 0)
 			{
 				OggClass3.method_0();
@@ -46,7 +45,7 @@ namespace ns10
 
 		public void method_0(OggClass1 oggClass1)
 		{
-			this.OggClass1 = oggClass1;
+			OggClass1 = oggClass1;
 		}
 
 		public int method_1()

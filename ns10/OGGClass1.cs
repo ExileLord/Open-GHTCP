@@ -123,7 +123,7 @@ namespace ns10
 
 		private int method_0(OggClass5 oggClass5, bool bool0)
 		{
-			this.OggClass5 = oggClass5;
+			OggClass5 = oggClass5;
 			Int3 = smethod_0(oggClass5.Int14);
 			Object0[0] = new object[Int0];
 			Object0[1] = new object[Int0];

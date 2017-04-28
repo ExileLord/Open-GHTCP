@@ -588,7 +588,7 @@ namespace ns3
 
 		private int method_10(Stream fileStream, byte[] nullArray, int zero)
 		{
-            this.FileStream = fileStream;
+            FileStream = fileStream;
             _class520.method_5();
             if (nullArray != null)
 			{
@@ -616,7 +616,7 @@ namespace ns3
 			}
             if (num != 0)
 			{
-				this.FileStream = null;
+				FileStream = null;
 				method_22();
 			}
             return num;

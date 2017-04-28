@@ -28,7 +28,7 @@ namespace ns14
 
 		public ActionList(List<QbEditor> actionList)
 		{
-			this._actionList = actionList;
+			_actionList = actionList;
 		}
 
 		public void method_1()

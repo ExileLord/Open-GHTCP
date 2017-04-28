@@ -136,10 +136,10 @@ namespace ns12
 		{
 			if (password != null && password.Length == 0)
 			{
-				this._password = null;
+				_password = null;
 				return;
 			}
-			this._password = password;
+			_password = password;
 		}
 
 		public void method_3(byte[] byte1, int int0, int int1)

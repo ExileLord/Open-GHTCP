@@ -1,11 +1,10 @@
 using System.IO;
 using System.Text;
-using ns1;
 using ns8;
 
 namespace ns20
 {
-	public class FsbClass2
+	public class FsbClass3
 	{
 		private static readonly byte[] FsbEncryptionKey = Encoding.ASCII.GetBytes("5atu6w4zaw");
 
