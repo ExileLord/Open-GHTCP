@@ -73,7 +73,7 @@ namespace ns6
 
 		private void method_1()
 		{
-			bool flag = false;
+			var flag = false;
 			while (enum1_0 != AudioStatus.ShouldStopAudio && !flag)
 			{
 				if (bool_0)
@@ -83,7 +83,7 @@ namespace ns6
 				}
 				if (enum1_0 != AudioStatus.IsCurrentlyPlayingAudio)
 				{
-					int num = 0;
+					var num = 0;
 					int num2;
 					do
 					{
@@ -100,7 +100,7 @@ namespace ns6
 					while (num2 == 0);
 					while (num2-- != 0)
 					{
-						IntPtr intPtr = Class119.smethod_6(intptr_1);
+						var intPtr = Class119.smethod_6(intptr_1);
 						int num3;
 						lock (stream1_0)
 						{
@@ -156,7 +156,7 @@ namespace ns6
 
 		public void SetStartingTimeBasedOnSomeValue(int int_4)
 		{
-			AudioStatus @enum = enum1_0;
+			var @enum = enum1_0;
 			if (@enum != AudioStatus.ShouldStopAudio)
 			{
 				StopPlaying();
@@ -205,10 +205,10 @@ namespace ns6
 				{
 					Class119.smethod_6(intptr_1);
 				}
-				IntPtr[] array = intptr_2;
-				for (int i = 0; i < array.Length; i++)
+				var array = intptr_2;
+				for (var i = 0; i < array.Length; i++)
 				{
-					IntPtr intPtr = array[i];
+					var intPtr = array[i];
 					int num;
 					lock (stream1_0)
 					{
@@ -285,8 +285,8 @@ namespace ns6
 		private void method_3(object object_0)
 		{
 			bool_1 = true;
-			float num = 0f;
-			float num2 = float_0;
+			var num = 0f;
+			var num2 = float_0;
 			while (num < num2)
 			{
 				SetVolume(num);

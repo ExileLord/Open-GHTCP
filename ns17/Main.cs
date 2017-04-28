@@ -12,7 +12,7 @@ namespace ns17
 		private static void Main(string[] args)
 		{
 			bool flag;
-			Mutex obj = new Mutex(true, "GHTCP", out flag);
+			var obj = new Mutex(true, "GHTCP", out flag);
 			if (!flag)
 			{
 				MessageBox.Show("GH3 Control Panel+ is already running.");

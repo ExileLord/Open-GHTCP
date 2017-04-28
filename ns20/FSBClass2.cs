@@ -12,17 +12,17 @@ namespace ns20
 		public static long smethod_0(string string_0, Stream[] stream_0)
 		{
 			long length;
-			using (FSBClass1 @class = new FSBClass1())
+			using (var @class = new FSBClass1())
 			{
 				@class.byte_0 = fsbEncryptionKey;
 				@class.enum20_0 = FSBEnum1.const_3;
 				@class.enum21_0 = FSBFlags1.flag_0;
-				for (int i = 0; i < stream_0.Length; i++)
+				for (var i = 0; i < stream_0.Length; i++)
 				{
-					Stream stream = stream_0[i];
+					var stream = stream_0[i];
 					stream.Position = 0L;
-					Class16 class2 = AudioManager.smethod_3(stream);
-					Class168 class3 = new Class168();
+					var class2 = AudioManager.smethod_3(stream);
+					var class3 = new Class168();
 					class3.FileName = i + ".mp3";
 					class3.enum22_0 = (((class2.method_0() == 1) ? FSBFlags2.flag_6 : FSBFlags2.flag_7) | FSBFlags2.flag_10);
 					class3.int_0 = class2.method_3();

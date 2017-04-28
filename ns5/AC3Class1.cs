@@ -187,19 +187,19 @@ namespace ns5
 
 		private void method_0()
 		{
-			for (int i = 0; i < 5; i++)
+			for (var i = 0; i < 5; i++)
 			{
 				double_9[i] = new double[18];
 			}
-			for (int j = 0; j < 5; j++)
+			for (var j = 0; j < 5; j++)
 			{
 				byte_1[j] = new byte[256];
 			}
-			for (int k = 0; k < 5; k++)
+			for (var k = 0; k < 5; k++)
 			{
 				byte_4[k] = new byte[256];
 			}
-			for (int l = 0; l < 5; l++)
+			for (var l = 0; l < 5; l++)
 			{
 				int_23[l] = new int[50];
 			}
@@ -232,19 +232,19 @@ namespace ns5
 			}
 			class115_0.method_2(16);
 			class115_0.method_2(16);
-			int num = class115_0.method_2(8);
-			int num2 = class115_0.method_2(8);
-			int num3 = class115_0.method_2(8);
-			int num4 = int_31[num2 >> 3];
-			int num5 = num3 >> 5;
+			var num = class115_0.method_2(8);
+			var num2 = class115_0.method_2(8);
+			var num3 = class115_0.method_2(8);
+			var num4 = int_31[num2 >> 3];
+			var num5 = num3 >> 5;
 			int_1 = ((((num3 & 248) == 80) ? 10 : num5) | (((num3 & int_33[num5]) != 0) ? 16 : 0));
-			int num6 = num & 63;
+			var num6 = num & 63;
 			if (num6 >= 38)
 			{
 				throw new AC3Exception("Unknown rate");
 			}
 			int_3 = int_32[num6 >> 1] * 1000 >> num4;
-			int num7 = num & 192;
+			var num7 = num & 192;
 			if (num7 != 0)
 			{
 				if (num7 != 64)
@@ -276,7 +276,7 @@ namespace ns5
 			class115_0.method_2(32);
 			int_5 = class115_0.method_2(3);
 			class115_0.method_2(5);
-			int num = class115_0.method_2(5);
+			var num = class115_0.method_2(5);
 			if (num >= int_31.Length)
 			{
 				throw new FFMpegException("Illegal half rate");
@@ -304,7 +304,7 @@ namespace ns5
 			double_7 *= 2.0;
 			double_8 = double_7;
 			bool_1 = false;
-			bool flag = int_7 == 0;
+			var flag = int_7 == 0;
 			do
 			{
 				class115_0.method_2(5);
@@ -333,30 +333,30 @@ namespace ns5
 			}
 			if (class115_0.vmethod_1())
 			{
-				int num2 = class115_0.method_2(6);
+				var num2 = class115_0.method_2(6);
 				class115_0.vmethod_3(class115_0.vmethod_0() + num2 * 8);
 			}
 		}
 
 		private void method_3()
 		{
-			int num = int_35[int_7];
-			bool[] array = new bool[5];
-			for (int i = 0; i < num; i++)
+			var num = int_35[int_7];
+			var array = new bool[5];
+			for (var i = 0; i < num; i++)
 			{
 				array[i] = class115_0.vmethod_1();
 			}
-			bool[] array2 = new bool[5];
-			for (int j = 0; j < num; j++)
+			var array2 = new bool[5];
+			for (var j = 0; j < num; j++)
 			{
 				array2[j] = class115_0.vmethod_1();
 			}
-			bool flag = int_7 == 0;
+			var flag = int_7 == 0;
 			do
 			{
 				if (class115_0.vmethod_1())
 				{
-					int num2 = method_8(8);
+					var num2 = method_8(8);
 					if (bool_1)
 					{
 						double_8 = (((num2 & 31) | 32) << 13) * double_13[2 - (num2 >> 5)] * double_7;
@@ -369,7 +369,7 @@ namespace ns5
 				int_9 = 0;
 				if (class115_0.vmethod_1())
 				{
-					for (int k = 0; k < num; k++)
+					for (var k = 0; k < num; k++)
 					{
 						int_9 |= class115_0.method_2(1) << k;
 					}
@@ -382,8 +382,8 @@ namespace ns5
 						bool_2 = class115_0.vmethod_1();
 						break;
 					}
-					int num3 = class115_0.method_2(4);
-					int num4 = class115_0.method_2(4);
+					var num3 = class115_0.method_2(4);
+					var num4 = class115_0.method_2(4);
 					if (num4 + 3 - num3 < 0)
 					{
 						throw new AC3Exception("Invalid values");
@@ -393,8 +393,8 @@ namespace ns5
 					int_12 = num3 * 12 + 37;
 					int_13 = num4 * 12 + 73;
 					int_14 = 0;
-					int num5 = int_10;
-					for (int l = 0; l < num5 - 1; l++)
+					var num5 = int_10;
+					for (var l = 0; l < num5 - 1; l++)
 					{
 						if (class115_0.vmethod_1())
 						{
@@ -406,17 +406,17 @@ namespace ns5
 			}
 			if (int_9 != 0)
 			{
-				bool flag2 = false;
-				for (int m = 0; m < num; m++)
+				var flag2 = false;
+				for (var m = 0; m < num; m++)
 				{
 					if ((int_9 >> m & 1) != 0 && class115_0.vmethod_1())
 					{
 						flag2 = true;
-						int num6 = 3 * class115_0.method_2(2);
-						for (int n = 0; n < int_10; n++)
+						var num6 = 3 * class115_0.method_2(2);
+						for (var n = 0; n < int_10; n++)
 						{
-							int num7 = class115_0.method_2(4);
-							int num8 = class115_0.method_2(4);
+							var num7 = class115_0.method_2(4);
+							var num8 = class115_0.method_2(4);
 							if (num7 == 15)
 							{
 								num8 <<= 14;
@@ -431,7 +431,7 @@ namespace ns5
 				}
 				if (int_7 == 2 && bool_2 && flag2)
 				{
-					for (int num9 = 0; num9 < int_10; num9++)
+					for (var num9 = 0; num9 < int_10; num9++)
 					{
 						if (class115_0.vmethod_1())
 						{
@@ -443,22 +443,22 @@ namespace ns5
 			if (int_7 == 2 && class115_0.vmethod_1())
 			{
 				int_15 = 0;
-				int num10 = (int_9 != 0) ? int_12 : 253;
-				int num11 = 0;
+				var num10 = (int_9 != 0) ? int_12 : 253;
+				var num11 = 0;
 				do
 				{
 					int_15 |= class115_0.method_2(1) << num11;
 				}
 				while (int_37[num11++] < num10);
 			}
-			int num12 = 0;
-			int num13 = 0;
+			var num12 = 0;
+			var num13 = 0;
 			if (int_9 != 0)
 			{
 				num12 = class115_0.method_2(2);
 			}
-			int[] array3 = new int[5];
-			for (int num14 = 0; num14 < num; num14++)
+			var array3 = new int[5];
+			for (var num14 = 0; num14 < num; num14++)
 			{
 				array3[num14] = class115_0.method_2(2);
 			}
@@ -466,7 +466,7 @@ namespace ns5
 			{
 				num13 = class115_0.method_2(1);
 			}
-			for (int num15 = 0; num15 < num; num15++)
+			for (var num15 = 0; num15 < num; num15++)
 			{
 				if (array3[num15] != 0)
 				{
@@ -476,7 +476,7 @@ namespace ns5
 					}
 					else
 					{
-						int num16 = class115_0.method_2(6);
+						var num16 = class115_0.method_2(6);
 						if (num16 > 60)
 						{
 							throw new AC3Exception("chbwcod too large");
@@ -485,21 +485,21 @@ namespace ns5
 					}
 				}
 			}
-			int num17 = 0;
+			var num17 = 0;
 			if (num12 != 0)
 			{
 				num17 = 64;
-				int int_ = (int_13 - int_12) / (3 << num12 - 1);
-				byte byte_ = (byte)(class115_0.method_2(4) << 1);
+				var int_ = (int_13 - int_12) / (3 << num12 - 1);
+				var byte_ = (byte)(class115_0.method_2(4) << 1);
 				method_13(num12, int_, byte_, byte_0, int_12);
 			}
-			for (int num18 = 0; num18 < num; num18++)
+			for (var num18 = 0; num18 < num; num18++)
 			{
 				if (array3[num18] != 0)
 				{
 					num17 |= 1 << num18;
-					int num19 = 3 << array3[num18] - 1;
-					int int_2 = (int_16[num18] + num19 - 4) / num19;
+					var num19 = 3 << array3[num18] - 1;
+					var int_2 = (int_16[num18] + num19 - 4) / num19;
 					byte_1[num18][0] = (byte)class115_0.method_2(4);
 					method_13(array3[num18], int_2, byte_1[num18][0], byte_1[num18], 1);
 					class115_0.method_2(2);
@@ -524,7 +524,7 @@ namespace ns5
 				{
 					int_18 = class115_0.method_2(7);
 				}
-				for (int num20 = 0; num20 < num; num20++)
+				for (var num20 = 0; num20 < num; num20++)
 				{
 					int_21[num20] = class115_0.method_2(7);
 				}
@@ -546,7 +546,7 @@ namespace ns5
 				{
 					int_19 = class115_0.method_2(2);
 				}
-				for (int num21 = 0; num21 < num; num21++)
+				for (var num21 = 0; num21 < num; num21++)
 				{
 					int_22[num21] = class115_0.method_2(2);
 				}
@@ -554,7 +554,7 @@ namespace ns5
 				{
 					method_12(int_20);
 				}
-				for (int num22 = 0; num22 < num; num22++)
+				for (var num22 = 0; num22 < num; num22++)
 				{
 					if (int_22[num22] == 1)
 					{
@@ -566,18 +566,18 @@ namespace ns5
 			{
 				if (method_5(num))
 				{
-					for (int num23 = 0; num23 < byte_3.Length; num23++)
+					for (var num23 = 0; num23 < byte_3.Length; num23++)
 					{
 						byte_3[num23] = 0;
 					}
-					for (int num24 = 0; num24 < num; num24++)
+					for (var num24 = 0; num24 < num; num24++)
 					{
-						for (int num25 = 0; num25 < byte_4[num24].Length; num25++)
+						for (var num25 = 0; num25 < byte_4[num24].Length; num25++)
 						{
 							byte_4[num24][num25] = 0;
 						}
 					}
-					for (int num26 = 0; num26 < byte_5.Length; num26++)
+					for (var num26 = 0; num26 < byte_5.Length; num26++)
 					{
 						byte_5[num26] = 0;
 					}
@@ -588,7 +588,7 @@ namespace ns5
 					{
 						method_4(int_18, int_19, int_20, int_11, int_12, int_13, int_28 << 8, int_29 << 8, byte_0, byte_3);
 					}
-					for (int num27 = 0; num27 < num; num27++)
+					for (var num27 = 0; num27 < num; num27++)
 					{
 						if ((num17 & 1 << num27) != 0)
 						{
@@ -604,17 +604,17 @@ namespace ns5
 			}
 			if (class115_0.vmethod_1())
 			{
-				int num28 = class115_0.method_2(9);
+				var num28 = class115_0.method_2(9);
 				class115_0.vmethod_3(class115_0.vmethod_0() + num28 * 8);
 			}
-			int num29 = 256;
-			double[] array4 = new double[5];
+			var num29 = 256;
+			var array4 = new double[5];
 			method_11(array4, int_7, double_8, double_5, double_6);
-			bool flag3 = false;
+			var flag3 = false;
 			class113_0.int_0 = -1;
 			class113_0.int_1 = -1;
 			class113_0.int_2 = -1;
-			for (int num30 = 0; num30 < num; num30++)
+			for (var num30 = 0; num30 < num; num30++)
 			{
 				method_7(double_10, num29 + 256 * num30, byte_1[num30], byte_4[num30], class113_0, array4[num30], array2[num30], int_16[num30]);
 				int num31;
@@ -639,10 +639,10 @@ namespace ns5
 			}
 			if (int_7 == 2)
 			{
-				int num32 = 0;
-				int num31 = 13;
-				int num33 = (int_16[0] < int_16[1]) ? int_16[0] : int_16[1];
-				int num34 = int_15;
+				var num32 = 0;
+				var num31 = 13;
+				var num33 = (int_16[0] < int_16[1]) ? int_16[0] : int_16[1];
+				var num34 = int_15;
 				do
 				{
 					if ((num34 & 1) == 0)
@@ -653,15 +653,15 @@ namespace ns5
 					else
 					{
 						num34 >>= 1;
-						int num35 = int_37[num32++];
+						var num35 = int_37[num32++];
 						if (num35 > num33)
 						{
 							num35 = num33;
 						}
 						do
 						{
-							double num36 = double_10[num29 + num31];
-							double num37 = double_10[num29 + num31 + 256];
+							var num36 = double_10[num29 + num31];
+							var num37 = double_10[num29 + num31 + 256];
 							double_10[num29 + num31] = num36 + num37;
 							double_10[num29 + num31 + 256] = num36 - num37;
 						}
@@ -673,13 +673,13 @@ namespace ns5
 			if (bool_0)
 			{
 				method_7(double_10, num29 - 256, byte_2, byte_5, class113_0, 0.0, false, 7);
-				for (int num38 = 7; num38 < 256; num38++)
+				for (var num38 = 7; num38 < 256; num38++)
 				{
 					double_10[num29 - 256 + num38] = 0.0;
 				}
 				class110_0.vmethod_0(double_10, num29 - 256, num29 - 256 + 1536, int_0);
 			}
-			int num39 = 0;
+			var num39 = 0;
 			if (2 < num)
 			{
 				num39 = 1;
@@ -709,7 +709,7 @@ namespace ns5
 					}
 					else
 					{
-						for (int num31 = 0; num31 < 256; num31++)
+						for (var num31 = 0; num31 < 256; num31++)
 						{
 							double_10[num29 + 256 * num39 + num31] = 0.0;
 						}
@@ -717,7 +717,7 @@ namespace ns5
 				}
 				return;
 			}
-			int num40 = 0;
+			var num40 = 0;
 			if (!bool_3)
 			{
 				bool_3 = true;
@@ -738,24 +738,24 @@ namespace ns5
 
 		private void method_4(int int_45, int int_46, int[] int_47, int int_48, int int_49, int int_50, int int_51, int int_52, byte[] byte_10, byte[] byte_11)
 		{
-			int num = 63 + 20 * (int_17 >> 7 & 3) >> int_6;
-			int num2 = 128 + 128 * (int_45 & 7);
-			int num3 = 15 + 2 * (int_17 >> 9) >> int_6;
-			int num4 = int_38[int_17 >> 5 & 3];
-			int num5 = int_39[int_17 >> 3 & 3];
-			int[] array = int_41[int_5];
+			var num = 63 + 20 * (int_17 >> 7 & 3) >> int_6;
+			var num2 = 128 + 128 * (int_45 & 7);
+			var num3 = 15 + 2 * (int_17 >> 9) >> int_6;
+			var num4 = int_38[int_17 >> 5 & 3];
+			var num5 = int_39[int_17 >> 3 & 3];
+			var array = int_41[int_5];
 			if (int_46 == 2)
 			{
 				int_47 = int_42;
 			}
-			int num6 = int_40[int_17 & 7];
-			int num7 = 960 - 64 * int_27 - 4 * (int_45 >> 3) + num6;
+			var num6 = int_40[int_17 & 7];
+			var num7 = 960 - 64 * int_27 - 4 * (int_45 >> 3) + num6;
 			num6 >>= 5;
-			int i = int_48;
-			int j = int_49;
+			var i = int_48;
+			var j = int_49;
 			if (int_49 == 0)
 			{
-				int k = 0;
+				var k = 0;
 				j = int_50 - 1;
 				int num8;
 				while (true)
@@ -772,7 +772,7 @@ namespace ns5
 						}
 					}
 					num8 = 128 * byte_10[i];
-					int num9 = num8 + num2 + k;
+					var num9 = num8 + num2 + k;
 					if (num8 > num5)
 					{
 						num9 -= num8 - num5 >> 2;
@@ -824,7 +824,7 @@ namespace ns5
 					{
 						int_52 = num8 + num4;
 					}
-					int num9 = (int_51 + k < int_52) ? (int_51 + k) : int_52;
+					var num9 = (int_51 + k < int_52) ? (int_51 + k) : int_52;
 					if (num8 > num5)
 					{
 						num9 -= num8 - num5 >> 2;
@@ -864,7 +864,7 @@ namespace ns5
 					{
 						int_52 = num8 + num4;
 					}
-					int num9 = (int_51 + k < int_52) ? (int_51 + k) : int_52;
+					var num9 = (int_51 + k < int_52) ? (int_51 + k) : int_52;
 					if (num8 > num5)
 					{
 						num9 -= num8 - num5 >> 2;
@@ -894,7 +894,7 @@ namespace ns5
 					{
 						int_52 = num8 + num4;
 					}
-					int num9 = (int_51 + k < int_52) ? (int_51 + k) : int_52;
+					var num9 = (int_51 + k < int_52) ? (int_51 + k) : int_52;
 					if (num8 > num5)
 					{
 						num9 -= num8 - num5 >> 2;
@@ -913,13 +913,13 @@ namespace ns5
 			}
 			do
 			{
-				int num10 = j;
-				int num11 = (int_43[i - 20] < int_50) ? int_43[i - 20] : int_50;
-				int num8 = 128 * byte_10[j++];
+				var num10 = j;
+				var num11 = (int_43[i - 20] < int_50) ? int_43[i - 20] : int_50;
+				var num8 = 128 * byte_10[j++];
 				while (j < num11)
 				{
-					int num12 = 128 * byte_10[j++];
-					int num13 = num12 - num8;
+					var num12 = 128 * byte_10[j++];
+					var num13 = num12 - num8;
 					switch (num13 >> 9)
 					{
 					case -6:
@@ -947,7 +947,7 @@ namespace ns5
 				{
 					int_52 = num8 + num4;
 				}
-				int num9 = (int_51 < int_52) ? int_51 : int_52;
+				var num9 = (int_51 < int_52) ? int_51 : int_52;
 				if (num8 > num5)
 				{
 					num9 -= num8 - num5 >> 2;
@@ -974,7 +974,7 @@ namespace ns5
 		{
 			if (int_27 == 0 && (int_9 == 0 || int_18 >> 3 == 0) && (!bool_0 || int_24 >> 3 == 0))
 			{
-				for (int i = 0; i < int_45; i++)
+				for (var i = 0; i < int_45; i++)
 				{
 					if (int_21[i] >> 3 != 0)
 					{
@@ -988,7 +988,7 @@ namespace ns5
 
 		private int method_6()
 		{
-			int num = int_34[int_30 >> 8] ^ int_30 << 8;
+			var num = int_34[int_30 >> 8] ^ int_30 << 8;
 			if ((num & 32768) != 0)
 			{
 				num |= -65536;
@@ -1003,12 +1003,12 @@ namespace ns5
 
 		private void method_7(double[] double_24, int int_45, byte[] byte_10, byte[] byte_11, Class113 class113_1, double double_25, bool bool_5, int int_46)
 		{
-			double[] array = new double[25];
-			for (int i = 0; i <= 24; i++)
+			var array = new double[25];
+			for (var i = 0; i <= 24; i++)
 			{
 				array[i] = double_13[i] * double_25;
 			}
-			int j = 0;
+			var j = 0;
 			while (j < int_46)
 			{
 				int num = byte_11[j];
@@ -1022,7 +1022,7 @@ namespace ns5
 					}
 					else
 					{
-						int num2 = class115_0.method_2(7);
+						var num2 = class115_0.method_2(7);
 						class113_1.int_2 = 0;
 						class113_1.vmethod_2()[0] = double_22[num2];
 						double_24[int_45 + j] = double_21[num2] * array[byte_10[j]];
@@ -1036,7 +1036,7 @@ namespace ns5
 					}
 					else
 					{
-						int num3 = class115_0.method_2(7);
+						var num3 = class115_0.method_2(7);
 						class113_1.int_1 = 1;
 						class113_1.vmethod_1()[0] = double_19[num3];
 						class113_1.vmethod_1()[1] = double_18[num3];
@@ -1051,7 +1051,7 @@ namespace ns5
 					}
 					else
 					{
-						int num4 = class115_0.method_2(5);
+						var num4 = class115_0.method_2(5);
 						class113_1.int_0 = 1;
 						class113_1.vmethod_0()[0] = double_16[num4];
 						class113_1.vmethod_0()[1] = double_15[num4];
@@ -1061,7 +1061,7 @@ namespace ns5
 				case 0:
 					if (bool_5)
 					{
-						int num5 = method_6();
+						var num5 = method_6();
 						double_24[int_45 + j] = num5 * array[byte_10[j]] * double_2;
 					}
 					else
@@ -1085,7 +1085,7 @@ namespace ns5
 				j++;
 				continue;
 				IL_216:
-				int num6 = method_8(num);
+				var num6 = method_8(num);
 				double_24[int_45 + j] = (num6 << 16 - num) * array[byte_10[j]];
 				goto IL_275;
 			}
@@ -1093,7 +1093,7 @@ namespace ns5
 
 		private int method_8(int int_45)
 		{
-			int num = class115_0.method_2(int_45);
+			var num = class115_0.method_2(int_45);
 			if ((num & 1 << int_45 - 1) != 0)
 			{
 				num |= -1 << int_45;
@@ -1103,22 +1103,22 @@ namespace ns5
 
 		private void method_9(int int_45, double[] double_24, double[] double_25, int int_46, Class113 class113_1, bool[] bool_5)
 		{
-			double[] array = new double[5];
-			byte[] array2 = byte_0;
-			byte[] array3 = byte_3;
-			int num = 0;
-			int num2 = int_14;
-			int i = int_12;
+			var array = new double[5];
+			var array2 = byte_0;
+			var array3 = byte_3;
+			var num = 0;
+			var num2 = int_14;
+			var i = int_12;
 			while (i < int_13)
 			{
-				int num3 = i + 12;
+				var num3 = i + 12;
 				while ((num2 & 1) != 0)
 				{
 					num2 >>= 1;
 					num3 += 12;
 				}
 				num2 >>= 1;
-				for (int j = 0; j < int_45; j++)
+				for (var j = 0; j < int_45; j++)
 				{
 					array[j] = double_9[j][num] * double_24[j];
 				}
@@ -1137,7 +1137,7 @@ namespace ns5
 						}
 						else
 						{
-							int num6 = class115_0.method_2(7);
+							var num6 = class115_0.method_2(7);
 							class113_1.int_2 = 0;
 							class113_1.vmethod_2()[0] = double_22[num6];
 							num5 = double_21[num6];
@@ -1151,7 +1151,7 @@ namespace ns5
 						}
 						else
 						{
-							int num7 = class115_0.method_2(7);
+							var num7 = class115_0.method_2(7);
 							class113_1.int_1 = 1;
 							class113_1.vmethod_1()[0] = double_19[num7];
 							class113_1.vmethod_1()[1] = double_18[num7];
@@ -1166,7 +1166,7 @@ namespace ns5
 						}
 						else
 						{
-							int num8 = class115_0.method_2(5);
+							var num8 = class115_0.method_2(5);
 							class113_1.int_0 = 1;
 							class113_1.vmethod_0()[0] = double_16[num8];
 							class113_1.vmethod_0()[1] = double_15[num8];
@@ -1175,7 +1175,7 @@ namespace ns5
 						break;
 					case 0:
 						num5 = double_2 * double_13[array2[i]];
-						for (int k = 0; k < int_45; k++)
+						for (var k = 0; k < int_45; k++)
 						{
 							if ((int_9 >> k & 1) != 0)
 							{
@@ -1207,7 +1207,7 @@ namespace ns5
 					if (num4 != 0)
 					{
 						num5 *= double_13[array2[i]];
-						for (int l = 0; l < int_45; l++)
+						for (var l = 0; l < int_45; l++)
 						{
 							if ((int_9 >> l & 1) != 0)
 							{
@@ -1281,17 +1281,17 @@ namespace ns5
 
 		private void method_12(int[] int_45)
 		{
-			for (int i = 0; i < int_45.Length; i++)
+			for (var i = 0; i < int_45.Length; i++)
 			{
 				int_45[i] = 0;
 			}
-			int num = class115_0.method_2(3);
-			int num2 = 0;
+			var num = class115_0.method_2(3);
+			var num2 = 0;
 			do
 			{
 				num2 += class115_0.method_2(5);
-				int num3 = class115_0.method_2(4);
-				int num4 = class115_0.method_2(3);
+				var num3 = class115_0.method_2(4);
+				var num4 = class115_0.method_2(3);
 				num4 -= ((num4 < 4) ? 4 : 3);
 				while (num3-- != 0)
 				{
@@ -1305,7 +1305,7 @@ namespace ns5
 		{
 			while (int_46-- != 0)
 			{
-				int num = class115_0.method_2(7);
+				var num = class115_0.method_2(7);
 				byte_10 += byte_6[num];
 				if ((255 & byte_10) <= 24)
 				{
@@ -1383,7 +1383,7 @@ namespace ns5
 		{
 			try
 			{
-				int num = byte_10.Length;
+				var num = byte_10.Length;
 				class115_0.vmethod_2(byte_10, 0, num);
 				while (class115_0.method_1() > 56)
 				{
@@ -1400,7 +1400,7 @@ namespace ns5
 					{
 						break;
 					}
-					int num2 = class115_0.vmethod_0();
+					var num2 = class115_0.vmethod_0();
 					method_2();
 					while (class115_0.vmethod_0() - num2 < (int_4 - 7) * 8)
 					{

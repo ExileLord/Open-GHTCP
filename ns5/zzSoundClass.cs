@@ -451,7 +451,7 @@ namespace ns5
 
 		public override string ToString()
 		{
-			StringBuilder stringBuilder = new StringBuilder(200);
+			var stringBuilder = new StringBuilder(200);
 			stringBuilder.Append("Layer ");
 			stringBuilder.Append(method_19());
 			stringBuilder.Append(" frame ");
@@ -473,10 +473,10 @@ namespace ns5
 
 		public void method_1(Class82 class82_0, Class101[] class101_1)
 		{
-			bool flag = false;
+			var flag = false;
 			while (true)
 			{
-				int num = class82_0.method_9(byte_0);
+				var num = class82_0.method_9(byte_0);
 				int_14 = num;
 				if (byte_0 == Class82.byte_1)
 				{
@@ -522,7 +522,7 @@ namespace ns5
 				}
 				else
 				{
-					int num2 = int_3;
+					var num2 = int_3;
 					if (enum5_0 != Enum5.const_3)
 					{
 						if (num2 == 4)
@@ -555,7 +555,7 @@ namespace ns5
 					int_8 = int_7;
 				}
 				method_15();
-				int num3 = class82_0.method_11(int_12);
+				var num3 = class82_0.method_11(int_12);
 				if (int_12 >= 0 && num3 != int_12)
 				{
 					break;
@@ -588,7 +588,7 @@ namespace ns5
 				{
 					class101_0 = new Class101();
 				}
-				int num=0;
+				var num=0;
 				class101_0.method_0(num, 16);
 				class101_1[0] = class101_0;
 			}
@@ -616,16 +616,16 @@ namespace ns5
 			}
 			try
 			{
-				string @string = Encoding.UTF8.GetString(byte_1, num, 4);
+				var @string = Encoding.UTF8.GetString(byte_1, num, 4);
 				if (@string.Equals("Xing") || @string.Equals("Info"))
 				{
 					bool_2 = true;
 					int_9 = -1;
 					int_11 = -1;
 					int_10 = -1;
-					byte[] array = new byte[100];
-					int num2 = smethod_0(BitConverter.ToInt32(byte_1, num + 4));
-					int num3 = 8;
+					var array = new byte[100];
+					var num2 = smethod_0(BitConverter.ToInt32(byte_1, num + 4));
+					var num3 = 8;
 					if ((num2 & 1) != 0)
 					{
 						int_9 = smethod_0(BitConverter.ToInt32(byte_1, num + num3));
@@ -665,16 +665,16 @@ namespace ns5
 					int_10 = smethod_1(BitConverter.ToInt16(byte_1, num + 8));
 					int_11 = smethod_0(BitConverter.ToInt32(byte_1, num + 10));
 					int_9 = smethod_0(BitConverter.ToInt32(byte_1, num + 14));
-					int[] array2 = new int[smethod_1(BitConverter.ToInt16(byte_1, num + 18))];
-					short num4 = smethod_1(BitConverter.ToInt16(byte_1, num + 20));
-					short num5 = smethod_1(BitConverter.ToInt16(byte_1, num + 22));
-					short num6 = smethod_1(BitConverter.ToInt16(byte_1, num + 24));
-					int num7 = 26;
+					var array2 = new int[smethod_1(BitConverter.ToInt16(byte_1, num + 18))];
+					var num4 = smethod_1(BitConverter.ToInt16(byte_1, num + 20));
+					var num5 = smethod_1(BitConverter.ToInt16(byte_1, num + 22));
+					var num6 = smethod_1(BitConverter.ToInt16(byte_1, num + 24));
+					var num7 = 26;
 					switch (num5)
 					{
 					case 1:
 					{
-						int i = 0;
+						var i = 0;
 						while (i < array2.Length)
 						{
 							array2[i] = byte_1[num + num7] * num4;
@@ -685,7 +685,7 @@ namespace ns5
 					}
 					case 2:
 					{
-						int j = 0;
+						var j = 0;
 						while (j < array2.Length)
 						{
 							array2[j] = smethod_1(BitConverter.ToInt16(byte_1, num + num7)) * num4;
@@ -696,7 +696,7 @@ namespace ns5
 					}
 					case 3:
 					{
-						int k = 0;
+						var k = 0;
 						while (k < array2.Length)
 						{
 							array2[k] = Struct8.smethod_0(Struct8.smethod_3(byte_1, num + num7, true)) * num4;
@@ -707,7 +707,7 @@ namespace ns5
 					}
 					case 4:
 					{
-						int l = 0;
+						var l = 0;
 						while (l < array2.Length)
 						{
 							array2[l] = smethod_0(BitConverter.ToInt32(byte_1, num + num7)) * num4;
@@ -866,7 +866,7 @@ namespace ns5
 		{
 			if (bool_2)
 			{
-				double num = double_0[method_4()] / method_7();
+				var num = double_0[method_4()] / method_7();
 				if (enum3_0 == Enum3.const_0 || enum3_0 == Enum3.const_2)
 				{
 					num /= 2.0;

@@ -21,7 +21,7 @@ namespace ns1
 		{
 			waveFormatTag_0 = WaveFormatTag.Adpcm;
 			short_3 = 32;
-			int int_4 = int_0;
+			var int_4 = int_0;
 			if (int_4 <= 11025)
 			{
 				if (int_4 == 8000 || int_4 == 11025)

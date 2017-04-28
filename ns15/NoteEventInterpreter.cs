@@ -42,9 +42,9 @@ namespace ns15
 			if (!(alwaysTrue = (stringImported.Length == 0)))//If string is empty
 			{
                 //Cycles through the string array imported (All notes/SP)
-				for (int i = 0; i < stringImported.Length; i++)
+				for (var i = 0; i < stringImported.Length; i++)
 				{
-					string currentString = stringImported[i];
+					var currentString = stringImported[i];
                     /*
                     Indexes:
                     0=Offset
@@ -52,13 +52,13 @@ namespace ns15
                     2=Note Value
                     3=Sustain Length
                     */
-					string[] NotesEventsArray = currentString.Split(new[]
+					var NotesEventsArray = currentString.Split(new[]
 					{
 						' ',
 						'\t',
 						'='
 					}, StringSplitOptions.RemoveEmptyEntries);
-					int offset = ChartParser.getNoteFromResolution(NotesEventsArray[0]);
+					var offset = ChartParser.getNoteFromResolution(NotesEventsArray[0]);
 					string eventType;
 					if ((eventType = NotesEventsArray[1]) != null)
 					{
@@ -72,7 +72,7 @@ namespace ns15
 									if (eventList.ContainsKey(offset))
 									{
 										currentEventLine = NotesEventsArray[2];
-                                        for (int j = 3; j < NotesEventsArray.Length; j++)
+                                        for (var j = 3; j < NotesEventsArray.Length; j++)
 										{
 											currentEventLine = currentEventLine + " " + NotesEventsArray[j];
 										}
@@ -81,7 +81,7 @@ namespace ns15
 									else
 									{
 										currentEventLine = NotesEventsArray[2];
-										for (int k = 3; k < NotesEventsArray.Length; k++)
+										for (var k = 3; k < NotesEventsArray.Length; k++)
 										{
 											currentEventLine = currentEventLine + " " + NotesEventsArray[k];
 										}
@@ -144,8 +144,8 @@ namespace ns15
                         */
                          else
                         {
-                            bool[] notes = new bool[32];
-							int sustainLength = ChartParser.getNoteFromResolution(NotesEventsArray[3]);
+                            var notes = new bool[32];
+							var sustainLength = ChartParser.getNoteFromResolution(NotesEventsArray[3]);
                             if (sustainLength <= constant480 / 4)
 							{
 								sustainLength = 0;
@@ -156,14 +156,14 @@ namespace ns15
 							}
 							else
 							{
-								int currentSustainLength = noteList[offset].sustainLength;
+								var currentSustainLength = noteList[offset].sustainLength;
                                 //Updates sustain length
 								if (currentSustainLength < sustainLength)
 								{
 									noteList[offset].sustainLength = sustainLength;
 								}
 							}
-                            int note = Convert.ToInt32(NotesEventsArray[2]);
+                            var note = Convert.ToInt32(NotesEventsArray[2]);
 							noteList[offset].noteValues[note] = true;
                         }
 					}

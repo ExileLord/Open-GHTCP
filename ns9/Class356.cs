@@ -22,7 +22,7 @@ namespace ns9
 
 		public void imethod_1(string string_0)
 		{
-			string stackTrace = Environment.StackTrace;
+			var stackTrace = Environment.StackTrace;
 			Console.WriteLine("WARNING: " + string_0);
 			Console.WriteLine(stackTrace);
 			if (dictionary_1.ContainsKey(stackTrace))
@@ -32,7 +32,7 @@ namespace ns9
 			while (true)
 			{
 				Console.Write("\tContinue? This can be dangerous, corrupt your files, etc! (y/n/y!): ");
-				string text = Console.ReadLine();
+				var text = Console.ReadLine();
 				string a;
 				if ((a = text.ToLower()) != null)
 				{

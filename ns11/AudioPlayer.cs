@@ -18,8 +18,8 @@ namespace ns11
 
 			public void StartListener(object object_0)
 			{
-				float num = 0f;
-				float num2 = Volume;
+				var num = 0f;
+				var num2 = Volume;
 				while (num < num2)
 				{
 					audioPlayer.SetVolume(num);
@@ -40,7 +40,7 @@ namespace ns11
 			public void method_0(object object_0)
 			{
 				GC.KeepAlive(class159_0.delegate4_0);
-				IntPtr intPtr = intptr_0;
+				var intPtr = intptr_0;
 				while (Class162.waveOutClose(intPtr) != Enum18.const_0)
 				{
 					Thread.Sleep(1000);
@@ -73,7 +73,7 @@ namespace ns11
 		public AudioPlayer(int int_0, WaveFormat waveFormat_0, int int_1, float Volume, bool bool_3, Delegate3 delegate3_1)
 		{
 			WaitCallback waitCallback = null;
-			VolumeListener volumeListener = new VolumeListener();
+			var volumeListener = new VolumeListener();
 			volumeListener.Volume = Volume;
             delegate4_0 = Class165.smethod_0;
 			object_0 = new object();
@@ -96,7 +96,7 @@ namespace ns11
 
 		public int method_0()
 		{
-			Struct67 @struct = default(Struct67);
+			var @struct = default(Struct67);
 			@struct.enum14_0 = Enum14.const_2;
 			if (intptr_0 != IntPtr.Zero)
 			{
@@ -107,7 +107,7 @@ namespace ns11
 
 		public float method_1()
 		{
-			int num = 0;
+			var num = 0;
 			if (intptr_0 != IntPtr.Zero)
 			{
 				Class162.waveOutGetVolume(intptr_0, ref num);
@@ -117,7 +117,7 @@ namespace ns11
 
 		public void SetVolume(float float_0)
 		{
-			int int_ = (int)(float_0 * 65535f) + ((int)(float_0 * 65535f) << 16);
+			var int_ = (int)(float_0 * 65535f) + ((int)(float_0 * 65535f) << 16);
 			if (intptr_0 != IntPtr.Zero)
 			{
 				Class162.waveOutSetVolume(intptr_0, int_);
@@ -162,7 +162,7 @@ namespace ns11
 						method_8();
 						if (intptr_0 != IntPtr.Zero)
 						{
-							Class161 @class = new Class161();
+							var @class = new Class161();
 							@class.class159_0 = this;
 							@class.intptr_0 = intptr_0;
 							ThreadPool.QueueUserWorkItem(@class.method_0);
@@ -193,10 +193,10 @@ namespace ns11
 				}
 				else
 				{
-                    byte[] array = new byte[class165_1.method_0()];
+                    var array = new byte[class165_1.method_0()];
 					if (byte_0 != 0)
 					{
-						for (int i = 0; i < array.Length; i++)
+						for (var i = 0; i < array.Length; i++)
 						{
 							array[i] = byte_0;
 						}
@@ -215,12 +215,12 @@ namespace ns11
 			if (int_1 > 0)
 			{
 				class165_0 = new Class165(intptr_0, int_0);
-				Class165 @class = class165_0;
+				var @class = class165_0;
 				try
 				{
-					for (int i = 1; i < int_1; i++)
+					for (var i = 1; i < int_1; i++)
 					{
-						Class165 class2 = new Class165(intptr_0, int_0);
+						var class2 = new Class165(intptr_0, int_0);
 						@class.class165_0 = class2;
 						@class = class2;
 					}
@@ -237,12 +237,12 @@ namespace ns11
 			class165_1 = null;
 			if (class165_0 != null)
 			{
-				Class165 @class = class165_0;
+				var @class = class165_0;
 				class165_0 = null;
-				Class165 class2 = @class;
+				var class2 = @class;
 				do
 				{
-					Class165 class3 = class2.class165_0;
+					var class3 = class2.class165_0;
 					class2.Dispose();
 					class2 = class3;
 				}
@@ -258,7 +258,7 @@ namespace ns11
 
 		private void method_10()
 		{
-			Class165 @class = class165_0;
+			var @class = class165_0;
 			while (@class.class165_0 != class165_0)
 			{
 				@class.method_3();

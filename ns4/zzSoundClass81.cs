@@ -55,7 +55,7 @@ namespace ns4
 				class104_2 = class104_0;
 			}
 			class104_1 = class104_2;
-			Class105 @class = class104_1.method_1();
+			var @class = class104_1.method_1();
 			if (@class != null)
 			{
 				class105_0.method_2(@class);
@@ -64,14 +64,14 @@ namespace ns4
 
 		private void method_3(zzSoundClass class107_0)
 		{
-			Enum5 @enum = class107_0.method_8();
+			var @enum = class107_0.method_8();
 			class107_0.method_4();
-			int num = (@enum == Enum5.const_3 || class104_1.method_0() != Enum4.const_0) ? 1 : 2;
+			var num = (@enum == Enum5.const_3 || class104_1.method_0() != Enum4.const_0) ? 1 : 2;
 			if (class84_0 == null)
 			{
 				class84_0 = new Class84(num);
 			}
-			float[] float_ = class105_0.method_0();
+			var float_ = class105_0.method_0();
 			class80_0 = new Class80(0, float_);
 			if (num == 2)
 			{
@@ -124,9 +124,9 @@ namespace ns4
 			{
 				method_3(class107_0);
 			}
-			int int_ = class107_0.method_4();
+			var int_ = class107_0.method_4();
 			class84_0.method_6();
-			Interface7 @interface = method_4(class107_0, class82_0, int_);
+			var @interface = method_4(class107_0, class82_0, int_);
 			@interface.imethod_0();
 			class84_0.method_5();
 			return class84_0;

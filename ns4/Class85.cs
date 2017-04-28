@@ -1899,13 +1899,13 @@ namespace ns4
 
 		public Class85(Class82 class82_1, zzSoundClass class107_1, Class80 class80_2, Class80 class80_3, Class84 class84_1, Enum4 enum4_1)
 		{
-			int[] array = new int[1];
+			var array = new int[1];
 			int_12 = array;
-			int[] array2 = new int[1];
+			var array2 = new int[1];
 			int_13 = array2;
-			int[] array3 = new int[1];
+			var array3 = new int[1];
 			int_14 = array3;
-			int[] array4 = new int[1];
+			var array4 = new int[1];
 			int_15 = array4;
 			int_16 = new int[576];
 			float_7 = new float[576];
@@ -2310,7 +2310,7 @@ namespace ns4
 			if (int_22 == null)
 			{
 				int_22 = new int[9][];
-				for (int i = 0; i < 9; i++)
+				for (var i = 0; i < 9; i++)
 				{
 					int_22[i] = smethod_1(class86_0[i].int_1);
 				}
@@ -2367,8 +2367,8 @@ namespace ns4
 			int_8 = 0;
 			IL_521:
 			Array.Clear(float_3, 0, 1152);
-			int[] arg_54B_0 = int_3;
-			int arg_54B_1 = 0;
+			var arg_54B_0 = int_3;
+			var arg_54B_1 = 0;
 			int_3[1] = 576;
 			arg_54B_0[arg_54B_1] = 576;
 			class102_0 = new Class102();
@@ -2382,20 +2382,20 @@ namespace ns4
 
 		public void method_0()
 		{
-			int num = class107_0.method_13();
+			var num = class107_0.method_13();
 			method_1();
-			for (int i = 0; i < num; i++)
+			for (var i = 0; i < num; i++)
 			{
 				class102_0.method_3(class82_0.method_13(8));
 			}
-			int num2 = class102_0.method_0() >> 3;
+			var num2 = class102_0.method_0() >> 3;
 			int num3;
 			if ((num3 = (class102_0.method_0() & 7)) != 0)
 			{
 				class102_0.method_1(8 - num3);
 				num2++;
 			}
-			int j = int_5 - num2 - class89_0.int_0;
+			var j = int_5 - num2 - class89_0.int_0;
 			int_5 += num;
 			if (j < 0)
 			{
@@ -2411,7 +2411,7 @@ namespace ns4
 				class102_0.method_1(8);
 				j--;
 			}
-			for (int k = 0; k < int_4; k++)
+			for (var k = 0; k < int_4; k++)
 			{
 				int l;
 				for (l = 0; l < int_7; l++)
@@ -2439,9 +2439,9 @@ namespace ns4
 					method_8(float_1[l], l, k);
 					method_10(l, k);
 					method_11(l, k);
-					for (int m = 18; m < 576; m += 36)
+					for (var m = 18; m < 576; m += 36)
 					{
-						for (int n = 1; n < 18; n += 2)
+						for (var n = 1; n < 18; n += 2)
 						{
 							float_2[m + n] = -float_2[m + n];
 						}
@@ -2454,10 +2454,10 @@ namespace ns4
 					{
 						goto IL_241;
 					}
-					for (int n = 0; n < 18; n++)
+					for (var n = 0; n < 18; n++)
 					{
-						int num4 = 0;
-						for (int m = 0; m < 576; m += 18)
+						var num4 = 0;
+						for (var m = 0; m < 576; m += 18)
 						{
 							float_6[num4] = float_2[m + n];
 							num4++;
@@ -2469,10 +2469,10 @@ namespace ns4
 					l++;
 					continue;
 					IL_241:
-					for (int n = 0; n < 18; n++)
+					for (var n = 0; n < 18; n++)
 					{
-						int num4 = 0;
-						for (int m = 0; m < 576; m += 18)
+						var num4 = 0;
+						for (var m = 0; m < 576; m += 18)
 						{
 							float_5[num4] = float_2[m + n];
 							num4++;
@@ -2493,16 +2493,16 @@ namespace ns4
 			{
 				class89_0.int_0 = class82_0.method_13(9);
 				class89_0.int_1 = ((int_7 == 1) ? class82_0.method_13(5) : class82_0.method_13(3));
-				for (int i = 0; i < int_7; i++)
+				for (var i = 0; i < int_7; i++)
 				{
 					class89_0.class88_0[i].int_0[0] = class82_0.method_13(1);
 					class89_0.class88_0[i].int_0[1] = class82_0.method_13(1);
 					class89_0.class88_0[i].int_0[2] = class82_0.method_13(1);
 					class89_0.class88_0[i].int_0[3] = class82_0.method_13(1);
 				}
-				for (int j = 0; j < 2; j++)
+				for (var j = 0; j < 2; j++)
 				{
-					for (int i = 0; i < int_7; i++)
+					for (var i = 0; i < int_7; i++)
 					{
 						class89_0.class88_0[i].class87_0[j].int_0 = class82_0.method_13(12);
 						class89_0.class88_0[i].class87_0[j].int_1 = class82_0.method_13(9);
@@ -2551,7 +2551,7 @@ namespace ns4
 			{
 				class89_0.int_0 = class82_0.method_13(8);
 				class89_0.int_1 = ((int_7 == 1) ? class82_0.method_13(1) : class82_0.method_13(2));
-				for (int i = 0; i < int_7; i++)
+				for (var i = 0; i < int_7; i++)
 				{
 					class89_0.class88_0[i].class87_0[0].int_0 = class82_0.method_13(12);
 					class89_0.class88_0[i].class87_0[0].int_1 = class82_0.method_13(9);
@@ -2599,10 +2599,10 @@ namespace ns4
 
 		private void method_2(int int_24, int int_25)
 		{
-			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
-			int num = @class.int_3;
-			int num2 = int_18[0, num];
-			int num3 = int_18[1, num];
+			var @class = class89_0.class88_0[int_24].class87_0[int_25];
+			var num = @class.int_3;
+			var num2 = int_18[0, num];
+			var num3 = int_18[1, num];
 			if (@class.int_4 == 0 || @class.int_5 != 2)
 			{
 				if (class89_0.class88_0[int_24].int_0[0] == 0 || int_25 == 0)
@@ -2651,20 +2651,20 @@ namespace ns4
 				}
 				for (i = 3; i < 6; i++)
 				{
-					for (int j = 0; j < 3; j++)
+					for (var j = 0; j < 3; j++)
 					{
 						class90_1[int_24].int_1[j, i] = class102_0.method_1(int_18[0, @class.int_3]);
 					}
 				}
 				for (i = 6; i < 12; i++)
 				{
-					for (int j = 0; j < 3; j++)
+					for (var j = 0; j < 3; j++)
 					{
 						class90_1[int_24].int_1[j, i] = class102_0.method_1(int_18[1, @class.int_3]);
 					}
 				}
 				i = 12;
-				for (int j = 0; j < 3; j++)
+				for (var j = 0; j < 3; j++)
 				{
 					class90_1[int_24].int_1[j, i] = 0;
 				}
@@ -2713,10 +2713,10 @@ namespace ns4
 
 		private void method_3(int int_24, int int_25)
 		{
-			int num = class107_0.method_14();
-			int num2 = 0;
-			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
-			int num3 = @class.int_3;
+			var num = class107_0.method_14();
+			var num2 = 0;
+			var @class = class89_0.class88_0[int_24].class87_0[int_25];
+			var num3 = @class.int_3;
 			int num4;
 			if (@class.int_5 == 2)
 			{
@@ -2762,7 +2762,7 @@ namespace ns4
 			}
 			if ((num == 1 || num == 3) && int_24 == 1)
 			{
-				int num5 = num3 >> 1;
+				var num5 = num3 >> 1;
 				if (num5 < 180)
 				{
 					int a;
@@ -2774,7 +2774,7 @@ namespace ns4
 				}
 				else if (num5 < 244)
 				{
-					int num6 = num5 - 180;
+					var num6 = num5 - 180;
 					int_11[0] = (num6 & 63) >> 4;
 					int_11[1] = (num6 & 15) >> 2;
 					int_11[2] = (num6 & 3);
@@ -2791,14 +2791,14 @@ namespace ns4
 					num2 = 5;
 				}
 			}
-			for (int i = 0; i < 45; i++)
+			for (var i = 0; i < 45; i++)
 			{
 				int_0[i] = 0;
 			}
-			int num7 = 0;
-			for (int j = 0; j < 4; j++)
+			var num7 = 0;
+			for (var j = 0; j < 4; j++)
 			{
-				for (int k = 0; k < int_23[num2, num4, j]; k++)
+				for (var k = 0; k < int_23[num2, num4, j]; k++)
 				{
 					int_0[num7++] = ((int_11[j] == 0) ? 0 : class102_0.method_1(int_11[j]));
 				}
@@ -2807,12 +2807,12 @@ namespace ns4
 
 		private void method_4(int int_24, int int_25)
 		{
-			int num = 0;
-			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
+			var num = 0;
+			var @class = class89_0.class88_0[int_24].class87_0[int_25];
 			method_3(int_24, int_25);
 			if (@class.int_4 == 0 || @class.int_5 != 2)
 			{
-				for (int i = 0; i < 21; i++)
+				for (var i = 0; i < 21; i++)
 				{
 					class90_1[int_24].int_0[i] = int_0[num++];
 				}
@@ -2822,31 +2822,31 @@ namespace ns4
 			}
 			if (@class.int_6 != 0)
 			{
-				for (int i = 0; i < 8; i++)
+				for (var i = 0; i < 8; i++)
 				{
 					class90_1[int_24].int_0[i] = int_0[num++];
 				}
-				for (int i = 3; i < 12; i++)
+				for (var i = 3; i < 12; i++)
 				{
-					for (int j = 0; j < 3; j++)
+					for (var j = 0; j < 3; j++)
 					{
 						class90_1[int_24].int_1[j, i] = int_0[num++];
 					}
 				}
-				for (int j = 0; j < 3; j++)
+				for (var j = 0; j < 3; j++)
 				{
 					class90_1[int_24].int_1[j, 12] = 0;
 				}
 				return;
 			}
-			for (int i = 0; i < 12; i++)
+			for (var i = 0; i < 12; i++)
 			{
-				for (int j = 0; j < 3; j++)
+				for (var j = 0; j < 3; j++)
 				{
 					class90_1[int_24].int_1[j, i] = int_0[num++];
 				}
 			}
-			for (int j = 0; j < 3; j++)
+			for (var j = 0; j < 3; j++)
 			{
 				class90_1[int_24].int_1[j, 12] = 0;
 			}
@@ -2858,7 +2858,7 @@ namespace ns4
 			int_13[0] = 0;
 			int_14[0] = 0;
 			int_15[0] = 0;
-			int num = int_6 + class89_0.class88_0[int_24].class87_0[int_25].int_0;
+			var num = int_6 + class89_0.class88_0[int_24].class87_0[int_25].int_0;
 			int num2;
 			int num3;
 			if (class89_0.class88_0[int_24].class87_0[int_25].int_4 != 0 && class89_0.class88_0[int_24].class87_0[int_25].int_5 == 2)
@@ -2868,8 +2868,8 @@ namespace ns4
 			}
 			else
 			{
-				int num4 = class89_0.class88_0[int_24].class87_0[int_25].int_9 + 1;
-				int num5 = num4 + class89_0.class88_0[int_24].class87_0[int_25].int_10 + 1;
+				var num4 = class89_0.class88_0[int_24].class87_0[int_25].int_9 + 1;
+				var num5 = num4 + class89_0.class88_0[int_24].class87_0[int_25].int_10 + 1;
 				if (num5 > class86_0[int_10].int_0.Length - 1)
 				{
 					num5 = class86_0[int_10].int_0.Length - 1;
@@ -2877,8 +2877,8 @@ namespace ns4
 				num2 = class86_0[int_10].int_0[num4];
 				num3 = class86_0[int_10].int_0[num5];
 			}
-			int i = 0;
-			int num6 = 0;
+			var i = 0;
+			var num6 = 0;
 			Class103 class103_;
 			while (num6 < class89_0.class88_0[int_24].class87_0[int_25].int_1 << 1 && i < int_2.Length)
 			{
@@ -2901,7 +2901,7 @@ namespace ns4
 				num6 += 2;
 			}
 			class103_ = Class103.class103_0[class89_0.class88_0[int_24].class87_0[int_25].int_13 + 32];
-			int num7 = class102_0.method_0();
+			var num7 = class102_0.method_0();
 			while (num7 < num && i < 576)
 			{
 				Class103.smethod_1(class103_, int_12, int_13, int_14, int_15, class102_0);
@@ -2954,11 +2954,11 @@ namespace ns4
 
 		private void method_7(float[,] float_17, int int_24, int int_25)
 		{
-			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
-			int num = 0;
-			int num2 = 0;
-			int num3 = 0;
-			int num4 = 0;
+			var @class = class89_0.class88_0[int_24].class87_0[int_25];
+			var num = 0;
+			var num2 = 0;
+			var num3 = 0;
+			var num4 = 0;
 			int num5;
 			if (@class.int_4 != 0 && @class.int_5 == 2)
 			{
@@ -2977,18 +2977,18 @@ namespace ns4
 			{
 				num5 = class86_0[int_10].int_0[1];
 			}
-			float num6 = (float)Math.Pow(2.0, 0.25 * (@class.int_2 - 210.0));
-			for (int i = 0; i < int_3[int_24]; i++)
+			var num6 = (float)Math.Pow(2.0, 0.25 * (@class.int_2 - 210.0));
+			for (var i = 0; i < int_3[int_24]; i++)
 			{
-				int num7 = i % 18;
-				int num8 = (i - num7) / 18;
+				var num7 = i % 18;
+				var num8 = (i - num7) / 18;
 				if (int_2[i] == 0)
 				{
 					float_17[num8, num7] = 0f;
 				}
 				else
 				{
-					int num9 = int_2[i];
+					var num9 = int_2[i];
 					if (num9 < float_11.Length)
 					{
 						if (int_2[i] > 0)
@@ -3014,10 +3014,10 @@ namespace ns4
 					}
 				}
 			}
-			for (int i = 0; i < int_3[int_24]; i++)
+			for (var i = 0; i < int_3[int_24]; i++)
 			{
-				int num10 = i % 18;
-				int num11 = (i - num10) / 18;
+				var num10 = i % 18;
+				var num11 = (i - num10) / 18;
 				if (num4 == num5)
 				{
 					if (@class.int_4 != 0 && @class.int_5 == 2)
@@ -3062,14 +3062,14 @@ namespace ns4
 				}
 				if (@class.int_4 != 0 && ((@class.int_5 == 2 && @class.int_6 == 0) || (@class.int_5 == 2 && @class.int_6 != 0 && i >= 36)))
 				{
-					int num12 = (num4 - num2) / num3;
-					int num13 = class90_1[int_24].int_1[num12, num] << @class.int_12;
+					var num12 = (num4 - num2) / num3;
+					var num13 = class90_1[int_24].int_1[num12, num] << @class.int_12;
 					num13 += @class.int_8[num12] << 2;
 					float_17[num11, num10] *= float_10[num13];
 				}
 				else
 				{
-					int num14 = class90_1[int_24].int_0[num];
+					var num14 = class90_1[int_24].int_0[num];
 					if (@class.int_11 != 0)
 					{
 						num14 += int_19[num];
@@ -3079,10 +3079,10 @@ namespace ns4
 				}
 				num4++;
 			}
-			for (int i = int_3[int_24]; i < 576; i++)
+			for (var i = int_3[int_24]; i < 576; i++)
 			{
-				int num15 = i % 18;
-				int num16 = (i - num15) / 18;
+				var num15 = i % 18;
+				var num16 = (i - num15) / 18;
 				if (num15 < 0)
 				{
 					num15 = 0;
@@ -3097,13 +3097,13 @@ namespace ns4
 
 		private void method_8(float[,] float_17, int int_24, int int_25)
 		{
-			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
+			var @class = class89_0.class88_0[int_24].class87_0[int_25];
 			if (@class.int_4 == 0 || @class.int_5 != 2)
 			{
-				for (int i = 0; i < 576; i++)
+				for (var i = 0; i < 576; i++)
 				{
-					int num = i % 18;
-					int num2 = (i - num) / 18;
+					var num = i % 18;
+					var num2 = (i - num) / 18;
 					float_2[i] = float_17[num2, num];
 				}
 				return;
@@ -3111,25 +3111,25 @@ namespace ns4
 			Array.Clear(float_2, 0, 576);
 			if (@class.int_6 != 0)
 			{
-				for (int i = 0; i < 36; i++)
+				for (var i = 0; i < 36; i++)
 				{
-					int num3 = i % 18;
-					int num4 = (i - num3) / 18;
+					var num3 = i % 18;
+					var num4 = (i - num3) / 18;
 					float_2[i] = float_17[num4, num3];
 				}
-				for (int j = 3; j < 13; j++)
+				for (var j = 3; j < 13; j++)
 				{
-					int num5 = class86_0[int_10].int_1[j];
-					int num6 = class86_0[int_10].int_1[j + 1] - num5;
-					int num7 = (num5 << 2) - num5;
-					int k = 0;
-					int num8 = 0;
+					var num5 = class86_0[int_10].int_1[j];
+					var num6 = class86_0[int_10].int_1[j + 1] - num5;
+					var num7 = (num5 << 2) - num5;
+					var k = 0;
+					var num8 = 0;
 					while (k < num6)
 					{
-						int num9 = num7 + k;
-						int num10 = num7 + num8;
-						int num11 = num9 % 18;
-						int num12 = (num9 - num11) / 18;
+						var num9 = num7 + k;
+						var num10 = num7 + num8;
+						var num11 = num9 % 18;
+						var num12 = (num9 - num11) / 18;
 						float_2[num10] = float_17[num12, num11];
 						num9 += num6;
 						num10++;
@@ -3147,11 +3147,11 @@ namespace ns4
 				}
 				return;
 			}
-			for (int i = 0; i < 576; i++)
+			for (var i = 0; i < 576; i++)
 			{
-				int num13 = int_22[int_10][i];
-				int num14 = num13 % 18;
-				int num15 = (num13 - num14) / 18;
+				var num13 = int_22[int_10][i];
+				var num14 = num13 % 18;
+				var num15 = (num13 - num14) / 18;
 				float_2[i] = float_17[num15, num14];
 			}
 		}
@@ -3163,12 +3163,12 @@ namespace ns4
 				Array.Copy(float_0[0], 0, float_1[0], 0, 576);
 				return;
 			}
-			Class87 @class = class89_0.class88_0[0].class87_0[int_24];
-			int num = class107_0.method_14();
-			bool flag = class107_0.method_8() == Enum5.const_1 && (num & 2) != 0;
-			bool flag2 = class107_0.method_8() == Enum5.const_1 && (num & 1) != 0;
-			bool flag3 = class107_0.method_3() == Enum3.const_0 || class107_0.method_3() == Enum3.const_2;
-			int int_25 = @class.int_3 & 1;
+			var @class = class89_0.class88_0[0].class87_0[int_24];
+			var num = class107_0.method_14();
+			var flag = class107_0.method_8() == Enum5.const_1 && (num & 2) != 0;
+			var flag2 = class107_0.method_8() == Enum5.const_1 && (num & 1) != 0;
+			var flag3 = class107_0.method_3() == Enum3.const_0 || class107_0.method_3() == Enum3.const_2;
+			var int_25 = @class.int_3 & 1;
 			int i;
 			for (i = 0; i < 576; i++)
 			{
@@ -3181,15 +3181,15 @@ namespace ns4
 				{
 					if (@class.int_6 != 0)
 					{
-						int num2 = 0;
-						for (int j = 0; j < 3; j++)
+						var num2 = 0;
+						for (var j = 0; j < 3; j++)
 						{
-							int num3 = 2;
+							var num3 = 2;
 							int k;
 							for (k = 12; k >= 3; k--)
 							{
 								i = class86_0[int_10].int_1[k];
-								int l = class86_0[int_10].int_1[k + 1] - i;
+								var l = class86_0[int_10].int_1[k + 1] - i;
 								i = (i << 2) - i + (j + 1) * l - 1;
 								while (l > 0)
 								{
@@ -3259,8 +3259,8 @@ namespace ns4
 						if (num2 <= 3)
 						{
 							i = 2;
-							int n = 17;
-							int m = -1;
+							var n = 17;
+							var m = -1;
 							while (i >= 0)
 							{
 								if (float_0[1][i, n] != 0f)
@@ -3283,7 +3283,7 @@ namespace ns4
 							{
 								i++;
 							}
-							int k = i;
+							var k = i;
 							i = class86_0[int_10].int_0[i];
 							while (k < 8)
 							{
@@ -3309,15 +3309,15 @@ namespace ns4
 					}
 					else
 					{
-						for (int num5 = 0; num5 < 3; num5++)
+						for (var num5 = 0; num5 < 3; num5++)
 						{
-							int num6 = -1;
+							var num6 = -1;
 							int k;
 							int num4;
 							for (k = 12; k >= 0; k--)
 							{
 								num4 = class86_0[int_10].int_1[k];
-								int l = class86_0[int_10].int_1[k + 1] - num4;
+								var l = class86_0[int_10].int_1[k + 1] - num4;
 								i = (num4 << 2) - num4 + (num5 + 1) * l - 1;
 								while (l > 0)
 								{
@@ -3356,7 +3356,7 @@ namespace ns4
 								}
 							}
 							num4 = class86_0[int_10].int_1[10];
-							int num7 = class86_0[int_10].int_1[11];
+							var num7 = class86_0[int_10].int_1[11];
 							m = num7 - num4;
 							k = (num4 << 2) - num4 + num5 * m;
 							m = class86_0[int_10].int_1[12] - num7;
@@ -3382,8 +3382,8 @@ namespace ns4
 				else
 				{
 					i = 31;
-					int n = 17;
-					int m = 0;
+					var n = 17;
+					var m = 0;
 					while (i >= 0)
 					{
 						if (float_0[1][i, n] != 0f)
@@ -3406,7 +3406,7 @@ namespace ns4
 					{
 						i++;
 					}
-					int k = i;
+					var k = i;
 					i = class86_0[int_10].int_0[i];
 					while (k < 21)
 					{
@@ -3448,9 +3448,9 @@ namespace ns4
 				}
 			}
 			i = 0;
-			for (int m = 0; m < 32; m++)
+			for (var m = 0; m < 32; m++)
 			{
-				for (int n = 0; n < 18; n++)
+				for (var n = 0; n < 18; n++)
 				{
 					if (int_16[i] == 7)
 					{
@@ -3485,7 +3485,7 @@ namespace ns4
 
 		private void method_10(int int_24, int int_25)
 		{
-			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
+			var @class = class89_0.class88_0[int_24].class87_0[int_25];
 			if (@class.int_4 != 0 && @class.int_5 == 2 && @class.int_6 == 0)
 			{
 				return;
@@ -3499,14 +3499,14 @@ namespace ns4
 			{
 				num = 558;
 			}
-			for (int i = 0; i < num; i += 18)
+			for (var i = 0; i < num; i += 18)
 			{
-				for (int j = 0; j < 8; j++)
+				for (var j = 0; j < 8; j++)
 				{
-					int num2 = i + 17 - j;
-					int num3 = i + 18 + j;
-					float num4 = float_2[num2];
-					float num5 = float_2[num3];
+					var num2 = i + 17 - j;
+					var num3 = i + 18 + j;
+					var num4 = float_2[num2];
+					var num5 = float_2[num3];
 					float_2[num2] = num4 * float_14[j] - num5 * float_15[j];
 					float_2[num3] = num5 * float_14[j] + num4 * float_15[j];
 				}
@@ -3515,21 +3515,21 @@ namespace ns4
 
 		private void method_11(int int_24, int int_25)
 		{
-			Class87 @class = class89_0.class88_0[int_24].class87_0[int_25];
-			for (int i = 0; i < 576; i += 18)
+			var @class = class89_0.class88_0[int_24].class87_0[int_25];
+			for (var i = 0; i < 576; i += 18)
 			{
-				int int_26 = (@class.int_4 == 0 || @class.int_6 == 0 || i >= 36) ? @class.int_5 : 0;
-				float[] array = float_2;
-				for (int j = 0; j < 18; j++)
+				var int_26 = (@class.int_4 == 0 || @class.int_6 == 0 || i >= 36) ? @class.int_5 : 0;
+				var array = float_2;
+				for (var j = 0; j < 18; j++)
 				{
 					float_8[j] = array[j + i];
 				}
 				method_13(float_8, float_9, int_26);
-				for (int k = 0; k < 18; k++)
+				for (var k = 0; k < 18; k++)
 				{
 					array[k + i] = float_8[k];
 				}
-				float[,] array2 = float_3;
+				var array2 = float_3;
 				array[i] = float_9[0] + array2[int_24, i];
 				array2[int_24, i] = float_9[18];
 				array[1 + i] = float_9[1] + array2[int_24, i + 1];
@@ -3571,9 +3571,9 @@ namespace ns4
 
 		private void method_12()
 		{
-			for (int i = 0; i < 18; i++)
+			for (var i = 0; i < 18; i++)
 			{
-				for (int j = 0; j < 18; j += 3)
+				for (var j = 0; j < 18; j += 3)
 				{
 					float_1[0][i, j] = (float_1[0][i, j] + float_1[1][i, j]) * 0.5f;
 					float_1[0][i, j + 1] = (float_1[0][i, j + 1] + float_1[1][i, j + 1]) * 0.5f;
@@ -3599,8 +3599,8 @@ namespace ns4
 			if (int_24 == 2)
 			{
 				Array.Clear(float_18, 0, 36);
-				int num = 0;
-				for (int i = 0; i < 3; i++)
+				var num = 0;
+				for (var i = 0; i < 3; i++)
 				{
 					float_17[15 + i] += float_17[12 + i];
 					float_17[12 + i] += float_17[9 + i];
@@ -3609,9 +3609,9 @@ namespace ns4
 					float_17[3 + i] += float_17[i];
 					float_17[15 + i] += float_17[9 + i];
 					float_17[9 + i] += float_17[3 + i];
-					float num2 = float_17[12 + i] * 0.5f;
-					float num3 = float_17[6 + i] * 0.8660254f;
-					float num4 = float_17[i] + num2;
+					var num2 = float_17[12 + i] * 0.5f;
+					var num3 = float_17[6 + i] * 0.8660254f;
+					var num4 = float_17[i] + num2;
 					num5 = float_17[i] - float_17[12 + i];
 					num6 = num4 + num3;
 					num7 = num4 - num3;
@@ -3624,7 +3624,7 @@ namespace ns4
 					num10 *= 1.93185163f;
 					num8 *= 0.707106769f;
 					num9 *= 0.5176381f;
-					float num11 = num6;
+					var num11 = num6;
 					num6 += num9;
 					num9 = num11 - num9;
 					num11 = num5;
@@ -3693,52 +3693,52 @@ namespace ns4
 			float_17[7] += float_17[5];
 			float_17[5] += float_17[3];
 			float_17[3] += float_17[1];
-			float num18 = float_17[0] + float_17[0];
-			float num19 = num18 + float_17[12];
-			float num20 = num19 + float_17[4] * 1.87938523f + float_17[8] * 1.53208888f + float_17[16] * 0.347296357f;
-			float num21 = num18 + float_17[4] - float_17[8] - float_17[12] - float_17[12] - float_17[16];
-			float num22 = num19 - float_17[4] * 0.347296357f - float_17[8] * 1.87938523f + float_17[16] * 1.53208888f;
-			float num23 = num19 - float_17[4] * 1.53208888f + float_17[8] * 0.347296357f - float_17[16] * 1.87938523f;
-			float num24 = float_17[0] - float_17[4] + float_17[8] - float_17[12] + float_17[16];
-			float num25 = float_17[6] * 1.73205078f;
-			float num26 = float_17[2] * 1.96961546f + num25 + float_17[10] * 1.28557527f + float_17[14] * 0.6840403f;
-			float num27 = (float_17[2] - float_17[10] - float_17[14]) * 1.73205078f;
-			float num28 = float_17[2] * 1.28557527f - num25 - float_17[10] * 0.6840403f + float_17[14] * 1.96961546f;
-			float num29 = float_17[2] * 0.6840403f - num25 + float_17[10] * 1.96961546f - float_17[14] * 1.28557527f;
-			float num30 = float_17[1] + float_17[1];
-			float num31 = num30 + float_17[13];
-			float num32 = num31 + float_17[5] * 1.87938523f + float_17[9] * 1.53208888f + float_17[17] * 0.347296357f;
-			float num33 = num30 + float_17[5] - float_17[9] - float_17[13] - float_17[13] - float_17[17];
-			float num34 = num31 - float_17[5] * 0.347296357f - float_17[9] * 1.87938523f + float_17[17] * 1.53208888f;
-			float num35 = num31 - float_17[5] * 1.53208888f + float_17[9] * 0.347296357f - float_17[17] * 1.87938523f;
-			float num36 = (float_17[1] - float_17[5] + float_17[9] - float_17[13] + float_17[17]) * 0.707106769f;
-			float num37 = float_17[7] * 1.73205078f;
-			float num38 = float_17[3] * 1.96961546f + num37 + float_17[11] * 1.28557527f + float_17[15] * 0.6840403f;
-			float num39 = (float_17[3] - float_17[11] - float_17[15]) * 1.73205078f;
-			float num40 = float_17[3] * 1.28557527f - num37 - float_17[11] * 0.6840403f + float_17[15] * 1.96961546f;
-			float num41 = float_17[3] * 0.6840403f - num37 + float_17[11] * 1.96961546f - float_17[15] * 1.28557527f;
-			float num42 = num20 + num26;
-			float num43 = (num32 + num38) * 0.5019099f;
+			var num18 = float_17[0] + float_17[0];
+			var num19 = num18 + float_17[12];
+			var num20 = num19 + float_17[4] * 1.87938523f + float_17[8] * 1.53208888f + float_17[16] * 0.347296357f;
+			var num21 = num18 + float_17[4] - float_17[8] - float_17[12] - float_17[12] - float_17[16];
+			var num22 = num19 - float_17[4] * 0.347296357f - float_17[8] * 1.87938523f + float_17[16] * 1.53208888f;
+			var num23 = num19 - float_17[4] * 1.53208888f + float_17[8] * 0.347296357f - float_17[16] * 1.87938523f;
+			var num24 = float_17[0] - float_17[4] + float_17[8] - float_17[12] + float_17[16];
+			var num25 = float_17[6] * 1.73205078f;
+			var num26 = float_17[2] * 1.96961546f + num25 + float_17[10] * 1.28557527f + float_17[14] * 0.6840403f;
+			var num27 = (float_17[2] - float_17[10] - float_17[14]) * 1.73205078f;
+			var num28 = float_17[2] * 1.28557527f - num25 - float_17[10] * 0.6840403f + float_17[14] * 1.96961546f;
+			var num29 = float_17[2] * 0.6840403f - num25 + float_17[10] * 1.96961546f - float_17[14] * 1.28557527f;
+			var num30 = float_17[1] + float_17[1];
+			var num31 = num30 + float_17[13];
+			var num32 = num31 + float_17[5] * 1.87938523f + float_17[9] * 1.53208888f + float_17[17] * 0.347296357f;
+			var num33 = num30 + float_17[5] - float_17[9] - float_17[13] - float_17[13] - float_17[17];
+			var num34 = num31 - float_17[5] * 0.347296357f - float_17[9] * 1.87938523f + float_17[17] * 1.53208888f;
+			var num35 = num31 - float_17[5] * 1.53208888f + float_17[9] * 0.347296357f - float_17[17] * 1.87938523f;
+			var num36 = (float_17[1] - float_17[5] + float_17[9] - float_17[13] + float_17[17]) * 0.707106769f;
+			var num37 = float_17[7] * 1.73205078f;
+			var num38 = float_17[3] * 1.96961546f + num37 + float_17[11] * 1.28557527f + float_17[15] * 0.6840403f;
+			var num39 = (float_17[3] - float_17[11] - float_17[15]) * 1.73205078f;
+			var num40 = float_17[3] * 1.28557527f - num37 - float_17[11] * 0.6840403f + float_17[15] * 1.96961546f;
+			var num41 = float_17[3] * 0.6840403f - num37 + float_17[11] * 1.96961546f - float_17[15] * 1.28557527f;
+			var num42 = num20 + num26;
+			var num43 = (num32 + num38) * 0.5019099f;
 			num6 = num42 + num43;
-			float num44 = num42 - num43;
+			var num44 = num42 - num43;
 			num42 = num21 + num27;
 			num43 = (num33 + num39) * 0.5176381f;
 			num5 = num42 + num43;
-			float num45 = num42 - num43;
+			var num45 = num42 - num43;
 			num42 = num22 + num28;
 			num43 = (num34 + num40) * 0.551688969f;
 			num7 = num42 + num43;
-			float num46 = num42 - num43;
+			var num46 = num42 - num43;
 			num42 = num23 + num29;
 			num43 = (num35 + num41) * 0.610387266f;
 			num10 = num42 + num43;
-			float num47 = num42 - num43;
+			var num47 = num42 - num43;
 			num8 = num24 + num36;
-			float num48 = num24 - num36;
+			var num48 = num24 - num36;
 			num42 = num23 - num29;
 			num43 = (num35 - num41) * 0.8717234f;
 			num9 = num42 + num43;
-			float num49 = num42 - num43;
+			var num49 = num42 - num43;
 			num42 = num22 - num28;
 			num43 = (num34 - num40) * 1.18310082f;
 			num16 = num42 + num43;
@@ -3751,7 +3751,7 @@ namespace ns4
 			num43 = (num32 - num38) * 5.73685646f;
 			num12 = num42 + num43;
 			num13 = num42 - num43;
-			float[] array = float_16[int_24];
+			var array = float_16[int_24];
 			float_18[0] = -num13 * array[0];
 			float_18[1] = -num15 * array[1];
 			float_18[2] = -num17 * array[2];
@@ -3792,9 +3792,9 @@ namespace ns4
 
 		private static float[] smethod_0()
 		{
-			float[] array = new float[8192];
-			double y = 1.3333333333333333;
-			for (int i = 0; i < 8192; i++)
+			var array = new float[8192];
+			var y = 1.3333333333333333;
+			for (var i = 0; i < 8192; i++)
 			{
 				array[i] = (float)Math.Pow(i, y);
 			}
@@ -3803,15 +3803,15 @@ namespace ns4
 
 		public static int[] smethod_1(int[] int_24)
 		{
-			int num = 0;
-			int[] array = new int[576];
-			for (int i = 0; i < 13; i++)
+			var num = 0;
+			var array = new int[576];
+			for (var i = 0; i < 13; i++)
 			{
-				int num2 = int_24[i];
-				int num3 = int_24[i + 1];
-				for (int j = 0; j < 3; j++)
+				var num2 = int_24[i];
+				var num3 = int_24[i + 1];
+				for (var j = 0; j < 3; j++)
 				{
-					for (int k = num2; k < num3; k++)
+					for (var k = num2; k < num3; k++)
 					{
 						array[3 * k + j] = num++;
 					}

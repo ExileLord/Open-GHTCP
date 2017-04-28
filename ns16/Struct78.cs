@@ -21,8 +21,8 @@ namespace ns16
 
 		public float method_0()
 		{
-			float num = float_0;
-			float num2 = float_1;
+			var num = float_0;
+			var num2 = float_1;
 			return (float)Math.Sqrt(num * num + num2 * num2);
 		}
 
@@ -40,7 +40,7 @@ namespace ns16
 		{
 			if (obj is Struct78)
 			{
-				Struct78 struct78_ = (Struct78)obj;
+				var struct78_ = (Struct78)obj;
 				return smethod_0(this, struct78_);
 			}
 			return false;

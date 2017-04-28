@@ -35,7 +35,7 @@ namespace ns15
 		private void InitializeComponent()
 		{
 			icontainer_0 = new Container();
-			ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(Disclaimer));
+			var componentResourceManager = new ComponentResourceManager(typeof(Disclaimer));
 			richTextBox1 = new RichTextBox();
 			AcceptBtn = new Button();
 			tableLayoutPanel1 = new TableLayoutPanel();

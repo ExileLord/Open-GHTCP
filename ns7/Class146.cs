@@ -9,7 +9,7 @@ namespace ns7
 
 		public Class146(Class144 class144_0)
 		{
-			int num = class144_0.vmethod_14();
+			var num = class144_0.vmethod_14();
 			if (num == 0)
 			{
 				return;

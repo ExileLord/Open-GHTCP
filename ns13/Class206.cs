@@ -40,7 +40,7 @@ namespace ns13
 			{
 				throw new TarException("Failed to read a record");
 			}
-			byte[] array = new byte[512];
+			var array = new byte[512];
 			Array.Copy(byte_0, int_0 * 512, array, 0, 512);
 			int_0++;
 			return array;
@@ -53,9 +53,9 @@ namespace ns13
 				throw new TarException("no input stream stream defined");
 			}
 			int_0 = 0;
-			int num = 0;
+			var num = 0;
 			long num2;
-			for (int i = method_0(); i > 0; i -= (int)num2)
+			for (var i = method_0(); i > 0; i -= (int)num2)
 			{
 				num2 = stream_0.Read(byte_0, num, i);
 				if (num2 <= 0L)
@@ -80,7 +80,7 @@ namespace ns13
 			}
 			if (byte_1.Length != 512)
 			{
-				string string_ = string.Format("TarBuffer.WriteBlock - block to write has length '{0}' which is not the block size of '{1}'", byte_1.Length, 512);
+				var string_ = string.Format("TarBuffer.WriteBlock - block to write has length '{0}' which is not the block size of '{1}'", byte_1.Length, 512);
 				throw new TarException(string_);
 			}
 			if (int_0 >= method_1())
@@ -107,7 +107,7 @@ namespace ns13
 			}
 			if (int_4 + 512 > byte_1.Length)
 			{
-				string string_ = string.Format("TarBuffer.WriteBlock - record has length '{0}' with offset '{1}' which is less than the record size of '{2}'", byte_1.Length, int_4, int_2);
+				var string_ = string.Format("TarBuffer.WriteBlock - record has length '{0}' with offset '{1}' which is less than the record size of '{2}'", byte_1.Length, int_4, int_2);
 				throw new TarException(string_);
 			}
 			if (int_0 >= method_1())
@@ -138,7 +138,7 @@ namespace ns13
 			}
 			if (int_0 > 0)
 			{
-				int num = int_0 * 512;
+				var num = int_0 * 512;
 				Array.Clear(byte_0, num, method_0() - num);
 				method_6();
 			}

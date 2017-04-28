@@ -15,17 +15,17 @@ namespace ns15
 
 		public BPMInterpreter(string[] string_0)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (var i = 0; i < string_0.Length; i++)
 			{
-				string text = string_0[i];
-				string[] array = text.Split(new[]
+				var text = string_0[i];
+				var array = text.Split(new[]
 				{
 					' ',
 					'\t',
 					'='
 				}, StringSplitOptions.RemoveEmptyEntries);
-				int num = ChartParser.getNoteFromResolution(array[0]);
-				int num2 = Convert.ToInt32(array[2]);
+				var num = ChartParser.getNoteFromResolution(array[0]);
+				var num2 = Convert.ToInt32(array[2]);
 				string a;
 				if ((a = array[1]) != null)
 				{

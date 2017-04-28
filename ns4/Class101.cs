@@ -11,7 +11,7 @@ namespace ns4
 
 		public void method_0(int int_0, int int_1)
 		{
-			int num = 1 << int_1 - 1;
+			var num = 1 << int_1 - 1;
 			do
 			{
 				if ((short_0 & 32768) == 0 ^ (int_0 & num) == 0)
@@ -29,7 +29,7 @@ namespace ns4
 
 		public short method_1()
 		{
-			short result = short_0;
+			var result = short_0;
 			short_0 = -1;
 			return result;
 		}

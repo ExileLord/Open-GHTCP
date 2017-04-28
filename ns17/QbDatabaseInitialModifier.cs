@@ -50,11 +50,11 @@ namespace ns17
 			};
 			KeyGenerator.smethod_56(array);
 			Console.WriteLine("Randomized Names:");
-			int num = 0;
+			var num = 0;
 			while (num < 5 && !QbDatabaseAlreadyEdited)
 			{
 				Console.WriteLine(array[num]);
-				UnicodeStructureNode class2 = @class.method_5(new UnicodeStructureNode("name" + (num + 1)));
+				var class2 = @class.method_5(new UnicodeStructureNode("name" + (num + 1)));
 				if (class2.method_8().Equals(bool_1 ? array3[num] : array2[num]))
 				{
 					class2.method_9(array[num]);

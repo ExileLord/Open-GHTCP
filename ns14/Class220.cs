@@ -23,7 +23,7 @@ namespace ns14
 
 		public bool MoveNext()
 		{
-			int[] array = vmethod_0(false);
+			var array = vmethod_0(false);
 			return array.Length > 0;
 		}
 
@@ -40,9 +40,9 @@ namespace ns14
 			{
 				throw new InvalidOperationException("CombinatorialBase collection must be Reset() before usage");
 			}
-			for (int i = 0; i < int_0.Length; i++)
+			for (var i = 0; i < int_0.Length; i++)
 			{
-				int index = int_0[i];
+				var index = int_0[i];
 				array_1.SetValue(array_0.GetValue(index), i);
 			}
 			return array_1;

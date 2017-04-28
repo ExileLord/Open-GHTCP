@@ -180,8 +180,8 @@ namespace ns4
 
 		public bool method_8(int int_7)
 		{
-			int num = method_16(byte_4, 0, 4);
-			int int_8 = (byte_4[0] << 24 & -16777216) | (byte_4[1] << 16 & 16711680) | (byte_4[2] << 8 & 65280) | byte_4[3] & 255;
+			var num = method_16(byte_4, 0, 4);
+			var int_8 = (byte_4[0] << 24 & -16777216) | (byte_4[1] << 16 & 16711680) | (byte_4[2] << 8 & 65280) | byte_4[3] & 255;
 			try
 			{
 				class106_0.IncrementSomeVariableAndCheckIfTheBackStreamIsFisted(num);
@@ -189,8 +189,8 @@ namespace ns4
 			catch (IOException)
 			{
 			}
-			bool result = false;
-			int num2 = num;
+			var result = false;
+			var num2 = num;
 			if (num2 != 0)
 			{
 				if (num2 == 4)
@@ -207,12 +207,12 @@ namespace ns4
 
 		public int method_9(byte byte_5)
 		{
-			int num = method_16(byte_4, 0, 3);
+			var num = method_16(byte_4, 0, 3);
 			if (num != 3)
 			{
 				throw new BitstreamException(BitstreamError.StreamEOF, null);
 			}
-			int num2 = (byte_4[0] << 16 & 16711680) | (byte_4[1] << 8 & 65280) | byte_4[2] & 255;
+			var num2 = (byte_4[0] << 16 & 16711680) | (byte_4[1] << 8 & 65280) | byte_4[2] & 255;
 			while (true)
 			{
 				num2 <<= 8;
@@ -257,7 +257,7 @@ namespace ns4
 
 		public int method_11(int int_7)
 		{
-			int result = method_15(byte_3, 0, int_7);
+			var result = method_15(byte_3, 0, int_7);
 			int_2 = int_7;
 			int_3 = -1;
 			int_4 = -1;
@@ -266,15 +266,15 @@ namespace ns4
 
 		public void method_12()
 		{
-			int num = 0;
-			byte[] array = byte_3;
-			int num2 = int_2;
-			for (int i = 0; i < num2; i += 4)
+			var num = 0;
+			var array = byte_3;
+			var num2 = int_2;
+			for (var i = 0; i < num2; i += 4)
 			{
 				byte b = 0;
 				byte b2 = 0;
 				byte b3 = 0;
-				byte b4 = array[i];
+				var b4 = array[i];
 				if (i + 1 < num2)
 				{
 					b = array[i + 1];
@@ -295,7 +295,7 @@ namespace ns4
 
 		public int method_13(int int_7)
 		{
-			int num = int_4 + int_7;
+			var num = int_4 + int_7;
 			if (int_3 < 0)
 			{
 				int_3 = 0;
@@ -303,8 +303,8 @@ namespace ns4
 			int num4;
 			if (num <= 32)
 			{
-				int num2 = int_1[int_3];
-				int num3 = 32 - num;
+				var num2 = int_1[int_3];
+				var num3 = 32 - num;
 				num4 = (num2 >> num3 & int_6[int_7]);
 				if ((int_4 += int_7) == 32)
 				{
@@ -313,11 +313,11 @@ namespace ns4
 				}
 				return num4;
 			}
-			int num5 = int_1[int_3] & 65535;
+			var num5 = int_1[int_3] & 65535;
 			int_3++;
-			int num6 = int_1[int_3] & -65536;
+			var num6 = int_1[int_3] & -65536;
 			num4 = ((num5 << 16 & -65536) | (num6 >> 16 & 65535));
-			int num7 = 48 - num;
+			var num7 = 48 - num;
 			num4 >>= num7;
 			num4 &= int_6[int_7];
 			int_4 = num - 32;
@@ -332,12 +332,12 @@ namespace ns4
 
 		private int method_15(byte[] byte_5, int int_7, int int_8)
 		{
-			int num = 0;
+			var num = 0;
 			try
 			{
 				while (int_8 > 0)
 				{
-					int num2 = class106_0.method_1(byte_5, int_7, int_8);
+					var num2 = class106_0.method_1(byte_5, int_7, int_8);
 					if (num2 == -1 || num2 == 0)
 					{
 						while (int_8-- > 0)
@@ -360,12 +360,12 @@ namespace ns4
 
 		private int method_16(byte[] byte_5, int int_7, int int_8)
 		{
-			int num = 0;
+			var num = 0;
 			try
 			{
 				while (int_8 > 0)
 				{
-					int num2 = class106_0.method_1(byte_5, int_7, int_8);
+					var num2 = class106_0.method_1(byte_5, int_7, int_8);
 					if (num2 == -1 || num2 == 0)
 					{
 						break;
@@ -384,8 +384,8 @@ namespace ns4
 
 		private void method_17(Stream stream_0)
 		{
-			long position = 0L;
-			int num = -1;
+			var position = 0L;
+			var num = -1;
 			try
 			{
 				position = stream_0.Position;
@@ -420,8 +420,8 @@ namespace ns4
 
 		private static int smethod_0(Stream stream_0)
 		{
-			byte[] array = new byte[4];
-			int num = -10;
+			var array = new byte[4];
+			var num = -10;
 			stream_0.Read(array, 0, 3);
 			if (array[0] == 73 && array[1] == 68 && array[2] == 51)
 			{

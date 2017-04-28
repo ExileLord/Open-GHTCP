@@ -20,7 +20,7 @@ namespace ns16
 			{
 				throw new ArgumentException("Value is not a SystemTools.Int24 or System.Int32");
 			}
-			int num = (int)target;
+			var num = (int)target;
 			if (int_2 == num)
 			{
 				return 0;

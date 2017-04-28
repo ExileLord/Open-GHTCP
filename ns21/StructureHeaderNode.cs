@@ -39,11 +39,11 @@ namespace ns21
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			int num = stream26_0.ReadInt();
+			var num = stream26_0.ReadInt();
 			if (num != 0)
 			{
 				stream26_0.Position = num;
-				AbstractTreeNode1 @class = method_11(stream26_0.ReadInt());
+				var @class = method_11(stream26_0.ReadInt());
 				Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}
@@ -51,7 +51,7 @@ namespace ns21
 
 		public override void vmethod_14(Stream26 stream26_0)
 		{
-			byte[] array = new byte[4];
+			var array = new byte[4];
 			array[2] = 1;
 			stream26_0.WriteByteArray(array, false);
 			if (Nodes.Count != 0)
@@ -74,9 +74,9 @@ namespace ns21
 			{
 				return new StructureHeaderNode();
 			}
-			int num = int_0 >> 16 & 255;
-			int num2 = int_0 >> 8 & 255;
-			Exception ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32bit(int_0));
+			var num = int_0 >> 16 & 255;
+			var num2 = int_0 >> 8 & 255;
+			var ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32bit(int_0));
 			if (num == 1)
 			{
 				vmethod_9(true);

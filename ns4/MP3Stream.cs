@@ -164,8 +164,8 @@ namespace ns4
 		public override int vmethod_3(IntPtr intptr_0, int int_5)
 		{
 			int_5 >>= 2;
-			float[] array = new float[int_5];
-			int num = vmethod_4(array, 0, int_5);
+			var array = new float[int_5];
+			var num = vmethod_4(array, 0, int_5);
 			Marshal.Copy(array, 0, intptr_0, num);
 			return num << 2;
 		}
@@ -175,7 +175,7 @@ namespace ns4
 			int result;
 			lock (object_0)
 			{
-				int num = 0;
+				var num = 0;
 				do
 				{
 					if (class81_0.method_0().method_0() <= 0)
@@ -200,13 +200,13 @@ namespace ns4
 			lock (object_0)
 			{
 				int num = vmethod_0().short_0;
-				float[][] array = new float[num][];
-				for (int i = 0; i < num; i++)
+				var array = new float[num][];
+				for (var i = 0; i < num; i++)
 				{
 					array[i] = new float[int_5];
 				}
 				int_5 *= num;
-				int num2 = 0;
+				var num2 = 0;
 				do
 				{
 					if (class81_0.method_0().method_0() <= 0)
@@ -230,7 +230,7 @@ namespace ns4
 			int result;
 			lock (object_0)
 			{
-				int num = 0;
+				var num = 0;
 				do
 				{
 					if (class81_0.method_0().method_0() <= 0)
@@ -251,7 +251,7 @@ namespace ns4
 
 		public bool method_0()
 		{
-			zzSoundClass @class = class82_0.method_3();
+			var @class = class82_0.method_3();
 			if (@class == null)
 			{
 				return false;

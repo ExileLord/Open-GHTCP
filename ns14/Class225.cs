@@ -77,7 +77,7 @@ namespace ns14
 					{
 						return false;
 					}
-					Class226 class2 = stack_0.Pop();
+					var class2 = stack_0.Pop();
 					@class = class2.class226_1;
 				}
 				while (@class != null)
@@ -185,10 +185,10 @@ namespace ns14
 			{
 				if (int_0 >= 0 && int_0 < method_4())
 				{
-					Class226 class226_ = class226_0;
+					var class226_ = class226_0;
 					while (class226_ != null)
 					{
-						int num = (int)((class226_.class226_0 == null) ? 0u : class226_.class226_0.method_2());
+						var num = (int)((class226_.class226_0 == null) ? 0u : class226_.class226_0.method_2());
 						if (int_0 == num)
 						{
 							return class226_;
@@ -242,9 +242,9 @@ namespace ns14
 				uint_0 += 1u;
 				return class226_0;
 			}
-			List<Class226> list = smethod_0();
-			int int_ = method_5(gparam_0, list);
-			Class226 @class = list[list.Count - 1];
+			var list = smethod_0();
+			var int_ = method_5(gparam_0, list);
+			var @class = list[list.Count - 1];
 			if (@class == null)
 			{
 				if (class226_1 == null)
@@ -263,8 +263,8 @@ namespace ns14
 			{
 				return null;
 			}
-			List<Class226> list_ = smethod_0();
-			int num = method_5(gparam_0, list_);
+			var list_ = smethod_0();
+			var num = method_5(gparam_0, list_);
 			Class226 result = null;
 			if (num == 0)
 			{
@@ -276,7 +276,7 @@ namespace ns14
 
 		public Class226 method_3<T>(T gparam_0)
 		{
-			Interface10<T> @interface = (Interface10<T>)object_0;
+			var @interface = (Interface10<T>)object_0;
 			Class226 @class;
 			int num;
 			for (@class = class226_0; @class != null; @class = ((num < 0) ? @class.class226_0 : @class.class226_1))
@@ -301,9 +301,9 @@ namespace ns14
 
 		private int method_5<T>(T gparam_0, List<Class226> list_0)
 		{
-			Interface10<T> @interface = (Interface10<T>)object_0;
-			int num = 0;
-			Class226 class226_ = class226_0;
+			var @interface = (Interface10<T>)object_0;
+			var num = 0;
+			var class226_ = class226_0;
 			if (list_0 != null)
 			{
 				list_0.Add(class226_0);
@@ -338,7 +338,7 @@ namespace ns14
 		private Class226 method_6(int int_0, Class226 class226_1, List<Class226> list_0)
 		{
 			list_0[list_0.Count - 1] = class226_1;
-			Class226 @class = list_0[list_0.Count - 3];
+			var @class = list_0[list_0.Count - 3];
 			if (int_0 < 0)
 			{
 				@class.class226_0 = class226_1;
@@ -347,9 +347,9 @@ namespace ns14
 			{
 				@class.class226_1 = class226_1;
 			}
-			for (int i = 0; i < list_0.Count - 2; i += 2)
+			for (var i = 0; i < list_0.Count - 2; i += 2)
 			{
-				Class226 expr_3D = list_0[i];
+				var expr_3D = list_0[i];
 				expr_3D.method_3(expr_3D.method_2() + 1u);
 			}
 			if (!@class.method_0())
@@ -366,15 +366,15 @@ namespace ns14
 
 		private Class226 method_7(List<Class226> list_0)
 		{
-			int num = list_0.Count - 1;
-			Class226 @class = list_0[num];
+			var num = list_0.Count - 1;
+			var @class = list_0[num];
 			if (@class.class226_0 != null)
 			{
-				Class226 class2 = smethod_2(@class.class226_0, @class.class226_1, list_0);
+				var class2 = smethod_2(@class.class226_0, @class.class226_1, list_0);
 				@class.vmethod_0(class2);
 				if (class2.class226_0 != null)
 				{
-					Class226 class3 = class2.class226_0;
+					var class3 = class2.class226_0;
 					list_0.Add(null);
 					list_0.Add(class3);
 					class2.vmethod_0(class3);
@@ -382,7 +382,7 @@ namespace ns14
 			}
 			else if (@class.class226_1 != null)
 			{
-				Class226 class226_ = @class.class226_1;
+				var class226_ = @class.class226_1;
 				list_0.Add(null);
 				list_0.Add(class226_);
 				@class.vmethod_0(class226_);
@@ -395,9 +395,9 @@ namespace ns14
 			}
 			list_0[num] = null;
 			method_13((num == 0) ? null : list_0[num - 2], @class, 0u, null);
-			for (int i = 0; i < list_0.Count - 2; i += 2)
+			for (var i = 0; i < list_0.Count - 2; i += 2)
 			{
-				Class226 expr_D2 = list_0[i];
+				var expr_D2 = list_0[i];
 				expr_D2.method_3(expr_D2.method_2() - 1u);
 			}
 			if (@class.method_0())
@@ -418,10 +418,10 @@ namespace ns14
 
 		private void method_8(List<Class226> list_0)
 		{
-			int num = list_0.Count - 1;
+			var num = list_0.Count - 1;
 			while (list_0[num - 3] != null && !list_0[num - 3].method_0())
 			{
-				Class226 arg_34_0 = list_0[num - 2];
+				var arg_34_0 = list_0[num - 2];
 				list_0[num - 3].method_1(true);
 				arg_34_0.method_1(true);
 				num -= 4;
@@ -440,10 +440,10 @@ namespace ns14
 
 		private void method_9(List<Class226> list_0)
 		{
-			int num = list_0.Count - 1;
+			var num = list_0.Count - 1;
 			do
 			{
-				Class226 @class = list_0[num - 1];
+				var @class = list_0[num - 1];
 				if (!@class.method_0())
 				{
 					num = method_12(num, list_0);
@@ -469,12 +469,12 @@ namespace ns14
 
 		private void method_10(int int_0, List<Class226> list_0)
 		{
-			Class226 @class = list_0[int_0];
-			Class226 class2 = list_0[int_0 - 2];
-			Class226 class3 = list_0[int_0 - 4];
-			uint uint_ = class3.method_2();
-			bool flag = class2 == class3.class226_0;
-			bool flag2 = @class == class2.class226_0;
+			var @class = list_0[int_0];
+			var class2 = list_0[int_0 - 2];
+			var class3 = list_0[int_0 - 4];
+			var uint_ = class3.method_2();
+			var flag = class2 == class3.class226_0;
+			var flag2 = @class == class2.class226_0;
 			Class226 class4;
 			if (flag && flag2)
 			{
@@ -516,10 +516,10 @@ namespace ns14
 
 		private void method_11(int int_0, List<Class226> list_0)
 		{
-			Class226 @class = list_0[int_0 - 1];
-			Class226 class2 = list_0[int_0 - 2];
-			uint uint_ = class2.method_2();
-			bool bool_ = class2.method_0();
+			var @class = list_0[int_0 - 1];
+			var class2 = list_0[int_0 - 2];
+			var uint_ = class2.method_2();
+			var bool_ = class2.method_0();
 			Class226 class3;
 			if (class2.class226_1 == @class)
 			{
@@ -532,7 +532,7 @@ namespace ns14
 				}
 				else
 				{
-					Class226 class4 = @class.class226_0;
+					var class4 = @class.class226_0;
 					class2.class226_1 = class4.class226_0;
 					class4.class226_0 = class2;
 					@class.class226_0 = class4.class226_1;
@@ -549,7 +549,7 @@ namespace ns14
 			}
 			else
 			{
-				Class226 class226_ = @class.class226_1;
+				var class226_ = @class.class226_1;
 				class2.class226_0 = class226_.class226_1;
 				class226_.class226_1 = class2;
 				@class.class226_1 = class226_.class226_0;
@@ -568,10 +568,10 @@ namespace ns14
 
 		private int method_12(int int_0, List<Class226> list_0)
 		{
-			Class226 value = list_0[int_0];
-			Class226 @class = list_0[int_0 - 1];
-			Class226 class2 = list_0[int_0 - 2];
-			uint uint_ = class2.method_2();
+			var value = list_0[int_0];
+			var @class = list_0[int_0 - 1];
+			var class2 = list_0[int_0 - 2];
+			var uint_ = class2.method_2();
 			bool flag;
 			if (class2.class226_1 == @class)
 			{
@@ -649,10 +649,10 @@ namespace ns14
 
 		public Struct77 method_15<T>(T gparam_0)
 		{
-			Stack<Class226> stack = new Stack<Class226>();
-			Interface10<T> @interface = (Interface10<T>)object_0;
+			var stack = new Stack<Class226>();
+			var @interface = (Interface10<T>)object_0;
 			int num;
-			for (Class226 @class = class226_0; @class != null; @class = ((num < 0) ? @class.class226_0 : @class.class226_1))
+			for (var @class = class226_0; @class != null; @class = ((num < 0) ? @class.class226_0 : @class.class226_1))
 			{
 				num = @interface.imethod_0(gparam_0, @class);
 				if (num <= 0)

@@ -47,7 +47,7 @@ namespace ns7
 			}
 			int_0 -= int_1;
 			int_1 = 0;
-			int num = byte_1.Length - int_0;
+			var num = byte_1.Length - int_0;
 			num = stream_0.Read(byte_1, int_0, num);
 			if (num <= 0)
 			{
@@ -82,14 +82,14 @@ namespace ns7
 			{
 				return;
 			}
-			int num = int_2 & 7;
+			var num = int_2 & 7;
 			if (num != 0)
 			{
-				int num2 = Math.Min(8 - num, int_5);
+				var num2 = Math.Min(8 - num, int_5);
 				vmethod_10(num2);
 				int_5 -= num2;
 			}
-			int num3 = int_5 / 8;
+			var num3 = int_5 / 8;
 			if (num3 > 0)
 			{
 				vmethod_15(null, num3);
@@ -107,7 +107,7 @@ namespace ns7
 			{
 				method_0();
 			}
-			int result = (((int)byte_1[int_1] & 128 >> int_2) != 0) ? 1 : 0;
+			var result = (((int)byte_1[int_1] & 128 >> int_2) != 0) ? 1 : 0;
 			int_2++;
 			if (int_2 == 8)
 			{
@@ -181,8 +181,8 @@ namespace ns7
 
 		public virtual int vmethod_10(int int_5)
 		{
-			int num = 0;
-			for (int i = 0; i < int_5; i++)
+			var num = 0;
+			for (var i = 0; i < int_5; i++)
 			{
 				num = vmethod_7(num);
 			}
@@ -191,8 +191,8 @@ namespace ns7
 
 		public virtual int vmethod_11(int int_5)
 		{
-			int num = 0;
-			for (int i = 0; i < int_5; i++)
+			var num = 0;
+			for (var i = 0; i < int_5; i++)
 			{
 				num = vmethod_8(num, i);
 			}
@@ -205,12 +205,12 @@ namespace ns7
 			{
 				return 0;
 			}
-			int num = 0;
-			for (int i = 0; i < int_5; i++)
+			var num = 0;
+			for (var i = 0; i < int_5; i++)
 			{
 				num = vmethod_7(num);
 			}
-			int num2 = 32 - int_5;
+			var num2 = 32 - int_5;
 			int num3;
 			if (num2 != 0)
 			{
@@ -227,8 +227,8 @@ namespace ns7
 
 		public virtual long vmethod_13(int int_5)
 		{
-			long num = 0L;
-			for (int i = 0; i < int_5; i++)
+			var num = 0L;
+			for (var i = 0; i < int_5; i++)
 			{
 				num = vmethod_9(num);
 			}
@@ -237,8 +237,8 @@ namespace ns7
 
 		public virtual int vmethod_14()
 		{
-			int num = vmethod_10(8);
-			int num2 = vmethod_10(8);
+			var num = vmethod_10(8);
+			var num2 = vmethod_10(8);
 			num |= num2 << 8;
 			num2 = vmethod_10(8);
 			num |= num2 << 16;
@@ -248,10 +248,10 @@ namespace ns7
 
 		public virtual void vmethod_15(byte[] byte_2, int int_5)
 		{
-			int num = int_5;
+			var num = int_5;
 			while (int_5 > 0)
 			{
-				int num2 = Math.Min(int_5, int_0 - int_1);
+				var num2 = Math.Min(int_5, int_0 - int_1);
 				if (num2 == 0)
 				{
 					method_0();
@@ -272,10 +272,10 @@ namespace ns7
 
 		public virtual int vmethod_16()
 		{
-			int num = 0;
+			var num = 0;
 			while (true)
 			{
-				int num2 = vmethod_6();
+				var num2 = vmethod_6();
 				if (num2 != 0)
 				{
 					break;
@@ -287,22 +287,22 @@ namespace ns7
 
 		public virtual void vmethod_17(int[] int_5, int int_6, int int_7, int int_8)
 		{
-			int i = 0;
-			int num = 0;
-			int num2 = 0;
-			int num3 = 0;
-			int num4 = 0;
-			int num5 = 0;
+			var i = 0;
+			var num = 0;
+			var num2 = 0;
+			var num3 = 0;
+			var num4 = 0;
+			var num5 = 0;
 			if (int_7 == 0)
 			{
 				return;
 			}
-			int num6 = int_1;
+			var num6 = int_1;
 			long num7 = int_1 * 8 + int_2;
 			if (int_2 > 0)
 			{
 				byte b2;
-				byte b = b2 = byte_1[num6];
+				var b = b2 = byte_1[num6];
 				num = int_2;
 				b = (byte)(b << (byte)num);
 				int num9;
@@ -314,7 +314,7 @@ namespace ns7
 						{
 							goto IL_13D;
 						}
-						int num8 = 0;
+						var num8 = 0;
 						while ((b & byte_0) == 0)
 						{
 							b = (byte)(b << 1);
@@ -405,7 +405,7 @@ namespace ns7
 				while (num6 < int_0 && i < int_7)
 				{
 					byte b2;
-					byte b = b2 = byte_1[num6];
+					var b = b2 = byte_1[num6];
 					num = 0;
 					int num10;
 					while (true)
@@ -416,7 +416,7 @@ namespace ns7
 							{
 								goto IL_2EA;
 							}
-							int num8 = 0;
+							var num8 = 0;
 							while ((b & byte_0) == 0)
 							{
 								b = (byte)(b << 1);
@@ -522,7 +522,7 @@ namespace ns7
 
 		public virtual int vmethod_18(Class152 class152_0)
 		{
-			int num = vmethod_10(8);
+			var num = vmethod_10(8);
 			if (class152_0 != null)
 			{
 				class152_0.vmethod_1((byte)num);
@@ -584,7 +584,7 @@ namespace ns7
 
 		public virtual long vmethod_19(Class152 class152_0)
 		{
-			int num = vmethod_10(8);
+			var num = vmethod_10(8);
 			if (class152_0 != null)
 			{
 				class152_0.vmethod_1((byte)num);

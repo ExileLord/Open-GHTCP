@@ -6,7 +6,7 @@ namespace ns2
 	{
 		public override int vmethod_3(OGGClass6 class71_0, object object_0, float[][] float_0, int[] int_1, int int_2)
 		{
-			int num = 0;
+			var num = 0;
 			while (num < int_2 && int_1[num] == 0)
 			{
 				num++;

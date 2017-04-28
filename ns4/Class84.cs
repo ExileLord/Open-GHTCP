@@ -27,7 +27,7 @@ namespace ns4
 			int_2 = int_1 << 2;
 			int_0 = new int[int_1];
 			float_0 = new float[int_1][];
-			for (int i = 0; i < int_1; i++)
+			for (var i = 0; i < int_1; i++)
 			{
 				float_0[i] = new float[1152];
 			}
@@ -37,21 +37,21 @@ namespace ns4
 		public int method_1(float[] float_1, int int_5, int int_6)
 		{
 			int_6 <<= 2;
-			int num = method_0();
-			int num2 = (int_6 > num) ? num : (int_6 - int_6 % int_2);
+			var num = method_0();
+			var num2 = (int_6 > num) ? num : (int_6 - int_6 % int_2);
 			if (int_1 == 1)
 			{
 				Buffer.BlockCopy(float_0[0], int_3, float_1, int_5 << 2, num2);
 			}
 			else
 			{
-				int num3 = int_3 / int_2;
-				int num4 = num2 / int_2 + num3;
-				for (int i = 0; i < int_1; i++)
+				var num3 = int_3 / int_2;
+				var num4 = num2 / int_2 + num3;
+				for (var i = 0; i < int_1; i++)
 				{
-					float[] array = float_0[i];
-					int j = num3;
-					int num5 = int_5 + i;
+					var array = float_0[i];
+					var j = num3;
+					var num5 = int_5 + i;
 					while (j < num4)
 					{
 						float_1[num5] = array[j];
@@ -66,15 +66,15 @@ namespace ns4
 
 		public int method_2(byte[] byte_0, int int_5, int int_6)
 		{
-			int num = method_0();
-			int num2 = (int_6 > num) ? num : int_6;
+			var num = method_0();
+			var num2 = (int_6 > num) ? num : int_6;
 			if (int_1 == 1)
 			{
 				Buffer.BlockCopy(float_0[0], int_3, byte_0, int_5, num2);
 			}
 			else
 			{
-				float[] array = new float[num2 >> 2];
+				var array = new float[num2 >> 2];
 				method_1(array, 0, array.Length);
 				Buffer.BlockCopy(array, 0, byte_0, int_5, num2);
 			}
@@ -86,18 +86,18 @@ namespace ns4
 		{
 			int_5 <<= 2;
 			int_6 <<= 2;
-			int num = method_0();
-			int num2 = (int_6 > num) ? num : (int_6 - int_6 % int_2);
+			var num = method_0();
+			var num2 = (int_6 > num) ? num : (int_6 - int_6 % int_2);
 			if (int_1 == 1)
 			{
 				Buffer.BlockCopy(float_0[0], int_3, float_1[0], int_5, num2);
 			}
 			else
 			{
-				int srcOffset = int_3 / int_1;
-				int count = num2 / int_1;
+				var srcOffset = int_3 / int_1;
+				var count = num2 / int_1;
 				int_5 /= int_1;
-				for (int i = 0; i < float_1.Length; i++)
+				for (var i = 0; i < float_1.Length; i++)
 				{
 					Buffer.BlockCopy(float_0[i], srcOffset, float_1[i], int_5, count);
 				}

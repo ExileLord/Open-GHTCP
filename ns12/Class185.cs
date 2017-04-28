@@ -11,8 +11,8 @@ namespace ns12
 
 		static Class185()
 		{
-			char[] invalidPathChars = Path.GetInvalidPathChars();
-			int num = invalidPathChars.Length + 2;
+			var invalidPathChars = Path.GetInvalidPathChars();
+			var num = invalidPathChars.Length + 2;
 			char_1 = new char[num];
 			Array.Copy(invalidPathChars, 0, char_1, 0, invalidPathChars.Length);
 			char_1[num - 1] = '*';

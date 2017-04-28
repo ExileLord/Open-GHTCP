@@ -28,10 +28,10 @@ namespace ns14
 
 		public virtual bool vmethod_1(ICollection<T> icollection_0)
 		{
-			bool result = false;
+			var result = false;
 			if (icollection_0 != null)
 			{
-				foreach (T current in icollection_0)
+				foreach (var current in icollection_0)
 				{
 					result = vmethod_0(current);
 				}

@@ -36,10 +36,10 @@ namespace ns15
 		{
 			byte[] byte_;
 			ZIPManager.smethod_3(saveLocation, out byte_, "songs.info", "SGH9ZIP2PASS4MXKR");
-			zzGenericNode1 @class = new zzGenericNode1("songs", KeyGenerator.smethod_8(byte_, "SNG4AES4KEY9MXKR"));
+			var @class = new zzGenericNode1("songs", KeyGenerator.smethod_8(byte_, "SNG4AES4KEY9MXKR"));
 			foreach (StructurePointerNode class302_ in @class.Nodes)
 			{
-				GH3Song gH3Song = new GH3Song(class302_);
+				var gH3Song = new GH3Song(class302_);
 				gH3Song.editable = true;
 				gh3SongList.method_0(gH3Song, string_0 != null);
 			}
@@ -47,11 +47,11 @@ namespace ns15
 			setlistToExport.method_1(new GH3Setlist((StructureHeaderNode)new zzGenericNode1("setlist", KeyGenerator.smethod_8(byte_, "SET4AES4KEY9MXKR")).Nodes[0], gh3SongList));
 			if (string_0 != null)
 			{
-				List<string> list = new List<string>();
-				List<string> list2 = new List<string>();
-				foreach (GH3Tier current in setlistToExport.tiers)
+				var list = new List<string>();
+				var list2 = new List<string>();
+				foreach (var current in setlistToExport.tiers)
 				{
-					foreach (GH3Song current2 in current.songs)
+					foreach (var current2 in current.songs)
 					{
 						if (current2.editable)
 						{
@@ -70,14 +70,14 @@ namespace ns15
 
 		public void method_1()
 		{
-			List<Stream> fileStreamList = new List<Stream>();
+			var fileStreamList = new List<Stream>();
 			Stream stream = new MemoryStream();
 			KeyGenerator.smethod_1(new zzGenericNode1("setlist", setlistToExport.method_6()).method_8(), stream, "SET4AES4KEY9MXKR");
-			List<string> fileNameList = new List<string>();
-			List<StructurePointerNode> list3 = new List<StructurePointerNode>();
-			foreach (GH3Tier current in setlistToExport.tiers)
+			var fileNameList = new List<string>();
+			var list3 = new List<StructurePointerNode>();
+			foreach (var current in setlistToExport.tiers)
 			{
-				foreach (GH3Song current2 in current.songs)
+				foreach (var current2 in current.songs)
 				{
 					if (current2.editable)
 					{

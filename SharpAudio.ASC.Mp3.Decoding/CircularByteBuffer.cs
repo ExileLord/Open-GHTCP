@@ -84,8 +84,8 @@ namespace SharpAudio.ASC.Mp3.Decoding
 
 		public override string ToString()
 		{
-			string text = "";
-			for (int i = 0; i < dataArray.Length; i++)
+			var text = "";
+			for (var i = 0; i < dataArray.Length; i++)
 			{
 				text = text + dataArray[i] + " ";
 			}

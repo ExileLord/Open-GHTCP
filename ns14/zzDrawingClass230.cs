@@ -56,7 +56,7 @@ namespace ns14
 			Point point4;
 			if (listBox_0.Sorted)
 			{
-				Rectangle r = listBox_0.ClientRectangle;
+				var r = listBox_0.ClientRectangle;
 				r = listBox_0.RectangleToScreen(r);
 				point = new Point(r.Left, r.Top);
 				point2 = new Point(r.Left, r.Bottom);
@@ -90,7 +90,7 @@ namespace ns14
 				point3 = new Point(r.Left, r.Top + 1);
 				point4 = new Point(r.Right, r.Top + 1);
 			}
-			IntPtr dC = GDI.GetDC(IntPtr.Zero);
+			var dC = GDI.GetDC(IntPtr.Zero);
 			GDI.SetROP2(dC, 6);
 			GDI.MoveToEx(dC, point.X, point.Y, IntPtr.Zero);
 			GDI.LineTo(dC, point2.X, point2.Y);

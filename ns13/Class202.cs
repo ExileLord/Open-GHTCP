@@ -77,8 +77,8 @@ namespace ns13
 			int_1 = byte_0.Length;
 			int_2 = 0;
 			int_0 = 0;
-			int num = int_1;
-			int num2 = int_3 - 1;
+			var num = int_1;
+			var num2 = int_3 - 1;
 			while (num2 != int_3 && int_0 < byte_0.Length - 3)
 			{
 				num2 = method_20();
@@ -103,12 +103,12 @@ namespace ns13
 			{
 				throw new ArgumentOutOfRangeException("headerID");
 			}
-			int num = (byte_1 == null) ? 0 : byte_1.Length;
+			var num = (byte_1 == null) ? 0 : byte_1.Length;
 			if (num > 65535)
 			{
 				throw new ArgumentOutOfRangeException("fieldData", "exceeds maximum length");
 			}
-			int num2 = byte_0.Length + num + 4;
+			var num2 = byte_0.Length + num + 4;
 			if (method_6(int_3))
 			{
 				num2 -= method_3() + 4;
@@ -118,9 +118,9 @@ namespace ns13
 				throw new ZipException("Data exceeds maximum length");
 			}
 			method_13(int_3);
-			byte[] array = new byte[num2];
+			var array = new byte[num2];
 			byte_0.CopyTo(array, 0);
-			int index = byte_0.Length;
+			var index = byte_0.Length;
 			byte_0 = array;
 			method_21(ref index, int_3);
 			method_21(ref index, num);
@@ -137,7 +137,7 @@ namespace ns13
 
 		public void method_9(int int_3)
 		{
-			byte[] byte_ = memoryStream_0.ToArray();
+			var byte_ = memoryStream_0.ToArray();
 			memoryStream_0 = null;
 			method_7(int_3, byte_);
 		}
@@ -162,14 +162,14 @@ namespace ns13
 
 		public bool method_13(int int_3)
 		{
-			bool result = false;
+			var result = false;
 			if (method_6(int_3))
 			{
 				result = true;
-				int num = int_1 - 4;
-				byte[] destinationArray = new byte[byte_0.Length - (method_3() + 4)];
+				var num = int_1 - 4;
+				var destinationArray = new byte[byte_0.Length - (method_3() + 4)];
 				Array.Copy(byte_0, 0, destinationArray, 0, num);
-				int num2 = num + method_3() + 4;
+				var num2 = num + method_3() + 4;
 				Array.Copy(byte_0, num2, destinationArray, num, byte_0.Length - num2);
 				byte_0 = destinationArray;
 			}
@@ -185,7 +185,7 @@ namespace ns13
 		public int method_15()
 		{
 			method_19(4);
-			int result = byte_0[int_0] + (byte_0[int_0 + 1] << 8) + (byte_0[int_0 + 2] << 16) + (byte_0[int_0 + 3] << 24);
+			var result = byte_0[int_0] + (byte_0[int_0 + 1] << 8) + (byte_0[int_0 + 2] << 16) + (byte_0[int_0 + 3] << 24);
 			int_0 += 4;
 			return result;
 		}
@@ -193,14 +193,14 @@ namespace ns13
 		public int method_16()
 		{
 			method_19(2);
-			int result = byte_0[int_0] + (byte_0[int_0 + 1] << 8);
+			var result = byte_0[int_0] + (byte_0[int_0 + 1] << 8);
 			int_0 += 2;
 			return result;
 		}
 
 		public int method_17()
 		{
-			int result = -1;
+			var result = -1;
 			if (int_0 < byte_0.Length && int_1 + int_2 > int_0)
 			{
 				result = byte_0[int_0];
@@ -233,7 +233,7 @@ namespace ns13
 			{
 				throw new ZipException("End of extra data");
 			}
-			int result = byte_0[int_0] + (byte_0[int_0 + 1] << 8);
+			var result = byte_0[int_0] + (byte_0[int_0 + 1] << 8);
 			int_0 += 2;
 			return result;
 		}

@@ -18,7 +18,7 @@ namespace ns14
 		public ViewLog()
 		{
 			InitializeComponent();
-			foreach (string current in Class216.sortedDictionary_0.Keys)
+			foreach (var current in Class216.sortedDictionary_0.Keys)
 			{
 				LogListBox.Items.Add(current);
 			}

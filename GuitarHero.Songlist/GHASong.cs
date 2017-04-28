@@ -44,7 +44,7 @@ namespace GuitarHero.Songlist
 			base.vmethod_0(interface16_0);
 			if (interface16_0 is GHASong)
 			{
-				GHASong gHASong = interface16_0 as GHASong;
+				var gHASong = interface16_0 as GHASong;
 				gHASong.covered_by = covered_by;
 				gHASong.band = band;
 				gHASong.guitarist_checksum = guitarist_checksum;
@@ -71,8 +71,8 @@ namespace GuitarHero.Songlist
 
 		public override StructurePointerNode vmethod_5()
 		{
-			StructurePointerNode @class = base.vmethod_5();
-			StructureHeaderNode class2 = @class.method_8();
+			var @class = base.vmethod_5();
+			var class2 = @class.method_8();
 			if (!covered_by.Equals(""))
 			{
 				class2.method_3(new UnicodeStructureNode("covered_by", covered_by));

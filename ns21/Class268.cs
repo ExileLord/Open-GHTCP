@@ -32,7 +32,7 @@ namespace ns21
 
 		public override void vmethod_14(Stream26 stream26_0)
 		{
-			byte[] array = new byte[4];
+			var array = new byte[4];
             array[1] = (vmethod_7() ? (byte)32 : (byte)4);
 			array[2] = vmethod_16();
 			stream26_0.WriteByteArray(array, false);
@@ -40,19 +40,19 @@ namespace ns21
 			stream26_0.WriteInt(int_1);
 			if (Nodes.Count != 0)
 			{
-				IEnumerator enumerator = Nodes.GetEnumerator();
+				var enumerator = Nodes.GetEnumerator();
 				try
 				{
 					while (enumerator.MoveNext())
 					{
-						AbstractTreeNode2 @class = (AbstractTreeNode2)enumerator.Current;
+						var @class = (AbstractTreeNode2)enumerator.Current;
 						stream26_0.WriteByteArray(@class.vmethod_8());
 					}
 					goto IL_97;
 				}
 				finally
 				{
-					IDisposable disposable = enumerator as IDisposable;
+					var disposable = enumerator as IDisposable;
 					if (disposable != null)
 					{
 						disposable.Dispose();

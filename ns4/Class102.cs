@@ -27,8 +27,8 @@ namespace ns4
 		public int method_1(int int_5)
 		{
 			int_2 += int_5;
-			int num = 0;
-			int num2 = int_3;
+			var num = 0;
+			var num2 = int_3;
 			if (num2 + int_5 < 32768)
 			{
 				while (int_5-- > 0)
@@ -53,14 +53,14 @@ namespace ns4
 		public int method_2()
 		{
 			int_2++;
-			int result = int_4[int_3];
+			var result = int_4[int_3];
 			int_3 = (int_3 + 1 & int_0);
 			return result;
 		}
 
 		public void method_3(int int_5)
 		{
-			int num = int_1;
+			var num = int_1;
 			int_4[num++] = (int_5 & 128);
 			int_4[num++] = (int_5 & 64);
 			int_4[num++] = (int_5 & 32);
@@ -89,7 +89,7 @@ namespace ns4
 
 		public void method_5(int int_5)
 		{
-			int num = int_5 << 3;
+			var num = int_5 << 3;
 			int_2 -= num;
 			int_3 -= num;
 			if (int_3 < 0)

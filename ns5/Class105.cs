@@ -14,9 +14,9 @@ namespace ns5
 
 		public float[] method_0()
 		{
-			float[] array = new float[num_1];
-			int i = 0;
-			int num = num_1;
+			var array = new float[num_1];
+			var i = 0;
+			var num = num_1;
 			while (i < num)
 			{
 				array[i] = smethod_1(float_1[i]);
@@ -28,8 +28,8 @@ namespace ns5
 		public void method_1(float[] float_2)
 		{
 			method_3();
-			int num = (float_2.Length > num_1) ? num_1 : float_2.Length;
-			for (int i = 0; i < num; i++)
+			var num = (float_2.Length > num_1) ? num_1 : float_2.Length;
+			for (var i = 0; i < num; i++)
 			{
 				float_1[i] = smethod_0(float_2[i]);
 			}
@@ -45,7 +45,7 @@ namespace ns5
 
 		public void method_3()
 		{
-			for (int i = 0; i < num_1; i++)
+			for (var i = 0; i < num_1; i++)
 			{
 				float_1[i] = 0f;
 			}

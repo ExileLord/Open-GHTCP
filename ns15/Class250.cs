@@ -24,7 +24,7 @@ namespace ns15
 
 		public override void vmethod_0()
 		{
-			using (zzPakNode2 @class = new zzPakNode2())
+			using (var @class = new zzPakNode2())
 			{
 				@class.method_0("songs\\" + string_0 + ".mid.qb", class362_0.method_4(string_0));
 				@class.method_16(string_1 + "songs\\" + string_0 + "_song.pak.xen");

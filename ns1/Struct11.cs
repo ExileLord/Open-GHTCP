@@ -16,8 +16,8 @@ namespace ns1
 
 		public Struct11 method_0(Struct11 struct11_0)
 		{
-			int num = Math.Max(int_0, struct11_0.int_0);
-			int num2 = Math.Min(int_1, struct11_0.int_1);
+			var num = Math.Max(int_0, struct11_0.int_0);
+			var num2 = Math.Min(int_1, struct11_0.int_1);
 			if (num2 > num)
 			{
 				return new Struct11(num, num2);

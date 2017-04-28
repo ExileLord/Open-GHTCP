@@ -31,8 +31,8 @@ namespace ns5
 
 		public int method_1(byte[] byte_1, int int_2, int int_3)
 		{
-			int num = 0;
-			bool flag = true;
+			var num = 0;
+			var flag = true;
 			while (num < int_3 && flag)
 			{
 				if (int_1 > 0)
@@ -43,10 +43,10 @@ namespace ns5
 				}
 				else
 				{
-					int num2 = int_3 - num;
-					int num3 = _stream.Read(_buffer, 0, num2);
+					var num2 = int_3 - num;
+					var num3 = _stream.Read(_buffer, 0, num2);
 					flag = (num3 >= num2);
-					for (int i = 0; i < num3; i++)
+					for (var i = 0; i < num3; i++)
 					{
 						_circBuffer.method_0(_buffer[i]);
 						byte_1[int_2 + num + i] = _buffer[i];

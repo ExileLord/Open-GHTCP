@@ -11,7 +11,7 @@ namespace ns19
 			{
 				stream26_0.ReadInt()
 			};
-			byte byte_ = byte_0;
+			var byte_ = byte_0;
 			switch (byte_)
 			{
 			case 1:
@@ -55,7 +55,7 @@ namespace ns19
 		{
 			stream26_0.WriteByte2(byte_0);
 			stream26_0.WriteInt(int_0[0]);
-			byte byte_ = byte_0;
+			var byte_ = byte_0;
 			switch (byte_)
 			{
 			case 1:

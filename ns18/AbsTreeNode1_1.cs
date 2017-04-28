@@ -27,22 +27,22 @@ namespace ns18
 
 		public List<T> method_8<T>()
 		{
-			List<T> list = new List<T>();
+			var list = new List<T>();
 			if (Nodes[0] is AbstractTreeNode1)
 			{
-				IEnumerator enumerator = Nodes.GetEnumerator();
+				var enumerator = Nodes.GetEnumerator();
 				try
 				{
 					while (enumerator.MoveNext())
 					{
-						T item = (T)enumerator.Current;
+						var item = (T)enumerator.Current;
 						list.Add(item);
 					}
 					return list;
 				}
 				finally
 				{
-					IDisposable disposable = enumerator as IDisposable;
+					var disposable = enumerator as IDisposable;
 					if (disposable != null)
 					{
 						disposable.Dispose();

@@ -77,14 +77,14 @@ namespace ns6
 
 		private static string smethod_0(BinaryReader binaryReader_0)
 		{
-			byte[] array = new byte[4];
+			var array = new byte[4];
 			binaryReader_0.Read(array, 0, array.Length);
 			return Encoding.UTF8.GetString(array);
 		}
 
 		private void method_0()
 		{
-			BinaryReader binaryReader = new BinaryReader(fileStream, Encoding.UTF8);
+			var binaryReader = new BinaryReader(fileStream, Encoding.UTF8);
 			if (smethod_0(binaryReader) != "RIFF")
 			{
 				throw new Exception("Invalid file format (No Tag RIFF)");
@@ -98,7 +98,7 @@ namespace ns6
 			{
 				throw new Exception("Invalid file format (No Tag fmt)");
 			}
-			int num = binaryReader.ReadInt32();
+			var num = binaryReader.ReadInt32();
 			if (num < 16)
 			{
 				throw new Exception("Invalid file format (Size of fmt different of 16)");

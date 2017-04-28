@@ -53,9 +53,9 @@ namespace ns19
 			{
 				_fileStream = new Stream26(File.Open(_fileName, FileMode.Open, FileAccess.Read, FileShare.Read), true);
 			}
-			int num = 1;
-			ushort num2 = _fileStream.ReadUShort();
-			int num3 = 0;
+			var num = 1;
+			var num2 = _fileStream.ReadUShort();
+			var num3 = 0;
 			if (num2 == 0xFACE) // Hey man he was in my face
 			{
 				_unkFlag0 = false;
@@ -86,7 +86,7 @@ namespace ns19
 
 		public void ReplaceTexture(int index, Image img, IMGPixelFormat format)
 		{
-			TextureMetadata texMetaData = TextureList[index];
+			var texMetaData = TextureList[index];
 			texMetaData.Height = (short)img.Height;
 			texMetaData.Width = (short)img.Width;
 			texMetaData.Data = new DDSTexture(img, texMetaData.MipMapCount, format).ToByteArray();
@@ -128,9 +128,9 @@ namespace ns19
 
 		public Stream26 ToStream()
 		{
-			Stream26 stream = new Stream26(true);
-			int textureCount = TextureCount();
-			int textureMetaDataOffset = 0;
+			var stream = new Stream26(true);
+			var textureCount = TextureCount();
+			var textureMetaDataOffset = 0;
 			if (!_unkFlag0)
 			{
 				stream.WriteUInt(0xFACECAA7); //meow
@@ -140,7 +140,7 @@ namespace ns19
 				stream.WriteInt(0);
 				stream.WriteInt(-1);
 
-				int num3 = 2;
+				var num3 = 2;
 				while (textureCount / Math.Pow(2.0, num3 - 2) > 1.0)
 				{
 					num3++;
@@ -156,10 +156,10 @@ namespace ns19
 				stream.Position = textureMetaDataOffset;
 			}
 			stream.WriteNBytes(0, 40 * textureCount);
-			for (int i = 0; i < textureCount; i++)
+			for (var i = 0; i < textureCount; i++)
 			{
-				TextureMetadata tex = TextureList[i];
-				byte[] array = GetRawTextureData(i);
+				var tex = TextureList[i];
+				var array = GetRawTextureData(i);
 				stream.WriteShortAt(textureMetaDataOffset + 40 * i, 2600);
 				stream.WriteShort(tex.unkFlags);
 				stream.WriteInt(tex.Key);
@@ -182,7 +182,7 @@ namespace ns19
 
 		public void WriteEverythingToFile(string fileName)
 		{
-			Stream26 stream = ToStream();
+			var stream = ToStream();
 			if (_fileStream != null && _fileName == fileName)
 			{
 				_fileStream.Close();
@@ -206,8 +206,8 @@ namespace ns19
 
         public int CloneTextureElement(int index)
         {
-            TextureMetadata original = TextureList[index];
-            TextureMetadata newMeta = new TextureMetadata(original.unkFlags, original.Key, original.Width, original.Height, original.unkShort3, original.MipMapCount, original.unkShort4, original.StartIndex, original.Length);
+            var original = TextureList[index];
+            var newMeta = new TextureMetadata(original.unkFlags, original.Key, original.Width, original.Height, original.unkShort3, original.MipMapCount, original.unkShort4, original.StartIndex, original.Length);
             TextureList.Add(newMeta);
             return TextureList.Count-1;
         }

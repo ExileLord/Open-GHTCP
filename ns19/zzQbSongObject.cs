@@ -21,7 +21,7 @@ namespace ns19
 		public zzQbSongObject(string newFileName, byte[] newData)
 		{
 			data = newData;
-			List<byte> list = new List<byte>(data);
+			var list = new List<byte>(data);
 			fileName = newFileName;
 			string_1 = new string[KeyGenerator.smethod_24(list.GetRange(0, 4).ToArray(), true)];
 			int_0 = KeyGenerator.smethod_24(list.GetRange(4, 4).ToArray(), true);
@@ -34,17 +34,17 @@ namespace ns19
 				fileName + "_coop_guitar",
 				fileName + "_coop_rhythm"
 			};
-			List<int> list2 = new List<int>();
-			string[] array2 = array;
-			for (int i = 0; i < array2.Length; i++)
+			var list2 = new List<int>();
+			var array2 = array;
+			for (var i = 0; i < array2.Length; i++)
 			{
-				string text = array2[i];
+				var text = array2[i];
 				list2.Add(KeyGenerator.GetQbKey(text, true));
 			}
-			int num = 8;
-			for (int j = 0; j < string_1.Length; j++)
+			var num = 8;
+			for (var j = 0; j < string_1.Length; j++)
 			{
-				int num2 = KeyGenerator.smethod_24(list.GetRange(num, 4).ToArray(), true);
+				var num2 = KeyGenerator.smethod_24(list.GetRange(num, 4).ToArray(), true);
 				if (!list2.Contains(num2))
 				{
 					throw new Exception(string.Concat("Dat File Corrupted: unperdictable CRC value (", num2, ") for song \"", fileName, "\""));
@@ -56,7 +56,7 @@ namespace ns19
 
 		public void method_0(string string_2)
 		{
-			for (int i = 0; i < string_1.Length; i++)
+			for (var i = 0; i < string_1.Length; i++)
 			{
 				string_1[i] = string_1[i].Replace(fileName, string_2);
 			}
@@ -74,14 +74,14 @@ namespace ns19
 
 		public void method_1()
 		{
-			List<byte> list = new List<byte>();
+			var list = new List<byte>();
 			list.AddRange(KeyGenerator.smethod_32(string_1.Length, true));
 			list.AddRange(KeyGenerator.smethod_32(int_0, true));
-			for (int i = 0; i < string_1.Length; i++)
+			for (var i = 0; i < string_1.Length; i++)
 			{
 				list.AddRange(KeyGenerator.smethod_32(KeyGenerator.GetQbKey(string_1[i], true), true));
 				list.AddRange(KeyGenerator.smethod_32(i, true));
-				for (int j = 0; j < 12; j++)
+				for (var j = 0; j < 12; j++)
 				{
 					list.Add(0);
 				}

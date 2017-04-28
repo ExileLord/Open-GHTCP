@@ -24,7 +24,7 @@ namespace ns6
 			if (int_0 > 0)
 			{
 				class147_0 = new Class147[int_0];
-				for (int i = 0; i < int_0; i++)
+				for (var i = 0; i < int_0; i++)
 				{
 					class147_0[i] = new Class147(class144_0);
 				}

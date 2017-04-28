@@ -117,21 +117,21 @@ namespace ns4
 
 		public static int smethod_1(Class103 class103_1, int[] int_25, int[] int_26, int[] int_27, int[] int_28, Class102 class102_0)
 		{
-			int num = 0;
-			int result = 1;
-			int num2 = -2147483648;
+			var num = 0;
+			var result = 1;
+			var num2 = -2147483648;
 			if (class103_1.int_3 == null)
 			{
 				return 2;
 			}
 			if (class103_1.int_4 == 0)
 			{
-				int arg_26_1 = 0;
+				var arg_26_1 = 0;
 				int_26[0] = 0;
 				int_25[arg_26_1] = 0;
 				return 0;
 			}
-            bool ILE4 = false;
+            var ILE4 = false;
             for (; ; )
             { 
                 while (ILE4 || class103_1.int_3[num, 0] != 0)
@@ -205,7 +205,7 @@ namespace ns4
                         return result;
                     }
                 }
-                int num3 = class103_1.int_3[num, 1];
+                var num3 = class103_1.int_3[num, 1];
                 int_25[0] = num3 >> 4;
                 int_26[0] = (class103_1.int_3[num, 1] & 15);
                 result = 0;
@@ -217,7 +217,7 @@ namespace ns4
 		static Class103()
 		{
 			// Note: this type is marked as 'beforefieldinit'.
-			int[,] array = new int[1, 2];
+			var array = new int[1, 2];
 			int_5 = array;
 			int_6 = new[,]
 			{
@@ -392,7 +392,7 @@ namespace ns4
 					34
 				}
 			};
-			int[,] array2 = new int[1, 2];
+			var array2 = new int[1, 2];
 			int_9 = array2;
 			int_10 = new[,]
 			{
@@ -5089,7 +5089,7 @@ namespace ns4
 					254
 				}
 			};
-			int[,] array3 = new int[1, 2];
+			var array3 = new int[1, 2];
 			int_19 = array3;
 			int_20 = new[,]
 			{

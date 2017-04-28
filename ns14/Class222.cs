@@ -80,8 +80,8 @@ namespace ns14
 
 			public override void vmethod_0(Class225.Class226 class226_2)
 			{
-				Class227 @class = (Class227)class226_2;
-				T t = gparam_0;
+				var @class = (Class227)class226_2;
+				var t = gparam_0;
 				gparam_0 = @class.gparam_0;
 				@class.gparam_0 = t;
 			}
@@ -177,7 +177,7 @@ namespace ns14
 			{
 				throw new ArgumentNullException("collection");
 			}
-			foreach (T current in ienumerable_0)
+			foreach (var current in ienumerable_0)
 			{
 				vmethod_1(current);
 			}
@@ -216,7 +216,7 @@ namespace ns14
 
 		public virtual bool vmethod_2(T gparam_0)
 		{
-			Class227 @class = new Class227(gparam_0);
+			var @class = new Class227(gparam_0);
 			return class225_0.method_1(gparam_0, @class) == @class;
 		}
 
@@ -258,11 +258,11 @@ namespace ns14
 			{
 				throw new ArgumentException("destination array cannot hold the requested elements");
 			}
-			using (Class225.Struct77 @struct = class225_0.method_14())
+			using (var @struct = class225_0.method_14())
 			{
 				while (@struct.MoveNext())
 				{
-					Class227 @class = (Class227)@struct.Current;
+					var @class = (Class227)@struct.Current;
 					if (int_1-- == 0)
 					{
 						break;
@@ -293,11 +293,11 @@ namespace ns14
 				{
 					throw new ArgumentException();
 				}
-				using (Class225.Struct77 @struct = class225_0.method_14())
+				using (var @struct = class225_0.method_14())
 				{
 					while (@struct.MoveNext())
 					{
-						Class227 @class = (Class227)@struct.Current;
+						var @class = (Class227)@struct.Current;
 						array.SetValue(@class.gparam_0, index++);
 					}
 					return;

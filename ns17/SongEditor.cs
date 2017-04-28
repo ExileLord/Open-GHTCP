@@ -29,12 +29,12 @@ namespace ns17
 
 			public void LoadAudioData(object object_0)
 			{
-				using (GenericAudioStream stream = AudioManager.getAudioStream(fileName))
+				using (var stream = AudioManager.getAudioStream(fileName))
 				{
                     songEditor_0.AudioData = new sbyte[stream.vmethod_1().uint_0 * (ulong)stream.vmethod_1().method_0()];
-					float[] array = new float[4096];
+					var array = new float[4096];
 					int num;
-					for (int i = 0; i < songEditor_0.AudioData.Length; i += num)
+					for (var i = 0; i < songEditor_0.AudioData.Length; i += num)
 					{
 						if (i + array.Length < songEditor_0.AudioData.Length)
 						{
@@ -44,7 +44,7 @@ namespace ns17
 						{
 							num = stream.vmethod_4(array, 0, songEditor_0.AudioData.Length - i);
 						}
-						for (int j = 0; j < num; j++)
+						for (var j = 0; j < num; j++)
 						{
 							songEditor_0.AudioData[i + j] = Class11.smethod_19(array[j]);
 						}
@@ -206,7 +206,7 @@ namespace ns17
             {
                 return;
             }
-            GH3Song ghSong = Chart.gh3Song_0;
+            var ghSong = Chart.gh3Song_0;
 			Chart.gh3Song_0.gem_offset = offset;
 			ghSong.fretbar_offset = offset;
 			RedrawFretboard();
@@ -282,7 +282,7 @@ namespace ns17
             FretbarWidth = size_1.Width / (decimal)Chart.FretbarList[1];
             SetFretboardAngle(15.0);
 			Difficulty = "expert";
-			for (int i = 0; i < NoteBrush.Length; i++)
+			for (var i = 0; i < NoteBrush.Length; i++)
 			{
 				pen_4[i] = new Pen(NoteBrush[i], size_1.Height / 24f);
 			}
@@ -291,14 +291,14 @@ namespace ns17
 
         public void LoadAudio(string fileName)
         {
-            SongData songData = new SongData();
+            var songData = new SongData();
             songData.fileName = fileName;
             songData.songEditor_0 = this;
             if (Audio != null)
             {
                 Audio.Dispose();
             }
-            GenericAudioStream audioStream = AudioManager.getAudioStream(songData.fileName);
+            var audioStream = AudioManager.getAudioStream(songData.fileName);
             if (audioStream == null)
             {
                 return;
@@ -375,7 +375,7 @@ namespace ns17
 
 		private void SongEditor_MouseWheel(object sender, MouseEventArgs e)
 		{
-			int num = VerticalScrollBar.Value - e.Delta / SystemInformation.MouseWheelScrollDelta;
+			var num = VerticalScrollBar.Value - e.Delta / SystemInformation.MouseWheelScrollDelta;
 			if (VerticalScrollBar.Maximum - (VerticalScrollBar.LargeChange - VerticalScrollBar.SmallChange) >= num && VerticalScrollBar.Minimum <= num)
 			{
 				VerticalScrollBar.Value = num;
@@ -394,7 +394,7 @@ namespace ns17
 
 		private int method_16(float float_6)
 		{
-			int num = (int)Math.Floor(float_6);
+			var num = (int)Math.Floor(float_6);
 			if (num + 1 >= Chart.FretbarList.Count)
 			{
 				return LastFretbar;
@@ -403,13 +403,13 @@ namespace ns17
 			{
 				return 0;
 			}
-			int num2 = Chart.FretbarList[num];
+			var num2 = Chart.FretbarList[num];
 			return num2 + Convert.ToInt32((float_6 - num) * (Chart.FretbarList[num + 1] - num2));
 		}
 
 		private static bool smethod_0(bool[] bool_5, bool[] bool_6)
 		{
-			for (int i = 0; i < 5; i++)
+			for (var i = 0; i < 5; i++)
 			{
 				if (bool_5[i] && bool_6[i])
 				{
@@ -424,21 +424,21 @@ namespace ns17
 			int_8 += Chart.gh3Song_0.fretbar_offset;
 			int_9 += Chart.gh3Song_0.fretbar_offset;
 			graphics_0.SetClip(new RectangleF(float_6, 0f, Width - float_6 * 2f, Height));
-			int count = Chart.FretbarList.Count;
-			int num = Chart.FretbarList.method_7(int_8);
-			int num2 = Chart.FretbarList.method_7(int_9);
-			int num3 = Chart.FretbarList[num];
-			float num4 = (num + 1 < count) ? ((int_8 - num3) / (float)(Chart.FretbarList[num + 1] - num3)) : 0f;
-			int count2 = Chart.tsList.Count;
-			int num5 = Chart.tsList.method_1(num3);
-			int num6 = Chart.tsList.Values[num5][0];
-			int num7 = Chart.FretbarList.method_7(Chart.tsList.Keys[num5]);
-			int num8 = (count2 > num5 + 1) ? Chart.FretbarList.method_7(Chart.tsList.Keys[num5 + 1]) : -1;
-			float num9 = 0f;
-			float y = float_7 + size_1.Height;
-			for (int i = num; i <= num2; i++)
+			var count = Chart.FretbarList.Count;
+			var num = Chart.FretbarList.method_7(int_8);
+			var num2 = Chart.FretbarList.method_7(int_9);
+			var num3 = Chart.FretbarList[num];
+			var num4 = (num + 1 < count) ? ((int_8 - num3) / (float)(Chart.FretbarList[num + 1] - num3)) : 0f;
+			var count2 = Chart.tsList.Count;
+			var num5 = Chart.tsList.method_1(num3);
+			var num6 = Chart.tsList.Values[num5][0];
+			var num7 = Chart.FretbarList.method_7(Chart.tsList.Keys[num5]);
+			var num8 = (count2 > num5 + 1) ? Chart.FretbarList.method_7(Chart.tsList.Keys[num5 + 1]) : -1;
+			var num9 = 0f;
+			var y = float_7 + size_1.Height;
+			for (var i = num; i <= num2; i++)
 			{
-				int num10 = Chart.FretbarList[i];
+				var num10 = Chart.FretbarList[i];
 				if (ShouldDoubleFretbarWidth())
 				{
 					num9 = float_6 + (i - num - num4) * size_1.Width;
@@ -481,8 +481,8 @@ namespace ns17
 					}
 				}
 			}
-			float x = (int_9 >= LastFretbar) ? num9 : (Width - float_6);
-			for (int j = 1; j < NumberOfNoteLines; j++)
+			var x = (int_9 >= LastFretbar) ? num9 : (Width - float_6);
+			for (var j = 1; j < NumberOfNoteLines; j++)
 			{
 				graphics_0.DrawLine(Pen_Gray, float_6, y = float_7 + j * size_1.Height / (float)NumberOfNoteLines, x, y);
 			}
@@ -495,47 +495,47 @@ namespace ns17
 		{
 			int_8 += Chart.gh3Song_0.gem_offset;
 			int_9 += Chart.gh3Song_0.gem_offset;
-			Track<int, NotesAtOffset> @class = Chart.noteList.ContainsKey(Difficulty) ? Chart.noteList[Difficulty] : new Track<int, NotesAtOffset>();
-			Track<int, int[]> class2 = Chart.spList.ContainsKey(Difficulty) ? Chart.spList[Difficulty] : new Track<int, int[]>();
-			int arg_9A_0 = @class.Count;
-			int num = @class.method_1(int_8);
-			int num2 = @class.method_1(int_9);
-			int num3 = @class.Keys[num];
+			var @class = Chart.noteList.ContainsKey(Difficulty) ? Chart.noteList[Difficulty] : new Track<int, NotesAtOffset>();
+			var class2 = Chart.spList.ContainsKey(Difficulty) ? Chart.spList[Difficulty] : new Track<int, int[]>();
+			var arg_9A_0 = @class.Count;
+			var num = @class.method_1(int_8);
+			var num2 = @class.method_1(int_9);
+			var num3 = @class.Keys[num];
 			if (int_8 < LastFretbar && num3 <= int_9)
 			{
-				int count = Chart.FretbarList.Count;
-				int num4 = Chart.FretbarList.method_7(num3);
-				int num5 = Chart.FretbarList[num4];
-				int num6 = Chart.FretbarList[num4 + 1] - num5;
-				int num7 = (count > num4 + 1) ? @class.method_2(Chart.FretbarList[num4 + 1]) : -1;
-				int num8 = Chart.FretbarList.method_7(int_8);
-				float num9 = (int_8 - Chart.FretbarList[num8]) / (float)(Chart.FretbarList[num8 + 1] - Chart.FretbarList[num8]);
-				int count2 = Chart.tsList.Count;
-				int num10 = Chart.tsList.method_1(num3);
-				int num11 = Chart.tsList.Values[num10][0];
-				int num12 = (count2 > num10 + 1) ? Chart.FretbarList.method_7(Chart.tsList.Keys[num10 + 1]) : -1;
-				int count3 = class2.Count;
-				int num13 = class2.method_1(num3);
-				int num14 = (class2.Count == 0 || class2.Keys[num13] > num3) ? -1 : (class2.Keys[num13] + class2.Values[num13][0]);
-				int num15 = (count3 > num13 + 1) ? @class.method_1(class2.Keys[(num14 != -1) ? (num13 + 1) : num13]) : -1;
+				var count = Chart.FretbarList.Count;
+				var num4 = Chart.FretbarList.method_7(num3);
+				var num5 = Chart.FretbarList[num4];
+				var num6 = Chart.FretbarList[num4 + 1] - num5;
+				var num7 = (count > num4 + 1) ? @class.method_2(Chart.FretbarList[num4 + 1]) : -1;
+				var num8 = Chart.FretbarList.method_7(int_8);
+				var num9 = (int_8 - Chart.FretbarList[num8]) / (float)(Chart.FretbarList[num8 + 1] - Chart.FretbarList[num8]);
+				var count2 = Chart.tsList.Count;
+				var num10 = Chart.tsList.method_1(num3);
+				var num11 = Chart.tsList.Values[num10][0];
+				var num12 = (count2 > num10 + 1) ? Chart.FretbarList.method_7(Chart.tsList.Keys[num10 + 1]) : -1;
+				var count3 = class2.Count;
+				var num13 = class2.method_1(num3);
+				var num14 = (class2.Count == 0 || class2.Keys[num13] > num3) ? -1 : (class2.Keys[num13] + class2.Values[num13][0]);
+				var num15 = (count3 > num13 + 1) ? @class.method_1(class2.Keys[(num14 != -1) ? (num13 + 1) : num13]) : -1;
 				if (num14 == -1)
 				{
 					num13--;
 				}
-				float num16 = size_1.Height / (float)NumberOfNoteLines;
-				float num17 = size_1.Height / 15f;
-				float num18 = num17 / 1.6f;
-				float num19 = num17 * 2f;
-				float num20 = num18 * 2f;
-				float val = Width - float_6;
+				var num16 = size_1.Height / (float)NumberOfNoteLines;
+				var num17 = size_1.Height / 15f;
+				var num18 = num17 / 1.6f;
+				var num19 = num17 * 2f;
+				var num20 = num18 * 2f;
+				var val = Width - float_6;
 				if (Has5NoteLines())
 				{
 					float_7 += num16 / 2f;
 				}
-				for (int i = num; i <= num2; i++)
+				for (var i = num; i <= num2; i++)
 				{
-					int num21 = @class.Keys[i];
-					NotesAtOffset class3 = @class[num21];
+					var num21 = @class.Keys[i];
+					var class3 = @class[num21];
 					if (i == num7)
 					{
 						num4 = Chart.FretbarList.method_7(num21);
@@ -555,7 +555,7 @@ namespace ns17
 						num14 = class2.Keys[num13] + class2.Values[num13][0];
 						num15 = ((count3 > num13 + 1) ? @class.method_1(class2.Keys[num13 + 1]) : -1);
 					}
-					bool ShowDrawSP = LoadStarpowerTextures && num14 >= num21;
+					var ShowDrawSP = LoadStarpowerTextures && num14 >= num21;
 					float num22;
 					float num23;
 					if (ShouldDoubleFretbarWidth())
@@ -564,7 +564,7 @@ namespace ns17
 						if (class3.sustainLength - Chart.int_0 > Chart.int_0)
 						{
 							num23 = num21 + class3.sustainLength - Chart.int_0;
-							int num24 = Chart.FretbarList.method_7((int)num23);
+							var num24 = Chart.FretbarList.method_7((int)num23);
 							num23 = Math.Min(float_6 + (num24 - num8 - num9 + (num23 - Chart.FretbarList[num24]) / (Chart.FretbarList[num24 + 1] - Chart.FretbarList[num24])) * size_1.Width, val);
 						}
 						else
@@ -580,12 +580,12 @@ namespace ns17
 					}
 					if (num23 == -1f || num23 >= float_6)
 					{
-						bool ShouldDrawHopo = LoadHopoTextures && ((i != 0 && smethod_0(@class[@class.Keys[i - 1]].noteValues, class3.noteValues) && num21 - @class.Keys[i - 1] <= num11 / 4f * num6 / ((Chart.gh3Song_0.hammer_on == 0f) ? QBCParser.float_0 : Chart.gh3Song_0.hammer_on)) ^ class3.noteValues[5]);
-						for (int j = 0; j < 6; j++)
+						var ShouldDrawHopo = LoadHopoTextures && ((i != 0 && smethod_0(@class[@class.Keys[i - 1]].noteValues, class3.noteValues) && num21 - @class.Keys[i - 1] <= num11 / 4f * num6 / ((Chart.gh3Song_0.hammer_on == 0f) ? QBCParser.float_0 : Chart.gh3Song_0.hammer_on)) ^ class3.noteValues[5]);
+						for (var j = 0; j < 6; j++)
 						{
 							if (class3.noteValues[j])
 							{
-								float num25 = float_7 + num16 * j;
+								var num25 = float_7 + num16 * j;
 								if (num23 != -1f)
 								{
 									graphics_0.DrawLine(pen_4[j], num22, num25, num23, num25);
@@ -595,14 +595,14 @@ namespace ns17
 								{
 									if (ShowDrawSP)
 									{
-										PointF[] array = new PointF[5];
-										for (int k = 0; k < 5; k++)
+										var array = new PointF[5];
+										for (var k = 0; k < 5; k++)
 										{
 											array[k] = new PointF(num22 + num19 * (float)Math.Sin(k * double_0), num25 - num19 * (float)Math.Cos(k * double_0));
 										}
 										graphics_0.FillPolygon(Brush_Black, array, FillMode.Winding);
 									}
-									RectangleF rect = new RectangleF(num22 - num17, num25 - num17, num19, num19);
+									var rect = new RectangleF(num22 - num17, num25 - num17, num19, num19);
 									graphics_0.FillEllipse(NoteBrush[j], rect);
 									graphics_0.DrawEllipse(Pen_Black2, rect);
 									if (ShouldDrawHopo)
@@ -625,33 +625,33 @@ namespace ns17
 			{
 				return;
 			}
-			float num = float_6;
-			float x = num;
-			float num2 = 0f;
-			int num3 = Convert.ToInt32(Audio.GetWaveFormat().int_0 * Audio.GetWaveFormat().short_0 * (int_8 / 1000m));
-			int num4 = Convert.ToInt32(Audio.GetWaveFormat().int_0 * Audio.GetWaveFormat().short_0 * (int_9 / 1000m));
+			var num = float_6;
+			var x = num;
+			var num2 = 0f;
+			var num3 = Convert.ToInt32(Audio.GetWaveFormat().int_0 * Audio.GetWaveFormat().short_0 * (int_8 / 1000m));
+			var num4 = Convert.ToInt32(Audio.GetWaveFormat().int_0 * Audio.GetWaveFormat().short_0 * (int_9 / 1000m));
 			num4 = Math.Min(num4, AudioData.Length);
-			int num5 = Convert.ToInt32(Audio.GetWaveFormat().int_0 * Audio.GetWaveFormat().short_0 / (FretbarWidth * 1000m));
-			int i = num3;
-			for (int j = 0; j < (int)Audio.GetWaveFormat().short_0; j++)
+			var num5 = Convert.ToInt32(Audio.GetWaveFormat().int_0 * Audio.GetWaveFormat().short_0 / (FretbarWidth * 1000m));
+			var i = num3;
+			for (var j = 0; j < (int)Audio.GetWaveFormat().short_0; j++)
 			{
 				while (i < num4)
 				{
-					float num6 = -128f;
-					float num7 = 127f;
+					var num6 = -128f;
+					var num7 = 127f;
 					if (ShouldDoubleFretbarWidth())
 					{
 						num5 = size_1.Width;
 					}
-					int num8 = j;
+					var num8 = j;
 					while (num8 < num5 && num8 + i < num4)
 					{
 						num6 = Math.Max(num6, AudioData[num8 + i]);
 						num7 = Math.Min(num7, AudioData[num8 + i]);
 						num8 += Audio.GetWaveFormat().short_0;
 					}
-					float num9 = (num7 + 128f) * size_1.Height / 256f;
-					float num10 = (num6 + 128f) * size_1.Height / 256f;
+					var num9 = (num7 + 128f) * size_1.Height / 256f;
+					var num10 = (num6 + 128f) * size_1.Height / 256f;
 					if (num6 != num7)
 					{
 						if (num5 <= 1E-10)
@@ -684,24 +684,24 @@ namespace ns17
 
 		private void DrawFlatView(Graphics graphics_0)
 		{
-			int num = 0;
-			int num2 = 0;
+			var num = 0;
+			var num2 = 0;
 			if (ShouldDoubleFretbarWidth())
 			{
-				int num3 = Math.Min(int_2, SomeFretbarValue);
-				for (int i = 0; i < num3; i++)
+				var num3 = Math.Min(int_2, SomeFretbarValue);
+				for (var i = 0; i < num3; i++)
 				{
 					num = method_16(FretboardAngleFloat * (VerticalScrollBar.Value + i));
 					num2 = method_16(FretboardAngleFloat * (VerticalScrollBar.Value + i + 1));
-					float num4 = float_5 * 2f + float_0 * i;
+					var num4 = float_5 * 2f + float_0 * i;
 					method_17(graphics_0, num, num2, float_5, num4);
 					DrawFlatViewNotes(graphics_0, num, num2, float_5, num4);
 				}
 			}
 			else
 			{
-				int num5 = Math.Min(int_2, LastFretbarValue);
-				int j = 0;
+				var num5 = Math.Min(int_2, LastFretbarValue);
+				var j = 0;
 				if (Audio != null)
 				{
 					j = (int)Audio.AudioLength().TotalMilliseconds;
@@ -713,11 +713,11 @@ namespace ns17
 						VerticalScrollBar.Value--;
 					}
 				}
-				for (int k = 0; k < num5; k++)
+				for (var k = 0; k < num5; k++)
 				{
 					num = UsedForCalculatingLastFretbar * (VerticalScrollBar.Value + k);
 					num2 = UsedForCalculatingLastFretbar * (VerticalScrollBar.Value + k + 1);
-					float num4 = float_5 * 2f + float_0 * k;
+					var num4 = float_5 * 2f + float_0 * k;
 					if (ShowAudioOnFretboard)
 					{
 						DrawAudio(graphics_0, num, num2, float_5, num4);
@@ -726,7 +726,7 @@ namespace ns17
 					DrawFlatViewNotes(graphics_0, num, num2, float_5, num4);
 					if (Audio != null && num <= j && j <= num2)
 					{
-						SmoothingMode smoothingMode = graphics_0.SmoothingMode;
+						var smoothingMode = graphics_0.SmoothingMode;
 						graphics_0.SmoothingMode = SmoothingMode.None;
 						graphics_0.DrawLine(Pen_Black2, float_5 + method_14(j - num), num4 - 5f, float_5 + method_14(j - num), num4 + size_1.Height + 5f);
 						graphics_0.SmoothingMode = smoothingMode;
@@ -774,20 +774,20 @@ namespace ns17
 		{
 			int_8 += Chart.gh3Song_0.fretbar_offset;
 			int_9 += Chart.gh3Song_0.fretbar_offset;
-			int count = Chart.FretbarList.Count;
-			int num = Chart.FretbarList.method_7(int_8);
-			int num2 = Chart.FretbarList.method_7(int_9);
-			int num3 = Chart.FretbarList[num];
-			float num4 = (num + 1 < count) ? ((int_8 - num3) / (float)(Chart.FretbarList[num + 1] - num3)) : 0f;
-			int count2 = Chart.tsList.Count;
-			int num5 = Chart.tsList.method_1(num3);
-			int num6 = Chart.tsList.Values[num5][0];
-			int num7 = Chart.FretbarList.method_7(Chart.tsList.Keys[num5]);
-			int num8 = (count2 > num5 + 1) ? Chart.FretbarList.method_7(Chart.tsList.Keys[num5 + 1]) : -1;
+			var count = Chart.FretbarList.Count;
+			var num = Chart.FretbarList.method_7(int_8);
+			var num2 = Chart.FretbarList.method_7(int_9);
+			var num3 = Chart.FretbarList[num];
+			var num4 = (num + 1 < count) ? ((int_8 - num3) / (float)(Chart.FretbarList[num + 1] - num3)) : 0f;
+			var count2 = Chart.tsList.Count;
+			var num5 = Chart.tsList.method_1(num3);
+			var num6 = Chart.tsList.Values[num5][0];
+			var num7 = Chart.FretbarList.method_7(Chart.tsList.Keys[num5]);
+			var num8 = (count2 > num5 + 1) ? Chart.FretbarList.method_7(Chart.tsList.Keys[num5 + 1]) : -1;
 			float num10;
-			for (int i = num; i <= num2; i++)
+			for (var i = num; i <= num2; i++)
 			{
-				int num9 = Chart.FretbarList[i];
+				var num9 = Chart.FretbarList[i];
 				if (ShouldDoubleFretbarWidth())
 				{
 					num10 = float_7 - Convert.ToSingle(Editor_Size.Width * (1.0 - Math.Pow(FretboardAngle, i - num - num4)) / (1f - FretboardAngle));
@@ -798,8 +798,8 @@ namespace ns17
 				}
 				if (i - num7 == 0)
 				{
-					float num11 = Convert.ToSingle((float_7 - num10) * Math.Tan(double_1));
-					Font font = new Font("Verdana", Math.Max(0f, (Editor_Size.Height - 2f * num11) / 15f));
+					var num11 = Convert.ToSingle((float_7 - num10) * Math.Tan(double_1));
+					var font = new Font("Verdana", Math.Max(0f, (Editor_Size.Height - 2f * num11) / 15f));
 					graphics_0.DrawString(num6 + "/" + Chart.tsList.Values[num5][1], font, Brush_GrayText, float_6 + Editor_Size.Height + 5f - num11, num10 - font.Size);
 				}
 				if (i == num8)
@@ -808,8 +808,8 @@ namespace ns17
 					num6 = Chart.tsList.Values[num5][0];
 					num7 = Chart.FretbarList.method_7(Chart.tsList.Keys[num5]);
 					num8 = ((count2 > num5 + 1) ? Chart.FretbarList.method_7(Chart.tsList.Keys[num5 + 1]) : -1);
-					float num11 = Convert.ToSingle((float_7 - num10) * Math.Tan(double_1));
-					Font font2 = new Font("Verdana", Math.Max(0f, (Editor_Size.Height - 2f * num11) / 15f));
+					var num11 = Convert.ToSingle((float_7 - num10) * Math.Tan(double_1));
+					var font2 = new Font("Verdana", Math.Max(0f, (Editor_Size.Height - 2f * num11) / 15f));
 					graphics_0.DrawString(num6 + "/" + Chart.tsList.Values[num5][1], font2, Brush_GrayText, float_6 + Editor_Size.Height + 5f - num11, num10 - font2.Size);
 				}
 				if (num10 <= float_7)
@@ -835,9 +835,9 @@ namespace ns17
 				}
 			}
 			num10 = float_7 - float_3;
-			float num12 = Convert.ToSingle((float_7 - num10) * Math.Tan(double_1));
-			float num13 = Editor_Size.Height - 2f * num12;
-			for (int j = 0; j <= NumberOfNoteLines; j++)
+			var num12 = Convert.ToSingle((float_7 - num10) * Math.Tan(double_1));
+			var num13 = Editor_Size.Height - 2f * num12;
+			for (var j = 0; j <= NumberOfNoteLines; j++)
 			{
 				graphics_0.DrawLine(Pen_Gray, float_6 + j * Editor_Size.Height / (float)NumberOfNoteLines, float_7, float_6 + num12 + j * num13 / NumberOfNoteLines, num10);
 			}
@@ -847,48 +847,48 @@ namespace ns17
 		{
 			int_8 += Chart.gh3Song_0.gem_offset;
 			int_9 += Chart.gh3Song_0.gem_offset;
-			Track<int, NotesAtOffset> @class = Chart.noteList.ContainsKey(Difficulty) ? Chart.noteList[Difficulty] : new Track<int, NotesAtOffset>();
-			Track<int, int[]> class2 = Chart.spList.ContainsKey(Difficulty) ? Chart.spList[Difficulty] : new Track<int, int[]>();
+			var @class = Chart.noteList.ContainsKey(Difficulty) ? Chart.noteList[Difficulty] : new Track<int, NotesAtOffset>();
+			var class2 = Chart.spList.ContainsKey(Difficulty) ? Chart.spList[Difficulty] : new Track<int, int[]>();
 			if (@class.Count == 0)
 			{
 				return;
 			}
-			int arg_A3_0 = @class.Count;
-			int num = @class.method_1(int_8);
-			int num2 = @class.method_1(int_9);
-			int num3 = @class.Keys[num];
+			var arg_A3_0 = @class.Count;
+			var num = @class.method_1(int_8);
+			var num2 = @class.method_1(int_9);
+			var num3 = @class.Keys[num];
 			if (int_8 < LastFretbar && num3 <= int_9)
 			{
-				int count = Chart.FretbarList.Count;
-				int num4 = Chart.FretbarList.method_7(num3);
-				int num5 = Chart.FretbarList[num4];
-				int num6 = Chart.FretbarList[num4 + 1] - num5;
-				int num7 = (count > num4 + 1) ? @class.method_2(Chart.FretbarList[num4 + 1]) : -1;
-				int num8 = Chart.FretbarList.method_7(int_8);
+				var count = Chart.FretbarList.Count;
+				var num4 = Chart.FretbarList.method_7(num3);
+				var num5 = Chart.FretbarList[num4];
+				var num6 = Chart.FretbarList[num4 + 1] - num5;
+				var num7 = (count > num4 + 1) ? @class.method_2(Chart.FretbarList[num4 + 1]) : -1;
+				var num8 = Chart.FretbarList.method_7(int_8);
 				Chart.FretbarList.method_7(int_9);
-				float num9 = (int_8 - Chart.FretbarList[num8]) / (float)(Chart.FretbarList[num8 + 1] - Chart.FretbarList[num8]);
-				int count2 = Chart.tsList.Count;
-				int num10 = Chart.tsList.method_1(num3);
-				int num11 = Chart.tsList.Values[num10][0];
-				int num12 = (count2 > num10 + 1) ? Chart.FretbarList.method_7(Chart.tsList.Keys[num10 + 1]) : -1;
-				int count3 = class2.Count;
-				int num13 = class2.method_1(num3);
-				int num14 = (class2.Count == 0 || class2.Keys[num13] > num3) ? -1 : (class2.Keys[num13] + class2.Values[num13][0]);
-				int num15 = (count3 > num13 + 1) ? @class.method_1(class2.Keys[(num14 != -1) ? (num13 + 1) : num13]) : -1;
+				var num9 = (int_8 - Chart.FretbarList[num8]) / (float)(Chart.FretbarList[num8 + 1] - Chart.FretbarList[num8]);
+				var count2 = Chart.tsList.Count;
+				var num10 = Chart.tsList.method_1(num3);
+				var num11 = Chart.tsList.Values[num10][0];
+				var num12 = (count2 > num10 + 1) ? Chart.FretbarList.method_7(Chart.tsList.Keys[num10 + 1]) : -1;
+				var count3 = class2.Count;
+				var num13 = class2.method_1(num3);
+				var num14 = (class2.Count == 0 || class2.Keys[num13] > num3) ? -1 : (class2.Keys[num13] + class2.Values[num13][0]);
+				var num15 = (count3 > num13 + 1) ? @class.method_1(class2.Keys[(num14 != -1) ? (num13 + 1) : num13]) : -1;
 				if (num14 == -1)
 				{
 					num13--;
 				}
-				float num16 = Editor_Size.Height / (float)NumberOfNoteLines;
-				float num17 = Editor_Size.Height / 15f;
-				float num18 = num17 / 1.6f;
-				float num19 = num17 * 2f;
-				float num20 = num18 * 2f;
-				float val = float_7 - float_3;
-				for (int i = num; i <= num2; i++)
+				var num16 = Editor_Size.Height / (float)NumberOfNoteLines;
+				var num17 = Editor_Size.Height / 15f;
+				var num18 = num17 / 1.6f;
+				var num19 = num17 * 2f;
+				var num20 = num18 * 2f;
+				var val = float_7 - float_3;
+				for (var i = num; i <= num2; i++)
 				{
-					int num21 = @class.Keys[i];
-					NotesAtOffset class3 = @class[num21];
+					var num21 = @class.Keys[i];
+					var class3 = @class[num21];
 					if (i == num7)
 					{
 						num4 = Chart.FretbarList.method_7(num21);
@@ -908,7 +908,7 @@ namespace ns17
 						num14 = class2.Keys[num13] + class2.Values[num13][0];
 						num15 = ((count3 > num13 + 1) ? @class.method_1(class2.Keys[num13 + 1]) : -1);
 					}
-					bool ShouldDrawSP = LoadStarpowerTextures && num14 >= num21;
+					var ShouldDrawSP = LoadStarpowerTextures && num14 >= num21;
 					float num22;
 					float num23;
 					if (ShouldDoubleFretbarWidth())
@@ -917,7 +917,7 @@ namespace ns17
 						if (class3.sustainLength - Chart.int_0 > Chart.int_0)
 						{
 							num23 = num21 + class3.sustainLength - Chart.int_0;
-							int num24 = Chart.FretbarList.method_7((int)num23);
+							var num24 = Chart.FretbarList.method_7((int)num23);
 							num23 = Math.Max(float_7 - Convert.ToSingle(Editor_Size.Width * (1.0 - Math.Pow(FretboardAngle, num24 - num8 - num9 + (num23 - Chart.FretbarList[num24]) / (Chart.FretbarList[num24 + 1] - Chart.FretbarList[num24]))) / (1f - FretboardAngle)), val);
 						}
 						else
@@ -933,17 +933,17 @@ namespace ns17
 					}
 					if (num23 == -1f || num23 <= float_7)
 					{
-						bool ShouldDrawHopo = LoadHopoTextures && ((i != 0 && smethod_0(@class[@class.Keys[i - 1]].noteValues, class3.noteValues) && num21 - @class.Keys[i - 1] <= num11 / 4f * num6 / ((Chart.gh3Song_0.hammer_on == 0f) ? QBCParser.float_0 : Chart.gh3Song_0.hammer_on)) ^ class3.noteValues[5]);
-						float num25 = float_6 + Convert.ToSingle((float_7 - num22) * Math.Tan(double_1));
+						var ShouldDrawHopo = LoadHopoTextures && ((i != 0 && smethod_0(@class[@class.Keys[i - 1]].noteValues, class3.noteValues) && num21 - @class.Keys[i - 1] <= num11 / 4f * num6 / ((Chart.gh3Song_0.hammer_on == 0f) ? QBCParser.float_0 : Chart.gh3Song_0.hammer_on)) ^ class3.noteValues[5]);
+						var num25 = float_6 + Convert.ToSingle((float_7 - num22) * Math.Tan(double_1));
 						num16 = (Editor_Size.Height - 2f * (num25 - float_6)) / NumberOfNoteLines;
-						float num26 = float_6 + Convert.ToSingle((float_7 - num23) * Math.Tan(double_1));
-						float num27 = (Editor_Size.Height - 2f * (num26 - float_6)) / NumberOfNoteLines;
+						var num26 = float_6 + Convert.ToSingle((float_7 - num23) * Math.Tan(double_1));
+						var num27 = (Editor_Size.Height - 2f * (num26 - float_6)) / NumberOfNoteLines;
 						num17 = (Editor_Size.Height - 2f * (num25 - float_6)) / 15f;
 						num18 = num17 / 1.6f;
 						num19 = num17 * 2f;
 						num20 = num18 * 2f;
-						float num28 = (Editor_Size.Height - 2f * (num25 - float_6)) / 32f;
-						float num29 = (Editor_Size.Height - 2f * (num26 - float_6)) / 32f;
+						var num28 = (Editor_Size.Height - 2f * (num25 - float_6)) / 32f;
+						var num29 = (Editor_Size.Height - 2f * (num26 - float_6)) / 32f;
 						if (Has5NoteLines())
 						{
 							num25 += num16 / 2f;
@@ -951,7 +951,7 @@ namespace ns17
 						}
 						num25 -= num16;
 						num26 -= num27;
-						for (int j = 0; j < 6; j++)
+						for (var j = 0; j < 6; j++)
 						{
 							num25 += num16;
 							num26 += num27;
@@ -971,14 +971,14 @@ namespace ns17
 								{
 									if (ShouldDrawSP)
 									{
-										PointF[] TrianlePositions = new PointF[5];
-										for (int k = 0; k < 5; k++)
+										var TrianlePositions = new PointF[5];
+										for (var k = 0; k < 5; k++)
 										{
 											TrianlePositions[k] = new PointF(num25 - num19 * (float)Math.Sin(k * double_0), num22 + num19 * FretboardAngle * (float)Math.Cos(k * double_0));
 										}
 										graphics_0.FillPolygon(Brush_Black, TrianlePositions, FillMode.Winding);
 									}
-									RectangleF rect = new RectangleF(num25 - num17, num22 - num17 * FretboardAngle, num19, num19 * FretboardAngle);
+									var rect = new RectangleF(num25 - num17, num22 - num17 * FretboardAngle, num19, num19 * FretboardAngle);
 									graphics_0.FillEllipse(NoteBrush[j], rect);
 									graphics_0.DrawEllipse(Pen_Black2, rect);
 									if (ShouldDrawHopo)
@@ -1001,36 +1001,36 @@ namespace ns17
 			{
 				return;
 			}
-			float num = 0f;
-			float num2 = float_7;
-			float num3 = num2;
-			int num4 = Convert.ToInt32(Audio.GetWaveFormat().int_0 * Audio.GetWaveFormat().short_0 * (int_8 / 1000m));
-			int num5 = Convert.ToInt32(Audio.GetWaveFormat().int_0 * Audio.GetWaveFormat().short_0 * (int_9 / 1000m));
+			var num = 0f;
+			var num2 = float_7;
+			var num3 = num2;
+			var num4 = Convert.ToInt32(Audio.GetWaveFormat().int_0 * Audio.GetWaveFormat().short_0 * (int_8 / 1000m));
+			var num5 = Convert.ToInt32(Audio.GetWaveFormat().int_0 * Audio.GetWaveFormat().short_0 * (int_9 / 1000m));
 			num5 = Math.Min(num5, AudioData.Length);
-			decimal d = 0m;
-			int i = num4;
-			for (int j = 0; j < (int)Audio.GetWaveFormat().short_0; j++)
+			var d = 0m;
+			var i = num4;
+			for (var j = 0; j < (int)Audio.GetWaveFormat().short_0; j++)
 			{
 				while (i < num5)
 				{
-					float num6 = -128f;
-					float num7 = 127f;
-					decimal num8 = (decimal)(Chart.FretbarList[1] / Hyperspeed * Math.Log(Math.Abs(1.0 - (float_7 - num2 + 1f) * (1f - FretboardAngle) / (double)Editor_Size.Width), FretboardAngle));
-					int num9 = Convert.ToInt32(Audio.GetWaveFormat().int_0 * Audio.GetWaveFormat().short_0 * ((num8 - d) / 1000m));
+					var num6 = -128f;
+					var num7 = 127f;
+					var num8 = (decimal)(Chart.FretbarList[1] / Hyperspeed * Math.Log(Math.Abs(1.0 - (float_7 - num2 + 1f) * (1f - FretboardAngle) / (double)Editor_Size.Width), FretboardAngle));
+					var num9 = Convert.ToInt32(Audio.GetWaveFormat().int_0 * Audio.GetWaveFormat().short_0 * ((num8 - d) / 1000m));
 					d = num8;
-					int num10 = j;
+					var num10 = j;
 					while (num10 < num9 && num10 + i < num5)
 					{
 						num6 = Math.Max(num6, AudioData[num10 + i]);
 						num7 = Math.Min(num7, AudioData[num10 + i]);
 						num10 += Audio.GetWaveFormat().short_0;
 					}
-					float num11 = Convert.ToSingle((float_7 - num2) * Math.Tan(double_1));
-					float num12 = Editor_Size.Height - 2f * num11;
+					var num11 = Convert.ToSingle((float_7 - num2) * Math.Tan(double_1));
+					var num12 = Editor_Size.Height - 2f * num11;
 					if (num7 != num6)
 					{
-						float num13 = (num7 + 128f) * num12 / 256f;
-						float num14 = (num6 + 128f) * num12 / 256f;
+						var num13 = (num7 + 128f) * num12 / 256f;
+						var num14 = (num6 + 128f) * num12 / 256f;
 						if (num9 <= 1E-10)
 						{
 							return;
@@ -1066,11 +1066,11 @@ namespace ns17
 
 		private void DrawGameView(Graphics graphics_0)
 		{
-			float num = float_5 * 2f;
-			int num2 = method_16((VerticalScrollBar.Maximum - VerticalScrollBar.LargeChange - VerticalScrollBar.Value) / 2f);
+			var num = float_5 * 2f;
+			var num2 = method_16((VerticalScrollBar.Maximum - VerticalScrollBar.LargeChange - VerticalScrollBar.Value) / 2f);
             if (ShouldDoubleFretbarWidth())
 			{
-                int int_ = method_16((VerticalScrollBar.Maximum - VerticalScrollBar.LargeChange - VerticalScrollBar.Value) / 2f + FretboardAngleFloat);
+                var int_ = method_16((VerticalScrollBar.Maximum - VerticalScrollBar.LargeChange - VerticalScrollBar.Value) / 2f + FretboardAngleFloat);
 				method_25(graphics_0, num2, int_, Width / 4f, Height - num);
                 DrawGameViewNotes(graphics_0, num2, int_, Width / 4f, Height - num);
             }
@@ -1080,7 +1080,7 @@ namespace ns17
 				{
 					num2 = (int)Audio.AudioLength().TotalMilliseconds;
 				}
-                int int_ = num2 + UsedForCalculatingLastFretbar;
+                var int_ = num2 + UsedForCalculatingLastFretbar;
 				if (ShowAudioOnFretboard)
 				{
 					DrawGameviewFretbars(graphics_0, num2, int_, Width / 4f, Height - num);
@@ -1093,12 +1093,12 @@ namespace ns17
 
 		public void method_29(Delegate10 delegate10_1)
 		{
-			Delegate10 @delegate = delegate10_0;
+			var @delegate = delegate10_0;
 			Delegate10 delegate2;
 			do
 			{
 				delegate2 = @delegate;
-				Delegate10 value = (Delegate10)Delegate.Combine(delegate2, delegate10_1);
+				var value = (Delegate10)Delegate.Combine(delegate2, delegate10_1);
 				@delegate = Interlocked.CompareExchange(ref delegate10_0, value, delegate2);
 			}
 			while (@delegate != delegate2);
@@ -1111,7 +1111,7 @@ namespace ns17
 			{
 				return;
 			}
-			Graphics graphics = e.Graphics;
+			var graphics = e.Graphics;
 			graphics.SmoothingMode = SmoothingMode.AntiAlias;
 			if (GamemodeView)
 			{

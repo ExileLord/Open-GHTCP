@@ -53,9 +53,9 @@ namespace ns22
 			if (smethod_0(stream_0))
 			{
 				UpdateFinalBlocks(stream_0, interface14_0.Length, 0L);
-				int[] array = new int[interface14_0.Length];
-				int[] array2 = new int[interface14_0.Length];
-				for (int i = 0; i < interface14_0.Length; i++)
+				var array = new int[interface14_0.Length];
+				var array2 = new int[interface14_0.Length];
+				for (var i = 0; i < interface14_0.Length; i++)
 				{
 					array[i] = (int)class343_0[i].method_0() * 28;
 					array2[i] = interface14_0[i].imethod_0();
@@ -76,11 +76,11 @@ namespace ns22
 			{
 				throw new ApplicationException("UpdateFinalBlocks called with non-updateable stream");
 			}
-			long position = stream_1.Position;
-			long num = long_0 + 128L;
-			bool[] array = new bool[int_0];
-			int num2 = 0;
-			byte[] array2 = new byte[16];
+			var position = stream_1.Position;
+			var num = long_0 + 128L;
+			var array = new bool[int_0];
+			var num2 = 0;
+			var array2 = new byte[16];
 			stream_1.Seek(array2.Length * -1, SeekOrigin.Current);
 			while (stream_1.Position - num >= 16L && num2 < array.Length)
 			{
@@ -88,7 +88,7 @@ namespace ns22
 				{
 					Class355.interface15_0.imethod_1("Unexpected end of stream trying to read final blocks");
 				}
-				int num3 = array2[1] & -129;
+				var num3 = array2[1] & -129;
 				if (num3 < 0 || num3 > int_0)
 				{
 					Class355.interface15_0.imethod_1(string.Format("Found reference to channel {0}, but only {1} channels expected", num3, int_0));
@@ -107,8 +107,8 @@ namespace ns22
 				}
 				else if (!array[num3])
 				{
-					byte[] expr_F6_cp_0 = array2;
-					int expr_F6_cp_1 = 1;
+					var expr_F6_cp_0 = array2;
+					var expr_F6_cp_1 = 1;
 					expr_F6_cp_0[expr_F6_cp_1] |= 128;
 					stream_1.Seek(array2.Length * -1, SeekOrigin.Current);
 					stream_1.Write(array2, 0, array2.Length);
@@ -126,7 +126,7 @@ namespace ns22
 			{
 				throw new ApplicationException("UpdateFinalBlocks called with non-updateable stream");
 			}
-			long position = stream_1.Position;
+			var position = stream_1.Position;
 			stream_1.Seek(long_0, SeekOrigin.Begin);
 			smethod_3(stream_1, int_0, int_1);
 			stream_1.Seek(position, SeekOrigin.Begin);
@@ -140,7 +140,7 @@ namespace ns22
 			}
 			if (!smethod_0(stream_1))
 			{
-				for (int i = 0; i < int_0.Length; i++)
+				for (var i = 0; i < int_0.Length; i++)
 				{
 					if (int_0[i] < 1)
 					{
@@ -148,10 +148,10 @@ namespace ns22
 					}
 				}
 			}
-			BinaryWriter binaryWriter = new BinaryWriter(stream_1);
+			var binaryWriter = new BinaryWriter(stream_1);
 			binaryWriter.Write(Encoding.ASCII.GetBytes("VgS!"));
 			binaryWriter.Write(2);
-			for (int j = 0; j < 15; j++)
+			for (var j = 0; j < 15; j++)
 			{
 				if (j < int_0.Length)
 				{

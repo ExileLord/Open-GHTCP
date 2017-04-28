@@ -78,11 +78,11 @@ namespace ns13
 			{
 				throw new ZipException("Too many entries for Zip file");
 			}
-			Enum31 @enum = class193_1.method_27();
-			int int_ = int_0;
+			var @enum = class193_1.method_27();
+			var int_ = int_0;
 			class193_1.method_5(class193_1.method_4() & 2048);
 			bool_2 = false;
-			bool flag = true;
+			var flag = true;
 			if (@enum == Enum31.const_0)
 			{
 				class193_1.method_5(class193_1.method_4() & -9);
@@ -195,12 +195,12 @@ namespace ns13
 					method_8(0);
 				}
 			}
-			byte[] array = Class186.smethod_4(class193_1.method_4(), class193_1.method_20());
+			var array = Class186.smethod_4(class193_1.method_4(), class193_1.method_20());
 			if (array.Length > 65535)
 			{
 				throw new ZipException("Entry name too long.");
 			}
-			Class202 @class = new Class202(class193_1.method_29());
+			var @class = new Class202(class193_1.method_29());
 			if (class193_1.method_15() && (flag || bool_2))
 			{
 				@class.method_8();
@@ -228,7 +228,7 @@ namespace ns13
 			{
 				@class.method_13(1);
 			}
-			byte[] array2 = @class.method_0();
+			var array2 = @class.method_0();
 			method_7(array.Length);
 			method_7(array2.Length);
 			if (array.Length > 0)
@@ -273,7 +273,7 @@ namespace ns13
 			{
 				base.vmethod_0();
 			}
-			long num = (enum31_0 == Enum31.const_1) ? class194_0.method_1() : long_0;
+			var num = (enum31_0 == Enum31.const_1) ? class194_0.method_1() : long_0;
 			if (class193_0.method_21() < 0L)
 			{
 				class193_0.method_22(long_0);
@@ -301,13 +301,13 @@ namespace ns13
 			long_1 += num;
 			if (class193_0.method_0())
 			{
-				Class193 expr_1E6 = class193_0;
+				var expr_1E6 = class193_0;
 				expr_1E6.method_24(expr_1E6.method_23() + 12L);
 			}
 			if (bool_2)
 			{
 				bool_2 = false;
-				long position = stream_0.Position;
+				var position = stream_0.Position;
 				stream_0.Seek(long_2, SeekOrigin.Begin);
 				method_8((int)class193_0.method_25());
 				if (class193_0.method_15())
@@ -352,8 +352,8 @@ namespace ns13
 		{
 			long_1 += 12L;
 			method_4(method_1());
-			byte[] array = new byte[12];
-			Random random = new Random();
+			var array = new byte[12];
+			var random = new Random();
 			random.NextBytes(array);
 			array[11] = (byte)(long_4 >> 24);
 			method_3(array, 0, array.Length);
@@ -384,7 +384,7 @@ namespace ns13
 			}
 			class192_0.vmethod_3(buffer, offset, count);
 			long_0 += count;
-			Enum31 @enum = enum31_0;
+			var @enum = enum31_0;
 			if (@enum != Enum31.const_0)
 			{
 				if (@enum != Enum31.const_1)
@@ -406,10 +406,10 @@ namespace ns13
 
 		private void method_13(byte[] byte_2, int int_1, int int_2)
 		{
-			byte[] array = new byte[4096];
+			var array = new byte[4096];
 			while (int_2 > 0)
 			{
-				int num = (int_2 < 4096) ? int_2 : 4096;
+				var num = (int_2 < 4096) ? int_2 : 4096;
 				Array.Copy(byte_2, int_1, array, 0, num);
 				method_3(array, 0, num);
 				stream_0.Write(array, 0, num);
@@ -429,7 +429,7 @@ namespace ns13
 				method_11();
 			}
 			long num = arrayList_0.Count;
-			long num2 = 0L;
+			var num2 = 0L;
 			foreach (Class193 @class in arrayList_0)
 			{
 				method_8(33639248);
@@ -455,12 +455,12 @@ namespace ns13
 				{
 					method_8(-1);
 				}
-				byte[] array = Class186.smethod_4(@class.method_4(), @class.method_20());
+				var array = Class186.smethod_4(@class.method_4(), @class.method_20());
 				if (array.Length > 65535)
 				{
 					throw new ZipException("Name too long.");
 				}
-				Class202 class2 = new Class202(@class.method_29());
+				var class2 = new Class202(@class.method_29());
 				if (@class.method_16())
 				{
 					class2.method_8();
@@ -482,8 +482,8 @@ namespace ns13
 				{
 					class2.method_13(1);
 				}
-				byte[] array2 = class2.method_0();
-				byte[] array3 = (@class.method_32() != null) ? Class186.smethod_4(@class.method_4(), @class.method_32()) : new byte[0];
+				var array2 = class2.method_0();
+				var array3 = (@class.method_32() != null) ? Class186.smethod_4(@class.method_4(), @class.method_32()) : new byte[0];
 				if (array3.Length > 65535)
 				{
 					throw new ZipException("Comment too long.");
@@ -527,7 +527,7 @@ namespace ns13
 				}
 				num2 += 46 + array.Length + array2.Length + array3.Length;
 			}
-			using (Stream25 stream = new Stream25(stream_0))
+			using (var stream = new Stream25(stream_0))
 			{
 				stream.method_1(num, num2, long_1, byte_1);
 			}

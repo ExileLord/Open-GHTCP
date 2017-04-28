@@ -21,8 +21,8 @@ namespace ns1
 
 		public float method_0()
 		{
-			float num = float_0;
-			float num2 = float_1;
+			var num = float_0;
+			var num2 = float_1;
 			return (float)Math.Sqrt(num * num + num2 * num2);
 		}
 
@@ -40,7 +40,7 @@ namespace ns1
 		{
 			if (obj is Struct10)
 			{
-				Struct10 struct10_ = (Struct10)obj;
+				var struct10_ = (Struct10)obj;
 				return smethod_0(this, struct10_);
 			}
 			return false;

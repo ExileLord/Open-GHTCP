@@ -17,10 +17,10 @@ namespace ns12
 
 		public override void vmethod_0(Class13 class13_0)
 		{
-			float[] array = class13_0.float_0;
-			int num = class13_0.method_0();
-			int num2 = class13_0.method_2();
-			float num3 = 0f;
+			var array = class13_0.float_0;
+			var num = class13_0.method_0();
+			var num2 = class13_0.method_2();
+			var num3 = 0f;
 			switch (int_0)
 			{
 			case 1:
@@ -33,8 +33,8 @@ namespace ns12
 				num3 = 1f;
 				break;
 			}
-			float num4 = float_0 / num3;
-			for (int i = num; i < num + num2; i++)
+			var num4 = float_0 / num3;
+			for (var i = num; i < num + num2; i++)
 			{
 				array[i] = class13_0.vmethod_1(i, array[i], array[i] * num4);
 			}

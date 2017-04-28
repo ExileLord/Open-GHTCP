@@ -22,18 +22,18 @@ namespace ns7
 
 		public Class140(Class144 class144_0, byte[] byte_0, Class122 class122_0)
 		{
-			int num = 0;
-			int num2 = 0;
-			Class152 @class = new Class152(16);
-			bool flag = class122_0 != null && class122_0.vmethod_2() != class122_0.vmethod_1();
-			bool flag2 = class122_0 != null && class122_0.vmethod_2() == class122_0.vmethod_1();
+			var num = 0;
+			var num2 = 0;
+			var @class = new Class152(16);
+			var flag = class122_0 != null && class122_0.vmethod_2() != class122_0.vmethod_1();
+			var flag2 = class122_0 != null && class122_0.vmethod_2() == class122_0.vmethod_1();
 			@class.vmethod_1(byte_0[0]);
 			@class.vmethod_1(byte_0[1]);
 			if ((@class.vmethod_3(1) & 3) != 0)
 			{
 				throw new BadHeaderException("Bad Magic Number: " + (@class.vmethod_3(1) & 255));
 			}
-			for (int i = 0; i < 2; i++)
+			for (var i = 0; i < 2; i++)
 			{
 				if (class144_0.vmethod_11(8) == 255)
 				{
@@ -41,7 +41,7 @@ namespace ns7
 				}
 				@class.vmethod_1((byte)class144_0.vmethod_10(8));
 			}
-			int num3 = @class.vmethod_3(2) >> 4 & 15;
+			var num3 = @class.vmethod_3(2) >> 4 & 15;
 			switch (num3)
 			{
 			case 0:
@@ -75,7 +75,7 @@ namespace ns7
 				int_0 = 256 << num3 - 8;
 				break;
 			}
-			int num4 = @class.vmethod_3(2) & 15;
+			var num4 = @class.vmethod_3(2) & 15;
 			switch (num4)
 			{
 			case 0:
@@ -121,7 +121,7 @@ namespace ns7
 			case 15:
 				throw new BadHeaderException("Bad Sample Rate (" + num4 + ")");
 			}
-			int num5 = @class.vmethod_3(3) >> 4 & 15;
+			var num5 = @class.vmethod_3(3) >> 4 & 15;
 			if ((num5 & 8) != 0)
 			{
 				int_2 = 2;
@@ -145,7 +145,7 @@ namespace ns7
 				int_2 = num5 + 1;
 				int_3 = 0;
 			}
-			int num6 = (@class.vmethod_3(3) & 14) >> 1;
+			var num6 = (@class.vmethod_3(3) & 14) >> 1;
 			switch (num6)
 			{
 			case 0:
@@ -188,7 +188,7 @@ namespace ns7
 			}
 			else
 			{
-				int num7 = class144_0.vmethod_18(@class);
+				var num7 = class144_0.vmethod_18(@class);
 				if (num7 == 4294967295L)
 				{
 					throw new BadHeaderException("Bad Last Frame");
@@ -197,11 +197,11 @@ namespace ns7
 			}
 			if (num != 0)
 			{
-				int num8 = class144_0.vmethod_10(8);
+				var num8 = class144_0.vmethod_10(8);
 				@class.vmethod_1((byte)num8);
 				if (num == 7)
 				{
-					int num9 = class144_0.vmethod_10(8);
+					var num9 = class144_0.vmethod_10(8);
 					@class.vmethod_1((byte)num9);
 					num8 = (num8 << 8 | num9);
 				}
@@ -209,11 +209,11 @@ namespace ns7
 			}
 			if (num2 != 0)
 			{
-				int num10 = class144_0.vmethod_10(8);
+				var num10 = class144_0.vmethod_10(8);
 				@class.vmethod_1((byte)num10);
 				if (num2 != 12)
 				{
-					int num11 = class144_0.vmethod_10(8);
+					var num11 = class144_0.vmethod_10(8);
 					@class.vmethod_1((byte)num11);
 					num10 = (num10 << 8 | num11);
 				}
@@ -230,7 +230,7 @@ namespace ns7
 					int_1 = num10 * 10;
 				}
 			}
-			byte b = (byte)class144_0.vmethod_10(8);
+			var b = (byte)class144_0.vmethod_10(8);
 			if (Class149.smethod_0(@class.vmethod_2(), @class.vmethod_0()) != b)
 			{
 				throw new BadHeaderException("STREAM_DECODER_ERROR_STATUS_BAD_HEADER");

@@ -7,8 +7,8 @@ namespace ns21
 	{
 		public int Compare(object x, object y)
 		{
-			TreeNode treeNode = x as TreeNode;
-			TreeNode treeNode2 = y as TreeNode;
+			var treeNode = x as TreeNode;
+			var treeNode2 = y as TreeNode;
 			if (treeNode.Nodes.Count > 0 && treeNode2.Nodes.Count == 0)
 			{
 				return -1;

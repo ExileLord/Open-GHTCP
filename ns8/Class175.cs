@@ -16,7 +16,7 @@ namespace ns8
 				vmethod_0(class13_0[0]);
 				return;
 			}
-			for (int i = 1; i < class13_0.Length; i++)
+			for (var i = 1; i < class13_0.Length; i++)
 			{
 				vmethod_1(class13_0[0], class13_0[i]);
 			}

@@ -20,7 +20,7 @@ namespace ns2
 
 		public Class31()
 		{
-			for (int i = 0; i < int_5.Length; i++)
+			for (var i = 0; i < int_5.Length; i++)
 			{
 				int_5[i] = new int[8];
 			}

@@ -38,10 +38,10 @@ namespace ns17
 
 		public string method_0()
 		{
-			object[] customAttributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
+			var customAttributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
 			if (customAttributes.Length > 0)
 			{
-				AssemblyTitleAttribute assemblyTitleAttribute = (AssemblyTitleAttribute)customAttributes[0];
+				var assemblyTitleAttribute = (AssemblyTitleAttribute)customAttributes[0];
 				if (assemblyTitleAttribute.Title != "")
 				{
 					return assemblyTitleAttribute.Title;
@@ -57,7 +57,7 @@ namespace ns17
 
 		public string method_2()
 		{
-			object[] customAttributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
+			var customAttributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
 			if (customAttributes.Length == 0)
 			{
 				return "";
@@ -67,7 +67,7 @@ namespace ns17
 
 		public string method_3()
 		{
-			object[] customAttributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
+			var customAttributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
 			if (customAttributes.Length == 0)
 			{
 				return "";
@@ -77,7 +77,7 @@ namespace ns17
 
 		public string method_4()
 		{
-			object[] customAttributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
+			var customAttributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
 			if (customAttributes.Length == 0)
 			{
 				return "";
@@ -96,7 +96,7 @@ namespace ns17
 
 		private void InitializeComponent()
 		{
-			ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(About));
+			var componentResourceManager = new ComponentResourceManager(typeof(About));
 			tableLayoutPanel = new TableLayoutPanel();
 			logoPictureBox = new PictureBox();
 			labelProductName = new Label();

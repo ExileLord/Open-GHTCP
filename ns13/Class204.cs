@@ -176,7 +176,7 @@ namespace ns13
 				string_4 = string_9.Substring(0, Math.Min(32, string_9.Length));
 				return;
 			}
-			string text = Environment.UserName;
+			var text = Environment.UserName;
 			if (text.Length > 32)
 			{
 				text = text.Substring(0, 32);
@@ -221,7 +221,7 @@ namespace ns13
 
 		public override bool Equals(object obj)
 		{
-			Class204 @class = obj as Class204;
+			var @class = obj as Class204;
 			return @class != null && (string_0 == @class.string_0 && int_0 == @class.int_0 && method_2() == @class.method_2() && method_4() == @class.method_4() && method_6() == @class.method_6() && method_8() == @class.method_8() && method_9() == @class.method_9() && method_10() == @class.method_10() && method_11() == @class.method_11() && method_13() == @class.method_13() && method_15() == @class.method_15() && method_17() == @class.method_17() && method_19() == @class.method_19() && method_21() == @class.method_21()) && method_22() == @class.method_22();
 		}
 	}

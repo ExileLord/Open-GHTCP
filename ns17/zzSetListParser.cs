@@ -24,7 +24,7 @@ namespace ns17
 
 		public override void vmethod_0()
 		{
-			string text = "scripts\\guitar\\guitar_progression.qb";
+			var text = "scripts\\guitar\\guitar_progression.qb";
 			zzGenericNode1 @class = class318_0.zzGetNode1(text);
 			gh3Songlist_0.method_4(text, @class.method_5(new StructurePointerRootNode("gh3_career_songs")));
 			gh3Songlist_0.method_4(text, @class.method_5(new StructurePointerRootNode("gh3_general_songs")));
@@ -58,8 +58,8 @@ namespace ns17
 			if (class318_0.method_6(text = "scripts\\guitar\\custom_menu\\guitar_custom_progression.qb"))
 			{
 				@class = class318_0.zzGetNode1(text);
-				int num = @class.method_5(new IntegerRootNode("custom_setlist_bitmask")).method_7();
-				for (int i = 0; i < 32; i++)
+				var num = @class.method_5(new IntegerRootNode("custom_setlist_bitmask")).method_7();
+				for (var i = 0; i < 32; i++)
 				{
 					if (num >> i != 0)
 					{

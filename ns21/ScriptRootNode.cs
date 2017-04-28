@@ -43,12 +43,12 @@ namespace ns21
 		{
 			int_0 = stream26_0.ReadInt();
 			int_1 = stream26_0.ReadInt();
-			int num = stream26_0.ReadInt();
+			var num = stream26_0.ReadInt();
 			stream26_0.ReadInt();
 			if (num != 0)
 			{
 				stream26_0.Position = num;
-				QbScriptNode @class = new QbScriptNode();
+				var @class = new QbScriptNode();
 				Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}
@@ -56,7 +56,7 @@ namespace ns21
 
 		public override void vmethod_14(Stream26 stream26_0)
 		{
-			byte[] array = new byte[4];
+			var array = new byte[4];
             array[1] = (byte)(vmethod_7() ? 32 : 4);
 			array[2] = 7;
 			stream26_0.WriteByteArray(array, false);

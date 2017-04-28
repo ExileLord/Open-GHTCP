@@ -19,7 +19,7 @@ namespace ns21
 		{
 			if (bool_1)
 			{
-				float[] ienumerable_ = new float[2];
+				var ienumerable_ = new float[2];
 				method_11(ienumerable_);
 			}
 		}
@@ -31,7 +31,7 @@ namespace ns21
 
 		public void method_11(IEnumerable<float> ienumerable_0)
 		{
-			foreach (float float_ in ienumerable_0)
+			foreach (var float_ in ienumerable_0)
 			{
 				Nodes.Add(new FloatValueNode(float_));
 			}
@@ -51,7 +51,7 @@ namespace ns21
 
 		public override void vmethod_14(Stream26 stream26_0)
 		{
-			byte[] array = new byte[4];
+			var array = new byte[4];
 			array[1] = 1;
 			stream26_0.WriteByteArray(array, false);
 			foreach (FloatValueNode class313_ in Nodes)

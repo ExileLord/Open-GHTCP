@@ -78,32 +78,32 @@ namespace ns3
 
 		public void method_1()
 		{
-			for (int i = 0; i < int_14; i++)
+			for (var i = 0; i < int_14; i++)
 			{
 				class27_0[i] = null;
 			}
 			class27_0 = null;
-			for (int j = 0; j < int_15; j++)
+			for (var j = 0; j < int_15; j++)
 			{
 				Class34.class34_0[int_21[j]].vmethod_2(object_0[j]);
 			}
 			object_0 = null;
-			for (int k = 0; k < int_16; k++)
+			for (var k = 0; k < int_16; k++)
 			{
 				Class50.class50_0[int_22[k]].vmethod_2(object_1[k]);
 			}
 			object_1 = null;
-			for (int l = 0; l < int_17; l++)
+			for (var l = 0; l < int_17; l++)
 			{
 				Class28.class28_0[int_23[l]].vmethod_2(object_2[l]);
 			}
 			object_2 = null;
-			for (int m = 0; m < int_18; m++)
+			for (var m = 0; m < int_18; m++)
 			{
 				Class23.class23_0[int_24[m]].vmethod_2(object_3[m]);
 			}
 			object_3 = null;
-			for (int n = 0; n < int_19; n++)
+			for (var n = 0; n < int_19; n++)
 			{
 				if (oggClass2[n] != null)
 				{
@@ -112,7 +112,7 @@ namespace ns3
 				}
 			}
 			oggClass2 = null;
-			for (int num = 0; num < int_20; num++)
+			for (var num = 0; num < int_20; num++)
 			{
 				class70_0[num].method_0();
 			}
@@ -150,7 +150,7 @@ namespace ns3
 			{
 				oggClass2 = new OGGClass2[int_19];
 			}
-			for (int i = 0; i < int_19; i++)
+			for (var i = 0; i < int_19; i++)
 			{
 				oggClass2[i] = new OGGClass2();
 				if (oggClass2[i].method_0(oggClass3) != 0)
@@ -168,7 +168,7 @@ namespace ns3
 			{
 				object_1 = new object[int_16];
 			}
-			for (int j = 0; j < int_16; j++)
+			for (var j = 0; j < int_16; j++)
 			{
 				int_22[j] = oggClass3.method_6(16);
 				if (int_22[j] < 0 || int_22[j] >= int_2)
@@ -192,7 +192,7 @@ namespace ns3
 			{
 				object_2 = new object[int_17];
 			}
-			for (int k = 0; k < int_17; k++)
+			for (var k = 0; k < int_17; k++)
 			{
 				int_23[k] = oggClass3.method_6(16);
 				if (int_23[k] < 0 || int_23[k] >= int_3)
@@ -216,7 +216,7 @@ namespace ns3
 			{
 				object_3 = new object[int_18];
 			}
-			for (int l = 0; l < int_18; l++)
+			for (var l = 0; l < int_18; l++)
 			{
 				int_24[l] = oggClass3.method_6(16);
 				if (int_24[l] < 0 || int_24[l] >= int_4)
@@ -240,7 +240,7 @@ namespace ns3
 			{
 				object_0 = new object[int_15];
 			}
-			for (int m = 0; m < int_15; m++)
+			for (var m = 0; m < int_15; m++)
 			{
 				int_21[m] = oggClass3.method_6(16);
 				if (int_21[m] < 0 || int_21[m] >= int_5)
@@ -260,7 +260,7 @@ namespace ns3
 			{
 				class27_0 = new Class27[int_14];
 			}
-			for (int n = 0; n < int_14; n++)
+			for (var n = 0; n < int_14; n++)
 			{
 				class27_0[n] = new Class27();
 				class27_0[n].int_0 = oggClass3.method_6(1);
@@ -283,12 +283,12 @@ namespace ns3
 
 		public int method_4(Class47 class47_0, Class67 class67_0)
 		{
-			OGGClass3 @class = new OGGClass3();
+			var @class = new OGGClass3();
 			if (class67_0 != null)
 			{
 				@class.method_4(class67_0.byte_0, class67_0.int_0, class67_0.int_1);
-				byte[] array = new byte[6];
-				int num = @class.method_6(8);
+				var array = new byte[6];
+				var num = @class.method_6(8);
 				@class.method_5(array, 6);
 				if (array[0] == 118 && array[1] == 111 && array[2] == 114 && array[3] == 98 && array[4] == 105)
 				{

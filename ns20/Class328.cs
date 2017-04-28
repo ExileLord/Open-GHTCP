@@ -83,11 +83,11 @@ namespace ns20
 			{
 				return int_1;
 			}
-			int num = 2;
+			var num = 2;
 			if (dictionary_0.Count != 0)
 			{
 				num = dictionary_0.Keys.Count * 12 + 1;
-				foreach (int current in dictionary_0.Keys)
+				foreach (var current in dictionary_0.Keys)
 				{
 					num += dictionary_0[current].Length;
 				}
@@ -177,12 +177,12 @@ namespace ns20
 
 		public byte[] imethod_16()
 		{
-			MemoryStream memoryStream = new MemoryStream();
-			using (StreamWriter streamWriter = new StreamWriter(memoryStream, encoding_0))
+			var memoryStream = new MemoryStream();
+			using (var streamWriter = new StreamWriter(memoryStream, encoding_0))
 			{
 				if (dictionary_0 != null && dictionary_0.Count != 0)
 				{
-					foreach (int current in dictionary_0.Keys)
+					foreach (var current in dictionary_0.Keys)
 					{
 						streamWriter.Write("{0} \"{1}\"\n", KeyGenerator.ValToHex32bit(current), dictionary_0[current]);
 					}
@@ -199,14 +199,14 @@ namespace ns20
 		public void imethod_17(byte[] byte_0)
 		{
 			dictionary_0 = new Dictionary<int, string>();
-			StreamReader streamReader = new StreamReader(new MemoryStream(byte_0), encoding_0);
+			var streamReader = new StreamReader(new MemoryStream(byte_0), encoding_0);
 			encoding_0 = streamReader.CurrentEncoding;
 			string text;
 			while ((text = streamReader.ReadLine()) != null)
 			{
 				if (!(text == ""))
 				{
-					string[] array = text.Split(new[]
+					var array = text.Split(new[]
 					{
 						' '
 					}, 2, StringSplitOptions.RemoveEmptyEntries);
@@ -266,7 +266,7 @@ namespace ns20
 
 		public override object Clone()
 		{
-			Class328 @class = (Class328)base.Clone();
+			var @class = (Class328)base.Clone();
 			@class.imethod_1(int_0);
 			@class.imethod_3(int_1);
 			@class.imethod_5(int_2);

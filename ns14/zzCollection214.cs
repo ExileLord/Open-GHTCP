@@ -25,8 +25,8 @@ namespace ns14
 			{
 				if (dictionary_0.ContainsKey(key))
 				{
-					List<TValue> arg_30_0 = list_1;
-					int arg_30_1 = list_0.IndexOf(key);
+					var arg_30_0 = list_1;
+					var arg_30_1 = list_0.IndexOf(key);
 					dictionary_0[key] = value;
 					arg_30_0[arg_30_1] = value;
 					return;
@@ -49,8 +49,8 @@ namespace ns14
 			{
 				if (dictionary_0.Count > int_0)
 				{
-					Dictionary<TKey, TValue> arg_30_0 = dictionary_0;
-					TKey arg_30_1 = list_0[int_0];
+					var arg_30_0 = dictionary_0;
+					var arg_30_1 = list_0[int_0];
 					list_1[int_0] = value;
 					arg_30_0[arg_30_1] = value;
 				}
@@ -67,8 +67,8 @@ namespace ns14
 			{
 				if (dictionary_0.ContainsKey(value))
 				{
-					List<TValue> arg_30_0 = list_1;
-					int arg_30_1 = list_0.IndexOf(value);
+					var arg_30_0 = list_1;
+					var arg_30_1 = list_0.IndexOf(value);
 					dictionary_0[value] = gparam_0;
 					arg_30_0[arg_30_1] = gparam_0;
 					return;
@@ -164,7 +164,7 @@ namespace ns14
 
 		public void Add(ICollection<KeyValuePair<TKey, TValue>> icollection_0)
 		{
-			foreach (KeyValuePair<TKey, TValue> current in icollection_0)
+			foreach (var current in icollection_0)
 			{
 				Add(current);
 			}
@@ -181,7 +181,7 @@ namespace ns14
 		{
 			if (dictionary_0.ContainsKey(item.Key))
 			{
-				TValue tValue = dictionary_0[item.Key];
+				var tValue = dictionary_0[item.Key];
 				return tValue.Equals(item.Value);
 			}
 			return false;
@@ -189,7 +189,7 @@ namespace ns14
 
 		public void CopyTo(KeyValuePair<TKey, TValue>[] array, int index)
 		{
-			for (int i = 0; i < dictionary_0.Count; i++)
+			for (var i = 0; i < dictionary_0.Count; i++)
 			{
 				array[index + i] = new KeyValuePair<TKey, TValue>(list_0[i], list_1[i]);
 			}

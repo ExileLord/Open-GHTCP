@@ -25,22 +25,22 @@ namespace ns13
 		{
 			if (compressionAmount >= 0 && compressionAmount <= 9)
 			{
-				Class192 @class = new Class192();
-				Stream23 stream = new Stream23(zipFile);
+				var @class = new Class192();
+				var stream = new Stream23(zipFile);
 				stream.method_6(compressionAmount);
 				if (password != null)
 				{
 					stream.method_2(password);
 				}
-				int num = 0;
-				using (IEnumerator<string> enumerator = fileNameList.GetEnumerator())
+				var num = 0;
+				using (var enumerator = fileNameList.GetEnumerator())
 				{
 					while (enumerator.MoveNext())
 					{
-						string current = enumerator.Current;
-						Class193 class2 = new Class193(current);
+						var current = enumerator.Current;
+						var class2 = new Class193(current);
 						class2.method_19(DateTime.Now);
-						Stream stream2 = fileStreamList[num++];
+						var stream2 = fileStreamList[num++];
 						byte[] array;
 						if (stream2 is MemoryStream)
 						{
@@ -49,7 +49,7 @@ namespace ns13
 						else
 						{
 							array = new byte[stream2.Length];
-							int num2 = stream2.Read(array, 0, array.Length);
+							var num2 = stream2.Read(array, 0, array.Length);
 							if (num2 < array.Length)
 							{
 								Array.Resize(ref array, num2);
@@ -91,14 +91,14 @@ namespace ns13
 
 		public static byte[] smethod_6(Stream stream_0, string string_0)
 		{
-			MemoryStream memoryStream = new MemoryStream();
+			var memoryStream = new MemoryStream();
 			smethod_9(stream_0, memoryStream, string_0);
 			return memoryStream.ToArray();
 		}
 
 		public static void smethod_7(Stream StreamIn, out byte[] bytes, string FileName, string Password)
 		{
-			MemoryStream memoryStream = new MemoryStream();
+			var memoryStream = new MemoryStream();
 			smethod_10(StreamIn, memoryStream, FileName, Password);
 			bytes = memoryStream.ToArray();
 		}
@@ -115,12 +115,12 @@ namespace ns13
 
 		public static void smethod_10(Stream zipFile, Stream memoryStream, string fileName, string password)
 		{
-            ZIPCompressor zipManager = new ZIPCompressor(zipFile);
+            var zipManager = new ZIPCompressor(zipFile);
 			if (password != null)
 			{
 				zipManager.method_3(password);
 			}
-			byte[] buffer = new byte[2048];
+			var buffer = new byte[2048];
 			Class193 @class;
 			while ((@class = zipManager.method_5()) != null)
 			{
@@ -144,18 +144,18 @@ namespace ns13
 		public static void smethod_11(string string_0, List<string> list_0, List<string> list_1, string string_1)
 		{
 			Stream stream = File.OpenRead(string_0);
-            ZIPCompressor stream2 = new ZIPCompressor(stream);
+            var stream2 = new ZIPCompressor(stream);
 			if (string_1 != null)
 			{
 				stream2.method_3(string_1);
 			}
-			byte[] array = new byte[2048];
+			var array = new byte[2048];
 			Class193 @class;
 			while ((@class = stream2.method_5()) != null)
 			{
 				if (list_1.Contains(@class.method_20()))
 				{
-					int index = list_1.IndexOf(@class.method_20());
+					var index = list_1.IndexOf(@class.method_20());
 					using (Stream stream3 = File.Create(list_0[index]))
 					{
 						if (stream3.CanWrite)

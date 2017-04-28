@@ -20,16 +20,16 @@ namespace ns11
 		{
 			int_3 = class136_0.vmethod_2();
 			int_1 = int_6;
-			for (int i = 0; i < int_6; i++)
+			for (var i = 0; i < int_6; i++)
 			{
 				int_2[i] = class144_0.vmethod_12(int_4);
 			}
-			int num = class144_0.vmethod_10(2);
-			int num2 = num;
+			var num = class144_0.vmethod_10(2);
+			var num2 = num;
 			if (num2 == 0)
 			{
-				int int_7 = class144_0.vmethod_10(4);
-				Class138 @class = new Class138();
+				var int_7 = class144_0.vmethod_10(4);
+				var @class = new Class138();
 				class137_0 = @class;
 				@class.int_0 = int_7;
 				@class.class143_0 = class136_0.vmethod_1();
@@ -43,8 +43,8 @@ namespace ns11
 
 		public override string ToString()
 		{
-			StringBuilder stringBuilder = new StringBuilder(string.Concat("FLACSubframe_Fixed: Order=", int_1, " PartitionOrder=", ((Class138)class137_0).int_0, " WastedBits=", int_0));
-			for (int i = 0; i < int_1; i++)
+			var stringBuilder = new StringBuilder(string.Concat("FLACSubframe_Fixed: Order=", int_1, " PartitionOrder=", ((Class138)class137_0).int_0, " WastedBits=", int_0));
+			for (var i = 0; i < int_1; i++)
 			{
 				stringBuilder.Append(string.Concat(" warmup[", i, "]=", int_2[i]));
 			}

@@ -33,9 +33,9 @@ namespace ns7
 
 		public override string ToString()
 		{
-			StringBuilder stringBuilder = new StringBuilder();
+			var stringBuilder = new StringBuilder();
 			stringBuilder.Append("Frame Header: " + class140_0 + "\n");
-			for (int i = 0; i < class140_0.int_2; i++)
+			for (var i = 0; i < class140_0.int_2; i++)
 			{
 				stringBuilder.Append("\tFrame Data " + class131_0[i] + "\n");
 			}

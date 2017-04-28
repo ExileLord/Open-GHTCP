@@ -197,7 +197,7 @@ namespace ns13
 
 		private bool method_1()
 		{
-			int num = class187_0.method_0(16);
+			var num = class187_0.method_0(16);
 			if (num < 0)
 			{
 				return false;
@@ -228,7 +228,7 @@ namespace ns13
 		{
 			while (int_6 > 0)
 			{
-				int num = class187_0.method_0(8);
+				var num = class187_0.method_0(8);
 				if (num < 0)
 				{
 					return false;
@@ -242,7 +242,7 @@ namespace ns13
 
 		private bool method_3()
 		{
-			int i = class203_0.method_4();
+			var i = class203_0.method_4();
 			while (i >= 258)
 			{
 				int num;
@@ -291,7 +291,7 @@ namespace ns13
 				if (int_6 > 0)
 				{
 					int_4 = 10;
-					int num2 = class187_0.method_0(int_6);
+					var num2 = class187_0.method_0(int_6);
 					if (num2 < 0)
 					{
 						return false;
@@ -323,7 +323,7 @@ namespace ns13
 				if (int_6 > 0)
 				{
 					int_4 = 8;
-					int num3 = class187_0.method_0(int_6);
+					var num3 = class187_0.method_0(int_6);
 					if (num3 < 0)
 					{
 						return false;
@@ -341,7 +341,7 @@ namespace ns13
 		{
 			while (int_6 > 0)
 			{
-				int num = class187_0.method_0(8);
+				var num = class187_0.method_0(8);
 				if (num < 0)
 				{
 					return false;
@@ -381,7 +381,7 @@ namespace ns13
 				}
 				else
 				{
-					int num = class187_0.method_0(3);
+					var num = class187_0.method_0(3);
 					if (num < 0)
 					{
 						return false;
@@ -445,7 +445,7 @@ namespace ns13
 			default:
 				throw new SharpZipBaseException("Inflater.Decode unknown mode");
 			}
-			int num2 = class187_0.method_0(16);
+			var num2 = class187_0.method_0(16);
 			if (num2 < 0)
 			{
 				return false;
@@ -457,7 +457,7 @@ namespace ns13
 			}
 			int_4 = 5;
 			IL_1A4:
-			int num3 = class203_0.method_3(class187_0, int_9);
+			var num3 = class203_0.method_3(class187_0, int_9);
 			int_9 -= num3;
 			if (int_9 == 0)
 			{
@@ -501,12 +501,12 @@ namespace ns13
 				}
 				return 0;
 			}
-			int num = 0;
+			var num = 0;
 			while (true)
 			{
 				if (int_4 != 11)
 				{
-					int num2 = class203_0.method_6(byte_0, int_10, int_11);
+					var num2 = class203_0.method_6(byte_0, int_10, int_11);
 					if (num2 > 0)
 					{
 						class200_0.vmethod_2(byte_0, int_10, num2);

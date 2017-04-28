@@ -490,11 +490,11 @@ namespace ns5
 
 		private void method_0()
 		{
-			for (int i = 0; i < 8; i++)
+			for (var i = 0; i < 8; i++)
 			{
 				double_12[i] = new double[256];
 			}
-			for (int j = 0; j < 8; j++)
+			for (var j = 0; j < 8; j++)
 			{
 				double_13[j] = new double[256];
 			}
@@ -502,8 +502,8 @@ namespace ns5
 
 		private void method_1(double[] double_14, double[] double_15, int int_2, int int_3)
 		{
-			double num = double_14[int_2];
-			double num2 = double_15[int_2];
+			var num = double_14[int_2];
+			var num2 = double_15[int_2];
 			double_14[int_2] = double_14[int_3];
 			double_15[int_2] = double_15[int_3];
 			double_14[int_3] = num;
@@ -512,20 +512,20 @@ namespace ns5
 
 		public virtual void vmethod_0(double[] double_14, int int_2, int int_3, double double_15)
 		{
-			for (int i = 0; i < 128; i++)
+			for (var i = 0; i < 128; i++)
 			{
 				double_2[i] = double_14[int_2 + 256 - 2 * i - 1] * double_8[i] - double_14[int_2 + 2 * i] * double_9[i];
 				double_3[i] = -1.0 * (double_14[int_2 + 2 * i] * double_8[i] + double_14[int_2 + 256 - 2 * i - 1] * double_9[i]);
 			}
-			for (int j = 0; j < 128; j++)
+			for (var j = 0; j < 128; j++)
 			{
-				int num = int_0[j];
+				var num = int_0[j];
 				if (num < j)
 				{
 					method_1(double_2, double_3, j, num);
 				}
 			}
-			for (int k = 0; k < 7; k++)
+			for (var k = 0; k < 7; k++)
 			{
 				int num2;
 				if (k != 0)
@@ -536,17 +536,17 @@ namespace ns5
 				{
 					num2 = 1;
 				}
-				int num3 = 1 << k + 1;
-				for (int l = 0; l < num2; l++)
+				var num3 = 1 << k + 1;
+				for (var l = 0; l < num2; l++)
 				{
-					for (int m = 0; m < 128; m += num3)
+					for (var m = 0; m < 128; m += num3)
 					{
-						int num4 = l + m;
-						int num5 = num4 + num2;
-						double num6 = double_2[num4];
-						double num7 = double_3[num4];
-						double num8 = double_2[num5] * double_12[k][l] - double_3[num5] * double_13[k][l];
-						double num9 = double_3[num5] * double_12[k][l] + double_2[num5] * double_13[k][l];
+						var num4 = l + m;
+						var num5 = num4 + num2;
+						var num6 = double_2[num4];
+						var num7 = double_3[num4];
+						var num8 = double_2[num5] * double_12[k][l] - double_3[num5] * double_13[k][l];
+						var num9 = double_3[num5] * double_12[k][l] + double_2[num5] * double_13[k][l];
 						double_2[num4] = num6 + num8;
 						double_3[num4] = num7 + num9;
 						double_2[num5] = num6 - num8;
@@ -554,33 +554,33 @@ namespace ns5
 					}
 				}
 			}
-			for (int n = 0; n < 128; n++)
+			for (var n = 0; n < 128; n++)
 			{
-				double num6 = double_2[n];
-				double num7 = -1.0 * double_3[n];
+				var num6 = double_2[n];
+				var num7 = -1.0 * double_3[n];
 				double_2[n] = num6 * double_8[n] - num7 * double_9[n];
 				double_3[n] = num6 * double_9[n] + num7 * double_8[n];
 			}
-			int num10 = int_2;
-			int num11 = int_3;
-			int num12 = 0;
-			for (int num13 = 0; num13 < 64; num13++)
+			var num10 = int_2;
+			var num11 = int_3;
+			var num12 = 0;
+			for (var num13 = 0; num13 < 64; num13++)
 			{
 				double_14[num10++] = -double_3[64 + num13] * double_1[num12++] + double_14[num11++] + double_15;
 				double_14[num10++] = double_2[64 - num13 - 1] * double_1[num12++] + double_14[num11++] + double_15;
 			}
-			for (int num14 = 0; num14 < 64; num14++)
+			for (var num14 = 0; num14 < 64; num14++)
 			{
 				double_14[num10++] = -double_2[num14] * double_1[num12++] + double_14[num11++] + double_15;
 				double_14[num10++] = double_3[128 - num14 - 1] * double_1[num12++] + double_14[num11++] + double_15;
 			}
 			num11 = int_3;
-			for (int num15 = 0; num15 < 64; num15++)
+			for (var num15 = 0; num15 < 64; num15++)
 			{
 				double_14[num11++] = -double_2[64 + num15] * double_1[--num12];
 				double_14[num11++] = double_3[64 - num15 - 1] * double_1[--num12];
 			}
-			for (int num16 = 0; num16 < 64; num16++)
+			for (var num16 = 0; num16 < 64; num16++)
 			{
 				double_14[num11++] = double_3[num16] * double_1[--num12];
 				double_14[num11++] = -double_2[128 - num16 - 1] * double_1[--num12];
@@ -589,28 +589,28 @@ namespace ns5
 
 		public virtual void vmethod_1(double[] double_14, int int_2, int int_3, double double_15)
 		{
-			for (int i = 0; i < 64; i++)
+			for (var i = 0; i < 64; i++)
 			{
-				int num = 2 * (128 - 2 * i - 1);
-				int num2 = 2 * (2 * i);
+				var num = 2 * (128 - 2 * i - 1);
+				var num2 = 2 * (2 * i);
 				double_4[i] = double_14[num] * double_10[i] - double_14[num2] * double_11[i];
 				double_5[i] = -1.0 * (double_14[num2] * double_10[i] + double_14[num] * double_11[i]);
 				double_6[i] = double_14[num + 1] * double_10[i] - double_14[num2 + 1] * double_11[i];
 				double_7[i] = -1.0 * (double_14[num2 + 1] * double_10[i] + double_14[num + 1] * double_11[i]);
 			}
-			for (int j = 0; j < 64; j++)
+			for (var j = 0; j < 64; j++)
 			{
-				int num3 = int_1[j];
+				var num3 = int_1[j];
 				if (num3 < j)
 				{
 					method_1(double_4, double_5, j, num3);
 					method_1(double_6, double_7, j, num3);
 				}
 			}
-			for (int k = 0; k < 6; k++)
+			for (var k = 0; k < 6; k++)
 			{
-				int num4 = 1 << k;
-				int num5 = 1 << k + 1;
+				var num4 = 1 << k;
+				var num5 = 1 << k + 1;
 				if (k != 0)
 				{
 					num4 = 1 << k;
@@ -619,16 +619,16 @@ namespace ns5
 				{
 					num4 = 1;
 				}
-				for (int l = 0; l < num4; l++)
+				for (var l = 0; l < num4; l++)
 				{
-					for (int m = 0; m < 64; m += num5)
+					for (var m = 0; m < 64; m += num5)
 					{
-						int num6 = l + m;
-						int num7 = num6 + num4;
-						double num8 = double_4[num6];
-						double num9 = double_5[num6];
-						double num10 = double_4[num7] * double_12[k][l] - double_5[num7] * double_13[k][l];
-						double num11 = double_5[num7] * double_12[k][l] + double_4[num7] * double_13[k][l];
+						var num6 = l + m;
+						var num7 = num6 + num4;
+						var num8 = double_4[num6];
+						var num9 = double_5[num6];
+						var num10 = double_4[num7] * double_12[k][l] - double_5[num7] * double_13[k][l];
+						var num11 = double_5[num7] * double_12[k][l] + double_4[num7] * double_13[k][l];
 						double_4[num6] = num8 + num10;
 						double_5[num6] = num9 + num11;
 						double_4[num7] = num8 - num10;
@@ -644,10 +644,10 @@ namespace ns5
 					}
 				}
 			}
-			for (int n = 0; n < 64; n++)
+			for (var n = 0; n < 64; n++)
 			{
-				double num8 = double_4[n];
-				double num9 = -double_5[n];
+				var num8 = double_4[n];
+				var num9 = -double_5[n];
 				double_4[n] = num8 * double_10[n] - num9 * double_11[n];
 				double_5[n] = num8 * double_11[n] + num9 * double_10[n];
 				num8 = double_6[n];
@@ -655,26 +655,26 @@ namespace ns5
 				double_6[n] = num8 * double_10[n] - num9 * double_11[n];
 				double_7[n] = num8 * double_11[n] + num9 * double_10[n];
 			}
-			int num12 = int_2;
-			int num13 = int_3;
-			int num14 = 0;
-			for (int num15 = 0; num15 < 64; num15++)
+			var num12 = int_2;
+			var num13 = int_3;
+			var num14 = 0;
+			for (var num15 = 0; num15 < 64; num15++)
 			{
 				double_14[num12++] = -double_5[num15] * double_1[num14++] + double_14[num13++] + double_15;
 				double_14[num12++] = double_4[64 - num15 - 1] * double_1[num14++] + double_14[num13++] + double_15;
 			}
-			for (int num16 = 0; num16 < 64; num16++)
+			for (var num16 = 0; num16 < 64; num16++)
 			{
 				double_14[num12++] = -double_4[num16] * double_1[num14++] + double_14[num13++] + double_15;
 				double_14[num12++] = double_5[64 - num16 - 1] * double_1[num14++] + double_14[num13++] + double_15;
 			}
 			num13 = int_3;
-			for (int num17 = 0; num17 < 64; num17++)
+			for (var num17 = 0; num17 < 64; num17++)
 			{
 				double_14[num13++] = -double_6[num17] * double_1[--num14];
 				double_14[num13++] = double_7[64 - num17 - 1] * double_1[--num14];
 			}
-			for (int num18 = 0; num18 < 64; num18++)
+			for (var num18 = 0; num18 < 64; num18++)
 			{
 				double_14[num13++] = double_7[num18] * double_1[--num14];
 				double_14[num13++] = -double_6[64 - num18 - 1] * double_1[--num14];
@@ -684,20 +684,20 @@ namespace ns5
 		public Class110()
 		{
 			method_0();
-			for (int i = 0; i < 128; i++)
+			for (var i = 0; i < 128; i++)
 			{
 				double_8[i] = -Math.Cos(0.0015339807878856412 * (8 * i + 1));
 				double_9[i] = -Math.Sin(0.0015339807878856412 * (8 * i + 1));
 			}
-			for (int i = 0; i < 64; i++)
+			for (var i = 0; i < 64; i++)
 			{
 				double_10[i] = -Math.Cos(0.0030679615757712823 * (8 * i + 1));
 				double_11[i] = -Math.Sin(0.0030679615757712823 * (8 * i + 1));
 			}
-			for (int i = 0; i < 7; i++)
+			for (var i = 0; i < 7; i++)
 			{
-				int num = 1 << i;
-				for (int j = 0; j < num; j++)
+				var num = 1 << i;
+				for (var j = 0; j < num; j++)
 				{
 					double_12[i][j] = Math.Cos(-3.1415926535897931 * j / num);
 					double_13[i][j] = Math.Sin(-3.1415926535897931 * j / num);
@@ -711,13 +711,13 @@ namespace ns5
 			{
 				int_2 = 2;
 			}
-			int num = 0;
-			byte[] array = new byte[int_2 * 256 * 2];
-			for (int i = 0; i < 256; i++)
+			var num = 0;
+			var array = new byte[int_2 * 256 * 2];
+			for (var i = 0; i < 256; i++)
 			{
-				for (int j = 0; j < int_2; j++)
+				for (var j = 0; j < int_2; j++)
 				{
-					int num2 = (int)(double_0 * double_14[i + 256 * j + 256]);
+					var num2 = (int)(double_0 * double_14[i + 256 * j + 256]);
 					if (num2 > 32767)
 					{
 						num2 = 32767;

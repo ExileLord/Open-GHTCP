@@ -65,14 +65,14 @@ namespace ns12
 
 		public override void vmethod_0(Class13 class13_0)
 		{
-			Struct11 @struct = new Struct11(class13_0.int_0 + class13_0.method_0(), class13_0.int_0 + class13_0.method_0() + class13_0.method_2());
+			var @struct = new Struct11(class13_0.int_0 + class13_0.method_0(), class13_0.int_0 + class13_0.method_0() + class13_0.method_2());
 			if (struct11_0.Length != 0)
 			{
-				Struct11[] array = struct11_0;
-				for (int i = 0; i < array.Length; i++)
+				var array = struct11_0;
+				for (var i = 0; i < array.Length; i++)
 				{
-					Struct11 struct2 = array[i];
-					Struct11 struct3 = struct2.method_0(@struct);
+					var struct2 = array[i];
+					var struct3 = struct2.method_0(@struct);
 					if (!struct3.method_1())
 					{
 						method_1(ref class13_0.float_0, struct3.method_2() - class13_0.int_0, struct3.method_3(), struct3.method_2() - struct2.method_2(), struct2.method_3());
@@ -90,13 +90,13 @@ namespace ns12
 			case Enum26.const_0:
 				try
 				{
-					for (int i = 0; i < int_1; i++)
+					for (var i = 0; i < int_1; i++)
 					{
 						float_2[int_0 + i] *= method_0((int_2 + i) / float_3) * float_1 + float_0;
 					}
 					if (bool_0)
 					{
-						for (int j = 0; j < int_0; j++)
+						for (var j = 0; j < int_0; j++)
 						{
 							float_2[j] *= float_0;
 						}
@@ -117,13 +117,13 @@ namespace ns12
 			}
 			try
 			{
-				for (int k = 0; k < int_1; k++)
+				for (var k = 0; k < int_1; k++)
 				{
 					float_2[int_0 + k] *= method_0(1f - (int_2 + k) / float_3) * float_1 + float_0;
 				}
 				if (bool_0)
 				{
-					for (int l = int_0 + int_1; l < float_2.Length; l++)
+					for (var l = int_0 + int_1; l < float_2.Length; l++)
 					{
 						float_2[l] *= float_0;
 					}
@@ -135,20 +135,20 @@ namespace ns12
 				return;
 			}
 			IL_117:
-			int num = int_1 / 2;
+			var num = int_1 / 2;
 			float_3 = num;
-			float[] array = new float[float_2.Length - num];
+			var array = new float[float_2.Length - num];
 			try
 			{
-				for (int m = 0; m < num; m++)
+				for (var m = 0; m < num; m++)
 				{
 					float_2[int_0 + m] = method_0((num - m) / float_3) * float_2[int_0 + m] + method_0(m / float_3) * float_2[int_0 + num + m];
 				}
-				for (int n = 0; n < int_0 + num; n++)
+				for (var n = 0; n < int_0 + num; n++)
 				{
 					array[n] = float_2[n];
 				}
-				for (int num2 = int_0 + int_1; num2 < float_2.Length; num2++)
+				for (var num2 = int_0 + int_1; num2 < float_2.Length; num2++)
 				{
 					array[num2 - num] = float_2[num2];
 				}

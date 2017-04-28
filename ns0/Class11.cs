@@ -86,7 +86,7 @@ namespace ns0
 
 		public static byte smethod_16(double double_0)
 		{
-			double num = Math.Round(double_0 * 127.0) + 128.0;
+			var num = Math.Round(double_0 * 127.0) + 128.0;
 			if (num > 255.0)
 			{
 				return 255;
@@ -105,7 +105,7 @@ namespace ns0
 
 		public static sbyte smethod_18(double double_0)
 		{
-			double num = Math.Round(double_0 * 127.0);
+			var num = Math.Round(double_0 * 127.0);
 			if (num > 127.0)
 			{
 				return 127;
@@ -124,7 +124,7 @@ namespace ns0
 
 		public static short smethod_20(double double_0)
 		{
-			double num = Math.Round(double_0 * 32767.0);
+			var num = Math.Round(double_0 * 32767.0);
 			if (num > 32767.0)
 			{
 				return 32767;
@@ -143,7 +143,7 @@ namespace ns0
 
 		public static Struct8 smethod_22(double double_0)
 		{
-			double num = Math.Round(double_0 * 8388607.0);
+			var num = Math.Round(double_0 * 8388607.0);
 			return Struct8.smethod_1((num > 8388607.0) ? 8388607 : ((num < -8388608.0) ? -8388608 : ((int)num)));
 		}
 
@@ -154,7 +154,7 @@ namespace ns0
 
 		public static int smethod_24(double double_0)
 		{
-			double num = Math.Round(double_0 * 2147483647.0);
+			var num = Math.Round(double_0 * 2147483647.0);
 			if (num > 2147483647.0)
 			{
 				return 2147483647;

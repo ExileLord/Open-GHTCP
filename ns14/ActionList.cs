@@ -15,12 +15,12 @@ namespace ns14
 
 		public void method_0(Delegate6 delegate6_1)
 		{
-			Delegate6 @delegate = delegate6_0;
+			var @delegate = delegate6_0;
 			Delegate6 delegate2;
 			do
 			{
 				delegate2 = @delegate;
-				Delegate6 value = (Delegate6)Delegate.Combine(delegate2, delegate6_1);
+				var value = (Delegate6)Delegate.Combine(delegate2, delegate6_1);
 				@delegate = Interlocked.CompareExchange(ref delegate6_0, value, delegate2);
 			}
 			while (@delegate != delegate2);
@@ -34,9 +34,9 @@ namespace ns14
 		public void method_1()
 		{
 			EventArgs0 e;
-            foreach (QbEditor current in actionList)
+            foreach (var current in actionList)
 			{
-				int int_ = 100 * actionList.IndexOf(current) / actionList.Count;
+				var int_ = 100 * actionList.IndexOf(current) / actionList.Count;
 				e = new EventArgs0(current + " Processing...", int_);
 				delegate6_0(this, e);
                 string finalStatus;

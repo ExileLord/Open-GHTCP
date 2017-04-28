@@ -20,7 +20,7 @@ namespace ns13
 				591751049u,
 				878082192u
 			};
-			for (int i = 0; i < byte_0.Length; i++)
+			for (var i = 0; i < byte_0.Length; i++)
 			{
 				array[0] = Class192.smethod_0(array[0], byte_0[i]);
 				array[1] = array[1] + (byte)array[0];

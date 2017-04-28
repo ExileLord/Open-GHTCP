@@ -77,7 +77,7 @@ namespace ns15
 
 		public ChartParser LoadMidi()
 		{
-			string name = "";
+			var name = "";
 			name = name + new FileInfo(fileLocation).Name + ":\n";
 			try
 			{
@@ -87,7 +87,7 @@ namespace ns15
 			{
 				throw new IOException(name + "Unknown Error: Could not parse MIDI sequence.");
 			}
-			foreach (MIDILine current in midiReader.getMidiLineList())
+			foreach (var current in midiReader.getMidiLineList())
 			{
 				if (current.method_2().Equals("PART GUITAR"))
 				{
@@ -107,7 +107,7 @@ namespace ns15
 			{
 				throw new IOException(name + "PART GUITAR not found. No chart created.");
 			}
-			ChartParser chartParser = new ChartParser();
+			var chartParser = new ChartParser();
 			bpmInterpreter = chartParser.bpmInterpreter;
 			sectionInterpreter = chartParser.sectionInterpreter;
 			chartParser.difficultyWithNotes.Add("EasySingle", easySingle);
@@ -135,7 +135,7 @@ namespace ns15
 			object obj = name;
 			name = string.Concat(obj, "NumTracks = ", midiReader.getMidiLineList().Count, "\n");
 			method_1(midiReader.getMidiLineList()[0]);
-			foreach (MIDILine midiLine in midiReader.getMidiLineList())
+			foreach (var midiLine in midiReader.getMidiLineList())
 			{
 				if (midiLine.method_2().Equals("PART GUITAR"))
 				{
@@ -186,12 +186,12 @@ namespace ns15
 		private void method_1(MIDILine class353_0)
 		{
 			songTitle = class353_0.method_2();
-			foreach (AbstractNoteClass current in class353_0.method_0())
+			foreach (var current in class353_0.method_0())
 			{
-				int num = Convert.ToInt32(current.method_0() * resolution);
+				var num = Convert.ToInt32(current.method_0() * resolution);
 				if (current is zzNote1)
 				{
-					zzNote1 @class = (zzNote1)current;
+					var @class = (zzNote1)current;
 					if (!isEvents && @class.method_2() == zzNote1.Enum37.const_0)
 					{
 						method_4(4, num, "section " + @class.method_1());
@@ -199,7 +199,7 @@ namespace ns15
 				}
 				else if (current is BpmNote1)
 				{
-					int num2 = ((BpmNote1)current).method_1();
+					var num2 = ((BpmNote1)current).method_1();
 					bpmInterpreter.bpmList.Add(num, Convert.ToInt32(Math.Floor(60000000.0 / num2 * 1000.0)));
 				}
 				else if (current is zzNote338)
@@ -211,20 +211,20 @@ namespace ns15
 
 		private void getNotes(MIDILine midiLine, int difficulty)
 		{
-			bool[] array = new bool[midiLine.method_0().Count];
-			List<AbstractNoteClass> list = midiLine.method_0();
-			for (int i = 0; i < list.Count; i++)
+			var array = new bool[midiLine.method_0().Count];
+			var list = midiLine.method_0();
+			for (var i = 0; i < list.Count; i++)
 			{
 				if (!array[i])
 				{
-					int num = Convert.ToInt32(list[i].method_0() * resolution);
+					var num = Convert.ToInt32(list[i].method_0() * resolution);
 					if (list[i] is MIDINote)
 					{
-						MIDINote midiNote = (MIDINote)list[i];
+						var midiNote = (MIDINote)list[i];
 						if (midiNote.method_5())
 						{
-							int j = -1;
-							int num2 = i + 1;
+							var j = -1;
+							var num2 = i + 1;
 							while (j < 0)
 							{
 								if (num2 == midiLine.method_0().Count)
@@ -245,7 +245,7 @@ namespace ns15
 								}
 								num2++;
 							}
-							int num3 = Convert.ToInt32(j - num);
+							var num3 = Convert.ToInt32(j - num);
 							if (num3 <= 160)
 							{
 								num3 = 0;
@@ -255,9 +255,9 @@ namespace ns15
 					}
 					else if (list[i] is zzNote1)
 					{
-						zzNote1 class2 = (zzNote1)list[i];
-						List<string> list2 = method_5(difficulty - 4);
-						string text = class2.method_1();
+						var class2 = (zzNote1)list[i];
+						var list2 = method_5(difficulty - 4);
+						var text = class2.method_1();
 						if (text.StartsWith("["))
 						{
 							text = text.Substring(1, text.Length - 2);
@@ -354,7 +354,7 @@ namespace ns15
 					noteEvenInterpreter.noteList[int_1].noteValues[(int)midiNote.method_3()] = true;
 					return;
 				}
-				bool[] array = new bool[32];
+				var array = new bool[32];
 				array[(int)midiNote.method_3()] = true;
 				noteEvenInterpreter.noteList.Add(int_1, new NotesAtOffset(array, int_2));
 			}

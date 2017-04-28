@@ -15,7 +15,7 @@ namespace ns9
 		public static MIDIReader smethod_0(string fileLocation)
 		{
 			MIDIReader result;
-			using (FileStream fileStream = new FileStream(fileLocation, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+			using (var fileStream = new FileStream(fileLocation, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
 			{
 				result = new MIDIReader(fileStream);
 			}
@@ -48,29 +48,29 @@ namespace ns9
 
 		private void method_3(Stream midiStream)
 		{
-			BinaryReader midiFile = new BinaryReader(midiStream);
+			var midiFile = new BinaryReader(midiStream);
 			ByteFiddler.smethod_3("MIDI", midiFile, "MThd");
 			ByteFiddler.RotateLeft(midiFile.ReadUInt32());
 			ByteFiddler.RotateRight(midiFile.ReadUInt16());
 			int num = ByteFiddler.RotateRight(midiFile.ReadUInt16());
 			method_1(ByteFiddler.RotateRight(midiFile.ReadUInt16()));
 			midiLineList.Clear();
-			for (int i = 0; i < num; i++)
+			for (var i = 0; i < num; i++)
 			{
-				MIDILine midiLine = new MIDILine(method_0());
+				var midiLine = new MIDILine(method_0());
 				midiLineList.Add(midiLine);
-				List<AbstractNoteClass> list = new List<AbstractNoteClass>();
+				var list = new List<AbstractNoteClass>();
 				ByteFiddler.smethod_3("MIDI", midiFile, "MTrk");
-				uint num2 = ByteFiddler.RotateLeft(midiFile.ReadUInt32());
-				long position = midiFile.BaseStream.Position;
-				int num3 = 0;
+				var num2 = ByteFiddler.RotateLeft(midiFile.ReadUInt32());
+				var position = midiFile.BaseStream.Position;
+				var num3 = 0;
 				byte b = 0;
 				while (midiFile.BaseStream.Position < position + num2)
 				{
-					int num4 = (int)method_4(midiFile);
+					var num4 = (int)method_4(midiFile);
 					AbstractNoteClass midiNote = null;
 					num3 += num4;
-					byte b2 = midiFile.ReadByte();
+					var b2 = midiFile.ReadByte();
 					if (b2 != 255)
 					{
 						byte int_;
@@ -84,7 +84,7 @@ namespace ns9
 							int_ = b2;
 							b2 = b;
 						}
-						byte b3 = (byte)(b2 >> 4);
+						var b3 = (byte)(b2 >> 4);
 						switch (b3)
 						{
 						case 8:
@@ -100,10 +100,10 @@ namespace ns9
 						}
 						throw new NotImplementedException(string.Format("Unhandled MIDI command: {0} at position {1}", b3.ToString("X"), midiFile.BaseStream.Position));
 					}
-					byte b4 = midiFile.ReadByte();
-					long num5 = method_4(midiFile);
-					byte[] array = midiFile.ReadBytes((int)num5);
-					byte b5 = b4;
+					var b4 = midiFile.ReadByte();
+					var num5 = method_4(midiFile);
+					var array = midiFile.ReadBytes((int)num5);
+					var b5 = b4;
 					if (b5 <= 47)
 					{
 						switch (b5)
@@ -115,7 +115,7 @@ namespace ns9
 							break;
 						case 3:
 						{
-							string text = Encoding.ASCII.GetString(array).ToUpper();
+							var text = Encoding.ASCII.GetString(array).ToUpper();
 							if (!string.IsNullOrEmpty(text))
 							{
 								midiLine.method_3(text);
@@ -146,7 +146,7 @@ namespace ns9
 						{
 							Class355.interface15_0.imethod_1(string.Format("Expected tempo event to have data length of 3, but found instead {0}", num5));
 						}
-						int num6 = array[0] << 16;
+						var num6 = array[0] << 16;
 						num6 |= array[1] << 8;
 						num6 |= array[2];
 						midiNote = new BpmNote1(num3, num6);
@@ -165,7 +165,7 @@ namespace ns9
 
 		private long method_4(BinaryReader binaryReader_0)
 		{
-			long num = 0L;
+			var num = 0L;
 			byte b;
 			do
 			{

@@ -67,25 +67,25 @@ namespace ns16
 
 		public object[] imethod_3()
 		{
-			object[] array = new object[SelectedItems.Count];
+			var array = new object[SelectedItems.Count];
 			SelectedItems.CopyTo(array, 0);
 			return array;
 		}
 
 		public void method_3()
 		{
-			for (int i = SelectedIndices.Count - 1; i >= 0; i--)
+			for (var i = SelectedIndices.Count - 1; i >= 0; i--)
 			{
-				int index = SelectedIndices[i];
+				var index = SelectedIndices[i];
 				Items.RemoveAt(index);
 			}
 		}
 
 		public void imethod_4(ref int int_1)
 		{
-			for (int i = SelectedIndices.Count - 1; i >= 0; i--)
+			for (var i = SelectedIndices.Count - 1; i >= 0; i--)
 			{
-				int num = SelectedIndices[i];
+				var num = SelectedIndices[i];
 				Items.RemoveAt(num);
 				if (num < int_1)
 				{
@@ -96,7 +96,7 @@ namespace ns16
 
 		public void imethod_5(EventArgs2 eventArgs2_0)
 		{
-			EventHandler<EventArgs2> eventHandler = eventHandler_0;
+			var eventHandler = eventHandler_0;
 			if (eventHandler != null)
 			{
 				eventHandler(this, eventArgs2_0);
@@ -117,12 +117,12 @@ namespace ns16
 
 		public void method_6(EventHandler<EventArgs2> eventHandler_1)
 		{
-			EventHandler<EventArgs2> eventHandler = eventHandler_0;
+			var eventHandler = eventHandler_0;
 			EventHandler<EventArgs2> eventHandler2;
 			do
 			{
 				eventHandler2 = eventHandler;
-				EventHandler<EventArgs2> value = (EventHandler<EventArgs2>)Delegate.Combine(eventHandler2, eventHandler_1);
+				var value = (EventHandler<EventArgs2>)Delegate.Combine(eventHandler2, eventHandler_1);
 				eventHandler = Interlocked.CompareExchange(ref eventHandler_0, value, eventHandler2);
 			}
 			while (eventHandler != eventHandler2);
@@ -132,29 +132,29 @@ namespace ns16
 		{
 			base.OnDragDrop(drgevent);
 			class230_0.method_1();
-			Interface11 @interface = drgevent.Data.GetData("IDragDropSource") as Interface11;
-			object[] array = @interface.imethod_3();
-			bool sorted = Sorted;
+			var @interface = drgevent.Data.GetData("IDragDropSource") as Interface11;
+			var array = @interface.imethod_3();
+			var sorted = Sorted;
 			Sorted = false;
-			int num = method_9(drgevent.Y);
-			int num2 = num;
+			var num = method_9(drgevent.Y);
+			var num2 = num;
 			if (num >= Items.Count)
 			{
 				Items.AddRange(array);
 			}
 			else
 			{
-				object[] array2 = array;
-				for (int i = 0; i < array2.Length; i++)
+				var array2 = array;
+				for (var i = 0; i < array2.Length; i++)
 				{
-					object item = array2[i];
+					var item = array2[i];
 					Items.Insert(num++, item);
 				}
 			}
 			Enum34 @enum;
 			if (drgevent.Effect == DragDropEffects.Move)
 			{
-				int num3 = num2;
+				var num3 = num2;
 				@interface.imethod_4(ref num3);
 				if (@interface == this)
 				{
@@ -177,7 +177,7 @@ namespace ns16
 			}
 			else if (SelectionMode != SelectionMode.None)
 			{
-				for (int j = num2; j < num2 + array.Length; j++)
+				for (var j = num2; j < num2 + array.Length; j++)
 				{
 					SetSelected(j, true);
 				}
@@ -210,7 +210,7 @@ namespace ns16
 			{
 				return;
 			}
-			int num = method_9(drgevent.Y);
+			var num = method_9(drgevent.Y);
 			if (num != class230_0.method_0())
 			{
 				class230_0.method_1();
@@ -233,11 +233,11 @@ namespace ns16
         protected override void OnMouseDown(MouseEventArgs e)
 		{
 			base.OnMouseDown(e);
-			int num = IndexFromPoint(e.Location);
+			var num = IndexFromPoint(e.Location);
 			if (num >= 0 && MouseButtons == MouseButtons.Left && (bool_1 || bool_2 || bool_3) && (GetSelected(num) || ModifierKeys == Keys.Shift))
 			{
 				method_7(num);
-				Size dragSize = SystemInformation.DragSize;
+				var dragSize = SystemInformation.DragSize;
 				rectangle_0 = new Rectangle(new Point(e.X - dragSize.Width / 2, e.Y - dragSize.Height / 2), dragSize);
 			}
 		}
@@ -269,10 +269,10 @@ namespace ns16
 			if (SelectionMode == SelectionMode.MultiExtended && ModifierKeys == Keys.None && Array.IndexOf(int_0, int_1) >= 0)
 			{
 				bool_0 = true;
-				int[] array = int_0;
-				for (int i = 0; i < array.Length; i++)
+				var array = int_0;
+				for (var i = 0; i < array.Length; i++)
 				{
-					int index = array[i];
+					var index = array[i];
 					SetSelected(index, true);
 				}
 				SetSelected(int_1, true);
@@ -284,7 +284,7 @@ namespace ns16
 		{
 			if (!bool_0 && SelectionMode == SelectionMode.MultiExtended)
 			{
-				SelectedIndexCollection selectedIndices = SelectedIndices;
+				var selectedIndices = SelectedIndices;
 				if (int_0.Length != selectedIndices.Count)
 				{
 					int_0 = new int[selectedIndices.Count];
@@ -295,7 +295,7 @@ namespace ns16
 
 		private int method_9(int int_1)
 		{
-			int num = PointToClient(new Point(0, int_1)).Y;
+			var num = PointToClient(new Point(0, int_1)).Y;
 			if (num < 0)
 			{
 				num = 0;
@@ -304,17 +304,17 @@ namespace ns16
 			{
 				num = ClientRectangle.Bottom - 1;
 			}
-			int num2 = IndexFromPoint(0, num);
+			var num2 = IndexFromPoint(0, num);
 			if (num2 == -1)
 			{
 				return Items.Count;
 			}
-			Rectangle itemRectangle = GetItemRectangle(num2);
+			var itemRectangle = GetItemRectangle(num2);
 			if (num > itemRectangle.Top + itemRectangle.Height / 2)
 			{
 				num2++;
 			}
-			int num3 = TopIndex + ClientRectangle.Height / ItemHeight;
+			var num3 = TopIndex + ClientRectangle.Height / ItemHeight;
 			if (num2 > num3)
 			{
 				return num3;
@@ -324,8 +324,8 @@ namespace ns16
 
 		private DragDropEffects method_10(DragEventArgs dragEventArgs_0)
 		{
-			DragDropEffects result = DragDropEffects.None;
-			Interface11 @interface = dragEventArgs_0.Data.GetData("IDragDropSource") as Interface11;
+			var result = DragDropEffects.None;
+			var @interface = dragEventArgs_0.Data.GetData("IDragDropSource") as Interface11;
 			if (@interface != null && string_0 == @interface.imethod_0())
 			{
 				if (@interface == this)

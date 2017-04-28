@@ -54,7 +54,7 @@ namespace SharpAudio.ASC
 
 		public override string ToString()
 		{
-			WaveFormatTag waveFormatTag = waveFormatTag_0;
+			var waveFormatTag = waveFormatTag_0;
 			if (waveFormatTag != WaveFormatTag.PCM)
 			{
 				if (waveFormatTag != WaveFormatTag.Extensible)
@@ -67,7 +67,7 @@ namespace SharpAudio.ASC
 
 		public override bool Equals(object obj)
 		{
-			WaveFormat waveFormat = obj as WaveFormat;
+			var waveFormat = obj as WaveFormat;
 			return waveFormat != null && (waveFormatTag_0 == waveFormat.waveFormatTag_0 && short_0 == waveFormat.short_0 && int_0 == waveFormat.int_0 && int_1 == waveFormat.int_1 && short_1 == waveFormat.short_1) && short_2 == waveFormat.short_2;
 		}
 
@@ -78,8 +78,8 @@ namespace SharpAudio.ASC
 
 		public static WaveFormat smethod_0(IntPtr intptr_0)
 		{
-			WaveFormat waveFormat = (WaveFormat)Marshal.PtrToStructure(intptr_0, typeof(WaveFormat));
-			WaveFormatTag waveFormatTag = waveFormat.waveFormatTag_0;
+			var waveFormat = (WaveFormat)Marshal.PtrToStructure(intptr_0, typeof(WaveFormat));
+			var waveFormatTag = waveFormat.waveFormatTag_0;
 			switch (waveFormatTag)
 			{
 			case WaveFormatTag.PCM:
@@ -107,15 +107,15 @@ namespace SharpAudio.ASC
 
 		public static IntPtr smethod_1(WaveFormat waveFormat_0)
 		{
-			int cb = Marshal.SizeOf(waveFormat_0);
-			IntPtr intPtr = Marshal.AllocHGlobal(cb);
+			var cb = Marshal.SizeOf(waveFormat_0);
+			var intPtr = Marshal.AllocHGlobal(cb);
 			Marshal.StructureToPtr(waveFormat_0, intPtr, false);
 			return intPtr;
 		}
 
 		public int method_0(int int_2)
 		{
-			int num = (int)(int_1 / 1000.0 * int_2);
+			var num = (int)(int_1 / 1000.0 * int_2);
 			if (num % short_1 != 0)
 			{
 				return num + short_1 - num % short_1;

@@ -78,17 +78,17 @@ namespace ns4
 					fileStream.Position = int_2;
 					class82_0.method_6();
 					class82_0.method_7();
-					for (int i = 0; i < class81_0.Length; i++)
+					for (var i = 0; i < class81_0.Length; i++)
 					{
 						class81_0[i].method_0().method_6();
 					}
 					if (long_1 != 0L)
 					{
-						long num = (long)(value / double_0 + int_2);
-						zzSoundClass @class = class82_0.method_3();
+						var num = (long)(value / double_0 + int_2);
+						var @class = class82_0.method_3();
 						while (fileStream.Position + @class.int_12 * class81_0.Length < num)
 						{
-							for (int j = 0; j < class81_0.Length; j++)
+							for (var j = 0; j < class81_0.Length; j++)
 							{
 								class82_0.method_7();
 								@class = class82_0.method_3();
@@ -107,7 +107,7 @@ namespace ns4
 						{
 							class82_0.method_7();
 						}
-						for (int k = 1; k < class81_0.Length; k++)
+						for (var k = 1; k < class81_0.Length; k++)
 						{
 							if (!method_1(k))
 							{
@@ -126,7 +126,7 @@ namespace ns4
 		public MP3Class(Stream stream_1, int int_5, Enum4 enum4_0, int int_6)
 		{
 			class81_0 = new zzSoundClass81[int_5];
-			for (int i = 0; i < class81_0.Length; i++)
+			for (var i = 0; i < class81_0.Length; i++)
 			{
 				class81_0[i] = new zzSoundClass81(new Class104(enum4_0));
 			}
@@ -140,7 +140,7 @@ namespace ns4
 				throw new Mp3Exception("Mp3 Decoder: Cannot read header.");
 			}
 			short_0 = 0;
-			for (int j = 0; j < class81_0.Length; j++)
+			for (var j = 0; j < class81_0.Length; j++)
 			{
 				short_0 += (short)class81_0[j].method_2();
 			}
@@ -182,8 +182,8 @@ namespace ns4
 		public override int vmethod_3(IntPtr intptr_0, int int_5)
 		{
 			int_5 >>= 2;
-			float[] array = new float[int_5];
-			int num = vmethod_4(array, 0, int_5);
+			var array = new float[int_5];
+			var num = vmethod_4(array, 0, int_5);
 			Marshal.Copy(array, 0, intptr_0, num);
 			return num << 2;
 		}
@@ -195,7 +195,7 @@ namespace ns4
 				int result;
 				lock (object_0)
 				{
-					int num = 0;
+					var num = 0;
 					do
 					{
 						if (class81_0[0].method_0().method_0() <= 0)
@@ -214,8 +214,8 @@ namespace ns4
 				return result;
 			}
 			count >>= 2;
-			float[] array = new float[count];
-			int num2 = vmethod_4(array, 0, count);
+			var array = new float[count];
+			var num2 = vmethod_4(array, 0, count);
 			Buffer.BlockCopy(array, 0, buffer, offset, num2);
 			return num2 << 2;
 		}
@@ -227,7 +227,7 @@ namespace ns4
 				int result;
 				lock (object_0)
 				{
-					int num = 0;
+					var num = 0;
 					do
 					{
 						if (class81_0[0].method_0().method_0() <= 0)
@@ -245,25 +245,25 @@ namespace ns4
 				}
 				return result;
 			}
-			float[][] array = vmethod_5(int_6 / waveFormat_0.short_0);
+			var array = vmethod_5(int_6 / waveFormat_0.short_0);
 			if (array == null)
 			{
 				return 0;
 			}
-			int num2 = 0;
-			float[][] array2 = array;
-			for (int i = 0; i < array2.Length; i++)
+			var num2 = 0;
+			var array2 = array;
+			for (var i = 0; i < array2.Length; i++)
 			{
-				float[] array3 = array2[i];
+				var array3 = array2[i];
 				num2 = Math.Max(array3.Length, num2);
 			}
 			num2 *= waveFormat_0.short_0;
-			int num3 = array.Length;
-			for (int j = 0; j < num3; j++)
+			var num3 = array.Length;
+			for (var j = 0; j < num3; j++)
 			{
-				float[] array4 = array[j];
-				int k = 0;
-				int num4 = int_5 + j;
+				var array4 = array[j];
+				var k = 0;
+				var num4 = int_5 + j;
 				while (k < array4.Length)
 				{
 					float_0[num4] = array4[k];
@@ -280,13 +280,13 @@ namespace ns4
 			lock (object_0)
 			{
 				int num = vmethod_0().short_0;
-				float[][] array = new float[num][];
-				for (int i = 0; i < num; i++)
+				var array = new float[num][];
+				for (var i = 0; i < num; i++)
 				{
 					array[i] = new float[int_5];
 				}
 				int_5 *= num;
-				int num2 = 0;
+				var num2 = 0;
 				do
 				{
 					if (class81_0[0].method_0().method_0() <= 0)
@@ -296,13 +296,13 @@ namespace ns4
 							break;
 						}
 					}
-					int num3 = 0;
-					int int_6 = num2 / class81_0.Length;
-					int int_7 = (int_5 - num2) / class81_0.Length;
-					for (int j = 0; j < class81_0.Length; j++)
+					var num3 = 0;
+					var int_6 = num2 / class81_0.Length;
+					var int_7 = (int_5 - num2) / class81_0.Length;
+					for (var j = 0; j < class81_0.Length; j++)
 					{
-						float[][] array2 = new float[class81_0[j].method_2()][];
-						int k = 0;
+						var array2 = new float[class81_0[j].method_2()][];
+						var k = 0;
 						while (k < array2.Length)
 						{
 							array2[k] = array[num3];
@@ -321,7 +321,7 @@ namespace ns4
 
 		public bool method_0()
 		{
-			for (int i = 0; i < class81_0.Length; i++)
+			for (var i = 0; i < class81_0.Length; i++)
 			{
 				if (!method_1(i))
 				{
@@ -333,7 +333,7 @@ namespace ns4
 
 		public bool method_1(int int_5)
 		{
-			zzSoundClass @class = class82_0.method_3();
+			var @class = class82_0.method_3();
 			if (@class == null)
 			{
 				return false;

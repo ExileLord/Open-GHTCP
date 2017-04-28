@@ -42,12 +42,12 @@ namespace ns16
 
 		public void method_0(EventHandler eventHandler_1)
 		{
-			EventHandler eventHandler = eventHandler_0;
+			var eventHandler = eventHandler_0;
 			EventHandler eventHandler2;
 			do
 			{
 				eventHandler2 = eventHandler;
-				EventHandler value = (EventHandler)Delegate.Combine(eventHandler2, eventHandler_1);
+				var value = (EventHandler)Delegate.Combine(eventHandler2, eventHandler_1);
 				eventHandler = Interlocked.CompareExchange(ref eventHandler_0, value, eventHandler2);
 			}
 			while (eventHandler != eventHandler2);
@@ -69,7 +69,7 @@ namespace ns16
 				Invoke(method, sender, e);
 				return;
 			}
-			RichTextBox expr_34 = ActionsTxt;
+			var expr_34 = ActionsTxt;
 			expr_34.Text += e.method_0();
 			ActionsTxt.ScrollToCaret();
 			progressBar.Value = e.method_1();

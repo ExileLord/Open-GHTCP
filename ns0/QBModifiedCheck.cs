@@ -210,7 +210,7 @@ namespace ns0
 				'\u009e',
 				'\u009f'
 			};
-			Type typeFromHandle = typeof(MulticastDelegate);
+			var typeFromHandle = typeof(MulticastDelegate);
 			if (typeFromHandle != null)
 			{
 				moduleHandle_0 = Assembly.GetExecutingAssembly().GetModules()[0].ModuleHandle;

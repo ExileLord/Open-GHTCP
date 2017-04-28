@@ -68,7 +68,7 @@ namespace ns12
 			while (true)
 			{
 				method_7();
-				bool bool_3 = bool_1 && int_18 == int_19;
+				var bool_3 = bool_1 && int_18 == int_19;
 				bool flag;
 				switch (int_16)
 				{
@@ -114,7 +114,7 @@ namespace ns12
 			{
 				throw new InvalidOperationException("Old input was not completely processed");
 			}
-			int num = int_20 + int_21;
+			var num = int_20 + int_21;
 			if (int_20 > num || num > byte_2.Length)
 			{
 				throw new ArgumentOutOfRangeException("count");
@@ -139,11 +139,11 @@ namespace ns12
 			int_17 = 0;
 			bool_0 = false;
 			int_8 = 2;
-			for (int i = 0; i < 32768; i++)
+			for (var i = 0; i < 32768; i++)
 			{
 				short_0[i] = 0;
 			}
-			for (int j = 0; j < 32768; j++)
+			for (var j = 0; j < 32768; j++)
 			{
 				short_1[j] = 0;
 			}
@@ -220,7 +220,7 @@ namespace ns12
 			}
 			while (int_11 < 262 && int_18 < int_19)
 			{
-				int num = 65536 - int_11 - int_10;
+				var num = 65536 - int_11 - int_10;
 				if (num > int_19 - int_18)
 				{
 					num = int_19 - int_18;
@@ -244,8 +244,8 @@ namespace ns12
 
 		private int method_9()
 		{
-			int num = (int_6 << 5 ^ byte_0[int_10 + 2]) & 32767;
-			short num2 = short_1[int_10 & 32767] = short_0[num];
+			var num = (int_6 << 5 ^ byte_0[int_10 + 2]) & 32767;
+			var num2 = short_1[int_10 & 32767] = short_0[num];
 			short_0[num] = (short)int_10;
 			int_6 = num;
 			return num2 & 65535;
@@ -257,30 +257,30 @@ namespace ns12
 			int_7 -= 32768;
 			int_10 -= 32768;
 			int_9 -= 32768;
-			for (int i = 0; i < 32768; i++)
+			for (var i = 0; i < 32768; i++)
 			{
-				int num = short_0[i] & 65535;
+				var num = short_0[i] & 65535;
 				short_0[i] = (short)((num >= 32768) ? (num - 32768) : 0);
 			}
-			for (int j = 0; j < 32768; j++)
+			for (var j = 0; j < 32768; j++)
 			{
-				int num2 = short_1[j] & 65535;
+				var num2 = short_1[j] & 65535;
 				short_1[j] = (short)((num2 >= 32768) ? (num2 - 32768) : 0);
 			}
 		}
 
 		private bool method_11(int int_20)
 		{
-			int num = int_12;
-			int num2 = int_14;
-			short[] array = short_1;
-			int num3 = int_10;
-			int num4 = int_10 + int_8;
-			int num5 = Math.Max(int_8, 2);
-			int num6 = Math.Max(int_10 - 32506, 0);
-			int num7 = int_10 + 258 - 1;
-			byte b = byte_0[num4 - 1];
-			byte b2 = byte_0[num4];
+			var num = int_12;
+			var num2 = int_14;
+			var array = short_1;
+			var num3 = int_10;
+			var num4 = int_10 + int_8;
+			var num5 = Math.Max(int_8, 2);
+			var num6 = Math.Max(int_10 - 32506, 0);
+			var num7 = int_10 + 258 - 1;
+			var b = byte_0[num4 - 1];
+			var b2 = byte_0[num4];
 			if (num5 >= int_15)
 			{
 				num >>= 2;
@@ -293,7 +293,7 @@ namespace ns12
 			{
 				if (byte_0[int_20 + num5] == b2 && byte_0[int_20 + num5 - 1] == b && byte_0[int_20] == byte_0[num3] && byte_0[int_20 + 1] == byte_0[num3 + 1])
 				{
-					int num8 = int_20 + 2;
+					var num8 = int_20 + 2;
 					num3 += 2;
 					while (byte_0[++num3] == byte_0[++num8] && byte_0[++num3] == byte_0[++num8] && byte_0[++num3] == byte_0[++num8] && byte_0[++num3] == byte_0[++num8] && byte_0[++num3] == byte_0[++num8] && byte_0[++num3] == byte_0[++num8] && byte_0[++num3] == byte_0[++num8] && byte_0[++num3] == byte_0[++num8] && num3 < num7)
 					{
@@ -330,12 +330,12 @@ namespace ns12
 			}
 			int_10 += int_11;
 			int_11 = 0;
-			int num = int_10 - int_9;
+			var num = int_10 - int_9;
 			if (num < int_0 && (int_9 >= 32768 || num < 32506) && !bool_1)
 			{
 				return true;
 			}
-			bool flag = bool_2;
+			var flag = bool_2;
 			if (num > int_0)
 			{
 				num = int_0;
@@ -367,7 +367,7 @@ namespace ns12
 				int num;
 				if (int_11 >= 3 && (num = method_9()) != 0 && enum29_0 != Enum29.const_2 && int_10 - num <= 32506 && method_11(num))
 				{
-					bool flag = class190_0.method_7(int_10 - int_7, int_8);
+					var flag = class190_0.method_7(int_10 - int_7, int_8);
 					int_11 -= int_8;
 					if (int_8 <= int_13 && int_11 >= 3)
 					{
@@ -400,7 +400,7 @@ namespace ns12
 				}
 				if (class190_0.method_5())
 				{
-					bool flag2 = bool_2 && int_11 == 0;
+					var flag2 = bool_2 && int_11 == 0;
 					class190_0.method_4(byte_0, int_9, int_10 - int_9, flag2);
 					int_9 = int_10;
 					return !flag2;
@@ -432,11 +432,11 @@ namespace ns12
 				{
 					method_10();
 				}
-				int num = int_7;
-				int num2 = int_8;
+				var num = int_7;
+				var num2 = int_8;
 				if (int_11 >= 3)
 				{
-					int num3 = method_9();
+					var num3 = method_9();
 					if (enum29_0 != Enum29.const_2 && num3 != 0 && int_10 - num3 <= 32506 && method_11(num3) && int_8 <= 5 && (enum29_0 == Enum29.const_1 || (int_8 == 3 && int_10 - int_7 > 4096)))
 					{
 						int_8 = 2;
@@ -473,12 +473,12 @@ namespace ns12
 				}
 				if (class190_0.method_5())
 				{
-					int num4 = int_10 - int_9;
+					var num4 = int_10 - int_9;
 					if (bool_0)
 					{
 						num4--;
 					}
-					bool flag = bool_2 && int_11 == 0 && !bool_0;
+					var flag = bool_2 && int_11 == 0 && !bool_0;
 					class190_0.method_4(byte_0, int_9, num4, flag);
 					int_9 += num4;
 					return !flag;

@@ -207,7 +207,7 @@ namespace ns21
 
 		public override object Clone()
 		{
-			Interface12 @interface = (Interface12)base.Clone();
+			var @interface = (Interface12)base.Clone();
 			@interface.imethod_1(int_0);
 			@interface.imethod_3(int_1);
 			@interface.imethod_5(int_2);

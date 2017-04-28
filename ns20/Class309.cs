@@ -165,19 +165,19 @@ namespace ns20
 
 		public void imethod_17(byte[] byte_1)
 		{
-			Stream26 stream26_ = new Stream26(byte_1);
+			var stream26_ = new Stream26(byte_1);
 			zzGenericNode1 @class;
 			if (Parent != null && Parent is zzPakNode1 && !(Parent as zzPakNode1).bool_0)
 			{
 				TreeNode treeNode = this;
-				int level = treeNode.Level;
+				var level = treeNode.Level;
 				while (level-- != 0)
 				{
 					treeNode = treeNode.Parent;
 				}
 				if (treeNode is zzPakNode2 && (treeNode as zzPakNode2).class318_0 != null)
 				{
-					string string_ = imethod_9().Contains(".qb") ? imethod_9().Replace(".qb", ".qs") : (imethod_9() + ".qs");
+					var string_ = imethod_9().Contains(".qb") ? imethod_9().Replace(".qb", ".qs") : (imethod_9() + ".qs");
 					if ((treeNode as zzPakNode2).class318_0.method_6(string_))
 					{
 						@class = new zzGenericNode1("TempFile", stream26_, (treeNode as zzPakNode2).class318_0.method_9(string_).dictionary_0);
@@ -249,7 +249,7 @@ namespace ns20
 
 		public override object Clone()
 		{
-			Interface12 @interface = (Interface12)base.Clone();
+			var @interface = (Interface12)base.Clone();
 			@interface.imethod_1(int_0);
 			@interface.imethod_3(int_1);
 			@interface.imethod_5(int_2);

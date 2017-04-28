@@ -105,15 +105,15 @@ namespace ns13
 
 		public int method_9(byte[] byte_0, int int_2, int int_3)
 		{
-			int num = int_3;
+			var num = int_3;
 			if (int_1 == 127)
 			{
 				throw new InvalidOperationException("Deflater closed");
 			}
 			if (int_1 < 16)
 			{
-				int num2 = 30720;
-				int num3 = int_0 - 1 >> 1;
+				var num2 = 30720;
+				var num3 = int_0 - 1 >> 1;
 				if (num3 < 0 || num3 > 3)
 				{
 					num3 = 3;
@@ -127,7 +127,7 @@ namespace ns13
 				class189_0.method_6(num2);
 				if ((int_1 & 1) != 0)
 				{
-					int num4 = class184_0.method_4();
+					var num4 = class184_0.method_4();
 					class184_0.ResetAdler();
 					class189_0.method_6(num4 >> 16);
 					class189_0.method_6(num4 & 65535);
@@ -136,7 +136,7 @@ namespace ns13
 			}
 			while (true)
 			{
-				int num5 = class189_0.method_8(byte_0, int_2, int_3);
+				var num5 = class189_0.method_8(byte_0, int_2, int_3);
 				int_2 += num5;
 				long_0 += num5;
 				int_3 -= num5;
@@ -154,7 +154,7 @@ namespace ns13
 					{
 						if (int_0 != 0)
 						{
-							for (int i = 8 + (-class189_0.method_3() & 7); i > 0; i -= 10)
+							for (var i = 8 + (-class189_0.method_3() & 7); i > 0; i -= 10)
 							{
 								class189_0.method_5(2, 10);
 							}
@@ -166,7 +166,7 @@ namespace ns13
 						class189_0.method_4();
 						if (!bool_0)
 						{
-							int num6 = class184_0.method_4();
+							var num6 = class184_0.method_4();
 							class189_0.method_6(num6 >> 16);
 							class189_0.method_6(num6 & 65535);
 						}

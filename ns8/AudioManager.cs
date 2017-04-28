@@ -36,8 +36,8 @@ namespace ns8
 			case Enum25.const_5:
 				return new WaveOutput(audioStream);
 			}
-            bool flag = Type.GetType("Mono.Runtime") != null;
-			int platform = (int)Environment.OSVersion.Platform;
+            var flag = Type.GetType("Mono.Runtime") != null;
+			var platform = (int)Environment.OSVersion.Platform;
             switch (platform)
 			{
 			case 0:
@@ -75,7 +75,7 @@ namespace ns8
 
 		public static AudioTypeEnum smethod_1(string fileName)
 		{
-			FileInfo fileInfo = new FileInfo(fileName);
+			var fileInfo = new FileInfo(fileName);
 			string fileExtension;
 			switch (fileExtension = fileInfo.Extension.ToLower())
 			{
@@ -106,7 +106,7 @@ namespace ns8
 		public static Class16 smethod_2(string string_0)
 		{
 			Class16 result;
-			using (GenericAudioStream stream = getAudioStream(string_0))
+			using (var stream = getAudioStream(string_0))
 			{
 				result = stream.vmethod_1();
 			}
@@ -115,7 +115,7 @@ namespace ns8
 
 		public static Class16 smethod_3(Stream stream_0)
 		{
-			long position = stream_0.Position;
+			var position = stream_0.Position;
 			Class16 result;
 			try
 			{
@@ -130,7 +130,7 @@ namespace ns8
 
 		public static GenericAudioStream getAudioStream(string fileName)
 		{
-            FileInfo fileInfo = new FileInfo(fileName);
+            var fileInfo = new FileInfo(fileName);
 			string fileExtension;
             if ((fileExtension = fileInfo.Extension.ToLower()) != null)
 			{
@@ -165,8 +165,8 @@ namespace ns8
 
 		public static GenericAudioStream smethod_5(Stream audioStream)
 		{
-			long position = audioStream.Position;
-			byte[] array = new byte[4];
+			var position = audioStream.Position;
+			var array = new byte[4];
 			audioStream.Read(array, 0, 4);
 			audioStream.Position = position;
 			if (array[0] == 255 && array[1] >= 240)
@@ -219,7 +219,7 @@ namespace ns8
 
 		public void method_0(bool bool_0)
 		{
-			foreach (PlayableAudio current in list_0)
+			foreach (var current in list_0)
 			{
 				current.Dispose();
 			}

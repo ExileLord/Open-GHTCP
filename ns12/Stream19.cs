@@ -98,12 +98,12 @@ namespace ns12
 				stream_0.Seek(long_1, SeekOrigin.Current);
 				return long_1;
 			}
-			int num = 2048;
+			var num = 2048;
 			if (long_1 < 2048L)
 			{
 				num = (int)long_1;
 			}
-			byte[] array = new byte[num];
+			var array = new byte[num];
 			return stream_0.Read(array, 0, array.Length);
 		}
 
@@ -166,10 +166,10 @@ namespace ns12
 			{
 				throw new SharpZipBaseException("Need a dictionary");
 			}
-			int num = count;
+			var num = count;
 			while (true)
 			{
-				int num2 = class196_0.method_7(buffer, offset, num);
+				var num2 = class196_0.method_7(buffer, offset, num);
 				offset += num2;
 				num -= num2;
 				if (num == 0 || class196_0.method_10())

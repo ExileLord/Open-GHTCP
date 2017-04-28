@@ -31,7 +31,7 @@ namespace ns11
 			{
 				try
 				{
-					Class165 @class = (Class165)((GCHandle)struct66_1.intptr_1).Target;
+					var @class = (Class165)((GCHandle)struct66_1.intptr_1).Target;
 					@class.method_4();
 				}
 				catch

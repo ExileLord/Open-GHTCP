@@ -25,7 +25,7 @@ namespace ns3
 
 		public int method_1(OGGClass3 class38_0)
 		{
-			int num = class38_0.method_6(32);
+			var num = class38_0.method_6(32);
 			if (num < 0)
 			{
 				method_2();
@@ -41,9 +41,9 @@ namespace ns3
 			}
 			byte_0 = new byte[int_2 + 1][];
 			int_1 = new int[int_2 + 1];
-			for (int i = 0; i < int_2; i++)
+			for (var i = 0; i < int_2; i++)
 			{
-				int num2 = class38_0.method_6(32);
+				var num2 = class38_0.method_6(32);
 				if (num2 < 0)
 				{
 					method_2();
@@ -63,7 +63,7 @@ namespace ns3
 
 		public void method_2()
 		{
-			for (int i = 0; i < int_2; i++)
+			for (var i = 0; i < int_2; i++)
 			{
 				byte_0[i] = null;
 			}

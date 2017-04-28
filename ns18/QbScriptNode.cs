@@ -31,9 +31,9 @@ namespace ns18
 		public override void vmethod_13(Stream26 stream26_0)
 		{
 			int_0 = stream26_0.ReadInt();
-			int num = stream26_0.ReadInt();
-			int num2 = stream26_0.ReadInt();
-			byte[] byte_ = stream26_0.ReadBytes(num2, false);
+			var num = stream26_0.ReadInt();
+			var num2 = stream26_0.ReadInt();
+			var byte_ = stream26_0.ReadBytes(num2, false);
 			if (num == num2)
 			{
 				byte_0 = byte_;
@@ -49,7 +49,7 @@ namespace ns18
 		{
 			stream26_0.WriteInt(int_0);
 			stream26_0.WriteInt(byte_0.Length);
-			byte[] array = new Class320().method_0(byte_0);
+			var array = new Class320().method_0(byte_0);
 			if (byte_0.Length <= array.Length)
 			{
 				array = byte_0;
@@ -96,7 +96,7 @@ namespace ns18
 			int_1 += 12;
 			if (byte_0 != null)
 			{
-				byte[] array = new Class320().method_0(byte_0);
+				var array = new Class320().method_0(byte_0);
 				if (byte_0.Length <= array.Length)
 				{
 					array = byte_0;
@@ -108,7 +108,7 @@ namespace ns18
 
 		public override object Clone()
 		{
-			QbScriptNode @class = (QbScriptNode)base.Clone();
+			var @class = (QbScriptNode)base.Clone();
 			@class.int_0 = int_0;
 			@class.byte_0 = new byte[byte_0.Length];
 			Buffer.BlockCopy(byte_0, 0, @class.byte_0, 0, byte_0.Length);

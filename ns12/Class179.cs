@@ -19,8 +19,8 @@ namespace ns12
 		{
 			public int Compare(object x, object y)
 			{
-				Class181 @class = x as Class181;
-				Class181 class2 = y as Class181;
+				var @class = x as Class181;
+				var class2 = y as Class181;
 				int num;
 				if (@class == null)
 				{
@@ -39,12 +39,12 @@ namespace ns12
 				}
 				else
 				{
-					int num2 = (@class.method_1() == Enum28.const_0 || @class.method_1() == Enum28.const_1) ? 0 : 1;
-					int num3 = (class2.method_1() == Enum28.const_0 || class2.method_1() == Enum28.const_1) ? 0 : 1;
+					var num2 = (@class.method_1() == Enum28.const_0 || @class.method_1() == Enum28.const_1) ? 0 : 1;
+					var num3 = (class2.method_1() == Enum28.const_0 || class2.method_1() == Enum28.const_1) ? 0 : 1;
 					num = num2 - num3;
 					if (num == 0)
 					{
-						long num4 = @class.method_0().method_6() - class2.method_0().method_6();
+						var num4 = @class.method_0().method_6() - class2.method_0().method_6();
 						if (num4 < 0L)
 						{
 							num = -1;

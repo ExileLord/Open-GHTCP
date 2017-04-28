@@ -88,15 +88,15 @@ namespace ns4
 
 			public Class98(int int_11)
 			{
-				int[] array = new int[1];
+				var array = new int[1];
 				int_8 = array;
 				float_25 = new float[2][];
-				float[] array2 = new float[1];
+				var array2 = new float[1];
 				float_26 = array2;
 				float_27 = new float[3];
-				float[] array3 = new float[1];
+				var array3 = new float[1];
 				float_28 = array3;
-				float[] array4 = new float[1];
+				var array4 = new float[1];
 				float_29 = array4;
 				//base..ctor();
 				int_5 = int_11;
@@ -108,7 +108,7 @@ namespace ns4
 			{
 				if (class107_0.method_3() == Enum3.const_1)
 				{
-					int num = class107_0.method_5();
+					var num = class107_0.method_5();
 					if (class107_0.method_8() != Enum5.const_3)
 					{
 						if (num == 4)
@@ -154,7 +154,7 @@ namespace ns4
 
 			public virtual void vmethod_5(zzSoundClass class107_0, int int_11, int int_12, float[] float_30, int[] int_13, float[] float_31, float[] float_32)
 			{
-				int num = class107_0.method_5();
+				var num = class107_0.method_5();
 				if (class107_0.method_8() != Enum5.const_3)
 				{
 					if (num == 4)
@@ -212,7 +212,7 @@ namespace ns4
 
 			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
 			{
-				int num = vmethod_4(class107_0);
+				var num = vmethod_4(class107_0);
 				int_6 = class82_0.method_13(num);
 				if (class101_0 != null)
 				{
@@ -267,12 +267,12 @@ namespace ns4
 				{
 					if (float_25[0] != null)
 					{
-						int num = class82_0.method_13(int_8[0]);
+						var num = class82_0.method_13(int_8[0]);
 						num += num << 1;
-						float[] array = float_27;
-						float[] array2 = float_25[0];
-						int num2 = 0;
-						int num3 = num;
+						var array = float_27;
+						var array2 = float_25[0];
+						var num2 = 0;
+						var num3 = num;
 						if (num3 > array2.Length - 3)
 						{
 							num3 = array2.Length - 3;
@@ -300,7 +300,7 @@ namespace ns4
 			{
 				if (int_6 != 0 && enum4_0 != Enum4.const_2)
 				{
-					float num = float_27[int_10];
+					var num = float_27[int_10];
 					if (float_25[0] == null)
 					{
 						num = (num + float_29[0]) * float_28[0];
@@ -3276,15 +3276,15 @@ namespace ns4
 					0.000122070313f,
 					6.103516E-05f
 				};
-				float[][] array = new float[16][];
+				var array = new float[16][];
 				array[1] = float_1;
 				float_4 = array;
-				float[][] array2 = new float[16][];
+				var array2 = new float[16][];
 				array2[1] = float_1;
 				array2[2] = float_2;
 				array2[4] = float_3;
 				float_8 = array2;
-				float[][] array3 = new float[16][];
+				var array3 = new float[16][];
 				array3[1] = float_1;
 				array3[2] = float_2;
 				array3[3] = float_3;
@@ -3365,14 +3365,14 @@ namespace ns4
 			{
 				if (int_6 != 0)
 				{
-					float num = float_27[int_10];
+					var num = float_27[int_10];
 					if (float_25[0] == null)
 					{
 						num = (num + float_29[0]) * float_28[0];
 					}
 					if (enum4_0 == Enum4.const_0)
 					{
-						float num2 = num;
+						var num2 = num;
 						if (int_9 <= 4)
 						{
 							num *= float_22;
@@ -3452,13 +3452,13 @@ namespace ns4
 
 			public Class100(int int_14) : base(int_14)
 			{
-				int[] array = new int[1];
+				var array = new int[1];
 				int_13 = array;
-				float[] array2 = new float[1];
+				var array2 = new float[1];
 				float_33 = array2;
-				float[] array3 = new float[1];
+				var array3 = new float[1];
 				float_35 = array3;
-				float[] array4 = new float[1];
+				var array4 = new float[1];
 				float_36 = array4;
 				//base..ctor(int_14);
 				float_34 = new float[3];
@@ -3466,7 +3466,7 @@ namespace ns4
 
 			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
 			{
-				int num = vmethod_4(class107_0);
+				var num = vmethod_4(class107_0);
 				int_6 = class82_0.method_13(num);
 				int_11 = class82_0.method_13(num);
 				if (class101_0 != null)
@@ -3526,16 +3526,16 @@ namespace ns4
 
 			public override bool vmethod_2(Class82 class82_0)
 			{
-				bool result = base.vmethod_2(class82_0);
+				var result = base.vmethod_2(class82_0);
 				if (int_11 != 0)
 				{
 					if (float_25[1] != null)
 					{
-						int num = class82_0.method_13(int_13[0]);
+						var num = class82_0.method_13(int_13[0]);
 						num += num << 1;
-						float[] array = float_34;
-						float[] array2 = float_25[1];
-						int num2 = num;
+						var array = float_34;
+						var array2 = float_25[1];
+						var num2 = num;
 						array[0] = array2[num2++];
 						array[1] = array2[num2++];
 						array[2] = array2[num2];
@@ -3552,10 +3552,10 @@ namespace ns4
 
 			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
 			{
-				bool result = base.vmethod_3(enum4_0, class80_0, class80_1);
+				var result = base.vmethod_3(enum4_0, class80_0, class80_1);
 				if (int_11 != 0 && enum4_0 != Enum4.const_1)
 				{
-					float num = float_34[int_10 - 1];
+					var num = float_34[int_10 - 1];
 					if (float_25[1] == null)
 					{
 						num = (num + float_36[0]) * float_35[0];
@@ -3604,13 +3604,13 @@ namespace ns4
 				return;
 			}
 			case Enum5.const_3:
-				for (int i = 0; i < int_0; i++)
+				for (var i = 0; i < int_0; i++)
 				{
 					class94_0[i] = new Class98(i);
 				}
 				return;
 			}
-			for (int i = 0; i < int_0; i++)
+			for (var i = 0; i < int_0; i++)
 			{
 				class94_0[i] = new Class100(i);
 			}
@@ -3618,7 +3618,7 @@ namespace ns4
 
 		public override void vmethod_3()
 		{
-			for (int i = 0; i < int_0; i++)
+			for (var i = 0; i < int_0; i++)
 			{
 				((Class98)class94_0[i]).vmethod_6(class82_0, class101_0);
 			}

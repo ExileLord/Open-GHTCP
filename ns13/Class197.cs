@@ -16,8 +16,8 @@ namespace ns13
 		{
 			try
 			{
-				byte[] array = new byte[288];
-				int i = 0;
+				var array = new byte[288];
+				var i = 0;
 				while (i < 144)
 				{
 					array[i++] = 8;
@@ -56,9 +56,9 @@ namespace ns13
 
 		private void method_0(byte[] byte_0)
 		{
-			int[] array = new int[16];
-			int[] array2 = new int[16];
-			for (int i = 0; i < byte_0.Length; i++)
+			var array = new int[16];
+			var array2 = new int[16];
+			for (var i = 0; i < byte_0.Length; i++)
 			{
 				int num = byte_0[i];
 				if (num > 0)
@@ -66,33 +66,33 @@ namespace ns13
 					array[num]++;
 				}
 			}
-			int num2 = 0;
-			int num3 = 512;
-			for (int j = 1; j <= 15; j++)
+			var num2 = 0;
+			var num3 = 512;
+			for (var j = 1; j <= 15; j++)
 			{
 				array2[j] = num2;
 				num2 += array[j] << 16 - j;
 				if (j >= 10)
 				{
-					int num4 = array2[j] & 130944;
-					int num5 = num2 & 130944;
+					var num4 = array2[j] & 130944;
+					var num5 = num2 & 130944;
 					num3 += num5 - num4 >> 16 - j;
 				}
 			}
 			short_0 = new short[num3];
-			int num6 = 512;
-			for (int k = 15; k >= 10; k--)
+			var num6 = 512;
+			for (var k = 15; k >= 10; k--)
 			{
-				int num7 = num2 & 130944;
+				var num7 = num2 & 130944;
 				num2 -= array[k] << 16 - k;
-				int num8 = num2 & 130944;
-				for (int l = num8; l < num7; l += 128)
+				var num8 = num2 & 130944;
+				for (var l = num8; l < num7; l += 128)
 				{
 					short_0[Class190.smethod_0(l)] = (short)(-num6 << 4 | k);
 					num6 += 1 << k - 9;
 				}
 			}
-			for (int m = 0; m < byte_0.Length; m++)
+			for (var m = 0; m < byte_0.Length; m++)
 			{
 				int num9 = byte_0[m];
 				if (num9 != 0)
@@ -111,7 +111,7 @@ namespace ns13
 					else
 					{
 						int num11 = short_0[num10 & 511];
-						int num12 = 1 << (num11 & 15);
+						var num12 = 1 << (num11 & 15);
 						num11 = -(num11 >> 4);
 						do
 						{
@@ -136,15 +136,15 @@ namespace ns13
 					class187_0.method_1(num2 & 15);
 					return num2 >> 4;
 				}
-				int num3 = -(num2 >> 4);
-				int int_ = num2 & 15;
+				var num3 = -(num2 >> 4);
+				var int_ = num2 & 15;
 				if ((num = class187_0.method_0(int_)) >= 0)
 				{
 					num2 = short_0[num3 | num >> 9];
 					class187_0.method_1(num2 & 15);
 					return num2 >> 4;
 				}
-				int num4 = class187_0.method_2();
+				var num4 = class187_0.method_2();
 				num = class187_0.method_0(num4);
 				num2 = short_0[num3 | num >> 9];
 				if ((num2 & 15) <= num4)
@@ -156,7 +156,7 @@ namespace ns13
 			}
 			else
 			{
-				int num5 = class187_0.method_2();
+				var num5 = class187_0.method_2();
 				num = class187_0.method_0(num5);
 				int num2 = short_0[num];
 				if (num2 >= 0 && (num2 & 15) <= num5)

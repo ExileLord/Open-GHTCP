@@ -119,7 +119,7 @@ namespace ns1
 					vmethod_2().Position = long_2;
 				}
 				int_2 = (int)Math.Min(int_2, method_0());
-				int num = stream1_0.vmethod_3(intptr_0, int_2);
+				var num = stream1_0.vmethod_3(intptr_0, int_2);
 				long_2 += num;
 				result = num;
 			}
@@ -136,7 +136,7 @@ namespace ns1
 					vmethod_2().Position = long_2;
 				}
 				count = (int)Math.Min(count, method_0());
-				int num = stream1_0.Read(buffer, offset, count);
+				var num = stream1_0.Read(buffer, offset, count);
 				long_2 += num;
 				result = num;
 			}
@@ -153,7 +153,7 @@ namespace ns1
 					vmethod_2().Position = long_2;
 				}
 				int_3 = (int)Math.Min(int_3, method_0() >> 2);
-				int num = stream1_0.vmethod_4(float_0, int_2, int_3);
+				var num = stream1_0.vmethod_4(float_0, int_2, int_3);
 				long_2 += (long)num << 2;
 				result = num;
 			}
@@ -176,7 +176,7 @@ namespace ns1
 				}
 				else
 				{
-					float[][] array = stream1_0.vmethod_5(int_2);
+					var array = stream1_0.vmethod_5(int_2);
 					if (array != null && array.Length >= 1)
 					{
 						long_2 += (array[0].Length << 2) * array.Length;

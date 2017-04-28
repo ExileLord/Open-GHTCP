@@ -32,8 +32,8 @@ namespace ns0
 
 		public static Struct8 smethod_1(int int_2)
 		{
-			Struct8 result = default(Struct8);
-			byte[] bytes = BitConverter.GetBytes(int_2);
+			var result = default(Struct8);
+			var bytes = BitConverter.GetBytes(int_2);
 			result.byte_0 = bytes[0];
 			result.byte_1 = bytes[1];
 			result.byte_2 = bytes[2];
@@ -59,7 +59,7 @@ namespace ns0
 			{
 				throw new ArgumentException("ToInt24: offseted size is too small.");
 			}
-			Struct8 result = default(Struct8);
+			var result = default(Struct8);
 			if (bool_0)
 			{
 				result.byte_0 = byte_3[int_2 + 2];
@@ -87,22 +87,22 @@ namespace ns0
 
 		public static Struct8 smethod_5(Struct8 struct8_0, int int_2)
 		{
-			byte[] array = new byte[4];
+			var array = new byte[4];
 			array[0] = struct8_0.byte_0;
 			array[1] = struct8_0.byte_1;
 			array[2] = struct8_0.byte_2;
-			int num = BitConverter.ToInt32(array, 0);
+			var num = BitConverter.ToInt32(array, 0);
 			num >>= int_2;
 			return smethod_1(num);
 		}
 
 		public static Struct8 smethod_6(Struct8 struct8_0, int int_2)
 		{
-			byte[] array = new byte[4];
+			var array = new byte[4];
 			array[0] = struct8_0.byte_0;
 			array[1] = struct8_0.byte_1;
 			array[2] = struct8_0.byte_2;
-			int num = BitConverter.ToInt32(array, 0);
+			var num = BitConverter.ToInt32(array, 0);
 			num <<= int_2;
 			return smethod_1(num);
 		}

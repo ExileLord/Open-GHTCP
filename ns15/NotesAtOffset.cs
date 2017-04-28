@@ -20,8 +20,8 @@ namespace ns15
 
 		public int method_0()
 		{
-			uint num = 0u;//0
-			for (int i = 0; i < noteValues.Length; i++)
+			var num = 0u;//0
+			for (var i = 0; i < noteValues.Length; i++)
 			{
 				if (noteValues[i])
 				{
@@ -34,7 +34,7 @@ namespace ns15
 		public void setNote(int int_1)
 		{
             noteValues = new bool[32];
-			for (int i = 0; i < 32; i++)
+			for (var i = 0; i < 32; i++)
 			{
 				if ((int_1 >> i & 1) != 0)
 				{

@@ -64,10 +64,10 @@ namespace ns0
 			}
 			set
 			{
-				double num = value / (double)(waveFormat_0.int_0 * waveFormat_0.short_1);
-				for (int i = 0; i < list_0.Count; i++)
+				var num = value / (double)(waveFormat_0.int_0 * waveFormat_0.short_1);
+				for (var i = 0; i < list_0.Count; i++)
 				{
-					long num2 = Convert.ToInt64(list_0[i].vmethod_0().int_0 * list_0[i].vmethod_0().short_1 * num);
+					var num2 = Convert.ToInt64(list_0[i].vmethod_0().int_0 * list_0[i].vmethod_0().short_1 * num);
 					list_0[i].Position = ((list_0[i].Length < num2) ? list_0[i].Length : num2);
 				}
 				long_1 = value;
@@ -93,11 +93,11 @@ namespace ns0
 			bool_0 = (stream1_0.Length == 1 && stream1_0[0].vmethod_0().short_0 == 1 && ushort_0 < 2);
 			long_1 = 0L;
 			long_0 = stream1_0[0].Length;
-			int val = 0;
-			int num = 0;
-			for (int i = 0; i < stream1_0.Length; i++)
+			var val = 0;
+			var num = 0;
+			for (var i = 0; i < stream1_0.Length; i++)
 			{
-				GenericAudioStream stream = stream1_0[i];
+				var stream = stream1_0[i];
 				val = Math.Max(val, stream.vmethod_0().int_0);
 				if (bool_1)
 				{
@@ -110,9 +110,9 @@ namespace ns0
 				stream.Position = long_1;
 			}
 			waveFormat_0 = new WaveFormat(val, (ushort_0 != 0) ? ushort_0 : Math.Min(num, smethod_0(enum2_0) * (bool_1 ? stream1_0.Length : 1)));
-			for (int j = 0; j < stream1_0.Length; j++)
+			for (var j = 0; j < stream1_0.Length; j++)
 			{
-				GenericAudioStream stream2 = stream1_0[j];
+				var stream2 = stream1_0[j];
 				long_0 = Math.Max(long_0, Convert.ToInt64(waveFormat_0.int_0 * waveFormat_0.short_1 * stream2.vmethod_1().timeSpan_0.TotalSeconds));
 			}
 			int_2 = waveFormat_0.short_0 << 2;
@@ -151,8 +151,8 @@ namespace ns0
 		public override int vmethod_3(IntPtr intptr_0, int int_3)
 		{
 			int_3 >>= 2;
-			float[] array = new float[int_3];
-			int num = vmethod_4(array, 0, int_3);
+			var array = new float[int_3];
+			var num = vmethod_4(array, 0, int_3);
 			Marshal.Copy(array, 0, intptr_0, num);
 			return num << 2;
 		}
@@ -163,8 +163,8 @@ namespace ns0
 			{
 				return 0;
 			}
-			int num = 0;
-			int int_5 = (int)(long_1 >> 2);
+			var num = 0;
+			var int_5 = (int)(long_1 >> 2);
 			if (bool_0)
 			{
 				num = list_0[0].vmethod_4(float_0, int_3, int_4);
@@ -180,24 +180,24 @@ namespace ns0
 				long_1 += (long)num << 2;
 				return num;
 			}
-		    float[][] array = vmethod_5(int_4 / waveFormat_0.short_0);
+		    var array = vmethod_5(int_4 / waveFormat_0.short_0);
 		    if (array == null)
 		    {
 		        return 0;
 		    }
-		    float[][] array2 = array;
-		    for (int i = 0; i < array2.Length; i++)
+		    var array2 = array;
+		    for (var i = 0; i < array2.Length; i++)
 		    {
-		        float[] array3 = array2[i];
+		        var array3 = array2[i];
 		        num = Math.Max(array3.Length, num);
 		    }
 		    num *= waveFormat_0.short_0;
-		    int num2 = array.Length;
-		    for (int j = 0; j < num2; j++)
+		    var num2 = array.Length;
+		    for (var j = 0; j < num2; j++)
 		    {
-		        float[] array4 = array[j];
-		        int k = 0;
-		        int num3 = int_3 + j;
+		        var array4 = array[j];
+		        var k = 0;
+		        var num3 = int_3 + j;
 		        while (k < array4.Length)
 		        {
 		            float_0[num3] = array4[k];
@@ -214,10 +214,10 @@ namespace ns0
 			{
 				return null;
 			}
-			int num = (int)(long_1 >> 2);
+			var num = (int)(long_1 >> 2);
 			if (bool_0)
 			{
-				float[][] array = list_0[0].vmethod_5(int_3);
+				var array = list_0[0].vmethod_5(int_3);
 				if (array == null)
 				{
 					long_1 = long_0;
@@ -230,11 +230,11 @@ namespace ns0
 				long_1 += array[0].Length * int_2;
 				return array;
 			}
-		    int num2 = 0;
-		    int num3 = 0;
-		    List<Class13> list = new List<Class13>();
-		    List<int> list2 = new List<int>();
-		    int i = 0;
+		    var num2 = 0;
+		    var num3 = 0;
+		    var list = new List<Class13>();
+		    var list2 = new List<int>();
+		    var i = 0;
 		    while (i < list_0.Count)
 		    {
 		        float[][] array2;
@@ -243,12 +243,12 @@ namespace ns0
 		            array2 = list_0[i].vmethod_5((int)(int_3 * (list_0[i].vmethod_0().int_0 / (double)waveFormat_0.int_0)));
 		            if (array2 != null)
 		            {
-		                float float_ = list_0[i].vmethod_0().int_0 / (float)waveFormat_0.int_0;
-		                for (int j = 0; j < array2.Length; j++)
+		                var float_ = list_0[i].vmethod_0().int_0 / (float)waveFormat_0.int_0;
+		                for (var j = 0; j < array2.Length; j++)
 		                {
 		                    if ((enum2_0 & (Enum2)(1 << j)) != 0)
 		                    {
-		                        Class13 @class = new Class13(num / waveFormat_0.short_0, array2[j]);
+		                        var @class = new Class13(num / waveFormat_0.short_0, array2[j]);
 		                        smethod_1(@class, float_);
 		                        array2[j] = @class.float_0;
 		                    }
@@ -272,10 +272,10 @@ namespace ns0
 		        {
 		            if (array2.Length < waveFormat_0.short_0)
 		            {
-		                float[][] array3 = new float[waveFormat_0.short_0][];
+		                var array3 = new float[waveFormat_0.short_0][];
 		                Array.Copy(array2, array3, array2.Length);
-		                int k = array2.Length;
-		                int num4 = 0;
+		                var k = array2.Length;
+		                var num4 = 0;
 		                while (k < array3.Length)
 		                {
 		                    if ((enum2_0 & (Enum2)(1 << k - array2.Length)) != 0)
@@ -290,7 +290,7 @@ namespace ns0
 		            }
 		            num3 = 0;
 		        }
-		        for (int l = 0; l < array2.Length; l++)
+		        for (var l = 0; l < array2.Length; l++)
 		        {
 		            if ((enum2_0 & (Enum2)(1 << l)) != 0)
 		            {
@@ -305,8 +305,8 @@ namespace ns0
 		                    List<int> list3;
 		                    int index;
 		                    (list3 = list2)[index = num3] = list3[index] + 1;
-		                    Class13 class2 = list[num3];
-		                    Class13 class3 = new Class13(num / waveFormat_0.short_0, array2[l]);
+		                    var class2 = list[num3];
+		                    var class3 = new Class13(num / waveFormat_0.short_0, array2[l]);
 		                    if (num2 < array2[l].Length)
 		                    {
 		                        smethod_2(class3, class2);
@@ -328,15 +328,15 @@ namespace ns0
 		        long_1 = long_0;
 		        return null;
 		    }
-		    int num5 = 0;
+		    var num5 = 0;
 		    while (num5 < list.Count && list2[num5] > 1)
 		    {
 		        smethod_3(list[num5], 1f / list2[num5]);
 		        num5++;
 		    }
 		    class12_0.imethod_0(list.ToArray());
-		    float[][] array4 = new float[list.Count][];
-		    for (int m = 0; m < array4.Length; m++)
+		    var array4 = new float[list.Count][];
+		    for (var m = 0; m < array4.Length; m++)
 		    {
 		        array4[m] = list[m].float_0;
 		    }
@@ -346,8 +346,8 @@ namespace ns0
 
 		private static int smethod_0(Enum2 enum2_1)
 		{
-			int num = 0;
-			for (int num2 = (int)enum2_1; num2 != 0; num2 &= num2 - 1)
+			var num = 0;
+			for (var num2 = (int)enum2_1; num2 != 0; num2 &= num2 - 1)
 			{
 				num++;
 			}
@@ -356,14 +356,14 @@ namespace ns0
 
 		private static void smethod_1(Class13 class13_0, float float_0)
 		{
-			float[] float_ = class13_0.float_0;
-			int num = class13_0.method_0();
-			int num2 = class13_0.method_2();
-			int num3 = (int)(num2 / float_0);
-			float[] array = new float[float_.Length - num2 + num3];
+			var float_ = class13_0.float_0;
+			var num = class13_0.method_0();
+			var num2 = class13_0.method_2();
+			var num3 = (int)(num2 / float_0);
+			var array = new float[float_.Length - num2 + num3];
 			Buffer.BlockCopy(float_, 0, array, 0, num << 2);
 			double num4 = num;
-			int num5 = num;
+			var num5 = num;
 			while (num5 < num + num3 && (int)num4 + 1 < float_.Length)
 			{
 				array[num5] = Class15.smethod_2(float_, (float)num4);
@@ -376,14 +376,14 @@ namespace ns0
 
 		private static void smethod_2(Class13 class13_0, Class13 class13_1)
 		{
-			int num = class13_0.method_0();
-			int num2 = class13_0.method_2();
-			int num3 = class13_1.method_0();
+			var num = class13_0.method_0();
+			var num2 = class13_0.method_2();
+			var num3 = class13_1.method_0();
 			if (class13_1.bool_0)
 			{
 				try
 				{
-					for (int i = 0; i < num2; i++)
+					for (var i = 0; i < num2; i++)
 					{
 						class13_0.vmethod_3(class13_0.vmethod_4(num + i) + class13_1.vmethod_4(num3 + i), num + i);
 					}
@@ -396,12 +396,12 @@ namespace ns0
 
 		private static void smethod_3(Class13 class13_0, float float_0)
 		{
-			float[] float_ = class13_0.float_0;
-			int num = class13_0.method_0();
-			int num2 = class13_0.method_2();
+			var float_ = class13_0.float_0;
+			var num = class13_0.method_0();
+			var num2 = class13_0.method_2();
 			try
 			{
-				for (int i = num; i < num + num2; i++)
+				for (var i = num; i < num + num2; i++)
 				{
 					float_[i] = class13_0.vmethod_1(i, float_[i], float_0 * float_[i]);
 				}
@@ -416,8 +416,8 @@ namespace ns0
 		public override int Read(byte[] buffer, int offset, int count)
 		{
 			count >>= 2;
-			float[] array = new float[count];
-			int num = vmethod_4(array, 0, count);
+			var array = new float[count];
+			var num = vmethod_4(array, 0, count);
 			Buffer.BlockCopy(array, 0, buffer, offset, num);
 			return num << 2;
 		}
@@ -434,7 +434,7 @@ namespace ns0
 
 		public override void Close()
 		{
-			foreach (GenericAudioStream current in list_0)
+			foreach (var current in list_0)
 			{
 				current.Close();
 			}
@@ -446,7 +446,7 @@ namespace ns0
 			if (disposing)
 			{
 				class12_0.Clear();
-				foreach (GenericAudioStream current in list_0)
+				foreach (var current in list_0)
 				{
 					current.Dispose();
 				}

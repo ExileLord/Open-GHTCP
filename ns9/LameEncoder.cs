@@ -14,11 +14,11 @@ namespace ns9
 
 		public static uint smethod_0(uint uint_0, byte[] byte_0, int int_0, uint uint_1, byte[] byte_1, ref uint uint_2)
 		{
-			GCHandle gCHandle = GCHandle.Alloc(byte_0, GCHandleType.Pinned);
+			var gCHandle = GCHandle.Alloc(byte_0, GCHandleType.Pinned);
 			uint result;
 			try
 			{
-				IntPtr pSamples = (IntPtr)(gCHandle.AddrOfPinnedObject().ToInt32() + int_0);
+				var pSamples = (IntPtr)(gCHandle.AddrOfPinnedObject().ToInt32() + int_0);
 				result = beEncodeChunk(uint_0, uint_1 / 2u, pSamples, byte_1, ref uint_2);
 			}
 			finally

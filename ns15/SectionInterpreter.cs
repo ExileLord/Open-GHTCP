@@ -17,10 +17,10 @@ namespace ns15
 
 		public SectionInterpreter(string[] string_0)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (var i = 0; i < string_0.Length; i++)
 			{
-				string text = string_0[i];
-				string[] array = text.Split(new[]
+				var text = string_0[i];
+				var array = text.Split(new[]
 				{
 					'=',
 					'"'
@@ -32,7 +32,7 @@ namespace ns15
 					{
 						array[2] = array[2].Substring(0, array[2].Length - 1);
 					}
-					int num = ChartParser.getNoteFromResolution(array[0].Trim());
+					var num = ChartParser.getNoteFromResolution(array[0].Trim());
 					if (array[2].StartsWith("section "))
 					{
 						sectionList.Add(num, CultureInfo.CurrentCulture.TextInfo.ToTitleCase(array[2].Substring("section ".Length).Replace('_', ' ')));

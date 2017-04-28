@@ -15,8 +15,8 @@ namespace MidiConverter
             Song song = null;
             try {
                 song = MidReader.ReadMidi(fileName);
-                String chartFile = ChartWriter.writeChart(song, "", false, forceRB3).ToString();
-                ChartParser chartParser = new ChartParser(chartFile, false);
+                var chartFile = ChartWriter.writeChart(song, "", false, forceRB3).ToString();
+                var chartParser = new ChartParser(chartFile, false);
                 qbc = chartParser.ConvertToQBC();
             }
             catch(Exception e)

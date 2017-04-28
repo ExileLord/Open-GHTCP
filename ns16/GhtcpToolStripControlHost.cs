@@ -63,7 +63,7 @@ namespace ns16
         protected override void OnSubscribeControlEvents(Control control)
 		{
 			base.OnSubscribeControlEvents(control);
-			TrackBar trackBar = control as TrackBar;
+			var trackBar = control as TrackBar;
 			if (trackBar != null)
 			{
 				trackBar.ValueChanged += method_6;
@@ -73,7 +73,7 @@ namespace ns16
         protected override void OnUnsubscribeControlEvents(Control control)
 		{
 			base.OnUnsubscribeControlEvents(control);
-			TrackBar trackBar = control as TrackBar;
+			var trackBar = control as TrackBar;
 			if (trackBar != null)
 			{
 				trackBar.ValueChanged -= method_6;
@@ -90,12 +90,12 @@ namespace ns16
 
 		public void method_7(EventHandler eventHandler_1)
 		{
-			EventHandler eventHandler = eventHandler_0;
+			var eventHandler = eventHandler_0;
 			EventHandler eventHandler2;
 			do
 			{
 				eventHandler2 = eventHandler;
-				EventHandler value = (EventHandler)Delegate.Combine(eventHandler2, eventHandler_1);
+				var value = (EventHandler)Delegate.Combine(eventHandler2, eventHandler_1);
 				eventHandler = Interlocked.CompareExchange(ref eventHandler_0, value, eventHandler2);
 			}
 			while (eventHandler != eventHandler2);

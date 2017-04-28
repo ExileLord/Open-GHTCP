@@ -305,11 +305,11 @@ namespace ns16
 			{
 				return;
 			}
-			Rijndael rijndael = Rijndael.Create();
+			var rijndael = Rijndael.Create();
 			rijndael.Key = byte_1;
 			rijndael.IV = byte_2;
-			CryptoStream cryptoStream = new CryptoStream(stream_1, rijndael.CreateEncryptor(), CryptoStreamMode.Write);
-			byte[] array = new byte[4096];
+			var cryptoStream = new CryptoStream(stream_1, rijndael.CreateEncryptor(), CryptoStreamMode.Write);
+			var array = new byte[4096];
 			int count;
 			while ((count = stream_0.Read(array, 0, array.Length)) > 0)
 			{
@@ -320,13 +320,13 @@ namespace ns16
 
 		public static void smethod_1(Stream stream_0, Stream stream_1, string string_0)
 		{
-			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, pwByteArray);
+			var passwordDeriveBytes = new PasswordDeriveBytes(string_0, pwByteArray);
 			smethod_0(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
 		public static byte[] smethod_2(Stream stream_0, string string_0)
 		{
-			MemoryStream memoryStream = new MemoryStream();
+			var memoryStream = new MemoryStream();
 			smethod_1(stream_0, memoryStream, string_0);
 			return memoryStream.ToArray();
 		}
@@ -337,11 +337,11 @@ namespace ns16
 			{
 				return;
 			}
-			Rijndael rijndael = Rijndael.Create();
+			var rijndael = Rijndael.Create();
 			rijndael.Key = byte_1;
 			rijndael.IV = byte_2;
-			CryptoStream cryptoStream = new CryptoStream(stream_1, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
-			byte[] array = new byte[4096];
+			var cryptoStream = new CryptoStream(stream_1, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
+			var array = new byte[4096];
 			int count;
 			while ((count = stream_0.Read(array, 0, array.Length)) > 0)
 			{
@@ -352,13 +352,13 @@ namespace ns16
 
 		private static void cryptoMethod(Stream stream_0, Stream stream_1, string string_0)
 		{
-			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, pwByteArray);
+			var passwordDeriveBytes = new PasswordDeriveBytes(string_0, pwByteArray);
 			cryptoMethod(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
 		public static byte[] cryptoMethod(Stream stream_0, string string_0)
 		{
-			MemoryStream memoryStream = new MemoryStream();
+			var memoryStream = new MemoryStream();
 			cryptoMethod(stream_0, memoryStream, string_0);
 			return memoryStream.ToArray();
 		}
@@ -369,23 +369,23 @@ namespace ns16
 			{
 				return;
 			}
-			Rijndael rijndael = Rijndael.Create();
+			var rijndael = Rijndael.Create();
 			rijndael.Key = key;
 			rijndael.IV = initializationVector;
-			CryptoStream cryptoStream = new CryptoStream(stream_0, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
+			var cryptoStream = new CryptoStream(stream_0, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
 			cryptoStream.Write(byte_1, 0, byte_1.Length);
 			cryptoStream.Close();
 		}
 
 		public static void smethod_7(byte[] byte_1, Stream stream_0, string string_0)
 		{
-			PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string_0, pwByteArray);
+			var passwordDeriveBytes = new PasswordDeriveBytes(string_0, pwByteArray);
 			smethod_6(byte_1, stream_0, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
 		public static byte[] smethod_8(byte[] byte_1, string string_0)
 		{
-			MemoryStream memoryStream = new MemoryStream();
+			var memoryStream = new MemoryStream();
 			smethod_7(byte_1, memoryStream, string_0);
 			return memoryStream.ToArray();
 		}
@@ -401,14 +401,14 @@ namespace ns16
 
 		public static string smethod_10(string string_0)
 		{
-			int length = string_0.LastIndexOfAny(new[] { '\\', '/' }) + 1;
+			var length = string_0.LastIndexOfAny(new[] { '\\', '/' }) + 1;
 			return string_0.Substring(0, length);
 		}
 
 		public static string GetFileName(string path, int dotsInExtension)
 		{
-			int i = path.LastIndexOfAny(new[] { '\\', '/' }) + 1;
-			string text = path.Substring(i);
+			var i = path.LastIndexOfAny(new[] { '\\', '/' }) + 1;
+			var text = path.Substring(i);
 			try
 			{
 				if (dotsInExtension == -1)
@@ -444,10 +444,10 @@ namespace ns16
 			string result;
 			try
 			{
-				string text = string_0.Substring(string_0.IndexOf('.') + 1);
+				var text = string_0.Substring(string_0.IndexOf('.') + 1);
 				if (int_0 != 0)
 				{
-					string[] array = text.Split(new[]
+					var array = text.Split(new[]
 					{
 						'.'
 					}, StringSplitOptions.RemoveEmptyEntries);
@@ -494,15 +494,15 @@ namespace ns16
 
 		public static List<string> checkFile(string string_0, string string_1, bool bool_2)
 		{
-			string[] array = string_1.Split(new[]
+			var array = string_1.Split(new[]
 			{
 				';'
 			}, StringSplitOptions.RemoveEmptyEntries);
-			List<string> fileList = new List<string>();
-			string[] array2 = array;
-			for (int i = 0; i < array2.Length; i++)
+			var fileList = new List<string>();
+			var array2 = array;
+			for (var i = 0; i < array2.Length; i++)
 			{
-				string searchPattern = array2[i];
+				var searchPattern = array2[i];
 				fileList.AddRange(Directory.GetFiles(string_0, searchPattern, bool_2 ? SearchOption.TopDirectoryOnly : SearchOption.AllDirectories));
 			}
 			return fileList;
@@ -540,8 +540,8 @@ namespace ns16
 
 		public static int[] smethod_22(List<byte> list_0)
 		{
-			int[] array = new int[list_0.Count / 4];
-			for (int i = 0; i < array.Length; i++)
+			var array = new int[list_0.Count / 4];
+			for (var i = 0; i < array.Length; i++)
 			{
 				array[i] = smethod_25(list_0.GetRange(i * 4, 4).ToArray());
 			}
@@ -559,7 +559,7 @@ namespace ns16
 			{
 				return BytesToInt(byte_1);
 			}
-			int num = byte_1.Length;
+			var num = byte_1.Length;
 			switch (num)
 			{
 			case 2:
@@ -591,8 +591,8 @@ namespace ns16
 		public static short BytesToShort(byte[] byte_1)
 		{
 			short num = 0;
-			int num2 = Math.Min(2, byte_1.Length);
-			for (int i = 0; i < num2; i++)
+			var num2 = Math.Min(2, byte_1.Length);
+			for (var i = 0; i < num2; i++)
 			{
 				num |= (short)(byte_1[i] << 8 - 8 * i);
 			}
@@ -601,9 +601,9 @@ namespace ns16
 
 		public static int BytesToInt(byte[] byte_1)
 		{
-			int num = 0;
-			int num2 = Math.Min(4, byte_1.Length);
-			for (int i = 0; i < num2; i++)
+			var num = 0;
+			var num2 = Math.Min(4, byte_1.Length);
+			for (var i = 0; i < num2; i++)
 			{
 				num |= byte_1[i] << 24 - 8 * i;
 			}
@@ -628,8 +628,8 @@ namespace ns16
 
 		public static byte[] ReadBytes(Stream stream_0)
 		{
-			BinaryReader binaryReader = new BinaryReader(stream_0);
-			byte[] result = binaryReader.ReadBytes((int)stream_0.Length);
+			var binaryReader = new BinaryReader(stream_0);
+			var result = binaryReader.ReadBytes((int)stream_0.Length);
 			binaryReader.Close();
 			return result;
 		}
@@ -655,7 +655,7 @@ namespace ns16
 
 		public static string ValToPaddedHex(int val, int halfPadding)
 		{
-			string text = val.ToString("x");
+			var text = val.ToString("x");
 			while (text.Length < halfPadding * 2)
 			{
 				text = "0" + text;
@@ -686,7 +686,7 @@ namespace ns16
 			}
 			stream.Position = 0L;
 			ResetKey();
-			byte[] array = new byte[4096];
+			var array = new byte[4096];
 			int int_;
 			while ((int_ = stream.Read(array, 0, array.Length)) != 0)
 			{
@@ -749,7 +749,7 @@ namespace ns16
 
 		public static byte[] HashStream(HashAlgorithm hashAlgorithm_0, Stream stream_0)
 		{
-			byte[] result = hashAlgorithm_0.ComputeHash(stream_0);
+			var result = hashAlgorithm_0.ComputeHash(stream_0);
 			hashAlgorithm_0.Clear();
 			stream_0.Close();
 			return result;
@@ -771,13 +771,13 @@ namespace ns16
 
 		public static void smethod_47(Stream stream_0, Stream stream_1)
 		{
-			int count = 256;
-			byte[] buffer = new byte[256];
+			var count = 256;
+			var buffer = new byte[256];
 			if (stream_0.CanSeek && stream_0.Position != 0L)
 			{
 				stream_0.Position = 0L;
 			}
-			for (int i = stream_0.Read(buffer, 0, count); i > 0; i = stream_0.Read(buffer, 0, count))
+			for (var i = stream_0.Read(buffer, 0, count); i > 0; i = stream_0.Read(buffer, 0, count))
 			{
 				stream_1.Write(buffer, 0, i);
 			}
@@ -792,7 +792,7 @@ namespace ns16
 
 		public static Bitmap ScaleImageFixedRatio(Image image, int width, int height)
 		{
-			Size size = ScaleDimensions(image.Width, image.Height, width, height);
+			var size = ScaleDimensions(image.Width, image.Height, width, height);
 			return ScaleImage(image, size.Width, size.Height);
 		}
 
@@ -803,19 +803,19 @@ namespace ns16
 
 		public static Bitmap ScaleImage(Image image, int width, int height)
 		{
-			Bitmap bitmap = new Bitmap(width, height, PixelFormat.Format32bppArgb);
-			Graphics graphics = Graphics.FromImage(bitmap);
+			var bitmap = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+			var graphics = Graphics.FromImage(bitmap);
 			graphics.SmoothingMode = SmoothingMode.HighQuality;
 			graphics.CompositingQuality = CompositingQuality.HighQuality;
 			graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-			Rectangle destRect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
+			var destRect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
 			graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel);
 			return bitmap;
 		}
 
 		private static Size ScaleDimensions(int width1, int height1, int width2, int height2)
 		{
-			decimal num = ((decimal)height1) / width1;
+			var num = ((decimal)height1) / width1;
 			if (height2 > width2)
 			{
 				width2 = decimal.ToInt32(height2 / num);
@@ -843,14 +843,14 @@ namespace ns16
 			{
 				return false;
 			}
-			IEnumerator<T> enumerator = icollection_0.GetEnumerator();
-			IEnumerator<T> enumerator2 = icollection_1.GetEnumerator();
+			var enumerator = icollection_0.GetEnumerator();
+			var enumerator2 = icollection_1.GetEnumerator();
 			enumerator.Reset();
 			enumerator2.Reset();
-			int num = 0;
+			var num = 0;
 			while (num < int_0 && enumerator.MoveNext() && enumerator2.MoveNext())
 			{
-				T current = enumerator.Current;
+				var current = enumerator.Current;
 				if (current.CompareTo(enumerator2.Current) != 0 ^ bool_2)
 				{
 					return false;
@@ -862,11 +862,11 @@ namespace ns16
 
 		public static void smethod_56(IList ilist_0)
 		{
-			ArrayList arrayList = new ArrayList(ilist_0);
-			int num = 0;
+			var arrayList = new ArrayList(ilist_0);
+			var num = 0;
 			while (arrayList.Count != 0)
 			{
-				object obj = arrayList[random_0.Next(0, arrayList.Count)];
+				var obj = arrayList[random_0.Next(0, arrayList.Count)];
 				ilist_0[num++] = obj;
 				arrayList.Remove(obj);
 			}

@@ -54,12 +54,12 @@ namespace ns1
 			{
 				return float_1[0];
 			}
-			for (int i = 1; i < float_0.Length; i++)
+			for (var i = 1; i < float_0.Length; i++)
 			{
 				if (float_0[i] > float_2)
 				{
-					float num = float_0[i] - float_0[i - 1];
-					float num2 = float_1[i] - float_1[i - 1];
+					var num = float_0[i] - float_0[i - 1];
+					var num2 = float_1[i] - float_1[i - 1];
 					return float_1[i - 1] + (float_2 - float_0[i - 1]) / num * num2;
 				}
 			}
@@ -68,8 +68,8 @@ namespace ns1
 
 		public static float smethod_4(float[] float_0, int int_3, int int_4)
 		{
-			float num = 0f;
-			for (int i = 0; i < int_4; i++)
+			var num = 0f;
+			for (var i = 0; i < int_4; i++)
 			{
 				num += float_0[int_3 + i] * float_0[int_3 + i];
 			}
@@ -83,14 +83,14 @@ namespace ns1
 
 		public static void smethod_6(float[] float_0, int int_3, int int_4, float float_1)
 		{
-			float num = float_0[int_3];
-			for (int i = int_3; i < int_3 + int_4; i++)
+			var num = float_0[int_3];
+			for (var i = int_3; i < int_3 + int_4; i++)
 			{
 				num = smethod_5(num, float_0[i], float_1);
 				float_0[i] = num;
 			}
 			num = float_0[int_3 + int_4 - 1];
-			for (int j = int_3 + int_4 - 1; j >= int_3; j--)
+			for (var j = int_3 + int_4 - 1; j >= int_3; j--)
 			{
 				num = smethod_5(num, float_0[j], float_1);
 				float_0[j] = num;
@@ -115,10 +115,10 @@ namespace ns1
 
 		public static float smethod_9(float[] float_0, int int_3, int int_4)
 		{
-			float num = 0f;
-			for (int i = 0; i < int_4; i++)
+			var num = 0f;
+			for (var i = 0; i < int_4; i++)
 			{
-				float num2 = Math.Abs(float_0[int_3 + i]);
+				var num2 = Math.Abs(float_0[int_3 + i]);
 				if (num2 > num)
 				{
 					num = num2;

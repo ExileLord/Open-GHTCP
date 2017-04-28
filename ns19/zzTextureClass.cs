@@ -86,17 +86,17 @@ namespace ns19
 
 		private static void smethod_0()
 		{
-			for (int i = 0; i < 32; i++)
+			for (var i = 0; i < 32; i++)
 			{
 				byte_0[i] = (byte)(i << 3 | i >> 2);
 			}
-			for (int j = 0; j < 64; j++)
+			for (var j = 0; j < 64; j++)
 			{
 				byte_1[j] = (byte)(j << 2 | j >> 4);
 			}
-			for (int k = 0; k < 272; k++)
+			for (var k = 0; k < 272; k++)
 			{
-				int int_ = smethod_11(k - 8, 0, 255);
+				var int_ = smethod_11(k - 8, 0, 255);
 				byte_4[k] = byte_0[smethod_2(int_, 31)];
 				byte_5[k] = byte_1[smethod_2(int_, 63)];
 			}
@@ -107,16 +107,16 @@ namespace ns19
 
 		private static void smethod_1(ref byte[,] byte_6, byte[] byte_7, int int_0)
 		{
-			for (int i = 0; i < 256; i++)
+			for (var i = 0; i < 256; i++)
 			{
-				int num = 256;
-				for (int j = 0; j < int_0; j++)
+				var num = 256;
+				for (var j = 0; j < int_0; j++)
 				{
-					for (int k = 0; k < int_0; k++)
+					for (var k = 0; k < int_0; k++)
 					{
 						int num2 = byte_7[j];
 						int num3 = byte_7[k];
-						int num4 = Math.Abs(num3 + smethod_2(num2 - num3, 85) - i);
+						var num4 = Math.Abs(num3 + smethod_2(num2 - num3, 85) - i);
 						if (num4 < num)
 						{
 							byte_6[i, 0] = (byte)k;
@@ -130,15 +130,15 @@ namespace ns19
 
 		private static int smethod_2(int int_0, int int_1)
 		{
-			int num = int_0 * int_1 + 128;
+			var num = int_0 * int_1 + 128;
 			return num + (num >> 8) >> 8;
 		}
 
 		private static Color smethod_3(ushort ushort_0)
 		{
-			int num = (ushort_0 & 63488) >> 11;
-			int num2 = (ushort_0 & 2016) >> 5;
-			int num3 = ushort_0 & 31;
+			var num = (ushort_0 & 63488) >> 11;
+			var num2 = (ushort_0 & 2016) >> 5;
+			var num3 = ushort_0 & 31;
 			return Color.FromArgb(0, byte_0[num], byte_1[num2], byte_0[num3]);
 		}
 
@@ -162,17 +162,17 @@ namespace ns19
 
 		private static Color[] smethod_7(Color[] color_0)
 		{
-			Color[] array = new Color[color_0.Length];
-			int[,] array2 = new int[3, 4];
-			int[,] array3 = new int[3, 4];
-			for (int i = 0; i < 4; i++)
+			var array = new Color[color_0.Length];
+			var array2 = new int[3, 4];
+			var array3 = new int[3, 4];
+			for (var i = 0; i < 4; i++)
 			{
-				int num = i * 4;
-				byte b = byte_4[color_0[num].B + (3 * array3[0, 1] + 5 * array3[0, 0] >> 4) + 8];
+				var num = i * 4;
+				var b = byte_4[color_0[num].B + (3 * array3[0, 1] + 5 * array3[0, 0] >> 4) + 8];
 				array2[0, 0] = color_0[num].B - b;
-				byte b2 = byte_5[color_0[num].G + (3 * array3[1, 1] + 5 * array3[1, 0] >> 4) + 8];
+				var b2 = byte_5[color_0[num].G + (3 * array3[1, 1] + 5 * array3[1, 0] >> 4) + 8];
 				array2[1, 0] = color_0[num].G - b2;
-				byte b3 = byte_4[color_0[num].R + (3 * array3[2, 1] + 5 * array3[2, 0] >> 4) + 8];
+				var b3 = byte_4[color_0[num].R + (3 * array3[2, 1] + 5 * array3[2, 0] >> 4) + 8];
 				array2[2, 0] = color_0[num].R - b3;
 				array[num] = Color.FromArgb(b3, b2, b);
 				b = byte_4[color_0[num + 1].B + (7 * array2[0, 0] + 3 * array3[0, 2] + 5 * array3[0, 1] + array3[0, 0] >> 4) + 8];
@@ -196,7 +196,7 @@ namespace ns19
 				b3 = byte_4[color_0[num + 3].R + (7 * array2[2, 2] + 5 * array3[2, 3] + array3[2, 2] >> 4) + 8];
 				array2[2, 3] = color_0[num + 3].R - b3;
 				array[num + 3] = Color.FromArgb(b3, b2, b);
-				int[,] array4 = array2;
+				var array4 = array2;
 				array2 = array3;
 				array3 = array4;
 			}
@@ -205,29 +205,29 @@ namespace ns19
 
 		private static uint smethod_8(Color[] color_0, Color[] color_1, bool bool_1)
 		{
-			uint num = 0u;
-			int num2 = color_1[0].R - color_1[1].R;
-			int num3 = color_1[0].G - color_1[1].G;
-			int num4 = color_1[0].B - color_1[1].B;
-			int[] array = new int[16];
-			for (int i = 0; i < 16; i++)
+			var num = 0u;
+			var num2 = color_1[0].R - color_1[1].R;
+			var num3 = color_1[0].G - color_1[1].G;
+			var num4 = color_1[0].B - color_1[1].B;
+			var array = new int[16];
+			for (var i = 0; i < 16; i++)
 			{
 				array[i] = color_0[i].R * num2 + color_0[i].G * num3 + color_0[i].B * num4;
 			}
-			int[] array2 = new int[4];
-			for (int j = 0; j < 4; j++)
+			var array2 = new int[4];
+			for (var j = 0; j < 4; j++)
 			{
 				array2[j] = color_1[j].R * num2 + color_1[j].G * num3 + color_1[j].B * num4;
 			}
-			int num5 = array2[1] + array2[3] >> 1;
-			int num6 = array2[3] + array2[2] >> 1;
-			int num7 = array2[2] + array2[0] >> 1;
+			var num5 = array2[1] + array2[3] >> 1;
+			var num6 = array2[3] + array2[2] >> 1;
+			var num7 = array2[2] + array2[0] >> 1;
 			if (!bool_1)
 			{
-				for (int k = 15; k >= 0; k--)
+				for (var k = 15; k >= 0; k--)
 				{
 					num <<= 2;
-					int num8 = array[k];
+					var num8 = array[k];
 					if (num8 < num6)
 					{
 						num |= ((num8 < num5) ? 1u : 3u);
@@ -240,14 +240,14 @@ namespace ns19
 			}
 			else
 			{
-				int[] array3 = new int[4];
-				int[] array4 = new int[4];
+				var array3 = new int[4];
+				var array4 = new int[4];
 				num5 <<= 4;
 				num6 <<= 4;
 				num7 <<= 4;
-				for (int l = 0; l < 4; l++)
+				for (var l = 0; l < 4; l++)
 				{
-					int num9 = (array[l * 4] << 4) + (3 * array4[1] + 5 * array4[0]);
+					var num9 = (array[l * 4] << 4) + (3 * array4[1] + 5 * array4[0]);
 					int num10;
 					if (num9 < num6)
 					{
@@ -258,7 +258,7 @@ namespace ns19
 						num10 = ((num9 < num7) ? 2 : 0);
 					}
 					array3[0] = array[l * 4] - array2[num10];
-					int num11 = num10;
+					var num11 = num10;
 					num9 = (array[l * 4 + 1] << 4) + (7 * array3[0] + 3 * array4[2] + 5 * array4[1] + array4[0]);
 					if (num9 < num6)
 					{
@@ -292,7 +292,7 @@ namespace ns19
 					}
 					array3[3] = array[l * 4 + 3] - array2[num10];
 					num11 |= num10 << 6;
-					int[] array5 = array3;
+					var array5 = array3;
 					array3 = array4;
 					array4 = array5;
 					num |= (uint)num11 << l * 8;
@@ -303,18 +303,18 @@ namespace ns19
 
 		private static void smethod_9(Color[] block, out ushort max16, out ushort min16)
 		{
-			int num = 4;
-			int[] array = new int[3];
-			int[] array2 = new int[3];
-			int[] array3 = new int[3];
-			for (int i = 0; i < 3; i++)
+			var num = 4;
+			var array = new int[3];
+			var array2 = new int[3];
+			var array3 = new int[3];
+			for (var i = 0; i < 3; i++)
 			{
 				int num4;
 				int num3;
-				int num2 = num3 = (num4 = (block[0].ToArgb() >> i * 8 & 255));
-				for (int j = 1; j < 16; j++)
+				var num2 = num3 = (num4 = (block[0].ToArgb() >> i * 8 & 255));
+				for (var j = 1; j < 16; j++)
 				{
-					byte b = (byte)(block[j].ToArgb() >> i * 8 & 255);
+					var b = (byte)(block[j].ToArgb() >> i * 8 & 255);
 					num3 += b;
 					num2 = Math.Min(num2, b);
 					num4 = Math.Max(num4, b);
@@ -323,16 +323,16 @@ namespace ns19
 				array2[i] = num2;
 				array3[i] = num4;
 			}
-			int[] array4 = new int[6];
-			for (int k = 0; k < 6; k++)
+			var array4 = new int[6];
+			for (var k = 0; k < 6; k++)
 			{
 				array4[k] = 0;
 			}
-			for (int l = 0; l < 16; l++)
+			for (var l = 0; l < 16; l++)
 			{
-				int num5 = block[l].R - array[2];
-				int num6 = block[l].G - array[1];
-				int num7 = block[l].B - array[0];
+				var num5 = block[l].R - array[2];
+				var num6 = block[l].G - array[1];
+				var num7 = block[l].B - array[0];
 				array4[0] += num5 * num5;
 				array4[1] += num5 * num6;
 				array4[2] += num5 * num7;
@@ -340,24 +340,24 @@ namespace ns19
 				array4[4] += num6 * num7;
 				array4[5] += num7 * num7;
 			}
-			float[] array5 = new float[6];
-			for (int m = 0; m < 6; m++)
+			var array5 = new float[6];
+			for (var m = 0; m < 6; m++)
 			{
 				array5[m] = array4[m] / 255f;
 			}
 			float num8 = array3[2] - array2[2];
 			float num9 = array3[1] - array2[1];
 			float num10 = array3[0] - array2[0];
-			for (int n = 0; n < num; n++)
+			for (var n = 0; n < num; n++)
 			{
-				float num11 = num8 * array5[0] + num9 * array5[1] + num10 * array5[2];
-				float num12 = num8 * array5[1] + num9 * array5[3] + num10 * array5[4];
-				float num13 = num8 * array5[2] + num9 * array5[4] + num10 * array5[5];
+				var num11 = num8 * array5[0] + num9 * array5[1] + num10 * array5[2];
+				var num12 = num8 * array5[1] + num9 * array5[3] + num10 * array5[4];
+				var num13 = num8 * array5[2] + num9 * array5[4] + num10 * array5[5];
 				num8 = num11;
 				num9 = num12;
 				num10 = num13;
 			}
-			float num14 = Math.Max(Math.Max(Math.Abs(num8), Math.Abs(num9)), Math.Abs(num10));
+			var num14 = Math.Max(Math.Max(Math.Abs(num8), Math.Abs(num9)), Math.Abs(num10));
 			int num15;
 			int num16;
 			int num17;
@@ -374,13 +374,13 @@ namespace ns19
 				num16 = Convert.ToInt32(num9 * num14);
 				num17 = Convert.ToInt32(num10 * num14);
 			}
-			int num18 = 2147483647;
-			int num19 = -2147483647;
-			Color color_ = default(Color);
-			Color color_2 = default(Color);
-			for (int num20 = 0; num20 < 16; num20++)
+			var num18 = 2147483647;
+			var num19 = -2147483647;
+			var color_ = default(Color);
+			var color_2 = default(Color);
+			for (var num20 = 0; num20 < 16; num20++)
 			{
-				int num21 = block[num20].R * num15 + block[num20].G * num16 + block[num20].B * num17;
+				var num21 = block[num20].R * num15 + block[num20].G * num16 + block[num20].B * num17;
 				if (num21 < num18)
 				{
 					num18 = num21;
@@ -410,21 +410,21 @@ namespace ns19
 				262402,
 				66562
 			};
-			int num = 0;
-			uint num2 = uint_0;
-			int arg_30_0 = 0;
-			int num3 = 0;
-			int num4 = 0;
-			int num5 = arg_30_0;
-			int arg_38_0 = 0;
-			int num6 = 0;
-			int num7 = 0;
-			int num8 = arg_38_0;
-			int i = 0;
+			var num = 0;
+			var num2 = uint_0;
+			var arg_30_0 = 0;
+			var num3 = 0;
+			var num4 = 0;
+			var num5 = arg_30_0;
+			var arg_38_0 = 0;
+			var num6 = 0;
+			var num7 = 0;
+			var num8 = arg_38_0;
+			var i = 0;
 			while (i < 16)
 			{
-				int num9 = (int)(num2 & 3u);
-				int num10 = array[num9];
+				var num9 = (int)(num2 & 3u);
+				var num10 = array[num9];
 				int r = color_0[i].R;
 				int g = color_0[i].G;
 				int b = color_0[i].B;
@@ -441,17 +441,17 @@ namespace ns19
 			num8 = 3 * num8 - num5;
 			num7 = 3 * num7 - num4;
 			num6 = 3 * num6 - num3;
-			int num11 = num >> 16;
-			int num12 = num >> 8 & 255;
-			int num13 = num & 255;
+			var num11 = num >> 16;
+			var num12 = num >> 8 & 255;
+			var num13 = num & 255;
 			if (num12 != 0 && num11 != 0)
 			{
 				if (num11 * num12 != num13 * num13)
 				{
-					float num14 = 0.3647059f / (num11 * num12 - num13 * num13);
-					float num15 = num14 * 63f / 31f;
-					ushort num16 = ushort_1;
-					ushort num17 = ushort_0;
+					var num14 = 0.3647059f / (num11 * num12 - num13 * num13);
+					var num15 = num14 * 63f / 31f;
+					var num16 = ushort_1;
+					var num17 = ushort_0;
 					ushort_0 = (ushort)(smethod_11(Convert.ToInt32((num5 * num12 - num8 * num13) * num14 + 0.5f), 0, 31) << 11);
 					ushort_0 = (ushort)(ushort_0 | smethod_11(Convert.ToInt32((num4 * num12 - num7 * num13) * num15 + 0.5f), 0, 63) << 5);
 					ushort_0 = (ushort)(ushort_0 | smethod_11(Convert.ToInt32((num3 * num12 - num6 * num13) * num14 + 0.5f), 0, 31));
@@ -479,11 +479,11 @@ namespace ns19
 
 		private static Jerry smethod_12(Color[] color_0, bool bool_1)
 		{
-			Color[] array = new Color[16];
-			Color[] color_ = new Color[4];
+			var array = new Color[16];
+			var color_ = new Color[4];
 			uint num2;
-			uint num = num2 = (uint)color_0[0].ToArgb();
-			for (int i = 1; i < 16; i++)
+			var num = num2 = (uint)color_0[0].ToArgb();
+			for (var i = 1; i < 16; i++)
 			{
 				num2 = Math.Min(num2, (uint)color_0[i].ToArgb());
 				num = Math.Max(num, (uint)color_0[i].ToArgb());
@@ -531,7 +531,7 @@ namespace ns19
 			}
 			if (num3 < num4)
 			{
-				ushort num6 = num3;
+				var num6 = num3;
 				num3 = num4;
 				num4 = num6;
 				num5 ^= 1431655765u;
@@ -545,7 +545,7 @@ namespace ns19
 
 		private static int smethod_13(float float_0, int int_0)
 		{
-			int num = Convert.ToInt32(float_0 + 0.5f);
+			var num = Convert.ToInt32(float_0 + 0.5f);
 			if (num < 0)
 			{
 				num = 0;
@@ -559,13 +559,13 @@ namespace ns19
 
 		private static byte[] smethod_14(Color[] color_0)
 		{
-			byte[] array = new byte[8];
-			for (int i = 0; i < 8; i++)
+			var array = new byte[8];
+			for (var i = 0; i < 8; i++)
 			{
-				float float_ = color_0[2 * i].A * 0.05882353f;
-				float float_2 = color_0[2 * i + 1].A * 0.05882353f;
-				int num = smethod_13(float_, 15);
-				int num2 = smethod_13(float_2, 15);
+				var float_ = color_0[2 * i].A * 0.05882353f;
+				var float_2 = color_0[2 * i + 1].A * 0.05882353f;
+				var num = smethod_13(float_, 15);
+				var num2 = smethod_13(float_2, 15);
 				array[i] = (byte)(num | num2 << 4);
 			}
 			return array;
@@ -573,28 +573,28 @@ namespace ns19
 
 		private static byte[] smethod_15(Color[] color_0)
 		{
-			byte[] array = new byte[8];
-			int num = 0;
+			var array = new byte[8];
+			var num = 0;
 			byte b2;
-			byte b = b2 = color_0[0].A;
-			for (int i = 1; i < 16; i++)
+			var b = b2 = color_0[0].A;
+			for (var i = 1; i < 16; i++)
 			{
 				b2 = Math.Min(b2, color_0[i].A);
 				b = Math.Max(b, color_0[i].A);
 			}
 			array[num++] = b;
 			array[num++] = b2;
-			int num2 = b - b2;
-			int num3 = b2 * 7 - (num2 >> 1);
-			int num4 = num2 * 4;
-			int num5 = num2 * 2;
-			int num6 = 0;
-			int num7 = 0;
-			for (int j = 0; j < 16; j++)
+			var num2 = b - b2;
+			var num3 = b2 * 7 - (num2 >> 1);
+			var num4 = num2 * 4;
+			var num5 = num2 * 2;
+			var num6 = 0;
+			var num7 = 0;
+			for (var j = 0; j < 16; j++)
 			{
-				int num8 = color_0[j].A * 7 - num3;
-				int num9 = num4 - num8 >> 31;
-				int num10 = num9 & 4;
+				var num8 = color_0[j].A * 7 - num3;
+				var num9 = num4 - num8 >> 31;
+				var num10 = num9 & 4;
 				num8 -= (num4 & num9);
 				num9 = num5 - num8 >> 31;
 				num10 += (num9 & 2);
@@ -616,21 +616,21 @@ namespace ns19
 
 		public static void smethod_16(Bitmap bitmap_0, BinaryWriter binaryWriter_0, IMGPixelFormat imgpixelFormat_0, bool bool_1)
 		{
-			int height = bitmap_0.Height;
-			int width = bitmap_0.Width;
+			var height = bitmap_0.Height;
+			var width = bitmap_0.Width;
 			if (!bool_0)
 			{
 				smethod_0();
 			}
-			for (int i = 0; i < height; i += 4)
+			for (var i = 0; i < height; i += 4)
 			{
-				for (int j = 0; j < width; j += 4)
+				for (var j = 0; j < width; j += 4)
 				{
-					Color[] array = new Color[16];
-					int num = 0;
-					for (int k = 0; k < 4; k++)
+					var array = new Color[16];
+					var num = 0;
+					for (var k = 0; k < 4; k++)
 					{
-						for (int l = 0; l < 4; l++)
+						for (var l = 0; l < 4; l++)
 						{
 							if (j + l < width && i + k < height)
 							{
@@ -653,39 +653,39 @@ namespace ns19
 
 		public static void smethod_17(BinaryReader binaryReader_0, ImageRelatedClass class219_0, IMGPixelFormat imgpixelFormat_0)
 		{
-			Tom[] array = new Tom[16];
-			int num = class219_0.method_1();
-			int num2 = class219_0.method_0();
-			for (int i = 0; i < num; i += 4)
+			var array = new Tom[16];
+			var num = class219_0.method_1();
+			var num2 = class219_0.method_0();
+			for (var i = 0; i < num; i += 4)
 			{
-				for (int j = 0; j < num2; j += 4)
+				for (var j = 0; j < num2; j += 4)
 				{
 					if (imgpixelFormat_0 == IMGPixelFormat.Dxt3)
 					{
-						ushort[] array2 = new ushort[4];
-						for (int k = 0; k < 4; k++)
+						var array2 = new ushort[4];
+						for (var k = 0; k < 4; k++)
 						{
-							for (int l = 0; l < 4; l++)
+							for (var l = 0; l < 4; l++)
 							{
 								if (l == 0)
 								{
 									array2[k] = binaryReader_0.ReadUInt16();
 								}
 								array[k * 4 + l].float_0 = (array2[k] & 15) / 15f;
-								ushort[] expr_74_cp_0 = array2;
-								int expr_74_cp_1 = k;
+								var expr_74_cp_0 = array2;
+								var expr_74_cp_1 = k;
 								expr_74_cp_0[expr_74_cp_1] = (ushort)(expr_74_cp_0[expr_74_cp_1] >> 4);
 							}
 						}
 					}
 					else if (imgpixelFormat_0 == IMGPixelFormat.Dxt5)
 					{
-						byte[] array3 = binaryReader_0.ReadBytes(2);
-						byte[] array4 = binaryReader_0.ReadBytes(6);
-						float[] array5 = new float[8];
+						var array3 = binaryReader_0.ReadBytes(2);
+						var array4 = binaryReader_0.ReadBytes(6);
+						var array5 = new float[8];
 						array5[0] = array3[0] / 255f;
 						array5[1] = array3[1] / 255f;
-						int num3 = 4;
+						var num3 = 4;
 						if (array3[0] > array3[1])
 						{
 							num3 = 6;
@@ -695,29 +695,29 @@ namespace ns19
 							array5[6] = 0f;
 							array5[7] = 1f;
 						}
-						float num4 = 1f / (num3 + 1);
-						for (int m = 0; m < num3; m++)
+						var num4 = 1f / (num3 + 1);
+						for (var m = 0; m < num3; m++)
 						{
-							float num5 = (num3 - m) * num4;
-							float num6 = (m + 1) * num4;
+							var num5 = (num3 - m) * num4;
+							var num6 = (m + 1) * num4;
 							array5[m + 2] = num5 * array3[0] + num6 * array3[1];
 						}
-						for (int n = 0; n < 16; n++)
+						for (var n = 0; n < 16; n++)
 						{
                             //Console.WriteLine("Broken");
-                            int div = (n * 3) / 8;
-							int rem = (n * 3) % 8;
-							byte b = (byte)((array4[div] >> rem) & 7);
+                            var div = (n * 3) / 8;
+							var rem = (n * 3) % 8;
+							var b = (byte)((array4[div] >> rem) & 7);
 							if (rem > 5)
 							{
-								byte b2 = (byte)((array4[div + 1] << (8 - rem)) & 0xFF);
+								var b2 = (byte)((array4[div + 1] << (8 - rem)) & 0xFF);
                                 b |= (byte)(b2 & 7);
 							}
 							array[n].float_0 = array5[b];
 						}
 					}
-					Jerry @struct = Jerry.smethod_0(binaryReader_0);
-					Tom[] array6 = new Tom[4];
+					var @struct = Jerry.smethod_0(binaryReader_0);
+					var array6 = new Tom[4];
 					array6[0].float_1 = ((@struct.ushort_0 & 63488) >> 11) / 31f;
 					array6[0].float_2 = ((@struct.ushort_0 & 2016) >> 5) / 63f;
 					array6[0].float_3 = (@struct.ushort_0 & 31) / 31f;
@@ -734,14 +734,14 @@ namespace ns19
 						array6[2] = Tom.smethod_1(Tom.smethod_2(Tom.smethod_0(2f, array6[0]), array6[1]), 0.333333343f);
 						array6[3] = Tom.smethod_1(Tom.smethod_2(array6[0], Tom.smethod_0(2f, array6[1])), 0.333333343f);
 					}
-					for (int num9 = 0; num9 < 4; num9++)
+					for (var num9 = 0; num9 < 4; num9++)
 					{
-						for (int num10 = 0; num10 < 4; num10++)
+						for (var num10 = 0; num10 < 4; num10++)
 						{
 							if (j + num10 < num2 && i + num9 < num)
 							{
-								Point point_ = new Point(j + num10, i + num9);
-								uint num11 = @struct.uint_0 & 3u;
+								var point_ = new Point(j + num10, i + num9);
+								var num11 = @struct.uint_0 & 3u;
 								if (imgpixelFormat_0 == IMGPixelFormat.Dxt1)
 								{
 									class219_0.method_6(point_, Color.FromArgb((byte)(array6[(int)((UIntPtr)num11)].float_0 * 255f), (byte)(array6[(int)((UIntPtr)num11)].float_1 * 255f), (byte)(array6[(int)((UIntPtr)num11)].float_2 * 255f), (byte)(array6[(int)((UIntPtr)num11)].float_3 * 255f)));

@@ -33,24 +33,24 @@ namespace ns0
 
 		public virtual int vmethod_3(IntPtr intptr_0, int int_2)
 		{
-			byte[] array = new byte[int_2];
-			int num = Read(array, 0, int_2);
+			var array = new byte[int_2];
+			var num = Read(array, 0, int_2);
 			Marshal.Copy(array, 0, intptr_0, num);
 			return num;
 		}
 
 		public virtual int vmethod_4(float[] float_0, int int_2, int int_3)
 		{
-			int num = vmethod_0().short_2 + 7 >> 3;
-			byte[] array = new byte[num * int_3];
-			int num2 = Read(array, num * int_2, array.Length) / num;
-			int num3 = int_2 + num2;
-			short short_ = vmethod_0().short_2;
+			var num = vmethod_0().short_2 + 7 >> 3;
+			var array = new byte[num * int_3];
+			var num2 = Read(array, num * int_2, array.Length) / num;
+			var num3 = int_2 + num2;
+			var short_ = vmethod_0().short_2;
 			if (short_ <= 16)
 			{
 				if (short_ == 8)
 				{
-					for (int i = 0; i < num3; i++)
+					for (var i = 0; i < num3; i++)
 					{
 						float_0[int_2 + i] = Class11.smethod_3(array[i]);
 					}
@@ -58,7 +58,7 @@ namespace ns0
 				}
 				if (short_ == 16)
 				{
-					int num4 = 0;
+					var num4 = 0;
 					while (int_2 < num3)
 					{
 						float_0[int_2] = Class11.smethod_7(BitConverter.ToInt16(array, num4));
@@ -72,7 +72,7 @@ namespace ns0
 			{
 				if (short_ == 24)
 				{
-					int num5 = 0;
+					var num5 = 0;
 					while (int_2 < num3)
 					{
 						float_0[int_2] = Class11.smethod_11(Struct8.smethod_2(array, num5));
@@ -87,7 +87,7 @@ namespace ns0
 					{
 						if (vmethod_0().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
 						{
-							int num6 = 0;
+							var num6 = 0;
 							while (int_2 < num3)
 							{
 								float_0[int_2] = Class11.smethod_26(BitConverter.ToDouble(array, num6));
@@ -105,7 +105,7 @@ namespace ns0
 						Buffer.BlockCopy(array, 0, float_0, int_2 << 2, num2);
 						return num2;
 					}
-					int num7 = 0;
+					var num7 = 0;
 					while (int_2 < num3)
 					{
 						float_0[int_2] = Class11.smethod_15(BitConverter.ToInt32(array, num7));
@@ -120,26 +120,26 @@ namespace ns0
 
 		public virtual float[][] vmethod_5(int int_2)
 		{
-			int num = vmethod_0().short_2 + 7 >> 3;
-			byte[] array = new byte[num * int_2 * waveFormat_0.short_0];
-			int num2 = Read(array, 0, array.Length) / num / waveFormat_0.short_0;
+			var num = vmethod_0().short_2 + 7 >> 3;
+			var array = new byte[num * int_2 * waveFormat_0.short_0];
+			var num2 = Read(array, 0, array.Length) / num / waveFormat_0.short_0;
 			if (num2 <= 0)
 			{
 				return null;
 			}
 			int short_ = waveFormat_0.short_0;
-			int num3 = num * short_;
-			float[][] array2 = new float[short_][];
-			short short_2 = vmethod_0().short_2;
+			var num3 = num * short_;
+			var array2 = new float[short_][];
+			var short_2 = vmethod_0().short_2;
 			if (short_2 <= 16)
 			{
 				if (short_2 == 8)
 				{
-					for (int i = 0; i < short_; i++)
+					for (var i = 0; i < short_; i++)
 					{
-						float[] array3 = array2[i] = new float[num2];
-						int j = 0;
-						int num4 = i;
+						var array3 = array2[i] = new float[num2];
+						var j = 0;
+						var num4 = i;
 						while (j < array3.Length)
 						{
 							array3[j] = Class11.smethod_3(array[num4]);
@@ -151,11 +151,11 @@ namespace ns0
 				}
 				if (short_2 == 16)
 				{
-					for (int k = 0; k < short_; k++)
+					for (var k = 0; k < short_; k++)
 					{
-						float[] array4 = array2[k] = new float[num2];
-						int l = 0;
-						int num5 = num * k;
+						var array4 = array2[k] = new float[num2];
+						var l = 0;
+						var num5 = num * k;
 						while (l < array4.Length)
 						{
 							array4[l] = Class11.smethod_7(BitConverter.ToInt16(array, num5));
@@ -170,11 +170,11 @@ namespace ns0
 			{
 				if (short_2 == 24)
 				{
-					for (int m = 0; m < short_; m++)
+					for (var m = 0; m < short_; m++)
 					{
-						float[] array5 = array2[m] = new float[num2];
-						int n = 0;
-						int num6 = num * m;
+						var array5 = array2[m] = new float[num2];
+						var n = 0;
+						var num6 = num * m;
 						while (n < array5.Length)
 						{
 							array5[n] = Class11.smethod_11(Struct8.smethod_2(array, num6));
@@ -190,11 +190,11 @@ namespace ns0
 					{
 						if (vmethod_0().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
 						{
-							for (int num7 = 0; num7 < short_; num7++)
+							for (var num7 = 0; num7 < short_; num7++)
 							{
-								float[] array6 = array2[num7] = new float[num2];
-								int num8 = 0;
-								int num9 = num * num7;
+								var array6 = array2[num7] = new float[num2];
+								var num8 = 0;
+								var num9 = num * num7;
 								while (num8 < array6.Length)
 								{
 									array6[num8] = Class11.smethod_26(BitConverter.ToDouble(array, num9));
@@ -210,11 +210,11 @@ namespace ns0
 				{
 					if (vmethod_0().waveFormatTag_0 != WaveFormatTag.IEEEFloat)
 					{
-						for (int num10 = 0; num10 < short_; num10++)
+						for (var num10 = 0; num10 < short_; num10++)
 						{
-							float[] array7 = array2[num10] = new float[num2];
-							int num11 = 0;
-							int num12 = num * num10;
+							var array7 = array2[num10] = new float[num2];
+							var num11 = 0;
+							var num12 = num * num10;
 							while (num11 < array7.Length)
 							{
 								array7[num11] = Class11.smethod_15(BitConverter.ToInt32(array, num12));
@@ -229,11 +229,11 @@ namespace ns0
 						Buffer.BlockCopy(array, 0, array2[0], 0, array.Length);
 						return array2;
 					}
-					for (int num13 = 0; num13 < short_; num13++)
+					for (var num13 = 0; num13 < short_; num13++)
 					{
-						float[] array8 = array2[num13] = new float[num2];
-						int num14 = 0;
-						int num15 = num * num13;
+						var array8 = array2[num13] = new float[num2];
+						var num14 = 0;
+						var num15 = num * num13;
 						while (num14 < array8.Length)
 						{
 							array8[num14] = BitConverter.ToSingle(array, num15);

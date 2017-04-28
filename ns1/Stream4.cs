@@ -65,7 +65,7 @@ namespace ns1
 		{
 			get
 			{
-				long position = stream1_0.Position;
+				var position = stream1_0.Position;
 				if (!bool_0)
 				{
 					return position;
@@ -183,9 +183,9 @@ namespace ns1
 
 		private int method_0(byte[] byte_0, int int_4, int int_5)
 		{
-			byte[] array = new byte[int_5 << 2];
-			int num = stream1_0.Read(array, 0, array.Length);
-			int i = 0;
+			var array = new byte[int_5 << 2];
+			var num = stream1_0.Read(array, 0, array.Length);
+			var i = 0;
 			while (i < num)
 			{
 				byte_0[int_4] = Class11.smethod_12(BitConverter.ToInt32(byte_0, i));
@@ -197,9 +197,9 @@ namespace ns1
 
 		private int method_1(byte[] byte_0, int int_4, int int_5)
 		{
-			byte[] array = new byte[int_5 + int_5 + int_5];
-			int num = stream1_0.Read(array, 0, array.Length);
-			int i = 0;
+			var array = new byte[int_5 + int_5 + int_5];
+			var num = stream1_0.Read(array, 0, array.Length);
+			var i = 0;
 			while (i < num)
 			{
 				byte_0[int_4] = Class11.smethod_8(Struct8.smethod_2(byte_0, i));
@@ -211,9 +211,9 @@ namespace ns1
 
 		private int method_2(byte[] byte_0, int int_4, int int_5)
 		{
-			byte[] array = new byte[int_5 << 1];
-			int num = stream1_0.Read(array, 0, array.Length);
-			int i = 0;
+			var array = new byte[int_5 << 1];
+			var num = stream1_0.Read(array, 0, array.Length);
+			var i = 0;
 			while (i < num)
 			{
 				byte_0[int_4] = Class11.smethod_4(BitConverter.ToInt16(byte_0, i));
@@ -270,9 +270,9 @@ namespace ns1
 
 		private int method_3(byte[] byte_0, int int_4, int int_5)
 		{
-			byte[] array = new byte[(int)(int_5 / double_0)];
-			int num = stream1_0.Read(array, 0, array.Length);
-			int i = 0;
+			var array = new byte[(int)(int_5 / double_0)];
+			var num = stream1_0.Read(array, 0, array.Length);
+			var i = 0;
 			while (i < num)
 			{
 				Buffer.BlockCopy(delegate0_0(array, i), 0, byte_0, int_4, int_3);
@@ -284,9 +284,9 @@ namespace ns1
 
 		private int method_4(byte[] byte_0, int int_4, int int_5)
 		{
-			float[] array = new float[int_5 >> 2];
-			int num = stream1_0.vmethod_4(array, 0, array.Length);
-			int i = 0;
+			var array = new float[int_5 >> 2];
+			var num = stream1_0.vmethod_4(array, 0, array.Length);
+			var i = 0;
 			while (i < num)
 			{
 				Buffer.BlockCopy(BitConverter.GetBytes(Class11.smethod_25(array[i])), 0, byte_0, int_4, 4);
@@ -298,9 +298,9 @@ namespace ns1
 
 		private int method_5(byte[] byte_0, int int_4, int int_5)
 		{
-			float[] array = new float[int_5 / 3];
-			int num = stream1_0.vmethod_4(array, 0, array.Length);
-			int i = 0;
+			var array = new float[int_5 / 3];
+			var num = stream1_0.vmethod_4(array, 0, array.Length);
+			var i = 0;
 			while (i < num)
 			{
 				Buffer.BlockCopy(Struct8.smethod_4(Class11.smethod_23(array[i])), 0, byte_0, int_4, 3);
@@ -312,9 +312,9 @@ namespace ns1
 
 		private int method_6(byte[] byte_0, int int_4, int int_5)
 		{
-			float[] array = new float[int_5 >> 1];
-			int num = stream1_0.vmethod_4(array, 0, array.Length);
-			int i = 0;
+			var array = new float[int_5 >> 1];
+			var num = stream1_0.vmethod_4(array, 0, array.Length);
+			var i = 0;
 			while (i < num)
 			{
 				Buffer.BlockCopy(BitConverter.GetBytes(Class11.smethod_21(array[i])), 0, byte_0, int_4, 2);
@@ -326,9 +326,9 @@ namespace ns1
 
 		private int method_7(byte[] byte_0, int int_4, int int_5)
 		{
-			float[] array = new float[int_5];
-			int num = stream1_0.vmethod_4(array, 0, array.Length);
-			int i = 0;
+			var array = new float[int_5];
+			var num = stream1_0.vmethod_4(array, 0, array.Length);
+			var i = 0;
 			while (i < num)
 			{
 				byte_0[int_4] = Class11.smethod_17(array[i]);
@@ -350,8 +350,8 @@ namespace ns1
 
 		public override int vmethod_3(IntPtr intptr_0, int int_4)
 		{
-			byte[] array = new byte[int_4];
-			int num = Read(array, 0, int_4);
+			var array = new byte[int_4];
+			var num = Read(array, 0, int_4);
 			Marshal.Copy(array, 0, intptr_0, num);
 			return num;
 		}

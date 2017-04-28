@@ -95,15 +95,15 @@ namespace ns19
 			{
 				throw new Exception("Pak File is empty!");
 			}
-			int num = 0;
-			int num2 = stream26_0.ReadInt();
+			var num = 0;
+			var num2 = stream26_0.ReadInt();
 			stream26_0._reverseEndianness = (bool_2 = (!QbSongClass1.ContainsKey(num2) || !QbSongClass1.GetDictString(num2).StartsWith(".")));
-			Enum35 @enum = (Enum35)stream26_0.ReadIntAt(28);
+			var @enum = (Enum35)stream26_0.ReadIntAt(28);
 			bool_1 = ((@enum & Enum35.flag_3) == Enum35.flag_0);
 			int_0 = stream26_0.ReadIntAt(bool_1 ? 12 : 16, bool_2 && (@enum & Enum35.flag_4) == Enum35.flag_0 && (@enum & Enum35.flag_5) == Enum35.flag_0);
 			if (bool_4 && string_0 != null)
 			{
-				string text = KeyGenerator.GetFileName(string_0);
+				var text = KeyGenerator.GetFileName(string_0);
 				if (text.Contains("_song"))
 				{
 					QbSongClass1.GenerateSongTrackStuff(text.Substring(0, text.LastIndexOf("_song.pak")).ToLower());
@@ -115,9 +115,9 @@ namespace ns19
 			}
 			while (true)
 			{
-				Enum35 enum2 = (Enum35)stream26_0.ReadIntAt(num + 28);
-				bool flag = bool_2 && (enum2 & Enum35.flag_4) == Enum35.flag_0 && (enum2 & Enum35.flag_5) == Enum35.flag_0;
-				int int_ = stream26_0.ReadIntAt(num, flag);
+				var enum2 = (Enum35)stream26_0.ReadIntAt(num + 28);
+				var flag = bool_2 && (enum2 & Enum35.flag_4) == Enum35.flag_0 && (enum2 & Enum35.flag_5) == Enum35.flag_0;
+				var int_ = stream26_0.ReadIntAt(num, flag);
 				if (QbSongClass1.ContainsKey(int_))
 				{
 					if (QbSongClass1.GetDictString(int_).Equals(".last"))
@@ -129,17 +129,17 @@ namespace ns19
 						break;
 					}
 				}
-				int int_2 = stream26_0.ReadInt(flag) + num;
-				int int_3 = stream26_0.ReadInt(flag);
-				int num3 = stream26_0.ReadIntAt(num + (bool_1 ? 16 : 12), flag);
-				int num4 = stream26_0.ReadIntAt(num + 20, flag);
-				int int_4 = stream26_0.ReadInt(flag);
+				var int_2 = stream26_0.ReadInt(flag) + num;
+				var int_3 = stream26_0.ReadInt(flag);
+				var num3 = stream26_0.ReadIntAt(num + (bool_1 ? 16 : 12), flag);
+				var num4 = stream26_0.ReadIntAt(num + 20, flag);
+				var int_4 = stream26_0.ReadInt(flag);
 				stream26_0.Position += 4L;
 				if ((enum2 & Enum35.flag_3) != Enum35.flag_0)
 				{
 					bool_1 = false;
-					string text2 = stream26_0.ReadString(160);
-					int num5 = text2.IndexOf('\0');
+					var text2 = stream26_0.ReadString(160);
+					var num5 = text2.IndexOf('\0');
 					if (num5 >= 0)
 					{
 						text2 = text2.Substring(0, num5);
@@ -168,10 +168,10 @@ namespace ns19
 					}
 					else
 					{
-						string text3 = "abcdefghijklmnopqrstuvwxyz";
-						for (int i = 0; i < text3.Length; i++)
+						var text3 = "abcdefghijklmnopqrstuvwxyz";
+						for (var i = 0; i < text3.Length; i++)
 						{
-							char c = text3[i];
+							var c = text3[i];
 							if (num3 == KeyGenerator.GetQbKey(c + text2, true))
 							{
 								QbSongClass1.AddKeyToDictionary(c + text2);
@@ -222,7 +222,7 @@ namespace ns19
 			{
 				Nodes.Add(class317_0);
 			}
-			Interface12 @interface = method_11(int_1);
+			var @interface = method_11(int_1);
 			if (@interface == null)
 			{
 				list_0.Add(interface12_0);
@@ -243,14 +243,14 @@ namespace ns19
 
 		public bool method_7(string string_2)
 		{
-			Interface12 @interface = method_10(string_2);
+			var @interface = method_10(string_2);
 			((TreeNode)@interface).Remove();
 			return @interface != null && list_0.Remove(@interface);
 		}
 
 		public Class309 zzGetNode1(string string_2)
 		{
-			Interface12 @interface = method_10(string_2);
+			var @interface = method_10(string_2);
 			if (@interface == null)
 			{
 				return null;
@@ -259,7 +259,7 @@ namespace ns19
 			{
 				return (Class309)method_15(@interface);
 			}
-			Class309 @class = @interface.imethod_20(new Class309());
+			var @class = @interface.imethod_20(new Class309());
 			if (bool_4)
 			{
 				((TreeNode)@interface).Remove();
@@ -274,7 +274,7 @@ namespace ns19
 
 		public Class328 method_9(string string_2)
 		{
-			Interface12 @interface = method_10(string_2);
+			var @interface = method_10(string_2);
 			if (@interface == null)
 			{
 				return null;
@@ -283,7 +283,7 @@ namespace ns19
 			{
 				return (Class328)method_15(@interface);
 			}
-			Class328 @class = @interface.imethod_20(new Class328());
+			var @class = @interface.imethod_20(new Class328());
 			if (bool_4)
 			{
 				((TreeNode)@interface).Remove();
@@ -303,7 +303,7 @@ namespace ns19
 
 		public Interface12 method_11(int int_1)
 		{
-			foreach (Interface12 current in list_0)
+			foreach (var current in list_0)
 			{
 				if (current.imethod_7() == int_1)
 				{
@@ -360,7 +360,7 @@ namespace ns19
 
 		public void method_16(string string_2)
 		{
-			Stream26 stream = method_17();
+			var stream = method_17();
 			if (stream26_0 != null && string_0 == string_2)
 			{
 				stream26_0.Close();
@@ -381,8 +381,8 @@ namespace ns19
 
 		public Stream26 method_17()
 		{
-			Stream26 stream = new Stream26(bool_2);
-			Stream26 stream2 = new Stream26();
+			var stream = new Stream26(bool_2);
+			var stream2 = new Stream26();
 			method_18(stream, stream2);
 			stream.WriteByteArray(stream2.ReadEverything(), false);
 			stream2.Dispose();
@@ -391,15 +391,15 @@ namespace ns19
 
 		private static int smethod_0(long long_0, int int_1)
 		{
-			int num = 1 << int_1;
-			int num2 = num - 1;
+			var num = 1 << int_1;
+			var num2 = num - 1;
 			return (int)(num - (long_0 & num2) & num2);
 		}
 
 		public void method_18(Stream26 stream26_1, Stream26 stream26_2)
 		{
-			int num = 0;
-			foreach (Interface12 current in list_0)
+			var num = 0;
+			foreach (var current in list_0)
 			{
 				num += (((current.imethod_14() & Enum35.flag_3) == Enum35.flag_0 || !QbSongClass1.ContainsKey(current.imethod_7())) ? 32 : 192);
 			}
@@ -411,13 +411,13 @@ namespace ns19
 			{
 				num += (bool_2 ? 64 : 48);
 			}
-			int num2 = 0;
-			List<Interface12> list = new List<Interface12>();
-			foreach (Interface12 current2 in list_0)
+			var num2 = 0;
+			var list = new List<Interface12>();
+			foreach (var current2 in list_0)
 			{
 				if (current2 is Class309 && (current2 as Class309).vmethod_8())
 				{
-					string string_ = current2.imethod_9().Replace(".qb", ".qs");
+					var string_ = current2.imethod_9().Replace(".qb", ".qs");
 					if (!class318_0.method_6(string_))
 					{
 						if (!current2.imethod_18())
@@ -431,7 +431,7 @@ namespace ns19
 					}
 					else
 					{
-						Interface12 @interface = class318_0.method_10(string_);
+						var @interface = class318_0.method_10(string_);
 						if (@interface.imethod_18() || ((Class328)@interface).dictionary_0 != (current2 as Class309).vmethod_10())
 						{
 							((Class328)@interface).dictionary_0 = (current2 as Class309).vmethod_10();
@@ -444,17 +444,17 @@ namespace ns19
 				class318_0.list_0.AddRange(list);
 			}
 			int num4;
-			foreach (Interface12 current3 in list_0)
+			foreach (var current3 in list_0)
 			{
-				bool flag = bool_2 && (current3.imethod_14() & Enum35.flag_4) == Enum35.flag_0 && (current3.imethod_14() & Enum35.flag_5) == Enum35.flag_0;
-				int num3 = current3.imethod_7();
+				var flag = bool_2 && (current3.imethod_14() & Enum35.flag_4) == Enum35.flag_0 && (current3.imethod_14() & Enum35.flag_5) == Enum35.flag_0;
+				var num3 = current3.imethod_7();
 				if (current3.imethod_4() != 0)
 				{
 					stream26_1.WriteInt(current3.imethod_4(), flag);
 				}
 				else
 				{
-					string text = QbSongClass1.GetDictString(num3);
+					var text = QbSongClass1.GetDictString(num3);
 					if (!bool_1 && !text.EndsWith(".qb.ngc") && !text.EndsWith(".qb.ps2"))
 					{
 						stream26_1.WriteInt(1270999134, flag);
@@ -489,11 +489,11 @@ namespace ns19
 				stream26_1.WriteInt(current3.imethod_10(), flag);
 				stream26_1.WriteInt(current3.imethod_12(), flag);
 				stream26_1.WriteInt((int)current3.imethod_14(), false);
-				bool flag2 = false;
+				var flag2 = false;
 				if ((current3.imethod_14() & Enum35.flag_3) != Enum35.flag_0 && QbSongClass1.ContainsKey(num3))
 				{
 					flag2 = true;
-					string text2 = QbSongClass1.GetDictString(num3);
+					var text2 = QbSongClass1.GetDictString(num3);
 					if (!current3.imethod_6().EndsWith(".qb.ngc") && !current3.imethod_6().EndsWith(".qb.ps2"))
 					{
 						if (bool_1)

@@ -62,10 +62,10 @@ namespace ns13
 		public void method_4()
 		{
 			int_0 = 0;
-			int i = byte_0.Length;
+			var i = byte_0.Length;
 			while (i > 0)
 			{
-				int num = stream_0.Read(byte_0, int_0, i);
+				var num = stream_0.Read(byte_0, int_0, i);
 				if (num > 0)
 				{
 					int_0 += num;
@@ -104,8 +104,8 @@ namespace ns13
 			{
 				throw new ArgumentOutOfRangeException("length");
 			}
-			int num = int_3;
-			int i = int_4;
+			var num = int_3;
+			var i = int_4;
 			while (i > 0)
 			{
 				if (int_2 <= 0)
@@ -116,7 +116,7 @@ namespace ns13
 						return 0;
 					}
 				}
-				int num2 = Math.Min(i, int_2);
+				var num2 = Math.Min(i, int_2);
 				Array.Copy(byte_0, int_0 - int_2, byte_3, num, num2);
 				num += num2;
 				i -= num2;
@@ -131,8 +131,8 @@ namespace ns13
 			{
 				throw new ArgumentOutOfRangeException("length");
 			}
-			int num = int_3;
-			int i = int_4;
+			var num = int_3;
+			var i = int_4;
 			while (i > 0)
 			{
 				if (int_2 <= 0)
@@ -143,7 +143,7 @@ namespace ns13
 						return 0;
 					}
 				}
-				int num2 = Math.Min(i, int_2);
+				var num2 = Math.Min(i, int_2);
 				Array.Copy(byte_1, int_1 - int_2, byte_3, num, num2);
 				num += num2;
 				i -= num2;
@@ -162,7 +162,7 @@ namespace ns13
 					throw new ZipException("EOF in header");
 				}
 			}
-            byte result = (byte)(byte_0[int_0 - int_2] & 255);
+            var result = (byte)(byte_0[int_0 - int_2] & 255);
 			int_2--;
 			return result;
 		}

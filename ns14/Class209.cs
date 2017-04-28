@@ -9,7 +9,7 @@ namespace ns14
 
 		public byte method_0()
 		{
-			uint num = (uint_0[2] & 65535u) | 2u;
+			var num = (uint_0[2] & 65535u) | 2u;
 			return (byte)(num * (num ^ 1u) >> 8);
 		}
 

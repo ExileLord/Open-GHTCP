@@ -667,7 +667,7 @@ namespace ns5
 				2992,
 				43937
 			};
-			for (int i = 0; i < array.Length; i++)
+			for (var i = 0; i < array.Length; i++)
 			{
 				if ((array[i] & 32768) != 0)
 				{
@@ -711,10 +711,10 @@ namespace ns5
 
 		public static double[] smethod_5()
 		{
-			double num = -21845.333333333332;
-			double num2 = 0.0;
-			double num3 = 21845.333333333332;
-			double[] array = new double[32];
+			var num = -21845.333333333332;
+			var num2 = 0.0;
+			var num3 = 21845.333333333332;
+			var array = new double[32];
 			array[0] = num;
 			array[1] = num;
 			array[2] = num;
@@ -747,10 +747,10 @@ namespace ns5
 
 		public static double[] smethod_6()
 		{
-			double num = -21845.333333333332;
-			double num2 = 0.0;
-			double num3 = 21845.333333333332;
-			double[] array = new double[32];
+			var num = -21845.333333333332;
+			var num2 = 0.0;
+			var num3 = 21845.333333333332;
+			var array = new double[32];
 			array[0] = num;
 			array[1] = num;
 			array[2] = num;
@@ -783,10 +783,10 @@ namespace ns5
 
 		public static double[] smethod_7()
 		{
-			double num = -21845.333333333332;
-			double num2 = 0.0;
-			double num3 = 21845.333333333332;
-			double[] array = new double[32];
+			var num = -21845.333333333332;
+			var num2 = 0.0;
+			var num3 = 21845.333333333332;
+			var array = new double[32];
 			array[0] = num;
 			array[1] = num2;
 			array[2] = num3;
@@ -819,12 +819,12 @@ namespace ns5
 
 		public static double[] smethod_8()
 		{
-			double num = -26214.4;
-			double num2 = -13107.2;
-			double num3 = 0.0;
-			double num4 = 13107.2;
-			double num5 = 26214.4;
-			double[] array = new double[128];
+			var num = -26214.4;
+			var num2 = -13107.2;
+			var num3 = 0.0;
+			var num4 = 13107.2;
+			var num5 = 26214.4;
+			var array = new double[128];
 			array[0] = num;
 			array[1] = num;
 			array[2] = num;
@@ -955,12 +955,12 @@ namespace ns5
 
 		public static double[] smethod_9()
 		{
-			double num = -26214.4;
-			double num2 = -13107.2;
-			double num3 = 0.0;
-			double num4 = 13107.2;
-			double num5 = 26214.4;
-			double[] array = new double[128];
+			var num = -26214.4;
+			var num2 = -13107.2;
+			var num3 = 0.0;
+			var num4 = 13107.2;
+			var num5 = 26214.4;
+			var array = new double[128];
 			array[0] = num;
 			array[1] = num;
 			array[2] = num;
@@ -1091,12 +1091,12 @@ namespace ns5
 
 		public static double[] smethod_10()
 		{
-			double num = -26214.4;
-			double num2 = -13107.2;
-			double num3 = 0.0;
-			double num4 = 13107.2;
-			double num5 = 26214.4;
-			double[] array = new double[128];
+			var num = -26214.4;
+			var num2 = -13107.2;
+			var num3 = 0.0;
+			var num4 = 13107.2;
+			var num5 = 26214.4;
+			var array = new double[128];
 			array[0] = num;
 			array[1] = num2;
 			array[2] = num3;
@@ -1242,18 +1242,18 @@ namespace ns5
 
 		public static double[] smethod_12()
 		{
-			double num = -29789.090909090908;
-			double num2 = -23831.272727272728;
-			double num3 = -17873.454545454544;
-			double num4 = -11915.636363636364;
-			double num5 = -5957.818181818182;
-			double num6 = 0.0;
-			double num7 = 5957.818181818182;
-			double num8 = 11915.636363636364;
-			double num9 = 17873.454545454544;
-			double num10 = 23831.272727272728;
-			double num11 = 29789.090909090908;
-			double[] array = new double[128];
+			var num = -29789.090909090908;
+			var num2 = -23831.272727272728;
+			var num3 = -17873.454545454544;
+			var num4 = -11915.636363636364;
+			var num5 = -5957.818181818182;
+			var num6 = 0.0;
+			var num7 = 5957.818181818182;
+			var num8 = 11915.636363636364;
+			var num9 = 17873.454545454544;
+			var num10 = 23831.272727272728;
+			var num11 = 29789.090909090908;
+			var array = new double[128];
 			array[0] = num;
 			array[1] = num;
 			array[2] = num;
@@ -1380,18 +1380,18 @@ namespace ns5
 
 		public static double[] smethod_13()
 		{
-			double num = -29789.090909090908;
-			double num2 = -23831.272727272728;
-			double num3 = -17873.454545454544;
-			double num4 = -11915.636363636364;
-			double num5 = -5957.818181818182;
-			double num6 = 0.0;
-			double num7 = 5957.818181818182;
-			double num8 = 11915.636363636364;
-			double num9 = 17873.454545454544;
-			double num10 = 23831.272727272728;
-			double num11 = 29789.090909090908;
-			double[] array = new double[128];
+			var num = -29789.090909090908;
+			var num2 = -23831.272727272728;
+			var num3 = -17873.454545454544;
+			var num4 = -11915.636363636364;
+			var num5 = -5957.818181818182;
+			var num6 = 0.0;
+			var num7 = 5957.818181818182;
+			var num8 = 11915.636363636364;
+			var num9 = 17873.454545454544;
+			var num10 = 23831.272727272728;
+			var num11 = 29789.090909090908;
+			var array = new double[128];
 			array[0] = num;
 			array[1] = num2;
 			array[2] = num3;

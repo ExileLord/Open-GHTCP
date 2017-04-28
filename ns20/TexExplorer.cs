@@ -766,7 +766,7 @@ namespace ns20
 			string_0 = string_2;
 			Closed += TexExplorer_Closed;
 			Text = "Texture Explorer - LOOKING FOR TEXTURES (PLEASE WAIT!)";
-			ZonePakLoader @class = new ZonePakLoader(string_0);
+			var @class = new ZonePakLoader(string_0);
 			@class.method_1(UpdateSearchText);
 			@class.method_0(AddNode);
 			thread_0 = new Thread(@class.method_2);
@@ -830,7 +830,7 @@ namespace ns20
 				if (DataFolder_TreeView.SelectedNode.Tag is int && DataFolder_TreeView.SelectedNode.ToolTipText != "")
 				{
 					DisposeTexFile();
-					string toolTipText = DataFolder_TreeView.SelectedNode.ToolTipText;
+					var toolTipText = DataFolder_TreeView.SelectedNode.ToolTipText;
 					zzPakNode2 pakNode;
 					if (File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")))
 					{
@@ -842,7 +842,7 @@ namespace ns20
 					}
 					_currentTexFile = new TexFile(pakNode.method_13((int)DataFolder_TreeView.SelectedNode.Tag));
 
-					for (int i = 1; i <= _currentTexFile.TextureCount(); i++)
+					for (var i = 1; i <= _currentTexFile.TextureCount(); i++)
 					{
 						ImgList.Items.Add("Image " + i);
 					}
@@ -853,7 +853,7 @@ namespace ns20
 				{
 					DisposeTexFile();
 					_currentTexFile = new TexFile(DataFolder_TreeView.SelectedNode.ToolTipText);
-					for (int j = 1; j <= _currentTexFile.TextureCount(); j++)
+					for (var j = 1; j <= _currentTexFile.TextureCount(); j++)
 					{
 						ImgList.Items.Add("Image " + j);
 					}
@@ -863,12 +863,12 @@ namespace ns20
 
 		private void ImgList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-            int index = ImgList.SelectedIndex;
+            var index = ImgList.SelectedIndex;
 
 
             if (index >= 0)
 			{
-				DDSTexture texture = _currentTexFile[index];
+				var texture = _currentTexFile[index];
 				_currentTexturePixelFormat = texture.PixelFormat;
 				BPPTxt.Text = string.Concat(texture.BPP);
 
@@ -895,7 +895,7 @@ namespace ns20
 				WidthTxt.Text = string.Concat(texture.Size.Width);
 				HeightTxt.Text = string.Concat(texture.Size.Height);
 
-				Image image = texture.GetImage();
+				var image = texture.GetImage();
 				size_0 = image.Size;
 				if (image.Width > ImagePreviewBox.Width || image.Height > ImagePreviewBox.Height)
 				{
@@ -904,7 +904,7 @@ namespace ns20
 				ImagePreviewBox.Image = image;
 				ImageInfoBox.Enabled = true;
 
-                TextureMetadata metadata = _currentTexFile.TextureList[index];
+                var metadata = _currentTexFile.TextureList[index];
                 CurrentImgFile = metadata;
             }
             else
@@ -920,7 +920,7 @@ namespace ns20
 
 		private void ReplaceImgBtn_Click(object sender, EventArgs e)
 		{
-			string text = KeyGenerator.OpenOrSaveFile("Select the image file to replace the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", true);
+			var text = KeyGenerator.OpenOrSaveFile("Select the image file to replace the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", true);
 			if (text == "")
 			{
 				return;
@@ -944,7 +944,7 @@ namespace ns20
 
 		public ImageFormat GetImageFormat(string fileName)
 		{
-			string ext = KeyGenerator.GetExtension(fileName, 1).ToLower();
+			var ext = KeyGenerator.GetExtension(fileName, 1).ToLower();
 			if (ext != null)
 			{
 				if (ext == "jpg")
@@ -965,7 +965,7 @@ namespace ns20
 
 		private void ExtractImgBtn_Click(object sender, EventArgs e)
 		{
-			string fileName = KeyGenerator.OpenOrSaveFile("Select location to export the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", false);
+			var fileName = KeyGenerator.OpenOrSaveFile("Select location to export the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", false);
 			if (fileName == "")
 			{
 				return;
@@ -990,8 +990,8 @@ namespace ns20
 			}
 			else
 			{
-				string toolTipText = DataFolder_TreeView.SelectedNode.ToolTipText;
-				zzPakNode2 pakNode = File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")) ? new zzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false) : new zzPakNode2(toolTipText, false);
+				var toolTipText = DataFolder_TreeView.SelectedNode.ToolTipText;
+				var pakNode = File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")) ? new zzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false) : new zzPakNode2(toolTipText, false);
 				pakNode.method_11((int)DataFolder_TreeView.SelectedNode.Tag).imethod_17(_currentTexFile.ToStream().ReadEverything());
 				pakNode.vmethod_1();
 				pakNode.Dispose();
@@ -1008,7 +1008,7 @@ namespace ns20
 			}
 			if (Search_TxtBox.Text.Equals(""))
 			{
-				foreach (TreeNode current in nodeList)
+				foreach (var current in nodeList)
 				{
 					current.BackColor = Color.Empty;
 				}
@@ -1019,7 +1019,7 @@ namespace ns20
 			}
 			if (!Search_TxtBox.Text.Equals(string_1))
 			{
-				foreach (TreeNode current2 in nodeList)
+				foreach (var current2 in nodeList)
 				{
 					current2.BackColor = Color.Transparent;
 				}
@@ -1037,8 +1037,8 @@ namespace ns20
 				count = -1;
 			}
 			count++;
-			TreeView treeView = DataFolder_TreeView;
-			List<TreeNode> node = nodeList;
+			var treeView = DataFolder_TreeView;
+			var node = nodeList;
 			int arg_16B_1;
 			if (nodeList.Count <= count)
 			{
@@ -1062,7 +1062,7 @@ namespace ns20
 			}
 			if (Search_TxtBox.Text.Equals(""))
 			{
-				foreach (TreeNode current in nodeList)
+				foreach (var current in nodeList)
 				{
 					current.BackColor = Color.Empty;
 				}
@@ -1073,7 +1073,7 @@ namespace ns20
 			}
 			if (!Search_TxtBox.Text.Equals(string_1))
 			{
-				foreach (TreeNode current2 in nodeList)
+				foreach (var current2 in nodeList)
 				{
 					current2.BackColor = Color.Empty;
 				}
@@ -1102,7 +1102,7 @@ namespace ns20
 			{
 				return;
 			}
-			foreach (TreeNode current in nodeList)
+			foreach (var current in nodeList)
 			{
 				current.BackColor = Color.Empty;
 			}
@@ -1128,7 +1128,7 @@ namespace ns20
 		private bool method_4()
 		{
 			AddNodeToContainerIfItHasThisString(DataFolder_TreeView.SelectedNode, string_1, nodeList);
-			foreach (TreeNode current in nodeList)
+			foreach (var current in nodeList)
 			{
 				current.BackColor = Color.YellowGreen;
 			}
@@ -1141,7 +1141,7 @@ namespace ns20
 			{
 				nodeCollection.Add(node);
 			}
-			for (int i = 0; i < node.Nodes.Count; i++)
+			for (var i = 0; i < node.Nodes.Count; i++)
 			{
 				AddNodeToContainerIfItHasThisString(node.Nodes[i], str, nodeCollection);
 			}
@@ -1257,7 +1257,7 @@ namespace ns20
             if (ImgList.SelectedIndex < 0 || ImgList.SelectedIndex >= _currentTexFile.TextureCount())
                 return;
 
-            int cloneIndex = _currentTexFile.CloneTextureElement(ImgList.SelectedIndex);
+            var cloneIndex = _currentTexFile.CloneTextureElement(ImgList.SelectedIndex);
             ImgList.Items.Add("Image " + (cloneIndex + 1) );
         }
     }

@@ -321,15 +321,15 @@ namespace ns10
 
 		public static float smethod_0(float float_5)
 		{
-			double num = float_5 * (0.31830989 * int_0);
-			int num2 = (int)num;
+			var num = float_5 * (0.31830989 * int_0);
+			var num2 = (int)num;
 			return float_0[num2] + (float)(num - num2) * (float_0[num2 + 1] - float_0[num2]);
 		}
 
 		public static float smethod_1(float float_5)
 		{
 			double num = float_5 * (2f * int_1) - int_1;
-			int num2 = (int)num;
+			var num2 = (int)num;
 			return float_1[num2] + (float)(num - num2) * (float_1[num2 + 1] - float_1[num2]);
 		}
 
@@ -340,7 +340,7 @@ namespace ns10
 
 		public static float smethod_3(float float_5)
 		{
-			int num = (int)(float_5 * -8f);
+			var num = (int)(float_5 * -8f);
 			if (num < 0)
 			{
 				return 1f;

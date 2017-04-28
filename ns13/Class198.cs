@@ -119,7 +119,7 @@ namespace ns13
 				IL_176:
 				while (int_9 < int_6)
 				{
-					int num2 = class187_0.method_0(3);
+					var num2 = class187_0.method_0(3);
 					if (num2 < 0)
 					{
 						return false;
@@ -134,8 +134,8 @@ namespace ns13
 				int_3 = 4;
 				goto IL_F4;
 				IL_2C:
-				int num3 = int_1[int_8];
-				int num4 = class187_0.method_0(num3);
+				var num3 = int_1[int_8];
+				var num4 = class187_0.method_0(num3);
 				if (num4 < 0)
 				{
 					return false;
@@ -188,14 +188,14 @@ namespace ns13
 
 		public Class197 method_1()
 		{
-			byte[] destinationArray = new byte[int_4];
+			var destinationArray = new byte[int_4];
 			Array.Copy(byte_1, 0, destinationArray, 0, int_4);
 			return new Class197(destinationArray);
 		}
 
 		public Class197 method_2()
 		{
-			byte[] destinationArray = new byte[int_5];
+			var destinationArray = new byte[int_5];
 			Array.Copy(byte_1, int_4, destinationArray, 0, int_5);
 			return new Class197(destinationArray);
 		}

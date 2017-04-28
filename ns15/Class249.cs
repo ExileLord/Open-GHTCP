@@ -22,11 +22,11 @@ namespace ns15
 		{
 			Console.WriteLine("-=- " + ToString() + " -=-");
 			zzGenericNode1 @class = class318_0.zzGetNode1("scripts\\guitar\\menu\\menu_cheats.qb");
-			foreach (StructureHeaderNode current in @class.method_5(new ArrayPointerRootNode("guitar_hero_cheats")).method_7().method_8<StructureHeaderNode>())
+			foreach (var current in @class.method_5(new ArrayPointerRootNode("guitar_hero_cheats")).method_7().method_8<StructureHeaderNode>())
 			{
-				bool flag = current.method_5(new TagStructureNode("name", "unlockall")) != null;
-				bool flag2 = current.method_5(new TagStructureNode("name", "unlockalleverything")) != null;
-				IntegerArrayNode class2 = current.method_5(new ArrayPointerNode("unlock_pattern")).method_8() as IntegerArrayNode;
+				var flag = current.method_5(new TagStructureNode("name", "unlockall")) != null;
+				var flag2 = current.method_5(new TagStructureNode("name", "unlockalleverything")) != null;
+				var class2 = current.method_5(new ArrayPointerNode("unlock_pattern")).method_8() as IntegerArrayNode;
 				if (class2.Nodes.Count == 1)
 				{
 					bool_0 = true;

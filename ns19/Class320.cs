@@ -26,7 +26,7 @@ namespace ns19
 		public byte[] method_0(byte[] byte_1)
 		{
 			MemoryStream memoryStream2;
-			using (MemoryStream memoryStream = new MemoryStream(byte_1))
+			using (var memoryStream = new MemoryStream(byte_1))
 			{
 				MemoryStream memoryStream3;
 				memoryStream2 = (memoryStream3 = new MemoryStream());
@@ -55,29 +55,29 @@ namespace ns19
 			{
 				throw new IOException("Output stream is not writable.");
 			}
-			int num = int_0 - int_1;
-			int num2 = 0;
-			int num3 = 1;
-			byte[] array = new byte[17];
+			var num = int_0 - int_1;
+			var num2 = 0;
+			var num3 = 1;
+			var array = new byte[17];
 			byte b = 1;
-			long num4 = stream_0.Length - stream_0.Position;
-			for (int i = int_0 + 1; i <= int_0 + 256; i++)
+			var num4 = stream_0.Length - stream_0.Position;
+			for (var i = int_0 + 1; i <= int_0 + 256; i++)
 			{
 				int_6[i] = int_0;
 			}
-			for (int i = 0; i < int_0; i++)
+			for (var i = 0; i < int_0; i++)
 			{
 				int_7[i] = int_0;
 			}
 			array[0] = 0;
-			for (int i = num2; i < byte_0.Length; i++)
+			for (var i = num2; i < byte_0.Length; i++)
 			{
 				byte_0[i] = 32;
 			}
 			int j;
 			for (j = 0; j < int_1; j++)
 			{
-				long expr_C0 = num4;
+				var expr_C0 = num4;
 				num4 = expr_C0 - 1L;
 				if (expr_C0 <= 0L)
 				{
@@ -85,7 +85,7 @@ namespace ns19
 				}
 				byte_0[num + j] = (byte)stream_0.ReadByte();
 			}
-			for (int i = 1; i <= int_1; i++)
+			for (var i = 1; i <= int_1; i++)
 			{
 				method_2(num - i);
 			}
@@ -99,8 +99,8 @@ namespace ns19
 				if (int_4 <= int_2)
 				{
 					int_4 = 1;
-					byte[] expr_136_cp_0 = array;
-					int expr_136_cp_1 = 0;
+					var expr_136_cp_0 = array;
+					var expr_136_cp_1 = 0;
 					expr_136_cp_0[expr_136_cp_1] |= b;
 					array[num3++] = byte_0[num];
 				}
@@ -117,14 +117,14 @@ namespace ns19
 						stream_1.WriteByte(array[i]);
 					}
 					array[0] = 0;
-					int arg_1BC_0 = 1;
+					var arg_1BC_0 = 1;
 					b = 1;
 					num3 = arg_1BC_0;
 				}
-				int num5 = int_4;
+				var num5 = int_4;
 				for (i = 0; i < num5; i++)
 				{
-					long expr_1CC = num4;
+					var expr_1CC = num4;
 					num4 = expr_1CC - 1L;
 					if (expr_1CC <= 0L)
 					{
@@ -154,7 +154,7 @@ namespace ns19
 			while (j > 0);
 			if (num3 > 1)
 			{
-				for (int i = 0; i < num3; i++)
+				for (var i = 0; i < num3; i++)
 				{
 					stream_1.WriteByte(array[i]);
 				}
@@ -163,8 +163,8 @@ namespace ns19
 
 		private void method_2(int int_8)
 		{
-			int num = 1;
-			int num2 = int_0 + 1 + byte_0[int_8];
+			var num = 1;
+			var num2 = int_0 + 1 + byte_0[int_8];
 			int_6[int_8] = (int_5[int_8] = int_0);
 			int_4 = 0;
 			while (true)
@@ -185,7 +185,7 @@ namespace ns19
 					}
 					num2 = int_5[num2];
 				}
-				int num3 = 1;
+				var num3 = 1;
 				while (num3 < int_1 && (num = byte_0[int_8 + num3] - byte_0[num2 + num3]) == 0)
 				{
 					num3++;
@@ -271,7 +271,7 @@ namespace ns19
 		public byte[] method_4(byte[] byte_1)
 		{
 			MemoryStream memoryStream2;
-			using (MemoryStream memoryStream = new MemoryStream(byte_1))
+			using (var memoryStream = new MemoryStream(byte_1))
 			{
 				MemoryStream memoryStream3;
 				memoryStream2 = (memoryStream3 = new MemoryStream());
@@ -300,10 +300,10 @@ namespace ns19
 			{
 				throw new IOException("Output stream is not writable.");
 			}
-			int num = int_0 - int_1;
-			int num2 = 0;
-			long num3 = stream_0.Length - stream_0.Position;
-			for (int i = 0; i < byte_0.Length; i++)
+			var num = int_0 - int_1;
+			var num2 = 0;
+			var num3 = stream_0.Length - stream_0.Position;
+			for (var i = 0; i < byte_0.Length; i++)
 			{
 				byte_0[i] = 32;
 			}
@@ -327,7 +327,7 @@ namespace ns19
 					int num5 = (byte)stream_0.ReadByte();
 					num4 |= (num5 & 240) << 4;
 					num5 = (num5 & 15) + int_2;
-					for (int j = 0; j <= num5; j++)
+					for (var j = 0; j <= num5; j++)
 					{
 						stream_1.WriteByte(byte_0[num++] = byte_0[num4 + j & int_0 - 1]);
 						num &= int_0 - 1;

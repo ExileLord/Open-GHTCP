@@ -23,8 +23,8 @@ namespace ns22
 
 		public static string smethod_3(string string_0, BinaryReader binaryReader_0, string string_1)
 		{
-			long position = binaryReader_0.BaseStream.Position;
-			string @string = Encoding.ASCII.GetString(binaryReader_0.ReadBytes(string_1.Length));
+			var position = binaryReader_0.BaseStream.Position;
+			var @string = Encoding.ASCII.GetString(binaryReader_0.ReadBytes(string_1.Length));
 			if (@string != string_1)
 			{
 				Console.WriteLine("Reading {0} at position {1}: expected {2}, found {3}", string_0, position, string_1, @string);

@@ -23,7 +23,7 @@ namespace ns1
 
 		public Class17(int int_2)
 		{
-			int num = int_2 & 3;
+			var num = int_2 & 3;
 			int_2 = ((num == 0) ? int_2 : (int_2 + 4 - num));
 			byte_0 = new byte[int_2];
 			int_0 = 0;
@@ -81,7 +81,7 @@ namespace ns1
 
 		private int method_9(string string_0, int int_2, int int_3)
 		{
-			int num = int_2 << int_3;
+			var num = int_2 << int_3;
 			if ((num & 3) != 0)
 			{
 				throw new ArgumentOutOfRangeException(string_0, string.Format("{0} cannot set a count ({1}) that is not 4 bytes aligned ", string_0, num));

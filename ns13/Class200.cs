@@ -43,11 +43,11 @@ namespace ns13
 			{
 				throw new ArgumentOutOfRangeException("count", "exceeds buffer size");
 			}
-			uint num = uint_0 & 65535u;
-			uint num2 = uint_0 >> 16;
+			var num = uint_0 & 65535u;
+			var num2 = uint_0 >> 16;
 			while (int_1 > 0)
 			{
-				int num3 = 3800;
+				var num3 = 3800;
 				if (3800 > int_1)
 				{
 					num3 = int_1;

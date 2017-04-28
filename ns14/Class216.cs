@@ -18,9 +18,9 @@ namespace ns14
 		{
 			if (sortedDictionary_0.Count != 0)
 			{
-				using (StreamWriter streamWriter = File.CreateText(string_2 + DateTime.Now.ToString(string_1) + ".log"))
+				using (var streamWriter = File.CreateText(string_2 + DateTime.Now.ToString(string_1) + ".log"))
 				{
-					foreach (string current in sortedDictionary_0.Keys)
+					foreach (var current in sortedDictionary_0.Keys)
 					{
 						streamWriter.WriteLine("[" + current + "]");
 						streamWriter.WriteLine("{");

@@ -26,23 +26,23 @@ namespace ns11
 		{
 			int_6 = class136_0.vmethod_2();
 			int_1 = int_9;
-			for (int i = 0; i < int_9; i++)
+			for (var i = 0; i < int_9; i++)
 			{
 				int_5[i] = class144_0.vmethod_12(int_7);
 			}
-			int num = class144_0.vmethod_10(4);
+			var num = class144_0.vmethod_10(4);
 			if (num == 15)
 			{
 				throw new IOException("STREAM_DECODER_ERROR_STATUS_LOST_SYNC");
 			}
 			int_2 = num + 1;
 			int_3 = class144_0.vmethod_12(5);
-			for (int j = 0; j < int_9; j++)
+			for (var j = 0; j < int_9; j++)
 			{
 				int_4[j] = class144_0.vmethod_12(int_2);
 			}
-			int num2 = class144_0.vmethod_10(2);
-			int num3 = num2;
+			var num2 = class144_0.vmethod_10(2);
+			var num3 = num2;
 			if (num3 != 0)
 			{
 				throw new IOException("STREAM_DECODER_UNPARSEABLE_STREAM");
@@ -70,20 +70,20 @@ namespace ns11
 
 		public override string ToString()
 		{
-			StringBuilder stringBuilder = new StringBuilder(string.Concat("ChannelLPC: Order=", int_1, " WastedBits=", int_0));
+			var stringBuilder = new StringBuilder(string.Concat("ChannelLPC: Order=", int_1, " WastedBits=", int_0));
 			stringBuilder.Append(string.Concat(" qlpCoeffPrecision=", int_2, " quantizationLevel=", int_3));
 			stringBuilder.Append("\n\t\tqlpCoeff: ");
-			for (int i = 0; i < int_1; i++)
+			for (var i = 0; i < int_1; i++)
 			{
 				stringBuilder.Append(int_4[i] + " ");
 			}
 			stringBuilder.Append("\n\t\tWarmup: ");
-			for (int j = 0; j < int_1; j++)
+			for (var j = 0; j < int_1; j++)
 			{
 				stringBuilder.Append(int_5[j] + " ");
 			}
 			stringBuilder.Append("\n\t\tParameter: ");
-			for (int k = 0; k < 1 << ((Class138)class137_0).int_0; k++)
+			for (var k = 0; k < 1 << ((Class138)class137_0).int_0; k++)
 			{
 				stringBuilder.Append(((Class138)class137_0).class143_0.int_0[k] + " ");
 			}

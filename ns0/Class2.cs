@@ -170,7 +170,7 @@ namespace ns0
 
 			private bool method_0()
 			{
-				int i = class5_0.method_4();
+				var i = class5_0.method_4();
 				while (i >= 258)
 				{
 					int num;
@@ -212,7 +212,7 @@ namespace ns0
 					if (int_5 > 0)
 					{
 						int_4 = 10;
-						int num2 = class4_0.method_0(int_5);
+						var num2 = class4_0.method_0(int_5);
 						if (num2 < 0)
 						{
 							return false;
@@ -237,7 +237,7 @@ namespace ns0
 					if (int_5 > 0)
 					{
 						int_4 = 8;
-						int num3 = class4_0.method_0(int_5);
+						var num3 = class4_0.method_0(int_5);
 						if (num3 < 0)
 						{
 							return false;
@@ -262,7 +262,7 @@ namespace ns0
 						int_4 = 12;
 						return false;
 					}
-					int num = class4_0.method_0(3);
+					var num = class4_0.method_0(3);
 					if (num < 0)
 					{
 						return false;
@@ -323,7 +323,7 @@ namespace ns0
 				default:
 					return false;
 				}
-				int num2 = class4_0.method_0(16);
+				var num2 = class4_0.method_0(16);
 				if (num2 < 0)
 				{
 					return false;
@@ -331,7 +331,7 @@ namespace ns0
 				class4_0.method_1(16);
 				int_4 = 5;
 				IL_137:
-				int num3 = class5_0.method_3(class4_0, int_8);
+				var num3 = class5_0.method_3(class4_0, int_8);
 				int_8 -= num3;
 				if (int_8 == 0)
 				{
@@ -345,12 +345,12 @@ namespace ns0
 
 			public int method_2(byte[] byte_0, int int_9, int int_10)
 			{
-				int num = 0;
+				var num = 0;
 				while (true)
 				{
 					if (int_4 != 11)
 					{
-						int num2 = class5_0.method_6(byte_0, int_9, int_10);
+						var num2 = class5_0.method_6(byte_0, int_9, int_10);
 						int_9 += num2;
 						num += num2;
 						int_10 -= num2;
@@ -430,7 +430,7 @@ namespace ns0
 
 			public int method_6(byte[] byte_1, int int_3, int int_4)
 			{
-				int num = 0;
+				var num = 0;
 				while (int_2 > 0 && int_4 > 0)
 				{
 					byte_1[int_3++] = (byte)uint_0;
@@ -443,7 +443,7 @@ namespace ns0
 				{
 					return num;
 				}
-				int num2 = int_1 - int_0;
+				var num2 = int_1 - int_0;
 				if (int_4 > num2)
 				{
 					int_4 = num2;
@@ -464,7 +464,7 @@ namespace ns0
 				{
 					throw new InvalidOperationException();
 				}
-				int num = int_3 + int_4;
+				var num = int_3 + int_4;
 				if (0 <= int_3 && int_3 <= num && num <= byte_1.Length)
 				{
 					if ((int_4 & 1) != 0)
@@ -519,8 +519,8 @@ namespace ns0
 				{
 					throw new InvalidOperationException();
 				}
-				int num = int_2 - int_5 & int_1;
-				int num2 = int_0 - int_4;
+				var num = int_2 - int_5 & int_1;
+				var num2 = int_0 - int_4;
 				if (num > num2 || int_2 >= num2)
 				{
 					method_1(num, int_4, int_5);
@@ -541,7 +541,7 @@ namespace ns0
 			public int method_3(Class4 class4_0, int int_4)
 			{
 				int_4 = Math.Min(Math.Min(int_4, int_0 - int_3), class4_0.method_3());
-				int num = int_0 - int_2;
+				var num = int_0 - int_2;
 				int num2;
 				if (int_4 > num)
 				{
@@ -572,7 +572,7 @@ namespace ns0
 
 			public int method_6(byte[] byte_1, int int_4, int int_5)
 			{
-				int num = int_2;
+				var num = int_2;
 				if (int_5 > int_3)
 				{
 					int_5 = int_3;
@@ -581,8 +581,8 @@ namespace ns0
 				{
 					num = (int_2 - int_3 + int_5 & int_1);
 				}
-				int num2 = int_5;
-				int num3 = int_5 - num;
+				var num2 = int_5;
+				var num3 = int_5 - num;
 				if (num3 > 0)
 				{
 					Array.Copy(byte_0, int_0 - num3, byte_1, int_4, num3);
@@ -612,8 +612,8 @@ namespace ns0
 			static Class6()
 			{
 				int_0 = 15;
-				byte[] array = new byte[288];
-				int i = 0;
+				var array = new byte[288];
+				var i = 0;
 				while (i < 144)
 				{
 					array[i++] = 8;
@@ -647,9 +647,9 @@ namespace ns0
 
 			private void method_0(byte[] byte_0)
 			{
-				int[] array = new int[int_0 + 1];
-				int[] array2 = new int[int_0 + 1];
-				for (int i = 0; i < byte_0.Length; i++)
+				var array = new int[int_0 + 1];
+				var array2 = new int[int_0 + 1];
+				for (var i = 0; i < byte_0.Length; i++)
 				{
 					int num = byte_0[i];
 					if (num > 0)
@@ -657,33 +657,33 @@ namespace ns0
 						array[num]++;
 					}
 				}
-				int num2 = 0;
-				int num3 = 512;
-				for (int j = 1; j <= int_0; j++)
+				var num2 = 0;
+				var num3 = 512;
+				for (var j = 1; j <= int_0; j++)
 				{
 					array2[j] = num2;
 					num2 += array[j] << 16 - j;
 					if (j >= 10)
 					{
-						int num4 = array2[j] & 130944;
-						int num5 = num2 & 130944;
+						var num4 = array2[j] & 130944;
+						var num5 = num2 & 130944;
 						num3 += num5 - num4 >> 16 - j;
 					}
 				}
 				short_0 = new short[num3];
-				int num6 = 512;
-				for (int k = int_0; k >= 10; k--)
+				var num6 = 512;
+				for (var k = int_0; k >= 10; k--)
 				{
-					int num7 = num2 & 130944;
+					var num7 = num2 & 130944;
 					num2 -= array[k] << 16 - k;
-					int num8 = num2 & 130944;
-					for (int l = num8; l < num7; l += 128)
+					var num8 = num2 & 130944;
+					for (var l = num8; l < num7; l += 128)
 					{
 						short_0[Class8.smethod_0(l)] = (short)(-num6 << 4 | k);
 						num6 += 1 << k - 9;
 					}
 				}
-				for (int m = 0; m < byte_0.Length; m++)
+				for (var m = 0; m < byte_0.Length; m++)
 				{
 					int num9 = byte_0[m];
 					if (num9 != 0)
@@ -702,7 +702,7 @@ namespace ns0
 						else
 						{
 							int num11 = short_0[num10 & 511];
-							int num12 = 1 << (num11 & 15);
+							var num12 = 1 << (num11 & 15);
 							num11 = -(num11 >> 4);
 							do
 							{
@@ -727,15 +727,15 @@ namespace ns0
 						class4_0.method_1(num2 & 15);
 						return num2 >> 4;
 					}
-					int num3 = -(num2 >> 4);
-					int int_ = num2 & 15;
+					var num3 = -(num2 >> 4);
+					var int_ = num2 & 15;
 					if ((num = class4_0.method_0(int_)) >= 0)
 					{
 						num2 = short_0[num3 | num >> 9];
 						class4_0.method_1(num2 & 15);
 						return num2 >> 4;
 					}
-					int num4 = class4_0.method_2();
+					var num4 = class4_0.method_2();
 					num = class4_0.method_0(num4);
 					num2 = short_0[num3 | num >> 9];
 					if ((num2 & 15) <= num4)
@@ -747,7 +747,7 @@ namespace ns0
 				}
 				else
 				{
-					int num5 = class4_0.method_2();
+					var num5 = class4_0.method_2();
 					num = class4_0.method_0(num5);
 					int num2 = short_0[num];
 					if (num2 >= 0 && (num2 & 15) <= num5)
@@ -871,7 +871,7 @@ namespace ns0
 					IL_156:
 					while (int_8 < int_5)
 					{
-						int num2 = class4_0.method_0(3);
+						var num2 = class4_0.method_0(3);
 						if (num2 < 0)
 						{
 							return false;
@@ -886,8 +886,8 @@ namespace ns0
 					int_2 = 4;
 					goto IL_E1;
 					IL_2C:
-					int num3 = int_1[int_7];
-					int num4 = class4_0.method_0(num3);
+					var num3 = int_1[int_7];
+					var num4 = class4_0.method_0(num3);
 					if (num4 < 0)
 					{
 						return false;
@@ -934,14 +934,14 @@ namespace ns0
 
 			public Class6 method_1()
 			{
-				byte[] destinationArray = new byte[int_3];
+				var destinationArray = new byte[int_3];
 				Array.Copy(byte_1, 0, destinationArray, 0, int_3);
 				return new Class6(destinationArray);
 			}
 
 			public Class6 method_2()
 			{
-				byte[] destinationArray = new byte[int_4];
+				var destinationArray = new byte[int_4];
 				Array.Copy(byte_1, int_3, destinationArray, 0, int_4);
 				return new Class6(destinationArray);
 			}
@@ -1035,7 +1035,7 @@ namespace ns0
 				};
 				short_0 = new short[int_1];
 				byte_1 = new byte[int_1];
-				int i = 0;
+				var i = 0;
 				while (i < 144)
 				{
 					short_0[i] = smethod_0(48 + i << 8);
@@ -1085,14 +1085,14 @@ namespace ns0
 
 		public static byte[] smethod_0(byte[] byte_0)
 		{
-			Stream0 stream = new Stream0(byte_0);
-			byte[] array = new byte[0];
-			int num = stream.method_1();
+			var stream = new Stream0(byte_0);
+			var array = new byte[0];
+			var num = stream.method_1();
 			if (num == 67324752)
 			{
-				short num2 = (short)stream.method_0();
-				int num3 = stream.method_0();
-				int num4 = stream.method_0();
+				var num2 = (short)stream.method_0();
+				var num3 = stream.method_0();
+				var num4 = stream.method_0();
 				if (num == 67324752 && num2 == 20 && num3 == 0)
 				{
 					if (num4 == 8)
@@ -1100,22 +1100,22 @@ namespace ns0
 						stream.method_1();
 						stream.method_1();
 						stream.method_1();
-						int num5 = stream.method_1();
-						int num6 = stream.method_0();
-						int num7 = stream.method_0();
+						var num5 = stream.method_1();
+						var num6 = stream.method_0();
+						var num7 = stream.method_0();
 						if (num6 > 0)
 						{
-							byte[] buffer = new byte[num6];
+							var buffer = new byte[num6];
 							stream.Read(buffer, 0, num6);
 						}
 						if (num7 > 0)
 						{
-							byte[] buffer2 = new byte[num7];
+							var buffer2 = new byte[num7];
 							stream.Read(buffer2, 0, num7);
 						}
-						byte[] array2 = new byte[stream.Length - stream.Position];
+						var array2 = new byte[stream.Length - stream.Position];
 						stream.Read(array2, 0, array2.Length);
-						Class3 @class = new Class3(array2);
+						var @class = new Class3(array2);
 						array = new byte[num5];
 						@class.method_2(array, 0, array.Length);
 						goto IL_1FF;
@@ -1123,7 +1123,7 @@ namespace ns0
 				}
 				throw new FormatException("Wrong Header Signature");
 			}
-			int num8 = num >> 24;
+			var num8 = num >> 24;
 			num -= num8 << 24;
 			if (num != 8223355)
 			{
@@ -1131,22 +1131,22 @@ namespace ns0
 			}
 			if (num8 == 1)
 			{
-				int num9 = stream.method_1();
+				var num9 = stream.method_1();
 				array = new byte[num9];
 				int num11;
-				for (int i = 0; i < num9; i += num11)
+				for (var i = 0; i < num9; i += num11)
 				{
-					int num10 = stream.method_1();
+					var num10 = stream.method_1();
 					num11 = stream.method_1();
-					byte[] array3 = new byte[num10];
+					var array3 = new byte[num10];
 					stream.Read(array3, 0, array3.Length);
-					Class3 class2 = new Class3(array3);
+					var class2 = new Class3(array3);
 					class2.method_2(array, i, num11);
 				}
 			}
 			if (num8 == 2)
 			{
-				DESCryptoServiceProvider dESCryptoServiceProvider = new DESCryptoServiceProvider();
+				var dESCryptoServiceProvider = new DESCryptoServiceProvider();
 				dESCryptoServiceProvider.Key = new byte[]
 				{
 					162,
@@ -1169,8 +1169,8 @@ namespace ns0
 					167,
 					112
 				};
-				ICryptoTransform cryptoTransform = dESCryptoServiceProvider.CreateDecryptor();
-				byte[] byte_ = cryptoTransform.TransformFinalBlock(byte_0, 4, byte_0.Length - 4);
+				var cryptoTransform = dESCryptoServiceProvider.CreateDecryptor();
+				var byte_ = cryptoTransform.TransformFinalBlock(byte_0, 4, byte_0.Length - 4);
 				dESCryptoServiceProvider.Clear();
 				array = smethod_0(byte_);
 			}

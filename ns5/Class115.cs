@@ -28,7 +28,7 @@ namespace ns5
 			}
 			if (byte_0.Length - int_1 / 8 < int_3 + 8)
 			{
-				byte[] dst = new byte[(byte_0.Length + int_3) * 2];
+				var dst = new byte[(byte_0.Length + int_3) * 2];
 				Buffer.BlockCopy(byte_0, 0, dst, 0, int_1 / 8);
 				Buffer.BlockCopy(byte_1, int_2, dst, int_1 / 8, int_3);
 				byte_0 = dst;
@@ -59,7 +59,7 @@ namespace ns5
 
 		public int method_2(int int_2)
 		{
-			int num = int_0 >> 3;
+			var num = int_0 >> 3;
 			int num2 = byte_0[num++];
 			int i;
 			for (i = int_2 - (8 - (int_0 & 7)); i > 0; i -= 8)
@@ -77,7 +77,7 @@ namespace ns5
 
 		public int method_3(int int_2)
 		{
-			int num = int_0 >> 3;
+			var num = int_0 >> 3;
 			int num2 = byte_0[num++];
 			int i;
 			for (i = int_2 - (8 - (int_0 & 7)); i > 0; i -= 8)

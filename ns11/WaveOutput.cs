@@ -126,7 +126,7 @@ namespace ns11
 			Exception4.smethod_1(Class162.waveOutOpen(out intptr_0, int_1, stream1_0.vmethod_0(), delegate4_0, 0, Class162.Enum17.const_3), "waveOutOpen");
 			stream1_0.Position = vmethod_0();
 			class158_0 = new Class158[5];
-			for (int i = 0; i < 5; i++)
+			for (var i = 0; i < 5; i++)
 			{
 				class158_0[i] = new Class158(intptr_0, int_0, stream1_0, object_0);
 			}
@@ -138,7 +138,7 @@ namespace ns11
 			while (true)
 			{
 				autoResetEvent_0.WaitOne();
-				bool flag = true;
+				var flag = true;
 				while (flag)
 				{
 					Class164 @class = null;
@@ -208,7 +208,7 @@ namespace ns11
 		{
 			if (enum16_0 == Class162.Enum16.const_1)
 			{
-				Class158 object_ = (Class158)((GCHandle)struct66_0.intptr_1).Target;
+				var object_ = (Class158)((GCHandle)struct66_0.intptr_1).Target;
 				lock (queue_1)
 				{
 					queue_1.Enqueue(new Class164(Enum19.const_2, object_));
@@ -271,7 +271,7 @@ namespace ns11
 			if (!bool_0)
 			{
 				enum1_0 = AudioStatus.ShouldStartAudio;
-				for (int i = 0; i < 5; i++)
+				for (var i = 0; i < 5; i++)
 				{
 					class158_0[i].method_1();
 				}
@@ -286,7 +286,7 @@ namespace ns11
 			{
 				return;
 			}
-			int num = vmethod_0();
+			var num = vmethod_0();
 			StopPlaying();
 			stream1_0.Position = int_3 = num;
 			enum1_0 = AudioStatus.IsCurrentlyPlayingAudio;
@@ -333,7 +333,7 @@ namespace ns11
 			}
 			if (class158_0 != null)
 			{
-				for (int i = 0; i < 5; i++)
+				for (var i = 0; i < 5; i++)
 				{
 					class158_0[i].Dispose();
 				}
@@ -398,7 +398,7 @@ namespace ns11
 		private void method_8(int int_4)
 		{
 			WaitCallback waitCallback = null;
-			AudioStatus @enum = enum1_0;
+			var @enum = enum1_0;
 			if (@enum == AudioStatus.IsCurrentlyPlayingAudio)
 			{
 				StopPlaying();
@@ -410,26 +410,26 @@ namespace ns11
 				arg_35_0.Position = int_4;
 				if (@enum == AudioStatus.ShouldStartAudio)
 				{
-					int count = queue_0.Count;
-					float num = 1f / (int_0 * count / (float)GetWaveFormat().short_1);
-					float num2 = 0f;
-					float num3 = 1f;
+					var count = queue_0.Count;
+					var num = 1f / (int_0 * count / (float)GetWaveFormat().short_1);
+					var num2 = 0f;
+					var num3 = 1f;
 					if (GetWaveFormat().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
 					{
-						float[] array = new float[int_0 >> 2];
-						using (Queue<Class158>.Enumerator enumerator = queue_0.GetEnumerator())
+						var array = new float[int_0 >> 2];
+						using (var enumerator = queue_0.GetEnumerator())
 						{
 							while (enumerator.MoveNext())
 							{
-								Class158 current = enumerator.Current;
-								float[] array2 = current.method_3().method_1();
-								int num4 = stream1_0.vmethod_4(array, 0, array.Length);
+								var current = enumerator.Current;
+								var array2 = current.method_3().method_1();
+								var num4 = stream1_0.vmethod_4(array, 0, array.Length);
 								if (num4 == 0)
 								{
 									break;
 								}
-								int i = 0;
-								int num5 = 0;
+								var i = 0;
+								var num5 = 0;
 								while (i < num4)
 								{
 									array2[i] = num3 * array2[i] + num2 * array[i];
@@ -450,19 +450,19 @@ namespace ns11
 					}
 					if (GetWaveFormat().waveFormatTag_0 == WaveFormatTag.PCM)
 					{
-						using (Class19 @class = new Class19(int_0))
+						using (var @class = new Class19(int_0))
 						{
-							foreach (Class158 current2 in queue_0)
+							foreach (var current2 in queue_0)
 							{
-								short[] array3 = current2.method_3().method_2();
-								short[] array4 = Class19.smethod_0(@class);
-								int num6 = stream1_0.vmethod_3(Class19.smethod_1(@class), int_0) >> 1;
+								var array3 = current2.method_3().method_2();
+								var array4 = Class19.smethod_0(@class);
+								var num6 = stream1_0.vmethod_3(Class19.smethod_1(@class), int_0) >> 1;
 								if (num6 == 0)
 								{
 									break;
 								}
-								int j = 0;
-								int num7 = 0;
+								var j = 0;
+								var num7 = 0;
 								while (j < num6)
 								{
 									array3[j] = (short)(num3 * array3[j] + num2 * array4[j]);
@@ -509,9 +509,9 @@ namespace ns11
 		public void SetVolume(float float_1)
 		{
 			float_0 = float_1;
-			float num = float_0;
-			float num2 = float_0;
-			int num3 = (int)(num * 65535f) + ((int)(num2 * 65535f) << 16);
+			var num = float_0;
+			var num2 = float_0;
+			var num3 = (int)(num * 65535f) + ((int)(num2 * 65535f) << 16);
 			lock (queue_1)
 			{
 				queue_1.Enqueue(new Class164(Enum19.const_5, num3));
@@ -557,8 +557,8 @@ namespace ns11
 		private void method_11(object object_1)
 		{
 			bool_1 = true;
-			float num = 0f;
-			float num2 = float_0;
+			var num = 0f;
+			var num2 = float_0;
 			while (num < num2)
 			{
 				SetVolume(num);
@@ -573,8 +573,8 @@ namespace ns11
 		private void method_12(object object_1)
 		{
 			bool_1 = true;
-			float num = 0f;
-			float num2 = float_0;
+			var num = 0f;
+			var num2 = float_0;
 			while (num < num2)
 			{
 				SetVolume(num);

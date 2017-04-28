@@ -43,13 +43,13 @@ namespace ns17
 			{
 				return;
 			}
-			zzGenericNode1 @class = new zzGenericNode1(_hashPath, KeyGenerator.smethod_8(class318_0.method_12(_hashPath), "MaC39SubInfo1245"));
+			var @class = new zzGenericNode1(_hashPath, KeyGenerator.smethod_8(class318_0.method_12(_hashPath), "MaC39SubInfo1245"));
 			version = new Version(@class.method_5(new UnicodeRootNode("version")).method_7());
-			float[] array = @class.method_5(new ArrayPointerRootNode("date")).method_7().method_7<float>();
+			var array = @class.method_5(new ArrayPointerRootNode("date")).method_7().method_7<float>();
 			date = new DateTime((int)array[0], (int)array[1], (int)array[2]);
 			unkBuffer = @class.method_5(new ArrayPointerRootNode("hash")).method_7().method_7<int>();
 			class318_0.method_7(_hashPath);
-			using (Stream26 stream = class318_0.method_17())
+			using (var stream = class318_0.method_17())
 			{
 				stream.Position = 0L;
                 // Ignore checks for external tools modifying game settings because we're not children who will dictate how people can play their game
@@ -76,15 +76,15 @@ namespace ns17
 			{
 				pakNode.method_7(_hashPath);
 			}
-			zzGenericNode1 @class = new zzGenericNode1();
+			var @class = new zzGenericNode1();
 			@class.method_3(new UnicodeRootNode("version", _hashPath, Assembly.GetExecutingAssembly().GetName().Version.ToString()));
-			using (Stream26 stream = pakNode.method_17())
+			using (var stream = pakNode.method_17())
 			{
 				stream.Position = 0L;
 				@class.method_3(new ArrayPointerRootNode("hash", _hashPath, new IntegerArrayNode(KeyGenerator.smethod_21(KeyGenerator.HashStream(stream._stream)))));
 			}
 			GC.Collect();
-			DateTime now = DateTime.Now;
+			var now = DateTime.Now;
 			@class.method_3(new ArrayPointerRootNode("date", _hashPath, new FloatArrayNode(new[]
 			{
 				now.Year,

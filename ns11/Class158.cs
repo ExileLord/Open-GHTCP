@@ -87,8 +87,8 @@ namespace ns11
 			int num;
 			lock (stream1_0)
 			{
-				GenericAudioStream arg_39_0 = stream1_0;
-				IntPtr arg_39_1 = struct66_0.intptr_0;
+				var arg_39_0 = stream1_0;
+				var arg_39_1 = struct66_0.intptr_0;
 				int int_;
 				class17_0.method_4(int_ = class17_0.method_0().Length);
 				num = arg_39_0.vmethod_3(arg_39_1, int_);

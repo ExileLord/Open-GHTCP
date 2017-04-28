@@ -35,10 +35,10 @@ namespace ns17
 		{
 			byte[] byte_;
 			ZIPManager.smethod_3(string_1, out byte_, "songs.info", "TGH9ZIP2PASS4MXKR");
-			zzGenericNode1 @class = new zzGenericNode1("songs", KeyGenerator.smethod_8(byte_, "SNG4AES4KEY9MXKR"));
+			var @class = new zzGenericNode1("songs", KeyGenerator.smethod_8(byte_, "SNG4AES4KEY9MXKR"));
 			foreach (StructurePointerNode class302_ in @class.Nodes)
 			{
-				GH3Song gH3Song = new GH3Song(class302_);
+				var gH3Song = new GH3Song(class302_);
 				gH3Song.editable = true;
 				gh3Songlist_0.method_0(gH3Song, string_0 != null);
 			}
@@ -46,9 +46,9 @@ namespace ns17
 			gh3Tier_0.method_1(new GH3Tier((StructureHeaderNode)new zzGenericNode1("tier", KeyGenerator.smethod_8(byte_, "TIR4AES4KEY9MXKR")).Nodes[0], gh3Songlist_0));
 			if (string_0 != null)
 			{
-				List<string> list = new List<string>();
-				List<string> list2 = new List<string>();
-				foreach (GH3Song current in gh3Tier_0.songs)
+				var list = new List<string>();
+				var list2 = new List<string>();
+				foreach (var current in gh3Tier_0.songs)
 				{
 					if (current.editable)
 					{
@@ -66,12 +66,12 @@ namespace ns17
 
 		public void method_1()
 		{
-			List<Stream> list = new List<Stream>();
+			var list = new List<Stream>();
 			Stream stream = new MemoryStream();
 			KeyGenerator.smethod_1(new zzGenericNode1("tier", gh3Tier_0.method_3()).method_8(), stream, "TIR4AES4KEY9MXKR");
-			List<string> list2 = new List<string>();
-			List<StructurePointerNode> list3 = new List<StructurePointerNode>();
-			foreach (GH3Song current in gh3Tier_0.songs)
+			var list2 = new List<string>();
+			var list3 = new List<StructurePointerNode>();
+			foreach (var current in gh3Tier_0.songs)
 			{
 				if (current.editable)
 				{

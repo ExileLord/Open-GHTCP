@@ -43,10 +43,10 @@ namespace ns15
 			string_1 = class323_0.fileName;
 			string_3 = string_4;
 			string_2 = string_5;
-			string[] array = class323_0.string_1;
-			for (int i = 0; i < array.Length; i++)
+			var array = class323_0.string_1;
+			for (var i = 0; i < array.Length; i++)
 			{
-				string text = array[i];
+				var text = array[i];
 				if (text.Equals(class323_0.fileName + "_rhythm"))
 				{
 					bool_0 = true;
@@ -78,8 +78,8 @@ namespace ns15
 			}
 			else
 			{
-				List<string> list = new List<string>();
-				List<Stream> list2 = new List<Stream>();
+				var list = new List<string>();
+				var list2 = new List<Stream>();
 				GenericAudioStream stream3;
 				if (string_0.Length == 1)
 				{
@@ -111,7 +111,7 @@ namespace ns15
 				}
 				else
 				{
-					List<GenericAudioStream> list3 = new List<GenericAudioStream>();
+					var list3 = new List<GenericAudioStream>();
 					string[] array = {
 						"_song",
 						"_guitar",
@@ -120,7 +120,7 @@ namespace ns15
 						"_coop_guitar",
 						"_coop_rhythm"
 					};
-					for (int i = 0; i < string_0.Length; i++)
+					for (var i = 0; i < string_0.Length; i++)
 					{
 						if (string_0[i] != null && !string_0[i].Equals("") && File.Exists(string_0[i]))
 						{
@@ -144,20 +144,20 @@ namespace ns15
 						}
 					}
 					stream3 = new Stream2(list3.ToArray());
-					float num = 0f;
-					Stream3 stream5 = new Stream3(stream3, timeSpan_0, timeSpan_1);
-					float[][] array2 = stream5.vmethod_5(100);
+					var num = 0f;
+					var stream5 = new Stream3(stream3, timeSpan_0, timeSpan_1);
+					var array2 = stream5.vmethod_5(100);
 					while (array2 != null && array2.Length > 0)
 					{
-						float[][] array3 = array2;
-						for (int j = 0; j < array3.Length; j++)
+						var array3 = array2;
+						for (var j = 0; j < array3.Length; j++)
 						{
-							float[] array4 = array3[j];
-							float[] array5 = array4;
-							for (int k = 0; k < array5.Length; k++)
+							var array4 = array3[j];
+							var array5 = array4;
+							for (var k = 0; k < array5.Length; k++)
 							{
-								float value = array5[k];
-								float num2 = Math.Abs(value);
+								var value = array5[k];
+								var num2 = Math.Abs(value);
 								if (num2 > num)
 								{
 									num = num2;
@@ -171,8 +171,8 @@ namespace ns15
 						new Class174(3, 1f / num)
 					});
 				}
-				WaveFormat waveFormat = stream3.vmethod_0();
-				TimeSpan t = new TimeSpan(0, 0, 1);
+				var waveFormat = stream3.vmethod_0();
+				var t = new TimeSpan(0, 0, 1);
 				Stream stream6 = new Stream27();
 				Stream16.smethod_0(new Stream2(new Stream3(stream3, timeSpan_0, timeSpan_1), new Interface5[]
 				{

@@ -15,7 +15,7 @@ namespace ns18
 
 		public void method_10(IEnumerable<T> ienumerable_0)
 		{
-			foreach (T current in ienumerable_0)
+			foreach (var current in ienumerable_0)
 			{
 				Nodes.Add(current);
 			}

@@ -61,7 +61,7 @@ namespace ns14
 			{
 				return;
 			}
-			Rectangle rect = new Rectangle(0, 0, method_0(), method_1());
+			var rect = new Rectangle(0, 0, method_0(), method_1());
 			bitmapData_0 = method_3().LockBits(rect, ImageLockMode.ReadWrite, method_3().PixelFormat);
 			intptr_0 = bitmapData_0.Scan0;
 			byte_0 = new byte[method_0() * method_1() * (method_2() ? 4 : 3)];
@@ -102,14 +102,14 @@ namespace ns14
 			}
 			if (method_2())
 			{
-				int num = (int_3 * method_0() + int_2) * 4;
+				var num = (int_3 * method_0() + int_2) * 4;
 				byte_0[num] = color_0.B;
 				byte_0[num + 1] = color_0.G;
 				byte_0[num + 2] = color_0.R;
 				byte_0[num + 3] = color_0.A;
 				return;
 			}
-			int num2 = (int_3 * method_0() + int_2) * 3;
+			var num2 = (int_3 * method_0() + int_2) * 3;
 			byte_0[num2] = color_0.B;
 			byte_0[num2 + 1] = color_0.G;
 			byte_0[num2 + 2] = color_0.R;

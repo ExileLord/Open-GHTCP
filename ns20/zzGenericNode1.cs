@@ -123,10 +123,10 @@ namespace ns20
 		{
 			while (stream26_0.Length > stream26_0.Position)
 			{
-				int num = stream26_0.ReadInt(true);
+				var num = stream26_0.ReadInt(true);
 				if (num != 0)
 				{
-					AbstractTreeNode1 @class = vmethod_12(num);
+					var @class = vmethod_12(num);
 					stream26_0._reverseEndianness = vmethod_7();
 					Nodes.Add(@class);
 					@class.method_4(stream26_0);
@@ -153,8 +153,8 @@ namespace ns20
 			{
 				return new StructureHeaderNode();
 			}
-			int num = int_0 >> 16 & 255;
-			int num2 = int_0 >> 8 & 255;
+			var num = int_0 >> 16 & 255;
+			var num2 = int_0 >> 8 & 255;
 			if (num == 32)
 			{
 				bool_1 = true;
@@ -163,7 +163,7 @@ namespace ns20
 			{
 				bool_1 = false;
 			}
-			Exception ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32bit(int_0));
+			var ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32bit(int_0));
 			if (num != 32)
 			{
 				if (num != 4)
@@ -373,7 +373,7 @@ namespace ns20
 
 		public MemoryStream method_8()
 		{
-			MemoryStream memoryStream = new MemoryStream();
+			var memoryStream = new MemoryStream();
 			method_9(memoryStream);
 			memoryStream.Position = 0L;
 			return memoryStream;
@@ -394,7 +394,7 @@ namespace ns20
 
 		public int method_11()
 		{
-			int result = 28;
+			var result = 28;
 			vmethod_2(ref result);
 			return result;
 		}

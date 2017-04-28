@@ -41,10 +41,10 @@ namespace ns3
 			}
 			if (int_6 > int_0 - int_1)
 			{
-				int num = int_6 + int_1 + 4096;
+				var num = int_6 + int_1 + 4096;
 				if (byte_0 != null)
 				{
-					byte[] dst = new byte[num];
+					var dst = new byte[num];
 					Buffer.BlockCopy(byte_0, 0, dst, 0, byte_0.Length);
 					byte_0 = dst;
 				}
@@ -69,8 +69,8 @@ namespace ns3
 
 		public int method_3(Class48 class48_1)
 		{
-			int num = int_2;
-			int num2 = int_1 - int_2;
+			var num = int_2;
+			var num2 = int_1 - int_2;
 			if (int_4 == 0)
 			{
 				if (num2 < 27)
@@ -81,12 +81,12 @@ namespace ns3
 				{
 					if (byte_0[num + 3] == 83)
 					{
-						int num3 = (byte_0[num + 26] & 255) + 27;
+						var num3 = (byte_0[num + 26] & 255) + 27;
 						if (num2 < num3)
 						{
 							return 0;
 						}
-						for (int i = 0; i < (byte_0[num + 26] & 255); i++)
+						for (var i = 0; i < (byte_0[num + 26] & 255); i++)
 						{
 							int_5 += byte_0[num + 27 + i] & 255;
 						}
@@ -96,8 +96,8 @@ namespace ns3
 				}
 				int_4 = 0;
 				int_5 = 0;
-				int num4 = 0;
-				for (int j = 0; j < num2 - 1; j++)
+				var num4 = 0;
+				for (var j = 0; j < num2 - 1; j++)
 				{
 					if (byte_0[num + 1 + j] == 79)
 					{
@@ -125,7 +125,7 @@ namespace ns3
 				byte_0[num + 23] = 0;
 				byte_0[num + 24] = 0;
 				byte_0[num + 25] = 0;
-				Class48 @class = class48_0;
+				var @class = class48_0;
 				@class.byte_0 = byte_0;
 				@class.int_0 = num;
 				@class.int_1 = int_4;
@@ -143,8 +143,8 @@ namespace ns3
 				Buffer.BlockCopy(byte_1, 0, byte_0, num + 22, 4);
 				int_4 = 0;
 				int_5 = 0;
-				int num4 = 0;
-				for (int k = 0; k < num2 - 1; k++)
+				var num4 = 0;
+				for (var k = 0; k < num2 - 1; k++)
 				{
 					if (byte_0[num + 1 + k] == 79)
 					{

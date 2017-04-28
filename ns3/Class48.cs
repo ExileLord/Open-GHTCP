@@ -20,7 +20,7 @@ namespace ns3
 
 		public Class48()
 		{
-			uint num = 0u;
+			var num = 0u;
 			while (num < (ulong)uint_0.Length)
 			{
 				uint_0[(int)((UIntPtr)num)] = smethod_0(num);
@@ -30,8 +30,8 @@ namespace ns3
 
 		private static uint smethod_0(uint uint_1)
 		{
-			uint num = uint_1 << 24;
-			for (int i = 0; i < 8; i++)
+			var num = uint_1 << 24;
+			for (var i = 0; i < 8; i++)
 			{
 				if ((num & 2147483648u) != 0u)
 				{
@@ -89,17 +89,17 @@ namespace ns3
 
 		public void method_7()
 		{
-			uint num = 0u;
-			for (int i = 0; i < int_1; i++)
+			var num = 0u;
+			for (var i = 0; i < int_1; i++)
 			{
-				uint num2 = (uint)(byte_0[int_0 + i] & 255);
-				uint num3 = num >> 24 & 255u;
+				var num2 = (uint)(byte_0[int_0 + i] & 255);
+				var num3 = num >> 24 & 255u;
 				num = (num << 8 ^ uint_0[(int)((UIntPtr)(num2 ^ num3))]);
 			}
-			for (int j = 0; j < int_3; j++)
+			for (var j = 0; j < int_3; j++)
 			{
-				uint num2 = (uint)(byte_1[int_2 + j] & 255);
-				uint num3 = num >> 24 & 255u;
+				var num2 = (uint)(byte_1[int_2 + j] & 255);
+				var num3 = num >> 24 & 255u;
 				num = (num << 8 ^ uint_0[(int)((UIntPtr)(num2 ^ num3))]);
 			}
 			byte_0[int_0 + 22] = (byte)num;

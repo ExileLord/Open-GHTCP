@@ -975,10 +975,10 @@ namespace ns17
 			timer_0 = new Timer();
 			timer_0.Interval = 30;
 			timer_0.Tick += timer_0_Tick;
-			CheckBox arg_71_0 = Audio_CheckBox;
+			var arg_71_0 = Audio_CheckBox;
 			bool_0 = bool_6;
 			arg_71_0.Checked = bool_6;
-			CheckBox arg_86_0 = Chart_CheckBox;
+			var arg_86_0 = Chart_CheckBox;
 			bool_1 = bool_7;
 			arg_86_0.Checked = bool_7;
 			EnableAudioButtons();
@@ -994,7 +994,7 @@ namespace ns17
 			method_4("No Track");
 			method_5("No Track");
 			method_8(0);
-			foreach (string current in qbcParser.noteList.Keys)
+			foreach (var current in qbcParser.noteList.Keys)
 			{
 				method_4(current);
 			}
@@ -1033,10 +1033,10 @@ namespace ns17
 				string text4 = null;
 				string text5 = null;
 				string text6 = null;
-				for (int i = 0; i < string_1.Length; i++)
+				for (var i = 0; i < string_1.Length; i++)
 				{
-					string text7 = string_1[i];
-					string text8 = KeyGenerator.GetFileName(text7).ToLower();
+					var text7 = string_1[i];
+					var text8 = KeyGenerator.GetFileName(text7).ToLower();
 					if (string_1.Length > 4 && text8.Contains("coop"))
 					{
 						if (text5 == null && (text8.Contains("rhythm") || text8.Contains("bass")))
@@ -1155,7 +1155,7 @@ namespace ns17
 
 		public Class250 method_1(zzPakNode2 class318_0, string string_0)
 		{
-			Dictionary<string, Track<int, NotesAtOffset>> dictionary = new Dictionary<string, Track<int, NotesAtOffset>>();
+			var dictionary = new Dictionary<string, Track<int, NotesAtOffset>>();
 			if (!EasyGuitarBox.SelectedItem.Equals("No Track"))
 			{
 				dictionary.Add("easy", qbcParser.noteList[(string)EasyGuitarBox.SelectedItem]);
@@ -1220,10 +1220,10 @@ namespace ns17
 			{
 				dictionary.Add("rhythmcoop_expert", qbcParser.noteList[(string)ExpertCoop2Box.SelectedItem]);
 			}
-			Track<int, int> class228_ = method_2(FaceOffP1Box);
-			Track<int, int> class228_2 = method_2(FaceOffP2Box);
-			Track<int, int> class228_3 = method_2(BossBattleP1Box);
-			Track<int, int> class228_4 = method_2(BossBattleP2Box);
+			var class228_ = method_2(FaceOffP1Box);
+			var class228_2 = method_2(FaceOffP2Box);
+			var class228_3 = method_2(BossBattleP1Box);
+			var class228_4 = method_2(BossBattleP2Box);
 			qbcParser.noteList = dictionary;
 			qbcParser.class228_2 = class228_;
 			qbcParser.class228_3 = class228_2;
@@ -1428,8 +1428,8 @@ namespace ns17
                     //Configures paks
                     if (fileName.EndsWith("_song.pak.xen"))
 					{
-						string text2 = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
-						using (zzPakNode2 @class = new zzPakNode2(fileName, false))
+						var text2 = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
+						using (var @class = new zzPakNode2(fileName, false))
 						{
 							if (!@class.method_6("songs\\" + text2 + ".mid.qb"))
 							{
@@ -1463,7 +1463,7 @@ namespace ns17
 					Control arg_12B_0 = AutoConfigBtn;
 					ResetBtn.Enabled = true;
 					arg_12B_0.Enabled = true;
-					foreach (string current in qbcParser.noteList.Keys)
+					foreach (var current in qbcParser.noteList.Keys)
 					{
 						method_4(current);
 					}
@@ -1605,7 +1605,7 @@ namespace ns17
 
 		private void GuitarAudioBtn_Click(object sender, EventArgs e)
 		{
-			string fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.dat.xen;*.mp3;*.wav;*.ogg;*.flac|GH3 Audio Header file|*.dat.xen|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true).ToLower();
+			var fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.dat.xen;*.mp3;*.wav;*.ogg;*.flac|GH3 Audio Header file|*.dat.xen|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true).ToLower();
             if (SingleAudioBtn.Checked)
 			{
                 if (!(fileName.Equals("")))
@@ -1814,7 +1814,7 @@ namespace ns17
 		{
 			try
 			{
-				List<GenericAudioStream> list = new List<GenericAudioStream>();
+				var list = new List<GenericAudioStream>();
 				if (!BandCoopTxt.Text.Equals(""))
 				{
 					list.Add(AudioManager.getAudioStream(BandCoopTxt.Text));
@@ -1841,7 +1841,7 @@ namespace ns17
 				}
 				if (list.Count != 0)
 				{
-					GenericAudioStream stream = (list.Count == 1) ? list[0] : new Stream2(list.ToArray());
+					var stream = (list.Count == 1) ? list[0] : new Stream2(list.ToArray());
 					if (Audio != null)
 					{
 						Audio.Dispose();

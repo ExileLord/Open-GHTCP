@@ -12,11 +12,11 @@ namespace ns9
 
 		public void Dispose()
 		{
-			foreach (EmptyInterface1 current in list_0)
+			foreach (var current in list_0)
 			{
 				current.Dispose();
 			}
-			for (int i = 0; i < class352_0.Length; i++)
+			for (var i = 0; i < class352_0.Length; i++)
 			{
 				class352_0[i].Dispose();
 			}

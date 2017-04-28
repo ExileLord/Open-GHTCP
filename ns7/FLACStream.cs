@@ -142,7 +142,7 @@ namespace ns7
 		private Class121[] method_1()
 		{
 			method_2();
-			List<Class121> list = new List<Class121>(10);
+			var list = new List<Class121>(10);
 			Class121 @class;
 			do
 			{
@@ -154,11 +154,11 @@ namespace ns7
 
 		private void method_2()
 		{
-			int num = 0;
-			int i = 0;
+			var num = 0;
+			var i = 0;
 			while (i < 4)
 			{
-				int num2 = class144_0.vmethod_10(8);
+				var num2 = class144_0.vmethod_10(8);
 				if (num2 == Class145.byte_0[i])
 				{
 					i++;
@@ -183,9 +183,9 @@ namespace ns7
 
 		private Class121 method_3()
 		{
-			bool flag = class144_0.vmethod_10(1) != 0;
-			int num = class144_0.vmethod_10(7);
-			int num2 = class144_0.vmethod_10(24);
+			var flag = class144_0.vmethod_10(1) != 0;
+			var num = class144_0.vmethod_10(7);
+			var num2 = class144_0.vmethod_10(24);
 			Class121 result;
 			if (num == 0)
 			{
@@ -229,10 +229,10 @@ namespace ns7
 			class144_0.vmethod_12(8);
 			class144_0.vmethod_12(8);
 			class144_0.vmethod_12(8);
-			int num = 0;
-			for (int i = 0; i < 4; i++)
+			var num = 0;
+			for (var i = 0; i < 4; i++)
 			{
-				int num2 = class144_0.vmethod_10(8);
+				var num2 = class144_0.vmethod_10(8);
 				num <<= 7;
 				num |= (num2 & 127);
 			}
@@ -281,11 +281,11 @@ namespace ns7
 			{
 				return;
 			}
-			for (int i = 0; i < 8; i++)
+			for (var i = 0; i < 8; i++)
 			{
 				class136_0[i] = null;
 			}
-			for (int j = 0; j < int_13; j++)
+			for (var j = 0; j < int_13; j++)
 			{
 				class136_0[j] = new Class136(int_12);
 			}
@@ -295,7 +295,7 @@ namespace ns7
 
 		private void method_7()
 		{
-			bool flag = true;
+			var flag = true;
 			if (class122_0 != null && class122_0.vmethod_3() != 0L && long_0 >= class122_0.vmethod_3())
 			{
 				bool_0 = true;
@@ -315,7 +315,7 @@ namespace ns7
 			{
 				while (true)
 				{
-				    int num = class144_0.vmethod_10(8);
+				    var num = class144_0.vmethod_10(8);
 					if (num == 255)
 					{
 						byte_1[0] = (byte)num;
@@ -344,7 +344,7 @@ namespace ns7
 
 		private void method_8()
 		{
-			short num = Class150.smethod_0(byte_1[0], 0);
+			var num = Class150.smethod_0(byte_1[0], 0);
 			num = Class150.smethod_0(byte_1[1], num);
 			class144_0.vmethod_3(num);
 			try
@@ -357,9 +357,9 @@ namespace ns7
 				throw new FrameDecodeException("Bad Frame Header: " + arg);
 			}
 			method_6(class151_0.class140_0.int_0, class151_0.class140_0.int_2);
-			for (int i = 0; i < class151_0.class140_0.int_2; i++)
+			for (var i = 0; i < class151_0.class140_0.int_2; i++)
 			{
-				int num2 = class151_0.class140_0.int_4;
+				var num2 = class151_0.class140_0.int_4;
 				switch (class151_0.class140_0.int_3)
 				{
 				case 1:
@@ -399,29 +399,29 @@ namespace ns7
 				switch (class151_0.class140_0.int_3)
 				{
 				case 1:
-					for (int j = 0; j < class151_0.class140_0.int_0; j++)
+					for (var j = 0; j < class151_0.class140_0.int_0; j++)
 					{
 						class136_0[1].vmethod_0()[j] = class136_0[0].vmethod_0()[j] - class136_0[1].vmethod_0()[j];
 					}
 					break;
 				case 2:
-					for (int j = 0; j < class151_0.class140_0.int_0; j++)
+					for (var j = 0; j < class151_0.class140_0.int_0; j++)
 					{
 						class136_0[0].vmethod_0()[j] += class136_0[1].vmethod_0()[j];
 					}
 					break;
 				case 3:
-					for (int j = 0; j < class151_0.class140_0.int_0; j++)
+					for (var j = 0; j < class151_0.class140_0.int_0; j++)
 					{
-						int num3 = class136_0[0].vmethod_0()[j];
-						int num4 = class136_0[1].vmethod_0()[j];
+						var num3 = class136_0[0].vmethod_0()[j];
+						var num4 = class136_0[1].vmethod_0()[j];
 						num3 <<= 1;
 						if ((num4 & 1) != 0)
 						{
 							num3++;
 						}
-						int num5 = num3 + num4;
-						int num6 = num3 - num4;
+						var num5 = num3 + num4;
+						var num6 = num3 - num4;
 						class136_0[0].vmethod_0()[j] = num5 >> 1;
 						class136_0[1].vmethod_0()[j] = num6 >> 1;
 					}
@@ -431,9 +431,9 @@ namespace ns7
 			else
 			{
 				Console.WriteLine("CRC Error: " + Convert.ToString(num & 65535, 16) + " vs " + Convert.ToString(class151_0.vmethod_0() & 65535, 16));
-				for (int i = 0; i < class151_0.class140_0.int_2; i++)
+				for (var i = 0; i < class151_0.class140_0.int_2; i++)
 				{
-					for (int k = 0; k < class151_0.class140_0.int_0; k++)
+					for (var k = 0; k < class151_0.class140_0.int_0; k++)
 					{
 						class136_0[i].vmethod_0()[k] = 0;
 					}
@@ -449,10 +449,10 @@ namespace ns7
 
 		private void method_9(int int_12, int int_13)
 		{
-			int num = class144_0.vmethod_10(8);
-			bool flag = (num & 1) != 0;
+			var num = class144_0.vmethod_10(8);
+			var flag = (num & 1) != 0;
 			num &= 254;
-			int num2 = 0;
+			var num2 = 0;
 			if (flag)
 			{
 				num2 = class144_0.vmethod_16() + 1;
@@ -492,7 +492,7 @@ namespace ns7
 			if (flag)
 			{
 				num = class151_0.class131_0[int_12].vmethod_0();
-				for (int i = 0; i < class151_0.class140_0.int_0; i++)
+				for (var i = 0; i < class151_0.class140_0.int_0; i++)
 				{
 					class136_0[int_12].vmethod_0()[i] <<= num;
 				}
@@ -503,7 +503,7 @@ namespace ns7
 		{
 			if (!class144_0.vmethod_1())
 			{
-				int num = class144_0.vmethod_10(class144_0.vmethod_4());
+				var num = class144_0.vmethod_10(class144_0.vmethod_4());
 				if (num != 0)
 				{
 					Console.WriteLine("ZeroPaddingError: " + Convert.ToString(num, 16));
@@ -524,13 +524,13 @@ namespace ns7
 				method_5();
 				return true;
 			}
-			long num = class122_0.vmethod_3();
-			int num2 = class122_0.vmethod_2();
-			int num3 = class122_0.vmethod_1();
-			int num4 = class122_0.vmethod_5();
-			int num5 = class122_0.vmethod_4();
-			int num6 = class151_0.class140_0.int_2;
-			int num7 = class151_0.class140_0.int_4;
+			var num = class122_0.vmethod_3();
+			var num2 = class122_0.vmethod_2();
+			var num3 = class122_0.vmethod_1();
+			var num4 = class122_0.vmethod_5();
+			var num5 = class122_0.vmethod_4();
+			var num6 = class151_0.class140_0.int_2;
+			var num7 = class151_0.class140_0.int_4;
 			if (num6 == 0)
 			{
 				num6 = class122_0.vmethod_8();
@@ -552,18 +552,18 @@ namespace ns7
 			{
 				num8 = 4096 * num6 * num7 / 8 + 64;
 			}
-			long num9 = long_3;
-			long num10 = 0L;
-			long num11 = long_4;
-			long num12 = (num > 0L) ? num : long_5;
+			var num9 = long_3;
+			var num10 = 0L;
+			var num11 = long_4;
+			var num12 = (num > 0L) ? num : long_5;
 			if (class127_0 != null)
 			{
-				long num13 = num9;
-				long num14 = num11;
-				long num15 = num10;
-				long num16 = num12;
-				int num17 = class127_0.vmethod_1();
-				int num18 = num17 - 1;
+				var num13 = num9;
+				var num14 = num11;
+				var num15 = num10;
+				var num16 = num12;
+				var num17 = class127_0.vmethod_1();
+				var num18 = num17 - 1;
 				while (num18 >= 0 && (class127_0.class142_0[num18].long_0 <= -1L || class127_0.class142_0[num18].int_0 <= 0 || (num > 0L && class127_0.class142_0[num18].long_0 >= num) || class127_0.class142_0[num18].long_0 > long_5))
 				{
 					num18--;
@@ -595,10 +595,10 @@ namespace ns7
 			{
 				num12 += 1L;
 			}
-			bool flag = true;
+			var flag = true;
 			while (num10 < num12 && num9 <= num11)
 			{
-				long num19 = num9 + (long)((long_5 - num10) / (double)(num12 - num10) * (num11 - num9)) - num8;
+				var num19 = num9 + (long)((long_5 - num10) / (double)(num12 - num10) * (num11 - num9)) - num8;
 				if (num19 >= num11)
 				{
 					num19 = num11 - 1L;
@@ -607,7 +607,7 @@ namespace ns7
 				{
 					fileStream.Position = num19;
 					class144_0.vmethod_2();
-					for (int i = 0; i < 10; i++)
+					for (var i = 0; i < 10; i++)
 					{
 						if (method_5() == null)
 						{
@@ -629,7 +629,7 @@ namespace ns7
 				{
 					return false;
 				}
-				long num20 = class151_0.class140_0.long_0;
+				var num20 = class151_0.class140_0.long_0;
 				if (num20 <= long_5 && num20 + class151_0.class140_0.int_0 > long_5)
 				{
 					long_0 = num20 + class151_0.class140_0.int_0;
@@ -710,8 +710,8 @@ namespace ns7
 			{
 				return 0;
 			}
-			byte[] array = new byte[int_12];
-			int num = Read(array, 0, int_12);
+			var array = new byte[int_12];
+			var num = Read(array, 0, int_12);
 			if (num == 0)
 			{
 				return 0;
@@ -726,28 +726,28 @@ namespace ns7
 			{
 				return 0;
 			}
-			int num = offset;
-			int num2 = offset + count;
+			var num = offset;
+			var num2 = offset + count;
 			int short_ = waveFormat_0.short_0;
-			int num3 = waveFormat_0.short_2 / 8;
+			var num3 = waveFormat_0.short_2 / 8;
 			int short_2 = waveFormat_0.short_1;
 			do
 			{
-				int num4 = class151_0.class140_0.int_0 - int_10;
+				var num4 = class151_0.class140_0.int_0 - int_10;
 				if (num4 > 0)
 				{
 					if (num4 * short_2 > num2 - num)
 					{
 						num4 = (num2 - num) / short_2;
 					}
-					for (int i = 0; i < short_; i++)
+					for (var i = 0; i < short_; i++)
 					{
-						int[] array = method_0()[i].vmethod_0();
+						var array = method_0()[i].vmethod_0();
 						if (waveFormat_0.short_2 == 8)
 						{
-							int j = int_10;
-							int num5 = num + i;
-							int num6 = j + num4;
+							var j = int_10;
+							var num5 = num + i;
+							var num6 = j + num4;
 							while (j < num6)
 							{
 								buffer[num5] = (byte)(array[j] + 128);
@@ -757,9 +757,9 @@ namespace ns7
 						}
 						else
 						{
-							int k = int_10 << 2;
-							int num7 = num + num3 * i;
-							int num8 = k + (num4 << 2);
+							var k = int_10 << 2;
+							var num7 = num + num3 * i;
+							var num8 = k + (num4 << 2);
 							while (k < num8)
 							{
 								Buffer.BlockCopy(array, k, buffer, num7, num3);
@@ -787,30 +787,30 @@ namespace ns7
 			{
 				return 0;
 			}
-			int num = int_12;
-			int num2 = int_12 + int_13;
+			var num = int_12;
+			var num2 = int_12 + int_13;
 			int short_ = waveFormat_0.short_0;
 			do
 			{
-				int num3 = class151_0.class140_0.int_0 - int_10;
+				var num3 = class151_0.class140_0.int_0 - int_10;
 				if (num3 > 0)
 				{
 					if (num3 > num2 - num)
 					{
 						num3 = num2 - num;
 					}
-					for (int i = 0; i < short_; i++)
+					for (var i = 0; i < short_; i++)
 					{
-						int[] array = method_0()[i].vmethod_0();
-						short short_2 = waveFormat_0.short_2;
+						var array = method_0()[i].vmethod_0();
+						var short_2 = waveFormat_0.short_2;
 						if (short_2 <= 16)
 						{
 							if (short_2 != 8)
 							{
 								if (short_2 == 16)
 								{
-									int j = int_10;
-									int num4 = num + i;
+									var j = int_10;
+									var num4 = num + i;
 									while (j < num3)
 									{
 										float_0[num4] = Class11.smethod_7((short)array[j]);
@@ -821,8 +821,8 @@ namespace ns7
 							}
 							else
 							{
-								int k = int_10;
-								int num5 = num + i;
+								var k = int_10;
+								var num5 = num + i;
 								while (k < num3)
 								{
 									float_0[num5] = Class11.smethod_3((byte)array[k]);
@@ -835,8 +835,8 @@ namespace ns7
 						{
 							if (short_2 == 32)
 							{
-								int l = int_10;
-								int num6 = num + i;
+								var l = int_10;
+								var num6 = num + i;
 								while (l < num3)
 								{
 									float_0[num6] = Class11.smethod_15(array[l]);
@@ -847,8 +847,8 @@ namespace ns7
 						}
 						else
 						{
-							int m = int_10;
-							int num7 = num + i;
+							var m = int_10;
+							var num7 = num + i;
 							while (m < num3)
 							{
 								float_0[num7] = Class11.smethod_11(Struct8.smethod_1(array[m]));
@@ -876,34 +876,34 @@ namespace ns7
 			{
 				return null;
 			}
-			float[][] array = new float[waveFormat_0.short_0][];
-			for (int i = 0; i < array.Length; i++)
+			var array = new float[waveFormat_0.short_0][];
+			for (var i = 0; i < array.Length; i++)
 			{
 				array[i] = new float[int_12];
 			}
-			int num = 0;
+			var num = 0;
 			do
 			{
-				int num2 = class151_0.class140_0.int_0 - int_10;
+				var num2 = class151_0.class140_0.int_0 - int_10;
 				if (num2 > 0)
 				{
 					if (num2 > int_12 - num)
 					{
 						num2 = int_12 - num;
 					}
-					for (int j = 0; j < array.Length; j++)
+					for (var j = 0; j < array.Length; j++)
 					{
-						float[] array2 = array[j];
-						int[] array3 = method_0()[j].vmethod_0();
-						short short_ = waveFormat_0.short_2;
+						var array2 = array[j];
+						var array3 = method_0()[j].vmethod_0();
+						var short_ = waveFormat_0.short_2;
 						if (short_ <= 16)
 						{
 							if (short_ != 8)
 							{
 								if (short_ == 16)
 								{
-									int k = num;
-									int num3 = int_10;
+									var k = num;
+									var num3 = int_10;
 									while (k < num2)
 									{
 										array2[k] = Class11.smethod_7((short)array3[num3]);
@@ -914,8 +914,8 @@ namespace ns7
 							}
 							else
 							{
-								int l = num;
-								int num4 = int_10;
+								var l = num;
+								var num4 = int_10;
 								while (l < num2)
 								{
 									array2[l] = Class11.smethod_3((byte)array3[num4]);
@@ -928,8 +928,8 @@ namespace ns7
 						{
 							if (short_ == 32)
 							{
-								int m = num;
-								int num5 = int_10;
+								var m = num;
+								var num5 = int_10;
 								while (m < num2)
 								{
 									array2[m] = Class11.smethod_15(array3[num5]);
@@ -940,8 +940,8 @@ namespace ns7
 						}
 						else
 						{
-							int n = num;
-							int num6 = int_10;
+							var n = num;
+							var num6 = int_10;
 							while (n < num2)
 							{
 								array2[n] = Class11.smethod_11(Struct8.smethod_1(array3[num6]));
@@ -966,7 +966,7 @@ namespace ns7
 			}
 			if (num < int_12)
 			{
-				for (int num7 = 0; num7 < array.Length; num7++)
+				for (var num7 = 0; num7 < array.Length; num7++)
 				{
 					Array.Resize(ref array[num7], num);
 				}

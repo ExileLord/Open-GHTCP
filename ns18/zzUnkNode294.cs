@@ -23,7 +23,7 @@ namespace ns18
 
 		public override string GetText()
 		{
-			string str = (Nodes.Count > 0) ? method_2(0).GetText() : "NULL";
+			var str = (Nodes.Count > 0) ? method_2(0).GetText() : "NULL";
 			if (QbSongClass1.ContainsKey(int_0))
 			{
 				return QbSongClass1.GetDictString(int_0) + " = " + str;
@@ -42,7 +42,7 @@ namespace ns18
 
 		public override object Clone()
 		{
-			zzUnkNode294 @class = (zzUnkNode294)base.Clone();
+			var @class = (zzUnkNode294)base.Clone();
 			@class.int_0 = int_0;
 			return @class;
 		}

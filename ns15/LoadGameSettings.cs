@@ -97,8 +97,8 @@ namespace ns15
 			{
 				return;
 			}
-			Rectangle itemRectangle = listQB.GetItemRectangle(int_0);
-			string text = (string)listQB.Items[int_0];
+			var itemRectangle = listQB.GetItemRectangle(int_0);
+			var text = (string)listQB.Items[int_0];
 			editBox.Location = new Point(itemRectangle.X + 30, itemRectangle.Y + 10);
 			editBox.Show();
 			editBox.Text = text;
@@ -120,7 +120,7 @@ namespace ns15
 
 		public string[] method_2()
 		{
-			string[] array = new string[listQB.Items.Count];
+			var array = new string[listQB.Items.Count];
 			listQB.Items.CopyTo(array, 0);
 			return array;
 		}

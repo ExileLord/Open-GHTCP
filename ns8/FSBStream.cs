@@ -77,8 +77,8 @@ namespace ns8
 				break;
 			default:
 			{
-				List<GenericAudioStream> list = new List<GenericAudioStream>();
-				foreach (Class168 current in class167_0.method_33())
+				var list = new List<GenericAudioStream>();
+				foreach (var current in class167_0.method_33())
 				{
 					list.Add(smethod_0(current));
 				}
@@ -91,10 +91,10 @@ namespace ns8
 
 		private static GenericAudioStream smethod_0(Class168 class168_0)
 		{
-			bool flag = (class168_0.enum22_0 & FSBFlags2.flag_19) != FSBFlags2.flag_0;
-			Stream stream_ = class168_0.stream_1;
-			long position = stream_.Position;
-			byte[] array = new byte[4];
+			var flag = (class168_0.enum22_0 & FSBFlags2.flag_19) != FSBFlags2.flag_0;
+			var stream_ = class168_0.stream_1;
+			var position = stream_.Position;
+			var array = new byte[4];
 			stream_.Read(array, 0, 4);
 			stream_.Position = position;
 			if (array[0] == 255 && array[1] >= 240)

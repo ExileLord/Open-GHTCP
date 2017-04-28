@@ -15,7 +15,7 @@ namespace ns13
 
 		public object Clone()
 		{
-			Class205 @class = new Class205();
+			var @class = new Class205();
 			@class.string_0 = string_0;
 			@class.class204_0 = (Class204)class204_0.Clone();
 			@class.method_1(method_0());
@@ -24,7 +24,7 @@ namespace ns13
 
 		public override bool Equals(object obj)
 		{
-			Class205 @class = obj as Class205;
+			var @class = obj as Class205;
 			return @class != null && method_0().Equals(@class.method_0());
 		}
 

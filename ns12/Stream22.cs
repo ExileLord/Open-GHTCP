@@ -99,7 +99,7 @@ namespace ns12
 			class194_0.method_3();
 			while (!class194_0.method_4())
 			{
-				int num = class194_0.method_9(byte_0, 0, byte_0.Length);
+				var num = class194_0.method_9(byte_0, 0, byte_0.Length);
 				if (num <= 0)
 				{
 					break;
@@ -149,8 +149,8 @@ namespace ns12
 
 		public void method_4(string string_1)
 		{
-			Class208 @class = new Class208();
-			byte[] rgbKey = Class207.smethod_0(Class186.smethod_3(string_1));
+			var @class = new Class208();
+			var rgbKey = Class207.smethod_0(Class186.smethod_3(string_1));
 			icryptoTransform_0 = @class.CreateEncryptor(rgbKey, null);
 		}
 
@@ -158,7 +158,7 @@ namespace ns12
 		{
 			while (!class194_0.method_5())
 			{
-				int num = class194_0.method_9(byte_0, 0, byte_0.Length);
+				var num = class194_0.method_9(byte_0, 0, byte_0.Length);
 				if (num <= 0)
 				{
 					break;

@@ -102,7 +102,7 @@ namespace ns8
 					method_0().Seek(long_2, SeekOrigin.Begin);
 				}
 				count = (int)Math.Min(count, method_2());
-				int num = method_0().Read(buffer, offset, count);
+				var num = method_0().Read(buffer, offset, count);
 				long_2 += num;
 				result = num;
 			}

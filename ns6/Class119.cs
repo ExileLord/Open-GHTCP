@@ -104,7 +104,7 @@ namespace ns6
 			{
 				throw new ArgumentOutOfRangeException("numEntries", "Must be greater than zero.");
 			}
-			IntPtr[] array = new IntPtr[int_0];
+			var array = new IntPtr[int_0];
 			alSourceUnqueueBuffers(intptr_0, int_0, array);
 			return array;
 		}
@@ -116,7 +116,7 @@ namespace ns6
 		[CLSCompliant(true)]
 		public static IntPtr[] smethod_8(int int_0)
 		{
-			IntPtr[] array = new IntPtr[int_0];
+			var array = new IntPtr[int_0];
 			alGenBuffers(array.Length, array);
 			return array;
 		}
@@ -152,7 +152,7 @@ namespace ns6
 				{
 				case 1:
 				{
-					short short_ = waveFormat_0.short_2;
+					var short_ = waveFormat_0.short_2;
 					if (short_ == 8)
 					{
 						return Enum12.const_0;
@@ -165,7 +165,7 @@ namespace ns6
 				}
 				case 2:
 				{
-					short short_2 = waveFormat_0.short_2;
+					var short_2 = waveFormat_0.short_2;
 					if (short_2 == 8)
 					{
 						return Enum12.const_2;
@@ -183,7 +183,7 @@ namespace ns6
 						{
 						case 4:
 						{
-							short short_3 = waveFormat_0.short_2;
+							var short_3 = waveFormat_0.short_2;
 							if (short_3 == 8)
 							{
 								return Enum12.const_6;
@@ -200,7 +200,7 @@ namespace ns6
 						}
 						case 5:
 						{
-							short short_4 = waveFormat_0.short_2;
+							var short_4 = waveFormat_0.short_2;
 							if (short_4 == 8)
 							{
 								return Enum12.const_9;
@@ -217,7 +217,7 @@ namespace ns6
 						}
 						case 6:
 						{
-							short short_5 = waveFormat_0.short_2;
+							var short_5 = waveFormat_0.short_2;
 							if (short_5 == 8)
 							{
 								return Enum12.const_12;
@@ -234,7 +234,7 @@ namespace ns6
 						}
 						case 7:
 						{
-							short short_6 = waveFormat_0.short_2;
+							var short_6 = waveFormat_0.short_2;
 							if (short_6 == 8)
 							{
 								return Enum12.const_15;
@@ -251,7 +251,7 @@ namespace ns6
 						}
 						case 8:
 						{
-							short short_7 = waveFormat_0.short_2;
+							var short_7 = waveFormat_0.short_2;
 							if (short_7 == 8)
 							{
 								return Enum12.const_18;

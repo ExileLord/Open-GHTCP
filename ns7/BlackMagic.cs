@@ -8,31 +8,31 @@ namespace ns7
 			switch (int_2)
 			{
 			case 0:
-				for (int i = 0; i < sourceSize; i++)
+				for (var i = 0; i < sourceSize; i++)
 				{
 					destination[i + offset] = source[i];
 				}
 				return;
 			case 1:
-				for (int j = 0; j < sourceSize; j++)
+				for (var j = 0; j < sourceSize; j++)
 				{
 					destination[j + offset] = source[j] + destination[j + offset - 1];
 				}
 				return;
 			case 2:
-				for (int k = 0; k < sourceSize; k++)
+				for (var k = 0; k < sourceSize; k++)
 				{
 					destination[k + offset] = source[k] + (destination[k + offset - 1] << 1) - destination[k + offset - 2];
 				}
 				return;
 			case 3:
-				for (int l = 0; l < sourceSize; l++)
+				for (var l = 0; l < sourceSize; l++)
 				{
 					destination[l + offset] = source[l] + ((destination[l + offset - 1] - destination[l + offset - 2] << 1) + (destination[l + offset - 1] - destination[l + offset - 2])) + destination[l + offset - 3];
 				}
 				return;
 			case 4:
-				for (int m = 0; m < sourceSize; m++)
+				for (var m = 0; m < sourceSize; m++)
 				{
 					destination[m + offset] = source[m] + (destination[m + offset - 1] + destination[m + offset - 3] << 2) - ((destination[m + offset - 2] << 2) + (destination[m + offset - 2] << 1)) - destination[m + offset - 4];
 				}

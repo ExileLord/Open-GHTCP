@@ -8,8 +8,8 @@ namespace ns3
 
 		private static uint smethod_0(uint uint_1)
 		{
-			uint num = uint_1 << 24;
-			for (int i = 0; i < 8; i++)
+			var num = uint_1 << 24;
+			for (var i = 0; i < 8; i++)
 			{
 				if ((num & 2147483648u) != 0u)
 				{
@@ -25,7 +25,7 @@ namespace ns3
 
 		public Class44()
 		{
-			uint num = 0u;
+			var num = 0u;
 			while (num < (ulong)uint_0.Length)
 			{
 				uint_0[(int)((UIntPtr)num)] = smethod_0(num);

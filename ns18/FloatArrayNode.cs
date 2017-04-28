@@ -34,7 +34,7 @@ namespace ns18
 
 		public void method_11(IEnumerable<float> ienumerable_0)
 		{
-			foreach (float float_ in ienumerable_0)
+			foreach (var float_ in ienumerable_0)
 			{
 				Nodes.Add(new FloatValueNode(float_));
 			}

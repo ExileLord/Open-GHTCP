@@ -38,10 +38,10 @@ namespace ns21
 		{
 			int_0 = stream26_0.ReadInt();
 			Nodes.Add(new TextValueNode(stream26_0.ReadInt(), vmethod_10()));
-			int num = stream26_0.ReadInt();
+			var num = stream26_0.ReadInt();
 			if (num != 0)
 			{
-				AbstractTreeNode1 @class = (Parent is StructureHeaderNode) ? (Parent as StructureHeaderNode).method_11(stream26_0.ReadIntAt(num)) : vmethod_12(stream26_0.ReadIntAt(num, true));
+				var @class = (Parent is StructureHeaderNode) ? (Parent as StructureHeaderNode).method_11(stream26_0.ReadIntAt(num)) : vmethod_12(stream26_0.ReadIntAt(num, true));
 				method_1().Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}
@@ -50,7 +50,7 @@ namespace ns21
 		public override void vmethod_14(Stream26 stream26_0)
 		{
 			vmethod_9(true);
-			byte[] array = new byte[4];
+			var array = new byte[4];
 			array[1] = 1;
 			array[2] = 28;
 			stream26_0.WriteByteArray(array, false);

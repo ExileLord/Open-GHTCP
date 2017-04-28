@@ -39,7 +39,7 @@ namespace ns19
 
 		public void method_1<T>(string string_0, T gparam_0) where T : TreeNode
 		{
-			zzPakNode1 @class = string.IsNullOrEmpty(string_0) ? this : method_2(KeyGenerator.smethod_10(string_0));
+			var @class = string.IsNullOrEmpty(string_0) ? this : method_2(KeyGenerator.smethod_10(string_0));
 			if (@class.Nodes.ContainsKey(gparam_0.Text))
 			{
 				@class.Nodes.RemoveByKey(gparam_0.Text);
@@ -48,13 +48,13 @@ namespace ns19
 			if (gparam_0 is Interface12)
 			{
 				TreeNode treeNode = this;
-				int level = treeNode.Level;
+				var level = treeNode.Level;
 				while (level-- != 0)
 				{
 					treeNode = treeNode.Parent;
 				}
-				zzPakNode2 class2 = treeNode as zzPakNode2;
-				Interface12 @interface = class2.method_10(string_0);
+				var class2 = treeNode as zzPakNode2;
+				var @interface = class2.method_10(string_0);
 				if (@interface == null)
 				{
 					class2.list_0.Add(gparam_0 as Interface12);
@@ -79,7 +79,7 @@ namespace ns19
 			{
 				return this;
 			}
-			List<string> list = new List<string>(string_0.Split(new[]
+			var list = new List<string>(string_0.Split(new[]
 			{
 				'\\',
 				'/'
@@ -109,7 +109,7 @@ namespace ns19
 			}
 			if (!Nodes.ContainsKey(list_0[0]) || !(Nodes[list_0[0]] is zzPakNode1))
 			{
-				zzPakNode1 @class = new zzPakNode1(list_0[0]);
+				var @class = new zzPakNode1(list_0[0]);
 				list_0.RemoveAt(0);
 				Nodes.Add(@class);
 				return @class.method_3(list_0);
@@ -118,7 +118,7 @@ namespace ns19
 			{
 				return (zzPakNode1)Nodes[list_0[0]];
 			}
-			string key = list_0[0];
+			var key = list_0[0];
 			list_0.RemoveAt(0);
 			return ((zzPakNode1)Nodes[key]).method_3(list_0);
 		}

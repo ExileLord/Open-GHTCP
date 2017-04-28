@@ -54,30 +54,30 @@ namespace ns19
 			{
 				class318_0 = new zzPakNode2(string_1, false);
 			}
-			using (Stream26 stream = new Stream26(File.Open(string_0, FileMode.Open, FileAccess.Read, FileShare.Read)))
+			using (var stream = new Stream26(File.Open(string_0, FileMode.Open, FileAccess.Read, FileShare.Read)))
 			{
-				int num = 0;
-				int num2 = (int)stream.Length;
+				var num = 0;
+				var num2 = (int)stream.Length;
 				if (num2 == 0)
 				{
 					throw new Exception("Pak File is empty!");
 				}
-				int int_ = stream.ReadInt();
+				var int_ = stream.ReadInt();
 				stream._reverseEndianness = (bool_2 = (!QbSongClass1.ContainsKey(int_) || !QbSongClass1.GetDictString(int_).StartsWith(".")));
 				bool_3 = (stream.ReadInt() < stream.Length);
-				Enum35 @enum = (Enum35)stream.ReadIntAt(28);
+				var @enum = (Enum35)stream.ReadIntAt(28);
 				bool_1 = ((@enum & Enum35.flag_3) == Enum35.flag_0);
 				int_0 = stream.ReadIntAt(bool_1 ? 12 : 16, bool_2 && (@enum & Enum35.flag_4) == Enum35.flag_0 && (@enum & Enum35.flag_5) == Enum35.flag_0);
 				while (true)
 				{
-					Enum35 enum2 = (Enum35)stream.ReadIntAt(num + 28, false);
-					bool bool_ = bool_2 && (enum2 & Enum35.flag_4) == Enum35.flag_0 && (enum2 & Enum35.flag_5) == Enum35.flag_0;
-					int num3 = stream.ReadIntAt(num, bool_);
+					var enum2 = (Enum35)stream.ReadIntAt(num + 28, false);
+					var bool_ = bool_2 && (enum2 & Enum35.flag_4) == Enum35.flag_0 && (enum2 & Enum35.flag_5) == Enum35.flag_0;
+					var num3 = stream.ReadIntAt(num, bool_);
 					if (QbSongClass1.ContainsKey(num3) && (QbSongClass1.GetDictString(num3).Equals(".last") || QbSongClass1.GetDictString(num3).Equals("last")))
 					{
 						break;
 					}
-					int num4 = stream.ReadInt(bool_);
+					var num4 = stream.ReadInt(bool_);
 					if (!bool_3)
 					{
 						num4 = num4 - num2 + num;
@@ -86,16 +86,16 @@ namespace ns19
 					{
 						num4 = 0;
 					}
-					int int_2 = stream.ReadInt(bool_);
-					int num5 = stream.ReadIntAt(num + (bool_1 ? 16 : 12), bool_);
-					int num6 = stream.ReadIntAt(num + 20, bool_);
-					int int_3 = stream.ReadInt(bool_);
+					var int_2 = stream.ReadInt(bool_);
+					var num5 = stream.ReadIntAt(num + (bool_1 ? 16 : 12), bool_);
+					var num6 = stream.ReadIntAt(num + 20, bool_);
+					var int_3 = stream.ReadInt(bool_);
 					stream.Position += 4L;
 					if ((enum2 & Enum35.flag_3) != Enum35.flag_0)
 					{
 						bool_1 = false;
-						string text = stream26_0.ReadString(160);
-						int num7 = text.IndexOf('\0');
+						var text = stream26_0.ReadString(160);
+						var num7 = text.IndexOf('\0');
 						if (num7 >= 0)
 						{
 							text = text.Substring(0, num7);
@@ -124,10 +124,10 @@ namespace ns19
 						}
 						else
 						{
-							string text2 = "abcdefghijklmnopqrstuvwxyz";
-							for (int i = 0; i < text2.Length; i++)
+							var text2 = "abcdefghijklmnopqrstuvwxyz";
+							for (var i = 0; i < text2.Length; i++)
 							{
-								char c = text2[i];
+								var c = text2[i];
 								if (num5 == KeyGenerator.GetQbKey(c + text, true))
 								{
 									QbSongClass1.AddKeyToDictionary(c + text);
@@ -181,8 +181,8 @@ namespace ns19
 
 		public void method_20(string string_3, string string_4)
 		{
-			Stream26 stream = new Stream26(bool_2);
-			Stream26 stream2 = new Stream26();
+			var stream = new Stream26(bool_2);
+			var stream2 = new Stream26();
 			method_18(stream, stream2);
 			if (stream26_0 != null && string_0 == string_3 && string_2 == string_4)
 			{

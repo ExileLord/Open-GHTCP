@@ -36,7 +36,7 @@ namespace ns22
 		public void Dispose()
 		{
 			stream_0.Dispose();
-			for (int i = 0; i < class352_0.Length; i++)
+			for (var i = 0; i < class352_0.Length; i++)
 			{
 				class352_0[i].Dispose();
 			}

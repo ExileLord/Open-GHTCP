@@ -35,7 +35,7 @@ namespace ns13
 
 			public void method_0()
 			{
-				for (int i = 0; i < short_0.Length; i++)
+				for (var i = 0; i < short_0.Length; i++)
 				{
 					short_0[i] = 0;
 				}
@@ -56,15 +56,15 @@ namespace ns13
 
 			public void method_3()
 			{
-				int[] array = new int[int_3];
-				int num = 0;
+				var array = new int[int_3];
+				var num = 0;
 				short_1 = new short[short_0.Length];
-				for (int i = 0; i < int_3; i++)
+				for (var i = 0; i < int_3; i++)
 				{
 					array[i] = num;
 					num += int_2[i] << 15 - i;
 				}
-				for (int j = 0; j < int_1; j++)
+				for (var j = 0; j < int_1; j++)
 				{
 					int num2 = byte_0[j];
 					if (num2 > 0)
@@ -77,16 +77,16 @@ namespace ns13
 
 			public void method_4()
 			{
-				int num = short_0.Length;
-				int[] array = new int[num];
-				int i = 0;
-				int num2 = 0;
-				for (int j = 0; j < num; j++)
+				var num = short_0.Length;
+				var array = new int[num];
+				var i = 0;
+				var num2 = 0;
+				for (var j = 0; j < num; j++)
 				{
 					int num3 = short_0[j];
 					if (num3 != 0)
 					{
-						int num4 = i++;
+						var num4 = i++;
 						int num5;
 						while (num4 > 0 && short_0[array[num5 = (num4 - 1) / 2]] > num3)
 						{
@@ -99,17 +99,17 @@ namespace ns13
 				}
 				while (i < 2)
 				{
-					int num6 = (num2 < 2) ? (++num2) : 0;
+					var num6 = (num2 < 2) ? (++num2) : 0;
 					array[i++] = num6;
 				}
 				int_1 = Math.Max(num2 + 1, int_0);
-				int num7 = i;
-				int[] array2 = new int[4 * i - 2];
-				int[] array3 = new int[2 * i - 1];
-				int num8 = num7;
-				for (int k = 0; k < i; k++)
+				var num7 = i;
+				var array2 = new int[4 * i - 2];
+				var array3 = new int[2 * i - 1];
+				var num8 = num7;
+				for (var k = 0; k < i; k++)
 				{
-					int num9 = array[k];
+					var num9 = array[k];
 					array2[2 * k] = num9;
 					array2[2 * k + 1] = -1;
 					array3[k] = short_0[num9] << 8;
@@ -117,9 +117,9 @@ namespace ns13
 				}
 				do
 				{
-					int num10 = array[0];
-					int num11 = array[--i];
-					int num12 = 0;
+					var num10 = array[0];
+					var num11 = array[--i];
+					var num12 = 0;
 					int l;
 					for (l = 1; l < i; l = l * 2 + 1)
 					{
@@ -130,17 +130,17 @@ namespace ns13
 						array[num12] = array[l];
 						num12 = l;
 					}
-					int num13 = array3[num11];
+					var num13 = array3[num11];
 					while ((l = num12) > 0 && array3[array[num12 = (l - 1) / 2]] > num13)
 					{
 						array[l] = array[num12];
 					}
 					array[l] = num11;
-					int num14 = array[0];
+					var num14 = array[0];
 					num11 = num8++;
 					array2[2 * num11] = num10;
 					array2[2 * num11 + 1] = num14;
-					int num15 = Math.Min(array3[num10] & 255, array3[num14] & 255);
+					var num15 = Math.Min(array3[num10] & 255, array3[num14] & 255);
 					num13 = (array3[num11] = array3[num10] + array3[num14] - num15 + 1);
 					num12 = 0;
 					for (l = 1; l < i; l = num12 * 2 + 1)
@@ -168,8 +168,8 @@ namespace ns13
 
 			public int method_5()
 			{
-				int num = 0;
-				for (int i = 0; i < short_0.Length; i++)
+				var num = 0;
+				for (var i = 0; i < short_0.Length; i++)
 				{
 					num += short_0[i] * byte_0[i];
 				}
@@ -178,11 +178,11 @@ namespace ns13
 
 			public void method_6(Class191 class191_0)
 			{
-				int num = -1;
-				int i = 0;
+				var num = -1;
+				var i = 0;
 				while (i < int_1)
 				{
-					int num2 = 1;
+					var num2 = 1;
 					int num3 = byte_0[i];
 					int num4;
 					int num5;
@@ -197,8 +197,8 @@ namespace ns13
 						num5 = 3;
 						if (num != num3)
 						{
-							short[] expr_3B_cp_0 = class191_0.short_0;
-							int expr_3B_cp_1 = num3;
+							var expr_3B_cp_0 = class191_0.short_0;
+							var expr_3B_cp_1 = num3;
 							expr_3B_cp_0[expr_3B_cp_1] += 1;
 							num2 = 0;
 						}
@@ -219,26 +219,26 @@ namespace ns13
 					}
 					if (num2 < num5)
 					{
-						short[] expr_8C_cp_0 = class191_0.short_0;
-						int expr_8C_cp_1 = num;
+						var expr_8C_cp_0 = class191_0.short_0;
+						var expr_8C_cp_1 = num;
 						expr_8C_cp_0[expr_8C_cp_1] += (short)num2;
 					}
 					else if (num != 0)
 					{
-						short[] expr_AD_cp_0 = class191_0.short_0;
-						int expr_AD_cp_1 = 16;
+						var expr_AD_cp_0 = class191_0.short_0;
+						var expr_AD_cp_1 = 16;
 						expr_AD_cp_0[expr_AD_cp_1] += 1;
 					}
 					else if (num2 <= 10)
 					{
-						short[] expr_CF_cp_0 = class191_0.short_0;
-						int expr_CF_cp_1 = 17;
+						var expr_CF_cp_0 = class191_0.short_0;
+						var expr_CF_cp_1 = 17;
 						expr_CF_cp_0[expr_CF_cp_1] += 1;
 					}
 					else
 					{
-						short[] expr_EC_cp_0 = class191_0.short_0;
-						int expr_EC_cp_1 = 18;
+						var expr_EC_cp_0 = class191_0.short_0;
+						var expr_EC_cp_1 = 18;
 						expr_EC_cp_0[expr_EC_cp_1] += 1;
 					}
 				}
@@ -246,11 +246,11 @@ namespace ns13
 
 			public void method_7(Class191 class191_0)
 			{
-				int num = -1;
-				int i = 0;
+				var num = -1;
+				var i = 0;
 				while (i < int_1)
 				{
-					int num2 = 1;
+					var num2 = 1;
 					int num3 = byte_0[i];
 					int num4;
 					int num5;
@@ -311,20 +311,20 @@ namespace ns13
 			private void method_8(int[] int_4)
 			{
 				byte_0 = new byte[short_0.Length];
-				int num = int_4.Length / 2;
-				int num2 = (num + 1) / 2;
-				int num3 = 0;
-				for (int i = 0; i < int_3; i++)
+				var num = int_4.Length / 2;
+				var num2 = (num + 1) / 2;
+				var num3 = 0;
+				for (var i = 0; i < int_3; i++)
 				{
 					int_2[i] = 0;
 				}
-				int[] array = new int[num];
+				var array = new int[num];
 				array[num - 1] = 0;
-				for (int j = num - 1; j >= 0; j--)
+				for (var j = num - 1; j >= 0; j--)
 				{
 					if (int_4[2 * j + 1] != -1)
 					{
-						int num4 = array[j] + 1;
+						var num4 = array[j] + 1;
 						if (num4 > int_3)
 						{
 							num4 = int_3;
@@ -334,7 +334,7 @@ namespace ns13
 					}
 					else
 					{
-						int num5 = array[j];
+						var num5 = array[j];
 						int_2[num5 - 1]++;
 						byte_0[int_4[2 * j]] = (byte)array[j];
 					}
@@ -343,7 +343,7 @@ namespace ns13
 				{
 					return;
 				}
-				int num6 = int_3 - 1;
+				var num6 = int_3 - 1;
 				while (true)
 				{
 					if (int_2[--num6] != 0)
@@ -363,13 +363,13 @@ namespace ns13
 				}
 				int_2[int_3 - 1] += num3;
 				int_2[int_3 - 2] -= num3;
-				int num7 = 2 * num2;
-				for (int num8 = int_3; num8 != 0; num8--)
+				var num7 = 2 * num2;
+				for (var num8 = int_3; num8 != 0; num8--)
 				{
-					int k = int_2[num8 - 1];
+					var k = int_2[num8 - 1];
 					while (k > 0)
 					{
-						int num9 = 2 * int_4[num7++];
+						var num9 = 2 * int_4[num7++];
 						if (int_4[num9 + 1] == -1)
 						{
 							byte_0[int_4[num9]] = (byte)num8;
@@ -453,7 +453,7 @@ namespace ns13
 			};
 			short_0 = new short[286];
 			byte_1 = new byte[286];
-			int i = 0;
+			var i = 0;
 			while (i < 144)
 			{
 				short_0[i] = smethod_0(48 + i << 8);
@@ -510,7 +510,7 @@ namespace ns13
 			class189_0.method_5(class191_0.int_1 - 257, 5);
 			class189_0.method_5(class191_1.int_1 - 1, 5);
 			class189_0.method_5(int_3 - 4, 4);
-			for (int i = 0; i < int_3; i++)
+			for (var i = 0; i < int_3; i++)
 			{
 				class189_0.method_5(class191_2.byte_0[int_0[i]], 3);
 			}
@@ -520,20 +520,20 @@ namespace ns13
 
 		public void method_2()
 		{
-			for (int i = 0; i < int_1; i++)
+			for (var i = 0; i < int_1; i++)
 			{
-				int num = byte_3[i] & 255;
+				var num = byte_3[i] & 255;
 				int num2 = short_2[i];
 				if (num2-- != 0)
 				{
-					int num3 = smethod_1(num);
+					var num3 = smethod_1(num);
 					class191_0.method_1(num3);
-					int num4 = (num3 - 261) / 4;
+					var num4 = (num3 - 261) / 4;
 					if (num4 > 0 && num4 <= 5)
 					{
 						class189_0.method_5(num & (1 << num4) - 1, num4);
 					}
-					int num5 = smethod_2(num2);
+					var num5 = smethod_2(num2);
 					class191_1.method_1(num5);
 					num4 = num5 / 2 - 1;
 					if (num4 > 0)
@@ -561,29 +561,29 @@ namespace ns13
 
 		public void method_4(byte[] byte_4, int int_3, int int_4, bool bool_0)
 		{
-			short[] expr_15_cp_0 = class191_0.short_0;
-			int expr_15_cp_1 = 256;
+			var expr_15_cp_0 = class191_0.short_0;
+			var expr_15_cp_1 = 256;
 			expr_15_cp_0[expr_15_cp_1] += 1;
 			class191_0.method_4();
 			class191_1.method_4();
 			class191_0.method_6(class191_2);
 			class191_1.method_6(class191_2);
 			class191_2.method_4();
-			int num = 4;
-			for (int i = 18; i > num; i--)
+			var num = 4;
+			for (var i = 18; i > num; i--)
 			{
 				if (class191_2.byte_0[int_0[i]] > 0)
 				{
 					num = i + 1;
 				}
 			}
-			int num2 = 14 + num * 3 + class191_2.method_5() + class191_0.method_5() + class191_1.method_5() + int_2;
-			int num3 = int_2;
-			for (int j = 0; j < 286; j++)
+			var num2 = 14 + num * 3 + class191_2.method_5() + class191_0.method_5() + class191_1.method_5() + int_2;
+			var num3 = int_2;
+			for (var j = 0; j < 286; j++)
 			{
 				num3 += class191_0.short_0[j] * byte_1[j];
 			}
-			for (int k = 0; k < 30; k++)
+			for (var k = 0; k < 30; k++)
 			{
 				num3 += class191_1.short_0[k] * byte_2[k];
 			}
@@ -620,7 +620,7 @@ namespace ns13
 		{
 			short_2[int_1] = 0;
 			byte_3[int_1++] = (byte)int_3;
-			short[] expr_39_cp_0 = class191_0.short_0;
+			var expr_39_cp_0 = class191_0.short_0;
 			expr_39_cp_0[int_3] += 1;
 			return method_5();
 		}
@@ -629,17 +629,17 @@ namespace ns13
 		{
 			short_2[int_1] = (short)int_3;
 			byte_3[int_1++] = (byte)(int_4 - 3);
-			int num = smethod_1(int_4 - 3);
-			short[] expr_45_cp_0 = class191_0.short_0;
-			int expr_45_cp_1 = num;
+			var num = smethod_1(int_4 - 3);
+			var expr_45_cp_0 = class191_0.short_0;
+			var expr_45_cp_1 = num;
 			expr_45_cp_0[expr_45_cp_1] += 1;
 			if (num >= 265 && num < 285)
 			{
 				int_2 += (num - 261) / 4;
 			}
-			int num2 = smethod_2(int_3 - 1);
-			short[] expr_93_cp_0 = class191_1.short_0;
-			int expr_93_cp_1 = num2;
+			var num2 = smethod_2(int_3 - 1);
+			var expr_93_cp_0 = class191_1.short_0;
+			var expr_93_cp_1 = num2;
 			expr_93_cp_0[expr_93_cp_1] += 1;
 			if (num2 >= 4)
 			{
@@ -659,7 +659,7 @@ namespace ns13
 			{
 				return 285;
 			}
-			int num = 257;
+			var num = 257;
 			while (int_3 >= 8)
 			{
 				num += 4;
@@ -670,7 +670,7 @@ namespace ns13
 
 		private static int smethod_2(int int_3)
 		{
-			int num = 0;
+			var num = 0;
 			while (int_3 >= 4)
 			{
 				num += 2;

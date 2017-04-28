@@ -130,7 +130,7 @@ namespace ns5
 			int result;
 			lock (object_0)
 			{
-				int num = 0;
+				var num = 0;
 				do
 				{
 					if (memoryStream_0.Position == memoryStream_0.Length)
@@ -155,7 +155,7 @@ namespace ns5
 
 		public bool method_0()
 		{
-			byte[] array = new byte[1792];
+			var array = new byte[1792];
 			fileStream.Read(array, 0, 1792);
 			memoryStream_0 = new MemoryStream();
 			class111_0.vmethod_0(array, memoryStream_0);

@@ -14,7 +14,7 @@ namespace ns18
 
 		public string IntToHex32Bit(int int_0) // This is kind of dumb because this is implemented elsewhere already
 		{
-			string text = int_0.ToString("x");
+			var text = int_0.ToString("x");
 			while (text.Length < 8)
 			{
 				text = "0" + text;
@@ -33,7 +33,7 @@ namespace ns18
 
 		public override object Clone()
 		{
-			AbstractTreeNode2 @class = (AbstractTreeNode2)base.Clone();
+			var @class = (AbstractTreeNode2)base.Clone();
 			@class.vmethod_9(vmethod_8());
 			return @class;
 		}

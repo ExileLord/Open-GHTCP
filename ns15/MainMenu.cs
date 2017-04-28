@@ -527,7 +527,7 @@ namespace ns15
 
 		private void SongListBox_MouseDown(object sender, MouseEventArgs e)
 		{
-			int num = SongListBox.IndexFromPoint(e.X, e.Y);
+			var num = SongListBox.IndexFromPoint(e.X, e.Y);
 			if (num >= 0 && num < SongListBox.Items.Count)
 			{
 				if (e.Clicks == 2 && e.Button == MouseButtons.Left)
@@ -541,11 +541,11 @@ namespace ns15
 				}
 				else if (e.Clicks == 2 && e.Button == MouseButtons.Right)
 				{
-					GH3Song gH3Song = (GH3Song)SongListBox.Items[num];
+					var gH3Song = (GH3Song)SongListBox.Items[num];
 					if (gH3Song.editable && DialogResult.Yes == MessageBox.Show(gH3Song.name.ToUpper() + " will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
 					{
 						SongListBox.Items.Remove(gH3Song);
-						foreach (int current in gh3Songlist.method_1(gH3Song))
+						foreach (var current in gh3Songlist.method_1(gH3Song))
 						{
 							method_4(new zzSetListUpdater(current, class319_0, gh3Songlist));
 						}
@@ -557,23 +557,23 @@ namespace ns15
 
 		private void HideUnEdit_MenuItem_Click(object sender, EventArgs e)
 		{
-			GH3Songlist arg_1D_0 = gh3Songlist;
-			ToolStripMenuItem expr_0C = HideUnEdit_MenuItem;
+			var arg_1D_0 = gh3Songlist;
+			var expr_0C = HideUnEdit_MenuItem;
 			arg_1D_0.HideUnEditable = (expr_0C.Checked = !expr_0C.Checked);
 			method_0();
 		}
 
 		private void HideUsed_MenuItem_Click(object sender, EventArgs e)
 		{
-			GH3Songlist arg_1D_0 = gh3Songlist;
-			ToolStripMenuItem expr_0C = HideUsed_MenuItem;
+			var arg_1D_0 = gh3Songlist;
+			var expr_0C = HideUsed_MenuItem;
 			arg_1D_0.HideUsed = (expr_0C.Checked = !expr_0C.Checked);
 			method_0();
 		}
 
 		private void ByTitle_MenuItem_Click(object sender, EventArgs e)
 		{
-			ToolStripMenuItem expr_06 = ByTitle_MenuItem;
+			var expr_06 = ByTitle_MenuItem;
 			GH3Song.bool_0 = (expr_06.Checked = !expr_06.Checked);
 			method_0();
 		}
@@ -582,7 +582,7 @@ namespace ns15
 		{
 			if (SongListBox.SelectedItems.Count != 0)
 			{
-				bool enabled = false;
+				var enabled = false;
 				foreach (GH3Song song in SongListBox.SelectedItems)
 				{
 					if (song.editable)
@@ -617,7 +617,7 @@ namespace ns15
 
 		private void RebuildSong_MenuItem_Click(object sender, EventArgs e)
 		{
-			GH3Song song = (GH3Song)SongListBox.Items[SongListBox.SelectedIndex];
+			var song = (GH3Song)SongListBox.Items[SongListBox.SelectedIndex];
             SongData songData;
             if (!song.isEditable())
             {
@@ -628,12 +628,12 @@ namespace ns15
 			{
 				if (songData.bool_1)
 				{
-					Class250 @class = songData.method_1(class319_0, DataFolder);
+					var @class = songData.method_1(class319_0, DataFolder);
 					method_4(@class);
 					if (DialogResult.Yes == MessageBox.Show("Do you wish to get the song properties from the game track? (Current properties will be overwritten | Mid files have no properties!)", "Tier Exporting", MessageBoxButtons.YesNo))
 					{
-						bool no_rhythm_track = song.no_rhythm_track;
-						bool use_coop_notetracks = song.use_coop_notetracks;
+						var no_rhythm_track = song.no_rhythm_track;
+						var use_coop_notetracks = song.use_coop_notetracks;
 						song.vmethod_0(@class.class362_0.gh3Song_0);
 						song.no_rhythm_track = no_rhythm_track;
 						song.use_coop_notetracks = use_coop_notetracks;
@@ -642,7 +642,7 @@ namespace ns15
 				}
 				if (songData.bool_0)
 				{
-					Class248 class2 = songData.method_0(DataFolder);
+					var class2 = songData.method_0(DataFolder);
 					method_4(class2);
 					song.no_rhythm_track = !class2.bool_0;
 					song.use_coop_notetracks = class2.bool_1;
@@ -655,14 +655,14 @@ namespace ns15
 		{
 			if (e.Shift && e.KeyCode == Keys.Delete && SongListBox.SelectedItems.Count != 0 && DialogResult.Yes == MessageBox.Show("The selected songs will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
 			{
-				object[] array = SongListBox.imethod_3();
-				for (int i = 0; i < array.Length; i++)
+				var array = SongListBox.imethod_3();
+				for (var i = 0; i < array.Length; i++)
 				{
-					GH3Song gh3Song = (GH3Song)array[i];
+					var gh3Song = (GH3Song)array[i];
 					if (gh3Song.editable)
 					{
 						SongListBox.Items.Remove(gh3Song);
-						foreach (int current in gh3Songlist.method_1(gh3Song))
+						foreach (var current in gh3Songlist.method_1(gh3Song))
 						{
 							method_4(new zzSetListUpdater(current, class319_0, gh3Songlist));
 						}
@@ -674,14 +674,14 @@ namespace ns15
 
 		private void DeleteSong_MenuItem_Click(object sender, EventArgs e)
 		{
-			object[] array = SongListBox.imethod_3();
-			for (int i = 0; i < array.Length; i++)
+			var array = SongListBox.imethod_3();
+			for (var i = 0; i < array.Length; i++)
 			{
-				GH3Song gH3Song = (GH3Song)array[i];
+				var gH3Song = (GH3Song)array[i];
 				if (gH3Song.editable && DialogResult.Yes == MessageBox.Show(gH3Song.name.ToUpper() + " will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
 				{
 					SongListBox.Items.Remove(gH3Song);
-					foreach (int current in gh3Songlist.method_1(gH3Song))
+					foreach (var current in gh3Songlist.method_1(gH3Song))
 					{
 						method_4(new zzSetListUpdater(current, class319_0, gh3Songlist));
 					}
@@ -692,19 +692,19 @@ namespace ns15
 
 		private void NewSong_MenuItem_Click(object sender, EventArgs e)
 		{
-			SongData songData = new SongData(gh3Songlist, forceRB3MidConversionToolStripMenuItem.Checked);
+			var songData = new SongData(gh3Songlist, forceRB3MidConversionToolStripMenuItem.Checked);
 			if (songData.ShowDialog() == DialogResult.OK)
 			{
-				GH3Song gH3Song = IsAerosmith ? new GHASong() : new GH3Song();
+				var gH3Song = IsAerosmith ? new GHASong() : new GH3Song();
 				if (songData.bool_1)
 				{
-					Class250 @class = songData.method_1(class319_0, DataFolder);
+					var @class = songData.method_1(class319_0, DataFolder);
 					method_4(@class);
 					gH3Song.vmethod_0(@class.class362_0.gh3Song_0);
 				}
 				if (songData.bool_0)
 				{
-					Class248 class2 = songData.method_0(DataFolder);
+					var class2 = songData.method_0(DataFolder);
 					method_4(class2);
 					gH3Song.name = class2.string_1;
 					gH3Song.no_rhythm_track = !class2.bool_0;
@@ -713,7 +713,7 @@ namespace ns15
 					gH3Song.leaderboard = true;
 					gH3Song.editable = true;
 				}
-				SongProperties songProperties = new SongProperties(gH3Song);
+				var songProperties = new SongProperties(gH3Song);
 				if (songProperties.ShowDialog() == DialogResult.OK)
 				{
 					songProperties.GetSongWithChanges();
@@ -726,18 +726,18 @@ namespace ns15
 
 		private void RecoverSonglist_MenuItem_Click(object sender, EventArgs e)
 		{
-			bool flag = false;
-			string[] files = Directory.GetFiles(DataFolder + "music\\", "*.dat.xen", SearchOption.AllDirectories);
-			for (int i = 0; i < files.Length; i++)
+			var flag = false;
+			var files = Directory.GetFiles(DataFolder + "music\\", "*.dat.xen", SearchOption.AllDirectories);
+			for (var i = 0; i < files.Length; i++)
 			{
-				string text = files[i];
-				string text2 = KeyGenerator.GetFileNameNoExt(text);
+				var text = files[i];
+				var text2 = KeyGenerator.GetFileNameNoExt(text);
 				if (File.Exists(DataFolder + "music\\" + text2 + ".fsb.xen") && File.Exists(DataFolder + "songs\\" + text2 + "_song.pak.xen") && !gh3Songlist.method_3(text2) && !QbSongClass1.smethod_4(text2) && !GH3Songlist.IgnoreSongs.Contains(QbSongClass1.AddKeyToDictionary(text2)))
 				{
 					try
 					{
-						GH3Song gH3Song = IsAerosmith ? new GHASong(text2) : new GH3Song(text2);
-						List<string> list = new List<string>(new zzQbSongObject(text).string_1);
+						var gH3Song = IsAerosmith ? new GHASong(text2) : new GH3Song(text2);
+						var list = new List<string>(new zzQbSongObject(text).string_1);
 						gH3Song.no_rhythm_track = !list.Contains(text2 + "_rhythm");
 						gH3Song.use_coop_notetracks = list.Contains(text2 + "_coop_song");
 						gh3Songlist.Add(text2, gH3Song);
@@ -771,8 +771,8 @@ namespace ns15
 				{
 					if (fileName.EndsWith("_song.pak.xen"))
 					{
-						string str = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
-						using (zzPakNode2 @class = new zzPakNode2(fileName, false))
+						var str = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
+						using (var @class = new zzPakNode2(fileName, false))
 						{
 							if (!@class.method_6("songs\\" + str + ".mid.qb"))
 							{
@@ -803,7 +803,7 @@ namespace ns15
 				}
 				SongName_EditorLbl.Text = qbcParser.gh3Song_0.title;
 				SelectedTrack_EditorBox.Items.Clear();
-				foreach (string current in qbcParser.noteList.Keys)
+				foreach (var current in qbcParser.noteList.Keys)
 				{
 					SelectedTrack_EditorBox.Items.Add(current);
 				}
@@ -891,14 +891,14 @@ namespace ns15
 
 		private void ToggleElements_EditorSplitBtn_ButtonClick(object sender, EventArgs e)
 		{
-			SongEditor arg_1D_0 = SongEditor_Control;
-			ToolStripMenuItem expr_0C = StarView_EditorBtn;
+			var arg_1D_0 = SongEditor_Control;
+			var expr_0C = StarView_EditorBtn;
 			arg_1D_0.LoadStarpowerTextures = (expr_0C.Checked = !expr_0C.Checked);
-			SongEditor arg_3F_0 = SongEditor_Control;
-			ToolStripMenuItem expr_2E = HopoView_EditorBtn;
+			var arg_3F_0 = SongEditor_Control;
+			var expr_2E = HopoView_EditorBtn;
 			arg_3F_0.LoadHopoTextures = (expr_2E.Checked = !expr_2E.Checked);
-			SongEditor arg_61_0 = SongEditor_Control;
-			ToolStripMenuItem expr_50 = AudioView_EditorBtn;
+			var arg_61_0 = SongEditor_Control;
+			var expr_50 = AudioView_EditorBtn;
 			arg_61_0.ShowAudioOnFretboard = (expr_50.Checked = !expr_50.Checked);
 		}
 
@@ -944,11 +944,11 @@ namespace ns15
 		{
 			if (SongListBox.SelectedIndex >= 0)
 			{
-				GH3Song gh3Song = (GH3Song)SongListBox.SelectedItem;
-                string fileLocation = KeyGenerator.OpenOrSaveFile("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
+				var gh3Song = (GH3Song)SongListBox.SelectedItem;
+                var fileLocation = KeyGenerator.OpenOrSaveFile("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
 				if (!fileLocation.Equals("") && File.Exists(DataFolder + "songs\\" + gh3Song.name + "_song.pak.xen"))
 				{
-					using (zzPakNode2 @class = new zzPakNode2(DataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
+					using (var @class = new zzPakNode2(DataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
 					{
 						if (fileLocation.EndsWith(".qbc"))
 						{
@@ -971,7 +971,7 @@ namespace ns15
 		{
 			if (TierBox.SelectedIndex >= 0)
 			{
-				string text = KeyGenerator.OpenOrSaveFile("Select where to save the tier.", "GH3CP Tier File|*.tgh", false, TierTitle_TxtBox.Text);
+				var text = KeyGenerator.OpenOrSaveFile("Select where to save the tier.", "GH3CP Tier File|*.tgh", false, TierTitle_TxtBox.Text);
 				if (text.Equals(""))
 				{
 					return;
@@ -998,12 +998,12 @@ namespace ns15
 		{
 			if (TierBox.SelectedIndex >= 0)
 			{
-				string text = KeyGenerator.OpenFile("Select the tier to switch too.", "GH3CP Tier File|*.tgh");
+				var text = KeyGenerator.OpenFile("Select the tier to switch too.", "GH3CP Tier File|*.tgh");
 				if (text.Equals(""))
 				{
 					return;
 				}
-				GH3Tier gH3Tier = new GH3Tier();
+				var gH3Tier = new GH3Tier();
 				try
 				{
 					TGHManager tghManager;
@@ -1033,12 +1033,12 @@ namespace ns15
 		{
 			if (gh3Songlist.gh3SetlistList.ContainsKey(SelectedSetlist))
 			{
-				string text = KeyGenerator.OpenFile("Select the tier to import.", "GH3CP Tier File|*.tgh");
+				var text = KeyGenerator.OpenFile("Select the tier to import.", "GH3CP Tier File|*.tgh");
 				if (text.Equals(""))
 				{
 					return;
 				}
-				GH3Tier gH3Tier = new GH3Tier();
+				var gH3Tier = new GH3Tier();
 				try
 				{
 					TGHManager @class;
@@ -1068,7 +1068,7 @@ namespace ns15
 		{
 			if (gh3Songlist.gh3SetlistList.ContainsKey(SelectedSetlist))
 			{
-				string saveLocation = KeyGenerator.OpenOrSaveFile("Select where to save the setlist.", "GH3CP Setlist File|*.sgh", false, SetlistTitle_TxtBox.Text);
+				var saveLocation = KeyGenerator.OpenOrSaveFile("Select where to save the setlist.", "GH3CP Setlist File|*.sgh", false, SetlistTitle_TxtBox.Text);
 				if (saveLocation.Equals(""))
 				{
 					return;
@@ -1090,7 +1090,7 @@ namespace ns15
         {
             if (gh3Songlist.gh3SetlistList.ContainsKey(SelectedSetlist))
             {
-                FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+                var folderBrowserDialog = new FolderBrowserDialog();
                 folderBrowserDialog.ShowNewFolderButton = false;
                 folderBrowserDialog.Description = "Please select where you would like to save the charts.";
                 folderBrowserDialog.RootFolder = Environment.SpecialFolder.DesktopDirectory;
@@ -1098,17 +1098,17 @@ namespace ns15
                 {
                     return;
                 }
-                string saveLocation = folderBrowserDialog.SelectedPath;
+                var saveLocation = folderBrowserDialog.SelectedPath;
                 if (saveLocation.Equals(""))
                 {
                     return;
                 }
-                foreach(GH3Tier tier in gh3Songlist.gh3SetlistList[SelectedSetlist].tiers)
+                foreach(var tier in gh3Songlist.gh3SetlistList[SelectedSetlist].tiers)
                 {
-                    foreach (GH3Song gh3Song in tier.songs)
+                    foreach (var gh3Song in tier.songs)
                     {
-                        string fileLocation = saveLocation + "\\" + gh3Song.name + ".chart";
-                        using (zzPakNode2 @class = new zzPakNode2(DataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
+                        var fileLocation = saveLocation + "\\" + gh3Song.name + ".chart";
+                        using (var @class = new zzPakNode2(DataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
                         {
                             new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).method_1().chartCreator(fileLocation, gh3Song);
                         }
@@ -1121,12 +1121,12 @@ namespace ns15
 		{
 			if (gh3Songlist.gh3SetlistList.ContainsKey(SelectedSetlist))
 			{
-				string text = KeyGenerator.OpenFile("Select the setlist to switch too.", "GH3CP Setlist File|*.sgh");
+				var text = KeyGenerator.OpenFile("Select the setlist to switch too.", "GH3CP Setlist File|*.sgh");
 				if (text.Equals(""))
 				{
 					return;
 				}
-				GH3Setlist gH3Setlist = new GH3Setlist();
+				var gH3Setlist = new GH3Setlist();
 				try
 				{
 					SGHManager sghManager;
@@ -1167,7 +1167,7 @@ namespace ns15
 
 		private void MassImporter_MenuItem_Click(object sender, EventArgs e)
 		{
-			FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+			var folderBrowserDialog = new FolderBrowserDialog();
 			folderBrowserDialog.ShowNewFolderButton = false;
 			folderBrowserDialog.Description = "Please select a folder that contains the folder structure for mass song importing.";
 			folderBrowserDialog.RootFolder = Environment.SpecialFolder.DesktopDirectory;
@@ -1175,20 +1175,20 @@ namespace ns15
 			{
 				return;
 			}
-			string[] directories = Directory.GetDirectories(folderBrowserDialog.SelectedPath, "*", SearchOption.TopDirectoryOnly);
-			List<string> list = new List<string>(directories);
-			string[] array = directories;
-			for (int i = 0; i < array.Length; i++)
+			var directories = Directory.GetDirectories(folderBrowserDialog.SelectedPath, "*", SearchOption.TopDirectoryOnly);
+			var list = new List<string>(directories);
+			var array = directories;
+			for (var i = 0; i < array.Length; i++)
 			{
-				string file = array[i];
+				var file = array[i];
 				try
 				{
-					List<string> list2 = KeyGenerator.checkFile(file, "*.mid;*.chart;*.qbc;*.dbc", true);
-					List<string> list3 = KeyGenerator.checkFile(file, "*.wav;*.mp3;*.ogg", true);
-					string[] files = Directory.GetFiles(file, "*.dat", SearchOption.TopDirectoryOnly);
+					var list2 = KeyGenerator.checkFile(file, "*.mid;*.chart;*.qbc;*.dbc", true);
+					var list3 = KeyGenerator.checkFile(file, "*.wav;*.mp3;*.ogg", true);
+					var files = Directory.GetFiles(file, "*.dat", SearchOption.TopDirectoryOnly);
 					if (list2.Count != 0 && (list3.Count != 0 || files.Length != 0))
 					{
-						GH3Song gH3Song = IsAerosmith ? new GHASong() : new GH3Song();
+						var gH3Song = IsAerosmith ? new GHASong() : new GH3Song();
 						gH3Song.name = KeyGenerator.GetFileName(file).ToLower().Replace(" ", "").Replace('.', '_');
 						if (gH3Song.name.Length > 30)
 						{
@@ -1196,16 +1196,16 @@ namespace ns15
 						}
 						if (QbSongClass1.smethod_4(gH3Song.name) || gh3Songlist.method_3(gH3Song.name))
 						{
-							int num = 2;
+							var num = 2;
 							while (QbSongClass1.smethod_4(gH3Song.name + num) || gh3Songlist.method_3(gH3Song.name + num))
 							{
 								num++;
 							}
-							GH3Song expr_176 = gH3Song;
+							var expr_176 = gH3Song;
 							expr_176.name += num;
 						}
 						QBCParser qbcParser = null;
-						foreach (string current in list2)
+						foreach (var current in list2)
 						{
 							try
 							{
@@ -1232,10 +1232,10 @@ namespace ns15
 							zzQbSongObject class2 = null;
 							if (files.Length != 0)
 							{
-								string[] array2 = files;
-								for (int j = 0; j < array2.Length; j++)
+								var array2 = files;
+								for (var j = 0; j < array2.Length; j++)
 								{
-									string text2 = array2[j];
+									var text2 = array2[j];
 									try
 									{
 										if (File.Exists(text2.Replace(".dat.xen", ".fsb.xen")))
@@ -1254,16 +1254,16 @@ namespace ns15
 							}
 							if (class2 != null || list3.Count != 0)
 							{
-								SongData songData = new SongData(gH3Song.name, qbcParser, class2, list3.ToArray());
-								Class250 class3 = songData.method_1(class319_0, DataFolder);
-								Class248 class4 = songData.method_0(DataFolder);
+								var songData = new SongData(gH3Song.name, qbcParser, class2, list3.ToArray());
+								var class3 = songData.method_1(class319_0, DataFolder);
+								var class4 = songData.method_0(DataFolder);
 								gH3Song.vmethod_0(class3.class362_0.gh3Song_0);
 								if (File.Exists(file + "\\song.ini"))
 								{
-									string[] array3 = File.ReadAllLines(file + "\\song.ini");
-									for (int k = 0; k < array3.Length; k++)
+									var array3 = File.ReadAllLines(file + "\\song.ini");
+									for (var k = 0; k < array3.Length; k++)
 									{
-										string text3 = array3[k];
+										var text3 = array3[k];
 										if (text3.StartsWith("name"))
 										{
 											gH3Song.title = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
@@ -1295,8 +1295,8 @@ namespace ns15
 			method_0();
 			if (list.Count != 0)
 			{
-				string text4 = "The follwing songs (by folder name) failed:";
-				foreach (string current2 in list)
+				var text4 = "The follwing songs (by folder name) failed:";
+				foreach (var current2 in list)
 				{
 					text4 = text4 + "\n" + KeyGenerator.GetFileName(current2);
 				}
@@ -1314,7 +1314,7 @@ namespace ns15
 			{
 				string text = null;
 				string text2 = null;
-				using (StreamReader streamReader = new StreamReader(new WebClient().OpenRead("http://sites.google.com/site/sigmaincproduction/ghtcp_latest.txt")))
+				using (var streamReader = new StreamReader(new WebClient().OpenRead("http://sites.google.com/site/sigmaincproduction/ghtcp_latest.txt")))
 				{
 					string text3;
 					while ((text3 = streamReader.ReadLine()) != null)
@@ -1436,7 +1436,7 @@ namespace ns15
 			QbSongClass1.smethod_0();
 			AppDirectory = Directory.GetCurrentDirectory() + "\\";
 			method_12(false);
-			RegistryKey registryKey = Registry.LocalMachine.CreateSubKey(GhtcpRegistry);
+			var registryKey = Registry.LocalMachine.CreateSubKey(GhtcpRegistry);
 			method_10((string)registryKey.GetValue("Priority"));
 			if (!new List<string>(new[]
 			{
@@ -1448,7 +1448,7 @@ namespace ns15
 			{
 				method_10("normal");
 			}
-			List<string> list = new List<string>(new[]
+			var list = new List<string>(new[]
 			{
 				(string)registryKey.GetValue("English"),
 				(string)registryKey.GetValue("French"),
@@ -1501,8 +1501,8 @@ namespace ns15
 					MessageBox.Show("Please download the file under \"ZIP OPTION:\" and select it: libmp3lame-win-#.#.zip", "MP3 Encoding Library Missing!");
 					try
 					{
-						string text4 = KeyGenerator.OpenOrSaveFile("Locate MP3 Encoding Library (file will be deleted after!)", "MP3 Lame Zip|*.zip", true);
-						string text5 = KeyGenerator.GetFileNameNoExt(text4);
+						var text4 = KeyGenerator.OpenOrSaveFile("Locate MP3 Encoding Library (file will be deleted after!)", "MP3 Lame Zip|*.zip", true);
+						var text5 = KeyGenerator.GetFileNameNoExt(text4);
 						ZIPManager.smethod_4(text4, AppDirectory + "lame_enc.dll", "libmp3lame" + text5.Substring(text5.LastIndexOf('-')) + "/lame_enc.dll");
 						try
 						{
@@ -1527,12 +1527,12 @@ namespace ns15
 
 		private void SaveFileControl_MenuItem_Click(object sender, EventArgs e)
 		{
-			string a = KeyGenerator.OpenOrSaveFile("Select Save File to Import. Current Save File will be Overwritten!", "GH3 Save File|s000.d", true);
+			var a = KeyGenerator.OpenOrSaveFile("Select Save File to Import. Current Save File will be Overwritten!", "GH3 Save File|s000.d", true);
 			if (a != "")
 			{
-				Class324 @class = new Class324(a);
+				var @class = new Class324(a);
 				@class.method_0(new Class324(872398018)).list_0[0].int_0[1] = -1;
-				string text = "Progress" + (new[]
+				var text = "Progress" + (new[]
 				{
 					"A",
 					"B",
@@ -1577,7 +1577,7 @@ namespace ns15
 			{
 				if (DialogResult.Yes == MessageBox.Show("Are You sure you want to Execute Actions?", "Warning!", MessageBoxButtons.YesNo))
 				{
-					List<QbEditor> list = new List<QbEditor>();
+					var list = new List<QbEditor>();
 					foreach (QbEditor item in ActionRequests_ListBox.Items)
 					{
 						list.Add(item);
@@ -1650,8 +1650,8 @@ namespace ns15
 				}
 				try
 				{
-					RegistryKey registryKey = Registry.LocalMachine.OpenSubKey(GameRegistry);
-					Process process = new Process();
+					var registryKey = Registry.LocalMachine.OpenSubKey(GameRegistry);
+					var process = new Process();
 					process.StartInfo = new ProcessStartInfo((string)registryKey.GetValue("Path") + (IsAerosmith ? "Guitar Hero Aerosmith.exe" : "GH3.exe"));
 					process.Start();
 					if (Priority != "normal")
@@ -1680,7 +1680,7 @@ namespace ns15
 
 		private void formClosing()
 		{
-            RegistryKey registryKey = Registry.LocalMachine.CreateSubKey(GhtcpRegistry);
+            var registryKey = Registry.LocalMachine.CreateSubKey(GhtcpRegistry);
 			registryKey.SetValue("Priority", Priority);
 			registryKey.SetValue("SilentGuitar", Class248.bool_2 ? 1 : 0);
 			registryKey.SetValue("MinimizeToTray", MinToTray_MenuItem.Checked ? 1 : 0);
@@ -1712,15 +1712,15 @@ namespace ns15
 
 		private void method_8(string string_7)
 		{
-			RegistryKey registryKey = Registry.LocalMachine.CreateSubKey(GameRegistry);
+			var registryKey = Registry.LocalMachine.CreateSubKey(GameRegistry);
 			registryKey.SetValue("Language", string_7);
 			method_7(string_7);
 		}
 
 		private string method_9()
 		{
-			RegistryKey registryKey = Registry.LocalMachine.CreateSubKey(GameRegistry);
-			string text = (string)registryKey.GetValue("Language");
+			var registryKey = Registry.LocalMachine.CreateSubKey(GameRegistry);
+			var text = (string)registryKey.GetValue("Language");
 			method_7(text);
 			return text;
 		}
@@ -1774,7 +1774,7 @@ namespace ns15
 
 		private void SilentGuitar_MenuItem_Click(object sender, EventArgs e)
 		{
-			ToolStripMenuItem expr_06 = SilentGuitar_MenuItem;
+			var expr_06 = SilentGuitar_MenuItem;
 			Class248.bool_2 = (expr_06.Checked = !expr_06.Checked);
 		}
 
@@ -1785,7 +1785,7 @@ namespace ns15
 
 		private void ForceMp3Conversion_MenuItem_Click(object sender, EventArgs e)
 		{
-			ToolStripMenuItem expr_06 = ForceMp3Conversion_MenuItem;
+			var expr_06 = ForceMp3Conversion_MenuItem;
 			Class248.bool_3 = (expr_06.Checked = !expr_06.Checked);
 		}
 
@@ -1821,14 +1821,14 @@ namespace ns15
 			{
 				return;
 			}
-			GH3Setlist gH3Setlist = new GH3Setlist();
+			var gH3Setlist = new GH3Setlist();
 			gH3Setlist.method_3("scripts\\guitar\\custom_menu\\guitar_custom_progression.qb");
 			gH3Setlist.initial_movie = "";
 			gH3Setlist.tiers.Add(new GH3Tier());
-			for (int i = 0; ; )
+			for (var i = 0; ; )
 			{
                 //num = 2^numOfSetlists
-				int num = 1 << i;
+				var num = 1 << i;
                 if (!((gh3Songlist.CustomBitMask & num) == 0)) {
                     goto SKIPIT;
                 }
@@ -1865,7 +1865,7 @@ namespace ns15
 			{
 				return;
 			}
-			string text = (string)Setlist_DropBox.SelectedItem;
+			var text = (string)Setlist_DropBox.SelectedItem;
 			Setlist_DropBox.SelectedIndex--;
 			Setlist_DropBox.Items.Remove(text);
 			method_4(new Class246(gh3Songlist.class214_0[text], class319_0, gh3Songlist, false));
@@ -1879,7 +1879,7 @@ namespace ns15
 
 		private void SetlistApply_Btn_Click(object sender, EventArgs e)
 		{
-			GH3Setlist gH3Setlist = gh3Songlist.gh3SetlistList[SelectedSetlist];
+			var gH3Setlist = gh3Songlist.gh3SetlistList[SelectedSetlist];
 			gH3Setlist.initial_movie = SetlistInitMovie_TxtBox.Text;
 			gH3Setlist.tiers.Clear();
 			foreach (GH3Tier item in TierBox.Items)
@@ -1911,12 +1911,12 @@ namespace ns15
 		{
 			if (TierBox.SelectedIndex >= 0)
 			{
-				List<GH3Tier> list = new List<GH3Tier>();
+				var list = new List<GH3Tier>();
 				foreach (GH3Tier item in TierBox.Items)
 				{
 					list.Add(item);
 				}
-				TierManagement tierManagement = new TierManagement((string)Setlist_DropBox.SelectedItem, list.ToArray());
+				var tierManagement = new TierManagement((string)Setlist_DropBox.SelectedItem, list.ToArray());
 				if (tierManagement.ShowDialog() == DialogResult.OK)
 				{
 					TierBox.Items.Clear();
@@ -1946,7 +1946,7 @@ namespace ns15
 		private void InitializeComponent()
 		{
             components = new Container();
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(MainMenu));
+            var resources = new ComponentResourceManager(typeof(MainMenu));
             rightClickMenu = new ContextMenuStrip(components);
             SysHigh_MenuItem = new ToolStripMenuItem();
             SysAbove_MenuItem = new ToolStripMenuItem();
@@ -3726,7 +3726,7 @@ namespace ns15
 
 		public void InitializeLanguageList()
 		{
-			RegistryKey registryKey = Registry.LocalMachine.CreateSubKey(GhtcpRegistry);
+			var registryKey = Registry.LocalMachine.CreateSubKey(GhtcpRegistry);
 			string[] array = {
 				"English",
 				"French",
@@ -3735,7 +3735,7 @@ namespace ns15
 				"German",
 				"Korean"
 			};
-			for (int i = 0; i < array.Length; i++)
+			for (var i = 0; i < array.Length; i++)
 			{
 				registryKey.SetValue(array[i], LanguageList[i]);
 			}
@@ -3759,7 +3759,7 @@ namespace ns15
 
 		private void LoadCurrentGameSettings(bool bool_1)
 		{
-			LoadGameSettings loadGameSettings = new LoadGameSettings(LanguageList);
+			var loadGameSettings = new LoadGameSettings(LanguageList);
 			if (loadGameSettings.ShowDialog() != DialogResult.OK)
 			{
 				return;
@@ -3769,7 +3769,7 @@ namespace ns15
 			InitializeLanguageList();
 			try
 			{
-				RegistryKey registryKey = Registry.LocalMachine.OpenSubKey(GameRegistry);
+				var registryKey = Registry.LocalMachine.OpenSubKey(GameRegistry);
 				DataFolder = (string)registryKey.GetValue("Path") + "\\DATA\\";
 				if (!Directory.Exists(DataFolder))
 				{
@@ -3778,7 +3778,7 @@ namespace ns15
 			}
 			catch
 			{
-				string text = KeyGenerator.OpenOrSaveFile("Find Guitar Hero " + (IsAerosmith ? "Aerosmith" : "3"), IsAerosmith ? "Guitar Hero Aerosmith Executable|Guitar Hero Aerosmith.exe" : "Guitar Hero 3 Executable|GH3.exe", true);
+				var text = KeyGenerator.OpenOrSaveFile("Find Guitar Hero " + (IsAerosmith ? "Aerosmith" : "3"), IsAerosmith ? "Guitar Hero Aerosmith Executable|Guitar Hero Aerosmith.exe" : "Guitar Hero 3 Executable|GH3.exe", true);
 				if (string.IsNullOrEmpty(text))
 				{
 					return;
@@ -3786,7 +3786,7 @@ namespace ns15
 				try
 				{
 					DataFolder = new FileInfo(text).Directory.FullName;
-					RegistryKey registryKey = Registry.LocalMachine.CreateSubKey(GameRegistry);
+					var registryKey = Registry.LocalMachine.CreateSubKey(GameRegistry);
 					registryKey.SetValue("Path", DataFolder);
 					DataFolder += "\\DATA\\";
 				}
@@ -3796,8 +3796,8 @@ namespace ns15
 					return;
 				}
 			}
-			string text2 = list_0[loadGameSettings.method_3()];
-			int int_ = loadGameSettings.method_3();
+			var text2 = list_0[loadGameSettings.method_3()];
+			var int_ = loadGameSettings.method_3();
 			using (new Class217("QB Parse Operations"))
 			{
 				try
@@ -3806,7 +3806,7 @@ namespace ns15
 					{
 						return;
 					}
-					zzPabNode class2 = new zzPabNode(string.Concat(AppDirectory, BackupName, "originals\\qb", text2, ".pak.xen"), string.Concat(AppDirectory, BackupName, "originals\\qb", text2, ".pab.xen"), false);
+					var class2 = new zzPabNode(string.Concat(AppDirectory, BackupName, "originals\\qb", text2, ".pak.xen"), string.Concat(AppDirectory, BackupName, "originals\\qb", text2, ".pab.xen"), false);
 					GH3Songlist gH3Songlist = null;
 					using (class319_0 = new zzPabNode(DataFolder + "PAK\\qb" + text2 + ".pak.xen", DataFolder + "PAK\\qb" + text2 + ".pab.xen", false))
 					{
@@ -3830,7 +3830,7 @@ namespace ns15
 						class319_0 = null;
 						if (gH3Songlist != null)
 						{
-							DialogResult dialogResult = MessageBox.Show("Game Settings files are not compatible, but something can be recovered. Do you wish to recover when starting from backup? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNoCancel);
+							var dialogResult = MessageBox.Show("Game Settings files are not compatible, but something can be recovered. Do you wish to recover when starting from backup? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNoCancel);
 							if (dialogResult == DialogResult.Cancel)
 							{
 								return;
@@ -3858,10 +3858,10 @@ namespace ns15
 					method_20(int_);
 					gh3Songlist = new GH3Songlist(class319_0.zzGetNode1("scripts\\guitar\\songlist.qb"), new GH3Songlist(class2.zzGetNode1("scripts\\guitar\\songlist.qb"), null));
 					class2.Dispose();
-					bool flag = false;
+					var flag = false;
 					if (gH3Songlist != null)
 					{
-						foreach (string current in gH3Songlist.Keys)
+						foreach (var current in gH3Songlist.Keys)
 						{
 							if (!gh3Songlist.method_3(current))
 							{
@@ -3878,14 +3878,14 @@ namespace ns15
 					new zzSetListParser(class319_0, gh3Songlist, IsAerosmith).method_0();
 					if (flag && gH3Songlist.gh3SetlistList.Count != 0)
 					{
-						bool flag2 = false;
-						using (Dictionary<int, GH3Setlist>.KeyCollection.Enumerator enumerator2 = gH3Songlist.gh3SetlistList.Keys.GetEnumerator())
+						var flag2 = false;
+						using (var enumerator2 = gH3Songlist.gh3SetlistList.Keys.GetEnumerator())
 						{
 							IL_78C:
 							while (enumerator2.MoveNext())
 							{
-								int current2 = enumerator2.Current;
-								GH3Setlist gH3Setlist = gH3Songlist.gh3SetlistList[current2];
+								var current2 = enumerator2.Current;
+								var gH3Setlist = gH3Songlist.gh3SetlistList[current2];
 								if (gH3Setlist.method_4())
 								{
 									try
@@ -3894,9 +3894,9 @@ namespace ns15
 										{
 											break;
 										}*/
-										for (int i = 0; ; )
+										for (var i = 0; ; )
 										{
-											int num = 1 << i;
+											var num = 1 << i;
                                             if (!((gh3Songlist.CustomBitMask & num) == 0))
                                                 goto SKIPIT;
 
@@ -3958,7 +3958,7 @@ namespace ns15
 					return;
 				}
 			}
-			foreach (string current3 in gh3Songlist.class214_0.Keys)
+			foreach (var current3 in gh3Songlist.class214_0.Keys)
 			{
 				Setlist_DropBox.Items.Add(current3);
 			}
@@ -4008,15 +4008,15 @@ namespace ns15
 
 		private bool method_16(int int_3)
 		{
-			string text = string.Concat(AppDirectory, BackupName, "originals\\qb", list_0[int_3], ".pab.xen");
-			int[] icollection_ = IsAerosmith ? int_2[int_3] : int_1[int_3];
+			var text = string.Concat(AppDirectory, BackupName, "originals\\qb", list_0[int_3], ".pab.xen");
+			var icollection_ = IsAerosmith ? int_2[int_3] : int_1[int_3];
 			return File.Exists(text) && File.Exists(text.Replace(".pab.xen", ".pak.xen")) && KeyGenerator.smethod_53(KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection_);
 		}
 
 		private bool method_17(int int_3)
 		{
-			string text = DataFolder + "PAK\\qb" + list_0[int_3] + ".pab.xen";
-			int[] icollection_ = IsAerosmith ? int_2[int_3] : int_1[int_3];
+			var text = DataFolder + "PAK\\qb" + list_0[int_3] + ".pab.xen";
+			var icollection_ = IsAerosmith ? int_2[int_3] : int_1[int_3];
 			while (!File.Exists(text) || !File.Exists(text.Replace(".pab.xen", ".pak.xen")) || !KeyGenerator.smethod_53(KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection_))
 			{
 				if ((text = KeyGenerator.OpenOrSaveFile("Find The Original V1.3 Game Settings.", "Original V1.3 Game Settings|qb" + list_0[int_3] + ".pab.xen", true)).Equals(""))
@@ -4075,8 +4075,8 @@ namespace ns15
 			{
 				return;
 			}
-			string text = KeyGenerator.GetFileNameNoExt(class319_0.string_0);
-			int int_ = new List<string>(list_0).IndexOf(text.Replace("qb", ""));
+			var text = KeyGenerator.GetFileNameNoExt(class319_0.string_0);
+			var int_ = new List<string>(list_0).IndexOf(text.Replace("qb", ""));
 			if (method_16(int_))
 			{
 				method_15();
@@ -4093,7 +4093,7 @@ namespace ns15
 			{
 				return;
 			}
-			string text = KeyGenerator.GetFileNameNoExt(class319_0.string_0);
+			var text = KeyGenerator.GetFileNameNoExt(class319_0.string_0);
 			if (File.Exists(string.Concat(AppDirectory, BackupName, "lastedited\\", text, ".pak.xen")) && File.Exists(string.Concat(AppDirectory, BackupName, "lastedited\\", text, ".pab.xen")))
 			{
 				method_15();
@@ -4110,7 +4110,7 @@ namespace ns15
 			{
 				return;
 			}
-			LoadGameSettings loadGameSettings = new LoadGameSettings(new[]
+			var loadGameSettings = new LoadGameSettings(new[]
 			{
 				"English",
 				"French",
@@ -4123,15 +4123,15 @@ namespace ns15
 			{
 				return;
 			}
-			int num = loadGameSettings.method_3();
-			string text = KeyGenerator.GetFileNameNoExt(class319_0.string_0);
+			var num = loadGameSettings.method_3();
+			var text = KeyGenerator.GetFileNameNoExt(class319_0.string_0);
 			if (!method_16(num) && DialogResult.Yes == MessageBox.Show("A proper backup doesn't exist. Do you wish to start backup creation? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNo) && !method_17(num))
 			{
 				return;
 			}
 			new List<string>(list_0).IndexOf(text.Replace("qb", ""));
 			method_15();
-			using (zzPabNode @class = new zzPabNode(string.Concat(AppDirectory, BackupName, "originals\\qb", list_0[num], ".pak.xen"), string.Concat(AppDirectory, BackupName, "originals\\qb", list_0[num], ".pab.xen"), false))
+			using (var @class = new zzPabNode(string.Concat(AppDirectory, BackupName, "originals\\qb", list_0[num], ".pak.xen"), string.Concat(AppDirectory, BackupName, "originals\\qb", list_0[num], ".pab.xen"), false))
 			{
 				GameSettingsChecker.SignHash(@class);
 				@class.method_20(DataFolder + "PAK\\" + text + ".pak.xen", DataFolder + "PAK\\" + text + ".pab.xen");
@@ -4150,7 +4150,7 @@ namespace ns15
 
         private void TierSongs_ListBox_MouseDown(object sender, MouseEventArgs e)
 		{
-            int num = TierSongs_ListBox.IndexFromPoint(e.Location);
+            var num = TierSongs_ListBox.IndexFromPoint(e.Location);
 			if (num >= 0 && num < TierSongs_ListBox.Items.Count && e.Clicks == 2 && e.Button == MouseButtons.Right)
 			{
 				TierSongs_ListBox.Items.RemoveAt(num);
@@ -4223,7 +4223,7 @@ namespace ns15
 
 		private void TierApply_Btn_Click(object sender, EventArgs e)
 		{
-			GH3Tier gH3Tier = (GH3Tier)TierBox.Items[TierBox.SelectedIndex];
+			var gH3Tier = (GH3Tier)TierBox.Items[TierBox.SelectedIndex];
 			gH3Tier.title = TierTitle_TxtBox.Text;
 			gH3Tier.defaultunlocked = Convert.ToInt32(TierUnlocked_NumBox.Value);
 			gH3Tier.completion_movie = TierCompMovie_TxtBox.Text;

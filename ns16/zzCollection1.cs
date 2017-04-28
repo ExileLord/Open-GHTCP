@@ -62,7 +62,7 @@ namespace ns16
 				}
 				while (int_0 < class236_0.int_1)
 				{
-					int num = int_0++;
+					var num = int_0++;
 					if (class236_0.method_4(num) != 0)
 					{
 						gparam_0 = class236_0.gparam_0[num];
@@ -140,8 +140,8 @@ namespace ns16
 			{
 				if ((int_1 & 1) != 0)
 				{
-					int num = (int)Math.Sqrt(int_1);
-					for (int i = 3; i < num; i += 2)
+					var num = (int)Math.Sqrt(int_1);
+					for (var i = 3; i < num; i += 2)
 					{
 						if (int_1 % i == 0)
 						{
@@ -155,7 +155,7 @@ namespace ns16
 
 			private static int smethod_1(int int_1)
 			{
-				for (int i = (int_1 & -2) - 1; i < Int32.MaxValue; i += 2)
+				for (var i = (int_1 & -2) - 1; i < Int32.MaxValue; i += 2)
 				{
 					if (smethod_0(i))
 					{
@@ -167,7 +167,7 @@ namespace ns16
 
 			public static int smethod_2(int int_1)
 			{
-				for (int i = 0; i < oddPrimeSequence.Length; i++)
+				for (var i = 0; i < oddPrimeSequence.Length; i++)
 				{
 					if (int_1 <= oddPrimeSequence[i])
 					{
@@ -232,14 +232,14 @@ namespace ns16
 			{
 				throw new ArgumentNullException("collection");
 			}
-			int int_ = 0;
-			ICollection<T> collection = ienumerable_0 as ICollection<T>;
+			var int_ = 0;
+			var collection = ienumerable_0 as ICollection<T>;
 			if (collection != null)
 			{
 				int_ = collection.Count;
 			}
 			method_0(int_, iequalityComparer_1);
-			foreach (T current in ienumerable_0)
+			foreach (var current in ienumerable_0)
 			{
 				vmethod_0(current);
 			}
@@ -303,8 +303,8 @@ namespace ns16
 			{
 				throw new ArgumentException("Destination array cannot hold the requested elements!");
 			}
-			int num = 0;
-			int num2 = int_6 + int_7;
+			var num = 0;
+			var num2 = int_6 + int_7;
 			while (num < int_1 && int_6 < num2)
 			{
 				if (method_4(num) != 0)
@@ -328,22 +328,22 @@ namespace ns16
 
 		private void method_3()
 		{
-			int num = Class237.smethod_2(int_0.Length << 1 | 1);
-			int[] array = new int[num];
-			Struct81[] array2 = new Struct81[num];
-			for (int i = 0; i < int_0.Length; i++)
+			var num = Class237.smethod_2(int_0.Length << 1 | 1);
+			var array = new int[num];
+			var array2 = new Struct81[num];
+			for (var i = 0; i < int_0.Length; i++)
 			{
-				for (int num2 = int_0[i] - 1; num2 != -1; num2 = struct81_0[num2].int_1)
+				for (var num2 = int_0[i] - 1; num2 != -1; num2 = struct81_0[num2].int_1)
 				{
-					int num3 = array2[num2].int_0 = method_5(gparam_0[num2]);
-					int num4 = (num3 & 2147483647) % num;
+					var num3 = array2[num2].int_0 = method_5(gparam_0[num2]);
+					var num4 = (num3 & 2147483647) % num;
 					array2[num2].int_1 = array[num4] - 1;
 					array[num4] = num2 + 1;
 				}
 			}
 			int_0 = array;
 			struct81_0 = array2;
-			T[] destinationArray = new T[num];
+			var destinationArray = new T[num];
 			Array.Copy(gparam_0, 0, destinationArray, 0, int_1);
 			gparam_0 = destinationArray;
 			int_4 = (int)(num * 0.9f);
@@ -370,8 +370,8 @@ namespace ns16
 
 		public bool vmethod_0(T gparam_1)
 		{
-			int num = method_5(gparam_1);
-			int num2 = (num & 2147483647) % int_0.Length;
+			var num = method_5(gparam_1);
+			var num2 = (num & 2147483647) % int_0.Length;
 			if (method_6(num2, num, gparam_1))
 			{
 				return false;
@@ -381,7 +381,7 @@ namespace ns16
 				method_3();
 				num2 = (num & 2147483647) % int_0.Length;
 			}
-			int num3 = int_2;
+			var num3 = int_2;
 			if (num3 == -1)
 			{
 				num3 = int_1++;
@@ -400,15 +400,15 @@ namespace ns16
 
 		public bool Contains(T item)
 		{
-			int num = method_5(item);
-			int int_ = (num & 2147483647) % int_0.Length;
+			var num = method_5(item);
+			var int_ = (num & 2147483647) % int_0.Length;
 			return method_6(int_, num, item);
 		}
 
 		private bool method_6(int int_6, int int_7, T gparam_1)
 		{
 			Struct81 @struct;
-			for (int num = int_0[int_6] - 1; num != -1; num = @struct.int_1)
+			for (var num = int_0[int_6] - 1; num != -1; num = @struct.int_1)
 			{
 				@struct = struct81_0[num];
 				if (@struct.int_0 == int_7 && ((int_7 != -2147483648 || (gparam_1 != null && gparam_0[num] != null)) ? iequalityComparer_0.Equals(gparam_1, gparam_0[num]) : (gparam_1 == null && null == gparam_0[num])))
@@ -421,17 +421,17 @@ namespace ns16
 
 		public bool Remove(T item)
 		{
-			int num = method_5(item);
-			int num2 = (num & 2147483647) % int_0.Length;
-			int num3 = int_0[num2] - 1;
+			var num = method_5(item);
+			var num2 = (num & 2147483647) % int_0.Length;
+			var num3 = int_0[num2] - 1;
 			if (num3 == -1)
 			{
 				return false;
 			}
-			int num4 = -1;
+			var num4 = -1;
 			do
 			{
-				Struct81 @struct = struct81_0[num3];
+				var @struct = struct81_0[num3];
 				if (@struct.int_0 == num)
 				{
 					if ((num != -2147483648 || (item != null && gparam_0[num3] != null)) ? iequalityComparer_0.Equals(gparam_0[num3], item) : (item == null && null == gparam_0[num3]))

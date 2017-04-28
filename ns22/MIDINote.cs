@@ -45,7 +45,7 @@ namespace ns22
 				return MIDINoteMask.Invalid;
 			}
             //Gets note type
-			int num = (midiMask - 60) % 12;
+			var num = (midiMask - 60) % 12;
 			if (Enum.IsDefined(typeof(MIDINoteMask), num))
 			{
 				return (MIDINoteMask)num;
@@ -59,7 +59,7 @@ namespace ns22
 			{
 				return Fret.Invalid;
 			}
-			Fret @enum = (Fret)((midiMask - 60) % 12);
+			var @enum = (Fret)((midiMask - 60) % 12);
 			if (@enum >= Fret.Green && @enum <= Fret.Orange)
 			{
 				return @enum;

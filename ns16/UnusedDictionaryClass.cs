@@ -67,7 +67,7 @@ namespace ns16
 			get
 			{
 				ICollection<TKey> collection = new List<TKey>();
-				foreach (KeyValuePair<TKey, TValue> current in class243_0)
+				foreach (var current in class243_0)
 				{
 					collection.Add(current.Key);
 				}
@@ -80,7 +80,7 @@ namespace ns16
 			get
 			{
 				ICollection<TValue> collection = new List<TValue>();
-				foreach (KeyValuePair<TKey, TValue> current in class243_0)
+				foreach (var current in class243_0)
 				{
 					collection.Add(current.Value);
 				}
@@ -131,7 +131,7 @@ namespace ns16
 
 		public void Add(ICollection<KeyValuePair<TKey, TValue>> icollection_0)
 		{
-			foreach (KeyValuePair<TKey, TValue> current in icollection_0)
+			foreach (var current in icollection_0)
 			{
 				class243_0.Add(current);
 			}

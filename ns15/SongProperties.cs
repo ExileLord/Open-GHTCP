@@ -198,7 +198,7 @@ namespace ns15
 			}
 			if (AeroGroupBox.Enabled)
 			{
-				GHASong gHASong = (GHASong)Song;
+				var gHASong = (GHASong)Song;
 				CoveredTxt.Text = gHASong.covered_by;
 				SingAnimPakTxt.Text = gHASong.singer_anim_pak;
 				BandBox.SelectedItem = gHASong.band;
@@ -278,7 +278,7 @@ namespace ns15
 			}
 			if (Song is GHASong)
 			{
-				GHASong song = (GHASong)Song;
+				var song = (GHASong)Song;
 				song.covered_by = CoveredTxt.Text;
 				song.singer_anim_pak = SingAnimPakTxt.Text;
 				song.band = (string)BandBox.SelectedItem;
@@ -377,8 +377,8 @@ namespace ns15
 			YearTxt.Size = new Size(156, 20);
 			YearTxt.TabIndex = 2;
 			OffsetBox.Location = new Point(130, 175);
-			NumericUpDown arg_2EA_0 = OffsetBox;
-			int[] array = new int[4];
+			var arg_2EA_0 = OffsetBox;
+			var array = new int[4];
 			array[0] = 30000;
 			arg_2EA_0.Maximum = new decimal(array);
 			OffsetBox.Minimum = new decimal(new[]
@@ -515,8 +515,8 @@ namespace ns15
 				131072
 			});
 			BandVolBox.Location = new Point(130, 124);
-			NumericUpDown arg_A56_0 = BandVolBox;
-			int[] array2 = new int[4];
+			var arg_A56_0 = BandVolBox;
+			var array2 = new int[4];
 			array2[0] = 5;
 			arg_A56_0.Maximum = new decimal(array2);
 			BandVolBox.Minimum = new decimal(new[]
@@ -547,8 +547,8 @@ namespace ns15
 				131072
 			});
 			GuitarVolBox.Location = new Point(130, 99);
-			NumericUpDown arg_BB0_0 = GuitarVolBox;
-			int[] array3 = new int[4];
+			var arg_BB0_0 = GuitarVolBox;
+			var array3 = new int[4];
 			array3[0] = 5;
 			arg_BB0_0.Maximum = new decimal(array3);
 			GuitarVolBox.Minimum = new decimal(new[]
@@ -579,8 +579,8 @@ namespace ns15
 				131072
 			});
 			HammerOnBox.Location = new Point(130, 150);
-			NumericUpDown arg_D0C_0 = HammerOnBox;
-			int[] array4 = new int[4];
+			var arg_D0C_0 = HammerOnBox;
+			var array4 = new int[4];
 			array4[0] = 5;
 			arg_D0C_0.Maximum = new decimal(array4);
 			HammerOnBox.Minimum = new decimal(new[]
@@ -860,13 +860,13 @@ namespace ns15
 			label15.TabIndex = 36;
 			label15.Text = "Covered By:";
 			label15.TextAlign = ContentAlignment.MiddleCenter;
-			NumericUpDown arg_1D9F_0 = BPM8NoteBox;
-			int[] array5 = new int[4];
+			var arg_1D9F_0 = BPM8NoteBox;
+			var array5 = new int[4];
 			array5[0] = 5;
 			arg_1D9F_0.Increment = new decimal(array5);
 			BPM8NoteBox.Location = new Point(127, 71);
-			NumericUpDown arg_1DD6_0 = BPM8NoteBox;
-			int[] array6 = new int[4];
+			var arg_1DD6_0 = BPM8NoteBox;
+			var array6 = new int[4];
 			array6[0] = 500;
 			arg_1DD6_0.Maximum = new decimal(array6);
 			BPM8NoteBox.Minimum = new decimal(new[]

@@ -29,16 +29,16 @@ namespace ns19
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			int num = stream26_0.ReadInt();
+			var num = stream26_0.ReadInt();
 			if (num == 0)
 			{
 				return;
 			}
-			int[] array = new int[num];
+			var array = new int[num];
 			if (num > 1)
 			{
 				stream26_0.Position = stream26_0.ReadInt();
-				for (int i = 0; i < num; i++)
+				for (var i = 0; i < num; i++)
 				{
 					array[i] = stream26_0.ReadInt();
 				}
@@ -47,10 +47,10 @@ namespace ns19
 			{
 				array[0] = stream26_0.ReadInt();
 			}
-			int[] array2 = array;
-			for (int j = 0; j < array2.Length; j++)
+			var array2 = array;
+			for (var j = 0; j < array2.Length; j++)
 			{
-				int int_ = array2[j];
+				var int_ = array2[j];
 				Nodes.Add(new UnicodeValueNode(stream26_0.ReadUnicodeStringAt(int_)));
 			}
 			stream26_0.Position += smethod_0(stream26_0.Position);
@@ -58,7 +58,7 @@ namespace ns19
 
 		public override void vmethod_14(Stream26 stream26_0)
 		{
-			byte[] array = new byte[4];
+			var array = new byte[4];
 			array[1] = 1;
 			array[2] = 4;
 			stream26_0.WriteByteArray(array, false);
@@ -71,8 +71,8 @@ namespace ns19
 			{
 				stream26_0.WriteInt((int)stream26_0.Position + 4);
 			}
-			int num = (int)stream26_0.Position + 4 * Nodes.Count;
-			Stream26 stream = new Stream26();
+			var num = (int)stream26_0.Position + 4 * Nodes.Count;
+			var stream = new Stream26();
 			foreach (UnicodeValueNode @class in Nodes)
 			{
 				stream26_0.WriteInt(num);

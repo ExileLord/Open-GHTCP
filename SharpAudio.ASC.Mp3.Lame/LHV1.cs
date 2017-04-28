@@ -74,7 +74,7 @@ namespace SharpAudio.ASC.Mp3.Lame
 			}
 			dwStructVersion = 1u;
 			dwStructSize = (uint)Marshal.SizeOf(typeof(BE_CONFIG));
-			uint num = (uint)((uint_1 == 0u) ? waveFormat_0.int_0 : ((int)uint_1));
+			var num = (uint)((uint_1 == 0u) ? waveFormat_0.int_0 : ((int)uint_1));
 			if (num <= 24000u)
 			{
 				if (num == 16000u || num == 22050u || num == 24000u)

@@ -117,7 +117,7 @@ namespace ns5
 				int_2 = 0;
 				secondaryBuffer_0.SetCurrentPosition(0);
 				method_4();
-				for (int i = 0; i < 5; i++)
+				for (var i = 0; i < 5; i++)
 				{
 					method_7();
 				}
@@ -183,7 +183,7 @@ namespace ns5
 
 		private int method_1()
 		{
-			int playPosition = secondaryBuffer_0.PlayPosition;
+			var playPosition = secondaryBuffer_0.PlayPosition;
 			if (playPosition >= int_2)
 			{
 				return playPosition - int_2;
@@ -208,7 +208,7 @@ namespace ns5
 
 		private void method_2(int int_5)
 		{
-			for (int i = 0; i < int_5; i++)
+			for (var i = 0; i < int_5; i++)
 			{
 				bufferPositionNotify_0[i].Offset = (i + 1) * int_0 - 1;
 				bufferPositionNotify_0[i].EventNotifyHandle = autoResetEvent_0.Handle;
@@ -242,7 +242,7 @@ namespace ns5
 
 		private void method_5()
 		{
-			int num = 0;
+			var num = 0;
 			while (bool_1)
 			{
 				if (bool_2)
@@ -257,21 +257,21 @@ namespace ns5
 				}
 			}
 			Array.Clear(byte_0, 0, byte_0.Length);
-			bool flag = true;
+			var flag = true;
 			while (flag)
 			{
 				autoResetEvent_0.WaitOne(-1, true);
 				flag = method_6();
 			}
-			int num2 = int_2 / int_0;
+			var num2 = int_2 / int_0;
 			method_8();
-			int int_ = (int)(long_0 % int_1);
+			var int_ = (int)(long_0 % int_1);
 			method_3(int_);
-			bool flag2 = false;
+			var flag2 = false;
 			while (!flag2)
 			{
 				autoResetEvent_0.WaitOne(-1, true);
-				int num3 = secondaryBuffer_0.PlayPosition / int_0;
+				var num3 = secondaryBuffer_0.PlayPosition / int_0;
 				if (!(flag2 = (num3 == num | num3 == num2)))
 				{
 					int_3++;
@@ -283,8 +283,8 @@ namespace ns5
 
 		private bool method_6()
 		{
-			int num = int_2 / int_0;
-			int num2 = secondaryBuffer_0.PlayPosition / int_0;
+			var num = int_2 / int_0;
+			var num2 = secondaryBuffer_0.PlayPosition / int_0;
 			if (num != num2)
 			{
 				return false;
@@ -295,7 +295,7 @@ namespace ns5
 
 		private bool method_7()
 		{
-			int num = stream1_0.Read(byte_0, 0, byte_0.Length);
+			var num = stream1_0.Read(byte_0, 0, byte_0.Length);
 			bool_1 = (num > 0);
 			long_0 += num;
 			method_8();

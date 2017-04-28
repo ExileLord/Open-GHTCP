@@ -28,7 +28,7 @@ namespace ns7
 			if (byte_2 > 0)
 			{
 				class148_0 = new Class148[byte_2];
-				for (int i = 0; i < (int)byte_2; i++)
+				for (var i = 0; i < (int)byte_2; i++)
 				{
 					class148_0[i] = new Class148(class144_0);
 				}

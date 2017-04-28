@@ -68,15 +68,15 @@ namespace ns3
 			}
 			else
 			{
-				for (int i = 0; i < byte_0.Length; i++)
+				for (var i = 0; i < byte_0.Length; i++)
 				{
 					byte_0[i] = 0;
 				}
-				for (int j = 0; j < int_3.Length; j++)
+				for (var j = 0; j < int_3.Length; j++)
 				{
 					int_3[j] = 0;
 				}
-				for (int k = 0; k < long_0.Length; k++)
+				for (var k = 0; k < long_0.Length; k++)
 				{
 					long_0[k] = 0L;
 				}
@@ -96,7 +96,7 @@ namespace ns3
 			if (int_0 <= int_1 + int_13)
 			{
 				int_0 += int_13 + 1024;
-				byte[] dst = new byte[int_0];
+				var dst = new byte[int_0];
 				Buffer.BlockCopy(byte_0, 0, dst, 0, byte_0.Length);
 				byte_0 = dst;
 			}
@@ -107,10 +107,10 @@ namespace ns3
 			if (int_4 <= int_5 + int_13)
 			{
 				int_4 += int_13 + 32;
-				int[] dst = new int[int_4];
+				var dst = new int[int_4];
 				Buffer.BlockCopy(int_3, 0, dst, 0, int_3.Length << 2);
 				int_3 = dst;
-				long[] dst2 = new long[int_4];
+				var dst2 = new long[int_4];
 				Buffer.BlockCopy(long_0, 0, dst2, 0, long_0.Length << 3);
 				long_0 = dst2;
 			}
@@ -118,7 +118,7 @@ namespace ns3
 
 		public int method_5(Class67 class67_0)
 		{
-			int num = int_7;
+			var num = int_7;
 			if (int_6 <= num)
 			{
 				return 0;
@@ -129,15 +129,15 @@ namespace ns3
 				long_1 += 1L;
 				return -1;
 			}
-			int num2 = int_3[num] & 255;
+			var num2 = int_3[num] & 255;
 			class67_0.byte_0 = byte_0;
 			class67_0.int_0 = int_2;
 			class67_0.int_3 = (int_3[num] & 512);
 			class67_0.int_2 = (int_3[num] & 256);
-			int num3 = 0 + num2;
+			var num3 = 0 + num2;
 			while (num2 == 255)
 			{
-				int num4 = int_3[++num];
+				var num4 = int_3[++num];
 				num2 = (num4 & 255);
 				if ((num4 & 512) != 0)
 				{
@@ -156,22 +156,22 @@ namespace ns3
 
 		public bool method_6(Class48 class48_0)
 		{
-			byte[] array = class48_0.byte_0;
-			int num = class48_0.int_0;
-			byte[] src = class48_0.byte_1;
-			int num2 = class48_0.int_2;
-			int num3 = class48_0.int_3;
-			int i = 0;
-			int num4 = class48_0.method_0();
-			int num5 = class48_0.method_1();
-			int num6 = class48_0.method_2();
-			int num7 = class48_0.method_3();
-			long num8 = class48_0.method_4();
-			int num9 = class48_0.method_5();
-			int num10 = class48_0.method_6();
-			int num11 = array[num + 26] & 255;
-			int num12 = int_7;
-			int num13 = int_2;
+			var array = class48_0.byte_0;
+			var num = class48_0.int_0;
+			var src = class48_0.byte_1;
+			var num2 = class48_0.int_2;
+			var num3 = class48_0.int_3;
+			var i = 0;
+			var num4 = class48_0.method_0();
+			var num5 = class48_0.method_1();
+			var num6 = class48_0.method_2();
+			var num7 = class48_0.method_3();
+			var num8 = class48_0.method_4();
+			var num9 = class48_0.method_5();
+			var num10 = class48_0.method_6();
+			var num11 = array[num + 26] & 255;
+			var num12 = int_7;
+			var num13 = int_2;
 			if (num13 != 0)
 			{
 				int_1 -= num13;
@@ -203,7 +203,7 @@ namespace ns3
 			method_4(num11 + 1);
 			if (num10 != int_12)
 			{
-				for (int j = int_6; j < int_5; j++)
+				for (var j = int_6; j < int_5; j++)
 				{
 					int_1 -= (int_3[j] & 255);
 				}
@@ -218,7 +218,7 @@ namespace ns3
 					num6 = 0;
 					while (i < num11)
 					{
-						int num14 = array[num + 27 + i] & 255;
+						var num14 = array[num + 27 + i] & 255;
 						num2 += num14;
 						num3 -= num14;
 						if (num14 < 255)
@@ -236,10 +236,10 @@ namespace ns3
 				Buffer.BlockCopy(src, num2, byte_0, int_1, num3);
 				int_1 += num3;
 			}
-			int num15 = -1;
+			var num15 = -1;
 			while (i < num11)
 			{
-				int num16 = array[num + 27 + i] & 255;
+				var num16 = array[num + 27 + i] & 255;
 				int_3[int_5] = num16;
 				long_0[int_5] = -1L;
 				if (num6 != 0)

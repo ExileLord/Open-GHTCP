@@ -136,7 +136,7 @@ namespace ns13
 
 		private bool method_9(int int_2)
 		{
-			bool result = false;
+			var result = false;
 			if ((byte)(enum32_0 & Enum32.flag_5) != 0 && (method_10() == 0 || method_10() == 10) && (method_8() & int_2) == int_2)
 			{
 				result = true;
@@ -155,7 +155,7 @@ namespace ns13
 			{
 				return ushort_1;
 			}
-			int result = 10;
+			var result = 10;
 			if (method_16())
 			{
 				result = 45;
@@ -199,7 +199,7 @@ namespace ns13
 			bool result;
 			if (!(result = bool_0))
 			{
-				ulong num = ulong_1;
+				var num = ulong_1;
 				if (ushort_1 == 0 && method_0())
 				{
 					num += 12uL;
@@ -231,12 +231,12 @@ namespace ns13
 
 		public void method_19(DateTime dateTime_0)
 		{
-			uint num = (uint)dateTime_0.Year;
-			uint num2 = (uint)dateTime_0.Month;
-			uint num3 = (uint)dateTime_0.Day;
-			uint num4 = (uint)dateTime_0.Hour;
-			uint num5 = (uint)dateTime_0.Minute;
-			uint num6 = (uint)dateTime_0.Second;
+			var num = (uint)dateTime_0.Year;
+			var num2 = (uint)dateTime_0.Month;
+			var num3 = (uint)dateTime_0.Day;
+			var num4 = (uint)dateTime_0.Hour;
+			var num5 = (uint)dateTime_0.Minute;
+			var num6 = (uint)dateTime_0.Second;
 			if (num < 1980u)
 			{
 				num = 1980u;
@@ -344,7 +344,7 @@ namespace ns13
 
 		public void method_31(bool bool_1)
 		{
-			Class202 @class = new Class202(byte_0);
+			var @class = new Class202(byte_0);
 			if (@class.method_6(1))
 			{
 				if ((ushort_1 & 255) < 45)
@@ -382,13 +382,13 @@ namespace ns13
 				@class.method_15();
 				while (@class.method_5() >= 4)
 				{
-					int num = @class.method_16();
-					int num2 = @class.method_16();
+					var num = @class.method_16();
+					var num2 = @class.method_16();
 					if (num == 1)
 					{
 						if (num2 >= 24)
 						{
-							long fileTime = @class.method_14();
+							var fileTime = @class.method_14();
 							@class.method_14();
 							@class.method_14();
 							method_19(DateTime.FromFileTime(fileTime));
@@ -401,11 +401,11 @@ namespace ns13
 			}
 			else if (@class.method_6(21589))
 			{
-				int num3 = @class.method_3();
-				int num4 = @class.method_17();
+				var num3 = @class.method_3();
+				var num4 = @class.method_17();
 				if ((num4 & 1) != 0 && num3 >= 5)
 				{
-					int seconds = @class.method_15();
+					var seconds = @class.method_15();
 					method_19((new DateTime(1970, 1, 1, 0, 0, 0).ToUniversalTime() + new TimeSpan(0, 0, 0, seconds, 0)).ToLocalTime());
 				}
 			}
@@ -418,7 +418,7 @@ namespace ns13
 
 		public bool method_33()
 		{
-			int length = string_0.Length;
+			var length = string_0.Length;
 			int arg_41_0;
 			if (length > 0)
 			{
@@ -439,7 +439,7 @@ namespace ns13
 
 		public object Clone()
 		{
-			Class193 @class = (Class193)MemberwiseClone();
+			var @class = (Class193)MemberwiseClone();
 			if (byte_0 != null)
 			{
 				@class.byte_0 = new byte[byte_0.Length];

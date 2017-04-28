@@ -39,8 +39,8 @@ namespace ns15
 
         public ChartParser(string string_0, bool nothing)
         {
-            List<string> list = new List<string>();
-            StringReader stringReader = new StringReader(string_0);
+            var list = new List<string>();
+            var stringReader = new StringReader(string_0);
             string bracketItems = null;
             string bracketItemsWithBrackets;
             while ((bracketItemsWithBrackets = stringReader.ReadLine()) != null)
@@ -65,20 +65,20 @@ namespace ns15
                         if (a == "Song")
                         {
                             gh3SongInfo.editable = true;
-                            using (List<string>.Enumerator enumerator = list.GetEnumerator())
+                            using (var enumerator = list.GetEnumerator())
                             {
                                 while (enumerator.MoveNext())
                                 {
-                                    string current = enumerator.Current;
-                                    string[] array = current.Split(new[]
+                                    var current = enumerator.Current;
+                                    var array = current.Split(new[]
                                     {
                                         '\t',
                                         '='
                                     }, StringSplitOptions.RemoveEmptyEntries);
                                     if (array.Length > 1)
                                     {
-                                        string text3 = array[0].Trim().ToLower();
-                                        string text4 = array[1].Trim().Replace("\"", "");
+                                        var text3 = array[0].Trim().ToLower();
+                                        var text4 = array[1].Trim().Replace("\"", "");
                                         string key;
                                         switch (key = text3)
                                         {
@@ -189,8 +189,8 @@ namespace ns15
 
         public ChartParser(string string_0)
 		{
-            List<string> list = new List<string>();
-			StreamReader streamReader = File.OpenText(string_0);
+            var list = new List<string>();
+			var streamReader = File.OpenText(string_0);
 			string bracketItems = null;
 			string bracketItemsWithBrackets;
 			while ((bracketItemsWithBrackets = streamReader.ReadLine()) != null)
@@ -215,20 +215,20 @@ namespace ns15
 						if (a == "Song")
 						{
 							gh3SongInfo.editable = true;
-							using (List<string>.Enumerator enumerator = list.GetEnumerator())
+							using (var enumerator = list.GetEnumerator())
 							{
 								while (enumerator.MoveNext())
 								{
-									string current = enumerator.Current;
-									string[] array = current.Split(new[]
+									var current = enumerator.Current;
+									var array = current.Split(new[]
 									{
 										'\t',
 										'='
 									}, StringSplitOptions.RemoveEmptyEntries);
 									if (array.Length > 1)
 									{
-										string text3 = array[0].Trim().ToLower();
-										string text4 = array[1].Trim().Replace("\"", "");
+										var text3 = array[0].Trim().ToLower();
+										var text4 = array[1].Trim().Replace("\"", "");
 										string key;
 										switch (key = text3)
 										{
@@ -350,9 +350,9 @@ namespace ns15
 				"Hard",
 				"Expert"
 			};
-			for (int i = 0; i < array.Length; i++)
+			for (var i = 0; i < array.Length; i++)
 			{
-				string str = array[i];
+				var str = array[i];
 				if (difficultyWithNotes.ContainsKey(str + "Single"))
 				{
 					difficultyWithNotes.Add(str + "SingleGuitar", difficultyWithNotes[str + "Single"]);
@@ -371,8 +371,8 @@ namespace ns15
 					difficultyWithNotes.Remove(str + "DoubleBass");
 				}
 			}
-            List<string> list = new List<string>(difficultyWithNotes.Keys);
-			foreach (string current in list)
+            var list = new List<string>(difficultyWithNotes.Keys);
+			foreach (var current in list)
 			{
 				if (difficultyWithNotes[current].noteList.Count == 0)
 				{
@@ -392,7 +392,7 @@ namespace ns15
         public void chartCreator(string fileLocation, GH3Song song)
         {
             gh3SongInfo = song;
-            StreamWriter streamWriter = new StreamWriter(fileLocation);
+            var streamWriter = new StreamWriter(fileLocation);
             streamWriter.WriteLine("[Song]");
             streamWriter.WriteLine("{");
             streamWriter.WriteLine("\tName = \"" + gh3SongInfo.title + "\"");
@@ -422,8 +422,8 @@ namespace ns15
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[SyncTrack]");
             streamWriter.WriteLine("{");
-            List<int> list = new List<int>(bpmInterpreter.TSList.Keys);
-            foreach (int current in bpmInterpreter.bpmList.Keys)
+            var list = new List<int>(bpmInterpreter.TSList.Keys);
+            foreach (var current in bpmInterpreter.bpmList.Keys)
             {
                 if (!list.Contains(current))
                 {
@@ -431,7 +431,7 @@ namespace ns15
                 }
             }
             list.Sort();
-            foreach (int current2 in list)
+            foreach (var current2 in list)
             {
                 if (bpmInterpreter.bpmList.ContainsKey(current2))
                 {
@@ -446,7 +446,7 @@ namespace ns15
             streamWriter.WriteLine("[Events]");
             streamWriter.WriteLine("{");
             list = new List<int>(sectionInterpreter.sectionList.Keys);
-            foreach (int current3 in sectionInterpreter.otherList.Keys)
+            foreach (var current3 in sectionInterpreter.otherList.Keys)
             {
                 if (!list.Contains(current3))
                 {
@@ -454,7 +454,7 @@ namespace ns15
                 }
             }
             list.Sort();
-            foreach (int current4 in list)
+            foreach (var current4 in list)
             {
                 if (sectionInterpreter.sectionList.ContainsKey(current4))
                 {
@@ -462,8 +462,8 @@ namespace ns15
                 }
                 if (sectionInterpreter.otherList.ContainsKey(current4))
                 {
-                    List<string> list2 = sectionInterpreter.otherList[current4];
-                    foreach (string current5 in list2)
+                    var list2 = sectionInterpreter.otherList[current4];
+                    foreach (var current5 in list2)
                     {
                         streamWriter.WriteLine(string.Concat("\t", current4, " = E \"", current5, "\""));
                     }
@@ -477,74 +477,74 @@ namespace ns15
                 "Hard",
                 "Expert"
             };
-            for (int i = 0; i < difficulties.Length; i++)
+            for (var i = 0; i < difficulties.Length; i++)
             {
-                string str = difficulties[i];
+                var str = difficulties[i];
                 string[] array2 = {
                     "Single",
                     "Double"
                 };
-                for (int j = 0; j < array2.Length; j++)
+                for (var j = 0; j < array2.Length; j++)
                 {
-                    string str2 = array2[j];
+                    var str2 = array2[j];
                     string[] array3 = {
                         "Guitar",
                         "Rhythm"
                     };
-                    for (int k = 0; k < array3.Length; k++)
+                    for (var k = 0; k < array3.Length; k++)
                     {
-                        string str3 = array3[k];
+                        var str3 = array3[k];
                         if (difficultyWithNotes.ContainsKey(str + str2 + str3))
                         {
-                            string text = str + str2 + str3;
-                            string printText = convertDBCName("[" + text + "]");
-                            NoteEventInterpreter @class = difficultyWithNotes[text];
+                            var text = str + str2 + str3;
+                            var printText = convertDBCName("[" + text + "]");
+                            var @class = difficultyWithNotes[text];
                             streamWriter.WriteLine(printText);
                             streamWriter.WriteLine("{");
                             list = new List<int>(@class.noteList.Keys);
-                            foreach (int current6 in @class.class228_2.Keys)
+                            foreach (var current6 in @class.class228_2.Keys)
                             {
                                 if (!list.Contains(current6))
                                 {
                                     list.Add(current6);
                                 }
                             }
-                            foreach (int current7 in @class.class228_3.Keys)
+                            foreach (var current7 in @class.class228_3.Keys)
                             {
                                 if (!list.Contains(current7))
                                 {
                                     list.Add(current7);
                                 }
                             }
-                            foreach (int current8 in @class.class228_1.Keys)
+                            foreach (var current8 in @class.class228_1.Keys)
                             {
                                 if (!list.Contains(current8))
                                 {
                                     list.Add(current8);
                                 }
                             }
-                            foreach (int current9 in @class.class228_4.Keys)
+                            foreach (var current9 in @class.class228_4.Keys)
                             {
                                 if (!list.Contains(current9))
                                 {
                                     list.Add(current9);
                                 }
                             }
-                            foreach (int current10 in @class.class228_5.Keys)
+                            foreach (var current10 in @class.class228_5.Keys)
                             {
                                 if (!list.Contains(current10))
                                 {
                                     list.Add(current10);
                                 }
                             }
-                            foreach (int current11 in @class.class228_6.Keys)
+                            foreach (var current11 in @class.class228_6.Keys)
                             {
                                 if (!list.Contains(current11))
                                 {
                                     list.Add(current11);
                                 }
                             }
-                            foreach (int current12 in @class.eventList.Keys)
+                            foreach (var current12 in @class.eventList.Keys)
                             {
                                 if (!list.Contains(current12))
                                 {
@@ -552,20 +552,20 @@ namespace ns15
                                 }
                             }
                             list.Sort();
-                            foreach (int current13 in list)
+                            foreach (var current13 in list)
                             {
                                 if (@class.eventList.ContainsKey(current13))
                                 {
-                                    List<string> list2 = @class.eventList[current13];
-                                    foreach (string current14 in list2)
+                                    var list2 = @class.eventList[current13];
+                                    foreach (var current14 in list2)
                                     {
                                         streamWriter.WriteLine(string.Concat("\t", current13, " = E ", current14));
                                     }
                                 }
                                 if (@class.noteList.ContainsKey(current13))
                                 {
-                                    NotesAtOffset class2 = @class.noteList[current13];
-                                    for (int l = 0; l < class2.noteValues.Length; l++)
+                                    var class2 = @class.noteList[current13];
+                                    for (var l = 0; l < class2.noteValues.Length; l++)
                                     {
                                         if (class2.noteValues[l])
                                         {
@@ -607,20 +607,20 @@ namespace ns15
                     "Drums",
                     "Keyboard"
                 };
-                for (int j = 0; j < array2.Length; j++)
+                for (var j = 0; j < array2.Length; j++)
                 {
-                    string str4 = array2[j];
+                    var str4 = array2[j];
                     if (instrumentList.ContainsKey(str + str4))
                     {
-                        string text2 = str + str4;
-                        InstrumentType class3 = instrumentList[text2];
+                        var text2 = str + str4;
+                        var class3 = instrumentList[text2];
                         streamWriter.WriteLine("[" + text2 + "]");
                         streamWriter.WriteLine("{");
                         list = new List<int>(class3.Keys);
                         list.Sort();
-                        foreach (int current15 in list)
+                        foreach (var current15 in list)
                         {
-                            foreach (string current16 in class3[current15])
+                            foreach (var current16 in class3[current15])
                             {
                                 streamWriter.WriteLine(string.Concat("\t", current15, " = E ", current16));
                             }
@@ -642,7 +642,7 @@ namespace ns15
                 "[EasyDoubleGuitar]", "[MediumDoubleGuitar]", "[HardDoubleGuitar]", "[ExpertDoubleGuitar]",
                 "[EasySingleBass]", "[MediumSingleBass]", "[HardSingleBass]", "[ExpertSingleBass]",
                 "[EasyDoubleBass]", "[MediumDoubleBass]", "[HardDoubleBass]", "[ExpertDoubleBass]"};
-            for (int i = 0; i < dbcTypes.Length; i++)
+            for (var i = 0; i < dbcTypes.Length; i++)
             {
                 if (name.Equals(dbcTypes[i]))
                 {
@@ -655,7 +655,7 @@ namespace ns15
         public void dbcCreator(string fileLocation, GH3Song gh3Song)
 		{
             gh3SongInfo = gh3Song;
-			StreamWriter streamWriter = new StreamWriter(fileLocation);
+			var streamWriter = new StreamWriter(fileLocation);
 			streamWriter.WriteLine("[Song]");
 			streamWriter.WriteLine("{");
 			streamWriter.WriteLine("\tName = \"" + gh3SongInfo.title + "\"");
@@ -685,8 +685,8 @@ namespace ns15
 			streamWriter.WriteLine("}");
 			streamWriter.WriteLine("[SyncTrack]");
 			streamWriter.WriteLine("{");
-			List<int> list = new List<int>(bpmInterpreter.TSList.Keys);
-			foreach (int current in bpmInterpreter.bpmList.Keys)
+			var list = new List<int>(bpmInterpreter.TSList.Keys);
+			foreach (var current in bpmInterpreter.bpmList.Keys)
 			{
 				if (!list.Contains(current))
 				{
@@ -694,7 +694,7 @@ namespace ns15
 				}
 			}
 			list.Sort();
-			foreach (int current2 in list)
+			foreach (var current2 in list)
 			{
 				if (bpmInterpreter.bpmList.ContainsKey(current2))
 				{
@@ -709,7 +709,7 @@ namespace ns15
 			streamWriter.WriteLine("[Events]");
 			streamWriter.WriteLine("{");
 			list = new List<int>(sectionInterpreter.sectionList.Keys);
-			foreach (int current3 in sectionInterpreter.otherList.Keys)
+			foreach (var current3 in sectionInterpreter.otherList.Keys)
 			{
 				if (!list.Contains(current3))
 				{
@@ -717,7 +717,7 @@ namespace ns15
 				}
 			}
 			list.Sort();
-			foreach (int current4 in list)
+			foreach (var current4 in list)
 			{
 				if (sectionInterpreter.sectionList.ContainsKey(current4))
 				{
@@ -725,8 +725,8 @@ namespace ns15
 				}
 				if (sectionInterpreter.otherList.ContainsKey(current4))
 				{
-					List<string> list2 = sectionInterpreter.otherList[current4];
-					foreach (string current5 in list2)
+					var list2 = sectionInterpreter.otherList[current4];
+					foreach (var current5 in list2)
 					{
 						streamWriter.WriteLine(string.Concat("\t", current4, " = E \"", current5, "\""));
 					}
@@ -740,73 +740,73 @@ namespace ns15
 				"Hard",
 				"Expert"
 			};
-			for (int i = 0; i < array.Length; i++)
+			for (var i = 0; i < array.Length; i++)
 			{
-				string str = array[i];
+				var str = array[i];
 				string[] array2 = {
 					"Single",
 					"Double"
 				};
-				for (int j = 0; j < array2.Length; j++)
+				for (var j = 0; j < array2.Length; j++)
 				{
-					string str2 = array2[j];
+					var str2 = array2[j];
 					string[] array3 = {
 						"Guitar",
 						"Rhythm"
 					};
-					for (int k = 0; k < array3.Length; k++)
+					for (var k = 0; k < array3.Length; k++)
 					{
-						string str3 = array3[k];
+						var str3 = array3[k];
 						if (difficultyWithNotes.ContainsKey(str + str2 + str3))
 						{
-							string text = str + str2 + str3;
-							NoteEventInterpreter @class = difficultyWithNotes[text];
+							var text = str + str2 + str3;
+							var @class = difficultyWithNotes[text];
 							streamWriter.WriteLine("[" + text + "]");
 							streamWriter.WriteLine("{");
 							list = new List<int>(@class.noteList.Keys);
-							foreach (int current6 in @class.class228_2.Keys)
+							foreach (var current6 in @class.class228_2.Keys)
 							{
 								if (!list.Contains(current6))
 								{
 									list.Add(current6);
 								}
 							}
-							foreach (int current7 in @class.class228_3.Keys)
+							foreach (var current7 in @class.class228_3.Keys)
 							{
 								if (!list.Contains(current7))
 								{
 									list.Add(current7);
 								}
 							}
-							foreach (int current8 in @class.class228_1.Keys)
+							foreach (var current8 in @class.class228_1.Keys)
 							{
 								if (!list.Contains(current8))
 								{
 									list.Add(current8);
 								}
 							}
-							foreach (int current9 in @class.class228_4.Keys)
+							foreach (var current9 in @class.class228_4.Keys)
 							{
 								if (!list.Contains(current9))
 								{
 									list.Add(current9);
 								}
 							}
-							foreach (int current10 in @class.class228_5.Keys)
+							foreach (var current10 in @class.class228_5.Keys)
 							{
 								if (!list.Contains(current10))
 								{
 									list.Add(current10);
 								}
 							}
-							foreach (int current11 in @class.class228_6.Keys)
+							foreach (var current11 in @class.class228_6.Keys)
 							{
 								if (!list.Contains(current11))
 								{
 									list.Add(current11);
 								}
 							}
-							foreach (int current12 in @class.eventList.Keys)
+							foreach (var current12 in @class.eventList.Keys)
 							{
 								if (!list.Contains(current12))
 								{
@@ -814,20 +814,20 @@ namespace ns15
 								}
 							}
 							list.Sort();
-							foreach (int current13 in list)
+							foreach (var current13 in list)
 							{
 								if (@class.eventList.ContainsKey(current13))
 								{
-									List<string> list2 = @class.eventList[current13];
-									foreach (string current14 in list2)
+									var list2 = @class.eventList[current13];
+									foreach (var current14 in list2)
 									{
 										streamWriter.WriteLine(string.Concat("\t", current13, " = E ", current14));
 									}
 								}
 								if (@class.noteList.ContainsKey(current13))
 								{
-									NotesAtOffset class2 = @class.noteList[current13];
-									for (int l = 0; l < class2.noteValues.Length; l++)
+									var class2 = @class.noteList[current13];
+									for (var l = 0; l < class2.noteValues.Length; l++)
 									{
 										if (class2.noteValues[l])
 										{
@@ -869,20 +869,20 @@ namespace ns15
 					"Drums",
 					"Keyboard"
 				};
-				for (int j = 0; j < array2.Length; j++)
+				for (var j = 0; j < array2.Length; j++)
 				{
-					string str4 = array2[j];
+					var str4 = array2[j];
 					if (instrumentList.ContainsKey(str + str4))
 					{
-						string text2 = str + str4;
-						InstrumentType class3 = instrumentList[text2];
+						var text2 = str + str4;
+						var class3 = instrumentList[text2];
 						streamWriter.WriteLine("[" + text2 + "]");
 						streamWriter.WriteLine("{");
 						list = new List<int>(class3.Keys);
 						list.Sort();
-						foreach (int current15 in list)
+						foreach (var current15 in list)
 						{
-							foreach (string current16 in class3[current15])
+							foreach (var current16 in class3[current15])
 							{
 								streamWriter.WriteLine(string.Concat("\t", current15, " = E ", current16));
 							}
@@ -896,24 +896,24 @@ namespace ns15
 
 		private int calculateOffset(int offsetInMS)
 		{
-			int bpmIndex = bpmInterpreter.bpmList.method_1(offsetInMS);
-            int test = Convert.ToInt32(125000m * (bpmMSTracker[bpmIndex] + (offsetInMS - (decimal)bpmInterpreter.bpmList.Keys[bpmIndex]) / bpmInterpreter.bpmList.Values[bpmIndex]));
+			var bpmIndex = bpmInterpreter.bpmList.method_1(offsetInMS);
+            var test = Convert.ToInt32(125000m * (bpmMSTracker[bpmIndex] + (offsetInMS - (decimal)bpmInterpreter.bpmList.Keys[bpmIndex]) / bpmInterpreter.bpmList.Values[bpmIndex]));
             return test;
         }
 
 		public QBCParser ConvertToQBC()
         { 
-            QBCParser @class = new QBCParser(gh3SongInfo);
+            var @class = new QBCParser(gh3SongInfo);
 			Track<int, int> track = null;
 			Track<int, int> class3 = null;
-			int largestOffset = 0;
+			var largestOffset = 0;
             //Checks if there are any difficulties
             if (difficultyWithNotes.Count == 0)
 			{
 				throw new Exception("Chart file is empty and cannot be parsed to QB.");
 			}
             //Finds the largest offset
-            foreach (NoteEventInterpreter notes in difficultyWithNotes.Values)
+            foreach (var notes in difficultyWithNotes.Values)
 			{                
 				largestOffset = Math.Max(largestOffset, notes.noteList.Keys[notes.noteList.Count - 1] + notes.noteList.Values[notes.noteList.Count - 1].sustainLength);
 			}
@@ -921,7 +921,7 @@ namespace ns15
 			bpmMSTracker = new Track<int, decimal>();
 			bpmMSTracker.Add(0, 0m);
             //Adds BPMS to local list
-			for (int i = 1; i < bpmInterpreter.bpmList.Count; i++)
+			for (var i = 1; i < bpmInterpreter.bpmList.Count; i++)
 			{
                  bpmMSTracker.Add(i, bpmMSTracker[i - 1] + (bpmInterpreter.bpmList.Keys[i] - bpmInterpreter.bpmList.Keys[i - 1]) / (decimal)bpmInterpreter.bpmList.Values[i - 1]);
             }
@@ -929,29 +929,29 @@ namespace ns15
 				"Single",
 				"Double"
 			};
-            for (int j = 0; j < array.Length; j++)
+            for (var j = 0; j < array.Length; j++)
 			{
-				string text = array[j];
+				var text = array[j];
 				string[] array2 = {
 					"Guitar",
 					"Rhythm"
 				};
-				for (int k = 0; k < array2.Length; k++)
+				for (var k = 0; k < array2.Length; k++)
 				{
-					string text2 = array2[k];
+					var text2 = array2[k];
 					string[] array3 = {
 						"Easy",
 						"Medium",
 						"Hard",
 						"Expert"
 					};
-                    for (int l = 0; l < array3.Length; l++)
+                    for (var l = 0; l < array3.Length; l++)
 					{
-						string text3 = array3[l];
-						string difficulty = (text2.ToLower() + ((text == "Double") ? "coop" : "") + "_" + text3.ToLower()).Replace("guitar_", "");
+						var text3 = array3[l];
+						var difficulty = (text2.ToLower() + ((text == "Double") ? "coop" : "") + "_" + text3.ToLower()).Replace("guitar_", "");
 						if (difficultyWithNotes.ContainsKey(text3 + text + text2))
 						{
-							NoteEventInterpreter noteEventInterpreter = difficultyWithNotes[text3 + text + text2];
+							var noteEventInterpreter = difficultyWithNotes[text3 + text + text2];
                             if (noteEventInterpreter.noteList.Count != 0)
 							{
                                 @class.noteList.Add(difficulty, new Track<int, NotesAtOffset>());
@@ -981,7 +981,7 @@ namespace ns15
 			}
             method_6(@class.class228_2, track);
 			method_6(@class.class228_3, class3);
-            foreach (int current2 in bpmInterpreter.TSList.Keys)
+            foreach (var current2 in bpmInterpreter.TSList.Keys)
 			{
 				@class.tsList.Add(calculateOffset(current2), new[]
 				{
@@ -989,14 +989,14 @@ namespace ns15
 					4
 				});
 			}
-            int num2 = (int)Math.Ceiling(largestOffset / (double)constant480);
-            for (int m = 0; m <= num2; m++)
+            var num2 = (int)Math.Ceiling(largestOffset / (double)constant480);
+            for (var m = 0; m <= num2; m++)
 			{
 				@class.FretbarList.method_1(calculateOffset(m * constant480));
 			}
             @class.FretbarList[0] = @class.FretbarList[1] - 4;
 			@class.int_0 = 1;
-            foreach (int current3 in sectionInterpreter.sectionList.Keys)
+            foreach (var current3 in sectionInterpreter.sectionList.Keys)
 			{
 				@class.class228_1.Add(calculateOffset(current3), sectionInterpreter.sectionList[current3]);
 			}
@@ -1008,13 +1008,13 @@ namespace ns15
 
 		private void method_4(Track<int, NotesAtOffset> class228_1, Track<int, NotesAtOffset> class228_2)
 		{
-			foreach (int current in class228_2.Keys)
+			foreach (var current in class228_2.Keys)
 			{
-				int num = calculateOffset(current);
-				int int_ = (class228_2[current].sustainLength == 0) ? 1 : (calculateOffset(current + class228_2[current].sustainLength) - num);
+				var num = calculateOffset(current);
+				var int_ = (class228_2[current].sustainLength == 0) ? 1 : (calculateOffset(current + class228_2[current].sustainLength) - num);
 				if (class228_1.ContainsKey(num))
 				{
-					for (int i = 0; i < 32; i++)
+					for (var i = 0; i < 32; i++)
 					{
 						if (class228_2[current].noteValues[i])
 						{
@@ -1031,17 +1031,17 @@ namespace ns15
 
 		private void method_5(Track<int, int[]> difficulty, Track<int, int> sp, Track<int, NotesAtOffset> notes)
 		{
-			foreach (int current in sp.Keys)
+			foreach (var current in sp.Keys)
 			{
-                int num = calculateOffset(current);
-                int num2 = 0;
+                var num = calculateOffset(current);
+                var num2 = 0;
                 if (sp[current] == 0)
                 {
                     num2 = 1;
                 }         
                 else
                 {
-                    int num4 = 0;
+                    var num4 = 0;
                     if ((sp.Keys[sp.method_1(current + sp[current])] > current))
                     {
                         num4 = notes.Keys[notes.method_1(sp.Keys[sp.method_1(current + sp[current])] - 1)];
@@ -1050,7 +1050,7 @@ namespace ns15
                     {
                         num4 = (current + sp[current]);
                     }
-                    int num3 = calculateOffset(num4);
+                    var num3 = calculateOffset(num4);
                     //int num3 = this.method_2((sp.Keys[sp.method_1(current + sp[current])] > current) ? notes.Keys[notes.method_1(sp.Keys[sp.method_1(current + sp[current])] - 1)] : (current + sp[current]));
                     num2 = (num3 - num);
                 }
@@ -1069,10 +1069,10 @@ namespace ns15
 			{
 				return;
 			}
-			foreach (int current in class228_2.Keys)
+			foreach (var current in class228_2.Keys)
 			{
-				int num = calculateOffset(current);
-				int value = (class228_2[current] == 0) ? 1 : (calculateOffset(current + class228_2[current]) - num);
+				var num = calculateOffset(current);
+				var value = (class228_2[current] == 0) ? 1 : (calculateOffset(current + class228_2[current]) - num);
 				class228_1.Add(num, value);
 			}
 		}

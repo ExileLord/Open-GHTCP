@@ -150,7 +150,7 @@ namespace ns0
 		public static bool smethod_0(string string_0)
 		{
 			Interface4 @interface = null;
-			int num = CreateAssemblyCache(out @interface, 0u);
+			var num = CreateAssemblyCache(out @interface, 0u);
 			if (num != 0)
 			{
 				return false;

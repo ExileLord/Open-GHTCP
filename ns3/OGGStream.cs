@@ -159,7 +159,7 @@ namespace ns3
 			{
 				throw new Exception0("OggStream: " + ex.Message);
 			}
-            int num = method_9(fileData, null, 0);
+            var num = method_9(fileData, null, 0);
             if (num == -1)
 			{
 				throw new Exception0("OggStream: open return -1");
@@ -172,7 +172,7 @@ namespace ns3
 
 		public OGGStream(Stream stream_1, byte[] byte_0, int int_24) : this()
 		{
-			int num = method_9(stream_1, byte_0, int_24);
+			var num = method_9(stream_1, byte_0, int_24);
 			if (num == -1)
 			{
 				throw new Exception0("OggStream: open return -1");
@@ -187,7 +187,7 @@ namespace ns3
 			}
 			while (long_6 <= 0L || long_0 < long_6)
 			{
-				int num = class52_0.method_3(class48_0);
+				var num = class52_0.method_3(class48_0);
 				if (num < 0)
 				{
 					long_0 -= num;
@@ -196,7 +196,7 @@ namespace ns3
 				{
 					if (num != 0)
 					{
-						int result = (int)long_0;
+						var result = (int)long_0;
 						long_0 += num;
 						return result;
 					}
@@ -204,7 +204,7 @@ namespace ns3
 					{
 						return int_6;
 					}
-					int num2 = method_7();
+					var num2 = method_7();
 					if (num2 == 0)
 					{
 						return int_7;
@@ -220,8 +220,8 @@ namespace ns3
 
 		private int method_1(Class48 class48_0)
 		{
-			long num = long_0;
-			int num2 = -1;
+			var num = long_0;
+			var num2 = -1;
 			int num3;
 			while (num2 == -1)
 			{
@@ -256,11 +256,11 @@ namespace ns3
 
 		private int method_2(OGGClass5 oggClass5, Class47 class47_1, int[] int_24, Class48 class48_0)
 		{
-			Class48 @class = new Class48();
-			Class67 class67_ = new Class67();
+			var @class = new Class48();
+			var class67_ = new Class67();
 			if (class48_0 == null)
 			{
-				int num = method_0(@class, int_2);
+				var num = method_0(@class, int_2);
 				if (num == int_9)
 				{
 					return int_9;
@@ -278,13 +278,13 @@ namespace ns3
 			class56_0.method_1(class48_0.method_5());
 			oggClass5.method_0();
 			class47_1.method_0();
-			int i = 0;
+			var i = 0;
 			while (i < 3)
 			{
 				class56_0.method_6(class48_0);
 				while (i < 3)
 				{
-					int num2 = class56_0.method_5(class67_);
+					var num2 = class56_0.method_5(class67_);
 					if (num2 == 0)
 					{
 						break;
@@ -321,13 +321,13 @@ namespace ns3
 
 		private void method_3(OGGClass5 class49_1, Class47 class47_1, int int_24)
 		{
-			Class48 @class = new Class48();
+			var @class = new Class48();
             oggClass5 = new OGGClass5[int_20];
 			class47_0 = new Class47[int_20];
 			long_2 = new long[int_20];
 			long_3 = new long[int_20];
 			int_21 = new int[int_20];
-			int i = 0;
+			var i = 0;
 			while (i < int_20)
 			{
                 if (class49_1 != null && class47_1 != null && i == 0)
@@ -350,12 +350,12 @@ namespace ns3
 						class56_0.method_2();
 					}
 				}
-                long long_ = long_1[i + 1];
+                var long_ = long_1[i + 1];
 				method_8(long_);
 				long num2;
                 while (true)
 				{
-                    int num = method_1(@class);
+                    var num = method_1(@class);
                     if (num == -1)
 					{
 						goto Block_6;
@@ -405,7 +405,7 @@ namespace ns3
 
 		private int method_6(int int_24)
 		{
-            Class48 @class = new Class48();
+            var @class = new Class48();
 			Class67 class2;
 			long num2;
 			while (true)
@@ -413,7 +413,7 @@ namespace ns3
                 if (bool_1)
 				{
                     class2 = new Class67();
-					int num = class56_0.method_5(class2);
+					var num = class56_0.method_5(class2);
 					if (num > 0)
 					{
 						num2 = class2.long_0;
@@ -441,7 +441,7 @@ namespace ns3
                     if (bool_0)
 					{
                         int_22 = @class.method_5();
-						int num3 = 0;
+						var num3 = 0;
 						while (num3 < int_20 && int_21[num3] != int_22)
 						{
 							num3++;
@@ -456,8 +456,8 @@ namespace ns3
                     }
 					else
 					{
-                        int[] array = new int[1];
-						int num4 = method_2(oggClass5[0], class47_0[0], array, @class);
+                        var array = new int[1];
+						var num4 = method_2(oggClass5[0], class47_0[0], array, @class);
 						int_22 = array[0];
 						if (num4 != 0)
 						{
@@ -471,16 +471,16 @@ namespace ns3
             }
 			return -1;
 			Block_11:
-            int num5 = oggClass1.method_3();
+            var num5 = oggClass1.method_3();
 			oggClass1.method_2(oggClass6);
 			float_1 += oggClass1.method_3() - num5;
 			float_0 += class2.int_1 * 8;
             if (num2 != -1L && class2.int_3 == 0)
 			{
-				int num6 = bool_0 ? int_23 : 0;
-				int num7 = oggClass1.method_3();
+				var num6 = bool_0 ? int_23 : 0;
+				var num7 = oggClass1.method_3();
 				num2 -= num7;
-				for (int i = 0; i < num6; i++)
+				for (var i = 0; i < num6; i++)
 				{
 					num2 += long_3[i];
 				}
@@ -550,9 +550,9 @@ namespace ns3
 
 		private int method_7()
 		{
-			int offset = class52_0.method_1(int_2);
-			byte[] byte_ = class52_0.byte_0;
-			int num = 0;
+			var offset = class52_0.method_1(int_2);
+			var byte_ = class52_0.byte_0;
+			var num = 0;
 			int result;
 			try
 			{
@@ -592,7 +592,7 @@ namespace ns3
             class52_0.method_5();
             if (nullArray != null)
 			{
-                int dstOffset = class52_0.method_1(zero);
+                var dstOffset = class52_0.method_1(zero);
                 Buffer.BlockCopy(nullArray, 0, class52_0.byte_0, dstOffset, zero);
 				class52_0.method_2(zero);
 			}
@@ -606,7 +606,7 @@ namespace ns3
                 num = method_12();
             }
             //int num = stream_1.CanSeek ? this.method_11() : this.method_12();
-            OGGClass5 @class = method_21(-1);
+            var @class = method_21(-1);
             waveFormat_0 = new WaveFormat(@class.int_9, @class.int_8);
 			double_0 = waveFormat_0.int_0 * waveFormat_0.short_1 / (method_20(-1) / 8.0);
             long_5 = method_15(-1) * waveFormat_0.short_1;
@@ -624,13 +624,13 @@ namespace ns3
 
 		private int method_11()
 		{
-			OGGClass5 oggClass5 = new OGGClass5();
-			Class47 class47_ = new Class47();
-			Class48 @class = new Class48();
-			int[] array = new int[1];
-            int num = method_2(oggClass5, class47_, array, null);
-            int num2 = array[0];
-			int int_ = (int)long_0;
+			var oggClass5 = new OGGClass5();
+			var class47_ = new Class47();
+			var @class = new Class48();
+			var array = new int[1];
+            var num = method_2(oggClass5, class47_, array, null);
+            var num2 = array[0];
+			var int_ = (int)long_0;
 			class56_0.method_2();
             if (num == -1)
 			{
@@ -639,7 +639,7 @@ namespace ns3
 			bool_0 = true;
             smethod_0(fileStream, 0L, int_5);
             long_0 = smethod_1(fileStream);
-			long num3 = long_0;
+			var num3 = long_0;
             num3 = method_1(@class);
             if (@class.method_5() != num2)
 			{
@@ -665,7 +665,7 @@ namespace ns3
 			oggClass5[0] = new OGGClass5();
 			class47_0 = new Class47[int_20];
 			class47_0[0] = new Class47();
-			int[] array = new int[1];
+			var array = new int[1];
 			if (method_2(oggClass5[0], class47_0[0], array, null) == -1)
 			{
 				return -1;
@@ -677,9 +677,9 @@ namespace ns3
 
 		private int method_13(long long_6, long long_7, long long_8, int int_24, int int_25)
 		{
-			long num = long_8;
-			long long_9 = long_8;
-			Class48 @class = new Class48();
+			var num = long_8;
+			var long_9 = long_8;
+			var @class = new Class48();
 			int num3;
 			while (long_7 < num)
 			{
@@ -746,8 +746,8 @@ namespace ns3
 			}
 			if (int_24 < 0)
 			{
-				long num = 0L;
-				for (int i = 0; i < int_20; i++)
+				var num = 0L;
+				for (var i = 0; i < int_20; i++)
 				{
 					num += method_14(i);
 				}
@@ -764,8 +764,8 @@ namespace ns3
 			}
 			if (int_24 < 0)
 			{
-				long num = 0L;
-				for (int i = 0; i < int_20; i++)
+				var num = 0L;
+				for (var i = 0; i < int_20; i++)
 				{
 					num += method_15(i);
 				}
@@ -782,8 +782,8 @@ namespace ns3
 			}
 			if (int_24 < 0)
 			{
-				float num = 0f;
-				for (int i = 0; i < int_20; i++)
+				var num = 0f;
+				for (var i = 0; i < int_20; i++)
 				{
 					num += method_16(i);
 				}
@@ -837,7 +837,7 @@ namespace ns3
 
 		public int method_18(long long_6)
 		{
-			long num = method_15(-1);
+			var num = method_15(-1);
 			if (!bool_0)
 			{
 				return -1;
@@ -857,11 +857,11 @@ namespace ns3
 					break;
 				}
 			}
-			long num2 = long_6 - num;
-			long num3 = long_1[i + 1];
-			long num4 = long_1[i];
-			int int_ = (int)num4;
-			Class48 @class = new Class48();
+			var num2 = long_6 - num;
+			var num3 = long_1[i + 1];
+			var num4 = long_1[i];
+			var int_ = (int)num4;
+			var @class = new Class48();
 			while (num4 < num3)
 			{
 				long num5;
@@ -874,14 +874,14 @@ namespace ns3
 					num5 = (num3 + num4) / 2L;
 				}
 				method_8(num5);
-				int num6 = method_0(@class, num3 - num5);
+				var num6 = method_0(@class, num3 - num5);
 				if (num6 == -1)
 				{
 					num3 = num5;
 				}
 				else
 				{
-					long num7 = @class.method_4();
+					var num7 = @class.method_4();
 					if (num7 < num2)
 					{
 						int_ = num6;
@@ -913,8 +913,8 @@ namespace ns3
 			}
 			while (long_4 < long_6)
 			{
-				int num8 = (int)(long_6 - long_4);
-				int num9 = oggClass1.method_3();
+				var num8 = (int)(long_6 - long_4);
+				var num9 = oggClass1.method_3();
 				if (num9 > num8)
 				{
 					num9 = num8;
@@ -950,8 +950,8 @@ namespace ns3
 			}
 			if (int_24 < 0)
 			{
-				long num = 0L;
-				for (int i = 0; i < int_20; i++)
+				var num = 0L;
+				for (var i = 0; i < int_20; i++)
 				{
 					num += (long_1[i + 1] - long_2[i]) * 8L;
 				}
@@ -1008,7 +1008,7 @@ namespace ns3
 			class56_0.method_2();
 			if (oggClass5 != null && int_20 != 0)
 			{
-				for (int i = 0; i < int_20; i++)
+				for (var i = 0; i < int_20; i++)
 				{
 					oggClass5[i].method_1();
 					class47_0[i].method_2();
@@ -1074,8 +1074,8 @@ namespace ns3
 		public override int vmethod_3(IntPtr intptr_0, int int_24)
 		{
 			int_24 >>= 2;
-			float[] source = new float[int_24];
-			int num = vmethod_4(source, 0, int_24);
+			var source = new float[int_24];
+			var num = vmethod_4(source, 0, int_24);
 			if (num == 0)
 			{
 				return 0;
@@ -1086,22 +1086,22 @@ namespace ns3
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			float[] array = new float[count >> 2];
-			int num = vmethod_4(array, 0, array.Length) << 2;
+			var array = new float[count >> 2];
+			var num = vmethod_4(array, 0, array.Length) << 2;
 			Buffer.BlockCopy(array, 0, buffer, offset, num);
 			return num;
 		}
 
 		public override int vmethod_4(float[] float_2, int int_24, int int_25)
 		{
-			int num = int_24;
-			int num2 = int_24 + int_25;
+			var num = int_24;
+			var num2 = int_24 + int_25;
 			int short_ = waveFormat_0.short_0;
 			do
 			{
 				if (bool_1)
 				{
-					int num3 = oggClass1.method_4(float_2, num, num2);
+					var num3 = oggClass1.method_4(float_2, num, num2);
 					if (num3 != 0)
 					{
 						oggClass1.method_6(num3);
@@ -1120,17 +1120,17 @@ namespace ns3
 
 		public override float[][] vmethod_5(int int_24)
 		{
-			float[][] array = new float[waveFormat_0.short_0][];
-			for (int i = 0; i < array.Length; i++)
+			var array = new float[waveFormat_0.short_0][];
+			for (var i = 0; i < array.Length; i++)
 			{
 				array[i] = new float[int_24];
 			}
-			int num = 0;
+			var num = 0;
 			do
 			{
 				if (bool_1)
 				{
-					int num2 = oggClass1.method_5(array, num, int_24);
+					var num2 = oggClass1.method_5(array, num, int_24);
 					if (num2 != 0)
 					{
 						num += num2;
@@ -1150,7 +1150,7 @@ namespace ns3
 			}
 			if (num < int_24)
 			{
-				for (int j = 0; j < array.Length; j++)
+				for (var j = 0; j < array.Length; j++)
 				{
 					Array.Resize(ref array[j], num);
 				}

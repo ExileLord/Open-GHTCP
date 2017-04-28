@@ -59,8 +59,8 @@ namespace ns9
 
 		public QBCParser(string fileName)
 		{
-			List<string> list = new List<string>();
-			StreamReader streamReader = File.OpenText(fileName);
+			var list = new List<string>();
+			var streamReader = File.OpenText(fileName);
 			string text = null;
 			string currentLine;
 			while ((currentLine = streamReader.ReadLine()) != null)
@@ -127,20 +127,20 @@ namespace ns9
 							{
 							case 0:
 								gh3Song_0.editable = true;
-								using (List<string>.Enumerator enumerator = list.GetEnumerator())
+								using (var enumerator = list.GetEnumerator())
 								{
 									while (enumerator.MoveNext())
 									{
-										string current = enumerator.Current;
-										string[] array = current.Split(new[]
+										var current = enumerator.Current;
+										var array = current.Split(new[]
 										{
 											'\t',
 											'='
 										}, StringSplitOptions.RemoveEmptyEntries);
 										if (array.Length > 1)
 										{
-											string text3 = array[0].Trim().ToLower();
-											string text4 = array[1].Trim().Replace("\"", "");
+											var text3 = array[0].Trim().ToLower();
+											var text4 = array[1].Trim().Replace("\"", "");
 											string key2;
 											switch (key2 = text3)
 											{
@@ -211,12 +211,12 @@ namespace ns9
 							case 2:
 								goto IL_5AE;
 							case 3:
-								using (List<string>.Enumerator enumerator2 = list.GetEnumerator())
+								using (var enumerator2 = list.GetEnumerator())
 								{
 									while (enumerator2.MoveNext())
 									{
-										string current2 = enumerator2.Current;
-										string[] array2 = current2.Split(new[]
+										var current2 = enumerator2.Current;
+										var array2 = current2.Split(new[]
 										{
 											' ',
 											'\t',
@@ -242,12 +242,12 @@ namespace ns9
 							default:
 								goto IL_8AA;
 							}
-							using (List<string>.Enumerator enumerator3 = list.GetEnumerator())
+							using (var enumerator3 = list.GetEnumerator())
 							{
 								while (enumerator3.MoveNext())
 								{
-									string current3 = enumerator3.Current;
-									string[] array3 = current3.Split(new[]
+									var current3 = enumerator3.Current;
+									var array3 = current3.Split(new[]
 									{
 										' ',
 										'\t',
@@ -264,19 +264,19 @@ namespace ns9
 							goto IL_72D;
 							IL_5AE:
 							FretbarList = new Fretbar<int>();
-							foreach (string current4 in list)
+							foreach (var current4 in list)
 							{
 								FretbarList.method_1(Convert.ToInt32(current4.Trim(' ', '\t', '=')));
 							}
 							int_0 = (FretbarList[1] - FretbarList[0]) / 4;
 							goto IL_A3C;
 							IL_514:
-							using (List<string>.Enumerator enumerator5 = list.GetEnumerator())
+							using (var enumerator5 = list.GetEnumerator())
 							{
 								while (enumerator5.MoveNext())
 								{
-									string current5 = enumerator5.Current;
-									string[] array4 = current5.Split(new[]
+									var current5 = enumerator5.Current;
+									var array4 = current5.Split(new[]
 									{
 										' ',
 										'\t',
@@ -296,12 +296,12 @@ namespace ns9
 							}
 							goto IL_5AE;
 							IL_72D:
-							using (List<string>.Enumerator enumerator6 = list.GetEnumerator())
+							using (var enumerator6 = list.GetEnumerator())
 							{
 								while (enumerator6.MoveNext())
 								{
-									string current6 = enumerator6.Current;
-									string[] array5 = current6.Split(new[]
+									var current6 = enumerator6.Current;
+									var array5 = current6.Split(new[]
 									{
 										' ',
 										'\t',
@@ -316,12 +316,12 @@ namespace ns9
 								goto IL_A3C;
 							}
 							IL_7AC:
-							using (List<string>.Enumerator enumerator7 = list.GetEnumerator())
+							using (var enumerator7 = list.GetEnumerator())
 							{
 								while (enumerator7.MoveNext())
 								{
-									string current7 = enumerator7.Current;
-									string[] array6 = current7.Split(new[]
+									var current7 = enumerator7.Current;
+									var array6 = current7.Split(new[]
 									{
 										' ',
 										'\t',
@@ -336,12 +336,12 @@ namespace ns9
 								goto IL_A3C;
 							}
 							IL_82B:
-							using (List<string>.Enumerator enumerator8 = list.GetEnumerator())
+							using (var enumerator8 = list.GetEnumerator())
 							{
 								while (enumerator8.MoveNext())
 								{
-									string current8 = enumerator8.Current;
-									string[] array7 = current8.Split(new[]
+									var current8 = enumerator8.Current;
+									var array7 = current8.Split(new[]
 									{
 										' ',
 										'\t',
@@ -365,12 +365,12 @@ namespace ns9
 						text = text.ToLower();
 						if (!this.noteList.ContainsKey(text))
 						{
-							Track<int, NotesAtOffset> noteList = new Track<int, NotesAtOffset>();
-							Track<int, int[]> spList = new Track<int, int[]>();
-							Track<int, int[]> battleNote = new Track<int, int[]>();
-							foreach (string current9 in list)
+							var noteList = new Track<int, NotesAtOffset>();
+							var spList = new Track<int, int[]>();
+							var battleNote = new Track<int, int[]>();
+							foreach (var current9 in list)
 							{
-								string[] array8 = current9.Split(new[]
+								var array8 = current9.Split(new[]
 								{
 									' ',
 									'\t',
@@ -443,27 +443,27 @@ namespace ns9
 				"Double"
 			};
 			ArrayPointerRootNode @class;
-			for (int i = 0; i < array2.Length; i++)
+			for (var i = 0; i < array2.Length; i++)
 			{
-				string a = array2[i];
+				var a = array2[i];
 				string[] array3 = {
 					"Guitar",
 					"Rhythm"
 				};
-				for (int j = 0; j < array3.Length; j++)
+				for (var j = 0; j < array3.Length; j++)
 				{
-					string text = array3[j];
-					string[] array4 = array;
-					for (int k = 0; k < array4.Length; k++)
+					var text = array3[j];
+					var array4 = array;
+					for (var k = 0; k < array4.Length; k++)
 					{
-						string text2 = array4[k];
-						string text3 = (text.ToLower() + ((a == "Double") ? "coop" : "") + "_" + text2.ToLower()).Replace("guitar_", "");
+						var text2 = array4[k];
+						var text3 = (text.ToLower() + ((a == "Double") ? "coop" : "") + "_" + text2.ToLower()).Replace("guitar_", "");
 						@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_song_" + text3));
 						if (@class != null && @class.method_7() is IntegerArrayNode)
 						{
-							Track<int, NotesAtOffset> class2 = new Track<int, NotesAtOffset>();
-							int[] array5 = @class.method_7().method_7<int>();
-							for (int l = 0; l < array5.Length; l += 3)
+							var class2 = new Track<int, NotesAtOffset>();
+							var array5 = @class.method_7().method_7<int>();
+							for (var l = 0; l < array5.Length; l += 3)
 							{
 								class2.Add(array5[l], new NotesAtOffset(array5[l + 2], array5[l + 1]));
 							}
@@ -472,8 +472,8 @@ namespace ns9
 						@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_" + text3 + "_star"));
 						if (@class != null && @class.method_7() is ListArrayNode)
 						{
-							Track<int, int[]> class3 = new Track<int, int[]>();
-							foreach (IntegerArrayNode current in @class.method_7().method_8<IntegerArrayNode>())
+							var class3 = new Track<int, int[]>();
+							foreach (var current in @class.method_7().method_8<IntegerArrayNode>())
 							{
 								class3.Add(current[0], new[]
 								{
@@ -486,8 +486,8 @@ namespace ns9
 						@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_" + text3 + "_starbattlemode"));
 						if (@class != null && @class.method_7() is ListArrayNode)
 						{
-							Track<int, int[]> class4 = new Track<int, int[]>();
-							foreach (IntegerArrayNode current2 in @class.method_7().method_8<IntegerArrayNode>())
+							var class4 = new Track<int, int[]>();
+							foreach (var current2 in @class.method_7().method_8<IntegerArrayNode>())
 							{
 								class4.Add(current2[0], new[]
 								{
@@ -503,7 +503,7 @@ namespace ns9
 			@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_faceoffp1"));
 			if (@class != null && @class.method_7() is ListArrayNode)
 			{
-				foreach (IntegerArrayNode current3 in @class.method_7().method_8<IntegerArrayNode>())
+				foreach (var current3 in @class.method_7().method_8<IntegerArrayNode>())
 				{
 					class228_2.Add(current3[0], current3[1]);
 				}
@@ -511,7 +511,7 @@ namespace ns9
 			@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_faceoffp2"));
 			if (@class != null && @class.method_7() is ListArrayNode)
 			{
-				foreach (IntegerArrayNode current4 in @class.method_7().method_8<IntegerArrayNode>())
+				foreach (var current4 in @class.method_7().method_8<IntegerArrayNode>())
 				{
 					class228_3.Add(current4[0], current4[1]);
 				}
@@ -519,7 +519,7 @@ namespace ns9
 			@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_bossbattlep1"));
 			if (@class != null && @class.method_7() is ListArrayNode)
 			{
-				foreach (IntegerArrayNode current5 in @class.method_7().method_8<IntegerArrayNode>())
+				foreach (var current5 in @class.method_7().method_8<IntegerArrayNode>())
 				{
 					bpmList.Add(current5[0], current5[1]);
 				}
@@ -527,7 +527,7 @@ namespace ns9
 			@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_bossbattlep2"));
 			if (@class != null && @class.method_7() is ListArrayNode)
 			{
-				foreach (IntegerArrayNode current6 in @class.method_7().method_8<IntegerArrayNode>())
+				foreach (var current6 in @class.method_7().method_8<IntegerArrayNode>())
 				{
 					class228_5.Add(current6[0], current6[1]);
 				}
@@ -535,7 +535,7 @@ namespace ns9
 			@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_timesig"));
 			if (@class != null && @class.method_7() is ListArrayNode)
 			{
-				foreach (IntegerArrayNode current7 in @class.method_7().method_8<IntegerArrayNode>())
+				foreach (var current7 in @class.method_7().method_8<IntegerArrayNode>())
 				{
 					tsList.Add(current7[0], new[]
 					{
@@ -551,7 +551,7 @@ namespace ns9
 				int_0 = (FretbarList[1] - FretbarList[0]) / 4;
 				try
 				{
-					Dictionary<int, string> dictionary = new Dictionary<int, string>();
+					var dictionary = new Dictionary<int, string>();
 					@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_markers"));
 					if (class308_1 != null && @class != null && @class.method_7() is StructureArrayNode)
 					{
@@ -559,11 +559,11 @@ namespace ns9
 						{
 							dictionary.Add(class5.int_0, class5.method_7());
 						}
-						using (List<StructureHeaderNode>.Enumerator enumerator9 = @class.method_7().method_8<StructureHeaderNode>().GetEnumerator())
+						using (var enumerator9 = @class.method_7().method_8<StructureHeaderNode>().GetEnumerator())
 						{
 							while (enumerator9.MoveNext())
 							{
-								StructureHeaderNode current8 = enumerator9.Current;
+								var current8 = enumerator9.Current;
 								class228_1.Add(((IntegerStructureNode)current8[0]).method_8(), dictionary[((FileTagStructureNode)current8[1]).method_9()]);
 							}
 							goto IL_7C2;
@@ -571,7 +571,7 @@ namespace ns9
 					}
 					if (@class != null && @class.method_7() is StructureArrayNode)
 					{
-						foreach (StructureHeaderNode current9 in @class.method_7().method_8<StructureHeaderNode>())
+						foreach (var current9 in @class.method_7().method_8<StructureHeaderNode>())
 						{
 							class228_1.Add(((IntegerStructureNode)current9[0]).method_8(), ((UnicodeStructureNode)current9[1]).method_8());
 						}
@@ -599,7 +599,7 @@ namespace ns9
 
 		private int method_0(int int_2)
 		{
-			int num = class228_6.method_1(int_2);
+			var num = class228_6.method_1(int_2);
 			return Convert.ToInt32((num + (int_2 - class228_6.Keys[num]) / (double)class228_6.Values[num]) * int_1);
 		}
 
@@ -610,7 +610,7 @@ namespace ns9
 
 		public ChartParser method_2(GH3Song gh3Song_1)
 		{
-			ChartParser @class = new ChartParser(gh3Song_0);
+			var @class = new ChartParser(gh3Song_0);
 			@class.constant480 = int_1;
 			if (gh3Song_1 != null)
 			{
@@ -619,13 +619,13 @@ namespace ns9
 			class228_6 = new Track<int, int>();
 			if (FretbarList != null)
 			{
-				int value = FretbarList[0];
+				var value = FretbarList[0];
 				FretbarList[0] = 0;
-				int num = 0;
-				for (int i = 1; i < FretbarList.Count; i++)
+				var num = 0;
+				for (var i = 1; i < FretbarList.Count; i++)
 				{
-					int num2 = FretbarList[i] - FretbarList[i - 1];
-					int num3 = Convert.ToInt32(60000000.0 / num2);
+					var num2 = FretbarList[i] - FretbarList[i - 1];
+					var num3 = Convert.ToInt32(60000000.0 / num2);
 					if (num3 != num)
 					{
 						@class.bpmInterpreter.bpmList.Add((i - 1) * int_1, num3);
@@ -638,40 +638,40 @@ namespace ns9
 				{
 					"end"
 				}));
-				foreach (int current in class228_1.Keys)
+				foreach (var current in class228_1.Keys)
 				{
 					@class.sectionInterpreter.sectionList.Add(method_0(current), class228_1[current]);
 				}
-				foreach (int current2 in tsList.Keys)
+				foreach (var current2 in tsList.Keys)
 				{
 					@class.bpmInterpreter.TSList.Add(method_0(current2), tsList[current2][0]);
 				}
-				Track<int, int> class2 = new Track<int, int>();
-				Track<int, int> class3 = new Track<int, int>();
-				foreach (int current3 in class228_2.Keys)
+				var class2 = new Track<int, int>();
+				var class3 = new Track<int, int>();
+				foreach (var current3 in class228_2.Keys)
 				{
-					int num4 = method_0(current3);
-					int num5 = method_0(current3 + class228_2[current3] - int_0) - num4;
+					var num4 = method_0(current3);
+					var num5 = method_0(current3 + class228_2[current3] - int_0) - num4;
 					class2.Add(num4, (num5 <= int_1 / 4) ? 0 : num5);
 				}
-				foreach (int current4 in class228_3.Keys)
+				foreach (var current4 in class228_3.Keys)
 				{
-					int num4 = method_0(current4);
-					int num5 = method_0(current4 + class228_3[current4] - int_0) - num4;
+					var num4 = method_0(current4);
+					var num5 = method_0(current4 + class228_3[current4] - int_0) - num4;
 					class3.Add(num4, (num5 <= int_1 / 4) ? 0 : num5);
 				}
-				Track<int, int> class4 = new Track<int, int>();
-				Track<int, int> class5 = new Track<int, int>();
-				foreach (int current5 in bpmList.Keys)
+				var class4 = new Track<int, int>();
+				var class5 = new Track<int, int>();
+				foreach (var current5 in bpmList.Keys)
 				{
-					int num4 = method_0(current5);
-					int num5 = method_0(current5 + bpmList[current5] - int_0) - num4;
+					var num4 = method_0(current5);
+					var num5 = method_0(current5 + bpmList[current5] - int_0) - num4;
 					class4.Add(num4, (num5 <= int_1 / 4) ? 0 : num5);
 				}
-				foreach (int current6 in class228_5.Keys)
+				foreach (var current6 in class228_5.Keys)
 				{
-					int num4 = method_0(current6);
-					int num5 = method_0(current6 + class228_5[current6] - int_0) - num4;
+					var num4 = method_0(current6);
+					var num5 = method_0(current6 + class228_5[current6] - int_0) - num4;
 					class5.Add(num4, (num5 <= int_1 / 4) ? 0 : num5);
 				}
 				string[] array = {
@@ -684,49 +684,49 @@ namespace ns9
 					"Single",
 					"Double"
 				};
-				for (int j = 0; j < array2.Length; j++)
+				for (var j = 0; j < array2.Length; j++)
 				{
-					string text = array2[j];
+					var text = array2[j];
 					string[] array3 = {
 						"Guitar",
 						"Rhythm"
 					};
-					for (int k = 0; k < array3.Length; k++)
+					for (var k = 0; k < array3.Length; k++)
 					{
-						string text2 = array3[k];
-						string[] array4 = array;
-						for (int l = 0; l < array4.Length; l++)
+						var text2 = array3[k];
+						var array4 = array;
+						for (var l = 0; l < array4.Length; l++)
 						{
-							string text3 = array4[l];
-							string key = (text2.ToLower() + ((text == "Double") ? "coop" : "") + "_" + text3.ToLower()).Replace("guitar_", "");
+							var text3 = array4[l];
+							var key = (text2.ToLower() + ((text == "Double") ? "coop" : "") + "_" + text3.ToLower()).Replace("guitar_", "");
 							if (noteList.ContainsKey(key))
 							{
-								NoteEventInterpreter class6 = new NoteEventInterpreter();
-								Track<int, NotesAtOffset> class7 = noteList[key];
-								foreach (int current7 in class7.Keys)
+								var class6 = new NoteEventInterpreter();
+								var class7 = noteList[key];
+								foreach (var current7 in class7.Keys)
 								{
-									int num4 = method_0(current7);
-									int num5 = method_0(current7 + class7[current7].sustainLength - int_0) - num4;
+									var num4 = method_0(current7);
+									var num5 = method_0(current7 + class7[current7].sustainLength - int_0) - num4;
 									class6.noteList.Add(num4, new NotesAtOffset(class7[current7].noteValues, (num5 <= int_1 / 4) ? 0 : num5));
 								}
 								class6.alwaysTrue = false;
 								if (spList.ContainsKey(key))
 								{
-									Track<int, int[]> class8 = spList[key];
-									foreach (int current8 in class8.Keys)
+									var class8 = spList[key];
+									foreach (var current8 in class8.Keys)
 									{
-										int num4 = method_0(current8);
-										int num5 = method_0(current8 + class8[current8][0] - int_0) - num4;
+										var num4 = method_0(current8);
+										var num5 = method_0(current8 + class8[current8][0] - int_0) - num4;
 										class6.class228_1.Add(num4, (num5 <= int_1 / 4) ? 0 : num5);
 									}
 								}
 								if (battleNoteList.ContainsKey(key))
 								{
-									Track<int, int[]> class9 = spList[key];
-									foreach (int current9 in class9.Keys)
+									var class9 = spList[key];
+									foreach (var current9 in class9.Keys)
 									{
-										int num4 = method_0(current9);
-										int num5 = method_0(current9 + class9[current9][0] - int_0) - num4;
+										var num4 = method_0(current9);
+										var num5 = method_0(current9 + class9[current9][0] - int_0) - num4;
 										class6.class228_4.Add(num4, (num5 <= int_1 / 4) ? 0 : num5);
 									}
 								}
@@ -749,7 +749,7 @@ namespace ns9
         public void qbcCreator(string fileLocation, GH3Song song)
         {
             gh3Song_0 = song;
-            StreamWriter streamWriter = new StreamWriter(fileLocation);
+            var streamWriter = new StreamWriter(fileLocation);
             streamWriter.WriteLine("[Song]");
             streamWriter.WriteLine("{");
             streamWriter.WriteLine("\tName = \"" + gh3Song_0.title + "\"");
@@ -779,21 +779,21 @@ namespace ns9
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[SyncTrack]");
             streamWriter.WriteLine("{");
-            foreach (int current in tsList.Keys)
+            foreach (var current in tsList.Keys)
             {
                 streamWriter.WriteLine(string.Concat("\t", current, " = TS ", tsList[current][0], " ", tsList[current][1]));
             }
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[FretBars]");
             streamWriter.WriteLine("{");
-            foreach (int current2 in FretbarList)
+            foreach (var current2 in FretbarList)
             {
                 streamWriter.WriteLine("\t" + current2);
             }
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[Events]");
             streamWriter.WriteLine("{");
-            foreach (int current3 in class228_1.Keys)
+            foreach (var current3 in class228_1.Keys)
             {
                 streamWriter.WriteLine(string.Concat("\t", current3, " = S \"", class228_1[current3], "\""));
             }
@@ -804,27 +804,27 @@ namespace ns9
                 "guitarcoop_",
                 "rhythmcoop_"
             };
-            for (int i = 0; i < array.Length; i++)
+            for (var i = 0; i < array.Length; i++)
             {
-                string str = array[i];
+                var str = array[i];
                 string[] array2 = {
                     "easy",
                     "medium",
                     "hard",
                     "expert"
                 };
-                for (int j = 0; j < array2.Length; j++)
+                for (var j = 0; j < array2.Length; j++)
                 {
-                    string str2 = array2[j];
-                    string text = str + str2;
-                    Track<int, NotesAtOffset> @class = noteList.ContainsKey(text) ? noteList[text] : new Track<int, NotesAtOffset>();
-                    Track<int, int[]> class2 = spList.ContainsKey(text) ? spList[text] : new Track<int, int[]>();
-                    Track<int, int[]> class3 = battleNoteList.ContainsKey(text) ? battleNoteList[text] : new Track<int, int[]>();
-                    Class221<int> class4 = new Class221<int>(@class.Keys);
+                    var str2 = array2[j];
+                    var text = str + str2;
+                    var @class = noteList.ContainsKey(text) ? noteList[text] : new Track<int, NotesAtOffset>();
+                    var class2 = spList.ContainsKey(text) ? spList[text] : new Track<int, int[]>();
+                    var class3 = battleNoteList.ContainsKey(text) ? battleNoteList[text] : new Track<int, int[]>();
+                    var class4 = new Class221<int>(@class.Keys);
                     class4.vmethod_1(class2.Keys);
                     class4.vmethod_1(class3.Keys);
                     class4.Sort();
-                    StringBuilder stringBuilder = new StringBuilder(text);
+                    var stringBuilder = new StringBuilder(text);
                     stringBuilder[0] = char.ToUpper(stringBuilder[0]);
                     if (text.Contains("_"))
                     {
@@ -832,7 +832,7 @@ namespace ns9
                     }
                     streamWriter.WriteLine("[" + stringBuilder + "]");
                     streamWriter.WriteLine("{");
-                    foreach (int current4 in class4)
+                    foreach (var current4 in class4)
                     {
                         if (@class.ContainsKey(current4))
                         {
@@ -852,28 +852,28 @@ namespace ns9
             }
             streamWriter.WriteLine("[FaceOffP1]");
             streamWriter.WriteLine("{");
-            foreach (int current5 in class228_2.Keys)
+            foreach (var current5 in class228_2.Keys)
             {
                 streamWriter.WriteLine(string.Concat("\t", current5, " = F ", class228_2[current5]));
             }
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[FaceOffP2]");
             streamWriter.WriteLine("{");
-            foreach (int current6 in class228_3.Keys)
+            foreach (var current6 in class228_3.Keys)
             {
                 streamWriter.WriteLine(string.Concat("\t", current6, " = F ", class228_3[current6]));
             }
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[BossBattleP1]");
             streamWriter.WriteLine("{");
-            foreach (int current7 in bpmList.Keys)
+            foreach (var current7 in bpmList.Keys)
             {
                 streamWriter.WriteLine(string.Concat("\t", current7, " = B ", bpmList[current7]));
             }
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[BossBattleP2]");
             streamWriter.WriteLine("{");
-            foreach (int current8 in class228_5.Keys)
+            foreach (var current8 in class228_5.Keys)
             {
                 streamWriter.WriteLine(string.Concat("\t", current8, " = B ", class228_5[current8]));
             }
@@ -883,8 +883,8 @@ namespace ns9
 
         public zzGenericNode1 method_4(string string_0)
 		{
-			zzGenericNode1 @class = new zzGenericNode1();
-			int int_ = QbSongClass1.AddKeyToDictionary("songs\\" + string_0 + ".mid.qb");
+			var @class = new zzGenericNode1();
+			var int_ = QbSongClass1.AddKeyToDictionary("songs\\" + string_0 + ".mid.qb");
 			string[] array = {
 				"",
 				"rhythm_",
@@ -892,19 +892,19 @@ namespace ns9
 				"rhythmcoop_",
 				"aux_"
 			};
-			for (int i = 0; i < array.Length; i++)
+			for (var i = 0; i < array.Length; i++)
 			{
-				string str = array[i];
+				var str = array[i];
 				string[] array2 = {
 					"easy",
 					"medium",
 					"hard",
 					"expert"
 				};
-				for (int j = 0; j < array2.Length; j++)
+				for (var j = 0; j < array2.Length; j++)
 				{
-					string str2 = array2[j];
-					string text = str + str2;
+					var str2 = array2[j];
+					var text = str + str2;
 					if (noteList.ContainsKey(text))
 					{
 						method_5(int_, string_0 + "_song_" + text, @class, noteList[text]);
@@ -964,8 +964,8 @@ namespace ns9
 				method_11(int_2, string_0, class308_0);
 				return;
 			}
-			List<int> list = new List<int>();
-			foreach (int current in class228_7.Keys)
+			var list = new List<int>();
+			foreach (var current in class228_7.Keys)
 			{
 				list.Add(current);
 				list.Add(class228_7[current].sustainLength);
@@ -981,8 +981,8 @@ namespace ns9
 				method_11(int_2, string_0, class308_0);
 				return;
 			}
-			ListArrayNode @class = new ListArrayNode();
-			foreach (int current in class228_7.Keys)
+			var @class = new ListArrayNode();
+			foreach (var current in class228_7.Keys)
 			{
 				@class.method_3(new IntegerArrayNode(new[]
 				{
@@ -1001,8 +1001,8 @@ namespace ns9
 				method_11(int_2, string_0, class308_0);
 				return;
 			}
-			ListArrayNode @class = new ListArrayNode();
-			foreach (int current in class228_7.Keys)
+			var @class = new ListArrayNode();
+			foreach (var current in class228_7.Keys)
 			{
 				@class.method_3(new IntegerArrayNode(new[]
 				{
@@ -1015,8 +1015,8 @@ namespace ns9
 
 		private void method_8(int int_2, string string_0, zzGenericNode1 class308_0)
 		{
-			ListArrayNode @class = new ListArrayNode();
-			foreach (int current in tsList.Keys)
+			var @class = new ListArrayNode();
+			foreach (var current in tsList.Keys)
 			{
 				@class.method_3(new IntegerArrayNode(new[]
 				{
@@ -1040,8 +1040,8 @@ namespace ns9
 				method_11(int_2, string_0, class308_0);
 				return;
 			}
-			StructureArrayNode @class = new StructureArrayNode();
-			foreach (int current in class228_1.Keys)
+			var @class = new StructureArrayNode();
+			foreach (var current in class228_1.Keys)
 			{
 				@class.method_3(new StructureHeaderNode(new zzUnkNode294[]
 				{

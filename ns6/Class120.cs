@@ -70,7 +70,7 @@ namespace ns6
 						{
 							enum13_0 = Enum13.const_0;
 						}
-						foreach (string arg_65_0 in list_0)
+						foreach (var arg_65_0 in list_0)
 						{
 						}
 					}
@@ -125,7 +125,7 @@ namespace ns6
 				throw new Exception2(string.Format("Audio device '{0}' does not exist or is tied up by another application.", string.IsNullOrEmpty(string_1) ? "default" : string_1));
 			}
 			method_1();
-			List<int> list = new List<int>();
+			var list = new List<int>();
 			if (int_0 != 0)
 			{
 				list.Add(4103);
@@ -163,13 +163,13 @@ namespace ns6
 			OpenAL.alcGetIntegerv(intptr_0, Enum9.const_2, 4, out num);
 			if (num > 0)
 			{
-				int[] array = new int[num];
+				var array = new int[num];
 				OpenAL.alcGetIntegerv(intptr_0, Enum9.const_3, array.Length * 4, out array[0]);
-				int[] array2 = array;
-				for (int i = 0; i < array2.Length; i++)
+				var array2 = array;
+				for (var i = 0; i < array2.Length; i++)
 				{
-					int num2 = array2[i];
-					Enum6 @enum = (Enum6)num2;
+					var num2 = array2[i];
+					var @enum = (Enum6)num2;
 					if (@enum == Enum6.const_2)
 					{
 						method_5(true);
@@ -185,7 +185,7 @@ namespace ns6
 
 		private void method_1()
 		{
-			AlcError alcError = OpenAL.alcGetError(intptr_0);
+			var alcError = OpenAL.alcGetError(intptr_0);
 			if (alcError != AlcError.NoError)
 			{
 				throw new Exception3(alcError.ToString());

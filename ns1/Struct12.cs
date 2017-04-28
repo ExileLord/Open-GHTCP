@@ -21,8 +21,8 @@ namespace ns1
 
 		public double method_0()
 		{
-			double num = double_0;
-			double num2 = double_1;
+			var num = double_0;
+			var num2 = double_1;
 			return Math.Sqrt(num * num + num2 * num2);
 		}
 
@@ -40,7 +40,7 @@ namespace ns1
 		{
 			if (obj is Struct12)
 			{
-				Struct12 struct12_ = (Struct12)obj;
+				var struct12_ = (Struct12)obj;
 				return smethod_0(this, struct12_);
 			}
 			return false;

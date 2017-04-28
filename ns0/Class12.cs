@@ -12,7 +12,7 @@ namespace ns0
 
 		public virtual void imethod_0(Class13[] class13_0)
 		{
-			foreach (Interface5 current in this)
+			foreach (var current in this)
 			{
 				current.imethod_0(class13_0);
 			}

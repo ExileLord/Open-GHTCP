@@ -65,7 +65,7 @@ namespace ns12
 			{
 				method_8();
 			}
-			int num = class201_0.method_10();
+			var num = class201_0.method_10();
 			if (num != 33639248 && num != 101010256 && num != 84233040 && num != 117853008)
 			{
 				if (num != 101075792)
@@ -78,19 +78,19 @@ namespace ns12
 					{
 						throw new ZipException("Wrong Local header signature: 0x" + string.Format("{0:X}", num));
 					}
-					short int_ = (short)class201_0.method_9();
+					var int_ = (short)class201_0.method_9();
 					int_1 = class201_0.method_9();
 					int_0 = class201_0.method_9();
-					uint num2 = (uint)class201_0.method_10();
-					int num3 = class201_0.method_10();
+					var num2 = (uint)class201_0.method_10();
+					var num3 = class201_0.method_10();
 					long_0 = class201_0.method_10();
 					long_1 = class201_0.method_10();
-					int num4 = class201_0.method_9();
-					int num5 = class201_0.method_9();
-					bool flag = (int_1 & 1) == 1;
-					byte[] array = new byte[num4];
+					var num4 = class201_0.method_9();
+					var num5 = class201_0.method_9();
+					var flag = (int_1 & 1) == 1;
+					var array = new byte[num4];
 					class201_0.method_5(array);
-					string string_ = Class186.smethod_2(int_1, array);
+					var string_ = Class186.smethod_2(int_1, array);
 					class193_0 = new Class193(string_, int_);
 					class193_0.method_5(int_1);
 					class193_0.method_28((Enum31)int_0);
@@ -120,7 +120,7 @@ namespace ns12
 					class193_0.method_18(num2);
 					if (num5 > 0)
 					{
-						byte[] array2 = new byte[num5];
+						var array2 = new byte[num5];
 						class201_0.method_5(array2);
 						class193_0.method_30(array2);
 					}
@@ -207,14 +207,14 @@ namespace ns12
 			{
 				if ((int_1 & 8) != 0)
 				{
-					byte[] array = new byte[2048];
+					var array = new byte[2048];
 					while (Read(array, 0, array.Length) > 0)
 					{
 					}
 					return;
 				}
 				long_0 -= class196_0.method_12();
-				Class201 expr_67 = class201_0;
+				var expr_67 = class201_0;
 				expr_67.method_2(expr_67.method_1() + class196_0.method_13());
 			}
 			if (class201_0.method_1() > long_0 && long_0 >= 0L)
@@ -227,7 +227,7 @@ namespace ns12
 				class201_0.method_2(0);
 				while (long_0 != 0L)
 				{
-					int num = (int)method_0(long_0 & 4294967295L);
+					var num = (int)method_0(long_0 & 4294967295L);
 					if (num <= 0)
 					{
 						throw new ZipException("Zip archive ends early.");
@@ -240,7 +240,7 @@ namespace ns12
 
 		public override int ReadByte()
 		{
-			byte[] array = new byte[1];
+			var array = new byte[1];
 			if (Read(array, 0, 1) <= 0)
 			{
 				return -1;
@@ -270,10 +270,10 @@ namespace ns12
 				{
 					throw new ZipException("No password set.");
 				}
-				Class208 @class = new Class208();
-				byte[] rgbKey = Class207.smethod_0(Class186.smethod_3(password));
+				var @class = new Class208();
+				var rgbKey = Class207.smethod_0(Class186.smethod_3(password));
 				class201_0.method_12(@class.CreateDecryptor(rgbKey, null));
-				byte[] array = new byte[12];
+				var array = new byte[12];
 				class201_0.method_7(array, 0, 12);
 				if (array[11] != class193_0.method_2())
 				{
@@ -335,8 +335,8 @@ namespace ns12
 			{
 				throw new ArgumentException("Offset + count exceeds buffer size");
 			}
-			bool flag = false;
-			int num = int_0;
+			var flag = false;
+			var num = int_0;
 			if (num != 0)
 			{
 				if (num == 8)

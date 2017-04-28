@@ -24,7 +24,7 @@ namespace ns16
 					base[int_0] = value;
 					if (int_0 > 0)
 					{
-						T t = base[int_0 - 1];
+						var t = base[int_0 - 1];
 						if (t.CompareTo(value) > 0)
 						{
 							goto IL_54;
@@ -69,8 +69,8 @@ namespace ns16
 			{
 				if (bool_1)
 				{
-					int num = method_3(gparam_0);
-					int num2 = (num >= 0) ? num : (-num - 1);
+					var num = method_3(gparam_0);
+					var num2 = (num >= 0) ? num : (-num - 1);
 					if (num2 >= Count)
 					{
 						Add(gparam_0);
@@ -102,7 +102,7 @@ namespace ns16
 			{
 				for (i = BinarySearch(gparam_0); i > 0; i--)
 				{
-					T t = base[i - 1];
+					var t = base[i - 1];
 					if (!t.Equals(gparam_0))
 					{
 						break;
@@ -118,11 +118,11 @@ namespace ns16
 
 		public override string ToString()
 		{
-			string text = "{";
-			for (int i = 0; i < Count; i++)
+			var text = "{";
+			for (var i = 0; i < Count; i++)
 			{
-				string arg_37_0 = text;
-				T t = base[i];
+				var arg_37_0 = text;
+				var t = base[i];
 				text = arg_37_0 + t + ((i != Count - 1) ? "; " : "}");
 			}
 			return text;
@@ -130,14 +130,14 @@ namespace ns16
 
 		public override bool Equals(object obj)
 		{
-			Fretbar<T> @class = (Fretbar<T>)obj;
+			var @class = (Fretbar<T>)obj;
 			if (@class.Count != Count)
 			{
 				return false;
 			}
-			for (int i = 0; i < Count; i++)
+			for (var i = 0; i < Count; i++)
 			{
-				T t = @class[i];
+				var t = @class[i];
 				if (!t.Equals(this[i]))
 				{
 					return false;
@@ -182,14 +182,14 @@ namespace ns16
 			while (int_0 <= int_1)
 			{
 				int_2 = (int_0 + int_1) / 2;
-				T t = base[int_2];
+				var t = base[int_2];
 				if (t.CompareTo(gparam_0) < 0)
 				{
 					int_0 = int_2 + 1;
 				}
 				else
 				{
-					T t2 = base[int_2];
+					var t2 = base[int_2];
 					if (t2.CompareTo(gparam_0) <= 0)
 					{
 						return true;
@@ -202,9 +202,9 @@ namespace ns16
 
 		public int method_7(T gparam_0)
 		{
-			int num = 0;
-			int num2 = Count - 1;
-			int num3 = 0;
+			var num = 0;
+			var num2 = Count - 1;
+			var num3 = 0;
 			num3 = (method_6(ref num, ref num2, ref num3, gparam_0) ? num3 : num2);
 			if (num3 >= 0)
 			{

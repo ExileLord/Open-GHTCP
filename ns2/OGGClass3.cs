@@ -63,13 +63,13 @@ namespace ns2
 
 		public int method_2(int int_5)
 		{
-			int num = int_0[int_5];
+			var num = int_0[int_5];
 			int_5 += int_2;
 			if (int_3 + 4 >= int_4 && int_3 + (int_5 - 1) / 8 >= int_4)
 			{
 				return -1;
 			}
-			int num2 = (byte_0[int_1] & 255) >> int_2;
+			var num2 = (byte_0[int_1] & 255) >> int_2;
 			if (int_5 > 8)
 			{
 				num2 |= (byte_0[int_1 + 1] & 255) << 8 - int_2;
@@ -108,7 +108,7 @@ namespace ns2
 
 		public void method_5(byte[] byte_1, int int_5)
 		{
-			int num = 0;
+			var num = 0;
 			while (int_5-- != 0)
 			{
 				byte_1[num++] = (byte)method_6(8);
@@ -117,7 +117,7 @@ namespace ns2
 
 		public int method_6(int int_5)
 		{
-			int num = int_0[int_5];
+			var num = int_0[int_5];
 			int_5 += int_2;
 			int num2;
 			if (int_3 + 4 >= int_4)

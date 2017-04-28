@@ -65,7 +65,7 @@ namespace ns12
 			{
 				throw new InvalidOperationException("Bit buffer is not byte aligned!");
 			}
-			int num = 0;
+			var num = 0;
 			while (int_2 > 0 && int_4 > 0)
 			{
 				byte_1[int_3++] = (byte)uint_0;
@@ -78,7 +78,7 @@ namespace ns12
 			{
 				return num;
 			}
-			int num2 = int_1 - int_0;
+			var num2 = int_1 - int_0;
 			if (int_4 > num2)
 			{
 				int_4 = num2;
@@ -119,7 +119,7 @@ namespace ns12
 			{
 				throw new InvalidOperationException("Old input was not completely processed");
 			}
-			int num = int_3 + int_4;
+			var num = int_3 + int_4;
 			if (int_3 <= num && num <= byte_1.Length)
 			{
 				if ((int_4 & 1) != 0)

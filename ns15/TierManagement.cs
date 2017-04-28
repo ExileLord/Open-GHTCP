@@ -89,7 +89,7 @@ namespace ns15
 			{
 				if (e.Clicks == 2 && e.Button == MouseButtons.Right)
 				{
-					int num = TierList.IndexFromPoint(e.X, e.Y);
+					var num = TierList.IndexFromPoint(e.X, e.Y);
 					if (num >= 0 && num < TierList.Items.Count && 1 < TierList.Items.Count)
 					{
 						TierList.Items.RemoveAt(num);
@@ -97,7 +97,7 @@ namespace ns15
 				}
 				return;
 			}
-			int num2 = TierList.IndexFromPoint(e.X, e.Y);
+			var num2 = TierList.IndexFromPoint(e.X, e.Y);
 			if (num2 >= 0 && num2 < TierList.Items.Count)
 			{
 				TierList.DoDragDrop(TierList.Items[int_0 = num2], DragDropEffects.Move);
@@ -138,7 +138,7 @@ namespace ns15
 
 		public GH3Tier[] method_0()
 		{
-			List<GH3Tier> list = new List<GH3Tier>();
+			var list = new List<GH3Tier>();
 			foreach (GH3Tier item in TierList.Items)
 			{
 				list.Add(item);

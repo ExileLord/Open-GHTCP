@@ -69,7 +69,7 @@ namespace ns11
 
 		public void SetStartingTimeBasedOnSomeValue(int int_1)
 		{
-			AudioStatus @enum = enum1_0;
+			var @enum = enum1_0;
 			if (@enum != AudioStatus.ShouldStopAudio)
 			{
 				StopPlaying();
@@ -176,7 +176,7 @@ namespace ns11
 			{
                 lock (stream1_0)
 				{
-					int num = stream1_0.vmethod_3(intptr_0, int_1);
+					var num = stream1_0.vmethod_3(intptr_0, int_1);
 					if (num < int_1)
 					{
                         bool_1 = true;
@@ -222,7 +222,7 @@ namespace ns11
 		[CompilerGenerated]
 		private void method_2(object object_0)
 		{
-			float num = vmethod_1();
+			var num = vmethod_1();
             while (num < Volume)
 			{
                 if (enum1_0 != AudioStatus.ShouldStartAudio)

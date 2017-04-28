@@ -21,7 +21,7 @@ namespace ns2
 		[MethodImpl(MethodImplOptions.Synchronized)]
 		public int method_0(float[] float_1, int int_3, OGGClass3 oggClass3, int int_4)
 		{
-			int num = int_4 / int_0;
+			var num = int_4 / int_0;
 			if (int_2.Length < num)
 			{
 				int_2 = new int[num];
@@ -29,7 +29,7 @@ namespace ns2
 			int i;
 			for (i = 0; i < num; i++)
 			{
-				int num2 = method_4(oggClass3);
+				var num2 = method_4(oggClass3);
 				if (num2 == -1)
 				{
 					return -1;
@@ -37,10 +37,10 @@ namespace ns2
 				int_2[i] = num2 * int_0;
 			}
 			i = 0;
-			int num3 = 0;
+			var num3 = 0;
 			while (i < int_0)
 			{
-				for (int j = 0; j < num; j++)
+				for (var j = 0; j < num; j++)
 				{
 					float_1[int_3 + num3 + j] += float_0[int_2[j] + i];
 				}
@@ -54,16 +54,16 @@ namespace ns2
 		{
 			if (int_0 > 8)
 			{
-				int i = 0;
+				var i = 0;
 				while (i < int_4)
 				{
-					int num = method_4(oggClass3);
+					var num = method_4(oggClass3);
 					if (num == -1)
 					{
 						return -1;
 					}
-					int num2 = num * int_0;
-					int j = 0;
+					var num2 = num * int_0;
+					var j = 0;
 					while (j < int_0)
 					{
 						float_1[int_3 + i++] += float_0[num2 + j++];
@@ -72,17 +72,17 @@ namespace ns2
 			}
 			else
 			{
-				int i = 0;
+				var i = 0;
 				while (i < int_4)
 				{
-					int num = method_4(oggClass3);
+					var num = method_4(oggClass3);
 					if (num == -1)
 					{
 						return -1;
 					}
-					int num2 = num * int_0;
-					int j = 0;
-					for (int k = 0; k < int_0; k++)
+					var num2 = num * int_0;
+					var j = 0;
+					for (var k = 0; k < int_0; k++)
 					{
 						float_1[int_3 + i++] += float_0[num2 + j++];
 					}
@@ -93,16 +93,16 @@ namespace ns2
 
 		public int method_2(float[] float_1, int int_3, OGGClass3 oggClass3, int int_4)
 		{
-			int i = 0;
+			var i = 0;
 			while (i < int_4)
 			{
-				int num = method_4(oggClass3);
+				var num = method_4(oggClass3);
 				if (num == -1)
 				{
 					return -1;
 				}
-				int num2 = num * int_0;
-				int j = 0;
+				var num2 = num * int_0;
+				var j = 0;
 				while (j < int_0)
 				{
 					float_1[int_3 + i++] = float_0[num2 + j++];
@@ -113,17 +113,17 @@ namespace ns2
 
 		public int method_3(float[][] float_1, int int_3, int int_4, OGGClass3 oggClass3, int int_5)
 		{
-            int num = 0;
-			int i = int_3 / int_4;
+            var num = 0;
+			var i = int_3 / int_4;
 			while (i < (int_3 + int_5) / int_4)
 			{
-				int num2 = method_4(oggClass3);
+				var num2 = method_4(oggClass3);
 				if (num2 == -1)
 				{
 					return -1;
 				}
-				int num3 = num2 * int_0;
-				for (int j = 0; j < int_0; j++)
+				var num3 = num2 * int_0;
+				for (var j = 0; j < int_0; j++)
 				{
 					float_1[num][i] += float_0[num3 + j];
 					num++;
@@ -139,13 +139,13 @@ namespace ns2
 
 		public int method_4(OGGClass3 oggClass3)
 		{
-            int num = 0;
-			OGGData @class = oggData;
+            var num = 0;
+			var @class = oggData;
 			if (@class == null)
 			{
 				return num;
 			}
-			int num2 = oggClass3.method_2(@class.int_2);
+			var num2 = oggClass3.method_2(@class.int_2);
 			if (num2 >= 0)
 			{
 				num = @class.int_0[num2];
@@ -193,20 +193,20 @@ namespace ns2
         
         internal static int[] smethod_0(int[] numArray, int num)
         {
-            int[] numArray1 = new int[33];
-            int[] numArray2 = new int[num];
-            for (int i = 0; i < num; i++)
+            var numArray1 = new int[33];
+            var numArray2 = new int[num];
+            for (var i = 0; i < num; i++)
             {
-                int num1 = numArray[i];
+                var num1 = numArray[i];
                 if (num1 > 0)
                 {
-                    int num2 = numArray1[num1];
+                    var num2 = numArray1[num1];
                     if (num1 < 32 && num2 >> (num1 & 31) != 0)
                     {
                         return null;
                     }
                     numArray2[i] = num2;
-                    int num3 = num1;
+                    var num3 = num1;
                     while (true)
                     {
                         if (num3 <= 0)
@@ -229,17 +229,17 @@ namespace ns2
                             break;
                         }
                     }
-                    for (int j = num1 + 1; j < 33 && (ulong)(numArray1[j] >> 1) == (ulong)num2; j++)
+                    for (var j = num1 + 1; j < 33 && (ulong)(numArray1[j] >> 1) == (ulong)num2; j++)
                     {
                         num2 = numArray1[j];
                         numArray1[j] = numArray1[j - 1] << 1;
                     }
                 }
             }
-            for (int k = 0; k < num; k++)
+            for (var k = 0; k < num; k++)
             {
-                int num4 = 0;
-                for (int l = 0; l < numArray[k]; l++)
+                var num4 = 0;
+                for (var l = 0; l < numArray[k]; l++)
                 {
                     num4 = num4 << 1;
                     num4 = num4 | numArray2[k] >> (l & 31) & 1;
@@ -251,21 +251,21 @@ namespace ns2
 
         public OGGData getOGGData()
 		{
-            int num = 0;
-			OGGData oggData = new OGGData();
-			int[] array = oggData.int_3 = new int[int_1 * 2];
-			int[] array2 = oggData.int_4 = new int[int_1 * 2];
-			int[] array3 = smethod_0(oggClass2.int_2, oggClass2.int_1);
+            var num = 0;
+			var oggData = new OGGData();
+			var array = oggData.int_3 = new int[int_1 * 2];
+			var array2 = oggData.int_4 = new int[int_1 * 2];
+			var array3 = smethod_0(oggClass2.int_2, oggClass2.int_1);
             if (array3 == null)
 			{
 				return null;
 			}
             oggData.int_5 = int_1 * 2;
-            for (int i = 0; i < int_1; i++)
+            for (var i = 0; i < int_1; i++)
 			{
 				if (oggClass2.int_2[i] > 0)
 				{
-					int num2 = 0;
+					var num2 = 0;
 					int j;
                     for (j = 0; j < oggClass2.int_2[i] - 1; j++)
 					{
@@ -301,13 +301,13 @@ namespace ns2
 			{
 				oggData.int_2 = 5;
 			}
-			int num3 = 1 << oggData.int_2;
+			var num3 = 1 << oggData.int_2;
 			oggData.int_0 = new int[num3];
 			oggData.int_1 = new int[num3];
-			for (int k = 0; k < num3; k++)
+			for (var k = 0; k < num3; k++)
 			{
-				int num4 = 0;
-				int num5 = 0;
+				var num4 = 0;
+				var num5 = 0;
 				while (num5 < oggData.int_2 && (num4 > 0 || num5 == 0))
 				{
 					if ((k & 1 << num5) != 0)
@@ -329,7 +329,7 @@ namespace ns2
         private void printArray(int[] array)
         {
             Console.Write("{");
-            foreach(int i in array)
+            foreach(var i in array)
             {
                 Console.Write(i + ", ");
             }
@@ -338,7 +338,7 @@ namespace ns2
 
 		public static int smethod_1(int int_3)
 		{
-			int num = 0;
+			var num = 0;
 			while (int_3 != 0)  
 			{
 				num++;

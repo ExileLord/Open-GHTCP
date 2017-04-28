@@ -15,8 +15,8 @@ namespace ns22
 			{
 				return class335_0.method_0() - class335_1.method_0();
 			}
-			bool flag = ((MIDINote)class335_0).method_5();
-			bool flag2 = ((MIDINote)class335_1).method_5();
+			var flag = ((MIDINote)class335_0).method_5();
+			var flag2 = ((MIDINote)class335_1).method_5();
 			if (flag && !flag2)
 			{
 				return 1;

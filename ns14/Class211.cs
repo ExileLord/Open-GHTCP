@@ -44,16 +44,16 @@ namespace ns14
 
 		public byte[] TransformFinalBlock(byte[] inputBuffer, int inputOffset, int inputCount)
 		{
-			byte[] array = new byte[inputCount];
+			var array = new byte[inputCount];
 			TransformBlock(inputBuffer, inputOffset, inputCount, array, 0);
 			return array;
 		}
 
 		public int TransformBlock(byte[] inputBuffer, int inputOffset, int inputCount, byte[] outputBuffer, int outputOffset)
 		{
-			for (int i = inputOffset; i < inputOffset + inputCount; i++)
+			for (var i = inputOffset; i < inputOffset + inputCount; i++)
 			{
-                byte b = (byte)(inputBuffer[i] ^ method_0());
+                var b = (byte)(inputBuffer[i] ^ method_0());
 				outputBuffer[outputOffset++] = b;
 				method_2(b);
 			}

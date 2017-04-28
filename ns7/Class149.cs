@@ -264,7 +264,7 @@ namespace ns7
 		public static byte smethod_0(byte[] byte_1, int int_0)
 		{
 			byte b = 0;
-			for (int i = 0; i < int_0; i++)
+			for (var i = 0; i < int_0; i++)
 			{
 				b = byte_0[(b ^ byte_1[i]) & 255];
 			}

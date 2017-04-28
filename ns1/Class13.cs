@@ -148,14 +148,14 @@ namespace ns1
 			{
 				float_1 = new float[list_0.Count];
 				float_2 = new float[list_0.Count];
-				for (int i = 0; i < list_0.Count; i++)
+				for (var i = 0; i < list_0.Count; i++)
 				{
 					float_1[i] = list_0[i].float_0;
 					float_2[i] = list_0[i].float_1;
 				}
 				bool_2 = false;
 			}
-			float num = Class15.smethod_3(float_1, float_2, (int_4 - (float)method_0()) / method_2());
+			var num = Class15.smethod_3(float_1, float_2, (int_4 - (float)method_0()) / method_2());
 			switch (enum0_0)
 			{
 			case Enum0.const_3:
@@ -170,7 +170,7 @@ namespace ns1
 
 		public virtual float vmethod_1(int int_4, float float_3, float float_4)
 		{
-			float num = vmethod_0(int_4);
+			var num = vmethod_0(int_4);
 			return float_4 * num + float_3 * (1f - num);
 		}
 

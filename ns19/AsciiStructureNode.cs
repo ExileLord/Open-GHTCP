@@ -50,8 +50,8 @@ namespace ns19
 		public override void vmethod_13(Stream26 stream26_0)
 		{
 			int_0 = stream26_0.ReadInt();
-			int num = stream26_0.ReadInt();
-			int num2 = stream26_0.ReadInt();
+			var num = stream26_0.ReadInt();
+			var num2 = stream26_0.ReadInt();
 			if (num != 0)
 			{
 				Nodes.Add(new AsciiValueNode(stream26_0.ReadAsciiStringAt(num)));
@@ -59,7 +59,7 @@ namespace ns19
 			}
 			if (num2 != 0)
 			{
-				AbstractTreeNode1 @class = (Parent is StructureHeaderNode) ? (Parent as StructureHeaderNode).method_11(stream26_0.ReadIntAt(num2)) : vmethod_12(stream26_0.ReadIntAt(num2, true));
+				var @class = (Parent is StructureHeaderNode) ? (Parent as StructureHeaderNode).method_11(stream26_0.ReadIntAt(num2)) : vmethod_12(stream26_0.ReadIntAt(num2, true));
 				method_1().Nodes.Add(@class);
 				@class.method_4(stream26_0);
 			}
@@ -69,19 +69,19 @@ namespace ns19
 		{
 			if (vmethod_8())
 			{
-				byte[] array = new byte[4];
+				var array = new byte[4];
 				array[1] = 1;
 				array[2] = 3;
 				stream26_0.WriteByteArray(array, false);
 			}
 			else
 			{
-				byte[] array2 = new byte[4];
+				var array2 = new byte[4];
                 array2[1] = (byte)(vmethod_7() ? 131 : 7);
 				stream26_0.WriteByteArray(array2, false);
 			}
 			stream26_0.WriteInt(int_0);
-			int int_ = (int)stream26_0.Position + 4;
+			var int_ = (int)stream26_0.Position + 4;
 			if (Nodes.Count != 0)
 			{
 				stream26_0.WriteInt((int)stream26_0.Position + 8);
@@ -94,7 +94,7 @@ namespace ns19
 			{
 				stream26_0.WriteInt(0);
 			}
-			int num = (int)stream26_0.Position;
+			var num = (int)stream26_0.Position;
 			if (method_1().Nodes.IndexOf(this) < method_1().Nodes.Count - 1)
 			{
 				stream26_0.WriteIntAt(int_, num);

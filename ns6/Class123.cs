@@ -30,12 +30,12 @@ namespace ns6
 
 		public Class123(Class144 class144_0, int int_8, bool bool_1) : base(bool_1)
 		{
-			int num = 0;
+			var num = 0;
 			int_0 = class144_0.vmethod_10(32);
 			num = 32;
 			int_1 = class144_0.vmethod_10(32);
 			num = 64;
-			byte[] array = new byte[int_1];
+			var array = new byte[int_1];
 			class144_0.vmethod_15(array, int_1);
 			num = 64 + int_1 * 8;
 			string_0 = Encoding.UTF8.GetString(array);

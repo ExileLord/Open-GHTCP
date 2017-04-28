@@ -27,8 +27,8 @@ namespace ns16
 				base.WndProc(ref m);
 				if (m.Msg == int_0)
 				{
-					Keys keys_ = (Keys)((int)m.LParam >> 16 & 65535);
-					ModKeys modKeys_ = (ModKeys)((int)m.LParam & 65535);
+					var keys_ = (Keys)((int)m.LParam >> 16 & 65535);
+					var modKeys_ = (ModKeys)((int)m.LParam & 65535);
 					if (eventHandler_0 != null)
 					{
 						eventHandler_0(this, new EventArgs1(modKeys_, keys_));
@@ -38,12 +38,12 @@ namespace ns16
 
 			public void method_0(EventHandler<EventArgs1> eventHandler_1)
 			{
-				EventHandler<EventArgs1> eventHandler = eventHandler_0;
+				var eventHandler = eventHandler_0;
 				EventHandler<EventArgs1> eventHandler2;
 				do
 				{
 					eventHandler2 = eventHandler;
-					EventHandler<EventArgs1> value = (EventHandler<EventArgs1>)Delegate.Combine(eventHandler2, eventHandler_1);
+					var value = (EventHandler<EventArgs1>)Delegate.Combine(eventHandler2, eventHandler_1);
 					eventHandler = Interlocked.CompareExchange(ref eventHandler_0, value, eventHandler2);
 				}
 				while (eventHandler != eventHandler2);
@@ -63,7 +63,7 @@ namespace ns16
 
 		public EventHandlerClass1()
 		{
-			HandlerBuddy arg_32_0 = class234_0;
+			var arg_32_0 = class234_0;
 			EventHandler<EventArgs1> eventHandler_ = method_1;
 			arg_32_0.method_0(eventHandler_);
 		}
@@ -73,7 +73,7 @@ namespace ns16
 
 		public void method_0()
 		{
-			foreach (int current in dictionary_0.Values)
+			foreach (var current in dictionary_0.Values)
 			{
 				UnregisterHotKey(class234_0.Handle, current);
 			}

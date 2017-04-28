@@ -20,18 +20,18 @@ namespace ns9
 			{
 				throw new ArgumentNullException();
 			}
-			TimeSpan timeSpan_ = (TimeSpan)arg;
+			var timeSpan_ = (TimeSpan)arg;
 			return smethod_0(timeSpan_, format);
 		}
 
 		private static string smethod_0(TimeSpan timeSpan_0, string string_0)
 		{
-			StringBuilder stringBuilder = new StringBuilder(64);
-			int length = string_0.Length;
-			int i = 0;
+			var stringBuilder = new StringBuilder(64);
+			var length = string_0.Length;
+			var i = 0;
 			while (i < length)
 			{
-				char c = string_0[i];
+				var c = string_0[i];
 				if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 				{
 					int j;
@@ -55,7 +55,7 @@ namespace ns9
 					}
 					else
 					{
-						bool flag = false;
+						var flag = false;
 						while (!flag)
 						{
 							int j;
@@ -130,8 +130,8 @@ namespace ns9
 
 		private static void smethod_2(StringBuilder stringBuilder_0, int int_0, int int_1)
 		{
-			int num = 10;
-			for (int i = 0; i < int_1 - 1; i++)
+			var num = 10;
+			for (var i = 0; i < int_1 - 1; i++)
 			{
 				if (int_0 < num)
 				{

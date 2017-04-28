@@ -28,9 +28,9 @@ namespace ns4
 
 		public int method_0(double double_1)
 		{
-			int num = 0;
-			int num2 = 0;
-			double num3 = 0.0;
+			var num = 0;
+			var num2 = 0;
+			var num3 = 0.0;
 			if (byte_0 == null)
 			{
 				while (num3 <= double_1)

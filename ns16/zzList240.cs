@@ -9,7 +9,7 @@ namespace ns16
 		{
 			public int Compare(object x, object y)
 			{
-				IComparable comparable = x as IComparable;
+				var comparable = x as IComparable;
 				return comparable.CompareTo(y);
 			}
 		}
@@ -46,8 +46,8 @@ namespace ns16
 				{
 					if (method_0(value))
 					{
-						object obj = (index > 0) ? arrayList_0[index - 1] : null;
-						object obj2 = (index < Count - 1) ? arrayList_0[index + 1] : null;
+						var obj = (index > 0) ? arrayList_0[index - 1] : null;
+						var obj2 = (index < Count - 1) ? arrayList_0[index + 1] : null;
 						if ((obj != null && icomparer_0.Compare(obj, value) > 0) || (obj2 != null && icomparer_0.Compare(value, obj2) > 0))
 						{
 							bool_1 = false;
@@ -112,13 +112,13 @@ namespace ns16
 
 		public int Add(object value)
 		{
-			int result = -1;
+			var result = -1;
 			if (method_0(value))
 			{
 				if (bool_2)
 				{
-					int num = IndexOf(value);
-					int num2 = (num >= 0) ? num : (-num - 1);
+					var num = IndexOf(value);
+					var num2 = (num >= 0) ? num : (-num - 1);
 					if (num2 >= Count)
 					{
 						arrayList_0.Add(value);
@@ -175,8 +175,8 @@ namespace ns16
 			{
 				if (method_0(value))
 				{
-					object obj = arrayList_0[index];
-					object obj2 = (index > 0) ? arrayList_0[index - 1] : null;
+					var obj = arrayList_0[index];
+					var obj2 = (index > 0) ? arrayList_0[index - 1] : null;
 					if ((obj2 != null && icomparer_0.Compare(obj2, value) > 0) || (obj != null && icomparer_0.Compare(value, obj) > 0))
 					{
 						bool_1 = false;
@@ -226,8 +226,8 @@ namespace ns16
 
 		public override string ToString()
 		{
-			string text = "{";
-			for (int i = 0; i < arrayList_0.Count; i++)
+			var text = "{";
+			for (var i = 0; i < arrayList_0.Count; i++)
 			{
 				text = text + arrayList_0[i] + ((i != arrayList_0.Count - 1) ? "; " : "}");
 			}
@@ -236,12 +236,12 @@ namespace ns16
 
 		public override bool Equals(object obj)
 		{
-			zzList240 @class = (zzList240)obj;
+			var @class = (zzList240)obj;
 			if (@class.Count != Count)
 			{
 				return false;
 			}
-			for (int i = 0; i < Count; i++)
+			for (var i = 0; i < Count; i++)
 			{
 				if (!@class[i].Equals(this[i]))
 				{

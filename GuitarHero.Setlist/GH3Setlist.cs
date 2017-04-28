@@ -62,10 +62,10 @@ namespace GuitarHero.Setlist
 			prefix = (((@class = class286_0.method_5(new AsciiStructureNode("prefix"))) != null) ? @class.method_8() : "general");
 			initial_movie = (((@class = class286_0.method_5(new AsciiStructureNode("initial_movie"))) != null) ? @class.method_8() : "");
 			IntegerStructureNode class2;
-			int num = ((class2 = class286_0.method_5(new IntegerStructureNode("num_tiers"))) != null) ? class2.method_8() : 0;
+			var num = ((class2 = class286_0.method_5(new IntegerStructureNode("num_tiers"))) != null) ? class2.method_8() : 0;
 			try
 			{
-				for (int i = 1; i <= num; i++)
+				for (var i = 1; i <= num; i++)
 				{
 					tiers.Add(new GH3Tier(class286_0.method_5(new StructurePointerNode("tier" + i)).method_8(), gh3Songlist_0));
 				}
@@ -78,11 +78,11 @@ namespace GuitarHero.Setlist
 
 		public StructureHeaderNode method_6()
 		{
-			StructureHeaderNode @class = new StructureHeaderNode();
+			var @class = new StructureHeaderNode();
 			@class.method_3(new AsciiStructureNode("prefix", prefix));
 			@class.method_3(new IntegerStructureNode("num_tiers", tiers.Count));
 			@class.method_3(new AsciiStructureNode("initial_movie", initial_movie));
-			for (int i = 0; i < tiers.Count; i++)
+			for (var i = 0; i < tiers.Count; i++)
 			{
 				@class.method_3(new StructurePointerNode("tier" + (i + 1), tiers[i].method_3()));
 			}

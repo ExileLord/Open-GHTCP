@@ -126,7 +126,7 @@ namespace ns13
 			}
 			if (long_0 < long_1)
 			{
-				string string_ = string.Format("Entry closed at '{0}' before the '{1}' bytes specified in the header were written", long_0, long_1);
+				var string_ = string.Format("Entry closed at '{0}' before the '{1}' bytes specified in the header were written", long_0, long_1);
 				throw new TarException(string_);
 			}
 		}
@@ -159,14 +159,14 @@ namespace ns13
 			}
 			if (long_0 + count > long_1)
 			{
-				string message = string.Format("request to write '{0}' bytes exceeds size in header of '{1}' bytes", count, long_1);
+				var message = string.Format("request to write '{0}' bytes exceeds size in header of '{1}' bytes", count, long_1);
 				throw new ArgumentOutOfRangeException("count", message);
 			}
 			if (int_0 > 0)
 			{
 				if (int_0 + count >= byte_0.Length)
 				{
-					int num = byte_0.Length - int_0;
+					var num = byte_0.Length - int_0;
 					Array.Copy(byte_1, 0, byte_0, 0, int_0);
 					Array.Copy(buffer, offset, byte_0, int_0, num);
 					class206_0.method_4(byte_0);
@@ -192,7 +192,7 @@ namespace ns13
 					return;
 				}
 				class206_0.method_5(buffer, offset);
-				int num2 = byte_0.Length;
+				var num2 = byte_0.Length;
 				long_0 += num2;
 				count -= num2;
 				offset += num2;

@@ -53,7 +53,7 @@ namespace ns19
 				if (num == 10)
 				{
 					stream26_0.Position -= 1L;
-					Class324 @class = new Class324();
+					var @class = new Class324();
 					@class.vmethod_0(stream26_0);
 					list_0.Add(@class);
 				}
@@ -64,7 +64,7 @@ namespace ns19
 						break;
 					}
 					stream26_0.Position -= 1L;
-					zzStreamClass325 class2 = new zzStreamClass325();
+					var class2 = new zzStreamClass325();
 					class2.vmethod_0(stream26_0);
 					list_0.Add(class2);
 				}
@@ -75,7 +75,7 @@ namespace ns19
 		{
 			stream26_0.WriteByte2(10);
 			stream26_0.WriteInt(int_0[0]);
-			foreach (Class324 current in list_0)
+			foreach (var current in list_0)
 			{
 				current.vmethod_1(stream26_0);
 			}
@@ -88,9 +88,9 @@ namespace ns19
 			{
 				return this;
 			}
-			foreach (Class324 current in list_0)
+			foreach (var current in list_0)
 			{
-				Class324 @class = current.method_0(class324_0);
+				var @class = current.method_0(class324_0);
 				if (@class != null)
 				{
 					return @class;
@@ -101,11 +101,11 @@ namespace ns19
 
 		public void method_1(string string_0)
 		{
-			using (Stream26 stream = new Stream26(File.Create(string_0 + "\\s000.d")))
+			using (var stream = new Stream26(File.Create(string_0 + "\\s000.d")))
 			{
 				vmethod_1(stream);
 				stream.WriteByte2(0);
-				using (Stream26 stream2 = new Stream26(File.Create(string_0 + "\\toc.dat")))
+				using (var stream2 = new Stream26(File.Create(string_0 + "\\toc.dat")))
 				{
 					stream2.WriteInt(0);
 					stream2.WriteByte2(4);
@@ -132,7 +132,7 @@ namespace ns19
 					stream2.WriteInt(756937245);
 					stream2.WriteNBytes(0, 12);
 					stream2.Position = 4L;
-					int num = KeyGenerator.GetQbKey(stream2, true);
+					var num = KeyGenerator.GetQbKey(stream2, true);
 					stream2.Position = 0L;
 					stream2.WriteInt(num);
 					stream.Position = stream.Length;

@@ -187,7 +187,7 @@ namespace ns4
 			{
 				if (int_2 != 0 && enum4_0 != Enum4.const_2)
 				{
-					float float_ = (float_4 * float_5 + float_6) * float_3;
+					var float_ = (float_4 * float_5 + float_6) * float_3;
 					class80_0.method_2(float_, int_0);
 				}
 				return true;
@@ -300,7 +300,7 @@ namespace ns4
 
 			public override bool vmethod_2(Class82 class82_0)
 			{
-				bool result = base.vmethod_2(class82_0);
+				var result = base.vmethod_2(class82_0);
 				if (int_4 != 0)
 				{
 					float_8 = class82_0.method_13(int_5);
@@ -313,7 +313,7 @@ namespace ns4
 				base.vmethod_3(enum4_0, class80_0, class80_1);
 				if (int_4 != 0 && enum4_0 != Enum4.const_1)
 				{
-					float num = (float_8 * float_9 + float_10) * float_7;
+					var num = (float_8 * float_9 + float_10) * float_7;
 					if (enum4_0 == Enum4.const_0)
 					{
 						class80_1.method_2(num, int_0);
@@ -387,7 +387,7 @@ namespace ns4
 		{
 			if (enum5_0 == Enum5.const_3)
 			{
-				for (int i = 0; i < int_0; i++)
+				for (var i = 0; i < int_0; i++)
 				{
 					class94_0[i] = new Class95(i);
 				}
@@ -407,7 +407,7 @@ namespace ns4
 				}
 				return;
 			}
-			for (int i = 0; i < int_0; i++)
+			for (var i = 0; i < int_0; i++)
 			{
 				class94_0[i] = new Class97(i);
 			}
@@ -415,7 +415,7 @@ namespace ns4
 
 		public virtual void vmethod_2()
 		{
-			for (int i = 0; i < int_0; i++)
+			for (var i = 0; i < int_0; i++)
 			{
 				class94_0[i].vmethod_0(class82_0, class107_0, class101_0);
 			}
@@ -427,7 +427,7 @@ namespace ns4
 
 		public virtual void vmethod_4()
 		{
-			for (int i = 0; i < int_0; i++)
+			for (var i = 0; i < int_0; i++)
 			{
 				class94_0[i].vmethod_1(class82_0, class107_0);
 			}
@@ -435,18 +435,18 @@ namespace ns4
 
 		public virtual void vmethod_5()
 		{
-			bool flag = false;
-			bool flag2 = false;
-			Enum5 @enum = class107_0.method_8();
+			var flag = false;
+			var flag2 = false;
+			var @enum = class107_0.method_8();
 			do
 			{
-				for (int i = 0; i < int_0; i++)
+				for (var i = 0; i < int_0; i++)
 				{
 					flag = class94_0[i].vmethod_2(class82_0);
 				}
 				do
 				{
-					for (int i = 0; i < int_0; i++)
+					for (var i = 0; i < int_0; i++)
 					{
 						flag2 = class94_0[i].vmethod_3(enum4_0, class80_0, class80_1);
 					}

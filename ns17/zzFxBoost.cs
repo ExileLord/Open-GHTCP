@@ -18,7 +18,7 @@ namespace ns17
 		public zzFxBoost(zzPakNode2 class318_1)
 		{
 			class318_0 = class318_1;
-			TagStructureNode @class = ((StructureHeaderNode)class318_0.zzGetNode1("scripts\\guitar\\guitar_events.qb").method_5(new TagStructureNode("event", "star_power_on")).Parent).method_5(new TagStructureNode("scr"));
+			var @class = ((StructureHeaderNode)class318_0.zzGetNode1("scripts\\guitar\\guitar_events.qb").method_5(new TagStructureNode("event", "star_power_on")).Parent).method_5(new TagStructureNode("scr"));
 			bool_0 = (@class.method_8() == "guitarevent_starpoweron");
 		}
 
@@ -42,7 +42,7 @@ namespace ns17
 			@class.method_5(new ScriptRootNode("guitarevent_starsequencebonus")).int_0 = QbSongClass1.AddKeyToDictionary("guitarevent_starsequencebonus_original");
 			@class.method_5(new ScriptRootNode("guitarevent_multiplier4xon_spawned")).int_0 = QbSongClass1.AddKeyToDictionary("guitarevent_multiplier4xon_spawned_original");
 			@class.method_5(new ScriptRootNode("first_gem_fx")).int_0 = QbSongClass1.AddKeyToDictionary("first_gem_fx_original");
-			ScriptRootNode class2 = @class.method_5(new ScriptRootNode("hit_note_fx_empty"));
+			var class2 = @class.method_5(new ScriptRootNode("hit_note_fx_empty"));
 			if (class2 != null)
 			{
 				class2.int_0 = QbSongClass1.AddKeyToDictionary("hit_note_fx");

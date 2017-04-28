@@ -14,10 +14,10 @@ namespace ns15
 		{
 			if (string_0.Length != 0)
 			{
-				for (int i = 0; i < string_0.Length; i++)
+				for (var i = 0; i < string_0.Length; i++)
 				{
-					string text = string_0[i];
-					string[] array = text.Split(new[]
+					var text = string_0[i];
+					var array = text.Split(new[]
 					{
 						' ',
 						'\t',

@@ -37,8 +37,8 @@ namespace ns13
 			{
 				throw new InvalidOperationException("Window full");
 			}
-			int num = int_0 - int_3 & 32767;
-			int num2 = 32768 - int_2;
+			var num = int_0 - int_3 & 32767;
+			var num2 = 32768 - int_2;
 			if (num > num2 || int_0 >= num2)
 			{
 				method_1(num, int_2, int_3);
@@ -59,7 +59,7 @@ namespace ns13
 		public int method_3(Class187 class187_0, int int_2)
 		{
 			int_2 = Math.Min(Math.Min(int_2, 32768 - int_1), class187_0.method_3());
-			int num = 32768 - int_0;
+			var num = 32768 - int_0;
 			int num2;
 			if (int_2 > num)
 			{
@@ -90,7 +90,7 @@ namespace ns13
 
 		public int method_6(byte[] byte_1, int int_2, int int_3)
 		{
-			int num = int_0;
+			var num = int_0;
 			if (int_3 > int_1)
 			{
 				int_3 = int_1;
@@ -99,8 +99,8 @@ namespace ns13
 			{
 				num = (int_0 - int_1 + int_3 & 32767);
 			}
-			int num2 = int_3;
-			int num3 = int_3 - num;
+			var num2 = int_3;
+			var num3 = int_3 - num;
 			if (num3 > 0)
 			{
 				Array.Copy(byte_0, 32768 - num3, byte_1, int_2, num3);

@@ -10,7 +10,7 @@ namespace ns18
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			int num = stream26_0.ReadInt();
+			var num = stream26_0.ReadInt();
 			if (num == 0)
 			{
 				return;
@@ -21,7 +21,7 @@ namespace ns18
 			}
 			if (this is FloatArrayNode)
 			{
-				for (int i = 0; i < num; i++)
+				for (var i = 0; i < num; i++)
 				{
 					Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
 				}
@@ -29,7 +29,7 @@ namespace ns18
 			}
 			if (this is IntegerArrayNode)
 			{
-				for (int j = 0; j < num; j++)
+				for (var j = 0; j < num; j++)
 				{
 					Nodes.Add(new IntegerValueNode(stream26_0.ReadInt()));
 				}
@@ -37,7 +37,7 @@ namespace ns18
 			}
 			if (this is TagArray || this is FileTagArrayNode)
 			{
-				for (int k = 0; k < num; k++)
+				for (var k = 0; k < num; k++)
 				{
 					Nodes.Add(new TagValueNode(stream26_0.ReadInt()));
 				}
@@ -46,7 +46,7 @@ namespace ns18
 
 		public override void vmethod_14(Stream26 stream26_0)
 		{
-			byte[] array = new byte[4];
+			var array = new byte[4];
 			array[1] = 1;
 			array[2] = vmethod_15();
 			stream26_0.WriteByteArray(array, false);

@@ -31,14 +31,14 @@ namespace ns14
             while (int_0 <= int_1)
 			{
 				int_2 = (int_0 + int_1) / 2;
-                TKey tKey = Keys[int_2];
+                var tKey = Keys[int_2];
                 if (tKey.CompareTo(offset) < 0)
 				{
                     int_0 = int_2 + 1;
                 }
 				else
 				{
-                    TKey tKey2 = Keys[int_2];
+                    var tKey2 = Keys[int_2];
                     if (tKey2.CompareTo(offset) <= 0)
 					{
                         return true;
@@ -53,9 +53,9 @@ namespace ns14
         //Not the problem
 		public int method_1(TKey offset)
 		{
-            int num = 0;
-			int num2 = Count - 1;
-			int num3 = 0;
+            var num = 0;
+			var num2 = Count - 1;
+			var num3 = 0;
             if(method_0(ref num, ref num2, ref num3, offset))
             {
             }
@@ -73,9 +73,9 @@ namespace ns14
 
 		public int method_2(TKey offset)
 		{
-			int num = 0;
-			int num2 = Count - 1;
-			int num3 = 0;
+			var num = 0;
+			var num2 = Count - 1;
+			var num3 = 0;
 			num3 = (method_0(ref num, ref num2, ref num3, offset) ? num3 : num);
 			if (num3 < Count)
 			{
@@ -86,14 +86,14 @@ namespace ns14
 
 		public int method_3(TKey gparam_0, TKey gparam_1)
 		{
-			int num = 0;
-			int num2 = Count - 1;
-			int num3 = 0;
-			int num4 = method_0(ref num, ref num2, ref num3, gparam_0) ? num3 : num;
+			var num = 0;
+			var num2 = Count - 1;
+			var num3 = 0;
+			var num4 = method_0(ref num, ref num2, ref num3, gparam_0) ? num3 : num;
 			num = num4;
 			num2 = Count - 1;
 			num3 = 0;
-			int num5 = method_0(ref num, ref num2, ref num3, gparam_1) ? (num3 + 1) : num;
+			var num5 = method_0(ref num, ref num2, ref num3, gparam_1) ? (num3 + 1) : num;
 			return num5 - num4;
 		}
 

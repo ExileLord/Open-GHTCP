@@ -56,12 +56,12 @@ namespace ns11
 			class156_1 = null;
 			if (class156_0 != null)
 			{
-				Class156 @class = class156_0;
+				var @class = class156_0;
 				class156_0 = null;
-				Class156 class2 = @class;
+				var class2 = @class;
 				do
 				{
-					Class156 class3 = class2.class156_0;
+					var class3 = class2.class156_0;
 					class2.Dispose();
 					class2 = class3;
 				}
@@ -71,7 +71,7 @@ namespace ns11
 
 		private void method_1()
 		{
-			Class156 @class = class156_0;
+			var @class = class156_0;
 			while (@class.class156_0 != class156_0)
 			{
 				@class.method_0();

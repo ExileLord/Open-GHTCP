@@ -337,14 +337,14 @@ namespace ns8
 
 		private static byte[] smethod_0(Stream stream_1)
 		{
-			long position = stream_1.Position;
-			byte[] array = new byte[65536];
-			int num = stream_1.Read(array, 0, array.Length);
+			var position = stream_1.Position;
+			var array = new byte[65536];
+			var num = stream_1.Read(array, 0, array.Length);
 			Array.Resize(ref array, num);
-			int i = 2;
+			var i = 2;
 			while (i < 50)
 			{
-				byte[] result = smethod_1(array, i);
+				var result = smethod_1(array, i);
 				stream_1.Position = position;
 				try
 				{
@@ -363,10 +363,10 @@ namespace ns8
 			if (num > 1000)
 			{
 				Array.Resize(ref array, 1000);
-				int j = 2;
+				var j = 2;
 				while (j < 50)
 				{
-					byte[] result2 = smethod_1(array, j);
+					var result2 = smethod_1(array, j);
 					stream_1.Position = position;
 					try
 					{
@@ -386,10 +386,10 @@ namespace ns8
 			if (num > 500)
 			{
 				Array.Resize(ref array, 500);
-				int k = 2;
+				var k = 2;
 				while (k < 50)
 				{
-					byte[] result3 = smethod_1(array, k);
+					var result3 = smethod_1(array, k);
 					stream_1.Position = position;
 					try
 					{
@@ -412,19 +412,19 @@ namespace ns8
 
 		private static byte[] smethod_1(byte[] byte_2, int int_0)
 		{
-			byte[] array = new byte[int_0];
-			uint[] array2 = new uint[256];
-			for (int i = 0; i < int_0; i++)
+			var array = new byte[int_0];
+			var array2 = new uint[256];
+			for (var i = 0; i < int_0; i++)
 			{
 				Array.Clear(array2, 0, array2.Length);
-				int num = 0;
+				var num = 0;
 				while (i + num < byte_2.Length)
 				{
 					array2[byte_2[i + num]] += 1u;
 					num += int_0;
 				}
-				int num2 = 0;
-				for (int j = 0; j < array2.Length; j++)
+				var num2 = 0;
+				for (var j = 0; j < array2.Length; j++)
 				{
 					if (array2[j] >= array2[num2])
 					{
@@ -438,8 +438,8 @@ namespace ns8
 
 		public byte method_1(byte byte_2, ref long long_0)
 		{
-			byte arg_1A_0 = byte_2;
-			byte[] arg_19_0 = byte_0;
+			var arg_1A_0 = byte_2;
+			var arg_19_0 = byte_0;
 			long num;
 			long_0 = (num = long_0) + 1L;
             byte_2 = (byte)(arg_1A_0 ^ arg_19_0[(int)((IntPtr)num)]);
@@ -462,7 +462,7 @@ namespace ns8
 
 		public void method_4(byte[] byte_2, int int_0, int int_1, long long_0)
 		{
-			for (int i = int_0; i < int_1; i++)
+			for (var i = int_0; i < int_1; i++)
 			{
 				byte_2[i] = method_2(byte_2[i], ref long_0);
 			}
@@ -470,7 +470,7 @@ namespace ns8
 
 		public void method_5(byte[] byte_2, int int_0, int int_1, long long_0)
 		{
-			for (int i = int_0; i < int_1; i++)
+			for (var i = int_0; i < int_1; i++)
 			{
 				byte_2[i] = method_3(byte_2[i], ref long_0);
 			}
@@ -478,15 +478,15 @@ namespace ns8
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			long long_ = method_0();
-			int num = stream_0.Read(buffer, offset, count);
+			var long_ = method_0();
+			var num = stream_0.Read(buffer, offset, count);
 			method_5(buffer, offset, num, long_);
 			return num;
 		}
 
 		public override int ReadByte()
 		{
-			long num = method_0();
+			var num = method_0();
 			return method_3(byte_0[(int)((IntPtr)method_0())], ref num);
 		}
 
@@ -498,7 +498,7 @@ namespace ns8
 
 		public override void WriteByte(byte value)
 		{
-			long num = method_0();
+			var num = method_0();
 			stream_0.WriteByte(method_2(value, ref num));
 		}
 

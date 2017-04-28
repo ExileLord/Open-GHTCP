@@ -55,8 +55,8 @@ namespace ns8
 
 		public static FSBClass1 smethod_0(Stream stream_1)
 		{
-			FSBClass1 @class = new FSBClass1();
-			long position = stream_1.Position;
+			var @class = new FSBClass1();
+			var position = stream_1.Position;
 			try
 			{
 				@class.method_1(stream_1);
@@ -64,7 +64,7 @@ namespace ns8
 			catch
 			{
 				stream_1.Position = position;
-				FSBClass2 stream = new FSBClass2(stream_1);
+				var stream = new FSBClass2(stream_1);
 				@class = new FSBClass1();
 				@class.method_1(stream);
 				@class.byte_0 = stream.byte_0;
@@ -75,7 +75,7 @@ namespace ns8
 
 		public static FSBClass1 smethod_1(Stream stream_1, byte[] byte_1)
 		{
-			FSBClass1 @class = new FSBClass1();
+			var @class = new FSBClass1();
 			@class.method_1(new FSBClass2(stream_1, byte_1));
 			@class.byte_0 = byte_1;
 			@class.stream_0 = stream_1;
@@ -84,7 +84,7 @@ namespace ns8
 
 		private void method_1(Stream stream_1)
 		{
-			BinaryReader binaryReader = new BinaryReader(stream_1);
+			var binaryReader = new BinaryReader(stream_1);
 			int int_;
 			long long_;
 			uint num;
@@ -94,7 +94,7 @@ namespace ns8
 
 		private void method_2(BinaryReader inputBin, out int numSubFiles, out long dataOffset, out uint allDataSize)
 		{
-			string @string = Encoding.UTF8.GetString(inputBin.ReadBytes(4));
+			var @string = Encoding.UTF8.GetString(inputBin.ReadBytes(4));
 			string a;
 			if ((a = @string) != null)
 			{
@@ -166,11 +166,11 @@ namespace ns8
 
 		private void method_7(BinaryReader binaryReader_0, int int_0, long long_0)
 		{
-			long num = long_0;
-			for (int i = 0; i < int_0; i++)
+			var num = long_0;
+			for (var i = 0; i < int_0; i++)
 			{
 				Class168 @class = null;
-				uint num2 = 0u;
+				var num2 = 0u;
 				switch (method_0(i))
 				{
 				case Enum23.const_0:
@@ -194,7 +194,7 @@ namespace ns8
 
 		private Class168 method_8(BinaryReader inputBin, out uint dataSize)
 		{
-			Class168 @class = new Class168();
+			var @class = new Class168();
 			@class.FileName = method_14(inputBin.ReadBytes(32));
 			@class.uint_0 = inputBin.ReadUInt32();
 			dataSize = inputBin.ReadUInt32();
@@ -212,14 +212,14 @@ namespace ns8
 		private Class168 method_9(BinaryReader inputBin, out uint dataSize)
 		{
 			uint num;
-			Class168 @class = method_10(inputBin, out dataSize, out num);
+			var @class = method_10(inputBin, out dataSize, out num);
 			method_11(inputBin, @class, num - 64u);
 			return @class;
 		}
 
 		private Class168 method_10(BinaryReader inputBin, out uint dataSize, out uint hdrSize)
 		{
-			Class168 @class = new Class168();
+			var @class = new Class168();
 			hdrSize = inputBin.ReadUInt16();
 			@class.FileName = method_14(inputBin.ReadBytes(30));
 			@class.uint_0 = inputBin.ReadUInt32();
@@ -243,14 +243,14 @@ namespace ns8
 		private Class168 method_12(BinaryReader inputBin, out uint dataSize)
 		{
 			uint num;
-			Class168 @class = method_13(inputBin, out dataSize, out num);
+			var @class = method_13(inputBin, out dataSize, out num);
 			method_11(inputBin, @class, num - 80u);
 			return @class;
 		}
 
 		private Class168 method_13(BinaryReader inputBin, out uint dataSize, out uint hdrSize)
 		{
-			Class168 @class = method_10(inputBin, out dataSize, out hdrSize);
+			var @class = method_10(inputBin, out dataSize, out hdrSize);
 			@class.float_2 = inputBin.ReadSingle();
 			@class.float_3 = inputBin.ReadSingle();
 			Console.WriteLine(inputBin.BaseStream.Position);
@@ -263,7 +263,7 @@ namespace ns8
 
 		private static Class168 smethod_2(BinaryReader inputBin, out uint dataSize, Class168 firstFile)
 		{
-			Class168 @class = new Class168();
+			var @class = new Class168();
 			@class.uint_0 = inputBin.ReadUInt32();
 			dataSize = inputBin.ReadUInt32();
 			Console.WriteLine(inputBin.BaseStream.Position);
@@ -287,7 +287,7 @@ namespace ns8
 
 		private string method_14(byte[] byte_1)
 		{
-			int num = Array.IndexOf<byte>(byte_1, 0);
+			var num = Array.IndexOf<byte>(byte_1, 0);
 			if (num == -1)
 			{
 				num = byte_1.Length;
@@ -326,7 +326,7 @@ namespace ns8
 			{
 				stream_1 = new FSBClass2(stream_1, byte_0);
 			}
-			BinaryWriter binaryWriter_ = new BinaryWriter(stream_1);
+			var binaryWriter_ = new BinaryWriter(stream_1);
 			method_18(binaryWriter_);
 			method_24(binaryWriter_);
 			method_32(binaryWriter_);
@@ -382,8 +382,8 @@ namespace ns8
 		private void method_22(BinaryWriter binaryWriter_0)
 		{
 			method_21(binaryWriter_0);
-			byte[] buffer = new byte[8];
-			byte[] bytes = Encoding.UTF8.GetBytes("CreatedByFSBTool");
+			var buffer = new byte[8];
+			var bytes = Encoding.UTF8.GetBytes("CreatedByFSBTool");
 			binaryWriter_0.Write(buffer);
 			binaryWriter_0.Write(bytes);
 		}
@@ -408,7 +408,7 @@ namespace ns8
 
 		private void method_24(BinaryWriter binaryWriter_0)
 		{
-			for (int i = 0; i < method_33().Count; i++)
+			for (var i = 0; i < method_33().Count; i++)
 			{
 				switch (method_0(i))
 				{
@@ -513,8 +513,8 @@ namespace ns8
 
 		private int method_30()
 		{
-			int num = method_23();
-			for (int i = 0; i < method_33().Count; i++)
+			var num = method_23();
+			for (var i = 0; i < method_33().Count; i++)
 			{
 				switch (method_0(i))
 				{
@@ -538,8 +538,8 @@ namespace ns8
 
 		private int method_31()
 		{
-			int num = 0;
-			for (int i = 0; i < method_33().Count; i++)
+			var num = 0;
+			for (var i = 0; i < method_33().Count; i++)
 			{
 				num += (int)method_33()[i].stream_1.Length;
 			}
@@ -552,7 +552,7 @@ namespace ns8
 			{
 				int_0 = string_0.Length + 1;
 			}
-			byte[] bytes = Encoding.UTF8.GetBytes(string_0);
+			var bytes = Encoding.UTF8.GetBytes(string_0);
 			Array.Resize(ref bytes, int_0);
 			return bytes;
 		}
@@ -574,7 +574,7 @@ namespace ns8
 
 		private void method_32(BinaryWriter binaryWriter_0)
 		{
-			for (int i = 0; i < method_33().Count; i++)
+			for (var i = 0; i < method_33().Count; i++)
 			{
 				StreamHelper.CopyStream(binaryWriter_0.BaseStream, method_33()[i].stream_1);
 			}
@@ -599,8 +599,8 @@ namespace ns8
 
 		public override string ToString()
 		{
-			string text = string.Concat("FsbFile:\nVersion = ", enum20_0, "\nFlags = ", enum21_0, "\nSubFiles.Count = ", method_33().Count, "\n");
-			foreach (Class168 current in method_33())
+			var text = string.Concat("FsbFile:\nVersion = ", enum20_0, "\nFlags = ", enum21_0, "\nSubFiles.Count = ", method_33().Count, "\n");
+			foreach (var current in method_33())
 			{
 				text += current;
 			}
@@ -628,7 +628,7 @@ namespace ns8
 			{
 				stream_0.Close();
 			}
-			foreach (Class168 current in method_33())
+			foreach (var current in method_33())
 			{
 				current.Dispose();
 			}

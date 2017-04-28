@@ -75,13 +75,13 @@ namespace ns18
 			}
 			if (Nodes.Count != 0 && Nodes[0] is AbstractTreeNode1)
 			{
-				IEnumerator enumerator = Nodes.GetEnumerator();
+				var enumerator = Nodes.GetEnumerator();
 				T result;
 				try
 				{
 					while (enumerator.MoveNext())
 					{
-						AbstractTreeNode1 @class = (AbstractTreeNode1)enumerator.Current;
+						var @class = (AbstractTreeNode1)enumerator.Current;
 						T t;
 						if ((t = @class.method_5(gparam_0)) != null)
 						{
@@ -93,7 +93,7 @@ namespace ns18
 				}
 				finally
 				{
-					IDisposable disposable = enumerator as IDisposable;
+					var disposable = enumerator as IDisposable;
 					if (disposable != null)
 					{
 						disposable.Dispose();
@@ -114,13 +114,13 @@ namespace ns18
 			}
 			if (Nodes.Count != 0 && Nodes[0] is AbstractTreeNode1)
 			{
-				IEnumerator enumerator = Nodes.GetEnumerator();
+				var enumerator = Nodes.GetEnumerator();
 				bool result;
 				try
 				{
 					while (enumerator.MoveNext())
 					{
-						AbstractTreeNode1 @class = (AbstractTreeNode1)enumerator.Current;
+						var @class = (AbstractTreeNode1)enumerator.Current;
 						if (@class.method_6(ref gparam_0))
 						{
 							result = true;
@@ -131,7 +131,7 @@ namespace ns18
 				}
 				finally
 				{
-					IDisposable disposable = enumerator as IDisposable;
+					var disposable = enumerator as IDisposable;
 					if (disposable != null)
 					{
 						disposable.Dispose();

@@ -9,7 +9,7 @@ namespace ns8
 
 		public void imethod_0(Class13[] class13_0)
 		{
-			for (int i = 0; i < class13_0.Length; i += 3)
+			for (var i = 0; i < class13_0.Length; i += 3)
 			{
 				vmethod_0(class13_0[i], class13_0[i + 1], class13_0[i + 2]);
 			}

@@ -30,7 +30,7 @@ namespace ns20
 
 		public override void vmethod_13(Stream26 stream26_0)
 		{
-			int num = stream26_0.ReadInt();
+			var num = stream26_0.ReadInt();
 			if (num == 0)
 			{
 				return;
@@ -39,7 +39,7 @@ namespace ns20
 			{
 				stream26_0.Position = stream26_0.ReadInt();
 			}
-			for (int i = 0; i < num; i++)
+			for (var i = 0; i < num; i++)
 			{
 				Nodes.Add(new TextValueNode(stream26_0.ReadInt(), vmethod_10()));
 			}
@@ -48,7 +48,7 @@ namespace ns20
 		public override void vmethod_14(Stream26 stream26_0)
 		{
 			vmethod_9(true);
-			byte[] array = new byte[4];
+			var array = new byte[4];
 			array[1] = 1;
 			array[2] = 28;
 			stream26_0.WriteByteArray(array, false);

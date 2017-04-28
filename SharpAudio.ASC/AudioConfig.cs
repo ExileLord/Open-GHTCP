@@ -10,9 +10,9 @@ namespace SharpAudio.ASC
 
 		public AudioConfig(SerializationInfo serializationInfo_0, StreamingContext streamingContext_0)
 		{
-			int @int = serializationInfo_0.GetInt32("Format.Rate");
-			int int2 = serializationInfo_0.GetInt32("Format.Bits");
-			int int3 = serializationInfo_0.GetInt32("Format.Channels");
+			var @int = serializationInfo_0.GetInt32("Format.Rate");
+			var int2 = serializationInfo_0.GetInt32("Format.Bits");
+			var int3 = serializationInfo_0.GetInt32("Format.Channels");
 			m_Format = new WaveFormat(@int, int2, int3);
 		}
 

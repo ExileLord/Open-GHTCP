@@ -60,13 +60,13 @@ namespace ns10
 
 		public int method_2(Class67 class67_0)
 		{
-			OGGClass5 oggClass5 = oggClass1.oggClass5;
+			var oggClass5 = oggClass1.oggClass5;
 			oggClass3.method_4(class67_0.byte_0, class67_0.int_0, class67_0.int_1);
 			if (oggClass3.method_6(1) != 0)
 			{
 				return -1;
 			}
-			int num = oggClass3.method_6(oggClass1.int_3);
+			var num = oggClass3.method_6(oggClass1.int_3);
 			if (num == -1)
 			{
 				return -1;
@@ -95,11 +95,11 @@ namespace ns10
 			{
 				float_0 = new float[oggClass5.int_8][];
 			}
-			for (int i = 0; i < oggClass5.int_8; i++)
+			for (var i = 0; i < oggClass5.int_8; i++)
 			{
 				if (float_0[i] != null && float_0[i].Length >= int_3)
 				{
-					for (int j = 0; j < int_3; j++)
+					for (var j = 0; j < int_3; j++)
 					{
 						float_0[i][j] = 0f;
 					}
@@ -109,7 +109,7 @@ namespace ns10
 					float_0[i] = new float[int_3];
 				}
 			}
-			int num2 = oggClass5.int_21[oggClass5.class27_0[int_4].int_3];
+			var num2 = oggClass5.int_21[oggClass5.class27_0[int_4].int_3];
 			return Class34.class34_0[num2].vmethod_3(this, oggClass1.object_1[int_4]);
 		}
 	}

@@ -93,7 +93,7 @@ namespace ns13
 
 		public override void Close()
 		{
-			Stream stream = stream_0;
+			var stream = stream_0;
 			stream_0 = null;
 			if (bool_0 && stream != null)
 			{
@@ -104,7 +104,7 @@ namespace ns13
 
 		public void method_0(long long_0, long long_1, long long_2)
 		{
-			long position = stream_0.Position;
+			var position = stream_0.Position;
 			method_4(101075792);
 			method_6(44L);
 			method_2(45);
@@ -156,7 +156,7 @@ namespace ns13
 			{
 				method_4((int)long_2);
 			}
-			int num = (byte_0 != null) ? byte_0.Length : 0;
+			var num = (byte_0 != null) ? byte_0.Length : 0;
 			if (num > 65535)
 			{
 				throw new ZipException(string.Format("Comment length({0}) is too long can only be 64K", num));

@@ -53,13 +53,13 @@ namespace ns6
 
 		public static IList<string> smethod_1(IntPtr intptr_0, Enum8 enum8_0)
 		{
-			List<string> list = new List<string>();
-			IntPtr ptr = alcGetString(IntPtr.Zero, (Enum7)enum8_0);
-			StringBuilder stringBuilder = new StringBuilder();
-			int ofs = 0;
+			var list = new List<string>();
+			var ptr = alcGetString(IntPtr.Zero, (Enum7)enum8_0);
+			var stringBuilder = new StringBuilder();
+			var ofs = 0;
 			while (true)
 			{
-				byte b = Marshal.ReadByte(ptr, ofs++);
+				var b = Marshal.ReadByte(ptr, ofs++);
 				if (b != 0)
 				{
 					stringBuilder.Append((char)b);

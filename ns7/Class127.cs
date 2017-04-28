@@ -9,9 +9,9 @@ namespace ns7
 
 		public Class127(Class144 class144_0, int int_0, bool bool_1) : base(bool_1)
 		{
-			int num = int_0 / 18;
+			var num = int_0 / 18;
 			class142_0 = new Class142[num];
-			for (int i = 0; i < class142_0.Length; i++)
+			for (var i = 0; i < class142_0.Length; i++)
 			{
 				class142_0[i] = new Class142(class144_0);
 			}
@@ -29,9 +29,9 @@ namespace ns7
 
 		public override string ToString()
 		{
-			StringBuilder stringBuilder = new StringBuilder();
+			var stringBuilder = new StringBuilder();
 			stringBuilder.Append("SeekTable: points=" + class142_0.Length + "\n");
-			for (int i = 0; i < class142_0.Length; i++)
+			for (var i = 0; i < class142_0.Length; i++)
 			{
 				stringBuilder.Append("\tPoint " + class142_0[i] + "\n");
 			}

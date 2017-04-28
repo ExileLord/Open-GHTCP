@@ -76,7 +76,7 @@ namespace ns14
 		public override void GenerateKey()
 		{
 			byte_0 = new byte[12];
-			Random random = new Random();
+			var random = new Random();
 			random.NextBytes(byte_0);
 		}
 

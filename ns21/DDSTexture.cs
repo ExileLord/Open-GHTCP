@@ -91,7 +91,7 @@ namespace ns21
 
 		private void Load(Stream stream, bool leaveOpen)
 		{
-			BinaryReader binaryReader = new BinaryReader(stream);
+			var binaryReader = new BinaryReader(stream);
 			if (new string(binaryReader.ReadChars(4)) != "DDS ")
 			{
 				throw new FileLoadException("Invalid DDS file");
@@ -133,7 +133,7 @@ namespace ns21
 					Size = new Size((int)header.width, (int)header.height);
 					if ((header.pixelFormat.flags & 4u) != 0u)
 					{
-						uint uint_ = header.pixelFormat.fourCC;
+						var uint_ = header.pixelFormat.fourCC;
 						if (uint_ > 116u)
 						{
 							if (uint_ <= 844388420u)
@@ -234,7 +234,7 @@ namespace ns21
 						}
 					}
 					IL_3BE:
-					byte[] array = new byte[header.width * header.height * (uint)BPP];
+					var array = new byte[header.width * header.height * (uint)BPP];
 					stream.Read(array, 0, array.Length);
 					data = array;
 					if (leaveOpen)
@@ -251,13 +251,13 @@ namespace ns21
 
 		public Image GetImage()
 		{
-            Bitmap bitmap = new Bitmap(Size.Width, Size.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            var bitmap = new Bitmap(Size.Width, Size.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 			if (PixelFormat == IMGPixelFormat.Bgra32)
 			{
-				BitmapData bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
+				var bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
 				Marshal.Copy(data, 0, bitmapData.Scan0, bitmapData.Stride * bitmap.Height);
 				bitmap.UnlockBits(bitmapData);
-				MemoryStream stream = new MemoryStream();
+				var stream = new MemoryStream();
 				bitmap.Save(stream, ImageFormat.Bmp);
 				return Image.FromStream(stream);
 			}
@@ -268,20 +268,20 @@ namespace ns21
 					throw new Exception("Can't decode DDS, Unknown format: " + PixelFormat);
 				}
 			}
-			ImageRelatedClass unk = new ImageRelatedClass(bitmap);
+			var unk = new ImageRelatedClass(bitmap);
 			unk.method_4();
-			BinaryReader binaryReader = new BinaryReader(new MemoryStream(data));
+			var binaryReader = new BinaryReader(new MemoryStream(data));
 			zzTextureClass.smethod_17(binaryReader, unk, PixelFormat);
 			binaryReader.Close();
 			unk.method_5(true);
-			MemoryStream stream2 = new MemoryStream();
+			var stream2 = new MemoryStream();
 			bitmap.Save(stream2, ImageFormat.Bmp);
 			return Image.FromStream(stream2);
 		}
 
         int ClampMipMaps(int MipMapCount, int Width, int Height)
         {
-            int minDimension = Math.Min(Width, Height);
+            var minDimension = Math.Min(Width, Height);
 
             while ((1 << MipMapCount) > minDimension)
                 --MipMapCount;
@@ -294,19 +294,19 @@ namespace ns21
 
 		public void ChangeImageProbably(Image img, int MipMaps, IMGPixelFormat imgpixelFormat_1, bool bool_0)
 		{
-			MemoryStream memoryStream = new MemoryStream();
-			BinaryWriter binaryWriter = new BinaryWriter(memoryStream);
+			var memoryStream = new MemoryStream();
+			var binaryWriter = new BinaryWriter(memoryStream);
 
             MipMaps = ClampMipMaps(MipMapCount, img.Width, img.Height);
 
             //Generate mipmaps
-            for (int i = 0; i < MipMaps; i++)
+            for (var i = 0; i < MipMaps; i++)
 			{
-				Bitmap bitmap = KeyGenerator.ScaleImageFixedRatio(img, Math.Max(1, img.Width >> i), Math.Max(1, img.Height >> i));
+				var bitmap = KeyGenerator.ScaleImageFixedRatio(img, Math.Max(1, img.Width >> i), Math.Max(1, img.Height >> i));
 				if (imgpixelFormat_1 == IMGPixelFormat.Bgra32)
 				{
-					BitmapData bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
-					byte[] array = new byte[bitmapData.Stride * bitmap.Height];
+					var bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
+					var array = new byte[bitmapData.Stride * bitmap.Height];
 					Marshal.Copy(bitmapData.Scan0, array, 0, array.Length);
 					bitmap.UnlockBits(bitmapData);
 					binaryWriter.Write(array);
@@ -323,14 +323,14 @@ namespace ns21
 
 		public byte[] ToByteArray()
 		{
-			MemoryStream memoryStream = new MemoryStream();
+			var memoryStream = new MemoryStream();
 			WriteDDS(memoryStream);
 			return memoryStream.ToArray();
 		}
 
 		public void WriteDDS(Stream stream, bool leaveOpen = false)
 		{
-			BinaryWriter binaryWriter = new BinaryWriter(stream);
+			var binaryWriter = new BinaryWriter(stream);
 			binaryWriter.Write(0x20534444);           // DDS Magic word
 			binaryWriter.Write(124);                  // size (why is this a constant?..)
 			binaryWriter.Write(135175);               // flags

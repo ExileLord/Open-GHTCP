@@ -60,32 +60,32 @@ namespace ns10
 
 		public void method_0()
 		{
-			for (int i = 0; i < int_8; i++)
+			for (var i = 0; i < int_8; i++)
 			{
 				class64_0[i] = null;
 			}
 			class64_0 = null;
-			for (int j = 0; j < int_9; j++)
+			for (var j = 0; j < int_9; j++)
 			{
 				Class45.class45_0[int_15[j]].vmethod_0(object_0[j]);
 			}
 			object_0 = null;
-			for (int k = 0; k < int_10; k++)
+			for (var k = 0; k < int_10; k++)
 			{
 				Class72.class72_0[int_16[k]].vmethod_0(object_1[k]);
 			}
 			object_1 = null;
-			for (int l = 0; l < int_11; l++)
+			for (var l = 0; l < int_11; l++)
 			{
 				Class41.class41_0[int_17[l]].vmethod_0(object_2[l]);
 			}
 			object_2 = null;
-			for (int m = 0; m < int_12; m++)
+			for (var m = 0; m < int_12; m++)
 			{
 				Class57.class57_0[int_18[m]].vmethod_0(object_3[m]);
 			}
 			object_3 = null;
-			for (int n = 0; n < int_13; n++)
+			for (var n = 0; n < int_13; n++)
 			{
 				if (class76_0[n] != null)
 				{
@@ -94,7 +94,7 @@ namespace ns10
 				}
 			}
 			class76_0 = null;
-			for (int num = 0; num < int_14; num++)
+			for (var num = 0; num < int_14; num++)
 			{
 				class53_0[num].method_0();
 			}

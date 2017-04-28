@@ -111,12 +111,12 @@ namespace ns9
 
 		public void method_0(EventHandler eventHandler_1)
 		{
-			EventHandler eventHandler = eventHandler_0;
+			var eventHandler = eventHandler_0;
 			EventHandler eventHandler2;
 			do
 			{
 				eventHandler2 = eventHandler;
-				EventHandler value = (EventHandler)Delegate.Combine(eventHandler2, eventHandler_1);
+				var value = (EventHandler)Delegate.Combine(eventHandler2, eventHandler_1);
 				eventHandler = Interlocked.CompareExchange(ref eventHandler_0, value, eventHandler2);
 			}
 			while (eventHandler != eventHandler2);
@@ -294,7 +294,7 @@ namespace ns9
 		public void method_21(Enum40 enum40_1)
 		{
 			enum40_0 = enum40_1;
-			byte b = (byte)enum40_1;
+			var b = (byte)enum40_1;
 			color_0 = color_8[b, 0];
 			color_1 = color_8[b, 1];
 			color_2 = color_8[b, 2];
@@ -308,7 +308,7 @@ namespace ns9
 
 		public Control1(int int_8, int int_9, int int_10)
 		{
-			Color[,] array = new Color[4, 8];
+			var array = new Color[4, 8];
 			array[0, 0] = Color.White;
 			array[0, 1] = Color.Gainsboro;
 			array[0, 2] = Color.Silver;
@@ -359,7 +359,7 @@ namespace ns9
 		{
 			if (!Enabled)
 			{
-				Color[] array = smethod_1(new[]
+				var array = smethod_1(new[]
 				{
 					color_0,
 					color_1,
@@ -375,7 +375,7 @@ namespace ns9
 			}
 			if (bool_4 && bool_6)
 			{
-				Color[] array2 = smethod_2(new[]
+				var array2 = smethod_2(new[]
 				{
 					color_0,
 					color_1,
@@ -398,12 +398,12 @@ namespace ns9
 			{
 				if (orientation_0 == Orientation.Horizontal)
 				{
-					float x = (int_2 - int_3) * (ClientRectangle.Width - int_1) / (float)(int_4 - int_3);
+					var x = (int_2 - int_3) * (ClientRectangle.Width - int_1) / (float)(int_4 - int_3);
 					rectangleF_0 = new RectangleF(x, 1f, int_1 - 1, ClientRectangle.Height - 2);
 				}
 				else
 				{
-					float y = (int_2 - int_3) * (ClientRectangle.Height - int_1) / (float)(int_4 - int_3);
+					var y = (int_2 - int_3) * (ClientRectangle.Height - int_1) / (float)(int_4 - int_3);
 					rectangleF_0 = new RectangleF(1f, y, ClientRectangle.Width - 2, int_1 - 1);
 				}
 				rectangleF_1 = ClientRectangle;
@@ -448,7 +448,7 @@ namespace ns9
 				}
 				else if (string_0.Length > 0 && bool_6)
 				{
-					string text = bool_3 ? smethod_4(TimeSpan.FromSeconds(int_7), string_0) : string.Format(string_0, int_7);
+					var text = bool_3 ? smethod_4(TimeSpan.FromSeconds(int_7), string_0) : string.Format(string_0, int_7);
 					if (orientation_0 == Orientation.Horizontal)
 					{
 						if (int_5 != float_2)
@@ -474,25 +474,25 @@ namespace ns9
 				else
 				{
 					graphicsPath = graphicsPath_0;
-					Matrix matrix = new Matrix();
+					var matrix = new Matrix();
 					matrix.Translate(rectangleF_0.Left - graphicsPath.GetBounds().Left, rectangleF_0.Top - graphicsPath.GetBounds().Top);
 					graphicsPath.Transform(matrix);
 				}
 				paintEventArgs_0.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-				using (GraphicsPath graphicsPath2 = smethod_0(rectangleF_1, sizeF_))
+				using (var graphicsPath2 = smethod_0(rectangleF_1, sizeF_))
 				{
-					using (LinearGradientBrush linearGradientBrush = new LinearGradientBrush(rectangleF_2, color_12, color_13, linearGradientMode))
+					using (var linearGradientBrush = new LinearGradientBrush(rectangleF_2, color_12, color_13, linearGradientMode))
 					{
 						linearGradientBrush.WrapMode = WrapMode.TileFlipXY;
 						paintEventArgs_0.Graphics.FillPath(linearGradientBrush, graphicsPath2);
-						using (GraphicsPath graphicsPath3 = smethod_0(rectangleF_4, sizeF_))
+						using (var graphicsPath3 = smethod_0(rectangleF_4, sizeF_))
 						{
-							using (LinearGradientBrush linearGradientBrush2 = new LinearGradientBrush(rectangleF_2, color_15, color_16, linearGradientMode))
+							using (var linearGradientBrush2 = new LinearGradientBrush(rectangleF_2, color_15, color_16, linearGradientMode))
 							{
 								linearGradientBrush2.WrapMode = WrapMode.TileFlipXY;
 								if (Capture && bool_5)
 								{
-									Region region = new Region(graphicsPath3);
+									var region = new Region(graphicsPath3);
 									region.Exclude(graphicsPath);
 									paintEventArgs_0.Graphics.FillRegion(linearGradientBrush2, region);
 								}
@@ -502,29 +502,29 @@ namespace ns9
 								}
 							}
 						}
-						using (Pen pen = new Pen(color_14, 0.5f))
+						using (var pen = new Pen(color_14, 0.5f))
 						{
 							paintEventArgs_0.Graphics.DrawPath(pen, graphicsPath2);
 						}
 					}
 				}
-				Color color = color_9;
-				Color color2 = color_10;
+				var color = color_9;
+				var color2 = color_10;
 				if (Capture && bool_5)
 				{
 					color = Color.FromArgb(175, color_9);
 					color2 = Color.FromArgb(175, color_10);
 				}
-				using (LinearGradientBrush linearGradientBrush3 = new LinearGradientBrush(rectangleF_3, color, color2, linearGradientMode))
+				using (var linearGradientBrush3 = new LinearGradientBrush(rectangleF_3, color, color2, linearGradientMode))
 				{
 					linearGradientBrush3.WrapMode = WrapMode.TileFlipXY;
 					paintEventArgs_0.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-					Color color3 = color_11;
+					var color3 = color_11;
 					if (bool_4 && (Capture || bool_7))
 					{
 						color3 = ControlPaint.Dark(color3);
 					}
-					using (Pen pen2 = new Pen(color3))
+					using (var pen2 = new Pen(color3))
 					{
 						if (image_0 != null)
 						{
@@ -539,14 +539,14 @@ namespace ns9
 				}
 				if (Focused & bool_1)
 				{
-					using (Pen pen3 = new Pen(Color.FromArgb(200, color_14)))
+					using (var pen3 = new Pen(Color.FromArgb(200, color_14)))
 					{
 						pen3.DashStyle = DashStyle.Dot;
 						RectangleF rectangleF_ = ClientRectangle;
 						rectangleF_.Width -= 2f;
 						rectangleF_.Height -= 1f;
 						rectangleF_.X += 1f;
-						using (GraphicsPath graphicsPath4 = smethod_0(rectangleF_, sizeF_))
+						using (var graphicsPath4 = smethod_0(rectangleF_, sizeF_))
 						{
 							paintEventArgs_0.Graphics.DrawPath(pen3, graphicsPath4);
 						}
@@ -604,15 +604,15 @@ namespace ns9
 			int_5 = e.X;
 			int_6 = e.Y;
 			bool_7 = smethod_3(e.Location, rectangleF_0);
-			Point location = e.Location;
-			int num = (orientation_0 == Orientation.Horizontal) ? location.X : location.Y;
-			int num2 = int_1 >> 1;
+			var location = e.Location;
+			var num = (orientation_0 == Orientation.Horizontal) ? location.X : location.Y;
+			var num2 = int_1 >> 1;
 			num -= num2;
-			float num3 = (int_4 - int_3) / (float)(((orientation_0 == Orientation.Horizontal) ? ClientSize.Width : ClientSize.Height) - 2 * num2);
+			var num3 = (int_4 - int_3) / (float)(((orientation_0 == Orientation.Horizontal) ? ClientSize.Width : ClientSize.Height) - 2 * num2);
 			int_7 = (int)(num * num3 + int_3);
 			if (Capture & e.Button == MouseButtons.Left)
 			{
-				ScrollEventType type = ScrollEventType.ThumbPosition;
+				var type = ScrollEventType.ThumbPosition;
 				int_2 = int_7;
 				if (int_2 <= int_3)
 				{
@@ -669,7 +669,7 @@ namespace ns9
 			if (bool_2)
 			{
 				base.OnMouseWheel(e);
-				int num = e.Delta / SystemInformation.MouseWheelScrollDelta * (int_4 - int_3) / int_0;
+				var num = e.Delta / SystemInformation.MouseWheelScrollDelta * (int_4 - int_3) / int_0;
 				method_23(method_13() + num);
 				if (scrollEventHandler_0 != null)
 				{
@@ -740,7 +740,7 @@ namespace ns9
 			{
 				scrollEventHandler_0(this, new ScrollEventArgs(ScrollEventType.Last, method_13()));
 			}
-			Point point = PointToClient(Cursor.Position);
+			var point = PointToClient(Cursor.Position);
 			OnMouseMove(new MouseEventArgs(MouseButtons.None, 0, point.X, point.Y, 0));
 		}
 
@@ -756,7 +756,7 @@ namespace ns9
 
 		public static GraphicsPath smethod_0(RectangleF rectangleF_5, SizeF sizeF_1)
 		{
-			GraphicsPath graphicsPath = new GraphicsPath();
+			var graphicsPath = new GraphicsPath();
 			graphicsPath.AddLine(rectangleF_5.Left + sizeF_1.Width / 2f, rectangleF_5.Top, rectangleF_5.Right - sizeF_1.Width / 2f, rectangleF_5.Top);
 			graphicsPath.AddArc(rectangleF_5.Right - sizeF_1.Width, rectangleF_5.Top, sizeF_1.Width, sizeF_1.Height, 270f, 90f);
 			graphicsPath.AddLine(rectangleF_5.Right, rectangleF_5.Top + sizeF_1.Height / 2f, rectangleF_5.Right, rectangleF_5.Bottom - sizeF_1.Height / 2f);
@@ -770,10 +770,10 @@ namespace ns9
 
 		public static Color[] smethod_1(Color[] color_9)
 		{
-			Color[] array = new Color[color_9.Length];
-			for (int i = 0; i < color_9.Length; i++)
+			var array = new Color[color_9.Length];
+			for (var i = 0; i < color_9.Length; i++)
 			{
-				int num = (int)(color_9[i].R * 0.3 + color_9[i].G * 0.6 + color_9[i].B * 0.1);
+				var num = (int)(color_9[i].R * 0.3 + color_9[i].G * 0.6 + color_9[i].B * 0.1);
 				array[i] = Color.FromArgb(-65793 * (255 - num) - 1);
 			}
 			return array;
@@ -781,8 +781,8 @@ namespace ns9
 
 		public static Color[] smethod_2(Color[] color_9)
 		{
-			Color[] array = new Color[color_9.Length];
-			for (int i = 0; i < color_9.Length; i++)
+			var array = new Color[color_9.Length];
+			for (var i = 0; i < color_9.Length; i++)
 			{
 				array[i] = ((color_9[i] == Color.FromKnownColor(KnownColor.Transparent)) ? color_9[i] : ControlPaint.Light(color_9[i]));
 			}
