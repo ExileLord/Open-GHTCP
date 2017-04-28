@@ -8,43 +8,43 @@ namespace ns0
 {
 	public abstract class GenericAudioStream : Stream
 	{
-		public Stream fileStream;
+		public Stream FileStream;
 
-		public WaveFormat waveFormat_0;
+		public WaveFormat WaveFormat0;
 
-		private static int int_0 = 368;
+		private static int _int0 = 368;
 
-		private static int int_1 = 264;
+		private static int _int1 = 264;
 
 		public virtual WaveFormat vmethod_0()
 		{
-			return waveFormat_0;
+			return WaveFormat0;
 		}
 
 		public virtual Class16 vmethod_1()
 		{
-			return new Class16(waveFormat_0, (uint)Position, (uint)Length);
+			return new Class16(WaveFormat0, (uint)Position, (uint)Length);
 		}
 
 		public virtual Stream vmethod_2()
 		{
-			return fileStream;
+			return FileStream;
 		}
 
-		public virtual int vmethod_3(IntPtr intptr_0, int int_2)
+		public virtual int vmethod_3(IntPtr intptr0, int int2)
 		{
-			var array = new byte[int_2];
-			var num = Read(array, 0, int_2);
-			Marshal.Copy(array, 0, intptr_0, num);
+			var array = new byte[int2];
+			var num = Read(array, 0, int2);
+			Marshal.Copy(array, 0, intptr0, num);
 			return num;
 		}
 
-		public virtual int vmethod_4(float[] float_0, int int_2, int int_3)
+		public virtual int vmethod_4(float[] float0, int int2, int int3)
 		{
 			var num = vmethod_0().short_2 + 7 >> 3;
-			var array = new byte[num * int_3];
-			var num2 = Read(array, num * int_2, array.Length) / num;
-			var num3 = int_2 + num2;
+			var array = new byte[num * int3];
+			var num2 = Read(array, num * int2, array.Length) / num;
+			var num3 = int2 + num2;
 			var short_ = vmethod_0().short_2;
 			if (short_ <= 16)
 			{
@@ -52,18 +52,18 @@ namespace ns0
 				{
 					for (var i = 0; i < num3; i++)
 					{
-						float_0[int_2 + i] = Class11.smethod_3(array[i]);
+						float0[int2 + i] = Class11.smethod_3(array[i]);
 					}
 					return num2;
 				}
 				if (short_ == 16)
 				{
 					var num4 = 0;
-					while (int_2 < num3)
+					while (int2 < num3)
 					{
-						float_0[int_2] = Class11.smethod_7(BitConverter.ToInt16(array, num4));
+						float0[int2] = Class11.smethod_7(BitConverter.ToInt16(array, num4));
 						num4 += num;
-						int_2++;
+						int2++;
 					}
 					return num2;
 				}
@@ -73,11 +73,11 @@ namespace ns0
 				if (short_ == 24)
 				{
 					var num5 = 0;
-					while (int_2 < num3)
+					while (int2 < num3)
 					{
-						float_0[int_2] = Class11.smethod_11(Struct8.smethod_2(array, num5));
+						float0[int2] = Class11.smethod_11(Struct8.smethod_2(array, num5));
 						num5 += num;
-						int_2++;
+						int2++;
 					}
 					return num2;
 				}
@@ -85,14 +85,14 @@ namespace ns0
 				{
 					if (short_ == 64)
 					{
-						if (vmethod_0().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
+						if (vmethod_0().waveFormatTag_0 == WaveFormatTag.IeeeFloat)
 						{
 							var num6 = 0;
-							while (int_2 < num3)
+							while (int2 < num3)
 							{
-								float_0[int_2] = Class11.smethod_26(BitConverter.ToDouble(array, num6));
+								float0[int2] = Class11.smethod_26(BitConverter.ToDouble(array, num6));
 								num6 += num;
-								int_2++;
+								int2++;
 							}
 							return num2;
 						}
@@ -100,17 +100,17 @@ namespace ns0
 				}
 				else
 				{
-					if (vmethod_0().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
+					if (vmethod_0().waveFormatTag_0 == WaveFormatTag.IeeeFloat)
 					{
-						Buffer.BlockCopy(array, 0, float_0, int_2 << 2, num2);
+						Buffer.BlockCopy(array, 0, float0, int2 << 2, num2);
 						return num2;
 					}
 					var num7 = 0;
-					while (int_2 < num3)
+					while (int2 < num3)
 					{
-						float_0[int_2] = Class11.smethod_15(BitConverter.ToInt32(array, num7));
+						float0[int2] = Class11.smethod_15(BitConverter.ToInt32(array, num7));
 						num7 += num;
-						int_2++;
+						int2++;
 					}
 					return num2;
 				}
@@ -118,22 +118,22 @@ namespace ns0
 			throw new ArrayTypeMismatchException();
 		}
 
-		public virtual float[][] vmethod_5(int int_2)
+		public virtual float[][] vmethod_5(int int2)
 		{
 			var num = vmethod_0().short_2 + 7 >> 3;
-			var array = new byte[num * int_2 * waveFormat_0.short_0];
-			var num2 = Read(array, 0, array.Length) / num / waveFormat_0.short_0;
+			var array = new byte[num * int2 * WaveFormat0.short_0];
+			var num2 = Read(array, 0, array.Length) / num / WaveFormat0.short_0;
 			if (num2 <= 0)
 			{
 				return null;
 			}
-			int short_ = waveFormat_0.short_0;
+			int short_ = WaveFormat0.short_0;
 			var num3 = num * short_;
 			var array2 = new float[short_][];
-			var short_2 = vmethod_0().short_2;
-			if (short_2 <= 16)
+			var short2 = vmethod_0().short_2;
+			if (short2 <= 16)
 			{
-				if (short_2 == 8)
+				if (short2 == 8)
 				{
 					for (var i = 0; i < short_; i++)
 					{
@@ -149,7 +149,7 @@ namespace ns0
 					}
 					return array2;
 				}
-				if (short_2 == 16)
+				if (short2 == 16)
 				{
 					for (var k = 0; k < short_; k++)
 					{
@@ -168,7 +168,7 @@ namespace ns0
 			}
 			else
 			{
-				if (short_2 == 24)
+				if (short2 == 24)
 				{
 					for (var m = 0; m < short_; m++)
 					{
@@ -184,11 +184,11 @@ namespace ns0
 					}
 					return array2;
 				}
-				if (short_2 != 32)
+				if (short2 != 32)
 				{
-					if (short_2 == 64)
+					if (short2 == 64)
 					{
-						if (vmethod_0().waveFormatTag_0 == WaveFormatTag.IEEEFloat)
+						if (vmethod_0().waveFormatTag_0 == WaveFormatTag.IeeeFloat)
 						{
 							for (var num7 = 0; num7 < short_; num7++)
 							{
@@ -208,7 +208,7 @@ namespace ns0
 				}
 				else
 				{
-					if (vmethod_0().waveFormatTag_0 != WaveFormatTag.IEEEFloat)
+					if (vmethod_0().waveFormatTag_0 != WaveFormatTag.IeeeFloat)
 					{
 						for (var num10 = 0; num10 < short_; num10++)
 						{
@@ -270,14 +270,14 @@ namespace ns0
 
 		public override void Flush()
 		{
-			fileStream.Flush();
+			FileStream.Flush();
 		}
 
         protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
-				fileStream.Close();
+				FileStream.Close();
 			}
 		}
 

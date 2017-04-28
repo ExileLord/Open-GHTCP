@@ -1,1 +1,1 @@
-public delegate int Delegate282(object object_0, int int_0);
+public delegate int Delegate282(object object0, int int0);

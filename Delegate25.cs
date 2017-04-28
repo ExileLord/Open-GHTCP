@@ -1,1 +1,1 @@
-public delegate short Delegate25(object object_0);
+public delegate short Delegate25(object object0);

@@ -1,3 +1,3 @@
 using System.IO;
 
-public delegate Stream Delegate221(object object_0);
+public delegate Stream Delegate221(object object0);

@@ -4,35 +4,35 @@ using ns16;
 
 namespace ns19
 {
-	public class zzQbSongObject
+	public class ZzQbSongObject
 	{
-		public byte[] data;
+		public byte[] Data;
 
-		public int int_0;
+		public int Int0;
 
-		public string fileName;
+		public string FileName;
 
-		public string[] string_1;
+		public string[] String1;
 
-		public zzQbSongObject(string path) : this(KeyGenerator.GetFileName(path, -1).ToLower(), KeyGenerator.ReadBytes(path))
+		public ZzQbSongObject(string path) : this(KeyGenerator.GetFileName(path, -1).ToLower(), KeyGenerator.ReadBytes(path))
 		{
 		}
 
-		public zzQbSongObject(string newFileName, byte[] newData)
+		public ZzQbSongObject(string newFileName, byte[] newData)
 		{
-			data = newData;
-			var list = new List<byte>(data);
-			fileName = newFileName;
-			string_1 = new string[KeyGenerator.smethod_24(list.GetRange(0, 4).ToArray(), true)];
-			int_0 = KeyGenerator.smethod_24(list.GetRange(4, 4).ToArray(), true);
+			Data = newData;
+			var list = new List<byte>(Data);
+			FileName = newFileName;
+			String1 = new string[KeyGenerator.smethod_24(list.GetRange(0, 4).ToArray(), true)];
+			Int0 = KeyGenerator.smethod_24(list.GetRange(4, 4).ToArray(), true);
 			string[] array = {
-				fileName + "_song",
-				fileName + "_guitar",
-				fileName + "_preview",
-				fileName + "_rhythm",
-				fileName + "_coop_song",
-				fileName + "_coop_guitar",
-				fileName + "_coop_rhythm"
+				FileName + "_song",
+				FileName + "_guitar",
+				FileName + "_preview",
+				FileName + "_rhythm",
+				FileName + "_coop_song",
+				FileName + "_coop_guitar",
+				FileName + "_coop_rhythm"
 			};
 			var list2 = new List<int>();
 			var array2 = array;
@@ -42,56 +42,56 @@ namespace ns19
 				list2.Add(KeyGenerator.GetQbKey(text, true));
 			}
 			var num = 8;
-			for (var j = 0; j < string_1.Length; j++)
+			for (var j = 0; j < String1.Length; j++)
 			{
 				var num2 = KeyGenerator.smethod_24(list.GetRange(num, 4).ToArray(), true);
 				if (!list2.Contains(num2))
 				{
-					throw new Exception(string.Concat("Dat File Corrupted: unperdictable CRC value (", num2, ") for song \"", fileName, "\""));
+					throw new Exception(string.Concat("Dat File Corrupted: unperdictable CRC value (", num2, ") for song \"", FileName, "\""));
 				}
-				string_1[KeyGenerator.smethod_24(list.GetRange(num + 4, 4).ToArray(), true)] = array[list2.IndexOf(num2)];
+				String1[KeyGenerator.smethod_24(list.GetRange(num + 4, 4).ToArray(), true)] = array[list2.IndexOf(num2)];
 				num += 20;
 			}
 		}
 
-		public void method_0(string string_2)
+		public void method_0(string string2)
 		{
-			for (var i = 0; i < string_1.Length; i++)
+			for (var i = 0; i < String1.Length; i++)
 			{
-				string_1[i] = string_1[i].Replace(fileName, string_2);
+				String1[i] = String1[i].Replace(FileName, string2);
 			}
-			fileName = string_2;
+			FileName = string2;
 			method_1();
 		}
 
-		public zzQbSongObject(int int_1, string[] string_2)
+		public ZzQbSongObject(int int1, string[] string2)
 		{
-			int_0 = int_1;
-			string_1 = string_2;
-			fileName = string_1[0].Remove(string_1[0].IndexOf('_'));
+			Int0 = int1;
+			String1 = string2;
+			FileName = String1[0].Remove(String1[0].IndexOf('_'));
 			method_1();
 		}
 
 		public void method_1()
 		{
 			var list = new List<byte>();
-			list.AddRange(KeyGenerator.smethod_32(string_1.Length, true));
-			list.AddRange(KeyGenerator.smethod_32(int_0, true));
-			for (var i = 0; i < string_1.Length; i++)
+			list.AddRange(KeyGenerator.smethod_32(String1.Length, true));
+			list.AddRange(KeyGenerator.smethod_32(Int0, true));
+			for (var i = 0; i < String1.Length; i++)
 			{
-				list.AddRange(KeyGenerator.smethod_32(KeyGenerator.GetQbKey(string_1[i], true), true));
+				list.AddRange(KeyGenerator.smethod_32(KeyGenerator.GetQbKey(String1[i], true), true));
 				list.AddRange(KeyGenerator.smethod_32(i, true));
 				for (var j = 0; j < 12; j++)
 				{
 					list.Add(0);
 				}
 			}
-			data = list.ToArray();
+			Data = list.ToArray();
 		}
 
-		public void method_2(string string_2)
+		public void method_2(string string2)
 		{
-			KeyGenerator.WriteAllBytes(string_2, data);
+			KeyGenerator.WriteAllBytes(string2, Data);
 		}
 	}
 }

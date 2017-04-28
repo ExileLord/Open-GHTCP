@@ -7,21 +7,21 @@ namespace ns12
 {
 	public class Stream21 : Stream
 	{
-		public long long_0;
+		public long Long0;
 
-		public long long_1;
+		public long Long1;
 
-		public byte[] byte_0;
+		public byte[] Byte0;
 
-		public Class206 class206_0;
+		public Class206 Class2060;
 
-		private Stream stream_0;
+		private Stream _stream0;
 
 		public override bool CanRead
 		{
 			get
 			{
-				return stream_0.CanRead;
+				return _stream0.CanRead;
 			}
 		}
 
@@ -45,7 +45,7 @@ namespace ns12
 		{
 			get
 			{
-				return stream_0.Length;
+				return _stream0.Length;
 			}
 		}
 
@@ -53,7 +53,7 @@ namespace ns12
 		{
 			get
 			{
-				return stream_0.Position;
+				return _stream0.Position;
 			}
 			set
 			{
@@ -63,7 +63,7 @@ namespace ns12
 
 		public override void Flush()
 		{
-			stream_0.Flush();
+			_stream0.Flush();
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
@@ -104,29 +104,29 @@ namespace ns12
 				throw new ArgumentNullException("buffer");
 			}
 			var num = 0;
-			if (long_1 >= long_0)
+			if (Long1 >= Long0)
 			{
 				return 0;
 			}
 			long num2 = count;
-			if (num2 + long_1 > long_0)
+			if (num2 + Long1 > Long0)
 			{
-				num2 = long_0 - long_1;
+				num2 = Long0 - Long1;
 			}
-			if (byte_0 != null)
+			if (Byte0 != null)
 			{
-				var num3 = (num2 > (long)byte_0.Length) ? byte_0.Length : ((int)num2);
-				Array.Copy(byte_0, 0, buffer, offset, num3);
-				if (num3 >= byte_0.Length)
+				var num3 = (num2 > (long)Byte0.Length) ? Byte0.Length : ((int)num2);
+				Array.Copy(Byte0, 0, buffer, offset, num3);
+				if (num3 >= Byte0.Length)
 				{
-					byte_0 = null;
+					Byte0 = null;
 				}
 				else
 				{
-					var num4 = byte_0.Length - num3;
+					var num4 = Byte0.Length - num3;
 					var destinationArray = new byte[num4];
-					Array.Copy(byte_0, num3, destinationArray, 0, num4);
-					byte_0 = destinationArray;
+					Array.Copy(Byte0, num3, destinationArray, 0, num4);
+					Byte0 = destinationArray;
 				}
 				num += num3;
 				num2 -= num3;
@@ -134,7 +134,7 @@ namespace ns12
 			}
 			while (num2 > 0L)
 			{
-				var array = class206_0.method_2();
+				var array = Class2060.method_2();
 				if (array == null)
 				{
 					throw new TarException("unexpected EOF with " + num2 + " bytes unread");
@@ -144,8 +144,8 @@ namespace ns12
 				if (num6 > num5)
 				{
 					Array.Copy(array, 0, buffer, offset, num5);
-					byte_0 = new byte[num6 - num5];
-					Array.Copy(array, num5, byte_0, 0, num6 - num5);
+					Byte0 = new byte[num6 - num5];
+					Array.Copy(array, num5, Byte0, 0, num6 - num5);
 				}
 				else
 				{
@@ -156,13 +156,13 @@ namespace ns12
 				num2 -= num5;
 				offset += num5;
 			}
-			long_1 += num;
+			Long1 += num;
 			return num;
 		}
 
 		public override void Close()
 		{
-			class206_0.method_8();
+			Class2060.method_8();
 		}
 	}
 }

@@ -10,15 +10,15 @@ using SharpAudio.ASC;
 
 namespace ns8
 {
-	public class FSBStream : GenericAudioStream
+	public class FsbStream : GenericAudioStream
 	{
-		private readonly GenericAudioStream stream1_0;
+		private readonly GenericAudioStream _stream10;
 
 		public override bool CanRead
 		{
 			get
 			{
-				return stream1_0.CanRead;
+				return _stream10.CanRead;
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace ns8
 		{
 			get
 			{
-				return stream1_0.CanSeek;
+				return _stream10.CanSeek;
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace ns8
 		{
 			get
 			{
-				return stream1_0.CanWrite;
+				return _stream10.CanWrite;
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace ns8
 		{
 			get
 			{
-				return stream1_0.Length;
+				return _stream10.Length;
 			}
 		}
 
@@ -50,96 +50,96 @@ namespace ns8
 		{
 			get
 			{
-				return stream1_0.Position;
+				return _stream10.Position;
 			}
 			set
 			{
-				stream1_0.Position = value;
+				_stream10.Position = value;
 			}
 		}
 
-		public FSBStream(string string_0) : this(File.OpenRead(string_0))
+		public FsbStream(string string0) : this(File.OpenRead(string0))
 		{
 		}
 
-		public FSBStream(Stream stream_1) : this(FSBClass1.smethod_0(stream_1))
+		public FsbStream(Stream stream1) : this(FsbClass1.smethod_0(stream1))
 		{
 		}
 
-		public FSBStream(FSBClass1 class167_0)
+		public FsbStream(FsbClass1 class1670)
 		{
-			switch (class167_0.method_33().Count)
+			switch (class1670.method_33().Count)
 			{
 			case 0:
 				throw new Exception5("FSB Stream: No subfiles.");
 			case 1:
-				fileStream = (stream1_0 = smethod_0(class167_0.method_33()[0]));
+				FileStream = (_stream10 = smethod_0(class1670.method_33()[0]));
 				break;
 			default:
 			{
 				var list = new List<GenericAudioStream>();
-				foreach (var current in class167_0.method_33())
+				foreach (var current in class1670.method_33())
 				{
 					list.Add(smethod_0(current));
 				}
-				fileStream = (stream1_0 = new Stream2(list.ToArray()));
+				FileStream = (_stream10 = new Stream2(list.ToArray()));
 				break;
 			}
 			}
-			waveFormat_0 = stream1_0.vmethod_0();
+			WaveFormat0 = _stream10.vmethod_0();
 		}
 
-		private static GenericAudioStream smethod_0(Class168 class168_0)
+		private static GenericAudioStream smethod_0(Class168 class1680)
 		{
-			var flag = (class168_0.enum22_0 & FSBFlags2.flag_19) != FSBFlags2.flag_0;
-			var stream_ = class168_0.stream_1;
-			var position = stream_.Position;
+			var flag = (class1680.Enum220 & FsbFlags2.Flag19) != FsbFlags2.Flag0;
+			var stream = class1680.Stream1;
+			var position = stream.Position;
 			var array = new byte[4];
-			stream_.Read(array, 0, 4);
-			stream_.Position = position;
+			stream.Read(array, 0, 4);
+			stream.Position = position;
 			if (array[0] == 255 && array[1] >= 240)
 			{
-				if ((class168_0.enum22_0 & FSBFlags2.flag_27) != FSBFlags2.flag_0 && class168_0.uint_3 > 2u)
+				if ((class1680.Enum220 & FsbFlags2.Flag27) != FsbFlags2.Flag0 && class1680.Uint3 > 2u)
 				{
-					return new MP3Class(class168_0.stream_1, (int)(class168_0.uint_3 / 2u), flag ? Enum4.const_3 : Enum4.const_0);
+					return new Mp3Class(class1680.Stream1, (int)(class1680.Uint3 / 2u), flag ? Enum4.Const3 : Enum4.Const0);
 				}
-				return new MP3Stream(class168_0.stream_1, flag ? Enum4.const_3 : Enum4.const_0);
+				return new Mp3Stream(class1680.Stream1, flag ? Enum4.Const3 : Enum4.Const0);
 			}
 		    string @string;
 		    if ((@string = Encoding.UTF8.GetString(array, 0, 3)) != null && @string == "Ogg")
 		    {
-		        return new OGGStream(class168_0.stream_1);
+		        return new OggStream(class1680.Stream1);
 		    }
-		    if ((class168_0.enum22_0 & FSBFlags2.flag_17) != FSBFlags2.flag_0)
+		    if ((class1680.Enum220 & FsbFlags2.Flag17) != FsbFlags2.Flag0)
 		    {
-		        return new Stream5(class168_0.stream_1, new WaveFormat(class168_0.int_0, ((class168_0.enum22_0 & FSBFlags2.flag_4) != FSBFlags2.flag_0) ? 8 : 16, (int)class168_0.uint_3));
+		        return new Stream5(class1680.Stream1, new WaveFormat(class1680.Int0, ((class1680.Enum220 & FsbFlags2.Flag4) != FsbFlags2.Flag0) ? 8 : 16, (int)class1680.Uint3));
 		    }
 		    throw new Exception5("FSB SubFile: Data not supported.");
 		}
 
-		public override int vmethod_3(IntPtr intptr_0, int int_2)
+		public override int vmethod_3(IntPtr intptr0, int int2)
 		{
-			return stream1_0.vmethod_3(intptr_0, int_2);
+			return _stream10.vmethod_3(intptr0, int2);
 		}
 
-		public override int vmethod_4(float[] float_0, int int_2, int int_3)
+		public override int vmethod_4(float[] float0, int int2, int int3)
 		{
-			return stream1_0.vmethod_4(float_0, int_2, int_3);
+			return _stream10.vmethod_4(float0, int2, int3);
 		}
 
-		public override float[][] vmethod_5(int int_2)
+		public override float[][] vmethod_5(int int2)
 		{
-			return stream1_0.vmethod_5(int_2);
+			return _stream10.vmethod_5(int2);
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			return stream1_0.Read(buffer, offset, count);
+			return _stream10.Read(buffer, offset, count);
 		}
 
 		public override void SetLength(long value)
 		{
-			stream1_0.SetLength(value);
+			_stream10.SetLength(value);
 		}
 
 		public override void Write(byte[] buffer, int offset, int count)

@@ -1,1 +1,1 @@
-public delegate string Delegate129(string string_0, object object_0, object object_1);
+public delegate string Delegate129(string string0, object object0, object object1);

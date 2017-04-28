@@ -1,1 +1,1 @@
-public delegate byte[] Delegate187(string string_0);
+public delegate byte[] Delegate187(string string0);

@@ -7,23 +7,23 @@ namespace ns17
 {
 	public class UpdateSetlistSwitcher : QbEditor
 	{
-		private readonly GH3Songlist gh3Songlist_0;
+		private readonly Gh3Songlist _gh3Songlist0;
 
-		private readonly zzPakNode2 class318_0;
+		private readonly ZzPakNode2 _class3180;
 
-		private readonly bool bool_0;
+		private readonly bool _bool0;
 
-		public UpdateSetlistSwitcher(zzPakNode2 class318_1, GH3Songlist gh3Songlist_1, bool bool_1)
+		public UpdateSetlistSwitcher(ZzPakNode2 class3181, Gh3Songlist gh3Songlist1, bool bool1)
 		{
-			class318_0 = class318_1;
-			gh3Songlist_0 = gh3Songlist_1;
-			bool_0 = bool_1;
+			_class3180 = class3181;
+			_gh3Songlist0 = gh3Songlist1;
+			_bool0 = bool1;
 		}
 
 		public override void vmethod_0()
 		{
-			zzGenericNode1 @class = class318_0.zzGetNode1("scripts\\guitar\\custom_menu\\guitar_custom_menu_setlist_switcher.qb");
-			@class.method_5(new ArrayPointerRootNode("custom_menu_setlist_switcher_progressions_" + (bool_0 ? "gha" : "gh3"))).method_8(gh3Songlist_0.method_7());
+			ZzGenericNode1 @class = _class3180.ZzGetNode1("scripts\\guitar\\custom_menu\\guitar_custom_menu_setlist_switcher.qb");
+			@class.method_5(new ArrayPointerRootNode("custom_menu_setlist_switcher_progressions_" + (_bool0 ? "gha" : "gh3"))).method_8(_gh3Songlist0.method_7());
 		}
 
 		public override string ToString()

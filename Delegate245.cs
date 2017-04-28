@@ -1,1 +1,1 @@
-public delegate byte Delegate245(int int_0);
+public delegate byte Delegate245(int int0);

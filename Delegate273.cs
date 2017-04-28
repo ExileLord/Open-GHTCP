@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate int Delegate273(object object_0, RowStyle rowStyle_0);
+public delegate int Delegate273(object object0, RowStyle rowStyle0);

@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate void Delegate67(object object_0, FormStartPosition formStartPosition_0);
+public delegate void Delegate67(object object0, FormStartPosition formStartPosition0);

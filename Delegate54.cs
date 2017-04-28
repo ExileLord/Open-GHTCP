@@ -1,3 +1,3 @@
 using System.Drawing;
 
-public delegate RectangleF Delegate54(object object_0);
+public delegate RectangleF Delegate54(object object0);

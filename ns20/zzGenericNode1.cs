@@ -10,15 +10,15 @@ using ns22;
 
 namespace ns20
 {
-	public class zzGenericNode1 : AbstractTreeNode1
+	public class ZzGenericNode1 : AbstractTreeNode1
 	{
-		public bool bool_1 = true;
+		public bool Bool1 = true;
 
-		private bool bool_2;
+		private bool _bool2;
 
-		private Dictionary<int, string> dictionary_0;
+		private Dictionary<int, string> _dictionary0;
 
-		public byte[] byte_0 = {
+		public byte[] Byte0 = {
 			0,
 			0,
 			0,
@@ -51,119 +51,119 @@ namespace ns20
 
 		public override bool vmethod_7()
 		{
-			return bool_1;
+			return Bool1;
 		}
 
 		public override bool vmethod_8()
 		{
-			return bool_2;
+			return _bool2;
 		}
 
-		public override void vmethod_9(bool bool_3)
+		public override void vmethod_9(bool bool3)
 		{
-			bool_2 = bool_3;
+			_bool2 = bool3;
 		}
 
 		public override Dictionary<int, string> vmethod_10()
 		{
-			Dictionary<int, string> arg_18_0;
-			if ((arg_18_0 = dictionary_0) == null)
+			Dictionary<int, string> arg180;
+			if ((arg180 = _dictionary0) == null)
 			{
-				arg_18_0 = (dictionary_0 = new Dictionary<int, string>());
+				arg180 = (_dictionary0 = new Dictionary<int, string>());
 			}
-			return arg_18_0;
+			return arg180;
 		}
 
-		public override void vmethod_11(Dictionary<int, string> dictionary_1)
+		public override void vmethod_11(Dictionary<int, string> dictionary1)
 		{
-			bool_2 = true;
-			dictionary_0 = dictionary_1;
+			_bool2 = true;
+			_dictionary0 = dictionary1;
 		}
 
-		public zzGenericNode1()
-		{
-		}
-
-		public zzGenericNode1(string string_0, AbstractTreeNode1 class259_0)
-		{
-			Text = KeyGenerator.GetFileName(string_0);
-			Nodes.Add(class259_0);
-		}
-
-		public zzGenericNode1(string string_0, IEnumerable<AbstractTreeNode1> ienumerable_0)
-		{
-			Text = KeyGenerator.GetFileName(string_0);
-			Nodes.AddRange(new List<AbstractTreeNode1>(ienumerable_0).ToArray());
-		}
-
-		public zzGenericNode1(string string_0, byte[] byte_1) : this(string_0, new Stream26(byte_1))
+		public ZzGenericNode1()
 		{
 		}
 
-		public zzGenericNode1(string string_0, Stream26 stream26_0)
+		public ZzGenericNode1(string string0, AbstractTreeNode1 class2590)
 		{
-			Text = KeyGenerator.GetFileName(string_0);
-			stream26_0.Position = 28L;
-			method_4(stream26_0);
+			Text = KeyGenerator.GetFileName(string0);
+			Nodes.Add(class2590);
 		}
 
-		public zzGenericNode1(string string_0, Stream26 stream26_0, Dictionary<int, string> dictionary_1)
+		public ZzGenericNode1(string string0, IEnumerable<AbstractTreeNode1> ienumerable0)
 		{
-			Text = KeyGenerator.GetFileName(string_0);
-			if (dictionary_1 != null)
+			Text = KeyGenerator.GetFileName(string0);
+			Nodes.AddRange(new List<AbstractTreeNode1>(ienumerable0).ToArray());
+		}
+
+		public ZzGenericNode1(string string0, byte[] byte1) : this(string0, new Stream26(byte1))
+		{
+		}
+
+		public ZzGenericNode1(string string0, Stream26 stream260)
+		{
+			Text = KeyGenerator.GetFileName(string0);
+			stream260.Position = 28L;
+			method_4(stream260);
+		}
+
+		public ZzGenericNode1(string string0, Stream26 stream260, Dictionary<int, string> dictionary1)
+		{
+			Text = KeyGenerator.GetFileName(string0);
+			if (dictionary1 != null)
 			{
-				dictionary_0 = dictionary_1;
-				bool_2 = true;
+				_dictionary0 = dictionary1;
+				_bool2 = true;
 			}
-			stream26_0.Position = 28L;
-			method_4(stream26_0);
+			stream260.Position = 28L;
+			method_4(stream260);
 		}
 
-		public override void vmethod_13(Stream26 stream26_0)
+		public override void vmethod_13(Stream26 stream260)
 		{
-			while (stream26_0.Length > stream26_0.Position)
+			while (stream260.Length > stream260.Position)
 			{
-				var num = stream26_0.ReadInt(true);
+				var num = stream260.ReadInt(true);
 				if (num != 0)
 				{
 					var @class = vmethod_12(num);
-					stream26_0._reverseEndianness = vmethod_7();
+					stream260.ReverseEndianness = vmethod_7();
 					Nodes.Add(@class);
-					@class.method_4(stream26_0);
+					@class.method_4(stream260);
 				}
 				else
 				{
-					stream26_0.Position += 4L;
+					stream260.Position += 4L;
 				}
 			}
 		}
 
-		public override void vmethod_14(Stream26 stream26_0)
+		public override void vmethod_14(Stream26 stream260)
 		{
-			stream26_0._reverseEndianness = vmethod_7();
+			stream260.ReverseEndianness = vmethod_7();
 			foreach (AbstractTreeNode1 @class in Nodes)
 			{
-				@class.vmethod_14(stream26_0);
+				@class.vmethod_14(stream260);
 			}
 		}
 
-		public override AbstractTreeNode1 vmethod_12(int int_0)
+		public override AbstractTreeNode1 vmethod_12(int int0)
 		{
-			if (int_0 == 256)
+			if (int0 == 256)
 			{
 				return new StructureHeaderNode();
 			}
-			var num = int_0 >> 16 & 255;
-			var num2 = int_0 >> 8 & 255;
+			var num = int0 >> 16 & 255;
+			var num2 = int0 >> 8 & 255;
 			if (num == 32)
 			{
-				bool_1 = true;
+				Bool1 = true;
 			}
 			else if (num == 4)
 			{
-				bool_1 = false;
+				Bool1 = false;
 			}
-			var ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32bit(int_0));
+			var ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32Bit(int0));
 			if (num != 32)
 			{
 				if (num != 4)
@@ -212,17 +212,17 @@ namespace ns20
 						}
 						if (num2 == 26)
 						{
-							bool_2 = true;
+							_bool2 = true;
 							return new FileTagArrayNode();
 						}
 						if (num2 == 28)
 						{
-							bool_2 = true;
+							_bool2 = true;
 							return new TextArrayNode();
 						}
 						throw ex;
 					}
-				    if (!bool_1)
+				    if (!Bool1)
 				    {
 				        if (num == 3)
 				        {
@@ -355,12 +355,12 @@ namespace ns20
 			}
 			if (num2 == 26)
 			{
-				bool_2 = true;
+				_bool2 = true;
 				return new FileTagRootNode();
 			}
 			if (num2 == 28)
 			{
-				bool_2 = true;
+				_bool2 = true;
 				return new TextRootNode();
 			}
 			throw ex;
@@ -379,17 +379,17 @@ namespace ns20
 			return memoryStream;
 		}
 
-		public void method_9(Stream stream_0)
+		public void method_9(Stream stream0)
 		{
-			method_10(new Stream26(stream_0, bool_1));
+			method_10(new Stream26(stream0, Bool1));
 		}
 
-		public void method_10(Stream26 stream26_0)
+		public void method_10(Stream26 stream260)
 		{
-			stream26_0.WriteByteArray(byte_0, false);
-			vmethod_14(stream26_0);
-			stream26_0.WriteIntAt(4, (int)stream26_0.Length);
-			stream26_0.Position = stream26_0.Length;
+			stream260.WriteByteArray(Byte0, false);
+			vmethod_14(stream260);
+			stream260.WriteIntAt(4, (int)stream260.Length);
+			stream260.Position = stream260.Length;
 		}
 
 		public int method_11()
@@ -399,11 +399,11 @@ namespace ns20
 			return result;
 		}
 
-		public override void vmethod_2(ref int int_0)
+		public override void vmethod_2(ref int int0)
 		{
 			foreach (AbstractTreeNode1 @class in Nodes)
 			{
-				@class.vmethod_2(ref int_0);
+				@class.vmethod_2(ref int0);
 			}
 		}
 
@@ -414,7 +414,7 @@ namespace ns20
 
 		public override void vmethod_0()
 		{
-			if (!bool_0)
+			if (!Bool0)
 			{
 				return;
 			}
@@ -436,11 +436,11 @@ namespace ns20
 
 		public override int CompareTo(object target)
 		{
-			if (!(target is zzGenericNode1))
+			if (!(target is ZzGenericNode1))
 			{
 				return -1;
 			}
-			if (((zzGenericNode1)target).Text == Text)
+			if (((ZzGenericNode1)target).Text == Text)
 			{
 				return 0;
 			}

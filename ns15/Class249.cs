@@ -9,19 +9,19 @@ namespace ns15
 {
 	public class Class249 : QbEditor
 	{
-		private readonly zzPakNode2 class318_0;
+		private readonly ZzPakNode2 _class3180;
 
-		private bool bool_0;
+		private bool _bool0;
 
-		public Class249(zzPakNode2 class318_1)
+		public Class249(ZzPakNode2 class3181)
 		{
-			class318_0 = class318_1;
+			_class3180 = class3181;
 		}
 
 		public override void vmethod_0()
 		{
 			Console.WriteLine("-=- " + ToString() + " -=-");
-			zzGenericNode1 @class = class318_0.zzGetNode1("scripts\\guitar\\menu\\menu_cheats.qb");
+			ZzGenericNode1 @class = _class3180.ZzGetNode1("scripts\\guitar\\menu\\menu_cheats.qb");
 			foreach (var current in @class.method_5(new ArrayPointerRootNode("guitar_hero_cheats")).method_7().method_8<StructureHeaderNode>())
 			{
 				var flag = current.method_5(new TagStructureNode("name", "unlockall")) != null;
@@ -29,7 +29,7 @@ namespace ns15
 				var class2 = current.method_5(new ArrayPointerNode("unlock_pattern")).method_8() as IntegerArrayNode;
 				if (class2.Nodes.Count == 1)
 				{
-					bool_0 = true;
+					_bool0 = true;
 					Console.WriteLine("QB Database is already edited.");
 					break;
 				}

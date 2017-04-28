@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate void Delegate61(object object_0, DragEventHandler dragEventHandler_0);
+public delegate void Delegate61(object object0, DragEventHandler dragEventHandler0);

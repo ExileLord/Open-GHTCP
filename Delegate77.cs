@@ -1,3 +1,3 @@
 using System;
 
-public delegate void Delegate77(object object_0, EventHandler eventHandler_0);
+public delegate void Delegate77(object object0, EventHandler eventHandler0);

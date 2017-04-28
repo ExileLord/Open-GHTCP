@@ -6,44 +6,44 @@ namespace ns14
 {
 	public static class Class216
 	{
-		public static SortedDictionary<string, string> sortedDictionary_0 = new SortedDictionary<string, string>();
+		public static SortedDictionary<string, string> SortedDictionary0 = new SortedDictionary<string, string>();
 
-		private static readonly string string_0 = "MM/dd/yyyy hh:mm:ss tt";
+		private static readonly string String0 = "MM/dd/yyyy hh:mm:ss tt";
 
-		private static readonly string string_1 = "MM_dd_yy hh_mm_ss tt";
+		private static readonly string String1 = "MM_dd_yy hh_mm_ss tt";
 
-		private static readonly bool bool_0 = true;
+		private static readonly bool Bool0 = true;
 
-		public static void smethod_0(string string_2)
+		public static void smethod_0(string string2)
 		{
-			if (sortedDictionary_0.Count != 0)
+			if (SortedDictionary0.Count != 0)
 			{
-				using (var streamWriter = File.CreateText(string_2 + DateTime.Now.ToString(string_1) + ".log"))
+				using (var streamWriter = File.CreateText(string2 + DateTime.Now.ToString(String1) + ".log"))
 				{
-					foreach (var current in sortedDictionary_0.Keys)
+					foreach (var current in SortedDictionary0.Keys)
 					{
 						streamWriter.WriteLine("[" + current + "]");
 						streamWriter.WriteLine("{");
-						streamWriter.WriteLine(sortedDictionary_0[current]);
+						streamWriter.WriteLine(SortedDictionary0[current]);
 						streamWriter.WriteLine("}");
 					}
 				}
 			}
 		}
 
-		public static void smethod_1(string string_2, string string_3)
+		public static void smethod_1(string string2, string string3)
 		{
-			sortedDictionary_0.Add(DateTime.Now.ToString(string_0) + " :: " + string_2, string_3 ?? "");
-			if (bool_0)
+			SortedDictionary0.Add(DateTime.Now.ToString(String0) + " :: " + string2, string3 ?? "");
+			if (Bool0)
 			{
-				Console.WriteLine(string.Concat("\n", DateTime.Now.ToString(string_0), "\n-=- ", string_2, " -=-\n"));
-				Console.WriteLine(string_3 + "\n-=- ENTRY LOG END -=-\n");
+				Console.WriteLine(string.Concat("\n", DateTime.Now.ToString(String0), "\n-=- ", string2, " -=-\n"));
+				Console.WriteLine(string3 + "\n-=- ENTRY LOG END -=-\n");
 			}
 		}
 
 		public static void smethod_2()
 		{
-			sortedDictionary_0.Clear();
+			SortedDictionary0.Clear();
 		}
 	}
 }

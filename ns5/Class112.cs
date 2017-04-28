@@ -4,96 +4,96 @@ namespace ns5
 {
 	public class Class112 : ICloneable
 	{
-		public long long_0 = -1L;
+		public long Long0 = -1L;
 
-		public long long_1 = -1L;
+		public long Long1 = -1L;
 
-		public int int_0;
+		public int Int0;
 
-		public object object_0;
+		public object Object0;
 
-		public object object_1;
+		public object Object1;
 
-		public int int_1;
+		public int Int1;
 
-		public int int_2;
+		public int Int2;
 
-		public long long_2 = long_3;
+		public long Long2 = Long3;
 
-		public static readonly long long_3 = 9223372036854775806L;
+		public static readonly long Long3 = 9223372036854775806L;
 
 		public virtual object Clone()
 		{
 			return new Class112
 			{
-				long_1 = long_1,
-				int_0 = int_0,
-				object_1 = smethod_0(object_1, true),
-				int_1 = int_1,
-				int_2 = int_2,
-				long_2 = long_2,
-				long_0 = long_0,
-				object_0 = smethod_0(object_0, true)
+				Long1 = Long1,
+				Int0 = Int0,
+				Object1 = smethod_0(Object1, true),
+				Int1 = Int1,
+				Int2 = Int2,
+				Long2 = Long2,
+				Long0 = Long0,
+				Object0 = smethod_0(Object0, true)
 			};
 		}
 
-		private static object smethod_0(object object_2, bool bool_0)
+		private static object smethod_0(object object2, bool bool0)
 		{
-			if (object_2 == null)
+			if (object2 == null)
 			{
 				return null;
 			}
-			if (!object_2.GetType().IsArray)
+			if (!object2.GetType().IsArray)
 			{
 				throw new ArgumentException();
 			}
 			int num;
 			object obj;
-			if (object_2.GetType() == typeof(byte[]))
+			if (object2.GetType() == typeof(byte[]))
 			{
-				num = ((byte[])object_2).Length;
+				num = ((byte[])object2).Length;
 				obj = new byte[num];
 			}
-			else if (object_2.GetType() == typeof(int[]))
+			else if (object2.GetType() == typeof(int[]))
 			{
-				num = ((int[])object_2).Length;
+				num = ((int[])object2).Length;
 				obj = new int[num];
 			}
-			else if (object_2.GetType() == typeof(short[]))
+			else if (object2.GetType() == typeof(short[]))
 			{
-				num = ((short[])object_2).Length;
+				num = ((short[])object2).Length;
 				obj = new short[num];
 			}
-			else if (!bool_0 && object_2.GetType() == typeof(float[]))
+			else if (!bool0 && object2.GetType() == typeof(float[]))
 			{
-				num = ((float[])object_2).Length;
+				num = ((float[])object2).Length;
 				obj = new float[num];
 			}
-			else if (!bool_0 && object_2.GetType() == typeof(double[]))
+			else if (!bool0 && object2.GetType() == typeof(double[]))
 			{
-				num = ((double[])object_2).Length;
+				num = ((double[])object2).Length;
 				obj = new double[num];
 			}
-			else if (!bool_0 && object_2.GetType() == typeof(bool[]))
+			else if (!bool0 && object2.GetType() == typeof(bool[]))
 			{
-				num = ((bool[])object_2).Length;
+				num = ((bool[])object2).Length;
 				obj = new bool[num];
 			}
-			else if (!bool_0 && object_2.GetType() == typeof(long[]))
+			else if (!bool0 && object2.GetType() == typeof(long[]))
 			{
-				num = ((long[])object_2).Length;
+				num = ((long[])object2).Length;
 				obj = new long[num];
 			}
 			else
 			{
-				if (bool_0 || object_2.GetType() != typeof(char[]))
+				if (bool0 || object2.GetType() != typeof(char[]))
 				{
-					return object_2;
+					return object2;
 				}
-				num = ((char[])object_2).Length;
+				num = ((char[])object2).Length;
 				obj = new char[num];
 			}
-			Array.Copy((Array)object_2, 0, (Array)obj, 0, num);
+			Array.Copy((Array)object2, 0, (Array)obj, 0, num);
 			return obj;
 		}
 	}

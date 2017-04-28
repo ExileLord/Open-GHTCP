@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate Control Delegate225(object object_0);
+public delegate Control Delegate225(object object0);

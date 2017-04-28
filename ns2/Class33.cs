@@ -2,36 +2,36 @@ namespace ns2
 {
 	public class Class33
 	{
-		private static float float_0 = 3.14159274f;
+		private static float _float0 = 3.14159274f;
 
-		private static int int_0 = 1;
+		private static int _int0 = 1;
 
-		private static int int_1 = 1;
+		private static int _int1 = 1;
 
-		public int int_2;
+		public int Int2;
 
-		public float[][][][][] float_1;
+		public float[][][][][] Float1;
 
-		public object[][] object_0;
+		public object[][] Object0;
 
 		public Class33()
 		{
-			object_0 = new object[2][];
-			float_1 = new float[2][][][][];
-			float_1[0] = new float[2][][][];
-			float_1[0][0] = new float[2][][];
-			float_1[0][1] = new float[2][][];
-			float_1[0][0][0] = new float[2][];
-			float_1[0][0][1] = new float[2][];
-			float_1[0][1][0] = new float[2][];
-			float_1[0][1][1] = new float[2][];
-			float_1[1] = new float[2][][][];
-			float_1[1][0] = new float[2][][];
-			float_1[1][1] = new float[2][][];
-			float_1[1][0][0] = new float[2][];
-			float_1[1][0][1] = new float[2][];
-			float_1[1][1][0] = new float[2][];
-			float_1[1][1][1] = new float[2][];
+			Object0 = new object[2][];
+			Float1 = new float[2][][][][];
+			Float1[0] = new float[2][][][];
+			Float1[0][0] = new float[2][][];
+			Float1[0][1] = new float[2][][];
+			Float1[0][0][0] = new float[2][];
+			Float1[0][0][1] = new float[2][];
+			Float1[0][1][0] = new float[2][];
+			Float1[0][1][1] = new float[2][];
+			Float1[1] = new float[2][][][];
+			Float1[1][0] = new float[2][][];
+			Float1[1][1] = new float[2][][];
+			Float1[1][0][0] = new float[2][];
+			Float1[1][0][1] = new float[2][];
+			Float1[1][1][0] = new float[2][];
+			Float1[1][1][1] = new float[2][];
 		}
 
 		public void method_0()

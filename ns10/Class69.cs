@@ -4,9 +4,9 @@ namespace ns10
 {
 	public class Class69
 	{
-		private static readonly int int_0 = 128;
+		private static readonly int Int0 = 128;
 
-		private static readonly float[] float_0 = {
+		private static readonly float[] Float0 = {
 			1f,
 			0.9996988f,
 			0.99879545f,
@@ -138,9 +138,9 @@ namespace ns10
 			-1f
 		};
 
-		private static readonly int int_1 = 32;
+		private static readonly int Int1 = 32;
 
-		private static readonly float[] float_1 = {
+		private static readonly float[] Float1 = {
 			1.41421354f,
 			1.39262128f,
 			1.37198865f,
@@ -176,9 +176,9 @@ namespace ns10
 			1f
 		};
 
-		private static readonly int int_2 = -32;
+		private static readonly int Int2 = -32;
 
-		private static readonly float[] float_2 = {
+		private static readonly float[] Float2 = {
 			65536f,
 			46340.95f,
 			32768f,
@@ -246,7 +246,7 @@ namespace ns10
 			1.52587891E-05f
 		};
 
-		private static readonly float[] float_3 = {
+		private static readonly float[] Float3 = {
 			1f,
 			0.630957365f,
 			0.398107171f,
@@ -284,7 +284,7 @@ namespace ns10
 			1.58489314E-07f
 		};
 
-		private static readonly float[] float_4 = {
+		private static readonly float[] Float4 = {
 			0.9928303f,
 			0.9786446f,
 			0.9646616f,
@@ -319,35 +319,35 @@ namespace ns10
 			0.635513842f
 		};
 
-		public static float smethod_0(float float_5)
+		public static float smethod_0(float float5)
 		{
-			var num = float_5 * (0.31830989 * int_0);
+			var num = float5 * (0.31830989 * Int0);
 			var num2 = (int)num;
-			return float_0[num2] + (float)(num - num2) * (float_0[num2 + 1] - float_0[num2]);
+			return Float0[num2] + (float)(num - num2) * (Float0[num2 + 1] - Float0[num2]);
 		}
 
-		public static float smethod_1(float float_5)
+		public static float smethod_1(float float5)
 		{
-			double num = float_5 * (2f * int_1) - int_1;
+			double num = float5 * (2f * Int1) - Int1;
 			var num2 = (int)num;
-			return float_1[num2] + (float)(num - num2) * (float_1[num2 + 1] - float_1[num2]);
+			return Float1[num2] + (float)(num - num2) * (Float1[num2 + 1] - Float1[num2]);
 		}
 
-		public static float smethod_2(int int_3)
+		public static float smethod_2(int int3)
 		{
-			return float_2[int_3 - int_2];
+			return Float2[int3 - Int2];
 		}
 
-		public static float smethod_3(float float_5)
+		public static float smethod_3(float float5)
 		{
-			var num = (int)(float_5 * -8f);
+			var num = (int)(float5 * -8f);
 			if (num < 0)
 			{
 				return 1f;
 			}
 			if (num < 1120)
 			{
-				return float_3[(int)((UIntPtr)((uint)num >> 5))] * float_4[num & 31];
+				return Float3[(int)((UIntPtr)((uint)num >> 5))] * Float4[num & 31];
 			}
 			return 0f;
 		}

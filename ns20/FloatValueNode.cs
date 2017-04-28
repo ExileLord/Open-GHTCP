@@ -5,16 +5,16 @@ namespace ns20
 {
 	public class FloatValueNode : AbstractTreeNode2
 	{
-		public float float_0;
+		public float Float0;
 
 		public FloatValueNode()
 		{
 			vmethod_0();
 		}
 
-		public FloatValueNode(float float_1)
+		public FloatValueNode(float float1)
 		{
-			float_0 = float_1;
+			Float0 = float1;
 			vmethod_0();
 		}
 
@@ -25,22 +25,22 @@ namespace ns20
 
 		public override object vmethod_7()
 		{
-			return float_0;
+			return Float0;
 		}
 
 		public override byte[] vmethod_8()
 		{
-			return BitConverter.GetBytes(float_0);
+			return BitConverter.GetBytes(Float0);
 		}
 
-		public override void vmethod_9(byte[] byte_0)
+		public override void vmethod_9(byte[] byte0)
 		{
-			float_0 = BitConverter.ToSingle(byte_0, 0);
+			Float0 = BitConverter.ToSingle(byte0, 0);
 		}
 
 		public override string GetText()
 		{
-			return string.Concat((double)float_0);
+			return string.Concat((double)Float0);
 		}
 
 		public override string GetNodeText()
@@ -48,14 +48,14 @@ namespace ns20
 			return "Float Value";
 		}
 
-		public override void vmethod_2(ref int int_0)
+		public override void vmethod_2(ref int int0)
 		{
-			int_0 += 4;
+			int0 += 4;
 		}
 
-		public static float smethod_0(FloatValueNode class313_0)
+		public static float smethod_0(FloatValueNode class3130)
 		{
-			return class313_0.float_0;
+			return class3130.Float0;
 		}
 	}
 }

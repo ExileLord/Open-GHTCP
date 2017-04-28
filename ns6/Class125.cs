@@ -4,29 +4,29 @@ namespace ns6
 {
 	public class Class125 : Class121
 	{
-		public byte[] byte_0 = new byte[129];
+		public byte[] Byte0 = new byte[129];
 
-		public long long_0;
+		public long Long0;
 
-		public bool bool_1;
+		public bool Bool1;
 
-		public int int_0;
+		public int Int0;
 
-		public Class147[] class147_0;
+		public Class147[] Class1470;
 
-		public Class125(Class144 class144_0, int int_1, bool bool_2) : base(bool_2)
+		public Class125(Class144 class1440, int int1, bool bool2) : base(bool2)
 		{
-			class144_0.vmethod_15(byte_0, 128);
-			long_0 = class144_0.vmethod_13(64);
-			bool_1 = (class144_0.vmethod_10(1) != 0);
-			class144_0.vmethod_5(2071);
-			int_0 = class144_0.vmethod_10(8);
-			if (int_0 > 0)
+			class1440.vmethod_15(Byte0, 128);
+			Long0 = class1440.vmethod_13(64);
+			Bool1 = (class1440.vmethod_10(1) != 0);
+			class1440.vmethod_5(2071);
+			Int0 = class1440.vmethod_10(8);
+			if (Int0 > 0)
 			{
-				class147_0 = new Class147[int_0];
-				for (var i = 0; i < int_0; i++)
+				Class1470 = new Class147[Int0];
+				for (var i = 0; i < Int0; i++)
 				{
-					class147_0[i] = new Class147(class144_0);
+					Class1470[i] = new Class147(class1440);
 				}
 			}
 		}

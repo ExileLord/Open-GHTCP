@@ -3,15 +3,15 @@ using ns1;
 
 namespace ns8
 {
-	public abstract class Class176 : Interface5
+	public abstract class Class176 : INterface5
 	{
-		public abstract void vmethod_0(Class13 class13_0, Class13 class13_1);
+		public abstract void vmethod_0(Class13 class130, Class13 class131);
 
-		public void imethod_0(Class13[] class13_0)
+		public void imethod_0(Class13[] class130)
 		{
-			for (var i = 0; i < class13_0.Length; i += 2)
+			for (var i = 0; i < class130.Length; i += 2)
 			{
-				vmethod_0(class13_0[i], class13_0[i + 1]);
+				vmethod_0(class130[i], class130[i + 1]);
 			}
 		}
 	}

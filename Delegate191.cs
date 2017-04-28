@@ -1,3 +1,3 @@
 using System.IO;
 
-public delegate StreamWriter Delegate191(object object_0);
+public delegate StreamWriter Delegate191(object object0);

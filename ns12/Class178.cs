@@ -3,22 +3,22 @@ using ns1;
 
 namespace ns12
 {
-	public abstract class Class178 : Interface5
+	public abstract class Class178 : INterface5
 	{
-		public abstract void vmethod_0(Class13 class13_0, Class13 class13_1);
+		public abstract void vmethod_0(Class13 class130, Class13 class131);
 
-		public abstract void vmethod_1(Class13 class13_0, Class13 class13_1, Class13 class13_2);
+		public abstract void vmethod_1(Class13 class130, Class13 class131, Class13 class132);
 
-		public void imethod_0(Class13[] class13_0)
+		public void imethod_0(Class13[] class130)
 		{
-			if (class13_0.Length == 2)
+			if (class130.Length == 2)
 			{
-				vmethod_0(class13_0[0], class13_0[1]);
+				vmethod_0(class130[0], class130[1]);
 				return;
 			}
-			if (class13_0.Length == 3)
+			if (class130.Length == 3)
 			{
-				vmethod_1(class13_0[0], class13_0[1], class13_0[2]);
+				vmethod_1(class130[0], class130[1], class130[2]);
 			}
 		}
 	}

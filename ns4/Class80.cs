@@ -4,27 +4,27 @@ namespace ns4
 {
 	public class Class80
 	{
-		private readonly float[] float_0;
+		private readonly float[] _float0;
 
-		private readonly float[] float_1;
+		private readonly float[] _float1;
 
-		private float[] float_2;
+		private float[] _float2;
 
-		private int int_0;
+		private int _int0;
 
-		private readonly float[] float_3;
+		private readonly float[] _float3;
 
-		private readonly int int_1;
+		private readonly int _int1;
 
-		private float[] float_4;
+		private float[] _float4;
 
-		private readonly float[] float_5 = new float[32];
+		private readonly float[] _float5 = new float[32];
 
-		private static float[] float_6;
+		private static float[] _float6;
 
-		private static float[][] float_7;
+		private static float[][] _float7;
 
-		private static readonly float[] float_8 = {
+		private static readonly float[] Float8 = {
 			0f,
 			-0.000442505f,
 			0.003250122f,
@@ -539,63 +539,63 @@ namespace ns4
 			1.5259E-05f
 		};
 
-		public void method_0(float[] float_9)
+		public void method_0(float[] float9)
 		{
-			float_4 = float_9;
-			if (float_4 == null)
+			_float4 = float9;
+			if (_float4 == null)
 			{
-				float_4 = new float[32];
+				_float4 = new float[32];
 				for (var i = 0; i < 32; i++)
 				{
-					float_4[i] = 1f;
+					_float4[i] = 1f;
 				}
 			}
-			if (float_4.Length < 32)
+			if (_float4.Length < 32)
 			{
 				throw new ArgumentException("Mp3 Synthesis Filter: EQ length.");
 			}
 		}
 
-		public Class80(int int_2, float[] float_9)
+		public Class80(int int2, float[] float9)
 		{
-			if (float_6 == null)
+			if (_float6 == null)
 			{
-				float_6 = float_8;
-				float_7 = smethod_0(float_6, 16);
+				_float6 = Float8;
+				_float7 = smethod_0(_float6, 16);
 			}
-			float_0 = new float[512];
-			float_1 = new float[512];
-			float_3 = new float[32];
-			int_1 = int_2;
-			method_0(float_9);
+			_float0 = new float[512];
+			_float1 = new float[512];
+			_float3 = new float[32];
+			_int1 = int2;
+			method_0(float9);
 			method_1();
 		}
 
 		public void method_1()
 		{
-			Array.Clear(float_0, 0, 512);
-			Array.Clear(float_1, 0, 512);
-			Array.Clear(float_3, 0, 32);
-			float_2 = float_0;
-			int_0 = 15;
+			Array.Clear(_float0, 0, 512);
+			Array.Clear(_float1, 0, 512);
+			Array.Clear(_float3, 0, 32);
+			_float2 = _float0;
+			_int0 = 15;
 		}
 
-		public void method_2(float float_9, int int_2)
+		public void method_2(float float9, int int2)
 		{
-			float_3[int_2] = float_4[int_2] * float_9;
+			_float3[int2] = _float4[int2] * float9;
 		}
 
-		public void method_3(float[] float_9)
+		public void method_3(float[] float9)
 		{
 			for (var i = 31; i >= 0; i--)
 			{
-				float_3[i] = float_9[i] * float_4[i];
+				_float3[i] = float9[i] * _float4[i];
 			}
 		}
 
 		private void method_4()
 		{
-			var array = float_3;
+			var array = _float3;
 			var num = array[0];
 			var num2 = array[1];
 			var num3 = array[2];
@@ -822,8 +822,8 @@ namespace ns4
 			var num95 = num75 - num45 - (num96 = num37 + num39 + num40);
 			var num97 = (num75 = -num41 - num45 - num47 - num48) - num33;
 			var num98 = num75 - num96;
-			var array2 = float_2;
-			var num99 = int_0;
+			var array2 = _float2;
+			var num99 = _int0;
 			array2[num99] = num79;
 			array2[16 + num99] = num89;
 			array2[32 + num99] = num73;
@@ -856,7 +856,7 @@ namespace ns4
 			array2[464 + num99] = -num91;
 			array2[480 + num99] = -num73;
 			array2[496 + num99] = -num89;
-			array2 = ((float_2 == float_0) ? float_1 : float_0);
+			array2 = ((_float2 == _float0) ? _float1 : _float0);
 			array2[num99] = -num79;
 			array2[16 + num99] = num88;
 			array2[32 + num99] = num72;
@@ -893,199 +893,199 @@ namespace ns4
 
 		private void method_5()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[num] * array2[0] + array[15 + num] * array2[1] + array[14 + num] * array2[2] + array[13 + num] * array2[3] + array[12 + num] * array2[4] + array[11 + num] * array2[5] + array[10 + num] * array2[6] + array[9 + num] * array2[7] + array[8 + num] * array2[8] + array[7 + num] * array2[9] + array[6 + num] * array2[10] + array[5 + num] * array2[11] + array[4 + num] * array2[12] + array[3 + num] * array2[13] + array[2 + num] * array2[14] + array[1 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[num] * array2[0] + array[15 + num] * array2[1] + array[14 + num] * array2[2] + array[13 + num] * array2[3] + array[12 + num] * array2[4] + array[11 + num] * array2[5] + array[10 + num] * array2[6] + array[9 + num] * array2[7] + array[8 + num] * array2[8] + array[7 + num] * array2[9] + array[6 + num] * array2[10] + array[5 + num] * array2[11] + array[4 + num] * array2[12] + array[3 + num] * array2[13] + array[2 + num] * array2[14] + array[1 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_6()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[1 + num] * array2[0] + array[num] * array2[1] + array[15 + num] * array2[2] + array[14 + num] * array2[3] + array[13 + num] * array2[4] + array[12 + num] * array2[5] + array[11 + num] * array2[6] + array[10 + num] * array2[7] + array[9 + num] * array2[8] + array[8 + num] * array2[9] + array[7 + num] * array2[10] + array[6 + num] * array2[11] + array[5 + num] * array2[12] + array[4 + num] * array2[13] + array[3 + num] * array2[14] + array[2 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[1 + num] * array2[0] + array[num] * array2[1] + array[15 + num] * array2[2] + array[14 + num] * array2[3] + array[13 + num] * array2[4] + array[12 + num] * array2[5] + array[11 + num] * array2[6] + array[10 + num] * array2[7] + array[9 + num] * array2[8] + array[8 + num] * array2[9] + array[7 + num] * array2[10] + array[6 + num] * array2[11] + array[5 + num] * array2[12] + array[4 + num] * array2[13] + array[3 + num] * array2[14] + array[2 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_7()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[2 + num] * array2[0] + array[1 + num] * array2[1] + array[num] * array2[2] + array[15 + num] * array2[3] + array[14 + num] * array2[4] + array[13 + num] * array2[5] + array[12 + num] * array2[6] + array[11 + num] * array2[7] + array[10 + num] * array2[8] + array[9 + num] * array2[9] + array[8 + num] * array2[10] + array[7 + num] * array2[11] + array[6 + num] * array2[12] + array[5 + num] * array2[13] + array[4 + num] * array2[14] + array[3 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[2 + num] * array2[0] + array[1 + num] * array2[1] + array[num] * array2[2] + array[15 + num] * array2[3] + array[14 + num] * array2[4] + array[13 + num] * array2[5] + array[12 + num] * array2[6] + array[11 + num] * array2[7] + array[10 + num] * array2[8] + array[9 + num] * array2[9] + array[8 + num] * array2[10] + array[7 + num] * array2[11] + array[6 + num] * array2[12] + array[5 + num] * array2[13] + array[4 + num] * array2[14] + array[3 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_8()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[3 + num] * array2[0] + array[2 + num] * array2[1] + array[1 + num] * array2[2] + array[num] * array2[3] + array[15 + num] * array2[4] + array[14 + num] * array2[5] + array[13 + num] * array2[6] + array[12 + num] * array2[7] + array[11 + num] * array2[8] + array[10 + num] * array2[9] + array[9 + num] * array2[10] + array[8 + num] * array2[11] + array[7 + num] * array2[12] + array[6 + num] * array2[13] + array[5 + num] * array2[14] + array[4 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[3 + num] * array2[0] + array[2 + num] * array2[1] + array[1 + num] * array2[2] + array[num] * array2[3] + array[15 + num] * array2[4] + array[14 + num] * array2[5] + array[13 + num] * array2[6] + array[12 + num] * array2[7] + array[11 + num] * array2[8] + array[10 + num] * array2[9] + array[9 + num] * array2[10] + array[8 + num] * array2[11] + array[7 + num] * array2[12] + array[6 + num] * array2[13] + array[5 + num] * array2[14] + array[4 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_9()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[4 + num] * array2[0] + array[3 + num] * array2[1] + array[2 + num] * array2[2] + array[1 + num] * array2[3] + array[num] * array2[4] + array[15 + num] * array2[5] + array[14 + num] * array2[6] + array[13 + num] * array2[7] + array[12 + num] * array2[8] + array[11 + num] * array2[9] + array[10 + num] * array2[10] + array[9 + num] * array2[11] + array[8 + num] * array2[12] + array[7 + num] * array2[13] + array[6 + num] * array2[14] + array[5 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[4 + num] * array2[0] + array[3 + num] * array2[1] + array[2 + num] * array2[2] + array[1 + num] * array2[3] + array[num] * array2[4] + array[15 + num] * array2[5] + array[14 + num] * array2[6] + array[13 + num] * array2[7] + array[12 + num] * array2[8] + array[11 + num] * array2[9] + array[10 + num] * array2[10] + array[9 + num] * array2[11] + array[8 + num] * array2[12] + array[7 + num] * array2[13] + array[6 + num] * array2[14] + array[5 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_10()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[5 + num] * array2[0] + array[4 + num] * array2[1] + array[3 + num] * array2[2] + array[2 + num] * array2[3] + array[1 + num] * array2[4] + array[num] * array2[5] + array[15 + num] * array2[6] + array[14 + num] * array2[7] + array[13 + num] * array2[8] + array[12 + num] * array2[9] + array[11 + num] * array2[10] + array[10 + num] * array2[11] + array[9 + num] * array2[12] + array[8 + num] * array2[13] + array[7 + num] * array2[14] + array[6 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[5 + num] * array2[0] + array[4 + num] * array2[1] + array[3 + num] * array2[2] + array[2 + num] * array2[3] + array[1 + num] * array2[4] + array[num] * array2[5] + array[15 + num] * array2[6] + array[14 + num] * array2[7] + array[13 + num] * array2[8] + array[12 + num] * array2[9] + array[11 + num] * array2[10] + array[10 + num] * array2[11] + array[9 + num] * array2[12] + array[8 + num] * array2[13] + array[7 + num] * array2[14] + array[6 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_11()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[6 + num] * array2[0] + array[5 + num] * array2[1] + array[4 + num] * array2[2] + array[3 + num] * array2[3] + array[2 + num] * array2[4] + array[1 + num] * array2[5] + array[num] * array2[6] + array[15 + num] * array2[7] + array[14 + num] * array2[8] + array[13 + num] * array2[9] + array[12 + num] * array2[10] + array[11 + num] * array2[11] + array[10 + num] * array2[12] + array[9 + num] * array2[13] + array[8 + num] * array2[14] + array[7 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[6 + num] * array2[0] + array[5 + num] * array2[1] + array[4 + num] * array2[2] + array[3 + num] * array2[3] + array[2 + num] * array2[4] + array[1 + num] * array2[5] + array[num] * array2[6] + array[15 + num] * array2[7] + array[14 + num] * array2[8] + array[13 + num] * array2[9] + array[12 + num] * array2[10] + array[11 + num] * array2[11] + array[10 + num] * array2[12] + array[9 + num] * array2[13] + array[8 + num] * array2[14] + array[7 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_12()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[7 + num] * array2[0] + array[6 + num] * array2[1] + array[5 + num] * array2[2] + array[4 + num] * array2[3] + array[3 + num] * array2[4] + array[2 + num] * array2[5] + array[1 + num] * array2[6] + array[num] * array2[7] + array[15 + num] * array2[8] + array[14 + num] * array2[9] + array[13 + num] * array2[10] + array[12 + num] * array2[11] + array[11 + num] * array2[12] + array[10 + num] * array2[13] + array[9 + num] * array2[14] + array[8 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[7 + num] * array2[0] + array[6 + num] * array2[1] + array[5 + num] * array2[2] + array[4 + num] * array2[3] + array[3 + num] * array2[4] + array[2 + num] * array2[5] + array[1 + num] * array2[6] + array[num] * array2[7] + array[15 + num] * array2[8] + array[14 + num] * array2[9] + array[13 + num] * array2[10] + array[12 + num] * array2[11] + array[11 + num] * array2[12] + array[10 + num] * array2[13] + array[9 + num] * array2[14] + array[8 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_13()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[8 + num] * array2[0] + array[7 + num] * array2[1] + array[6 + num] * array2[2] + array[5 + num] * array2[3] + array[4 + num] * array2[4] + array[3 + num] * array2[5] + array[2 + num] * array2[6] + array[1 + num] * array2[7] + array[num] * array2[8] + array[15 + num] * array2[9] + array[14 + num] * array2[10] + array[13 + num] * array2[11] + array[12 + num] * array2[12] + array[11 + num] * array2[13] + array[10 + num] * array2[14] + array[9 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[8 + num] * array2[0] + array[7 + num] * array2[1] + array[6 + num] * array2[2] + array[5 + num] * array2[3] + array[4 + num] * array2[4] + array[3 + num] * array2[5] + array[2 + num] * array2[6] + array[1 + num] * array2[7] + array[num] * array2[8] + array[15 + num] * array2[9] + array[14 + num] * array2[10] + array[13 + num] * array2[11] + array[12 + num] * array2[12] + array[11 + num] * array2[13] + array[10 + num] * array2[14] + array[9 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_14()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[9 + num] * array2[0] + array[8 + num] * array2[1] + array[7 + num] * array2[2] + array[6 + num] * array2[3] + array[5 + num] * array2[4] + array[4 + num] * array2[5] + array[3 + num] * array2[6] + array[2 + num] * array2[7] + array[1 + num] * array2[8] + array[num] * array2[9] + array[15 + num] * array2[10] + array[14 + num] * array2[11] + array[13 + num] * array2[12] + array[12 + num] * array2[13] + array[11 + num] * array2[14] + array[10 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[9 + num] * array2[0] + array[8 + num] * array2[1] + array[7 + num] * array2[2] + array[6 + num] * array2[3] + array[5 + num] * array2[4] + array[4 + num] * array2[5] + array[3 + num] * array2[6] + array[2 + num] * array2[7] + array[1 + num] * array2[8] + array[num] * array2[9] + array[15 + num] * array2[10] + array[14 + num] * array2[11] + array[13 + num] * array2[12] + array[12 + num] * array2[13] + array[11 + num] * array2[14] + array[10 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_15()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[10 + num] * array2[0] + array[9 + num] * array2[1] + array[8 + num] * array2[2] + array[7 + num] * array2[3] + array[6 + num] * array2[4] + array[5 + num] * array2[5] + array[4 + num] * array2[6] + array[3 + num] * array2[7] + array[2 + num] * array2[8] + array[1 + num] * array2[9] + array[num] * array2[10] + array[15 + num] * array2[11] + array[14 + num] * array2[12] + array[13 + num] * array2[13] + array[12 + num] * array2[14] + array[11 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[10 + num] * array2[0] + array[9 + num] * array2[1] + array[8 + num] * array2[2] + array[7 + num] * array2[3] + array[6 + num] * array2[4] + array[5 + num] * array2[5] + array[4 + num] * array2[6] + array[3 + num] * array2[7] + array[2 + num] * array2[8] + array[1 + num] * array2[9] + array[num] * array2[10] + array[15 + num] * array2[11] + array[14 + num] * array2[12] + array[13 + num] * array2[13] + array[12 + num] * array2[14] + array[11 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_16()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[11 + num] * array2[0] + array[10 + num] * array2[1] + array[9 + num] * array2[2] + array[8 + num] * array2[3] + array[7 + num] * array2[4] + array[6 + num] * array2[5] + array[5 + num] * array2[6] + array[4 + num] * array2[7] + array[3 + num] * array2[8] + array[2 + num] * array2[9] + array[1 + num] * array2[10] + array[num] * array2[11] + array[15 + num] * array2[12] + array[14 + num] * array2[13] + array[13 + num] * array2[14] + array[12 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[11 + num] * array2[0] + array[10 + num] * array2[1] + array[9 + num] * array2[2] + array[8 + num] * array2[3] + array[7 + num] * array2[4] + array[6 + num] * array2[5] + array[5 + num] * array2[6] + array[4 + num] * array2[7] + array[3 + num] * array2[8] + array[2 + num] * array2[9] + array[1 + num] * array2[10] + array[num] * array2[11] + array[15 + num] * array2[12] + array[14 + num] * array2[13] + array[13 + num] * array2[14] + array[12 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_17()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[12 + num] * array2[0] + array[11 + num] * array2[1] + array[10 + num] * array2[2] + array[9 + num] * array2[3] + array[8 + num] * array2[4] + array[7 + num] * array2[5] + array[6 + num] * array2[6] + array[5 + num] * array2[7] + array[4 + num] * array2[8] + array[3 + num] * array2[9] + array[2 + num] * array2[10] + array[1 + num] * array2[11] + array[num] * array2[12] + array[15 + num] * array2[13] + array[14 + num] * array2[14] + array[13 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[12 + num] * array2[0] + array[11 + num] * array2[1] + array[10 + num] * array2[2] + array[9 + num] * array2[3] + array[8 + num] * array2[4] + array[7 + num] * array2[5] + array[6 + num] * array2[6] + array[5 + num] * array2[7] + array[4 + num] * array2[8] + array[3 + num] * array2[9] + array[2 + num] * array2[10] + array[1 + num] * array2[11] + array[num] * array2[12] + array[15 + num] * array2[13] + array[14 + num] * array2[14] + array[13 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_18()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[13 + num] * array2[0] + array[12 + num] * array2[1] + array[11 + num] * array2[2] + array[10 + num] * array2[3] + array[9 + num] * array2[4] + array[8 + num] * array2[5] + array[7 + num] * array2[6] + array[6 + num] * array2[7] + array[5 + num] * array2[8] + array[4 + num] * array2[9] + array[3 + num] * array2[10] + array[2 + num] * array2[11] + array[1 + num] * array2[12] + array[num] * array2[13] + array[15 + num] * array2[14] + array[14 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[13 + num] * array2[0] + array[12 + num] * array2[1] + array[11 + num] * array2[2] + array[10 + num] * array2[3] + array[9 + num] * array2[4] + array[8 + num] * array2[5] + array[7 + num] * array2[6] + array[6 + num] * array2[7] + array[5 + num] * array2[8] + array[4 + num] * array2[9] + array[3 + num] * array2[10] + array[2 + num] * array2[11] + array[1 + num] * array2[12] + array[num] * array2[13] + array[15 + num] * array2[14] + array[14 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_19()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[14 + num] * array2[0] + array[13 + num] * array2[1] + array[12 + num] * array2[2] + array[11 + num] * array2[3] + array[10 + num] * array2[4] + array[9 + num] * array2[5] + array[8 + num] * array2[6] + array[7 + num] * array2[7] + array[6 + num] * array2[8] + array[5 + num] * array2[9] + array[4 + num] * array2[10] + array[3 + num] * array2[11] + array[2 + num] * array2[12] + array[1 + num] * array2[13] + array[num] * array2[14] + array[15 + num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[14 + num] * array2[0] + array[13 + num] * array2[1] + array[12 + num] * array2[2] + array[11 + num] * array2[3] + array[10 + num] * array2[4] + array[9 + num] * array2[5] + array[8 + num] * array2[6] + array[7 + num] * array2[7] + array[6 + num] * array2[8] + array[5 + num] * array2[9] + array[4 + num] * array2[10] + array[3 + num] * array2[11] + array[2 + num] * array2[12] + array[1 + num] * array2[13] + array[num] * array2[14] + array[15 + num] * array2[15];
 				num += 16;
 			}
 		}
 
 		private void method_20()
 		{
-			var array = float_2;
+			var array = _float2;
 			var num = 0;
 			for (var i = 0; i < 32; i++)
 			{
-				var array2 = float_7[i];
-				float_5[i] = array[15 + num] * array2[0] + array[14 + num] * array2[1] + array[13 + num] * array2[2] + array[12 + num] * array2[3] + array[11 + num] * array2[4] + array[10 + num] * array2[5] + array[9 + num] * array2[6] + array[8 + num] * array2[7] + array[7 + num] * array2[8] + array[6 + num] * array2[9] + array[5 + num] * array2[10] + array[4 + num] * array2[11] + array[3 + num] * array2[12] + array[2 + num] * array2[13] + array[1 + num] * array2[14] + array[num] * array2[15];
+				var array2 = _float7[i];
+				_float5[i] = array[15 + num] * array2[0] + array[14 + num] * array2[1] + array[13 + num] * array2[2] + array[12 + num] * array2[3] + array[11 + num] * array2[4] + array[10 + num] * array2[5] + array[9 + num] * array2[6] + array[8 + num] * array2[7] + array[7 + num] * array2[8] + array[6 + num] * array2[9] + array[5 + num] * array2[10] + array[4 + num] * array2[11] + array[3 + num] * array2[12] + array[2 + num] * array2[13] + array[1 + num] * array2[14] + array[num] * array2[15];
 				num += 16;
 			}
 		}
 
-		private void method_21(Class84 class84_0)
+		private void method_21(Class84 class840)
 		{
-			switch (int_0)
+			switch (_int0)
 			{
 			case 0:
 				method_5();
@@ -1136,46 +1136,46 @@ namespace ns4
 				method_20();
 				break;
 			}
-			if (class84_0 != null)
+			if (class840 != null)
 			{
-				class84_0.method_4(int_1, float_5);
+				class840.method_4(_int1, _float5);
 			}
 		}
 
-		public void method_22(Class84 class84_0)
+		public void method_22(Class84 class840)
 		{
 			method_4();
-			method_21(class84_0);
-			int_0 = (int_0 + 1 & 15);
-			float_2 = ((float_2 == float_0) ? float_1 : float_0);
-			Array.Clear(float_3, 0, 32);
+			method_21(class840);
+			_int0 = (_int0 + 1 & 15);
+			_float2 = ((_float2 == _float0) ? _float1 : _float0);
+			Array.Clear(_float3, 0, 32);
 		}
 
-		private static float[][] smethod_0(float[] float_9, int int_2)
+		private static float[][] smethod_0(float[] float9, int int2)
 		{
-			var num = float_9.Length / int_2;
+			var num = float9.Length / int2;
 			var array = new float[num][];
 			for (var i = 0; i < num; i++)
 			{
-				array[i] = smethod_1(float_9, i * int_2, int_2);
+				array[i] = smethod_1(float9, i * int2, int2);
 			}
 			return array;
 		}
 
-		private static float[] smethod_1(float[] float_9, int int_2, int int_3)
+		private static float[] smethod_1(float[] float9, int int2, int int3)
 		{
-			if (int_2 + int_3 > float_9.Length)
+			if (int2 + int3 > float9.Length)
 			{
-				int_3 = float_9.Length - int_2;
+				int3 = float9.Length - int2;
 			}
-			if (int_3 < 0)
+			if (int3 < 0)
 			{
-				int_3 = 0;
+				int3 = 0;
 			}
-			var array = new float[int_3];
-			for (var i = 0; i < int_3; i++)
+			var array = new float[int3];
+			for (var i = 0; i < int3; i++)
 			{
-				array[i] = float_9[int_2 + i];
+				array[i] = float9[int2 + i];
 			}
 			return array;
 		}

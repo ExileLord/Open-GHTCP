@@ -1,1 +1,1 @@
-public delegate string Delegate94(object object_0, char char_0, char char_1);
+public delegate string Delegate94(object object0, char char0, char char1);

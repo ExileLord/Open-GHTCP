@@ -1,1 +1,1 @@
-public delegate int Delegate115(double double_0);
+public delegate int Delegate115(double double0);

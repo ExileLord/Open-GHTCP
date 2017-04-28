@@ -4,32 +4,32 @@ namespace ns5
 {
 	public class Class104
 	{
-		private readonly Enum4 enum4_0;
+		private readonly Enum4 _enum40;
 
-		private readonly Class105 class105_0;
+		private readonly Class105 _class1050;
 
-		public Class104() : this(Enum4.const_0, Class105.class105_0)
+		public Class104() : this(Enum4.Const0, Class105.Class1050)
 		{
 		}
 
-		public Class104(Enum4 enum4_1) : this(enum4_1, Class105.class105_0)
+		public Class104(Enum4 enum41) : this(enum41, Class105.Class1050)
 		{
 		}
 
-		public Class104(Enum4 enum4_1, Class105 class105_1)
+		public Class104(Enum4 enum41, Class105 class1051)
 		{
-			enum4_0 = enum4_1;
-			class105_0 = class105_1;
+			_enum40 = enum41;
+			_class1050 = class1051;
 		}
 
 		public Enum4 method_0()
 		{
-			return enum4_0;
+			return _enum40;
 		}
 
 		public Class105 method_1()
 		{
-			return class105_0;
+			return _class1050;
 		}
 	}
 }

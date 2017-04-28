@@ -6,19 +6,19 @@ namespace ns13
 {
 	public class Class198
 	{
-		private static readonly int[] int_0 = {
+		private static readonly int[] Int0 = {
 			3,
 			3,
 			11
 		};
 
-		private static readonly int[] int_1 = {
+		private static readonly int[] Int1 = {
 			2,
 			3,
 			7
 		};
 
-		private static readonly int[] int_2 = {
+		private static readonly int[] Int2 = {
 			16,
 			17,
 			18,
@@ -40,41 +40,41 @@ namespace ns13
 			15
 		};
 
-		private byte[] byte_0;
+		private byte[] _byte0;
 
-		private byte[] byte_1;
+		private byte[] _byte1;
 
-		private Class197 class197_0;
+		private Class197 _class1970;
 
-		private int int_3;
+		private int _int3;
 
-		private int int_4;
+		private int _int4;
 
-		private int int_5;
+		private int _int5;
 
-		private int int_6;
+		private int _int6;
 
-		private int int_7;
+		private int _int7;
 
-		private int int_8;
+		private int _int8;
 
-		private byte byte_2;
+		private byte _byte2;
 
-		private int int_9;
+		private int _int9;
 
-		public bool method_0(Class187 class187_0)
+		public bool method_0(Class187 class1870)
 		{
 			while (true)
 			{
-				switch (int_3)
+				switch (_int3)
 				{
 				case 0:
-					int_4 = class187_0.method_0(5);
-					if (int_4 >= 0)
+					_int4 = class1870.method_0(5);
+					if (_int4 >= 0)
 					{
-						int_4 += 257;
-						class187_0.method_1(5);
-						int_3 = 1;
+						_int4 += 257;
+						class1870.method_1(5);
+						_int3 = 1;
 						goto IL_1FD;
 					}
 					return false;
@@ -93,10 +93,10 @@ namespace ns13
 				}
 				IL_F4:
 				int num;
-				while (((num = class197_0.method_1(class187_0)) & -16) == 0)
+				while (((num = _class1970.method_1(class1870)) & -16) == 0)
 				{
-					byte_1[int_9++] = (byte_2 = (byte)num);
-					if (int_9 == int_7)
+					_byte1[_int9++] = (_byte2 = (byte)num);
+					if (_int9 == _int7)
 					{
 						return true;
 					}
@@ -105,78 +105,78 @@ namespace ns13
 				{
 					if (num >= 17)
 					{
-						byte_2 = 0;
+						_byte2 = 0;
 					}
-					else if (int_9 == 0)
+					else if (_int9 == 0)
 					{
 						goto IL_2A6;
 					}
-					int_8 = num - 16;
-					int_3 = 5;
+					_int8 = num - 16;
+					_int3 = 5;
 					goto IL_2C;
 				}
 				return false;
 				IL_176:
-				while (int_9 < int_6)
+				while (_int9 < _int6)
 				{
-					var num2 = class187_0.method_0(3);
+					var num2 = class1870.method_0(3);
 					if (num2 < 0)
 					{
 						return false;
 					}
-					class187_0.method_1(3);
-					byte_0[int_2[int_9]] = (byte)num2;
-					int_9++;
+					class1870.method_1(3);
+					_byte0[Int2[_int9]] = (byte)num2;
+					_int9++;
 				}
-				class197_0 = new Class197(byte_0);
-				byte_0 = null;
-				int_9 = 0;
-				int_3 = 4;
+				_class1970 = new Class197(_byte0);
+				_byte0 = null;
+				_int9 = 0;
+				_int3 = 4;
 				goto IL_F4;
 				IL_2C:
-				var num3 = int_1[int_8];
-				var num4 = class187_0.method_0(num3);
+				var num3 = Int1[_int8];
+				var num4 = class1870.method_0(num3);
 				if (num4 < 0)
 				{
 					return false;
 				}
-				class187_0.method_1(num3);
-				num4 += int_0[int_8];
-				if (int_9 + num4 > int_7)
+				class1870.method_1(num3);
+				num4 += Int0[_int8];
+				if (_int9 + num4 > _int7)
 				{
 					break;
 				}
 				while (num4-- > 0)
 				{
-					byte_1[int_9++] = byte_2;
+					_byte1[_int9++] = _byte2;
 				}
-				if (int_9 == int_7)
+				if (_int9 == _int7)
 				{
 					return true;
 				}
-				int_3 = 4;
+				_int3 = 4;
 				continue;
 				IL_1AF:
-				int_6 = class187_0.method_0(4);
-				if (int_6 >= 0)
+				_int6 = class1870.method_0(4);
+				if (_int6 >= 0)
 				{
-					int_6 += 4;
-					class187_0.method_1(4);
-					byte_0 = new byte[19];
-					int_9 = 0;
-					int_3 = 3;
+					_int6 += 4;
+					class1870.method_1(4);
+					_byte0 = new byte[19];
+					_int9 = 0;
+					_int3 = 3;
 					goto IL_176;
 				}
 				return false;
 				IL_1FD:
-				int_5 = class187_0.method_0(5);
-				if (int_5 >= 0)
+				_int5 = class1870.method_0(5);
+				if (_int5 >= 0)
 				{
-					int_5++;
-					class187_0.method_1(5);
-					int_7 = int_4 + int_5;
-					byte_1 = new byte[int_7];
-					int_3 = 2;
+					_int5++;
+					class1870.method_1(5);
+					_int7 = _int4 + _int5;
+					_byte1 = new byte[_int7];
+					_int3 = 2;
 					goto IL_1AF;
 				}
 				return false;
@@ -188,15 +188,15 @@ namespace ns13
 
 		public Class197 method_1()
 		{
-			var destinationArray = new byte[int_4];
-			Array.Copy(byte_1, 0, destinationArray, 0, int_4);
+			var destinationArray = new byte[_int4];
+			Array.Copy(_byte1, 0, destinationArray, 0, _int4);
 			return new Class197(destinationArray);
 		}
 
 		public Class197 method_2()
 		{
-			var destinationArray = new byte[int_5];
-			Array.Copy(byte_1, int_4, destinationArray, 0, int_5);
+			var destinationArray = new byte[_int5];
+			Array.Copy(_byte1, _int4, destinationArray, 0, _int5);
 			return new Class197(destinationArray);
 		}
 	}

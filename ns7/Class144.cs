@@ -6,211 +6,211 @@ namespace ns7
 {
 	public class Class144
 	{
-		private static readonly byte byte_0 = 128;
+		private static readonly byte Byte0 = 128;
 
-		private readonly byte[] byte_1 = new byte[1024];
+		private readonly byte[] _byte1 = new byte[1024];
 
-		private int int_0;
+		private int _int0;
 
-		private int int_1;
+		private int _int1;
 
-		private int int_2;
+		private int _int2;
 
-		private int int_3;
+		private int _int3;
 
-		private int int_4;
+		private int _int4;
 
-		private short short_0;
+		private short _short0;
 
-		private readonly Stream stream_0;
+		private readonly Stream _stream0;
 
 		public virtual short vmethod_0()
 		{
-			return short_0;
+			return _short0;
 		}
 
 		public virtual bool vmethod_1()
 		{
-			return (int_2 & 7) == 0;
+			return (_int2 & 7) == 0;
 		}
 
-		public Class144(Stream stream_1)
+		public Class144(Stream stream1)
 		{
-			stream_0 = stream_1;
+			_stream0 = stream1;
 		}
 
 		private int method_0()
 		{
-			if (int_1 > 0 && int_0 > int_1)
+			if (_int1 > 0 && _int0 > _int1)
 			{
-				Buffer.BlockCopy(byte_1, int_1, byte_1, 0, int_0 - int_1);
+				Buffer.BlockCopy(_byte1, _int1, _byte1, 0, _int0 - _int1);
 			}
-			int_0 -= int_1;
-			int_1 = 0;
-			var num = byte_1.Length - int_0;
-			num = stream_0.Read(byte_1, int_0, num);
+			_int0 -= _int1;
+			_int1 = 0;
+			var num = _byte1.Length - _int0;
+			num = _stream0.Read(_byte1, _int0, num);
 			if (num <= 0)
 			{
 				throw new EndOfStreamException();
 			}
-			int_0 += num;
-			int_3 += num << 3;
+			_int0 += num;
+			_int3 += num << 3;
 			return num;
 		}
 
 		public virtual void vmethod_2()
 		{
-			int_1 = 0;
-			int_2 = 0;
-			int_0 = 0;
-			int_3 = 0;
+			_int1 = 0;
+			_int2 = 0;
+			_int0 = 0;
+			_int3 = 0;
 		}
 
-		public virtual void vmethod_3(short short_1)
+		public virtual void vmethod_3(short short1)
 		{
-			short_0 = short_1;
+			_short0 = short1;
 		}
 
 		public virtual int vmethod_4()
 		{
-			return 8 - (int_2 & 7);
+			return 8 - (_int2 & 7);
 		}
 
-		public virtual void vmethod_5(int int_5)
+		public virtual void vmethod_5(int int5)
 		{
-			if (int_5 == 0)
+			if (int5 == 0)
 			{
 				return;
 			}
-			var num = int_2 & 7;
+			var num = _int2 & 7;
 			if (num != 0)
 			{
-				var num2 = Math.Min(8 - num, int_5);
+				var num2 = Math.Min(8 - num, int5);
 				vmethod_10(num2);
-				int_5 -= num2;
+				int5 -= num2;
 			}
-			var num3 = int_5 / 8;
+			var num3 = int5 / 8;
 			if (num3 > 0)
 			{
 				vmethod_15(null, num3);
-				int_5 %= 8;
+				int5 %= 8;
 			}
-			if (int_5 > 0)
+			if (int5 > 0)
 			{
-				vmethod_10(int_5);
+				vmethod_10(int5);
 			}
 		}
 
 		public virtual int vmethod_6()
 		{
-			while (int_3 <= 0)
+			while (_int3 <= 0)
 			{
 				method_0();
 			}
-			var result = (((int)byte_1[int_1] & 128 >> int_2) != 0) ? 1 : 0;
-			int_2++;
-			if (int_2 == 8)
+			var result = (((int)_byte1[_int1] & 128 >> _int2) != 0) ? 1 : 0;
+			_int2++;
+			if (_int2 == 8)
 			{
-				short_0 = Class150.smethod_0(byte_1[int_1], short_0);
-				int_1++;
-				int_2 = 0;
+				_short0 = Class150.smethod_0(_byte1[_int1], _short0);
+				_int1++;
+				_int2 = 0;
 			}
-			int_3--;
-			int_4++;
+			_int3--;
+			_int4++;
 			return result;
 		}
 
-		public virtual int vmethod_7(int int_5)
+		public virtual int vmethod_7(int int5)
 		{
-			while (int_3 <= 0)
+			while (_int3 <= 0)
 			{
 				method_0();
 			}
-			int_5 <<= 1;
-			int_5 |= ((((int)byte_1[int_1] & 128 >> int_2) != 0) ? 1 : 0);
-			int_2++;
-			if (int_2 == 8)
+			int5 <<= 1;
+			int5 |= ((((int)_byte1[_int1] & 128 >> _int2) != 0) ? 1 : 0);
+			_int2++;
+			if (_int2 == 8)
 			{
-				short_0 = Class150.smethod_0(byte_1[int_1], short_0);
-				int_1++;
-				int_2 = 0;
+				_short0 = Class150.smethod_0(_byte1[_int1], _short0);
+				_int1++;
+				_int2 = 0;
 			}
-			int_3--;
-			int_4++;
-			return int_5;
+			_int3--;
+			_int4++;
+			return int5;
 		}
 
-		public virtual int vmethod_8(int int_5, int int_6)
+		public virtual int vmethod_8(int int5, int int6)
 		{
-			while (int_6 >= int_3)
+			while (int6 >= _int3)
 			{
 				method_0();
 			}
-			int_5 <<= 1;
-			if (int_2 + int_6 >= 8)
+			int5 <<= 1;
+			if (_int2 + int6 >= 8)
 			{
-				int_6 = (int_2 + int_6) % 8;
-				int_5 |= ((((int)byte_1[int_1 + 1] & 128 >> int_6) != 0) ? 1 : 0);
+				int6 = (_int2 + int6) % 8;
+				int5 |= ((((int)_byte1[_int1 + 1] & 128 >> int6) != 0) ? 1 : 0);
 			}
 			else
 			{
-				int_5 |= ((((int)byte_1[int_1] & 128 >> int_2 + int_6) != 0) ? 1 : 0);
+				int5 |= ((((int)_byte1[_int1] & 128 >> _int2 + int6) != 0) ? 1 : 0);
 			}
-			return int_5;
+			return int5;
 		}
 
-		public virtual long vmethod_9(long long_0)
+		public virtual long vmethod_9(long long0)
 		{
-			while (int_3 <= 0)
+			while (_int3 <= 0)
 			{
 				method_0();
 			}
-			long_0 <<= 1;
-			long_0 |= ((((int)byte_1[int_1] & 128 >> int_2) != 0) ? 1L : 0L);
-			int_2++;
-			if (int_2 == 8)
+			long0 <<= 1;
+			long0 |= ((((int)_byte1[_int1] & 128 >> _int2) != 0) ? 1L : 0L);
+			_int2++;
+			if (_int2 == 8)
 			{
-				short_0 = Class150.smethod_0(byte_1[int_1], short_0);
-				int_1++;
-				int_2 = 0;
+				_short0 = Class150.smethod_0(_byte1[_int1], _short0);
+				_int1++;
+				_int2 = 0;
 			}
-			int_3--;
-			int_4++;
-			return long_0;
+			_int3--;
+			_int4++;
+			return long0;
 		}
 
-		public virtual int vmethod_10(int int_5)
+		public virtual int vmethod_10(int int5)
 		{
 			var num = 0;
-			for (var i = 0; i < int_5; i++)
+			for (var i = 0; i < int5; i++)
 			{
 				num = vmethod_7(num);
 			}
 			return num;
 		}
 
-		public virtual int vmethod_11(int int_5)
+		public virtual int vmethod_11(int int5)
 		{
 			var num = 0;
-			for (var i = 0; i < int_5; i++)
+			for (var i = 0; i < int5; i++)
 			{
 				num = vmethod_8(num, i);
 			}
 			return num;
 		}
 
-		public virtual int vmethod_12(int int_5)
+		public virtual int vmethod_12(int int5)
 		{
-			if (int_5 == 0)
+			if (int5 == 0)
 			{
 				return 0;
 			}
 			var num = 0;
-			for (var i = 0; i < int_5; i++)
+			for (var i = 0; i < int5; i++)
 			{
 				num = vmethod_7(num);
 			}
-			var num2 = 32 - int_5;
+			var num2 = 32 - int5;
 			int num3;
 			if (num2 != 0)
 			{
@@ -225,10 +225,10 @@ namespace ns7
 			return num3;
 		}
 
-		public virtual long vmethod_13(int int_5)
+		public virtual long vmethod_13(int int5)
 		{
 			var num = 0L;
-			for (var i = 0; i < int_5; i++)
+			for (var i = 0; i < int5; i++)
 			{
 				num = vmethod_9(num);
 			}
@@ -246,26 +246,26 @@ namespace ns7
 			return num | num2 << 24;
 		}
 
-		public virtual void vmethod_15(byte[] byte_2, int int_5)
+		public virtual void vmethod_15(byte[] byte2, int int5)
 		{
-			var num = int_5;
-			while (int_5 > 0)
+			var num = int5;
+			while (int5 > 0)
 			{
-				var num2 = Math.Min(int_5, int_0 - int_1);
+				var num2 = Math.Min(int5, _int0 - _int1);
 				if (num2 == 0)
 				{
 					method_0();
 				}
 				else
 				{
-					if (byte_2 != null)
+					if (byte2 != null)
 					{
-						Buffer.BlockCopy(byte_1, int_1, byte_2, num - int_5, num2);
+						Buffer.BlockCopy(_byte1, _int1, byte2, num - int5, num2);
 					}
-					int_5 -= num2;
-					int_1 += num2;
-					int_3 -= num2 << 3;
-					int_4 += num2 << 3;
+					int5 -= num2;
+					_int1 += num2;
+					_int3 -= num2 << 3;
+					_int4 += num2 << 3;
 				}
 			}
 		}
@@ -285,7 +285,7 @@ namespace ns7
 			return num;
 		}
 
-		public virtual void vmethod_17(int[] int_5, int int_6, int int_7, int int_8)
+		public virtual void vmethod_17(int[] int5, int int6, int int7, int int8)
 		{
 			var i = 0;
 			var num = 0;
@@ -293,17 +293,17 @@ namespace ns7
 			var num3 = 0;
 			var num4 = 0;
 			var num5 = 0;
-			if (int_7 == 0)
+			if (int7 == 0)
 			{
 				return;
 			}
-			var num6 = int_1;
-			long num7 = int_1 * 8 + int_2;
-			if (int_2 > 0)
+			var num6 = _int1;
+			long num7 = _int1 * 8 + _int2;
+			if (_int2 > 0)
 			{
 				byte b2;
-				var b = b2 = byte_1[num6];
-				num = int_2;
+				var b = b2 = _byte1[num6];
+				num = _int2;
 				b = (byte)(b << (byte)num);
 				int num9;
 				while (true)
@@ -315,7 +315,7 @@ namespace ns7
 							goto IL_13D;
 						}
 						var num8 = 0;
-						while ((b & byte_0) == 0)
+						while ((b & Byte0) == 0)
 						{
 							b = (byte)(b << 1);
 							num8++;
@@ -325,7 +325,7 @@ namespace ns7
 						num8++;
 						num += num8;
 						num2 = 0;
-						num4 = int_8;
+						num4 = int8;
 						num5++;
 						if (num == 8)
 						{
@@ -343,16 +343,16 @@ namespace ns7
 						num2 |= (b & 255) >> 8 - num4;
 						b = (byte)(b << (byte)num4);
 						num += num4;
-						num2 |= num3 << int_8;
+						num2 |= num3 << int8;
 						if ((num2 & 1) != 0)
 						{
-							int_5[int_6 + i++] = -(num2 >> 1) - 1;
+							int5[int6 + i++] = -(num2 >> 1) - 1;
 						}
 						else
 						{
-							int_5[int_6 + i++] = num2 >> 1;
+							int5[int6 + i++] = num2 >> 1;
 						}
-						if (i == int_7)
+						if (i == int7)
 						{
 							break;
 						}
@@ -364,30 +364,30 @@ namespace ns7
 				goto IL_1D5;
 				Block_8:
 				num = 0;
-				short_0 = Class150.smethod_0(b2, short_0);
+				_short0 = Class150.smethod_0(b2, _short0);
 				goto IL_1D5;
 				IL_13D:
 				num3 += 8 - num;
 				num = 0;
-				short_0 = Class150.smethod_0(b2, short_0);
+				_short0 = Class150.smethod_0(b2, _short0);
 				goto IL_1D5;
 				IL_15C:
 				num2 <<= num9;
 				num2 |= (b & 255) >> num;
 				num = 0;
-				short_0 = Class150.smethod_0(b2, short_0);
+				_short0 = Class150.smethod_0(b2, _short0);
 				if (num4 == num9)
 				{
-					num2 |= num3 << int_8;
+					num2 |= num3 << int8;
 					if ((num2 & 1) != 0)
 					{
-						int_5[int_6 + i++] = -(num2 >> 1) - 1;
+						int5[int6 + i++] = -(num2 >> 1) - 1;
 					}
 					else
 					{
-						int_5[int_6 + i++] = num2 >> 1;
+						int5[int6 + i++] = num2 >> 1;
 					}
-					if (i == int_7)
+					if (i == int7)
 					{
 						goto IL_1D5;
 					}
@@ -397,15 +397,15 @@ namespace ns7
 				num4 -= num9;
 				IL_1D5:
 				num6++;
-				int_1 = num6;
-				int_2 = num;
+				_int1 = num6;
+				_int2 = num;
 			}
-			while (i < int_7)
+			while (i < int7)
 			{
-				while (num6 < int_0 && i < int_7)
+				while (num6 < _int0 && i < int7)
 				{
 					byte b2;
-					var b = b2 = byte_1[num6];
+					var b = b2 = _byte1[num6];
 					num = 0;
 					int num10;
 					while (true)
@@ -417,7 +417,7 @@ namespace ns7
 								goto IL_2EA;
 							}
 							var num8 = 0;
-							while ((b & byte_0) == 0)
+							while ((b & Byte0) == 0)
 							{
 								b = (byte)(b << 1);
 								num8++;
@@ -427,7 +427,7 @@ namespace ns7
 							num8++;
 							num += num8;
 							num2 = 0;
-							num4 = int_8;
+							num4 = int8;
 							num5++;
 							if (num == 8)
 							{
@@ -445,16 +445,16 @@ namespace ns7
 							num2 |= (b & 255) >> 8 - num4;
 							b = (byte)(b << (byte)num4);
 							num += num4;
-							num2 |= num3 << int_8;
+							num2 |= num3 << int8;
 							if ((num2 & 1) != 0)
 							{
-								int_5[int_6 + i++] = -(num2 >> 1) - 1;
+								int5[int6 + i++] = -(num2 >> 1) - 1;
 							}
 							else
 							{
-								int_5[int_6 + i++] = num2 >> 1;
+								int5[int6 + i++] = num2 >> 1;
 							}
-							if (i == int_7)
+							if (i == int7)
 							{
 								goto Block_16;
 							}
@@ -470,30 +470,30 @@ namespace ns7
 					goto IL_382;
 					Block_19:
 					num = 0;
-					short_0 = Class150.smethod_0(b2, short_0);
+					_short0 = Class150.smethod_0(b2, _short0);
 					goto IL_382;
 					IL_2EA:
 					num3 += 8 - num;
 					num = 0;
-					short_0 = Class150.smethod_0(b2, short_0);
+					_short0 = Class150.smethod_0(b2, _short0);
 					goto IL_382;
 					IL_309:
 					num2 <<= num10;
 					num2 |= (b & 255) >> num;
 					num = 0;
-					short_0 = Class150.smethod_0(b2, short_0);
+					_short0 = Class150.smethod_0(b2, _short0);
 					if (num4 == num10)
 					{
-						num2 |= num3 << int_8;
+						num2 |= num3 << int8;
 						if ((num2 & 1) != 0)
 						{
-							int_5[int_6 + i++] = -(num2 >> 1) - 1;
+							int5[int6 + i++] = -(num2 >> 1) - 1;
 						}
 						else
 						{
-							int_5[int_6 + i++] = num2 >> 1;
+							int5[int6 + i++] = num2 >> 1;
 						}
-						if (i == int_7)
+						if (i == int7)
 						{
 							goto IL_382;
 						}
@@ -503,29 +503,29 @@ namespace ns7
 					num4 -= num10;
 					goto IL_382;
 				}
-				int_1 = num6;
-				int_2 = num;
-				if (i < int_7)
+				_int1 = num6;
+				_int2 = num;
+				if (i < int7)
 				{
-					long num11 = int_1 * 8 + int_2;
-					int_4 = (int)(int_4 + num11 - num7);
-					int_3 = (int)(int_3 - (num11 - num7));
+					long num11 = _int1 * 8 + _int2;
+					_int4 = (int)(_int4 + num11 - num7);
+					_int3 = (int)(_int3 - (num11 - num7));
 					method_0();
 					num6 = 0;
-					num7 = int_1 * 8 + int_2;
+					num7 = _int1 * 8 + _int2;
 				}
 			}
-			long num12 = int_1 * 8 + int_2;
-			int_4 = (int)(int_4 + num12 - num7);
-			int_3 = (int)(int_3 - (num12 - num7));
+			long num12 = _int1 * 8 + _int2;
+			_int4 = (int)(_int4 + num12 - num7);
+			_int3 = (int)(_int3 - (num12 - num7));
 		}
 
-		public virtual int vmethod_18(Class152 class152_0)
+		public virtual int vmethod_18(Class152 class1520)
 		{
 			var num = vmethod_10(8);
-			if (class152_0 != null)
+			if (class1520 != null)
 			{
-				class152_0.vmethod_1((byte)num);
+				class1520.vmethod_1((byte)num);
 			}
 			int num2;
 			int i;
@@ -571,9 +571,9 @@ namespace ns7
 					return -1;
 				}
 				num = vmethod_10(8);
-				if (class152_0 != null)
+				if (class1520 != null)
 				{
-					class152_0.vmethod_1((byte)num);
+					class1520.vmethod_1((byte)num);
 				}
 				num2 <<= 6;
 				num2 |= (num & 63);
@@ -582,12 +582,12 @@ namespace ns7
 			return num2;
 		}
 
-		public virtual long vmethod_19(Class152 class152_0)
+		public virtual long vmethod_19(Class152 class1520)
 		{
 			var num = vmethod_10(8);
-			if (class152_0 != null)
+			if (class1520 != null)
 			{
-				class152_0.vmethod_1((byte)num);
+				class1520.vmethod_1((byte)num);
 			}
 			long num2;
 			int i;
@@ -638,9 +638,9 @@ namespace ns7
 					return -1L;
 				}
 				num = vmethod_10(8);
-				if (class152_0 != null)
+				if (class1520 != null)
 				{
-					class152_0.vmethod_1((byte)num);
+					class1520.vmethod_1((byte)num);
 				}
 				num2 <<= 6;
 				num2 |= num & 63;

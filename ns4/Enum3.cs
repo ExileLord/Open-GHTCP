@@ -2,8 +2,8 @@ namespace ns4
 {
 	public enum Enum3
 	{
-		const_0,
-		const_1,
-		const_2
+		Const0,
+		Const1,
+		Const2
 	}
 }

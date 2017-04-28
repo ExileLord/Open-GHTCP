@@ -1,1 +1,1 @@
-public delegate uint Delegate243(object object_0);
+public delegate uint Delegate243(object object0);

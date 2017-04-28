@@ -22,177 +22,177 @@ namespace ns17
 	{
 		private IContainer icontainer_0;
 
-		private TextBox GuitarAudioTxt;
+		private TextBox _guitarAudioTxt;
 
-		private Label label6;
+		private Label _label6;
 
-		private GroupBox AudioGroupBox;
+		private GroupBox _audioGroupBox;
 
-		private Label label3;
+		private Label _label3;
 
-		private TextBox BandAudioTxt;
+		private TextBox _bandAudioTxt;
 
-		private Label label2;
+		private Label _label2;
 
-		private TextBox RhythmAudioTxt;
+		private TextBox _rhythmAudioTxt;
 
-		private Button GuitarAudioBtn;
+		private Button _guitarAudioBtn;
 
-		private Label label1;
+		private Label _label1;
 
-		private RadioButton MultiAudioBtn;
+		private RadioButton _multiAudioBtn;
 
-		private RadioButton SingleAudioBtn;
+		private RadioButton _singleAudioBtn;
 
-		private Button BandAudioBtn;
+		private Button _bandAudioBtn;
 
-		private Button RhythmAudioBtn;
+		private Button _rhythmAudioBtn;
 
-		private GroupBox ChartGroupBox;
+		private GroupBox _chartGroupBox;
 
-		private Label label9;
+		private Label _label9;
 
-		private Label label8;
+		private Label _label8;
 
-		private Label label7;
+		private Label _label7;
 
-		private Label label5;
+		private Label _label5;
 
-		private Button ChartFileBtn;
+		private Button _chartFileBtn;
 
-		private Label label4;
+		private Label _label4;
 
-		private TextBox ChartFileTxt;
+		private TextBox _chartFileTxt;
 
-		private GroupBox groupBox3;
+		private GroupBox _groupBox3;
 
-		private ComboBox ExpertGuitarBox;
+		private ComboBox _expertGuitarBox;
 
-		private ComboBox HardGuitarBox;
+		private ComboBox _hardGuitarBox;
 
-		private ComboBox MediumGuitarBox;
+		private ComboBox _mediumGuitarBox;
 
-		private ComboBox EasyGuitarBox;
+		private ComboBox _easyGuitarBox;
 
-		private GroupBox groupBox5;
+		private GroupBox _groupBox5;
 
-		private ComboBox ExpertCoop2Box;
+		private ComboBox _expertCoop2Box;
 
-		private ComboBox HardCoop2Box;
+		private ComboBox _hardCoop2Box;
 
-		private ComboBox MediumCoop2Box;
+		private ComboBox _mediumCoop2Box;
 
-		private ComboBox EasyCoop2Box;
+		private ComboBox _easyCoop2Box;
 
-		private GroupBox groupBox4;
+		private GroupBox _groupBox4;
 
-		private ComboBox ExpertRhythmBox;
+		private ComboBox _expertRhythmBox;
 
-		private ComboBox HardRhythmBox;
+		private ComboBox _hardRhythmBox;
 
-		private ComboBox MediumRhythmBox;
+		private ComboBox _mediumRhythmBox;
 
-		private ComboBox EasyRhythmBox;
+		private ComboBox _easyRhythmBox;
 
-		private GroupBox groupBox6;
+		private GroupBox _groupBox6;
 
-		private ComboBox ExpertCoopBox;
+		private ComboBox _expertCoopBox;
 
-		private ComboBox HardCoopBox;
+		private ComboBox _hardCoopBox;
 
-		private ComboBox MediumCoopBox;
+		private ComboBox _mediumCoopBox;
 
-		private ComboBox EasyCoopBox;
+		private ComboBox _easyCoopBox;
 
-		private Button AutoConfigBtn;
+		private Button _autoConfigBtn;
 
-		private Button ResetBtn;
+		private Button _resetBtn;
 
-		private Label label10;
+		private Label _label10;
 
-		private TextBox SongNameTxt;
+		private TextBox _songNameTxt;
 
-		private GroupBox MainGroupBox;
+		private GroupBox _mainGroupBox;
 
-		private CheckBox Chart_CheckBox;
+		private CheckBox _chartCheckBox;
 
-		private CheckBox Audio_CheckBox;
+		private CheckBox _audioCheckBox;
 
-		private Button CancelBtn;
+		private Button _cancelBtn;
 
-		private Button ApplyBtn;
+		private Button _applyBtn;
 
-		private Label label11;
+		private Label _label11;
 
-		private Control1 PreviewSlider;
+		private Control1 _previewSlider;
 
-		private Label label12;
+		private Label _label12;
 
-		private Button BandCoopBtn;
+		private Button _bandCoopBtn;
 
-		private Button RhythmCoopBtn;
+		private Button _rhythmCoopBtn;
 
-		private Button GuitarCoopBtn;
+		private Button _guitarCoopBtn;
 
-		private TextBox BandCoopTxt;
+		private TextBox _bandCoopTxt;
 
-		private TextBox RhythmCoopTxt;
+		private TextBox _rhythmCoopTxt;
 
-		private TextBox GuitarCoopTxt;
+		private TextBox _guitarCoopTxt;
 
-		private RadioButton CoopAudioBtn;
+		private RadioButton _coopAudioBtn;
 
-		private RadioButton DualAudioBtn;
+		private RadioButton _dualAudioBtn;
 
-		private GroupBox groupBox1;
+		private GroupBox _groupBox1;
 
-		private ComboBox FaceOffP1Box;
+		private ComboBox _faceOffP1Box;
 
-		private Label label13;
+		private Label _label13;
 
-		private GroupBox groupBox7;
+		private GroupBox _groupBox7;
 
-		private ComboBox BossBattleP2Box;
+		private ComboBox _bossBattleP2Box;
 
-		private GroupBox groupBox2;
+		private GroupBox _groupBox2;
 
-		private ComboBox FaceOffP2Box;
+		private ComboBox _faceOffP2Box;
 
-		private GroupBox groupBox8;
+		private GroupBox _groupBox8;
 
-		private ComboBox BossBattleP1Box;
+		private ComboBox _bossBattleP1Box;
 
-		private Button Stop_Btn;
+		private Button _stopBtn;
 
-		private Button Pause_Btn;
+		private Button _pauseBtn;
 
-		private Button Play_Btn;
+		private Button _playBtn;
 
-		private Control1 VolumeSlider;
+		private Control1 _volumeSlider;
 
-		public bool bool_0;
+		public bool Bool0;
 
-		public bool bool_1;
+		public bool Bool1;
 
-		private zzQbSongObject class323_0;
+		private ZzQbSongObject _class3230;
 
-		private QBCParser qbcParser;
+		private QbcParser _qbcParser;
 
-		private readonly GH3Songlist gh3Songlist_0;
+		private readonly Gh3Songlist _gh3Songlist0;
 
-		private bool bool_2;
+		private bool _bool2;
 
-		private bool bool_3;
+		private bool _bool3;
 
-		private bool bool_4;
+		private bool _bool4;
 
-		private PlayableAudio Audio;
+		private IPlayableAudio _audio;
 
-		private readonly Timer timer_0;
+		private readonly Timer _timer0;
 
-		private bool bool_5 = true;
+		private bool _bool5 = true;
 
-        private readonly bool forceRB3;
+        private readonly bool _forceRb3;
 
         protected override void Dispose(bool disposing)
 		{
@@ -205,825 +205,825 @@ namespace ns17
 
 		private void InitializeComponent()
 		{
-			GuitarAudioTxt = new TextBox();
-			label6 = new Label();
-			AudioGroupBox = new GroupBox();
-			Stop_Btn = new Button();
-			Pause_Btn = new Button();
-			Play_Btn = new Button();
-			DualAudioBtn = new RadioButton();
-			CoopAudioBtn = new RadioButton();
-			BandCoopBtn = new Button();
-			RhythmCoopBtn = new Button();
-			GuitarCoopBtn = new Button();
-			BandCoopTxt = new TextBox();
-			RhythmCoopTxt = new TextBox();
-			GuitarCoopTxt = new TextBox();
-			label11 = new Label();
-			BandAudioBtn = new Button();
-			RhythmAudioBtn = new Button();
-			GuitarAudioBtn = new Button();
-			label1 = new Label();
-			MultiAudioBtn = new RadioButton();
-			SingleAudioBtn = new RadioButton();
-			label3 = new Label();
-			BandAudioTxt = new TextBox();
-			label2 = new Label();
-			RhythmAudioTxt = new TextBox();
-			ChartGroupBox = new GroupBox();
-			groupBox7 = new GroupBox();
-			BossBattleP2Box = new ComboBox();
-			groupBox2 = new GroupBox();
-			FaceOffP2Box = new ComboBox();
-			groupBox8 = new GroupBox();
-			BossBattleP1Box = new ComboBox();
-			groupBox1 = new GroupBox();
-			FaceOffP1Box = new ComboBox();
-			label13 = new Label();
-			ResetBtn = new Button();
-			AutoConfigBtn = new Button();
-			groupBox5 = new GroupBox();
-			ExpertCoop2Box = new ComboBox();
-			HardCoop2Box = new ComboBox();
-			MediumCoop2Box = new ComboBox();
-			EasyCoop2Box = new ComboBox();
-			groupBox4 = new GroupBox();
-			ExpertRhythmBox = new ComboBox();
-			HardRhythmBox = new ComboBox();
-			MediumRhythmBox = new ComboBox();
-			EasyRhythmBox = new ComboBox();
-			groupBox6 = new GroupBox();
-			ExpertCoopBox = new ComboBox();
-			HardCoopBox = new ComboBox();
-			MediumCoopBox = new ComboBox();
-			EasyCoopBox = new ComboBox();
-			groupBox3 = new GroupBox();
-			ExpertGuitarBox = new ComboBox();
-			HardGuitarBox = new ComboBox();
-			MediumGuitarBox = new ComboBox();
-			EasyGuitarBox = new ComboBox();
-			label9 = new Label();
-			label8 = new Label();
-			label7 = new Label();
-			label5 = new Label();
-			ChartFileBtn = new Button();
-			label4 = new Label();
-			ChartFileTxt = new TextBox();
-			label10 = new Label();
-			SongNameTxt = new TextBox();
-			MainGroupBox = new GroupBox();
-			label12 = new Label();
-			CancelBtn = new Button();
-			ApplyBtn = new Button();
-			Chart_CheckBox = new CheckBox();
-			Audio_CheckBox = new CheckBox();
-			VolumeSlider = new Control1();
-			PreviewSlider = new Control1();
-			AudioGroupBox.SuspendLayout();
-			ChartGroupBox.SuspendLayout();
-			groupBox7.SuspendLayout();
-			groupBox2.SuspendLayout();
-			groupBox8.SuspendLayout();
-			groupBox1.SuspendLayout();
-			groupBox5.SuspendLayout();
-			groupBox4.SuspendLayout();
-			groupBox6.SuspendLayout();
-			groupBox3.SuspendLayout();
-			MainGroupBox.SuspendLayout();
+			_guitarAudioTxt = new TextBox();
+			_label6 = new Label();
+			_audioGroupBox = new GroupBox();
+			_stopBtn = new Button();
+			_pauseBtn = new Button();
+			_playBtn = new Button();
+			_dualAudioBtn = new RadioButton();
+			_coopAudioBtn = new RadioButton();
+			_bandCoopBtn = new Button();
+			_rhythmCoopBtn = new Button();
+			_guitarCoopBtn = new Button();
+			_bandCoopTxt = new TextBox();
+			_rhythmCoopTxt = new TextBox();
+			_guitarCoopTxt = new TextBox();
+			_label11 = new Label();
+			_bandAudioBtn = new Button();
+			_rhythmAudioBtn = new Button();
+			_guitarAudioBtn = new Button();
+			_label1 = new Label();
+			_multiAudioBtn = new RadioButton();
+			_singleAudioBtn = new RadioButton();
+			_label3 = new Label();
+			_bandAudioTxt = new TextBox();
+			_label2 = new Label();
+			_rhythmAudioTxt = new TextBox();
+			_chartGroupBox = new GroupBox();
+			_groupBox7 = new GroupBox();
+			_bossBattleP2Box = new ComboBox();
+			_groupBox2 = new GroupBox();
+			_faceOffP2Box = new ComboBox();
+			_groupBox8 = new GroupBox();
+			_bossBattleP1Box = new ComboBox();
+			_groupBox1 = new GroupBox();
+			_faceOffP1Box = new ComboBox();
+			_label13 = new Label();
+			_resetBtn = new Button();
+			_autoConfigBtn = new Button();
+			_groupBox5 = new GroupBox();
+			_expertCoop2Box = new ComboBox();
+			_hardCoop2Box = new ComboBox();
+			_mediumCoop2Box = new ComboBox();
+			_easyCoop2Box = new ComboBox();
+			_groupBox4 = new GroupBox();
+			_expertRhythmBox = new ComboBox();
+			_hardRhythmBox = new ComboBox();
+			_mediumRhythmBox = new ComboBox();
+			_easyRhythmBox = new ComboBox();
+			_groupBox6 = new GroupBox();
+			_expertCoopBox = new ComboBox();
+			_hardCoopBox = new ComboBox();
+			_mediumCoopBox = new ComboBox();
+			_easyCoopBox = new ComboBox();
+			_groupBox3 = new GroupBox();
+			_expertGuitarBox = new ComboBox();
+			_hardGuitarBox = new ComboBox();
+			_mediumGuitarBox = new ComboBox();
+			_easyGuitarBox = new ComboBox();
+			_label9 = new Label();
+			_label8 = new Label();
+			_label7 = new Label();
+			_label5 = new Label();
+			_chartFileBtn = new Button();
+			_label4 = new Label();
+			_chartFileTxt = new TextBox();
+			_label10 = new Label();
+			_songNameTxt = new TextBox();
+			_mainGroupBox = new GroupBox();
+			_label12 = new Label();
+			_cancelBtn = new Button();
+			_applyBtn = new Button();
+			_chartCheckBox = new CheckBox();
+			_audioCheckBox = new CheckBox();
+			_volumeSlider = new Control1();
+			_previewSlider = new Control1();
+			_audioGroupBox.SuspendLayout();
+			_chartGroupBox.SuspendLayout();
+			_groupBox7.SuspendLayout();
+			_groupBox2.SuspendLayout();
+			_groupBox8.SuspendLayout();
+			_groupBox1.SuspendLayout();
+			_groupBox5.SuspendLayout();
+			_groupBox4.SuspendLayout();
+			_groupBox6.SuspendLayout();
+			_groupBox3.SuspendLayout();
+			_mainGroupBox.SuspendLayout();
 			SuspendLayout();
-			GuitarAudioTxt.Location = new Point(113, 39);
-			GuitarAudioTxt.Name = "GuitarAudioTxt";
-			GuitarAudioTxt.ReadOnly = true;
-			GuitarAudioTxt.Size = new Size(180, 20);
-			GuitarAudioTxt.TabIndex = 39;
-			label6.AutoSize = true;
-			label6.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label6.Location = new Point(6, 38);
-			label6.Name = "label6";
-			label6.Size = new Size(101, 19);
-			label6.TabIndex = 39;
-			label6.Text = "Guitar Track:";
-			label6.TextAlign = ContentAlignment.MiddleCenter;
-			AudioGroupBox.Controls.Add(VolumeSlider);
-			AudioGroupBox.Controls.Add(Stop_Btn);
-			AudioGroupBox.Controls.Add(Pause_Btn);
-			AudioGroupBox.Controls.Add(Play_Btn);
-			AudioGroupBox.Controls.Add(DualAudioBtn);
-			AudioGroupBox.Controls.Add(CoopAudioBtn);
-			AudioGroupBox.Controls.Add(BandCoopBtn);
-			AudioGroupBox.Controls.Add(RhythmCoopBtn);
-			AudioGroupBox.Controls.Add(GuitarCoopBtn);
-			AudioGroupBox.Controls.Add(BandCoopTxt);
-			AudioGroupBox.Controls.Add(RhythmCoopTxt);
-			AudioGroupBox.Controls.Add(GuitarCoopTxt);
-			AudioGroupBox.Controls.Add(PreviewSlider);
-			AudioGroupBox.Controls.Add(label11);
-			AudioGroupBox.Controls.Add(BandAudioBtn);
-			AudioGroupBox.Controls.Add(RhythmAudioBtn);
-			AudioGroupBox.Controls.Add(GuitarAudioBtn);
-			AudioGroupBox.Controls.Add(label1);
-			AudioGroupBox.Controls.Add(MultiAudioBtn);
-			AudioGroupBox.Controls.Add(SingleAudioBtn);
-			AudioGroupBox.Controls.Add(label3);
-			AudioGroupBox.Controls.Add(BandAudioTxt);
-			AudioGroupBox.Controls.Add(label2);
-			AudioGroupBox.Controls.Add(RhythmAudioTxt);
-			AudioGroupBox.Controls.Add(label6);
-			AudioGroupBox.Controls.Add(GuitarAudioTxt);
-			AudioGroupBox.Location = new Point(12, 96);
-			AudioGroupBox.Name = "AudioGroupBox";
-			AudioGroupBox.Size = new Size(566, 168);
-			AudioGroupBox.TabIndex = 36;
-			AudioGroupBox.TabStop = false;
-			AudioGroupBox.Text = "Audio Track";
-			Stop_Btn.FlatStyle = FlatStyle.Popup;
-			Stop_Btn.Location = new Point(205, 137);
-			Stop_Btn.Name = "Stop_Btn";
-			Stop_Btn.Size = new Size(37, 20);
-			Stop_Btn.TabIndex = 50;
-			Stop_Btn.Text = "Stop";
-			Stop_Btn.UseVisualStyleBackColor = true;
-			Stop_Btn.Click += Stop_Btn_Click;
-			Pause_Btn.FlatStyle = FlatStyle.Popup;
-			Pause_Btn.Location = new Point(160, 137);
-			Pause_Btn.Name = "Pause_Btn";
-			Pause_Btn.Size = new Size(45, 20);
-			Pause_Btn.TabIndex = 49;
-			Pause_Btn.Text = "Pause";
-			Pause_Btn.UseVisualStyleBackColor = true;
-			Pause_Btn.Click += Pause_Btn_Click;
-			Play_Btn.FlatStyle = FlatStyle.Popup;
-			Play_Btn.Location = new Point(123, 137);
-			Play_Btn.Name = "Play_Btn";
-			Play_Btn.Size = new Size(37, 20);
-			Play_Btn.TabIndex = 48;
-			Play_Btn.Text = "Play";
-			Play_Btn.UseVisualStyleBackColor = true;
-			Play_Btn.Click += Play_Btn_Click;
-			DualAudioBtn.AutoSize = true;
-			DualAudioBtn.Location = new Point(194, 18);
-			DualAudioBtn.Name = "DualAudioBtn";
-			DualAudioBtn.Size = new Size(84, 17);
-			DualAudioBtn.TabIndex = 5;
-			DualAudioBtn.Text = "Guitar Track";
-			DualAudioBtn.UseVisualStyleBackColor = true;
-			DualAudioBtn.CheckedChanged += DualAudioBtn_CheckedChanged;
-			CoopAudioBtn.AutoSize = true;
-			CoopAudioBtn.Location = new Point(382, 18);
-			CoopAudioBtn.Name = "CoopAudioBtn";
-			CoopAudioBtn.Size = new Size(86, 17);
-			CoopAudioBtn.TabIndex = 7;
-			CoopAudioBtn.Text = "Coop Tracks";
-			CoopAudioBtn.UseVisualStyleBackColor = true;
-			CoopAudioBtn.CheckedChanged += CoopAudioBtn_CheckedChanged;
-			BandCoopBtn.Enabled = false;
-			BandCoopBtn.Location = new Point(539, 91);
-			BandCoopBtn.Name = "BandCoopBtn";
-			BandCoopBtn.Size = new Size(24, 21);
-			BandCoopBtn.TabIndex = 13;
-			BandCoopBtn.Text = "...";
-			BandCoopBtn.UseVisualStyleBackColor = true;
-			BandCoopBtn.Click += BandCoopBtn_Click;
-			RhythmCoopBtn.Enabled = false;
-			RhythmCoopBtn.Location = new Point(539, 65);
-			RhythmCoopBtn.Name = "RhythmCoopBtn";
-			RhythmCoopBtn.Size = new Size(24, 21);
-			RhythmCoopBtn.TabIndex = 12;
-			RhythmCoopBtn.Text = "...";
-			RhythmCoopBtn.UseVisualStyleBackColor = true;
-			RhythmCoopBtn.Click += RhythmCoopBtn_Click;
-			GuitarCoopBtn.Enabled = false;
-			GuitarCoopBtn.Location = new Point(539, 38);
-			GuitarCoopBtn.Name = "GuitarCoopBtn";
-			GuitarCoopBtn.Size = new Size(24, 21);
-			GuitarCoopBtn.TabIndex = 11;
-			GuitarCoopBtn.Text = "...";
-			GuitarCoopBtn.UseVisualStyleBackColor = true;
-			GuitarCoopBtn.Click += GuitarCoopBtn_Click;
-			BandCoopTxt.Enabled = false;
-			BandCoopTxt.Location = new Point(329, 92);
-			BandCoopTxt.Name = "BandCoopTxt";
-			BandCoopTxt.ReadOnly = true;
-			BandCoopTxt.Size = new Size(204, 20);
-			BandCoopTxt.TabIndex = 46;
-			RhythmCoopTxt.Enabled = false;
-			RhythmCoopTxt.Location = new Point(329, 66);
-			RhythmCoopTxt.Name = "RhythmCoopTxt";
-			RhythmCoopTxt.ReadOnly = true;
-			RhythmCoopTxt.Size = new Size(204, 20);
-			RhythmCoopTxt.TabIndex = 45;
-			GuitarCoopTxt.Enabled = false;
-			GuitarCoopTxt.Location = new Point(329, 39);
-			GuitarCoopTxt.Name = "GuitarCoopTxt";
-			GuitarCoopTxt.ReadOnly = true;
-			GuitarCoopTxt.Size = new Size(204, 20);
-			GuitarCoopTxt.TabIndex = 44;
-			label11.AutoSize = true;
-			label11.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label11.Location = new Point(6, 129);
-			label11.Name = "label11";
-			label11.Size = new Size(111, 19);
-			label11.TabIndex = 47;
-			label11.Text = "Preview Track:";
-			label11.TextAlign = ContentAlignment.MiddleCenter;
-			BandAudioBtn.Enabled = false;
-			BandAudioBtn.Location = new Point(299, 91);
-			BandAudioBtn.Name = "BandAudioBtn";
-			BandAudioBtn.Size = new Size(24, 21);
-			BandAudioBtn.TabIndex = 10;
-			BandAudioBtn.Text = "...";
-			BandAudioBtn.UseVisualStyleBackColor = true;
-			BandAudioBtn.Click += BandAudioBtn_Click;
-			RhythmAudioBtn.Enabled = false;
-			RhythmAudioBtn.Location = new Point(299, 65);
-			RhythmAudioBtn.Name = "RhythmAudioBtn";
-			RhythmAudioBtn.Size = new Size(24, 21);
-			RhythmAudioBtn.TabIndex = 9;
-			RhythmAudioBtn.Text = "...";
-			RhythmAudioBtn.UseVisualStyleBackColor = true;
-			RhythmAudioBtn.Click += RhythmAudioBtn_Click;
-			GuitarAudioBtn.Location = new Point(299, 38);
-			GuitarAudioBtn.Name = "GuitarAudioBtn";
-			GuitarAudioBtn.Size = new Size(24, 21);
-			GuitarAudioBtn.TabIndex = 8;
-			GuitarAudioBtn.Text = "...";
-			GuitarAudioBtn.UseVisualStyleBackColor = true;
-			GuitarAudioBtn.Click += GuitarAudioBtn_Click;
-			label1.AutoSize = true;
-			label1.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label1.Location = new Point(6, 16);
-			label1.Name = "label1";
-			label1.Size = new Size(91, 19);
-			label1.TabIndex = 38;
-			label1.Text = "Audio Type:";
-			label1.TextAlign = ContentAlignment.MiddleCenter;
-			MultiAudioBtn.AutoSize = true;
-			MultiAudioBtn.Location = new Point(284, 18);
-			MultiAudioBtn.Name = "MultiAudioBtn";
-			MultiAudioBtn.Size = new Size(92, 17);
-			MultiAudioBtn.TabIndex = 6;
-			MultiAudioBtn.Text = "Rhythm Track";
-			MultiAudioBtn.UseVisualStyleBackColor = true;
-			MultiAudioBtn.CheckedChanged += MultiAudioBtn_CheckedChanged;
-			SingleAudioBtn.AutoSize = true;
-			SingleAudioBtn.Checked = true;
-			SingleAudioBtn.Location = new Point(103, 18);
-			SingleAudioBtn.Name = "SingleAudioBtn";
-			SingleAudioBtn.Size = new Size(85, 17);
-			SingleAudioBtn.TabIndex = 4;
-			SingleAudioBtn.TabStop = true;
-			SingleAudioBtn.Text = "Single Track";
-			SingleAudioBtn.UseVisualStyleBackColor = true;
-			SingleAudioBtn.CheckedChanged += SingleAudioBtn_CheckedChanged;
-			label3.AutoSize = true;
-			label3.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label3.Location = new Point(6, 91);
-			label3.Name = "label3";
-			label3.Size = new Size(93, 19);
-			label3.TabIndex = 42;
-			label3.Text = "Band Track:";
-			label3.TextAlign = ContentAlignment.MiddleCenter;
-			BandAudioTxt.Enabled = false;
-			BandAudioTxt.Location = new Point(105, 92);
-			BandAudioTxt.Name = "BandAudioTxt";
-			BandAudioTxt.ReadOnly = true;
-			BandAudioTxt.Size = new Size(188, 20);
-			BandAudioTxt.TabIndex = 43;
-			label2.AutoSize = true;
-			label2.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label2.Location = new Point(6, 65);
-			label2.Name = "label2";
-			label2.Size = new Size(111, 19);
-			label2.TabIndex = 40;
-			label2.Text = "Rhythm Track:";
-			label2.TextAlign = ContentAlignment.MiddleCenter;
-			RhythmAudioTxt.Enabled = false;
-			RhythmAudioTxt.Location = new Point(123, 66);
-			RhythmAudioTxt.Name = "RhythmAudioTxt";
-			RhythmAudioTxt.ReadOnly = true;
-			RhythmAudioTxt.Size = new Size(170, 20);
-			RhythmAudioTxt.TabIndex = 41;
-			ChartGroupBox.Controls.Add(groupBox7);
-			ChartGroupBox.Controls.Add(groupBox2);
-			ChartGroupBox.Controls.Add(groupBox8);
-			ChartGroupBox.Controls.Add(groupBox1);
-			ChartGroupBox.Controls.Add(label13);
-			ChartGroupBox.Controls.Add(ResetBtn);
-			ChartGroupBox.Controls.Add(AutoConfigBtn);
-			ChartGroupBox.Controls.Add(groupBox5);
-			ChartGroupBox.Controls.Add(groupBox4);
-			ChartGroupBox.Controls.Add(groupBox6);
-			ChartGroupBox.Controls.Add(groupBox3);
-			ChartGroupBox.Controls.Add(label9);
-			ChartGroupBox.Controls.Add(label8);
-			ChartGroupBox.Controls.Add(label7);
-			ChartGroupBox.Controls.Add(label5);
-			ChartGroupBox.Controls.Add(ChartFileBtn);
-			ChartGroupBox.Controls.Add(label4);
-			ChartGroupBox.Controls.Add(ChartFileTxt);
-			ChartGroupBox.Location = new Point(12, 270);
-			ChartGroupBox.Name = "ChartGroupBox";
-			ChartGroupBox.Size = new Size(566, 239);
-			ChartGroupBox.TabIndex = 37;
-			ChartGroupBox.TabStop = false;
-			ChartGroupBox.Text = "Game Track";
-			groupBox7.Controls.Add(BossBattleP2Box);
-			groupBox7.Location = new Point(445, 180);
-			groupBox7.Name = "groupBox7";
-			groupBox7.Size = new Size(110, 48);
-			groupBox7.TabIndex = 58;
-			groupBox7.TabStop = false;
-			groupBox7.Text = "Boss Battle P2";
-			BossBattleP2Box.DropDownStyle = ComboBoxStyle.DropDownList;
-			BossBattleP2Box.FormattingEnabled = true;
-			BossBattleP2Box.Location = new Point(6, 19);
-			BossBattleP2Box.Name = "BossBattleP2Box";
-			BossBattleP2Box.Size = new Size(98, 21);
-			BossBattleP2Box.TabIndex = 18;
-			groupBox2.Controls.Add(FaceOffP2Box);
-			groupBox2.Location = new Point(213, 180);
-			groupBox2.Name = "groupBox2";
-			groupBox2.Size = new Size(110, 48);
-			groupBox2.TabIndex = 56;
-			groupBox2.TabStop = false;
-			groupBox2.Text = "Face Off P2";
-			FaceOffP2Box.DropDownStyle = ComboBoxStyle.DropDownList;
-			FaceOffP2Box.FormattingEnabled = true;
-			FaceOffP2Box.Location = new Point(6, 19);
-			FaceOffP2Box.Name = "FaceOffP2Box";
-			FaceOffP2Box.Size = new Size(98, 21);
-			FaceOffP2Box.TabIndex = 18;
-			groupBox8.Controls.Add(BossBattleP1Box);
-			groupBox8.Location = new Point(329, 180);
-			groupBox8.Name = "groupBox8";
-			groupBox8.Size = new Size(110, 48);
-			groupBox8.TabIndex = 57;
-			groupBox8.TabStop = false;
-			groupBox8.Text = "Boss Battle P1";
-			BossBattleP1Box.DropDownStyle = ComboBoxStyle.DropDownList;
-			BossBattleP1Box.FormattingEnabled = true;
-			BossBattleP1Box.Location = new Point(6, 19);
-			BossBattleP1Box.Name = "BossBattleP1Box";
-			BossBattleP1Box.Size = new Size(98, 21);
-			BossBattleP1Box.TabIndex = 18;
-			groupBox1.Controls.Add(FaceOffP1Box);
-			groupBox1.Location = new Point(97, 180);
-			groupBox1.Name = "groupBox1";
-			groupBox1.Size = new Size(110, 48);
-			groupBox1.TabIndex = 55;
-			groupBox1.TabStop = false;
-			groupBox1.Text = "Face Off P1";
-			FaceOffP1Box.DropDownStyle = ComboBoxStyle.DropDownList;
-			FaceOffP1Box.FormattingEnabled = true;
-			FaceOffP1Box.Location = new Point(6, 19);
-			FaceOffP1Box.Name = "FaceOffP1Box";
-			FaceOffP1Box.Size = new Size(98, 21);
-			FaceOffP1Box.TabIndex = 18;
-			label13.AutoSize = true;
-			label13.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label13.Location = new Point(-2, 201);
-			label13.Name = "label13";
-			label13.Size = new Size(93, 19);
-			label13.TabIndex = 58;
-			label13.Text = "SECTIONS:";
-			label13.TextAlign = ContentAlignment.MiddleCenter;
-			ResetBtn.Enabled = false;
-			ResetBtn.Location = new Point(512, 15);
-			ResetBtn.Name = "ResetBtn";
-			ResetBtn.Size = new Size(43, 23);
-			ResetBtn.TabIndex = 17;
-			ResetBtn.Text = "Reset";
-			ResetBtn.UseVisualStyleBackColor = true;
-			ResetBtn.Click += ResetBtn_Click;
-			AutoConfigBtn.Enabled = false;
-			AutoConfigBtn.Location = new Point(404, 15);
-			AutoConfigBtn.Name = "AutoConfigBtn";
-			AutoConfigBtn.Size = new Size(102, 23);
-			AutoConfigBtn.TabIndex = 16;
-			AutoConfigBtn.Text = "Auto Configuration";
-			AutoConfigBtn.UseVisualStyleBackColor = true;
-			AutoConfigBtn.Click += AutoConfigBtn_Click;
-			groupBox5.Controls.Add(ExpertCoop2Box);
-			groupBox5.Controls.Add(HardCoop2Box);
-			groupBox5.Controls.Add(MediumCoop2Box);
-			groupBox5.Controls.Add(EasyCoop2Box);
-			groupBox5.Location = new Point(445, 43);
-			groupBox5.Name = "groupBox5";
-			groupBox5.Size = new Size(110, 131);
-			groupBox5.TabIndex = 57;
-			groupBox5.TabStop = false;
-			groupBox5.Text = "Coop Rhythm";
-			ExpertCoop2Box.DropDownStyle = ComboBoxStyle.DropDownList;
-			ExpertCoop2Box.FormattingEnabled = true;
-			ExpertCoop2Box.Location = new Point(6, 100);
-			ExpertCoop2Box.Name = "ExpertCoop2Box";
-			ExpertCoop2Box.Size = new Size(98, 21);
-			ExpertCoop2Box.TabIndex = 33;
-			HardCoop2Box.DropDownStyle = ComboBoxStyle.DropDownList;
-			HardCoop2Box.FormattingEnabled = true;
-			HardCoop2Box.Location = new Point(6, 73);
-			HardCoop2Box.Name = "HardCoop2Box";
-			HardCoop2Box.Size = new Size(98, 21);
-			HardCoop2Box.TabIndex = 32;
-			MediumCoop2Box.DropDownStyle = ComboBoxStyle.DropDownList;
-			MediumCoop2Box.FormattingEnabled = true;
-			MediumCoop2Box.Location = new Point(6, 46);
-			MediumCoop2Box.Name = "MediumCoop2Box";
-			MediumCoop2Box.Size = new Size(98, 21);
-			MediumCoop2Box.TabIndex = 31;
-			EasyCoop2Box.DropDownStyle = ComboBoxStyle.DropDownList;
-			EasyCoop2Box.FormattingEnabled = true;
-			EasyCoop2Box.Location = new Point(6, 19);
-			EasyCoop2Box.Name = "EasyCoop2Box";
-			EasyCoop2Box.Size = new Size(98, 21);
-			EasyCoop2Box.TabIndex = 30;
-			groupBox4.Controls.Add(ExpertRhythmBox);
-			groupBox4.Controls.Add(HardRhythmBox);
-			groupBox4.Controls.Add(MediumRhythmBox);
-			groupBox4.Controls.Add(EasyRhythmBox);
-			groupBox4.Location = new Point(213, 43);
-			groupBox4.Name = "groupBox4";
-			groupBox4.Size = new Size(110, 131);
-			groupBox4.TabIndex = 55;
-			groupBox4.TabStop = false;
-			groupBox4.Text = "Single Rhythm";
-			ExpertRhythmBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			ExpertRhythmBox.FormattingEnabled = true;
-			ExpertRhythmBox.Location = new Point(6, 100);
-			ExpertRhythmBox.Name = "ExpertRhythmBox";
-			ExpertRhythmBox.Size = new Size(98, 21);
-			ExpertRhythmBox.TabIndex = 25;
-			HardRhythmBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			HardRhythmBox.FormattingEnabled = true;
-			HardRhythmBox.Location = new Point(6, 73);
-			HardRhythmBox.Name = "HardRhythmBox";
-			HardRhythmBox.Size = new Size(98, 21);
-			HardRhythmBox.TabIndex = 24;
-			MediumRhythmBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			MediumRhythmBox.FormattingEnabled = true;
-			MediumRhythmBox.Location = new Point(6, 46);
-			MediumRhythmBox.Name = "MediumRhythmBox";
-			MediumRhythmBox.Size = new Size(98, 21);
-			MediumRhythmBox.TabIndex = 23;
-			EasyRhythmBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			EasyRhythmBox.FormattingEnabled = true;
-			EasyRhythmBox.Location = new Point(6, 19);
-			EasyRhythmBox.Name = "EasyRhythmBox";
-			EasyRhythmBox.Size = new Size(98, 21);
-			EasyRhythmBox.TabIndex = 22;
-			groupBox6.Controls.Add(ExpertCoopBox);
-			groupBox6.Controls.Add(HardCoopBox);
-			groupBox6.Controls.Add(MediumCoopBox);
-			groupBox6.Controls.Add(EasyCoopBox);
-			groupBox6.Location = new Point(329, 43);
-			groupBox6.Name = "groupBox6";
-			groupBox6.Size = new Size(110, 131);
-			groupBox6.TabIndex = 56;
-			groupBox6.TabStop = false;
-			groupBox6.Text = "Coop Guitar";
-			ExpertCoopBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			ExpertCoopBox.FormattingEnabled = true;
-			ExpertCoopBox.Location = new Point(6, 100);
-			ExpertCoopBox.Name = "ExpertCoopBox";
-			ExpertCoopBox.Size = new Size(98, 21);
-			ExpertCoopBox.TabIndex = 29;
-			HardCoopBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			HardCoopBox.FormattingEnabled = true;
-			HardCoopBox.Location = new Point(6, 73);
-			HardCoopBox.Name = "HardCoopBox";
-			HardCoopBox.Size = new Size(98, 21);
-			HardCoopBox.TabIndex = 28;
-			MediumCoopBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			MediumCoopBox.FormattingEnabled = true;
-			MediumCoopBox.Location = new Point(6, 46);
-			MediumCoopBox.Name = "MediumCoopBox";
-			MediumCoopBox.Size = new Size(98, 21);
-			MediumCoopBox.TabIndex = 27;
-			EasyCoopBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			EasyCoopBox.FormattingEnabled = true;
-			EasyCoopBox.Location = new Point(6, 19);
-			EasyCoopBox.Name = "EasyCoopBox";
-			EasyCoopBox.Size = new Size(98, 21);
-			EasyCoopBox.TabIndex = 26;
-			groupBox3.Controls.Add(ExpertGuitarBox);
-			groupBox3.Controls.Add(HardGuitarBox);
-			groupBox3.Controls.Add(MediumGuitarBox);
-			groupBox3.Controls.Add(EasyGuitarBox);
-			groupBox3.Location = new Point(97, 43);
-			groupBox3.Name = "groupBox3";
-			groupBox3.Size = new Size(110, 131);
-			groupBox3.TabIndex = 54;
-			groupBox3.TabStop = false;
-			groupBox3.Text = "Single Guitar";
-			ExpertGuitarBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			ExpertGuitarBox.FormattingEnabled = true;
-			ExpertGuitarBox.Location = new Point(6, 100);
-			ExpertGuitarBox.Name = "ExpertGuitarBox";
-			ExpertGuitarBox.Size = new Size(98, 21);
-			ExpertGuitarBox.TabIndex = 21;
-			HardGuitarBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			HardGuitarBox.FormattingEnabled = true;
-			HardGuitarBox.Location = new Point(6, 73);
-			HardGuitarBox.Name = "HardGuitarBox";
-			HardGuitarBox.Size = new Size(98, 21);
-			HardGuitarBox.TabIndex = 20;
-			MediumGuitarBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			MediumGuitarBox.FormattingEnabled = true;
-			MediumGuitarBox.Location = new Point(6, 46);
-			MediumGuitarBox.Name = "MediumGuitarBox";
-			MediumGuitarBox.Size = new Size(98, 21);
-			MediumGuitarBox.TabIndex = 19;
-			EasyGuitarBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			EasyGuitarBox.FormattingEnabled = true;
-			EasyGuitarBox.Location = new Point(6, 19);
-			EasyGuitarBox.Name = "EasyGuitarBox";
-			EasyGuitarBox.Size = new Size(98, 21);
-			EasyGuitarBox.TabIndex = 18;
-			label9.AutoSize = true;
-			label9.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label9.Location = new Point(15, 145);
-			label9.Name = "label9";
-			label9.Size = new Size(76, 19);
-			label9.TabIndex = 53;
-			label9.Text = "EXPERT:";
-			label9.TextAlign = ContentAlignment.MiddleCenter;
-			label8.AutoSize = true;
-			label8.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label8.Location = new Point(30, 118);
-			label8.Name = "label8";
-			label8.Size = new Size(61, 19);
-			label8.TabIndex = 52;
-			label8.Text = "HARD:";
-			label8.TextAlign = ContentAlignment.MiddleCenter;
-			label7.AutoSize = true;
-			label7.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label7.Location = new Point(6, 91);
-			label7.Name = "label7";
-			label7.Size = new Size(85, 19);
-			label7.TabIndex = 51;
-			label7.Text = "MEDIUM:";
-			label7.TextAlign = ContentAlignment.MiddleCenter;
-			label5.AutoSize = true;
-			label5.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label5.Location = new Point(37, 64);
-			label5.Name = "label5";
-			label5.Size = new Size(54, 19);
-			label5.TabIndex = 50;
-			label5.Text = "EASY:";
-			label5.TextAlign = ContentAlignment.MiddleCenter;
-			ChartFileBtn.Location = new Point(374, 16);
-			ChartFileBtn.Name = "ChartFileBtn";
-			ChartFileBtn.Size = new Size(24, 21);
-			ChartFileBtn.TabIndex = 15;
-			ChartFileBtn.Text = "...";
-			ChartFileBtn.UseVisualStyleBackColor = true;
-			ChartFileBtn.Click += ChartFileBtn_Click;
-			label4.AutoSize = true;
-			label4.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label4.Location = new Point(10, 16);
-			label4.Name = "label4";
-			label4.Size = new Size(81, 19);
-			label4.TabIndex = 48;
-			label4.Text = "Chart File:";
-			label4.TextAlign = ContentAlignment.MiddleCenter;
-			ChartFileTxt.Location = new Point(97, 17);
-			ChartFileTxt.Name = "ChartFileTxt";
-			ChartFileTxt.ReadOnly = true;
-			ChartFileTxt.Size = new Size(271, 20);
-			ChartFileTxt.TabIndex = 49;
-			label10.AutoSize = true;
-			label10.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label10.Location = new Point(6, 28);
-			label10.Name = "label10";
-			label10.Size = new Size(91, 19);
-			label10.TabIndex = 36;
-			label10.Text = "Song Name:";
-			label10.TextAlign = ContentAlignment.MiddleCenter;
-			SongNameTxt.CharacterCasing = CharacterCasing.Lower;
-			SongNameTxt.Location = new Point(103, 29);
-			SongNameTxt.MaxLength = 30;
-			SongNameTxt.Name = "SongNameTxt";
-			SongNameTxt.Size = new Size(140, 20);
-			SongNameTxt.TabIndex = 1;
-			SongNameTxt.TextChanged += SongNameTxt_TextChanged;
-			SongNameTxt.KeyPress += SongNameTxt_KeyPress;
-			MainGroupBox.Controls.Add(label12);
-			MainGroupBox.Controls.Add(CancelBtn);
-			MainGroupBox.Controls.Add(ApplyBtn);
-			MainGroupBox.Controls.Add(Chart_CheckBox);
-			MainGroupBox.Controls.Add(Audio_CheckBox);
-			MainGroupBox.Controls.Add(label10);
-			MainGroupBox.Controls.Add(SongNameTxt);
-			MainGroupBox.Location = new Point(12, 12);
-			MainGroupBox.Name = "MainGroupBox";
-			MainGroupBox.Size = new Size(566, 78);
-			MainGroupBox.TabIndex = 0;
-			MainGroupBox.TabStop = false;
-			MainGroupBox.Text = "Main Settings";
-			label12.AutoSize = true;
-			label12.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label12.Location = new Point(249, 28);
-			label12.Name = "label12";
-			label12.Size = new Size(131, 19);
-			label12.TabIndex = 43;
-			label12.Text = "Data to Generate:";
-			label12.TextAlign = ContentAlignment.MiddleCenter;
-			CancelBtn.DialogResult = DialogResult.Cancel;
-			CancelBtn.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			CancelBtn.Location = new Point(495, 44);
-			CancelBtn.Name = "CancelBtn";
-			CancelBtn.Size = new Size(65, 27);
-			CancelBtn.TabIndex = 35;
-			CancelBtn.Text = "Cancel";
-			CancelBtn.UseVisualStyleBackColor = true;
-			ApplyBtn.DialogResult = DialogResult.OK;
-			ApplyBtn.Enabled = false;
-			ApplyBtn.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			ApplyBtn.Location = new Point(495, 11);
-			ApplyBtn.Name = "ApplyBtn";
-			ApplyBtn.Size = new Size(65, 27);
-			ApplyBtn.TabIndex = 34;
-			ApplyBtn.Text = "Apply";
-			ApplyBtn.UseVisualStyleBackColor = true;
-			Chart_CheckBox.AutoSize = true;
-			Chart_CheckBox.Checked = true;
-			Chart_CheckBox.CheckState = CheckState.Checked;
-			Chart_CheckBox.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			Chart_CheckBox.Location = new Point(380, 44);
-			Chart_CheckBox.Name = "Chart_CheckBox";
-			Chart_CheckBox.Size = new Size(112, 23);
-			Chart_CheckBox.TabIndex = 3;
-			Chart_CheckBox.Text = "Game Track";
-			Chart_CheckBox.UseVisualStyleBackColor = true;
-			Chart_CheckBox.CheckedChanged += Chart_CheckBox_CheckedChanged;
-			Audio_CheckBox.AutoSize = true;
-			Audio_CheckBox.Checked = true;
-			Audio_CheckBox.CheckState = CheckState.Checked;
-			Audio_CheckBox.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			Audio_CheckBox.Location = new Point(380, 15);
-			Audio_CheckBox.Name = "Audio_CheckBox";
-			Audio_CheckBox.Size = new Size(111, 23);
-			Audio_CheckBox.TabIndex = 2;
-			Audio_CheckBox.Text = "Audio Track";
-			Audio_CheckBox.UseVisualStyleBackColor = true;
-			Audio_CheckBox.CheckedChanged += Audio_CheckBox_CheckedChanged;
-			VolumeSlider.BackColor = Color.Transparent;
-			VolumeSlider.method_7(50f);
-			VolumeSlider.method_8(70f);
-			VolumeSlider.method_20(5u);
-			VolumeSlider.Location = new Point(465, 137);
-			VolumeSlider.method_4(20);
-			VolumeSlider.Name = "VolumeSlider";
-			VolumeSlider.Size = new Size(95, 10);
-			VolumeSlider.method_19(1u);
-			VolumeSlider.TabIndex = 51;
-			VolumeSlider.Text = "TimeSlideBar";
-			VolumeSlider.method_6(new SizeF(50f, 25f));
-			VolumeSlider.method_5(20);
-			VolumeSlider.method_1("{0}%");
-			VolumeSlider.method_14(100);
-			VolumeSlider.method_0(method_10);
-			PreviewSlider.BackColor = Color.Transparent;
-			PreviewSlider.method_10(Color.Crimson);
-			PreviewSlider.method_9(Color.Red);
-			PreviewSlider.method_7(50f);
-			PreviewSlider.method_8(60f);
-			PreviewSlider.method_21(Control1.Enum40.const_3);
-			PreviewSlider.method_12(Color.Violet);
-			PreviewSlider.method_11(Color.DarkViolet);
-			PreviewSlider.Enabled = false;
-			PreviewSlider.method_20(5u);
-			PreviewSlider.Location = new Point(123, 116);
-			PreviewSlider.method_4(20);
-			PreviewSlider.Name = "PreviewSlider";
-			PreviewSlider.Size = new Size(437, 15);
-			PreviewSlider.method_19(1u);
-			PreviewSlider.TabIndex = 14;
-			PreviewSlider.Text = "PreviewSlider";
-			PreviewSlider.method_6(new SizeF(20f, 50f));
-			PreviewSlider.method_5(35);
-			PreviewSlider.method_1("{0:mm:ss}");
-			PreviewSlider.method_2(true);
-			PreviewSlider.MouseDown += PreviewSlider_MouseDown;
-			PreviewSlider.MouseUp += PreviewSlider_MouseUp;
+			_guitarAudioTxt.Location = new Point(113, 39);
+			_guitarAudioTxt.Name = "_guitarAudioTxt";
+			_guitarAudioTxt.ReadOnly = true;
+			_guitarAudioTxt.Size = new Size(180, 20);
+			_guitarAudioTxt.TabIndex = 39;
+			_label6.AutoSize = true;
+			_label6.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label6.Location = new Point(6, 38);
+			_label6.Name = "_label6";
+			_label6.Size = new Size(101, 19);
+			_label6.TabIndex = 39;
+			_label6.Text = "Guitar Track:";
+			_label6.TextAlign = ContentAlignment.MiddleCenter;
+			_audioGroupBox.Controls.Add(_volumeSlider);
+			_audioGroupBox.Controls.Add(_stopBtn);
+			_audioGroupBox.Controls.Add(_pauseBtn);
+			_audioGroupBox.Controls.Add(_playBtn);
+			_audioGroupBox.Controls.Add(_dualAudioBtn);
+			_audioGroupBox.Controls.Add(_coopAudioBtn);
+			_audioGroupBox.Controls.Add(_bandCoopBtn);
+			_audioGroupBox.Controls.Add(_rhythmCoopBtn);
+			_audioGroupBox.Controls.Add(_guitarCoopBtn);
+			_audioGroupBox.Controls.Add(_bandCoopTxt);
+			_audioGroupBox.Controls.Add(_rhythmCoopTxt);
+			_audioGroupBox.Controls.Add(_guitarCoopTxt);
+			_audioGroupBox.Controls.Add(_previewSlider);
+			_audioGroupBox.Controls.Add(_label11);
+			_audioGroupBox.Controls.Add(_bandAudioBtn);
+			_audioGroupBox.Controls.Add(_rhythmAudioBtn);
+			_audioGroupBox.Controls.Add(_guitarAudioBtn);
+			_audioGroupBox.Controls.Add(_label1);
+			_audioGroupBox.Controls.Add(_multiAudioBtn);
+			_audioGroupBox.Controls.Add(_singleAudioBtn);
+			_audioGroupBox.Controls.Add(_label3);
+			_audioGroupBox.Controls.Add(_bandAudioTxt);
+			_audioGroupBox.Controls.Add(_label2);
+			_audioGroupBox.Controls.Add(_rhythmAudioTxt);
+			_audioGroupBox.Controls.Add(_label6);
+			_audioGroupBox.Controls.Add(_guitarAudioTxt);
+			_audioGroupBox.Location = new Point(12, 96);
+			_audioGroupBox.Name = "_audioGroupBox";
+			_audioGroupBox.Size = new Size(566, 168);
+			_audioGroupBox.TabIndex = 36;
+			_audioGroupBox.TabStop = false;
+			_audioGroupBox.Text = "Audio Track";
+			_stopBtn.FlatStyle = FlatStyle.Popup;
+			_stopBtn.Location = new Point(205, 137);
+			_stopBtn.Name = "_stopBtn";
+			_stopBtn.Size = new Size(37, 20);
+			_stopBtn.TabIndex = 50;
+			_stopBtn.Text = "Stop";
+			_stopBtn.UseVisualStyleBackColor = true;
+			_stopBtn.Click += Stop_Btn_Click;
+			_pauseBtn.FlatStyle = FlatStyle.Popup;
+			_pauseBtn.Location = new Point(160, 137);
+			_pauseBtn.Name = "_pauseBtn";
+			_pauseBtn.Size = new Size(45, 20);
+			_pauseBtn.TabIndex = 49;
+			_pauseBtn.Text = "Pause";
+			_pauseBtn.UseVisualStyleBackColor = true;
+			_pauseBtn.Click += Pause_Btn_Click;
+			_playBtn.FlatStyle = FlatStyle.Popup;
+			_playBtn.Location = new Point(123, 137);
+			_playBtn.Name = "_playBtn";
+			_playBtn.Size = new Size(37, 20);
+			_playBtn.TabIndex = 48;
+			_playBtn.Text = "Play";
+			_playBtn.UseVisualStyleBackColor = true;
+			_playBtn.Click += Play_Btn_Click;
+			_dualAudioBtn.AutoSize = true;
+			_dualAudioBtn.Location = new Point(194, 18);
+			_dualAudioBtn.Name = "_dualAudioBtn";
+			_dualAudioBtn.Size = new Size(84, 17);
+			_dualAudioBtn.TabIndex = 5;
+			_dualAudioBtn.Text = "Guitar Track";
+			_dualAudioBtn.UseVisualStyleBackColor = true;
+			_dualAudioBtn.CheckedChanged += DualAudioBtn_CheckedChanged;
+			_coopAudioBtn.AutoSize = true;
+			_coopAudioBtn.Location = new Point(382, 18);
+			_coopAudioBtn.Name = "_coopAudioBtn";
+			_coopAudioBtn.Size = new Size(86, 17);
+			_coopAudioBtn.TabIndex = 7;
+			_coopAudioBtn.Text = "Coop Tracks";
+			_coopAudioBtn.UseVisualStyleBackColor = true;
+			_coopAudioBtn.CheckedChanged += CoopAudioBtn_CheckedChanged;
+			_bandCoopBtn.Enabled = false;
+			_bandCoopBtn.Location = new Point(539, 91);
+			_bandCoopBtn.Name = "_bandCoopBtn";
+			_bandCoopBtn.Size = new Size(24, 21);
+			_bandCoopBtn.TabIndex = 13;
+			_bandCoopBtn.Text = "...";
+			_bandCoopBtn.UseVisualStyleBackColor = true;
+			_bandCoopBtn.Click += BandCoopBtn_Click;
+			_rhythmCoopBtn.Enabled = false;
+			_rhythmCoopBtn.Location = new Point(539, 65);
+			_rhythmCoopBtn.Name = "_rhythmCoopBtn";
+			_rhythmCoopBtn.Size = new Size(24, 21);
+			_rhythmCoopBtn.TabIndex = 12;
+			_rhythmCoopBtn.Text = "...";
+			_rhythmCoopBtn.UseVisualStyleBackColor = true;
+			_rhythmCoopBtn.Click += RhythmCoopBtn_Click;
+			_guitarCoopBtn.Enabled = false;
+			_guitarCoopBtn.Location = new Point(539, 38);
+			_guitarCoopBtn.Name = "_guitarCoopBtn";
+			_guitarCoopBtn.Size = new Size(24, 21);
+			_guitarCoopBtn.TabIndex = 11;
+			_guitarCoopBtn.Text = "...";
+			_guitarCoopBtn.UseVisualStyleBackColor = true;
+			_guitarCoopBtn.Click += GuitarCoopBtn_Click;
+			_bandCoopTxt.Enabled = false;
+			_bandCoopTxt.Location = new Point(329, 92);
+			_bandCoopTxt.Name = "_bandCoopTxt";
+			_bandCoopTxt.ReadOnly = true;
+			_bandCoopTxt.Size = new Size(204, 20);
+			_bandCoopTxt.TabIndex = 46;
+			_rhythmCoopTxt.Enabled = false;
+			_rhythmCoopTxt.Location = new Point(329, 66);
+			_rhythmCoopTxt.Name = "_rhythmCoopTxt";
+			_rhythmCoopTxt.ReadOnly = true;
+			_rhythmCoopTxt.Size = new Size(204, 20);
+			_rhythmCoopTxt.TabIndex = 45;
+			_guitarCoopTxt.Enabled = false;
+			_guitarCoopTxt.Location = new Point(329, 39);
+			_guitarCoopTxt.Name = "_guitarCoopTxt";
+			_guitarCoopTxt.ReadOnly = true;
+			_guitarCoopTxt.Size = new Size(204, 20);
+			_guitarCoopTxt.TabIndex = 44;
+			_label11.AutoSize = true;
+			_label11.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label11.Location = new Point(6, 129);
+			_label11.Name = "_label11";
+			_label11.Size = new Size(111, 19);
+			_label11.TabIndex = 47;
+			_label11.Text = "Preview Track:";
+			_label11.TextAlign = ContentAlignment.MiddleCenter;
+			_bandAudioBtn.Enabled = false;
+			_bandAudioBtn.Location = new Point(299, 91);
+			_bandAudioBtn.Name = "_bandAudioBtn";
+			_bandAudioBtn.Size = new Size(24, 21);
+			_bandAudioBtn.TabIndex = 10;
+			_bandAudioBtn.Text = "...";
+			_bandAudioBtn.UseVisualStyleBackColor = true;
+			_bandAudioBtn.Click += BandAudioBtn_Click;
+			_rhythmAudioBtn.Enabled = false;
+			_rhythmAudioBtn.Location = new Point(299, 65);
+			_rhythmAudioBtn.Name = "_rhythmAudioBtn";
+			_rhythmAudioBtn.Size = new Size(24, 21);
+			_rhythmAudioBtn.TabIndex = 9;
+			_rhythmAudioBtn.Text = "...";
+			_rhythmAudioBtn.UseVisualStyleBackColor = true;
+			_rhythmAudioBtn.Click += RhythmAudioBtn_Click;
+			_guitarAudioBtn.Location = new Point(299, 38);
+			_guitarAudioBtn.Name = "_guitarAudioBtn";
+			_guitarAudioBtn.Size = new Size(24, 21);
+			_guitarAudioBtn.TabIndex = 8;
+			_guitarAudioBtn.Text = "...";
+			_guitarAudioBtn.UseVisualStyleBackColor = true;
+			_guitarAudioBtn.Click += GuitarAudioBtn_Click;
+			_label1.AutoSize = true;
+			_label1.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label1.Location = new Point(6, 16);
+			_label1.Name = "_label1";
+			_label1.Size = new Size(91, 19);
+			_label1.TabIndex = 38;
+			_label1.Text = "Audio Type:";
+			_label1.TextAlign = ContentAlignment.MiddleCenter;
+			_multiAudioBtn.AutoSize = true;
+			_multiAudioBtn.Location = new Point(284, 18);
+			_multiAudioBtn.Name = "_multiAudioBtn";
+			_multiAudioBtn.Size = new Size(92, 17);
+			_multiAudioBtn.TabIndex = 6;
+			_multiAudioBtn.Text = "Rhythm Track";
+			_multiAudioBtn.UseVisualStyleBackColor = true;
+			_multiAudioBtn.CheckedChanged += MultiAudioBtn_CheckedChanged;
+			_singleAudioBtn.AutoSize = true;
+			_singleAudioBtn.Checked = true;
+			_singleAudioBtn.Location = new Point(103, 18);
+			_singleAudioBtn.Name = "_singleAudioBtn";
+			_singleAudioBtn.Size = new Size(85, 17);
+			_singleAudioBtn.TabIndex = 4;
+			_singleAudioBtn.TabStop = true;
+			_singleAudioBtn.Text = "Single Track";
+			_singleAudioBtn.UseVisualStyleBackColor = true;
+			_singleAudioBtn.CheckedChanged += SingleAudioBtn_CheckedChanged;
+			_label3.AutoSize = true;
+			_label3.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label3.Location = new Point(6, 91);
+			_label3.Name = "_label3";
+			_label3.Size = new Size(93, 19);
+			_label3.TabIndex = 42;
+			_label3.Text = "Band Track:";
+			_label3.TextAlign = ContentAlignment.MiddleCenter;
+			_bandAudioTxt.Enabled = false;
+			_bandAudioTxt.Location = new Point(105, 92);
+			_bandAudioTxt.Name = "_bandAudioTxt";
+			_bandAudioTxt.ReadOnly = true;
+			_bandAudioTxt.Size = new Size(188, 20);
+			_bandAudioTxt.TabIndex = 43;
+			_label2.AutoSize = true;
+			_label2.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label2.Location = new Point(6, 65);
+			_label2.Name = "_label2";
+			_label2.Size = new Size(111, 19);
+			_label2.TabIndex = 40;
+			_label2.Text = "Rhythm Track:";
+			_label2.TextAlign = ContentAlignment.MiddleCenter;
+			_rhythmAudioTxt.Enabled = false;
+			_rhythmAudioTxt.Location = new Point(123, 66);
+			_rhythmAudioTxt.Name = "_rhythmAudioTxt";
+			_rhythmAudioTxt.ReadOnly = true;
+			_rhythmAudioTxt.Size = new Size(170, 20);
+			_rhythmAudioTxt.TabIndex = 41;
+			_chartGroupBox.Controls.Add(_groupBox7);
+			_chartGroupBox.Controls.Add(_groupBox2);
+			_chartGroupBox.Controls.Add(_groupBox8);
+			_chartGroupBox.Controls.Add(_groupBox1);
+			_chartGroupBox.Controls.Add(_label13);
+			_chartGroupBox.Controls.Add(_resetBtn);
+			_chartGroupBox.Controls.Add(_autoConfigBtn);
+			_chartGroupBox.Controls.Add(_groupBox5);
+			_chartGroupBox.Controls.Add(_groupBox4);
+			_chartGroupBox.Controls.Add(_groupBox6);
+			_chartGroupBox.Controls.Add(_groupBox3);
+			_chartGroupBox.Controls.Add(_label9);
+			_chartGroupBox.Controls.Add(_label8);
+			_chartGroupBox.Controls.Add(_label7);
+			_chartGroupBox.Controls.Add(_label5);
+			_chartGroupBox.Controls.Add(_chartFileBtn);
+			_chartGroupBox.Controls.Add(_label4);
+			_chartGroupBox.Controls.Add(_chartFileTxt);
+			_chartGroupBox.Location = new Point(12, 270);
+			_chartGroupBox.Name = "_chartGroupBox";
+			_chartGroupBox.Size = new Size(566, 239);
+			_chartGroupBox.TabIndex = 37;
+			_chartGroupBox.TabStop = false;
+			_chartGroupBox.Text = "Game Track";
+			_groupBox7.Controls.Add(_bossBattleP2Box);
+			_groupBox7.Location = new Point(445, 180);
+			_groupBox7.Name = "_groupBox7";
+			_groupBox7.Size = new Size(110, 48);
+			_groupBox7.TabIndex = 58;
+			_groupBox7.TabStop = false;
+			_groupBox7.Text = "Boss Battle P2";
+			_bossBattleP2Box.DropDownStyle = ComboBoxStyle.DropDownList;
+			_bossBattleP2Box.FormattingEnabled = true;
+			_bossBattleP2Box.Location = new Point(6, 19);
+			_bossBattleP2Box.Name = "_bossBattleP2Box";
+			_bossBattleP2Box.Size = new Size(98, 21);
+			_bossBattleP2Box.TabIndex = 18;
+			_groupBox2.Controls.Add(_faceOffP2Box);
+			_groupBox2.Location = new Point(213, 180);
+			_groupBox2.Name = "_groupBox2";
+			_groupBox2.Size = new Size(110, 48);
+			_groupBox2.TabIndex = 56;
+			_groupBox2.TabStop = false;
+			_groupBox2.Text = "Face Off P2";
+			_faceOffP2Box.DropDownStyle = ComboBoxStyle.DropDownList;
+			_faceOffP2Box.FormattingEnabled = true;
+			_faceOffP2Box.Location = new Point(6, 19);
+			_faceOffP2Box.Name = "_faceOffP2Box";
+			_faceOffP2Box.Size = new Size(98, 21);
+			_faceOffP2Box.TabIndex = 18;
+			_groupBox8.Controls.Add(_bossBattleP1Box);
+			_groupBox8.Location = new Point(329, 180);
+			_groupBox8.Name = "_groupBox8";
+			_groupBox8.Size = new Size(110, 48);
+			_groupBox8.TabIndex = 57;
+			_groupBox8.TabStop = false;
+			_groupBox8.Text = "Boss Battle P1";
+			_bossBattleP1Box.DropDownStyle = ComboBoxStyle.DropDownList;
+			_bossBattleP1Box.FormattingEnabled = true;
+			_bossBattleP1Box.Location = new Point(6, 19);
+			_bossBattleP1Box.Name = "_bossBattleP1Box";
+			_bossBattleP1Box.Size = new Size(98, 21);
+			_bossBattleP1Box.TabIndex = 18;
+			_groupBox1.Controls.Add(_faceOffP1Box);
+			_groupBox1.Location = new Point(97, 180);
+			_groupBox1.Name = "_groupBox1";
+			_groupBox1.Size = new Size(110, 48);
+			_groupBox1.TabIndex = 55;
+			_groupBox1.TabStop = false;
+			_groupBox1.Text = "Face Off P1";
+			_faceOffP1Box.DropDownStyle = ComboBoxStyle.DropDownList;
+			_faceOffP1Box.FormattingEnabled = true;
+			_faceOffP1Box.Location = new Point(6, 19);
+			_faceOffP1Box.Name = "_faceOffP1Box";
+			_faceOffP1Box.Size = new Size(98, 21);
+			_faceOffP1Box.TabIndex = 18;
+			_label13.AutoSize = true;
+			_label13.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label13.Location = new Point(-2, 201);
+			_label13.Name = "_label13";
+			_label13.Size = new Size(93, 19);
+			_label13.TabIndex = 58;
+			_label13.Text = "SECTIONS:";
+			_label13.TextAlign = ContentAlignment.MiddleCenter;
+			_resetBtn.Enabled = false;
+			_resetBtn.Location = new Point(512, 15);
+			_resetBtn.Name = "_resetBtn";
+			_resetBtn.Size = new Size(43, 23);
+			_resetBtn.TabIndex = 17;
+			_resetBtn.Text = "Reset";
+			_resetBtn.UseVisualStyleBackColor = true;
+			_resetBtn.Click += ResetBtn_Click;
+			_autoConfigBtn.Enabled = false;
+			_autoConfigBtn.Location = new Point(404, 15);
+			_autoConfigBtn.Name = "_autoConfigBtn";
+			_autoConfigBtn.Size = new Size(102, 23);
+			_autoConfigBtn.TabIndex = 16;
+			_autoConfigBtn.Text = "Auto Configuration";
+			_autoConfigBtn.UseVisualStyleBackColor = true;
+			_autoConfigBtn.Click += AutoConfigBtn_Click;
+			_groupBox5.Controls.Add(_expertCoop2Box);
+			_groupBox5.Controls.Add(_hardCoop2Box);
+			_groupBox5.Controls.Add(_mediumCoop2Box);
+			_groupBox5.Controls.Add(_easyCoop2Box);
+			_groupBox5.Location = new Point(445, 43);
+			_groupBox5.Name = "_groupBox5";
+			_groupBox5.Size = new Size(110, 131);
+			_groupBox5.TabIndex = 57;
+			_groupBox5.TabStop = false;
+			_groupBox5.Text = "Coop Rhythm";
+			_expertCoop2Box.DropDownStyle = ComboBoxStyle.DropDownList;
+			_expertCoop2Box.FormattingEnabled = true;
+			_expertCoop2Box.Location = new Point(6, 100);
+			_expertCoop2Box.Name = "_expertCoop2Box";
+			_expertCoop2Box.Size = new Size(98, 21);
+			_expertCoop2Box.TabIndex = 33;
+			_hardCoop2Box.DropDownStyle = ComboBoxStyle.DropDownList;
+			_hardCoop2Box.FormattingEnabled = true;
+			_hardCoop2Box.Location = new Point(6, 73);
+			_hardCoop2Box.Name = "_hardCoop2Box";
+			_hardCoop2Box.Size = new Size(98, 21);
+			_hardCoop2Box.TabIndex = 32;
+			_mediumCoop2Box.DropDownStyle = ComboBoxStyle.DropDownList;
+			_mediumCoop2Box.FormattingEnabled = true;
+			_mediumCoop2Box.Location = new Point(6, 46);
+			_mediumCoop2Box.Name = "_mediumCoop2Box";
+			_mediumCoop2Box.Size = new Size(98, 21);
+			_mediumCoop2Box.TabIndex = 31;
+			_easyCoop2Box.DropDownStyle = ComboBoxStyle.DropDownList;
+			_easyCoop2Box.FormattingEnabled = true;
+			_easyCoop2Box.Location = new Point(6, 19);
+			_easyCoop2Box.Name = "_easyCoop2Box";
+			_easyCoop2Box.Size = new Size(98, 21);
+			_easyCoop2Box.TabIndex = 30;
+			_groupBox4.Controls.Add(_expertRhythmBox);
+			_groupBox4.Controls.Add(_hardRhythmBox);
+			_groupBox4.Controls.Add(_mediumRhythmBox);
+			_groupBox4.Controls.Add(_easyRhythmBox);
+			_groupBox4.Location = new Point(213, 43);
+			_groupBox4.Name = "_groupBox4";
+			_groupBox4.Size = new Size(110, 131);
+			_groupBox4.TabIndex = 55;
+			_groupBox4.TabStop = false;
+			_groupBox4.Text = "Single Rhythm";
+			_expertRhythmBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_expertRhythmBox.FormattingEnabled = true;
+			_expertRhythmBox.Location = new Point(6, 100);
+			_expertRhythmBox.Name = "_expertRhythmBox";
+			_expertRhythmBox.Size = new Size(98, 21);
+			_expertRhythmBox.TabIndex = 25;
+			_hardRhythmBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_hardRhythmBox.FormattingEnabled = true;
+			_hardRhythmBox.Location = new Point(6, 73);
+			_hardRhythmBox.Name = "_hardRhythmBox";
+			_hardRhythmBox.Size = new Size(98, 21);
+			_hardRhythmBox.TabIndex = 24;
+			_mediumRhythmBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_mediumRhythmBox.FormattingEnabled = true;
+			_mediumRhythmBox.Location = new Point(6, 46);
+			_mediumRhythmBox.Name = "_mediumRhythmBox";
+			_mediumRhythmBox.Size = new Size(98, 21);
+			_mediumRhythmBox.TabIndex = 23;
+			_easyRhythmBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_easyRhythmBox.FormattingEnabled = true;
+			_easyRhythmBox.Location = new Point(6, 19);
+			_easyRhythmBox.Name = "_easyRhythmBox";
+			_easyRhythmBox.Size = new Size(98, 21);
+			_easyRhythmBox.TabIndex = 22;
+			_groupBox6.Controls.Add(_expertCoopBox);
+			_groupBox6.Controls.Add(_hardCoopBox);
+			_groupBox6.Controls.Add(_mediumCoopBox);
+			_groupBox6.Controls.Add(_easyCoopBox);
+			_groupBox6.Location = new Point(329, 43);
+			_groupBox6.Name = "_groupBox6";
+			_groupBox6.Size = new Size(110, 131);
+			_groupBox6.TabIndex = 56;
+			_groupBox6.TabStop = false;
+			_groupBox6.Text = "Coop Guitar";
+			_expertCoopBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_expertCoopBox.FormattingEnabled = true;
+			_expertCoopBox.Location = new Point(6, 100);
+			_expertCoopBox.Name = "_expertCoopBox";
+			_expertCoopBox.Size = new Size(98, 21);
+			_expertCoopBox.TabIndex = 29;
+			_hardCoopBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_hardCoopBox.FormattingEnabled = true;
+			_hardCoopBox.Location = new Point(6, 73);
+			_hardCoopBox.Name = "_hardCoopBox";
+			_hardCoopBox.Size = new Size(98, 21);
+			_hardCoopBox.TabIndex = 28;
+			_mediumCoopBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_mediumCoopBox.FormattingEnabled = true;
+			_mediumCoopBox.Location = new Point(6, 46);
+			_mediumCoopBox.Name = "_mediumCoopBox";
+			_mediumCoopBox.Size = new Size(98, 21);
+			_mediumCoopBox.TabIndex = 27;
+			_easyCoopBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_easyCoopBox.FormattingEnabled = true;
+			_easyCoopBox.Location = new Point(6, 19);
+			_easyCoopBox.Name = "_easyCoopBox";
+			_easyCoopBox.Size = new Size(98, 21);
+			_easyCoopBox.TabIndex = 26;
+			_groupBox3.Controls.Add(_expertGuitarBox);
+			_groupBox3.Controls.Add(_hardGuitarBox);
+			_groupBox3.Controls.Add(_mediumGuitarBox);
+			_groupBox3.Controls.Add(_easyGuitarBox);
+			_groupBox3.Location = new Point(97, 43);
+			_groupBox3.Name = "_groupBox3";
+			_groupBox3.Size = new Size(110, 131);
+			_groupBox3.TabIndex = 54;
+			_groupBox3.TabStop = false;
+			_groupBox3.Text = "Single Guitar";
+			_expertGuitarBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_expertGuitarBox.FormattingEnabled = true;
+			_expertGuitarBox.Location = new Point(6, 100);
+			_expertGuitarBox.Name = "_expertGuitarBox";
+			_expertGuitarBox.Size = new Size(98, 21);
+			_expertGuitarBox.TabIndex = 21;
+			_hardGuitarBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_hardGuitarBox.FormattingEnabled = true;
+			_hardGuitarBox.Location = new Point(6, 73);
+			_hardGuitarBox.Name = "_hardGuitarBox";
+			_hardGuitarBox.Size = new Size(98, 21);
+			_hardGuitarBox.TabIndex = 20;
+			_mediumGuitarBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_mediumGuitarBox.FormattingEnabled = true;
+			_mediumGuitarBox.Location = new Point(6, 46);
+			_mediumGuitarBox.Name = "_mediumGuitarBox";
+			_mediumGuitarBox.Size = new Size(98, 21);
+			_mediumGuitarBox.TabIndex = 19;
+			_easyGuitarBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_easyGuitarBox.FormattingEnabled = true;
+			_easyGuitarBox.Location = new Point(6, 19);
+			_easyGuitarBox.Name = "_easyGuitarBox";
+			_easyGuitarBox.Size = new Size(98, 21);
+			_easyGuitarBox.TabIndex = 18;
+			_label9.AutoSize = true;
+			_label9.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label9.Location = new Point(15, 145);
+			_label9.Name = "_label9";
+			_label9.Size = new Size(76, 19);
+			_label9.TabIndex = 53;
+			_label9.Text = "EXPERT:";
+			_label9.TextAlign = ContentAlignment.MiddleCenter;
+			_label8.AutoSize = true;
+			_label8.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label8.Location = new Point(30, 118);
+			_label8.Name = "_label8";
+			_label8.Size = new Size(61, 19);
+			_label8.TabIndex = 52;
+			_label8.Text = "HARD:";
+			_label8.TextAlign = ContentAlignment.MiddleCenter;
+			_label7.AutoSize = true;
+			_label7.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label7.Location = new Point(6, 91);
+			_label7.Name = "_label7";
+			_label7.Size = new Size(85, 19);
+			_label7.TabIndex = 51;
+			_label7.Text = "MEDIUM:";
+			_label7.TextAlign = ContentAlignment.MiddleCenter;
+			_label5.AutoSize = true;
+			_label5.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label5.Location = new Point(37, 64);
+			_label5.Name = "_label5";
+			_label5.Size = new Size(54, 19);
+			_label5.TabIndex = 50;
+			_label5.Text = "EASY:";
+			_label5.TextAlign = ContentAlignment.MiddleCenter;
+			_chartFileBtn.Location = new Point(374, 16);
+			_chartFileBtn.Name = "_chartFileBtn";
+			_chartFileBtn.Size = new Size(24, 21);
+			_chartFileBtn.TabIndex = 15;
+			_chartFileBtn.Text = "...";
+			_chartFileBtn.UseVisualStyleBackColor = true;
+			_chartFileBtn.Click += ChartFileBtn_Click;
+			_label4.AutoSize = true;
+			_label4.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label4.Location = new Point(10, 16);
+			_label4.Name = "_label4";
+			_label4.Size = new Size(81, 19);
+			_label4.TabIndex = 48;
+			_label4.Text = "Chart File:";
+			_label4.TextAlign = ContentAlignment.MiddleCenter;
+			_chartFileTxt.Location = new Point(97, 17);
+			_chartFileTxt.Name = "_chartFileTxt";
+			_chartFileTxt.ReadOnly = true;
+			_chartFileTxt.Size = new Size(271, 20);
+			_chartFileTxt.TabIndex = 49;
+			_label10.AutoSize = true;
+			_label10.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label10.Location = new Point(6, 28);
+			_label10.Name = "_label10";
+			_label10.Size = new Size(91, 19);
+			_label10.TabIndex = 36;
+			_label10.Text = "Song Name:";
+			_label10.TextAlign = ContentAlignment.MiddleCenter;
+			_songNameTxt.CharacterCasing = CharacterCasing.Lower;
+			_songNameTxt.Location = new Point(103, 29);
+			_songNameTxt.MaxLength = 30;
+			_songNameTxt.Name = "_songNameTxt";
+			_songNameTxt.Size = new Size(140, 20);
+			_songNameTxt.TabIndex = 1;
+			_songNameTxt.TextChanged += SongNameTxt_TextChanged;
+			_songNameTxt.KeyPress += SongNameTxt_KeyPress;
+			_mainGroupBox.Controls.Add(_label12);
+			_mainGroupBox.Controls.Add(_cancelBtn);
+			_mainGroupBox.Controls.Add(_applyBtn);
+			_mainGroupBox.Controls.Add(_chartCheckBox);
+			_mainGroupBox.Controls.Add(_audioCheckBox);
+			_mainGroupBox.Controls.Add(_label10);
+			_mainGroupBox.Controls.Add(_songNameTxt);
+			_mainGroupBox.Location = new Point(12, 12);
+			_mainGroupBox.Name = "_mainGroupBox";
+			_mainGroupBox.Size = new Size(566, 78);
+			_mainGroupBox.TabIndex = 0;
+			_mainGroupBox.TabStop = false;
+			_mainGroupBox.Text = "Main Settings";
+			_label12.AutoSize = true;
+			_label12.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label12.Location = new Point(249, 28);
+			_label12.Name = "_label12";
+			_label12.Size = new Size(131, 19);
+			_label12.TabIndex = 43;
+			_label12.Text = "Data to Generate:";
+			_label12.TextAlign = ContentAlignment.MiddleCenter;
+			_cancelBtn.DialogResult = DialogResult.Cancel;
+			_cancelBtn.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_cancelBtn.Location = new Point(495, 44);
+			_cancelBtn.Name = "_cancelBtn";
+			_cancelBtn.Size = new Size(65, 27);
+			_cancelBtn.TabIndex = 35;
+			_cancelBtn.Text = "Cancel";
+			_cancelBtn.UseVisualStyleBackColor = true;
+			_applyBtn.DialogResult = DialogResult.OK;
+			_applyBtn.Enabled = false;
+			_applyBtn.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_applyBtn.Location = new Point(495, 11);
+			_applyBtn.Name = "_applyBtn";
+			_applyBtn.Size = new Size(65, 27);
+			_applyBtn.TabIndex = 34;
+			_applyBtn.Text = "Apply";
+			_applyBtn.UseVisualStyleBackColor = true;
+			_chartCheckBox.AutoSize = true;
+			_chartCheckBox.Checked = true;
+			_chartCheckBox.CheckState = CheckState.Checked;
+			_chartCheckBox.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_chartCheckBox.Location = new Point(380, 44);
+			_chartCheckBox.Name = "_chartCheckBox";
+			_chartCheckBox.Size = new Size(112, 23);
+			_chartCheckBox.TabIndex = 3;
+			_chartCheckBox.Text = "Game Track";
+			_chartCheckBox.UseVisualStyleBackColor = true;
+			_chartCheckBox.CheckedChanged += Chart_CheckBox_CheckedChanged;
+			_audioCheckBox.AutoSize = true;
+			_audioCheckBox.Checked = true;
+			_audioCheckBox.CheckState = CheckState.Checked;
+			_audioCheckBox.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_audioCheckBox.Location = new Point(380, 15);
+			_audioCheckBox.Name = "_audioCheckBox";
+			_audioCheckBox.Size = new Size(111, 23);
+			_audioCheckBox.TabIndex = 2;
+			_audioCheckBox.Text = "Audio Track";
+			_audioCheckBox.UseVisualStyleBackColor = true;
+			_audioCheckBox.CheckedChanged += Audio_CheckBox_CheckedChanged;
+			_volumeSlider.BackColor = Color.Transparent;
+			_volumeSlider.method_7(50f);
+			_volumeSlider.method_8(70f);
+			_volumeSlider.method_20(5u);
+			_volumeSlider.Location = new Point(465, 137);
+			_volumeSlider.method_4(20);
+			_volumeSlider.Name = "_volumeSlider";
+			_volumeSlider.Size = new Size(95, 10);
+			_volumeSlider.method_19(1u);
+			_volumeSlider.TabIndex = 51;
+			_volumeSlider.Text = "TimeSlideBar";
+			_volumeSlider.method_6(new SizeF(50f, 25f));
+			_volumeSlider.method_5(20);
+			_volumeSlider.method_1("{0}%");
+			_volumeSlider.method_14(100);
+			_volumeSlider.method_0(method_10);
+			_previewSlider.BackColor = Color.Transparent;
+			_previewSlider.method_10(Color.Crimson);
+			_previewSlider.method_9(Color.Red);
+			_previewSlider.method_7(50f);
+			_previewSlider.method_8(60f);
+			_previewSlider.method_21(Control1.Enum40.Const3);
+			_previewSlider.method_12(Color.Violet);
+			_previewSlider.method_11(Color.DarkViolet);
+			_previewSlider.Enabled = false;
+			_previewSlider.method_20(5u);
+			_previewSlider.Location = new Point(123, 116);
+			_previewSlider.method_4(20);
+			_previewSlider.Name = "_previewSlider";
+			_previewSlider.Size = new Size(437, 15);
+			_previewSlider.method_19(1u);
+			_previewSlider.TabIndex = 14;
+			_previewSlider.Text = "PreviewSlider";
+			_previewSlider.method_6(new SizeF(20f, 50f));
+			_previewSlider.method_5(35);
+			_previewSlider.method_1("{0:mm:ss}");
+			_previewSlider.method_2(true);
+			_previewSlider.MouseDown += PreviewSlider_MouseDown;
+			_previewSlider.MouseUp += PreviewSlider_MouseUp;
 			AutoScaleDimensions = new SizeF(6f, 13f);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(590, 520);
-			Controls.Add(MainGroupBox);
-			Controls.Add(ChartGroupBox);
-			Controls.Add(AudioGroupBox);
+			Controls.Add(_mainGroupBox);
+			Controls.Add(_chartGroupBox);
+			Controls.Add(_audioGroupBox);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
 			MaximizeBox = false;
 			MinimizeBox = false;
 			Name = "SongData";
 			Text = "Generate Song Data";
-			AudioGroupBox.ResumeLayout(false);
-			AudioGroupBox.PerformLayout();
-			ChartGroupBox.ResumeLayout(false);
-			ChartGroupBox.PerformLayout();
-			groupBox7.ResumeLayout(false);
-			groupBox2.ResumeLayout(false);
-			groupBox8.ResumeLayout(false);
-			groupBox1.ResumeLayout(false);
-			groupBox5.ResumeLayout(false);
-			groupBox4.ResumeLayout(false);
-			groupBox6.ResumeLayout(false);
-			groupBox3.ResumeLayout(false);
-			MainGroupBox.ResumeLayout(false);
-			MainGroupBox.PerformLayout();
+			_audioGroupBox.ResumeLayout(false);
+			_audioGroupBox.PerformLayout();
+			_chartGroupBox.ResumeLayout(false);
+			_chartGroupBox.PerformLayout();
+			_groupBox7.ResumeLayout(false);
+			_groupBox2.ResumeLayout(false);
+			_groupBox8.ResumeLayout(false);
+			_groupBox1.ResumeLayout(false);
+			_groupBox5.ResumeLayout(false);
+			_groupBox4.ResumeLayout(false);
+			_groupBox6.ResumeLayout(false);
+			_groupBox3.ResumeLayout(false);
+			_mainGroupBox.ResumeLayout(false);
+			_mainGroupBox.PerformLayout();
 			ResumeLayout(false);
 			FormClosing += SongData_FormClosing;
 		}
 
-		public SongData(GH3Songlist gh3Songlist_1)
+		public SongData(Gh3Songlist gh3Songlist1)
 		{
 			InitializeComponent();
-			Control arg_26_0 = Audio_CheckBox;
-			Chart_CheckBox.Enabled = false;
-			arg_26_0.Enabled = false;
-			bool_1 = true;
-			bool_0 = true;
+			Control arg260 = _audioCheckBox;
+			_chartCheckBox.Enabled = false;
+			arg260.Enabled = false;
+			Bool1 = true;
+			Bool0 = true;
 			EnableAudioButtons();
-			gh3Songlist_0 = gh3Songlist_1;
-			timer_0 = new Timer();
-			timer_0.Interval = 30;
-			timer_0.Tick += timer_0_Tick;
+			_gh3Songlist0 = gh3Songlist1;
+			_timer0 = new Timer();
+			_timer0.Interval = 30;
+			_timer0.Tick += timer_0_Tick;
 		}
 
-        public SongData(GH3Songlist gh3Songlist_1, bool forceRB3)
+        public SongData(Gh3Songlist gh3Songlist1, bool forceRb3)
         {
-            this.forceRB3 = forceRB3;
+            this._forceRb3 = forceRb3;
             InitializeComponent();
-            Control arg_26_0 = Audio_CheckBox;
-            Chart_CheckBox.Enabled = false;
-            arg_26_0.Enabled = false;
-            bool_1 = true;
-            bool_0 = true;
+            Control arg260 = _audioCheckBox;
+            _chartCheckBox.Enabled = false;
+            arg260.Enabled = false;
+            Bool1 = true;
+            Bool0 = true;
             EnableAudioButtons();
-            gh3Songlist_0 = gh3Songlist_1;
-            timer_0 = new Timer();
-            timer_0.Interval = 30;
-            timer_0.Tick += timer_0_Tick;
+            _gh3Songlist0 = gh3Songlist1;
+            _timer0 = new Timer();
+            _timer0.Interval = 30;
+            _timer0.Tick += timer_0_Tick;
         }
 
-        public SongData(string string_0, bool bool_6, bool bool_7)
+        public SongData(string string0, bool bool6, bool bool7)
 		{
 			InitializeComponent();
-			SongNameTxt.Text = string_0;
-			bool_2 = true;
-			SongNameTxt.Enabled = false;
-			timer_0 = new Timer();
-			timer_0.Interval = 30;
-			timer_0.Tick += timer_0_Tick;
-			var arg_71_0 = Audio_CheckBox;
-			bool_0 = bool_6;
-			arg_71_0.Checked = bool_6;
-			var arg_86_0 = Chart_CheckBox;
-			bool_1 = bool_7;
-			arg_86_0.Checked = bool_7;
+			_songNameTxt.Text = string0;
+			_bool2 = true;
+			_songNameTxt.Enabled = false;
+			_timer0 = new Timer();
+			_timer0.Interval = 30;
+			_timer0.Tick += timer_0_Tick;
+			var arg710 = _audioCheckBox;
+			Bool0 = bool6;
+			arg710.Checked = bool6;
+			var arg860 = _chartCheckBox;
+			Bool1 = bool7;
+			arg860.Checked = bool7;
 			EnableAudioButtons();
 		}
 
-		public SongData(string string_0, QBCParser class362_1, zzQbSongObject class323_1, string[] string_1)
+		public SongData(string string0, QbcParser class3621, ZzQbSongObject class3231, string[] string1)
 		{
 			InitializeComponent();
-			SongNameTxt.Text = string_0;
-			bool_2 = true;
-			qbcParser = class362_1;
+			_songNameTxt.Text = string0;
+			_bool2 = true;
+			_qbcParser = class3621;
 			method_6();
 			method_4("No Track");
 			method_5("No Track");
 			method_8(0);
-			foreach (var current in qbcParser.noteList.Keys)
+			foreach (var current in _qbcParser.NoteList.Keys)
 			{
 				method_4(current);
 			}
-			if (qbcParser.class228_2.Count != 0)
+			if (_qbcParser.Class2282.Count != 0)
 			{
 				method_5("faceoffp1");
 			}
-			if (qbcParser.class228_3.Count != 0)
+			if (_qbcParser.Class2283.Count != 0)
 			{
 				method_5("faceoffp2");
 			}
-			if (qbcParser.bpmList.Count != 0)
+			if (_qbcParser.BpmList.Count != 0)
 			{
 				method_5("bossbattlep1");
 			}
-			if (qbcParser.class228_5.Count != 0)
+			if (_qbcParser.Class2285.Count != 0)
 			{
 				method_5("bossbattlep2");
 			}
 			method_7();
-			if (class323_1 != null)
+			if (class3231 != null)
 			{
-				class323_0 = class323_1;
+				_class3230 = class3231;
 				return;
 			}
-			if (string_1.Length == 1)
+			if (string1.Length == 1)
 			{
-				SingleAudioBtn.Checked = true;
-				GuitarAudioTxt.Text = string_1[0];
+				_singleAudioBtn.Checked = true;
+				_guitarAudioTxt.Text = string1[0];
 			}
 			else
 			{
@@ -1033,11 +1033,11 @@ namespace ns17
 				string text4 = null;
 				string text5 = null;
 				string text6 = null;
-				for (var i = 0; i < string_1.Length; i++)
+				for (var i = 0; i < string1.Length; i++)
 				{
-					var text7 = string_1[i];
+					var text7 = string1[i];
 					var text8 = KeyGenerator.GetFileName(text7).ToLower();
-					if (string_1.Length > 4 && text8.Contains("coop"))
+					if (string1.Length > 4 && text8.Contains("coop"))
 					{
 						if (text5 == null && (text8.Contains("rhythm") || text8.Contains("bass")))
 						{
@@ -1075,257 +1075,257 @@ namespace ns17
 					{
 						if (text4 != null && text5 != null && text6 != null)
 						{
-							CoopAudioBtn.Checked = true;
-							GuitarCoopTxt.Text = text4;
-							RhythmCoopTxt.Text = text5;
-							BandCoopTxt.Text = text6;
+							_coopAudioBtn.Checked = true;
+							_guitarCoopTxt.Text = text4;
+							_rhythmCoopTxt.Text = text5;
+							_bandCoopTxt.Text = text6;
 						}
 						else
 						{
-							MultiAudioBtn.Checked = true;
+							_multiAudioBtn.Checked = true;
 						}
-						RhythmAudioTxt.Text = text2;
+						_rhythmAudioTxt.Text = text2;
 					}
 					else
 					{
-						DualAudioBtn.Checked = true;
+						_dualAudioBtn.Checked = true;
 					}
-					BandAudioTxt.Text = text3;
+					_bandAudioTxt.Text = text3;
 				}
 				else
 				{
-					SingleAudioBtn.Checked = true;
+					_singleAudioBtn.Checked = true;
 				}
-				GuitarAudioTxt.Text = text;
+				_guitarAudioTxt.Text = text;
 			}
-			PreviewSlider.method_18(Convert.ToInt32(AudioManager.getAudioStream(GuitarAudioTxt.Text).vmethod_1().timeSpan_0.TotalSeconds));
-			PreviewSlider.method_14(PreviewSlider.method_17() / 2);
-			if (GuitarAudioTxt.Text == "" || (!SingleAudioBtn.Checked && (BandAudioTxt.Text == "" || !DualAudioBtn.Checked) && (RhythmAudioTxt.Text == "" || !MultiAudioBtn.Checked) && (GuitarCoopTxt.Text == "" || RhythmCoopTxt.Text == "" || BandCoopTxt.Text == "" || !CoopAudioBtn.Checked)))
+			_previewSlider.method_18(Convert.ToInt32(AudioManager.GetAudioStream(_guitarAudioTxt.Text).vmethod_1().TimeSpan0.TotalSeconds));
+			_previewSlider.method_14(_previewSlider.method_17() / 2);
+			if (_guitarAudioTxt.Text == "" || (!_singleAudioBtn.Checked && (_bandAudioTxt.Text == "" || !_dualAudioBtn.Checked) && (_rhythmAudioTxt.Text == "" || !_multiAudioBtn.Checked) && (_guitarCoopTxt.Text == "" || _rhythmCoopTxt.Text == "" || _bandCoopTxt.Text == "" || !_coopAudioBtn.Checked)))
 			{
 				throw new Exception("File names did not follow format!");
 			}
 		}
 
-		public Class248 method_0(string string_0)
+		public Class248 method_0(string string0)
 		{
-			if (class323_0 != null)
+			if (_class3230 != null)
 			{
-				class323_0.method_0(SongNameTxt.Text);
-				return new Class248(class323_0, GuitarAudioTxt.Text.Replace(".dat.xen", ".fsb.xen"), string_0);
+				_class3230.method_0(_songNameTxt.Text);
+				return new Class248(_class3230, _guitarAudioTxt.Text.Replace(".dat.xen", ".fsb.xen"), string0);
 			}
 			string[] string_;
-			if (SingleAudioBtn.Checked)
+			if (_singleAudioBtn.Checked)
 			{
 				string_ = new[]
 				{
-					GuitarAudioTxt.Text
+					_guitarAudioTxt.Text
 				};
 			}
-			else if (DualAudioBtn.Checked)
+			else if (_dualAudioBtn.Checked)
 			{
 				string_ = new[]
 				{
-					BandAudioTxt.Text,
-					GuitarAudioTxt.Text
+					_bandAudioTxt.Text,
+					_guitarAudioTxt.Text
 				};
 			}
-			else if (MultiAudioBtn.Checked)
+			else if (_multiAudioBtn.Checked)
 			{
 				string_ = new[]
 				{
-					BandAudioTxt.Text,
-					GuitarAudioTxt.Text,
-					RhythmAudioTxt.Text
+					_bandAudioTxt.Text,
+					_guitarAudioTxt.Text,
+					_rhythmAudioTxt.Text
 				};
 			}
 			else
 			{
 				string_ = new[]
 				{
-					BandAudioTxt.Text,
-					GuitarAudioTxt.Text,
-					RhythmAudioTxt.Text,
-					BandCoopTxt.Text,
-					GuitarCoopTxt.Text,
-					RhythmCoopTxt.Text
+					_bandAudioTxt.Text,
+					_guitarAudioTxt.Text,
+					_rhythmAudioTxt.Text,
+					_bandCoopTxt.Text,
+					_guitarCoopTxt.Text,
+					_rhythmCoopTxt.Text
 				};
 			}
-			return new Class248(SongNameTxt.Text, string_, new TimeSpan(0, 0, PreviewSlider.method_13()), new TimeSpan(0, 0, PreviewSlider.method_13() + Math.Min(PreviewSlider.method_17() - PreviewSlider.method_13(), 20)), string_0);
+			return new Class248(_songNameTxt.Text, string_, new TimeSpan(0, 0, _previewSlider.method_13()), new TimeSpan(0, 0, _previewSlider.method_13() + Math.Min(_previewSlider.method_17() - _previewSlider.method_13(), 20)), string0);
 		}
 
-		public Class250 method_1(zzPakNode2 class318_0, string string_0)
+		public Class250 method_1(ZzPakNode2 class3180, string string0)
 		{
 			var dictionary = new Dictionary<string, Track<int, NotesAtOffset>>();
-			if (!EasyGuitarBox.SelectedItem.Equals("No Track"))
+			if (!_easyGuitarBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("easy", qbcParser.noteList[(string)EasyGuitarBox.SelectedItem]);
+				dictionary.Add("easy", _qbcParser.NoteList[(string)_easyGuitarBox.SelectedItem]);
 			}
-			if (!EasyRhythmBox.SelectedItem.Equals("No Track"))
+			if (!_easyRhythmBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythm_easy", qbcParser.noteList[(string)EasyRhythmBox.SelectedItem]);
+				dictionary.Add("rhythm_easy", _qbcParser.NoteList[(string)_easyRhythmBox.SelectedItem]);
 			}
-			if (!EasyCoopBox.SelectedItem.Equals("No Track"))
+			if (!_easyCoopBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("guitarcoop_easy", qbcParser.noteList[(string)EasyCoopBox.SelectedItem]);
+				dictionary.Add("guitarcoop_easy", _qbcParser.NoteList[(string)_easyCoopBox.SelectedItem]);
 			}
-			if (!EasyCoop2Box.SelectedItem.Equals("No Track"))
+			if (!_easyCoop2Box.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythmcoop_easy", qbcParser.noteList[(string)EasyCoop2Box.SelectedItem]);
+				dictionary.Add("rhythmcoop_easy", _qbcParser.NoteList[(string)_easyCoop2Box.SelectedItem]);
 			}
-			if (!MediumGuitarBox.SelectedItem.Equals("No Track"))
+			if (!_mediumGuitarBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("medium", qbcParser.noteList[(string)MediumGuitarBox.SelectedItem]);
+				dictionary.Add("medium", _qbcParser.NoteList[(string)_mediumGuitarBox.SelectedItem]);
 			}
-			if (!MediumRhythmBox.SelectedItem.Equals("No Track"))
+			if (!_mediumRhythmBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythm_medium", qbcParser.noteList[(string)MediumRhythmBox.SelectedItem]);
+				dictionary.Add("rhythm_medium", _qbcParser.NoteList[(string)_mediumRhythmBox.SelectedItem]);
 			}
-			if (!MediumCoopBox.SelectedItem.Equals("No Track"))
+			if (!_mediumCoopBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("guitarcoop_medium", qbcParser.noteList[(string)MediumCoopBox.SelectedItem]);
+				dictionary.Add("guitarcoop_medium", _qbcParser.NoteList[(string)_mediumCoopBox.SelectedItem]);
 			}
-			if (!MediumCoop2Box.SelectedItem.Equals("No Track"))
+			if (!_mediumCoop2Box.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythmcoop_medium", qbcParser.noteList[(string)MediumCoop2Box.SelectedItem]);
+				dictionary.Add("rhythmcoop_medium", _qbcParser.NoteList[(string)_mediumCoop2Box.SelectedItem]);
 			}
-			if (!HardGuitarBox.SelectedItem.Equals("No Track"))
+			if (!_hardGuitarBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("hard", qbcParser.noteList[(string)HardGuitarBox.SelectedItem]);
+				dictionary.Add("hard", _qbcParser.NoteList[(string)_hardGuitarBox.SelectedItem]);
 			}
-			if (!HardRhythmBox.SelectedItem.Equals("No Track"))
+			if (!_hardRhythmBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythm_hard", qbcParser.noteList[(string)HardRhythmBox.SelectedItem]);
+				dictionary.Add("rhythm_hard", _qbcParser.NoteList[(string)_hardRhythmBox.SelectedItem]);
 			}
-			if (!HardCoopBox.SelectedItem.Equals("No Track"))
+			if (!_hardCoopBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("guitarcoop_hard", qbcParser.noteList[(string)HardCoopBox.SelectedItem]);
+				dictionary.Add("guitarcoop_hard", _qbcParser.NoteList[(string)_hardCoopBox.SelectedItem]);
 			}
-			if (!HardCoop2Box.SelectedItem.Equals("No Track"))
+			if (!_hardCoop2Box.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythmcoop_hard", qbcParser.noteList[(string)HardCoop2Box.SelectedItem]);
+				dictionary.Add("rhythmcoop_hard", _qbcParser.NoteList[(string)_hardCoop2Box.SelectedItem]);
 			}
-			if (!ExpertGuitarBox.SelectedItem.Equals("No Track"))
+			if (!_expertGuitarBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("expert", qbcParser.noteList[(string)ExpertGuitarBox.SelectedItem]);
+				dictionary.Add("expert", _qbcParser.NoteList[(string)_expertGuitarBox.SelectedItem]);
 			}
-			if (!ExpertRhythmBox.SelectedItem.Equals("No Track"))
+			if (!_expertRhythmBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythm_expert", qbcParser.noteList[(string)ExpertRhythmBox.SelectedItem]);
+				dictionary.Add("rhythm_expert", _qbcParser.NoteList[(string)_expertRhythmBox.SelectedItem]);
 			}
-			if (!ExpertCoopBox.SelectedItem.Equals("No Track"))
+			if (!_expertCoopBox.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("guitarcoop_expert", qbcParser.noteList[(string)ExpertCoopBox.SelectedItem]);
+				dictionary.Add("guitarcoop_expert", _qbcParser.NoteList[(string)_expertCoopBox.SelectedItem]);
 			}
-			if (!ExpertCoop2Box.SelectedItem.Equals("No Track"))
+			if (!_expertCoop2Box.SelectedItem.Equals("No Track"))
 			{
-				dictionary.Add("rhythmcoop_expert", qbcParser.noteList[(string)ExpertCoop2Box.SelectedItem]);
+				dictionary.Add("rhythmcoop_expert", _qbcParser.NoteList[(string)_expertCoop2Box.SelectedItem]);
 			}
-			var class228_ = method_2(FaceOffP1Box);
-			var class228_2 = method_2(FaceOffP2Box);
-			var class228_3 = method_2(BossBattleP1Box);
-			var class228_4 = method_2(BossBattleP2Box);
-			qbcParser.noteList = dictionary;
-			qbcParser.class228_2 = class228_;
-			qbcParser.class228_3 = class228_2;
-			qbcParser.bpmList = class228_3;
-			qbcParser.class228_5 = class228_4;
-			return new Class250(SongNameTxt.Text, qbcParser, class318_0, string_0);
+			var class228 = method_2(_faceOffP1Box);
+			var class2282 = method_2(_faceOffP2Box);
+			var class2283 = method_2(_bossBattleP1Box);
+			var class2284 = method_2(_bossBattleP2Box);
+			_qbcParser.NoteList = dictionary;
+			_qbcParser.Class2282 = class228;
+			_qbcParser.Class2283 = class2282;
+			_qbcParser.BpmList = class2283;
+			_qbcParser.Class2285 = class2284;
+			return new Class250(_songNameTxt.Text, _qbcParser, class3180, string0);
 		}
 
-		private Track<int, int> method_2(ComboBox comboBox_0)
+		private Track<int, int> method_2(ComboBox comboBox0)
 		{
-			if (comboBox_0.SelectedItem.Equals("faceoffp1"))
+			if (comboBox0.SelectedItem.Equals("faceoffp1"))
 			{
-				return qbcParser.class228_2;
+				return _qbcParser.Class2282;
 			}
-			if (comboBox_0.SelectedItem.Equals("faceoffp2"))
+			if (comboBox0.SelectedItem.Equals("faceoffp2"))
 			{
-				return qbcParser.class228_3;
+				return _qbcParser.Class2283;
 			}
-			if (comboBox_0.SelectedItem.Equals("bossbattlep1"))
+			if (comboBox0.SelectedItem.Equals("bossbattlep1"))
 			{
-				return qbcParser.bpmList;
+				return _qbcParser.BpmList;
 			}
-			if (comboBox_0.SelectedItem.Equals("bossbattlep2"))
+			if (comboBox0.SelectedItem.Equals("bossbattlep2"))
 			{
-				return qbcParser.class228_5;
+				return _qbcParser.Class2285;
 			}
 			return new Track<int, int>();
 		}
 
 		private void EnableAudioButtons()
 		{
-			if (bool_0)
+			if (Bool0)
 			{
-				bool_3 = (GuitarAudioTxt.Text != "" && (SingleAudioBtn.Checked || (BandAudioTxt.Text != "" && (DualAudioBtn.Checked || (RhythmAudioTxt.Text != "" && MultiAudioBtn.Checked) || (GuitarCoopTxt.Text != "" && RhythmCoopTxt.Text != "" && BandCoopTxt.Text != "" && CoopAudioBtn.Checked)))));
+				_bool3 = (_guitarAudioTxt.Text != "" && (_singleAudioBtn.Checked || (_bandAudioTxt.Text != "" && (_dualAudioBtn.Checked || (_rhythmAudioTxt.Text != "" && _multiAudioBtn.Checked) || (_guitarCoopTxt.Text != "" && _rhythmCoopTxt.Text != "" && _bandCoopTxt.Text != "" && _coopAudioBtn.Checked)))));
 			}
-			ApplyBtn.Enabled = (((SongNameTxt.Enabled && bool_2) || !SongNameTxt.Enabled) && ((bool_0 && bool_3) || !bool_0) && ((bool_1 && bool_4) || !bool_1));
-			if (!SongNameTxt.Enabled && !bool_0 && !bool_1)
+			_applyBtn.Enabled = (((_songNameTxt.Enabled && _bool2) || !_songNameTxt.Enabled) && ((Bool0 && _bool3) || !Bool0) && ((Bool1 && _bool4) || !Bool1));
+			if (!_songNameTxt.Enabled && !Bool0 && !Bool1)
 			{
-				ApplyBtn.Enabled = false;
+				_applyBtn.Enabled = false;
 			}
 		}
 
 		private void Audio_CheckBox_CheckedChanged(object sender, EventArgs e)
 		{
-			AudioGroupBox.Enabled = (bool_0 = Audio_CheckBox.Checked);
+			_audioGroupBox.Enabled = (Bool0 = _audioCheckBox.Checked);
 		}
 
 		private void Chart_CheckBox_CheckedChanged(object sender, EventArgs e)
 		{
-			ChartGroupBox.Enabled = (bool_1 = Chart_CheckBox.Checked);
+			_chartGroupBox.Enabled = (Bool1 = _chartCheckBox.Checked);
 		}
 
-		private void method_4(string string_0)
+		private void method_4(string string0)
 		{
-			EasyGuitarBox.Items.Add(string_0);
-			EasyRhythmBox.Items.Add(string_0);
-			EasyCoopBox.Items.Add(string_0);
-			EasyCoop2Box.Items.Add(string_0);
-			MediumGuitarBox.Items.Add(string_0);
-			MediumRhythmBox.Items.Add(string_0);
-			MediumCoopBox.Items.Add(string_0);
-			MediumCoop2Box.Items.Add(string_0);
-			HardGuitarBox.Items.Add(string_0);
-			HardRhythmBox.Items.Add(string_0);
-			HardCoopBox.Items.Add(string_0);
-			HardCoop2Box.Items.Add(string_0);
-			ExpertGuitarBox.Items.Add(string_0);
-			ExpertRhythmBox.Items.Add(string_0);
-			ExpertCoopBox.Items.Add(string_0);
-			ExpertCoop2Box.Items.Add(string_0);
+			_easyGuitarBox.Items.Add(string0);
+			_easyRhythmBox.Items.Add(string0);
+			_easyCoopBox.Items.Add(string0);
+			_easyCoop2Box.Items.Add(string0);
+			_mediumGuitarBox.Items.Add(string0);
+			_mediumRhythmBox.Items.Add(string0);
+			_mediumCoopBox.Items.Add(string0);
+			_mediumCoop2Box.Items.Add(string0);
+			_hardGuitarBox.Items.Add(string0);
+			_hardRhythmBox.Items.Add(string0);
+			_hardCoopBox.Items.Add(string0);
+			_hardCoop2Box.Items.Add(string0);
+			_expertGuitarBox.Items.Add(string0);
+			_expertRhythmBox.Items.Add(string0);
+			_expertCoopBox.Items.Add(string0);
+			_expertCoop2Box.Items.Add(string0);
 		}
 
-		private void method_5(string string_0)
+		private void method_5(string string0)
 		{
-			FaceOffP1Box.Items.Add(string_0);
-			FaceOffP2Box.Items.Add(string_0);
-			BossBattleP1Box.Items.Add(string_0);
-			BossBattleP2Box.Items.Add(string_0);
+			_faceOffP1Box.Items.Add(string0);
+			_faceOffP2Box.Items.Add(string0);
+			_bossBattleP1Box.Items.Add(string0);
+			_bossBattleP2Box.Items.Add(string0);
 		}
 
 		private void method_6()
 		{
-			EasyGuitarBox.Items.Clear();
-			EasyRhythmBox.Items.Clear();
-			EasyCoopBox.Items.Clear();
-			EasyCoop2Box.Items.Clear();
-			MediumGuitarBox.Items.Clear();
-			MediumRhythmBox.Items.Clear();
-			MediumCoopBox.Items.Clear();
-			MediumCoop2Box.Items.Clear();
-			HardGuitarBox.Items.Clear();
-			HardRhythmBox.Items.Clear();
-			HardCoopBox.Items.Clear();
-			HardCoop2Box.Items.Clear();
-			ExpertGuitarBox.Items.Clear();
-			ExpertRhythmBox.Items.Clear();
-			ExpertCoopBox.Items.Clear();
-			ExpertCoop2Box.Items.Clear();
-			FaceOffP1Box.Items.Clear();
-			FaceOffP2Box.Items.Clear();
-			BossBattleP1Box.Items.Clear();
-			BossBattleP2Box.Items.Clear();
+			_easyGuitarBox.Items.Clear();
+			_easyRhythmBox.Items.Clear();
+			_easyCoopBox.Items.Clear();
+			_easyCoop2Box.Items.Clear();
+			_mediumGuitarBox.Items.Clear();
+			_mediumRhythmBox.Items.Clear();
+			_mediumCoopBox.Items.Clear();
+			_mediumCoop2Box.Items.Clear();
+			_hardGuitarBox.Items.Clear();
+			_hardRhythmBox.Items.Clear();
+			_hardCoopBox.Items.Clear();
+			_hardCoop2Box.Items.Clear();
+			_expertGuitarBox.Items.Clear();
+			_expertRhythmBox.Items.Clear();
+			_expertCoopBox.Items.Clear();
+			_expertCoop2Box.Items.Clear();
+			_faceOffP1Box.Items.Clear();
+			_faceOffP2Box.Items.Clear();
+			_bossBattleP1Box.Items.Clear();
+			_bossBattleP2Box.Items.Clear();
 		}
 
 		private void AutoConfigBtn_Click(object sender, EventArgs e)
@@ -1335,81 +1335,81 @@ namespace ns17
 
 		private void method_7()
 		{
-			ExpertGuitarBox.SelectedItem = (HardGuitarBox.SelectedItem = (MediumGuitarBox.SelectedItem = (EasyGuitarBox.SelectedItem = "easy")));
-			ExpertGuitarBox.SelectedItem = (HardGuitarBox.SelectedItem = (MediumGuitarBox.SelectedItem = (EasyGuitarBox.SelectedItem = "medium")));
-			ExpertGuitarBox.SelectedItem = (HardGuitarBox.SelectedItem = (MediumGuitarBox.SelectedItem = (EasyGuitarBox.SelectedItem = "hard")));
-			ExpertGuitarBox.SelectedItem = (HardGuitarBox.SelectedItem = (MediumGuitarBox.SelectedItem = (EasyGuitarBox.SelectedItem = "expert")));
-			HardGuitarBox.SelectedItem = (MediumGuitarBox.SelectedItem = (EasyGuitarBox.SelectedItem = "hard"));
-			MediumGuitarBox.SelectedItem = (EasyGuitarBox.SelectedItem = "medium");
-			EasyGuitarBox.SelectedItem = "easy";
-			ExpertRhythmBox.SelectedItem = (HardRhythmBox.SelectedItem = (MediumRhythmBox.SelectedItem = (EasyRhythmBox.SelectedItem = "rhythm_easy")));
-			ExpertRhythmBox.SelectedItem = (HardRhythmBox.SelectedItem = (MediumRhythmBox.SelectedItem = (EasyRhythmBox.SelectedItem = "rhythm_medium")));
-			ExpertRhythmBox.SelectedItem = (HardRhythmBox.SelectedItem = (MediumRhythmBox.SelectedItem = (EasyRhythmBox.SelectedItem = "rhythm_hard")));
-			ExpertRhythmBox.SelectedItem = (HardRhythmBox.SelectedItem = (MediumRhythmBox.SelectedItem = (EasyRhythmBox.SelectedItem = "rhythm_expert")));
-			HardRhythmBox.SelectedItem = (MediumRhythmBox.SelectedItem = (EasyRhythmBox.SelectedItem = "rhythm_hard"));
-			MediumRhythmBox.SelectedItem = (EasyRhythmBox.SelectedItem = "rhythm_medium");
-			EasyRhythmBox.SelectedItem = "rhythm_easy";
-			ExpertCoopBox.SelectedItem = (HardCoopBox.SelectedItem = (MediumCoopBox.SelectedItem = (EasyCoopBox.SelectedItem = "guitarcoop_easy")));
-			ExpertCoopBox.SelectedItem = (HardCoopBox.SelectedItem = (MediumCoopBox.SelectedItem = (EasyCoopBox.SelectedItem = "guitarcoop_medium")));
-			ExpertCoopBox.SelectedItem = (HardCoopBox.SelectedItem = (MediumCoopBox.SelectedItem = (EasyCoopBox.SelectedItem = "guitarcoop_hard")));
-			ExpertCoopBox.SelectedItem = (HardCoopBox.SelectedItem = (MediumCoopBox.SelectedItem = (EasyCoopBox.SelectedItem = "guitarcoop_expert")));
-			HardCoopBox.SelectedItem = (MediumCoopBox.SelectedItem = (EasyCoopBox.SelectedItem = "guitarcoop_hard"));
-			MediumCoopBox.SelectedItem = (EasyCoopBox.SelectedItem = "guitarcoop_medium");
-			EasyCoopBox.SelectedItem = "guitarcoop_easy";
-			ExpertCoop2Box.SelectedItem = (HardCoop2Box.SelectedItem = (MediumCoop2Box.SelectedItem = (EasyCoop2Box.SelectedItem = "rhythmcoop_easy")));
-			ExpertCoop2Box.SelectedItem = (HardCoop2Box.SelectedItem = (MediumCoop2Box.SelectedItem = (EasyCoop2Box.SelectedItem = "rhythmcoop_medium")));
-			ExpertCoop2Box.SelectedItem = (HardCoop2Box.SelectedItem = (MediumCoop2Box.SelectedItem = (EasyCoop2Box.SelectedItem = "rhythmcoop_hard")));
-			ExpertCoop2Box.SelectedItem = (HardCoop2Box.SelectedItem = (MediumCoop2Box.SelectedItem = (EasyCoop2Box.SelectedItem = "rhythmcoop_expert")));
-			HardCoop2Box.SelectedItem = (MediumCoop2Box.SelectedItem = (EasyCoop2Box.SelectedItem = "rhythmcoop_hard"));
-			MediumCoop2Box.SelectedItem = (EasyCoop2Box.SelectedItem = "rhythmcoop_medium");
-			EasyCoop2Box.SelectedItem = "rhythmcoop_easy";
-			FaceOffP1Box.SelectedItem = "faceoffp1";
-			FaceOffP2Box.SelectedItem = "faceoffp2";
-			BossBattleP1Box.SelectedItem = "bossbattlep1";
-			BossBattleP2Box.SelectedItem = "bossbattlep2";
+			_expertGuitarBox.SelectedItem = (_hardGuitarBox.SelectedItem = (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "easy")));
+			_expertGuitarBox.SelectedItem = (_hardGuitarBox.SelectedItem = (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "medium")));
+			_expertGuitarBox.SelectedItem = (_hardGuitarBox.SelectedItem = (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "hard")));
+			_expertGuitarBox.SelectedItem = (_hardGuitarBox.SelectedItem = (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "expert")));
+			_hardGuitarBox.SelectedItem = (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "hard"));
+			_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "medium");
+			_easyGuitarBox.SelectedItem = "easy";
+			_expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem = (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythm_easy")));
+			_expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem = (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythm_medium")));
+			_expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem = (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythm_hard")));
+			_expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem = (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythm_expert")));
+			_hardRhythmBox.SelectedItem = (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythm_hard"));
+			_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythm_medium");
+			_easyRhythmBox.SelectedItem = "rhythm_easy";
+			_expertCoopBox.SelectedItem = (_hardCoopBox.SelectedItem = (_mediumCoopBox.SelectedItem = (_easyCoopBox.SelectedItem = "guitarcoop_easy")));
+			_expertCoopBox.SelectedItem = (_hardCoopBox.SelectedItem = (_mediumCoopBox.SelectedItem = (_easyCoopBox.SelectedItem = "guitarcoop_medium")));
+			_expertCoopBox.SelectedItem = (_hardCoopBox.SelectedItem = (_mediumCoopBox.SelectedItem = (_easyCoopBox.SelectedItem = "guitarcoop_hard")));
+			_expertCoopBox.SelectedItem = (_hardCoopBox.SelectedItem = (_mediumCoopBox.SelectedItem = (_easyCoopBox.SelectedItem = "guitarcoop_expert")));
+			_hardCoopBox.SelectedItem = (_mediumCoopBox.SelectedItem = (_easyCoopBox.SelectedItem = "guitarcoop_hard"));
+			_mediumCoopBox.SelectedItem = (_easyCoopBox.SelectedItem = "guitarcoop_medium");
+			_easyCoopBox.SelectedItem = "guitarcoop_easy";
+			_expertCoop2Box.SelectedItem = (_hardCoop2Box.SelectedItem = (_mediumCoop2Box.SelectedItem = (_easyCoop2Box.SelectedItem = "rhythmcoop_easy")));
+			_expertCoop2Box.SelectedItem = (_hardCoop2Box.SelectedItem = (_mediumCoop2Box.SelectedItem = (_easyCoop2Box.SelectedItem = "rhythmcoop_medium")));
+			_expertCoop2Box.SelectedItem = (_hardCoop2Box.SelectedItem = (_mediumCoop2Box.SelectedItem = (_easyCoop2Box.SelectedItem = "rhythmcoop_hard")));
+			_expertCoop2Box.SelectedItem = (_hardCoop2Box.SelectedItem = (_mediumCoop2Box.SelectedItem = (_easyCoop2Box.SelectedItem = "rhythmcoop_expert")));
+			_hardCoop2Box.SelectedItem = (_mediumCoop2Box.SelectedItem = (_easyCoop2Box.SelectedItem = "rhythmcoop_hard"));
+			_mediumCoop2Box.SelectedItem = (_easyCoop2Box.SelectedItem = "rhythmcoop_medium");
+			_easyCoop2Box.SelectedItem = "rhythmcoop_easy";
+			_faceOffP1Box.SelectedItem = "faceoffp1";
+			_faceOffP2Box.SelectedItem = "faceoffp2";
+			_bossBattleP1Box.SelectedItem = "bossbattlep1";
+			_bossBattleP2Box.SelectedItem = "bossbattlep2";
 		}
 
-		private void method_8(int int_0)
+		private void method_8(int int0)
 		{
-			ListControl arg_12F_0 = EasyGuitarBox;
-			ListControl arg_128_0 = EasyRhythmBox;
-			ListControl arg_11E_0 = EasyCoopBox;
-			ListControl arg_114_0 = EasyCoop2Box;
-			ListControl arg_10A_0 = MediumGuitarBox;
-			ListControl arg_100_0 = MediumRhythmBox;
-			ListControl arg_F6_0 = MediumCoopBox;
-			ListControl arg_EC_0 = MediumCoop2Box;
-			ListControl arg_E2_0 = HardGuitarBox;
-			ListControl arg_D8_0 = HardRhythmBox;
-			ListControl arg_CE_0 = HardCoopBox;
-			ListControl arg_C4_0 = HardCoop2Box;
-			ListControl arg_BA_0 = ExpertGuitarBox;
-			ListControl arg_B0_0 = ExpertRhythmBox;
-			ListControl arg_A6_0 = ExpertCoopBox;
-			ListControl arg_9C_0 = ExpertCoop2Box;
-			ListControl arg_93_0 = FaceOffP1Box;
-			ListControl arg_8B_0 = FaceOffP2Box;
-			ListControl arg_83_0 = BossBattleP1Box;
-			BossBattleP2Box.SelectedIndex = int_0;
-			arg_83_0.SelectedIndex = int_0;
-			arg_8B_0.SelectedIndex = int_0;
-			arg_93_0.SelectedIndex = int_0;
-			arg_9C_0.SelectedIndex = int_0;
-			arg_A6_0.SelectedIndex = int_0;
-			arg_B0_0.SelectedIndex = int_0;
-			arg_BA_0.SelectedIndex = int_0;
-			arg_C4_0.SelectedIndex = int_0;
-			arg_CE_0.SelectedIndex = int_0;
-			arg_D8_0.SelectedIndex = int_0;
-			arg_E2_0.SelectedIndex = int_0;
-			arg_EC_0.SelectedIndex = int_0;
-			arg_F6_0.SelectedIndex = int_0;
-			arg_100_0.SelectedIndex = int_0;
-			arg_10A_0.SelectedIndex = int_0;
-			arg_114_0.SelectedIndex = int_0;
-			arg_11E_0.SelectedIndex = int_0;
-			arg_128_0.SelectedIndex = int_0;
-			arg_12F_0.SelectedIndex = int_0;
+			ListControl arg12F0 = _easyGuitarBox;
+			ListControl arg1280 = _easyRhythmBox;
+			ListControl arg11E0 = _easyCoopBox;
+			ListControl arg1140 = _easyCoop2Box;
+			ListControl arg10A0 = _mediumGuitarBox;
+			ListControl arg1000 = _mediumRhythmBox;
+			ListControl argF60 = _mediumCoopBox;
+			ListControl argEc0 = _mediumCoop2Box;
+			ListControl argE20 = _hardGuitarBox;
+			ListControl argD80 = _hardRhythmBox;
+			ListControl argCe0 = _hardCoopBox;
+			ListControl argC40 = _hardCoop2Box;
+			ListControl argBa0 = _expertGuitarBox;
+			ListControl argB00 = _expertRhythmBox;
+			ListControl argA60 = _expertCoopBox;
+			ListControl arg_9C0 = _expertCoop2Box;
+			ListControl arg930 = _faceOffP1Box;
+			ListControl arg_8B0 = _faceOffP2Box;
+			ListControl arg830 = _bossBattleP1Box;
+			_bossBattleP2Box.SelectedIndex = int0;
+			arg830.SelectedIndex = int0;
+			arg_8B0.SelectedIndex = int0;
+			arg930.SelectedIndex = int0;
+			arg_9C0.SelectedIndex = int0;
+			argA60.SelectedIndex = int0;
+			argB00.SelectedIndex = int0;
+			argBa0.SelectedIndex = int0;
+			argC40.SelectedIndex = int0;
+			argCe0.SelectedIndex = int0;
+			argD80.SelectedIndex = int0;
+			argE20.SelectedIndex = int0;
+			argEc0.SelectedIndex = int0;
+			argF60.SelectedIndex = int0;
+			arg1000.SelectedIndex = int0;
+			arg10A0.SelectedIndex = int0;
+			arg1140.SelectedIndex = int0;
+			arg11E0.SelectedIndex = int0;
+			arg1280.SelectedIndex = int0;
+			arg12F0.SelectedIndex = int0;
 		}
 
 		private void ResetBtn_Click(object sender, EventArgs e)
@@ -1422,70 +1422,70 @@ namespace ns17
 			string fileName;
 			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the game track file.", "Any Supported Game Track Formats|*.qbc;*.dbc;*_song.pak.xen;*.mid;*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc|GH3 Game Track file|*_song.pak.xen|GH standard Midi file|*.mid|dB standard or GH3CP Chart file|*.chart", true)).Equals(""))
 			{
-				bool_4 = false;
+				_bool4 = false;
 				try
 				{
                     //Configures paks
                     if (fileName.EndsWith("_song.pak.xen"))
 					{
 						var text2 = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
-						using (var @class = new zzPakNode2(fileName, false))
+						using (var @class = new ZzPakNode2(fileName, false))
 						{
 							if (!@class.method_6("songs\\" + text2 + ".mid.qb"))
 							{
 								throw new Exception("MID.QB song file not found.");
 							}
-							qbcParser = new QBCParser(text2, @class.zzGetNode1("songs\\" + text2 + ".mid.qb"));
+							_qbcParser = new QbcParser(text2, @class.ZzGetNode1("songs\\" + text2 + ".mid.qb"));
 							goto IL_F5;
 						}
 					}
                     //Configures qbc
 					if (fileName.EndsWith(".qbc"))
 					{
-						qbcParser = new QBCParser(fileName);
+						_qbcParser = new QbcParser(fileName);
 					}
                     //Configures midi
                     else if (fileName.EndsWith(".mid"))
 					{
-                        qbcParser = Midi2Chart.LoadMidiSong(fileName, forceRB3);
+                        _qbcParser = Midi2Chart.LoadMidiSong(fileName, _forceRb3);
 					}
                     //Configures charts
                     else
                     {
                         //Crashes in this
-                        qbcParser = new ChartParser(fileName).ConvertToQBC();
+                        _qbcParser = new ChartParser(fileName).ConvertToQbc();
 					}
                     IL_F5:
 					method_6();
 					method_4("No Track");
 					method_5("No Track");
 					method_8(0);
-					Control arg_12B_0 = AutoConfigBtn;
-					ResetBtn.Enabled = true;
-					arg_12B_0.Enabled = true;
-					foreach (var current in qbcParser.noteList.Keys)
+					Control arg12B0 = _autoConfigBtn;
+					_resetBtn.Enabled = true;
+					arg12B0.Enabled = true;
+					foreach (var current in _qbcParser.NoteList.Keys)
 					{
 						method_4(current);
 					}
-					if (qbcParser.class228_2.Count != 0)
+					if (_qbcParser.Class2282.Count != 0)
 					{
 						method_5("faceoffp1");
 					}
-					if (qbcParser.class228_3.Count != 0)
+					if (_qbcParser.Class2283.Count != 0)
 					{
 						method_5("faceoffp2");
 					}
-					if (qbcParser.bpmList.Count != 0)
+					if (_qbcParser.BpmList.Count != 0)
 					{
 						method_5("bossbattlep1");
 					}
-					if (qbcParser.class228_5.Count != 0)
+					if (_qbcParser.Class2285.Count != 0)
 					{
 						method_5("bossbattlep2");
 					}
-					ChartFileTxt.Text = fileName;
-					ChartFileTxt.SelectionStart = ChartFileTxt.TextLength;
-					bool_4 = true;
+					_chartFileTxt.Text = fileName;
+					_chartFileTxt.SelectionStart = _chartFileTxt.TextLength;
+					_bool4 = true;
 					method_7();
 				}
 				catch (Exception ex)
@@ -1498,146 +1498,146 @@ namespace ns17
 
 		private void method_9()
 		{
-			GuitarAudioTxt.Text = (RhythmAudioTxt.Text = (BandAudioTxt.Text = (GuitarCoopTxt.Text = (RhythmCoopTxt.Text = (BandCoopTxt.Text = "")))));
-			PreviewSlider.method_18(1);
-			PreviewSlider.method_14(0);
-			PreviewSlider.Enabled = false;
-			if (Audio != null)
+			_guitarAudioTxt.Text = (_rhythmAudioTxt.Text = (_bandAudioTxt.Text = (_guitarCoopTxt.Text = (_rhythmCoopTxt.Text = (_bandCoopTxt.Text = "")))));
+			_previewSlider.method_18(1);
+			_previewSlider.method_14(0);
+			_previewSlider.Enabled = false;
+			if (_audio != null)
 			{
-				Audio.Dispose();
-				Audio = null;
+				_audio.Dispose();
+				_audio = null;
 			}
 		}
 
 		private void SingleAudioBtn_CheckedChanged(object sender, EventArgs e)
 		{
-			Control arg_73_0 = RhythmAudioBtn;
-			Control arg_6D_0 = RhythmAudioTxt;
-			Control arg_67_0 = BandAudioBtn;
-			Control arg_61_0 = BandAudioTxt;
-			Control arg_5B_0 = GuitarCoopBtn;
-			Control arg_55_0 = GuitarCoopTxt;
-			Control arg_4F_0 = RhythmCoopBtn;
-			Control arg_49_0 = RhythmCoopTxt;
-			Control arg_43_0 = BandCoopBtn;
-			BandCoopTxt.Enabled = false;
-			arg_43_0.Enabled = false;
-			arg_49_0.Enabled = false;
-			arg_4F_0.Enabled = false;
-			arg_55_0.Enabled = false;
-			arg_5B_0.Enabled = false;
-			arg_61_0.Enabled = false;
-			arg_67_0.Enabled = false;
-			arg_6D_0.Enabled = false;
-			arg_73_0.Enabled = false;
+			Control arg730 = _rhythmAudioBtn;
+			Control arg_6D0 = _rhythmAudioTxt;
+			Control arg670 = _bandAudioBtn;
+			Control arg610 = _bandAudioTxt;
+			Control arg_5B0 = _guitarCoopBtn;
+			Control arg550 = _guitarCoopTxt;
+			Control arg_4F0 = _rhythmCoopBtn;
+			Control arg490 = _rhythmCoopTxt;
+			Control arg430 = _bandCoopBtn;
+			_bandCoopTxt.Enabled = false;
+			arg430.Enabled = false;
+			arg490.Enabled = false;
+			arg_4F0.Enabled = false;
+			arg550.Enabled = false;
+			arg_5B0.Enabled = false;
+			arg610.Enabled = false;
+			arg670.Enabled = false;
+			arg_6D0.Enabled = false;
+			arg730.Enabled = false;
 			method_9();
 		}
 
 		private void DualAudioBtn_CheckedChanged(object sender, EventArgs e)
 		{
-			Control arg_13_0 = BandAudioBtn;
-			BandAudioTxt.Enabled = true;
-			arg_13_0.Enabled = true;
-			Control arg_73_0 = RhythmAudioBtn;
-			Control arg_6D_0 = RhythmAudioTxt;
-			Control arg_67_0 = GuitarCoopBtn;
-			Control arg_61_0 = GuitarCoopTxt;
-			Control arg_5B_0 = RhythmCoopBtn;
-			Control arg_55_0 = RhythmCoopTxt;
-			Control arg_4F_0 = BandCoopBtn;
-			BandCoopTxt.Enabled = false;
-			arg_4F_0.Enabled = false;
-			arg_55_0.Enabled = false;
-			arg_5B_0.Enabled = false;
-			arg_61_0.Enabled = false;
-			arg_67_0.Enabled = false;
-			arg_6D_0.Enabled = false;
-			arg_73_0.Enabled = false;
+			Control arg130 = _bandAudioBtn;
+			_bandAudioTxt.Enabled = true;
+			arg130.Enabled = true;
+			Control arg730 = _rhythmAudioBtn;
+			Control arg_6D0 = _rhythmAudioTxt;
+			Control arg670 = _guitarCoopBtn;
+			Control arg610 = _guitarCoopTxt;
+			Control arg_5B0 = _rhythmCoopBtn;
+			Control arg550 = _rhythmCoopTxt;
+			Control arg_4F0 = _bandCoopBtn;
+			_bandCoopTxt.Enabled = false;
+			arg_4F0.Enabled = false;
+			arg550.Enabled = false;
+			arg_5B0.Enabled = false;
+			arg610.Enabled = false;
+			arg670.Enabled = false;
+			arg_6D0.Enabled = false;
+			arg730.Enabled = false;
 			method_9();
 		}
 
 		private void MultiAudioBtn_CheckedChanged(object sender, EventArgs e)
 		{
-			Control arg_2B_0 = RhythmAudioBtn;
-			Control arg_25_0 = RhythmAudioTxt;
-			Control arg_1F_0 = BandAudioBtn;
-			BandAudioTxt.Enabled = true;
-			arg_1F_0.Enabled = true;
-			arg_25_0.Enabled = true;
-			arg_2B_0.Enabled = true;
-			Control arg_73_0 = GuitarCoopBtn;
-			Control arg_6D_0 = GuitarCoopTxt;
-			Control arg_67_0 = RhythmCoopBtn;
-			Control arg_61_0 = RhythmCoopTxt;
-			Control arg_5B_0 = BandCoopBtn;
-			BandCoopTxt.Enabled = false;
-			arg_5B_0.Enabled = false;
-			arg_61_0.Enabled = false;
-			arg_67_0.Enabled = false;
-			arg_6D_0.Enabled = false;
-			arg_73_0.Enabled = false;
+			Control arg_2B0 = _rhythmAudioBtn;
+			Control arg250 = _rhythmAudioTxt;
+			Control arg_1F0 = _bandAudioBtn;
+			_bandAudioTxt.Enabled = true;
+			arg_1F0.Enabled = true;
+			arg250.Enabled = true;
+			arg_2B0.Enabled = true;
+			Control arg730 = _guitarCoopBtn;
+			Control arg_6D0 = _guitarCoopTxt;
+			Control arg670 = _rhythmCoopBtn;
+			Control arg610 = _rhythmCoopTxt;
+			Control arg_5B0 = _bandCoopBtn;
+			_bandCoopTxt.Enabled = false;
+			arg_5B0.Enabled = false;
+			arg610.Enabled = false;
+			arg670.Enabled = false;
+			arg_6D0.Enabled = false;
+			arg730.Enabled = false;
 			method_9();
 		}
 
 		private void CoopAudioBtn_CheckedChanged(object sender, EventArgs e)
 		{
-			Control arg_73_0 = RhythmAudioBtn;
-			Control arg_6D_0 = RhythmAudioTxt;
-			Control arg_67_0 = BandAudioBtn;
-			Control arg_61_0 = BandAudioTxt;
-			Control arg_5B_0 = GuitarCoopBtn;
-			Control arg_55_0 = GuitarCoopTxt;
-			Control arg_4F_0 = RhythmCoopBtn;
-			Control arg_49_0 = RhythmCoopTxt;
-			Control arg_43_0 = BandCoopBtn;
-			BandCoopTxt.Enabled = true;
-			arg_43_0.Enabled = true;
-			arg_49_0.Enabled = true;
-			arg_4F_0.Enabled = true;
-			arg_55_0.Enabled = true;
-			arg_5B_0.Enabled = true;
-			arg_61_0.Enabled = true;
-			arg_67_0.Enabled = true;
-			arg_6D_0.Enabled = true;
-			arg_73_0.Enabled = true;
+			Control arg730 = _rhythmAudioBtn;
+			Control arg_6D0 = _rhythmAudioTxt;
+			Control arg670 = _bandAudioBtn;
+			Control arg610 = _bandAudioTxt;
+			Control arg_5B0 = _guitarCoopBtn;
+			Control arg550 = _guitarCoopTxt;
+			Control arg_4F0 = _rhythmCoopBtn;
+			Control arg490 = _rhythmCoopTxt;
+			Control arg430 = _bandCoopBtn;
+			_bandCoopTxt.Enabled = true;
+			arg430.Enabled = true;
+			arg490.Enabled = true;
+			arg_4F0.Enabled = true;
+			arg550.Enabled = true;
+			arg_5B0.Enabled = true;
+			arg610.Enabled = true;
+			arg670.Enabled = true;
+			arg_6D0.Enabled = true;
+			arg730.Enabled = true;
 			method_9();
 		}
 
 		private void GuitarAudioBtn_Click(object sender, EventArgs e)
 		{
 			var fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.dat.xen;*.mp3;*.wav;*.ogg;*.flac|GH3 Audio Header file|*.dat.xen|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true).ToLower();
-            if (SingleAudioBtn.Checked)
+            if (_singleAudioBtn.Checked)
 			{
                 if (!(fileName.Equals("")))
 				{
-                    GuitarAudioTxt.Text = fileName;
-					GuitarAudioTxt.SelectionStart = GuitarAudioTxt.TextLength;
+                    _guitarAudioTxt.Text = fileName;
+					_guitarAudioTxt.SelectionStart = _guitarAudioTxt.TextLength;
 					if (fileName.EndsWith(".dat.xen"))
 					{
 						if (!File.Exists(fileName.Replace(".dat.xen", ".fsb.xen")))
 						{
 							MessageBox.Show("Data file (FSB.XEN) is missing.", "Error!");
-							class323_0 = null;
-							GuitarAudioTxt.Text = "";
+							_class3230 = null;
+							_guitarAudioTxt.Text = "";
 						}
 						else
 						{
-							class323_0 = new zzQbSongObject(fileName);
-							if ((int)new FileInfo(fileName.Replace(".dat.xen", ".fsb.xen")).Length != class323_0.int_0)
+							_class3230 = new ZzQbSongObject(fileName);
+							if ((int)new FileInfo(fileName.Replace(".dat.xen", ".fsb.xen")).Length != _class3230.Int0)
 							{
 								MessageBox.Show("FSB file size does not match!", "Error!");
-								class323_0 = null;
-								GuitarAudioTxt.Text = "";
+								_class3230 = null;
+								_guitarAudioTxt.Text = "";
 							}
 							else
 							{
-								PreviewSlider.Enabled = false;
+								_previewSlider.Enabled = false;
 							}
 						}
 					}
 					else
 					{
-						PreviewSlider.Enabled = true;
+						_previewSlider.Enabled = true;
 						LoadAudio();
 					}
 					EnableAudioButtons();
@@ -1645,9 +1645,9 @@ namespace ns17
 			}
 			else if (!(fileName.Equals("")))
 			{
-				GuitarAudioTxt.Text = fileName;
-				GuitarAudioTxt.SelectionStart = GuitarAudioTxt.TextLength;
-				PreviewSlider.Enabled = true;
+				_guitarAudioTxt.Text = fileName;
+				_guitarAudioTxt.SelectionStart = _guitarAudioTxt.TextLength;
+				_previewSlider.Enabled = true;
 				LoadAudio();
 				EnableAudioButtons();
             }
@@ -1658,9 +1658,9 @@ namespace ns17
 			string fileName;
 			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Rhythm Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
-                RhythmAudioTxt.Text = fileName;
-				RhythmAudioTxt.SelectionStart = RhythmAudioTxt.TextLength;
-				PreviewSlider.Enabled = true;
+                _rhythmAudioTxt.Text = fileName;
+				_rhythmAudioTxt.SelectionStart = _rhythmAudioTxt.TextLength;
+				_previewSlider.Enabled = true;
 				LoadAudio();
 				EnableAudioButtons();
 			}
@@ -1671,9 +1671,9 @@ namespace ns17
 			string fileName;
 			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Band Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
-                BandAudioTxt.Text = fileName;
-				BandAudioTxt.SelectionStart = BandAudioTxt.TextLength;
-				PreviewSlider.Enabled = true;
+                _bandAudioTxt.Text = fileName;
+				_bandAudioTxt.SelectionStart = _bandAudioTxt.TextLength;
+				_previewSlider.Enabled = true;
 				LoadAudio();
 				EnableAudioButtons();
 			}
@@ -1684,9 +1684,9 @@ namespace ns17
 			string fileName;
 			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
-                GuitarCoopTxt.Text = fileName;
-				GuitarCoopTxt.SelectionStart = GuitarCoopTxt.TextLength;
-				PreviewSlider.Enabled = true;
+                _guitarCoopTxt.Text = fileName;
+				_guitarCoopTxt.SelectionStart = _guitarCoopTxt.TextLength;
+				_previewSlider.Enabled = true;
 				LoadAudio();
 				EnableAudioButtons();
 			}
@@ -1697,9 +1697,9 @@ namespace ns17
 			string fileName;
 			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Rhythm Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
-                RhythmCoopTxt.Text = fileName;
-				RhythmCoopTxt.SelectionStart = RhythmCoopTxt.TextLength;
-				PreviewSlider.Enabled = true;
+                _rhythmCoopTxt.Text = fileName;
+				_rhythmCoopTxt.SelectionStart = _rhythmCoopTxt.TextLength;
+				_previewSlider.Enabled = true;
 				LoadAudio();
 				EnableAudioButtons();
 			}
@@ -1710,9 +1710,9 @@ namespace ns17
 			string fileName;
 			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Band Coop Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
-                BandCoopTxt.Text = fileName;
-				BandCoopTxt.SelectionStart = BandCoopTxt.TextLength;
-				PreviewSlider.Enabled = true;
+                _bandCoopTxt.Text = fileName;
+				_bandCoopTxt.SelectionStart = _bandCoopTxt.TextLength;
+				_previewSlider.Enabled = true;
 				LoadAudio();
 				EnableAudioButtons();
 			}
@@ -1720,9 +1720,9 @@ namespace ns17
 
 		private void SongNameTxt_TextChanged(object sender, EventArgs e)
 		{
-			if (gh3Songlist_0 != null)
+			if (_gh3Songlist0 != null)
 			{
-				bool_2 = (SongNameTxt.Text != "" && !QbSongClass1.smethod_4(SongNameTxt.Text) && !gh3Songlist_0.method_3(SongNameTxt.Text));
+				_bool2 = (_songNameTxt.Text != "" && !QbSongClass1.smethod_4(_songNameTxt.Text) && !_gh3Songlist0.method_3(_songNameTxt.Text));
 			}
 			EnableAudioButtons();
 		}
@@ -1737,76 +1737,76 @@ namespace ns17
 
 		private void SongData_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (Audio != null)
+			if (_audio != null)
 			{
-				Audio.Dispose();
+				_audio.Dispose();
 			}
 		}
 
 		~SongData()
 		{
-			if (Audio != null)
+			if (_audio != null)
 			{
-				Audio.Dispose();
+				_audio.Dispose();
 			}
 		}
 
 		private void timer_0_Tick(object sender, EventArgs e)
 		{
-			if (Audio != null && bool_5)
+			if (_audio != null && _bool5)
 			{
-				PreviewSlider.method_14((int)Audio.AudioLength().TotalSeconds);
+				_previewSlider.method_14((int)_audio.AudioLength().TotalSeconds);
 			}
 		}
 
 		private void Play_Btn_Click(object sender, EventArgs e)
 		{
-			if (Audio == null)
+			if (_audio == null)
 			{
 				return;
 			}
-			Audio.DifferentStartPlaying();
-			timer_0.Start();
+			_audio.DifferentStartPlaying();
+			_timer0.Start();
 		}
 
 		private void Pause_Btn_Click(object sender, EventArgs e)
 		{
-			if (Audio == null)
+			if (_audio == null)
 			{
 				return;
 			}
-			Audio.StartPlaying();
-			timer_0.Stop();
+			_audio.StartPlaying();
+			_timer0.Stop();
 		}
 
 		private void Stop_Btn_Click(object sender, EventArgs e)
 		{
-			if (Audio == null)
+			if (_audio == null)
 			{
 				return;
 			}
-			Audio.StopPlaying();
-			timer_0.Stop();
-			PreviewSlider.method_14(PreviewSlider.method_15());
-			Audio.SetStartingTimeBasedOnSomeValue(0);
+			_audio.StopPlaying();
+			_timer0.Stop();
+			_previewSlider.method_14(_previewSlider.method_15());
+			_audio.SetStartingTimeBasedOnSomeValue(0);
 		}
 
 		private void PreviewSlider_MouseUp(object sender, MouseEventArgs e)
 		{
-			bool_5 = true;
-			Audio.SetStartingTime(TimeSpan.FromSeconds(PreviewSlider.method_13()));
+			_bool5 = true;
+			_audio.SetStartingTime(TimeSpan.FromSeconds(_previewSlider.method_13()));
 		}
 
 		private void PreviewSlider_MouseDown(object sender, MouseEventArgs e)
 		{
-			bool_5 = false;
+			_bool5 = false;
 		}
 
 		private void method_10(object sender, EventArgs e)
 		{
-			if (Audio != null)
+			if (_audio != null)
 			{
-				Audio.SetVolume(VolumeSlider.method_13() / 100f);
+				_audio.SetVolume(_volumeSlider.method_13() / 100f);
 			}
 		}
 
@@ -1815,40 +1815,40 @@ namespace ns17
 			try
 			{
 				var list = new List<GenericAudioStream>();
-				if (!BandCoopTxt.Text.Equals(""))
+				if (!_bandCoopTxt.Text.Equals(""))
 				{
-					list.Add(AudioManager.getAudioStream(BandCoopTxt.Text));
+					list.Add(AudioManager.GetAudioStream(_bandCoopTxt.Text));
 				}
-				else if (!BandAudioTxt.Text.Equals(""))
+				else if (!_bandAudioTxt.Text.Equals(""))
 				{
-					list.Add(AudioManager.getAudioStream(BandAudioTxt.Text));
+					list.Add(AudioManager.GetAudioStream(_bandAudioTxt.Text));
 				}
-				if (!GuitarCoopTxt.Text.Equals("") && !RhythmCoopTxt.Text.Equals(""))
+				if (!_guitarCoopTxt.Text.Equals("") && !_rhythmCoopTxt.Text.Equals(""))
 				{
-					list.Insert(0, AudioManager.getAudioStream(RhythmCoopTxt.Text));
-					list.Insert(0, AudioManager.getAudioStream(GuitarCoopTxt.Text));
+					list.Insert(0, AudioManager.GetAudioStream(_rhythmCoopTxt.Text));
+					list.Insert(0, AudioManager.GetAudioStream(_guitarCoopTxt.Text));
 				}
 				else
 				{
-					if (!RhythmAudioTxt.Text.Equals(""))
+					if (!_rhythmAudioTxt.Text.Equals(""))
 					{
-						list.Insert(0, AudioManager.getAudioStream(RhythmAudioTxt.Text));
+						list.Insert(0, AudioManager.GetAudioStream(_rhythmAudioTxt.Text));
 					}
-					if (!GuitarAudioTxt.Text.Equals(""))
+					if (!_guitarAudioTxt.Text.Equals(""))
 					{
-						list.Insert(0, AudioManager.getAudioStream(GuitarAudioTxt.Text));
+						list.Insert(0, AudioManager.GetAudioStream(_guitarAudioTxt.Text));
 					}
 				}
 				if (list.Count != 0)
 				{
 					var stream = (list.Count == 1) ? list[0] : new Stream2(list.ToArray());
-					if (Audio != null)
+					if (_audio != null)
 					{
-						Audio.Dispose();
+						_audio.Dispose();
 					}
-					Audio = AudioManager.LoadPlayableAudio(Enum25.const_5, stream);
-					PreviewSlider.method_14((int)Audio.AudioLength().TotalSeconds);
-					PreviewSlider.method_18((int)stream.vmethod_1().timeSpan_0.TotalSeconds);
+					_audio = AudioManager.LoadPlayableAudio(Enum25.Const5, stream);
+					_previewSlider.method_14((int)_audio.AudioLength().TotalSeconds);
+					_previewSlider.method_18((int)stream.vmethod_1().TimeSpan0.TotalSeconds);
 				}
 			}
 			catch (Exception ex)

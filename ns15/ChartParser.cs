@@ -10,37 +10,37 @@ namespace ns15
 {
 	public class ChartParser
 	{
-		public Dictionary<string, NoteEventInterpreter> difficultyWithNotes = new Dictionary<string, NoteEventInterpreter>();
+		public Dictionary<string, NoteEventInterpreter> DifficultyWithNotes = new Dictionary<string, NoteEventInterpreter>();
 
-		public Dictionary<string, InstrumentType> instrumentList = new Dictionary<string, InstrumentType>();
+		public Dictionary<string, InstrumentType> InstrumentList = new Dictionary<string, InstrumentType>();
 
-		public BPMInterpreter bpmInterpreter;
+		public BpmInterpreter BpmInterpreter;
 
-		public SectionInterpreter sectionInterpreter;
+		public SectionInterpreter SectionInterpreter;
 
-		public int constant480 = 480;
+		public int Constant480 = 480;
 
-		public GH3Song gh3SongInfo = new GH3Song();
+		public Gh3Song Gh3SongInfo = new Gh3Song();
 
-		private static double resolution;
+		private static double _resolution;
 
-		private Track<int, decimal> bpmMSTracker;
+		private Track<int, decimal> _bpmMsTracker;
 
 		public ChartParser()
 		{
-			bpmInterpreter = new BPMInterpreter();
-			sectionInterpreter = new SectionInterpreter();
+			BpmInterpreter = new BpmInterpreter();
+			SectionInterpreter = new SectionInterpreter();
 		}
 
-		public ChartParser(GH3Song gh3Song_1) : this()
+		public ChartParser(Gh3Song gh3Song1) : this()
 		{
-			gh3SongInfo = gh3Song_1;
+			Gh3SongInfo = gh3Song1;
 		}
 
-        public ChartParser(string string_0, bool nothing)
+        public ChartParser(string string0, bool nothing)
         {
             var list = new List<string>();
-            var stringReader = new StringReader(string_0);
+            var stringReader = new StringReader(string0);
             string bracketItems = null;
             string bracketItemsWithBrackets;
             while ((bracketItemsWithBrackets = stringReader.ReadLine()) != null)
@@ -64,7 +64,7 @@ namespace ns15
                         }
                         if (a == "Song")
                         {
-                            gh3SongInfo.editable = true;
+                            Gh3SongInfo.Editable = true;
                             using (var enumerator = list.GetEnumerator())
                             {
                                 while (enumerator.MoveNext())
@@ -83,60 +83,60 @@ namespace ns15
                                         switch (key = text3)
                                         {
                                             case "name":
-                                                gh3SongInfo.title = text4;
+                                                Gh3SongInfo.Title = text4;
                                                 break;
                                             case "artist":
-                                                gh3SongInfo.artist = text4;
+                                                Gh3SongInfo.Artist = text4;
                                                 break;
                                             case "year":
-                                                gh3SongInfo.year = text4;
+                                                Gh3SongInfo.Year = text4;
                                                 break;
                                             case "player2":
-                                                gh3SongInfo.not_bass = !text4.ToLower().Equals("bass");
+                                                Gh3SongInfo.NotBass = !text4.ToLower().Equals("bass");
                                                 break;
                                             case "artisttext":
                                                 if (text4.Equals("by"))
                                                 {
-                                                    gh3SongInfo.artist_text = true;
+                                                    Gh3SongInfo.ArtistText = true;
                                                 }
                                                 else if (text4.Equals("as made famous by"))
                                                 {
-                                                    gh3SongInfo.artist_text = false;
+                                                    Gh3SongInfo.ArtistText = false;
                                                 }
                                                 else
                                                 {
-                                                    gh3SongInfo.artist_text = text4;
+                                                    Gh3SongInfo.ArtistText = text4;
                                                 }
                                                 break;
                                             case "offset":
-                                                gh3SongInfo.input_offset = (gh3SongInfo.gem_offset = Convert.ToInt32(Convert.ToDouble(text4) * -1000.0));
+                                                Gh3SongInfo.InputOffset = (Gh3SongInfo.GemOffset = Convert.ToInt32(Convert.ToDouble(text4) * -1000.0));
                                                 break;
                                             case "singer":
-                                                gh3SongInfo.singer = text4;
+                                                Gh3SongInfo.Singer = text4;
                                                 break;
                                             case "bassist":
-                                                gh3SongInfo.bassist = text4;
+                                                Gh3SongInfo.Bassist = text4;
                                                 break;
                                             case "boss":
-                                                gh3SongInfo.boss = text4;
+                                                Gh3SongInfo.Boss = text4;
                                                 break;
                                             case "countoff":
-                                                gh3SongInfo.countoff = text4;
+                                                Gh3SongInfo.Countoff = text4;
                                                 break;
                                             case "guitarvol":
-                                                gh3SongInfo.guitar_vol = Convert.ToSingle(text4);
+                                                Gh3SongInfo.GuitarVol = Convert.ToSingle(text4);
                                                 break;
                                             case "bandvol":
-                                                gh3SongInfo.band_vol = Convert.ToSingle(text4);
+                                                Gh3SongInfo.BandVol = Convert.ToSingle(text4);
                                                 break;
                                             case "hopo":
-                                                gh3SongInfo.hammer_on = Convert.ToSingle(text4);
+                                                Gh3SongInfo.HammerOn = Convert.ToSingle(text4);
                                                 break;
                                             case "originalartist":
-                                                gh3SongInfo.original_artist = text4.Equals("true");
+                                                Gh3SongInfo.OriginalArtist = text4.Equals("true");
                                                 break;
                                             case "resolution":
-                                                resolution = 480.0 / Convert.ToDouble(text4);
+                                                _resolution = 480.0 / Convert.ToDouble(text4);
                                                 break;
                                         }
                                     }
@@ -151,30 +151,30 @@ namespace ns15
                             {
                                 goto IL_477;
                             }
-                            if (sectionInterpreter == null)
+                            if (SectionInterpreter == null)
                             {
-                                sectionInterpreter = new SectionInterpreter(list.ToArray());
+                                SectionInterpreter = new SectionInterpreter(list.ToArray());
                             }
                         }
-                        else if (bpmInterpreter == null)
+                        else if (BpmInterpreter == null)
                         {
-                            bpmInterpreter = new BPMInterpreter(list.ToArray());
+                            BpmInterpreter = new BpmInterpreter(list.ToArray());
                         }
                     IL_4D5:
                         list.Clear();
                         continue;
                     IL_477:
                         Console.WriteLine(bracketItems + ", " + bracketItemsWithBrackets);
-                        if (difficultyWithNotes.ContainsKey(bracketItems))
+                        if (DifficultyWithNotes.ContainsKey(bracketItems))
                         {
                             goto IL_4D5;
                         }
                         if (!bracketItems.Contains("Single") && !bracketItems.Contains("Double"))
                         {
-                            instrumentList.Add(bracketItems, new InstrumentType(list.ToArray()));
+                            InstrumentList.Add(bracketItems, new InstrumentType(list.ToArray()));
                             goto IL_4D5;
                         }
-                        difficultyWithNotes.Add(bracketItems, new NoteEventInterpreter(list.ToArray(), constant480));
+                        DifficultyWithNotes.Add(bracketItems, new NoteEventInterpreter(list.ToArray(), Constant480));
                         goto IL_4D5;
                     }
                     if (!bracketItemsWithBrackets.Equals(""))
@@ -184,13 +184,13 @@ namespace ns15
                 }
             }
             stringReader.Close();
-            removeEmptyParts();
+            RemoveEmptyParts();
         }
 
-        public ChartParser(string string_0)
+        public ChartParser(string string0)
 		{
             var list = new List<string>();
-			var streamReader = File.OpenText(string_0);
+			var streamReader = File.OpenText(string0);
 			string bracketItems = null;
 			string bracketItemsWithBrackets;
 			while ((bracketItemsWithBrackets = streamReader.ReadLine()) != null)
@@ -214,7 +214,7 @@ namespace ns15
 						}
 						if (a == "Song")
 						{
-							gh3SongInfo.editable = true;
+							Gh3SongInfo.Editable = true;
 							using (var enumerator = list.GetEnumerator())
 							{
 								while (enumerator.MoveNext())
@@ -233,60 +233,60 @@ namespace ns15
 										switch (key = text3)
 										{
 										case "name":
-											gh3SongInfo.title = text4;
+											Gh3SongInfo.Title = text4;
 											break;
 										case "artist":
-											gh3SongInfo.artist = text4;
+											Gh3SongInfo.Artist = text4;
 											break;
 										case "year":
-											gh3SongInfo.year = text4;
+											Gh3SongInfo.Year = text4;
 											break;
 										case "player2":
-											gh3SongInfo.not_bass = !text4.ToLower().Equals("bass");
+											Gh3SongInfo.NotBass = !text4.ToLower().Equals("bass");
 											break;
 										case "artisttext":
 											if (text4.Equals("by"))
 											{
-												gh3SongInfo.artist_text = true;
+												Gh3SongInfo.ArtistText = true;
 											}
 											else if (text4.Equals("as made famous by"))
 											{
-												gh3SongInfo.artist_text = false;
+												Gh3SongInfo.ArtistText = false;
 											}
 											else
 											{
-												gh3SongInfo.artist_text = text4;
+												Gh3SongInfo.ArtistText = text4;
 											}
 											break;
 										case "offset":
-											gh3SongInfo.input_offset = (gh3SongInfo.gem_offset = Convert.ToInt32(Convert.ToDouble(text4) * -1000.0));
+											Gh3SongInfo.InputOffset = (Gh3SongInfo.GemOffset = Convert.ToInt32(Convert.ToDouble(text4) * -1000.0));
 											break;
 										case "singer":
-											gh3SongInfo.singer = text4;
+											Gh3SongInfo.Singer = text4;
 											break;
 										case "bassist":
-											gh3SongInfo.bassist = text4;
+											Gh3SongInfo.Bassist = text4;
 											break;
 										case "boss":
-											gh3SongInfo.boss = text4;
+											Gh3SongInfo.Boss = text4;
 											break;
 										case "countoff":
-											gh3SongInfo.countoff = text4;
+											Gh3SongInfo.Countoff = text4;
 											break;
 										case "guitarvol":
-											gh3SongInfo.guitar_vol = Convert.ToSingle(text4);
+											Gh3SongInfo.GuitarVol = Convert.ToSingle(text4);
 											break;
 										case "bandvol":
-											gh3SongInfo.band_vol = Convert.ToSingle(text4);
+											Gh3SongInfo.BandVol = Convert.ToSingle(text4);
 											break;
 										case "hopo":
-											gh3SongInfo.hammer_on = Convert.ToSingle(text4);
+											Gh3SongInfo.HammerOn = Convert.ToSingle(text4);
 											break;
 										case "originalartist":
-											gh3SongInfo.original_artist = text4.Equals("true");
+											Gh3SongInfo.OriginalArtist = text4.Equals("true");
 											break;
 										case "resolution":
-											resolution = 480.0 / Convert.ToDouble(text4);
+											_resolution = 480.0 / Convert.ToDouble(text4);
 											break;
 										}
 									}
@@ -301,30 +301,30 @@ namespace ns15
 							{
 								goto IL_477;
 							}
-							if (sectionInterpreter == null)
+							if (SectionInterpreter == null)
 							{
-								sectionInterpreter = new SectionInterpreter(list.ToArray());
+								SectionInterpreter = new SectionInterpreter(list.ToArray());
 							}
 						}
-						else if (bpmInterpreter == null)
+						else if (BpmInterpreter == null)
 						{
-							bpmInterpreter = new BPMInterpreter(list.ToArray());
+							BpmInterpreter = new BpmInterpreter(list.ToArray());
 						}
 						IL_4D5:
 						list.Clear();
 						continue;
                     IL_477:
                         Console.WriteLine(bracketItems + ", " + bracketItemsWithBrackets);
-                        if (difficultyWithNotes.ContainsKey(bracketItems))
+                        if (DifficultyWithNotes.ContainsKey(bracketItems))
 						{
                             goto IL_4D5;
 						}
                         if (!bracketItems.Contains("Single") && !bracketItems.Contains("Double"))
 						{
-							instrumentList.Add(bracketItems, new InstrumentType(list.ToArray()));
+							InstrumentList.Add(bracketItems, new InstrumentType(list.ToArray()));
 							goto IL_4D5;
 						}
-						difficultyWithNotes.Add(bracketItems, new NoteEventInterpreter(list.ToArray(), constant480));
+						DifficultyWithNotes.Add(bracketItems, new NoteEventInterpreter(list.ToArray(), Constant480));
                         goto IL_4D5;
 					}
 				    if (!bracketItemsWithBrackets.Equals(""))
@@ -334,15 +334,15 @@ namespace ns15
 				}
 			}
 			streamReader.Close();
-            removeEmptyParts();
+            RemoveEmptyParts();
         }
 
-		public static int getNoteFromResolution(string offset)
+		public static int GetNoteFromResolution(string offset)
 		{
-			return Convert.ToInt32(Convert.ToInt32(offset) * resolution);
+			return Convert.ToInt32(Convert.ToInt32(offset) * _resolution);
 		}
 
-		public void removeEmptyParts()
+		public void RemoveEmptyParts()
 		{
             string[] array = {
 				"Easy",
@@ -353,77 +353,77 @@ namespace ns15
 			for (var i = 0; i < array.Length; i++)
 			{
 				var str = array[i];
-				if (difficultyWithNotes.ContainsKey(str + "Single"))
+				if (DifficultyWithNotes.ContainsKey(str + "Single"))
 				{
-					difficultyWithNotes.Add(str + "SingleGuitar", difficultyWithNotes[str + "Single"]);
-					difficultyWithNotes.Remove(str + "Single");
+					DifficultyWithNotes.Add(str + "SingleGuitar", DifficultyWithNotes[str + "Single"]);
+					DifficultyWithNotes.Remove(str + "Single");
 				}
-				if (difficultyWithNotes.ContainsKey(str + "DoubleBass"))
+				if (DifficultyWithNotes.ContainsKey(str + "DoubleBass"))
 				{
-					if (difficultyWithNotes.ContainsKey(str + "DoubleGuitar") && !difficultyWithNotes[str + "DoubleGuitar"].alwaysTrue)
+					if (DifficultyWithNotes.ContainsKey(str + "DoubleGuitar") && !DifficultyWithNotes[str + "DoubleGuitar"].AlwaysTrue)
 					{
-						difficultyWithNotes.Add(str + "DoubleRhythm", difficultyWithNotes[str + "DoubleBass"]);
+						DifficultyWithNotes.Add(str + "DoubleRhythm", DifficultyWithNotes[str + "DoubleBass"]);
 					}
 					else
 					{
-						difficultyWithNotes.Add(str + "SingleRhythm", difficultyWithNotes[str + "DoubleBass"]);
+						DifficultyWithNotes.Add(str + "SingleRhythm", DifficultyWithNotes[str + "DoubleBass"]);
 					}
-					difficultyWithNotes.Remove(str + "DoubleBass");
+					DifficultyWithNotes.Remove(str + "DoubleBass");
 				}
 			}
-            var list = new List<string>(difficultyWithNotes.Keys);
+            var list = new List<string>(DifficultyWithNotes.Keys);
 			foreach (var current in list)
 			{
-				if (difficultyWithNotes[current].noteList.Count == 0)
+				if (DifficultyWithNotes[current].NoteList.Count == 0)
 				{
-					difficultyWithNotes.Remove(current);
+					DifficultyWithNotes.Remove(current);
 				}
 			}
-            if (sectionInterpreter == null)
+            if (SectionInterpreter == null)
 			{
-				sectionInterpreter = new SectionInterpreter();
+				SectionInterpreter = new SectionInterpreter();
 			}
-			if (bpmInterpreter.TSList.Count == 0)
+			if (BpmInterpreter.TsList.Count == 0)
 			{
-                bpmInterpreter.TSList.Add(0, 4);
+                BpmInterpreter.TsList.Add(0, 4);
             }
         }
 
-        public void chartCreator(string fileLocation, GH3Song song)
+        public void ChartCreator(string fileLocation, Gh3Song song)
         {
-            gh3SongInfo = song;
+            Gh3SongInfo = song;
             var streamWriter = new StreamWriter(fileLocation);
             streamWriter.WriteLine("[Song]");
             streamWriter.WriteLine("{");
-            streamWriter.WriteLine("\tName = \"" + gh3SongInfo.title + "\"");
-            streamWriter.WriteLine("\tArtist = \"" + gh3SongInfo.artist + "\"");
-            streamWriter.WriteLine("\tYear = \"" + gh3SongInfo.year + "\"");
-            streamWriter.WriteLine("\tPlayer2 = " + (gh3SongInfo.not_bass ? "Rhythm" : "Bass"));
-            streamWriter.WriteLine("\tArtistText = \"" + ((gh3SongInfo.artist_text is bool) ? (((bool)gh3SongInfo.artist_text) ? "by" : "as made famous by") : ((string)gh3SongInfo.artist_text)) + "\"");
-            streamWriter.WriteLine("\tOffset = " + gh3SongInfo.input_offset / -1000.0);
-            if (!gh3SongInfo.singer.Equals(""))
+            streamWriter.WriteLine("\tName = \"" + Gh3SongInfo.Title + "\"");
+            streamWriter.WriteLine("\tArtist = \"" + Gh3SongInfo.Artist + "\"");
+            streamWriter.WriteLine("\tYear = \"" + Gh3SongInfo.Year + "\"");
+            streamWriter.WriteLine("\tPlayer2 = " + (Gh3SongInfo.NotBass ? "Rhythm" : "Bass"));
+            streamWriter.WriteLine("\tArtistText = \"" + ((Gh3SongInfo.ArtistText is bool) ? (((bool)Gh3SongInfo.ArtistText) ? "by" : "as made famous by") : ((string)Gh3SongInfo.ArtistText)) + "\"");
+            streamWriter.WriteLine("\tOffset = " + Gh3SongInfo.InputOffset / -1000.0);
+            if (!Gh3SongInfo.Singer.Equals(""))
             {
-                streamWriter.WriteLine("\tSinger = \"" + gh3SongInfo.singer + "\"");
+                streamWriter.WriteLine("\tSinger = \"" + Gh3SongInfo.Singer + "\"");
             }
-            if (!gh3SongInfo.bassist.Equals("Generic Bassist"))
+            if (!Gh3SongInfo.Bassist.Equals("Generic Bassist"))
             {
-                streamWriter.WriteLine("\tBassist = \"" + gh3SongInfo.bassist + "\"");
+                streamWriter.WriteLine("\tBassist = \"" + Gh3SongInfo.Bassist + "\"");
             }
-            if (!gh3SongInfo.boss.Equals(""))
+            if (!Gh3SongInfo.Boss.Equals(""))
             {
-                streamWriter.WriteLine("\tBoss = \"" + gh3SongInfo.boss + "\"");
+                streamWriter.WriteLine("\tBoss = \"" + Gh3SongInfo.Boss + "\"");
             }
-            streamWriter.WriteLine("\tCountOff = \"" + gh3SongInfo.countoff + "\"");
-            streamWriter.WriteLine("\tGuitarVol = " + gh3SongInfo.guitar_vol);
-            streamWriter.WriteLine("\tBandVol = " + gh3SongInfo.band_vol);
-            streamWriter.WriteLine("\tHoPo = " + gh3SongInfo.hammer_on);
-            streamWriter.WriteLine("\tOriginalArtist = " + (gh3SongInfo.original_artist ? "true" : "false"));
-            streamWriter.WriteLine("\tResolution = " + constant480);
+            streamWriter.WriteLine("\tCountOff = \"" + Gh3SongInfo.Countoff + "\"");
+            streamWriter.WriteLine("\tGuitarVol = " + Gh3SongInfo.GuitarVol);
+            streamWriter.WriteLine("\tBandVol = " + Gh3SongInfo.BandVol);
+            streamWriter.WriteLine("\tHoPo = " + Gh3SongInfo.HammerOn);
+            streamWriter.WriteLine("\tOriginalArtist = " + (Gh3SongInfo.OriginalArtist ? "true" : "false"));
+            streamWriter.WriteLine("\tResolution = " + Constant480);
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[SyncTrack]");
             streamWriter.WriteLine("{");
-            var list = new List<int>(bpmInterpreter.TSList.Keys);
-            foreach (var current in bpmInterpreter.bpmList.Keys)
+            var list = new List<int>(BpmInterpreter.TsList.Keys);
+            foreach (var current in BpmInterpreter.BpmList.Keys)
             {
                 if (!list.Contains(current))
                 {
@@ -433,20 +433,20 @@ namespace ns15
             list.Sort();
             foreach (var current2 in list)
             {
-                if (bpmInterpreter.bpmList.ContainsKey(current2))
+                if (BpmInterpreter.BpmList.ContainsKey(current2))
                 {
-                    streamWriter.WriteLine(string.Concat("\t", current2, " = B ", bpmInterpreter.bpmList[current2]));
+                    streamWriter.WriteLine(string.Concat("\t", current2, " = B ", BpmInterpreter.BpmList[current2]));
                 }
-                if (bpmInterpreter.TSList.ContainsKey(current2))
+                if (BpmInterpreter.TsList.ContainsKey(current2))
                 {
-                    streamWriter.WriteLine(string.Concat("\t", current2, " = TS ", bpmInterpreter.TSList[current2]));
+                    streamWriter.WriteLine(string.Concat("\t", current2, " = TS ", BpmInterpreter.TsList[current2]));
                 }
             }
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[Events]");
             streamWriter.WriteLine("{");
-            list = new List<int>(sectionInterpreter.sectionList.Keys);
-            foreach (var current3 in sectionInterpreter.otherList.Keys)
+            list = new List<int>(SectionInterpreter.SectionList.Keys);
+            foreach (var current3 in SectionInterpreter.OtherList.Keys)
             {
                 if (!list.Contains(current3))
                 {
@@ -456,13 +456,13 @@ namespace ns15
             list.Sort();
             foreach (var current4 in list)
             {
-                if (sectionInterpreter.sectionList.ContainsKey(current4))
+                if (SectionInterpreter.SectionList.ContainsKey(current4))
                 {
-                    streamWriter.WriteLine(string.Concat("\t", current4, " = E \"section ", sectionInterpreter.sectionList[current4].Replace(" ", "_").ToLower(), "\""));
+                    streamWriter.WriteLine(string.Concat("\t", current4, " = E \"section ", SectionInterpreter.SectionList[current4].Replace(" ", "_").ToLower(), "\""));
                 }
-                if (sectionInterpreter.otherList.ContainsKey(current4))
+                if (SectionInterpreter.OtherList.ContainsKey(current4))
                 {
-                    var list2 = sectionInterpreter.otherList[current4];
+                    var list2 = SectionInterpreter.OtherList[current4];
                     foreach (var current5 in list2)
                     {
                         streamWriter.WriteLine(string.Concat("\t", current4, " = E \"", current5, "\""));
@@ -470,7 +470,7 @@ namespace ns15
                 }
             }
             streamWriter.WriteLine("}");
-            new ArrayList(difficultyWithNotes.Keys);
+            new ArrayList(DifficultyWithNotes.Keys);
             string[] difficulties = {
                 "Easy",
                 "Medium",
@@ -494,57 +494,57 @@ namespace ns15
                     for (var k = 0; k < array3.Length; k++)
                     {
                         var str3 = array3[k];
-                        if (difficultyWithNotes.ContainsKey(str + str2 + str3))
+                        if (DifficultyWithNotes.ContainsKey(str + str2 + str3))
                         {
                             var text = str + str2 + str3;
-                            var printText = convertDBCName("[" + text + "]");
-                            var @class = difficultyWithNotes[text];
+                            var printText = ConvertDbcName("[" + text + "]");
+                            var @class = DifficultyWithNotes[text];
                             streamWriter.WriteLine(printText);
                             streamWriter.WriteLine("{");
-                            list = new List<int>(@class.noteList.Keys);
-                            foreach (var current6 in @class.class228_2.Keys)
+                            list = new List<int>(@class.NoteList.Keys);
+                            foreach (var current6 in @class.Class2282.Keys)
                             {
                                 if (!list.Contains(current6))
                                 {
                                     list.Add(current6);
                                 }
                             }
-                            foreach (var current7 in @class.class228_3.Keys)
+                            foreach (var current7 in @class.Class2283.Keys)
                             {
                                 if (!list.Contains(current7))
                                 {
                                     list.Add(current7);
                                 }
                             }
-                            foreach (var current8 in @class.class228_1.Keys)
+                            foreach (var current8 in @class.Class2281.Keys)
                             {
                                 if (!list.Contains(current8))
                                 {
                                     list.Add(current8);
                                 }
                             }
-                            foreach (var current9 in @class.class228_4.Keys)
+                            foreach (var current9 in @class.Class2284.Keys)
                             {
                                 if (!list.Contains(current9))
                                 {
                                     list.Add(current9);
                                 }
                             }
-                            foreach (var current10 in @class.class228_5.Keys)
+                            foreach (var current10 in @class.Class2285.Keys)
                             {
                                 if (!list.Contains(current10))
                                 {
                                     list.Add(current10);
                                 }
                             }
-                            foreach (var current11 in @class.class228_6.Keys)
+                            foreach (var current11 in @class.Class2286.Keys)
                             {
                                 if (!list.Contains(current11))
                                 {
                                     list.Add(current11);
                                 }
                             }
-                            foreach (var current12 in @class.eventList.Keys)
+                            foreach (var current12 in @class.EventList.Keys)
                             {
                                 if (!list.Contains(current12))
                                 {
@@ -554,48 +554,48 @@ namespace ns15
                             list.Sort();
                             foreach (var current13 in list)
                             {
-                                if (@class.eventList.ContainsKey(current13))
+                                if (@class.EventList.ContainsKey(current13))
                                 {
-                                    var list2 = @class.eventList[current13];
+                                    var list2 = @class.EventList[current13];
                                     foreach (var current14 in list2)
                                     {
                                         streamWriter.WriteLine(string.Concat("\t", current13, " = E ", current14));
                                     }
                                 }
-                                if (@class.noteList.ContainsKey(current13))
+                                if (@class.NoteList.ContainsKey(current13))
                                 {
-                                    var class2 = @class.noteList[current13];
-                                    for (var l = 0; l < class2.noteValues.Length; l++)
+                                    var class2 = @class.NoteList[current13];
+                                    for (var l = 0; l < class2.NoteValues.Length; l++)
                                     {
-                                        if (class2.noteValues[l])
+                                        if (class2.NoteValues[l])
                                         {
-                                            streamWriter.WriteLine(string.Concat("\t", current13, " = N ", l, " ", class2.sustainLength));
+                                            streamWriter.WriteLine(string.Concat("\t", current13, " = N ", l, " ", class2.SustainLength));
                                         }
                                     }
                                 }
-                                if (@class.class228_2.ContainsKey(current13))
+                                if (@class.Class2282.ContainsKey(current13))
                                 {
-                                    streamWriter.WriteLine(string.Concat("\t", current13, " = S 0 ", @class.class228_2[current13]));
+                                    streamWriter.WriteLine(string.Concat("\t", current13, " = S 0 ", @class.Class2282[current13]));
                                 }
-                                if (@class.class228_3.ContainsKey(current13))
+                                if (@class.Class2283.ContainsKey(current13))
                                 {
-                                    streamWriter.WriteLine(string.Concat("\t", current13, " = S 1 ", @class.class228_3[current13]));
+                                    streamWriter.WriteLine(string.Concat("\t", current13, " = S 1 ", @class.Class2283[current13]));
                                 }
-                                if (@class.class228_1.ContainsKey(current13))
+                                if (@class.Class2281.ContainsKey(current13))
                                 {
-                                    streamWriter.WriteLine(string.Concat("\t", current13, " = S 2 ", @class.class228_1[current13]));
+                                    streamWriter.WriteLine(string.Concat("\t", current13, " = S 2 ", @class.Class2281[current13]));
                                 }
-                                if (@class.class228_4.ContainsKey(current13))
+                                if (@class.Class2284.ContainsKey(current13))
                                 {
-                                    streamWriter.WriteLine(string.Concat("\t", current13, " = S 3 ", @class.class228_4[current13]));
+                                    streamWriter.WriteLine(string.Concat("\t", current13, " = S 3 ", @class.Class2284[current13]));
                                 }
-                                if (@class.class228_5.ContainsKey(current13))
+                                if (@class.Class2285.ContainsKey(current13))
                                 {
-                                    streamWriter.WriteLine(string.Concat("\t", current13, " = S 4 ", @class.class228_5[current13]));
+                                    streamWriter.WriteLine(string.Concat("\t", current13, " = S 4 ", @class.Class2285[current13]));
                                 }
-                                if (@class.class228_6.ContainsKey(current13))
+                                if (@class.Class2286.ContainsKey(current13))
                                 {
-                                    streamWriter.WriteLine(string.Concat("\t", current13, " = S 5 ", @class.class228_6[current13]));
+                                    streamWriter.WriteLine(string.Concat("\t", current13, " = S 5 ", @class.Class2286[current13]));
                                 }
                             }
                             streamWriter.WriteLine("}");
@@ -610,10 +610,10 @@ namespace ns15
                 for (var j = 0; j < array2.Length; j++)
                 {
                     var str4 = array2[j];
-                    if (instrumentList.ContainsKey(str + str4))
+                    if (InstrumentList.ContainsKey(str + str4))
                     {
                         var text2 = str + str4;
-                        var class3 = instrumentList[text2];
+                        var class3 = InstrumentList[text2];
                         streamWriter.WriteLine("[" + text2 + "]");
                         streamWriter.WriteLine("{");
                         list = new List<int>(class3.Keys);
@@ -632,7 +632,7 @@ namespace ns15
             streamWriter.Close();
         }
 
-        private String convertDBCName(String name)
+        private String ConvertDbcName(String name)
         {
             String[] dbcTypes = {"[EasySingleGuitar]", "[MediumSingleGuitar]", "[HardSingleGuitar]", "[ExpertSingleGuitar]",
                 "[EasyDoubleGuitar]", "[MediumDoubleGuitar]", "[HardDoubleGuitar]", "[ExpertDoubleGuitar]",
@@ -652,41 +652,41 @@ namespace ns15
             return name;
         }
 
-        public void dbcCreator(string fileLocation, GH3Song gh3Song)
+        public void DbcCreator(string fileLocation, Gh3Song gh3Song)
 		{
-            gh3SongInfo = gh3Song;
+            Gh3SongInfo = gh3Song;
 			var streamWriter = new StreamWriter(fileLocation);
 			streamWriter.WriteLine("[Song]");
 			streamWriter.WriteLine("{");
-			streamWriter.WriteLine("\tName = \"" + gh3SongInfo.title + "\"");
-			streamWriter.WriteLine("\tArtist = \"" + gh3SongInfo.artist + "\"");
-			streamWriter.WriteLine("\tYear = \"" + gh3SongInfo.year + "\"");
-			streamWriter.WriteLine("\tPlayer2 = " + (gh3SongInfo.not_bass ? "Rhythm" : "Bass"));
-			streamWriter.WriteLine("\tArtistText = \"" + ((gh3SongInfo.artist_text is bool) ? (((bool)gh3SongInfo.artist_text) ? "by" : "as made famous by") : ((string)gh3SongInfo.artist_text)) + "\"");
-			streamWriter.WriteLine("\tOffset = " + gh3SongInfo.input_offset / -1000.0);
-			if (!gh3SongInfo.singer.Equals(""))
+			streamWriter.WriteLine("\tName = \"" + Gh3SongInfo.Title + "\"");
+			streamWriter.WriteLine("\tArtist = \"" + Gh3SongInfo.Artist + "\"");
+			streamWriter.WriteLine("\tYear = \"" + Gh3SongInfo.Year + "\"");
+			streamWriter.WriteLine("\tPlayer2 = " + (Gh3SongInfo.NotBass ? "Rhythm" : "Bass"));
+			streamWriter.WriteLine("\tArtistText = \"" + ((Gh3SongInfo.ArtistText is bool) ? (((bool)Gh3SongInfo.ArtistText) ? "by" : "as made famous by") : ((string)Gh3SongInfo.ArtistText)) + "\"");
+			streamWriter.WriteLine("\tOffset = " + Gh3SongInfo.InputOffset / -1000.0);
+			if (!Gh3SongInfo.Singer.Equals(""))
 			{
-				streamWriter.WriteLine("\tSinger = \"" + gh3SongInfo.singer + "\"");
+				streamWriter.WriteLine("\tSinger = \"" + Gh3SongInfo.Singer + "\"");
 			}
-			if (!gh3SongInfo.bassist.Equals("Generic Bassist"))
+			if (!Gh3SongInfo.Bassist.Equals("Generic Bassist"))
 			{
-				streamWriter.WriteLine("\tBassist = \"" + gh3SongInfo.bassist + "\"");
+				streamWriter.WriteLine("\tBassist = \"" + Gh3SongInfo.Bassist + "\"");
 			}
-			if (!gh3SongInfo.boss.Equals(""))
+			if (!Gh3SongInfo.Boss.Equals(""))
 			{
-				streamWriter.WriteLine("\tBoss = \"" + gh3SongInfo.boss + "\"");
+				streamWriter.WriteLine("\tBoss = \"" + Gh3SongInfo.Boss + "\"");
 			}
-			streamWriter.WriteLine("\tCountOff = \"" + gh3SongInfo.countoff + "\"");
-			streamWriter.WriteLine("\tGuitarVol = " + gh3SongInfo.guitar_vol);
-			streamWriter.WriteLine("\tBandVol = " + gh3SongInfo.band_vol);
-			streamWriter.WriteLine("\tHoPo = " + gh3SongInfo.hammer_on);
-			streamWriter.WriteLine("\tOriginalArtist = " + (gh3SongInfo.original_artist ? "true" : "false"));
-			streamWriter.WriteLine("\tResolution = " + constant480);
+			streamWriter.WriteLine("\tCountOff = \"" + Gh3SongInfo.Countoff + "\"");
+			streamWriter.WriteLine("\tGuitarVol = " + Gh3SongInfo.GuitarVol);
+			streamWriter.WriteLine("\tBandVol = " + Gh3SongInfo.BandVol);
+			streamWriter.WriteLine("\tHoPo = " + Gh3SongInfo.HammerOn);
+			streamWriter.WriteLine("\tOriginalArtist = " + (Gh3SongInfo.OriginalArtist ? "true" : "false"));
+			streamWriter.WriteLine("\tResolution = " + Constant480);
 			streamWriter.WriteLine("}");
 			streamWriter.WriteLine("[SyncTrack]");
 			streamWriter.WriteLine("{");
-			var list = new List<int>(bpmInterpreter.TSList.Keys);
-			foreach (var current in bpmInterpreter.bpmList.Keys)
+			var list = new List<int>(BpmInterpreter.TsList.Keys);
+			foreach (var current in BpmInterpreter.BpmList.Keys)
 			{
 				if (!list.Contains(current))
 				{
@@ -696,20 +696,20 @@ namespace ns15
 			list.Sort();
 			foreach (var current2 in list)
 			{
-				if (bpmInterpreter.bpmList.ContainsKey(current2))
+				if (BpmInterpreter.BpmList.ContainsKey(current2))
 				{
-					streamWriter.WriteLine(string.Concat("\t", current2, " = B ", bpmInterpreter.bpmList[current2]));
+					streamWriter.WriteLine(string.Concat("\t", current2, " = B ", BpmInterpreter.BpmList[current2]));
 				}
-				if (bpmInterpreter.TSList.ContainsKey(current2))
+				if (BpmInterpreter.TsList.ContainsKey(current2))
 				{
-					streamWriter.WriteLine(string.Concat("\t", current2, " = TS ", bpmInterpreter.TSList[current2]));
+					streamWriter.WriteLine(string.Concat("\t", current2, " = TS ", BpmInterpreter.TsList[current2]));
 				}
 			}
 			streamWriter.WriteLine("}");
 			streamWriter.WriteLine("[Events]");
 			streamWriter.WriteLine("{");
-			list = new List<int>(sectionInterpreter.sectionList.Keys);
-			foreach (var current3 in sectionInterpreter.otherList.Keys)
+			list = new List<int>(SectionInterpreter.SectionList.Keys);
+			foreach (var current3 in SectionInterpreter.OtherList.Keys)
 			{
 				if (!list.Contains(current3))
 				{
@@ -719,13 +719,13 @@ namespace ns15
 			list.Sort();
 			foreach (var current4 in list)
 			{
-				if (sectionInterpreter.sectionList.ContainsKey(current4))
+				if (SectionInterpreter.SectionList.ContainsKey(current4))
 				{
-					streamWriter.WriteLine(string.Concat("\t", current4, " = E \"section ", sectionInterpreter.sectionList[current4].Replace(" ", "_").ToLower(), "\""));
+					streamWriter.WriteLine(string.Concat("\t", current4, " = E \"section ", SectionInterpreter.SectionList[current4].Replace(" ", "_").ToLower(), "\""));
 				}
-				if (sectionInterpreter.otherList.ContainsKey(current4))
+				if (SectionInterpreter.OtherList.ContainsKey(current4))
 				{
-					var list2 = sectionInterpreter.otherList[current4];
+					var list2 = SectionInterpreter.OtherList[current4];
 					foreach (var current5 in list2)
 					{
 						streamWriter.WriteLine(string.Concat("\t", current4, " = E \"", current5, "\""));
@@ -733,7 +733,7 @@ namespace ns15
 				}
 			}
 			streamWriter.WriteLine("}");
-			new ArrayList(difficultyWithNotes.Keys);
+			new ArrayList(DifficultyWithNotes.Keys);
 			string[] array = {
 				"Easy",
 				"Medium",
@@ -757,56 +757,56 @@ namespace ns15
 					for (var k = 0; k < array3.Length; k++)
 					{
 						var str3 = array3[k];
-						if (difficultyWithNotes.ContainsKey(str + str2 + str3))
+						if (DifficultyWithNotes.ContainsKey(str + str2 + str3))
 						{
 							var text = str + str2 + str3;
-							var @class = difficultyWithNotes[text];
+							var @class = DifficultyWithNotes[text];
 							streamWriter.WriteLine("[" + text + "]");
 							streamWriter.WriteLine("{");
-							list = new List<int>(@class.noteList.Keys);
-							foreach (var current6 in @class.class228_2.Keys)
+							list = new List<int>(@class.NoteList.Keys);
+							foreach (var current6 in @class.Class2282.Keys)
 							{
 								if (!list.Contains(current6))
 								{
 									list.Add(current6);
 								}
 							}
-							foreach (var current7 in @class.class228_3.Keys)
+							foreach (var current7 in @class.Class2283.Keys)
 							{
 								if (!list.Contains(current7))
 								{
 									list.Add(current7);
 								}
 							}
-							foreach (var current8 in @class.class228_1.Keys)
+							foreach (var current8 in @class.Class2281.Keys)
 							{
 								if (!list.Contains(current8))
 								{
 									list.Add(current8);
 								}
 							}
-							foreach (var current9 in @class.class228_4.Keys)
+							foreach (var current9 in @class.Class2284.Keys)
 							{
 								if (!list.Contains(current9))
 								{
 									list.Add(current9);
 								}
 							}
-							foreach (var current10 in @class.class228_5.Keys)
+							foreach (var current10 in @class.Class2285.Keys)
 							{
 								if (!list.Contains(current10))
 								{
 									list.Add(current10);
 								}
 							}
-							foreach (var current11 in @class.class228_6.Keys)
+							foreach (var current11 in @class.Class2286.Keys)
 							{
 								if (!list.Contains(current11))
 								{
 									list.Add(current11);
 								}
 							}
-							foreach (var current12 in @class.eventList.Keys)
+							foreach (var current12 in @class.EventList.Keys)
 							{
 								if (!list.Contains(current12))
 								{
@@ -816,48 +816,48 @@ namespace ns15
 							list.Sort();
 							foreach (var current13 in list)
 							{
-								if (@class.eventList.ContainsKey(current13))
+								if (@class.EventList.ContainsKey(current13))
 								{
-									var list2 = @class.eventList[current13];
+									var list2 = @class.EventList[current13];
 									foreach (var current14 in list2)
 									{
 										streamWriter.WriteLine(string.Concat("\t", current13, " = E ", current14));
 									}
 								}
-								if (@class.noteList.ContainsKey(current13))
+								if (@class.NoteList.ContainsKey(current13))
 								{
-									var class2 = @class.noteList[current13];
-									for (var l = 0; l < class2.noteValues.Length; l++)
+									var class2 = @class.NoteList[current13];
+									for (var l = 0; l < class2.NoteValues.Length; l++)
 									{
-										if (class2.noteValues[l])
+										if (class2.NoteValues[l])
 										{
-											streamWriter.WriteLine(string.Concat("\t", current13, " = N ", l, " ", class2.sustainLength));
+											streamWriter.WriteLine(string.Concat("\t", current13, " = N ", l, " ", class2.SustainLength));
 										}
 									}
 								}
-								if (@class.class228_2.ContainsKey(current13))
+								if (@class.Class2282.ContainsKey(current13))
 								{
-									streamWriter.WriteLine(string.Concat("\t", current13, " = S 0 ", @class.class228_2[current13]));
+									streamWriter.WriteLine(string.Concat("\t", current13, " = S 0 ", @class.Class2282[current13]));
 								}
-								if (@class.class228_3.ContainsKey(current13))
+								if (@class.Class2283.ContainsKey(current13))
 								{
-									streamWriter.WriteLine(string.Concat("\t", current13, " = S 1 ", @class.class228_3[current13]));
+									streamWriter.WriteLine(string.Concat("\t", current13, " = S 1 ", @class.Class2283[current13]));
 								}
-								if (@class.class228_1.ContainsKey(current13))
+								if (@class.Class2281.ContainsKey(current13))
 								{
-									streamWriter.WriteLine(string.Concat("\t", current13, " = S 2 ", @class.class228_1[current13]));
+									streamWriter.WriteLine(string.Concat("\t", current13, " = S 2 ", @class.Class2281[current13]));
 								}
-								if (@class.class228_4.ContainsKey(current13))
+								if (@class.Class2284.ContainsKey(current13))
 								{
-									streamWriter.WriteLine(string.Concat("\t", current13, " = S 3 ", @class.class228_4[current13]));
+									streamWriter.WriteLine(string.Concat("\t", current13, " = S 3 ", @class.Class2284[current13]));
 								}
-								if (@class.class228_5.ContainsKey(current13))
+								if (@class.Class2285.ContainsKey(current13))
 								{
-									streamWriter.WriteLine(string.Concat("\t", current13, " = S 4 ", @class.class228_5[current13]));
+									streamWriter.WriteLine(string.Concat("\t", current13, " = S 4 ", @class.Class2285[current13]));
 								}
-								if (@class.class228_6.ContainsKey(current13))
+								if (@class.Class2286.ContainsKey(current13))
 								{
-									streamWriter.WriteLine(string.Concat("\t", current13, " = S 5 ", @class.class228_6[current13]));
+									streamWriter.WriteLine(string.Concat("\t", current13, " = S 5 ", @class.Class2286[current13]));
 								}
 							}
 							streamWriter.WriteLine("}");
@@ -872,10 +872,10 @@ namespace ns15
 				for (var j = 0; j < array2.Length; j++)
 				{
 					var str4 = array2[j];
-					if (instrumentList.ContainsKey(str + str4))
+					if (InstrumentList.ContainsKey(str + str4))
 					{
 						var text2 = str + str4;
-						var class3 = instrumentList[text2];
+						var class3 = InstrumentList[text2];
 						streamWriter.WriteLine("[" + text2 + "]");
 						streamWriter.WriteLine("{");
 						list = new List<int>(class3.Keys);
@@ -894,36 +894,36 @@ namespace ns15
 			streamWriter.Close();
 		}
 
-		private int calculateOffset(int offsetInMS)
+		private int CalculateOffset(int offsetInMs)
 		{
-			var bpmIndex = bpmInterpreter.bpmList.method_1(offsetInMS);
-            var test = Convert.ToInt32(125000m * (bpmMSTracker[bpmIndex] + (offsetInMS - (decimal)bpmInterpreter.bpmList.Keys[bpmIndex]) / bpmInterpreter.bpmList.Values[bpmIndex]));
+			var bpmIndex = BpmInterpreter.BpmList.method_1(offsetInMs);
+            var test = Convert.ToInt32(125000m * (_bpmMsTracker[bpmIndex] + (offsetInMs - (decimal)BpmInterpreter.BpmList.Keys[bpmIndex]) / BpmInterpreter.BpmList.Values[bpmIndex]));
             return test;
         }
 
-		public QBCParser ConvertToQBC()
+		public QbcParser ConvertToQbc()
         { 
-            var @class = new QBCParser(gh3SongInfo);
+            var @class = new QbcParser(Gh3SongInfo);
 			Track<int, int> track = null;
 			Track<int, int> class3 = null;
 			var largestOffset = 0;
             //Checks if there are any difficulties
-            if (difficultyWithNotes.Count == 0)
+            if (DifficultyWithNotes.Count == 0)
 			{
 				throw new Exception("Chart file is empty and cannot be parsed to QB.");
 			}
             //Finds the largest offset
-            foreach (var notes in difficultyWithNotes.Values)
+            foreach (var notes in DifficultyWithNotes.Values)
 			{                
-				largestOffset = Math.Max(largestOffset, notes.noteList.Keys[notes.noteList.Count - 1] + notes.noteList.Values[notes.noteList.Count - 1].sustainLength);
+				largestOffset = Math.Max(largestOffset, notes.NoteList.Keys[notes.NoteList.Count - 1] + notes.NoteList.Values[notes.NoteList.Count - 1].SustainLength);
 			}
-			largestOffset = ((sectionInterpreter.otherList.Count == 0) ? largestOffset : Math.Max(largestOffset, sectionInterpreter.otherList.Keys[sectionInterpreter.otherList.Count - 1]));
-			bpmMSTracker = new Track<int, decimal>();
-			bpmMSTracker.Add(0, 0m);
+			largestOffset = ((SectionInterpreter.OtherList.Count == 0) ? largestOffset : Math.Max(largestOffset, SectionInterpreter.OtherList.Keys[SectionInterpreter.OtherList.Count - 1]));
+			_bpmMsTracker = new Track<int, decimal>();
+			_bpmMsTracker.Add(0, 0m);
             //Adds BPMS to local list
-			for (var i = 1; i < bpmInterpreter.bpmList.Count; i++)
+			for (var i = 1; i < BpmInterpreter.BpmList.Count; i++)
 			{
-                 bpmMSTracker.Add(i, bpmMSTracker[i - 1] + (bpmInterpreter.bpmList.Keys[i] - bpmInterpreter.bpmList.Keys[i - 1]) / (decimal)bpmInterpreter.bpmList.Values[i - 1]);
+                 _bpmMsTracker.Add(i, _bpmMsTracker[i - 1] + (BpmInterpreter.BpmList.Keys[i] - BpmInterpreter.BpmList.Keys[i - 1]) / (decimal)BpmInterpreter.BpmList.Values[i - 1]);
             }
 			string[] array = {
 				"Single",
@@ -949,82 +949,82 @@ namespace ns15
 					{
 						var text3 = array3[l];
 						var difficulty = (text2.ToLower() + ((text == "Double") ? "coop" : "") + "_" + text3.ToLower()).Replace("guitar_", "");
-						if (difficultyWithNotes.ContainsKey(text3 + text + text2))
+						if (DifficultyWithNotes.ContainsKey(text3 + text + text2))
 						{
-							var noteEventInterpreter = difficultyWithNotes[text3 + text + text2];
-                            if (noteEventInterpreter.noteList.Count != 0)
+							var noteEventInterpreter = DifficultyWithNotes[text3 + text + text2];
+                            if (noteEventInterpreter.NoteList.Count != 0)
 							{
-                                @class.noteList.Add(difficulty, new Track<int, NotesAtOffset>());
-                                method_4(@class.noteList[difficulty], noteEventInterpreter.noteList);
+                                @class.NoteList.Add(difficulty, new Track<int, NotesAtOffset>());
+                                method_4(@class.NoteList[difficulty], noteEventInterpreter.NoteList);
                             }
-                            if (noteEventInterpreter.class228_1.Count != 0)
+                            if (noteEventInterpreter.Class2281.Count != 0)
 							{
-                                @class.spList.Add(difficulty, new Track<int, int[]>());
-                                method_5(@class.spList[difficulty], noteEventInterpreter.class228_1, noteEventInterpreter.noteList);
+                                @class.SpList.Add(difficulty, new Track<int, int[]>());
+                                method_5(@class.SpList[difficulty], noteEventInterpreter.Class2281, noteEventInterpreter.NoteList);
                             }
-                            if (noteEventInterpreter.class228_4.Count != 0)
+                            if (noteEventInterpreter.Class2284.Count != 0)
 							{
-								@class.battleNoteList.Add(difficulty, new Track<int, int[]>());
-								method_5(@class.battleNoteList[difficulty], noteEventInterpreter.class228_4, noteEventInterpreter.noteList);
+								@class.BattleNoteList.Add(difficulty, new Track<int, int[]>());
+								method_5(@class.BattleNoteList[difficulty], noteEventInterpreter.Class2284, noteEventInterpreter.NoteList);
 							}
-                            if (track == null || track.Count < noteEventInterpreter.class228_2.Count)
+                            if (track == null || track.Count < noteEventInterpreter.Class2282.Count)
 							{
-								track = noteEventInterpreter.class228_2;
+								track = noteEventInterpreter.Class2282;
 							}
-                            if (class3 == null || class3.Count < noteEventInterpreter.class228_3.Count)
+                            if (class3 == null || class3.Count < noteEventInterpreter.Class2283.Count)
 							{
-								class3 = noteEventInterpreter.class228_3;
+								class3 = noteEventInterpreter.Class2283;
 							}
                         }
                     }
 				}
 			}
-            method_6(@class.class228_2, track);
-			method_6(@class.class228_3, class3);
-            foreach (var current2 in bpmInterpreter.TSList.Keys)
+            method_6(@class.Class2282, track);
+			method_6(@class.Class2283, class3);
+            foreach (var current2 in BpmInterpreter.TsList.Keys)
 			{
-				@class.tsList.Add(calculateOffset(current2), new[]
+				@class.TsList.Add(CalculateOffset(current2), new[]
 				{
-					bpmInterpreter.TSList[current2],
+					BpmInterpreter.TsList[current2],
 					4
 				});
 			}
-            var num2 = (int)Math.Ceiling(largestOffset / (double)constant480);
+            var num2 = (int)Math.Ceiling(largestOffset / (double)Constant480);
             for (var m = 0; m <= num2; m++)
 			{
-				@class.FretbarList.method_1(calculateOffset(m * constant480));
+				@class.FretbarList.method_1(CalculateOffset(m * Constant480));
 			}
             @class.FretbarList[0] = @class.FretbarList[1] - 4;
-			@class.int_0 = 1;
-            foreach (var current3 in sectionInterpreter.sectionList.Keys)
+			@class.Int0 = 1;
+            foreach (var current3 in SectionInterpreter.SectionList.Keys)
 			{
-				@class.class228_1.Add(calculateOffset(current3), sectionInterpreter.sectionList[current3]);
+				@class.Class2281.Add(CalculateOffset(current3), SectionInterpreter.SectionList[current3]);
 			}
-            bpmMSTracker.Clear();
-			bpmMSTracker = null;
+            _bpmMsTracker.Clear();
+			_bpmMsTracker = null;
 			GC.Collect();
             return @class;
 		}
 
-		private void method_4(Track<int, NotesAtOffset> class228_1, Track<int, NotesAtOffset> class228_2)
+		private void method_4(Track<int, NotesAtOffset> class2281, Track<int, NotesAtOffset> class2282)
 		{
-			foreach (var current in class228_2.Keys)
+			foreach (var current in class2282.Keys)
 			{
-				var num = calculateOffset(current);
-				var int_ = (class228_2[current].sustainLength == 0) ? 1 : (calculateOffset(current + class228_2[current].sustainLength) - num);
-				if (class228_1.ContainsKey(num))
+				var num = CalculateOffset(current);
+				var int_ = (class2282[current].SustainLength == 0) ? 1 : (CalculateOffset(current + class2282[current].SustainLength) - num);
+				if (class2281.ContainsKey(num))
 				{
 					for (var i = 0; i < 32; i++)
 					{
-						if (class228_2[current].noteValues[i])
+						if (class2282[current].NoteValues[i])
 						{
-							class228_1[num].noteValues[i] = true;
+							class2281[num].NoteValues[i] = true;
 						}
 					}
 				}
 				else
 				{
-					class228_1.Add(num, new NotesAtOffset(class228_2[current].noteValues, int_));
+					class2281.Add(num, new NotesAtOffset(class2282[current].NoteValues, int_));
 				}
 			}
 		}
@@ -1033,7 +1033,7 @@ namespace ns15
 		{
 			foreach (var current in sp.Keys)
 			{
-                var num = calculateOffset(current);
+                var num = CalculateOffset(current);
                 var num2 = 0;
                 if (sp[current] == 0)
                 {
@@ -1050,7 +1050,7 @@ namespace ns15
                     {
                         num4 = (current + sp[current]);
                     }
-                    var num3 = calculateOffset(num4);
+                    var num3 = CalculateOffset(num4);
                     //int num3 = this.method_2((sp.Keys[sp.method_1(current + sp[current])] > current) ? notes.Keys[notes.method_1(sp.Keys[sp.method_1(current + sp[current])] - 1)] : (current + sp[current]));
                     num2 = (num3 - num);
                 }
@@ -1063,17 +1063,17 @@ namespace ns15
             }
 		}
 
-		private void method_6(Track<int, int> class228_1, Track<int, int> class228_2)
+		private void method_6(Track<int, int> class2281, Track<int, int> class2282)
 		{
-			if (class228_2 == null)
+			if (class2282 == null)
 			{
 				return;
 			}
-			foreach (var current in class228_2.Keys)
+			foreach (var current in class2282.Keys)
 			{
-				var num = calculateOffset(current);
-				var value = (class228_2[current] == 0) ? 1 : (calculateOffset(current + class228_2[current]) - num);
-				class228_1.Add(num, value);
+				var num = CalculateOffset(current);
+				var value = (class2282[current] == 0) ? 1 : (CalculateOffset(current + class2282[current]) - num);
+				class2281.Add(num, value);
 			}
 		}
 	}

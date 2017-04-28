@@ -3,29 +3,29 @@ using System.Collections.Generic;
 
 namespace ns9
 {
-	public class Class356 : Interface15
+	public class Class356 : INterface15
 	{
-		private DateTime dateTime_0 = DateTime.MinValue;
+		private DateTime _dateTime0 = DateTime.MinValue;
 
-		private int int_0 = -1;
+		private int _int0 = -1;
 
-		private DateTime dateTime_1 = DateTime.MinValue;
+		private DateTime _dateTime1 = DateTime.MinValue;
 
-		private Dictionary<string, bool> dictionary_0 = new Dictionary<string, bool>();
+		private Dictionary<string, bool> _dictionary0 = new Dictionary<string, bool>();
 
-		private readonly Dictionary<string, bool> dictionary_1 = new Dictionary<string, bool>();
+		private readonly Dictionary<string, bool> _dictionary1 = new Dictionary<string, bool>();
 
-		public void imethod_0(string string_0)
+		public void imethod_0(string string0)
 		{
-			Console.WriteLine(string_0);
+			Console.WriteLine(string0);
 		}
 
-		public void imethod_1(string string_0)
+		public void imethod_1(string string0)
 		{
 			var stackTrace = Environment.StackTrace;
-			Console.WriteLine("WARNING: " + string_0);
+			Console.WriteLine("WARNING: " + string0);
 			Console.WriteLine(stackTrace);
-			if (dictionary_1.ContainsKey(stackTrace))
+			if (_dictionary1.ContainsKey(stackTrace))
 			{
 				return;
 			}
@@ -53,7 +53,7 @@ namespace ns9
 					}
 				}
 			}
-			dictionary_1[stackTrace] = true;
+			_dictionary1[stackTrace] = true;
 		}
 	}
 }

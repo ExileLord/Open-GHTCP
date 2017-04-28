@@ -5,21 +5,21 @@ namespace ns7
 {
 	public class Class133 : Class131
 	{
-		private readonly int[] int_1;
+		private readonly int[] _int1;
 
-		public Class133(Class144 class144_0, Class140 class140_1, Class136 class136_0, int int_2, int int_3) : base(class140_1, int_3)
+		public Class133(Class144 class1440, Class140 class1401, Class136 class1360, int int2, int int3) : base(class1401, int3)
 		{
-			int_1 = class136_0.vmethod_2();
-			for (var i = 0; i < class140_1.int_0; i++)
+			_int1 = class1360.vmethod_2();
+			for (var i = 0; i < class1401.Int0; i++)
 			{
-				int_1[i] = class144_0.vmethod_12(int_2);
+				_int1[i] = class1440.vmethod_12(int2);
 			}
-			Buffer.BlockCopy(int_1, 0, class136_0.vmethod_0(), 0, class140_1.int_0 << 2);
+			Buffer.BlockCopy(_int1, 0, class1360.vmethod_0(), 0, class1401.Int0 << 2);
 		}
 
 		public override string ToString()
 		{
-			return "ChannelVerbatim: WastedBits=" + int_0;
+			return "ChannelVerbatim: WastedBits=" + Int0;
 		}
 	}
 }

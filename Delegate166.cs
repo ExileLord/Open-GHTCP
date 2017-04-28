@@ -1,1 +1,1 @@
-public delegate void Delegate166(object object_0, float float_0);
+public delegate void Delegate166(object object0, float float0);

@@ -48,11 +48,11 @@ namespace SystemTools
 				return MemberwiseClone();
 			}
 
-			public BitListEnumerator(BitList bitList_0)
+			public BitListEnumerator(BitList bitList0)
 			{
 				_index = -1;
-				_bitList = bitList_0;
-				_max = bitList_0.bitLength;
+				_bitList = bitList0;
+				_max = bitList0._bitLength;
 			}
 
 			public bool MoveNext()
@@ -79,23 +79,23 @@ namespace SystemTools
 			}
 		}
 
-		private readonly List<byte> data = new List<byte>();
+		private readonly List<byte> _data = new List<byte>();
 
-		private int bitLength;
+		private int _bitLength;
 
 		public bool this[int index]
 		{
 			get
 			{
-				if (index < 0 || index >= bitLength)
+				if (index < 0 || index >= _bitLength)
 				{
 					throw new ArgumentOutOfRangeException();
 				}
-				return (data[index >> 3] & 1 << (index & 7)) != 0;
+				return (_data[index >> 3] & 1 << (index & 7)) != 0;
 			}
 			set
 			{
-				if (index < 0 || index >= bitLength)
+				if (index < 0 || index >= _bitLength)
 				{
 					throw new ArgumentOutOfRangeException();
 				}
@@ -105,12 +105,12 @@ namespace SystemTools
 				{
 					List<byte> list;
 					int index2;
-                    (list = data)[index2 = num] = (byte)(list[index2] | (byte)(1 << num2));
+                    (list = _data)[index2 = num] = (byte)(list[index2] | (byte)(1 << num2));
 					return;
 				}
 				List<byte> list2;
 				int index3;
-                (list2 = data)[index3 = num] = (byte)(list2[index3] & (byte)(~(byte)(1 << num2)));
+                (list2 = _data)[index3 = num] = (byte)(list2[index3] & (byte)(~(byte)(1 << num2)));
 			}
 		}
 
@@ -118,7 +118,7 @@ namespace SystemTools
 		{
 			get
 			{
-				return bitLength;
+				return _bitLength;
 			}
 		}
 
@@ -134,19 +134,19 @@ namespace SystemTools
 		{
 		}
 
-		public BitList(BitList bitList_0)
+		public BitList(BitList bitList0)
 		{
-			data.AddRange(bitList_0.data);
-			bitLength = bitList_0.bitLength;
+			_data.AddRange(bitList0._data);
+			_bitLength = bitList0._bitLength;
 		}
 
-		public static byte[] smethod_0<T>(T gparam_0) where T : struct
+		public static byte[] smethod_0<T>(T gparam0) where T : struct
 		{
-			var array = new byte[Marshal.SizeOf(gparam_0)];
+			var array = new byte[Marshal.SizeOf(gparam0)];
 			try
 			{
 				T[] src = {
-					gparam_0
+					gparam0
 				};
 				Buffer.BlockCopy(src, 0, array, 0, array.Length);
 				return array;
@@ -157,7 +157,7 @@ namespace SystemTools
 			var gCHandle = GCHandle.Alloc(array, GCHandleType.Pinned);
 			try
 			{
-				Marshal.StructureToPtr(gparam_0, gCHandle.AddrOfPinnedObject(), false);
+				Marshal.StructureToPtr(gparam0, gCHandle.AddrOfPinnedObject(), false);
 			}
 			finally
 			{
@@ -166,55 +166,55 @@ namespace SystemTools
 			return array;
 		}
 
-		public void method_0(int int_0, byte byte_0)
+		public void method_0(int int0, byte byte0)
 		{
-			var num = int_0 >> 3;
-			var num2 = int_0 & 7;
+			var num = int0 >> 3;
+			var num2 = int0 & 7;
 			if (num2 == 0)
 			{
-				data[num] = byte_0;
+				_data[num] = byte0;
 			}
 			List<byte> list;
 			int index;
-            (list = data)[index = num] = (byte)(list[index] & (byte)(~(byte)(255 << num2)));
+            (list = _data)[index = num] = (byte)(list[index] & (byte)(~(byte)(255 << num2)));
 			List<byte> list2;
 			int index2;
-            (list2 = data)[index2 = num] = (byte)(list2[index2] | (byte)(byte_0 << num2));
-			if (num + 1 == data.Count)
+            (list2 = _data)[index2 = num] = (byte)(list2[index2] | (byte)(byte0 << num2));
+			if (num + 1 == _data.Count)
 			{
-				data.Add(0);
-				bitLength += num2;
+				_data.Add(0);
+				_bitLength += num2;
 			}
 			List<byte> list3;
 			int index3;
-            (list3 = data)[index3 = num + 1] = (byte)(list3[index3] & (byte)(~(byte)(255 >> 8 - num2)));
+            (list3 = _data)[index3 = num + 1] = (byte)(list3[index3] & (byte)(~(byte)(255 >> 8 - num2)));
 			List<byte> list4;
 			int index4;
-            (list4 = data)[index4 = num + 1] = (byte)(list4[index4] | (byte)(byte_0 >> 8 - num2));
+            (list4 = _data)[index4 = num + 1] = (byte)(list4[index4] | (byte)(byte0 >> 8 - num2));
 		}
 
-		public void Add<T>(T gparam_0) where T : struct
+		public void Add<T>(T gparam0) where T : struct
 		{
 			if (typeof(T).Equals(typeof(byte)))
 			{
-				method_0(bitLength, (byte)((object)gparam_0));
+				method_0(_bitLength, (byte)((object)gparam0));
 				return;
 			}
-			method_1(smethod_0(gparam_0));
+			method_1(smethod_0(gparam0));
 		}
 
-		public void method_1(IEnumerable<byte> ienumerable_0)
+		public void method_1(IEnumerable<byte> ienumerable0)
 		{
-			if (bitLength != 0 && (bitLength & 7) != 0)
+			if (_bitLength != 0 && (_bitLength & 7) != 0)
 			{
-				foreach (var current in ienumerable_0)
+				foreach (var current in ienumerable0)
 				{
-					method_0(bitLength, current);
+					method_0(_bitLength, current);
 				}
 				return;
 			}
-			data.AddRange(ienumerable_0);
-			bitLength = data.Count << 3;
+			_data.AddRange(ienumerable0);
+			_bitLength = _data.Count << 3;
 		}
 
 		public override string ToString()
@@ -233,14 +233,14 @@ namespace SystemTools
 		public override bool Equals(object obj)
 		{
 			var bitList = (BitList)obj;
-			if (bitLength != bitList.bitLength)
+			if (_bitLength != bitList._bitLength)
 			{
 				return false;
 			}
-			var num = (bitLength >> 3) + 1;
+			var num = (_bitLength >> 3) + 1;
 			for (var i = 0; i < num; i++)
 			{
-				if (data[i] != bitList.data[i])
+				if (_data[i] != bitList._data[i])
 				{
 					return false;
 				}
@@ -255,7 +255,7 @@ namespace SystemTools
 
 		public int IndexOf(bool item)
 		{
-			for (var i = 0; i < bitLength; i++)
+			for (var i = 0; i < _bitLength; i++)
 			{
 				if (this[i] == item)
 				{
@@ -267,61 +267,61 @@ namespace SystemTools
 
 		public void Insert(int index, bool item)
 		{
-			if (index < 0 || index > bitLength)
+			if (index < 0 || index > _bitLength)
 			{
 				throw new ArgumentOutOfRangeException();
 			}
-			if (index == bitLength)
+			if (index == _bitLength)
 			{
 				Add(item);
 				return;
 			}
-			if ((data.Count << 3) - bitLength == 0)
+			if ((_data.Count << 3) - _bitLength == 0)
 			{
-				data.Add(0);
+				_data.Add(0);
 			}
 			var num = 1;
 			var num2 = 7;
-			var num3 = data.Count - 1;
+			var num3 = _data.Count - 1;
 			var num4 = index >> 3;
 			var num5 = index - (num4 << 3);
 			for (var i = num3; i > num4; i--)
 			{
-				data[i] = (byte)(data[i] << num | data[i - 1] >> num2);
+				_data[i] = (byte)(_data[i] << num | _data[i - 1] >> num2);
 			}
-			data[num4] = (byte)((data[num4] << num & 255 << num5 + 1) | (data[num4] & ~(255 << num5)));
+			_data[num4] = (byte)((_data[num4] << num & 255 << num5 + 1) | (_data[num4] & ~(255 << num5)));
 			if (item)
 			{
 				List<byte> list;
 				int index2;
-                (list = data)[index2 = num4] = (byte)(list[index2] | (byte)(1 << num5));
+                (list = _data)[index2 = num4] = (byte)(list[index2] | (byte)(1 << num5));
 			}
-			bitLength++;
+			_bitLength++;
 		}
 
 		public void RemoveAt(int index)
 		{
-			if (index >= 0 && index < bitLength)
+			if (index >= 0 && index < _bitLength)
 			{
 				var num = 1;
 				var num2 = 7;
-				var num3 = data.Count - 1;
+				var num3 = _data.Count - 1;
 				var num4 = index >> 3;
 				var num5 = index - (num4 << 3);
-				var b = data[num4];
+				var b = _data[num4];
 				for (var i = num4; i < num3; i++)
 				{
-					data[i] = (byte)(data[i] >> num | data[i + 1] << num2);
+					_data[i] = (byte)(_data[i] >> num | _data[i + 1] << num2);
 				}
 				List<byte> list;
 				int index2;
-				(list = data)[index2 = num3] = (byte)(list[index2] >> num);
-				data[num4] = (byte)((data[num4] & 255 << num5) | (b & ~(255 << num5)));
-				if ((data.Count << 3) - bitLength == 7)
+				(list = _data)[index2 = num3] = (byte)(list[index2] >> num);
+				_data[num4] = (byte)((_data[num4] & 255 << num5) | (b & ~(255 << num5)));
+				if ((_data.Count << 3) - _bitLength == 7)
 				{
-					data.RemoveAt(num3);
+					_data.RemoveAt(num3);
 				}
-				bitLength--;
+				_bitLength--;
 				return;
 			}
 			throw new ArgumentOutOfRangeException();
@@ -329,38 +329,38 @@ namespace SystemTools
 
 		public void Add(bool item)
 		{
-			var num = (data.Count << 3) - bitLength;
+			var num = (_data.Count << 3) - _bitLength;
 			if (num > 0)
 			{
 				if (item)
 				{
 					List<byte> list;
 					int index;
-                    (list = data)[index = data.Count - 1] = (byte)(list[index] | (byte)(1 << num));
+                    (list = _data)[index = _data.Count - 1] = (byte)(list[index] | (byte)(1 << num));
 				}
 				else
 				{
 					List<byte> list2;
 					int index2;
-                    (list2 = data)[index2 = data.Count - 1] = (byte)(list2[index2] & (byte)(~(byte)(1 << num)));
+                    (list2 = _data)[index2 = _data.Count - 1] = (byte)(list2[index2] & (byte)(~(byte)(1 << num)));
 				}
 			}
 			else
 			{
-				data.Add(item ? (byte)1 : (byte)0);
+				_data.Add(item ? (byte)1 : (byte)0);
 			}
-			bitLength++;
+			_bitLength++;
 		}
 
 		public void Clear()
 		{
-			data.Clear();
-			bitLength = 0;
+			_data.Clear();
+			_bitLength = 0;
 		}
 
 		public bool Contains(bool item)
 		{
-			foreach (var current in data)
+			foreach (var current in _data)
 			{
 				if (item ? (current != 0) : (current != 255))
 				{
@@ -372,9 +372,9 @@ namespace SystemTools
 
 		public void CopyTo(bool[] array, int index)
 		{
-			if (index >= 0 && index + bitLength < array.Length)
+			if (index >= 0 && index + _bitLength < array.Length)
 			{
-				for (var i = 0; i < bitLength; i++)
+				for (var i = 0; i < _bitLength; i++)
 				{
 					array[index + i] = this[i];
 				}

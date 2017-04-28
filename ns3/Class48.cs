@@ -4,33 +4,33 @@ namespace ns3
 {
 	public class Class48
 	{
-		public byte[] byte_0;
+		public byte[] Byte0;
 
-		public int int_0;
+		public int Int0;
 
-		public int int_1;
+		public int Int1;
 
-		public byte[] byte_1;
+		public byte[] Byte1;
 
-		public int int_2;
+		public int Int2;
 
-		public int int_3;
+		public int Int3;
 
-		private static readonly uint[] uint_0 = new uint[256];
+		private static readonly uint[] Uint0 = new uint[256];
 
 		public Class48()
 		{
 			var num = 0u;
-			while (num < (ulong)uint_0.Length)
+			while (num < (ulong)Uint0.Length)
 			{
-				uint_0[(int)((UIntPtr)num)] = smethod_0(num);
+				Uint0[(int)((UIntPtr)num)] = smethod_0(num);
 				num += 1u;
 			}
 		}
 
-		private static uint smethod_0(uint uint_1)
+		private static uint smethod_0(uint uint1)
 		{
-			var num = uint_1 << 24;
+			var num = uint1 << 24;
 			for (var i = 0; i < 8; i++)
 			{
 				if ((num & 2147483648u) != 0u)
@@ -47,65 +47,65 @@ namespace ns3
 
 		public int method_0()
 		{
-			return byte_0[int_0 + 4] & 255;
+			return Byte0[Int0 + 4] & 255;
 		}
 
 		public int method_1()
 		{
-			return byte_0[int_0 + 5] & 1;
+			return Byte0[Int0 + 5] & 1;
 		}
 
 		public int method_2()
 		{
-			return byte_0[int_0 + 5] & 2;
+			return Byte0[Int0 + 5] & 2;
 		}
 
 		public int method_3()
 		{
-			return byte_0[int_0 + 5] & 4;
+			return Byte0[Int0 + 5] & 4;
 		}
 
 		public long method_4()
 		{
-			long num = byte_0[int_0 + 13] & 255;
-			num = (num << 8 | byte_0[int_0 + 12] & 255);
-			num = (num << 8 | byte_0[int_0 + 11] & 255);
-			num = (num << 8 | byte_0[int_0 + 10] & 255);
-			num = (num << 8 | byte_0[int_0 + 9] & 255);
-			num = (num << 8 | byte_0[int_0 + 8] & 255);
-			num = (num << 8 | byte_0[int_0 + 7] & 255);
-			return num << 8 | byte_0[int_0 + 6] & 255;
+			long num = Byte0[Int0 + 13] & 255;
+			num = (num << 8 | Byte0[Int0 + 12] & 255);
+			num = (num << 8 | Byte0[Int0 + 11] & 255);
+			num = (num << 8 | Byte0[Int0 + 10] & 255);
+			num = (num << 8 | Byte0[Int0 + 9] & 255);
+			num = (num << 8 | Byte0[Int0 + 8] & 255);
+			num = (num << 8 | Byte0[Int0 + 7] & 255);
+			return num << 8 | Byte0[Int0 + 6] & 255;
 		}
 
 		public int method_5()
 		{
-			return byte_0[int_0 + 14] & 255 | (byte_0[int_0 + 15] & 255) << 8 | (byte_0[int_0 + 16] & 255) << 16 | (byte_0[int_0 + 17] & 255) << 24;
+			return Byte0[Int0 + 14] & 255 | (Byte0[Int0 + 15] & 255) << 8 | (Byte0[Int0 + 16] & 255) << 16 | (Byte0[Int0 + 17] & 255) << 24;
 		}
 
 		public int method_6()
 		{
-			return byte_0[int_0 + 18] & 255 | (byte_0[int_0 + 19] & 255) << 8 | (byte_0[int_0 + 20] & 255) << 16 | (byte_0[int_0 + 21] & 255) << 24;
+			return Byte0[Int0 + 18] & 255 | (Byte0[Int0 + 19] & 255) << 8 | (Byte0[Int0 + 20] & 255) << 16 | (Byte0[Int0 + 21] & 255) << 24;
 		}
 
 		public void method_7()
 		{
 			var num = 0u;
-			for (var i = 0; i < int_1; i++)
+			for (var i = 0; i < Int1; i++)
 			{
-				var num2 = (uint)(byte_0[int_0 + i] & 255);
+				var num2 = (uint)(Byte0[Int0 + i] & 255);
 				var num3 = num >> 24 & 255u;
-				num = (num << 8 ^ uint_0[(int)((UIntPtr)(num2 ^ num3))]);
+				num = (num << 8 ^ Uint0[(int)((UIntPtr)(num2 ^ num3))]);
 			}
-			for (var j = 0; j < int_3; j++)
+			for (var j = 0; j < Int3; j++)
 			{
-				var num2 = (uint)(byte_1[int_2 + j] & 255);
+				var num2 = (uint)(Byte1[Int2 + j] & 255);
 				var num3 = num >> 24 & 255u;
-				num = (num << 8 ^ uint_0[(int)((UIntPtr)(num2 ^ num3))]);
+				num = (num << 8 ^ Uint0[(int)((UIntPtr)(num2 ^ num3))]);
 			}
-			byte_0[int_0 + 22] = (byte)num;
-			byte_0[int_0 + 23] = (byte)(num >> 8);
-			byte_0[int_0 + 24] = (byte)(num >> 16);
-			byte_0[int_0 + 25] = (byte)(num >> 24);
+			Byte0[Int0 + 22] = (byte)num;
+			Byte0[Int0 + 23] = (byte)(num >> 8);
+			Byte0[Int0 + 24] = (byte)(num >> 16);
+			Byte0[Int0 + 25] = (byte)(num >> 24);
 		}
 	}
 }

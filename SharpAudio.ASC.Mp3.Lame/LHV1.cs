@@ -5,11 +5,11 @@ namespace SharpAudio.ASC.Mp3.Lame
 {
 	[Serializable]
 	[StructLayout(LayoutKind.Sequential, Size = 327)]
-	public struct LHV1
+	public struct Lhv1
 	{
-		public const uint MPEG1 = 1u;
+		public const uint Mpeg1 = 1u;
 
-		public const uint MPEG2 = 0u;
+		public const uint Mpeg2 = 0u;
 
 		public uint dwStructVersion;
 
@@ -57,24 +57,24 @@ namespace SharpAudio.ASC.Mp3.Lame
 
 		public ushort nQuality;
 
-		public LHV1(WaveFormat waveFormat_0, uint uint_0)
+		public Lhv1(WaveFormat waveFormat0, uint uint0)
 		{
-			this = new LHV1(waveFormat_0, uint_0, 0u);
+			this = new Lhv1(waveFormat0, uint0, 0u);
 		}
 
-		public LHV1(WaveFormat waveFormat_0, uint uint_0, uint uint_1)
+		public Lhv1(WaveFormat waveFormat0, uint uint0, uint uint1)
 		{
-			if (waveFormat_0.waveFormatTag_0 != WaveFormatTag.PCM)
+			if (waveFormat0.waveFormatTag_0 != WaveFormatTag.Pcm)
 			{
 				throw new ArgumentOutOfRangeException("format", "Only PCM format supported");
 			}
-			if (waveFormat_0.short_2 != 16)
+			if (waveFormat0.short_2 != 16)
 			{
 				throw new ArgumentOutOfRangeException("format", "Only 16 bits samples supported");
 			}
 			dwStructVersion = 1u;
-			dwStructSize = (uint)Marshal.SizeOf(typeof(BE_CONFIG));
-			var num = (uint)((uint_1 == 0u) ? waveFormat_0.int_0 : ((int)uint_1));
+			dwStructSize = (uint)Marshal.SizeOf(typeof(BeConfig));
+			var num = (uint)((uint1 == 0u) ? waveFormat0.int_0 : ((int)uint1));
 			if (num <= 24000u)
 			{
 				if (num == 16000u || num == 22050u || num == 24000u)
@@ -90,9 +90,9 @@ namespace SharpAudio.ASC.Mp3.Lame
 			}
 			throw new ArgumentOutOfRangeException("format", "Unsupported sample rate");
 			IL_B6:
-			dwSampleRate = (uint)waveFormat_0.int_0;
-			dwReSampleRate = uint_1;
-			switch (waveFormat_0.short_0)
+			dwSampleRate = (uint)waveFormat0.int_0;
+			dwReSampleRate = uint1;
+			switch (waveFormat0.short_0)
 			{
 			case 1:
 				nMode = MpegMode.Mono;
@@ -103,29 +103,29 @@ namespace SharpAudio.ASC.Mp3.Lame
 			default:
 				throw new ArgumentOutOfRangeException("format", "Invalid number of channels");
 			}
-			if (uint_0 <= 80u)
+			if (uint0 <= 80u)
 			{
-				if (uint_0 <= 32u)
+				if (uint0 <= 32u)
 				{
-					if (uint_0 <= 16u)
+					if (uint0 <= 16u)
 					{
-						if (uint_0 != 8u && uint_0 != 16u)
+						if (uint0 != 8u && uint0 != 16u)
 						{
 							goto IL_1E5;
 						}
 					}
-					else if (uint_0 != 24u)
+					else if (uint0 != 24u)
 					{
-						if (uint_0 != 32u)
+						if (uint0 != 32u)
 						{
 							goto IL_1E5;
 						}
 						goto IL_20E;
 					}
 				}
-				else if (uint_0 <= 48u)
+				else if (uint0 <= 48u)
 				{
-					if (uint_0 != 40u && uint_0 != 48u)
+					if (uint0 != 40u && uint0 != 48u)
 					{
 						goto IL_1E5;
 					}
@@ -133,48 +133,48 @@ namespace SharpAudio.ASC.Mp3.Lame
 				}
 				else
 				{
-					if (uint_0 != 56u && uint_0 != 64u && uint_0 != 80u)
+					if (uint0 != 56u && uint0 != 64u && uint0 != 80u)
 					{
 						goto IL_1E5;
 					}
 					goto IL_20E;
 				}
 			}
-			else if (uint_0 <= 144u)
+			else if (uint0 <= 144u)
 			{
-				if (uint_0 <= 112u)
+				if (uint0 <= 112u)
 				{
-					if (uint_0 != 96u && uint_0 != 112u)
+					if (uint0 != 96u && uint0 != 112u)
 					{
 						goto IL_1E5;
 					}
 					goto IL_20E;
 				}
-			    if (uint_0 == 128u)
+			    if (uint0 == 128u)
 			    {
 			        goto IL_20E;
 			    }
-			    if (uint_0 != 144u)
+			    if (uint0 != 144u)
 			    {
 			        goto IL_1E5;
 			    }
 			}
 			else
 			{
-				if (uint_0 <= 192u)
+				if (uint0 <= 192u)
 				{
-					if (uint_0 == 160u)
+					if (uint0 == 160u)
 					{
 						goto IL_20E;
 					}
-					if (uint_0 != 192u)
+					if (uint0 != 192u)
 					{
 						goto IL_1E5;
 					}
 				}
-				else if (uint_0 != 224u && uint_0 != 256u)
+				else if (uint0 != 224u && uint0 != 256u)
 				{
-					if (uint_0 != 320u)
+					if (uint0 != 320u)
 					{
 						goto IL_1E5;
 					}
@@ -193,7 +193,7 @@ namespace SharpAudio.ASC.Mp3.Lame
 			IL_1E5:
 			throw new ArgumentOutOfRangeException("MpsBitRate", "Unsupported bit rate");
 			IL_20E:
-			dwBitrate = uint_0;
+			dwBitrate = uint0;
 			nPreset = LameQualityPreset.LqpNormalQuality;
 			dwPsyModel = 0u;
 			dwEmphasis = 0u;

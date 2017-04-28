@@ -9,7 +9,7 @@ namespace SharpAudio.ASC.Flac.LibFlac.frame
 		{
 		}
 
-		public BadHeaderException(string string_0) : base(string_0)
+		public BadHeaderException(string string0) : base(string0)
 		{
 		}
 	}

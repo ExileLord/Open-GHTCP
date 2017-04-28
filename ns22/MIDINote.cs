@@ -3,63 +3,63 @@ using ns9;
 
 namespace ns22
 {
-	public class MIDINote : AbstractNoteClass
+	public class MidiNote : AbstractNoteClass
 	{
-		private readonly int midiMask;
+		private readonly int _midiMask;
 
-		private readonly byte byte_0;
+		private readonly byte _byte0;
 
-		private readonly bool bool_0 = true;
+		private readonly bool _bool0 = true;
 
-		public MIDINote(int int_2, int int_3, byte byte_1, bool bool_1)
+		public MidiNote(int int2, int int3, byte byte1, bool bool1)
 		{
-			int_0 = int_2;
-			midiMask = int_3;
-			byte_0 = byte_1;
-			bool_0 = bool_1;
+			Int0 = int2;
+			_midiMask = int3;
+			_byte0 = byte1;
+			_bool0 = bool1;
 		}
 
-		public Difficulty getDifficulty()
+		public Difficulty GetDifficulty()
 		{
-			if (midiMask >= 60 && midiMask <= 106)
+			if (_midiMask >= 60 && _midiMask <= 106)
 			{
-				return (Difficulty)((midiMask - 60) / 12);
+				return (Difficulty)((_midiMask - 60) / 12);
 			}
 			return Difficulty.Invalid;
 		}
 
-		public MIDINoteMask method_2()
+		public MidiNoteMask method_2()
 		{
-			if (midiMask == 108)
+			if (_midiMask == 108)
 			{
-				return MIDINoteMask.Unk108;
+				return MidiNoteMask.Unk108;
 			}
             //SP
-			if (midiMask == 116)
+			if (_midiMask == 116)
 			{
-				return MIDINoteMask.StarPower;
+				return MidiNoteMask.StarPower;
 			}
             //I assume nothing
-			if (midiMask < 60 || midiMask > 106)
+			if (_midiMask < 60 || _midiMask > 106)
 			{
-				return MIDINoteMask.Invalid;
+				return MidiNoteMask.Invalid;
 			}
             //Gets note type
-			var num = (midiMask - 60) % 12;
-			if (Enum.IsDefined(typeof(MIDINoteMask), num))
+			var num = (_midiMask - 60) % 12;
+			if (Enum.IsDefined(typeof(MidiNoteMask), num))
 			{
-				return (MIDINoteMask)num;
+				return (MidiNoteMask)num;
 			}
-			return MIDINoteMask.Invalid;
+			return MidiNoteMask.Invalid;
 		}
 
 		public Fret method_3()
 		{
-			if (midiMask < 60 || midiMask > 106)
+			if (_midiMask < 60 || _midiMask > 106)
 			{
 				return Fret.Invalid;
 			}
-			var @enum = (Fret)((midiMask - 60) % 12);
+			var @enum = (Fret)((_midiMask - 60) % 12);
 			if (@enum >= Fret.Green && @enum <= Fret.Orange)
 			{
 				return @enum;
@@ -69,17 +69,17 @@ namespace ns22
 
 		public int method_4()
 		{
-			return midiMask;
+			return _midiMask;
 		}
 
 		public bool method_5()
 		{
-			return byte_0 > 0 && bool_0;
+			return _byte0 > 0 && _bool0;
 		}
 
 		public override string ToString()
 		{
-			return string.Format("{0}: NoteId {1} ({2} {3})", method_0(), midiMask, byte_0, bool_0 ? "On" : "Off");
+			return string.Format("{0}: NoteId {1} ({2} {3})", method_0(), _midiMask, _byte0, _bool0 ? "On" : "Off");
 		}
 	}
 }

@@ -6,193 +6,193 @@ using ns9;
 
 namespace ns15
 {
-	public class MIDIParser
+	public class MidiParser
 	{
-		private readonly string fileLocation;
+		private readonly string _fileLocation;
 
-		private readonly NoteEventInterpreter expertSingle = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter _expertSingle = new NoteEventInterpreter();
 
-		private readonly NoteEventInterpreter hardSingle = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter _hardSingle = new NoteEventInterpreter();
 
-		private readonly NoteEventInterpreter mediumSingle = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter _mediumSingle = new NoteEventInterpreter();
 
-		private readonly NoteEventInterpreter easySingle = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter _easySingle = new NoteEventInterpreter();
 
-		private readonly NoteEventInterpreter expertDoubleGuitar = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter _expertDoubleGuitar = new NoteEventInterpreter();
 
-		private readonly NoteEventInterpreter hardDoubleGuitar = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter _hardDoubleGuitar = new NoteEventInterpreter();
 
-		private readonly NoteEventInterpreter mediumDoubleGuitar = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter _mediumDoubleGuitar = new NoteEventInterpreter();
 
-		private readonly NoteEventInterpreter easyDoubleGuitar = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter _easyDoubleGuitar = new NoteEventInterpreter();
 
-		private readonly NoteEventInterpreter expertDoubleBass = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter _expertDoubleBass = new NoteEventInterpreter();
 
-		private readonly NoteEventInterpreter hardDoubleBass = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter _hardDoubleBass = new NoteEventInterpreter();
 
-		private readonly NoteEventInterpreter mediumDoubleBass = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter _mediumDoubleBass = new NoteEventInterpreter();
 
-		private readonly NoteEventInterpreter easyDoubleBass = new NoteEventInterpreter();
+		private readonly NoteEventInterpreter _easyDoubleBass = new NoteEventInterpreter();
 
-		private readonly InstrumentType expertDrums = new InstrumentType();
+		private readonly InstrumentType _expertDrums = new InstrumentType();
 
-		private readonly InstrumentType hardDrums = new InstrumentType();
+		private readonly InstrumentType _hardDrums = new InstrumentType();
 
-		private readonly InstrumentType mediumDrums = new InstrumentType();
+		private readonly InstrumentType _mediumDrums = new InstrumentType();
 
-		private readonly InstrumentType easyDrums = new InstrumentType();
+		private readonly InstrumentType _easyDrums = new InstrumentType();
 
-		private readonly InstrumentType expertKeyboard = new InstrumentType();
+		private readonly InstrumentType _expertKeyboard = new InstrumentType();
 
-		private readonly InstrumentType hardKeyboard = new InstrumentType();
+		private readonly InstrumentType _hardKeyboard = new InstrumentType();
 
-		private readonly InstrumentType mediumKeyboard = new InstrumentType();
+		private readonly InstrumentType _mediumKeyboard = new InstrumentType();
 
-		private readonly InstrumentType easyKeyboard = new InstrumentType();
+		private readonly InstrumentType _easyKeyboard = new InstrumentType();
 
-		private BPMInterpreter bpmInterpreter;
+		private BpmInterpreter _bpmInterpreter;
 
-		private SectionInterpreter sectionInterpreter;
+		private SectionInterpreter _sectionInterpreter;
 
-		private string songTitle = "";
+		private string _songTitle = "";
 
-		private double resolution;
+		private double _resolution;
 
-		private bool isPartGuitar;
+		private bool _isPartGuitar;
 
-		private bool isEvents;
+		private bool _isEvents;
 
-		private bool notBass;
+		private bool _notBass;
 
-		private bool bool_3;
+		private bool _bool3;
 
-		private MIDIReader midiReader;
+		private MidiReader _midiReader;
 
-		private readonly List<string> uselessEvents = new List<string>();
+		private readonly List<string> _uselessEvents = new List<string>();
 
-		public MIDIParser(string fileLocation)
+		public MidiParser(string fileLocation)
 		{
-			this.fileLocation = fileLocation;
+			this._fileLocation = fileLocation;
 		}
 
 		public ChartParser LoadMidi()
 		{
 			var name = "";
-			name = name + new FileInfo(fileLocation).Name + ":\n";
+			name = name + new FileInfo(_fileLocation).Name + ":\n";
 			try
 			{
-				midiReader = MIDIReader.smethod_0(fileLocation);
+				_midiReader = MidiReader.smethod_0(_fileLocation);
 			}
 			catch (Exception)
 			{
 				throw new IOException(name + "Unknown Error: Could not parse MIDI sequence.");
 			}
-			foreach (var current in midiReader.getMidiLineList())
+			foreach (var current in _midiReader.GetMidiLineList())
 			{
 				if (current.method_2().Equals("PART GUITAR"))
 				{
-					isPartGuitar = true;
+					_isPartGuitar = true;
 				}
 				else if (current.method_2().Equals("EVENTS"))
 				{
-					isEvents = true;
+					_isEvents = true;
 				}
 			}
-			if (midiReader.getMidiLineList().Count == 1 && !isPartGuitar)
+			if (_midiReader.GetMidiLineList().Count == 1 && !_isPartGuitar)
 			{
-				midiReader.getMidiLineList()[0].method_3("PART GUITAR");
-				isPartGuitar = true;
+				_midiReader.GetMidiLineList()[0].method_3("PART GUITAR");
+				_isPartGuitar = true;
 			}
-			if (!isPartGuitar)
+			if (!_isPartGuitar)
 			{
 				throw new IOException(name + "PART GUITAR not found. No chart created.");
 			}
 			var chartParser = new ChartParser();
-			bpmInterpreter = chartParser.bpmInterpreter;
-			sectionInterpreter = chartParser.sectionInterpreter;
-			chartParser.difficultyWithNotes.Add("EasySingle", easySingle);
-			chartParser.difficultyWithNotes.Add("MediumSingle", mediumSingle);
-			chartParser.difficultyWithNotes.Add("HardSingle", hardSingle);
-			chartParser.difficultyWithNotes.Add("ExpertSingle", expertSingle);
-			chartParser.difficultyWithNotes.Add("EasyDoubleGuitar", easyDoubleGuitar);
-			chartParser.difficultyWithNotes.Add("MediumDoubleGuitar", mediumDoubleGuitar);
-			chartParser.difficultyWithNotes.Add("HardDoubleGuitar", hardDoubleGuitar);
-			chartParser.difficultyWithNotes.Add("ExpertDoubleGuitar", expertDoubleGuitar);
-			chartParser.difficultyWithNotes.Add("EasyDoubleBass", easyDoubleBass);
-			chartParser.difficultyWithNotes.Add("MediumDoubleBass", mediumDoubleBass);
-			chartParser.difficultyWithNotes.Add("HardDoubleBass", hardDoubleBass);
-			chartParser.difficultyWithNotes.Add("ExpertDoubleBass", expertDoubleBass);
-			chartParser.instrumentList.Add("EasyDrums", easyDrums);
-			chartParser.instrumentList.Add("MediumDrums", mediumDrums);
-			chartParser.instrumentList.Add("HardDrums", hardDrums);
-			chartParser.instrumentList.Add("ExpertDrums", expertDrums);
-			chartParser.instrumentList.Add("EasyKeyboard", easyKeyboard);
-			chartParser.instrumentList.Add("MediumKeyboard", mediumKeyboard);
-			chartParser.instrumentList.Add("HardKeyboard", hardKeyboard);
-			chartParser.instrumentList.Add("ExpertKeyboard", expertKeyboard);
-			chartParser.constant480 = 480;
-			resolution = 480.0 / midiReader.method_0();
+			_bpmInterpreter = chartParser.BpmInterpreter;
+			_sectionInterpreter = chartParser.SectionInterpreter;
+			chartParser.DifficultyWithNotes.Add("EasySingle", _easySingle);
+			chartParser.DifficultyWithNotes.Add("MediumSingle", _mediumSingle);
+			chartParser.DifficultyWithNotes.Add("HardSingle", _hardSingle);
+			chartParser.DifficultyWithNotes.Add("ExpertSingle", _expertSingle);
+			chartParser.DifficultyWithNotes.Add("EasyDoubleGuitar", _easyDoubleGuitar);
+			chartParser.DifficultyWithNotes.Add("MediumDoubleGuitar", _mediumDoubleGuitar);
+			chartParser.DifficultyWithNotes.Add("HardDoubleGuitar", _hardDoubleGuitar);
+			chartParser.DifficultyWithNotes.Add("ExpertDoubleGuitar", _expertDoubleGuitar);
+			chartParser.DifficultyWithNotes.Add("EasyDoubleBass", _easyDoubleBass);
+			chartParser.DifficultyWithNotes.Add("MediumDoubleBass", _mediumDoubleBass);
+			chartParser.DifficultyWithNotes.Add("HardDoubleBass", _hardDoubleBass);
+			chartParser.DifficultyWithNotes.Add("ExpertDoubleBass", _expertDoubleBass);
+			chartParser.InstrumentList.Add("EasyDrums", _easyDrums);
+			chartParser.InstrumentList.Add("MediumDrums", _mediumDrums);
+			chartParser.InstrumentList.Add("HardDrums", _hardDrums);
+			chartParser.InstrumentList.Add("ExpertDrums", _expertDrums);
+			chartParser.InstrumentList.Add("EasyKeyboard", _easyKeyboard);
+			chartParser.InstrumentList.Add("MediumKeyboard", _mediumKeyboard);
+			chartParser.InstrumentList.Add("HardKeyboard", _hardKeyboard);
+			chartParser.InstrumentList.Add("ExpertKeyboard", _expertKeyboard);
+			chartParser.Constant480 = 480;
+			_resolution = 480.0 / _midiReader.method_0();
 			object obj = name;
-			name = string.Concat(obj, "NumTracks = ", midiReader.getMidiLineList().Count, "\n");
-			method_1(midiReader.getMidiLineList()[0]);
-			foreach (var midiLine in midiReader.getMidiLineList())
+			name = string.Concat(obj, "NumTracks = ", _midiReader.GetMidiLineList().Count, "\n");
+			method_1(_midiReader.GetMidiLineList()[0]);
+			foreach (var midiLine in _midiReader.GetMidiLineList())
 			{
 				if (midiLine.method_2().Equals("PART GUITAR"))
 				{
-					getNotes(midiLine, 0);
+					GetNotes(midiLine, 0);
 				}
 				else if (midiLine.method_2().Equals("T1 GEMS"))
 				{
-					getNotes(midiLine, 0);
+					GetNotes(midiLine, 0);
 				}
 				else if (midiLine.method_2().Equals("PART GUITAR COOP"))
 				{
-					getNotes(midiLine, 1);
+					GetNotes(midiLine, 1);
 				}
 				else if (midiLine.method_2().Equals("PART RHYTHM"))
 				{
-					notBass = true;
-					getNotes(midiLine, 3);
+					_notBass = true;
+					GetNotes(midiLine, 3);
 				}
 				else if (midiLine.method_2().Equals("PART BASS"))
 				{
-					getNotes(midiLine, 3);
+					GetNotes(midiLine, 3);
 				}
 				else if (midiLine.method_2().Equals("EVENTS"))
 				{
-					getNotes(midiLine, 4);
+					GetNotes(midiLine, 4);
 				}
 				else if (midiLine.method_2().Equals("BAND DRUMS"))
 				{
-					getNotes(midiLine, 5);
+					GetNotes(midiLine, 5);
 				}
 				else if (midiLine.method_2().Equals("BAND KEYS"))
 				{
-					getNotes(midiLine, 7);
+					GetNotes(midiLine, 7);
 				}
 				else
 				{
 					name = name + "Track (" + midiLine.method_2() + ") ignored.\n";
 				}
 			}
-			chartParser.gh3SongInfo.title = songTitle;
-			chartParser.gh3SongInfo.not_bass = notBass;
+			chartParser.Gh3SongInfo.Title = _songTitle;
+			chartParser.Gh3SongInfo.NotBass = _notBass;
 			name += "Conversion Complete!";
 			Console.WriteLine(name);
-			chartParser.removeEmptyParts();
+			chartParser.RemoveEmptyParts();
 			return chartParser;
 		}
 
-		private void method_1(MIDILine class353_0)
+		private void method_1(MidiLine class3530)
 		{
-			songTitle = class353_0.method_2();
-			foreach (var current in class353_0.method_0())
+			_songTitle = class3530.method_2();
+			foreach (var current in class3530.method_0())
 			{
-				var num = Convert.ToInt32(current.method_0() * resolution);
-				if (current is zzNote1)
+				var num = Convert.ToInt32(current.method_0() * _resolution);
+				if (current is ZzNote1)
 				{
-					var @class = (zzNote1)current;
-					if (!isEvents && @class.method_2() == zzNote1.Enum37.const_0)
+					var @class = (ZzNote1)current;
+					if (!_isEvents && @class.method_2() == ZzNote1.Enum37.Const0)
 					{
 						method_4(4, num, "section " + @class.method_1());
 					}
@@ -200,16 +200,16 @@ namespace ns15
 				else if (current is BpmNote1)
 				{
 					var num2 = ((BpmNote1)current).method_1();
-					bpmInterpreter.bpmList.Add(num, Convert.ToInt32(Math.Floor(60000000.0 / num2 * 1000.0)));
+					_bpmInterpreter.BpmList.Add(num, Convert.ToInt32(Math.Floor(60000000.0 / num2 * 1000.0)));
 				}
-				else if (current is zzNote338)
+				else if (current is ZzNote338)
 				{
-					bpmInterpreter.TSList.Add(num, ((zzNote338)current).method_1());
+					_bpmInterpreter.TsList.Add(num, ((ZzNote338)current).method_1());
 				}
 			}
 		}
 
-		private void getNotes(MIDILine midiLine, int difficulty)
+		private void GetNotes(MidiLine midiLine, int difficulty)
 		{
 			var array = new bool[midiLine.method_0().Count];
 			var list = midiLine.method_0();
@@ -217,10 +217,10 @@ namespace ns15
 			{
 				if (!array[i])
 				{
-					var num = Convert.ToInt32(list[i].method_0() * resolution);
-					if (list[i] is MIDINote)
+					var num = Convert.ToInt32(list[i].method_0() * _resolution);
+					if (list[i] is MidiNote)
 					{
-						var midiNote = (MIDINote)list[i];
+						var midiNote = (MidiNote)list[i];
 						if (midiNote.method_5())
 						{
 							var j = -1;
@@ -231,16 +231,16 @@ namespace ns15
 								{
 									break;
 								}
-								if (list[num2] is MIDINote && ((MIDINote)list[num2]).method_4() == midiNote.method_4())
+								if (list[num2] is MidiNote && ((MidiNote)list[num2]).method_4() == midiNote.method_4())
 								{
-									if (((MIDINote)list[num2]).method_5())
+									if (((MidiNote)list[num2]).method_5())
 									{
-										j = Convert.ToInt32(list[num2].method_0() * resolution);
+										j = Convert.ToInt32(list[num2].method_0() * _resolution);
 										array[num2] = true;
 									}
 									else
 									{
-										j = Convert.ToInt32(list[num2].method_0() * resolution);
+										j = Convert.ToInt32(list[num2].method_0() * _resolution);
 									}
 								}
 								num2++;
@@ -253,9 +253,9 @@ namespace ns15
 							method_3(difficulty, num, midiNote, num3);
 						}
 					}
-					else if (list[i] is zzNote1)
+					else if (list[i] is ZzNote1)
 					{
-						var class2 = (zzNote1)list[i];
+						var class2 = (ZzNote1)list[i];
 						var list2 = method_5(difficulty - 4);
 						var text = class2.method_1();
 						if (text.StartsWith("["))
@@ -271,22 +271,22 @@ namespace ns15
 			}
 		}
 
-		private void method_3(int instrumentType, int int_1, MIDINote midiNote, int int_2)
+		private void method_3(int instrumentType, int int1, MidiNote midiNote, int int2)
 		{
 			NoteEventInterpreter noteEvenInterpreter = null;
-			switch (midiNote.getDifficulty())
+			switch (midiNote.GetDifficulty())
 			{
 			case Difficulty.Easy:
 				switch (instrumentType)
 				{
 				case 0:
-					noteEvenInterpreter = easySingle;
+					noteEvenInterpreter = _easySingle;
 					break;
 				case 1:
-					noteEvenInterpreter = easyDoubleGuitar;
+					noteEvenInterpreter = _easyDoubleGuitar;
 					break;
 				case 3:
-					noteEvenInterpreter = easyDoubleBass;
+					noteEvenInterpreter = _easyDoubleBass;
 					break;
 				}
 				break;
@@ -294,13 +294,13 @@ namespace ns15
 				switch (instrumentType)
 				{
 				case 0:
-					noteEvenInterpreter = mediumSingle;
+					noteEvenInterpreter = _mediumSingle;
 					break;
 				case 1:
-					noteEvenInterpreter = mediumDoubleGuitar;
+					noteEvenInterpreter = _mediumDoubleGuitar;
 					break;
 				case 3:
-					noteEvenInterpreter = mediumDoubleBass;
+					noteEvenInterpreter = _mediumDoubleBass;
 					break;
 				}
 				break;
@@ -308,13 +308,13 @@ namespace ns15
 				switch (instrumentType)
 				{
 				case 0:
-					noteEvenInterpreter = hardSingle;
+					noteEvenInterpreter = _hardSingle;
 					break;
 				case 1:
-					noteEvenInterpreter = hardDoubleGuitar;
+					noteEvenInterpreter = _hardDoubleGuitar;
 					break;
 				case 3:
-					noteEvenInterpreter = hardDoubleBass;
+					noteEvenInterpreter = _hardDoubleBass;
 					break;
 				}
 				break;
@@ -322,26 +322,26 @@ namespace ns15
 				switch (instrumentType)
 				{
 				case 0:
-					noteEvenInterpreter = expertSingle;
+					noteEvenInterpreter = _expertSingle;
 					break;
 				case 1:
-					noteEvenInterpreter = expertDoubleGuitar;
+					noteEvenInterpreter = _expertDoubleGuitar;
 					break;
 				case 3:
-					noteEvenInterpreter = expertDoubleBass;
+					noteEvenInterpreter = _expertDoubleBass;
 					break;
 				}
 				break;
 			default:
-				if (!bool_3 && midiNote.method_2() == MIDINoteMask.StarPower)
+				if (!_bool3 && midiNote.method_2() == MidiNoteMask.StarPower)
 				{
-					bool_3 = true;
-					expertSingle.class228_1.Clear();
-					hardSingle.class228_1.Clear();
-					mediumSingle.class228_1.Clear();
-					easySingle.class228_1.Clear();
+					_bool3 = true;
+					_expertSingle.Class2281.Clear();
+					_hardSingle.Class2281.Clear();
+					_mediumSingle.Class2281.Clear();
+					_easySingle.Class2281.Clear();
 				}
-				else if (!bool_3)
+				else if (!_bool3)
 				{
 					return;
 				}
@@ -349,59 +349,59 @@ namespace ns15
 			}
 			if (midiNote.method_3() != Fret.Invalid)
 			{
-				if (noteEvenInterpreter.noteList.method_4(int_1))
+				if (noteEvenInterpreter.NoteList.method_4(int1))
 				{
-					noteEvenInterpreter.noteList[int_1].noteValues[(int)midiNote.method_3()] = true;
+					noteEvenInterpreter.NoteList[int1].NoteValues[(int)midiNote.method_3()] = true;
 					return;
 				}
 				var array = new bool[32];
 				array[(int)midiNote.method_3()] = true;
-				noteEvenInterpreter.noteList.Add(int_1, new NotesAtOffset(array, int_2));
+				noteEvenInterpreter.NoteList.Add(int1, new NotesAtOffset(array, int2));
 			}
 			else
 			{
-				if (midiNote.method_2() == MIDINoteMask.StarPower && !expertSingle.class228_1.ContainsKey(int_1))
+				if (midiNote.method_2() == MidiNoteMask.StarPower && !_expertSingle.Class2281.ContainsKey(int1))
 				{
-					expertSingle.class228_1.Add(int_1, int_2);
-					hardSingle.class228_1.Add(int_1, int_2);
-					mediumSingle.class228_1.Add(int_1, int_2);
-					easySingle.class228_1.Add(int_1, int_2);
+					_expertSingle.Class2281.Add(int1, int2);
+					_hardSingle.Class2281.Add(int1, int2);
+					_mediumSingle.Class2281.Add(int1, int2);
+					_easySingle.Class2281.Add(int1, int2);
 					return;
 				}
-				if (midiNote.method_2() == MIDINoteMask.Unk7 && !noteEvenInterpreter.class228_1.ContainsKey(int_1) && !bool_3)
+				if (midiNote.method_2() == MidiNoteMask.Unk7 && !noteEvenInterpreter.Class2281.ContainsKey(int1) && !_bool3)
 				{
-					noteEvenInterpreter.class228_1.Add(int_1, int_2);
+					noteEvenInterpreter.Class2281.Add(int1, int2);
 					return;
 				}
-				if (midiNote.method_2() == MIDINoteMask.Unk9 && !noteEvenInterpreter.class228_2.ContainsKey(int_1))
+				if (midiNote.method_2() == MidiNoteMask.Unk9 && !noteEvenInterpreter.Class2282.ContainsKey(int1))
 				{
-					noteEvenInterpreter.class228_2.Add(int_1, int_2);
+					noteEvenInterpreter.Class2282.Add(int1, int2);
 					return;
 				}
-				if (midiNote.method_2() == MIDINoteMask.Unk10 && !noteEvenInterpreter.class228_3.ContainsKey(int_1))
+				if (midiNote.method_2() == MidiNoteMask.Unk10 && !noteEvenInterpreter.Class2283.ContainsKey(int1))
 				{
-					noteEvenInterpreter.class228_3.Add(int_1, int_2);
+					noteEvenInterpreter.Class2283.Add(int1, int2);
 				}
 			}
 		}
 
-		private void method_4(int int_0, int int_1, string string_2)
+		private void method_4(int int0, int int1, string string2)
 		{
-			if (int_0 == 4)
+			if (int0 == 4)
 			{
-				if (string_2.Contains("section "))
+				if (string2.Contains("section "))
 				{
-					sectionInterpreter.sectionList.Add(int_1, string_2);
+					_sectionInterpreter.SectionList.Add(int1, string2);
 					return;
 				}
-				if (sectionInterpreter.otherList.method_4(int_1))
+				if (_sectionInterpreter.OtherList.method_4(int1))
 				{
-					sectionInterpreter.otherList[int_1].Add(string_2);
+					_sectionInterpreter.OtherList[int1].Add(string2);
 					return;
 				}
-				sectionInterpreter.otherList.Add(int_1, new List<string>(new[]
+				_sectionInterpreter.OtherList.Add(int1, new List<string>(new[]
 				{
-					string_2
+					string2
 				}));
 			}
 			else
@@ -410,116 +410,116 @@ namespace ns15
 				NoteEventInterpreter class2 = null;
 				NoteEventInterpreter class3 = null;
 				NoteEventInterpreter class4 = null;
-				switch (int_0)
+				switch (int0)
 				{
 				case 0:
-					@class = expertSingle;
-					class2 = hardSingle;
-					class3 = mediumSingle;
-					class4 = easySingle;
+					@class = _expertSingle;
+					class2 = _hardSingle;
+					class3 = _mediumSingle;
+					class4 = _easySingle;
 					break;
 				case 1:
-					@class = expertDoubleGuitar;
-					class2 = hardDoubleGuitar;
-					class3 = mediumDoubleGuitar;
-					class4 = easyDoubleGuitar;
+					@class = _expertDoubleGuitar;
+					class2 = _hardDoubleGuitar;
+					class3 = _mediumDoubleGuitar;
+					class4 = _easyDoubleGuitar;
 					break;
 				case 3:
-					@class = expertDoubleBass;
-					class2 = hardDoubleBass;
-					class3 = mediumDoubleBass;
-					class4 = easyDoubleBass;
+					@class = _expertDoubleBass;
+					class2 = _hardDoubleBass;
+					class3 = _mediumDoubleBass;
+					class4 = _easyDoubleBass;
 					break;
 				case 5:
-					expertDrums.method_5(int_1, string_2);
-					hardDrums.method_5(int_1, string_2);
-					mediumDrums.method_5(int_1, string_2);
-					easyDrums.method_5(int_1, string_2);
+					_expertDrums.method_5(int1, string2);
+					_hardDrums.method_5(int1, string2);
+					_mediumDrums.method_5(int1, string2);
+					_easyDrums.method_5(int1, string2);
 					return;
 				case 7:
-					expertKeyboard.method_5(int_1, string_2);
-					hardKeyboard.method_5(int_1, string_2);
-					mediumKeyboard.method_5(int_1, string_2);
-					easyKeyboard.method_5(int_1, string_2);
+					_expertKeyboard.method_5(int1, string2);
+					_hardKeyboard.method_5(int1, string2);
+					_mediumKeyboard.method_5(int1, string2);
+					_easyKeyboard.method_5(int1, string2);
 					return;
 				}
-				if (@class != null && @class.eventList.method_4(int_1))
+				if (@class != null && @class.EventList.method_4(int1))
 				{
-					@class.eventList[int_1].Add(string_2);
-					class2.eventList[int_1].Add(string_2);
-					class3.eventList[int_1].Add(string_2);
-					class4.eventList[int_1].Add(string_2);
+					@class.EventList[int1].Add(string2);
+					class2.EventList[int1].Add(string2);
+					class3.EventList[int1].Add(string2);
+					class4.EventList[int1].Add(string2);
 					return;
 				}
-				@class.eventList.Add(int_1, new List<string>(new[]
+				@class.EventList.Add(int1, new List<string>(new[]
 				{
-					string_2
+					string2
 				}));
-				class2.eventList.Add(int_1, new List<string>(new[]
+				class2.EventList.Add(int1, new List<string>(new[]
 				{
-					string_2
+					string2
 				}));
-				class3.eventList.Add(int_1, new List<string>(new[]
+				class3.EventList.Add(int1, new List<string>(new[]
 				{
-					string_2
+					string2
 				}));
-				class4.eventList.Add(int_1, new List<string>(new[]
+				class4.EventList.Add(int1, new List<string>(new[]
 				{
-					string_2
+					string2
 				}));
 			}
 		}
 
-		private List<string> method_5(int int_0)
+		private List<string> method_5(int int0)
 		{
-			if (uselessEvents.Count == 0)
+			if (_uselessEvents.Count == 0)
 			{
-				uselessEvents.Add("lighting (chase)");
-				uselessEvents.Add("lighting (strobe)");
-				uselessEvents.Add("lighting (color1)");
-				uselessEvents.Add("lighting (color2)");
-				uselessEvents.Add("lighting (sweep)");
-				uselessEvents.Add("crowd_lighters_fast");
-				uselessEvents.Add("crowd_lighters_off");
-				uselessEvents.Add("crowd_lighters_slow");
-				uselessEvents.Add("crowd_half_tempo");
-				uselessEvents.Add("crowd_normal_tempo");
-				uselessEvents.Add("crowd_double_tempo");
-				uselessEvents.Add("band_jump");
-				uselessEvents.Add("sync_head_bang");
-				uselessEvents.Add("sync_wag");
-				uselessEvents.Add("lighting ()");
-				uselessEvents.Add("lighting (flare)");
-				uselessEvents.Add("lighting (blackout)");
-				uselessEvents.Add("music_start");
-				uselessEvents.Add("verse");
-				uselessEvents.Add("chorus");
-				uselessEvents.Add("solo");
-				uselessEvents.Add("end");
-				uselessEvents.Add("idle");
-				uselessEvents.Add("play");
-				uselessEvents.Add("solo_on");
-				uselessEvents.Add("solo_off");
-				uselessEvents.Add("wail_on");
-				uselessEvents.Add("wail_off");
-				uselessEvents.Add("drum_on");
-				uselessEvents.Add("drum_off");
-				uselessEvents.Add("sing_on");
-				uselessEvents.Add("sing_off");
-				uselessEvents.Add("bass_on");
-				uselessEvents.Add("bass_off");
-				uselessEvents.Add("gtr_on");
-				uselessEvents.Add("gtr_off");
-				uselessEvents.Add("ow_face_on");
-				uselessEvents.Add("ow_face_off");
-				uselessEvents.Add("half_tempo");
-				uselessEvents.Add("normal_tempo");
-				uselessEvents.Add("half_time");
-				uselessEvents.Add("double_time");
-				uselessEvents.Add("allbeat");
-				uselessEvents.Add("nobeat");
+				_uselessEvents.Add("lighting (chase)");
+				_uselessEvents.Add("lighting (strobe)");
+				_uselessEvents.Add("lighting (color1)");
+				_uselessEvents.Add("lighting (color2)");
+				_uselessEvents.Add("lighting (sweep)");
+				_uselessEvents.Add("crowd_lighters_fast");
+				_uselessEvents.Add("crowd_lighters_off");
+				_uselessEvents.Add("crowd_lighters_slow");
+				_uselessEvents.Add("crowd_half_tempo");
+				_uselessEvents.Add("crowd_normal_tempo");
+				_uselessEvents.Add("crowd_double_tempo");
+				_uselessEvents.Add("band_jump");
+				_uselessEvents.Add("sync_head_bang");
+				_uselessEvents.Add("sync_wag");
+				_uselessEvents.Add("lighting ()");
+				_uselessEvents.Add("lighting (flare)");
+				_uselessEvents.Add("lighting (blackout)");
+				_uselessEvents.Add("music_start");
+				_uselessEvents.Add("verse");
+				_uselessEvents.Add("chorus");
+				_uselessEvents.Add("solo");
+				_uselessEvents.Add("end");
+				_uselessEvents.Add("idle");
+				_uselessEvents.Add("play");
+				_uselessEvents.Add("solo_on");
+				_uselessEvents.Add("solo_off");
+				_uselessEvents.Add("wail_on");
+				_uselessEvents.Add("wail_off");
+				_uselessEvents.Add("drum_on");
+				_uselessEvents.Add("drum_off");
+				_uselessEvents.Add("sing_on");
+				_uselessEvents.Add("sing_off");
+				_uselessEvents.Add("bass_on");
+				_uselessEvents.Add("bass_off");
+				_uselessEvents.Add("gtr_on");
+				_uselessEvents.Add("gtr_off");
+				_uselessEvents.Add("ow_face_on");
+				_uselessEvents.Add("ow_face_off");
+				_uselessEvents.Add("half_tempo");
+				_uselessEvents.Add("normal_tempo");
+				_uselessEvents.Add("half_time");
+				_uselessEvents.Add("double_time");
+				_uselessEvents.Add("allbeat");
+				_uselessEvents.Add("nobeat");
 			}
-			return uselessEvents;
+			return _uselessEvents;
 		}
 	}
 }

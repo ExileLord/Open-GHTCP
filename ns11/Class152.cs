@@ -2,38 +2,38 @@ namespace ns11
 {
 	public class Class152
 	{
-		private readonly byte[] byte_0;
+		private readonly byte[] _byte0;
 
-		private int int_0;
+		private int _int0;
 
 		public virtual int vmethod_0()
 		{
-			return int_0;
+			return _int0;
 		}
 
-		public Class152(int int_1)
+		public Class152(int int1)
 		{
-			if (int_1 <= 0)
+			if (int1 <= 0)
 			{
-				int_1 = 256;
+				int1 = 256;
 			}
-			byte_0 = new byte[int_1];
-			int_0 = 0;
+			_byte0 = new byte[int1];
+			_int0 = 0;
 		}
 
-		public virtual void vmethod_1(byte byte_1)
+		public virtual void vmethod_1(byte byte1)
 		{
-			byte_0[int_0++] = byte_1;
+			_byte0[_int0++] = byte1;
 		}
 
 		public virtual byte[] vmethod_2()
 		{
-			return byte_0;
+			return _byte0;
 		}
 
-		public virtual byte vmethod_3(int int_1)
+		public virtual byte vmethod_3(int int1)
 		{
-			return byte_0[int_1];
+			return _byte0[int1];
 		}
 	}
 }

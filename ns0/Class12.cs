@@ -3,18 +3,18 @@ using ns1;
 
 namespace ns0
 {
-	public class Class12 : List<Interface5>, Interface5
+	public class Class12 : List<INterface5>, INterface5
 	{
-		public Class12(Interface5[] interface5_0)
+		public Class12(INterface5[] interface50)
 		{
-			AddRange(interface5_0);
+			AddRange(interface50);
 		}
 
-		public virtual void imethod_0(Class13[] class13_0)
+		public virtual void imethod_0(Class13[] class130)
 		{
 			foreach (var current in this)
 			{
-				current.imethod_0(class13_0);
+				current.imethod_0(class130);
 			}
 		}
 	}

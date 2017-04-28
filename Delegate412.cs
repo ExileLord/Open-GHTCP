@@ -1,3 +1,3 @@
 using System;
 
-public delegate TimeSpan Delegate412(double double_0);
+public delegate TimeSpan Delegate412(double double0);

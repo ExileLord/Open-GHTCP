@@ -1,1 +1,1 @@
-public delegate bool Delegate146(string string_0, string string_1);
+public delegate bool Delegate146(string string0, string string1);

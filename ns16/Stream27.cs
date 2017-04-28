@@ -8,7 +8,7 @@ namespace ns16
 		{
 		}
 
-		public Stream27(byte[] byte_0) : base(byte_0)
+		public Stream27(byte[] byte0) : base(byte0)
 		{
 		}
 

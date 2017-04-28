@@ -5,16 +5,16 @@ namespace ns19
 {
 	public class UnicodeValueNode : AbstractTreeNode2
 	{
-		public string string_0 = "";
+		public string String0 = "";
 
 		public UnicodeValueNode()
 		{
 			vmethod_0();
 		}
 
-		public UnicodeValueNode(string string_1)
+		public UnicodeValueNode(string string1)
 		{
-			string_0 = string_1;
+			String0 = string1;
 			vmethod_0();
 		}
 
@@ -25,22 +25,22 @@ namespace ns19
 
 		public override object vmethod_7()
 		{
-			return string_0;
+			return String0;
 		}
 
 		public override byte[] vmethod_8()
 		{
-			return Encoding.Unicode.GetBytes(string_0);
+			return Encoding.Unicode.GetBytes(String0);
 		}
 
-		public override void vmethod_9(byte[] byte_0)
+		public override void vmethod_9(byte[] byte0)
 		{
-			string_0 = Encoding.Unicode.GetString(byte_0);
+			String0 = Encoding.Unicode.GetString(byte0);
 		}
 
 		public override string GetText()
 		{
-			return "\"" + string_0 + "\"";
+			return "\"" + String0 + "\"";
 		}
 
 		public override string GetNodeText()
@@ -48,9 +48,9 @@ namespace ns19
 			return "Unicode Value";
 		}
 
-		public override void vmethod_2(ref int int_0)
+		public override void vmethod_2(ref int int0)
 		{
-			int_0 += Encoding.Unicode.GetByteCount(string_0);
+			int0 += Encoding.Unicode.GetByteCount(String0);
 		}
 	}
 }

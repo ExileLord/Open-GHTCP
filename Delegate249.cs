@@ -1,1 +1,1 @@
-public delegate int Delegate249(int int_0);
+public delegate int Delegate249(int int0);

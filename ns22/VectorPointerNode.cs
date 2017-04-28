@@ -2,7 +2,7 @@ using ns19;
 
 namespace ns22
 {
-	public class VectorPointerNode : zzUnkNode300
+	public class VectorPointerNode : ZzUnkNode300
 	{
 		public VectorPointerNode()
 		{

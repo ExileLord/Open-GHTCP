@@ -7,19 +7,19 @@ namespace ns15
 {
 	public class SectionInterpreter
 	{
-		public Track<int, List<string>> otherList = new Track<int, List<string>>();
+		public Track<int, List<string>> OtherList = new Track<int, List<string>>();
 
-		public Track<int, string> sectionList = new Track<int, string>();
+		public Track<int, string> SectionList = new Track<int, string>();
 
 		public SectionInterpreter()
 		{
 		}
 
-		public SectionInterpreter(string[] string_0)
+		public SectionInterpreter(string[] string0)
 		{
-			for (var i = 0; i < string_0.Length; i++)
+			for (var i = 0; i < string0.Length; i++)
 			{
-				var text = string_0[i];
+				var text = string0[i];
 				var array = text.Split(new[]
 				{
 					'=',
@@ -32,19 +32,19 @@ namespace ns15
 					{
 						array[2] = array[2].Substring(0, array[2].Length - 1);
 					}
-					var num = ChartParser.getNoteFromResolution(array[0].Trim());
+					var num = ChartParser.GetNoteFromResolution(array[0].Trim());
 					if (array[2].StartsWith("section "))
 					{
-						sectionList.Add(num, CultureInfo.CurrentCulture.TextInfo.ToTitleCase(array[2].Substring("section ".Length).Replace('_', ' ')));
+						SectionList.Add(num, CultureInfo.CurrentCulture.TextInfo.ToTitleCase(array[2].Substring("section ".Length).Replace('_', ' ')));
 					}
-					else if (otherList.ContainsKey(num))
+					else if (OtherList.ContainsKey(num))
 					{
-						otherList[num].Add(array[2]);
+						OtherList[num].Add(array[2]);
 					}
 					else
 					{
-						otherList.Add(num, new List<string>());
-						otherList[num].Add(array[2]);
+						OtherList.Add(num, new List<string>());
+						OtherList[num].Add(array[2]);
 					}
 				}
 			}

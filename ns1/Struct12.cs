@@ -4,14 +4,14 @@ namespace ns1
 {
 	public struct Struct12 : IComparable, ICloneable
 	{
-		public double double_0;
+		public double Double0;
 
-		public double double_1;
+		public double Double1;
 
-		public Struct12(Struct12 struct12_0)
+		public Struct12(Struct12 struct120)
 		{
-			double_0 = struct12_0.double_0;
-			double_1 = struct12_0.double_1;
+			Double0 = struct120.Double0;
+			Double1 = struct120.Double1;
 		}
 
 		object ICloneable.Clone()
@@ -21,27 +21,27 @@ namespace ns1
 
 		public double method_0()
 		{
-			var num = double_0;
-			var num2 = double_1;
+			var num = Double0;
+			var num2 = Double1;
 			return Math.Sqrt(num * num + num2 * num2);
 		}
 
-		public static bool smethod_0(Struct12 struct12_0, Struct12 struct12_1)
+		public static bool smethod_0(Struct12 struct120, Struct12 struct121)
 		{
-			return struct12_0.double_0 == struct12_1.double_0 && struct12_0.double_1 == struct12_1.double_1;
+			return struct120.Double0 == struct121.Double0 && struct120.Double1 == struct121.Double1;
 		}
 
 		public override int GetHashCode()
 		{
-			return double_0.GetHashCode() ^ double_1.GetHashCode();
+			return Double0.GetHashCode() ^ Double1.GetHashCode();
 		}
 
 		public override bool Equals(object obj)
 		{
 			if (obj is Struct12)
 			{
-				var struct12_ = (Struct12)obj;
-				return smethod_0(this, struct12_);
+				var struct12 = (Struct12)obj;
+				return smethod_0(this, struct12);
 			}
 			return false;
 		}
@@ -73,7 +73,7 @@ namespace ns1
 
 		public override string ToString()
 		{
-			return string.Format("( {0}, {1}i )", double_0, double_1);
+			return string.Format("( {0}, {1}i )", Double0, Double1);
 		}
 	}
 }

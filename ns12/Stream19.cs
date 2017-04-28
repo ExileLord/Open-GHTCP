@@ -8,23 +8,23 @@ namespace ns12
 {
 	public class Stream19 : Stream
 	{
-		public Class196 class196_0;
+		public Class196 Class1960;
 
-		public Class201 class201_0;
+		public Class201 Class2010;
 
-		public Stream stream_0;
+		public Stream Stream0;
 
-		public long long_0;
+		public long Long0;
 
-		private bool bool_0;
+		private bool _bool0;
 
-		private readonly bool bool_1 = true;
+		private readonly bool _bool1 = true;
 
 		public override bool CanRead
 		{
 			get
 			{
-				return stream_0.CanRead;
+				return Stream0.CanRead;
 			}
 		}
 
@@ -48,7 +48,7 @@ namespace ns12
 		{
 			get
 			{
-				return class201_0.method_0();
+				return Class2010.method_0();
 			}
 		}
 
@@ -56,7 +56,7 @@ namespace ns12
 		{
 			get
 			{
-				return stream_0.Position;
+				return Stream0.Position;
 			}
 			set
 			{
@@ -64,63 +64,63 @@ namespace ns12
 			}
 		}
 
-		public Stream19(Stream stream_1, Class196 class196_1) : this(stream_1, class196_1, 4096)
+		public Stream19(Stream stream1, Class196 class1961) : this(stream1, class1961, 4096)
 		{
 		}
 
-		public Stream19(Stream stream_1, Class196 class196_1, int int_0)
+		public Stream19(Stream stream1, Class196 class1961, int int0)
 		{
-			if (stream_1 == null)
+			if (stream1 == null)
 			{
 				throw new ArgumentNullException("baseInputStream");
 			}
-			if (class196_1 == null)
+			if (class1961 == null)
 			{
 				throw new ArgumentNullException("inflater");
 			}
-			if (int_0 <= 0)
+			if (int0 <= 0)
 			{
 				throw new ArgumentOutOfRangeException("bufferSize");
 			}
-			stream_0 = stream_1;
-			class196_0 = class196_1;
-			class201_0 = new Class201(stream_1, int_0);
+			Stream0 = stream1;
+			Class1960 = class1961;
+			Class2010 = new Class201(stream1, int0);
 		}
 
-		public long method_0(long long_1)
+		public long method_0(long long1)
 		{
-			if (long_1 < 0L)
+			if (long1 < 0L)
 			{
 				throw new ArgumentOutOfRangeException("count");
 			}
-			if (stream_0.CanSeek)
+			if (Stream0.CanSeek)
 			{
-				stream_0.Seek(long_1, SeekOrigin.Current);
-				return long_1;
+				Stream0.Seek(long1, SeekOrigin.Current);
+				return long1;
 			}
 			var num = 2048;
-			if (long_1 < 2048L)
+			if (long1 < 2048L)
 			{
-				num = (int)long_1;
+				num = (int)long1;
 			}
 			var array = new byte[num];
-			return stream_0.Read(array, 0, array.Length);
+			return Stream0.Read(array, 0, array.Length);
 		}
 
 		public void method_1()
 		{
-			class201_0.method_12(null);
+			Class2010.method_12(null);
 		}
 
 		public void method_2()
 		{
-			class201_0.method_4();
-			class201_0.method_3(class196_0);
+			Class2010.method_4();
+			Class2010.method_3(Class1960);
 		}
 
 		public override void Flush()
 		{
-			stream_0.Flush();
+			Stream0.Flush();
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
@@ -150,33 +150,33 @@ namespace ns12
 
 		public override void Close()
 		{
-			if (!bool_0)
+			if (!_bool0)
 			{
-				bool_0 = true;
-				if (bool_1)
+				_bool0 = true;
+				if (_bool1)
 				{
-					stream_0.Close();
+					Stream0.Close();
 				}
 			}
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			if (class196_0.method_9())
+			if (Class1960.method_9())
 			{
 				throw new SharpZipBaseException("Need a dictionary");
 			}
 			var num = count;
 			while (true)
 			{
-				var num2 = class196_0.method_7(buffer, offset, num);
+				var num2 = Class1960.method_7(buffer, offset, num);
 				offset += num2;
 				num -= num2;
-				if (num == 0 || class196_0.method_10())
+				if (num == 0 || Class1960.method_10())
 				{
 					goto IL_69;
 				}
-				if (class196_0.method_8())
+				if (Class1960.method_8())
 				{
 					method_2();
 				}

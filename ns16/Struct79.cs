@@ -4,14 +4,14 @@ namespace ns16
 {
 	public struct Struct79 : IComparable, ICloneable
 	{
-		public double double_0;
+		public double Double0;
 
-		public double double_1;
+		public double Double1;
 
-		public Struct79(Struct79 struct79_0)
+		public Struct79(Struct79 struct790)
 		{
-			double_0 = struct79_0.double_0;
-			double_1 = struct79_0.double_1;
+			Double0 = struct790.Double0;
+			Double1 = struct790.Double1;
 		}
 
 		object ICloneable.Clone()
@@ -21,27 +21,27 @@ namespace ns16
 
 		public double method_0()
 		{
-			var num = double_0;
-			var num2 = double_1;
+			var num = Double0;
+			var num2 = Double1;
 			return Math.Sqrt(num * num + num2 * num2);
 		}
 
-		public static bool smethod_0(Struct79 struct79_0, Struct79 struct79_1)
+		public static bool smethod_0(Struct79 struct790, Struct79 struct791)
 		{
-			return struct79_0.double_0 == struct79_1.double_0 && struct79_0.double_1 == struct79_1.double_1;
+			return struct790.Double0 == struct791.Double0 && struct790.Double1 == struct791.Double1;
 		}
 
 		public override int GetHashCode()
 		{
-			return double_0.GetHashCode() ^ double_1.GetHashCode();
+			return Double0.GetHashCode() ^ Double1.GetHashCode();
 		}
 
 		public override bool Equals(object obj)
 		{
 			if (obj is Struct79)
 			{
-				var struct79_ = (Struct79)obj;
-				return smethod_0(this, struct79_);
+				var struct79 = (Struct79)obj;
+				return smethod_0(this, struct79);
 			}
 			return false;
 		}
@@ -73,7 +73,7 @@ namespace ns16
 
 		public override string ToString()
 		{
-			return string.Format("( {0}, {1}i )", double_0, double_1);
+			return string.Format("( {0}, {1}i )", Double0, Double1);
 		}
 	}
 }

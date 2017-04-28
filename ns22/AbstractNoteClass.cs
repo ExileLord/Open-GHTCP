@@ -2,21 +2,21 @@ namespace ns22
 {
 	public abstract class AbstractNoteClass
 	{
-		public int int_0;
+		public int Int0;
 
 		public int method_0()
 		{
-			return int_0;
+			return Int0;
 		}
 
-		public static int smethod_0(AbstractNoteClass class335_0, AbstractNoteClass class335_1)
+		public static int smethod_0(AbstractNoteClass class3350, AbstractNoteClass class3351)
 		{
-			if (!(class335_0 is MIDINote) || !(class335_1 is MIDINote) || class335_0.method_0() != class335_1.method_0())
+			if (!(class3350 is MidiNote) || !(class3351 is MidiNote) || class3350.method_0() != class3351.method_0())
 			{
-				return class335_0.method_0() - class335_1.method_0();
+				return class3350.method_0() - class3351.method_0();
 			}
-			var flag = ((MIDINote)class335_0).method_5();
-			var flag2 = ((MIDINote)class335_1).method_5();
+			var flag = ((MidiNote)class3350).method_5();
+			var flag2 = ((MidiNote)class3351).method_5();
 			if (flag && !flag2)
 			{
 				return 1;

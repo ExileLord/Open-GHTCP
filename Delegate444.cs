@@ -1,1 +1,1 @@
-public delegate decimal Delegate444(object object_0);
+public delegate decimal Delegate444(object object0);

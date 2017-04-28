@@ -4,7 +4,7 @@ using ns19;
 
 namespace ns21
 {
-	public class TextStructureNode : zzUnkNode294
+	public class TextStructureNode : ZzUnkNode294
 	{
 		public TextStructureNode()
 		{
@@ -29,35 +29,35 @@ namespace ns21
 		{
 			if (Nodes.Count != 0)
 			{
-				return ((TextValueNode)FirstNode).int_0;
+				return ((TextValueNode)FirstNode).Int0;
 			}
 			return 0;
 		}
 
-		public override void vmethod_13(Stream26 stream26_0)
+		public override void vmethod_13(Stream26 stream260)
 		{
-			int_0 = stream26_0.ReadInt();
-			Nodes.Add(new TextValueNode(stream26_0.ReadInt(), vmethod_10()));
-			var num = stream26_0.ReadInt();
+			Int0 = stream260.ReadInt();
+			Nodes.Add(new TextValueNode(stream260.ReadInt(), vmethod_10()));
+			var num = stream260.ReadInt();
 			if (num != 0)
 			{
-				var @class = (Parent is StructureHeaderNode) ? (Parent as StructureHeaderNode).method_11(stream26_0.ReadIntAt(num)) : vmethod_12(stream26_0.ReadIntAt(num, true));
+				var @class = (Parent is StructureHeaderNode) ? (Parent as StructureHeaderNode).method_11(stream260.ReadIntAt(num)) : vmethod_12(stream260.ReadIntAt(num, true));
 				method_1().Nodes.Add(@class);
-				@class.method_4(stream26_0);
+				@class.method_4(stream260);
 			}
 		}
 
-		public override void vmethod_14(Stream26 stream26_0)
+		public override void vmethod_14(Stream26 stream260)
 		{
 			vmethod_9(true);
 			var array = new byte[4];
 			array[1] = 1;
 			array[2] = 28;
-			stream26_0.WriteByteArray(array, false);
-			stream26_0.WriteInt(int_0);
+			stream260.WriteByteArray(array, false);
+			stream260.WriteInt(Int0);
 			if (Nodes.Count != 0)
 			{
-				stream26_0.WriteInt(method_9());
+				stream260.WriteInt(method_9());
 				if (method_8() != null)
 				{
 					vmethod_10()[method_9()] = method_8();
@@ -65,14 +65,14 @@ namespace ns21
 			}
 			else
 			{
-				stream26_0.WriteInt(0);
+				stream260.WriteInt(0);
 			}
 			if (method_1().Nodes.IndexOf(this) < method_1().Nodes.Count - 1)
 			{
-				stream26_0.WriteInt((int)stream26_0.Position + 4);
+				stream260.WriteInt((int)stream260.Position + 4);
 				return;
 			}
-			stream26_0.WriteInt(0);
+			stream260.WriteInt(0);
 		}
 
 		public override string GetNodeText()
@@ -80,9 +80,9 @@ namespace ns21
 			return "Text Structure";
 		}
 
-		public override void vmethod_2(ref int int_1)
+		public override void vmethod_2(ref int int1)
 		{
-			int_1 += 16;
+			int1 += 16;
 		}
 	}
 }

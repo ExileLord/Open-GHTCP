@@ -1,1 +1,1 @@
-public delegate void Delegate117(int int_0);
+public delegate void Delegate117(int int0);

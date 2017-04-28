@@ -3,17 +3,17 @@ using ns19;
 
 namespace ns21
 {
-	public class ListArrayNode : zzUnkNode289<AbsTreeNode1_1>
+	public class ListArrayNode : ZzUnkNode289<AbsTreeNode11>
 	{
-		public AbsTreeNode1_1 this[int int_0]
+		public AbsTreeNode11 this[int int0]
 		{
 			get
 			{
-				return (AbsTreeNode1_1)Nodes[int_0];
+				return (AbsTreeNode11)Nodes[int0];
 			}
 			set
 			{
-				Nodes[int_0] = value;
+				Nodes[int0] = value;
 			}
 		}
 

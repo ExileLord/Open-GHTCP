@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate void Delegate32(object object_0, MouseEventHandler mouseEventHandler_0);
+public delegate void Delegate32(object object0, MouseEventHandler mouseEventHandler0);

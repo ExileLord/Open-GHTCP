@@ -6,70 +6,70 @@ using ns19;
 
 namespace ns20
 {
-	public class Class309 : zzGenericNode1, IDisposable, Interface12
+	public class Class309 : ZzGenericNode1, IDisposable, INterface12
 	{
-		private int int_0;
+		private int _int0;
 
-		private int int_1;
+		private int _int1;
 
-		private int int_2;
+		private int _int2;
 
-		private int int_3;
+		private int _int3;
 
-		private int int_4;
+		private int _int4;
 
-		private int int_5;
+		private int _int5;
 
-		private Enum35 enum35_0;
+		private Enum35 _enum350;
 
-		private bool bool_3;
+		private bool _bool3;
 
 		public Class309() : this("newfile.qb")
 		{
 		}
 
-		public Class309(string string_0)
+		public Class309(string string0)
 		{
-			Text = KeyGenerator.GetFileName(string_0);
-			int_2 = QbSongClass1.AddKeyToDictionary(string_0.Substring(string_0.LastIndexOf('.')));
-			int_3 = QbSongClass1.AddKeyToDictionary(string_0);
-			int_4 = QbSongClass1.AddKeyToDictionary(KeyGenerator.GetFileNameNoExt(string_0));
+			Text = KeyGenerator.GetFileName(string0);
+			_int2 = QbSongClass1.AddKeyToDictionary(string0.Substring(string0.LastIndexOf('.')));
+			_int3 = QbSongClass1.AddKeyToDictionary(string0);
+			_int4 = QbSongClass1.AddKeyToDictionary(KeyGenerator.GetFileNameNoExt(string0));
 			ImageIndex = 40;
 			SelectedImageIndex = 40;
-			bool_3 = true;
+			_bool3 = true;
 		}
 
-		public Class309(string string_0, zzGenericNode1 class308_0) : this(string_0)
+		public Class309(string string0, ZzGenericNode1 class3080) : this(string0)
 		{
-			foreach (AbstractTreeNode1 node in class308_0.Nodes)
+			foreach (AbstractTreeNode1 node in class3080.Nodes)
 			{
 				Nodes.Add(node);
 			}
 		}
 
-		public Class309(int int_6, int int_7, int int_8, int int_9, int int_10, int int_11, Enum35 enum35_1)
+		public Class309(int int6, int int7, int int8, int int9, int int10, int int11, Enum35 enum351)
 		{
-			Text = (QbSongClass1.ContainsKey(int_9) ? KeyGenerator.GetFileName(QbSongClass1.GetDictString(int_9)) : ("0x" + KeyGenerator.ValToHex32bit(int_9)));
-			int_2 = int_6;
-			int_0 = int_7;
-			int_1 = int_8;
-			int_3 = int_9;
-			int_4 = int_10;
-			int_5 = int_11;
-			enum35_0 = enum35_1;
+			Text = (QbSongClass1.ContainsKey(int9) ? KeyGenerator.GetFileName(QbSongClass1.GetDictString(int9)) : ("0x" + KeyGenerator.ValToHex32Bit(int9)));
+			_int2 = int6;
+			_int0 = int7;
+			_int1 = int8;
+			_int3 = int9;
+			_int4 = int10;
+			_int5 = int11;
+			_enum350 = enum351;
 			ImageIndex = 40;
 			SelectedImageIndex = 40;
-			bool_3 = false;
+			_bool3 = false;
 		}
 
 		public int imethod_0()
 		{
-			return int_0;
+			return _int0;
 		}
 
-		public void imethod_1(int int_6)
+		public void imethod_1(int int6)
 		{
-			int_0 = int_6;
+			_int0 = int6;
 		}
 
 		public int imethod_2()
@@ -78,84 +78,84 @@ namespace ns20
 			{
 				return method_11();
 			}
-			return int_1;
+			return _int1;
 		}
 
-		public void imethod_3(int int_6)
+		public void imethod_3(int int6)
 		{
-			int_1 = int_6;
+			_int1 = int6;
 		}
 
 		public int imethod_4()
 		{
-			return int_2;
+			return _int2;
 		}
 
-		public void imethod_5(int int_6)
+		public void imethod_5(int int6)
 		{
-			int_2 = int_6;
+			_int2 = int6;
 		}
 
 		public string imethod_6()
 		{
 			if (!QbSongClass1.ContainsKey(imethod_4()))
 			{
-				return "0x" + KeyGenerator.ValToHex32bit(imethod_4());
+				return "0x" + KeyGenerator.ValToHex32Bit(imethod_4());
 			}
 			return QbSongClass1.GetDictString(imethod_4());
 		}
 
 		public int imethod_7()
 		{
-			if (Parent != null && Parent is zzPakNode1 && !(Parent as zzPakNode1).bool_0)
+			if (Parent != null && Parent is ZzPakNode1 && !(Parent as ZzPakNode1).Bool0)
 			{
-				return QbSongClass1.AddKeyToDictionary((Parent as zzPakNode1).vmethod_0() + Text);
+				return QbSongClass1.AddKeyToDictionary((Parent as ZzPakNode1).vmethod_0() + Text);
 			}
-			return int_3;
+			return _int3;
 		}
 
-		public void imethod_8(int int_6)
+		public void imethod_8(int int6)
 		{
-			int_3 = int_6;
+			_int3 = int6;
 		}
 
 		public string imethod_9()
 		{
 			if (!QbSongClass1.ContainsKey(imethod_7()))
 			{
-				return "0x" + KeyGenerator.ValToHex32bit(imethod_7());
+				return "0x" + KeyGenerator.ValToHex32Bit(imethod_7());
 			}
 			return QbSongClass1.GetDictString(imethod_7());
 		}
 
 		public int imethod_10()
 		{
-			return int_4;
+			return _int4;
 		}
 
-		public void imethod_11(int int_6)
+		public void imethod_11(int int6)
 		{
-			int_4 = int_6;
+			_int4 = int6;
 		}
 
 		public int imethod_12()
 		{
-			return int_5;
+			return _int5;
 		}
 
-		public void imethod_13(int int_6)
+		public void imethod_13(int int6)
 		{
-			int_5 = int_6;
+			_int5 = int6;
 		}
 
 		public Enum35 imethod_14()
 		{
-			return enum35_0;
+			return _enum350;
 		}
 
-		public void imethod_15(Enum35 enum35_1)
+		public void imethod_15(Enum35 enum351)
 		{
-			enum35_0 = enum35_1;
+			_enum350 = enum351;
 		}
 
 		public byte[] imethod_16()
@@ -163,11 +163,11 @@ namespace ns20
 			return method_7();
 		}
 
-		public void imethod_17(byte[] byte_1)
+		public void imethod_17(byte[] byte1)
 		{
-			var stream26_ = new Stream26(byte_1);
-			zzGenericNode1 @class;
-			if (Parent != null && Parent is zzPakNode1 && !(Parent as zzPakNode1).bool_0)
+			var stream26 = new Stream26(byte1);
+			ZzGenericNode1 @class;
+			if (Parent != null && Parent is ZzPakNode1 && !(Parent as ZzPakNode1).Bool0)
 			{
 				TreeNode treeNode = this;
 				var level = treeNode.Level;
@@ -175,26 +175,26 @@ namespace ns20
 				{
 					treeNode = treeNode.Parent;
 				}
-				if (treeNode is zzPakNode2 && (treeNode as zzPakNode2).class318_0 != null)
+				if (treeNode is ZzPakNode2 && (treeNode as ZzPakNode2).Class3180 != null)
 				{
 					var string_ = imethod_9().Contains(".qb") ? imethod_9().Replace(".qb", ".qs") : (imethod_9() + ".qs");
-					if ((treeNode as zzPakNode2).class318_0.method_6(string_))
+					if ((treeNode as ZzPakNode2).Class3180.method_6(string_))
 					{
-						@class = new zzGenericNode1("TempFile", stream26_, (treeNode as zzPakNode2).class318_0.method_9(string_).dictionary_0);
+						@class = new ZzGenericNode1("TempFile", stream26, (treeNode as ZzPakNode2).Class3180.method_9(string_).Dictionary0);
 					}
 					else
 					{
-						@class = new zzGenericNode1("TempFile", stream26_);
+						@class = new ZzGenericNode1("TempFile", stream26);
 					}
 				}
 				else
 				{
-					@class = new zzGenericNode1("TempFile", stream26_);
+					@class = new ZzGenericNode1("TempFile", stream26);
 				}
 			}
 			else
 			{
-				@class = new zzGenericNode1("TempFile", stream26_);
+				@class = new ZzGenericNode1("TempFile", stream26);
 			}
 			Nodes.Clear();
 			foreach (AbstractTreeNode1 node in @class.Nodes)
@@ -207,39 +207,39 @@ namespace ns20
 			{
 				vmethod_11(@class.vmethod_10());
 			}
-			bool_1 = @class.vmethod_7();
-			bool_3 = true;
+			Bool1 = @class.vmethod_7();
+			_bool3 = true;
 		}
 
 		public bool imethod_18()
 		{
-			return !bool_3 && Nodes.Count == 0;
+			return !_bool3 && Nodes.Count == 0;
 		}
 
 		public void imethod_19()
 		{
 			Nodes.Clear();
-			bool_3 = false;
+			_bool3 = false;
 		}
 
-		public T imethod_20<T>(T gparam_0) where T : Interface12
+		public T imethod_20<T>(T gparam0) where T : INterface12
 		{
-			gparam_0.imethod_1(int_0);
-			gparam_0.imethod_3(int_1);
-			gparam_0.imethod_5(int_2);
-			gparam_0.imethod_8(int_3);
-			gparam_0.imethod_11(int_4);
-			gparam_0.imethod_13(int_5);
-			gparam_0.imethod_15(enum35_0);
+			gparam0.imethod_1(_int0);
+			gparam0.imethod_3(_int1);
+			gparam0.imethod_5(_int2);
+			gparam0.imethod_8(_int3);
+			gparam0.imethod_11(_int4);
+			gparam0.imethod_13(_int5);
+			gparam0.imethod_15(_enum350);
 			if (!imethod_18())
 			{
-				gparam_0.imethod_17(imethod_16());
+				gparam0.imethod_17(imethod_16());
 			}
 			else
 			{
-				gparam_0.imethod_19();
+				gparam0.imethod_19();
 			}
-			return gparam_0;
+			return gparam0;
 		}
 
 		public void Dispose()
@@ -249,14 +249,14 @@ namespace ns20
 
 		public override object Clone()
 		{
-			var @interface = (Interface12)base.Clone();
-			@interface.imethod_1(int_0);
-			@interface.imethod_3(int_1);
-			@interface.imethod_5(int_2);
-			@interface.imethod_8(int_3);
-			@interface.imethod_11(int_4);
-			@interface.imethod_13(int_5);
-			@interface.imethod_15(enum35_0);
+			var @interface = (INterface12)base.Clone();
+			@interface.imethod_1(_int0);
+			@interface.imethod_3(_int1);
+			@interface.imethod_5(_int2);
+			@interface.imethod_8(_int3);
+			@interface.imethod_11(_int4);
+			@interface.imethod_13(_int5);
+			@interface.imethod_15(_enum350);
 			if (imethod_18())
 			{
 				@interface.imethod_19();

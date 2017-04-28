@@ -8,14 +8,14 @@ namespace ns18
 {
 	public class QbScriptNode : AbstractTreeNode1
 	{
-		public byte[] byte_0;
+		public byte[] Byte0;
 
-		public int int_0;
+		public int Int0;
 
 		public QbScriptNode()
 		{
-			int_0 = -1;
-			byte_0 = new byte[]
+			Int0 = -1;
+			Byte0 = new byte[]
 			{
 				1,
 				36
@@ -28,35 +28,35 @@ namespace ns18
 			return 36;
 		}
 
-		public override void vmethod_13(Stream26 stream26_0)
+		public override void vmethod_13(Stream26 stream260)
 		{
-			int_0 = stream26_0.ReadInt();
-			var num = stream26_0.ReadInt();
-			var num2 = stream26_0.ReadInt();
-			var byte_ = stream26_0.ReadBytes(num2, false);
+			Int0 = stream260.ReadInt();
+			var num = stream260.ReadInt();
+			var num2 = stream260.ReadInt();
+			var byte_ = stream260.ReadBytes(num2, false);
 			if (num == num2)
 			{
-				byte_0 = byte_;
+				Byte0 = byte_;
 			}
 			else
 			{
-				byte_0 = new Class320().method_4(byte_);
+				Byte0 = new Class320().method_4(byte_);
 			}
-			stream26_0.Position += smethod_0(stream26_0.Position);
+			stream260.Position += smethod_0(stream260.Position);
 		}
 
-		public override void vmethod_14(Stream26 stream26_0)
+		public override void vmethod_14(Stream26 stream260)
 		{
-			stream26_0.WriteInt(int_0);
-			stream26_0.WriteInt(byte_0.Length);
-			var array = new Class320().method_0(byte_0);
-			if (byte_0.Length <= array.Length)
+			stream260.WriteInt(Int0);
+			stream260.WriteInt(Byte0.Length);
+			var array = new Class320().method_0(Byte0);
+			if (Byte0.Length <= array.Length)
 			{
-				array = byte_0;
+				array = Byte0;
 			}
-			stream26_0.WriteInt(array.Length);
-			stream26_0.WriteByteArray(array, false);
-			stream26_0.WriteNBytes(0, smethod_0(stream26_0.Position));
+			stream260.WriteInt(array.Length);
+			stream260.WriteByteArray(array, false);
+			stream260.WriteNBytes(0, smethod_0(stream260.Position));
 		}
 
 		public override int CompareTo(object target)
@@ -65,7 +65,7 @@ namespace ns18
 			{
 				return -1;
 			}
-			if (((QbScriptNode)target).int_0 == int_0)
+			if (((QbScriptNode)target).Int0 == Int0)
 			{
 				return 0;
 			}
@@ -74,16 +74,16 @@ namespace ns18
 
 		public override string GetText()
 		{
-			if (QbSongClass1.ContainsKey(int_0))
+			if (QbSongClass1.ContainsKey(Int0))
 			{
-				return QbSongClass1.GetDictString(int_0) + " (Script)";
+				return QbSongClass1.GetDictString(Int0) + " (Script)";
 			}
-			return KeyGenerator.ValToHex32bit(int_0) + " (Script Tag)";
+			return KeyGenerator.ValToHex32Bit(Int0) + " (Script Tag)";
 		}
 
-		public void method_7(byte[] byte_1)
+		public void method_7(byte[] byte1)
 		{
-			byte_0 = byte_1;
+			Byte0 = byte1;
 		}
 
 		public override string GetNodeText()
@@ -91,27 +91,27 @@ namespace ns18
 			return "QB Script";
 		}
 
-		public override void vmethod_2(ref int int_1)
+		public override void vmethod_2(ref int int1)
 		{
-			int_1 += 12;
-			if (byte_0 != null)
+			int1 += 12;
+			if (Byte0 != null)
 			{
-				var array = new Class320().method_0(byte_0);
-				if (byte_0.Length <= array.Length)
+				var array = new Class320().method_0(Byte0);
+				if (Byte0.Length <= array.Length)
 				{
-					array = byte_0;
+					array = Byte0;
 				}
-				int_1 += array.Length;
+				int1 += array.Length;
 			}
-			int_1 += smethod_0(int_1);
+			int1 += smethod_0(int1);
 		}
 
 		public override object Clone()
 		{
 			var @class = (QbScriptNode)base.Clone();
-			@class.int_0 = int_0;
-			@class.byte_0 = new byte[byte_0.Length];
-			Buffer.BlockCopy(byte_0, 0, @class.byte_0, 0, byte_0.Length);
+			@class.Int0 = Int0;
+			@class.Byte0 = new byte[Byte0.Length];
+			Buffer.BlockCopy(Byte0, 0, @class.Byte0, 0, Byte0.Length);
 			return @class;
 		}
 
@@ -122,9 +122,9 @@ namespace ns18
 
 		public override string GetToolTipText()
 		{
-			if (byte_0 != null)
+			if (Byte0 != null)
 			{
-				return byte_0.Length + " QB Script Bytes";
+				return Byte0.Length + " QB Script Bytes";
 			}
 			return "No QB Script Bytes";
 		}

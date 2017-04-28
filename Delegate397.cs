@@ -1,1 +1,1 @@
-public delegate void Delegate397(object object_0, uint uint_0);
+public delegate void Delegate397(object object0, uint uint0);

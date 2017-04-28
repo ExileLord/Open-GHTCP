@@ -5,15 +5,15 @@ namespace ns13
 {
 	public class Stream25 : Stream
 	{
-		private bool bool_0;
+		private bool _bool0;
 
-		private Stream stream_0;
+		private Stream _stream0;
 
 		public override bool CanRead
 		{
 			get
 			{
-				return stream_0.CanRead;
+				return _stream0.CanRead;
 			}
 		}
 
@@ -21,7 +21,7 @@ namespace ns13
 		{
 			get
 			{
-				return stream_0.CanSeek;
+				return _stream0.CanSeek;
 			}
 		}
 
@@ -29,7 +29,7 @@ namespace ns13
 		{
 			get
 			{
-				return stream_0.CanTimeout;
+				return _stream0.CanTimeout;
 			}
 		}
 
@@ -37,7 +37,7 @@ namespace ns13
 		{
 			get
 			{
-				return stream_0.CanWrite;
+				return _stream0.CanWrite;
 			}
 		}
 
@@ -45,7 +45,7 @@ namespace ns13
 		{
 			get
 			{
-				return stream_0.Length;
+				return _stream0.Length;
 			}
 		}
 
@@ -53,110 +53,110 @@ namespace ns13
 		{
 			get
 			{
-				return stream_0.Position;
+				return _stream0.Position;
 			}
 			set
 			{
-				stream_0.Position = value;
+				_stream0.Position = value;
 			}
 		}
 
-		public Stream25(Stream stream_1)
+		public Stream25(Stream stream1)
 		{
-			stream_0 = stream_1;
+			_stream0 = stream1;
 		}
 
 		public override void Flush()
 		{
-			stream_0.Flush();
+			_stream0.Flush();
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
 		{
-			return stream_0.Seek(offset, origin);
+			return _stream0.Seek(offset, origin);
 		}
 
 		public override void SetLength(long value)
 		{
-			stream_0.SetLength(value);
+			_stream0.SetLength(value);
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			return stream_0.Read(buffer, offset, count);
+			return _stream0.Read(buffer, offset, count);
 		}
 
 		public override void Write(byte[] buffer, int offset, int count)
 		{
-			stream_0.Write(buffer, offset, count);
+			_stream0.Write(buffer, offset, count);
 		}
 
 		public override void Close()
 		{
-			var stream = stream_0;
-			stream_0 = null;
-			if (bool_0 && stream != null)
+			var stream = _stream0;
+			_stream0 = null;
+			if (_bool0 && stream != null)
 			{
-				bool_0 = false;
+				_bool0 = false;
 				stream.Close();
 			}
 		}
 
-		public void method_0(long long_0, long long_1, long long_2)
+		public void method_0(long long0, long long1, long long2)
 		{
-			var position = stream_0.Position;
+			var position = _stream0.Position;
 			method_4(101075792);
 			method_6(44L);
 			method_2(45);
 			method_2(45);
 			method_4(0);
 			method_4(0);
-			method_6(long_0);
-			method_6(long_0);
-			method_6(long_1);
-			method_6(long_2);
+			method_6(long0);
+			method_6(long0);
+			method_6(long1);
+			method_6(long2);
 			method_4(117853008);
 			method_4(0);
 			method_6(position);
 			method_4(1);
 		}
 
-		public void method_1(long long_0, long long_1, long long_2, byte[] byte_0)
+		public void method_1(long long0, long long1, long long2, byte[] byte0)
 		{
-			if (long_0 >= 65535L || long_2 >= 4294967295L || long_1 >= 4294967295L)
+			if (long0 >= 65535L || long2 >= 4294967295L || long1 >= 4294967295L)
 			{
-				method_0(long_0, long_1, long_2);
+				method_0(long0, long1, long2);
 			}
 			method_4(101010256);
 			method_2(0);
 			method_2(0);
-			if (long_0 >= 65535L)
+			if (long0 >= 65535L)
 			{
 				method_3(65535);
 				method_3(65535);
 			}
 			else
 			{
-				method_2((short)long_0);
-				method_2((short)long_0);
+				method_2((short)long0);
+				method_2((short)long0);
 			}
-			if (long_1 >= 4294967295L)
+			if (long1 >= 4294967295L)
 			{
 				method_5(4294967295u);
 			}
 			else
 			{
-				method_4((int)long_1);
+				method_4((int)long1);
 			}
-			if (long_2 >= 4294967295L)
+			if (long2 >= 4294967295L)
 			{
 				method_5(4294967295u);
 			}
 			else
 			{
-				method_4((int)long_2);
+				method_4((int)long2);
 			}
-			var num = (byte_0 != null) ? byte_0.Length : 0;
+			var num = (byte0 != null) ? byte0.Length : 0;
 			if (num > 65535)
 			{
 				throw new ZipException(string.Format("Comment length({0}) is too long can only be 64K", num));
@@ -164,38 +164,38 @@ namespace ns13
 			method_2(num);
 			if (num > 0)
 			{
-				Write(byte_0, 0, byte_0.Length);
+				Write(byte0, 0, byte0.Length);
 			}
 		}
 
-		public void method_2(int int_0)
+		public void method_2(int int0)
 		{
-			stream_0.WriteByte((byte)(int_0 & 255));
-			stream_0.WriteByte((byte)(int_0 >> 8 & 255));
+			_stream0.WriteByte((byte)(int0 & 255));
+			_stream0.WriteByte((byte)(int0 >> 8 & 255));
 		}
 
-		public void method_3(ushort ushort_0)
+		public void method_3(ushort ushort0)
 		{
-			stream_0.WriteByte((byte)(ushort_0 & 255));
-			stream_0.WriteByte((byte)(ushort_0 >> 8));
+			_stream0.WriteByte((byte)(ushort0 & 255));
+			_stream0.WriteByte((byte)(ushort0 >> 8));
 		}
 
-		public void method_4(int int_0)
+		public void method_4(int int0)
 		{
-			method_2(int_0);
-			method_2(int_0 >> 16);
+			method_2(int0);
+			method_2(int0 >> 16);
 		}
 
-		public void method_5(uint uint_0)
+		public void method_5(uint uint0)
 		{
-			method_3((ushort)(uint_0 & 65535u));
-			method_3((ushort)(uint_0 >> 16));
+			method_3((ushort)(uint0 & 65535u));
+			method_3((ushort)(uint0 >> 16));
 		}
 
-		public void method_6(long long_0)
+		public void method_6(long long0)
 		{
-			method_4((int)long_0);
-			method_4((int)(long_0 >> 32));
+			method_4((int)long0);
+			method_4((int)(long0 >> 32));
 		}
 	}
 }

@@ -6,19 +6,19 @@ namespace ns1
 {
 	public class Stream3 : GenericAudioStream
 	{
-		private readonly GenericAudioStream stream1_0;
+		private readonly GenericAudioStream _stream10;
 
-		private readonly long long_0;
+		private readonly long _long0;
 
-		private readonly long long_1;
+		private readonly long _long1;
 
-		private long long_2;
+		private long _long2;
 
 		public override bool CanRead
 		{
 			get
 			{
-				return stream1_0.CanRead;
+				return _stream10.CanRead;
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace ns1
 		{
 			get
 			{
-				return stream1_0.CanSeek;
+				return _stream10.CanSeek;
 			}
 		}
 
@@ -34,7 +34,7 @@ namespace ns1
 		{
 			get
 			{
-				return stream1_0.CanWrite;
+				return _stream10.CanWrite;
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace ns1
 		{
 			get
 			{
-				return long_1;
+				return _long1;
 			}
 		}
 
@@ -50,52 +50,52 @@ namespace ns1
 		{
 			get
 			{
-				return long_2 - long_0;
+				return _long2 - _long0;
 			}
 			set
 			{
-				if (value < 0L || value >= long_1)
+				if (value < 0L || value >= _long1)
 				{
 					throw new IOException("Seeking position out of range.");
 				}
-				stream1_0.Position = (long_2 = long_0 + value);
+				_stream10.Position = (_long2 = _long0 + value);
 			}
 		}
 
 		private long method_0()
 		{
-			return Math.Max(long_0 + long_1 - long_2, 0L);
+			return Math.Max(_long0 + _long1 - _long2, 0L);
 		}
 
-		private Stream3(GenericAudioStream stream1_1)
+		private Stream3(GenericAudioStream stream11)
 		{
-			stream1_0 = stream1_1;
-			fileStream = stream1_1;
-			waveFormat_0 = stream1_1.vmethod_0();
+			_stream10 = stream11;
+			FileStream = stream11;
+			WaveFormat0 = stream11.vmethod_0();
 		}
 
-		public Stream3(GenericAudioStream stream1_1, long long_3, long long_4) : this(stream1_1)
+		public Stream3(GenericAudioStream stream11, long long3, long long4) : this(stream11)
 		{
-			if (0L > long_3)
+			if (0L > long3)
 			{
 				throw new ArgumentException("Start Offset is out of range.");
 			}
-			if (stream1_1.Length < long_4)
+			if (stream11.Length < long4)
 			{
 				throw new ArgumentException("End Offset is out of range.");
 			}
-			if (long_3 >= long_4)
+			if (long3 >= long4)
 			{
 				throw new ArgumentException("Start/End Offset are out of range.");
 			}
-			long_1 = long_4 - long_3;
-			Stream arg_63_0 = stream1_0;
-			long_0 = long_3;
-			long_2 = long_3;
-			arg_63_0.Position = long_3;
+			_long1 = long4 - long3;
+			Stream arg630 = _stream10;
+			_long0 = long3;
+			_long2 = long3;
+			arg630.Position = long3;
 		}
 
-		public Stream3(GenericAudioStream stream1_1, TimeSpan timeSpan_0, TimeSpan timeSpan_1) : this(stream1_1, Convert.ToInt32(stream1_1.vmethod_0().int_0 * stream1_1.vmethod_0().short_1 * timeSpan_0.TotalSeconds), Convert.ToInt32(stream1_1.vmethod_0().int_0 * stream1_1.vmethod_0().short_1 * timeSpan_1.TotalSeconds))
+		public Stream3(GenericAudioStream stream11, TimeSpan timeSpan0, TimeSpan timeSpan1) : this(stream11, Convert.ToInt32(stream11.vmethod_0().int_0 * stream11.vmethod_0().short_1 * timeSpan0.TotalSeconds), Convert.ToInt32(stream11.vmethod_0().int_0 * stream11.vmethod_0().short_1 * timeSpan1.TotalSeconds))
 		{
 		}
 
@@ -109,18 +109,18 @@ namespace ns1
 			throw new NotImplementedException();
 		}
 
-		public override int vmethod_3(IntPtr intptr_0, int int_2)
+		public override int vmethod_3(IntPtr intptr0, int int2)
 		{
 			int result;
-			lock (stream1_0)
+			lock (_stream10)
 			{
-				if (vmethod_2().Position != long_2)
+				if (vmethod_2().Position != _long2)
 				{
-					vmethod_2().Position = long_2;
+					vmethod_2().Position = _long2;
 				}
-				int_2 = (int)Math.Min(int_2, method_0());
-				var num = stream1_0.vmethod_3(intptr_0, int_2);
-				long_2 += num;
+				int2 = (int)Math.Min(int2, method_0());
+				var num = _stream10.vmethod_3(intptr0, int2);
+				_long2 += num;
 				result = num;
 			}
 			return result;
@@ -129,57 +129,57 @@ namespace ns1
 		public override int Read(byte[] buffer, int offset, int count)
 		{
 			int result;
-			lock (stream1_0)
+			lock (_stream10)
 			{
-				if (vmethod_2().Position != long_2)
+				if (vmethod_2().Position != _long2)
 				{
-					vmethod_2().Position = long_2;
+					vmethod_2().Position = _long2;
 				}
 				count = (int)Math.Min(count, method_0());
-				var num = stream1_0.Read(buffer, offset, count);
-				long_2 += num;
+				var num = _stream10.Read(buffer, offset, count);
+				_long2 += num;
 				result = num;
 			}
 			return result;
 		}
 
-		public override int vmethod_4(float[] float_0, int int_2, int int_3)
+		public override int vmethod_4(float[] float0, int int2, int int3)
 		{
 			int result;
-			lock (stream1_0)
+			lock (_stream10)
 			{
-				if (vmethod_2().Position != long_2)
+				if (vmethod_2().Position != _long2)
 				{
-					vmethod_2().Position = long_2;
+					vmethod_2().Position = _long2;
 				}
-				int_3 = (int)Math.Min(int_3, method_0() >> 2);
-				var num = stream1_0.vmethod_4(float_0, int_2, int_3);
-				long_2 += (long)num << 2;
+				int3 = (int)Math.Min(int3, method_0() >> 2);
+				var num = _stream10.vmethod_4(float0, int2, int3);
+				_long2 += (long)num << 2;
 				result = num;
 			}
 			return result;
 		}
 
-		public override float[][] vmethod_5(int int_2)
+		public override float[][] vmethod_5(int int2)
 		{
 			float[][] result;
-			lock (stream1_0)
+			lock (_stream10)
 			{
-				if (vmethod_2().Position != long_2)
+				if (vmethod_2().Position != _long2)
 				{
-					vmethod_2().Position = long_2;
+					vmethod_2().Position = _long2;
 				}
-				int_2 = (int)Math.Min(int_2, (method_0() >> 2) / waveFormat_0.short_0);
-				if (int_2 == 0)
+				int2 = (int)Math.Min(int2, (method_0() >> 2) / WaveFormat0.short_0);
+				if (int2 == 0)
 				{
 					result = null;
 				}
 				else
 				{
-					var array = stream1_0.vmethod_5(int_2);
+					var array = _stream10.vmethod_5(int2);
 					if (array != null && array.Length >= 1)
 					{
-						long_2 += (array[0].Length << 2) * array.Length;
+						_long2 += (array[0].Length << 2) * array.Length;
 						result = array;
 					}
 					else

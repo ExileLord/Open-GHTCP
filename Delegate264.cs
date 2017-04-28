@@ -1,3 +1,3 @@
 using System;
 
-public delegate sbyte Delegate264(object object_0, IFormatProvider iformatProvider_0);
+public delegate sbyte Delegate264(object object0, IFormatProvider iformatProvider0);

@@ -1,1 +1,1 @@
-public delegate char Delegate409(int int_0);
+public delegate char Delegate409(int int0);

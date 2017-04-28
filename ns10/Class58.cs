@@ -4,9 +4,9 @@ namespace ns10
 {
 	public class Class58 : Class57
 	{
-		private static int[][][] int_0 = new int[2][][];
+		private static int[][][] _int0 = new int[2][][];
 
-		public override void vmethod_0(object object_0)
+		public override void vmethod_0(object object0)
 		{
 		}
 	}

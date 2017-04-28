@@ -2,17 +2,17 @@ using ns21;
 
 namespace ns19
 {
-	public class VectorArrayNode : zzUnkNode289<FloatListNode>
+	public class VectorArrayNode : ZzUnkNode289<FloatListNode>
 	{
-		public FloatListNode this[int int_0]
+		public FloatListNode this[int int0]
 		{
 			get
 			{
-				return (FloatListNode)Nodes[int_0];
+				return (FloatListNode)Nodes[int0];
 			}
 			set
 			{
-				Nodes[int_0] = value;
+				Nodes[int0] = value;
 			}
 		}
 

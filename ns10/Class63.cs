@@ -2,14 +2,14 @@ namespace ns10
 {
 	public class Class63
 	{
-		private int int_0;
+		private int _int0;
 
-		private int int_1;
+		private int _int1;
 
-		public void method_0(int int_2, int int_3)
+		public void method_0(int int2, int int3)
 		{
-			int_0 = int_2;
-			int_1 = int_3;
+			_int0 = int2;
+			_int1 = int3;
 		}
 	}
 }

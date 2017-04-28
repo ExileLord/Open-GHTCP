@@ -8,7 +8,7 @@ namespace ns0
 	{
 		public class Class3
 		{
-			private static readonly int[] int_0 = {
+			private static readonly int[] Int0 = {
 				3,
 				4,
 				5,
@@ -40,7 +40,7 @@ namespace ns0
 				258
 			};
 
-			private static readonly int[] int_1 = {
+			private static readonly int[] Int1 = {
 				0,
 				0,
 				0,
@@ -72,7 +72,7 @@ namespace ns0
 				0
 			};
 
-			private static readonly int[] int_2 = {
+			private static readonly int[] Int2 = {
 				1,
 				2,
 				3,
@@ -105,7 +105,7 @@ namespace ns0
 				24577
 			};
 
-			private static readonly int[] int_3 = {
+			private static readonly int[] Int3 = {
 				0,
 				0,
 				0,
@@ -138,48 +138,48 @@ namespace ns0
 				13
 			};
 
-			private int int_4;
+			private int _int4;
 
-			private int int_5;
+			private int _int5;
 
-			private int int_6;
+			private int _int6;
 
-			private int int_7;
+			private int _int7;
 
-			private int int_8;
+			private int _int8;
 
-			private bool bool_0;
+			private bool _bool0;
 
-			private readonly Class4 class4_0;
+			private readonly Class4 _class40;
 
-			private readonly Class5 class5_0;
+			private readonly Class5 _class50;
 
-			private Class7 class7_0;
+			private Class7 _class70;
 
-			private Class6 class6_0;
+			private Class6 _class60;
 
-			private Class6 class6_1;
+			private Class6 _class61;
 
-			public Class3(byte[] byte_0)
+			public Class3(byte[] byte0)
 			{
-				class4_0 = new Class4();
-				class5_0 = new Class5();
-				int_4 = 2;
-				class4_0.method_7(byte_0, 0, byte_0.Length);
+				_class40 = new Class4();
+				_class50 = new Class5();
+				_int4 = 2;
+				_class40.method_7(byte0, 0, byte0.Length);
 			}
 
 			private bool method_0()
 			{
-				var i = class5_0.method_4();
+				var i = _class50.method_4();
 				while (i >= 258)
 				{
 					int num;
-					switch (int_4)
+					switch (_int4)
 					{
 					case 7:
-						while (((num = class6_0.method_1(class4_0)) & -256) == 0)
+						while (((num = _class60.method_1(_class40)) & -256) == 0)
 						{
-							class5_0.method_0(num);
+							_class50.method_0(num);
 							if (--i < 258)
 							{
 								return true;
@@ -187,17 +187,17 @@ namespace ns0
 						}
 						if (num >= 257)
 						{
-							int_6 = int_0[num - 257];
-							int_5 = int_1[num - 257];
+							_int6 = Int0[num - 257];
+							_int5 = Int1[num - 257];
 							goto IL_9E;
 						}
 						if (num < 0)
 						{
 							return false;
 						}
-						class6_1 = null;
-						class6_0 = null;
-						int_4 = 2;
+						_class61 = null;
+						_class60 = null;
+						_int4 = 2;
 						return true;
 					case 8:
 						goto IL_9E;
@@ -209,43 +209,43 @@ namespace ns0
 						continue;
 					}
 					IL_121:
-					if (int_5 > 0)
+					if (_int5 > 0)
 					{
-						int_4 = 10;
-						var num2 = class4_0.method_0(int_5);
+						_int4 = 10;
+						var num2 = _class40.method_0(_int5);
 						if (num2 < 0)
 						{
 							return false;
 						}
-						class4_0.method_1(int_5);
-						int_7 += num2;
+						_class40.method_1(_int5);
+						_int7 += num2;
 					}
-					class5_0.method_2(int_6, int_7);
-					i -= int_6;
-					int_4 = 7;
+					_class50.method_2(_int6, _int7);
+					i -= _int6;
+					_int4 = 7;
 					continue;
 					IL_EE:
-					num = class6_1.method_1(class4_0);
+					num = _class61.method_1(_class40);
 					if (num >= 0)
 					{
-						int_7 = int_2[num];
-						int_5 = int_3[num];
+						_int7 = Int2[num];
+						_int5 = Int3[num];
 						goto IL_121;
 					}
 					return false;
 					IL_9E:
-					if (int_5 > 0)
+					if (_int5 > 0)
 					{
-						int_4 = 8;
-						var num3 = class4_0.method_0(int_5);
+						_int4 = 8;
+						var num3 = _class40.method_0(_int5);
 						if (num3 < 0)
 						{
 							return false;
 						}
-						class4_0.method_1(int_5);
-						int_6 += num3;
+						_class40.method_1(_int5);
+						_int6 += num3;
 					}
-					int_4 = 9;
+					_int4 = 9;
 					goto IL_EE;
 				}
 				return true;
@@ -253,63 +253,63 @@ namespace ns0
 
 			private bool method_1()
 			{
-				switch (int_4)
+				switch (_int4)
 				{
 				case 2:
 				{
-					if (bool_0)
+					if (_bool0)
 					{
-						int_4 = 12;
+						_int4 = 12;
 						return false;
 					}
-					var num = class4_0.method_0(3);
+					var num = _class40.method_0(3);
 					if (num < 0)
 					{
 						return false;
 					}
-					class4_0.method_1(3);
+					_class40.method_1(3);
 					if ((num & 1) != 0)
 					{
-						bool_0 = true;
+						_bool0 = true;
 					}
 					switch (num >> 1)
 					{
 					case 0:
-						class4_0.method_4();
-						int_4 = 3;
+						_class40.method_4();
+						_int4 = 3;
 						break;
 					case 1:
-						class6_0 = Class6.class6_0;
-						class6_1 = Class6.class6_1;
-						int_4 = 7;
+						_class60 = Class6.Class60;
+						_class61 = Class6.Class61;
+						_int4 = 7;
 						break;
 					case 2:
-						class7_0 = new Class7();
-						int_4 = 6;
+						_class70 = new Class7();
+						_int4 = 6;
 						break;
 					}
 					return true;
 				}
 				case 3:
-					if ((int_8 = class4_0.method_0(16)) < 0)
+					if ((_int8 = _class40.method_0(16)) < 0)
 					{
 						return false;
 					}
-					class4_0.method_1(16);
-					int_4 = 4;
+					_class40.method_1(16);
+					_int4 = 4;
 					break;
 				case 4:
 					break;
 				case 5:
 					goto IL_137;
 				case 6:
-					if (!class7_0.method_0(class4_0))
+					if (!_class70.method_0(_class40))
 					{
 						return false;
 					}
-					class6_0 = class7_0.method_1();
-					class6_1 = class7_0.method_2();
-					int_4 = 7;
+					_class60 = _class70.method_1();
+					_class61 = _class70.method_2();
+					_int4 = 7;
 					goto IL_1BB;
 				case 7:
 				case 8:
@@ -323,49 +323,49 @@ namespace ns0
 				default:
 					return false;
 				}
-				var num2 = class4_0.method_0(16);
+				var num2 = _class40.method_0(16);
 				if (num2 < 0)
 				{
 					return false;
 				}
-				class4_0.method_1(16);
-				int_4 = 5;
+				_class40.method_1(16);
+				_int4 = 5;
 				IL_137:
-				var num3 = class5_0.method_3(class4_0, int_8);
-				int_8 -= num3;
-				if (int_8 == 0)
+				var num3 = _class50.method_3(_class40, _int8);
+				_int8 -= num3;
+				if (_int8 == 0)
 				{
-					int_4 = 2;
+					_int4 = 2;
 					return true;
 				}
-				return !class4_0.method_5();
+				return !_class40.method_5();
 				IL_1BB:
 				return method_0();
 			}
 
-			public int method_2(byte[] byte_0, int int_9, int int_10)
+			public int method_2(byte[] byte0, int int9, int int10)
 			{
 				var num = 0;
 				while (true)
 				{
-					if (int_4 != 11)
+					if (_int4 != 11)
 					{
-						var num2 = class5_0.method_6(byte_0, int_9, int_10);
-						int_9 += num2;
+						var num2 = _class50.method_6(byte0, int9, int10);
+						int9 += num2;
 						num += num2;
-						int_10 -= num2;
-						if (int_10 == 0)
+						int10 -= num2;
+						if (int10 == 0)
 						{
 							return num;
 						}
 					}
 					if (!method_1())
 					{
-						if (class5_0.method_5() <= 0)
+						if (_class50.method_5() <= 0)
 						{
 							break;
 						}
-						if (int_4 == 11)
+						if (_int4 == 11)
 						{
 							break;
 						}
@@ -377,104 +377,104 @@ namespace ns0
 
 		public class Class4
 		{
-			private byte[] byte_0;
+			private byte[] _byte0;
 
-			private int int_0;
+			private int _int0;
 
-			private int int_1;
+			private int _int1;
 
-			private uint uint_0;
+			private uint _uint0;
 
-			private int int_2;
+			private int _int2;
 
-			public int method_0(int int_3)
+			public int method_0(int int3)
 			{
-				if (int_2 < int_3)
+				if (_int2 < int3)
 				{
-					if (int_0 == int_1)
+					if (_int0 == _int1)
 					{
 						return -1;
 					}
-					uint_0 |= (uint)(byte_0[int_0++] & 255 | (byte_0[int_0++] & 255) << 8) << int_2;
-					int_2 += 16;
+					_uint0 |= (uint)(_byte0[_int0++] & 255 | (_byte0[_int0++] & 255) << 8) << _int2;
+					_int2 += 16;
 				}
-				return (int)(uint_0 & (ulong)((1 << int_3) - 1));
+				return (int)(_uint0 & (ulong)((1 << int3) - 1));
 			}
 
-			public void method_1(int int_3)
+			public void method_1(int int3)
 			{
-				uint_0 >>= int_3;
-				int_2 -= int_3;
+				_uint0 >>= int3;
+				_int2 -= int3;
 			}
 
 			public int method_2()
 			{
-				return int_2;
+				return _int2;
 			}
 
 			public int method_3()
 			{
-				return int_1 - int_0 + (int_2 >> 3);
+				return _int1 - _int0 + (_int2 >> 3);
 			}
 
 			public void method_4()
 			{
-				uint_0 >>= (int_2 & 7);
-				int_2 &= -8;
+				_uint0 >>= (_int2 & 7);
+				_int2 &= -8;
 			}
 
 			public bool method_5()
 			{
-				return int_0 == int_1;
+				return _int0 == _int1;
 			}
 
-			public int method_6(byte[] byte_1, int int_3, int int_4)
+			public int method_6(byte[] byte1, int int3, int int4)
 			{
 				var num = 0;
-				while (int_2 > 0 && int_4 > 0)
+				while (_int2 > 0 && int4 > 0)
 				{
-					byte_1[int_3++] = (byte)uint_0;
-					uint_0 >>= 8;
-					int_2 -= 8;
-					int_4--;
+					byte1[int3++] = (byte)_uint0;
+					_uint0 >>= 8;
+					_int2 -= 8;
+					int4--;
 					num++;
 				}
-				if (int_4 == 0)
+				if (int4 == 0)
 				{
 					return num;
 				}
-				var num2 = int_1 - int_0;
-				if (int_4 > num2)
+				var num2 = _int1 - _int0;
+				if (int4 > num2)
 				{
-					int_4 = num2;
+					int4 = num2;
 				}
-				Array.Copy(byte_0, int_0, byte_1, int_3, int_4);
-				int_0 += int_4;
-				if ((int_0 - int_1 & 1) != 0)
+				Array.Copy(_byte0, _int0, byte1, int3, int4);
+				_int0 += int4;
+				if ((_int0 - _int1 & 1) != 0)
 				{
-					uint_0 = (uint)(byte_0[int_0++] & 255);
-					int_2 = 8;
+					_uint0 = (uint)(_byte0[_int0++] & 255);
+					_int2 = 8;
 				}
-				return num + int_4;
+				return num + int4;
 			}
 
-			public void method_7(byte[] byte_1, int int_3, int int_4)
+			public void method_7(byte[] byte1, int int3, int int4)
 			{
-				if (int_0 < int_1)
+				if (_int0 < _int1)
 				{
 					throw new InvalidOperationException();
 				}
-				var num = int_3 + int_4;
-				if (0 <= int_3 && int_3 <= num && num <= byte_1.Length)
+				var num = int3 + int4;
+				if (0 <= int3 && int3 <= num && num <= byte1.Length)
 				{
-					if ((int_4 & 1) != 0)
+					if ((int4 & 1) != 0)
 					{
-						uint_0 |= (uint)(byte_1[int_3++] & 255) << int_2;
-						int_2 += 8;
+						_uint0 |= (uint)(byte1[int3++] & 255) << _int2;
+						_int2 += 8;
 					}
-					byte_0 = byte_1;
-					int_0 = int_3;
-					int_1 = num;
+					_byte0 = byte1;
+					_int0 = int3;
+					_int1 = num;
 					return;
 				}
 				throw new ArgumentOutOfRangeException();
@@ -483,115 +483,115 @@ namespace ns0
 
 		public class Class5
 		{
-			private static readonly int int_0 = 32768;
+			private static readonly int Int0 = 32768;
 
-			private static readonly int int_1 = int_0 - 1;
+			private static readonly int Int1 = Int0 - 1;
 
-			private readonly byte[] byte_0 = new byte[int_0];
+			private readonly byte[] _byte0 = new byte[Int0];
 
-			private int int_2;
+			private int _int2;
 
-			private int int_3;
+			private int _int3;
 
-			public void method_0(int int_4)
+			public void method_0(int int4)
 			{
-				if (int_3++ == int_0)
+				if (_int3++ == Int0)
 				{
 					throw new InvalidOperationException();
 				}
-				byte_0[int_2++] = (byte)int_4;
-				int_2 &= int_1;
+				_byte0[_int2++] = (byte)int4;
+				_int2 &= Int1;
 			}
 
-			private void method_1(int int_4, int int_5, int int_6)
+			private void method_1(int int4, int int5, int int6)
 			{
-				while (int_5-- > 0)
+				while (int5-- > 0)
 				{
-					byte_0[int_2++] = byte_0[int_4++];
-					int_2 &= int_1;
-					int_4 &= int_1;
+					_byte0[_int2++] = _byte0[int4++];
+					_int2 &= Int1;
+					int4 &= Int1;
 				}
 			}
 
-			public void method_2(int int_4, int int_5)
+			public void method_2(int int4, int int5)
 			{
-				if ((int_3 += int_4) > int_0)
+				if ((_int3 += int4) > Int0)
 				{
 					throw new InvalidOperationException();
 				}
-				var num = int_2 - int_5 & int_1;
-				var num2 = int_0 - int_4;
-				if (num > num2 || int_2 >= num2)
+				var num = _int2 - int5 & Int1;
+				var num2 = Int0 - int4;
+				if (num > num2 || _int2 >= num2)
 				{
-					method_1(num, int_4, int_5);
+					method_1(num, int4, int5);
 					return;
 				}
-				if (int_4 <= int_5)
+				if (int4 <= int5)
 				{
-					Array.Copy(byte_0, num, byte_0, int_2, int_4);
-					int_2 += int_4;
+					Array.Copy(_byte0, num, _byte0, _int2, int4);
+					_int2 += int4;
 					return;
 				}
-				while (int_4-- > 0)
+				while (int4-- > 0)
 				{
-					byte_0[int_2++] = byte_0[num++];
+					_byte0[_int2++] = _byte0[num++];
 				}
 			}
 
-			public int method_3(Class4 class4_0, int int_4)
+			public int method_3(Class4 class40, int int4)
 			{
-				int_4 = Math.Min(Math.Min(int_4, int_0 - int_3), class4_0.method_3());
-				var num = int_0 - int_2;
+				int4 = Math.Min(Math.Min(int4, Int0 - _int3), class40.method_3());
+				var num = Int0 - _int2;
 				int num2;
-				if (int_4 > num)
+				if (int4 > num)
 				{
-					num2 = class4_0.method_6(byte_0, int_2, num);
+					num2 = class40.method_6(_byte0, _int2, num);
 					if (num2 == num)
 					{
-						num2 += class4_0.method_6(byte_0, 0, int_4 - num);
+						num2 += class40.method_6(_byte0, 0, int4 - num);
 					}
 				}
 				else
 				{
-					num2 = class4_0.method_6(byte_0, int_2, int_4);
+					num2 = class40.method_6(_byte0, _int2, int4);
 				}
-				int_2 = (int_2 + num2 & int_1);
-				int_3 += num2;
+				_int2 = (_int2 + num2 & Int1);
+				_int3 += num2;
 				return num2;
 			}
 
 			public int method_4()
 			{
-				return int_0 - int_3;
+				return Int0 - _int3;
 			}
 
 			public int method_5()
 			{
-				return int_3;
+				return _int3;
 			}
 
-			public int method_6(byte[] byte_1, int int_4, int int_5)
+			public int method_6(byte[] byte1, int int4, int int5)
 			{
-				var num = int_2;
-				if (int_5 > int_3)
+				var num = _int2;
+				if (int5 > _int3)
 				{
-					int_5 = int_3;
+					int5 = _int3;
 				}
 				else
 				{
-					num = (int_2 - int_3 + int_5 & int_1);
+					num = (_int2 - _int3 + int5 & Int1);
 				}
-				var num2 = int_5;
-				var num3 = int_5 - num;
+				var num2 = int5;
+				var num3 = int5 - num;
 				if (num3 > 0)
 				{
-					Array.Copy(byte_0, int_0 - num3, byte_1, int_4, num3);
-					int_4 += num3;
-					int_5 = num;
+					Array.Copy(_byte0, Int0 - num3, byte1, int4, num3);
+					int4 += num3;
+					int5 = num;
 				}
-				Array.Copy(byte_0, num - int_5, byte_1, int_4, int_5);
-				int_3 -= num2;
-				if (int_3 < 0)
+				Array.Copy(_byte0, num - int5, byte1, int4, int5);
+				_int3 -= num2;
+				if (_int3 < 0)
 				{
 					throw new InvalidOperationException();
 				}
@@ -601,17 +601,17 @@ namespace ns0
 
 		public class Class6
 		{
-			private static readonly int int_0;
+			private static readonly int Int0;
 
-			private short[] short_0;
+			private short[] _short0;
 
-			public static Class6 class6_0;
+			public static Class6 Class60;
 
-			public static Class6 class6_1;
+			public static Class6 Class61;
 
 			static Class6()
 			{
-				int_0 = 15;
+				Int0 = 15;
 				var array = new byte[288];
 				var i = 0;
 				while (i < 144)
@@ -630,28 +630,28 @@ namespace ns0
 				{
 					array[i++] = 8;
 				}
-				class6_0 = new Class6(array);
+				Class60 = new Class6(array);
 				array = new byte[32];
 				i = 0;
 				while (i < 32)
 				{
 					array[i++] = 5;
 				}
-				class6_1 = new Class6(array);
+				Class61 = new Class6(array);
 			}
 
-			public Class6(byte[] byte_0)
+			public Class6(byte[] byte0)
 			{
-				method_0(byte_0);
+				method_0(byte0);
 			}
 
-			private void method_0(byte[] byte_0)
+			private void method_0(byte[] byte0)
 			{
-				var array = new int[int_0 + 1];
-				var array2 = new int[int_0 + 1];
-				for (var i = 0; i < byte_0.Length; i++)
+				var array = new int[Int0 + 1];
+				var array2 = new int[Int0 + 1];
+				for (var i = 0; i < byte0.Length; i++)
 				{
-					int num = byte_0[i];
+					int num = byte0[i];
 					if (num > 0)
 					{
 						array[num]++;
@@ -659,7 +659,7 @@ namespace ns0
 				}
 				var num2 = 0;
 				var num3 = 512;
-				for (var j = 1; j <= int_0; j++)
+				for (var j = 1; j <= Int0; j++)
 				{
 					array2[j] = num2;
 					num2 += array[j] << 16 - j;
@@ -670,22 +670,22 @@ namespace ns0
 						num3 += num5 - num4 >> 16 - j;
 					}
 				}
-				short_0 = new short[num3];
+				_short0 = new short[num3];
 				var num6 = 512;
-				for (var k = int_0; k >= 10; k--)
+				for (var k = Int0; k >= 10; k--)
 				{
 					var num7 = num2 & 130944;
 					num2 -= array[k] << 16 - k;
 					var num8 = num2 & 130944;
 					for (var l = num8; l < num7; l += 128)
 					{
-						short_0[Class8.smethod_0(l)] = (short)(-num6 << 4 | k);
+						_short0[Class8.smethod_0(l)] = (short)(-num6 << 4 | k);
 						num6 += 1 << k - 9;
 					}
 				}
-				for (var m = 0; m < byte_0.Length; m++)
+				for (var m = 0; m < byte0.Length; m++)
 				{
-					int num9 = byte_0[m];
+					int num9 = byte0[m];
 					if (num9 != 0)
 					{
 						num2 = array2[num9];
@@ -694,19 +694,19 @@ namespace ns0
 						{
 							do
 							{
-								short_0[num10] = (short)(m << 4 | num9);
+								_short0[num10] = (short)(m << 4 | num9);
 								num10 += 1 << num9;
 							}
 							while (num10 < 512);
 						}
 						else
 						{
-							int num11 = short_0[num10 & 511];
+							int num11 = _short0[num10 & 511];
 							var num12 = 1 << (num11 & 15);
 							num11 = -(num11 >> 4);
 							do
 							{
-								short_0[num11 | num10 >> 9] = (short)(m << 4 | num9);
+								_short0[num11 | num10 >> 9] = (short)(m << 4 | num9);
 								num10 += 1 << num9;
 							}
 							while (num10 < num12);
@@ -716,43 +716,43 @@ namespace ns0
 				}
 			}
 
-			public int method_1(Class4 class4_0)
+			public int method_1(Class4 class40)
 			{
 				int num;
-				if ((num = class4_0.method_0(9)) >= 0)
+				if ((num = class40.method_0(9)) >= 0)
 				{
 					int num2;
-					if ((num2 = short_0[num]) >= 0)
+					if ((num2 = _short0[num]) >= 0)
 					{
-						class4_0.method_1(num2 & 15);
+						class40.method_1(num2 & 15);
 						return num2 >> 4;
 					}
 					var num3 = -(num2 >> 4);
 					var int_ = num2 & 15;
-					if ((num = class4_0.method_0(int_)) >= 0)
+					if ((num = class40.method_0(int_)) >= 0)
 					{
-						num2 = short_0[num3 | num >> 9];
-						class4_0.method_1(num2 & 15);
+						num2 = _short0[num3 | num >> 9];
+						class40.method_1(num2 & 15);
 						return num2 >> 4;
 					}
-					var num4 = class4_0.method_2();
-					num = class4_0.method_0(num4);
-					num2 = short_0[num3 | num >> 9];
+					var num4 = class40.method_2();
+					num = class40.method_0(num4);
+					num2 = _short0[num3 | num >> 9];
 					if ((num2 & 15) <= num4)
 					{
-						class4_0.method_1(num2 & 15);
+						class40.method_1(num2 & 15);
 						return num2 >> 4;
 					}
 					return -1;
 				}
 				else
 				{
-					var num5 = class4_0.method_2();
-					num = class4_0.method_0(num5);
-					int num2 = short_0[num];
+					var num5 = class40.method_2();
+					num = class40.method_0(num5);
+					int num2 = _short0[num];
 					if (num2 >= 0 && (num2 & 15) <= num5)
 					{
-						class4_0.method_1(num2 & 15);
+						class40.method_1(num2 & 15);
 						return num2 >> 4;
 					}
 					return -1;
@@ -762,41 +762,41 @@ namespace ns0
 
 		public class Class7
 		{
-			private static readonly int[] int_0 = {
+			private static readonly int[] Int0 = {
 				3,
 				3,
 				11
 			};
 
-			private static readonly int[] int_1 = {
+			private static readonly int[] Int1 = {
 				2,
 				3,
 				7
 			};
 
-			private byte[] byte_0;
+			private byte[] _byte0;
 
-			private byte[] byte_1;
+			private byte[] _byte1;
 
-			private Class6 class6_0;
+			private Class6 _class60;
 
-			private int int_2;
+			private int _int2;
 
-			private int int_3;
+			private int _int3;
 
-			private int int_4;
+			private int _int4;
 
-			private int int_5;
+			private int _int5;
 
-			private int int_6;
+			private int _int6;
 
-			private int int_7;
+			private int _int7;
 
-			private byte byte_2;
+			private byte _byte2;
 
-			private int int_8;
+			private int _int8;
 
-			private static readonly int[] int_9 = {
+			private static readonly int[] Int9 = {
 				16,
 				17,
 				18,
@@ -818,19 +818,19 @@ namespace ns0
 				15
 			};
 
-			public bool method_0(Class4 class4_0)
+			public bool method_0(Class4 class40)
 			{
 				while (true)
 				{
-					switch (int_2)
+					switch (_int2)
 					{
 					case 0:
-						int_3 = class4_0.method_0(5);
-						if (int_3 >= 0)
+						_int3 = class40.method_0(5);
+						if (_int3 >= 0)
 						{
-							int_3 += 257;
-							class4_0.method_1(5);
-							int_2 = 1;
+							_int3 += 257;
+							class40.method_1(5);
+							_int2 = 1;
 							goto IL_1DD;
 						}
 						return false;
@@ -849,10 +849,10 @@ namespace ns0
 					}
 					IL_E1:
 					int num;
-					while (((num = class6_0.method_1(class4_0)) & -16) == 0)
+					while (((num = _class60.method_1(class40)) & -16) == 0)
 					{
-						byte_1[int_8++] = (byte_2 = (byte)num);
-						if (int_8 == int_6)
+						_byte1[_int8++] = (_byte2 = (byte)num);
+						if (_int8 == _int6)
 						{
 							return true;
 						}
@@ -861,70 +861,70 @@ namespace ns0
 					{
 						if (num >= 17)
 						{
-							byte_2 = 0;
+							_byte2 = 0;
 						}
-						int_7 = num - 16;
-						int_2 = 5;
+						_int7 = num - 16;
+						_int2 = 5;
 						goto IL_2C;
 					}
 					return false;
 					IL_156:
-					while (int_8 < int_5)
+					while (_int8 < _int5)
 					{
-						var num2 = class4_0.method_0(3);
+						var num2 = class40.method_0(3);
 						if (num2 < 0)
 						{
 							return false;
 						}
-						class4_0.method_1(3);
-						byte_0[int_9[int_8]] = (byte)num2;
-						int_8++;
+						class40.method_1(3);
+						_byte0[Int9[_int8]] = (byte)num2;
+						_int8++;
 					}
-					class6_0 = new Class6(byte_0);
-					byte_0 = null;
-					int_8 = 0;
-					int_2 = 4;
+					_class60 = new Class6(_byte0);
+					_byte0 = null;
+					_int8 = 0;
+					_int2 = 4;
 					goto IL_E1;
 					IL_2C:
-					var num3 = int_1[int_7];
-					var num4 = class4_0.method_0(num3);
+					var num3 = Int1[_int7];
+					var num4 = class40.method_0(num3);
 					if (num4 < 0)
 					{
 						return false;
 					}
-					class4_0.method_1(num3);
-					num4 += int_0[int_7];
+					class40.method_1(num3);
+					num4 += Int0[_int7];
 					while (num4-- > 0)
 					{
-						byte_1[int_8++] = byte_2;
+						_byte1[_int8++] = _byte2;
 					}
-					if (int_8 == int_6)
+					if (_int8 == _int6)
 					{
 						break;
 					}
-					int_2 = 4;
+					_int2 = 4;
 					continue;
 					IL_18F:
-					int_5 = class4_0.method_0(4);
-					if (int_5 >= 0)
+					_int5 = class40.method_0(4);
+					if (_int5 >= 0)
 					{
-						int_5 += 4;
-						class4_0.method_1(4);
-						byte_0 = new byte[19];
-						int_8 = 0;
-						int_2 = 3;
+						_int5 += 4;
+						class40.method_1(4);
+						_byte0 = new byte[19];
+						_int8 = 0;
+						_int2 = 3;
 						goto IL_156;
 					}
 					return false;
 					IL_1DD:
-					int_4 = class4_0.method_0(5);
-					if (int_4 >= 0)
+					_int4 = class40.method_0(5);
+					if (_int4 >= 0)
 					{
-						int_4++;
-						class4_0.method_1(5);
-						int_6 = int_3 + int_4;
-						byte_1 = new byte[int_6];
-						int_2 = 2;
+						_int4++;
+						class40.method_1(5);
+						_int6 = _int3 + _int4;
+						_byte1 = new byte[_int6];
+						_int2 = 2;
 						goto IL_18F;
 					}
 					return false;
@@ -934,65 +934,65 @@ namespace ns0
 
 			public Class6 method_1()
 			{
-				var destinationArray = new byte[int_3];
-				Array.Copy(byte_1, 0, destinationArray, 0, int_3);
+				var destinationArray = new byte[_int3];
+				Array.Copy(_byte1, 0, destinationArray, 0, _int3);
 				return new Class6(destinationArray);
 			}
 
 			public Class6 method_2()
 			{
-				var destinationArray = new byte[int_4];
-				Array.Copy(byte_1, int_3, destinationArray, 0, int_4);
+				var destinationArray = new byte[_int4];
+				Array.Copy(_byte1, _int3, destinationArray, 0, _int4);
 				return new Class6(destinationArray);
 			}
 		}
 
 		public class Class8
 		{
-			private static int int_0;
+			private static int _int0;
 
-			private static readonly int int_1;
+			private static readonly int Int1;
 
-			private static readonly int int_2;
+			private static readonly int Int2;
 
-			private static int int_3;
+			private static int _int3;
 
-			private static int int_4;
+			private static int _int4;
 
-			private static int int_5;
+			private static int _int5;
 
-			private static int int_6;
+			private static int _int6;
 
-			private static int int_7;
+			private static int _int7;
 
-			private static int[] int_8;
+			private static int[] _int8;
 
-			private static readonly byte[] byte_0;
+			private static readonly byte[] Byte0;
 
-			private static readonly short[] short_0;
+			private static readonly short[] Short0;
 
-			private static readonly byte[] byte_1;
+			private static readonly byte[] Byte1;
 
-			private static readonly short[] short_1;
+			private static readonly short[] Short1;
 
-			private static readonly byte[] byte_2;
+			private static readonly byte[] Byte2;
 
-			public static short smethod_0(int int_9)
+			public static short smethod_0(int int9)
 			{
-				return (short)(byte_0[int_9 & 15] << 12 | byte_0[int_9 >> 4 & 15] << 8 | byte_0[int_9 >> 8 & 15] << 4 | byte_0[int_9 >> 12]);
+				return (short)(Byte0[int9 & 15] << 12 | Byte0[int9 >> 4 & 15] << 8 | Byte0[int9 >> 8 & 15] << 4 | Byte0[int9 >> 12]);
 			}
 
 			static Class8()
 			{
-				int_0 = 16384;
-				int_1 = 286;
-				int_2 = 30;
-				int_3 = 19;
-				int_4 = 16;
-				int_5 = 17;
-				int_6 = 18;
-				int_7 = 256;
-				int_8 = new[]
+				_int0 = 16384;
+				Int1 = 286;
+				Int2 = 30;
+				_int3 = 19;
+				_int4 = 16;
+				_int5 = 17;
+				_int6 = 18;
+				_int7 = 256;
+				_int8 = new[]
 				{
 					16,
 					17,
@@ -1014,7 +1014,7 @@ namespace ns0
 					1,
 					15
 				};
-				byte_0 = new byte[]
+				Byte0 = new byte[]
 				{
 					0,
 					8,
@@ -1033,35 +1033,35 @@ namespace ns0
 					7,
 					15
 				};
-				short_0 = new short[int_1];
-				byte_1 = new byte[int_1];
+				Short0 = new short[Int1];
+				Byte1 = new byte[Int1];
 				var i = 0;
 				while (i < 144)
 				{
-					short_0[i] = smethod_0(48 + i << 8);
-					byte_1[i++] = 8;
+					Short0[i] = smethod_0(48 + i << 8);
+					Byte1[i++] = 8;
 				}
 				while (i < 256)
 				{
-					short_0[i] = smethod_0(256 + i << 7);
-					byte_1[i++] = 9;
+					Short0[i] = smethod_0(256 + i << 7);
+					Byte1[i++] = 9;
 				}
 				while (i < 280)
 				{
-					short_0[i] = smethod_0(-256 + i << 9);
-					byte_1[i++] = 7;
+					Short0[i] = smethod_0(-256 + i << 9);
+					Byte1[i++] = 7;
 				}
-				while (i < int_1)
+				while (i < Int1)
 				{
-					short_0[i] = smethod_0(-88 + i << 8);
-					byte_1[i++] = 8;
+					Short0[i] = smethod_0(-88 + i << 8);
+					Byte1[i++] = 8;
 				}
-				short_1 = new short[int_2];
-				byte_2 = new byte[int_2];
-				for (i = 0; i < int_2; i++)
+				Short1 = new short[Int2];
+				Byte2 = new byte[Int2];
+				for (i = 0; i < Int2; i++)
 				{
-					short_1[i] = smethod_0(i << 11);
-					byte_2[i] = 5;
+					Short1[i] = smethod_0(i << 11);
+					Byte2[i] = 5;
 				}
 			}
 		}
@@ -1078,14 +1078,14 @@ namespace ns0
 				return method_0() | method_0() << 16;
 			}
 
-			public Stream0(byte[] byte_0) : base(byte_0, false)
+			public Stream0(byte[] byte0) : base(byte0, false)
 			{
 			}
 		}
 
-		public static byte[] smethod_0(byte[] byte_0)
+		public static byte[] smethod_0(byte[] byte0)
 		{
-			var stream = new Stream0(byte_0);
+			var stream = new Stream0(byte0);
 			var array = new byte[0];
 			var num = stream.method_1();
 			if (num == 67324752)
@@ -1146,8 +1146,8 @@ namespace ns0
 			}
 			if (num8 == 2)
 			{
-				var dESCryptoServiceProvider = new DESCryptoServiceProvider();
-				dESCryptoServiceProvider.Key = new byte[]
+				var dEsCryptoServiceProvider = new DESCryptoServiceProvider();
+				dEsCryptoServiceProvider.Key = new byte[]
 				{
 					162,
 					181,
@@ -1158,7 +1158,7 @@ namespace ns0
 					205,
 					58
 				};
-				dESCryptoServiceProvider.IV = new byte[]
+				dEsCryptoServiceProvider.IV = new byte[]
 				{
 					83,
 					253,
@@ -1169,9 +1169,9 @@ namespace ns0
 					167,
 					112
 				};
-				var cryptoTransform = dESCryptoServiceProvider.CreateDecryptor();
-				var byte_ = cryptoTransform.TransformFinalBlock(byte_0, 4, byte_0.Length - 4);
-				dESCryptoServiceProvider.Clear();
+				var cryptoTransform = dEsCryptoServiceProvider.CreateDecryptor();
+				var byte_ = cryptoTransform.TransformFinalBlock(byte0, 4, byte0.Length - 4);
+				dEsCryptoServiceProvider.Clear();
 				array = smethod_0(byte_);
 			}
 			IL_1FF:

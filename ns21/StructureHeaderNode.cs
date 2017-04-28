@@ -8,17 +8,17 @@ using ns22;
 
 namespace ns21
 {
-	public class StructureHeaderNode : AbsTreeNode1_1_<zzUnkNode294>
+	public class StructureHeaderNode : AbsTreeNode11<ZzUnkNode294>
 	{
-		public zzUnkNode294 this[int int_0]
+		public ZzUnkNode294 this[int int0]
 		{
 			get
 			{
-				return (zzUnkNode294)Nodes[int_0];
+				return (ZzUnkNode294)Nodes[int0];
 			}
 			set
 			{
-				Nodes[int_0] = value;
+				Nodes[int0] = value;
 			}
 		}
 
@@ -27,9 +27,9 @@ namespace ns21
 			vmethod_0();
 		}
 
-		public StructureHeaderNode(IEnumerable<zzUnkNode294> ienumerable_0)
+		public StructureHeaderNode(IEnumerable<ZzUnkNode294> ienumerable0)
 		{
-			method_10(ienumerable_0);
+			method_10(ienumerable0);
 		}
 
 		public override int vmethod_1()
@@ -37,46 +37,46 @@ namespace ns21
 			return 19;
 		}
 
-		public override void vmethod_13(Stream26 stream26_0)
+		public override void vmethod_13(Stream26 stream260)
 		{
-			var num = stream26_0.ReadInt();
+			var num = stream260.ReadInt();
 			if (num != 0)
 			{
-				stream26_0.Position = num;
-				var @class = method_11(stream26_0.ReadInt());
+				stream260.Position = num;
+				var @class = method_11(stream260.ReadInt());
 				Nodes.Add(@class);
-				@class.method_4(stream26_0);
+				@class.method_4(stream260);
 			}
 		}
 
-		public override void vmethod_14(Stream26 stream26_0)
+		public override void vmethod_14(Stream26 stream260)
 		{
 			var array = new byte[4];
 			array[2] = 1;
-			stream26_0.WriteByteArray(array, false);
+			stream260.WriteByteArray(array, false);
 			if (Nodes.Count != 0)
 			{
-				stream26_0.WriteInt((int)stream26_0.Position + 4);
+				stream260.WriteInt((int)stream260.Position + 4);
 			}
 			else
 			{
-				stream26_0.WriteInt(0);
+				stream260.WriteInt(0);
 			}
 			foreach (AbstractTreeNode1 @class in Nodes)
 			{
-				@class.vmethod_14(stream26_0);
+				@class.vmethod_14(stream260);
 			}
 		}
 
-		public AbstractTreeNode1 method_11(int int_0)
+		public AbstractTreeNode1 method_11(int int0)
 		{
-			if (int_0 == 256)
+			if (int0 == 256)
 			{
 				return new StructureHeaderNode();
 			}
-			var num = int_0 >> 16 & 255;
-			var num2 = int_0 >> 8 & 255;
-			var ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32bit(int_0));
+			var num = int0 >> 16 & 255;
+			var num2 = int0 >> 8 & 255;
+			var ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32Bit(int0));
 			if (num == 1)
 			{
 				vmethod_9(true);
@@ -217,12 +217,12 @@ namespace ns21
 		    throw ex;
 		}
 
-		public override void vmethod_2(ref int int_0)
+		public override void vmethod_2(ref int int0)
 		{
-			int_0 += 8;
+			int0 += 8;
 			foreach (AbstractTreeNode1 @class in Nodes)
 			{
-				@class.vmethod_2(ref int_0);
+				@class.vmethod_2(ref int0);
 			}
 		}
 

@@ -1,1 +1,1 @@
-public delegate byte Delegate185(byte byte_0, byte byte_1);
+public delegate byte Delegate185(byte byte0, byte byte1);

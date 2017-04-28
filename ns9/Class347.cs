@@ -4,11 +4,11 @@ namespace ns9
 {
 	public class Class347 : Class346<short>
 	{
-		private readonly int int_2;
+		private readonly int _int2;
 
 		public int method_0()
 		{
-			return int_2;
+			return _int2;
 		}
 	}
 }

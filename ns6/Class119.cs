@@ -35,52 +35,52 @@ namespace ns6
 
 		[CLSCompliant(true), SuppressUnmanagedCodeSecurity]
 		[DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-		public static extern void alDeleteSources(int int_0, ref IntPtr intptr_0);
+		public static extern void alDeleteSources(int int0, ref IntPtr intptr0);
 
 		[CLSCompliant(true)]
-		public static void smethod_3(IntPtr intptr_0)
+		public static void smethod_3(IntPtr intptr0)
 		{
-			alDeleteSources(1, ref intptr_0);
+			alDeleteSources(1, ref intptr0);
 		}
 
 		[CLSCompliant(false), SuppressUnmanagedCodeSecurity]
 		[DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-		public static extern void alSourcef(IntPtr intptr_0, Enum10 enum10_0, float float_0);
+		public static extern void alSourcef(IntPtr intptr0, Enum10 enum100, float float0);
 
 		[CLSCompliant(true), SuppressUnmanagedCodeSecurity]
 		[DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
 		public static extern void alGetSourcei(IntPtr sid, Enum11 param, out int value);
 
-		public static int smethod_4(IntPtr intptr_0, Enum11 enum11_0)
+		public static int smethod_4(IntPtr intptr0, Enum11 enum110)
 		{
 			int result;
-			alGetSourcei(intptr_0, enum11_0, out result);
+			alGetSourcei(intptr0, enum110, out result);
 			return result;
 		}
 
 		[CLSCompliant(true), SuppressUnmanagedCodeSecurity]
 		[DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-		public static extern void alSourcePlay(IntPtr intptr_0);
+		public static extern void alSourcePlay(IntPtr intptr0);
 
 		[CLSCompliant(true), SuppressUnmanagedCodeSecurity]
 		[DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-		public static extern void alSourceStop(IntPtr intptr_0);
+		public static extern void alSourceStop(IntPtr intptr0);
 
 		[CLSCompliant(true), SuppressUnmanagedCodeSecurity]
 		[DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-		public static extern void alSourcePause(IntPtr intptr_0);
+		public static extern void alSourcePause(IntPtr intptr0);
 
 		[SuppressUnmanagedCodeSecurity]
 		[DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-		public static extern void alSourceQueueBuffers(IntPtr intptr_0, int int_0, IntPtr[] intptr_1);
+		public static extern void alSourceQueueBuffers(IntPtr intptr0, int int0, IntPtr[] intptr1);
 
 		[SuppressUnmanagedCodeSecurity]
 		[DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "alSourceQueueBuffers", ExactSpelling = true)]
-		public static extern void alSourceQueueBuffers_1(IntPtr intptr_0, int int_0, ref IntPtr intptr_1);
+		public static extern void alSourceQueueBuffers_1(IntPtr intptr0, int int0, ref IntPtr intptr1);
 
-		public static void smethod_5(IntPtr intptr_0, ref IntPtr intptr_1)
+		public static void smethod_5(IntPtr intptr0, ref IntPtr intptr1)
 		{
-			alSourceQueueBuffers_1(intptr_0, 1, ref intptr_1);
+			alSourceQueueBuffers_1(intptr0, 1, ref intptr1);
 		}
 
 		[SuppressUnmanagedCodeSecurity]
@@ -91,21 +91,21 @@ namespace ns6
 		[DllImport("openal32.dll", EntryPoint = "alSourceUnqueueBuffers")]
 		public static extern void alSourceUnqueueBuffers_1(IntPtr sid, int numEntries, out IntPtr bids);
 
-		public static IntPtr smethod_6(IntPtr intptr_0)
+		public static IntPtr smethod_6(IntPtr intptr0)
 		{
 			IntPtr result;
-			alSourceUnqueueBuffers_1(intptr_0, 1, out result);
+			alSourceUnqueueBuffers_1(intptr0, 1, out result);
 			return result;
 		}
 
-		public static IntPtr[] smethod_7(IntPtr intptr_0, int int_0)
+		public static IntPtr[] smethod_7(IntPtr intptr0, int int0)
 		{
-			if (int_0 <= 0)
+			if (int0 <= 0)
 			{
 				throw new ArgumentOutOfRangeException("numEntries", "Must be greater than zero.");
 			}
-			var array = new IntPtr[int_0];
-			alSourceUnqueueBuffers(intptr_0, int_0, array);
+			var array = new IntPtr[int0];
+			alSourceUnqueueBuffers(intptr0, int0, array);
 			return array;
 		}
 
@@ -114,9 +114,9 @@ namespace ns6
 		public static extern void alGenBuffers(int n, [Out] IntPtr[] buffers);
 
 		[CLSCompliant(true)]
-		public static IntPtr[] smethod_8(int int_0)
+		public static IntPtr[] smethod_8(int int0)
 		{
-			var array = new IntPtr[int_0];
+			var array = new IntPtr[int0];
 			alGenBuffers(array.Length, array);
 			return array;
 		}
@@ -126,143 +126,143 @@ namespace ns6
 		public static extern void alDeleteBuffers(int n, [In] IntPtr[] buffers);
 
 		[CLSCompliant(true)]
-		public static void smethod_9(IntPtr[] intptr_0)
+		public static void smethod_9(IntPtr[] intptr0)
 		{
-			if (intptr_0 == null)
+			if (intptr0 == null)
 			{
 				throw new ArgumentNullException();
 			}
-			if (intptr_0.Length == 0)
+			if (intptr0.Length == 0)
 			{
 				throw new ArgumentOutOfRangeException();
 			}
-			alDeleteBuffers(intptr_0.Length, intptr_0);
+			alDeleteBuffers(intptr0.Length, intptr0);
 		}
 
 		[SuppressUnmanagedCodeSecurity]
 		[DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-		public static extern void alBufferData(IntPtr intptr_0, Enum12 enum12_0, IntPtr intptr_1, int int_0, int int_1);
+		public static extern void alBufferData(IntPtr intptr0, Enum12 enum120, IntPtr intptr1, int int0, int int1);
 
-		public static Enum12 smethod_10(WaveFormat waveFormat_0)
+		public static Enum12 smethod_10(WaveFormat waveFormat0)
 		{
-			switch (waveFormat_0.waveFormatTag_0)
+			switch (waveFormat0.waveFormatTag_0)
 			{
-			case WaveFormatTag.PCM:
-				switch (waveFormat_0.short_0)
+			case WaveFormatTag.Pcm:
+				switch (waveFormat0.short_0)
 				{
 				case 1:
 				{
-					var short_ = waveFormat_0.short_2;
+					var short_ = waveFormat0.short_2;
 					if (short_ == 8)
 					{
-						return Enum12.const_0;
+						return Enum12.Const0;
 					}
 					if (short_ == 16)
 					{
-						return Enum12.const_1;
+						return Enum12.Const1;
 					}
 					break;
 				}
 				case 2:
 				{
-					var short_2 = waveFormat_0.short_2;
-					if (short_2 == 8)
+					var short2 = waveFormat0.short_2;
+					if (short2 == 8)
 					{
-						return Enum12.const_2;
+						return Enum12.Const2;
 					}
-					if (short_2 == 16)
+					if (short2 == 16)
 					{
-						return Enum12.const_3;
+						return Enum12.Const3;
 					}
 					break;
 				}
 				default:
 					if (smethod_1())
 					{
-						switch (waveFormat_0.short_0)
+						switch (waveFormat0.short_0)
 						{
 						case 4:
 						{
-							var short_3 = waveFormat_0.short_2;
-							if (short_3 == 8)
+							var short3 = waveFormat0.short_2;
+							if (short3 == 8)
 							{
-								return Enum12.const_6;
+								return Enum12.Const6;
 							}
-							if (short_3 == 16)
+							if (short3 == 16)
 							{
-								return Enum12.const_7;
+								return Enum12.Const7;
 							}
-							if (short_3 == 32)
+							if (short3 == 32)
 							{
-								return Enum12.const_8;
+								return Enum12.Const8;
 							}
 							break;
 						}
 						case 5:
 						{
-							var short_4 = waveFormat_0.short_2;
-							if (short_4 == 8)
+							var short4 = waveFormat0.short_2;
+							if (short4 == 8)
 							{
-								return Enum12.const_9;
+								return Enum12.Const9;
 							}
-							if (short_4 == 16)
+							if (short4 == 16)
 							{
-								return Enum12.const_10;
+								return Enum12.Const10;
 							}
-							if (short_4 == 32)
+							if (short4 == 32)
 							{
-								return Enum12.const_11;
+								return Enum12.Const11;
 							}
 							break;
 						}
 						case 6:
 						{
-							var short_5 = waveFormat_0.short_2;
-							if (short_5 == 8)
+							var short5 = waveFormat0.short_2;
+							if (short5 == 8)
 							{
-								return Enum12.const_12;
+								return Enum12.Const12;
 							}
-							if (short_5 == 16)
+							if (short5 == 16)
 							{
-								return Enum12.const_13;
+								return Enum12.Const13;
 							}
-							if (short_5 == 32)
+							if (short5 == 32)
 							{
-								return Enum12.const_14;
+								return Enum12.Const14;
 							}
 							break;
 						}
 						case 7:
 						{
-							var short_6 = waveFormat_0.short_2;
-							if (short_6 == 8)
+							var short6 = waveFormat0.short_2;
+							if (short6 == 8)
 							{
-								return Enum12.const_15;
+								return Enum12.Const15;
 							}
-							if (short_6 == 16)
+							if (short6 == 16)
 							{
-								return Enum12.const_16;
+								return Enum12.Const16;
 							}
-							if (short_6 == 32)
+							if (short6 == 32)
 							{
-								return Enum12.const_17;
+								return Enum12.Const17;
 							}
 							break;
 						}
 						case 8:
 						{
-							var short_7 = waveFormat_0.short_2;
-							if (short_7 == 8)
+							var short7 = waveFormat0.short_2;
+							if (short7 == 8)
 							{
-								return Enum12.const_18;
+								return Enum12.Const18;
 							}
-							if (short_7 == 16)
+							if (short7 == 16)
 							{
-								return Enum12.const_19;
+								return Enum12.Const19;
 							}
-							if (short_7 == 32)
+							if (short7 == 32)
 							{
-								return Enum12.const_20;
+								return Enum12.Const20;
 							}
 							break;
 						}
@@ -271,20 +271,20 @@ namespace ns6
 					break;
 				}
 				break;
-			case WaveFormatTag.IEEEFloat:
+			case WaveFormatTag.IeeeFloat:
 				if (smethod_0())
 				{
-					switch (waveFormat_0.short_0)
+					switch (waveFormat0.short_0)
 					{
 					case 1:
-						return Enum12.const_4;
+						return Enum12.Const4;
 					case 2:
-						return Enum12.const_5;
+						return Enum12.Const5;
 					}
 				}
 				break;
 			}
-			throw new NotSupportedException(string.Concat("OpenAL does not support this format: ", waveFormat_0.waveFormatTag_0, " | ", (int)waveFormat_0.waveFormatTag_0));
+			throw new NotSupportedException(string.Concat("OpenAL does not support this format: ", waveFormat0.waveFormatTag_0, " | ", (int)waveFormat0.waveFormatTag_0));
 		}
 	}
 }

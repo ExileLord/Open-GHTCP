@@ -3,17 +3,17 @@ using ns12;
 
 namespace ns14
 {
-	public class Class212 : Interface9
+	public class Class212 : INterface9
 	{
-		private Interface8 interface8_0;
+		private INterface8 _interface80;
 
-		private DateTime dateTime_0 = DateTime.Now;
+		private DateTime _dateTime0 = DateTime.Now;
 
-		private int int_0 = -1;
+		private int _int0 = -1;
 
 		public Class212()
 		{
-			interface8_0 = new Class185();
+			_interface80 = new Class185();
 		}
 	}
 }

@@ -9,25 +9,25 @@ namespace ns14
 	{
 		private IContainer icontainer_0;
 
-		private SplitContainer splitContainer1;
+		private SplitContainer _splitContainer1;
 
-		private ListBox LogListBox;
+		private ListBox _logListBox;
 
-		private RichTextBox LogTextBox;
+		private RichTextBox _logTextBox;
 
 		public ViewLog()
 		{
 			InitializeComponent();
-			foreach (var current in Class216.sortedDictionary_0.Keys)
+			foreach (var current in Class216.SortedDictionary0.Keys)
 			{
-				LogListBox.Items.Add(current);
+				_logListBox.Items.Add(current);
 			}
-			LogListBox.SelectedIndex = LogListBox.Items.Count - 1;
+			_logListBox.SelectedIndex = _logListBox.Items.Count - 1;
 		}
 
 		private void LogListBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			LogTextBox.Text = Class216.sortedDictionary_0[(string)LogListBox.SelectedItem];
+			_logTextBox.Text = Class216.SortedDictionary0[(string)_logListBox.SelectedItem];
 		}
 
         protected override void Dispose(bool disposing)
@@ -41,44 +41,44 @@ namespace ns14
 
 		private void InitializeComponent()
 		{
-			splitContainer1 = new SplitContainer();
-			LogListBox = new ListBox();
-			LogTextBox = new RichTextBox();
-			splitContainer1.Panel1.SuspendLayout();
-			splitContainer1.Panel2.SuspendLayout();
-			splitContainer1.SuspendLayout();
+			_splitContainer1 = new SplitContainer();
+			_logListBox = new ListBox();
+			_logTextBox = new RichTextBox();
+			_splitContainer1.Panel1.SuspendLayout();
+			_splitContainer1.Panel2.SuspendLayout();
+			_splitContainer1.SuspendLayout();
 			SuspendLayout();
-			splitContainer1.Dock = DockStyle.Fill;
-			splitContainer1.Location = new Point(0, 0);
-			splitContainer1.Name = "splitContainer1";
-			splitContainer1.Panel1.Controls.Add(LogListBox);
-			splitContainer1.Panel2.Controls.Add(LogTextBox);
-			splitContainer1.Size = new Size(476, 188);
-			splitContainer1.SplitterDistance = 158;
-			splitContainer1.TabIndex = 0;
-			LogListBox.Dock = DockStyle.Fill;
-			LogListBox.FormattingEnabled = true;
-			LogListBox.Location = new Point(0, 0);
-			LogListBox.Name = "LogListBox";
-			LogListBox.Size = new Size(158, 186);
-			LogListBox.TabIndex = 0;
-			LogListBox.SelectedIndexChanged += LogListBox_SelectedIndexChanged;
-			LogTextBox.Dock = DockStyle.Fill;
-			LogTextBox.Location = new Point(0, 0);
-			LogTextBox.Name = "LogTextBox";
-			LogTextBox.ReadOnly = true;
-			LogTextBox.Size = new Size(314, 188);
-			LogTextBox.TabIndex = 0;
-			LogTextBox.Text = "";
+			_splitContainer1.Dock = DockStyle.Fill;
+			_splitContainer1.Location = new Point(0, 0);
+			_splitContainer1.Name = "_splitContainer1";
+			_splitContainer1.Panel1.Controls.Add(_logListBox);
+			_splitContainer1.Panel2.Controls.Add(_logTextBox);
+			_splitContainer1.Size = new Size(476, 188);
+			_splitContainer1.SplitterDistance = 158;
+			_splitContainer1.TabIndex = 0;
+			_logListBox.Dock = DockStyle.Fill;
+			_logListBox.FormattingEnabled = true;
+			_logListBox.Location = new Point(0, 0);
+			_logListBox.Name = "_logListBox";
+			_logListBox.Size = new Size(158, 186);
+			_logListBox.TabIndex = 0;
+			_logListBox.SelectedIndexChanged += LogListBox_SelectedIndexChanged;
+			_logTextBox.Dock = DockStyle.Fill;
+			_logTextBox.Location = new Point(0, 0);
+			_logTextBox.Name = "_logTextBox";
+			_logTextBox.ReadOnly = true;
+			_logTextBox.Size = new Size(314, 188);
+			_logTextBox.TabIndex = 0;
+			_logTextBox.Text = "";
 			AutoScaleDimensions = new SizeF(6f, 13f);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(476, 188);
-			Controls.Add(splitContainer1);
+			Controls.Add(_splitContainer1);
 			Name = "ViewLog";
 			Text = "ViewLog";
-			splitContainer1.Panel1.ResumeLayout(false);
-			splitContainer1.Panel2.ResumeLayout(false);
-			splitContainer1.ResumeLayout(false);
+			_splitContainer1.Panel1.ResumeLayout(false);
+			_splitContainer1.Panel2.ResumeLayout(false);
+			_splitContainer1.ResumeLayout(false);
 			ResumeLayout(false);
 		}
 	}

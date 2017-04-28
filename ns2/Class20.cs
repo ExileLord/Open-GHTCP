@@ -16,8 +16,8 @@ namespace ns2
 		{
 		}
 
-		public static Struct13 struct13_0;
+		public static Struct13 Struct130;
 
-		public static Struct14 struct14_0;
+		public static Struct14 Struct140;
 	}
 }

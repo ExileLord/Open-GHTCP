@@ -13,12 +13,12 @@ namespace ns16
 {
 	public class KeyGenerator
 	{
-		public static bool _flag0 = false;
+		public static bool Flag0 = false;
 
-		public static bool _flag1 = false;
+		public static bool Flag1 = false;
 
         //Who the hell is Ivan Medvedev
-		private static readonly byte[] pwByteArray = {
+		private static readonly byte[] PwByteArray = {
 			73,   //I
 			118,  //v
 			97,   //a
@@ -36,9 +36,9 @@ namespace ns16
 
 		private static uint _key;
 
-		private static readonly uint _xorMask = 4294967295u;
+		private static readonly uint XorMask = 4294967295u;
 
-		public static readonly uint[] crc32 = {
+		public static readonly uint[] Crc32 = {
 			0u,
 			1996959894u, // Magic
 			3993919788u, // Do not touch
@@ -297,73 +297,73 @@ namespace ns16
 			755167117u
 		};
 
-		private static readonly Random random_0 = new Random();
+		private static readonly Random Random0 = new Random();
 
-		public static void smethod_0(Stream stream_0, Stream stream_1, byte[] byte_1, byte[] byte_2)
+		public static void smethod_0(Stream stream0, Stream stream1, byte[] byte1, byte[] byte2)
 		{
-			if ((byte_1.Length != 16 && byte_1.Length != 24 && byte_1.Length != 32) || byte_2.Length != 16)
+			if ((byte1.Length != 16 && byte1.Length != 24 && byte1.Length != 32) || byte2.Length != 16)
 			{
 				return;
 			}
 			var rijndael = Rijndael.Create();
-			rijndael.Key = byte_1;
-			rijndael.IV = byte_2;
-			var cryptoStream = new CryptoStream(stream_1, rijndael.CreateEncryptor(), CryptoStreamMode.Write);
+			rijndael.Key = byte1;
+			rijndael.IV = byte2;
+			var cryptoStream = new CryptoStream(stream1, rijndael.CreateEncryptor(), CryptoStreamMode.Write);
 			var array = new byte[4096];
 			int count;
-			while ((count = stream_0.Read(array, 0, array.Length)) > 0)
+			while ((count = stream0.Read(array, 0, array.Length)) > 0)
 			{
 				cryptoStream.Write(array, 0, count);
 			}
 			cryptoStream.Close();
 		}
 
-		public static void smethod_1(Stream stream_0, Stream stream_1, string string_0)
+		public static void smethod_1(Stream stream0, Stream stream1, string string0)
 		{
-			var passwordDeriveBytes = new PasswordDeriveBytes(string_0, pwByteArray);
-			smethod_0(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
+			var passwordDeriveBytes = new PasswordDeriveBytes(string0, PwByteArray);
+			smethod_0(stream0, stream1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
-		public static byte[] smethod_2(Stream stream_0, string string_0)
+		public static byte[] smethod_2(Stream stream0, string string0)
 		{
 			var memoryStream = new MemoryStream();
-			smethod_1(stream_0, memoryStream, string_0);
+			smethod_1(stream0, memoryStream, string0);
 			return memoryStream.ToArray();
 		}
 
-		private static void cryptoMethod(Stream stream_0, Stream stream_1, byte[] byte_1, byte[] byte_2)
+		private static void CryptoMethod(Stream stream0, Stream stream1, byte[] byte1, byte[] byte2)
 		{
-			if ((byte_1.Length != 16 && byte_1.Length != 24 && byte_1.Length != 32) || byte_2.Length != 16)
+			if ((byte1.Length != 16 && byte1.Length != 24 && byte1.Length != 32) || byte2.Length != 16)
 			{
 				return;
 			}
 			var rijndael = Rijndael.Create();
-			rijndael.Key = byte_1;
-			rijndael.IV = byte_2;
-			var cryptoStream = new CryptoStream(stream_1, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
+			rijndael.Key = byte1;
+			rijndael.IV = byte2;
+			var cryptoStream = new CryptoStream(stream1, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
 			var array = new byte[4096];
 			int count;
-			while ((count = stream_0.Read(array, 0, array.Length)) > 0)
+			while ((count = stream0.Read(array, 0, array.Length)) > 0)
 			{
 				cryptoStream.Write(array, 0, count);
 			}
 			cryptoStream.Close();
 		}
 
-		private static void cryptoMethod(Stream stream_0, Stream stream_1, string string_0)
+		private static void CryptoMethod(Stream stream0, Stream stream1, string string0)
 		{
-			var passwordDeriveBytes = new PasswordDeriveBytes(string_0, pwByteArray);
-			cryptoMethod(stream_0, stream_1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
+			var passwordDeriveBytes = new PasswordDeriveBytes(string0, PwByteArray);
+			CryptoMethod(stream0, stream1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
-		public static byte[] cryptoMethod(Stream stream_0, string string_0)
+		public static byte[] CryptoMethod(Stream stream0, string string0)
 		{
 			var memoryStream = new MemoryStream();
-			cryptoMethod(stream_0, memoryStream, string_0);
+			CryptoMethod(stream0, memoryStream, string0);
 			return memoryStream.ToArray();
 		}
 
-		public static void smethod_6(byte[] byte_1, Stream stream_0, byte[] key, byte[] initializationVector)
+		public static void smethod_6(byte[] byte1, Stream stream0, byte[] key, byte[] initializationVector)
 		{
 			if ((key.Length != 16 && key.Length != 24 && key.Length != 32) || initializationVector.Length != 16)
 			{
@@ -372,21 +372,21 @@ namespace ns16
 			var rijndael = Rijndael.Create();
 			rijndael.Key = key;
 			rijndael.IV = initializationVector;
-			var cryptoStream = new CryptoStream(stream_0, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
-			cryptoStream.Write(byte_1, 0, byte_1.Length);
+			var cryptoStream = new CryptoStream(stream0, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
+			cryptoStream.Write(byte1, 0, byte1.Length);
 			cryptoStream.Close();
 		}
 
-		public static void smethod_7(byte[] byte_1, Stream stream_0, string string_0)
+		public static void smethod_7(byte[] byte1, Stream stream0, string string0)
 		{
-			var passwordDeriveBytes = new PasswordDeriveBytes(string_0, pwByteArray);
-			smethod_6(byte_1, stream_0, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
+			var passwordDeriveBytes = new PasswordDeriveBytes(string0, PwByteArray);
+			smethod_6(byte1, stream0, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
 		}
 
-		public static byte[] smethod_8(byte[] byte_1, string string_0)
+		public static byte[] smethod_8(byte[] byte1, string string0)
 		{
 			var memoryStream = new MemoryStream();
-			smethod_7(byte_1, memoryStream, string_0);
+			smethod_7(byte1, memoryStream, string0);
 			return memoryStream.ToArray();
 		}
 
@@ -399,10 +399,10 @@ namespace ns16
 			File.WriteAllBytes(fileName, bytes);
 		}
 
-		public static string smethod_10(string string_0)
+		public static string smethod_10(string string0)
 		{
-			var length = string_0.LastIndexOfAny(new[] { '\\', '/' }) + 1;
-			return string_0.Substring(0, length);
+			var length = string0.LastIndexOfAny(new[] { '\\', '/' }) + 1;
+			return string0.Substring(0, length);
 		}
 
 		public static string GetFileName(string path, int dotsInExtension)
@@ -434,24 +434,24 @@ namespace ns16
 			return GetFileName(path, -1);
 		}
 
-		public static string GetFileName(string string_0)
+		public static string GetFileName(string string0)
 		{
-			return GetFileName(string_0, 0);
+			return GetFileName(string0, 0);
 		}
 
-		public static string GetExtension(string string_0, int int_0)
+		public static string GetExtension(string string0, int int0)
 		{
 			string result;
 			try
 			{
-				var text = string_0.Substring(string_0.IndexOf('.') + 1);
-				if (int_0 != 0)
+				var text = string0.Substring(string0.IndexOf('.') + 1);
+				if (int0 != 0)
 				{
 					var array = text.Split(new[]
 					{
 						'.'
 					}, StringSplitOptions.RemoveEmptyEntries);
-					text = array[array.Length - int_0];
+					text = array[array.Length - int0];
 				}
 				result = text;
 			}
@@ -462,10 +462,10 @@ namespace ns16
 			return result;
 		}
 
-		public static string OpenOrSaveFile(string title, string filter, bool IsOpenDialog, string fileName = "")
+		public static string OpenOrSaveFile(string title, string filter, bool isOpenDialog, string fileName = "")
 		{
 			FileDialog fileDialog;
-			if (IsOpenDialog)
+			if (isOpenDialog)
 			{
 				fileDialog = new OpenFileDialog();
 			}
@@ -487,14 +487,14 @@ namespace ns16
 			return "";
 		}
 
-		public static string OpenFile(string string_0, string string_1)
+		public static string OpenFile(string string0, string string1)
 		{
-			return OpenOrSaveFile(string_0, string_1, true);
+			return OpenOrSaveFile(string0, string1, true);
 		}
 
-		public static List<string> checkFile(string string_0, string string_1, bool bool_2)
+		public static List<string> CheckFile(string string0, string string1, bool bool2)
 		{
-			var array = string_1.Split(new[]
+			var array = string1.Split(new[]
 			{
 				';'
 			}, StringSplitOptions.RemoveEmptyEntries);
@@ -503,47 +503,47 @@ namespace ns16
 			for (var i = 0; i < array2.Length; i++)
 			{
 				var searchPattern = array2[i];
-				fileList.AddRange(Directory.GetFiles(string_0, searchPattern, bool_2 ? SearchOption.TopDirectoryOnly : SearchOption.AllDirectories));
+				fileList.AddRange(Directory.GetFiles(string0, searchPattern, bool2 ? SearchOption.TopDirectoryOnly : SearchOption.AllDirectories));
 			}
 			return fileList;
 		}
 
-		public static void smethod_19(string string_0, string string_1, bool bool_2)
+		public static void smethod_19(string string0, string string1, bool bool2)
 		{
-			if (string_0.ToLower().Equals(string_1.ToLower()))
+			if (string0.ToLower().Equals(string1.ToLower()))
 			{
 				return;
 			}
-			if (bool_2 && File.Exists(string_1) && (File.GetAttributes(string_1) & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+			if (bool2 && File.Exists(string1) && (File.GetAttributes(string1) & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
 			{
-				File.SetAttributes(string_1, FileAttributes.Normal);
+				File.SetAttributes(string1, FileAttributes.Normal);
 			}
-			File.Copy(string_0, string_1, bool_2);
+			File.Copy(string0, string1, bool2);
 		}
 
-		public static void smethod_20(string string_0)
+		public static void smethod_20(string string0)
 		{
-			if (File.Exists(string_0))
+			if (File.Exists(string0))
 			{
-				if ((File.GetAttributes(string_0) & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+				if ((File.GetAttributes(string0) & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
 				{
-					File.SetAttributes(string_0, FileAttributes.Normal);
+					File.SetAttributes(string0, FileAttributes.Normal);
 				}
-				File.Delete(string_0);
+				File.Delete(string0);
 			}
 		}
 
-		public static int[] smethod_21(ICollection<byte> icollection_0)
+		public static int[] smethod_21(ICollection<byte> icollection0)
 		{
-			return smethod_22(new List<byte>(icollection_0));
+			return smethod_22(new List<byte>(icollection0));
 		}
 
-		public static int[] smethod_22(List<byte> list_0)
+		public static int[] smethod_22(List<byte> list0)
 		{
-			var array = new int[list_0.Count / 4];
+			var array = new int[list0.Count / 4];
 			for (var i = 0; i < array.Length; i++)
 			{
-				array[i] = smethod_25(list_0.GetRange(i * 4, 4).ToArray());
+				array[i] = smethod_25(list0.GetRange(i * 4, 4).ToArray());
 			}
 			return array;
 		}
@@ -553,71 +553,71 @@ namespace ns16
 			return Convert.ToInt32(hexidecimalInteger.Replace(" ", ""), 16);
 		}
 
-		public static int smethod_24(byte[] byte_1, bool bool_2)
+		public static int smethod_24(byte[] byte1, bool bool2)
 		{
-			if (!(bool_2 ^ BitConverter.IsLittleEndian))
+			if (!(bool2 ^ BitConverter.IsLittleEndian))
 			{
-				return BytesToInt(byte_1);
+				return BytesToInt(byte1);
 			}
-			var num = byte_1.Length;
+			var num = byte1.Length;
 			switch (num)
 			{
 			case 2:
-				return BitConverter.ToInt16(byte_1, 0);
+				return BitConverter.ToInt16(byte1, 0);
 			case 3:
 				break;
 			case 4:
-				return BitConverter.ToInt32(byte_1, 0);
+				return BitConverter.ToInt32(byte1, 0);
 			default:
 				if (num == 8) //i am pretty sure this should just be another switch case but I'm not going to touch it for now
 				{
-					return (int)BitConverter.ToInt64(byte_1, 0);
+					return (int)BitConverter.ToInt64(byte1, 0);
 				}
 				break;
 			}
 			throw new Exception();
 		}
 
-		public static int smethod_25(byte[] byte_1)
+		public static int smethod_25(byte[] byte1)
 		{
-			return smethod_24(byte_1, _flag0);
+			return smethod_24(byte1, Flag0);
 		}
 
-		public static int ReverseEndianness(int int_0)
+		public static int ReverseEndianness(int int0)
 		{
-			return (int_0 >> 24 & 255) | (int_0 >> 8 & 65280) | (int_0 << 8 & 16711680) | (int_0 << 24 & -16777216);
+			return (int0 >> 24 & 255) | (int0 >> 8 & 65280) | (int0 << 8 & 16711680) | (int0 << 24 & -16777216);
 		}
 
-		public static short BytesToShort(byte[] byte_1)
+		public static short BytesToShort(byte[] byte1)
 		{
 			short num = 0;
-			var num2 = Math.Min(2, byte_1.Length);
+			var num2 = Math.Min(2, byte1.Length);
 			for (var i = 0; i < num2; i++)
 			{
-				num |= (short)(byte_1[i] << 8 - 8 * i);
+				num |= (short)(byte1[i] << 8 - 8 * i);
 			}
 			return num;
 		}
 
-		public static int BytesToInt(byte[] byte_1)
+		public static int BytesToInt(byte[] byte1)
 		{
 			var num = 0;
-			var num2 = Math.Min(4, byte_1.Length);
+			var num2 = Math.Min(4, byte1.Length);
 			for (var i = 0; i < num2; i++)
 			{
-				num |= byte_1[i] << 24 - 8 * i;
+				num |= byte1[i] << 24 - 8 * i;
 			}
 			return num;
 		}
 
-		public static byte[] IntToBytes(int int_0)
+		public static byte[] IntToBytes(int int0)
 		{
 			return new[]
 			{
-				(byte)(int_0 >> 24 & 255),
-				(byte)(int_0 >> 16 & 255),
-				(byte)(int_0 >> 8 & 255),
-				(byte)(int_0 & 255)
+				(byte)(int0 >> 24 & 255),
+				(byte)(int0 >> 16 & 255),
+				(byte)(int0 >> 8 & 255),
+				(byte)(int0 & 255)
 			};
 		}
 
@@ -626,31 +626,31 @@ namespace ns16
 			return File.ReadAllBytes(path);
 		}
 
-		public static byte[] ReadBytes(Stream stream_0)
+		public static byte[] ReadBytes(Stream stream0)
 		{
-			var binaryReader = new BinaryReader(stream_0);
-			var result = binaryReader.ReadBytes((int)stream_0.Length);
+			var binaryReader = new BinaryReader(stream0);
+			var result = binaryReader.ReadBytes((int)stream0.Length);
 			binaryReader.Close();
 			return result;
 		}
 
-		public static byte[] smethod_32(int int_0, bool bool_2)
+		public static byte[] smethod_32(int int0, bool bool2)
 		{
-			if (!(bool_2 ^ BitConverter.IsLittleEndian))
+			if (!(bool2 ^ BitConverter.IsLittleEndian))
 			{
-				return IntToBytes(int_0);
+				return IntToBytes(int0);
 			}
-			return BitConverter.GetBytes(int_0);
+			return BitConverter.GetBytes(int0);
 		}
 
-		public static byte[] stringToBytes(string string_0)
+		public static byte[] StringToBytes(string string0)
 		{
-			return Encoding.Default.GetBytes(string_0);
+			return Encoding.Default.GetBytes(string0);
 		}
 
-		public static string ValToHex32bit(int int_0)
+		public static string ValToHex32Bit(int int0)
 		{
-			return ValToPaddedHex(int_0, 4);
+			return ValToPaddedHex(int0, 4);
 		}
 
 		public static string ValToPaddedHex(int val, int halfPadding)
@@ -666,15 +666,15 @@ namespace ns16
 		public static int GetQbKey(string text, bool negativeCrc = true)
 		{
             //bool_0 is always false;
-			return GetQbKey(new MemoryStream(stringToBytes(text)), negativeCrc, _flag0);
+			return GetQbKey(new MemoryStream(StringToBytes(text)), negativeCrc, Flag0);
 		}
 
-		public static int GetQbKey(byte[] byte_1, bool bool_2)
+		public static int GetQbKey(byte[] byte1, bool bool2)
 		{
-			return GetQbKey(new MemoryStream(byte_1), bool_2, _flag0);
+			return GetQbKey(new MemoryStream(byte1), bool2, Flag0);
 		}
 
-		public static int GetQbKey(Stream stream, bool NegateCrc, bool ReverseEndianness)
+		public static int GetQbKey(Stream stream, bool negateCrc, bool reverseEndianness)
 		{
 			if (stream == null)
 			{
@@ -693,24 +693,24 @@ namespace ns16
 				CrcVerifyMethod1(array, 0, int_);
 			}
 			stream.Position = 0L;
-			if (NegateCrc && ReverseEndianness)
+			if (negateCrc && reverseEndianness)
 			{
                 return KeyGenerator.ReverseEndianness((int)(_key ^ 4294967295u));
 			}
-			if (NegateCrc)
+			if (negateCrc)
 			{
                 return (int)(_key ^ 4294967295u);
 			}
-			if (ReverseEndianness)
+			if (reverseEndianness)
 			{
 				return KeyGenerator.ReverseEndianness((int)_key);
 			}
 			return (int)_key;
 		}
 
-		public static int GetQbKey(Stream stream_0, bool bool_2)
+		public static int GetQbKey(Stream stream0, bool bool2)
 		{
-			return GetQbKey(stream_0, bool_2, _flag0);
+			return GetQbKey(stream0, bool2, Flag0);
 		}
 
 		private static void ResetKey()
@@ -718,71 +718,71 @@ namespace ns16
 			_key = 0u;
 		}
 
-		private static void CrcVerifyMethod1(byte[] byte_1, int int_0, int int_1)
+		private static void CrcVerifyMethod1(byte[] byte1, int int0, int int1)
 		{
-			if (byte_1 == null)
+			if (byte1 == null)
 			{
 				throw new ArgumentNullException("Crc buffer");
 			}
-			if (int_0 >= 0 && int_1 >= 0 && int_0 + int_1 <= byte_1.Length)
+			if (int0 >= 0 && int1 >= 0 && int0 + int1 <= byte1.Length)
 			{
-				_key ^= _xorMask;
-				while (--int_1 >= 0)
+				_key ^= XorMask;
+				while (--int1 >= 0)
 				{
-					_key = (crc32[(int)((UIntPtr)((_key ^ byte_1[int_0++]) & 255u))] ^ _key >> 8);
+					_key = (Crc32[(int)((UIntPtr)((_key ^ byte1[int0++]) & 255u))] ^ _key >> 8);
 				}
-				_key ^= _xorMask;
+				_key ^= XorMask;
 				return;
 			}
 			throw new ArgumentOutOfRangeException("Crc buffer");
 		}
 
-		public static byte[] HashStream(string string_0)
+		public static byte[] HashStream(string string0)
 		{
-			return HashStream(File.OpenRead(string_0));
+			return HashStream(File.OpenRead(string0));
 		}
 
-		public static byte[] HashStream(Stream stream_0)
+		public static byte[] HashStream(Stream stream0)
 		{
-			return HashStream(SHA512.Create(), stream_0);
+			return HashStream(SHA512.Create(), stream0);
 		}
 
-		public static byte[] HashStream(HashAlgorithm hashAlgorithm_0, Stream stream_0)
+		public static byte[] HashStream(HashAlgorithm hashAlgorithm0, Stream stream0)
 		{
-			var result = hashAlgorithm_0.ComputeHash(stream_0);
-			hashAlgorithm_0.Clear();
-			stream_0.Close();
+			var result = hashAlgorithm0.ComputeHash(stream0);
+			hashAlgorithm0.Clear();
+			stream0.Close();
 			return result;
 		}
 
-		public static FileStream smethod_45(string string_0)
+		public static FileStream smethod_45(string string0)
 		{
-			if (File.Exists(string_0) && (File.GetAttributes(string_0) & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+			if (File.Exists(string0) && (File.GetAttributes(string0) & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
 			{
-				File.SetAttributes(string_0, FileAttributes.Normal);
+				File.SetAttributes(string0, FileAttributes.Normal);
 			}
-			return File.Create(string_0);
+			return File.Create(string0);
 		}
 
-		public static void smethod_46(Stream stream_0, string string_0)
+		public static void smethod_46(Stream stream0, string string0)
 		{
-			smethod_47(stream_0, smethod_45(string_0));
+			smethod_47(stream0, smethod_45(string0));
 		}
 
-		public static void smethod_47(Stream stream_0, Stream stream_1)
+		public static void smethod_47(Stream stream0, Stream stream1)
 		{
 			var count = 256;
 			var buffer = new byte[256];
-			if (stream_0.CanSeek && stream_0.Position != 0L)
+			if (stream0.CanSeek && stream0.Position != 0L)
 			{
-				stream_0.Position = 0L;
+				stream0.Position = 0L;
 			}
-			for (var i = stream_0.Read(buffer, 0, count); i > 0; i = stream_0.Read(buffer, 0, count))
+			for (var i = stream0.Read(buffer, 0, count); i > 0; i = stream0.Read(buffer, 0, count))
 			{
-				stream_1.Write(buffer, 0, i);
+				stream1.Write(buffer, 0, i);
 			}
-			stream_0.Close();
-			stream_1.Close();
+			stream0.Close();
+			stream1.Close();
 		}
 
 		public static Bitmap ScaleImageFixedRatio(Image image, Size size)
@@ -827,31 +827,31 @@ namespace ns16
 			return new Size(width2, height2);
 		}
 
-		public static bool smethod_53<T>(ICollection<T> icollection_0, ICollection<T> icollection_1) where T : IComparable
+		public static bool smethod_53<T>(ICollection<T> icollection0, ICollection<T> icollection1) where T : IComparable
 		{
-			return smethod_54(icollection_0, icollection_1, Math.Max(icollection_0.Count, icollection_1.Count));
+			return smethod_54(icollection0, icollection1, Math.Max(icollection0.Count, icollection1.Count));
 		}
 
-		public static bool smethod_54<T>(ICollection<T> icollection_0, ICollection<T> icollection_1, int int_0) where T : IComparable
+		public static bool smethod_54<T>(ICollection<T> icollection0, ICollection<T> icollection1, int int0) where T : IComparable
 		{
-			return smethod_55(icollection_0, icollection_1, int_0, false);
+			return smethod_55(icollection0, icollection1, int0, false);
 		}
 
-		public static bool smethod_55<T>(ICollection<T> icollection_0, ICollection<T> icollection_1, int int_0, bool bool_2) where T : IComparable
+		public static bool smethod_55<T>(ICollection<T> icollection0, ICollection<T> icollection1, int int0, bool bool2) where T : IComparable
 		{
-			if (!bool_2 && (int_0 > icollection_0.Count || int_0 > icollection_1.Count))
+			if (!bool2 && (int0 > icollection0.Count || int0 > icollection1.Count))
 			{
 				return false;
 			}
-			var enumerator = icollection_0.GetEnumerator();
-			var enumerator2 = icollection_1.GetEnumerator();
+			var enumerator = icollection0.GetEnumerator();
+			var enumerator2 = icollection1.GetEnumerator();
 			enumerator.Reset();
 			enumerator2.Reset();
 			var num = 0;
-			while (num < int_0 && enumerator.MoveNext() && enumerator2.MoveNext())
+			while (num < int0 && enumerator.MoveNext() && enumerator2.MoveNext())
 			{
 				var current = enumerator.Current;
-				if (current.CompareTo(enumerator2.Current) != 0 ^ bool_2)
+				if (current.CompareTo(enumerator2.Current) != 0 ^ bool2)
 				{
 					return false;
 				}
@@ -860,14 +860,14 @@ namespace ns16
 			return true;
 		}
 
-		public static void smethod_56(IList ilist_0)
+		public static void smethod_56(IList ilist0)
 		{
-			var arrayList = new ArrayList(ilist_0);
+			var arrayList = new ArrayList(ilist0);
 			var num = 0;
 			while (arrayList.Count != 0)
 			{
-				var obj = arrayList[random_0.Next(0, arrayList.Count)];
-				ilist_0[num++] = obj;
+				var obj = arrayList[Random0.Next(0, arrayList.Count)];
+				ilist0[num++] = obj;
 				arrayList.Remove(obj);
 			}
 		}

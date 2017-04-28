@@ -1,3 +1,3 @@
 using System.Diagnostics;
 
-public delegate ProcessModule Delegate440(object object_0);
+public delegate ProcessModule Delegate440(object object0);

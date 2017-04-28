@@ -6,44 +6,44 @@ using ns22;
 
 namespace ns9
 {
-	public class MIDIReader
+	public class MidiReader
 	{
-		public readonly List<MIDILine> midiLineList = new List<MIDILine>();
+		public readonly List<MidiLine> MidiLineList = new List<MidiLine>();
 
-		public int int_0;
+		public int Int0;
 
-		public static MIDIReader smethod_0(string fileLocation)
+		public static MidiReader smethod_0(string fileLocation)
 		{
-			MIDIReader result;
+			MidiReader result;
 			using (var fileStream = new FileStream(fileLocation, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
 			{
-				result = new MIDIReader(fileStream);
+				result = new MidiReader(fileStream);
 			}
 			return result;
 		}
 
-		public MIDIReader()
+		public MidiReader()
 		{
 		}
 
-		public MIDIReader(Stream stream_0)
+		public MidiReader(Stream stream0)
 		{
-			method_3(stream_0);
+			method_3(stream0);
 		}
 
 		public int method_0()
 		{
-			return int_0;
+			return Int0;
 		}
 
-		public void method_1(int int_1)
+		public void method_1(int int1)
 		{
-			int_0 = int_1;
+			Int0 = int1;
 		}
 
-		public List<MIDILine> getMidiLineList()
+		public List<MidiLine> GetMidiLineList()
 		{
-			return midiLineList;
+			return MidiLineList;
 		}
 
 		private void method_3(Stream midiStream)
@@ -54,11 +54,11 @@ namespace ns9
 			ByteFiddler.RotateRight(midiFile.ReadUInt16());
 			int num = ByteFiddler.RotateRight(midiFile.ReadUInt16());
 			method_1(ByteFiddler.RotateRight(midiFile.ReadUInt16()));
-			midiLineList.Clear();
+			MidiLineList.Clear();
 			for (var i = 0; i < num; i++)
 			{
-				var midiLine = new MIDILine(method_0());
-				midiLineList.Add(midiLine);
+				var midiLine = new MidiLine(method_0());
+				MidiLineList.Add(midiLine);
 				var list = new List<AbstractNoteClass>();
 				ByteFiddler.smethod_3("MIDI", midiFile, "MTrk");
 				var num2 = ByteFiddler.RotateLeft(midiFile.ReadUInt32());
@@ -88,10 +88,10 @@ namespace ns9
 						switch (b3)
 						{
 						case 8:
-							midiNote = new MIDINote(num3, int_, midiFile.ReadByte(), false);
+							midiNote = new MidiNote(num3, int_, midiFile.ReadByte(), false);
 							goto IL_298;
 						case 9:
-							midiNote = new MIDINote(num3, int_, midiFile.ReadByte(), true);
+							midiNote = new MidiNote(num3, int_, midiFile.ReadByte(), true);
 							goto IL_298;
 						case 11:
 						case 12:
@@ -109,7 +109,7 @@ namespace ns9
 						switch (b5)
 						{
 						case 1:
-							midiNote = new zzNote1(num3, zzNote1.Enum37.const_0, Encoding.ASCII.GetString(array));
+							midiNote = new ZzNote1(num3, ZzNote1.Enum37.Const0, Encoding.ASCII.GetString(array));
 							break;
 						case 2:
 							break;
@@ -135,16 +135,16 @@ namespace ns9
 						{
 							if (num5 != 4L)
 							{
-								Class355.interface15_0.imethod_1(string.Format("Expected time signature event to have data length of 4, but found instead {0}", num5));
+								Class355.Interface150.imethod_1(string.Format("Expected time signature event to have data length of 4, but found instead {0}", num5));
 							}
-							midiNote = new zzNote338(num3, array[0], array[1], array[2], array[3]);
+							midiNote = new ZzNote338(num3, array[0], array[1], array[2], array[3]);
 						}
 					}
 					else
 					{
 						if (num5 != 3L)
 						{
-							Class355.interface15_0.imethod_1(string.Format("Expected tempo event to have data length of 3, but found instead {0}", num5));
+							Class355.Interface150.imethod_1(string.Format("Expected tempo event to have data length of 3, but found instead {0}", num5));
 						}
 						var num6 = array[0] << 16;
 						num6 |= array[1] << 8;
@@ -163,13 +163,13 @@ namespace ns9
 			}
 		}
 
-		private long method_4(BinaryReader binaryReader_0)
+		private long method_4(BinaryReader binaryReader0)
 		{
 			var num = 0L;
 			byte b;
 			do
 			{
-				b = binaryReader_0.ReadByte();
+				b = binaryReader0.ReadByte();
 				num = (num << 7) + (b & 127);
 			}
 			while ((b & 128) != 0);

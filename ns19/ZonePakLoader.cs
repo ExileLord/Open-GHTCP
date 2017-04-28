@@ -14,46 +14,46 @@ namespace ns19
 
 		public delegate void Delegate9(int percentCompleted, string fileName);
 
-		private Delegate8 delegate8_0;
+		private Delegate8 _delegate80;
 
-		private Delegate9 delegate9_0;
+		private Delegate9 _delegate90;
 
 		private readonly string _dataDirectory;
 
-		public void method_0(Delegate8 delegate8_1)
+		public void method_0(Delegate8 delegate81)
 		{
-			var @delegate = delegate8_0;
+			var @delegate = _delegate80;
 			Delegate8 delegate2;
 			do
 			{
 				delegate2 = @delegate;
-				var value = (Delegate8)Delegate.Combine(delegate2, delegate8_1);
-				@delegate = Interlocked.CompareExchange(ref delegate8_0, value, delegate2);
+				var value = (Delegate8)Delegate.Combine(delegate2, delegate81);
+				@delegate = Interlocked.CompareExchange(ref _delegate80, value, delegate2);
 			}
 			while (@delegate != delegate2);
 		}
 
-		public void method_1(Delegate9 delegate9_1)
+		public void method_1(Delegate9 delegate91)
 		{
-			var @delegate = delegate9_0;
+			var @delegate = _delegate90;
 			Delegate9 delegate2;
 			do
 			{
 				delegate2 = @delegate;
-				var value = (Delegate9)Delegate.Combine(delegate2, delegate9_1);
-				@delegate = Interlocked.CompareExchange(ref delegate9_0, value, delegate2);
+				var value = (Delegate9)Delegate.Combine(delegate2, delegate91);
+				@delegate = Interlocked.CompareExchange(ref _delegate90, value, delegate2);
 			}
 			while (@delegate != delegate2);
 		}
 
-		public ZonePakLoader(string DataDirectory)
+		public ZonePakLoader(string dataDirectory)
 		{
-			_dataDirectory = DataDirectory;
+			_dataDirectory = dataDirectory;
 		}
 
 		public void method_2()
 		{
-			delegate9_0(0, "*.tex.xen");
+			_delegate90(0, "*.tex.xen");
 			var treeNode = new TreeNode("Data");
 			var files = Directory.GetFiles(_dataDirectory.Remove(_dataDirectory.Length - 1), "*.tex.xen", SearchOption.AllDirectories);
 			var array = files;
@@ -67,7 +67,7 @@ namespace ns19
 				}, StringSplitOptions.RemoveEmptyEntries))).ToolTipText = text;
 			}
 
-			delegate9_0(1, "*.img.xen");
+			_delegate90(1, "*.img.xen");
 			files = Directory.GetFiles(_dataDirectory.Remove(_dataDirectory.Length - 1), "*.img.xen", SearchOption.AllDirectories);
 			var array2 = files;
 			for (var j = 0; j < array2.Length; j++)
@@ -88,18 +88,18 @@ namespace ns19
 			for (var k = 0; k < array3.Length; k++)
 			{
 				var text3 = array3[k];
-				delegate9_0(1 + (int)(98.0 * ++num3 / files.Length), KeyGenerator.GetFileName(text3));
+				_delegate90(1 + (int)(98.0 * ++num3 / files.Length), KeyGenerator.GetFileName(text3));
 				try
 				{
-					using (var @class = File.Exists(text3.Replace(".pak.xen", ".pab.xen")) ? new zzPabNode(text3, text3.Replace(".pak.xen", ".pab.xen"), false) : new zzPakNode2(text3, false))
+					using (var @class = File.Exists(text3.Replace(".pak.xen", ".pab.xen")) ? new ZzPabNode(text3, text3.Replace(".pak.xen", ".pab.xen"), false) : new ZzPakNode2(text3, false))
 					{
 						var list = new List<TreeNode>();
-						foreach (var current in @class.list_0)
+						foreach (var current in @class.List0)
 						{
 							var num4 = current.imethod_7();
 							if (current.imethod_4() == num || current.imethod_4() == num2)
 							{
-								list.Add(new TreeNode(QbSongClass1.ContainsKey(num4) ? KeyGenerator.GetFileName(QbSongClass1.GetDictString(num4)) : KeyGenerator.ValToHex32bit(num4))
+								list.Add(new TreeNode(QbSongClass1.ContainsKey(num4) ? KeyGenerator.GetFileName(QbSongClass1.GetDictString(num4)) : KeyGenerator.ValToHex32Bit(num4))
 								{
 									ToolTipText = text3,
 									Tag = num4
@@ -121,30 +121,30 @@ namespace ns19
 				}
 				GC.Collect();
 			}
-			delegate8_0(treeNode);
+			_delegate80(treeNode);
 		}
 
-		public TreeNode method_3(TreeNode treeNode_0, List<string> list_0)
+		public TreeNode method_3(TreeNode treeNode0, List<string> list0)
 		{
-			if (list_0.Count == 0)
+			if (list0.Count == 0)
 			{
-				return treeNode_0;
+				return treeNode0;
 			}
 			string text;
-			if (!treeNode_0.Nodes.ContainsKey(list_0[0]))
+			if (!treeNode0.Nodes.ContainsKey(list0[0]))
 			{
-				text = list_0[0];
-				list_0.RemoveAt(0);
-				treeNode_0.Nodes.Add(text, text);
-				return method_3(treeNode_0.Nodes[text], list_0);
+				text = list0[0];
+				list0.RemoveAt(0);
+				treeNode0.Nodes.Add(text, text);
+				return method_3(treeNode0.Nodes[text], list0);
 			}
-			if (list_0.Count == 1)
+			if (list0.Count == 1)
 			{
-				return treeNode_0.Nodes[list_0[0]];
+				return treeNode0.Nodes[list0[0]];
 			}
-			text = list_0[0];
-			list_0.RemoveAt(0);
-			return method_3(treeNode_0.Nodes[text], list_0);
+			text = list0[0];
+			list0.RemoveAt(0);
+			return method_3(treeNode0.Nodes[text], list0);
 		}
 	}
 }

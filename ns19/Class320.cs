@@ -5,28 +5,28 @@ namespace ns19
 {
 	public class Class320
 	{
-		private static readonly int int_0 = 4096;
+		private static readonly int Int0 = 4096;
 
-		private static readonly int int_1 = 18;
+		private static readonly int Int1 = 18;
 
-		private static readonly int int_2 = 2;
+		private static readonly int Int2 = 2;
 
-		private int int_3;
+		private int _int3;
 
-		private int int_4;
+		private int _int4;
 
-		private readonly int[] int_5 = new int[int_0 + 1];
+		private readonly int[] _int5 = new int[Int0 + 1];
 
-		private readonly int[] int_6 = new int[int_0 + 257];
+		private readonly int[] _int6 = new int[Int0 + 257];
 
-		private readonly int[] int_7 = new int[int_0 + 1];
+		private readonly int[] _int7 = new int[Int0 + 1];
 
-		private readonly byte[] byte_0 = new byte[int_0 + int_1 - 1];
+		private readonly byte[] _byte0 = new byte[Int0 + Int1 - 1];
 
-		public byte[] method_0(byte[] byte_1)
+		public byte[] method_0(byte[] byte1)
 		{
 			MemoryStream memoryStream2;
-			using (var memoryStream = new MemoryStream(byte_1))
+			using (var memoryStream = new MemoryStream(byte1))
 			{
 				MemoryStream memoryStream3;
 				memoryStream2 = (memoryStream3 = new MemoryStream());
@@ -45,106 +45,106 @@ namespace ns19
 			return memoryStream2.ToArray();
 		}
 
-		public void method_1(Stream stream_0, Stream stream_1)
+		public void method_1(Stream stream0, Stream stream1)
 		{
-			if (!stream_0.CanRead)
+			if (!stream0.CanRead)
 			{
 				throw new IOException("Input stream is not readable.");
 			}
-			if (!stream_1.CanWrite)
+			if (!stream1.CanWrite)
 			{
 				throw new IOException("Output stream is not writable.");
 			}
-			var num = int_0 - int_1;
+			var num = Int0 - Int1;
 			var num2 = 0;
 			var num3 = 1;
 			var array = new byte[17];
 			byte b = 1;
-			var num4 = stream_0.Length - stream_0.Position;
-			for (var i = int_0 + 1; i <= int_0 + 256; i++)
+			var num4 = stream0.Length - stream0.Position;
+			for (var i = Int0 + 1; i <= Int0 + 256; i++)
 			{
-				int_6[i] = int_0;
+				_int6[i] = Int0;
 			}
-			for (var i = 0; i < int_0; i++)
+			for (var i = 0; i < Int0; i++)
 			{
-				int_7[i] = int_0;
+				_int7[i] = Int0;
 			}
 			array[0] = 0;
-			for (var i = num2; i < byte_0.Length; i++)
+			for (var i = num2; i < _byte0.Length; i++)
 			{
-				byte_0[i] = 32;
+				_byte0[i] = 32;
 			}
 			int j;
-			for (j = 0; j < int_1; j++)
+			for (j = 0; j < Int1; j++)
 			{
-				var expr_C0 = num4;
-				num4 = expr_C0 - 1L;
-				if (expr_C0 <= 0L)
+				var exprC0 = num4;
+				num4 = exprC0 - 1L;
+				if (exprC0 <= 0L)
 				{
 					break;
 				}
-				byte_0[num + j] = (byte)stream_0.ReadByte();
+				_byte0[num + j] = (byte)stream0.ReadByte();
 			}
-			for (var i = 1; i <= int_1; i++)
+			for (var i = 1; i <= Int1; i++)
 			{
 				method_2(num - i);
 			}
 			method_2(num);
 			do
 			{
-				if (int_4 > j)
+				if (_int4 > j)
 				{
-					int_4 = j;
+					_int4 = j;
 				}
-				if (int_4 <= int_2)
+				if (_int4 <= Int2)
 				{
-					int_4 = 1;
-					var expr_136_cp_0 = array;
-					var expr_136_cp_1 = 0;
-					expr_136_cp_0[expr_136_cp_1] |= b;
-					array[num3++] = byte_0[num];
+					_int4 = 1;
+					var expr136Cp0 = array;
+					var expr136Cp1 = 0;
+					expr136Cp0[expr136Cp1] |= b;
+					array[num3++] = _byte0[num];
 				}
 				else
 				{
-					array[num3++] = (byte)int_3;
-					array[num3++] = (byte)((int_3 >> 4 & 240) | int_4 - (int_2 + 1));
+					array[num3++] = (byte)_int3;
+					array[num3++] = (byte)((_int3 >> 4 & 240) | _int4 - (Int2 + 1));
 				}
 				int i;
 				if ((b = (byte)(b << 1)) == 0)
 				{
 					for (i = 0; i < num3; i++)
 					{
-						stream_1.WriteByte(array[i]);
+						stream1.WriteByte(array[i]);
 					}
 					array[0] = 0;
-					var arg_1BC_0 = 1;
+					var arg_1Bc0 = 1;
 					b = 1;
-					num3 = arg_1BC_0;
+					num3 = arg_1Bc0;
 				}
-				var num5 = int_4;
+				var num5 = _int4;
 				for (i = 0; i < num5; i++)
 				{
-					var expr_1CC = num4;
-					num4 = expr_1CC - 1L;
-					if (expr_1CC <= 0L)
+					var expr_1Cc = num4;
+					num4 = expr_1Cc - 1L;
+					if (expr_1Cc <= 0L)
 					{
 						break;
 					}
 					method_3(num2);
-					byte_0[num2] = (byte)stream_0.ReadByte();
-					if (num2 < int_1 - 1)
+					_byte0[num2] = (byte)stream0.ReadByte();
+					if (num2 < Int1 - 1)
 					{
-						byte_0[num2 + int_0] = byte_0[num2];
+						_byte0[num2 + Int0] = _byte0[num2];
 					}
-					num2 = (num2 + 1 & int_0 - 1);
-					num = (num + 1 & int_0 - 1);
+					num2 = (num2 + 1 & Int0 - 1);
+					num = (num + 1 & Int0 - 1);
 					method_2(num);
 				}
 				while (i++ < num5)
 				{
 					method_3(num2);
-					num2 = (num2 + 1 & int_0 - 1);
-					num = (num + 1 & int_0 - 1);
+					num2 = (num2 + 1 & Int0 - 1);
+					num = (num + 1 & Int0 - 1);
 					if (--j != 0)
 					{
 						method_2(num);
@@ -156,122 +156,122 @@ namespace ns19
 			{
 				for (var i = 0; i < num3; i++)
 				{
-					stream_1.WriteByte(array[i]);
+					stream1.WriteByte(array[i]);
 				}
 			}
 		}
 
-		private void method_2(int int_8)
+		private void method_2(int int8)
 		{
 			var num = 1;
-			var num2 = int_0 + 1 + byte_0[int_8];
-			int_6[int_8] = (int_5[int_8] = int_0);
-			int_4 = 0;
+			var num2 = Int0 + 1 + _byte0[int8];
+			_int6[int8] = (_int5[int8] = Int0);
+			_int4 = 0;
 			while (true)
 			{
 				if (num >= 0)
 				{
-					if (int_6[num2] == int_0)
+					if (_int6[num2] == Int0)
 					{
 						goto IL_C3;
 					}
-					num2 = int_6[num2];
+					num2 = _int6[num2];
 				}
 				else
 				{
-					if (int_5[num2] == int_0)
+					if (_int5[num2] == Int0)
 					{
 						goto IL_168;
 					}
-					num2 = int_5[num2];
+					num2 = _int5[num2];
 				}
 				var num3 = 1;
-				while (num3 < int_1 && (num = byte_0[int_8 + num3] - byte_0[num2 + num3]) == 0)
+				while (num3 < Int1 && (num = _byte0[int8 + num3] - _byte0[num2 + num3]) == 0)
 				{
 					num3++;
 				}
-				if (num3 > int_4)
+				if (num3 > _int4)
 				{
-					int_3 = num2;
-					if ((int_4 = num3) >= int_1)
+					_int3 = num2;
+					if ((_int4 = num3) >= Int1)
 					{
 						break;
 					}
 				}
 			}
-			int_7[int_8] = int_7[num2];
-			int_5[int_8] = int_5[num2];
-			int_6[int_8] = int_6[num2];
-			int_7[int_5[num2]] = int_8;
-			int_7[int_6[num2]] = int_8;
-			if (int_6[int_7[num2]] == num2)
+			_int7[int8] = _int7[num2];
+			_int5[int8] = _int5[num2];
+			_int6[int8] = _int6[num2];
+			_int7[_int5[num2]] = int8;
+			_int7[_int6[num2]] = int8;
+			if (_int6[_int7[num2]] == num2)
 			{
-				int_6[int_7[num2]] = int_8;
+				_int6[_int7[num2]] = int8;
 			}
 			else
 			{
-				int_5[int_7[num2]] = int_8;
+				_int5[_int7[num2]] = int8;
 			}
-			int_7[num2] = int_0;
+			_int7[num2] = Int0;
 			return;
 			IL_C3:
-			int_6[num2] = int_8;
-			int_7[int_8] = num2;
+			_int6[num2] = int8;
+			_int7[int8] = num2;
 			return;
 			IL_168:
-			int_5[num2] = int_8;
-			int_7[int_8] = num2;
+			_int5[num2] = int8;
+			_int7[int8] = num2;
 		}
 
-		private void method_3(int int_8)
+		private void method_3(int int8)
 		{
-			if (int_7[int_8] == int_0)
+			if (_int7[int8] == Int0)
 			{
 				return;
 			}
 			int num;
-			if (int_6[int_8] == int_0)
+			if (_int6[int8] == Int0)
 			{
-				num = int_5[int_8];
+				num = _int5[int8];
 			}
-			else if (int_5[int_8] == int_0)
+			else if (_int5[int8] == Int0)
 			{
-				num = int_6[int_8];
+				num = _int6[int8];
 			}
 			else
 			{
-				num = int_5[int_8];
-				if (int_6[num] != int_0)
+				num = _int5[int8];
+				if (_int6[num] != Int0)
 				{
 					do
 					{
-						num = int_6[num];
+						num = _int6[num];
 					}
-					while (int_6[num] != int_0);
-					int_6[int_7[num]] = int_5[num];
-					int_7[int_5[num]] = int_7[num];
-					int_5[num] = int_5[int_8];
-					int_7[int_5[int_8]] = num;
+					while (_int6[num] != Int0);
+					_int6[_int7[num]] = _int5[num];
+					_int7[_int5[num]] = _int7[num];
+					_int5[num] = _int5[int8];
+					_int7[_int5[int8]] = num;
 				}
-				int_6[num] = int_6[int_8];
-				int_7[int_6[int_8]] = num;
+				_int6[num] = _int6[int8];
+				_int7[_int6[int8]] = num;
 			}
-			int_7[num] = int_7[int_8];
-			if (int_6[int_7[int_8]] == int_8)
+			_int7[num] = _int7[int8];
+			if (_int6[_int7[int8]] == int8)
 			{
-				int_6[int_7[int_8]] = num;
+				_int6[_int7[int8]] = num;
 			}
 			else
 			{
-				int_5[int_7[int_8]] = num;
+				_int5[_int7[int8]] = num;
 			}
-			int_7[int_8] = int_0;
+			_int7[int8] = Int0;
 		}
 
-		public byte[] method_4(byte[] byte_1)
+		public byte[] method_4(byte[] byte1)
 		{
 			MemoryStream memoryStream2;
-			using (var memoryStream = new MemoryStream(byte_1))
+			using (var memoryStream = new MemoryStream(byte1))
 			{
 				MemoryStream memoryStream3;
 				memoryStream2 = (memoryStream3 = new MemoryStream());
@@ -290,47 +290,47 @@ namespace ns19
 			return memoryStream2.ToArray();
 		}
 
-		public void method_5(Stream stream_0, Stream stream_1)
+		public void method_5(Stream stream0, Stream stream1)
 		{
-			if (!stream_0.CanRead)
+			if (!stream0.CanRead)
 			{
 				throw new IOException("Input stream is not readable.");
 			}
-			if (!stream_1.CanWrite)
+			if (!stream1.CanWrite)
 			{
 				throw new IOException("Output stream is not writable.");
 			}
-			var num = int_0 - int_1;
+			var num = Int0 - Int1;
 			var num2 = 0;
-			var num3 = stream_0.Length - stream_0.Position;
-			for (var i = 0; i < byte_0.Length; i++)
+			var num3 = stream0.Length - stream0.Position;
+			for (var i = 0; i < _byte0.Length; i++)
 			{
-				byte_0[i] = 32;
+				_byte0[i] = 32;
 			}
 			while (num3 > 0L)
 			{
 				if (((num2 >>= 1) & 256) == 0)
 				{
 					num3 -= 1L;
-					num2 = (stream_0.ReadByte() | 65280);
+					num2 = (stream0.ReadByte() | 65280);
 				}
 				if ((num2 & 1) != 0)
 				{
 					num3 -= 1L;
-					stream_1.WriteByte(byte_0[num++] = (byte)stream_0.ReadByte());
-					num &= int_0 - 1;
+					stream1.WriteByte(_byte0[num++] = (byte)stream0.ReadByte());
+					num &= Int0 - 1;
 				}
 				else
 				{
 					num3 -= 2L;
-					int num4 = (byte)stream_0.ReadByte();
-					int num5 = (byte)stream_0.ReadByte();
+					int num4 = (byte)stream0.ReadByte();
+					int num5 = (byte)stream0.ReadByte();
 					num4 |= (num5 & 240) << 4;
-					num5 = (num5 & 15) + int_2;
+					num5 = (num5 & 15) + Int2;
 					for (var j = 0; j <= num5; j++)
 					{
-						stream_1.WriteByte(byte_0[num++] = byte_0[num4 + j & int_0 - 1]);
-						num &= int_0 - 1;
+						stream1.WriteByte(_byte0[num++] = _byte0[num4 + j & Int0 - 1]);
+						num &= Int0 - 1;
 					}
 				}
 			}

@@ -3,27 +3,27 @@ using ns21;
 
 namespace ns20
 {
-	public class FileTagStructureNode : zzUnkNode295
+	public class FileTagStructureNode : ZzUnkNode295
 	{
 		public FileTagStructureNode()
 		{
 			vmethod_0();
 		}
 
-		public FileTagStructureNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
+		public FileTagStructureNode(string string0) : this(QbSongClass1.AddKeyToDictionary(string0))
 		{
 		}
 
-		public FileTagStructureNode(int int_1)
+		public FileTagStructureNode(int int1)
 		{
-			int_0 = int_1;
+			Int0 = int1;
 			vmethod_0();
 		}
 
-		public FileTagStructureNode(string string_0, string string_1)
+		public FileTagStructureNode(string string0, string string1)
 		{
-			int_0 = QbSongClass1.AddKeyToDictionary(string_0);
-			Nodes.Add(new TagValueNode(string_1));
+			Int0 = QbSongClass1.AddKeyToDictionary(string0);
+			Nodes.Add(new TagValueNode(string1));
 			vmethod_0();
 		}
 
@@ -45,7 +45,7 @@ namespace ns20
 		{
 			if (Nodes.Count != 0)
 			{
-				return ((TagValueNode)FirstNode).int_0;
+				return ((TagValueNode)FirstNode).Int0;
 			}
 			return 0;
 		}

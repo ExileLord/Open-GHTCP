@@ -4,24 +4,24 @@ namespace ns16
 {
 	public class EventArgs0 : EventArgs
 	{
-		private readonly string string_0;
+		private readonly string _string0;
 
-		private readonly int int_0;
+		private readonly int _int0;
 
-		public EventArgs0(string string_1, int int_1)
+		public EventArgs0(string string1, int int1)
 		{
-			string_0 = string_1;
-			int_0 = int_1;
+			_string0 = string1;
+			_int0 = int1;
 		}
 
 		public string method_0()
 		{
-			return string_0;
+			return _string0;
 		}
 
 		public int method_1()
 		{
-			return int_0;
+			return _int0;
 		}
 	}
 }

@@ -1,3 +1,3 @@
 using System.Drawing;
 
-public delegate void Delegate224(object object_0, Color color_0);
+public delegate void Delegate224(object object0, Color color0);

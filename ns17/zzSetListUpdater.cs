@@ -5,38 +5,38 @@ using ns20;
 
 namespace ns17
 {
-	public class zzSetListUpdater : QbEditor
+	public class ZzSetListUpdater : QbEditor
 	{
-		private readonly GH3Songlist gh3Songlist_0;
+		private readonly Gh3Songlist _gh3Songlist0;
 
-		private readonly zzPakNode2 class318_0;
+		private readonly ZzPakNode2 _class3180;
 
-		private readonly string string_0;
+		private readonly string _string0;
 
-		private readonly int int_0;
+		private readonly int _int0;
 
-		public zzSetListUpdater(int int_1, zzPakNode2 class318_1, GH3Songlist gh3Songlist_1)
+		public ZzSetListUpdater(int int1, ZzPakNode2 class3181, Gh3Songlist gh3Songlist1)
 		{
-			string_0 = gh3Songlist_1.method_8(int_1);
-			int_0 = int_1;
-			class318_0 = class318_1;
-			gh3Songlist_0 = gh3Songlist_1;
+			_string0 = gh3Songlist1.method_8(int1);
+			_int0 = int1;
+			_class3180 = class3181;
+			_gh3Songlist0 = gh3Songlist1;
 		}
 
 		public override void vmethod_0()
 		{
-			zzGenericNode1 @class = class318_0.zzGetNode1(gh3Songlist_0.gh3SetlistList[int_0].method_2());
-			@class.method_5(new StructurePointerRootNode(int_0)).method_8(gh3Songlist_0.gh3SetlistList[int_0].method_6());
+			ZzGenericNode1 @class = _class3180.ZzGetNode1(_gh3Songlist0.Gh3SetlistList[_int0].method_2());
+			@class.method_5(new StructurePointerRootNode(_int0)).method_8(_gh3Songlist0.Gh3SetlistList[_int0].method_6());
 		}
 
 		public override string ToString()
 		{
-			return "Update Setlist: " + string_0;
+			return "Update Setlist: " + _string0;
 		}
 
 		public override bool Equals(QbEditor other)
 		{
-			return other is zzSetListUpdater && (other as zzSetListUpdater).int_0 == int_0;
+			return other is ZzSetListUpdater && (other as ZzSetListUpdater)._int0 == _int0;
 		}
 	}
 }

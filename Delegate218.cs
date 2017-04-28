@@ -1,1 +1,1 @@
-public delegate sbyte Delegate218(int int_0);
+public delegate sbyte Delegate218(int int0);

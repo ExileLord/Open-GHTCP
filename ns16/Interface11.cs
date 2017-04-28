@@ -2,7 +2,7 @@ using ns18;
 
 namespace ns16
 {
-	public interface Interface11
+	public interface INterface11
 	{
 		string imethod_0();
 
@@ -12,8 +12,8 @@ namespace ns16
 
 		object[] imethod_3();
 
-		void imethod_4(ref int int_0);
+		void imethod_4(ref int int0);
 
-		void imethod_5(EventArgs2 eventArgs2_0);
+		void imethod_5(EventArgs2 eventArgs20);
 	}
 }

@@ -12,81 +12,81 @@ namespace ns11
 		[CompilerGenerated]
 		private class VolumeListener
 		{
-			public AudioPlayer audioPlayer;
+			public AudioPlayer AudioPlayer;
 
 			public float Volume;
 
-			public void StartListener(object object_0)
+			public void StartListener(object object0)
 			{
 				var num = 0f;
 				var num2 = Volume;
 				while (num < num2)
 				{
-					audioPlayer.SetVolume(num);
+					AudioPlayer.SetVolume(num);
 					num += 0.1f;
 					Thread.Sleep(50);
 				}
-				audioPlayer.SetVolume(num2);
+				AudioPlayer.SetVolume(num2);
 			}
 		}
 
 		[CompilerGenerated]
 		private class Class161
 		{
-			public IntPtr intptr_0;
+			public IntPtr Intptr0;
 
-			public AudioPlayer class159_0;
+			public AudioPlayer Class1590;
 
-			public void method_0(object object_0)
+			public void method_0(object object0)
 			{
-				GC.KeepAlive(class159_0.delegate4_0);
-				var intPtr = intptr_0;
-				while (Class162.waveOutClose(intPtr) != Enum18.const_0)
+				GC.KeepAlive(Class1590._delegate40);
+				var intPtr = Intptr0;
+				while (Class162.waveOutClose(intPtr) != Enum18.Const0)
 				{
 					Thread.Sleep(1000);
 				}
 			}
 		}
 
-		private IntPtr intptr_0;
+		private IntPtr _intptr0;
 
-		private Class165 class165_0;
+		private Class165 _class1650;
 
-		private Class165 class165_1;
+		private Class165 _class1651;
 
-		private Thread thread_0;
+		private Thread _thread0;
 
-		private Delegate3 delegate3_0;
+		private Delegate3 _delegate30;
 
-		private bool bool_0;
+		private bool _bool0;
 
-		private bool bool_1;
+		private bool _bool1;
 
-		private readonly byte byte_0;
+		private readonly byte _byte0;
 
-		private readonly bool bool_2;
+		private readonly bool _bool2;
 
-		private readonly Class162.Delegate4 delegate4_0;
+		private readonly Class162.Delegate4 _delegate40;
 
-		private readonly object object_0;
+		private readonly object _object0;
 
-		public AudioPlayer(int int_0, WaveFormat waveFormat_0, int int_1, float Volume, bool bool_3, Delegate3 delegate3_1)
+		public AudioPlayer(int int0, WaveFormat waveFormat0, int int1, float volume, bool bool3, Delegate3 delegate31)
 		{
 			WaitCallback waitCallback = null;
 			var volumeListener = new VolumeListener();
-			volumeListener.Volume = Volume;
-            delegate4_0 = Class165.smethod_0;
-			object_0 = new object();
+			volumeListener.Volume = volume;
+            _delegate40 = Class165.smethod_0;
+			_object0 = new object();
 			//base..ctor();
-			volumeListener.audioPlayer = this;
-			bool_2 = bool_3;
-            byte_0 = (byte)((waveFormat_0.short_2 == 8) ? 128 : 0);
-			delegate3_0 = delegate3_1;
-			Exception4.smethod_1(Class162.waveOutOpen(out intptr_0, int_0, waveFormat_0, delegate4_0, 0, Class162.Enum17.const_3), "waveOutOpen");
-			method_7(waveFormat_0.method_0(int_1 / 5), 5);
-			thread_0 = new Thread(method_6);
+			volumeListener.AudioPlayer = this;
+			_bool2 = bool3;
+            _byte0 = (byte)((waveFormat0.short_2 == 8) ? 128 : 0);
+			_delegate30 = delegate31;
+			Exception4.smethod_1(Class162.waveOutOpen(out _intptr0, int0, waveFormat0, _delegate40, 0, Class162.Enum17.Const3), "waveOutOpen");
+			method_7(waveFormat0.method_0(int1 / 5), 5);
+			_thread0 = new Thread(method_6);
 			SetVolume(0f);
-			thread_0.Start();
+			_thread0.Start();
 			if (waitCallback == null)
 			{
 				waitCallback = volumeListener.StartListener;
@@ -97,10 +97,10 @@ namespace ns11
 		public int method_0()
 		{
 			var @struct = default(Struct67);
-			@struct.enum14_0 = Enum14.const_2;
-			if (intptr_0 != IntPtr.Zero)
+			@struct.enum14_0 = Enum14.Const2;
+			if (_intptr0 != IntPtr.Zero)
 			{
-				Class162.waveOutGetPosition(intptr_0, ref @struct, Marshal.SizeOf(@struct));
+				Class162.waveOutGetPosition(_intptr0, ref @struct, Marshal.SizeOf(@struct));
 			}
 			return @struct.int_2;
 		}
@@ -108,35 +108,35 @@ namespace ns11
 		public float method_1()
 		{
 			var num = 0;
-			if (intptr_0 != IntPtr.Zero)
+			if (_intptr0 != IntPtr.Zero)
 			{
-				Class162.waveOutGetVolume(intptr_0, ref num);
+				Class162.waveOutGetVolume(_intptr0, ref num);
 			}
 			return ((num >> 16) / 65536f + (num & 65535) / 65536f) / 2f;
 		}
 
-		public void SetVolume(float float_0)
+		public void SetVolume(float float0)
 		{
-			var int_ = (int)(float_0 * 65535f) + ((int)(float_0 * 65535f) << 16);
-			if (intptr_0 != IntPtr.Zero)
+			var int_ = (int)(float0 * 65535f) + ((int)(float0 * 65535f) << 16);
+			if (_intptr0 != IntPtr.Zero)
 			{
-				Class162.waveOutSetVolume(intptr_0, int_);
+				Class162.waveOutSetVolume(_intptr0, int_);
 			}
 		}
 
 		public void method_3()
 		{
-			Class162.waveOutRestart(intptr_0);
+			Class162.waveOutRestart(_intptr0);
 		}
 
 		public void method_4()
 		{
-			Class162.waveOutPause(intptr_0);
+			Class162.waveOutPause(_intptr0);
 		}
 
 		public bool method_5()
 		{
-			return !bool_2 && bool_1;
+			return !_bool2 && _bool1;
 		}
 
 		~AudioPlayer()
@@ -146,32 +146,32 @@ namespace ns11
 
 		public void Dispose()
 		{
-			lock (object_0)
+			lock (_object0)
 			{
-				if (thread_0 != null)
+				if (_thread0 != null)
 				{
 					try
 					{
-						bool_0 = true;
-						if (intptr_0 != IntPtr.Zero)
+						_bool0 = true;
+						if (_intptr0 != IntPtr.Zero)
 						{
-							Class162.waveOutReset(intptr_0);
+							Class162.waveOutReset(_intptr0);
 						}
-						thread_0.Join();
-						delegate3_0 = null;
+						_thread0.Join();
+						_delegate30 = null;
 						method_8();
-						if (intptr_0 != IntPtr.Zero)
+						if (_intptr0 != IntPtr.Zero)
 						{
 							var @class = new Class161();
-							@class.class159_0 = this;
-							@class.intptr_0 = intptr_0;
+							@class.Class1590 = this;
+							@class.Intptr0 = _intptr0;
 							ThreadPool.QueueUserWorkItem(@class.method_0);
 						}
 					}
 					finally
 					{
-						thread_0 = null;
-						intptr_0 = IntPtr.Zero;
+						_thread0 = null;
+						_intptr0 = IntPtr.Zero;
 					}
 				}
 			}
@@ -180,69 +180,69 @@ namespace ns11
 
 		private void method_6()
 		{
-			while (!bool_0)
+			while (!_bool0)
 			{
 				method_9();
-				if (delegate3_0 != null && !bool_0)
+				if (_delegate30 != null && !_bool0)
 				{
-					delegate3_0(this, class165_1.method_1(), class165_1.method_0(), ref bool_0);
-					if (bool_0 && bool_2)
+					_delegate30(this, _class1651.method_1(), _class1651.method_0(), ref _bool0);
+					if (_bool0 && _bool2)
 					{
-						bool_0 = false;
+						_bool0 = false;
 					}
 				}
 				else
 				{
-                    var array = new byte[class165_1.method_0()];
-					if (byte_0 != 0)
+                    var array = new byte[_class1651.method_0()];
+					if (_byte0 != 0)
 					{
 						for (var i = 0; i < array.Length; i++)
 						{
-							array[i] = byte_0;
+							array[i] = _byte0;
 						}
 					}
-					Marshal.Copy(array, 0, class165_1.method_1(), array.Length);
+					Marshal.Copy(array, 0, _class1651.method_1(), array.Length);
 				}
-				class165_1.method_2();
+				_class1651.method_2();
 			}
 			method_10();
-			bool_1 = true;
+			_bool1 = true;
 		}
 
-		private void method_7(int int_0, int int_1)
+		private void method_7(int int0, int int1)
 		{
 			method_8();
-			if (int_1 > 0)
+			if (int1 > 0)
 			{
-				class165_0 = new Class165(intptr_0, int_0);
-				var @class = class165_0;
+				_class1650 = new Class165(_intptr0, int0);
+				var @class = _class1650;
 				try
 				{
-					for (var i = 1; i < int_1; i++)
+					for (var i = 1; i < int1; i++)
 					{
-						var class2 = new Class165(intptr_0, int_0);
-						@class.class165_0 = class2;
+						var class2 = new Class165(_intptr0, int0);
+						@class.Class1650 = class2;
 						@class = class2;
 					}
 				}
 				finally
 				{
-					@class.class165_0 = class165_0;
+					@class.Class1650 = _class1650;
 				}
 			}
 		}
 
 		private void method_8()
 		{
-			class165_1 = null;
-			if (class165_0 != null)
+			_class1651 = null;
+			if (_class1650 != null)
 			{
-				var @class = class165_0;
-				class165_0 = null;
+				var @class = _class1650;
+				_class1650 = null;
 				var class2 = @class;
 				do
 				{
-					var class3 = class2.class165_0;
+					var class3 = class2.Class1650;
 					class2.Dispose();
 					class2 = class3;
 				}
@@ -252,17 +252,17 @@ namespace ns11
 
 		private void method_9()
 		{
-			class165_1 = ((class165_1 == null) ? class165_0 : class165_1.class165_0);
-			class165_1.method_3();
+			_class1651 = ((_class1651 == null) ? _class1650 : _class1651.Class1650);
+			_class1651.method_3();
 		}
 
 		private void method_10()
 		{
-			var @class = class165_0;
-			while (@class.class165_0 != class165_0)
+			var @class = _class1650;
+			while (@class.Class1650 != _class1650)
 			{
 				@class.method_3();
-				@class = @class.class165_0;
+				@class = @class.Class1650;
 			}
 		}
 	}

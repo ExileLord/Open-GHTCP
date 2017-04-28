@@ -1,1 +1,1 @@
-public delegate uint Delegate315(long long_0);
+public delegate uint Delegate315(long long0);

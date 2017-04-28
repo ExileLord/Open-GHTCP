@@ -1,1 +1,1 @@
-public delegate long Delegate323(object object_0);
+public delegate long Delegate323(object object0);

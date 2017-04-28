@@ -2,7 +2,7 @@ using System;
 
 namespace ns22
 {
-	public interface EmptyInterface1 : IDisposable
+	public interface IEmptyInterface1 : IDisposable
 	{
 	}
 }

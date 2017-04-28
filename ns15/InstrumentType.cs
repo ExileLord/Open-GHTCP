@@ -10,13 +10,13 @@ namespace ns15
 		{
 		}
 
-		public InstrumentType(string[] string_0) : this()
+		public InstrumentType(string[] string0) : this()
 		{
-			if (string_0.Length != 0)
+			if (string0.Length != 0)
 			{
-				for (var i = 0; i < string_0.Length; i++)
+				for (var i = 0; i < string0.Length; i++)
 				{
-					var text = string_0[i];
+					var text = string0[i];
 					var array = text.Split(new[]
 					{
 						' ',
@@ -25,21 +25,21 @@ namespace ns15
 						'"',
 						'E'
 					}, StringSplitOptions.RemoveEmptyEntries);
-                    method_5(ChartParser.getNoteFromResolution(array[0]), array[1]);
+                    method_5(ChartParser.GetNoteFromResolution(array[0]), array[1]);
 				}
 			}
 		}
 
-		public void method_5(int int_0, string string_0)
+		public void method_5(int int0, string string0)
 		{
-			if (ContainsKey(int_0))
+			if (ContainsKey(int0))
 			{
-				base[int_0].Add(string_0);
+				base[int0].Add(string0);
 				return;
 			}
-			Add(int_0, new List<string>(new[]
+			Add(int0, new List<string>(new[]
 			{
-				string_0
+				string0
 			}));
 		}
 	}

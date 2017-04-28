@@ -6,101 +6,101 @@ using ns1;
 using ns12;
 using ns16;
 using ns19;
+using ns20;
 using ns8;
 using ns9;
 using SharpAudio.ASC;
-using FSBClass2 = ns20.FSBClass2;
 
 namespace ns15
 {
 	public class Class248 : QbEditor
 	{
-		private readonly zzQbSongObject class323_0;
+		private readonly ZzQbSongObject _class3230;
 
-		public bool bool_0;
+		public bool Bool0;
 
-		public bool bool_1;
+		public bool Bool1;
 
-		private readonly string[] string_0;
+		private readonly string[] _string0;
 
-		private readonly TimeSpan timeSpan_0;
+		private readonly TimeSpan _timeSpan0;
 
-		private readonly TimeSpan timeSpan_1;
+		private readonly TimeSpan _timeSpan1;
 
-		public string string_1;
+		public string String1;
 
-		private readonly string string_2;
+		private readonly string _string2;
 
-		private readonly string string_3;
+		private readonly string _string3;
 
-		public static bool bool_2;
+		public static bool Bool2;
 
-		public static bool bool_3;
+		public static bool Bool3;
 
-		public Class248(zzQbSongObject class323_1, string string_4, string string_5)
+		public Class248(ZzQbSongObject class3231, string string4, string string5)
 		{
-			class323_0 = class323_1;
-			string_1 = class323_0.fileName;
-			string_3 = string_4;
-			string_2 = string_5;
-			var array = class323_0.string_1;
+			_class3230 = class3231;
+			String1 = _class3230.FileName;
+			_string3 = string4;
+			_string2 = string5;
+			var array = _class3230.String1;
 			for (var i = 0; i < array.Length; i++)
 			{
 				var text = array[i];
-				if (text.Equals(class323_0.fileName + "_rhythm"))
+				if (text.Equals(_class3230.FileName + "_rhythm"))
 				{
-					bool_0 = true;
+					Bool0 = true;
 				}
-				else if (text.Contains(class323_0.fileName + "_coop_"))
+				else if (text.Contains(_class3230.FileName + "_coop_"))
 				{
-					bool_1 = true;
+					Bool1 = true;
 				}
 			}
 		}
 
-		public Class248(string string_4, string[] string_5, TimeSpan timeSpan_2, TimeSpan timeSpan_3, string string_6)
+		public Class248(string string4, string[] string5, TimeSpan timeSpan2, TimeSpan timeSpan3, string string6)
 		{
-			string_1 = string_4;
-			string_0 = string_5;
-			timeSpan_0 = timeSpan_2;
-			timeSpan_1 = timeSpan_3;
-			string_2 = string_6;
-			bool_0 = (string_0.Length > 2 && !string_0[2].Equals(""));
-			bool_1 = (string_0.Length == 6);
+			String1 = string4;
+			_string0 = string5;
+			_timeSpan0 = timeSpan2;
+			_timeSpan1 = timeSpan3;
+			_string2 = string6;
+			Bool0 = (_string0.Length > 2 && !_string0[2].Equals(""));
+			Bool1 = (_string0.Length == 6);
 		}
 
 		public override void vmethod_0()
 		{
-			if (class323_0 != null)
+			if (_class3230 != null)
 			{
-				KeyGenerator.WriteAllBytes(string_2 + "music\\" + string_1 + ".dat.xen", class323_0.data);
-				KeyGenerator.smethod_19(string_3, string_2 + "music\\" + string_1 + ".fsb.xen", true);
+				KeyGenerator.WriteAllBytes(_string2 + "music\\" + String1 + ".dat.xen", _class3230.Data);
+				KeyGenerator.smethod_19(_string3, _string2 + "music\\" + String1 + ".fsb.xen", true);
 			}
 			else
 			{
 				var list = new List<string>();
 				var list2 = new List<Stream>();
 				GenericAudioStream stream3;
-				if (string_0.Length == 1)
+				if (_string0.Length == 1)
 				{
 					Stream stream;
-					if (!bool_3 && AudioManager.smethod_1(string_0[0]) == AudioTypeEnum.const_1)
+					if (!Bool3 && AudioManager.smethod_1(_string0[0]) == AudioTypeEnum.Const1)
 					{
-						stream = File.OpenRead(string_0[0]);
+						stream = File.OpenRead(_string0[0]);
 					}
 					else
 					{
 						stream = new Stream27();
-						Stream16.smethod_0(AudioManager.getAudioStream(string_0[0]), stream, 44100, 128);
+						Stream16.smethod_0(AudioManager.GetAudioStream(_string0[0]), stream, 44100, 128);
 					}
 					stream.Position = 0L;
-					list.Add(string_1 + "_song");
+					list.Add(String1 + "_song");
 					list2.Add(stream);
-					list.Add(string_1 + "_guitar");
-					if (bool_2)
+					list.Add(String1 + "_guitar");
+					if (Bool2)
 					{
 						Stream stream2 = new Stream27();
-						Stream16.smethod_1(stream2, AudioManager.smethod_2(string_0[0]), 128);
+						Stream16.smethod_1(stream2, AudioManager.smethod_2(_string0[0]), 128);
 						list2.Add(stream2);
 					}
 					else
@@ -120,24 +120,24 @@ namespace ns15
 						"_coop_guitar",
 						"_coop_rhythm"
 					};
-					for (var i = 0; i < string_0.Length; i++)
+					for (var i = 0; i < _string0.Length; i++)
 					{
-						if (string_0[i] != null && !string_0[i].Equals("") && File.Exists(string_0[i]))
+						if (_string0[i] != null && !_string0[i].Equals("") && File.Exists(_string0[i]))
 						{
 							Stream stream4;
-							if (!bool_3 && AudioManager.smethod_1(string_0[i]) == AudioTypeEnum.const_1)
+							if (!Bool3 && AudioManager.smethod_1(_string0[i]) == AudioTypeEnum.Const1)
 							{
-								stream4 = File.OpenRead(string_0[i]);
+								stream4 = File.OpenRead(_string0[i]);
 							}
 							else
 							{
 								stream4 = new Stream27();
-								Stream16.smethod_0(AudioManager.getAudioStream(string_0[i]), stream4, 44100, 128);
+								Stream16.smethod_0(AudioManager.GetAudioStream(_string0[i]), stream4, 44100, 128);
 							}
 							stream4.Position = 0L;
-							list.Add(string_1 + array[i]);
+							list.Add(String1 + array[i]);
 							list2.Add(stream4);
-							if ((string_0.Length == 6) ? (i >= 3) : (i < 3))
+							if ((_string0.Length == 6) ? (i >= 3) : (i < 3))
 							{
 								list3.Add(AudioManager.smethod_5(stream4));
 							}
@@ -145,7 +145,7 @@ namespace ns15
 					}
 					stream3 = new Stream2(list3.ToArray());
 					var num = 0f;
-					var stream5 = new Stream3(stream3, timeSpan_0, timeSpan_1);
+					var stream5 = new Stream3(stream3, _timeSpan0, _timeSpan1);
 					var array2 = stream5.vmethod_5(100);
 					while (array2 != null && array2.Length > 0)
 					{
@@ -166,7 +166,7 @@ namespace ns15
 						}
 						array2 = stream5.vmethod_5(100);
 					}
-					(stream3 as Stream2).method_0(new Interface5[]
+					(stream3 as Stream2).method_0(new INterface5[]
 					{
 						new Class174(3, 1f / num)
 					});
@@ -174,32 +174,32 @@ namespace ns15
 				var waveFormat = stream3.vmethod_0();
 				var t = new TimeSpan(0, 0, 1);
 				Stream stream6 = new Stream27();
-				Stream16.smethod_0(new Stream2(new Stream3(stream3, timeSpan_0, timeSpan_1), new Interface5[]
+				Stream16.smethod_0(new Stream2(new Stream3(stream3, _timeSpan0, _timeSpan1), new INterface5[]
 				{
-					new Class173(Class173.Enum26.const_0, new[]
+					new Class173(Class173.Enum26.Const0, new[]
 					{
 						new Struct11(0, waveFormat.method_1(t))
 					}),
-					new Class173(Class173.Enum26.const_1, new[]
+					new Class173(Class173.Enum26.Const1, new[]
 					{
-						new Struct11(waveFormat.method_1(timeSpan_1 - timeSpan_0 - t), waveFormat.method_1(timeSpan_1 - timeSpan_0))
+						new Struct11(waveFormat.method_1(_timeSpan1 - _timeSpan0 - t), waveFormat.method_1(_timeSpan1 - _timeSpan0))
 					})
 				}), stream6, 44100, 128);
-				list.Add(string_1 + "_preview");
+				list.Add(String1 + "_preview");
 				list2.Add(stream6);
-				new zzQbSongObject((int)FSBClass2.smethod_0(string_2 + "music\\" + string_1 + ".fsb.xen", list2.ToArray()), list.ToArray()).method_2(string_2 + "music\\" + string_1 + ".dat.xen");
+				new ZzQbSongObject((int)FsbClass2.smethod_0(_string2 + "music\\" + String1 + ".fsb.xen", list2.ToArray()), list.ToArray()).method_2(_string2 + "music\\" + String1 + ".dat.xen");
 			}
 			GC.Collect();
 		}
 
 		public override string ToString()
 		{
-			return "Create Music Track: " + string_1;
+			return "Create Music Track: " + String1;
 		}
 
 		public override bool Equals(QbEditor other)
 		{
-			return other is Class248 && (other as Class248).string_1 == string_1;
+			return other is Class248 && (other as Class248).String1 == String1;
 		}
 	}
 }

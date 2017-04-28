@@ -1,3 +1,3 @@
 using System.Drawing;
 
-public delegate void Delegate355(object object_0, Point point_0);
+public delegate void Delegate355(object object0, Point point0);

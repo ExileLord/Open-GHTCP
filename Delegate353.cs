@@ -1,1 +1,1 @@
-public delegate void Delegate353(object object_0, ushort ushort_0);
+public delegate void Delegate353(object object0, ushort ushort0);

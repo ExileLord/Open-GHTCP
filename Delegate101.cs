@@ -1,3 +1,3 @@
 using System;
 
-public delegate DateTime Delegate101(object object_0, IFormatProvider iformatProvider_0);
+public delegate DateTime Delegate101(object object0, IFormatProvider iformatProvider0);

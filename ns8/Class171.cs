@@ -6,6 +6,6 @@ namespace ns8
 	[CompilerGenerated]
 	public class Class171
 	{
-		public static Dictionary<string, int> dictionary_0;
+		public static Dictionary<string, int> Dictionary0;
 	}
 }

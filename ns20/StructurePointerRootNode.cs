@@ -10,25 +10,25 @@ namespace ns20
 			vmethod_0();
 		}
 
-		public StructurePointerRootNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
+		public StructurePointerRootNode(string string0) : this(QbSongClass1.AddKeyToDictionary(string0))
 		{
 		}
 
-		public StructurePointerRootNode(int int_2)
+		public StructurePointerRootNode(int int2)
 		{
-			int_0 = int_2;
+			Int0 = int2;
 			vmethod_0();
 		}
 
-		public StructurePointerRootNode(int int_2, string string_0, StructureHeaderNode class286_0) : this(int_2, QbSongClass1.AddKeyToDictionary(string_0), class286_0)
+		public StructurePointerRootNode(int int2, string string0, StructureHeaderNode class2860) : this(int2, QbSongClass1.AddKeyToDictionary(string0), class2860)
 		{
 		}
 
-		public StructurePointerRootNode(int int_2, int int_3, StructureHeaderNode class286_0)
+		public StructurePointerRootNode(int int2, int int3, StructureHeaderNode class2860)
 		{
-			int_0 = int_2;
-			int_1 = int_3;
-			Nodes.Add(class286_0);
+			Int0 = int2;
+			Int1 = int3;
+			Nodes.Add(class2860);
 			vmethod_0();
 		}
 
@@ -46,14 +46,14 @@ namespace ns20
 			return null;
 		}
 
-		public void method_8(StructureHeaderNode class286_0)
+		public void method_8(StructureHeaderNode class2860)
 		{
 			if (Nodes.Count != 0)
 			{
-				Nodes[0] = class286_0;
+				Nodes[0] = class2860;
 				return;
 			}
-			Nodes.Add(class286_0);
+			Nodes.Add(class2860);
 		}
 
 		public override string GetNodeText()

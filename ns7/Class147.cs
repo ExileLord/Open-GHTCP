@@ -2,35 +2,35 @@ namespace ns7
 {
 	public class Class147
 	{
-		public long long_0;
+		public long Long0;
 
-		public byte byte_0;
+		public byte Byte0;
 
-		public byte[] byte_1 = new byte[13];
+		public byte[] Byte1 = new byte[13];
 
-		public int int_0;
+		public int Int0;
 
-		public int int_1;
+		public int Int1;
 
-		public byte byte_2;
+		public byte Byte2;
 
-		public Class148[] class148_0;
+		public Class148[] Class1480;
 
-		public Class147(Class144 class144_0)
+		public Class147(Class144 class1440)
 		{
-			long_0 = class144_0.vmethod_13(64);
-			byte_0 = (byte)class144_0.vmethod_10(8);
-			class144_0.vmethod_15(byte_1, 12);
-			int_0 = class144_0.vmethod_10(1);
-			int_1 = class144_0.vmethod_10(1);
-			class144_0.vmethod_5(110);
-			byte_2 = (byte)class144_0.vmethod_10(8);
-			if (byte_2 > 0)
+			Long0 = class1440.vmethod_13(64);
+			Byte0 = (byte)class1440.vmethod_10(8);
+			class1440.vmethod_15(Byte1, 12);
+			Int0 = class1440.vmethod_10(1);
+			Int1 = class1440.vmethod_10(1);
+			class1440.vmethod_5(110);
+			Byte2 = (byte)class1440.vmethod_10(8);
+			if (Byte2 > 0)
 			{
-				class148_0 = new Class148[byte_2];
-				for (var i = 0; i < (int)byte_2; i++)
+				Class1480 = new Class148[Byte2];
+				for (var i = 0; i < (int)Byte2; i++)
 				{
-					class148_0[i] = new Class148(class144_0);
+					Class1480[i] = new Class148(class1440);
 				}
 			}
 		}

@@ -37,9 +37,9 @@ namespace ns14
 			}
 		}
 
-		public Class210(byte[] byte_0)
+		public Class210(byte[] byte0)
 		{
-			method_1(byte_0);
+			method_1(byte0);
 		}
 
 		public byte[] TransformFinalBlock(byte[] inputBuffer, int inputOffset, int inputCount)

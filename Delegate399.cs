@@ -1,3 +1,3 @@
 using System;
 
-public delegate object[] Delegate399(object object_0, Type type_0, bool bool_0);
+public delegate object[] Delegate399(object object0, Type type0, bool bool0);

@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate void Delegate159(object object_0, ToolStripItemDisplayStyle toolStripItemDisplayStyle_0);
+public delegate void Delegate159(object object0, ToolStripItemDisplayStyle toolStripItemDisplayStyle0);

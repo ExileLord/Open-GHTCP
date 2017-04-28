@@ -1,1 +1,1 @@
-public delegate string Delegate430(object object_0, int int_0, int int_1);
+public delegate string Delegate430(object object0, int int0, int int1);

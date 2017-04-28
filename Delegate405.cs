@@ -1,1 +1,1 @@
-public delegate char Delegate405(object object_0);
+public delegate char Delegate405(object object0);

@@ -2,31 +2,31 @@ using ns18;
 
 namespace ns20
 {
-	public class FloatStructureNode : zzUnkNode295
+	public class FloatStructureNode : ZzUnkNode295
 	{
 		public FloatStructureNode()
 		{
 			vmethod_0();
 		}
 
-		public FloatStructureNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
+		public FloatStructureNode(string string0) : this(QbSongClass1.AddKeyToDictionary(string0))
 		{
 		}
 
-		public FloatStructureNode(int int_1)
+		public FloatStructureNode(int int1)
 		{
-			int_0 = int_1;
+			Int0 = int1;
 			vmethod_0();
 		}
 
-		public FloatStructureNode(string string_0, float float_0) : this(QbSongClass1.AddKeyToDictionary(string_0), float_0)
+		public FloatStructureNode(string string0, float float0) : this(QbSongClass1.AddKeyToDictionary(string0), float0)
 		{
 		}
 
-		public FloatStructureNode(int int_1, float float_0)
+		public FloatStructureNode(int int1, float float0)
 		{
-			int_0 = int_1;
-			Nodes.Add(new FloatValueNode(float_0));
+			Int0 = int1;
+			Nodes.Add(new FloatValueNode(float0));
 			vmethod_0();
 		}
 
@@ -39,7 +39,7 @@ namespace ns20
 		{
 			if (Nodes.Count != 0)
 			{
-				return ((FloatValueNode)FirstNode).float_0;
+				return ((FloatValueNode)FirstNode).Float0;
 			}
 			return 0f;
 		}

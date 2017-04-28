@@ -2,214 +2,214 @@ namespace ns4
 {
 	public class Class103
 	{
-		private readonly char char_0 = ' ';
+		private readonly char _char0 = ' ';
 
-		private readonly char char_1 = ' ';
+		private readonly char _char1 = ' ';
 
-		private readonly char char_2 = ' ';
+		private readonly char _char2 = ' ';
 
-		private readonly int int_0;
+		private readonly int _int0;
 
-		private readonly int int_1;
+		private readonly int _int1;
 
-		private readonly int int_2;
+		private readonly int _int2;
 
-		private readonly int[,] int_3;
+		private readonly int[,] _int3;
 
-		private readonly int int_4;
+		private readonly int _int4;
 
-		public static Class103[] class103_0;
+		public static Class103[] Class1030;
 
-		private static readonly int[,] int_5;
+		private static readonly int[,] Int5;
 
-		private static readonly int[,] int_6;
+		private static readonly int[,] Int6;
 
-		private static readonly int[,] int_7;
+		private static readonly int[,] Int7;
 
-		private static readonly int[,] int_8;
+		private static readonly int[,] Int8;
 
-		private static readonly int[,] int_9;
+		private static readonly int[,] Int9;
 
-		private static readonly int[,] int_10;
+		private static readonly int[,] Int10;
 
-		private static readonly int[,] int_11;
+		private static readonly int[,] Int11;
 
-		private static readonly int[,] int_12;
+		private static readonly int[,] Int12;
 
-		private static readonly int[,] int_13;
+		private static readonly int[,] Int13;
 
-		private static readonly int[,] int_14;
+		private static readonly int[,] Int14;
 
-		private static readonly int[,] int_15;
+		private static readonly int[,] Int15;
 
-		private static readonly int[,] int_16;
+		private static readonly int[,] Int16;
 
-		private static readonly int[,] int_17;
+		private static readonly int[,] Int17;
 
-		private static readonly int[,] int_18;
+		private static readonly int[,] Int18;
 
-		private static readonly int[,] int_19;
+		private static readonly int[,] Int19;
 
-		private static readonly int[,] int_20;
+		private static readonly int[,] Int20;
 
-		private static readonly int[,] int_21;
+		private static readonly int[,] Int21;
 
-		private static readonly int[,] int_22;
+		private static readonly int[,] Int22;
 
-		private static readonly int[,] int_23;
+		private static readonly int[,] Int23;
 
-		private static readonly int[,] int_24;
+		private static readonly int[,] Int24;
 
-		private Class103(string string_0, int int_25, int int_26, int int_27, int[,] int_28, int int_29)
+		private Class103(string string0, int int25, int int26, int int27, int[,] int28, int int29)
 		{
-			char_0 = string_0[0];
-			char_1 = string_0[1];
-			char_2 = string_0[2];
-			int_0 = int_25;
-			int_1 = int_26;
-			int_2 = int_27;
-			int_3 = int_28;
-			int_4 = int_29;
+			_char0 = string0[0];
+			_char1 = string0[1];
+			_char2 = string0[2];
+			_int0 = int25;
+			_int1 = int26;
+			_int2 = int27;
+			_int3 = int28;
+			_int4 = int29;
 		}
 
 		public static void smethod_0()
 		{
-			if (class103_0 != null)
+			if (Class1030 != null)
 			{
 				return;
 			}
-			class103_0 = new Class103[34];
-			class103_0[0] = new Class103("0  ", 0, 0, 0, int_5, 0);
-			class103_0[1] = new Class103("1  ", 2, 2, 0, int_6, 7);
-			class103_0[2] = new Class103("2  ", 3, 3, 0, int_7, 17);
-			class103_0[3] = new Class103("3  ", 3, 3, 0, int_8, 17);
-			class103_0[4] = new Class103("4  ", 0, 0, 0, int_9, 0);
-			class103_0[5] = new Class103("5  ", 4, 4, 0, int_10, 31);
-			class103_0[6] = new Class103("6  ", 4, 4, 0, int_11, 31);
-			class103_0[7] = new Class103("7  ", 6, 6, 0, int_12, 71);
-			class103_0[8] = new Class103("8  ", 6, 6, 0, int_13, 71);
-			class103_0[9] = new Class103("9  ", 6, 6, 0, int_14, 71);
-			class103_0[10] = new Class103("10 ", 8, 8, 0, int_15, 127);
-			class103_0[11] = new Class103("11 ", 8, 8, 0, int_16, 127);
-			class103_0[12] = new Class103("12 ", 8, 8, 0, int_17, 127);
-			class103_0[13] = new Class103("13 ", 16, 16, 0, int_18, 511);
-			class103_0[14] = new Class103("14 ", 0, 0, 0, int_19, 0);
-			class103_0[15] = new Class103("15 ", 16, 16, 0, int_20, 511);
-			class103_0[16] = new Class103("16 ", 16, 16, 1, int_21, 511);
-			class103_0[17] = new Class103("17 ", 16, 16, 2, int_21, 511);
-			class103_0[18] = new Class103("18 ", 16, 16, 3, int_21, 511);
-			class103_0[19] = new Class103("19 ", 16, 16, 4, int_21, 511);
-			class103_0[20] = new Class103("20 ", 16, 16, 6, int_21, 511);
-			class103_0[21] = new Class103("21 ", 16, 16, 8, int_21, 511);
-			class103_0[22] = new Class103("22 ", 16, 16, 10, int_21, 511);
-			class103_0[23] = new Class103("23 ", 16, 16, 13, int_21, 511);
-			class103_0[24] = new Class103("24 ", 16, 16, 4, int_22, 512);
-			class103_0[25] = new Class103("25 ", 16, 16, 5, int_22, 512);
-			class103_0[26] = new Class103("26 ", 16, 16, 6, int_22, 512);
-			class103_0[27] = new Class103("27 ", 16, 16, 7, int_22, 512);
-			class103_0[28] = new Class103("28 ", 16, 16, 8, int_22, 512);
-			class103_0[29] = new Class103("29 ", 16, 16, 9, int_22, 512);
-			class103_0[30] = new Class103("30 ", 16, 16, 11, int_22, 512);
-			class103_0[31] = new Class103("31 ", 16, 16, 13, int_22, 512);
-			class103_0[32] = new Class103("32 ", 1, 16, 0, int_23, 31);
-			class103_0[33] = new Class103("33 ", 1, 16, 0, int_24, 31);
+			Class1030 = new Class103[34];
+			Class1030[0] = new Class103("0  ", 0, 0, 0, Int5, 0);
+			Class1030[1] = new Class103("1  ", 2, 2, 0, Int6, 7);
+			Class1030[2] = new Class103("2  ", 3, 3, 0, Int7, 17);
+			Class1030[3] = new Class103("3  ", 3, 3, 0, Int8, 17);
+			Class1030[4] = new Class103("4  ", 0, 0, 0, Int9, 0);
+			Class1030[5] = new Class103("5  ", 4, 4, 0, Int10, 31);
+			Class1030[6] = new Class103("6  ", 4, 4, 0, Int11, 31);
+			Class1030[7] = new Class103("7  ", 6, 6, 0, Int12, 71);
+			Class1030[8] = new Class103("8  ", 6, 6, 0, Int13, 71);
+			Class1030[9] = new Class103("9  ", 6, 6, 0, Int14, 71);
+			Class1030[10] = new Class103("10 ", 8, 8, 0, Int15, 127);
+			Class1030[11] = new Class103("11 ", 8, 8, 0, Int16, 127);
+			Class1030[12] = new Class103("12 ", 8, 8, 0, Int17, 127);
+			Class1030[13] = new Class103("13 ", 16, 16, 0, Int18, 511);
+			Class1030[14] = new Class103("14 ", 0, 0, 0, Int19, 0);
+			Class1030[15] = new Class103("15 ", 16, 16, 0, Int20, 511);
+			Class1030[16] = new Class103("16 ", 16, 16, 1, Int21, 511);
+			Class1030[17] = new Class103("17 ", 16, 16, 2, Int21, 511);
+			Class1030[18] = new Class103("18 ", 16, 16, 3, Int21, 511);
+			Class1030[19] = new Class103("19 ", 16, 16, 4, Int21, 511);
+			Class1030[20] = new Class103("20 ", 16, 16, 6, Int21, 511);
+			Class1030[21] = new Class103("21 ", 16, 16, 8, Int21, 511);
+			Class1030[22] = new Class103("22 ", 16, 16, 10, Int21, 511);
+			Class1030[23] = new Class103("23 ", 16, 16, 13, Int21, 511);
+			Class1030[24] = new Class103("24 ", 16, 16, 4, Int22, 512);
+			Class1030[25] = new Class103("25 ", 16, 16, 5, Int22, 512);
+			Class1030[26] = new Class103("26 ", 16, 16, 6, Int22, 512);
+			Class1030[27] = new Class103("27 ", 16, 16, 7, Int22, 512);
+			Class1030[28] = new Class103("28 ", 16, 16, 8, Int22, 512);
+			Class1030[29] = new Class103("29 ", 16, 16, 9, Int22, 512);
+			Class1030[30] = new Class103("30 ", 16, 16, 11, Int22, 512);
+			Class1030[31] = new Class103("31 ", 16, 16, 13, Int22, 512);
+			Class1030[32] = new Class103("32 ", 1, 16, 0, Int23, 31);
+			Class1030[33] = new Class103("33 ", 1, 16, 0, Int24, 31);
 		}
 
-		public static int smethod_1(Class103 class103_1, int[] int_25, int[] int_26, int[] int_27, int[] int_28, Class102 class102_0)
+		public static int smethod_1(Class103 class1031, int[] int25, int[] int26, int[] int27, int[] int28, Class102 class1020)
 		{
 			var num = 0;
 			var result = 1;
 			var num2 = -2147483648;
-			if (class103_1.int_3 == null)
+			if (class1031._int3 == null)
 			{
 				return 2;
 			}
-			if (class103_1.int_4 == 0)
+			if (class1031._int4 == 0)
 			{
-				var arg_26_1 = 0;
-				int_26[0] = 0;
-				int_25[arg_26_1] = 0;
+				var arg261 = 0;
+				int26[0] = 0;
+				int25[arg261] = 0;
 				return 0;
 			}
-            var ILE4 = false;
+            var ile4 = false;
             for (; ; )
             { 
-                while (ILE4 || class103_1.int_3[num, 0] != 0)
+                while (ile4 || class1031._int3[num, 0] != 0)
                 {
-                    if (!ILE4)
+                    if (!ile4)
                     {
-                        if (class102_0.method_2() != 0)
+                        if (class1020.method_2() != 0)
                         {
-                            while (class103_1.int_3[num, 1] >= 250)
+                            while (class1031._int3[num, 1] >= 250)
                             {
-                                num += class103_1.int_3[num, 1];
+                                num += class1031._int3[num, 1];
                             }
-                            num += class103_1.int_3[num, 1];
+                            num += class1031._int3[num, 1];
                         }
                         else
                         {
-                            while (class103_1.int_3[num, 0] >= 250)
+                            while (class1031._int3[num, 0] >= 250)
                             {
-                                num += class103_1.int_3[num, 0];
+                                num += class1031._int3[num, 0];
                             }
-                            num += class103_1.int_3[num, 0];
+                            num += class1031._int3[num, 0];
                         }
 
                         num2 >>= 1;
                     }
-                    if (ILE4 || num2 == 0 && num >= 0)
+                    if (ile4 || num2 == 0 && num >= 0)
                     {
                         //IL_E4:
-                        if (class103_1.char_0 == '3' && (class103_1.char_1 == '2' || class103_1.char_1 == '3'))
+                        if (class1031._char0 == '3' && (class1031._char1 == '2' || class1031._char1 == '3'))
                         {
-                            int_27[0] = (int_26[0] >> 3 & 1);
-                            int_28[0] = (int_26[0] >> 2 & 1);
-                            int_25[0] = (int_26[0] >> 1 & 1);
-                            int_26[0] = (int_26[0] & 1);
-                            if (int_27[0] != 0 && class102_0.method_2() != 0)
+                            int27[0] = (int26[0] >> 3 & 1);
+                            int28[0] = (int26[0] >> 2 & 1);
+                            int25[0] = (int26[0] >> 1 & 1);
+                            int26[0] = (int26[0] & 1);
+                            if (int27[0] != 0 && class1020.method_2() != 0)
                             {
-                                int_27[0] = -int_27[0];
+                                int27[0] = -int27[0];
                             }
-                            if (int_28[0] != 0 && class102_0.method_2() != 0)
+                            if (int28[0] != 0 && class1020.method_2() != 0)
                             {
-                                int_28[0] = -int_28[0];
+                                int28[0] = -int28[0];
                             }
-                            if (int_25[0] != 0 && class102_0.method_2() != 0)
+                            if (int25[0] != 0 && class1020.method_2() != 0)
                             {
-                                int_25[0] = -int_25[0];
+                                int25[0] = -int25[0];
                             }
-                            if (int_26[0] != 0 && class102_0.method_2() != 0)
+                            if (int26[0] != 0 && class1020.method_2() != 0)
                             {
-                                int_26[0] = -int_26[0];
+                                int26[0] = -int26[0];
                             }
                         }
                         else
                         {
-                            if (class103_1.int_2 != 0 && class103_1.int_0 - 1 == int_25[0])
+                            if (class1031._int2 != 0 && class1031._int0 - 1 == int25[0])
                             {
-                                int_25[0] += class102_0.method_1(class103_1.int_2);
+                                int25[0] += class1020.method_1(class1031._int2);
                             }
-                            if (int_25[0] != 0 && class102_0.method_2() != 0)
+                            if (int25[0] != 0 && class1020.method_2() != 0)
                             {
-                                int_25[0] = -int_25[0];
+                                int25[0] = -int25[0];
                             }
-                            if (class103_1.int_2 != 0 && class103_1.int_1 - 1 == int_26[0])
+                            if (class1031._int2 != 0 && class1031._int1 - 1 == int26[0])
                             {
-                                int_26[0] += class102_0.method_1(class103_1.int_2);
+                                int26[0] += class1020.method_1(class1031._int2);
                             }
-                            if (int_26[0] != 0 && class102_0.method_2() != 0)
+                            if (int26[0] != 0 && class1020.method_2() != 0)
                             {
-                                int_26[0] = -int_26[0];
+                                int26[0] = -int26[0];
                             }
                         }
                         return result;
                     }
                 }
-                var num3 = class103_1.int_3[num, 1];
-                int_25[0] = num3 >> 4;
-                int_26[0] = (class103_1.int_3[num, 1] & 15);
+                var num3 = class1031._int3[num, 1];
+                int25[0] = num3 >> 4;
+                int26[0] = (class1031._int3[num, 1] & 15);
                 result = 0;
-                ILE4 = true;
+                ile4 = true;
             }
 			//goto IL_E4;
 		}
@@ -218,8 +218,8 @@ namespace ns4
 		{
 			// Note: this type is marked as 'beforefieldinit'.
 			var array = new int[1, 2];
-			int_5 = array;
-			int_6 = new[,]
+			Int5 = array;
+			Int6 = new[,]
 			{
 				{
 					2,
@@ -250,7 +250,7 @@ namespace ns4
 					17
 				}
 			};
-			int_7 = new[,]
+			Int7 = new[,]
 			{
 				{
 					2,
@@ -321,7 +321,7 @@ namespace ns4
 					34
 				}
 			};
-			int_8 = new[,]
+			Int8 = new[,]
 			{
 				{
 					4,
@@ -393,8 +393,8 @@ namespace ns4
 				}
 			};
 			var array2 = new int[1, 2];
-			int_9 = array2;
-			int_10 = new[,]
+			Int9 = array2;
+			Int10 = new[,]
 			{
 				{
 					2,
@@ -521,7 +521,7 @@ namespace ns4
 					51
 				}
 			};
-			int_11 = new[,]
+			Int11 = new[,]
 			{
 				{
 					6,
@@ -648,7 +648,7 @@ namespace ns4
 					51
 				}
 			};
-			int_12 = new[,]
+			Int12 = new[,]
 			{
 				{
 					2,
@@ -935,7 +935,7 @@ namespace ns4
 					85
 				}
 			};
-			int_13 = new[,]
+			Int13 = new[,]
 			{
 				{
 					6,
@@ -1222,7 +1222,7 @@ namespace ns4
 					85
 				}
 			};
-			int_14 = new[,]
+			Int14 = new[,]
 			{
 				{
 					8,
@@ -1509,7 +1509,7 @@ namespace ns4
 					85
 				}
 			};
-			int_15 = new[,]
+			Int15 = new[,]
 			{
 				{
 					2,
@@ -2020,7 +2020,7 @@ namespace ns4
 					119
 				}
 			};
-			int_16 = new[,]
+			Int16 = new[,]
 			{
 				{
 					6,
@@ -2531,7 +2531,7 @@ namespace ns4
 					119
 				}
 			};
-			int_17 = new[,]
+			Int17 = new[,]
 			{
 				{
 					12,
@@ -3042,7 +3042,7 @@ namespace ns4
 					119
 				}
 			};
-			int_18 = new[,]
+			Int18 = new[,]
 			{
 				{
 					2,
@@ -5090,8 +5090,8 @@ namespace ns4
 				}
 			};
 			var array3 = new int[1, 2];
-			int_19 = array3;
-			int_20 = new[,]
+			Int19 = array3;
+			Int20 = new[,]
 			{
 				{
 					16,
@@ -7138,7 +7138,7 @@ namespace ns4
 					255
 				}
 			};
-			int_21 = new[,]
+			Int21 = new[,]
 			{
 				{
 					2,
@@ -9185,7 +9185,7 @@ namespace ns4
 					239
 				}
 			};
-			int_22 = new[,]
+			Int22 = new[,]
 			{
 				{
 					60,
@@ -11236,7 +11236,7 @@ namespace ns4
 					239
 				}
 			};
-			int_23 = new[,]
+			Int23 = new[,]
 			{
 				{
 					2,
@@ -11363,7 +11363,7 @@ namespace ns4
 					11
 				}
 			};
-			int_24 = new[,]
+			Int24 = new[,]
 			{
 				{
 					16,

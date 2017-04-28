@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate TableLayoutControlCollection Delegate93(object object_0);
+public delegate TableLayoutControlCollection Delegate93(object object0);

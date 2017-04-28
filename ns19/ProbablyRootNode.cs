@@ -4,46 +4,46 @@ using ns18;
 
 namespace ns19
 {
-	public abstract class ProbablyRootNode : zzUnkNode260
+	public abstract class ProbablyRootNode : ZzUnkNode260
 	{
 		public abstract byte vmethod_16();
 
-		public override void vmethod_13(Stream26 stream26_0)
+		public override void vmethod_13(Stream26 stream260)
 		{
-			int_0 = stream26_0.ReadInt();
-			int_1 = stream26_0.ReadInt();
-			var num = stream26_0.ReadInt();
-			stream26_0.ReadInt();
+			Int0 = stream260.ReadInt();
+			Int1 = stream260.ReadInt();
+			var num = stream260.ReadInt();
+			stream260.ReadInt();
 			if (num != 0)
 			{
-				var @class = vmethod_12(stream26_0.ReadIntAt(num, true));
+				var @class = vmethod_12(stream260.ReadIntAt(num, true));
 				Nodes.Add(@class);
-				@class.method_4(stream26_0);
+				@class.method_4(stream260);
 			}
 		}
 
-		public override void vmethod_14(Stream26 stream26_0)
+		public override void vmethod_14(Stream26 stream260)
 		{
 			var array = new byte[4];
             array[1] = (vmethod_7() ? (byte)32 : (byte)4);
 			array[2] = vmethod_16();
-			stream26_0.WriteByteArray(array, false);
-			stream26_0.WriteInt(int_0);
-			stream26_0.WriteInt(int_1);
-			stream26_0.WriteInt((Nodes.Count != 0) ? ((int)stream26_0.Position + 8) : 0);
-			stream26_0.WriteInt(0);
+			stream260.WriteByteArray(array, false);
+			stream260.WriteInt(Int0);
+			stream260.WriteInt(Int1);
+			stream260.WriteInt((Nodes.Count != 0) ? ((int)stream260.Position + 8) : 0);
+			stream260.WriteInt(0);
 			foreach (AbstractTreeNode1 @class in Nodes)
 			{
-				@class.vmethod_14(stream26_0);
+				@class.vmethod_14(stream260);
 			}
 		}
 
-		public override void vmethod_2(ref int int_2)
+		public override void vmethod_2(ref int int2)
 		{
-			int_2 += 20;
+			int2 += 20;
 			foreach (AbstractTreeNode1 @class in Nodes)
 			{
-				@class.vmethod_2(ref int_2);
+				@class.vmethod_2(ref int2);
 			}
 		}
 

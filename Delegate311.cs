@@ -1,1 +1,1 @@
-public delegate int Delegate311(object object_0, byte[] byte_0, int int_0, int int_1, byte[] byte_1, int int_2);
+public delegate int Delegate311(object object0, byte[] byte0, int int0, int int1, byte[] byte1, int int2);

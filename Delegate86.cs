@@ -1,4 +1,4 @@
 using System;
 using Microsoft.DirectX.DirectSound;
 
-public delegate void Delegate86(object object_0, int int_0, Array array_0, LockFlag lockFlag_0);
+public delegate void Delegate86(object object0, int int0, Array array0, LockFlag lockFlag0);

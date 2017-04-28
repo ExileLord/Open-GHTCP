@@ -13,8 +13,8 @@ namespace ns9
 		{
 		}
 
-		public static Struct93 struct93_0;
+		public static Struct93 Struct930;
 
-		public static Struct93 struct93_1;
+		public static Struct93 Struct931;
 	}
 }

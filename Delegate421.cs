@@ -1,1 +1,1 @@
-public delegate string[] Delegate421(string string_0);
+public delegate string[] Delegate421(string string0);

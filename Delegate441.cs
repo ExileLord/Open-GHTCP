@@ -1,3 +1,3 @@
 using System.IO;
 
-public delegate byte[] Delegate441(object object_0, Stream stream_0);
+public delegate byte[] Delegate441(object object0, Stream stream0);

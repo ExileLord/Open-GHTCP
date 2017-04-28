@@ -4,19 +4,19 @@ namespace ns6
 {
 	public abstract class Class131
 	{
-		public Class140 class140_0;
+		public Class140 Class1400;
 
-		public int int_0;
+		public int Int0;
 
 		public virtual int vmethod_0()
 		{
-			return int_0;
+			return Int0;
 		}
 
-		public Class131(Class140 class140_1, int int_1)
+		public Class131(Class140 class1401, int int1)
 		{
-			class140_0 = class140_1;
-			int_0 = int_1;
+			Class1400 = class1401;
+			Int0 = int1;
 		}
 	}
 }

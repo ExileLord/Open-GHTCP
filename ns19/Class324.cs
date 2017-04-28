@@ -7,55 +7,55 @@ namespace ns19
 {
 	public class Class324
 	{
-		public readonly List<Class324> list_0 = new List<Class324>();
+		public readonly List<Class324> List0 = new List<Class324>();
 
-		public byte byte_0 = 10;
+		public byte Byte0 = 10;
 
-		public int[] int_0 = new int[0];
+		public int[] Int0 = new int[0];
 
-		public object object_0;
+		public object Object0;
 
 		public Class324()
 		{
 		}
 
-		public Class324(int int_1)
+		public Class324(int int1)
 		{
-			int_0 = new[]
+			Int0 = new[]
 			{
-				int_1
+				int1
 			};
 		}
 
-		public Class324(string string_0) : this(File.OpenRead(string_0))
+		public Class324(string string0) : this(File.OpenRead(string0))
 		{
 		}
 
-		public Class324(Stream stream_0)
+		public Class324(Stream stream0)
 		{
-			vmethod_0(new Stream26(stream_0));
+			vmethod_0(new Stream26(stream0));
 		}
 
-		public virtual void vmethod_0(Stream26 stream26_0)
+		public virtual void vmethod_0(Stream26 stream260)
 		{
-			byte_0 = stream26_0.ReadByte2();
-			if (byte_0 != 10)
+			Byte0 = stream260.ReadByte2();
+			if (Byte0 != 10)
 			{
-				throw new Exception(string.Concat("Unknown : ", byte_0, " at position : ", stream26_0.Position));
+				throw new Exception(string.Concat("Unknown : ", Byte0, " at position : ", stream260.Position));
 			}
-			int_0 = new[]
+			Int0 = new[]
 			{
-				stream26_0.ReadInt()
+				stream260.ReadInt()
 			};
-			while (stream26_0.Length > stream26_0.Position)
+			while (stream260.Length > stream260.Position)
 			{
-				int num = stream26_0.ReadByte2();
+				int num = stream260.ReadByte2();
 				if (num == 10)
 				{
-					stream26_0.Position -= 1L;
+					stream260.Position -= 1L;
 					var @class = new Class324();
-					@class.vmethod_0(stream26_0);
-					list_0.Add(@class);
+					@class.vmethod_0(stream260);
+					List0.Add(@class);
 				}
 				else
 				{
@@ -63,34 +63,34 @@ namespace ns19
 					{
 						break;
 					}
-					stream26_0.Position -= 1L;
-					var class2 = new zzStreamClass325();
-					class2.vmethod_0(stream26_0);
-					list_0.Add(class2);
+					stream260.Position -= 1L;
+					var class2 = new ZzStreamClass325();
+					class2.vmethod_0(stream260);
+					List0.Add(class2);
 				}
 			}
 		}
 
-		public virtual void vmethod_1(Stream26 stream26_0)
+		public virtual void vmethod_1(Stream26 stream260)
 		{
-			stream26_0.WriteByte2(10);
-			stream26_0.WriteInt(int_0[0]);
-			foreach (var current in list_0)
+			stream260.WriteByte2(10);
+			stream260.WriteInt(Int0[0]);
+			foreach (var current in List0)
 			{
-				current.vmethod_1(stream26_0);
+				current.vmethod_1(stream260);
 			}
-			stream26_0.WriteByte2(0);
+			stream260.WriteByte2(0);
 		}
 
-		public Class324 method_0(Class324 class324_0)
+		public Class324 method_0(Class324 class3240)
 		{
-			if (class324_0.byte_0 == byte_0 && class324_0.int_0[0] == int_0[0] && (class324_0.object_0 == null || class324_0.object_0 == object_0))
+			if (class3240.Byte0 == Byte0 && class3240.Int0[0] == Int0[0] && (class3240.Object0 == null || class3240.Object0 == Object0))
 			{
 				return this;
 			}
-			foreach (var current in list_0)
+			foreach (var current in List0)
 			{
-				var @class = current.method_0(class324_0);
+				var @class = current.method_0(class3240);
 				if (@class != null)
 				{
 					return @class;
@@ -99,13 +99,13 @@ namespace ns19
 			return null;
 		}
 
-		public void method_1(string string_0)
+		public void method_1(string string0)
 		{
-			using (var stream = new Stream26(File.Create(string_0 + "\\s000.d")))
+			using (var stream = new Stream26(File.Create(string0 + "\\s000.d")))
 			{
 				vmethod_1(stream);
 				stream.WriteByte2(0);
-				using (var stream2 = new Stream26(File.Create(string_0 + "\\toc.dat")))
+				using (var stream2 = new Stream26(File.Create(string0 + "\\toc.dat")))
 				{
 					stream2.WriteInt(0);
 					stream2.WriteByte2(4);

@@ -4,17 +4,17 @@ using ns19;
 
 namespace ns20
 {
-	public class TextArrayNode : AbsTreeNode1_1_<TextValueNode>
+	public class TextArrayNode : AbsTreeNode11<TextValueNode>
 	{
-		public string this[int int_0]
+		public string this[int int0]
 		{
 			get
 			{
-				return ((TextValueNode)Nodes[int_0]).method_2();
+				return ((TextValueNode)Nodes[int0]).method_2();
 			}
 			set
 			{
-				((TextValueNode)Nodes[int_0]).method_3(value);
+				((TextValueNode)Nodes[int0]).method_3(value);
 			}
 		}
 
@@ -28,61 +28,61 @@ namespace ns20
 			return 11;
 		}
 
-		public override void vmethod_13(Stream26 stream26_0)
+		public override void vmethod_13(Stream26 stream260)
 		{
-			var num = stream26_0.ReadInt();
+			var num = stream260.ReadInt();
 			if (num == 0)
 			{
 				return;
 			}
 			if (num > 1)
 			{
-				stream26_0.Position = stream26_0.ReadInt();
+				stream260.Position = stream260.ReadInt();
 			}
 			for (var i = 0; i < num; i++)
 			{
-				Nodes.Add(new TextValueNode(stream26_0.ReadInt(), vmethod_10()));
+				Nodes.Add(new TextValueNode(stream260.ReadInt(), vmethod_10()));
 			}
 		}
 
-		public override void vmethod_14(Stream26 stream26_0)
+		public override void vmethod_14(Stream26 stream260)
 		{
 			vmethod_9(true);
 			var array = new byte[4];
 			array[1] = 1;
 			array[2] = 28;
-			stream26_0.WriteByteArray(array, false);
-			stream26_0.WriteInt(Nodes.Count);
+			stream260.WriteByteArray(array, false);
+			stream260.WriteInt(Nodes.Count);
 			if (Nodes.Count == 0)
 			{
 				return;
 			}
 			if (Nodes.Count > 1)
 			{
-				stream26_0.WriteInt((int)stream26_0.Position + 4);
+				stream260.WriteInt((int)stream260.Position + 4);
 			}
 			foreach (TextValueNode @class in Nodes)
 			{
-				stream26_0.WriteByteArray(@class.vmethod_8());
+				stream260.WriteByteArray(@class.vmethod_8());
 				if (@class.method_2() != null)
 				{
-					vmethod_10()[@class.int_0] = @class.method_2();
+					vmethod_10()[@class.Int0] = @class.method_2();
 				}
 			}
 		}
 
-		public override void vmethod_2(ref int int_0)
+		public override void vmethod_2(ref int int0)
 		{
-			int_0 += 8;
+			int0 += 8;
 			if (Nodes.Count == 0)
 			{
 				return;
 			}
 			if (Nodes.Count > 1)
 			{
-				int_0 += 4;
+				int0 += 4;
 			}
-			int_0 += 4 * Nodes.Count;
+			int0 += 4 * Nodes.Count;
 		}
 
 		public override string GetNodeText()

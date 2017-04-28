@@ -22,11 +22,11 @@ namespace SharpAudio.ADI.OpenAL
 
 		public static readonly int SizeInBytes = Marshal.SizeOf(default(Vector3));
 
-		public Vector3(float float_0, float float_1, float float_2)
+		public Vector3(float float0, float float1, float float2)
 		{
-			X = float_0;
-			Y = float_1;
-			Z = float_2;
+			X = float0;
+			Y = float1;
+			Z = float2;
 		}
 
 		public override string ToString()

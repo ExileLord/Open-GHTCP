@@ -5,11 +5,11 @@ namespace ns7
 {
 	public class Class151
 	{
-		public Class140 class140_0;
+		public Class140 Class1400;
 
-		public Class131[] class131_0;
+		public Class131[] Class1310;
 
-		private short short_0;
+		private short _short0;
 
 		public Class151()
 		{
@@ -18,28 +18,28 @@ namespace ns7
 
 		private void method_0()
 		{
-			class131_0 = new Class131[8];
+			Class1310 = new Class131[8];
 		}
 
 		public virtual short vmethod_0()
 		{
-			return short_0;
+			return _short0;
 		}
 
-		public virtual void vmethod_1(short short_1)
+		public virtual void vmethod_1(short short1)
 		{
-			short_0 = short_1;
+			_short0 = short1;
 		}
 
 		public override string ToString()
 		{
 			var stringBuilder = new StringBuilder();
-			stringBuilder.Append("Frame Header: " + class140_0 + "\n");
-			for (var i = 0; i < class140_0.int_2; i++)
+			stringBuilder.Append("Frame Header: " + Class1400 + "\n");
+			for (var i = 0; i < Class1400.Int2; i++)
 			{
-				stringBuilder.Append("\tFrame Data " + class131_0[i] + "\n");
+				stringBuilder.Append("\tFrame Data " + Class1310[i] + "\n");
 			}
-			stringBuilder.Append("\tFrame Footer: " + short_0);
+			stringBuilder.Append("\tFrame Footer: " + _short0);
 			return stringBuilder.ToString();
 		}
 	}

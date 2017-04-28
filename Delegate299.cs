@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate void Delegate299(object object_0, DragDropEffects dragDropEffects_0);
+public delegate void Delegate299(object object0, DragDropEffects dragDropEffects0);

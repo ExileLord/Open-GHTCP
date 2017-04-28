@@ -5,44 +5,44 @@ using ns8;
 
 namespace ns20
 {
-	public class FSBClass2
+	public class FsbClass2
 	{
-		private static readonly byte[] fsbEncryptionKey = Encoding.ASCII.GetBytes("5atu6w4zaw");
+		private static readonly byte[] FsbEncryptionKey = Encoding.ASCII.GetBytes("5atu6w4zaw");
 
-		public static long smethod_0(string string_0, Stream[] stream_0)
+		public static long smethod_0(string string0, Stream[] stream0)
 		{
 			long length;
-			using (var @class = new FSBClass1())
+			using (var @class = new FsbClass1())
 			{
-				@class.byte_0 = fsbEncryptionKey;
-				@class.enum20_0 = FSBEnum1.const_3;
-				@class.enum21_0 = FSBFlags1.flag_0;
-				for (var i = 0; i < stream_0.Length; i++)
+				@class.Byte0 = FsbEncryptionKey;
+				@class.Enum200 = FsbEnum1.Const3;
+				@class.Enum210 = FsbFlags1.Flag0;
+				for (var i = 0; i < stream0.Length; i++)
 				{
-					var stream = stream_0[i];
+					var stream = stream0[i];
 					stream.Position = 0L;
 					var class2 = AudioManager.smethod_3(stream);
 					var class3 = new Class168();
 					class3.FileName = i + ".mp3";
-					class3.enum22_0 = (((class2.method_0() == 1) ? FSBFlags2.flag_6 : FSBFlags2.flag_7) | FSBFlags2.flag_10);
-					class3.int_0 = class2.method_3();
-					class3.ushort_0 = 255;
-					class3.short_0 = 0;
-					class3.ushort_1 = 255;
-					class3.uint_3 = (uint)class2.method_0();
-					class3.uint_0 = class2.uint_0;
-					class3.uint_1 = 0u;
-					class3.uint_2 = class3.uint_0 - 1u;
-					class3.float_2 = 1f;
-					class3.float_3 = 10000f;
-					class3.int_1 = 0;
-					class3.short_1 = 0;
-					class3.short_2 = -1;
-					class3.stream_1 = stream;
+					class3.Enum220 = (((class2.method_0() == 1) ? FsbFlags2.Flag6 : FsbFlags2.Flag7) | FsbFlags2.Flag10);
+					class3.Int0 = class2.method_3();
+					class3.Ushort0 = 255;
+					class3.Short0 = 0;
+					class3.Ushort1 = 255;
+					class3.Uint3 = (uint)class2.method_0();
+					class3.Uint0 = class2.Uint0;
+					class3.Uint1 = 0u;
+					class3.Uint2 = class3.Uint0 - 1u;
+					class3.Float2 = 1f;
+					class3.Float3 = 10000f;
+					class3.Int1 = 0;
+					class3.Short1 = 0;
+					class3.Short2 = -1;
+					class3.Stream1 = stream;
 					@class.method_33().Add(class3);
 				}
-				@class.method_16(string_0);
-				length = new FileInfo(string_0).Length;
+				@class.method_16(string0);
+				length = new FileInfo(string0).Length;
 			}
 			return length;
 		}

@@ -1,6 +1,6 @@
 namespace ns12
 {
-	public interface Interface8
+	public interface INterface8
 	{
 	}
 }

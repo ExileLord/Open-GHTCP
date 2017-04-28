@@ -7,37 +7,37 @@ using ns22;
 
 namespace ns21
 {
-	public abstract class Class268 : zzUnkNode260
+	public abstract class Class268 : ZzUnkNode260
 	{
 		public abstract byte vmethod_16();
 
-		public override void vmethod_13(Stream26 stream26_0)
+		public override void vmethod_13(Stream26 stream260)
 		{
-			int_0 = stream26_0.ReadInt();
-			int_1 = stream26_0.ReadInt();
+			Int0 = stream260.ReadInt();
+			Int1 = stream260.ReadInt();
 			if (this is FloatRootNode)
 			{
-				Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
+				Nodes.Add(new FloatValueNode(stream260.ReadFloat()));
 			}
 			else if (this is IntegerRootNode)
 			{
-				Nodes.Add(new IntegerValueNode(stream26_0.ReadInt()));
+				Nodes.Add(new IntegerValueNode(stream260.ReadInt()));
 			}
 			else if (this is TagRootNode || this is FileTagRootNode)
 			{
-				Nodes.Add(new TagValueNode(stream26_0.ReadInt()));
+				Nodes.Add(new TagValueNode(stream260.ReadInt()));
 			}
-			stream26_0.ReadInt();
+			stream260.ReadInt();
 		}
 
-		public override void vmethod_14(Stream26 stream26_0)
+		public override void vmethod_14(Stream26 stream260)
 		{
 			var array = new byte[4];
             array[1] = (vmethod_7() ? (byte)32 : (byte)4);
 			array[2] = vmethod_16();
-			stream26_0.WriteByteArray(array, false);
-			stream26_0.WriteInt(int_0);
-			stream26_0.WriteInt(int_1);
+			stream260.WriteByteArray(array, false);
+			stream260.WriteInt(Int0);
+			stream260.WriteInt(Int1);
 			if (Nodes.Count != 0)
 			{
 				var enumerator = Nodes.GetEnumerator();
@@ -46,7 +46,7 @@ namespace ns21
 					while (enumerator.MoveNext())
 					{
 						var @class = (AbstractTreeNode2)enumerator.Current;
-						stream26_0.WriteByteArray(@class.vmethod_8());
+						stream260.WriteByteArray(@class.vmethod_8());
 					}
 					goto IL_97;
 				}
@@ -59,14 +59,14 @@ namespace ns21
 					}
 				}
 			}
-			stream26_0.WriteInt(0);
+			stream260.WriteInt(0);
 			IL_97:
-			stream26_0.WriteInt(0);
+			stream260.WriteInt(0);
 		}
 
-		public override void vmethod_2(ref int int_2)
+		public override void vmethod_2(ref int int2)
 		{
-			int_2 += 20;
+			int2 += 20;
 		}
 	}
 }

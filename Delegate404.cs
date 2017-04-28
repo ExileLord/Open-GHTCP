@@ -1,1 +1,1 @@
-public delegate ushort Delegate404(object object_0);
+public delegate ushort Delegate404(object object0);

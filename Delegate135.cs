@@ -1,1 +1,1 @@
-public delegate void Delegate135(object object_0, long long_0);
+public delegate void Delegate135(object object0, long long0);

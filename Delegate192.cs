@@ -1,3 +1,3 @@
 using System;
 
-public delegate short Delegate192(object object_0, IFormatProvider iformatProvider_0);
+public delegate short Delegate192(object object0, IFormatProvider iformatProvider0);

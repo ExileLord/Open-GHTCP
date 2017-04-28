@@ -1,6 +1,6 @@
 namespace ns9
 {
-	public interface Interface14
+	public interface INterface14
 	{
 		int imethod_0();
 	}

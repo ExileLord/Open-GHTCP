@@ -1,3 +1,3 @@
 using System.Runtime.InteropServices;
 
-public delegate GCHandle Delegate212(object object_0, GCHandleType gchandleType_0);
+public delegate GCHandle Delegate212(object object0, GCHandleType gchandleType0);

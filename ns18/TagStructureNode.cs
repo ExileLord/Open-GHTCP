@@ -3,41 +3,41 @@ using ns21;
 
 namespace ns18
 {
-	public class TagStructureNode : zzUnkNode295
+	public class TagStructureNode : ZzUnkNode295
 	{
 		public TagStructureNode()
 		{
 			vmethod_0();
 		}
 
-		public TagStructureNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
+		public TagStructureNode(string string0) : this(QbSongClass1.AddKeyToDictionary(string0))
 		{
 		}
 
-		public TagStructureNode(int int_1)
+		public TagStructureNode(int int1)
 		{
-			int_0 = int_1;
+			Int0 = int1;
 			vmethod_0();
 		}
 
-		public TagStructureNode(int int_1, string string_0)
+		public TagStructureNode(int int1, string string0)
 		{
-			int_0 = int_1;
-			Nodes.Add(new TagValueNode(string_0));
+			Int0 = int1;
+			Nodes.Add(new TagValueNode(string0));
 			vmethod_0();
 		}
 
-		public TagStructureNode(string string_0, string string_1)
+		public TagStructureNode(string string0, string string1)
 		{
-			int_0 = QbSongClass1.AddKeyToDictionary(string_0);
-			Nodes.Add(new TagValueNode(string_1));
+			Int0 = QbSongClass1.AddKeyToDictionary(string0);
+			Nodes.Add(new TagValueNode(string1));
 			vmethod_0();
 		}
 
-		public TagStructureNode(string string_0, int int_1)
+		public TagStructureNode(string string0, int int1)
 		{
-			int_0 = QbSongClass1.AddKeyToDictionary(string_0);
-			Nodes.Add(new TagValueNode(int_1));
+			Int0 = QbSongClass1.AddKeyToDictionary(string0);
+			Nodes.Add(new TagValueNode(int1));
 			vmethod_0();
 		}
 
@@ -55,21 +55,21 @@ namespace ns18
 			return null;
 		}
 
-		public void method_9(string string_0)
+		public void method_9(string string0)
 		{
 			if (Nodes.Count != 0)
 			{
-				((TagValueNode)FirstNode).method_3(string_0);
+				((TagValueNode)FirstNode).method_3(string0);
 				return;
 			}
-			Nodes.Add(new TagValueNode(string_0));
+			Nodes.Add(new TagValueNode(string0));
 		}
 
 		public int method_10()
 		{
 			if (Nodes.Count != 0)
 			{
-				return ((TagValueNode)FirstNode).int_0;
+				return ((TagValueNode)FirstNode).Int0;
 			}
 			return 0;
 		}

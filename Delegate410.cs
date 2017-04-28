@@ -1,1 +1,1 @@
-public delegate long Delegate410(double double_0);
+public delegate long Delegate410(double double0);

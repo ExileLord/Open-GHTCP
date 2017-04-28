@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate int Delegate286(object object_0, TreeNode treeNode_0);
+public delegate int Delegate286(object object0, TreeNode treeNode0);

@@ -1,3 +1,3 @@
 using System.Drawing;
 
-public delegate Color Delegate411(int int_0, Color color_0);
+public delegate Color Delegate411(int int0, Color color0);

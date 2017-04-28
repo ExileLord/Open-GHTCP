@@ -9,6 +9,6 @@ namespace ns0
 		{
 		}
 
-		public static Struct0 struct0_0;
+		public static Struct0 Struct00;
 	}
 }

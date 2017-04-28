@@ -8,30 +8,30 @@ namespace ns14
 		{
 		}
 
-		public Class221(IEnumerable<T> ienumerable_0) : base(ienumerable_0)
+		public Class221(IEnumerable<T> ienumerable0) : base(ienumerable0)
 		{
 		}
 
-		public Class221(int int_0) : base(int_0)
+		public Class221(int int0) : base(int0)
 		{
 		}
 
-		public virtual bool vmethod_0(T gparam_0)
+		public virtual bool vmethod_0(T gparam0)
 		{
-			if (Contains(gparam_0))
+			if (Contains(gparam0))
 			{
 				return false;
 			}
-			Add(gparam_0);
+			Add(gparam0);
 			return true;
 		}
 
-		public virtual bool vmethod_1(ICollection<T> icollection_0)
+		public virtual bool vmethod_1(ICollection<T> icollection0)
 		{
 			var result = false;
-			if (icollection_0 != null)
+			if (icollection0 != null)
 			{
-				foreach (var current in icollection_0)
+				foreach (var current in icollection0)
 				{
 					result = vmethod_0(current);
 				}

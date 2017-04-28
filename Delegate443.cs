@@ -1,3 +1,3 @@
 using System.Reflection.Emit;
 
-public delegate void Delegate443(object object_0, OpCode opCode_0, int int_0);
+public delegate void Delegate443(object object0, OpCode opCode0, int int0);

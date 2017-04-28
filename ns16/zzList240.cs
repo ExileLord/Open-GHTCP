@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace ns16
 {
-	public class zzList240 : IEnumerable, ICloneable, ICollection, IList
+	public class ZzList240 : IEnumerable, ICloneable, ICollection, IList
 	{
 		private class MyComparer : IComparer
 		{
@@ -14,45 +14,45 @@ namespace ns16
 			}
 		}
 
-		private ArrayList arrayList_0;
+		private ArrayList _arrayList0;
 
-		private IComparer icomparer_0;
+		private IComparer _icomparer0;
 
-		private bool bool_0;
+		private bool _bool0;
 
-		private bool bool_1;
+		private bool _bool1;
 
-		private bool bool_2;
+		private bool _bool2;
 
-		private bool bool_3;
+		private bool _bool3;
 
 		public object this[int index]
 		{
 			get
 			{
-				if (index >= arrayList_0.Count || index < 0)
+				if (index >= _arrayList0.Count || index < 0)
 				{
 					throw new ArgumentOutOfRangeException("Index is less than zero or Index is greater than Count.");
 				}
-				return arrayList_0[index];
+				return _arrayList0[index];
 			}
 			set
 			{
-				if (bool_2)
+				if (_bool2)
 				{
 					throw new InvalidOperationException("[] operator cannot be used to set a value if KeepSorted property is set to true.");
 				}
-				if (index < arrayList_0.Count && index >= 0)
+				if (index < _arrayList0.Count && index >= 0)
 				{
 					if (method_0(value))
 					{
-						var obj = (index > 0) ? arrayList_0[index - 1] : null;
-						var obj2 = (index < Count - 1) ? arrayList_0[index + 1] : null;
-						if ((obj != null && icomparer_0.Compare(obj, value) > 0) || (obj2 != null && icomparer_0.Compare(value, obj2) > 0))
+						var obj = (index > 0) ? _arrayList0[index - 1] : null;
+						var obj2 = (index < Count - 1) ? _arrayList0[index + 1] : null;
+						if ((obj != null && _icomparer0.Compare(obj, value) > 0) || (obj2 != null && _icomparer0.Compare(value, obj2) > 0))
 						{
-							bool_1 = false;
+							_bool1 = false;
 						}
-						arrayList_0[index] = value;
+						_arrayList0[index] = value;
 					}
 					return;
 				}
@@ -64,7 +64,7 @@ namespace ns16
 		{
 			get
 			{
-				return arrayList_0.Count;
+				return _arrayList0.Count;
 			}
 		}
 
@@ -72,7 +72,7 @@ namespace ns16
 		{
 			get
 			{
-				return arrayList_0.SyncRoot;
+				return _arrayList0.SyncRoot;
 			}
 		}
 
@@ -80,7 +80,7 @@ namespace ns16
 		{
 			get
 			{
-				return arrayList_0.IsSynchronized;
+				return _arrayList0.IsSynchronized;
 			}
 		}
 
@@ -88,7 +88,7 @@ namespace ns16
 		{
 			get
 			{
-				return arrayList_0.IsReadOnly;
+				return _arrayList0.IsReadOnly;
 			}
 		}
 
@@ -96,18 +96,18 @@ namespace ns16
 		{
 			get
 			{
-				return arrayList_0.IsFixedSize;
+				return _arrayList0.IsFixedSize;
 			}
 		}
 
-		public zzList240()
+		public ZzList240()
 		{
 			method_1(null, 0);
 		}
 
-		public zzList240(IComparer icomparer_1, int int_0)
+		public ZzList240(IComparer icomparer1, int int0)
 		{
-			method_1(icomparer_1, int_0);
+			method_1(icomparer1, int0);
 		}
 
 		public int Add(object value)
@@ -115,24 +115,24 @@ namespace ns16
 			var result = -1;
 			if (method_0(value))
 			{
-				if (bool_2)
+				if (_bool2)
 				{
 					var num = IndexOf(value);
 					var num2 = (num >= 0) ? num : (-num - 1);
 					if (num2 >= Count)
 					{
-						arrayList_0.Add(value);
+						_arrayList0.Add(value);
 					}
 					else
 					{
-						arrayList_0.Insert(num2, value);
+						_arrayList0.Insert(num2, value);
 					}
 					result = num2;
 				}
 				else
 				{
-					bool_1 = false;
-					result = arrayList_0.Add(value);
+					_bool1 = false;
+					result = _arrayList0.Add(value);
 				}
 			}
 			return result;
@@ -140,48 +140,48 @@ namespace ns16
 
 		public bool Contains(object value)
 		{
-			if (!bool_1)
+			if (!_bool1)
 			{
-				return arrayList_0.Contains(value);
+				return _arrayList0.Contains(value);
 			}
-			return arrayList_0.BinarySearch(value, icomparer_0) >= 0;
+			return _arrayList0.BinarySearch(value, _icomparer0) >= 0;
 		}
 
 		public int IndexOf(object value)
 		{
 			int num;
-			if (bool_1)
+			if (_bool1)
 			{
-				num = arrayList_0.BinarySearch(value, icomparer_0);
-				while (num > 0 && arrayList_0[num - 1].Equals(value))
+				num = _arrayList0.BinarySearch(value, _icomparer0);
+				while (num > 0 && _arrayList0[num - 1].Equals(value))
 				{
 					num--;
 				}
 			}
 			else
 			{
-				num = arrayList_0.IndexOf(value);
+				num = _arrayList0.IndexOf(value);
 			}
 			return num;
 		}
 
 		public void Insert(int index, object value)
 		{
-			if (bool_2)
+			if (_bool2)
 			{
 				throw new InvalidOperationException("Insert method cannot be called if KeepSorted property is set to true.");
 			}
-			if (index < arrayList_0.Count && index >= 0)
+			if (index < _arrayList0.Count && index >= 0)
 			{
 				if (method_0(value))
 				{
-					var obj = arrayList_0[index];
-					var obj2 = (index > 0) ? arrayList_0[index - 1] : null;
-					if ((obj2 != null && icomparer_0.Compare(obj2, value) > 0) || (obj != null && icomparer_0.Compare(value, obj) > 0))
+					var obj = _arrayList0[index];
+					var obj2 = (index > 0) ? _arrayList0[index - 1] : null;
+					if ((obj2 != null && _icomparer0.Compare(obj2, value) > 0) || (obj != null && _icomparer0.Compare(value, obj) > 0))
 					{
-						bool_1 = false;
+						_bool1 = false;
 					}
-					arrayList_0.Insert(index, value);
+					_arrayList0.Insert(index, value);
 				}
 				return;
 			}
@@ -190,53 +190,53 @@ namespace ns16
 
 		public void Remove(object value)
 		{
-			arrayList_0.Remove(value);
+			_arrayList0.Remove(value);
 		}
 
 		public void RemoveAt(int index)
 		{
-			arrayList_0.RemoveAt(index);
+			_arrayList0.RemoveAt(index);
 		}
 
 		public void CopyTo(Array array, int index)
 		{
-			arrayList_0.CopyTo(array, index);
+			_arrayList0.CopyTo(array, index);
 		}
 
 		public IEnumerator GetEnumerator()
 		{
-			return arrayList_0.GetEnumerator();
+			return _arrayList0.GetEnumerator();
 		}
 
 		public void Clear()
 		{
-			arrayList_0.Clear();
+			_arrayList0.Clear();
 		}
 
 		public object Clone()
 		{
-			return new zzList240(icomparer_0, arrayList_0.Capacity)
+			return new ZzList240(_icomparer0, _arrayList0.Capacity)
 			{
-				arrayList_0 = (ArrayList)arrayList_0.Clone(),
-				bool_3 = bool_3,
-				bool_1 = bool_1,
-				bool_2 = bool_2
+				_arrayList0 = (ArrayList)_arrayList0.Clone(),
+				_bool3 = _bool3,
+				_bool1 = _bool1,
+				_bool2 = _bool2
 			};
 		}
 
 		public override string ToString()
 		{
 			var text = "{";
-			for (var i = 0; i < arrayList_0.Count; i++)
+			for (var i = 0; i < _arrayList0.Count; i++)
 			{
-				text = text + arrayList_0[i] + ((i != arrayList_0.Count - 1) ? "; " : "}");
+				text = text + _arrayList0[i] + ((i != _arrayList0.Count - 1) ? "; " : "}");
 			}
 			return text;
 		}
 
 		public override bool Equals(object obj)
 		{
-			var @class = (zzList240)obj;
+			var @class = (ZzList240)obj;
 			if (@class.Count != Count)
 			{
 				return false;
@@ -253,34 +253,34 @@ namespace ns16
 
 		public override int GetHashCode()
 		{
-			return arrayList_0.GetHashCode();
+			return _arrayList0.GetHashCode();
 		}
 
-		private bool method_0(object object_0)
+		private bool method_0(object object0)
 		{
-			if (bool_0 && !(object_0 is IComparable))
+			if (_bool0 && !(object0 is IComparable))
 			{
 				throw new ArgumentException("The SortableArrayList is set to use the IComparable interface of objects, and the object to add does not implement the IComparable interface.");
 			}
-			return bool_3 || !Contains(object_0);
+			return _bool3 || !Contains(object0);
 		}
 
-		private void method_1(IComparer icomparer_1, int int_0)
+		private void method_1(IComparer icomparer1, int int0)
 		{
-			if (icomparer_1 != null)
+			if (icomparer1 != null)
 			{
-				icomparer_0 = icomparer_1;
-				bool_0 = false;
+				_icomparer0 = icomparer1;
+				_bool0 = false;
 			}
 			else
 			{
-				icomparer_0 = new MyComparer();
-				bool_0 = true;
+				_icomparer0 = new MyComparer();
+				_bool0 = true;
 			}
-			arrayList_0 = ((int_0 > 0) ? new ArrayList(int_0) : new ArrayList());
-			bool_1 = true;
-			bool_2 = true;
-			bool_3 = true;
+			_arrayList0 = ((int0 > 0) ? new ArrayList(int0) : new ArrayList());
+			_bool1 = true;
+			_bool2 = true;
+			_bool3 = true;
 		}
 	}
 }

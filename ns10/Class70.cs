@@ -2,47 +2,47 @@ namespace ns10
 {
 	public class Class70
 	{
-		private float[] float_0 = new float[5];
+		private float[] _float0 = new float[5];
 
-		private float[] float_1 = new float[5];
+		private float[] _float1 = new float[5];
 
-		private float[] float_2 = new float[5];
+		private float[] _float2 = new float[5];
 
-		private float[] float_3 = new float[5];
+		private float[] _float3 = new float[5];
 
-		private float[] float_4 = new float[5];
+		private float[] _float4 = new float[5];
 
-		private float[] float_5 = new float[5];
+		private float[] _float5 = new float[5];
 
-		private float[] float_6 = new float[5];
+		private float[] _float6 = new float[5];
 
-		private float[] float_7 = new float[5];
+		private float[] _float7 = new float[5];
 
-		private float[] float_8 = new float[5];
+		private float[] _float8 = new float[5];
 
-		private float[] float_9 = new float[5];
+		private float[] _float9 = new float[5];
 
-		private float[] float_10 = new float[5];
+		private float[] _float10 = new float[5];
 
-		private float[] float_11 = new float[5];
+		private float[] _float11 = new float[5];
 
-		private float[] float_12 = new float[5];
+		private float[] _float12 = new float[5];
 
-		private float[] float_13 = new float[5];
+		private float[] _float13 = new float[5];
 
-		private float[] float_14 = new float[5];
+		private float[] _float14 = new float[5];
 
-		private float[] float_15 = new float[5];
+		private float[] _float15 = new float[5];
 
-		private float[] float_16 = new float[5];
+		private float[] _float16 = new float[5];
 
-		private float[] float_17 = new float[5];
+		private float[] _float17 = new float[5];
 
-		private float[] float_18 = new float[5];
+		private float[] _float18 = new float[5];
 
-		private float[] float_19 = new float[5];
+		private float[] _float19 = new float[5];
 
-		private float[] float_20 = new float[5];
+		private float[] _float20 = new float[5];
 
 		public void method_0()
 		{

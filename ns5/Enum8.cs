@@ -2,8 +2,8 @@ namespace ns5
 {
 	public enum Enum8
 	{
-		const_0 = 784,
-		const_1 = 4101,
-		const_2 = 4115
+		Const0 = 784,
+		Const1 = 4101,
+		Const2 = 4115
 	}
 }

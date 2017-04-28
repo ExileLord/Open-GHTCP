@@ -1,6 +1,6 @@
 namespace ns22
 {
-	public enum MIDINoteMask
+	public enum MidiNoteMask
 	{
 		Green,
 		Red,

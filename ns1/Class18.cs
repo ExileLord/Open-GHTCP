@@ -6,7 +6,7 @@ namespace ns1
 {
 	public class Class18 : ICustomMarshaler
 	{
-		public void CleanUpManagedData(object ManagedObj)
+		public void CleanUpManagedData(object managedObj)
 		{
 		}
 
@@ -20,9 +20,9 @@ namespace ns1
 			throw new NotImplementedException();
 		}
 
-		public IntPtr MarshalManagedToNative(object ManagedObj)
+		public IntPtr MarshalManagedToNative(object managedObj)
 		{
-			return WaveFormat.smethod_1((WaveFormat)ManagedObj);
+			return WaveFormat.smethod_1((WaveFormat)managedObj);
 		}
 
 		public object MarshalNativeToManaged(IntPtr pNativeData)

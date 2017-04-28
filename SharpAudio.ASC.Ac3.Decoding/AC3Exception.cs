@@ -4,9 +4,9 @@ using AVTools.MpegUtils;
 namespace SharpAudio.ASC.Ac3.Decoding
 {
 	[Serializable]
-	public class AC3Exception : FFMpegException
+	public class Ac3Exception : FfMpegException
 	{
-		public AC3Exception(string string_0) : base(string_0)
+		public Ac3Exception(string string0) : base(string0)
 		{
 		}
 	}

@@ -6,11 +6,11 @@ using SharpAudio.ASC;
 
 namespace ns6
 {
-	public class WAVStream : GenericAudioStream
+	public class WavStream : GenericAudioStream
 	{
-		private long long_0;
+		private long _long0;
 
-		private long long_1;
+		private long _long1;
 
 		public override bool CanRead
 		{
@@ -32,7 +32,7 @@ namespace ns6
 		{
 			get
 			{
-				return fileStream.CanWrite;
+				return FileStream.CanWrite;
 			}
 		}
 
@@ -40,7 +40,7 @@ namespace ns6
 		{
 			get
 			{
-				return long_1;
+				return _long1;
 			}
 		}
 
@@ -48,43 +48,43 @@ namespace ns6
 		{
 			get
 			{
-				return fileStream.Position - long_0;
+				return FileStream.Position - _long0;
 			}
 			set
 			{
-				fileStream.Position = long_0 + value;
+				FileStream.Position = _long0 + value;
 			}
 		}
 
-		public WAVStream()
+		public WavStream()
 		{
 		}
 
-		public WAVStream(string string_0) : this(File.OpenRead(string_0))
+		public WavStream(string string0) : this(File.OpenRead(string0))
 		{
 		}
 
-		public WAVStream(Stream stream_1)
+		public WavStream(Stream stream1)
 		{
-			fileStream = stream_1;
+			FileStream = stream1;
 			method_0();
 		}
 
-		~WAVStream()
+		~WavStream()
 		{
 			Dispose();
 		}
 
-		private static string smethod_0(BinaryReader binaryReader_0)
+		private static string smethod_0(BinaryReader binaryReader0)
 		{
 			var array = new byte[4];
-			binaryReader_0.Read(array, 0, array.Length);
+			binaryReader0.Read(array, 0, array.Length);
 			return Encoding.UTF8.GetString(array);
 		}
 
 		private void method_0()
 		{
-			var binaryReader = new BinaryReader(fileStream, Encoding.UTF8);
+			var binaryReader = new BinaryReader(FileStream, Encoding.UTF8);
 			if (smethod_0(binaryReader) != "RIFF")
 			{
 				throw new Exception("Invalid file format (No Tag RIFF)");
@@ -103,26 +103,26 @@ namespace ns6
 			{
 				throw new Exception("Invalid file format (Size of fmt different of 16)");
 			}
-			waveFormat_0 = new WaveFormat(22050, 16, 2);
-			waveFormat_0.waveFormatTag_0 = (WaveFormatTag)binaryReader.ReadInt16();
-			waveFormat_0.short_0 = binaryReader.ReadInt16();
-			waveFormat_0.int_0 = binaryReader.ReadInt32();
-			waveFormat_0.int_1 = binaryReader.ReadInt32();
-			waveFormat_0.short_1 = binaryReader.ReadInt16();
-			waveFormat_0.short_2 = binaryReader.ReadInt16();
+			WaveFormat0 = new WaveFormat(22050, 16, 2);
+			WaveFormat0.waveFormatTag_0 = (WaveFormatTag)binaryReader.ReadInt16();
+			WaveFormat0.short_0 = binaryReader.ReadInt16();
+			WaveFormat0.int_0 = binaryReader.ReadInt32();
+			WaveFormat0.int_1 = binaryReader.ReadInt32();
+			WaveFormat0.short_1 = binaryReader.ReadInt16();
+			WaveFormat0.short_2 = binaryReader.ReadInt16();
 			if (num > 16)
 			{
-				fileStream.Position += num - 16;
+				FileStream.Position += num - 16;
 			}
-			while (fileStream.Position < fileStream.Length && smethod_0(binaryReader) != "data")
+			while (FileStream.Position < FileStream.Length && smethod_0(binaryReader) != "data")
 			{
 			}
-			if (fileStream.Position >= fileStream.Length)
+			if (FileStream.Position >= FileStream.Length)
 			{
 				throw new Exception("Invalid file format (No data chunk)");
 			}
-			long_1 = binaryReader.ReadInt32();
-			long_0 = fileStream.Position;
+			_long1 = binaryReader.ReadInt32();
+			_long0 = FileStream.Position;
 			Position = 0L;
 		}
 
@@ -133,29 +133,29 @@ namespace ns6
 
 		public override void Flush()
 		{
-			fileStream.Flush();
+			FileStream.Flush();
 		}
 
 		public override void SetLength(long value)
 		{
-			long_1 = value;
+			_long1 = value;
 		}
 
 		public override void Write(byte[] buffer, int offset, int count)
 		{
-			fileStream.Write(buffer, offset, count);
+			FileStream.Write(buffer, offset, count);
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			return fileStream.Read(buffer, offset, (long_1 > 0L) ? ((int)Math.Min(count, long_1 - Position)) : count);
+			return FileStream.Read(buffer, offset, (_long1 > 0L) ? ((int)Math.Min(count, _long1 - Position)) : count);
 		}
 
         protected override void Dispose(bool disposing)
 		{
-			if (disposing && fileStream != null)
+			if (disposing && FileStream != null)
 			{
-				fileStream.Close();
+				FileStream.Close();
 			}
 		}
 

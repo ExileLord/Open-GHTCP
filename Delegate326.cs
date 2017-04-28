@@ -1,1 +1,1 @@
-public delegate bool Delegate326(int int_0);
+public delegate bool Delegate326(int int0);

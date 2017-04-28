@@ -24,10 +24,10 @@ namespace ns18
 		{
 		}
 
-		public static Struct84 struct84_0;
+		public static Struct84 Struct840;
 
-		public static Struct85 struct85_0;
+		public static Struct85 Struct850;
 
-		public static Struct86 struct86_0;
+		public static Struct86 Struct860;
 	}
 }

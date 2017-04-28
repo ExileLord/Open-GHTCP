@@ -8,42 +8,42 @@ namespace ns11
 {
 	public class Class158 : IDisposable
 	{
-		private Struct66 struct66_0;
+		private Struct66 _struct660;
 
-		private readonly int int_0;
+		private readonly int _int0;
 
-		private readonly Class17 class17_0;
+		private readonly Class17 _class170;
 
-		private GCHandle gchandle_0;
+		private GCHandle _gchandle0;
 
-		private IntPtr intptr_0;
+		private IntPtr _intptr0;
 
-		private GCHandle gchandle_1;
+		private GCHandle _gchandle1;
 
-		private GCHandle gchandle_2;
+		private GCHandle _gchandle2;
 
-		private readonly GenericAudioStream stream1_0;
+		private readonly GenericAudioStream _stream10;
 
-		private readonly object object_0;
+		private readonly object _object0;
 
-		public Class158(IntPtr intptr_1, int int_1, GenericAudioStream stream1_1, object object_1)
+		public Class158(IntPtr intptr1, int int1, GenericAudioStream stream11, object object1)
 		{
-			int_0 = int_1;
-			class17_0 = new Class17(int_1);
-			gchandle_0 = GCHandle.Alloc(class17_0.method_0(), GCHandleType.Pinned);
-			intptr_0 = intptr_1;
-			stream1_0 = stream1_1;
-			object_0 = object_1;
-			struct66_0 = default(Struct66);
-			gchandle_1 = GCHandle.Alloc(struct66_0);
-			struct66_0.intptr_0 = gchandle_0.AddrOfPinnedObject();
-			struct66_0.int_0 = int_1;
-			struct66_0.int_2 = 1;
-			gchandle_2 = GCHandle.Alloc(this);
-			struct66_0.intptr_1 = (IntPtr)gchandle_2;
-			lock (object_1)
+			_int0 = int1;
+			_class170 = new Class17(int1);
+			_gchandle0 = GCHandle.Alloc(_class170.method_0(), GCHandleType.Pinned);
+			_intptr0 = intptr1;
+			_stream10 = stream11;
+			_object0 = object1;
+			_struct660 = default(Struct66);
+			_gchandle1 = GCHandle.Alloc(_struct660);
+			_struct660.Intptr0 = _gchandle0.AddrOfPinnedObject();
+			_struct660.Int0 = int1;
+			_struct660.Int2 = 1;
+			_gchandle2 = GCHandle.Alloc(this);
+			_struct660.Intptr1 = (IntPtr)_gchandle2;
+			lock (object1)
 			{
-				Exception4.smethod_1(Class162.waveOutPrepareHeader(intptr_1, ref struct66_0, Marshal.SizeOf(struct66_0)), "waveOutPrepareHeader");
+				Exception4.smethod_1(Class162.waveOutPrepareHeader(intptr1, ref _struct660, Marshal.SizeOf(_struct660)), "waveOutPrepareHeader");
 			}
 		}
 
@@ -58,68 +58,68 @@ namespace ns11
 			method_0(true);
 		}
 
-		public void method_0(bool bool_0)
+		public void method_0(bool bool0)
 		{
-			if (gchandle_1.IsAllocated)
+			if (_gchandle1.IsAllocated)
 			{
-				gchandle_1.Free();
+				_gchandle1.Free();
 			}
-			if (gchandle_0.IsAllocated)
+			if (_gchandle0.IsAllocated)
 			{
-				gchandle_0.Free();
+				_gchandle0.Free();
 			}
-			if (gchandle_2.IsAllocated)
+			if (_gchandle2.IsAllocated)
 			{
-				gchandle_2.Free();
+				_gchandle2.Free();
 			}
-			if (intptr_0 != IntPtr.Zero)
+			if (_intptr0 != IntPtr.Zero)
 			{
-				lock (object_0)
+				lock (_object0)
 				{
-					Class162.waveOutUnprepareHeader(intptr_0, ref struct66_0, Marshal.SizeOf(struct66_0));
+					Class162.waveOutUnprepareHeader(_intptr0, ref _struct660, Marshal.SizeOf(_struct660));
 				}
-				intptr_0 = IntPtr.Zero;
+				_intptr0 = IntPtr.Zero;
 			}
 		}
 
 		public bool method_1()
 		{
 			int num;
-			lock (stream1_0)
+			lock (_stream10)
 			{
-				var arg_39_0 = stream1_0;
-				var arg_39_1 = struct66_0.intptr_0;
+				var arg390 = _stream10;
+				var arg391 = _struct660.Intptr0;
 				int int_;
-				class17_0.method_4(int_ = class17_0.method_0().Length);
-				num = arg_39_0.vmethod_3(arg_39_1, int_);
+				_class170.method_4(int_ = _class170.method_0().Length);
+				num = arg390.vmethod_3(arg391, int_);
 			}
 			if (num == 0)
 			{
 				return false;
 			}
-			Array.Clear(class17_0.method_0(), num, class17_0.method_3() - num);
+			Array.Clear(_class170.method_0(), num, _class170.method_3() - num);
 			method_4();
 			return true;
 		}
 
 		public bool method_2()
 		{
-			return (struct66_0.enum15_0 & Enum15.flag_3) == Enum15.flag_3;
+			return (_struct660.Enum150 & Enum15.Flag3) == Enum15.Flag3;
 		}
 
 		public Class17 method_3()
 		{
-			return class17_0;
+			return _class170;
 		}
 
 		private void method_4()
 		{
 			Enum18 @enum;
-			lock (object_0)
+			lock (_object0)
 			{
-				@enum = Class162.waveOutWrite(intptr_0, ref struct66_0, Marshal.SizeOf(struct66_0));
+				@enum = Class162.waveOutWrite(_intptr0, ref _struct660, Marshal.SizeOf(_struct660));
 			}
-			if (@enum != Enum18.const_0)
+			if (@enum != Enum18.Const0)
 			{
 				throw new Exception4(@enum, "waveOutWrite");
 			}

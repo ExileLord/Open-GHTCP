@@ -1,1 +1,1 @@
-public delegate decimal Delegate14(decimal decimal_0, decimal decimal_1);
+public delegate decimal Delegate14(decimal decimal0, decimal decimal1);

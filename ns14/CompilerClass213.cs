@@ -43,36 +43,36 @@ namespace ns14
 		{
 		}
 
-		public static Struct69 struct69_0;
+		public static Struct69 Struct690;
 
-		public static Struct69 struct69_1;
+		public static Struct69 Struct691;
 
-		public static Struct69 struct69_2;
+		public static Struct69 Struct692;
 
-		public static Struct69 struct69_3;
+		public static Struct69 Struct693;
 
-		public static Struct69 struct69_4;
+		public static Struct69 Struct694;
 
-		public static Struct72 struct72_0;
+		public static Struct72 Struct720;
 
-		public static Struct73 struct73_0;
+		public static Struct73 Struct730;
 
-		public static Struct70 struct70_0;
+		public static Struct70 Struct700;
 
-		public static Struct74 struct74_0;
+		public static Struct74 Struct740;
 
-		public static Struct74 struct74_1;
+		public static Struct74 Struct741;
 
-		public static Struct71 struct71_0;
+		public static Struct71 Struct710;
 
-		public static Struct71 struct71_1;
+		public static Struct71 Struct711;
 
-		public static Struct75 struct75_0;
+		public static Struct75 Struct750;
 
-		public static Struct75 struct75_1;
+		public static Struct75 Struct751;
 
-		public static Struct72 struct72_1;
+		public static Struct72 Struct721;
 
-		public static Struct75 struct75_2;
+		public static Struct75 Struct752;
 	}
 }

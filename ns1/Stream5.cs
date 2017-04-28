@@ -11,7 +11,7 @@ namespace ns1
 		{
 			get
 			{
-				return fileStream.CanRead;
+				return FileStream.CanRead;
 			}
 		}
 
@@ -19,7 +19,7 @@ namespace ns1
 		{
 			get
 			{
-				return fileStream.CanSeek;
+				return FileStream.CanSeek;
 			}
 		}
 
@@ -27,7 +27,7 @@ namespace ns1
 		{
 			get
 			{
-				return fileStream.CanWrite;
+				return FileStream.CanWrite;
 			}
 		}
 
@@ -35,7 +35,7 @@ namespace ns1
 		{
 			get
 			{
-				return fileStream.Length;
+				return FileStream.Length;
 			}
 		}
 
@@ -43,11 +43,11 @@ namespace ns1
 		{
 			get
 			{
-				return fileStream.Position;
+				return FileStream.Position;
 			}
 			set
 			{
-				fileStream.Position = value;
+				FileStream.Position = value;
 			}
 		}
 
@@ -55,25 +55,25 @@ namespace ns1
 		{
 		}
 
-		public Stream5(Stream stream_1, WaveFormat waveFormat_1)
+		public Stream5(Stream stream1, WaveFormat waveFormat1)
 		{
-			fileStream = stream_1;
-			waveFormat_0 = waveFormat_1;
+			FileStream = stream1;
+			WaveFormat0 = waveFormat1;
 		}
 
 		public override void SetLength(long value)
 		{
-			fileStream.SetLength(value);
+			FileStream.SetLength(value);
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
 		{
-			return fileStream.Seek(offset, origin);
+			return FileStream.Seek(offset, origin);
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			return fileStream.Read(buffer, offset, count);
+			return FileStream.Read(buffer, offset, count);
 		}
 
 		public override void Write(byte[] buffer, int offset, int count)
@@ -82,7 +82,7 @@ namespace ns1
 			{
 				throw new NotSupportedException();
 			}
-			fileStream.Write(buffer, offset, count);
+			FileStream.Write(buffer, offset, count);
 		}
 	}
 }

@@ -3,23 +3,23 @@ using System.Collections.Generic;
 
 namespace ns16
 {
-	public class zzDictionary242<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>, ICollection<KeyValuePair<TKey, TValue>>, IDictionary<TKey, TValue>, IEnumerable
+	public class ZzDictionary242<TKey, TValue> : IEnumerable<KeyValuePair<TKey, TValue>>, ICollection<KeyValuePair<TKey, TValue>>, IDictionary<TKey, TValue>, IEnumerable
 	{
-		private readonly zzMap243<TKey, TValue> class243_0 = new zzMap243<TKey, TValue>();
+		private readonly ZzMap243<TKey, TValue> _class2430 = new ZzMap243<TKey, TValue>();
 
 		public TValue this[TKey key]
 		{
 			get
 			{
-				if (!class243_0.Contains(key))
+				if (!_class2430.Contains(key))
 				{
 					return default(TValue);
 				}
-				return class243_0[key].Value;
+				return _class2430[key].Value;
 			}
 			set
 			{
-				if (class243_0.Contains(key))
+				if (_class2430.Contains(key))
 				{
 					Remove(key);
 				}
@@ -27,21 +27,21 @@ namespace ns16
 			}
 		}
 
-		public TValue this[int int_0]
+		public TValue this[int int0]
 		{
 			get
 			{
-				if (class243_0.Count <= int_0)
+				if (_class2430.Count <= int0)
 				{
 					return default(TValue);
 				}
-				return class243_0[int_0].Value;
+				return _class2430[int0].Value;
 			}
 			set
 			{
-				if (class243_0.Count > int_0)
+				if (_class2430.Count > int0)
 				{
-					class243_0[int_0] = new KeyValuePair<TKey, TValue>(class243_0[int_0].Key, value);
+					_class2430[int0] = new KeyValuePair<TKey, TValue>(_class2430[int0].Key, value);
 				}
 			}
 		}
@@ -50,7 +50,7 @@ namespace ns16
 		{
 			get
 			{
-				return class243_0.Count;
+				return _class2430.Count;
 			}
 		}
 
@@ -67,7 +67,7 @@ namespace ns16
 			get
 			{
 				ICollection<TKey> collection = new List<TKey>();
-				foreach (var current in class243_0)
+				foreach (var current in _class2430)
 				{
 					collection.Add(current.Key);
 				}
@@ -80,7 +80,7 @@ namespace ns16
 			get
 			{
 				ICollection<TValue> collection = new List<TValue>();
-				foreach (var current in class243_0)
+				foreach (var current in _class2430)
 				{
 					collection.Add(current.Value);
 				}
@@ -90,76 +90,76 @@ namespace ns16
 
 		public bool ContainsKey(TKey key)
 		{
-			return class243_0.Contains(key);
+			return _class2430.Contains(key);
 		}
 
 		public void Add(TKey key, TValue value)
 		{
-			class243_0.Add(new KeyValuePair<TKey, TValue>(key, value));
+			_class2430.Add(new KeyValuePair<TKey, TValue>(key, value));
 		}
 
 		public bool Remove(TKey key)
 		{
-			if (!class243_0.Contains(key))
+			if (!_class2430.Contains(key))
 			{
 				return false;
 			}
-			class243_0.Remove(key);
+			_class2430.Remove(key);
 			return true;
 		}
 
 		public bool TryGetValue(TKey key, out TValue value)
 		{
-			if (!class243_0.Contains(key))
+			if (!_class2430.Contains(key))
 			{
 				value = default(TValue);
 				return false;
 			}
-			value = class243_0[key].Value;
+			value = _class2430[key].Value;
 			return true;
 		}
 
 		public IEnumerator GetEnumerator()
 		{
-			return class243_0.GetEnumerator();
+			return _class2430.GetEnumerator();
 		}
 
 		public void Add(KeyValuePair<TKey, TValue> item)
 		{
-			class243_0.Add(item);
+			_class2430.Add(item);
 		}
 
-		public void Add(ICollection<KeyValuePair<TKey, TValue>> icollection_0)
+		public void Add(ICollection<KeyValuePair<TKey, TValue>> icollection0)
 		{
-			foreach (var current in icollection_0)
+			foreach (var current in icollection0)
 			{
-				class243_0.Add(current);
+				_class2430.Add(current);
 			}
 		}
 
 		public void Clear()
 		{
-			class243_0.Clear();
+			_class2430.Clear();
 		}
 
 		public bool Contains(KeyValuePair<TKey, TValue> item)
 		{
-			return class243_0.Contains(item);
+			return _class2430.Contains(item);
 		}
 
 		public void CopyTo(KeyValuePair<TKey, TValue>[] array, int index)
 		{
-			class243_0.CopyTo(array, index);
+			_class2430.CopyTo(array, index);
 		}
 
 		public bool Remove(KeyValuePair<TKey, TValue> item)
 		{
-			return class243_0.Remove(item);
+			return _class2430.Remove(item);
 		}
 
 		IEnumerator<KeyValuePair<TKey, TValue>> IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator()
 		{
-			return class243_0.GetEnumerator();
+			return _class2430.GetEnumerator();
 		}
 	}
 }

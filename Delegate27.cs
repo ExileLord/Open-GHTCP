@@ -1,1 +1,1 @@
-public delegate string Delegate27(string string_0, object object_0, object object_1, object object_2);
+public delegate string Delegate27(string string0, object object0, object object1, object object2);

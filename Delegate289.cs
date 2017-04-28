@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate void Delegate289(object object_0, ComboBoxStyle comboBoxStyle_0);
+public delegate void Delegate289(object object0, ComboBoxStyle comboBoxStyle0);

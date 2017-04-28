@@ -9,92 +9,92 @@ using ns21;
 namespace GuitarHero.Tier
 {
 	[Serializable]
-	public class GH3Tier
+	public class Gh3Tier
 	{
-		public string title = "";
+		public string Title = "";
 
-		public string completion_movie = "";
+		public string CompletionMovie = "";
 
-		public string level = "No Preset Stage";
+		public string Level = "No Preset Stage";
 
-		public string setlist_icon = "No Icon";
+		public string SetlistIcon = "No Icon";
 
-		public List<GH3Song> songs = new List<GH3Song>();
+		public List<Gh3Song> Songs = new List<Gh3Song>();
 
-		public int defaultunlocked;
+		public int Defaultunlocked;
 
-		public bool encorep1;
+		public bool Encorep1;
 
-		public bool encorep2;
+		public bool Encorep2;
 
-		public bool aerosmith_encore_p1;
+		public bool AerosmithEncoreP1;
 
-		public bool boss;
+		public bool Boss;
 
-		public bool nocash;
+		public bool Nocash;
 
-		public bool unlockall;
+		public bool Unlockall;
 
-		public GH3Tier()
+		public Gh3Tier()
 		{
 		}
 
-		public GH3Tier(StructureHeaderNode class286_0, GH3Songlist gh3Songlist_0)
+		public Gh3Tier(StructureHeaderNode class2860, Gh3Songlist gh3Songlist0)
 		{
-			method_2(class286_0, gh3Songlist_0);
+			method_2(class2860, gh3Songlist0);
 		}
 
-		public List<GH3Song> method_0()
+		public List<Gh3Song> method_0()
 		{
-			return songs;
+			return Songs;
 		}
 
-		public void method_1(GH3Tier gh3Tier_0)
+		public void method_1(Gh3Tier gh3Tier0)
 		{
-			title = gh3Tier_0.title;
-			completion_movie = gh3Tier_0.completion_movie;
-			level = gh3Tier_0.level;
-			setlist_icon = gh3Tier_0.setlist_icon;
-			songs = gh3Tier_0.songs;
-			defaultunlocked = gh3Tier_0.defaultunlocked;
-			encorep1 = gh3Tier_0.encorep1;
-			encorep2 = gh3Tier_0.encorep2;
-			aerosmith_encore_p1 = gh3Tier_0.aerosmith_encore_p1;
-			boss = gh3Tier_0.boss;
-			nocash = gh3Tier_0.nocash;
-			unlockall = gh3Tier_0.unlockall;
+			Title = gh3Tier0.Title;
+			CompletionMovie = gh3Tier0.CompletionMovie;
+			Level = gh3Tier0.Level;
+			SetlistIcon = gh3Tier0.SetlistIcon;
+			Songs = gh3Tier0.Songs;
+			Defaultunlocked = gh3Tier0.Defaultunlocked;
+			Encorep1 = gh3Tier0.Encorep1;
+			Encorep2 = gh3Tier0.Encorep2;
+			AerosmithEncoreP1 = gh3Tier0.AerosmithEncoreP1;
+			Boss = gh3Tier0.Boss;
+			Nocash = gh3Tier0.Nocash;
+			Unlockall = gh3Tier0.Unlockall;
 		}
 
 		public override string ToString()
 		{
-			return title ?? "[No Title]";
+			return Title ?? "[No Title]";
 		}
 
-		public void method_2(StructureHeaderNode class286_0, GH3Songlist gh3Songlist_0)
+		public void method_2(StructureHeaderNode class2860, Gh3Songlist gh3Songlist0)
 		{
 			UnicodeStructureNode @class;
-			title = (((@class = class286_0.method_5(new UnicodeStructureNode("title"))) != null) ? @class.method_8() : "");
+			Title = (((@class = class2860.method_5(new UnicodeStructureNode("title"))) != null) ? @class.method_8() : "");
 			AsciiStructureNode class2;
-			completion_movie = (((class2 = class286_0.method_5(new AsciiStructureNode("completion_movie"))) != null) ? class2.method_8() : "");
+			CompletionMovie = (((class2 = class2860.method_5(new AsciiStructureNode("completion_movie"))) != null) ? class2.method_8() : "");
 			IntegerStructureNode class3;
-			defaultunlocked = (((class3 = class286_0.method_5(new IntegerStructureNode("defaultunlocked"))) != null) ? class3.method_8() : 0);
+			Defaultunlocked = (((class3 = class2860.method_5(new IntegerStructureNode("defaultunlocked"))) != null) ? class3.method_8() : 0);
 			TagStructureNode class4;
-			level = (((class4 = class286_0.method_5(new TagStructureNode("level"))) != null) ? class4.method_8() : "No Preset Stage");
-			setlist_icon = (((class4 = class286_0.method_5(new TagStructureNode("setlist_icon"))) != null) ? class4.method_8() : "No Icon");
-			encorep1 = (class286_0.method_5(new TagStructureNode(0, "encorep1")) != null);
-			encorep2 = (class286_0.method_5(new TagStructureNode(0, "encorep2")) != null);
-			aerosmith_encore_p1 = (class286_0.method_5(new TagStructureNode(0, "aerosmith_encore_p1")) != null);
-			boss = (class286_0.method_5(new TagStructureNode(0, "boss")) != null);
-			nocash = (class286_0.method_5(new TagStructureNode(0, "nocash")) != null);
-			unlockall = (class286_0.method_5(new TagStructureNode(0, "unlockall")) != null);
+			Level = (((class4 = class2860.method_5(new TagStructureNode("level"))) != null) ? class4.method_8() : "No Preset Stage");
+			SetlistIcon = (((class4 = class2860.method_5(new TagStructureNode("setlist_icon"))) != null) ? class4.method_8() : "No Icon");
+			Encorep1 = (class2860.method_5(new TagStructureNode(0, "encorep1")) != null);
+			Encorep2 = (class2860.method_5(new TagStructureNode(0, "encorep2")) != null);
+			AerosmithEncoreP1 = (class2860.method_5(new TagStructureNode(0, "aerosmith_encore_p1")) != null);
+			Boss = (class2860.method_5(new TagStructureNode(0, "boss")) != null);
+			Nocash = (class2860.method_5(new TagStructureNode(0, "nocash")) != null);
+			Unlockall = (class2860.method_5(new TagStructureNode(0, "unlockall")) != null);
 			var class5 = new ArrayPointerNode("songs");
-			if (class286_0.method_6(ref class5) && !(class5.method_8() is FloatListNode))
+			if (class2860.method_6(ref class5) && !(class5.method_8() is FloatListNode))
 			{
 				foreach (var current in class5.method_8().method_8<string>())
 				{
-					if (gh3Songlist_0.ContainsKey(current))
+					if (gh3Songlist0.ContainsKey(current))
 					{
-						songs.Add(gh3Songlist_0[current]);
+						Songs.Add(gh3Songlist0[current]);
 					}
 					else
 					{
@@ -107,57 +107,57 @@ namespace GuitarHero.Tier
 		public StructureHeaderNode method_3()
 		{
 			var @class = new StructureHeaderNode();
-			@class.method_3(new UnicodeStructureNode("title", title));
-			if (songs.Count == 0)
+			@class.method_3(new UnicodeStructureNode("title", Title));
+			if (Songs.Count == 0)
 			{
 				@class.method_3(new ArrayPointerNode("songs", new FloatListNode(true)));
 			}
 			else
 			{
 				var list = new List<int>();
-				foreach (var current in songs)
+				foreach (var current in Songs)
 				{
-					list.Add(QbSongClass1.AddKeyToDictionary(current.name));
+					list.Add(QbSongClass1.AddKeyToDictionary(current.Name));
 				}
 				@class.method_3(new ArrayPointerNode("songs", new TagArray(list)));
 			}
-			if (boss)
+			if (Boss)
 			{
 				@class.method_3(new TagStructureNode(0, "boss"));
 			}
-			if (encorep1)
+			if (Encorep1)
 			{
 				@class.method_3(new TagStructureNode(0, "encorep1"));
 			}
-			if (encorep2)
+			if (Encorep2)
 			{
 				@class.method_3(new TagStructureNode(0, "encorep2"));
 			}
-			if (aerosmith_encore_p1)
+			if (AerosmithEncoreP1)
 			{
 				@class.method_3(new TagStructureNode(0, "aerosmith_encore_p1"));
 			}
-			if (level != null && level != "No Preset Stage")
+			if (Level != null && Level != "No Preset Stage")
 			{
-				@class.method_3(new TagStructureNode("level", level));
+				@class.method_3(new TagStructureNode("level", Level));
 			}
-			if (defaultunlocked != 0)
+			if (Defaultunlocked != 0)
 			{
-				@class.method_3(new IntegerStructureNode("defaultunlocked", defaultunlocked));
+				@class.method_3(new IntegerStructureNode("defaultunlocked", Defaultunlocked));
 			}
-			if (!completion_movie.Equals(""))
+			if (!CompletionMovie.Equals(""))
 			{
-				@class.method_3(new AsciiStructureNode("completion_movie", completion_movie));
+				@class.method_3(new AsciiStructureNode("completion_movie", CompletionMovie));
 			}
-			if (!setlist_icon.Equals("No Icon"))
+			if (!SetlistIcon.Equals("No Icon"))
 			{
-				@class.method_3(new TagStructureNode("setlist_icon", setlist_icon));
+				@class.method_3(new TagStructureNode("setlist_icon", SetlistIcon));
 			}
-			if (nocash)
+			if (Nocash)
 			{
 				@class.method_3(new TagStructureNode(0, "nocash"));
 			}
-			if (unlockall)
+			if (Unlockall)
 			{
 				@class.method_3(new TagStructureNode(0, "unlockall"));
 			}

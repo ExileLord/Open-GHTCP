@@ -1,3 +1,3 @@
 using System.IO;
 
-public delegate StreamReader Delegate445(string string_0);
+public delegate StreamReader Delegate445(string string0);

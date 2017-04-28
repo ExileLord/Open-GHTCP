@@ -1,3 +1,3 @@
 using System.Text;
 
-public delegate Encoding Delegate277(string string_0);
+public delegate Encoding Delegate277(string string0);

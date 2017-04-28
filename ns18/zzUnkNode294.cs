@@ -4,17 +4,17 @@ using ns20;
 
 namespace ns18
 {
-	public abstract class zzUnkNode294 : AbstractTreeNode1
+	public abstract class ZzUnkNode294 : AbstractTreeNode1
 	{
-		public int int_0;
+		public int Int0;
 
 		public override int CompareTo(object target)
 		{
-			if (!target.GetType().Equals(GetType()) || (((zzUnkNode294)target).Nodes.Count != 0 && !((zzUnkNode294)target).Nodes[0].Equals(Nodes[0])))
+			if (!target.GetType().Equals(GetType()) || (((ZzUnkNode294)target).Nodes.Count != 0 && !((ZzUnkNode294)target).Nodes[0].Equals(Nodes[0])))
 			{
 				return -1;
 			}
-			if (((zzUnkNode294)target).int_0 == int_0)
+			if (((ZzUnkNode294)target).Int0 == Int0)
 			{
 				return 0;
 			}
@@ -24,11 +24,11 @@ namespace ns18
 		public override string GetText()
 		{
 			var str = (Nodes.Count > 0) ? method_2(0).GetText() : "NULL";
-			if (QbSongClass1.ContainsKey(int_0))
+			if (QbSongClass1.ContainsKey(Int0))
 			{
-				return QbSongClass1.GetDictString(int_0) + " = " + str;
+				return QbSongClass1.GetDictString(Int0) + " = " + str;
 			}
-			return KeyGenerator.ValToHex32bit(int_0) + " (Tag) = " + str;
+			return KeyGenerator.ValToHex32Bit(Int0) + " (Tag) = " + str;
 		}
 
 		public override Color GetColor()
@@ -42,8 +42,8 @@ namespace ns18
 
 		public override object Clone()
 		{
-			var @class = (zzUnkNode294)base.Clone();
-			@class.int_0 = int_0;
+			var @class = (ZzUnkNode294)base.Clone();
+			@class.Int0 = Int0;
 			return @class;
 		}
 

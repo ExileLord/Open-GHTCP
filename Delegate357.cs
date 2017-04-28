@@ -1,3 +1,3 @@
 using System;
 
-public delegate int Delegate357(Type type_0);
+public delegate int Delegate357(Type type0);

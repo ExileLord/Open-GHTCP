@@ -1,1 +1,1 @@
-public delegate byte[] Delegate268(float float_0);
+public delegate byte[] Delegate268(float float0);

@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate void Delegate342(object object_0, BorderStyle borderStyle_0);
+public delegate void Delegate342(object object0, BorderStyle borderStyle0);

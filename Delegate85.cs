@@ -1,3 +1,3 @@
 using System;
 
-public delegate bool Delegate85(Type type_0, object object_0);
+public delegate bool Delegate85(Type type0, object object0);

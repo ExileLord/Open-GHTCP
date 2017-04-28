@@ -1,1 +1,1 @@
-public delegate float Delegate403(object object_0);
+public delegate float Delegate403(object object0);

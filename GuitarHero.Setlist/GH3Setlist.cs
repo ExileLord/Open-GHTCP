@@ -9,46 +9,46 @@ using ns21;
 namespace GuitarHero.Setlist
 {
 	[Serializable]
-	public class GH3Setlist
+	public class Gh3Setlist
 	{
-		public string path;
+		public string Path;
 
-		public string prefix = "";
+		public string Prefix = "";
 
-		public string initial_movie;
+		public string InitialMovie;
 
-		public List<GH3Tier> tiers = new List<GH3Tier>();
+		public List<Gh3Tier> Tiers = new List<Gh3Tier>();
 
 		public int CustomBit;
 
-		public GH3Setlist()
+		public Gh3Setlist()
 		{
 		}
 
-		public GH3Setlist(StructureHeaderNode class286_0, GH3Songlist gh3Songlist_0)
+		public Gh3Setlist(StructureHeaderNode class2860, Gh3Songlist gh3Songlist0)
 		{
-			method_5(class286_0, gh3Songlist_0);
+			method_5(class2860, gh3Songlist0);
 		}
 
-		public List<GH3Tier> method_0()
+		public List<Gh3Tier> method_0()
 		{
-			return tiers;
+			return Tiers;
 		}
 
-		public void method_1(GH3Setlist gh3Setlist_0)
+		public void method_1(Gh3Setlist gh3Setlist0)
 		{
-			initial_movie = gh3Setlist_0.initial_movie;
-			tiers = gh3Setlist_0.tiers;
+			InitialMovie = gh3Setlist0.InitialMovie;
+			Tiers = gh3Setlist0.Tiers;
 		}
 
 		public string method_2()
 		{
-			return path;
+			return Path;
 		}
 
-		public void method_3(string string_0)
+		public void method_3(string string0)
 		{
-			path = string_0;
+			Path = string0;
 		}
 
 		public bool method_4()
@@ -56,35 +56,35 @@ namespace GuitarHero.Setlist
 			return CustomBit != 0;
 		}
 
-		public void method_5(StructureHeaderNode class286_0, GH3Songlist gh3Songlist_0)
+		public void method_5(StructureHeaderNode class2860, Gh3Songlist gh3Songlist0)
 		{
 			AsciiStructureNode @class;
-			prefix = (((@class = class286_0.method_5(new AsciiStructureNode("prefix"))) != null) ? @class.method_8() : "general");
-			initial_movie = (((@class = class286_0.method_5(new AsciiStructureNode("initial_movie"))) != null) ? @class.method_8() : "");
+			Prefix = (((@class = class2860.method_5(new AsciiStructureNode("prefix"))) != null) ? @class.method_8() : "general");
+			InitialMovie = (((@class = class2860.method_5(new AsciiStructureNode("initial_movie"))) != null) ? @class.method_8() : "");
 			IntegerStructureNode class2;
-			var num = ((class2 = class286_0.method_5(new IntegerStructureNode("num_tiers"))) != null) ? class2.method_8() : 0;
+			var num = ((class2 = class2860.method_5(new IntegerStructureNode("num_tiers"))) != null) ? class2.method_8() : 0;
 			try
 			{
 				for (var i = 1; i <= num; i++)
 				{
-					tiers.Add(new GH3Tier(class286_0.method_5(new StructurePointerNode("tier" + i)).method_8(), gh3Songlist_0));
+					Tiers.Add(new Gh3Tier(class2860.method_5(new StructurePointerNode("tier" + i)).method_8(), gh3Songlist0));
 				}
 			}
 			catch
 			{
-				throw new Exception(path + " setlist is corrupt: Tier/s missing.");
+				throw new Exception(Path + " setlist is corrupt: Tier/s missing.");
 			}
 		}
 
 		public StructureHeaderNode method_6()
 		{
 			var @class = new StructureHeaderNode();
-			@class.method_3(new AsciiStructureNode("prefix", prefix));
-			@class.method_3(new IntegerStructureNode("num_tiers", tiers.Count));
-			@class.method_3(new AsciiStructureNode("initial_movie", initial_movie));
-			for (var i = 0; i < tiers.Count; i++)
+			@class.method_3(new AsciiStructureNode("prefix", Prefix));
+			@class.method_3(new IntegerStructureNode("num_tiers", Tiers.Count));
+			@class.method_3(new AsciiStructureNode("initial_movie", InitialMovie));
+			for (var i = 0; i < Tiers.Count; i++)
 			{
-				@class.method_3(new StructurePointerNode("tier" + (i + 1), tiers[i].method_3()));
+				@class.method_3(new StructurePointerNode("tier" + (i + 1), Tiers[i].method_3()));
 			}
 			return @class;
 		}

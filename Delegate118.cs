@@ -1,1 +1,1 @@
-public delegate ulong Delegate118(int int_0);
+public delegate ulong Delegate118(int int0);

@@ -17,14 +17,14 @@ namespace ns1
 		{
 		}
 
-		public Form2(int int_2, int int_3) : base(int_2, 0, int_3)
+		public Form2(int int2, int int3) : base(int2, 0, int3)
 		{
 			waveFormatTag_0 = WaveFormatTag.Adpcm;
 			short_3 = 32;
-			var int_4 = int_0;
-			if (int_4 <= 11025)
+			var int4 = int_0;
+			if (int4 <= 11025)
 			{
-				if (int_4 == 8000 || int_4 == 11025)
+				if (int4 == 8000 || int4 == 11025)
 				{
 					short_1 = 256;
 					goto IL_6E;
@@ -32,19 +32,19 @@ namespace ns1
 			}
 			else
 			{
-				if (int_4 == 22050)
+				if (int4 == 22050)
 				{
 					short_1 = 512;
 					goto IL_6E;
 				}
-				if (int_4 != 44100)
+				if (int4 != 44100)
 				{
 				}
 			}
 			short_1 = 1024;
 			IL_6E:
 			short_2 = 4;
-			short_4 = (short)((short_1 - 7 * int_3) * 8 / (short_2 * int_3) + 2);
+			short_4 = (short)((short_1 - 7 * int3) * 8 / (short_2 * int3) + 2);
 			int_1 = int_0 * short_1 / short_4;
 			short_5 = 7;
 			short_6 = new short[]

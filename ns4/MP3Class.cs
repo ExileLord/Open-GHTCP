@@ -8,35 +8,35 @@ using SharpAudio.ASC.Mp3.Decoding;
 
 namespace ns4
 {
-	public class MP3Class : GenericAudioStream
+	public class Mp3Class : GenericAudioStream
 	{
-		private readonly int int_2;
+		private readonly int _int2;
 
-		private readonly double double_0;
+		private readonly double _double0;
 
-		private readonly long long_0;
+		private readonly long _long0;
 
-		private long long_1;
+		private long _long1;
 
-		private zzSoundClass class107_0;
+		private ZzSoundClass _class1070;
 
-		private readonly zzSoundClass81[] class81_0;
+		private readonly ZzSoundClass81[] _class810;
 
-		private readonly Class82 class82_0;
+		private readonly Class82 _class820;
 
-		private int int_3 = -1;
+		private int _int3 = -1;
 
-		private readonly int int_4 = -1;
+		private readonly int _int4 = -1;
 
-		private readonly short short_0 = -1;
+		private readonly short _short0 = -1;
 
-		private readonly object object_0 = new object();
+		private readonly object _object0 = new object();
 
 		public override bool CanRead
 		{
 			get
 			{
-				return fileStream.CanRead;
+				return FileStream.CanRead;
 			}
 		}
 
@@ -44,7 +44,7 @@ namespace ns4
 		{
 			get
 			{
-				return fileStream.CanSeek;
+				return FileStream.CanSeek;
 			}
 		}
 
@@ -52,7 +52,7 @@ namespace ns4
 		{
 			get
 			{
-				return fileStream.CanWrite;
+				return FileStream.CanWrite;
 			}
 		}
 
@@ -60,7 +60,7 @@ namespace ns4
 		{
 			get
 			{
-				return long_0;
+				return _long0;
 			}
 		}
 
@@ -68,30 +68,30 @@ namespace ns4
 		{
 			get
 			{
-				return long_1;
+				return _long1;
 			}
 			set
 			{
-				lock (object_0)
+				lock (_object0)
 				{
-					long_1 = value;
-					fileStream.Position = int_2;
-					class82_0.method_6();
-					class82_0.method_7();
-					for (var i = 0; i < class81_0.Length; i++)
+					_long1 = value;
+					FileStream.Position = _int2;
+					_class820.method_6();
+					_class820.method_7();
+					for (var i = 0; i < _class810.Length; i++)
 					{
-						class81_0[i].method_0().method_6();
+						_class810[i].method_0().method_6();
 					}
-					if (long_1 != 0L)
+					if (_long1 != 0L)
 					{
-						var num = (long)(value / double_0 + int_2);
-						var @class = class82_0.method_3();
-						while (fileStream.Position + @class.int_12 * class81_0.Length < num)
+						var num = (long)(value / _double0 + _int2);
+						var @class = _class820.method_3();
+						while (FileStream.Position + @class.Int12 * _class810.Length < num)
 						{
-							for (var j = 0; j < class81_0.Length; j++)
+							for (var j = 0; j < _class810.Length; j++)
 							{
-								class82_0.method_7();
-								@class = class82_0.method_3();
+								_class820.method_7();
+								@class = _class820.method_3();
 								if (@class == null)
 								{
 									return;
@@ -100,14 +100,14 @@ namespace ns4
 						}
 						try
 						{
-							int_3 = @class.method_21();
-							class81_0[0].method_5(@class, class82_0);
+							_int3 = @class.method_21();
+							_class810[0].method_5(@class, _class820);
 						}
 						finally
 						{
-							class82_0.method_7();
+							_class820.method_7();
 						}
-						for (var k = 1; k < class81_0.Length; k++)
+						for (var k = 1; k < _class810.Length; k++)
 						{
 							if (!method_1(k))
 							{
@@ -119,48 +119,48 @@ namespace ns4
 			}
 		}
 
-		public MP3Class(Stream stream_1, int int_5, Enum4 enum4_0) : this(stream_1, int_5, enum4_0, 4096)
+		public Mp3Class(Stream stream1, int int5, Enum4 enum40) : this(stream1, int5, enum40, 4096)
 		{
 		}
 
-		public MP3Class(Stream stream_1, int int_5, Enum4 enum4_0, int int_6)
+		public Mp3Class(Stream stream1, int int5, Enum4 enum40, int int6)
 		{
-			class81_0 = new zzSoundClass81[int_5];
-			for (var i = 0; i < class81_0.Length; i++)
+			_class810 = new ZzSoundClass81[int5];
+			for (var i = 0; i < _class810.Length; i++)
 			{
-				class81_0[i] = new zzSoundClass81(new Class104(enum4_0));
+				_class810[i] = new ZzSoundClass81(new Class104(enum40));
 			}
-			fileStream = stream_1;
-			class82_0 = new Class82(fileStream, int_6);
-			int_2 = class82_0.method_2();
-			long_0 = -1L;
-			class107_0 = null;
+			FileStream = stream1;
+			_class820 = new Class82(FileStream, int6);
+			_int2 = _class820.method_2();
+			_long0 = -1L;
+			_class1070 = null;
 			if (!method_0())
 			{
 				throw new Mp3Exception("Mp3 Decoder: Cannot read header.");
 			}
-			short_0 = 0;
-			for (var j = 0; j < class81_0.Length; j++)
+			_short0 = 0;
+			for (var j = 0; j < _class810.Length; j++)
 			{
-				short_0 += (short)class81_0[j].method_2();
+				_short0 += (short)_class810[j].method_2();
 			}
-			int_4 = class81_0[0].method_1();
-			waveFormat_0 = new WaveFormat(int_4, short_0);
-			double_0 = waveFormat_0.int_0 * (waveFormat_0.short_1 / class81_0.Length) / (int_3 / 8.0);
-			long_1 = 0L;
-			if (class107_0 != null && class107_0.method_10())
+			_int4 = _class810[0].method_1();
+			WaveFormat0 = new WaveFormat(_int4, _short0);
+			_double0 = WaveFormat0.int_0 * (WaveFormat0.short_1 / _class810.Length) / (_int3 / 8.0);
+			_long1 = 0L;
+			if (_class1070 != null && _class1070.method_10())
 			{
-				long_0 = Convert.ToInt64(class107_0.method_18((int)(fileStream.Length - int_2) / class81_0.Length) * (waveFormat_0.int_0 * (waveFormat_0.short_1 / 1000.0)));
+				_long0 = Convert.ToInt64(_class1070.method_18((int)(FileStream.Length - _int2) / _class810.Length) * (WaveFormat0.int_0 * (WaveFormat0.short_1 / 1000.0)));
 			}
-			if (long_0 <= 0L)
+			if (_long0 <= 0L)
 			{
-				long_0 = (long)((fileStream.Length - int_2) * double_0);
+				_long0 = (long)((FileStream.Length - _int2) * _double0);
 			}
 		}
 
 		public override void Flush()
 		{
-			fileStream.Flush();
+			FileStream.Flush();
 		}
 
 		public override void SetLength(long value)
@@ -175,40 +175,40 @@ namespace ns4
 
 		public override void Close()
 		{
-			class82_0.method_1();
-			fileStream.Close();
+			_class820.method_1();
+			FileStream.Close();
 		}
 
-		public override int vmethod_3(IntPtr intptr_0, int int_5)
+		public override int vmethod_3(IntPtr intptr0, int int5)
 		{
-			int_5 >>= 2;
-			var array = new float[int_5];
-			var num = vmethod_4(array, 0, int_5);
-			Marshal.Copy(array, 0, intptr_0, num);
+			int5 >>= 2;
+			var array = new float[int5];
+			var num = vmethod_4(array, 0, int5);
+			Marshal.Copy(array, 0, intptr0, num);
 			return num << 2;
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			if (class81_0.Length == 1)
+			if (_class810.Length == 1)
 			{
 				int result;
-				lock (object_0)
+				lock (_object0)
 				{
 					var num = 0;
 					do
 					{
-						if (class81_0[0].method_0().method_0() <= 0)
+						if (_class810[0].method_0().method_0() <= 0)
 						{
 							if (!method_1(0))
 							{
 								break;
 							}
 						}
-						num += class81_0[0].method_0().method_2(buffer, offset + num, count - num);
+						num += _class810[0].method_0().method_2(buffer, offset + num, count - num);
 					}
 					while (num < count);
-					long_1 += num;
+					_long1 += num;
 					result = num;
 				}
 				return result;
@@ -220,32 +220,32 @@ namespace ns4
 			return num2 << 2;
 		}
 
-		public override int vmethod_4(float[] float_0, int int_5, int int_6)
+		public override int vmethod_4(float[] float0, int int5, int int6)
 		{
-			if (class81_0.Length == 1)
+			if (_class810.Length == 1)
 			{
 				int result;
-				lock (object_0)
+				lock (_object0)
 				{
 					var num = 0;
 					do
 					{
-						if (class81_0[0].method_0().method_0() <= 0)
+						if (_class810[0].method_0().method_0() <= 0)
 						{
 							if (!method_1(0))
 							{
 								break;
 							}
 						}
-						num += class81_0[0].method_0().method_1(float_0, int_5 + num, int_6 - num);
+						num += _class810[0].method_0().method_1(float0, int5 + num, int6 - num);
 					}
-					while (num < int_6);
-					long_1 += (long)num << 2;
+					while (num < int6);
+					_long1 += (long)num << 2;
 					result = num;
 				}
 				return result;
 			}
-			var array = vmethod_5(int_6 / waveFormat_0.short_0);
+			var array = vmethod_5(int6 / WaveFormat0.short_0);
 			if (array == null)
 			{
 				return 0;
@@ -257,16 +257,16 @@ namespace ns4
 				var array3 = array2[i];
 				num2 = Math.Max(array3.Length, num2);
 			}
-			num2 *= waveFormat_0.short_0;
+			num2 *= WaveFormat0.short_0;
 			var num3 = array.Length;
 			for (var j = 0; j < num3; j++)
 			{
 				var array4 = array[j];
 				var k = 0;
-				var num4 = int_5 + j;
+				var num4 = int5 + j;
 				while (k < array4.Length)
 				{
-					float_0[num4] = array4[k];
+					float0[num4] = array4[k];
 					k++;
 					num4 += num3;
 				}
@@ -274,22 +274,22 @@ namespace ns4
 			return num2;
 		}
 
-		public override float[][] vmethod_5(int int_5)
+		public override float[][] vmethod_5(int int5)
 		{
 			float[][] result;
-			lock (object_0)
+			lock (_object0)
 			{
 				int num = vmethod_0().short_0;
 				var array = new float[num][];
 				for (var i = 0; i < num; i++)
 				{
-					array[i] = new float[int_5];
+					array[i] = new float[int5];
 				}
-				int_5 *= num;
+				int5 *= num;
 				var num2 = 0;
 				do
 				{
-					if (class81_0[0].method_0().method_0() <= 0)
+					if (_class810[0].method_0().method_0() <= 0)
 					{
 						if (!method_0())
 						{
@@ -297,11 +297,11 @@ namespace ns4
 						}
 					}
 					var num3 = 0;
-					var int_6 = num2 / class81_0.Length;
-					var int_7 = (int_5 - num2) / class81_0.Length;
-					for (var j = 0; j < class81_0.Length; j++)
+					var int6 = num2 / _class810.Length;
+					var int7 = (int5 - num2) / _class810.Length;
+					for (var j = 0; j < _class810.Length; j++)
 					{
-						var array2 = new float[class81_0[j].method_2()][];
+						var array2 = new float[_class810[j].method_2()][];
 						var k = 0;
 						while (k < array2.Length)
 						{
@@ -309,11 +309,11 @@ namespace ns4
 							k++;
 							num3++;
 						}
-						num2 += class81_0[j].method_0().method_3(array2, int_6, int_7);
+						num2 += _class810[j].method_0().method_3(array2, int6, int7);
 					}
 				}
-				while (num2 < int_5);
-				long_1 += (long)num2 << 2;
+				while (num2 < int5);
+				_long1 += (long)num2 << 2;
 				result = array;
 			}
 			return result;
@@ -321,7 +321,7 @@ namespace ns4
 
 		public bool method_0()
 		{
-			for (var i = 0; i < class81_0.Length; i++)
+			for (var i = 0; i < _class810.Length; i++)
 			{
 				if (!method_1(i))
 				{
@@ -331,25 +331,25 @@ namespace ns4
 			return true;
 		}
 
-		public bool method_1(int int_5)
+		public bool method_1(int int5)
 		{
-			var @class = class82_0.method_3();
+			var @class = _class820.method_3();
 			if (@class == null)
 			{
 				return false;
 			}
-			if (class107_0 == null)
+			if (_class1070 == null)
 			{
-				class107_0 = @class;
+				_class1070 = @class;
 			}
 			try
 			{
-				int_3 = @class.method_21();
-				class81_0[int_5].method_5(@class, class82_0);
+				_int3 = @class.method_21();
+				_class810[int5].method_5(@class, _class820);
 			}
 			finally
 			{
-				class82_0.method_7();
+				_class820.method_7();
 			}
 			return true;
 		}

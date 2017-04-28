@@ -1,6 +1,6 @@
 namespace ns15
 {
-	public interface Interface16
+	public interface INterface16
 	{
 	}
 }

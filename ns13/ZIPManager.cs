@@ -5,23 +5,23 @@ using ns12;
 
 namespace ns13
 {
-	public static class ZIPManager
+	public static class ZipManager
 	{
 		public static void smethod_0(IEnumerable<string> fileNameList, string saveLocation, string password, Stream[] fileStreamList)
 		{
-			checkFileDirectory(fileNameList, saveLocation, 9, password, fileStreamList);
+			CheckFileDirectory(fileNameList, saveLocation, 9, password, fileStreamList);
 		}
 
-		public static void checkFileDirectory(IEnumerable<string> fileNameList, string saveLocation, int nine, string password, Stream[] fileStreamList)
+		public static void CheckFileDirectory(IEnumerable<string> fileNameList, string saveLocation, int nine, string password, Stream[] fileStreamList)
 		{
 			if (!Directory.Exists(new FileInfo(saveLocation).Directory.ToString()))
 			{
 				throw new ArgumentException("The Path does not exist.");
 			}
-			processFile(fileNameList, File.Create(saveLocation), nine, password, fileStreamList);
+			ProcessFile(fileNameList, File.Create(saveLocation), nine, password, fileStreamList);
 		}
 
-		public static void processFile(IEnumerable<string> fileNameList, Stream zipFile, int compressionAmount, string password, Stream[] fileStreamList)
+		public static void ProcessFile(IEnumerable<string> fileNameList, Stream zipFile, int compressionAmount, string password, Stream[] fileStreamList)
 		{
 			if (compressionAmount >= 0 && compressionAmount <= 9)
 			{
@@ -74,48 +74,48 @@ namespace ns13
 			throw new ArgumentException("Invalid compression rate.");
 		}
 
-		public static void smethod_3(string ZipFilePath, out byte[] bytes, string FileName, string Password)
+		public static void smethod_3(string zipFilePath, out byte[] bytes, string fileName, string password)
 		{
-			smethod_7(File.OpenRead(ZipFilePath), out bytes, FileName, Password);
+			smethod_7(File.OpenRead(zipFilePath), out bytes, fileName, password);
 		}
 
-		public static void smethod_4(string string_0, string string_1, string string_2)
+		public static void smethod_4(string string0, string string1, string string2)
 		{
-			smethod_9(File.OpenRead(string_0), File.Create(string_1), string_2);
+			smethod_9(File.OpenRead(string0), File.Create(string1), string2);
 		}
 
-		public static byte[] smethod_5(byte[] byte_0, string string_0)
+		public static byte[] smethod_5(byte[] byte0, string string0)
 		{
-			return smethod_6(new MemoryStream(byte_0), string_0);
+			return smethod_6(new MemoryStream(byte0), string0);
 		}
 
-		public static byte[] smethod_6(Stream stream_0, string string_0)
+		public static byte[] smethod_6(Stream stream0, string string0)
 		{
 			var memoryStream = new MemoryStream();
-			smethod_9(stream_0, memoryStream, string_0);
+			smethod_9(stream0, memoryStream, string0);
 			return memoryStream.ToArray();
 		}
 
-		public static void smethod_7(Stream StreamIn, out byte[] bytes, string FileName, string Password)
+		public static void smethod_7(Stream streamIn, out byte[] bytes, string fileName, string password)
 		{
 			var memoryStream = new MemoryStream();
-			smethod_10(StreamIn, memoryStream, FileName, Password);
+			smethod_10(streamIn, memoryStream, fileName, password);
 			bytes = memoryStream.ToArray();
 		}
 
-		public static void smethod_8(Stream stream_0, string string_0, string string_1)
+		public static void smethod_8(Stream stream0, string string0, string string1)
 		{
-			smethod_10(stream_0, File.Create(string_0), string_1, null);
+			smethod_10(stream0, File.Create(string0), string1, null);
 		}
 
-		public static void smethod_9(Stream stream_0, Stream stream_1, string string_0)
+		public static void smethod_9(Stream stream0, Stream stream1, string string0)
 		{
-			smethod_10(stream_0, stream_1, string_0, null);
+			smethod_10(stream0, stream1, string0, null);
 		}
 
 		public static void smethod_10(Stream zipFile, Stream memoryStream, string fileName, string password)
 		{
-            var zipManager = new ZIPCompressor(zipFile);
+            var zipManager = new ZipCompressor(zipFile);
 			if (password != null)
 			{
 				zipManager.method_3(password);
@@ -141,22 +141,22 @@ namespace ns13
 			}
 		}
 
-		public static void smethod_11(string string_0, List<string> list_0, List<string> list_1, string string_1)
+		public static void smethod_11(string string0, List<string> list0, List<string> list1, string string1)
 		{
-			Stream stream = File.OpenRead(string_0);
-            var stream2 = new ZIPCompressor(stream);
-			if (string_1 != null)
+			Stream stream = File.OpenRead(string0);
+            var stream2 = new ZipCompressor(stream);
+			if (string1 != null)
 			{
-				stream2.method_3(string_1);
+				stream2.method_3(string1);
 			}
 			var array = new byte[2048];
 			Class193 @class;
 			while ((@class = stream2.method_5()) != null)
 			{
-				if (list_1.Contains(@class.method_20()))
+				if (list1.Contains(@class.method_20()))
 				{
-					var index = list_1.IndexOf(@class.method_20());
-					using (Stream stream3 = File.Create(list_0[index]))
+					var index = list1.IndexOf(@class.method_20());
+					using (Stream stream3 = File.Create(list0[index]))
 					{
 						if (stream3.CanWrite)
 						{

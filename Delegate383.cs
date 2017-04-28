@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate FormWindowState Delegate383(object object_0);
+public delegate FormWindowState Delegate383(object object0);

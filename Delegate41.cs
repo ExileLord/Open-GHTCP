@@ -1,3 +1,3 @@
 using System;
 
-public delegate string Delegate41(IntPtr intptr_0);
+public delegate string Delegate41(IntPtr intptr0);

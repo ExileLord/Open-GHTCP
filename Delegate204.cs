@@ -1,1 +1,1 @@
-public delegate byte[] Delegate204(short short_0);
+public delegate byte[] Delegate204(short short0);

@@ -4,9 +4,9 @@ namespace ns12
 {
 	public class Class183
 	{
-		public static int int_0 = Math.Min(65535, 65531);
+		public static int Int0 = Math.Min(65535, 65531);
 
-		public static int[] int_1 = {
+		public static int[] Int1 = {
 			0,
 			4,
 			4,
@@ -19,7 +19,7 @@ namespace ns12
 			32
 		};
 
-		public static int[] int_2 = {
+		public static int[] Int2 = {
 			0,
 			4,
 			5,
@@ -32,7 +32,7 @@ namespace ns12
 			258
 		};
 
-		public static int[] int_3 = {
+		public static int[] Int3 = {
 			0,
 			8,
 			16,
@@ -45,7 +45,7 @@ namespace ns12
 			258
 		};
 
-		public static int[] int_4 = {
+		public static int[] Int4 = {
 			0,
 			4,
 			8,
@@ -58,7 +58,7 @@ namespace ns12
 			4096
 		};
 
-		public static int[] int_5 = {
+		public static int[] Int5 = {
 			0,
 			1,
 			1,

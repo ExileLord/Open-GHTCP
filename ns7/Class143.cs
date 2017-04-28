@@ -2,21 +2,21 @@ namespace ns7
 {
 	public class Class143
 	{
-		public int[] int_0;
+		public int[] Int0;
 
-		public int[] int_1;
+		public int[] Int1;
 
-		public int int_2;
+		public int Int2;
 
-		public virtual void vmethod_0(int int_3)
+		public virtual void vmethod_0(int int3)
 		{
-			if (int_2 >= int_3)
+			if (Int2 >= int3)
 			{
 				return;
 			}
-			int_0 = new int[1 << int_3];
-			int_1 = new int[1 << int_3];
-			int_2 = int_3;
+			Int0 = new int[1 << int3];
+			Int1 = new int[1 << int3];
+			Int2 = int3;
 		}
 	}
 }

@@ -5,31 +5,31 @@ using ns21;
 
 namespace ns19
 {
-	public class AsciiStructureNode : zzUnkNode294
+	public class AsciiStructureNode : ZzUnkNode294
 	{
 		public AsciiStructureNode()
 		{
 			vmethod_0();
 		}
 
-		public AsciiStructureNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
+		public AsciiStructureNode(string string0) : this(QbSongClass1.AddKeyToDictionary(string0))
 		{
 		}
 
-		public AsciiStructureNode(int int_1)
+		public AsciiStructureNode(int int1)
 		{
-			int_0 = int_1;
+			Int0 = int1;
 			vmethod_0();
 		}
 
-		public AsciiStructureNode(string string_0, string string_1) : this(QbSongClass1.AddKeyToDictionary(string_0), string_1)
+		public AsciiStructureNode(string string0, string string1) : this(QbSongClass1.AddKeyToDictionary(string0), string1)
 		{
 		}
 
-		public AsciiStructureNode(int int_1, string string_0)
+		public AsciiStructureNode(int int1, string string0)
 		{
-			int_0 = int_1;
-			Nodes.Add(new AsciiValueNode(string_0));
+			Int0 = int1;
+			Nodes.Add(new AsciiValueNode(string0));
 			vmethod_0();
 		}
 
@@ -42,68 +42,68 @@ namespace ns19
 		{
 			if (Nodes.Count != 0)
 			{
-				return ((AsciiValueNode)FirstNode).string_0;
+				return ((AsciiValueNode)FirstNode).String0;
 			}
 			return null;
 		}
 
-		public override void vmethod_13(Stream26 stream26_0)
+		public override void vmethod_13(Stream26 stream260)
 		{
-			int_0 = stream26_0.ReadInt();
-			var num = stream26_0.ReadInt();
-			var num2 = stream26_0.ReadInt();
+			Int0 = stream260.ReadInt();
+			var num = stream260.ReadInt();
+			var num2 = stream260.ReadInt();
 			if (num != 0)
 			{
-				Nodes.Add(new AsciiValueNode(stream26_0.ReadAsciiStringAt(num)));
-				stream26_0.Position += smethod_0(stream26_0.Position);
+				Nodes.Add(new AsciiValueNode(stream260.ReadAsciiStringAt(num)));
+				stream260.Position += smethod_0(stream260.Position);
 			}
 			if (num2 != 0)
 			{
-				var @class = (Parent is StructureHeaderNode) ? (Parent as StructureHeaderNode).method_11(stream26_0.ReadIntAt(num2)) : vmethod_12(stream26_0.ReadIntAt(num2, true));
+				var @class = (Parent is StructureHeaderNode) ? (Parent as StructureHeaderNode).method_11(stream260.ReadIntAt(num2)) : vmethod_12(stream260.ReadIntAt(num2, true));
 				method_1().Nodes.Add(@class);
-				@class.method_4(stream26_0);
+				@class.method_4(stream260);
 			}
 		}
 
-		public override void vmethod_14(Stream26 stream26_0)
+		public override void vmethod_14(Stream26 stream260)
 		{
 			if (vmethod_8())
 			{
 				var array = new byte[4];
 				array[1] = 1;
 				array[2] = 3;
-				stream26_0.WriteByteArray(array, false);
+				stream260.WriteByteArray(array, false);
 			}
 			else
 			{
 				var array2 = new byte[4];
                 array2[1] = (byte)(vmethod_7() ? 131 : 7);
-				stream26_0.WriteByteArray(array2, false);
+				stream260.WriteByteArray(array2, false);
 			}
-			stream26_0.WriteInt(int_0);
-			var int_ = (int)stream26_0.Position + 4;
+			stream260.WriteInt(Int0);
+			var int_ = (int)stream260.Position + 4;
 			if (Nodes.Count != 0)
 			{
-				stream26_0.WriteInt((int)stream26_0.Position + 8);
-				stream26_0.WriteInt(0);
-				stream26_0.WriteString(method_8());
-				stream26_0.WriteByte2(0);
-				stream26_0.WriteNBytes(0, smethod_0(stream26_0.Position));
+				stream260.WriteInt((int)stream260.Position + 8);
+				stream260.WriteInt(0);
+				stream260.WriteString(method_8());
+				stream260.WriteByte2(0);
+				stream260.WriteNBytes(0, smethod_0(stream260.Position));
 			}
 			else
 			{
-				stream26_0.WriteInt(0);
+				stream260.WriteInt(0);
 			}
-			var num = (int)stream26_0.Position;
+			var num = (int)stream260.Position;
 			if (method_1().Nodes.IndexOf(this) < method_1().Nodes.Count - 1)
 			{
-				stream26_0.WriteIntAt(int_, num);
+				stream260.WriteIntAt(int_, num);
 			}
 			else
 			{
-				stream26_0.WriteIntAt(int_, 0);
+				stream260.WriteIntAt(int_, 0);
 			}
-			stream26_0.Position = num;
+			stream260.Position = num;
 		}
 
 		public override string GetNodeText()
@@ -111,14 +111,14 @@ namespace ns19
 			return "Ascii Structure";
 		}
 
-		public override void vmethod_2(ref int int_1)
+		public override void vmethod_2(ref int int1)
 		{
-			int_1 += 16;
+			int1 += 16;
 			if (Nodes.Count != 0)
 			{
-				((AsciiValueNode)Nodes[0]).vmethod_2(ref int_1);
-				int_1++;
-				int_1 += smethod_0(int_1);
+				((AsciiValueNode)Nodes[0]).vmethod_2(ref int1);
+				int1++;
+				int1 += smethod_0(int1);
 			}
 		}
 	}

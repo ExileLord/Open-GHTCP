@@ -9,36 +9,36 @@ namespace ns14
 	{
 		public delegate void Delegate6(object sender, EventArgs0 e);
 
-		private Delegate6 delegate6_0;
+		private Delegate6 _delegate60;
 
-		private readonly List<QbEditor> actionList;
+		private readonly List<QbEditor> _actionList;
 
-		public void method_0(Delegate6 delegate6_1)
+		public void method_0(Delegate6 delegate61)
 		{
-			var @delegate = delegate6_0;
+			var @delegate = _delegate60;
 			Delegate6 delegate2;
 			do
 			{
 				delegate2 = @delegate;
-				var value = (Delegate6)Delegate.Combine(delegate2, delegate6_1);
-				@delegate = Interlocked.CompareExchange(ref delegate6_0, value, delegate2);
+				var value = (Delegate6)Delegate.Combine(delegate2, delegate61);
+				@delegate = Interlocked.CompareExchange(ref _delegate60, value, delegate2);
 			}
 			while (@delegate != delegate2);
 		}
 
 		public ActionList(List<QbEditor> actionList)
 		{
-			this.actionList = actionList;
+			this._actionList = actionList;
 		}
 
 		public void method_1()
 		{
 			EventArgs0 e;
-            foreach (var current in actionList)
+            foreach (var current in _actionList)
 			{
-				var int_ = 100 * actionList.IndexOf(current) / actionList.Count;
+				var int_ = 100 * _actionList.IndexOf(current) / _actionList.Count;
 				e = new EventArgs0(current + " Processing...", int_);
-				delegate6_0(this, e);
+				_delegate60(this, e);
                 string finalStatus;
                 using (new Class217(current.ToString()))
 				{
@@ -52,10 +52,10 @@ namespace ns14
 					}
 				}
 				e = new EventArgs0(finalStatus, int_);
-				delegate6_0(this, e);
+				_delegate60(this, e);
 			}
 			e = new EventArgs0("", 100);
-            delegate6_0(this, e);
+            _delegate60(this, e);
         }
 	}
 }

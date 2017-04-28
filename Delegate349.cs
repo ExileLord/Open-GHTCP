@@ -1,1 +1,1 @@
-public delegate byte[] Delegate349(object object_0);
+public delegate byte[] Delegate349(object object0);

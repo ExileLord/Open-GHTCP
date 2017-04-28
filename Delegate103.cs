@@ -1,3 +1,3 @@
 using System.Reflection;
 
-public delegate Assembly Delegate103(string string_0);
+public delegate Assembly Delegate103(string string0);

@@ -19,18 +19,18 @@ namespace ns22
 		{
 		}
 
-		public static Struct91 struct91_0;
+		public static Struct91 Struct910;
 
-		public static Struct91 struct91_1;
+		public static Struct91 Struct911;
 
-		public static Struct92 struct92_0;
+		public static Struct92 Struct920;
 
-		public static Struct92 struct92_1;
+		public static Struct92 Struct921;
 
-		public static Struct92 struct92_2;
+		public static Struct92 Struct922;
 
-		public static Struct92 struct92_3;
+		public static Struct92 Struct923;
 
-		public static Struct92 struct92_4;
+		public static Struct92 Struct924;
 	}
 }

@@ -1,1 +1,1 @@
-public delegate int Delegate252(float float_0);
+public delegate int Delegate252(float float0);

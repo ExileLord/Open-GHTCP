@@ -1,1 +1,1 @@
-public delegate string[] Delegate259(object object_0);
+public delegate string[] Delegate259(object object0);

@@ -3,17 +3,17 @@ using ns21;
 
 namespace ns22
 {
-	public class StructureArrayNode : zzUnkNode289<StructureHeaderNode>
+	public class StructureArrayNode : ZzUnkNode289<StructureHeaderNode>
 	{
-		public StructureHeaderNode this[int int_0]
+		public StructureHeaderNode this[int int0]
 		{
 			get
 			{
-				return (StructureHeaderNode)Nodes[int_0];
+				return (StructureHeaderNode)Nodes[int0];
 			}
 			set
 			{
-				Nodes[int_0] = value;
+				Nodes[int0] = value;
 			}
 		}
 

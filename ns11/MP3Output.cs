@@ -9,74 +9,74 @@ using SharpAudio.ASC;
 
 namespace ns11
 {
-	public class MP3Output : IDisposable, PlayableAudio
+	public class Mp3Output : IDisposable, IPlayableAudio
 	{
-		private AudioPlayer class159_0;
+		private AudioPlayer _class1590;
 
-		private readonly Class16 class16_0;
+		private readonly Class16 _class160;
 
-		private GenericAudioStream stream1_0;
+		private GenericAudioStream _stream10;
 
-		private readonly bool bool_0;
+		private readonly bool _bool0;
 
-		private byte[] byte_0;
+		private byte[] _byte0;
 
-		private AudioStatus enum1_0;
+		private AudioStatus _enum10;
 
-		private float Volume = 1f;
+		private float _volume = 1f;
 
-		private int int_0;
+		private int _int0;
 
-		public MP3Output(GenericAudioStream stream1_1) : this(stream1_1, false)
+		public Mp3Output(GenericAudioStream stream11) : this(stream11, false)
 		{
 		}
 
-		public MP3Output(GenericAudioStream stream1_1, bool bool_1)
+		public Mp3Output(GenericAudioStream stream11, bool bool1)
 		{
-			if (stream1_1.Length <= 0L)
+			if (stream11.Length <= 0L)
 			{
 				throw new Exception("WinMM2Player: Invalid Stream.");
 			}
-			class16_0 = stream1_1.vmethod_1();
-			if (class16_0.waveFormat_0.waveFormatTag_0 != WaveFormatTag.PCM && class16_0.waveFormat_0.waveFormatTag_0 != WaveFormatTag.IEEEFloat)
+			_class160 = stream11.vmethod_1();
+			if (_class160.WaveFormat0.waveFormatTag_0 != WaveFormatTag.Pcm && _class160.WaveFormat0.waveFormatTag_0 != WaveFormatTag.IeeeFloat)
 			{
 				throw new Exception("WinMM2Player: Only PCM is supported.");
 			}
-			stream1_0 = stream1_1;
-			bool_0 = bool_1;
+			_stream10 = stream11;
+			_bool0 = bool1;
 			SetStartingTimeBasedOnSomeValue(0);
-			enum1_0 = AudioStatus.ShouldStopAudio;
+			_enum10 = AudioStatus.ShouldStopAudio;
 		}
 
 		public TimeSpan AudioLength()
 		{
-			return TimeSpan.FromSeconds(vmethod_0() / (double)(class16_0.method_3() * class16_0.method_1()));
+			return TimeSpan.FromSeconds(vmethod_0() / (double)(_class160.method_3() * _class160.method_1()));
 		}
 
-		public void SetStartingTime(TimeSpan timeSpan_0)
+		public void SetStartingTime(TimeSpan timeSpan0)
 		{
-			SetStartingTimeBasedOnSomeValue(Convert.ToInt32(class16_0.method_3() * class16_0.method_1() * timeSpan_0.TotalSeconds));
+			SetStartingTimeBasedOnSomeValue(Convert.ToInt32(_class160.method_3() * _class160.method_1() * timeSpan0.TotalSeconds));
 		}
 
 		public int vmethod_0()
 		{
-			if (enum1_0 != AudioStatus.ShouldStopAudio)
+			if (_enum10 != AudioStatus.ShouldStopAudio)
 			{
-				return int_0 + class159_0.method_0();
+				return _int0 + _class1590.method_0();
 			}
-			return (int)stream1_0.Position;
+			return (int)_stream10.Position;
 		}
 
-		public void SetStartingTimeBasedOnSomeValue(int int_1)
+		public void SetStartingTimeBasedOnSomeValue(int int1)
 		{
-			var @enum = enum1_0;
+			var @enum = _enum10;
 			if (@enum != AudioStatus.ShouldStopAudio)
 			{
 				StopPlaying();
 			}
-			Stream arg_21_0 = stream1_0;
-			int_0 = int_1;
-			arg_21_0.Position = int_1;
+			Stream arg210 = _stream10;
+			_int0 = int1;
+			arg210.Position = int1;
 			if (@enum == AudioStatus.ShouldStartAudio)
 			{
 				DifferentStartPlaying();
@@ -85,46 +85,46 @@ namespace ns11
 
 		public float vmethod_1()
 		{
-			if (class159_0 == null)
+			if (_class1590 == null)
 			{
-				return Volume;
+				return _volume;
 			}
-			return class159_0.method_1();
+			return _class1590.method_1();
 		}
 
-		public void SetVolume(float float_1)
+		public void SetVolume(float float1)
 		{
-			Volume = float_1;
-			if (class159_0 != null)
+			_volume = float1;
+			if (_class1590 != null)
 			{
-				class159_0.SetVolume(Volume);
+				_class1590.SetVolume(_volume);
 			}
 		}
 
 		public AudioStatus GetStatus()
 		{
-			return enum1_0;
+			return _enum10;
 		}
 
 		public WaveFormat GetWaveFormat()
 		{
-			return class16_0.waveFormat_0;
+			return _class160.WaveFormat0;
 		}
 
 		public void DifferentStartPlaying()
 		{
             WaitCallback waitCallback = null;
             //Error Case (Will never get called)
-            if (enum1_0 == AudioStatus.ShouldStartAudio)
+            if (_enum10 == AudioStatus.ShouldStartAudio)
 			{
 				return;
 			}
             //If song is already playing
-            if (class159_0 != null && enum1_0 == AudioStatus.IsCurrentlyPlayingAudio && !class159_0.method_5())
+            if (_class1590 != null && _enum10 == AudioStatus.IsCurrentlyPlayingAudio && !_class1590.method_5())
 			{
-                enum1_0 = AudioStatus.ShouldStartAudio;
-				class159_0.SetVolume(0f);
-				class159_0.method_3();
+                _enum10 = AudioStatus.ShouldStartAudio;
+				_class1590.SetVolume(0f);
+				_class1590.method_3();
                 if (waitCallback == null)
 				{
 					waitCallback = method_2;
@@ -133,53 +133,53 @@ namespace ns11
 				return;
 			}
             StopPlaying();
-			enum1_0 = AudioStatus.ShouldStartAudio;
-            class159_0 = new AudioPlayer(-1, class16_0.waveFormat_0, 200, Volume, bool_0, method_0);
+			_enum10 = AudioStatus.ShouldStartAudio;
+            _class1590 = new AudioPlayer(-1, _class160.WaveFormat0, 200, _volume, _bool0, method_0);
         }
 
 		public void StartPlaying()
 		{
-			if (class159_0 != null)
+			if (_class1590 != null)
 			{
-				if (enum1_0 == AudioStatus.ShouldStartAudio)
+				if (_enum10 == AudioStatus.ShouldStartAudio)
 				{
-					enum1_0 = AudioStatus.IsCurrentlyPlayingAudio;
-                    class159_0.method_4();
+					_enum10 = AudioStatus.IsCurrentlyPlayingAudio;
+                    _class1590.method_4();
 				}
 			}
 		}
 
 		public void StopPlaying()
 		{
-			if (class159_0 != null && enum1_0 != AudioStatus.ShouldStopAudio)
+			if (_class1590 != null && _enum10 != AudioStatus.ShouldStopAudio)
 			{
-				enum1_0 = AudioStatus.ShouldStopAudio;
+				_enum10 = AudioStatus.ShouldStopAudio;
 				try
 				{
-					class159_0.Dispose();
+					_class1590.Dispose();
 				}
 				finally
 				{
-					class159_0 = null;
+					_class1590 = null;
 				}
 			}
 		}
 
-		private void method_0(AudioPlayer class159_1, IntPtr intptr_0, int int_1, ref bool bool_1)
+		private void method_0(AudioPlayer class1591, IntPtr intptr0, int int1, ref bool bool1)
 		{
 			WaitCallback waitCallback = null;
-			if (byte_0 == null || byte_0.Length < int_1)
+			if (_byte0 == null || _byte0.Length < int1)
 			{
-				byte_0 = new byte[int_1];
+				_byte0 = new byte[int1];
 			}
-			if (stream1_0 != null && class159_1 == class159_0)
+			if (_stream10 != null && class1591 == _class1590)
 			{
-                lock (stream1_0)
+                lock (_stream10)
 				{
-					var num = stream1_0.vmethod_3(intptr_0, int_1);
-					if (num < int_1)
+					var num = _stream10.vmethod_3(intptr0, int1);
+					if (num < int1)
 					{
-                        bool_1 = true;
+                        bool1 = true;
 						if (waitCallback == null)
 						{
 							waitCallback = method_3;
@@ -189,21 +189,21 @@ namespace ns11
 					return;
 				}
 			}
-			Marshal.Copy(byte_0, 0, intptr_0, int_1);
+			Marshal.Copy(_byte0, 0, intptr0, int1);
 		}
 
-		public void method_1(bool bool_1)
+		public void method_1(bool bool1)
 		{
 			StopPlaying();
-			if (bool_1 && stream1_0 != null)
+			if (bool1 && _stream10 != null)
 			{
 				try
 				{
-					stream1_0.Dispose();
+					_stream10.Dispose();
 				}
 				finally
 				{
-					stream1_0 = null;
+					_stream10 = null;
 				}
 			}
 		}
@@ -214,38 +214,38 @@ namespace ns11
 			GC.SuppressFinalize(this);
 		}
 
-		~MP3Output()
+		~Mp3Output()
 		{
 			method_1(false);
 		}
 
 		[CompilerGenerated]
-		private void method_2(object object_0)
+		private void method_2(object object0)
 		{
 			var num = vmethod_1();
-            while (num < Volume)
+            while (num < _volume)
 			{
-                if (enum1_0 != AudioStatus.ShouldStartAudio)
+                if (_enum10 != AudioStatus.ShouldStartAudio)
 				{
 					break;
 				}
-				class159_0.SetVolume(num);
+				_class1590.SetVolume(num);
 				num += 0.1f;
 				Thread.Sleep(50);
 			}
-            if (enum1_0 != AudioStatus.ShouldStartAudio)
+            if (_enum10 != AudioStatus.ShouldStartAudio)
 			{
 				return;
 			}
-			class159_0.SetVolume(Volume);
+			_class1590.SetVolume(_volume);
 		}
 
 		[CompilerGenerated]
-		private void method_3(object object_0)
+		private void method_3(object object0)
 		{
-			if (class159_0 != null)
+			if (_class1590 != null)
 			{
-				while (!class159_0.method_5())
+				while (!_class1590.method_5())
 				{
 				}
 			}

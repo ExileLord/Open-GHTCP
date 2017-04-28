@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate ToolStripContentPanel Delegate122(object object_0);
+public delegate ToolStripContentPanel Delegate122(object object0);

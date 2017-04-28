@@ -3,7 +3,7 @@ namespace ns7
 	public class Class150
 	{
         //Appears to be a qb int array (like for a song)
-		private static readonly short[] short_0 = {
+		private static readonly short[] Short0 = {
 			0,
 			-32763,
 			-32753,
@@ -262,10 +262,10 @@ namespace ns7
 			514
 		};
 
-		public static short smethod_0(byte byte_0, short short_1)
+		public static short smethod_0(byte byte0, short short1)
 		{
-			short_1 = (short)(short_1 << 8 ^ short_0[(short_1 >> 8 ^ byte_0) & 255]);
-			return short_1;
+			short1 = (short)(short1 << 8 ^ Short0[(short1 >> 8 ^ byte0) & 255]);
+			return short1;
 		}
 	}
 }

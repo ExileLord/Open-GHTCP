@@ -1,3 +1,3 @@
 using System;
 
-public delegate bool Delegate428(DateTime dateTime_0, DateTime dateTime_1);
+public delegate bool Delegate428(DateTime dateTime0, DateTime dateTime1);

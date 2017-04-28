@@ -1,3 +1,3 @@
 using System;
 
-public delegate IntPtr Delegate211(int int_0);
+public delegate IntPtr Delegate211(int int0);

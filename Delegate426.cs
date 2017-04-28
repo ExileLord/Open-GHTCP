@@ -1,1 +1,1 @@
-public delegate char[] Delegate426(object object_0, int int_0);
+public delegate char[] Delegate426(object object0, int int0);

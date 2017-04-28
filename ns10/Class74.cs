@@ -4,15 +4,15 @@ namespace ns10
 {
 	public class Class74
 	{
-		public Class62 class62_0;
+		public Class62 Class620;
 
-		public Class33 class33_0;
+		public Class33 Class330;
 
 		public int method_0()
 		{
-			if (class33_0 != null && class33_0.int_2 != 0)
+			if (Class330 != null && Class330.Int2 != 0)
 			{
-				class62_0.method_0();
+				Class620.method_0();
 			}
 			return 0;
 		}

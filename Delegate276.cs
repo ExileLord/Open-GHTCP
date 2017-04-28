@@ -1,1 +1,1 @@
-public delegate void Delegate276(string string_0, string string_1, bool bool_0);
+public delegate void Delegate276(string string0, string string1, bool bool0);

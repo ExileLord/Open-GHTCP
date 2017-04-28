@@ -1,1 +1,1 @@
-public delegate void Delegate113(object object_0);
+public delegate void Delegate113(object object0);

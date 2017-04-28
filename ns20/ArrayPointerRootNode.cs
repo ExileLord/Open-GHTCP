@@ -10,29 +10,29 @@ namespace ns20
 			vmethod_0();
 		}
 
-		public ArrayPointerRootNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
+		public ArrayPointerRootNode(string string0) : this(QbSongClass1.AddKeyToDictionary(string0))
 		{
 		}
 
-		public ArrayPointerRootNode(int int_2)
+		public ArrayPointerRootNode(int int2)
 		{
-			int_0 = int_2;
+			Int0 = int2;
 			vmethod_0();
 		}
 
-		public ArrayPointerRootNode(string string_0, string string_1, AbsTreeNode1_1 class276_0) : this(QbSongClass1.AddKeyToDictionary(string_0), QbSongClass1.AddKeyToDictionary(string_1), class276_0)
+		public ArrayPointerRootNode(string string0, string string1, AbsTreeNode11 class2760) : this(QbSongClass1.AddKeyToDictionary(string0), QbSongClass1.AddKeyToDictionary(string1), class2760)
 		{
 		}
 
-		public ArrayPointerRootNode(string string_0, int int_2, AbsTreeNode1_1 class276_0) : this(QbSongClass1.AddKeyToDictionary(string_0), int_2, class276_0)
+		public ArrayPointerRootNode(string string0, int int2, AbsTreeNode11 class2760) : this(QbSongClass1.AddKeyToDictionary(string0), int2, class2760)
 		{
 		}
 
-		public ArrayPointerRootNode(int int_2, int int_3, AbsTreeNode1_1 class276_0)
+		public ArrayPointerRootNode(int int2, int int3, AbsTreeNode11 class2760)
 		{
-			int_0 = int_2;
-			int_1 = int_3;
-			Nodes.Add(class276_0);
+			Int0 = int2;
+			Int1 = int3;
+			Nodes.Add(class2760);
 			vmethod_0();
 		}
 
@@ -41,23 +41,23 @@ namespace ns20
 			return 7;
 		}
 
-		public AbsTreeNode1_1 method_7()
+		public AbsTreeNode11 method_7()
 		{
 			if (Nodes.Count != 0)
 			{
-				return (AbsTreeNode1_1)FirstNode;
+				return (AbsTreeNode11)FirstNode;
 			}
 			return null;
 		}
 
-		public void method_8(AbsTreeNode1_1 class276_0)
+		public void method_8(AbsTreeNode11 class2760)
 		{
 			if (Nodes.Count != 0)
 			{
-				Nodes[0] = class276_0;
+				Nodes[0] = class2760;
 				return;
 			}
-			Nodes.Add(class276_0);
+			Nodes.Add(class2760);
 		}
 
 		public override string GetNodeText()

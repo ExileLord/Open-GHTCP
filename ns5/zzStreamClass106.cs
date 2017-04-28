@@ -4,24 +4,24 @@ using SharpAudio.ASC.Mp3.Decoding;
 
 namespace ns5
 {
-	public class zzStreamClass106
+	public class ZzStreamClass106
 	{
 		private readonly Stream _stream;
 
-		private readonly int int_0;
+		private readonly int _int0;
 
-		private int int_1;
+		private int _int1;
 
 		private readonly byte[] _buffer;
 
 		private readonly CircularByteBuffer _circBuffer;
 
-		public zzStreamClass106(Stream stream_1, int int_2)
+		public ZzStreamClass106(Stream stream1, int int2)
 		{
-			_stream = stream_1;
-			int_0 = int_2;
-			_buffer = new byte[int_0];
-			_circBuffer = new CircularByteBuffer(int_0);
+			_stream = stream1;
+			_int0 = int2;
+			_buffer = new byte[_int0];
+			_circBuffer = new CircularByteBuffer(_int0);
 		}
 
 		public Stream method_0()
@@ -29,27 +29,27 @@ namespace ns5
 			return _stream;
 		}
 
-		public int method_1(byte[] byte_1, int int_2, int int_3)
+		public int method_1(byte[] byte1, int int2, int int3)
 		{
 			var num = 0;
 			var flag = true;
-			while (num < int_3 && flag)
+			while (num < int3 && flag)
 			{
-				if (int_1 > 0)
+				if (_int1 > 0)
 				{
-					int_1--;
-					byte_1[int_2 + num] = _circBuffer[int_1];
+					_int1--;
+					byte1[int2 + num] = _circBuffer[_int1];
 					num++;
 				}
 				else
 				{
-					var num2 = int_3 - num;
+					var num2 = int3 - num;
 					var num3 = _stream.Read(_buffer, 0, num2);
 					flag = (num3 >= num2);
 					for (var i = 0; i < num3; i++)
 					{
 						_circBuffer.method_0(_buffer[i]);
-						byte_1[int_2 + num + i] = _buffer[i];
+						byte1[int2 + num + i] = _buffer[i];
 					}
 					num += num3;
 				}
@@ -57,10 +57,10 @@ namespace ns5
 			return num;
 		}
 
-		public void IncrementSomeVariableAndCheckIfTheBackStreamIsFisted(int int_2)
+		public void IncrementSomeVariableAndCheckIfTheBackStreamIsFisted(int int2)
 		{
-			int_1 += int_2;
-			if (int_1 > int_0)
+			_int1 += int2;
+			if (_int1 > _int0)
 			{
 				Console.WriteLine("YOUR BACKSTREAM IS FISTED!");
 			}

@@ -2,8 +2,8 @@ namespace ns12
 {
 	public enum Enum29
 	{
-		const_0,
-		const_1,
-		const_2
+		Const0,
+		Const1,
+		Const2
 	}
 }

@@ -8,100 +8,100 @@ namespace ns13
 {
 	public class Stream23 : Stream22
 	{
-		private ArrayList arrayList_0 = new ArrayList();
+		private ArrayList _arrayList0 = new ArrayList();
 
-		private readonly Class192 class192_0 = new Class192();
+		private readonly Class192 _class1920 = new Class192();
 
-		private Class193 class193_0;
+		private Class193 _class1930;
 
-		private int int_0 = -1;
+		private int _int0 = -1;
 
-		private Enum31 enum31_0 = Enum31.const_1;
+		private Enum31 _enum310 = Enum31.Const1;
 
-		private long long_0;
+		private long _long0;
 
-		private long long_1;
+		private long _long1;
 
-		private readonly byte[] byte_1 = new byte[0];
+		private readonly byte[] _byte1 = new byte[0];
 
-		private bool bool_2;
+		private bool _bool2;
 
-		private long long_2 = -1L;
+		private long _long2 = -1L;
 
-		private long long_3 = -1L;
+		private long _long3 = -1L;
 
-		private readonly Enum30 enum30_0 = Enum30.const_2;
+		private readonly Enum30 _enum300 = Enum30.Const2;
 
-		public Stream23(Stream stream_1) : base(stream_1, new Class194(-1, true))
+		public Stream23(Stream stream1) : base(stream1, new Class194(-1, true))
 		{
 		}
 
-		public void method_6(int int_1)
+		public void method_6(int int1)
 		{
-			class194_0.method_7(int_1);
-			int_0 = int_1;
+			Class1940.method_7(int1);
+			_int0 = int1;
 		}
 
-		private void method_7(int int_1)
+		private void method_7(int int1)
 		{
-			stream_0.WriteByte((byte)(int_1 & 255));
-			stream_0.WriteByte((byte)(int_1 >> 8 & 255));
+			Stream0.WriteByte((byte)(int1 & 255));
+			Stream0.WriteByte((byte)(int1 >> 8 & 255));
 		}
 
-		private void method_8(int int_1)
+		private void method_8(int int1)
 		{
-			method_7(int_1);
-			method_7(int_1 >> 16);
+			method_7(int1);
+			method_7(int1 >> 16);
 		}
 
-		private void method_9(long long_4)
+		private void method_9(long long4)
 		{
-			method_8((int)long_4);
-			method_8((int)(long_4 >> 32));
+			method_8((int)long4);
+			method_8((int)(long4 >> 32));
 		}
 
-		public void method_10(Class193 class193_1)
+		public void method_10(Class193 class1931)
 		{
-			if (class193_1 == null)
+			if (class1931 == null)
 			{
 				throw new ArgumentNullException("entry");
 			}
-			if (arrayList_0 == null)
+			if (_arrayList0 == null)
 			{
 				throw new InvalidOperationException("ZipOutputStream was finished");
 			}
-			if (class193_0 != null)
+			if (_class1930 != null)
 			{
 				method_11();
 			}
-			if (arrayList_0.Count == 2147483647)
+			if (_arrayList0.Count == 2147483647)
 			{
 				throw new ZipException("Too many entries for Zip file");
 			}
-			var @enum = class193_1.method_27();
-			var int_ = int_0;
-			class193_1.method_5(class193_1.method_4() & 2048);
-			bool_2 = false;
+			var @enum = class1931.method_27();
+			var int_ = _int0;
+			class1931.method_5(class1931.method_4() & 2048);
+			_bool2 = false;
 			var flag = true;
-			if (@enum == Enum31.const_0)
+			if (@enum == Enum31.Const0)
 			{
-				class193_1.method_5(class193_1.method_4() & -9);
-				if (class193_1.method_23() >= 0L)
+				class1931.method_5(class1931.method_4() & -9);
+				if (class1931.method_23() >= 0L)
 				{
-					if (class193_1.method_21() < 0L)
+					if (class1931.method_21() < 0L)
 					{
-						class193_1.method_22(class193_1.method_23());
+						class1931.method_22(class1931.method_23());
 					}
-					else if (class193_1.method_21() != class193_1.method_23())
+					else if (class1931.method_21() != class1931.method_23())
 					{
 						throw new ZipException("Method STORED, but compressed size != size");
 					}
 				}
-				else if (class193_1.method_21() >= 0L)
+				else if (class1931.method_21() >= 0L)
 				{
-					class193_1.method_24(class193_1.method_21());
+					class1931.method_24(class1931.method_21());
 				}
-				if (class193_1.method_21() < 0L || class193_1.method_25() < 0L)
+				if (class1931.method_21() < 0L || class1931.method_25() < 0L)
 				{
 					if (method_0())
 					{
@@ -109,20 +109,20 @@ namespace ns13
 					}
 					else
 					{
-						@enum = Enum31.const_1;
+						@enum = Enum31.Const1;
 						int_ = 0;
 					}
 				}
 			}
-			if (@enum == Enum31.const_1)
+			if (@enum == Enum31.Const1)
 			{
-				if (class193_1.method_21() == 0L)
+				if (class1931.method_21() == 0L)
 				{
-					class193_1.method_24(class193_1.method_21());
-					class193_1.method_26(0L);
-					@enum = Enum31.const_0;
+					class1931.method_24(class1931.method_21());
+					class1931.method_26(0L);
+					@enum = Enum31.Const0;
 				}
-				else if (class193_1.method_23() < 0L || class193_1.method_21() < 0L || class193_1.method_25() < 0L)
+				else if (class1931.method_23() < 0L || class1931.method_21() < 0L || class1931.method_25() < 0L)
 				{
 					flag = false;
 				}
@@ -131,60 +131,60 @@ namespace ns13
 			{
 				if (!method_0())
 				{
-					class193_1.method_5(class193_1.method_4() | 8);
+					class1931.method_5(class1931.method_4() | 8);
 				}
 				else
 				{
-					bool_2 = true;
+					_bool2 = true;
 				}
 			}
 			if (method_1() != null)
 			{
-				class193_1.method_1(true);
-				if (class193_1.method_25() < 0L)
+				class1931.method_1(true);
+				if (class1931.method_25() < 0L)
 				{
-					class193_1.method_5(class193_1.method_4() | 8);
+					class1931.method_5(class1931.method_4() | 8);
 				}
 			}
-			class193_1.method_7(long_1);
-			class193_1.method_28(@enum);
-			enum31_0 = @enum;
-			long_3 = -1L;
-			if (enum30_0 == Enum30.const_1 || (class193_1.method_21() < 0L && enum30_0 == Enum30.const_2))
+			class1931.method_7(_long1);
+			class1931.method_28(@enum);
+			_enum310 = @enum;
+			_long3 = -1L;
+			if (_enum300 == Enum30.Const1 || (class1931.method_21() < 0L && _enum300 == Enum30.Const2))
 			{
-				class193_1.method_13();
+				class1931.method_13();
 			}
 			method_8(67324752);
-			method_7(class193_1.method_11());
-			method_7(class193_1.method_4());
+			method_7(class1931.method_11());
+			method_7(class1931.method_4());
 			method_7((byte)@enum);
-			method_8((int)class193_1.method_17());
+			method_8((int)class1931.method_17());
 			if (flag)
 			{
-				method_8((int)class193_1.method_25());
-				if (class193_1.method_15())
+				method_8((int)class1931.method_25());
+				if (class1931.method_15())
 				{
 					method_8(-1);
 					method_8(-1);
 				}
 				else
 				{
-					method_8(class193_1.method_0() ? ((int)class193_1.method_23() + 12) : ((int)class193_1.method_23()));
-					method_8((int)class193_1.method_21());
+					method_8(class1931.method_0() ? ((int)class1931.method_23() + 12) : ((int)class1931.method_23()));
+					method_8((int)class1931.method_21());
 				}
 			}
 			else
 			{
-				if (bool_2)
+				if (_bool2)
 				{
-					long_2 = stream_0.Position;
+					_long2 = Stream0.Position;
 				}
 				method_8(0);
-				if (bool_2)
+				if (_bool2)
 				{
-					long_3 = stream_0.Position;
+					_long3 = Stream0.Position;
 				}
-				if (class193_1.method_15() && bool_2)
+				if (class1931.method_15() && _bool2)
 				{
 					method_8(-1);
 					method_8(-1);
@@ -195,19 +195,19 @@ namespace ns13
 					method_8(0);
 				}
 			}
-			var array = Class186.smethod_4(class193_1.method_4(), class193_1.method_20());
+			var array = Class186.smethod_4(class1931.method_4(), class1931.method_20());
 			if (array.Length > 65535)
 			{
 				throw new ZipException("Entry name too long.");
 			}
-			var @class = new Class202(class193_1.method_29());
-			if (class193_1.method_15() && (flag || bool_2))
+			var @class = new Class202(class1931.method_29());
+			if (class1931.method_15() && (flag || _bool2))
 			{
 				@class.method_8();
 				if (flag)
 				{
-					@class.method_12(class193_1.method_21());
-					@class.method_12(class193_1.method_23());
+					@class.method_12(class1931.method_21());
+					@class.method_12(class1931.method_23());
 				}
 				else
 				{
@@ -219,9 +219,9 @@ namespace ns13
 				{
 					throw new ZipException("Internal error cant find extra data");
 				}
-				if (bool_2)
+				if (_bool2)
 				{
-					long_3 = @class.method_4();
+					_long3 = @class.method_4();
 				}
 			}
 			else
@@ -233,136 +233,136 @@ namespace ns13
 			method_7(array2.Length);
 			if (array.Length > 0)
 			{
-				stream_0.Write(array, 0, array.Length);
+				Stream0.Write(array, 0, array.Length);
 			}
-			if (class193_1.method_15() && bool_2)
+			if (class1931.method_15() && _bool2)
 			{
-				long_3 += stream_0.Position;
+				_long3 += Stream0.Position;
 			}
 			if (array2.Length > 0)
 			{
-				stream_0.Write(array2, 0, array2.Length);
+				Stream0.Write(array2, 0, array2.Length);
 			}
-			long_1 += 30 + array.Length + array2.Length;
-			class193_0 = class193_1;
-			class192_0.vmethod_1();
-			if (@enum == Enum31.const_1)
+			_long1 += 30 + array.Length + array2.Length;
+			_class1930 = class1931;
+			_class1920.vmethod_1();
+			if (@enum == Enum31.Const1)
 			{
-				class194_0.method_0();
-				class194_0.method_7(int_);
+				Class1940.method_0();
+				Class1940.method_7(int_);
 			}
-			long_0 = 0L;
-			if (class193_1.method_0())
+			_long0 = 0L;
+			if (class1931.method_0())
 			{
-				if (class193_1.method_25() < 0L)
+				if (class1931.method_25() < 0L)
 				{
-					method_12(class193_1.method_17() << 16);
+					method_12(class1931.method_17() << 16);
 					return;
 				}
-				method_12(class193_1.method_25());
+				method_12(class1931.method_25());
 			}
 		}
 
 		public void method_11()
 		{
-			if (class193_0 == null)
+			if (_class1930 == null)
 			{
 				throw new InvalidOperationException("No open entry");
 			}
-			if (enum31_0 == Enum31.const_1)
+			if (_enum310 == Enum31.Const1)
 			{
 				base.vmethod_0();
 			}
-			var num = (enum31_0 == Enum31.const_1) ? class194_0.method_1() : long_0;
-			if (class193_0.method_21() < 0L)
+			var num = (_enum310 == Enum31.Const1) ? Class1940.method_1() : _long0;
+			if (_class1930.method_21() < 0L)
 			{
-				class193_0.method_22(long_0);
+				_class1930.method_22(_long0);
 			}
-			else if (class193_0.method_21() != long_0)
+			else if (_class1930.method_21() != _long0)
 			{
-				throw new ZipException(string.Concat("size was ", long_0, ", but I expected ", class193_0.method_21()));
+				throw new ZipException(string.Concat("size was ", _long0, ", but I expected ", _class1930.method_21()));
 			}
-			if (class193_0.method_23() < 0L)
+			if (_class1930.method_23() < 0L)
 			{
-				class193_0.method_24(num);
+				_class1930.method_24(num);
 			}
-			else if (class193_0.method_23() != num)
+			else if (_class1930.method_23() != num)
 			{
-				throw new ZipException(string.Concat("compressed size was ", num, ", but I expected ", class193_0.method_23()));
+				throw new ZipException(string.Concat("compressed size was ", num, ", but I expected ", _class1930.method_23()));
 			}
-			if (class193_0.method_25() < 0L)
+			if (_class1930.method_25() < 0L)
 			{
-				class193_0.method_26(class192_0.vmethod_0());
+				_class1930.method_26(_class1920.vmethod_0());
 			}
-			else if (class193_0.method_25() != class192_0.vmethod_0())
+			else if (_class1930.method_25() != _class1920.vmethod_0())
 			{
-				throw new ZipException(string.Concat("crc was ", class192_0.vmethod_0(), ", but I expected ", class193_0.method_25()));
+				throw new ZipException(string.Concat("crc was ", _class1920.vmethod_0(), ", but I expected ", _class1930.method_25()));
 			}
-			long_1 += num;
-			if (class193_0.method_0())
+			_long1 += num;
+			if (_class1930.method_0())
 			{
-				var expr_1E6 = class193_0;
+				var expr_1E6 = _class1930;
 				expr_1E6.method_24(expr_1E6.method_23() + 12L);
 			}
-			if (bool_2)
+			if (_bool2)
 			{
-				bool_2 = false;
-				var position = stream_0.Position;
-				stream_0.Seek(long_2, SeekOrigin.Begin);
-				method_8((int)class193_0.method_25());
-				if (class193_0.method_15())
+				_bool2 = false;
+				var position = Stream0.Position;
+				Stream0.Seek(_long2, SeekOrigin.Begin);
+				method_8((int)_class1930.method_25());
+				if (_class1930.method_15())
 				{
-					if (long_3 == -1L)
+					if (_long3 == -1L)
 					{
 						throw new ZipException("Entry requires zip64 but this has been turned off");
 					}
-					stream_0.Seek(long_3, SeekOrigin.Begin);
-					method_9(class193_0.method_21());
-					method_9(class193_0.method_23());
+					Stream0.Seek(_long3, SeekOrigin.Begin);
+					method_9(_class1930.method_21());
+					method_9(_class1930.method_23());
 				}
 				else
 				{
-					method_8((int)class193_0.method_23());
-					method_8((int)class193_0.method_21());
+					method_8((int)_class1930.method_23());
+					method_8((int)_class1930.method_21());
 				}
-				stream_0.Seek(position, SeekOrigin.Begin);
+				Stream0.Seek(position, SeekOrigin.Begin);
 			}
-			if ((class193_0.method_4() & 8) != 0)
+			if ((_class1930.method_4() & 8) != 0)
 			{
 				method_8(134695760);
-				method_8((int)class193_0.method_25());
-				if (class193_0.method_15())
+				method_8((int)_class1930.method_25());
+				if (_class1930.method_15())
 				{
-					method_9(class193_0.method_23());
-					method_9(class193_0.method_21());
-					long_1 += 24L;
+					method_9(_class1930.method_23());
+					method_9(_class1930.method_21());
+					_long1 += 24L;
 				}
 				else
 				{
-					method_8((int)class193_0.method_23());
-					method_8((int)class193_0.method_21());
-					long_1 += 16L;
+					method_8((int)_class1930.method_23());
+					method_8((int)_class1930.method_21());
+					_long1 += 16L;
 				}
 			}
-			arrayList_0.Add(class193_0);
-			class193_0 = null;
+			_arrayList0.Add(_class1930);
+			_class1930 = null;
 		}
 
-		private void method_12(long long_4)
+		private void method_12(long long4)
 		{
-			long_1 += 12L;
+			_long1 += 12L;
 			method_4(method_1());
 			var array = new byte[12];
 			var random = new Random();
 			random.NextBytes(array);
-			array[11] = (byte)(long_4 >> 24);
+			array[11] = (byte)(long4 >> 24);
 			method_3(array, 0, array.Length);
-			stream_0.Write(array, 0, array.Length);
+			Stream0.Write(array, 0, array.Length);
 		}
 
 		public override void Write(byte[] buffer, int offset, int count)
 		{
-			if (class193_0 == null)
+			if (_class1930 == null)
 			{
 				throw new InvalidOperationException("No open entry.");
 			}
@@ -382,12 +382,12 @@ namespace ns13
 			{
 				throw new ArgumentException("Invalid offset/count combination");
 			}
-			class192_0.vmethod_3(buffer, offset, count);
-			long_0 += count;
-			var @enum = enum31_0;
-			if (@enum != Enum31.const_0)
+			_class1920.vmethod_3(buffer, offset, count);
+			_long0 += count;
+			var @enum = _enum310;
+			if (@enum != Enum31.Const0)
 			{
-				if (@enum != Enum31.const_1)
+				if (@enum != Enum31.Const1)
 				{
 					return;
 				}
@@ -400,37 +400,37 @@ namespace ns13
 					method_13(buffer, offset, count);
 					return;
 				}
-				stream_0.Write(buffer, offset, count);
+				Stream0.Write(buffer, offset, count);
 			}
 		}
 
-		private void method_13(byte[] byte_2, int int_1, int int_2)
+		private void method_13(byte[] byte2, int int1, int int2)
 		{
 			var array = new byte[4096];
-			while (int_2 > 0)
+			while (int2 > 0)
 			{
-				var num = (int_2 < 4096) ? int_2 : 4096;
-				Array.Copy(byte_2, int_1, array, 0, num);
+				var num = (int2 < 4096) ? int2 : 4096;
+				Array.Copy(byte2, int1, array, 0, num);
 				method_3(array, 0, num);
-				stream_0.Write(array, 0, num);
-				int_2 -= num;
-				int_1 += num;
+				Stream0.Write(array, 0, num);
+				int2 -= num;
+				int1 += num;
 			}
 		}
 
 		public override void vmethod_0()
 		{
-			if (arrayList_0 == null)
+			if (_arrayList0 == null)
 			{
 				return;
 			}
-			if (class193_0 != null)
+			if (_class1930 != null)
 			{
 				method_11();
 			}
-			long num = arrayList_0.Count;
+			long num = _arrayList0.Count;
 			var num2 = 0L;
-			foreach (Class193 @class in arrayList_0)
+			foreach (Class193 @class in _arrayList0)
 			{
 				method_8(33639248);
 				method_7(45);
@@ -515,23 +515,23 @@ namespace ns13
 				}
 				if (array.Length > 0)
 				{
-					stream_0.Write(array, 0, array.Length);
+					Stream0.Write(array, 0, array.Length);
 				}
 				if (array2.Length > 0)
 				{
-					stream_0.Write(array2, 0, array2.Length);
+					Stream0.Write(array2, 0, array2.Length);
 				}
 				if (array3.Length > 0)
 				{
-					stream_0.Write(array3, 0, array3.Length);
+					Stream0.Write(array3, 0, array3.Length);
 				}
 				num2 += 46 + array.Length + array2.Length + array3.Length;
 			}
-			using (var stream = new Stream25(stream_0))
+			using (var stream = new Stream25(Stream0))
 			{
-				stream.method_1(num, num2, long_1, byte_1);
+				stream.method_1(num, num2, _long1, _byte1);
 			}
-			arrayList_0 = null;
+			_arrayList0 = null;
 		}
 	}
 }

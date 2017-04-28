@@ -28,190 +28,190 @@ namespace ns15
 {
 	public class MainMenu : Form
 	{
-		private readonly string AppDirectory;
+		private readonly string _appDirectory;
 
-		private readonly string GameRegistry;
+		private readonly string _gameRegistry;
 
-		private readonly string GhtcpRegistry;
+		private readonly string _ghtcpRegistry;
 
-		private readonly string BackupName;
+		private readonly string _backupName;
 
-		private string DataFolder;
+		private string _dataFolder;
 
-		private string Priority;
+		private string _priority;
 
-		private string[] LanguageList;
+		private string[] _languageList;
 
-		private GH3Songlist gh3Songlist;
+		private Gh3Songlist _gh3Songlist;
 
-		private int SelectedSetlist;
+		private int _selectedSetlist;
 
-		private readonly bool IsAerosmith;
+		private readonly bool _isAerosmith;
 
-		public zzPabNode class319_0;
+		public ZzPabNode Class3190;
 
-		private ActionsWindow actionsWindow_0;
+		private ActionsWindow _actionsWindow0;
 
 		private IContainer icontainer_0;
 
-		private ContextMenuStrip rightClickMenu;
+		private ContextMenuStrip _rightClickMenu;
 
-		private MenuStrip TopMenuStrip;
+		private MenuStrip _topMenuStrip;
 
-		private ToolStripMenuItem File_MenuItem;
+		private ToolStripMenuItem _fileMenuItem;
 
-		private ToolStripMenuItem OpenGameSettings_MenuItem;
+		private ToolStripMenuItem _openGameSettingsMenuItem;
 
-		private ToolStripMenuItem ExecuteActions_MenuItem;
+		private ToolStripMenuItem _executeActionsMenuItem;
 
-		private ToolStripMenuItem Exit_MenuItem;
+		private ToolStripMenuItem _exitMenuItem;
 
-		private ToolStripMenuItem Add_MenuItem;
+		private ToolStripMenuItem _addMenuItem;
 
-		private ToolStripMenuItem ManageGame_MenuItem;
+		private ToolStripMenuItem _manageGameMenuItem;
 
-		private ListBox ActionRequests_ListBox;
+		private ListBox _actionRequestsListBox;
 
-		private Label label1;
+		private Label _label1;
 
-		private ToolStripSeparator toolStripSeparator1;
+		private ToolStripSeparator _toolStripSeparator1;
 
-		private ToolStripMenuItem NewSong_MenuItem;
+		private ToolStripMenuItem _newSongMenuItem;
 
-		private ToolStripMenuItem Tier_MenuItem;
+		private ToolStripMenuItem _tierMenuItem;
 
-		private ToolStripMenuItem ManageTiers_MenuItem;
+		private ToolStripMenuItem _manageTiersMenuItem;
 
-		private Label label3;
+		private Label _label3;
 
-		private ToolStripMenuItem Help_MenuItem;
+		private ToolStripMenuItem _helpMenuItem;
 
-		private ToolStripMenuItem Guide_MenuItem;
+		private ToolStripMenuItem _guideMenuItem;
 
-		private ToolStripSeparator toolStripSeparator3;
+		private ToolStripSeparator _toolStripSeparator3;
 
-		private ToolStripMenuItem About_MenuItem;
+		private ToolStripMenuItem _aboutMenuItem;
 
-		private ToolStripMenuItem ScoreHero_MenuItem;
+		private ToolStripMenuItem _scoreHeroMenuItem;
 
-		private TableLayoutPanel SidePanel;
+		private TableLayoutPanel _sidePanel;
 
-		private ToolStripMenuItem NewTier_MenuItem;
+		private ToolStripMenuItem _newTierMenuItem;
 
-		private ToolStripMenuItem LegacyImporter_MenuItem;
+		private ToolStripMenuItem _legacyImporterMenuItem;
 
-		private ToolStripMenuItem TGHImport_MenuItem;
+		private ToolStripMenuItem _tghImportMenuItem;
 
-		private ToolStripMenuItem SGHSwitch_MenuItem;
+		private ToolStripMenuItem _sghSwitchMenuItem;
 
-		private ToolStripSeparator toolStripSeparator4;
+		private ToolStripSeparator _toolStripSeparator4;
 
-		private ToolStripMenuItem TGHSwitch_MenuItem;
+		private ToolStripMenuItem _tghSwitchMenuItem;
 
-		private ToolStripMenuItem TexExplorer_MenuItem;
+		private ToolStripMenuItem _texExplorerMenuItem;
 
-		private ToolStripSeparator toolStripSeparator6;
+		private ToolStripSeparator _toolStripSeparator6;
 
-		private ToolStripMenuItem ManageSongs_MenuItem;
+		private ToolStripMenuItem _manageSongsMenuItem;
 
-		private ToolStripMenuItem SongProps_MenuItem;
+		private ToolStripMenuItem _songPropsMenuItem;
 
-		private ToolStripSeparator toolStripSeparator7;
+		private ToolStripSeparator _toolStripSeparator7;
 
-		private ToolStripMenuItem SaveTGH_MenuItem;
+		private ToolStripMenuItem _saveTghMenuItem;
 
-		private ToolStripMenuItem SaveSGH_MenuItem;
+		private ToolStripMenuItem _saveSghMenuItem;
 
-		private ToolStripMenuItem MassImporter_MenuItem;
+		private ToolStripMenuItem _massImporterMenuItem;
 
-		private ToolStripMenuItem ClearActions_MenuItem;
+		private ToolStripMenuItem _clearActionsMenuItem;
 
-		private ToolStripMenuItem Disclaimer_MenuItem;
+		private ToolStripMenuItem _disclaimerMenuItem;
 
-		private ToolStripMenuItem SysExit_MenuItem;
+		private ToolStripMenuItem _sysExitMenuItem;
 
-		private NotifyIcon notifyIcon_0;
+		private NotifyIcon _notifyIcon0;
 
-		private FontDialog fontDialog_0;
+		private FontDialog _fontDialog0;
 
-		private ToolStripMenuItem SysEnglish_MenuItem;
+		private ToolStripMenuItem _sysEnglishMenuItem;
 
-		private ToolStripMenuItem SysFrench_MenuItem;
+		private ToolStripMenuItem _sysFrenchMenuItem;
 
-		private ToolStripMenuItem SysItalian_MenuItem;
+		private ToolStripMenuItem _sysItalianMenuItem;
 
-		private ToolStripMenuItem SysSpanish_MenuItem;
+		private ToolStripMenuItem _sysSpanishMenuItem;
 
-		private ToolStripMenuItem SysGerman_MenuItem;
+		private ToolStripMenuItem _sysGermanMenuItem;
 
-		private ContextMenuStrip leftClickMenu;
+		private ContextMenuStrip _leftClickMenu;
 
-		private ToolStripMenuItem SysHigh_MenuItem;
+		private ToolStripMenuItem _sysHighMenuItem;
 
-		private ToolStripMenuItem SysAbove_MenuItem;
+		private ToolStripMenuItem _sysAboveMenuItem;
 
-		private ToolStripMenuItem SysNormal_MenuItem;
+		private ToolStripMenuItem _sysNormalMenuItem;
 
-		private ToolStripMenuItem SysBelow_MenuItem;
+		private ToolStripMenuItem _sysBelowMenuItem;
 
-		private ToolStripSeparator toolStripSeparator8;
+		private ToolStripSeparator _toolStripSeparator8;
 
-		private ToolStripContainer MainContainer;
+		private ToolStripContainer _mainContainer;
 
-		private StatusStrip StatusStrip;
+		private StatusStrip _statusStrip;
 
-		private ToolStripStatusLabel ToolStripStatusLbl;
+		private ToolStripStatusLabel _toolStripStatusLbl;
 
-		private ToolStripMenuItem RebuildSong_MenuItem;
+		private ToolStripMenuItem _rebuildSongMenuItem;
 
-		private ToolStripSeparator RemoveSong_ToolStripMenuItem;
+		private ToolStripSeparator _removeSongToolStripMenuItem;
 
-		private ToolStripMenuItem HideUsed_MenuItem;
+		private ToolStripMenuItem _hideUsedMenuItem;
 
-		private ToolStripMenuItem ByTitle_MenuItem;
+		private ToolStripMenuItem _byTitleMenuItem;
 
-		private ToolStripMenuItem ClearGameSettings_MenuItem;
+		private ToolStripMenuItem _clearGameSettingsMenuItem;
 
-		private ToolStripMenuItem DeleteSong_MenuItem;
+		private ToolStripMenuItem _deleteSongMenuItem;
 
-		private ToolStripMenuItem SaveChart_MenuItem;
+		private ToolStripMenuItem _saveChartMenuItem;
 
-		private ToolStripMenuItem HideUnEdit_MenuItem;
+		private ToolStripMenuItem _hideUnEditMenuItem;
 
-		private ToolStripMenuItem GameSettingsSwitch_MenuItem;
+		private ToolStripMenuItem _gameSettingsSwitchMenuItem;
 
-		private ToolStripMenuItem RestoreLast_MenuItem;
+		private ToolStripMenuItem _restoreLastMenuItem;
 
-		private ToolStripSeparator toolStripSeparator11;
+		private ToolStripSeparator _toolStripSeparator11;
 
-		private ToolStripMenuItem RestoreOriginal_MenuItem;
+		private ToolStripMenuItem _restoreOriginalMenuItem;
 
-		private ToolStripMenuItem SaveFileControl_MenuItem;
+		private ToolStripMenuItem _saveFileControlMenuItem;
 
-		private ToolStripMenuItem SysKorean_MenuItem;
+		private ToolStripMenuItem _sysKoreanMenuItem;
 
-		private ToolStripMenuItem RecoverGameSettings_MenuItem;
+		private ToolStripMenuItem _recoverGameSettingsMenuItem;
 
-		private ToolStripMenuItem GH3Folder_MenuItem;
+		private ToolStripMenuItem _gh3FolderMenuItem;
 
-		private zzListBox238 SongListBox;
+		private ZzListBox238 _songListBox;
 
-		private ToolStripMenuItem SilentGuitar_MenuItem;
+		private ToolStripMenuItem _silentGuitarMenuItem;
 
-		private ToolStripMenuItem RecoverSonglist_MenuItem;
+		private ToolStripMenuItem _recoverSonglistMenuItem;
 
-		private ToolStripMenuItem MinToTray_MenuItem;
+		private ToolStripMenuItem _minToTrayMenuItem;
 
-		private ToolStripMenuItem FxSpeedBoost_MenuItem;
+		private ToolStripMenuItem _fxSpeedBoostMenuItem;
 
-		private ToolStripMenuItem ForceMp3Conversion_MenuItem;
+		private ToolStripMenuItem _forceMp3ConversionMenuItem;
 
-        private ToolStripMenuItem exportSetlistAsChartsToolStripMenuItem;
+        private ToolStripMenuItem _exportSetlistAsChartsToolStripMenuItem;
 
-        private ToolStripMenuItem forceRB3MidConversionToolStripMenuItem;
+        private ToolStripMenuItem _forceRb3MidConversionToolStripMenuItem;
 
 
-        private readonly List<string> list_0 = new List<string>(new[]
+        private readonly List<string> _list0 = new List<string>(new[]
 		{
 			"",
 			"_f",
@@ -221,7 +221,7 @@ namespace ns15
 			"_k"
 		});
 
-		private readonly int[][] int_1 = {
+		private readonly int[][] _int1 = {
 			new[]
 			{
 				829593536,
@@ -338,77 +338,77 @@ namespace ns15
 			}
 		};
         private IContainer components;
-        private TabControl TabControl;
-        private TabPage SetlistTab;
-        private ToolStripContainer SetlistConfig_Container;
-        private TableLayoutPanel SetlistConf_TLPanel;
-        private TableLayoutPanel Setlist_TLPanel;
-        private TextBox textBox3;
-        private Label label5;
-        private Label label4;
-        private ComboBox TierBox;
-        private TextBox SetlistInitMovie_TxtBox;
-        private TextBox SetlistPrefix_TxtBox;
-        private Label label2;
-        private Label label13;
-        private TextBox SetlistTitle_TxtBox;
-        private TableLayoutPanel Tier_TLPanel;
-        private Panel TierProps_Panel;
-        private Button TierUnlockedSet_Btn;
-        private CheckBox UnlockAll_CheckBox;
-        private CheckBox NoCash_CheckBox;
-        private Button TierApply_Btn;
-        private Label label12;
-        private Button SetlistApply_Btn;
-        private TextBox TierCompMovie_TxtBox;
-        private NumericUpDown TierUnlocked_NumBox;
-        private TextBox TierTitle_TxtBox;
-        private ComboBox TierIcon_DropBox;
-        private ComboBox TierStage_DropBox;
-        private CheckBox TierBoss_CheckBox;
-        private CheckBox TierEncorep2_CheckBox;
-        private CheckBox TierEncorep1_CheckBox;
-        private Label label10;
-        private Label label9;
-        private Label label8;
-        private Label label6;
-        private Label label7;
-        private TableLayoutPanel TierSongs_Panel;
-        private zzListBox238 TierSongs_ListBox;
-        private Label label11;
-        private ToolStrip SetlistStrip;
-        private ToolStripLabel Setlist_Lbl;
-        private ToolStripComboBox Setlist_DropBox;
-        private ToolStripButton CreateSetlist_Btn;
-        private ToolStripButton DeleteSetlist_Btn;
-        private TabPage SongEditorTab;
-        private ToolStripContainer SongEditor_Container;
-        private ToolStrip SongEditor_BottomToolStrip;
-        private ToolStripSplitButton ToggleElements_EditorSplitBtn;
-        private ToolStripMenuItem StarView_EditorBtn;
-        private ToolStripMenuItem HopoView_EditorBtn;
-        private ToolStripMenuItem AudioView_EditorBtn;
-        private ToolStripSeparator toolStripSeparator10;
-        private ToolStripLabel toolStripLabel1;
-        private ToolStripTextBox BeatSize_EditorTxtBox;
-        private GhtcpToolStripControlHost HyperSpeed_EditorBar;
-        private GhtcpToolStripControlHost FretAngle_EditorBar;
-        private ToolStripSeparator toolStripSeparator12;
-        private ToolStripLabel toolStripLabel2;
-        private ToolStripTextBox Offset_EditorTxtBox;
-        private SongEditor SongEditor_Control;
-        private ToolStrip SongEditor_TopToolStrip;
-        private ToolStripButton GameMode_EditorBtn;
-        private ToolStripSeparator toolStripSeparator5;
-        private ToolStripButton LoadChart_EditorBtn;
-        private ToolStripComboBox SelectedTrack_EditorBox;
-        private ToolStripLabel SongName_EditorLbl;
-        private ToolStripSeparator toolStripSeparator2;
-        private ToolStripButton LoadAudio_EditorBtn;
-        private ToolStripButton PlayPause_EditorBtn;
-        private ToolStripButton Stop_EditorBtn;
-        private ToolStripLabel PlayTime_EditorLbl;
-        private readonly int[][] int_2 = {
+        private TabControl _tabControl;
+        private TabPage _setlistTab;
+        private ToolStripContainer _setlistConfigContainer;
+        private TableLayoutPanel _setlistConfTLPanel;
+        private TableLayoutPanel _setlistTLPanel;
+        private TextBox _textBox3;
+        private Label _label5;
+        private Label _label4;
+        private ComboBox _tierBox;
+        private TextBox _setlistInitMovieTxtBox;
+        private TextBox _setlistPrefixTxtBox;
+        private Label _label2;
+        private Label _label13;
+        private TextBox _setlistTitleTxtBox;
+        private TableLayoutPanel _tierTLPanel;
+        private Panel _tierPropsPanel;
+        private Button _tierUnlockedSetBtn;
+        private CheckBox _unlockAllCheckBox;
+        private CheckBox _noCashCheckBox;
+        private Button _tierApplyBtn;
+        private Label _label12;
+        private Button _setlistApplyBtn;
+        private TextBox _tierCompMovieTxtBox;
+        private NumericUpDown _tierUnlockedNumBox;
+        private TextBox _tierTitleTxtBox;
+        private ComboBox _tierIconDropBox;
+        private ComboBox _tierStageDropBox;
+        private CheckBox _tierBossCheckBox;
+        private CheckBox _tierEncorep2CheckBox;
+        private CheckBox _tierEncorep1CheckBox;
+        private Label _label10;
+        private Label _label9;
+        private Label _label8;
+        private Label _label6;
+        private Label _label7;
+        private TableLayoutPanel _tierSongsPanel;
+        private ZzListBox238 _tierSongsListBox;
+        private Label _label11;
+        private ToolStrip _setlistStrip;
+        private ToolStripLabel _setlistLbl;
+        private ToolStripComboBox _setlistDropBox;
+        private ToolStripButton _createSetlistBtn;
+        private ToolStripButton _deleteSetlistBtn;
+        private TabPage _songEditorTab;
+        private ToolStripContainer _songEditorContainer;
+        private ToolStrip _songEditorBottomToolStrip;
+        private ToolStripSplitButton _toggleElementsEditorSplitBtn;
+        private ToolStripMenuItem _starViewEditorBtn;
+        private ToolStripMenuItem _hopoViewEditorBtn;
+        private ToolStripMenuItem _audioViewEditorBtn;
+        private ToolStripSeparator _toolStripSeparator10;
+        private ToolStripLabel _toolStripLabel1;
+        private ToolStripTextBox _beatSizeEditorTxtBox;
+        private GhtcpToolStripControlHost _hyperSpeedEditorBar;
+        private GhtcpToolStripControlHost _fretAngleEditorBar;
+        private ToolStripSeparator _toolStripSeparator12;
+        private ToolStripLabel _toolStripLabel2;
+        private ToolStripTextBox _offsetEditorTxtBox;
+        private SongEditor _songEditorControl;
+        private ToolStrip _songEditorTopToolStrip;
+        private ToolStripButton _gameModeEditorBtn;
+        private ToolStripSeparator _toolStripSeparator5;
+        private ToolStripButton _loadChartEditorBtn;
+        private ToolStripComboBox _selectedTrackEditorBox;
+        private ToolStripLabel _songNameEditorLbl;
+        private ToolStripSeparator _toolStripSeparator2;
+        private ToolStripButton _loadAudioEditorBtn;
+        private ToolStripButton _playPauseEditorBtn;
+        private ToolStripButton _stopEditorBtn;
+        private ToolStripLabel _playTimeEditorLbl;
+        private readonly int[][] _int2 = {
 			new[]
 			{
 				1437566472,
@@ -527,29 +527,29 @@ namespace ns15
 
 		private void SongListBox_MouseDown(object sender, MouseEventArgs e)
 		{
-			var num = SongListBox.IndexFromPoint(e.X, e.Y);
-			if (num >= 0 && num < SongListBox.Items.Count)
+			var num = _songListBox.IndexFromPoint(e.X, e.Y);
+			if (num >= 0 && num < _songListBox.Items.Count)
 			{
 				if (e.Clicks == 2 && e.Button == MouseButtons.Left)
 				{
 					SongProperties songProperties;
-					if ((songProperties = new SongProperties((GH3Song)SongListBox.Items[num])).ShowDialog() == DialogResult.OK)
+					if ((songProperties = new SongProperties((Gh3Song)_songListBox.Items[num])).ShowDialog() == DialogResult.OK)
 					{
 						songProperties.GetSongWithChanges();
-						method_4(new Class247(class319_0, gh3Songlist));
+						method_4(new Class247(Class3190, _gh3Songlist));
 					}
 				}
 				else if (e.Clicks == 2 && e.Button == MouseButtons.Right)
 				{
-					var gH3Song = (GH3Song)SongListBox.Items[num];
-					if (gH3Song.editable && DialogResult.Yes == MessageBox.Show(gH3Song.name.ToUpper() + " will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
+					var gH3Song = (Gh3Song)_songListBox.Items[num];
+					if (gH3Song.Editable && DialogResult.Yes == MessageBox.Show(gH3Song.Name.ToUpper() + " will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
 					{
-						SongListBox.Items.Remove(gH3Song);
-						foreach (var current in gh3Songlist.method_1(gH3Song))
+						_songListBox.Items.Remove(gH3Song);
+						foreach (var current in _gh3Songlist.method_1(gH3Song))
 						{
-							method_4(new zzSetListUpdater(current, class319_0, gh3Songlist));
+							method_4(new ZzSetListUpdater(current, Class3190, _gh3Songlist));
 						}
-						method_4(new Class247(class319_0, gh3Songlist));
+						method_4(new Class247(Class3190, _gh3Songlist));
 					}
 				}
 			}
@@ -557,41 +557,41 @@ namespace ns15
 
 		private void HideUnEdit_MenuItem_Click(object sender, EventArgs e)
 		{
-			var arg_1D_0 = gh3Songlist;
-			var expr_0C = HideUnEdit_MenuItem;
-			arg_1D_0.HideUnEditable = (expr_0C.Checked = !expr_0C.Checked);
+			var arg_1D0 = _gh3Songlist;
+			var expr_0C = _hideUnEditMenuItem;
+			arg_1D0.HideUnEditable = (expr_0C.Checked = !expr_0C.Checked);
 			method_0();
 		}
 
 		private void HideUsed_MenuItem_Click(object sender, EventArgs e)
 		{
-			var arg_1D_0 = gh3Songlist;
-			var expr_0C = HideUsed_MenuItem;
-			arg_1D_0.HideUsed = (expr_0C.Checked = !expr_0C.Checked);
+			var arg_1D0 = _gh3Songlist;
+			var expr_0C = _hideUsedMenuItem;
+			arg_1D0.HideUsed = (expr_0C.Checked = !expr_0C.Checked);
 			method_0();
 		}
 
 		private void ByTitle_MenuItem_Click(object sender, EventArgs e)
 		{
-			var expr_06 = ByTitle_MenuItem;
-			GH3Song.bool_0 = (expr_06.Checked = !expr_06.Checked);
+			var expr06 = _byTitleMenuItem;
+			Gh3Song.Bool0 = (expr06.Checked = !expr06.Checked);
 			method_0();
 		}
 
 		private void SongListBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (SongListBox.SelectedItems.Count != 0)
+			if (_songListBox.SelectedItems.Count != 0)
 			{
 				var enabled = false;
-				foreach (GH3Song song in SongListBox.SelectedItems)
+				foreach (Gh3Song song in _songListBox.SelectedItems)
 				{
-					if (song.editable)
+					if (song.Editable)
 					{
 						enabled = true;
 					}
 				}
-                SaveChart_MenuItem.Enabled = (RebuildSong_MenuItem.Enabled = true);
-                DeleteSong_MenuItem.Enabled = enabled;
+                _saveChartMenuItem.Enabled = (_rebuildSongMenuItem.Enabled = true);
+                _deleteSongMenuItem.Enabled = enabled;
 			}
 		}
 
@@ -603,70 +603,70 @@ namespace ns15
 		private void SongProps_MenuItem_Click(object sender, EventArgs e)
 		{
 			SongProperties songProperties;
-            if (!((GH3Song)SongListBox.Items[SongListBox.SelectedIndex]).isEditable())
+            if (!((Gh3Song)_songListBox.Items[_songListBox.SelectedIndex]).IsEditable())
             {
                 if (MsgBoxEditDefaultSongs() != DialogResult.Yes)
                     return;
             }
-            if (SongListBox.SelectedIndex >= 0 && (songProperties = new SongProperties((GH3Song)SongListBox.Items[SongListBox.SelectedIndex])).ShowDialog() == DialogResult.OK)
+            if (_songListBox.SelectedIndex >= 0 && (songProperties = new SongProperties((Gh3Song)_songListBox.Items[_songListBox.SelectedIndex])).ShowDialog() == DialogResult.OK)
 			{
 				songProperties.GetSongWithChanges();
-				method_4(new Class247(class319_0, gh3Songlist));
+				method_4(new Class247(Class3190, _gh3Songlist));
 			}
 		}
 
 		private void RebuildSong_MenuItem_Click(object sender, EventArgs e)
 		{
-			var song = (GH3Song)SongListBox.Items[SongListBox.SelectedIndex];
+			var song = (Gh3Song)_songListBox.Items[_songListBox.SelectedIndex];
             SongData songData;
-            if (!song.isEditable())
+            if (!song.IsEditable())
             {
                 if (MsgBoxEditDefaultSongs() != DialogResult.Yes)
                     return;
             }
-            if (SongListBox.SelectedIndex >= 0 && (songData = new SongData(song.name, false, false)).ShowDialog() == DialogResult.OK)
+            if (_songListBox.SelectedIndex >= 0 && (songData = new SongData(song.Name, false, false)).ShowDialog() == DialogResult.OK)
 			{
-				if (songData.bool_1)
+				if (songData.Bool1)
 				{
-					var @class = songData.method_1(class319_0, DataFolder);
+					var @class = songData.method_1(Class3190, _dataFolder);
 					method_4(@class);
 					if (DialogResult.Yes == MessageBox.Show("Do you wish to get the song properties from the game track? (Current properties will be overwritten | Mid files have no properties!)", "Tier Exporting", MessageBoxButtons.YesNo))
 					{
-						var no_rhythm_track = song.no_rhythm_track;
-						var use_coop_notetracks = song.use_coop_notetracks;
-						song.vmethod_0(@class.class362_0.gh3Song_0);
-						song.no_rhythm_track = no_rhythm_track;
-						song.use_coop_notetracks = use_coop_notetracks;
-						method_4(new Class247(class319_0, gh3Songlist));
+						var noRhythmTrack = song.NoRhythmTrack;
+						var useCoopNotetracks = song.UseCoopNotetracks;
+						song.vmethod_0(@class.Class3620.Gh3Song0);
+						song.NoRhythmTrack = noRhythmTrack;
+						song.UseCoopNotetracks = useCoopNotetracks;
+						method_4(new Class247(Class3190, _gh3Songlist));
 					}
 				}
-				if (songData.bool_0)
+				if (songData.Bool0)
 				{
-					var class2 = songData.method_0(DataFolder);
+					var class2 = songData.method_0(_dataFolder);
 					method_4(class2);
-					song.no_rhythm_track = !class2.bool_0;
-					song.use_coop_notetracks = class2.bool_1;
-					method_4(new Class247(class319_0, gh3Songlist));
+					song.NoRhythmTrack = !class2.Bool0;
+					song.UseCoopNotetracks = class2.Bool1;
+					method_4(new Class247(Class3190, _gh3Songlist));
 				}
 			}
 		}
 
 		private void SongListBox_KeyDown(object sender, KeyEventArgs e)
 		{
-			if (e.Shift && e.KeyCode == Keys.Delete && SongListBox.SelectedItems.Count != 0 && DialogResult.Yes == MessageBox.Show("The selected songs will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
+			if (e.Shift && e.KeyCode == Keys.Delete && _songListBox.SelectedItems.Count != 0 && DialogResult.Yes == MessageBox.Show("The selected songs will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
 			{
-				var array = SongListBox.imethod_3();
+				var array = _songListBox.imethod_3();
 				for (var i = 0; i < array.Length; i++)
 				{
-					var gh3Song = (GH3Song)array[i];
-					if (gh3Song.editable)
+					var gh3Song = (Gh3Song)array[i];
+					if (gh3Song.Editable)
 					{
-						SongListBox.Items.Remove(gh3Song);
-						foreach (var current in gh3Songlist.method_1(gh3Song))
+						_songListBox.Items.Remove(gh3Song);
+						foreach (var current in _gh3Songlist.method_1(gh3Song))
 						{
-							method_4(new zzSetListUpdater(current, class319_0, gh3Songlist));
+							method_4(new ZzSetListUpdater(current, Class3190, _gh3Songlist));
 						}
-						method_4(new Class247(class319_0, gh3Songlist));
+						method_4(new Class247(Class3190, _gh3Songlist));
 					}
 				}
 			}
@@ -674,52 +674,52 @@ namespace ns15
 
 		private void DeleteSong_MenuItem_Click(object sender, EventArgs e)
 		{
-			var array = SongListBox.imethod_3();
+			var array = _songListBox.imethod_3();
 			for (var i = 0; i < array.Length; i++)
 			{
-				var gH3Song = (GH3Song)array[i];
-				if (gH3Song.editable && DialogResult.Yes == MessageBox.Show(gH3Song.name.ToUpper() + " will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
+				var gH3Song = (Gh3Song)array[i];
+				if (gH3Song.Editable && DialogResult.Yes == MessageBox.Show(gH3Song.Name.ToUpper() + " will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
 				{
-					SongListBox.Items.Remove(gH3Song);
-					foreach (var current in gh3Songlist.method_1(gH3Song))
+					_songListBox.Items.Remove(gH3Song);
+					foreach (var current in _gh3Songlist.method_1(gH3Song))
 					{
-						method_4(new zzSetListUpdater(current, class319_0, gh3Songlist));
+						method_4(new ZzSetListUpdater(current, Class3190, _gh3Songlist));
 					}
-					method_4(new Class247(class319_0, gh3Songlist));
+					method_4(new Class247(Class3190, _gh3Songlist));
 				}
 			}
 		}
 
 		private void NewSong_MenuItem_Click(object sender, EventArgs e)
 		{
-			var songData = new SongData(gh3Songlist, forceRB3MidConversionToolStripMenuItem.Checked);
+			var songData = new SongData(_gh3Songlist, _forceRb3MidConversionToolStripMenuItem.Checked);
 			if (songData.ShowDialog() == DialogResult.OK)
 			{
-				var gH3Song = IsAerosmith ? new GHASong() : new GH3Song();
-				if (songData.bool_1)
+				var gH3Song = _isAerosmith ? new GhaSong() : new Gh3Song();
+				if (songData.Bool1)
 				{
-					var @class = songData.method_1(class319_0, DataFolder);
+					var @class = songData.method_1(Class3190, _dataFolder);
 					method_4(@class);
-					gH3Song.vmethod_0(@class.class362_0.gh3Song_0);
+					gH3Song.vmethod_0(@class.Class3620.Gh3Song0);
 				}
-				if (songData.bool_0)
+				if (songData.Bool0)
 				{
-					var class2 = songData.method_0(DataFolder);
+					var class2 = songData.method_0(_dataFolder);
 					method_4(class2);
-					gH3Song.name = class2.string_1;
-					gH3Song.no_rhythm_track = !class2.bool_0;
-					gH3Song.use_coop_notetracks = class2.bool_1;
-					gH3Song.version = 3;
-					gH3Song.leaderboard = true;
-					gH3Song.editable = true;
+					gH3Song.Name = class2.String1;
+					gH3Song.NoRhythmTrack = !class2.Bool0;
+					gH3Song.UseCoopNotetracks = class2.Bool1;
+					gH3Song.Version = 3;
+					gH3Song.Leaderboard = true;
+					gH3Song.Editable = true;
 				}
 				var songProperties = new SongProperties(gH3Song);
 				if (songProperties.ShowDialog() == DialogResult.OK)
 				{
 					songProperties.GetSongWithChanges();
 				}
-				gh3Songlist.Add(gH3Song.name, gH3Song);
-				method_4(new Class247(class319_0, gh3Songlist));
+				_gh3Songlist.Add(gH3Song.Name, gH3Song);
+				method_4(new Class247(Class3190, _gh3Songlist));
 				method_0();
 			}
 		}
@@ -727,20 +727,20 @@ namespace ns15
 		private void RecoverSonglist_MenuItem_Click(object sender, EventArgs e)
 		{
 			var flag = false;
-			var files = Directory.GetFiles(DataFolder + "music\\", "*.dat.xen", SearchOption.AllDirectories);
+			var files = Directory.GetFiles(_dataFolder + "music\\", "*.dat.xen", SearchOption.AllDirectories);
 			for (var i = 0; i < files.Length; i++)
 			{
 				var text = files[i];
 				var text2 = KeyGenerator.GetFileNameNoExt(text);
-				if (File.Exists(DataFolder + "music\\" + text2 + ".fsb.xen") && File.Exists(DataFolder + "songs\\" + text2 + "_song.pak.xen") && !gh3Songlist.method_3(text2) && !QbSongClass1.smethod_4(text2) && !GH3Songlist.IgnoreSongs.Contains(QbSongClass1.AddKeyToDictionary(text2)))
+				if (File.Exists(_dataFolder + "music\\" + text2 + ".fsb.xen") && File.Exists(_dataFolder + "songs\\" + text2 + "_song.pak.xen") && !_gh3Songlist.method_3(text2) && !QbSongClass1.smethod_4(text2) && !Gh3Songlist.IgnoreSongs.Contains(QbSongClass1.AddKeyToDictionary(text2)))
 				{
 					try
 					{
-						var gH3Song = IsAerosmith ? new GHASong(text2) : new GH3Song(text2);
-						var list = new List<string>(new zzQbSongObject(text).string_1);
-						gH3Song.no_rhythm_track = !list.Contains(text2 + "_rhythm");
-						gH3Song.use_coop_notetracks = list.Contains(text2 + "_coop_song");
-						gh3Songlist.Add(text2, gH3Song);
+						var gH3Song = _isAerosmith ? new GhaSong(text2) : new Gh3Song(text2);
+						var list = new List<string>(new ZzQbSongObject(text).String1);
+						gH3Song.NoRhythmTrack = !list.Contains(text2 + "_rhythm");
+						gH3Song.UseCoopNotetracks = list.Contains(text2 + "_coop_song");
+						_gh3Songlist.Add(text2, gH3Song);
 						flag = true;
 					}
 					catch
@@ -750,15 +750,15 @@ namespace ns15
 			}
 			if (flag)
 			{
-				method_4(new Class247(class319_0, gh3Songlist));
+				method_4(new Class247(Class3190, _gh3Songlist));
 				method_0();
 			}
 		}
 
 		private void method_0()
 		{
-			SongListBox.Items.Clear();
-			SongListBox.Items.AddRange(gh3Songlist.getSongs());
+			_songListBox.Items.Clear();
+			_songListBox.Items.AddRange(_gh3Songlist.GetSongs());
 		}
 
 		private void LoadChart_EditorBtn_Click(object sender, EventArgs e)
@@ -766,33 +766,33 @@ namespace ns15
 			string fileName;
 			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the game track file.", "Any Supported Game Track Formats|*.qbc;*.dbc;*_song.pak.xen;*.mid;*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc|GH3 Game Track file|*_song.pak.xen|GH standard Midi file|*.mid|dB standard or GH3CP Chart file|*.chart", true)).Equals(""))
 			{
-				QBCParser qbcParser;
+				QbcParser qbcParser;
 				try
 				{
 					if (fileName.EndsWith("_song.pak.xen"))
 					{
 						var str = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
-						using (var @class = new zzPakNode2(fileName, false))
+						using (var @class = new ZzPakNode2(fileName, false))
 						{
 							if (!@class.method_6("songs\\" + str + ".mid.qb"))
 							{
 								throw new Exception("MID.QB song file not found.");
 							}
-							qbcParser = new QBCParser(str, @class.zzGetNode1("songs\\" + str + ".mid.qb"));
+							qbcParser = new QbcParser(str, @class.ZzGetNode1("songs\\" + str + ".mid.qb"));
 							goto IL_DA;
 						}
 					}
 					if (fileName.EndsWith(".qbc"))
 					{
-						qbcParser = new QBCParser(fileName);
+						qbcParser = new QbcParser(fileName);
 					}
 					else if (fileName.EndsWith(".mid"))
 					{
-                        qbcParser = Midi2Chart.LoadMidiSong(fileName, forceRB3MidConversionToolStripMenuItem.Checked);
+                        qbcParser = Midi2Chart.LoadMidiSong(fileName, _forceRb3MidConversionToolStripMenuItem.Checked);
 					}
 					else
 					{
-						qbcParser = new ChartParser(fileName).ConvertToQBC();
+						qbcParser = new ChartParser(fileName).ConvertToQbc();
                     }
 					IL_DA:;
 				}
@@ -801,15 +801,15 @@ namespace ns15
 					MessageBox.Show("Error loading game track file!\n" + ex.Message);
 					return;
 				}
-				SongName_EditorLbl.Text = qbcParser.gh3Song_0.title;
-				SelectedTrack_EditorBox.Items.Clear();
-				foreach (var current in qbcParser.noteList.Keys)
+				_songNameEditorLbl.Text = qbcParser.Gh3Song0.Title;
+				_selectedTrackEditorBox.Items.Clear();
+				foreach (var current in qbcParser.NoteList.Keys)
 				{
-					SelectedTrack_EditorBox.Items.Add(current);
+					_selectedTrackEditorBox.Items.Add(current);
 				}
-                SongEditor_Control.LoadChart(qbcParser);
-                SelectedTrack_EditorBox.SelectedIndex = 0;
-				Offset_EditorTxtBox.Text = string.Concat(qbcParser.gh3Song_0.gem_offset);
+                _songEditorControl.LoadChart(qbcParser);
+                _selectedTrackEditorBox.SelectedIndex = 0;
+				_offsetEditorTxtBox.Text = string.Concat(qbcParser.Gh3Song0.GemOffset);
 			}
 		}
 
@@ -818,7 +818,7 @@ namespace ns15
 			int num;
 			try
 			{
-				num = Convert.ToInt32(BeatSize_EditorTxtBox.Text);
+				num = Convert.ToInt32(_beatSizeEditorTxtBox.Text);
 			}
 			catch
 			{
@@ -826,7 +826,7 @@ namespace ns15
 			}
 			if (num != 0)
 			{
-				SongEditor_Control.SetBeatSize(num);
+				_songEditorControl.SetBeatSize(num);
 			}
 		}
 
@@ -835,33 +835,33 @@ namespace ns15
 			int int_;
 			try
 			{
-				int_ = Convert.ToInt32(Offset_EditorTxtBox.Text);
+				int_ = Convert.ToInt32(_offsetEditorTxtBox.Text);
 			}
 			catch
 			{
 				return;
 			}
-			SongEditor_Control.SetOffset(int_);
+			_songEditorControl.SetOffset(int_);
 		}
 
 		private void PlayPause_EditorBtn_Click(object sender, EventArgs e)
 		{
-			if (SongEditor_Control.AudioLoaded())
+			if (_songEditorControl.AudioLoaded())
 			{
-				if (SongEditor_Control.GetAudioStatus() != AudioStatus.ShouldStartAudio)
+				if (_songEditorControl.GetAudioStatus() != AudioStatus.ShouldStartAudio)
 				{
-					SongEditor_Control.DifferentStartPlaying();
+					_songEditorControl.DifferentStartPlaying();
 					return;
 				}
-				SongEditor_Control.StartPlaying();
+				_songEditorControl.StartPlaying();
 			}
 		}
 
 		private void Stop_EditorBtn_Click(object sender, EventArgs e)
 		{
-			if (SongEditor_Control.AudioLoaded())
+			if (_songEditorControl.AudioLoaded())
 			{
-				SongEditor_Control.StopAudio();
+				_songEditorControl.StopAudio();
 			}
 		}
 
@@ -870,97 +870,97 @@ namespace ns15
 			string fileName;
 			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio File|*.mp3|Waveform Audio File|*.wav|Ogg Vorbis Audio File|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
 			{
-				SongEditor_Control.LoadAudio(fileName);
+				_songEditorControl.LoadAudio(fileName);
             }
 		}
 
 		private void SelectedTrack_EditorBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			SongEditor_Control.Difficulty = (string)SelectedTrack_EditorBox.SelectedItem;
+			_songEditorControl.Difficulty = (string)_selectedTrackEditorBox.SelectedItem;
 		}
 
 		private void method_1(object sender, EventArgs e)
 		{
-			PlayTime_EditorLbl.Text = string.Concat((int)sender / 1000f);
+			_playTimeEditorLbl.Text = string.Concat((int)sender / 1000f);
 		}
 
 		private void GameMode_EditorBtn_Click(object sender, EventArgs e)
 		{
-			SongEditor_Control.SetGamemodeView(GameMode_EditorBtn.Checked);
+			_songEditorControl.SetGamemodeView(_gameModeEditorBtn.Checked);
 		}
 
 		private void ToggleElements_EditorSplitBtn_ButtonClick(object sender, EventArgs e)
 		{
-			var arg_1D_0 = SongEditor_Control;
-			var expr_0C = StarView_EditorBtn;
-			arg_1D_0.LoadStarpowerTextures = (expr_0C.Checked = !expr_0C.Checked);
-			var arg_3F_0 = SongEditor_Control;
-			var expr_2E = HopoView_EditorBtn;
-			arg_3F_0.LoadHopoTextures = (expr_2E.Checked = !expr_2E.Checked);
-			var arg_61_0 = SongEditor_Control;
-			var expr_50 = AudioView_EditorBtn;
-			arg_61_0.ShowAudioOnFretboard = (expr_50.Checked = !expr_50.Checked);
+			var arg_1D0 = _songEditorControl;
+			var expr_0C = _starViewEditorBtn;
+			arg_1D0.LoadStarpowerTextures = (expr_0C.Checked = !expr_0C.Checked);
+			var arg_3F0 = _songEditorControl;
+			var expr_2E = _hopoViewEditorBtn;
+			arg_3F0.LoadHopoTextures = (expr_2E.Checked = !expr_2E.Checked);
+			var arg610 = _songEditorControl;
+			var expr50 = _audioViewEditorBtn;
+			arg610.ShowAudioOnFretboard = (expr50.Checked = !expr50.Checked);
 		}
 
 		private void StarView_EditorBtn_Click(object sender, EventArgs e)
 		{
-			SongEditor_Control.LoadStarpowerTextures = StarView_EditorBtn.Checked;
+			_songEditorControl.LoadStarpowerTextures = _starViewEditorBtn.Checked;
 		}
 
 		private void HopoView_EditorBtn_Click(object sender, EventArgs e)
 		{
-			SongEditor_Control.LoadHopoTextures = HopoView_EditorBtn.Checked;
+			_songEditorControl.LoadHopoTextures = _hopoViewEditorBtn.Checked;
 		}
 
 		private void AudioView_EditorBtn_Click(object sender, EventArgs e)
 		{
-			SongEditor_Control.ShowAudioOnFretboard = AudioView_EditorBtn.Checked;
+			_songEditorControl.ShowAudioOnFretboard = _audioViewEditorBtn.Checked;
 		}
 
 		private void method_2(object sender, EventArgs e)
 		{
-			SongEditor_Control.SetFretboardAngle(FretAngle_EditorBar.method_4());
+			_songEditorControl.SetFretboardAngle(_fretAngleEditorBar.method_4());
 		}
 
 		private void method_3(object sender, EventArgs e)
 		{
-			if (HyperSpeed_EditorBar.method_4() == 0)
+			if (_hyperSpeedEditorBar.method_4() == 0)
 			{
-				SongEditor_Control.SetHyperspeed(1.0);
+				_songEditorControl.SetHyperspeed(1.0);
 				return;
 			}
-			if (HyperSpeed_EditorBar.method_4() < 0)
+			if (_hyperSpeedEditorBar.method_4() < 0)
 			{
-				SongEditor_Control.SetHyperspeed(1.0 - HyperSpeed_EditorBar.method_4() / (double)(HyperSpeed_EditorBar.method_1() * 2));
+				_songEditorControl.SetHyperspeed(1.0 - _hyperSpeedEditorBar.method_4() / (double)(_hyperSpeedEditorBar.method_1() * 2));
 				return;
 			}
-			if (HyperSpeed_EditorBar.method_4() > 0)
+			if (_hyperSpeedEditorBar.method_4() > 0)
 			{
-				SongEditor_Control.SetHyperspeed(1.0 + HyperSpeed_EditorBar.method_4() * HyperSpeed_EditorBar.method_4() / 10.0);
+				_songEditorControl.SetHyperspeed(1.0 + _hyperSpeedEditorBar.method_4() * _hyperSpeedEditorBar.method_4() / 10.0);
 			}
 		}
 
 		private void SaveChart_MenuItem_Click(object sender, EventArgs e)
 		{
-			if (SongListBox.SelectedIndex >= 0)
+			if (_songListBox.SelectedIndex >= 0)
 			{
-				var gh3Song = (GH3Song)SongListBox.SelectedItem;
+				var gh3Song = (Gh3Song)_songListBox.SelectedItem;
                 var fileLocation = KeyGenerator.OpenOrSaveFile("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
-				if (!fileLocation.Equals("") && File.Exists(DataFolder + "songs\\" + gh3Song.name + "_song.pak.xen"))
+				if (!fileLocation.Equals("") && File.Exists(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen"))
 				{
-					using (var @class = new zzPakNode2(DataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
+					using (var @class = new ZzPakNode2(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen", false))
 					{
 						if (fileLocation.EndsWith(".qbc"))
 						{
-							new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).qbcCreator(fileLocation, gh3Song);
+							new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb")).QbcCreator(fileLocation, gh3Song);
 						}
                         else if (fileLocation.EndsWith(".chart"))
                         {
-                            new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).method_1().chartCreator(fileLocation, gh3Song);
+                            new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb")).method_1().ChartCreator(fileLocation, gh3Song);
                         }
                         else
 						{
-							new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).method_1().dbcCreator(fileLocation, gh3Song);
+							new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb")).method_1().DbcCreator(fileLocation, gh3Song);
 						}
 					}
 				}
@@ -969,21 +969,21 @@ namespace ns15
 
 		private void SaveTGH_MenuItem_Click(object sender, EventArgs e)
 		{
-			if (TierBox.SelectedIndex >= 0)
+			if (_tierBox.SelectedIndex >= 0)
 			{
-				var text = KeyGenerator.OpenOrSaveFile("Select where to save the tier.", "GH3CP Tier File|*.tgh", false, TierTitle_TxtBox.Text);
+				var text = KeyGenerator.OpenOrSaveFile("Select where to save the tier.", "GH3CP Tier File|*.tgh", false, _tierTitleTxtBox.Text);
 				if (text.Equals(""))
 				{
 					return;
 				}
-				TGHManager @class;
+				TghManager @class;
 				if (DialogResult.Yes == MessageBox.Show("Do you wish to include all used song data (Music & Game Tracks)?", "Tier Exporting", MessageBoxButtons.YesNo))
 				{
-					@class = new TGHManager(gh3Songlist, (GH3Tier)TierBox.SelectedItem, text, DataFolder);
+					@class = new TghManager(_gh3Songlist, (Gh3Tier)_tierBox.SelectedItem, text, _dataFolder);
 				}
 				else
 				{
-					@class = new TGHManager(gh3Songlist, (GH3Tier)TierBox.SelectedItem, text);
+					@class = new TghManager(_gh3Songlist, (Gh3Tier)_tierBox.SelectedItem, text);
 				}
 				@class.method_1();
 			}
@@ -996,30 +996,30 @@ namespace ns15
 
         private void TGHSwitch_MenuItem_Click(object sender, EventArgs e)
 		{
-			if (TierBox.SelectedIndex >= 0)
+			if (_tierBox.SelectedIndex >= 0)
 			{
 				var text = KeyGenerator.OpenFile("Select the tier to switch too.", "GH3CP Tier File|*.tgh");
 				if (text.Equals(""))
 				{
 					return;
 				}
-				var gH3Tier = new GH3Tier();
+				var gH3Tier = new Gh3Tier();
 				try
 				{
-					TGHManager tghManager;
+					TghManager tghManager;
 					if (DialogResult.Yes == MessageBox.Show("Do you wish to import all contained song data (Music & Game Tracks)? Data and properties will be overwritten!", "Tier Switching", MessageBoxButtons.YesNo))
 					{
-						tghManager = new TGHManager(gh3Songlist, gH3Tier, text, DataFolder);
+						tghManager = new TghManager(_gh3Songlist, gH3Tier, text, _dataFolder);
 					}
 					else
 					{
-						tghManager = new TGHManager(gh3Songlist, gH3Tier, text);
+						tghManager = new TghManager(_gh3Songlist, gH3Tier, text);
 					}
 					tghManager.method_0();
-					TierBox.Items[TierBox.SelectedIndex] = gH3Tier;
-					TierBox.SelectedIndex = TierBox.SelectedIndex;
-					SetlistApply_Btn.Enabled = true;
-					method_4(new Class247(class319_0, gh3Songlist));
+					_tierBox.Items[_tierBox.SelectedIndex] = gH3Tier;
+					_tierBox.SelectedIndex = _tierBox.SelectedIndex;
+					_setlistApplyBtn.Enabled = true;
+					method_4(new Class247(Class3190, _gh3Songlist));
 					method_0();
 				}
 				catch
@@ -1031,30 +1031,30 @@ namespace ns15
 
 		private void TGHImport_MenuItem_Click(object sender, EventArgs e)
 		{
-			if (gh3Songlist.gh3SetlistList.ContainsKey(SelectedSetlist))
+			if (_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
 			{
 				var text = KeyGenerator.OpenFile("Select the tier to import.", "GH3CP Tier File|*.tgh");
 				if (text.Equals(""))
 				{
 					return;
 				}
-				var gH3Tier = new GH3Tier();
+				var gH3Tier = new Gh3Tier();
 				try
 				{
-					TGHManager @class;
+					TghManager @class;
 					if (DialogResult.Yes == MessageBox.Show("Do you wish to import all contained song data (Music & Game Tracks) and properties? Data will be overwritten!", "Tier Importing", MessageBoxButtons.YesNo))
 					{
-						@class = new TGHManager(gh3Songlist, gH3Tier, text, DataFolder);
+						@class = new TghManager(_gh3Songlist, gH3Tier, text, _dataFolder);
 					}
 					else
 					{
-						@class = new TGHManager(gh3Songlist, gH3Tier, text);
+						@class = new TghManager(_gh3Songlist, gH3Tier, text);
 					}
 					@class.method_0();
-					TierBox.Items.Add(gH3Tier);
-					TierBox.SelectedIndex = TierBox.Items.Count - 1;
-					SetlistApply_Btn.Enabled = true;
-					method_4(new Class247(class319_0, gh3Songlist));
+					_tierBox.Items.Add(gH3Tier);
+					_tierBox.SelectedIndex = _tierBox.Items.Count - 1;
+					_setlistApplyBtn.Enabled = true;
+					method_4(new Class247(Class3190, _gh3Songlist));
 					method_0();
 				}
 				catch
@@ -1066,21 +1066,21 @@ namespace ns15
 
 		private void SaveSGH_MenuItem_Click(object sender, EventArgs e)
 		{
-			if (gh3Songlist.gh3SetlistList.ContainsKey(SelectedSetlist))
+			if (_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
 			{
-				var saveLocation = KeyGenerator.OpenOrSaveFile("Select where to save the setlist.", "GH3CP Setlist File|*.sgh", false, SetlistTitle_TxtBox.Text);
+				var saveLocation = KeyGenerator.OpenOrSaveFile("Select where to save the setlist.", "GH3CP Setlist File|*.sgh", false, _setlistTitleTxtBox.Text);
 				if (saveLocation.Equals(""))
 				{
 					return;
 				}
-				SGHManager sghManager;
+				SghManager sghManager;
 				if (DialogResult.Yes == MessageBox.Show("Do you wish to include all used song data (Music & Game Tracks)?", "Setlist Exporting", MessageBoxButtons.YesNo))
 				{
-					sghManager = new SGHManager(gh3Songlist, gh3Songlist.gh3SetlistList[SelectedSetlist], saveLocation, DataFolder);
+					sghManager = new SghManager(_gh3Songlist, _gh3Songlist.Gh3SetlistList[_selectedSetlist], saveLocation, _dataFolder);
 				}
 				else
 				{
-					sghManager = new SGHManager(gh3Songlist, gh3Songlist.gh3SetlistList[SelectedSetlist], saveLocation);
+					sghManager = new SghManager(_gh3Songlist, _gh3Songlist.Gh3SetlistList[_selectedSetlist], saveLocation);
 				}
 				sghManager.method_1();
 			}
@@ -1088,7 +1088,7 @@ namespace ns15
 
         private void exportSetlistAsChartsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (gh3Songlist.gh3SetlistList.ContainsKey(SelectedSetlist))
+            if (_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
             {
                 var folderBrowserDialog = new FolderBrowserDialog();
                 folderBrowserDialog.ShowNewFolderButton = false;
@@ -1103,14 +1103,14 @@ namespace ns15
                 {
                     return;
                 }
-                foreach(var tier in gh3Songlist.gh3SetlistList[SelectedSetlist].tiers)
+                foreach(var tier in _gh3Songlist.Gh3SetlistList[_selectedSetlist].Tiers)
                 {
-                    foreach (var gh3Song in tier.songs)
+                    foreach (var gh3Song in tier.Songs)
                     {
-                        var fileLocation = saveLocation + "\\" + gh3Song.name + ".chart";
-                        using (var @class = new zzPakNode2(DataFolder + "songs\\" + gh3Song.name + "_song.pak.xen", false))
+                        var fileLocation = saveLocation + "\\" + gh3Song.Name + ".chart";
+                        using (var @class = new ZzPakNode2(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen", false))
                         {
-                            new QBCParser(gh3Song.name, @class.zzGetNode1("songs\\" + gh3Song.name + ".mid.qb")).method_1().chartCreator(fileLocation, gh3Song);
+                            new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb")).method_1().ChartCreator(fileLocation, gh3Song);
                         }
                     }
                 }
@@ -1119,39 +1119,39 @@ namespace ns15
 
         private void SGHSwitch_MenuItem_Click(object sender, EventArgs e)
 		{
-			if (gh3Songlist.gh3SetlistList.ContainsKey(SelectedSetlist))
+			if (_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
 			{
 				var text = KeyGenerator.OpenFile("Select the setlist to switch too.", "GH3CP Setlist File|*.sgh");
 				if (text.Equals(""))
 				{
 					return;
 				}
-				var gH3Setlist = new GH3Setlist();
+				var gH3Setlist = new Gh3Setlist();
 				try
 				{
-					SGHManager sghManager;
+					SghManager sghManager;
 					if (DialogResult.Yes == MessageBox.Show("Do you wish to import all contained song data (Music & Game Tracks)? Data and properties will be overwritten!", "Setlist Switching", MessageBoxButtons.YesNo))
 					{
-						sghManager = new SGHManager(gh3Songlist, gH3Setlist, text, DataFolder);
+						sghManager = new SghManager(_gh3Songlist, gH3Setlist, text, _dataFolder);
 					}
 					else
 					{
-						sghManager = new SGHManager(gh3Songlist, gH3Setlist, text);
+						sghManager = new SghManager(_gh3Songlist, gH3Setlist, text);
 					}
 					sghManager.method_0();
-					TierBox.Items.Clear();
-					TierBox.Items.AddRange(gH3Setlist.tiers.ToArray());
-					if (TierBox.Items.Count != 0)
+					_tierBox.Items.Clear();
+					_tierBox.Items.AddRange(gH3Setlist.Tiers.ToArray());
+					if (_tierBox.Items.Count != 0)
 					{
-						TierBox.SelectedIndex = 0;
+						_tierBox.SelectedIndex = 0;
 					}
 					else
 					{
 						method_23();
 					}
-					SetlistTitle_TxtBox.Text = KeyGenerator.GetFileName(text, 1);
-					SetlistApply_Btn.Enabled = true;
-					method_4(new Class247(class319_0, gh3Songlist));
+					_setlistTitleTxtBox.Text = KeyGenerator.GetFileName(text, 1);
+					_setlistApplyBtn.Enabled = true;
+					method_4(new Class247(Class3190, _gh3Songlist));
 					method_0();
 				}
 				catch (Exception exception)
@@ -1183,43 +1183,43 @@ namespace ns15
 				var file = array[i];
 				try
 				{
-					var list2 = KeyGenerator.checkFile(file, "*.mid;*.chart;*.qbc;*.dbc", true);
-					var list3 = KeyGenerator.checkFile(file, "*.wav;*.mp3;*.ogg", true);
+					var list2 = KeyGenerator.CheckFile(file, "*.mid;*.chart;*.qbc;*.dbc", true);
+					var list3 = KeyGenerator.CheckFile(file, "*.wav;*.mp3;*.ogg", true);
 					var files = Directory.GetFiles(file, "*.dat", SearchOption.TopDirectoryOnly);
 					if (list2.Count != 0 && (list3.Count != 0 || files.Length != 0))
 					{
-						var gH3Song = IsAerosmith ? new GHASong() : new GH3Song();
-						gH3Song.name = KeyGenerator.GetFileName(file).ToLower().Replace(" ", "").Replace('.', '_');
-						if (gH3Song.name.Length > 30)
+						var gH3Song = _isAerosmith ? new GhaSong() : new Gh3Song();
+						gH3Song.Name = KeyGenerator.GetFileName(file).ToLower().Replace(" ", "").Replace('.', '_');
+						if (gH3Song.Name.Length > 30)
 						{
-							gH3Song.name = gH3Song.name.Remove(30);
+							gH3Song.Name = gH3Song.Name.Remove(30);
 						}
-						if (QbSongClass1.smethod_4(gH3Song.name) || gh3Songlist.method_3(gH3Song.name))
+						if (QbSongClass1.smethod_4(gH3Song.Name) || _gh3Songlist.method_3(gH3Song.Name))
 						{
 							var num = 2;
-							while (QbSongClass1.smethod_4(gH3Song.name + num) || gh3Songlist.method_3(gH3Song.name + num))
+							while (QbSongClass1.smethod_4(gH3Song.Name + num) || _gh3Songlist.method_3(gH3Song.Name + num))
 							{
 								num++;
 							}
-							var expr_176 = gH3Song;
-							expr_176.name += num;
+							var expr176 = gH3Song;
+							expr176.Name += num;
 						}
-						QBCParser qbcParser = null;
+						QbcParser qbcParser = null;
 						foreach (var current in list2)
 						{
 							try
 							{
 								if (current.EndsWith(".qbc"))
 								{
-									qbcParser = new QBCParser(current);
+									qbcParser = new QbcParser(current);
 								}
 								else if (current.EndsWith(".mid"))
 								{
-                                    qbcParser = Midi2Chart.LoadMidiSong(current, forceRB3MidConversionToolStripMenuItem.Checked);
+                                    qbcParser = Midi2Chart.LoadMidiSong(current, _forceRb3MidConversionToolStripMenuItem.Checked);
 								}
 								else
 								{
-									qbcParser = new ChartParser(current).ConvertToQBC();
+									qbcParser = new ChartParser(current).ConvertToQbc();
 								}
 								break;
 							}
@@ -1229,7 +1229,7 @@ namespace ns15
 						}
 						if (qbcParser != null)
 						{
-							zzQbSongObject class2 = null;
+							ZzQbSongObject class2 = null;
 							if (files.Length != 0)
 							{
 								var array2 = files;
@@ -1240,8 +1240,8 @@ namespace ns15
 									{
 										if (File.Exists(text2.Replace(".dat.xen", ".fsb.xen")))
 										{
-											class2 = new zzQbSongObject(text2);
-											if ((int)new FileInfo(text2.Replace(".dat.xen", ".fsb.xen")).Length == class2.int_0)
+											class2 = new ZzQbSongObject(text2);
+											if ((int)new FileInfo(text2.Replace(".dat.xen", ".fsb.xen")).Length == class2.Int0)
 											{
 												break;
 											}
@@ -1254,10 +1254,10 @@ namespace ns15
 							}
 							if (class2 != null || list3.Count != 0)
 							{
-								var songData = new SongData(gH3Song.name, qbcParser, class2, list3.ToArray());
-								var class3 = songData.method_1(class319_0, DataFolder);
-								var class4 = songData.method_0(DataFolder);
-								gH3Song.vmethod_0(class3.class362_0.gh3Song_0);
+								var songData = new SongData(gH3Song.Name, qbcParser, class2, list3.ToArray());
+								var class3 = songData.method_1(Class3190, _dataFolder);
+								var class4 = songData.method_0(_dataFolder);
+								gH3Song.vmethod_0(class3.Class3620.Gh3Song0);
 								if (File.Exists(file + "\\song.ini"))
 								{
 									var array3 = File.ReadAllLines(file + "\\song.ini");
@@ -1266,22 +1266,22 @@ namespace ns15
 										var text3 = array3[k];
 										if (text3.StartsWith("name"))
 										{
-											gH3Song.title = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
+											gH3Song.Title = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
 										}
 										else if (text3.StartsWith("artist"))
 										{
-											gH3Song.artist = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
+											gH3Song.Artist = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
 										}
 									}
 								}
-								gH3Song.no_rhythm_track = !class4.bool_0;
-								gH3Song.use_coop_notetracks = class4.bool_1;
-								gH3Song.version = 3;
-								gH3Song.leaderboard = true;
-								gH3Song.editable = true;
+								gH3Song.NoRhythmTrack = !class4.Bool0;
+								gH3Song.UseCoopNotetracks = class4.Bool1;
+								gH3Song.Version = 3;
+								gH3Song.Leaderboard = true;
+								gH3Song.Editable = true;
 								method_4(class3);
 								method_4(class4);
-								gh3Songlist.Add(gH3Song.name, gH3Song);
+								_gh3Songlist.Add(gH3Song.Name, gH3Song);
 								list.Remove(file);
 							}
 						}
@@ -1291,7 +1291,7 @@ namespace ns15
 				{
 				}
 			}
-			method_4(new Class247(class319_0, gh3Songlist));
+			method_4(new Class247(Class3190, _gh3Songlist));
 			method_0();
 			if (list.Count != 0)
 			{
@@ -1309,7 +1309,7 @@ namespace ns15
             //Creates GUI
 			InitializeComponent();
             LoadMore();
-			AbstractBaseTreeNode1.bool_0 = false;
+			AbstractBaseTreeNode1.Bool0 = false;
 			try
 			{
 				string text = null;
@@ -1340,44 +1340,44 @@ namespace ns15
 		    }
 		    if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero III\\") != null)
 			{
-				GameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero III\\";
+				_gameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero III\\";
 				if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\") != null && MessageBox.Show("Do you wish to load GH3 Aerosmith?", "GH3 Aerosmith found!", MessageBoxButtons.YesNo) == DialogResult.Yes)
 				{
-					GameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\";
-					IsAerosmith = true;
+					_gameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\";
+					_isAerosmith = true;
 				}
 			}
 			else if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Aspyr\\Guitar Hero III\\") != null)
 			{
-				GameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero III\\";
+				_gameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero III\\";
 				if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\") != null && MessageBox.Show("Do you wish to load GH3 Aerosmith?", "GH3 Aerosmith found!", MessageBoxButtons.YesNo) == DialogResult.Yes)
 				{
-					GameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\";
-					IsAerosmith = true;
+					_gameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\";
+					_isAerosmith = true;
 				}
 			}
 			else if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\") != null)
 			{
-				GameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\";
-				IsAerosmith = true;
+				_gameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\";
+				_isAerosmith = true;
 			}
 			else if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\") != null)
 			{
-				GameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\";
-				IsAerosmith = true;
+				_gameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\";
+				_isAerosmith = true;
 			}
 			else
 			{
 				MessageBox.Show("Guitar Hero III is not installed properly! Please re/install and run again.");
 				formClosing();
 			}
-			GhtcpRegistry = (IsAerosmith ? "SOFTWARE\\SigmaInc\\GHTCPAero\\" : "SOFTWARE\\SigmaInc\\GHTCP\\");
-			BackupName = (IsAerosmith ? "backupAero\\" : "backup\\");
-			zzQbScriptZipperClass.GameName = (IsAerosmith ? "GHA" : "GH3");
-			if (IsAerosmith)
+			_ghtcpRegistry = (_isAerosmith ? "SOFTWARE\\SigmaInc\\GHTCPAero\\" : "SOFTWARE\\SigmaInc\\GHTCP\\");
+			_backupName = (_isAerosmith ? "backupAero\\" : "backup\\");
+			ZzQbScriptZipperClass.GameName = (_isAerosmith ? "GHA" : "GH3");
+			if (_isAerosmith)
 			{
 				Text += " - Aerosmith";
-				TierIcon_DropBox.Items.AddRange(new[]
+				_tierIconDropBox.Items.AddRange(new[]
 				{
 					"setlist_icon_01",
 					"setlist_icon_02",
@@ -1386,7 +1386,7 @@ namespace ns15
 					"setlist_icon_05",
 					"setlist_icon_06"
 				});
-				TierStage_DropBox.Items.AddRange(new[]
+				_tierStageDropBox.Items.AddRange(new[]
 				{
 					"load_z_hof",
 					"load_z_nine_lives",
@@ -1398,12 +1398,12 @@ namespace ns15
 					"load_z_credits",
 					"load_z_viewer"
 				});
-				TierEncorep2_CheckBox.Text = "P1 Aerosmith Encore";
+				_tierEncorep2CheckBox.Text = "P1 Aerosmith Encore";
 			}
 			else
 			{
 				Text += " - Legends of Rock";
-				TierIcon_DropBox.Items.AddRange(new[]
+				_tierIconDropBox.Items.AddRange(new[]
 				{
 					"setlist_icon_backyard",
 					"setlist_icon_bar",
@@ -1414,7 +1414,7 @@ namespace ns15
 					"setlist_icon_megadome",
 					"setlist_icon_hell"
 				});
-				TierStage_DropBox.Items.AddRange(new[]
+				_tierStageDropBox.Items.AddRange(new[]
 				{
 					"load_z_artdeco",
 					"load_z_budokan",
@@ -1435,9 +1435,9 @@ namespace ns15
 				throw new Exception("GH3 Language setting missing from registry!");
 			}
 			QbSongClass1.smethod_0();
-			AppDirectory = Directory.GetCurrentDirectory() + "\\";
+			_appDirectory = Directory.GetCurrentDirectory() + "\\";
 			method_12(false);
-			var registryKey = Registry.LocalMachine.CreateSubKey(GhtcpRegistry);
+			var registryKey = Registry.LocalMachine.CreateSubKey(_ghtcpRegistry);
 			method_10((string)registryKey.GetValue("Priority"));
 			if (!new List<string>(new[]
 			{
@@ -1445,7 +1445,7 @@ namespace ns15
 				"above",
 				"normal",
 				"below"
-			}).Contains(Priority))
+			}).Contains(_priority))
 			{
 				method_10("normal");
 			}
@@ -1460,7 +1460,7 @@ namespace ns15
 			});
 			if (list.Contains(null))
 			{
-				LanguageList = new[]
+				_languageList = new[]
 				{
 					"Guitar Hero III (English)",
 					"Guitar Hero III (French)",
@@ -1472,29 +1472,29 @@ namespace ns15
 			}
 			else
 			{
-				LanguageList = list.ToArray();
+				_languageList = list.ToArray();
 			}
 			InitializeLanguageList();
-			SilentGuitar_MenuItem.Checked = (Class248.bool_2 = ((((int?)registryKey.GetValue("SilentGuitar")) ?? 0) != 0));
-			MinToTray_MenuItem.Checked = ((((int?)registryKey.GetValue("MinimizeToTray")) ?? 0) != 0);
-			SilentGuitar_MenuItem.Checked = (Class248.bool_3 = ((((int?)registryKey.GetValue("ForceConversion")) ?? 0) != 0));
-			if (!Directory.Exists(AppDirectory + BackupName))
+			_silentGuitarMenuItem.Checked = (Class248.Bool2 = ((((int?)registryKey.GetValue("SilentGuitar")) ?? 0) != 0));
+			_minToTrayMenuItem.Checked = ((((int?)registryKey.GetValue("MinimizeToTray")) ?? 0) != 0);
+			_silentGuitarMenuItem.Checked = (Class248.Bool3 = ((((int?)registryKey.GetValue("ForceConversion")) ?? 0) != 0));
+			if (!Directory.Exists(_appDirectory + _backupName))
 			{
-				Directory.CreateDirectory(AppDirectory + BackupName);
+				Directory.CreateDirectory(_appDirectory + _backupName);
 			}
-			if (!Directory.Exists(AppDirectory + BackupName + "originals"))
+			if (!Directory.Exists(_appDirectory + _backupName + "originals"))
 			{
-				Directory.CreateDirectory(AppDirectory + BackupName + "originals");
+				Directory.CreateDirectory(_appDirectory + _backupName + "originals");
 			}
-			if (!Directory.Exists(AppDirectory + BackupName + "lastedited"))
+			if (!Directory.Exists(_appDirectory + _backupName + "lastedited"))
 			{
-				Directory.CreateDirectory(AppDirectory + BackupName + "lastedited");
+				Directory.CreateDirectory(_appDirectory + _backupName + "lastedited");
 			}
-			if (!File.Exists(AppDirectory + "lame_enc.dll"))
+			if (!File.Exists(_appDirectory + "lame_enc.dll"))
 			{
 				try
 				{
-					ZIPManager.smethod_8(new WebClient().OpenRead("http://spaghetticode.org/lame/libmp3lame-win-3.97.zip"), AppDirectory + "lame_enc.dll", "libmp3lame-3.97/lame_enc.dll");
+					ZipManager.smethod_8(new WebClient().OpenRead("http://spaghetticode.org/lame/libmp3lame-win-3.97.zip"), _appDirectory + "lame_enc.dll", "libmp3lame-3.97/lame_enc.dll");
 				}
 				catch
 				{
@@ -1504,7 +1504,7 @@ namespace ns15
 					{
 						var text4 = KeyGenerator.OpenOrSaveFile("Locate MP3 Encoding Library (file will be deleted after!)", "MP3 Lame Zip|*.zip", true);
 						var text5 = KeyGenerator.GetFileNameNoExt(text4);
-						ZIPManager.smethod_4(text4, AppDirectory + "lame_enc.dll", "libmp3lame" + text5.Substring(text5.LastIndexOf('-')) + "/lame_enc.dll");
+						ZipManager.smethod_4(text4, _appDirectory + "lame_enc.dll", "libmp3lame" + text5.Substring(text5.LastIndexOf('-')) + "/lame_enc.dll");
 						try
 						{
 							KeyGenerator.smethod_20(text4);
@@ -1523,7 +1523,7 @@ namespace ns15
 
 		private void TexExplorer_MenuItem_Click(object sender, EventArgs e)
 		{
-			new TexExplorer(DataFolder).ShowDialog();
+			new TexExplorer(_dataFolder).ShowDialog();
 		}
 
 		private void SaveFileControl_MenuItem_Click(object sender, EventArgs e)
@@ -1532,7 +1532,7 @@ namespace ns15
 			if (a != "")
 			{
 				var @class = new Class324(a);
-				@class.method_0(new Class324(872398018)).list_0[0].int_0[1] = -1;
+				@class.method_0(new Class324(872398018)).List0[0].Int0[1] = -1;
 				var text = "Progress" + (new[]
 				{
 					"A",
@@ -1540,7 +1540,7 @@ namespace ns15
 					"C",
 					"D",
 					"E"
-				})[list_0.IndexOf(KeyGenerator.GetFileNameNoExt(class319_0.string_0).Remove(0, 2))];
+				})[_list0.IndexOf(KeyGenerator.GetFileNameNoExt(Class3190.String0).Remove(0, 2))];
 				text = string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "\\Aspyr\\Guitar Hero III\\Save\\", text, "}{", text);
 				if (!Directory.Exists(text))
 				{
@@ -1550,60 +1550,60 @@ namespace ns15
 			}
 		}
 
-		private void method_4(QbEditor class245_0)
+		private void method_4(QbEditor class2450)
 		{
-			foreach (QbEditor @class in ActionRequests_ListBox.Items)
+			foreach (QbEditor @class in _actionRequestsListBox.Items)
 			{
-				if (@class.Equals(class245_0))
+				if (@class.Equals(class2450))
 				{
-					ActionRequests_ListBox.Items.Remove(@class);
+					_actionRequestsListBox.Items.Remove(@class);
 					break;
 				}
 			}
-			ActionRequests_ListBox.Items.Add(class245_0);
+			_actionRequestsListBox.Items.Add(class2450);
 		}
 
 		private void ClearActions_MenuItem_Click(object sender, EventArgs e)
 		{
-			if (ActionRequests_ListBox.Items.Count != 0 && DialogResult.Yes == MessageBox.Show("Are You sure you want to delete all Actions?", "Warning!", MessageBoxButtons.YesNo))
+			if (_actionRequestsListBox.Items.Count != 0 && DialogResult.Yes == MessageBox.Show("Are You sure you want to delete all Actions?", "Warning!", MessageBoxButtons.YesNo))
 			{
-				ActionRequests_ListBox.Items.Clear();
+				_actionRequestsListBox.Items.Clear();
 				GC.Collect();
 			}
 		}
 
 		private void ExecuteActions_MenuItem_Click(object sender, EventArgs e)
 		{
-			if (ActionRequests_ListBox.Items.Count != 0)
+			if (_actionRequestsListBox.Items.Count != 0)
 			{
 				if (DialogResult.Yes == MessageBox.Show("Are You sure you want to Execute Actions?", "Warning!", MessageBoxButtons.YesNo))
 				{
 					var list = new List<QbEditor>();
-					foreach (QbEditor item in ActionRequests_ListBox.Items)
+					foreach (QbEditor item in _actionRequestsListBox.Items)
 					{
 						list.Add(item);
 					}
-					actionsWindow_0 = new ActionsWindow(list);
-					actionsWindow_0.method_0(method_5);
-					actionsWindow_0.Show();
-					actionsWindow_0.method_1();
+					_actionsWindow0 = new ActionsWindow(list);
+					_actionsWindow0.method_0(method_5);
+					_actionsWindow0.Show();
+					_actionsWindow0.method_1();
 				}
 			}
 		}
 
 		private void method_5(object sender, EventArgs e)
 		{
-			if ((!actionsWindow_0.bool_0 || DialogResult.Yes == MessageBox.Show("Some of the action requests failed!\nDo you still wish to rebuild the game settings?", "Warning!", MessageBoxButtons.YesNo)) && method_18())
+			if ((!_actionsWindow0.Bool0 || DialogResult.Yes == MessageBox.Show("Some of the action requests failed!\nDo you still wish to rebuild the game settings?", "Warning!", MessageBoxButtons.YesNo)) && method_18())
 			{
-				actionsWindow_0 = null;
-				ActionRequests_ListBox.Items.Clear();
+				_actionsWindow0 = null;
+				_actionRequestsListBox.Items.Clear();
 				GC.Collect();
 			}
 		}
 
 		private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (ActionRequests_ListBox.Items.Count != 0 && DialogResult.Yes != MessageBox.Show("Any actions that are not executed will be erased! Are you sure you wish to quit?", "Warning!", MessageBoxButtons.YesNo))
+			if (_actionRequestsListBox.Items.Count != 0 && DialogResult.Yes != MessageBox.Show("Any actions that are not executed will be erased! Are you sure you wish to quit?", "Warning!", MessageBoxButtons.YesNo))
 			{
 				e.Cancel = true;
 				return;
@@ -1614,7 +1614,7 @@ namespace ns15
 		public void MainMenu_SizeChanged(object sender, EventArgs e)
 		{
 			Console.WriteLine(WindowState);
-			if (WindowState == FormWindowState.Minimized && MinToTray_MenuItem.Checked)
+			if (WindowState == FormWindowState.Minimized && _minToTrayMenuItem.Checked)
 			{
 				Hide();
 				return;
@@ -1629,14 +1629,14 @@ namespace ns15
 		}
 
 		[DllImport("User32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-		public static extern bool SetForegroundWindow(HandleRef handleRef_0);
+		public static extern bool SetForegroundWindow(HandleRef handleRef0);
 
 		private void notifyIcon_0_MouseDown(object sender, MouseEventArgs e)
 		{
 			if (e.Clicks == 2)
 			{
-				leftClickMenu.Hide();
-				rightClickMenu.Hide();
+				_leftClickMenu.Hide();
+				_rightClickMenu.Hide();
 				if (e.Button == MouseButtons.Left)
 				{
 					BringToFront();
@@ -1651,13 +1651,13 @@ namespace ns15
 				}
 				try
 				{
-					var registryKey = Registry.LocalMachine.OpenSubKey(GameRegistry);
+					var registryKey = Registry.LocalMachine.OpenSubKey(_gameRegistry);
 					var process = new Process();
-					process.StartInfo = new ProcessStartInfo((string)registryKey.GetValue("Path") + (IsAerosmith ? "Guitar Hero Aerosmith.exe" : "GH3.exe"));
+					process.StartInfo = new ProcessStartInfo((string)registryKey.GetValue("Path") + (_isAerosmith ? "Guitar Hero Aerosmith.exe" : "GH3.exe"));
 					process.Start();
-					if (Priority != "normal")
+					if (_priority != "normal")
 					{
-						process.PriorityClass = ((Priority == "high") ? ProcessPriorityClass.High : ((Priority == "above") ? ProcessPriorityClass.AboveNormal : ((Priority == "below") ? ProcessPriorityClass.BelowNormal : ProcessPriorityClass.Normal)));
+						process.PriorityClass = ((_priority == "high") ? ProcessPriorityClass.High : ((_priority == "above") ? ProcessPriorityClass.AboveNormal : ((_priority == "below") ? ProcessPriorityClass.BelowNormal : ProcessPriorityClass.Normal)));
 					}
 					return;
 				}
@@ -1670,57 +1670,57 @@ namespace ns15
 			SetForegroundWindow(new HandleRef(this, Handle));
 			if (e.Button == MouseButtons.Left)
 			{
-				leftClickMenu.Show(this, PointToClient(Cursor.Position), ToolStripDropDownDirection.AboveLeft);
+				_leftClickMenu.Show(this, PointToClient(Cursor.Position), ToolStripDropDownDirection.AboveLeft);
 				return;
 			}
 			if (e.Button == MouseButtons.Right)
 			{
-				rightClickMenu.Show(this, PointToClient(Cursor.Position), ToolStripDropDownDirection.AboveRight);
+				_rightClickMenu.Show(this, PointToClient(Cursor.Position), ToolStripDropDownDirection.AboveRight);
 			}
 		}
 
 		private void formClosing()
 		{
-            var registryKey = Registry.LocalMachine.CreateSubKey(GhtcpRegistry);
-			registryKey.SetValue("Priority", Priority);
-			registryKey.SetValue("SilentGuitar", Class248.bool_2 ? 1 : 0);
-			registryKey.SetValue("MinimizeToTray", MinToTray_MenuItem.Checked ? 1 : 0);
-			registryKey.SetValue("ForceConversion", Class248.bool_3 ? 1 : 0);
+            var registryKey = Registry.LocalMachine.CreateSubKey(_ghtcpRegistry);
+			registryKey.SetValue("Priority", _priority);
+			registryKey.SetValue("SilentGuitar", Class248.Bool2 ? 1 : 0);
+			registryKey.SetValue("MinimizeToTray", _minToTrayMenuItem.Checked ? 1 : 0);
+			registryKey.SetValue("ForceConversion", Class248.Bool3 ? 1 : 0);
 			method_15();
-			SongEditor_Control.Dispose();
-            notifyIcon_0.Visible = false;
+			_songEditorControl.Dispose();
+            _notifyIcon0.Visible = false;
             Dispose(true);
         }
 
 		private void Exit_MenuItem_Click(object sender, EventArgs e)
 		{
-			if (ActionRequests_ListBox.Items.Count != 0 && DialogResult.Yes != MessageBox.Show("Any actions that are not executed will be erased! Are you sure you wish to quit?", "Warning!", MessageBoxButtons.YesNo))
+			if (_actionRequestsListBox.Items.Count != 0 && DialogResult.Yes != MessageBox.Show("Any actions that are not executed will be erased! Are you sure you wish to quit?", "Warning!", MessageBoxButtons.YesNo))
 			{
 				return;
 			}
 			formClosing();
 		}
 
-		private void method_7(string string_7)
+		private void method_7(string string7)
 		{
-			SysEnglish_MenuItem.Checked = (string_7 == "en");
-			SysFrench_MenuItem.Checked = (string_7 == "fr");
-			SysItalian_MenuItem.Checked = (string_7 == "it");
-			SysSpanish_MenuItem.Checked = (string_7 == "es");
-			SysGerman_MenuItem.Checked = (string_7 == "de");
-			SysKorean_MenuItem.Checked = (string_7 == "ko");
+			_sysEnglishMenuItem.Checked = (string7 == "en");
+			_sysFrenchMenuItem.Checked = (string7 == "fr");
+			_sysItalianMenuItem.Checked = (string7 == "it");
+			_sysSpanishMenuItem.Checked = (string7 == "es");
+			_sysGermanMenuItem.Checked = (string7 == "de");
+			_sysKoreanMenuItem.Checked = (string7 == "ko");
 		}
 
-		private void method_8(string string_7)
+		private void method_8(string string7)
 		{
-			var registryKey = Registry.LocalMachine.CreateSubKey(GameRegistry);
-			registryKey.SetValue("Language", string_7);
-			method_7(string_7);
+			var registryKey = Registry.LocalMachine.CreateSubKey(_gameRegistry);
+			registryKey.SetValue("Language", string7);
+			method_7(string7);
 		}
 
 		private string method_9()
 		{
-			var registryKey = Registry.LocalMachine.CreateSubKey(GameRegistry);
+			var registryKey = Registry.LocalMachine.CreateSubKey(_gameRegistry);
 			var text = (string)registryKey.GetValue("Language");
 			method_7(text);
 			return text;
@@ -1731,13 +1731,13 @@ namespace ns15
 			method_8((string)((ToolStripMenuItem)sender).Tag);
 		}
 
-		private void method_10(string string_7)
+		private void method_10(string string7)
 		{
-			Priority = string_7;
-			SysHigh_MenuItem.Checked = (Priority == "high");
-			SysAbove_MenuItem.Checked = (Priority == "above");
-			SysNormal_MenuItem.Checked = (Priority == "normal");
-			SysBelow_MenuItem.Checked = (Priority == "below");
+			_priority = string7;
+			_sysHighMenuItem.Checked = (_priority == "high");
+			_sysAboveMenuItem.Checked = (_priority == "above");
+			_sysNormalMenuItem.Checked = (_priority == "normal");
+			_sysBelowMenuItem.Checked = (_priority == "below");
 		}
 
 		private void SysBelow_MenuItem_Click(object sender, EventArgs e)
@@ -1757,7 +1757,7 @@ namespace ns15
 
 		private void GH3Folder_MenuItem_Click(object sender, EventArgs e)
 		{
-			Process.Start(DataFolder);
+			Process.Start(_dataFolder);
 		}
 
 		private void Disclaimer_MenuItem_Click(object sender, EventArgs e)
@@ -1775,80 +1775,80 @@ namespace ns15
 
 		private void SilentGuitar_MenuItem_Click(object sender, EventArgs e)
 		{
-			var expr_06 = SilentGuitar_MenuItem;
-			Class248.bool_2 = (expr_06.Checked = !expr_06.Checked);
+			var expr06 = _silentGuitarMenuItem;
+			Class248.Bool2 = (expr06.Checked = !expr06.Checked);
 		}
 
 		private void FxSpeedBoost_MenuItem_Click(object sender, EventArgs e)
 		{
-			method_4(new zzFxBoost(class319_0));
+			method_4(new ZzFxBoost(Class3190));
 		}
 
 		private void ForceMp3Conversion_MenuItem_Click(object sender, EventArgs e)
 		{
-			var expr_06 = ForceMp3Conversion_MenuItem;
-			Class248.bool_3 = (expr_06.Checked = !expr_06.Checked);
+			var expr06 = _forceMp3ConversionMenuItem;
+			Class248.Bool3 = (expr06.Checked = !expr06.Checked);
 		}
 
         //Disables Buttons
-		private void method_11(GH3Setlist gh3Setlist_0)
+		private void method_11(Gh3Setlist gh3Setlist0)
 		{
-			SetlistTitle_TxtBox.Text = (string)Setlist_DropBox.SelectedItem;
-			SetlistTitle_TxtBox.Enabled = (DeleteSetlist_Btn.Enabled = gh3Setlist_0.method_4());
+			_setlistTitleTxtBox.Text = (string)_setlistDropBox.SelectedItem;
+			_setlistTitleTxtBox.Enabled = (_deleteSetlistBtn.Enabled = gh3Setlist0.method_4());
 			//this.CreateSetlist_Btn.Enabled = (this.gh3Songlist_0.CustomBitMask != -1);
-			SetlistPrefix_TxtBox.Text = gh3Setlist_0.prefix;
-			SetlistInitMovie_TxtBox.Text = gh3Setlist_0.initial_movie;
-			TierBox.Items.Clear();
-			TierBox.Items.AddRange(gh3Setlist_0.tiers.ToArray());
-			if (TierBox.Items.Count != 0)
+			_setlistPrefixTxtBox.Text = gh3Setlist0.Prefix;
+			_setlistInitMovieTxtBox.Text = gh3Setlist0.InitialMovie;
+			_tierBox.Items.Clear();
+			_tierBox.Items.AddRange(gh3Setlist0.Tiers.ToArray());
+			if (_tierBox.Items.Count != 0)
 			{
-				TierBox.SelectedIndex = 0;
+				_tierBox.SelectedIndex = 0;
 			}
 			else
 			{
 				method_23();
 			}
-			SetlistApply_Btn.Enabled = false;
+			_setlistApplyBtn.Enabled = false;
 		}
 
 		private void Setlist_DropBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			method_11(gh3Songlist.gh3SetlistList[SelectedSetlist = gh3Songlist.method_9((string)Setlist_DropBox.SelectedItem)]);
+			method_11(_gh3Songlist.Gh3SetlistList[_selectedSetlist = _gh3Songlist.method_9((string)_setlistDropBox.SelectedItem)]);
 		}
 
 		private void CreateSetlist_Btn_Click(object sender, EventArgs e)
 		{
-			if (gh3Songlist.CustomBitMask == -1)
+			if (_gh3Songlist.CustomBitMask == -1)
 			{
 				return;
 			}
-			var gH3Setlist = new GH3Setlist();
+			var gH3Setlist = new Gh3Setlist();
 			gH3Setlist.method_3("scripts\\guitar\\custom_menu\\guitar_custom_progression.qb");
-			gH3Setlist.initial_movie = "";
-			gH3Setlist.tiers.Add(new GH3Tier());
+			gH3Setlist.InitialMovie = "";
+			gH3Setlist.Tiers.Add(new Gh3Tier());
 			for (var i = 0; ; )
 			{
                 //num = 2^numOfSetlists
 				var num = 1 << i;
-                if (!((gh3Songlist.CustomBitMask & num) == 0)) {
+                if (!((_gh3Songlist.CustomBitMask & num) == 0)) {
                     goto SKIPIT;
                 }
                 //2^numOfSetlists - 1
 
-                    gh3Songlist.CustomBitMask |= (gH3Setlist.CustomBit = num);
+                    _gh3Songlist.CustomBitMask |= (gH3Setlist.CustomBit = num);
 
                     IL_7E:
-                    gH3Setlist.prefix = "custom" + (i + 1);
+                    gH3Setlist.Prefix = "custom" + (i + 1);
 					int num2;
-					gh3Songlist.gh3SetlistList.Add(num2 = QbSongClass1.AddKeyToDictionary("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
+					_gh3Songlist.Gh3SetlistList.Add(num2 = QbSongClass1.AddKeyToDictionary("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
 					int value;
-					gh3Songlist.dictionary_1.Add(value = QbSongClass1.AddKeyToDictionary("custom" + (i + 1) + "_progression"), new GHLink(num2));
+					_gh3Songlist.Dictionary1.Add(value = QbSongClass1.AddKeyToDictionary("custom" + (i + 1) + "_progression"), new GhLink(num2));
 					string text;
-					gh3Songlist.class214_0.Add(text = "Custom Setlist " + (i + 1), value);
-					Setlist_DropBox.Items.Add(text);
-					Setlist_DropBox.SelectedItem = text;
-					method_4(new Class246(value, class319_0, gh3Songlist, true));
-					method_4(new UpdateSetlistSwitcher(class319_0, gh3Songlist, IsAerosmith));
+					_gh3Songlist.Class2140.Add(text = "Custom Setlist " + (i + 1), value);
+					_setlistDropBox.Items.Add(text);
+					_setlistDropBox.SelectedItem = text;
+					method_4(new Class246(value, Class3190, _gh3Songlist, true));
+					method_4(new UpdateSetlistSwitcher(Class3190, _gh3Songlist, _isAerosmith));
 					return;
             SKIPIT:
                 i++;
@@ -1862,75 +1862,75 @@ namespace ns15
 
 		private void DeleteSetlist_Btn_Click(object sender, EventArgs e)
 		{
-			if (!gh3Songlist.gh3SetlistList[SelectedSetlist].method_4())
+			if (!_gh3Songlist.Gh3SetlistList[_selectedSetlist].method_4())
 			{
 				return;
 			}
-			var text = (string)Setlist_DropBox.SelectedItem;
-			Setlist_DropBox.SelectedIndex--;
-			Setlist_DropBox.Items.Remove(text);
-			method_4(new Class246(gh3Songlist.class214_0[text], class319_0, gh3Songlist, false));
-			method_4(new UpdateSetlistSwitcher(class319_0, gh3Songlist, IsAerosmith));
+			var text = (string)_setlistDropBox.SelectedItem;
+			_setlistDropBox.SelectedIndex--;
+			_setlistDropBox.Items.Remove(text);
+			method_4(new Class246(_gh3Songlist.Class2140[text], Class3190, _gh3Songlist, false));
+			method_4(new UpdateSetlistSwitcher(Class3190, _gh3Songlist, _isAerosmith));
 		}
 
 		private void SetlistTitle_TxtBox_TextChanged(object sender, EventArgs e)
 		{
-			SetlistApply_Btn.Enabled = true;
+			_setlistApplyBtn.Enabled = true;
 		}
 
 		private void SetlistApply_Btn_Click(object sender, EventArgs e)
 		{
-			var gH3Setlist = gh3Songlist.gh3SetlistList[SelectedSetlist];
-			gH3Setlist.initial_movie = SetlistInitMovie_TxtBox.Text;
-			gH3Setlist.tiers.Clear();
-			foreach (GH3Tier item in TierBox.Items)
+			var gH3Setlist = _gh3Songlist.Gh3SetlistList[_selectedSetlist];
+			gH3Setlist.InitialMovie = _setlistInitMovieTxtBox.Text;
+			gH3Setlist.Tiers.Clear();
+			foreach (Gh3Tier item in _tierBox.Items)
 			{
-				gH3Setlist.tiers.Add(item);
+				gH3Setlist.Tiers.Add(item);
 			}
-			if (SetlistTitle_TxtBox.Text != (string)Setlist_DropBox.SelectedItem)
+			if (_setlistTitleTxtBox.Text != (string)_setlistDropBox.SelectedItem)
 			{
-				gh3Songlist.class214_0.Add(SetlistTitle_TxtBox.Text, gh3Songlist.class214_0[(string)Setlist_DropBox.SelectedItem]);
-				gh3Songlist.class214_0.Remove((string)Setlist_DropBox.SelectedItem);
-				method_4(new UpdateSetlistSwitcher(class319_0, gh3Songlist, IsAerosmith));
-				Setlist_DropBox.Items[Setlist_DropBox.SelectedIndex] = SetlistTitle_TxtBox.Text;
+				_gh3Songlist.Class2140.Add(_setlistTitleTxtBox.Text, _gh3Songlist.Class2140[(string)_setlistDropBox.SelectedItem]);
+				_gh3Songlist.Class2140.Remove((string)_setlistDropBox.SelectedItem);
+				method_4(new UpdateSetlistSwitcher(Class3190, _gh3Songlist, _isAerosmith));
+				_setlistDropBox.Items[_setlistDropBox.SelectedIndex] = _setlistTitleTxtBox.Text;
 			}
-			SetlistApply_Btn.Enabled = false;
-			method_4(new zzSetListUpdater(SelectedSetlist, class319_0, gh3Songlist));
+			_setlistApplyBtn.Enabled = false;
+			method_4(new ZzSetListUpdater(_selectedSetlist, Class3190, _gh3Songlist));
 		}
 
 		private void NewTier_MenuItem_Click(object sender, EventArgs e)
 		{
-			if (gh3Songlist.gh3SetlistList.ContainsKey(SelectedSetlist))
+			if (_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
 			{
-				TierBox.Items.Add(new GH3Tier());
-				TierBox.SelectedIndex = TierBox.Items.Count - 1;
-				SetlistApply_Btn.Enabled = true;
+				_tierBox.Items.Add(new Gh3Tier());
+				_tierBox.SelectedIndex = _tierBox.Items.Count - 1;
+				_setlistApplyBtn.Enabled = true;
 			}
 		}
 
 		private void ManageTiers_MenuItem_Click(object sender, EventArgs e)
 		{
-			if (TierBox.SelectedIndex >= 0)
+			if (_tierBox.SelectedIndex >= 0)
 			{
-				var list = new List<GH3Tier>();
-				foreach (GH3Tier item in TierBox.Items)
+				var list = new List<Gh3Tier>();
+				foreach (Gh3Tier item in _tierBox.Items)
 				{
 					list.Add(item);
 				}
-				var tierManagement = new TierManagement((string)Setlist_DropBox.SelectedItem, list.ToArray());
+				var tierManagement = new TierManagement((string)_setlistDropBox.SelectedItem, list.ToArray());
 				if (tierManagement.ShowDialog() == DialogResult.OK)
 				{
-					TierBox.Items.Clear();
-					TierBox.Items.AddRange(tierManagement.method_0());
-					if (TierBox.Items.Count != 0)
+					_tierBox.Items.Clear();
+					_tierBox.Items.AddRange(tierManagement.method_0());
+					if (_tierBox.Items.Count != 0)
 					{
-						TierBox.SelectedIndex = 0;
+						_tierBox.SelectedIndex = 0;
 					}
 					else
 					{
 						method_23();
 					}
-					SetlistApply_Btn.Enabled = true;
+					_setlistApplyBtn.Enabled = true;
 				}
 			}
 		}
@@ -1948,1786 +1948,1786 @@ namespace ns15
 		{
             components = new Container();
             var resources = new ComponentResourceManager(typeof(MainMenu));
-            rightClickMenu = new ContextMenuStrip(components);
-            SysHigh_MenuItem = new ToolStripMenuItem();
-            SysAbove_MenuItem = new ToolStripMenuItem();
-            SysNormal_MenuItem = new ToolStripMenuItem();
-            SysBelow_MenuItem = new ToolStripMenuItem();
-            toolStripSeparator8 = new ToolStripSeparator();
-            MinToTray_MenuItem = new ToolStripMenuItem();
-            SysExit_MenuItem = new ToolStripMenuItem();
-            TopMenuStrip = new MenuStrip();
-            File_MenuItem = new ToolStripMenuItem();
-            OpenGameSettings_MenuItem = new ToolStripMenuItem();
-            RecoverGameSettings_MenuItem = new ToolStripMenuItem();
-            ClearGameSettings_MenuItem = new ToolStripMenuItem();
-            ExecuteActions_MenuItem = new ToolStripMenuItem();
-            ClearActions_MenuItem = new ToolStripMenuItem();
-            toolStripSeparator1 = new ToolStripSeparator();
-            SaveTGH_MenuItem = new ToolStripMenuItem();
-            SaveSGH_MenuItem = new ToolStripMenuItem();
-            SaveChart_MenuItem = new ToolStripMenuItem();
-            exportSetlistAsChartsToolStripMenuItem = new ToolStripMenuItem();
-            toolStripSeparator6 = new ToolStripSeparator();
-            Exit_MenuItem = new ToolStripMenuItem();
-            Add_MenuItem = new ToolStripMenuItem();
-            NewSong_MenuItem = new ToolStripMenuItem();
-            Tier_MenuItem = new ToolStripMenuItem();
-            NewTier_MenuItem = new ToolStripMenuItem();
-            TGHImport_MenuItem = new ToolStripMenuItem();
-            MassImporter_MenuItem = new ToolStripMenuItem();
-            LegacyImporter_MenuItem = new ToolStripMenuItem();
-            RecoverSonglist_MenuItem = new ToolStripMenuItem();
-            ManageGame_MenuItem = new ToolStripMenuItem();
-            ManageTiers_MenuItem = new ToolStripMenuItem();
-            toolStripSeparator4 = new ToolStripSeparator();
-            TGHSwitch_MenuItem = new ToolStripMenuItem();
-            SGHSwitch_MenuItem = new ToolStripMenuItem();
-            toolStripSeparator11 = new ToolStripSeparator();
-            GameSettingsSwitch_MenuItem = new ToolStripMenuItem();
-            RestoreLast_MenuItem = new ToolStripMenuItem();
-            RestoreOriginal_MenuItem = new ToolStripMenuItem();
-            toolStripSeparator7 = new ToolStripSeparator();
-            SaveFileControl_MenuItem = new ToolStripMenuItem();
-            TexExplorer_MenuItem = new ToolStripMenuItem();
-            FxSpeedBoost_MenuItem = new ToolStripMenuItem();
-            ManageSongs_MenuItem = new ToolStripMenuItem();
-            SongProps_MenuItem = new ToolStripMenuItem();
-            RebuildSong_MenuItem = new ToolStripMenuItem();
-            SilentGuitar_MenuItem = new ToolStripMenuItem();
-            ForceMp3Conversion_MenuItem = new ToolStripMenuItem();
-            forceRB3MidConversionToolStripMenuItem = new ToolStripMenuItem();
-            DeleteSong_MenuItem = new ToolStripMenuItem();
-            RemoveSong_ToolStripMenuItem = new ToolStripSeparator();
-            HideUnEdit_MenuItem = new ToolStripMenuItem();
-            HideUsed_MenuItem = new ToolStripMenuItem();
-            ByTitle_MenuItem = new ToolStripMenuItem();
-            Help_MenuItem = new ToolStripMenuItem();
-            Guide_MenuItem = new ToolStripMenuItem();
-            ScoreHero_MenuItem = new ToolStripMenuItem();
-            GH3Folder_MenuItem = new ToolStripMenuItem();
-            toolStripSeparator3 = new ToolStripSeparator();
-            Disclaimer_MenuItem = new ToolStripMenuItem();
-            About_MenuItem = new ToolStripMenuItem();
-            ActionRequests_ListBox = new ListBox();
-            label1 = new Label();
-            label3 = new Label();
-            SidePanel = new TableLayoutPanel();
-            notifyIcon_0 = new NotifyIcon(components);
-            fontDialog_0 = new FontDialog();
-            leftClickMenu = new ContextMenuStrip(components);
-            SysEnglish_MenuItem = new ToolStripMenuItem();
-            SysFrench_MenuItem = new ToolStripMenuItem();
-            SysItalian_MenuItem = new ToolStripMenuItem();
-            SysSpanish_MenuItem = new ToolStripMenuItem();
-            SysGerman_MenuItem = new ToolStripMenuItem();
-            SysKorean_MenuItem = new ToolStripMenuItem();
-            MainContainer = new ToolStripContainer();
-            StatusStrip = new StatusStrip();
-            ToolStripStatusLbl = new ToolStripStatusLabel();
-            TabControl = new TabControl();
-            SetlistTab = new TabPage();
-            SetlistConfig_Container = new ToolStripContainer();
-            SetlistConf_TLPanel = new TableLayoutPanel();
-            Setlist_TLPanel = new TableLayoutPanel();
-            textBox3 = new TextBox();
-            label5 = new Label();
-            label4 = new Label();
-            TierBox = new ComboBox();
-            SetlistInitMovie_TxtBox = new TextBox();
-            SetlistPrefix_TxtBox = new TextBox();
-            label2 = new Label();
-            label13 = new Label();
-            SetlistTitle_TxtBox = new TextBox();
-            Tier_TLPanel = new TableLayoutPanel();
-            TierProps_Panel = new Panel();
-            TierUnlockedSet_Btn = new Button();
-            UnlockAll_CheckBox = new CheckBox();
-            NoCash_CheckBox = new CheckBox();
-            TierApply_Btn = new Button();
-            label12 = new Label();
-            SetlistApply_Btn = new Button();
-            TierCompMovie_TxtBox = new TextBox();
-            TierUnlocked_NumBox = new NumericUpDown();
-            TierTitle_TxtBox = new TextBox();
-            TierIcon_DropBox = new ComboBox();
-            TierStage_DropBox = new ComboBox();
-            TierBoss_CheckBox = new CheckBox();
-            TierEncorep2_CheckBox = new CheckBox();
-            TierEncorep1_CheckBox = new CheckBox();
-            label10 = new Label();
-            label9 = new Label();
-            label8 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            TierSongs_Panel = new TableLayoutPanel();
-            label11 = new Label();
-            SetlistStrip = new ToolStrip();
-            Setlist_Lbl = new ToolStripLabel();
-            Setlist_DropBox = new ToolStripComboBox();
-            CreateSetlist_Btn = new ToolStripButton();
-            DeleteSetlist_Btn = new ToolStripButton();
-            SongEditorTab = new TabPage();
-            SongEditor_Container = new ToolStripContainer();
-            SongEditor_BottomToolStrip = new ToolStrip();
-            ToggleElements_EditorSplitBtn = new ToolStripSplitButton();
-            StarView_EditorBtn = new ToolStripMenuItem();
-            HopoView_EditorBtn = new ToolStripMenuItem();
-            AudioView_EditorBtn = new ToolStripMenuItem();
-            toolStripSeparator10 = new ToolStripSeparator();
-            toolStripLabel1 = new ToolStripLabel();
-            BeatSize_EditorTxtBox = new ToolStripTextBox();
-            toolStripSeparator12 = new ToolStripSeparator();
-            toolStripLabel2 = new ToolStripLabel();
-            Offset_EditorTxtBox = new ToolStripTextBox();
-            SongEditor_TopToolStrip = new ToolStrip();
-            GameMode_EditorBtn = new ToolStripButton();
-            toolStripSeparator5 = new ToolStripSeparator();
-            LoadChart_EditorBtn = new ToolStripButton();
-            SelectedTrack_EditorBox = new ToolStripComboBox();
-            SongName_EditorLbl = new ToolStripLabel();
-            toolStripSeparator2 = new ToolStripSeparator();
-            LoadAudio_EditorBtn = new ToolStripButton();
-            PlayPause_EditorBtn = new ToolStripButton();
-            Stop_EditorBtn = new ToolStripButton();
-            PlayTime_EditorLbl = new ToolStripLabel();
-            TierSongs_ListBox = new zzListBox238();
-            HyperSpeed_EditorBar = new GhtcpToolStripControlHost();
-            FretAngle_EditorBar = new GhtcpToolStripControlHost();
-            SongEditor_Control = new SongEditor();
-            SongListBox = new zzListBox238();
-            rightClickMenu.SuspendLayout();
-            TopMenuStrip.SuspendLayout();
-            SidePanel.SuspendLayout();
-            leftClickMenu.SuspendLayout();
-            MainContainer.BottomToolStripPanel.SuspendLayout();
-            MainContainer.ContentPanel.SuspendLayout();
-            MainContainer.TopToolStripPanel.SuspendLayout();
-            MainContainer.SuspendLayout();
-            StatusStrip.SuspendLayout();
-            TabControl.SuspendLayout();
-            SetlistTab.SuspendLayout();
-            SetlistConfig_Container.ContentPanel.SuspendLayout();
-            SetlistConfig_Container.TopToolStripPanel.SuspendLayout();
-            SetlistConfig_Container.SuspendLayout();
-            SetlistConf_TLPanel.SuspendLayout();
-            Setlist_TLPanel.SuspendLayout();
-            Tier_TLPanel.SuspendLayout();
-            TierProps_Panel.SuspendLayout();
-            ((ISupportInitialize)(TierUnlocked_NumBox)).BeginInit();
-            TierSongs_Panel.SuspendLayout();
-            SetlistStrip.SuspendLayout();
-            SongEditorTab.SuspendLayout();
-            SongEditor_Container.BottomToolStripPanel.SuspendLayout();
-            SongEditor_Container.ContentPanel.SuspendLayout();
-            SongEditor_Container.TopToolStripPanel.SuspendLayout();
-            SongEditor_Container.SuspendLayout();
-            SongEditor_BottomToolStrip.SuspendLayout();
-            SongEditor_TopToolStrip.SuspendLayout();
+            _rightClickMenu = new ContextMenuStrip(components);
+            _sysHighMenuItem = new ToolStripMenuItem();
+            _sysAboveMenuItem = new ToolStripMenuItem();
+            _sysNormalMenuItem = new ToolStripMenuItem();
+            _sysBelowMenuItem = new ToolStripMenuItem();
+            _toolStripSeparator8 = new ToolStripSeparator();
+            _minToTrayMenuItem = new ToolStripMenuItem();
+            _sysExitMenuItem = new ToolStripMenuItem();
+            _topMenuStrip = new MenuStrip();
+            _fileMenuItem = new ToolStripMenuItem();
+            _openGameSettingsMenuItem = new ToolStripMenuItem();
+            _recoverGameSettingsMenuItem = new ToolStripMenuItem();
+            _clearGameSettingsMenuItem = new ToolStripMenuItem();
+            _executeActionsMenuItem = new ToolStripMenuItem();
+            _clearActionsMenuItem = new ToolStripMenuItem();
+            _toolStripSeparator1 = new ToolStripSeparator();
+            _saveTghMenuItem = new ToolStripMenuItem();
+            _saveSghMenuItem = new ToolStripMenuItem();
+            _saveChartMenuItem = new ToolStripMenuItem();
+            _exportSetlistAsChartsToolStripMenuItem = new ToolStripMenuItem();
+            _toolStripSeparator6 = new ToolStripSeparator();
+            _exitMenuItem = new ToolStripMenuItem();
+            _addMenuItem = new ToolStripMenuItem();
+            _newSongMenuItem = new ToolStripMenuItem();
+            _tierMenuItem = new ToolStripMenuItem();
+            _newTierMenuItem = new ToolStripMenuItem();
+            _tghImportMenuItem = new ToolStripMenuItem();
+            _massImporterMenuItem = new ToolStripMenuItem();
+            _legacyImporterMenuItem = new ToolStripMenuItem();
+            _recoverSonglistMenuItem = new ToolStripMenuItem();
+            _manageGameMenuItem = new ToolStripMenuItem();
+            _manageTiersMenuItem = new ToolStripMenuItem();
+            _toolStripSeparator4 = new ToolStripSeparator();
+            _tghSwitchMenuItem = new ToolStripMenuItem();
+            _sghSwitchMenuItem = new ToolStripMenuItem();
+            _toolStripSeparator11 = new ToolStripSeparator();
+            _gameSettingsSwitchMenuItem = new ToolStripMenuItem();
+            _restoreLastMenuItem = new ToolStripMenuItem();
+            _restoreOriginalMenuItem = new ToolStripMenuItem();
+            _toolStripSeparator7 = new ToolStripSeparator();
+            _saveFileControlMenuItem = new ToolStripMenuItem();
+            _texExplorerMenuItem = new ToolStripMenuItem();
+            _fxSpeedBoostMenuItem = new ToolStripMenuItem();
+            _manageSongsMenuItem = new ToolStripMenuItem();
+            _songPropsMenuItem = new ToolStripMenuItem();
+            _rebuildSongMenuItem = new ToolStripMenuItem();
+            _silentGuitarMenuItem = new ToolStripMenuItem();
+            _forceMp3ConversionMenuItem = new ToolStripMenuItem();
+            _forceRb3MidConversionToolStripMenuItem = new ToolStripMenuItem();
+            _deleteSongMenuItem = new ToolStripMenuItem();
+            _removeSongToolStripMenuItem = new ToolStripSeparator();
+            _hideUnEditMenuItem = new ToolStripMenuItem();
+            _hideUsedMenuItem = new ToolStripMenuItem();
+            _byTitleMenuItem = new ToolStripMenuItem();
+            _helpMenuItem = new ToolStripMenuItem();
+            _guideMenuItem = new ToolStripMenuItem();
+            _scoreHeroMenuItem = new ToolStripMenuItem();
+            _gh3FolderMenuItem = new ToolStripMenuItem();
+            _toolStripSeparator3 = new ToolStripSeparator();
+            _disclaimerMenuItem = new ToolStripMenuItem();
+            _aboutMenuItem = new ToolStripMenuItem();
+            _actionRequestsListBox = new ListBox();
+            _label1 = new Label();
+            _label3 = new Label();
+            _sidePanel = new TableLayoutPanel();
+            _notifyIcon0 = new NotifyIcon(components);
+            _fontDialog0 = new FontDialog();
+            _leftClickMenu = new ContextMenuStrip(components);
+            _sysEnglishMenuItem = new ToolStripMenuItem();
+            _sysFrenchMenuItem = new ToolStripMenuItem();
+            _sysItalianMenuItem = new ToolStripMenuItem();
+            _sysSpanishMenuItem = new ToolStripMenuItem();
+            _sysGermanMenuItem = new ToolStripMenuItem();
+            _sysKoreanMenuItem = new ToolStripMenuItem();
+            _mainContainer = new ToolStripContainer();
+            _statusStrip = new StatusStrip();
+            _toolStripStatusLbl = new ToolStripStatusLabel();
+            _tabControl = new TabControl();
+            _setlistTab = new TabPage();
+            _setlistConfigContainer = new ToolStripContainer();
+            _setlistConfTLPanel = new TableLayoutPanel();
+            _setlistTLPanel = new TableLayoutPanel();
+            _textBox3 = new TextBox();
+            _label5 = new Label();
+            _label4 = new Label();
+            _tierBox = new ComboBox();
+            _setlistInitMovieTxtBox = new TextBox();
+            _setlistPrefixTxtBox = new TextBox();
+            _label2 = new Label();
+            _label13 = new Label();
+            _setlistTitleTxtBox = new TextBox();
+            _tierTLPanel = new TableLayoutPanel();
+            _tierPropsPanel = new Panel();
+            _tierUnlockedSetBtn = new Button();
+            _unlockAllCheckBox = new CheckBox();
+            _noCashCheckBox = new CheckBox();
+            _tierApplyBtn = new Button();
+            _label12 = new Label();
+            _setlistApplyBtn = new Button();
+            _tierCompMovieTxtBox = new TextBox();
+            _tierUnlockedNumBox = new NumericUpDown();
+            _tierTitleTxtBox = new TextBox();
+            _tierIconDropBox = new ComboBox();
+            _tierStageDropBox = new ComboBox();
+            _tierBossCheckBox = new CheckBox();
+            _tierEncorep2CheckBox = new CheckBox();
+            _tierEncorep1CheckBox = new CheckBox();
+            _label10 = new Label();
+            _label9 = new Label();
+            _label8 = new Label();
+            _label6 = new Label();
+            _label7 = new Label();
+            _tierSongsPanel = new TableLayoutPanel();
+            _label11 = new Label();
+            _setlistStrip = new ToolStrip();
+            _setlistLbl = new ToolStripLabel();
+            _setlistDropBox = new ToolStripComboBox();
+            _createSetlistBtn = new ToolStripButton();
+            _deleteSetlistBtn = new ToolStripButton();
+            _songEditorTab = new TabPage();
+            _songEditorContainer = new ToolStripContainer();
+            _songEditorBottomToolStrip = new ToolStrip();
+            _toggleElementsEditorSplitBtn = new ToolStripSplitButton();
+            _starViewEditorBtn = new ToolStripMenuItem();
+            _hopoViewEditorBtn = new ToolStripMenuItem();
+            _audioViewEditorBtn = new ToolStripMenuItem();
+            _toolStripSeparator10 = new ToolStripSeparator();
+            _toolStripLabel1 = new ToolStripLabel();
+            _beatSizeEditorTxtBox = new ToolStripTextBox();
+            _toolStripSeparator12 = new ToolStripSeparator();
+            _toolStripLabel2 = new ToolStripLabel();
+            _offsetEditorTxtBox = new ToolStripTextBox();
+            _songEditorTopToolStrip = new ToolStrip();
+            _gameModeEditorBtn = new ToolStripButton();
+            _toolStripSeparator5 = new ToolStripSeparator();
+            _loadChartEditorBtn = new ToolStripButton();
+            _selectedTrackEditorBox = new ToolStripComboBox();
+            _songNameEditorLbl = new ToolStripLabel();
+            _toolStripSeparator2 = new ToolStripSeparator();
+            _loadAudioEditorBtn = new ToolStripButton();
+            _playPauseEditorBtn = new ToolStripButton();
+            _stopEditorBtn = new ToolStripButton();
+            _playTimeEditorLbl = new ToolStripLabel();
+            _tierSongsListBox = new ZzListBox238();
+            _hyperSpeedEditorBar = new GhtcpToolStripControlHost();
+            _fretAngleEditorBar = new GhtcpToolStripControlHost();
+            _songEditorControl = new SongEditor();
+            _songListBox = new ZzListBox238();
+            _rightClickMenu.SuspendLayout();
+            _topMenuStrip.SuspendLayout();
+            _sidePanel.SuspendLayout();
+            _leftClickMenu.SuspendLayout();
+            _mainContainer.BottomToolStripPanel.SuspendLayout();
+            _mainContainer.ContentPanel.SuspendLayout();
+            _mainContainer.TopToolStripPanel.SuspendLayout();
+            _mainContainer.SuspendLayout();
+            _statusStrip.SuspendLayout();
+            _tabControl.SuspendLayout();
+            _setlistTab.SuspendLayout();
+            _setlistConfigContainer.ContentPanel.SuspendLayout();
+            _setlistConfigContainer.TopToolStripPanel.SuspendLayout();
+            _setlistConfigContainer.SuspendLayout();
+            _setlistConfTLPanel.SuspendLayout();
+            _setlistTLPanel.SuspendLayout();
+            _tierTLPanel.SuspendLayout();
+            _tierPropsPanel.SuspendLayout();
+            ((ISupportInitialize)(_tierUnlockedNumBox)).BeginInit();
+            _tierSongsPanel.SuspendLayout();
+            _setlistStrip.SuspendLayout();
+            _songEditorTab.SuspendLayout();
+            _songEditorContainer.BottomToolStripPanel.SuspendLayout();
+            _songEditorContainer.ContentPanel.SuspendLayout();
+            _songEditorContainer.TopToolStripPanel.SuspendLayout();
+            _songEditorContainer.SuspendLayout();
+            _songEditorBottomToolStrip.SuspendLayout();
+            _songEditorTopToolStrip.SuspendLayout();
             SuspendLayout();
             //
             // rightClickMenu
             //
-            rightClickMenu.Items.AddRange(new ToolStripItem[] {
-            SysHigh_MenuItem,
-            SysAbove_MenuItem,
-            SysNormal_MenuItem,
-            SysBelow_MenuItem,
-            toolStripSeparator8,
-            MinToTray_MenuItem,
-            SysExit_MenuItem});
-            rightClickMenu.Name = "rightClickMenu";
-            rightClickMenu.Size = new Size(167, 142);
+            _rightClickMenu.Items.AddRange(new ToolStripItem[] {
+            _sysHighMenuItem,
+            _sysAboveMenuItem,
+            _sysNormalMenuItem,
+            _sysBelowMenuItem,
+            _toolStripSeparator8,
+            _minToTrayMenuItem,
+            _sysExitMenuItem});
+            _rightClickMenu.Name = "_rightClickMenu";
+            _rightClickMenu.Size = new Size(167, 142);
             //
             // SysHigh_MenuItem
             //
-            SysHigh_MenuItem.Name = "SysHigh_MenuItem";
-            SysHigh_MenuItem.ShowShortcutKeys = false;
-            SysHigh_MenuItem.Size = new Size(166, 22);
-            SysHigh_MenuItem.Tag = "high";
-            SysHigh_MenuItem.Text = "High";
-            SysHigh_MenuItem.Click += SysBelow_MenuItem_Click;
+            _sysHighMenuItem.Name = "_sysHighMenuItem";
+            _sysHighMenuItem.ShowShortcutKeys = false;
+            _sysHighMenuItem.Size = new Size(166, 22);
+            _sysHighMenuItem.Tag = "high";
+            _sysHighMenuItem.Text = "High";
+            _sysHighMenuItem.Click += SysBelow_MenuItem_Click;
             //
             // SysAbove_MenuItem
             //
-            SysAbove_MenuItem.Name = "SysAbove_MenuItem";
-            SysAbove_MenuItem.ShowShortcutKeys = false;
-            SysAbove_MenuItem.Size = new Size(166, 22);
-            SysAbove_MenuItem.Tag = "above";
-            SysAbove_MenuItem.Text = "Above Normal";
-            SysAbove_MenuItem.Click += SysBelow_MenuItem_Click;
+            _sysAboveMenuItem.Name = "_sysAboveMenuItem";
+            _sysAboveMenuItem.ShowShortcutKeys = false;
+            _sysAboveMenuItem.Size = new Size(166, 22);
+            _sysAboveMenuItem.Tag = "above";
+            _sysAboveMenuItem.Text = "Above Normal";
+            _sysAboveMenuItem.Click += SysBelow_MenuItem_Click;
             //
             // SysNormal_MenuItem
             //
-            SysNormal_MenuItem.Name = "SysNormal_MenuItem";
-            SysNormal_MenuItem.ShowShortcutKeys = false;
-            SysNormal_MenuItem.Size = new Size(166, 22);
-            SysNormal_MenuItem.Tag = "normal";
-            SysNormal_MenuItem.Text = "Normal";
-            SysNormal_MenuItem.Click += SysBelow_MenuItem_Click;
+            _sysNormalMenuItem.Name = "_sysNormalMenuItem";
+            _sysNormalMenuItem.ShowShortcutKeys = false;
+            _sysNormalMenuItem.Size = new Size(166, 22);
+            _sysNormalMenuItem.Tag = "normal";
+            _sysNormalMenuItem.Text = "Normal";
+            _sysNormalMenuItem.Click += SysBelow_MenuItem_Click;
             //
             // SysBelow_MenuItem
             //
-            SysBelow_MenuItem.Name = "SysBelow_MenuItem";
-            SysBelow_MenuItem.ShowShortcutKeys = false;
-            SysBelow_MenuItem.Size = new Size(166, 22);
-            SysBelow_MenuItem.Tag = "below";
-            SysBelow_MenuItem.Text = "Below Normal";
-            SysBelow_MenuItem.Click += SysBelow_MenuItem_Click;
+            _sysBelowMenuItem.Name = "_sysBelowMenuItem";
+            _sysBelowMenuItem.ShowShortcutKeys = false;
+            _sysBelowMenuItem.Size = new Size(166, 22);
+            _sysBelowMenuItem.Tag = "below";
+            _sysBelowMenuItem.Text = "Below Normal";
+            _sysBelowMenuItem.Click += SysBelow_MenuItem_Click;
             //
             // toolStripSeparator8
             //
-            toolStripSeparator8.Name = "toolStripSeparator8";
-            toolStripSeparator8.Size = new Size(163, 6);
+            _toolStripSeparator8.Name = "_toolStripSeparator8";
+            _toolStripSeparator8.Size = new Size(163, 6);
             //
             // MinToTray_MenuItem
             //
-            MinToTray_MenuItem.CheckOnClick = true;
-            MinToTray_MenuItem.Name = "MinToTray_MenuItem";
-            MinToTray_MenuItem.Size = new Size(166, 22);
-            MinToTray_MenuItem.Text = "Minimize To Tray";
+            _minToTrayMenuItem.CheckOnClick = true;
+            _minToTrayMenuItem.Name = "_minToTrayMenuItem";
+            _minToTrayMenuItem.Size = new Size(166, 22);
+            _minToTrayMenuItem.Text = "Minimize To Tray";
             //
             // SysExit_MenuItem
             //
-            SysExit_MenuItem.Name = "SysExit_MenuItem";
-            SysExit_MenuItem.ShowShortcutKeys = false;
-            SysExit_MenuItem.Size = new Size(166, 22);
-            SysExit_MenuItem.Text = "Exit";
-            SysExit_MenuItem.Click += Exit_MenuItem_Click;
+            _sysExitMenuItem.Name = "_sysExitMenuItem";
+            _sysExitMenuItem.ShowShortcutKeys = false;
+            _sysExitMenuItem.Size = new Size(166, 22);
+            _sysExitMenuItem.Text = "Exit";
+            _sysExitMenuItem.Click += Exit_MenuItem_Click;
             //
             // TopMenuStrip
             //
-            TopMenuStrip.Dock = DockStyle.None;
-            TopMenuStrip.Items.AddRange(new ToolStripItem[] {
-            File_MenuItem,
-            Add_MenuItem,
-            ManageGame_MenuItem,
-            ManageSongs_MenuItem,
-            Help_MenuItem});
-            TopMenuStrip.Location = new Point(0, 0);
-            TopMenuStrip.Name = "TopMenuStrip";
-            TopMenuStrip.Size = new Size(784, 24);
-            TopMenuStrip.TabIndex = 2;
-            TopMenuStrip.Text = "menuStrip1";
+            _topMenuStrip.Dock = DockStyle.None;
+            _topMenuStrip.Items.AddRange(new ToolStripItem[] {
+            _fileMenuItem,
+            _addMenuItem,
+            _manageGameMenuItem,
+            _manageSongsMenuItem,
+            _helpMenuItem});
+            _topMenuStrip.Location = new Point(0, 0);
+            _topMenuStrip.Name = "_topMenuStrip";
+            _topMenuStrip.Size = new Size(784, 24);
+            _topMenuStrip.TabIndex = 2;
+            _topMenuStrip.Text = "menuStrip1";
             //
             // File_MenuItem
             //
-            File_MenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            OpenGameSettings_MenuItem,
-            RecoverGameSettings_MenuItem,
-            ClearGameSettings_MenuItem,
-            ExecuteActions_MenuItem,
-            ClearActions_MenuItem,
-            toolStripSeparator1,
-            SaveTGH_MenuItem,
-            SaveSGH_MenuItem,
-            SaveChart_MenuItem,
-            exportSetlistAsChartsToolStripMenuItem,
-            toolStripSeparator6,
-            Exit_MenuItem});
-            File_MenuItem.Name = "File_MenuItem";
-            File_MenuItem.Size = new Size(37, 20);
-            File_MenuItem.Text = "File";
+            _fileMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+            _openGameSettingsMenuItem,
+            _recoverGameSettingsMenuItem,
+            _clearGameSettingsMenuItem,
+            _executeActionsMenuItem,
+            _clearActionsMenuItem,
+            _toolStripSeparator1,
+            _saveTghMenuItem,
+            _saveSghMenuItem,
+            _saveChartMenuItem,
+            _exportSetlistAsChartsToolStripMenuItem,
+            _toolStripSeparator6,
+            _exitMenuItem});
+            _fileMenuItem.Name = "_fileMenuItem";
+            _fileMenuItem.Size = new Size(37, 20);
+            _fileMenuItem.Text = "File";
             //
             // OpenGameSettings_MenuItem
             //
-            OpenGameSettings_MenuItem.Name = "OpenGameSettings_MenuItem";
-            OpenGameSettings_MenuItem.ShortcutKeys = Keys.Control | Keys.O;
-            OpenGameSettings_MenuItem.Size = new Size(264, 22);
-            OpenGameSettings_MenuItem.Text = "&Open Game Settings";
-            OpenGameSettings_MenuItem.Click += OpenGameSettings_MenuItem_Click;
+            _openGameSettingsMenuItem.Name = "_openGameSettingsMenuItem";
+            _openGameSettingsMenuItem.ShortcutKeys = Keys.Control | Keys.O;
+            _openGameSettingsMenuItem.Size = new Size(264, 22);
+            _openGameSettingsMenuItem.Text = "&Open Game Settings";
+            _openGameSettingsMenuItem.Click += OpenGameSettings_MenuItem_Click;
             //
             // RecoverGameSettings_MenuItem
             //
-            RecoverGameSettings_MenuItem.Name = "RecoverGameSettings_MenuItem";
-            RecoverGameSettings_MenuItem.ShortcutKeys = Keys.Control | Keys.R;
-            RecoverGameSettings_MenuItem.Size = new Size(264, 22);
-            RecoverGameSettings_MenuItem.Text = "&Recover Game Settings";
-            RecoverGameSettings_MenuItem.Click += RecoverGameSettings_MenuItem_Click;
+            _recoverGameSettingsMenuItem.Name = "_recoverGameSettingsMenuItem";
+            _recoverGameSettingsMenuItem.ShortcutKeys = Keys.Control | Keys.R;
+            _recoverGameSettingsMenuItem.Size = new Size(264, 22);
+            _recoverGameSettingsMenuItem.Text = "&Recover Game Settings";
+            _recoverGameSettingsMenuItem.Click += RecoverGameSettings_MenuItem_Click;
             //
             // ClearGameSettings_MenuItem
             //
-            ClearGameSettings_MenuItem.Name = "ClearGameSettings_MenuItem";
-            ClearGameSettings_MenuItem.ShortcutKeys = Keys.Control | Keys.Q;
-            ClearGameSettings_MenuItem.Size = new Size(264, 22);
-            ClearGameSettings_MenuItem.Text = "Clear Game Settings";
-            ClearGameSettings_MenuItem.Click += ClearGameSettings_MenuItem_Click;
+            _clearGameSettingsMenuItem.Name = "_clearGameSettingsMenuItem";
+            _clearGameSettingsMenuItem.ShortcutKeys = Keys.Control | Keys.Q;
+            _clearGameSettingsMenuItem.Size = new Size(264, 22);
+            _clearGameSettingsMenuItem.Text = "Clear Game Settings";
+            _clearGameSettingsMenuItem.Click += ClearGameSettings_MenuItem_Click;
             //
             // ExecuteActions_MenuItem
             //
-            ExecuteActions_MenuItem.Name = "ExecuteActions_MenuItem";
-            ExecuteActions_MenuItem.ShortcutKeys = (Keys.Control | Keys.Alt)
+            _executeActionsMenuItem.Name = "_executeActionsMenuItem";
+            _executeActionsMenuItem.ShortcutKeys = (Keys.Control | Keys.Alt)
                                                    | Keys.S;
-            ExecuteActions_MenuItem.Size = new Size(264, 22);
-            ExecuteActions_MenuItem.Text = "Execute &Actions";
-            ExecuteActions_MenuItem.Click += ExecuteActions_MenuItem_Click;
+            _executeActionsMenuItem.Size = new Size(264, 22);
+            _executeActionsMenuItem.Text = "Execute &Actions";
+            _executeActionsMenuItem.Click += ExecuteActions_MenuItem_Click;
             //
             // ClearActions_MenuItem
             //
-            ClearActions_MenuItem.Name = "ClearActions_MenuItem";
-            ClearActions_MenuItem.ShortcutKeys = (Keys.Control | Keys.Alt)
+            _clearActionsMenuItem.Name = "_clearActionsMenuItem";
+            _clearActionsMenuItem.ShortcutKeys = (Keys.Control | Keys.Alt)
                                                  | Keys.Q;
-            ClearActions_MenuItem.Size = new Size(264, 22);
-            ClearActions_MenuItem.Text = "&Clear Actions";
-            ClearActions_MenuItem.Click += ClearActions_MenuItem_Click;
+            _clearActionsMenuItem.Size = new Size(264, 22);
+            _clearActionsMenuItem.Text = "&Clear Actions";
+            _clearActionsMenuItem.Click += ClearActions_MenuItem_Click;
             //
             // toolStripSeparator1
             //
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(261, 6);
+            _toolStripSeparator1.Name = "_toolStripSeparator1";
+            _toolStripSeparator1.Size = new Size(261, 6);
             //
             // SaveTGH_MenuItem
             //
-            SaveTGH_MenuItem.Name = "SaveTGH_MenuItem";
-            SaveTGH_MenuItem.ShortcutKeys = (Keys.Alt | Keys.Shift)
+            _saveTghMenuItem.Name = "_saveTghMenuItem";
+            _saveTghMenuItem.ShortcutKeys = (Keys.Alt | Keys.Shift)
                                             | Keys.S;
-            SaveTGH_MenuItem.Size = new Size(264, 22);
-            SaveTGH_MenuItem.Text = "Export &TGH (Tier)";
-            SaveTGH_MenuItem.Click += SaveTGH_MenuItem_Click;
+            _saveTghMenuItem.Size = new Size(264, 22);
+            _saveTghMenuItem.Text = "Export &TGH (Tier)";
+            _saveTghMenuItem.Click += SaveTGH_MenuItem_Click;
             //
             // SaveSGH_MenuItem
             //
-            SaveSGH_MenuItem.Name = "SaveSGH_MenuItem";
-            SaveSGH_MenuItem.ShortcutKeys = Keys.Alt | Keys.S;
-            SaveSGH_MenuItem.Size = new Size(264, 22);
-            SaveSGH_MenuItem.Text = "Export &SGH (Setlist)";
-            SaveSGH_MenuItem.Click += SaveSGH_MenuItem_Click;
+            _saveSghMenuItem.Name = "_saveSghMenuItem";
+            _saveSghMenuItem.ShortcutKeys = Keys.Alt | Keys.S;
+            _saveSghMenuItem.Size = new Size(264, 22);
+            _saveSghMenuItem.Text = "Export &SGH (Setlist)";
+            _saveSghMenuItem.Click += SaveSGH_MenuItem_Click;
             //
             // SaveChart_MenuItem
             //
-            SaveChart_MenuItem.Name = "SaveChart_MenuItem";
-            SaveChart_MenuItem.Size = new Size(264, 22);
-            SaveChart_MenuItem.Text = "Export Song Chart";
-            SaveChart_MenuItem.Click += SaveChart_MenuItem_Click;
+            _saveChartMenuItem.Name = "_saveChartMenuItem";
+            _saveChartMenuItem.Size = new Size(264, 22);
+            _saveChartMenuItem.Text = "Export Song Chart";
+            _saveChartMenuItem.Click += SaveChart_MenuItem_Click;
             //
             // exportSetlistAsChartsToolStripMenuItem
             //
-            exportSetlistAsChartsToolStripMenuItem.Name = "exportSetlistAsChartsToolStripMenuItem";
-            exportSetlistAsChartsToolStripMenuItem.ShortcutKeys = (Keys.Control | Keys.Shift)
+            _exportSetlistAsChartsToolStripMenuItem.Name = "_exportSetlistAsChartsToolStripMenuItem";
+            _exportSetlistAsChartsToolStripMenuItem.ShortcutKeys = (Keys.Control | Keys.Shift)
                                                                   | Keys.S;
-            exportSetlistAsChartsToolStripMenuItem.Size = new Size(264, 22);
-            exportSetlistAsChartsToolStripMenuItem.Text = "Export Setlist as Charts";
-            exportSetlistAsChartsToolStripMenuItem.Click += exportSetlistAsChartsToolStripMenuItem_Click_1;
+            _exportSetlistAsChartsToolStripMenuItem.Size = new Size(264, 22);
+            _exportSetlistAsChartsToolStripMenuItem.Text = "Export Setlist as Charts";
+            _exportSetlistAsChartsToolStripMenuItem.Click += exportSetlistAsChartsToolStripMenuItem_Click_1;
             //
             // toolStripSeparator6
             //
-            toolStripSeparator6.Name = "toolStripSeparator6";
-            toolStripSeparator6.Size = new Size(261, 6);
+            _toolStripSeparator6.Name = "_toolStripSeparator6";
+            _toolStripSeparator6.Size = new Size(261, 6);
             //
             // Exit_MenuItem
             //
-            Exit_MenuItem.Name = "Exit_MenuItem";
-            Exit_MenuItem.Size = new Size(264, 22);
-            Exit_MenuItem.Text = "&Exit";
-            Exit_MenuItem.Click += Exit_MenuItem_Click;
+            _exitMenuItem.Name = "_exitMenuItem";
+            _exitMenuItem.Size = new Size(264, 22);
+            _exitMenuItem.Text = "&Exit";
+            _exitMenuItem.Click += Exit_MenuItem_Click;
             //
             // Add_MenuItem
             //
-            Add_MenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            NewSong_MenuItem,
-            Tier_MenuItem,
-            MassImporter_MenuItem,
-            LegacyImporter_MenuItem,
-            RecoverSonglist_MenuItem});
-            Add_MenuItem.Name = "Add_MenuItem";
-            Add_MenuItem.Size = new Size(41, 20);
-            Add_MenuItem.Text = "Add";
+            _addMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+            _newSongMenuItem,
+            _tierMenuItem,
+            _massImporterMenuItem,
+            _legacyImporterMenuItem,
+            _recoverSonglistMenuItem});
+            _addMenuItem.Name = "_addMenuItem";
+            _addMenuItem.Size = new Size(41, 20);
+            _addMenuItem.Text = "Add";
             //
             // NewSong_MenuItem
             //
-            NewSong_MenuItem.Name = "NewSong_MenuItem";
-            NewSong_MenuItem.ShortcutKeys = Keys.Alt | Keys.N;
-            NewSong_MenuItem.Size = new Size(167, 22);
-            NewSong_MenuItem.Text = "New Song";
-            NewSong_MenuItem.Click += NewSong_MenuItem_Click;
+            _newSongMenuItem.Name = "_newSongMenuItem";
+            _newSongMenuItem.ShortcutKeys = Keys.Alt | Keys.N;
+            _newSongMenuItem.Size = new Size(167, 22);
+            _newSongMenuItem.Text = "New Song";
+            _newSongMenuItem.Click += NewSong_MenuItem_Click;
             //
             // Tier_MenuItem
             //
-            Tier_MenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            NewTier_MenuItem,
-            TGHImport_MenuItem});
-            Tier_MenuItem.Name = "Tier_MenuItem";
-            Tier_MenuItem.Size = new Size(167, 22);
-            Tier_MenuItem.Text = "Tier";
+            _tierMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+            _newTierMenuItem,
+            _tghImportMenuItem});
+            _tierMenuItem.Name = "_tierMenuItem";
+            _tierMenuItem.Size = new Size(167, 22);
+            _tierMenuItem.Text = "Tier";
             //
             // NewTier_MenuItem
             //
-            NewTier_MenuItem.Name = "NewTier_MenuItem";
-            NewTier_MenuItem.ShortcutKeys = Keys.Alt | Keys.T;
-            NewTier_MenuItem.Size = new Size(137, 22);
-            NewTier_MenuItem.Text = "New";
-            NewTier_MenuItem.Click += NewTier_MenuItem_Click;
+            _newTierMenuItem.Name = "_newTierMenuItem";
+            _newTierMenuItem.ShortcutKeys = Keys.Alt | Keys.T;
+            _newTierMenuItem.Size = new Size(137, 22);
+            _newTierMenuItem.Text = "New";
+            _newTierMenuItem.Click += NewTier_MenuItem_Click;
             //
             // TGHImport_MenuItem
             //
-            TGHImport_MenuItem.Name = "TGHImport_MenuItem";
-            TGHImport_MenuItem.Size = new Size(137, 22);
-            TGHImport_MenuItem.Text = "TGH Import";
-            TGHImport_MenuItem.Click += TGHImport_MenuItem_Click;
+            _tghImportMenuItem.Name = "_tghImportMenuItem";
+            _tghImportMenuItem.Size = new Size(137, 22);
+            _tghImportMenuItem.Text = "TGH Import";
+            _tghImportMenuItem.Click += TGHImport_MenuItem_Click;
             //
             // MassImporter_MenuItem
             //
-            MassImporter_MenuItem.Name = "MassImporter_MenuItem";
-            MassImporter_MenuItem.Size = new Size(167, 22);
-            MassImporter_MenuItem.Text = "Mass Importer";
-            MassImporter_MenuItem.Click += MassImporter_MenuItem_Click;
+            _massImporterMenuItem.Name = "_massImporterMenuItem";
+            _massImporterMenuItem.Size = new Size(167, 22);
+            _massImporterMenuItem.Text = "Mass Importer";
+            _massImporterMenuItem.Click += MassImporter_MenuItem_Click;
             //
             // LegacyImporter_MenuItem
             //
-            LegacyImporter_MenuItem.Enabled = false;
-            LegacyImporter_MenuItem.Name = "LegacyImporter_MenuItem";
-            LegacyImporter_MenuItem.Size = new Size(167, 22);
-            LegacyImporter_MenuItem.Text = "Legacy Importer";
-            LegacyImporter_MenuItem.Click += LegacyImporter_MenuItem_Click;
+            _legacyImporterMenuItem.Enabled = false;
+            _legacyImporterMenuItem.Name = "_legacyImporterMenuItem";
+            _legacyImporterMenuItem.Size = new Size(167, 22);
+            _legacyImporterMenuItem.Text = "Legacy Importer";
+            _legacyImporterMenuItem.Click += LegacyImporter_MenuItem_Click;
             //
             // RecoverSonglist_MenuItem
             //
-            RecoverSonglist_MenuItem.Name = "RecoverSonglist_MenuItem";
-            RecoverSonglist_MenuItem.Size = new Size(167, 22);
-            RecoverSonglist_MenuItem.Text = "Recover Songlist";
-            RecoverSonglist_MenuItem.Click += RecoverSonglist_MenuItem_Click;
+            _recoverSonglistMenuItem.Name = "_recoverSonglistMenuItem";
+            _recoverSonglistMenuItem.Size = new Size(167, 22);
+            _recoverSonglistMenuItem.Text = "Recover Songlist";
+            _recoverSonglistMenuItem.Click += RecoverSonglist_MenuItem_Click;
             //
             // ManageGame_MenuItem
             //
-            ManageGame_MenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            ManageTiers_MenuItem,
-            toolStripSeparator4,
-            TGHSwitch_MenuItem,
-            SGHSwitch_MenuItem,
-            toolStripSeparator11,
-            GameSettingsSwitch_MenuItem,
-            RestoreLast_MenuItem,
-            RestoreOriginal_MenuItem,
-            toolStripSeparator7,
-            SaveFileControl_MenuItem,
-            TexExplorer_MenuItem,
-            FxSpeedBoost_MenuItem});
-            ManageGame_MenuItem.Name = "ManageGame_MenuItem";
-            ManageGame_MenuItem.Size = new Size(124, 20);
-            ManageGame_MenuItem.Text = "Game Management";
+            _manageGameMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+            _manageTiersMenuItem,
+            _toolStripSeparator4,
+            _tghSwitchMenuItem,
+            _sghSwitchMenuItem,
+            _toolStripSeparator11,
+            _gameSettingsSwitchMenuItem,
+            _restoreLastMenuItem,
+            _restoreOriginalMenuItem,
+            _toolStripSeparator7,
+            _saveFileControlMenuItem,
+            _texExplorerMenuItem,
+            _fxSpeedBoostMenuItem});
+            _manageGameMenuItem.Name = "_manageGameMenuItem";
+            _manageGameMenuItem.Size = new Size(124, 20);
+            _manageGameMenuItem.Text = "Game Management";
             //
             // ManageTiers_MenuItem
             //
-            ManageTiers_MenuItem.Name = "ManageTiers_MenuItem";
-            ManageTiers_MenuItem.ShortcutKeys = Keys.Control | Keys.T;
-            ManageTiers_MenuItem.Size = new Size(237, 22);
-            ManageTiers_MenuItem.Text = "Manage Tiers";
-            ManageTiers_MenuItem.Click += ManageTiers_MenuItem_Click;
+            _manageTiersMenuItem.Name = "_manageTiersMenuItem";
+            _manageTiersMenuItem.ShortcutKeys = Keys.Control | Keys.T;
+            _manageTiersMenuItem.Size = new Size(237, 22);
+            _manageTiersMenuItem.Text = "Manage Tiers";
+            _manageTiersMenuItem.Click += ManageTiers_MenuItem_Click;
             //
             // toolStripSeparator4
             //
-            toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(234, 6);
+            _toolStripSeparator4.Name = "_toolStripSeparator4";
+            _toolStripSeparator4.Size = new Size(234, 6);
             //
             // TGHSwitch_MenuItem
             //
-            TGHSwitch_MenuItem.Name = "TGHSwitch_MenuItem";
-            TGHSwitch_MenuItem.Size = new Size(237, 22);
-            TGHSwitch_MenuItem.Text = "TGH Tier Switch";
-            TGHSwitch_MenuItem.Click += TGHSwitch_MenuItem_Click;
+            _tghSwitchMenuItem.Name = "_tghSwitchMenuItem";
+            _tghSwitchMenuItem.Size = new Size(237, 22);
+            _tghSwitchMenuItem.Text = "TGH Tier Switch";
+            _tghSwitchMenuItem.Click += TGHSwitch_MenuItem_Click;
             //
             // SGHSwitch_MenuItem
             //
-            SGHSwitch_MenuItem.Name = "SGHSwitch_MenuItem";
-            SGHSwitch_MenuItem.Size = new Size(237, 22);
-            SGHSwitch_MenuItem.Text = "SGH Setlist Switch";
-            SGHSwitch_MenuItem.Click += SGHSwitch_MenuItem_Click;
+            _sghSwitchMenuItem.Name = "_sghSwitchMenuItem";
+            _sghSwitchMenuItem.Size = new Size(237, 22);
+            _sghSwitchMenuItem.Text = "SGH Setlist Switch";
+            _sghSwitchMenuItem.Click += SGHSwitch_MenuItem_Click;
             //
             // toolStripSeparator11
             //
-            toolStripSeparator11.Name = "toolStripSeparator11";
-            toolStripSeparator11.Size = new Size(234, 6);
+            _toolStripSeparator11.Name = "_toolStripSeparator11";
+            _toolStripSeparator11.Size = new Size(234, 6);
             //
             // GameSettingsSwitch_MenuItem
             //
-            GameSettingsSwitch_MenuItem.Name = "GameSettingsSwitch_MenuItem";
-            GameSettingsSwitch_MenuItem.Size = new Size(237, 22);
-            GameSettingsSwitch_MenuItem.Text = "Game Settings Switch";
-            GameSettingsSwitch_MenuItem.Click += GameSettingsSwitch_MenuItem_Click;
+            _gameSettingsSwitchMenuItem.Name = "_gameSettingsSwitchMenuItem";
+            _gameSettingsSwitchMenuItem.Size = new Size(237, 22);
+            _gameSettingsSwitchMenuItem.Text = "Game Settings Switch";
+            _gameSettingsSwitchMenuItem.Click += GameSettingsSwitch_MenuItem_Click;
             //
             // RestoreLast_MenuItem
             //
-            RestoreLast_MenuItem.Name = "RestoreLast_MenuItem";
-            RestoreLast_MenuItem.Size = new Size(237, 22);
-            RestoreLast_MenuItem.Text = "Restore Last Game Settings";
-            RestoreLast_MenuItem.Click += RestoreLast_MenuItem_Click;
+            _restoreLastMenuItem.Name = "_restoreLastMenuItem";
+            _restoreLastMenuItem.Size = new Size(237, 22);
+            _restoreLastMenuItem.Text = "Restore Last Game Settings";
+            _restoreLastMenuItem.Click += RestoreLast_MenuItem_Click;
             //
             // RestoreOriginal_MenuItem
             //
-            RestoreOriginal_MenuItem.Name = "RestoreOriginal_MenuItem";
-            RestoreOriginal_MenuItem.Size = new Size(237, 22);
-            RestoreOriginal_MenuItem.Text = "Restore Original Game Settings";
-            RestoreOriginal_MenuItem.Click += RestoreOriginal_MenuItem_Click;
+            _restoreOriginalMenuItem.Name = "_restoreOriginalMenuItem";
+            _restoreOriginalMenuItem.Size = new Size(237, 22);
+            _restoreOriginalMenuItem.Text = "Restore Original Game Settings";
+            _restoreOriginalMenuItem.Click += RestoreOriginal_MenuItem_Click;
             //
             // toolStripSeparator7
             //
-            toolStripSeparator7.Name = "toolStripSeparator7";
-            toolStripSeparator7.Size = new Size(234, 6);
+            _toolStripSeparator7.Name = "_toolStripSeparator7";
+            _toolStripSeparator7.Size = new Size(234, 6);
             //
             // SaveFileControl_MenuItem
             //
-            SaveFileControl_MenuItem.Name = "SaveFileControl_MenuItem";
-            SaveFileControl_MenuItem.ShortcutKeys = Keys.Control | Keys.S;
-            SaveFileControl_MenuItem.Size = new Size(237, 22);
-            SaveFileControl_MenuItem.Text = "Save File Patcher";
-            SaveFileControl_MenuItem.Click += SaveFileControl_MenuItem_Click;
+            _saveFileControlMenuItem.Name = "_saveFileControlMenuItem";
+            _saveFileControlMenuItem.ShortcutKeys = Keys.Control | Keys.S;
+            _saveFileControlMenuItem.Size = new Size(237, 22);
+            _saveFileControlMenuItem.Text = "Save File Patcher";
+            _saveFileControlMenuItem.Click += SaveFileControl_MenuItem_Click;
             //
             // TexExplorer_MenuItem
             //
-            TexExplorer_MenuItem.Name = "TexExplorer_MenuItem";
-            TexExplorer_MenuItem.ShortcutKeys = Keys.Control | Keys.I;
-            TexExplorer_MenuItem.Size = new Size(237, 22);
-            TexExplorer_MenuItem.Text = "Texture Explorer";
-            TexExplorer_MenuItem.Click += TexExplorer_MenuItem_Click;
+            _texExplorerMenuItem.Name = "_texExplorerMenuItem";
+            _texExplorerMenuItem.ShortcutKeys = Keys.Control | Keys.I;
+            _texExplorerMenuItem.Size = new Size(237, 22);
+            _texExplorerMenuItem.Text = "Texture Explorer";
+            _texExplorerMenuItem.Click += TexExplorer_MenuItem_Click;
             //
             // FxSpeedBoost_MenuItem
             //
-            FxSpeedBoost_MenuItem.Name = "FxSpeedBoost_MenuItem";
-            FxSpeedBoost_MenuItem.Size = new Size(237, 22);
-            FxSpeedBoost_MenuItem.Text = "FX Speed Boost";
-            FxSpeedBoost_MenuItem.Click += FxSpeedBoost_MenuItem_Click;
+            _fxSpeedBoostMenuItem.Name = "_fxSpeedBoostMenuItem";
+            _fxSpeedBoostMenuItem.Size = new Size(237, 22);
+            _fxSpeedBoostMenuItem.Text = "FX Speed Boost";
+            _fxSpeedBoostMenuItem.Click += FxSpeedBoost_MenuItem_Click;
             //
             // ManageSongs_MenuItem
             //
-            ManageSongs_MenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            SongProps_MenuItem,
-            RebuildSong_MenuItem,
-            SilentGuitar_MenuItem,
-            ForceMp3Conversion_MenuItem,
-            forceRB3MidConversionToolStripMenuItem,
-            DeleteSong_MenuItem,
-            RemoveSong_ToolStripMenuItem,
-            HideUnEdit_MenuItem,
-            HideUsed_MenuItem,
-            ByTitle_MenuItem});
-            ManageSongs_MenuItem.Name = "ManageSongs_MenuItem";
-            ManageSongs_MenuItem.Size = new Size(135, 20);
-            ManageSongs_MenuItem.Text = "Songlist Management";
+            _manageSongsMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+            _songPropsMenuItem,
+            _rebuildSongMenuItem,
+            _silentGuitarMenuItem,
+            _forceMp3ConversionMenuItem,
+            _forceRb3MidConversionToolStripMenuItem,
+            _deleteSongMenuItem,
+            _removeSongToolStripMenuItem,
+            _hideUnEditMenuItem,
+            _hideUsedMenuItem,
+            _byTitleMenuItem});
+            _manageSongsMenuItem.Name = "_manageSongsMenuItem";
+            _manageSongsMenuItem.Size = new Size(135, 20);
+            _manageSongsMenuItem.Text = "Songlist Management";
             //
             // SongProps_MenuItem
             //
-            SongProps_MenuItem.Name = "SongProps_MenuItem";
-            SongProps_MenuItem.ShortcutKeys = Keys.Control | Keys.P;
-            SongProps_MenuItem.Size = new Size(221, 22);
-            SongProps_MenuItem.Text = "Edit Song Properties";
-            SongProps_MenuItem.Click += SongProps_MenuItem_Click;
+            _songPropsMenuItem.Name = "_songPropsMenuItem";
+            _songPropsMenuItem.ShortcutKeys = Keys.Control | Keys.P;
+            _songPropsMenuItem.Size = new Size(221, 22);
+            _songPropsMenuItem.Text = "Edit Song Properties";
+            _songPropsMenuItem.Click += SongProps_MenuItem_Click;
             //
             // RebuildSong_MenuItem
             //
-            RebuildSong_MenuItem.Name = "RebuildSong_MenuItem";
-            RebuildSong_MenuItem.ShortcutKeys = Keys.Control | Keys.D;
-            RebuildSong_MenuItem.Size = new Size(221, 22);
-            RebuildSong_MenuItem.Text = "Rebuild Song Data";
-            RebuildSong_MenuItem.Click += RebuildSong_MenuItem_Click;
+            _rebuildSongMenuItem.Name = "_rebuildSongMenuItem";
+            _rebuildSongMenuItem.ShortcutKeys = Keys.Control | Keys.D;
+            _rebuildSongMenuItem.Size = new Size(221, 22);
+            _rebuildSongMenuItem.Text = "Rebuild Song Data";
+            _rebuildSongMenuItem.Click += RebuildSong_MenuItem_Click;
             //
             // SilentGuitar_MenuItem
             //
-            SilentGuitar_MenuItem.Name = "SilentGuitar_MenuItem";
-            SilentGuitar_MenuItem.Size = new Size(221, 22);
-            SilentGuitar_MenuItem.Text = "Silent Guitar Track";
-            SilentGuitar_MenuItem.Click += SilentGuitar_MenuItem_Click;
+            _silentGuitarMenuItem.Name = "_silentGuitarMenuItem";
+            _silentGuitarMenuItem.Size = new Size(221, 22);
+            _silentGuitarMenuItem.Text = "Silent Guitar Track";
+            _silentGuitarMenuItem.Click += SilentGuitar_MenuItem_Click;
             //
             // ForceMp3Conversion_MenuItem
             //
-            ForceMp3Conversion_MenuItem.Name = "ForceMp3Conversion_MenuItem";
-            ForceMp3Conversion_MenuItem.Size = new Size(221, 22);
-            ForceMp3Conversion_MenuItem.Text = "Force Mp3 Conversion";
-            ForceMp3Conversion_MenuItem.Click += ForceMp3Conversion_MenuItem_Click;
+            _forceMp3ConversionMenuItem.Name = "_forceMp3ConversionMenuItem";
+            _forceMp3ConversionMenuItem.Size = new Size(221, 22);
+            _forceMp3ConversionMenuItem.Text = "Force Mp3 Conversion";
+            _forceMp3ConversionMenuItem.Click += ForceMp3Conversion_MenuItem_Click;
             //
             // forceRB3MidConversionToolStripMenuItem
             //
-            forceRB3MidConversionToolStripMenuItem.CheckOnClick = true;
-            forceRB3MidConversionToolStripMenuItem.Name = "forceRB3MidConversionToolStripMenuItem";
-            forceRB3MidConversionToolStripMenuItem.Size = new Size(221, 22);
-            forceRB3MidConversionToolStripMenuItem.Text = "Force RB3 Mid Conversion";
-            forceRB3MidConversionToolStripMenuItem.Click += forceRB3MidConversionToolStripMenuItem_Click;
+            _forceRb3MidConversionToolStripMenuItem.CheckOnClick = true;
+            _forceRb3MidConversionToolStripMenuItem.Name = "_forceRb3MidConversionToolStripMenuItem";
+            _forceRb3MidConversionToolStripMenuItem.Size = new Size(221, 22);
+            _forceRb3MidConversionToolStripMenuItem.Text = "Force RB3 Mid Conversion";
+            _forceRb3MidConversionToolStripMenuItem.Click += forceRB3MidConversionToolStripMenuItem_Click;
             //
             // DeleteSong_MenuItem
             //
-            DeleteSong_MenuItem.Name = "DeleteSong_MenuItem";
-            DeleteSong_MenuItem.Size = new Size(221, 22);
-            DeleteSong_MenuItem.Text = "Delete Song";
-            DeleteSong_MenuItem.Click += DeleteSong_MenuItem_Click;
+            _deleteSongMenuItem.Name = "_deleteSongMenuItem";
+            _deleteSongMenuItem.Size = new Size(221, 22);
+            _deleteSongMenuItem.Text = "Delete Song";
+            _deleteSongMenuItem.Click += DeleteSong_MenuItem_Click;
             //
             // RemoveSong_ToolStripMenuItem
             //
-            RemoveSong_ToolStripMenuItem.Name = "RemoveSong_ToolStripMenuItem";
-            RemoveSong_ToolStripMenuItem.Size = new Size(218, 6);
+            _removeSongToolStripMenuItem.Name = "_removeSongToolStripMenuItem";
+            _removeSongToolStripMenuItem.Size = new Size(218, 6);
             //
             // HideUnEdit_MenuItem
             //
-            HideUnEdit_MenuItem.Name = "HideUnEdit_MenuItem";
-            HideUnEdit_MenuItem.ShortcutKeys = Keys.Alt | Keys.O;
-            HideUnEdit_MenuItem.Size = new Size(221, 22);
-            HideUnEdit_MenuItem.Text = "Hide Original Songs";
-            HideUnEdit_MenuItem.Click += HideUnEdit_MenuItem_Click;
+            _hideUnEditMenuItem.Name = "_hideUnEditMenuItem";
+            _hideUnEditMenuItem.ShortcutKeys = Keys.Alt | Keys.O;
+            _hideUnEditMenuItem.Size = new Size(221, 22);
+            _hideUnEditMenuItem.Text = "Hide Original Songs";
+            _hideUnEditMenuItem.Click += HideUnEdit_MenuItem_Click;
             //
             // HideUsed_MenuItem
             //
-            HideUsed_MenuItem.Name = "HideUsed_MenuItem";
-            HideUsed_MenuItem.ShortcutKeys = Keys.Alt | Keys.H;
-            HideUsed_MenuItem.Size = new Size(221, 22);
-            HideUsed_MenuItem.Text = "Hide Used Songs";
-            HideUsed_MenuItem.Click += HideUsed_MenuItem_Click;
+            _hideUsedMenuItem.Name = "_hideUsedMenuItem";
+            _hideUsedMenuItem.ShortcutKeys = Keys.Alt | Keys.H;
+            _hideUsedMenuItem.Size = new Size(221, 22);
+            _hideUsedMenuItem.Text = "Hide Used Songs";
+            _hideUsedMenuItem.Click += HideUsed_MenuItem_Click;
             //
             // ByTitle_MenuItem
             //
-            ByTitle_MenuItem.Name = "ByTitle_MenuItem";
-            ByTitle_MenuItem.ShortcutKeys = Keys.Alt | Keys.D;
-            ByTitle_MenuItem.Size = new Size(221, 22);
-            ByTitle_MenuItem.Text = "Display By Title";
-            ByTitle_MenuItem.Click += ByTitle_MenuItem_Click;
+            _byTitleMenuItem.Name = "_byTitleMenuItem";
+            _byTitleMenuItem.ShortcutKeys = Keys.Alt | Keys.D;
+            _byTitleMenuItem.Size = new Size(221, 22);
+            _byTitleMenuItem.Text = "Display By Title";
+            _byTitleMenuItem.Click += ByTitle_MenuItem_Click;
             //
             // Help_MenuItem
             //
-            Help_MenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            Guide_MenuItem,
-            ScoreHero_MenuItem,
-            GH3Folder_MenuItem,
-            toolStripSeparator3,
-            Disclaimer_MenuItem,
-            About_MenuItem});
-            Help_MenuItem.Name = "Help_MenuItem";
-            Help_MenuItem.Size = new Size(44, 20);
-            Help_MenuItem.Text = "Help";
+            _helpMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
+            _guideMenuItem,
+            _scoreHeroMenuItem,
+            _gh3FolderMenuItem,
+            _toolStripSeparator3,
+            _disclaimerMenuItem,
+            _aboutMenuItem});
+            _helpMenuItem.Name = "_helpMenuItem";
+            _helpMenuItem.Size = new Size(44, 20);
+            _helpMenuItem.Text = "Help";
             //
             // Guide_MenuItem
             //
-            Guide_MenuItem.Name = "Guide_MenuItem";
-            Guide_MenuItem.ShortcutKeys = Keys.F1;
-            Guide_MenuItem.Size = new Size(154, 22);
-            Guide_MenuItem.Text = "Guide";
-            Guide_MenuItem.Click += Guide_MenuItem_Click;
+            _guideMenuItem.Name = "_guideMenuItem";
+            _guideMenuItem.ShortcutKeys = Keys.F1;
+            _guideMenuItem.Size = new Size(154, 22);
+            _guideMenuItem.Text = "Guide";
+            _guideMenuItem.Click += Guide_MenuItem_Click;
             //
             // ScoreHero_MenuItem
             //
-            ScoreHero_MenuItem.Name = "ScoreHero_MenuItem";
-            ScoreHero_MenuItem.ShortcutKeys = Keys.F2;
-            ScoreHero_MenuItem.Size = new Size(154, 22);
-            ScoreHero_MenuItem.Text = "Score Hero";
-            ScoreHero_MenuItem.Click += ScoreHero_MenuItem_Click;
+            _scoreHeroMenuItem.Name = "_scoreHeroMenuItem";
+            _scoreHeroMenuItem.ShortcutKeys = Keys.F2;
+            _scoreHeroMenuItem.Size = new Size(154, 22);
+            _scoreHeroMenuItem.Text = "Score Hero";
+            _scoreHeroMenuItem.Click += ScoreHero_MenuItem_Click;
             //
             // GH3Folder_MenuItem
             //
-            GH3Folder_MenuItem.Name = "GH3Folder_MenuItem";
-            GH3Folder_MenuItem.ShortcutKeys = Keys.F3;
-            GH3Folder_MenuItem.Size = new Size(154, 22);
-            GH3Folder_MenuItem.Text = "GH3 Folder";
-            GH3Folder_MenuItem.Click += GH3Folder_MenuItem_Click;
+            _gh3FolderMenuItem.Name = "_gh3FolderMenuItem";
+            _gh3FolderMenuItem.ShortcutKeys = Keys.F3;
+            _gh3FolderMenuItem.Size = new Size(154, 22);
+            _gh3FolderMenuItem.Text = "GH3 Folder";
+            _gh3FolderMenuItem.Click += GH3Folder_MenuItem_Click;
             //
             // toolStripSeparator3
             //
-            toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(151, 6);
+            _toolStripSeparator3.Name = "_toolStripSeparator3";
+            _toolStripSeparator3.Size = new Size(151, 6);
             //
             // Disclaimer_MenuItem
             //
-            Disclaimer_MenuItem.Name = "Disclaimer_MenuItem";
-            Disclaimer_MenuItem.ShortcutKeys = Keys.F11;
-            Disclaimer_MenuItem.Size = new Size(154, 22);
-            Disclaimer_MenuItem.Text = "Disclaimer";
-            Disclaimer_MenuItem.Click += Disclaimer_MenuItem_Click;
+            _disclaimerMenuItem.Name = "_disclaimerMenuItem";
+            _disclaimerMenuItem.ShortcutKeys = Keys.F11;
+            _disclaimerMenuItem.Size = new Size(154, 22);
+            _disclaimerMenuItem.Text = "Disclaimer";
+            _disclaimerMenuItem.Click += Disclaimer_MenuItem_Click;
             //
             // About_MenuItem
             //
-            About_MenuItem.Name = "About_MenuItem";
-            About_MenuItem.ShortcutKeys = Keys.F12;
-            About_MenuItem.Size = new Size(154, 22);
-            About_MenuItem.Text = "About";
-            About_MenuItem.Click += About_MenuItem_Click;
+            _aboutMenuItem.Name = "_aboutMenuItem";
+            _aboutMenuItem.ShortcutKeys = Keys.F12;
+            _aboutMenuItem.Size = new Size(154, 22);
+            _aboutMenuItem.Text = "About";
+            _aboutMenuItem.Click += About_MenuItem_Click;
             //
             // ActionRequests_ListBox
             //
-            ActionRequests_ListBox.Anchor = ((AnchorStyles.Top | AnchorStyles.Bottom)
+            _actionRequestsListBox.Anchor = ((AnchorStyles.Top | AnchorStyles.Bottom)
                                              | AnchorStyles.Left)
                                             | AnchorStyles.Right;
-            ActionRequests_ListBox.FormattingEnabled = true;
-            ActionRequests_ListBox.IntegralHeight = false;
-            ActionRequests_ListBox.Location = new Point(0, 400);
-            ActionRequests_ListBox.Margin = new Padding(0);
-            ActionRequests_ListBox.Name = "ActionRequests_ListBox";
-            ActionRequests_ListBox.ScrollAlwaysVisible = true;
-            ActionRequests_ListBox.Size = new Size(180, 119);
-            ActionRequests_ListBox.TabIndex = 3;
+            _actionRequestsListBox.FormattingEnabled = true;
+            _actionRequestsListBox.IntegralHeight = false;
+            _actionRequestsListBox.Location = new Point(0, 400);
+            _actionRequestsListBox.Margin = new Padding(0);
+            _actionRequestsListBox.Name = "_actionRequestsListBox";
+            _actionRequestsListBox.ScrollAlwaysVisible = true;
+            _actionRequestsListBox.Size = new Size(180, 119);
+            _actionRequestsListBox.TabIndex = 3;
             //
             // label1
             //
-            label1.AutoSize = true;
-            label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 20);
-            label1.TabIndex = 4;
-            label1.Text = "Song List";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            _label1.AutoSize = true;
+            _label1.Dock = DockStyle.Fill;
+            _label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label1.Location = new Point(3, 0);
+            _label1.Name = "_label1";
+            _label1.Size = new Size(174, 20);
+            _label1.TabIndex = 4;
+            _label1.Text = "Song List";
+            _label1.TextAlign = ContentAlignment.MiddleCenter;
             //
             // label3
             //
-            label3.AutoSize = true;
-            label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(3, 375);
-            label3.Name = "label3";
-            label3.Size = new Size(174, 25);
-            label3.TabIndex = 6;
-            label3.Text = "Action Request";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            _label3.AutoSize = true;
+            _label3.Dock = DockStyle.Fill;
+            _label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label3.Location = new Point(3, 375);
+            _label3.Name = "_label3";
+            _label3.Size = new Size(174, 25);
+            _label3.TabIndex = 6;
+            _label3.Text = "Action Request";
+            _label3.TextAlign = ContentAlignment.MiddleCenter;
             //
             // SidePanel
             //
-            SidePanel.ColumnCount = 1;
-            SidePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            SidePanel.Controls.Add(ActionRequests_ListBox, 0, 3);
-            SidePanel.Controls.Add(label1, 0, 0);
-            SidePanel.Controls.Add(label3, 0, 2);
-            SidePanel.Controls.Add(SongListBox, 0, 1);
-            SidePanel.Dock = DockStyle.Left;
-            SidePanel.Location = new Point(0, 0);
-            SidePanel.Margin = new Padding(0);
-            SidePanel.MinimumSize = new Size(180, 500);
-            SidePanel.Name = "SidePanel";
-            SidePanel.RowCount = 4;
-            SidePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            SidePanel.RowStyles.Add(new RowStyle(SizeType.Percent, 75F));
-            SidePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
-            SidePanel.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            SidePanel.Size = new Size(180, 519);
-            SidePanel.TabIndex = 7;
+            _sidePanel.ColumnCount = 1;
+            _sidePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            _sidePanel.Controls.Add(_actionRequestsListBox, 0, 3);
+            _sidePanel.Controls.Add(_label1, 0, 0);
+            _sidePanel.Controls.Add(_label3, 0, 2);
+            _sidePanel.Controls.Add(_songListBox, 0, 1);
+            _sidePanel.Dock = DockStyle.Left;
+            _sidePanel.Location = new Point(0, 0);
+            _sidePanel.Margin = new Padding(0);
+            _sidePanel.MinimumSize = new Size(180, 500);
+            _sidePanel.Name = "_sidePanel";
+            _sidePanel.RowCount = 4;
+            _sidePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            _sidePanel.RowStyles.Add(new RowStyle(SizeType.Percent, 75F));
+            _sidePanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            _sidePanel.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            _sidePanel.Size = new Size(180, 519);
+            _sidePanel.TabIndex = 7;
             //
             // notifyIcon_0
             //
-            notifyIcon_0.Icon = ((Icon)(resources.GetObject("notifyIcon_0.Icon")));
-            notifyIcon_0.Text = "Guitar Hero Three Control Panel+";
-            notifyIcon_0.Visible = true;
-            notifyIcon_0.MouseDown += notifyIcon_0_MouseDown;
+            _notifyIcon0.Icon = ((Icon)(resources.GetObject("notifyIcon_0.Icon")));
+            _notifyIcon0.Text = "Guitar Hero Three Control Panel+";
+            _notifyIcon0.Visible = true;
+            _notifyIcon0.MouseDown += notifyIcon_0_MouseDown;
             //
             // fontDialog_0
             //
-            fontDialog_0.Color = Color.Red;
-            fontDialog_0.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            fontDialog_0.ShowColor = true;
+            _fontDialog0.Color = Color.Red;
+            _fontDialog0.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _fontDialog0.ShowColor = true;
             //
             // leftClickMenu
             //
-            leftClickMenu.Items.AddRange(new ToolStripItem[] {
-            SysEnglish_MenuItem,
-            SysFrench_MenuItem,
-            SysItalian_MenuItem,
-            SysSpanish_MenuItem,
-            SysGerman_MenuItem,
-            SysKorean_MenuItem});
-            leftClickMenu.Name = "leftClickMenu";
-            leftClickMenu.Size = new Size(118, 136);
+            _leftClickMenu.Items.AddRange(new ToolStripItem[] {
+            _sysEnglishMenuItem,
+            _sysFrenchMenuItem,
+            _sysItalianMenuItem,
+            _sysSpanishMenuItem,
+            _sysGermanMenuItem,
+            _sysKoreanMenuItem});
+            _leftClickMenu.Name = "_leftClickMenu";
+            _leftClickMenu.Size = new Size(118, 136);
             //
             // SysEnglish_MenuItem
             //
-            SysEnglish_MenuItem.Name = "SysEnglish_MenuItem";
-            SysEnglish_MenuItem.ShowShortcutKeys = false;
-            SysEnglish_MenuItem.Size = new Size(117, 22);
-            SysEnglish_MenuItem.Tag = "en";
-            SysEnglish_MenuItem.Text = "(English)";
-            SysEnglish_MenuItem.Click += SysKorean_MenuItem_Click;
+            _sysEnglishMenuItem.Name = "_sysEnglishMenuItem";
+            _sysEnglishMenuItem.ShowShortcutKeys = false;
+            _sysEnglishMenuItem.Size = new Size(117, 22);
+            _sysEnglishMenuItem.Tag = "en";
+            _sysEnglishMenuItem.Text = "(English)";
+            _sysEnglishMenuItem.Click += SysKorean_MenuItem_Click;
             //
             // SysFrench_MenuItem
             //
-            SysFrench_MenuItem.Name = "SysFrench_MenuItem";
-            SysFrench_MenuItem.ShowShortcutKeys = false;
-            SysFrench_MenuItem.Size = new Size(117, 22);
-            SysFrench_MenuItem.Tag = "fr";
-            SysFrench_MenuItem.Text = "(French)";
-            SysFrench_MenuItem.Click += SysKorean_MenuItem_Click;
+            _sysFrenchMenuItem.Name = "_sysFrenchMenuItem";
+            _sysFrenchMenuItem.ShowShortcutKeys = false;
+            _sysFrenchMenuItem.Size = new Size(117, 22);
+            _sysFrenchMenuItem.Tag = "fr";
+            _sysFrenchMenuItem.Text = "(French)";
+            _sysFrenchMenuItem.Click += SysKorean_MenuItem_Click;
             //
             // SysItalian_MenuItem
             //
-            SysItalian_MenuItem.Name = "SysItalian_MenuItem";
-            SysItalian_MenuItem.ShowShortcutKeys = false;
-            SysItalian_MenuItem.Size = new Size(117, 22);
-            SysItalian_MenuItem.Tag = "it";
-            SysItalian_MenuItem.Text = "(Italian)";
-            SysItalian_MenuItem.Click += SysKorean_MenuItem_Click;
+            _sysItalianMenuItem.Name = "_sysItalianMenuItem";
+            _sysItalianMenuItem.ShowShortcutKeys = false;
+            _sysItalianMenuItem.Size = new Size(117, 22);
+            _sysItalianMenuItem.Tag = "it";
+            _sysItalianMenuItem.Text = "(Italian)";
+            _sysItalianMenuItem.Click += SysKorean_MenuItem_Click;
             //
             // SysSpanish_MenuItem
             //
-            SysSpanish_MenuItem.Name = "SysSpanish_MenuItem";
-            SysSpanish_MenuItem.ShowShortcutKeys = false;
-            SysSpanish_MenuItem.Size = new Size(117, 22);
-            SysSpanish_MenuItem.Tag = "es";
-            SysSpanish_MenuItem.Text = "(Spanish)";
-            SysSpanish_MenuItem.Click += SysKorean_MenuItem_Click;
+            _sysSpanishMenuItem.Name = "_sysSpanishMenuItem";
+            _sysSpanishMenuItem.ShowShortcutKeys = false;
+            _sysSpanishMenuItem.Size = new Size(117, 22);
+            _sysSpanishMenuItem.Tag = "es";
+            _sysSpanishMenuItem.Text = "(Spanish)";
+            _sysSpanishMenuItem.Click += SysKorean_MenuItem_Click;
             //
             // SysGerman_MenuItem
             //
-            SysGerman_MenuItem.Name = "SysGerman_MenuItem";
-            SysGerman_MenuItem.ShowShortcutKeys = false;
-            SysGerman_MenuItem.Size = new Size(117, 22);
-            SysGerman_MenuItem.Tag = "de";
-            SysGerman_MenuItem.Text = "(German)";
-            SysGerman_MenuItem.Click += SysKorean_MenuItem_Click;
+            _sysGermanMenuItem.Name = "_sysGermanMenuItem";
+            _sysGermanMenuItem.ShowShortcutKeys = false;
+            _sysGermanMenuItem.Size = new Size(117, 22);
+            _sysGermanMenuItem.Tag = "de";
+            _sysGermanMenuItem.Text = "(German)";
+            _sysGermanMenuItem.Click += SysKorean_MenuItem_Click;
             //
             // SysKorean_MenuItem
             //
-            SysKorean_MenuItem.Name = "SysKorean_MenuItem";
-            SysKorean_MenuItem.ShowShortcutKeys = false;
-            SysKorean_MenuItem.Size = new Size(117, 22);
-            SysKorean_MenuItem.Tag = "ko";
-            SysKorean_MenuItem.Text = "(Korean)";
-            SysKorean_MenuItem.Click += SysKorean_MenuItem_Click;
+            _sysKoreanMenuItem.Name = "_sysKoreanMenuItem";
+            _sysKoreanMenuItem.ShowShortcutKeys = false;
+            _sysKoreanMenuItem.Size = new Size(117, 22);
+            _sysKoreanMenuItem.Tag = "ko";
+            _sysKoreanMenuItem.Text = "(Korean)";
+            _sysKoreanMenuItem.Click += SysKorean_MenuItem_Click;
             //
             // MainContainer
             //
             //
             // MainContainer.BottomToolStripPanel
             //
-            MainContainer.BottomToolStripPanel.Controls.Add(StatusStrip);
+            _mainContainer.BottomToolStripPanel.Controls.Add(_statusStrip);
             //
             // MainContainer.ContentPanel
             //
-            MainContainer.ContentPanel.Controls.Add(TabControl);
-            MainContainer.ContentPanel.Controls.Add(SidePanel);
-            MainContainer.ContentPanel.Size = new Size(784, 519);
-            MainContainer.Dock = DockStyle.Fill;
-            MainContainer.LeftToolStripPanelVisible = false;
-            MainContainer.Location = new Point(0, 0);
-            MainContainer.Name = "MainContainer";
-            MainContainer.RightToolStripPanelVisible = false;
-            MainContainer.Size = new Size(784, 565);
-            MainContainer.TabIndex = 13;
-            MainContainer.Text = "toolStripContainer1";
+            _mainContainer.ContentPanel.Controls.Add(_tabControl);
+            _mainContainer.ContentPanel.Controls.Add(_sidePanel);
+            _mainContainer.ContentPanel.Size = new Size(784, 519);
+            _mainContainer.Dock = DockStyle.Fill;
+            _mainContainer.LeftToolStripPanelVisible = false;
+            _mainContainer.Location = new Point(0, 0);
+            _mainContainer.Name = "_mainContainer";
+            _mainContainer.RightToolStripPanelVisible = false;
+            _mainContainer.Size = new Size(784, 565);
+            _mainContainer.TabIndex = 13;
+            _mainContainer.Text = "toolStripContainer1";
             //
             // MainContainer.TopToolStripPanel
             //
-            MainContainer.TopToolStripPanel.Controls.Add(TopMenuStrip);
+            _mainContainer.TopToolStripPanel.Controls.Add(_topMenuStrip);
             //
             // StatusStrip
             //
-            StatusStrip.Dock = DockStyle.None;
-            StatusStrip.Items.AddRange(new ToolStripItem[] {
-            ToolStripStatusLbl});
-            StatusStrip.Location = new Point(0, 0);
-            StatusStrip.Name = "StatusStrip";
-            StatusStrip.Size = new Size(784, 22);
-            StatusStrip.TabIndex = 0;
+            _statusStrip.Dock = DockStyle.None;
+            _statusStrip.Items.AddRange(new ToolStripItem[] {
+            _toolStripStatusLbl});
+            _statusStrip.Location = new Point(0, 0);
+            _statusStrip.Name = "StatusStrip";
+            _statusStrip.Size = new Size(784, 22);
+            _statusStrip.TabIndex = 0;
             //
             // ToolStripStatusLbl
             //
-            ToolStripStatusLbl.Name = "ToolStripStatusLbl";
-            ToolStripStatusLbl.Size = new Size(0, 17);
-            ToolStripStatusLbl.Tag = "Function Description";
+            _toolStripStatusLbl.Name = "_toolStripStatusLbl";
+            _toolStripStatusLbl.Size = new Size(0, 17);
+            _toolStripStatusLbl.Tag = "Function Description";
             //
             // TabControl
             //
-            TabControl.Controls.Add(SetlistTab);
-            TabControl.Controls.Add(SongEditorTab);
-            TabControl.Dock = DockStyle.Fill;
-            TabControl.HotTrack = true;
-            TabControl.Location = new Point(180, 0);
-            TabControl.Margin = new Padding(0);
-            TabControl.MinimumSize = new Size(600, 500);
-            TabControl.Name = "TabControl";
-            TabControl.SelectedIndex = 0;
-            TabControl.Size = new Size(604, 519);
-            TabControl.TabIndex = 8;
+            _tabControl.Controls.Add(_setlistTab);
+            _tabControl.Controls.Add(_songEditorTab);
+            _tabControl.Dock = DockStyle.Fill;
+            _tabControl.HotTrack = true;
+            _tabControl.Location = new Point(180, 0);
+            _tabControl.Margin = new Padding(0);
+            _tabControl.MinimumSize = new Size(600, 500);
+            _tabControl.Name = "TabControl";
+            _tabControl.SelectedIndex = 0;
+            _tabControl.Size = new Size(604, 519);
+            _tabControl.TabIndex = 8;
             //
             // SetlistTab
             //
-            SetlistTab.Controls.Add(SetlistConfig_Container);
-            SetlistTab.Location = new Point(4, 22);
-            SetlistTab.Name = "SetlistTab";
-            SetlistTab.Padding = new Padding(3);
-            SetlistTab.Size = new Size(596, 493);
-            SetlistTab.TabIndex = 0;
-            SetlistTab.Text = "Setlist Configuration";
-            SetlistTab.UseVisualStyleBackColor = true;
+            _setlistTab.Controls.Add(_setlistConfigContainer);
+            _setlistTab.Location = new Point(4, 22);
+            _setlistTab.Name = "_setlistTab";
+            _setlistTab.Padding = new Padding(3);
+            _setlistTab.Size = new Size(596, 493);
+            _setlistTab.TabIndex = 0;
+            _setlistTab.Text = "Setlist Configuration";
+            _setlistTab.UseVisualStyleBackColor = true;
             //
             // SetlistConfig_Container
             //
             //
             // SetlistConfig_Container.ContentPanel
             //
-            SetlistConfig_Container.ContentPanel.Controls.Add(SetlistConf_TLPanel);
-            SetlistConfig_Container.ContentPanel.Size = new Size(590, 462);
-            SetlistConfig_Container.Dock = DockStyle.Fill;
-            SetlistConfig_Container.Location = new Point(3, 3);
-            SetlistConfig_Container.Name = "SetlistConfig_Container";
-            SetlistConfig_Container.Size = new Size(590, 487);
-            SetlistConfig_Container.TabIndex = 3;
-            SetlistConfig_Container.Text = "Setlist Config Container";
+            _setlistConfigContainer.ContentPanel.Controls.Add(_setlistConfTLPanel);
+            _setlistConfigContainer.ContentPanel.Size = new Size(590, 462);
+            _setlistConfigContainer.Dock = DockStyle.Fill;
+            _setlistConfigContainer.Location = new Point(3, 3);
+            _setlistConfigContainer.Name = "_setlistConfigContainer";
+            _setlistConfigContainer.Size = new Size(590, 487);
+            _setlistConfigContainer.TabIndex = 3;
+            _setlistConfigContainer.Text = "Setlist Config Container";
             //
             // SetlistConfig_Container.TopToolStripPanel
             //
-            SetlistConfig_Container.TopToolStripPanel.Controls.Add(SetlistStrip);
+            _setlistConfigContainer.TopToolStripPanel.Controls.Add(_setlistStrip);
             //
             // SetlistConf_TLPanel
             //
-            SetlistConf_TLPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-            SetlistConf_TLPanel.ColumnCount = 1;
-            SetlistConf_TLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            SetlistConf_TLPanel.Controls.Add(Setlist_TLPanel, 0, 0);
-            SetlistConf_TLPanel.Controls.Add(Tier_TLPanel, 0, 1);
-            SetlistConf_TLPanel.Dock = DockStyle.Fill;
-            SetlistConf_TLPanel.Location = new Point(0, 0);
-            SetlistConf_TLPanel.Name = "SetlistConf_TLPanel";
-            SetlistConf_TLPanel.RowCount = 2;
-            SetlistConf_TLPanel.RowStyles.Add(new RowStyle());
-            SetlistConf_TLPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            SetlistConf_TLPanel.Size = new Size(590, 462);
-            SetlistConf_TLPanel.TabIndex = 2;
+            _setlistConfTLPanel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            _setlistConfTLPanel.ColumnCount = 1;
+            _setlistConfTLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            _setlistConfTLPanel.Controls.Add(_setlistTLPanel, 0, 0);
+            _setlistConfTLPanel.Controls.Add(_tierTLPanel, 0, 1);
+            _setlistConfTLPanel.Dock = DockStyle.Fill;
+            _setlistConfTLPanel.Location = new Point(0, 0);
+            _setlistConfTLPanel.Name = "_setlistConfTLPanel";
+            _setlistConfTLPanel.RowCount = 2;
+            _setlistConfTLPanel.RowStyles.Add(new RowStyle());
+            _setlistConfTLPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            _setlistConfTLPanel.Size = new Size(590, 462);
+            _setlistConfTLPanel.TabIndex = 2;
             //
             // Setlist_TLPanel
             //
-            Setlist_TLPanel.ColumnCount = 4;
-            Setlist_TLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            Setlist_TLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            Setlist_TLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            Setlist_TLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            Setlist_TLPanel.Controls.Add(textBox3, 1, 2);
-            Setlist_TLPanel.Controls.Add(label5, 3, 0);
-            Setlist_TLPanel.Controls.Add(label4, 2, 0);
-            Setlist_TLPanel.Controls.Add(TierBox, 3, 1);
-            Setlist_TLPanel.Controls.Add(SetlistInitMovie_TxtBox, 2, 1);
-            Setlist_TLPanel.Controls.Add(SetlistPrefix_TxtBox, 1, 1);
-            Setlist_TLPanel.Controls.Add(label2, 0, 0);
-            Setlist_TLPanel.Controls.Add(label13, 1, 0);
-            Setlist_TLPanel.Controls.Add(SetlistTitle_TxtBox, 0, 1);
-            Setlist_TLPanel.Dock = DockStyle.Fill;
-            Setlist_TLPanel.Location = new Point(4, 4);
-            Setlist_TLPanel.Name = "Setlist_TLPanel";
-            Setlist_TLPanel.RowCount = 3;
-            Setlist_TLPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            Setlist_TLPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
-            Setlist_TLPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            Setlist_TLPanel.Size = new Size(582, 44);
-            Setlist_TLPanel.TabIndex = 0;
+            _setlistTLPanel.ColumnCount = 4;
+            _setlistTLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            _setlistTLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            _setlistTLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            _setlistTLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            _setlistTLPanel.Controls.Add(_textBox3, 1, 2);
+            _setlistTLPanel.Controls.Add(_label5, 3, 0);
+            _setlistTLPanel.Controls.Add(_label4, 2, 0);
+            _setlistTLPanel.Controls.Add(_tierBox, 3, 1);
+            _setlistTLPanel.Controls.Add(_setlistInitMovieTxtBox, 2, 1);
+            _setlistTLPanel.Controls.Add(_setlistPrefixTxtBox, 1, 1);
+            _setlistTLPanel.Controls.Add(_label2, 0, 0);
+            _setlistTLPanel.Controls.Add(_label13, 1, 0);
+            _setlistTLPanel.Controls.Add(_setlistTitleTxtBox, 0, 1);
+            _setlistTLPanel.Dock = DockStyle.Fill;
+            _setlistTLPanel.Location = new Point(4, 4);
+            _setlistTLPanel.Name = "_setlistTLPanel";
+            _setlistTLPanel.RowCount = 3;
+            _setlistTLPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            _setlistTLPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            _setlistTLPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            _setlistTLPanel.Size = new Size(582, 44);
+            _setlistTLPanel.TabIndex = 0;
             //
             // textBox3
             //
-            textBox3.Dock = DockStyle.Fill;
-            textBox3.Location = new Point(148, 49);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(139, 20);
-            textBox3.TabIndex = 7;
+            _textBox3.Dock = DockStyle.Fill;
+            _textBox3.Location = new Point(148, 49);
+            _textBox3.Name = "_textBox3";
+            _textBox3.Size = new Size(139, 20);
+            _textBox3.TabIndex = 7;
             //
             // label5
             //
-            label5.AutoSize = true;
-            label5.Dock = DockStyle.Fill;
-            label5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(438, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(141, 20);
-            label5.TabIndex = 5;
-            label5.Text = "Tiers";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            _label5.AutoSize = true;
+            _label5.Dock = DockStyle.Fill;
+            _label5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label5.Location = new Point(438, 0);
+            _label5.Name = "_label5";
+            _label5.Size = new Size(141, 20);
+            _label5.TabIndex = 5;
+            _label5.Text = "Tiers";
+            _label5.TextAlign = ContentAlignment.MiddleCenter;
             //
             // label4
             //
-            label4.AutoSize = true;
-            label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(293, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(139, 20);
-            label4.TabIndex = 4;
-            label4.Text = "Initial Movie";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            _label4.AutoSize = true;
+            _label4.Dock = DockStyle.Fill;
+            _label4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label4.Location = new Point(293, 0);
+            _label4.Name = "_label4";
+            _label4.Size = new Size(139, 20);
+            _label4.TabIndex = 4;
+            _label4.Text = "Initial Movie";
+            _label4.TextAlign = ContentAlignment.MiddleCenter;
             //
             // TierBox
             //
-            TierBox.Dock = DockStyle.Fill;
-            TierBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            TierBox.FormattingEnabled = true;
-            TierBox.Location = new Point(438, 23);
-            TierBox.Name = "TierBox";
-            TierBox.Size = new Size(141, 21);
-            TierBox.TabIndex = 7;
-            TierBox.SelectedIndexChanged += TierBox_SelectedIndexChanged;
+            _tierBox.Dock = DockStyle.Fill;
+            _tierBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            _tierBox.FormattingEnabled = true;
+            _tierBox.Location = new Point(438, 23);
+            _tierBox.Name = "_tierBox";
+            _tierBox.Size = new Size(141, 21);
+            _tierBox.TabIndex = 7;
+            _tierBox.SelectedIndexChanged += TierBox_SelectedIndexChanged;
             //
             // SetlistInitMovie_TxtBox
             //
-            SetlistInitMovie_TxtBox.Dock = DockStyle.Fill;
-            SetlistInitMovie_TxtBox.Location = new Point(293, 23);
-            SetlistInitMovie_TxtBox.Name = "SetlistInitMovie_TxtBox";
-            SetlistInitMovie_TxtBox.Size = new Size(139, 20);
-            SetlistInitMovie_TxtBox.TabIndex = 6;
-            SetlistInitMovie_TxtBox.TextChanged += SetlistTitle_TxtBox_TextChanged;
+            _setlistInitMovieTxtBox.Dock = DockStyle.Fill;
+            _setlistInitMovieTxtBox.Location = new Point(293, 23);
+            _setlistInitMovieTxtBox.Name = "_setlistInitMovieTxtBox";
+            _setlistInitMovieTxtBox.Size = new Size(139, 20);
+            _setlistInitMovieTxtBox.TabIndex = 6;
+            _setlistInitMovieTxtBox.TextChanged += SetlistTitle_TxtBox_TextChanged;
             //
             // SetlistPrefix_TxtBox
             //
-            SetlistPrefix_TxtBox.Dock = DockStyle.Fill;
-            SetlistPrefix_TxtBox.Enabled = false;
-            SetlistPrefix_TxtBox.Location = new Point(148, 23);
-            SetlistPrefix_TxtBox.Name = "SetlistPrefix_TxtBox";
-            SetlistPrefix_TxtBox.Size = new Size(139, 20);
-            SetlistPrefix_TxtBox.TabIndex = 1;
+            _setlistPrefixTxtBox.Dock = DockStyle.Fill;
+            _setlistPrefixTxtBox.Enabled = false;
+            _setlistPrefixTxtBox.Location = new Point(148, 23);
+            _setlistPrefixTxtBox.Name = "_setlistPrefixTxtBox";
+            _setlistPrefixTxtBox.Size = new Size(139, 20);
+            _setlistPrefixTxtBox.TabIndex = 1;
             //
             // label2
             //
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(3, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(139, 20);
-            label2.TabIndex = 3;
-            label2.Text = "Title";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            _label2.AutoSize = true;
+            _label2.Dock = DockStyle.Fill;
+            _label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label2.Location = new Point(3, 0);
+            _label2.Name = "_label2";
+            _label2.Size = new Size(139, 20);
+            _label2.TabIndex = 3;
+            _label2.Text = "Title";
+            _label2.TextAlign = ContentAlignment.MiddleCenter;
             //
             // label13
             //
-            label13.AutoSize = true;
-            label13.Dock = DockStyle.Fill;
-            label13.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(148, 0);
-            label13.Name = "label13";
-            label13.Size = new Size(139, 20);
-            label13.TabIndex = 8;
-            label13.Text = "Prefix";
-            label13.TextAlign = ContentAlignment.MiddleCenter;
+            _label13.AutoSize = true;
+            _label13.Dock = DockStyle.Fill;
+            _label13.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label13.Location = new Point(148, 0);
+            _label13.Name = "_label13";
+            _label13.Size = new Size(139, 20);
+            _label13.TabIndex = 8;
+            _label13.Text = "Prefix";
+            _label13.TextAlign = ContentAlignment.MiddleCenter;
             //
             // SetlistTitle_TxtBox
             //
-            SetlistTitle_TxtBox.Dock = DockStyle.Fill;
-            SetlistTitle_TxtBox.Enabled = false;
-            SetlistTitle_TxtBox.Location = new Point(3, 23);
-            SetlistTitle_TxtBox.Name = "SetlistTitle_TxtBox";
-            SetlistTitle_TxtBox.Size = new Size(139, 20);
-            SetlistTitle_TxtBox.TabIndex = 9;
-            SetlistTitle_TxtBox.TextChanged += SetlistTitle_TxtBox_TextChanged;
+            _setlistTitleTxtBox.Dock = DockStyle.Fill;
+            _setlistTitleTxtBox.Enabled = false;
+            _setlistTitleTxtBox.Location = new Point(3, 23);
+            _setlistTitleTxtBox.Name = "_setlistTitleTxtBox";
+            _setlistTitleTxtBox.Size = new Size(139, 20);
+            _setlistTitleTxtBox.TabIndex = 9;
+            _setlistTitleTxtBox.TextChanged += SetlistTitle_TxtBox_TextChanged;
             //
             // Tier_TLPanel
             //
-            Tier_TLPanel.ColumnCount = 2;
-            Tier_TLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            Tier_TLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 180F));
-            Tier_TLPanel.Controls.Add(TierProps_Panel, 0, 0);
-            Tier_TLPanel.Controls.Add(TierSongs_Panel, 1, 0);
-            Tier_TLPanel.Dock = DockStyle.Fill;
-            Tier_TLPanel.Location = new Point(4, 55);
-            Tier_TLPanel.Name = "Tier_TLPanel";
-            Tier_TLPanel.RowCount = 1;
-            Tier_TLPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            Tier_TLPanel.Size = new Size(582, 403);
-            Tier_TLPanel.TabIndex = 1;
+            _tierTLPanel.ColumnCount = 2;
+            _tierTLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            _tierTLPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 180F));
+            _tierTLPanel.Controls.Add(_tierPropsPanel, 0, 0);
+            _tierTLPanel.Controls.Add(_tierSongsPanel, 1, 0);
+            _tierTLPanel.Dock = DockStyle.Fill;
+            _tierTLPanel.Location = new Point(4, 55);
+            _tierTLPanel.Name = "_tierTLPanel";
+            _tierTLPanel.RowCount = 1;
+            _tierTLPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            _tierTLPanel.Size = new Size(582, 403);
+            _tierTLPanel.TabIndex = 1;
             //
             // TierProps_Panel
             //
-            TierProps_Panel.Controls.Add(TierUnlockedSet_Btn);
-            TierProps_Panel.Controls.Add(UnlockAll_CheckBox);
-            TierProps_Panel.Controls.Add(NoCash_CheckBox);
-            TierProps_Panel.Controls.Add(TierApply_Btn);
-            TierProps_Panel.Controls.Add(label12);
-            TierProps_Panel.Controls.Add(SetlistApply_Btn);
-            TierProps_Panel.Controls.Add(TierCompMovie_TxtBox);
-            TierProps_Panel.Controls.Add(TierUnlocked_NumBox);
-            TierProps_Panel.Controls.Add(TierTitle_TxtBox);
-            TierProps_Panel.Controls.Add(TierIcon_DropBox);
-            TierProps_Panel.Controls.Add(TierStage_DropBox);
-            TierProps_Panel.Controls.Add(TierBoss_CheckBox);
-            TierProps_Panel.Controls.Add(TierEncorep2_CheckBox);
-            TierProps_Panel.Controls.Add(TierEncorep1_CheckBox);
-            TierProps_Panel.Controls.Add(label10);
-            TierProps_Panel.Controls.Add(label9);
-            TierProps_Panel.Controls.Add(label8);
-            TierProps_Panel.Controls.Add(label6);
-            TierProps_Panel.Controls.Add(label7);
-            TierProps_Panel.Dock = DockStyle.Fill;
-            TierProps_Panel.Location = new Point(3, 3);
-            TierProps_Panel.Name = "TierProps_Panel";
-            TierProps_Panel.Size = new Size(396, 397);
-            TierProps_Panel.TabIndex = 0;
+            _tierPropsPanel.Controls.Add(_tierUnlockedSetBtn);
+            _tierPropsPanel.Controls.Add(_unlockAllCheckBox);
+            _tierPropsPanel.Controls.Add(_noCashCheckBox);
+            _tierPropsPanel.Controls.Add(_tierApplyBtn);
+            _tierPropsPanel.Controls.Add(_label12);
+            _tierPropsPanel.Controls.Add(_setlistApplyBtn);
+            _tierPropsPanel.Controls.Add(_tierCompMovieTxtBox);
+            _tierPropsPanel.Controls.Add(_tierUnlockedNumBox);
+            _tierPropsPanel.Controls.Add(_tierTitleTxtBox);
+            _tierPropsPanel.Controls.Add(_tierIconDropBox);
+            _tierPropsPanel.Controls.Add(_tierStageDropBox);
+            _tierPropsPanel.Controls.Add(_tierBossCheckBox);
+            _tierPropsPanel.Controls.Add(_tierEncorep2CheckBox);
+            _tierPropsPanel.Controls.Add(_tierEncorep1CheckBox);
+            _tierPropsPanel.Controls.Add(_label10);
+            _tierPropsPanel.Controls.Add(_label9);
+            _tierPropsPanel.Controls.Add(_label8);
+            _tierPropsPanel.Controls.Add(_label6);
+            _tierPropsPanel.Controls.Add(_label7);
+            _tierPropsPanel.Dock = DockStyle.Fill;
+            _tierPropsPanel.Location = new Point(3, 3);
+            _tierPropsPanel.Name = "_tierPropsPanel";
+            _tierPropsPanel.Size = new Size(396, 397);
+            _tierPropsPanel.TabIndex = 0;
             //
             // TierUnlockedSet_Btn
             //
-            TierUnlockedSet_Btn.Font = new Font("Times New Roman", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TierUnlockedSet_Btn.Location = new Point(242, 55);
-            TierUnlockedSet_Btn.Name = "TierUnlockedSet_Btn";
-            TierUnlockedSet_Btn.Size = new Size(33, 20);
-            TierUnlockedSet_Btn.TabIndex = 23;
-            TierUnlockedSet_Btn.Text = "=";
-            TierUnlockedSet_Btn.UseVisualStyleBackColor = true;
-            TierUnlockedSet_Btn.Click += TierUnlockedSet_Btn_Click;
+            _tierUnlockedSetBtn.Font = new Font("Times New Roman", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _tierUnlockedSetBtn.Location = new Point(242, 55);
+            _tierUnlockedSetBtn.Name = "_tierUnlockedSetBtn";
+            _tierUnlockedSetBtn.Size = new Size(33, 20);
+            _tierUnlockedSetBtn.TabIndex = 23;
+            _tierUnlockedSetBtn.Text = "=";
+            _tierUnlockedSetBtn.UseVisualStyleBackColor = true;
+            _tierUnlockedSetBtn.Click += TierUnlockedSet_Btn_Click;
             //
             // UnlockAll_CheckBox
             //
-            UnlockAll_CheckBox.AutoSize = true;
-            UnlockAll_CheckBox.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UnlockAll_CheckBox.Location = new Point(226, 168);
-            UnlockAll_CheckBox.Name = "UnlockAll_CheckBox";
-            UnlockAll_CheckBox.Size = new Size(97, 23);
-            UnlockAll_CheckBox.TabIndex = 22;
-            UnlockAll_CheckBox.Text = "Unlock All";
-            UnlockAll_CheckBox.UseVisualStyleBackColor = true;
-            UnlockAll_CheckBox.Visible = false;
-            UnlockAll_CheckBox.CheckedChanged += TierEncorep1_CheckBox_CheckedChanged;
+            _unlockAllCheckBox.AutoSize = true;
+            _unlockAllCheckBox.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _unlockAllCheckBox.Location = new Point(226, 168);
+            _unlockAllCheckBox.Name = "_unlockAllCheckBox";
+            _unlockAllCheckBox.Size = new Size(97, 23);
+            _unlockAllCheckBox.TabIndex = 22;
+            _unlockAllCheckBox.Text = "Unlock All";
+            _unlockAllCheckBox.UseVisualStyleBackColor = true;
+            _unlockAllCheckBox.Visible = false;
+            _unlockAllCheckBox.CheckedChanged += TierEncorep1_CheckBox_CheckedChanged;
             //
             // NoCash_CheckBox
             //
-            NoCash_CheckBox.AutoSize = true;
-            NoCash_CheckBox.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            NoCash_CheckBox.Location = new Point(128, 168);
-            NoCash_CheckBox.Name = "NoCash_CheckBox";
-            NoCash_CheckBox.Size = new Size(86, 23);
-            NoCash_CheckBox.TabIndex = 15;
-            NoCash_CheckBox.Text = "No Cash";
-            NoCash_CheckBox.UseVisualStyleBackColor = true;
-            NoCash_CheckBox.CheckedChanged += TierEncorep1_CheckBox_CheckedChanged;
+            _noCashCheckBox.AutoSize = true;
+            _noCashCheckBox.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _noCashCheckBox.Location = new Point(128, 168);
+            _noCashCheckBox.Name = "_noCashCheckBox";
+            _noCashCheckBox.Size = new Size(86, 23);
+            _noCashCheckBox.TabIndex = 15;
+            _noCashCheckBox.Text = "No Cash";
+            _noCashCheckBox.UseVisualStyleBackColor = true;
+            _noCashCheckBox.CheckedChanged += TierEncorep1_CheckBox_CheckedChanged;
             //
             // TierApply_Btn
             //
-            TierApply_Btn.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TierApply_Btn.Location = new Point(16, 255);
-            TierApply_Btn.Name = "TierApply_Btn";
-            TierApply_Btn.Size = new Size(153, 27);
-            TierApply_Btn.TabIndex = 17;
-            TierApply_Btn.Text = "Apply Tier Changes";
-            TierApply_Btn.UseVisualStyleBackColor = true;
-            TierApply_Btn.Click += TierApply_Btn_Click;
+            _tierApplyBtn.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _tierApplyBtn.Location = new Point(16, 255);
+            _tierApplyBtn.Name = "_tierApplyBtn";
+            _tierApplyBtn.Size = new Size(153, 27);
+            _tierApplyBtn.TabIndex = 17;
+            _tierApplyBtn.Text = "Apply Tier Changes";
+            _tierApplyBtn.UseVisualStyleBackColor = true;
+            _tierApplyBtn.Click += TierApply_Btn_Click;
             //
             // label12
             //
-            label12.AutoSize = true;
-            label12.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(89, 5);
-            label12.Name = "label12";
-            label12.Size = new Size(110, 19);
-            label12.TabIndex = 21;
-            label12.Text = "Tier Properties";
-            label12.TextAlign = ContentAlignment.MiddleCenter;
+            _label12.AutoSize = true;
+            _label12.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label12.Location = new Point(89, 5);
+            _label12.Name = "_label12";
+            _label12.Size = new Size(110, 19);
+            _label12.TabIndex = 21;
+            _label12.Text = "Tier Properties";
+            _label12.TextAlign = ContentAlignment.MiddleCenter;
             //
             // SetlistApply_Btn
             //
-            SetlistApply_Btn.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SetlistApply_Btn.Location = new Point(175, 255);
-            SetlistApply_Btn.Name = "SetlistApply_Btn";
-            SetlistApply_Btn.Size = new Size(169, 27);
-            SetlistApply_Btn.TabIndex = 18;
-            SetlistApply_Btn.Text = "Apply Setlist Changes";
-            SetlistApply_Btn.UseVisualStyleBackColor = true;
-            SetlistApply_Btn.Click += SetlistApply_Btn_Click;
+            _setlistApplyBtn.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _setlistApplyBtn.Location = new Point(175, 255);
+            _setlistApplyBtn.Name = "_setlistApplyBtn";
+            _setlistApplyBtn.Size = new Size(169, 27);
+            _setlistApplyBtn.TabIndex = 18;
+            _setlistApplyBtn.Text = "Apply Setlist Changes";
+            _setlistApplyBtn.UseVisualStyleBackColor = true;
+            _setlistApplyBtn.Click += SetlistApply_Btn_Click;
             //
             // TierCompMovie_TxtBox
             //
-            TierCompMovie_TxtBox.Location = new Point(156, 84);
-            TierCompMovie_TxtBox.Name = "TierCompMovie_TxtBox";
-            TierCompMovie_TxtBox.Size = new Size(119, 20);
-            TierCompMovie_TxtBox.TabIndex = 10;
-            TierCompMovie_TxtBox.TextChanged += TierEncorep1_CheckBox_CheckedChanged;
+            _tierCompMovieTxtBox.Location = new Point(156, 84);
+            _tierCompMovieTxtBox.Name = "_tierCompMovieTxtBox";
+            _tierCompMovieTxtBox.Size = new Size(119, 20);
+            _tierCompMovieTxtBox.TabIndex = 10;
+            _tierCompMovieTxtBox.TextChanged += TierEncorep1_CheckBox_CheckedChanged;
             //
             // TierUnlocked_NumBox
             //
-            TierUnlocked_NumBox.Location = new Point(193, 55);
-            TierUnlocked_NumBox.Maximum = new decimal(new[] {
+            _tierUnlockedNumBox.Location = new Point(193, 55);
+            _tierUnlockedNumBox.Maximum = new decimal(new[] {
             65536,
             0,
             0,
             0});
-            TierUnlocked_NumBox.Name = "TierUnlocked_NumBox";
-            TierUnlocked_NumBox.Size = new Size(43, 20);
-            TierUnlocked_NumBox.TabIndex = 9;
-            TierUnlocked_NumBox.ValueChanged += TierEncorep1_CheckBox_CheckedChanged;
+            _tierUnlockedNumBox.Name = "_tierUnlockedNumBox";
+            _tierUnlockedNumBox.Size = new Size(43, 20);
+            _tierUnlockedNumBox.TabIndex = 9;
+            _tierUnlockedNumBox.ValueChanged += TierEncorep1_CheckBox_CheckedChanged;
             //
             // TierTitle_TxtBox
             //
-            TierTitle_TxtBox.Location = new Point(63, 26);
-            TierTitle_TxtBox.Name = "TierTitle_TxtBox";
-            TierTitle_TxtBox.Size = new Size(212, 20);
-            TierTitle_TxtBox.TabIndex = 8;
-            TierTitle_TxtBox.TextChanged += TierEncorep1_CheckBox_CheckedChanged;
+            _tierTitleTxtBox.Location = new Point(63, 26);
+            _tierTitleTxtBox.Name = "_tierTitleTxtBox";
+            _tierTitleTxtBox.Size = new Size(212, 20);
+            _tierTitleTxtBox.TabIndex = 8;
+            _tierTitleTxtBox.TextChanged += TierEncorep1_CheckBox_CheckedChanged;
             //
             // TierIcon_DropBox
             //
-            TierIcon_DropBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            TierIcon_DropBox.FormattingEnabled = true;
-            TierIcon_DropBox.Items.AddRange(new object[] {
+            _tierIconDropBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            _tierIconDropBox.FormattingEnabled = true;
+            _tierIconDropBox.Items.AddRange(new object[] {
             "No Icon"});
-            TierIcon_DropBox.Location = new Point(93, 112);
-            TierIcon_DropBox.Name = "TierIcon_DropBox";
-            TierIcon_DropBox.Size = new Size(182, 21);
-            TierIcon_DropBox.TabIndex = 11;
-            TierIcon_DropBox.SelectedIndexChanged += TierEncorep1_CheckBox_CheckedChanged;
+            _tierIconDropBox.Location = new Point(93, 112);
+            _tierIconDropBox.Name = "_tierIconDropBox";
+            _tierIconDropBox.Size = new Size(182, 21);
+            _tierIconDropBox.TabIndex = 11;
+            _tierIconDropBox.SelectedIndexChanged += TierEncorep1_CheckBox_CheckedChanged;
             //
             // TierStage_DropBox
             //
-            TierStage_DropBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            TierStage_DropBox.FormattingEnabled = true;
-            TierStage_DropBox.Items.AddRange(new object[] {
+            _tierStageDropBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            _tierStageDropBox.FormattingEnabled = true;
+            _tierStageDropBox.Items.AddRange(new object[] {
             "No Preset Stage"});
-            TierStage_DropBox.Location = new Point(70, 141);
-            TierStage_DropBox.Name = "TierStage_DropBox";
-            TierStage_DropBox.Size = new Size(205, 21);
-            TierStage_DropBox.TabIndex = 12;
-            TierStage_DropBox.SelectedIndexChanged += TierEncorep1_CheckBox_CheckedChanged;
+            _tierStageDropBox.Location = new Point(70, 141);
+            _tierStageDropBox.Name = "_tierStageDropBox";
+            _tierStageDropBox.Size = new Size(205, 21);
+            _tierStageDropBox.TabIndex = 12;
+            _tierStageDropBox.SelectedIndexChanged += TierEncorep1_CheckBox_CheckedChanged;
             //
             // TierBoss_CheckBox
             //
-            TierBoss_CheckBox.AutoSize = true;
-            TierBoss_CheckBox.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TierBoss_CheckBox.Location = new Point(16, 168);
-            TierBoss_CheckBox.Name = "TierBoss_CheckBox";
-            TierBoss_CheckBox.Size = new Size(106, 23);
-            TierBoss_CheckBox.TabIndex = 13;
-            TierBoss_CheckBox.Text = "Boss Battle";
-            TierBoss_CheckBox.UseVisualStyleBackColor = true;
-            TierBoss_CheckBox.CheckedChanged += TierEncorep1_CheckBox_CheckedChanged;
+            _tierBossCheckBox.AutoSize = true;
+            _tierBossCheckBox.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _tierBossCheckBox.Location = new Point(16, 168);
+            _tierBossCheckBox.Name = "_tierBossCheckBox";
+            _tierBossCheckBox.Size = new Size(106, 23);
+            _tierBossCheckBox.TabIndex = 13;
+            _tierBossCheckBox.Text = "Boss Battle";
+            _tierBossCheckBox.UseVisualStyleBackColor = true;
+            _tierBossCheckBox.CheckedChanged += TierEncorep1_CheckBox_CheckedChanged;
             //
             // TierEncorep2_CheckBox
             //
-            TierEncorep2_CheckBox.AutoSize = true;
-            TierEncorep2_CheckBox.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TierEncorep2_CheckBox.Location = new Point(128, 197);
-            TierEncorep2_CheckBox.Name = "TierEncorep2_CheckBox";
-            TierEncorep2_CheckBox.Size = new Size(96, 23);
-            TierEncorep2_CheckBox.TabIndex = 16;
-            TierEncorep2_CheckBox.Text = "P2 Encore";
-            TierEncorep2_CheckBox.UseVisualStyleBackColor = true;
-            TierEncorep2_CheckBox.CheckedChanged += TierEncorep1_CheckBox_CheckedChanged;
+            _tierEncorep2CheckBox.AutoSize = true;
+            _tierEncorep2CheckBox.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _tierEncorep2CheckBox.Location = new Point(128, 197);
+            _tierEncorep2CheckBox.Name = "_tierEncorep2CheckBox";
+            _tierEncorep2CheckBox.Size = new Size(96, 23);
+            _tierEncorep2CheckBox.TabIndex = 16;
+            _tierEncorep2CheckBox.Text = "P2 Encore";
+            _tierEncorep2CheckBox.UseVisualStyleBackColor = true;
+            _tierEncorep2CheckBox.CheckedChanged += TierEncorep1_CheckBox_CheckedChanged;
             //
             // TierEncorep1_CheckBox
             //
-            TierEncorep1_CheckBox.AutoSize = true;
-            TierEncorep1_CheckBox.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TierEncorep1_CheckBox.Location = new Point(16, 197);
-            TierEncorep1_CheckBox.Name = "TierEncorep1_CheckBox";
-            TierEncorep1_CheckBox.Size = new Size(96, 23);
-            TierEncorep1_CheckBox.TabIndex = 14;
-            TierEncorep1_CheckBox.Text = "P1 Encore";
-            TierEncorep1_CheckBox.UseVisualStyleBackColor = true;
-            TierEncorep1_CheckBox.CheckedChanged += TierEncorep1_CheckBox_CheckedChanged;
+            _tierEncorep1CheckBox.AutoSize = true;
+            _tierEncorep1CheckBox.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _tierEncorep1CheckBox.Location = new Point(16, 197);
+            _tierEncorep1CheckBox.Name = "_tierEncorep1CheckBox";
+            _tierEncorep1CheckBox.Size = new Size(96, 23);
+            _tierEncorep1CheckBox.TabIndex = 14;
+            _tierEncorep1CheckBox.Text = "P1 Encore";
+            _tierEncorep1CheckBox.UseVisualStyleBackColor = true;
+            _tierEncorep1CheckBox.CheckedChanged += TierEncorep1_CheckBox_CheckedChanged;
             //
             // label10
             //
-            label10.AutoSize = true;
-            label10.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(12, 140);
-            label10.Name = "label10";
-            label10.Size = new Size(52, 19);
-            label10.TabIndex = 10;
-            label10.Text = "Stage:";
-            label10.TextAlign = ContentAlignment.MiddleCenter;
+            _label10.AutoSize = true;
+            _label10.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label10.Location = new Point(12, 140);
+            _label10.Name = "_label10";
+            _label10.Size = new Size(52, 19);
+            _label10.TabIndex = 10;
+            _label10.Text = "Stage:";
+            _label10.TextAlign = ContentAlignment.MiddleCenter;
             //
             // label9
             //
-            label9.AutoSize = true;
-            label9.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(12, 111);
-            label9.Name = "label9";
-            label9.Size = new Size(75, 19);
-            label9.TabIndex = 9;
-            label9.Text = "Tier Icon:";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
+            _label9.AutoSize = true;
+            _label9.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label9.Location = new Point(12, 111);
+            _label9.Name = "_label9";
+            _label9.Size = new Size(75, 19);
+            _label9.TabIndex = 9;
+            _label9.Text = "Tier Icon:";
+            _label9.TextAlign = ContentAlignment.MiddleCenter;
             //
             // label8
             //
-            label8.AutoSize = true;
-            label8.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(12, 83);
-            label8.Name = "label8";
-            label8.Size = new Size(138, 19);
-            label8.TabIndex = 8;
-            label8.Text = "Completion Movie:";
-            label8.TextAlign = ContentAlignment.MiddleCenter;
+            _label8.AutoSize = true;
+            _label8.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label8.Location = new Point(12, 83);
+            _label8.Name = "_label8";
+            _label8.Size = new Size(138, 19);
+            _label8.TabIndex = 8;
+            _label8.Text = "Completion Movie:";
+            _label8.TextAlign = ContentAlignment.MiddleCenter;
             //
             // label6
             //
-            label6.AutoSize = true;
-            label6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(12, 25);
-            label6.Name = "label6";
-            label6.Size = new Size(45, 19);
-            label6.TabIndex = 7;
-            label6.Text = "Title:";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
+            _label6.AutoSize = true;
+            _label6.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label6.Location = new Point(12, 25);
+            _label6.Name = "_label6";
+            _label6.Size = new Size(45, 19);
+            _label6.TabIndex = 7;
+            _label6.Text = "Title:";
+            _label6.TextAlign = ContentAlignment.MiddleCenter;
             //
             // label7
             //
-            label7.AutoSize = true;
-            label7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(12, 55);
-            label7.Name = "label7";
-            label7.Size = new Size(175, 19);
-            label7.TabIndex = 6;
-            label7.Text = "Default Unlocked Songs:";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
+            _label7.AutoSize = true;
+            _label7.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label7.Location = new Point(12, 55);
+            _label7.Name = "_label7";
+            _label7.Size = new Size(175, 19);
+            _label7.TabIndex = 6;
+            _label7.Text = "Default Unlocked Songs:";
+            _label7.TextAlign = ContentAlignment.MiddleCenter;
             //
             // TierSongs_Panel
             //
-            TierSongs_Panel.ColumnCount = 1;
-            TierSongs_Panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            TierSongs_Panel.Controls.Add(TierSongs_ListBox, 0, 1);
-            TierSongs_Panel.Controls.Add(label11, 0, 0);
-            TierSongs_Panel.Dock = DockStyle.Fill;
-            TierSongs_Panel.Location = new Point(405, 3);
-            TierSongs_Panel.Name = "TierSongs_Panel";
-            TierSongs_Panel.RowCount = 2;
-            TierSongs_Panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            TierSongs_Panel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            TierSongs_Panel.Size = new Size(174, 397);
-            TierSongs_Panel.TabIndex = 1;
+            _tierSongsPanel.ColumnCount = 1;
+            _tierSongsPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            _tierSongsPanel.Controls.Add(_tierSongsListBox, 0, 1);
+            _tierSongsPanel.Controls.Add(_label11, 0, 0);
+            _tierSongsPanel.Dock = DockStyle.Fill;
+            _tierSongsPanel.Location = new Point(405, 3);
+            _tierSongsPanel.Name = "_tierSongsPanel";
+            _tierSongsPanel.RowCount = 2;
+            _tierSongsPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            _tierSongsPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            _tierSongsPanel.Size = new Size(174, 397);
+            _tierSongsPanel.TabIndex = 1;
             //
             // label11
             //
-            label11.AutoSize = true;
-            label11.Dock = DockStyle.Fill;
-            label11.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(3, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(168, 20);
-            label11.TabIndex = 5;
-            label11.Text = "Tier Songs";
-            label11.TextAlign = ContentAlignment.MiddleCenter;
+            _label11.AutoSize = true;
+            _label11.Dock = DockStyle.Fill;
+            _label11.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _label11.Location = new Point(3, 0);
+            _label11.Name = "_label11";
+            _label11.Size = new Size(168, 20);
+            _label11.TabIndex = 5;
+            _label11.Text = "Tier Songs";
+            _label11.TextAlign = ContentAlignment.MiddleCenter;
             //
             // SetlistStrip
             //
-            SetlistStrip.Dock = DockStyle.None;
-            SetlistStrip.GripStyle = ToolStripGripStyle.Hidden;
-            SetlistStrip.Items.AddRange(new ToolStripItem[] {
-            Setlist_Lbl,
-            Setlist_DropBox,
-            CreateSetlist_Btn,
-            DeleteSetlist_Btn});
-            SetlistStrip.Location = new Point(0, 0);
-            SetlistStrip.Name = "SetlistStrip";
-            SetlistStrip.Size = new Size(590, 25);
-            SetlistStrip.Stretch = true;
-            SetlistStrip.TabIndex = 0;
-            SetlistStrip.Text = "toolStrip1";
+            _setlistStrip.Dock = DockStyle.None;
+            _setlistStrip.GripStyle = ToolStripGripStyle.Hidden;
+            _setlistStrip.Items.AddRange(new ToolStripItem[] {
+            _setlistLbl,
+            _setlistDropBox,
+            _createSetlistBtn,
+            _deleteSetlistBtn});
+            _setlistStrip.Location = new Point(0, 0);
+            _setlistStrip.Name = "_setlistStrip";
+            _setlistStrip.Size = new Size(590, 25);
+            _setlistStrip.Stretch = true;
+            _setlistStrip.TabIndex = 0;
+            _setlistStrip.Text = "toolStrip1";
             //
             // Setlist_Lbl
             //
-            Setlist_Lbl.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            Setlist_Lbl.Name = "Setlist_Lbl";
-            Setlist_Lbl.Size = new Size(56, 22);
-            Setlist_Lbl.Text = "Setlist:";
+            _setlistLbl.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
+            _setlistLbl.Name = "_setlistLbl";
+            _setlistLbl.Size = new Size(56, 22);
+            _setlistLbl.Text = "Setlist:";
             //
             // Setlist_DropBox
             //
-            Setlist_DropBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            Setlist_DropBox.Name = "Setlist_DropBox";
-            Setlist_DropBox.Size = new Size(121, 25);
-            Setlist_DropBox.SelectedIndexChanged += Setlist_DropBox_SelectedIndexChanged;
+            _setlistDropBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            _setlistDropBox.Name = "_setlistDropBox";
+            _setlistDropBox.Size = new Size(121, 25);
+            _setlistDropBox.SelectedIndexChanged += Setlist_DropBox_SelectedIndexChanged;
             //
             // CreateSetlist_Btn
             //
-            CreateSetlist_Btn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            CreateSetlist_Btn.ImageTransparentColor = Color.Magenta;
-            CreateSetlist_Btn.Name = "CreateSetlist_Btn";
-            CreateSetlist_Btn.Size = new Size(79, 22);
-            CreateSetlist_Btn.Text = "Create Setlist";
-            CreateSetlist_Btn.Click += CreateSetlist_Btn_Click;
+            _createSetlistBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            _createSetlistBtn.ImageTransparentColor = Color.Magenta;
+            _createSetlistBtn.Name = "_createSetlistBtn";
+            _createSetlistBtn.Size = new Size(79, 22);
+            _createSetlistBtn.Text = "Create Setlist";
+            _createSetlistBtn.Click += CreateSetlist_Btn_Click;
             //
             // DeleteSetlist_Btn
             //
-            DeleteSetlist_Btn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            DeleteSetlist_Btn.ImageTransparentColor = Color.Magenta;
-            DeleteSetlist_Btn.Name = "DeleteSetlist_Btn";
-            DeleteSetlist_Btn.Size = new Size(78, 22);
-            DeleteSetlist_Btn.Text = "Delete Setlist";
-            DeleteSetlist_Btn.Click += DeleteSetlist_Btn_Click;
+            _deleteSetlistBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            _deleteSetlistBtn.ImageTransparentColor = Color.Magenta;
+            _deleteSetlistBtn.Name = "_deleteSetlistBtn";
+            _deleteSetlistBtn.Size = new Size(78, 22);
+            _deleteSetlistBtn.Text = "Delete Setlist";
+            _deleteSetlistBtn.Click += DeleteSetlist_Btn_Click;
             //
             // SongEditorTab
             //
-            SongEditorTab.AccessibleRole = AccessibleRole.None;
-            SongEditorTab.Controls.Add(SongEditor_Container);
-            SongEditorTab.Location = new Point(4, 22);
-            SongEditorTab.Name = "SongEditorTab";
-            SongEditorTab.Padding = new Padding(3);
-            SongEditorTab.Size = new Size(596, 493);
-            SongEditorTab.TabIndex = 1;
-            SongEditorTab.Text = "Song Editor";
-            SongEditorTab.UseVisualStyleBackColor = true;
+            _songEditorTab.AccessibleRole = AccessibleRole.None;
+            _songEditorTab.Controls.Add(_songEditorContainer);
+            _songEditorTab.Location = new Point(4, 22);
+            _songEditorTab.Name = "_songEditorTab";
+            _songEditorTab.Padding = new Padding(3);
+            _songEditorTab.Size = new Size(596, 493);
+            _songEditorTab.TabIndex = 1;
+            _songEditorTab.Text = "Song Editor";
+            _songEditorTab.UseVisualStyleBackColor = true;
             //
             // SongEditor_Container
             //
             //
             // SongEditor_Container.BottomToolStripPanel
             //
-            SongEditor_Container.BottomToolStripPanel.Controls.Add(SongEditor_BottomToolStrip);
+            _songEditorContainer.BottomToolStripPanel.Controls.Add(_songEditorBottomToolStrip);
             //
             // SongEditor_Container.ContentPanel
             //
-            SongEditor_Container.ContentPanel.Controls.Add(SongEditor_Control);
-            SongEditor_Container.ContentPanel.Size = new Size(590, 437);
-            SongEditor_Container.Dock = DockStyle.Fill;
-            SongEditor_Container.Location = new Point(3, 3);
-            SongEditor_Container.Name = "SongEditor_Container";
-            SongEditor_Container.Size = new Size(590, 487);
-            SongEditor_Container.TabIndex = 1;
-            SongEditor_Container.Text = "SongEditor Container";
+            _songEditorContainer.ContentPanel.Controls.Add(_songEditorControl);
+            _songEditorContainer.ContentPanel.Size = new Size(590, 437);
+            _songEditorContainer.Dock = DockStyle.Fill;
+            _songEditorContainer.Location = new Point(3, 3);
+            _songEditorContainer.Name = "_songEditorContainer";
+            _songEditorContainer.Size = new Size(590, 487);
+            _songEditorContainer.TabIndex = 1;
+            _songEditorContainer.Text = "SongEditor Container";
             //
             // SongEditor_Container.TopToolStripPanel
             //
-            SongEditor_Container.TopToolStripPanel.Controls.Add(SongEditor_TopToolStrip);
+            _songEditorContainer.TopToolStripPanel.Controls.Add(_songEditorTopToolStrip);
             //
             // SongEditor_BottomToolStrip
             //
-            SongEditor_BottomToolStrip.Dock = DockStyle.None;
-            SongEditor_BottomToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            SongEditor_BottomToolStrip.Items.AddRange(new ToolStripItem[] {
-            ToggleElements_EditorSplitBtn,
-            toolStripSeparator10,
-            toolStripLabel1,
-            BeatSize_EditorTxtBox,
-            HyperSpeed_EditorBar,
-            FretAngle_EditorBar,
-            toolStripSeparator12,
-            toolStripLabel2,
-            Offset_EditorTxtBox});
-            SongEditor_BottomToolStrip.Location = new Point(0, 0);
-            SongEditor_BottomToolStrip.Name = "SongEditor_BottomToolStrip";
-            SongEditor_BottomToolStrip.Size = new Size(590, 25);
-            SongEditor_BottomToolStrip.Stretch = true;
-            SongEditor_BottomToolStrip.TabIndex = 0;
+            _songEditorBottomToolStrip.Dock = DockStyle.None;
+            _songEditorBottomToolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            _songEditorBottomToolStrip.Items.AddRange(new ToolStripItem[] {
+            _toggleElementsEditorSplitBtn,
+            _toolStripSeparator10,
+            _toolStripLabel1,
+            _beatSizeEditorTxtBox,
+            _hyperSpeedEditorBar,
+            _fretAngleEditorBar,
+            _toolStripSeparator12,
+            _toolStripLabel2,
+            _offsetEditorTxtBox});
+            _songEditorBottomToolStrip.Location = new Point(0, 0);
+            _songEditorBottomToolStrip.Name = "_songEditorBottomToolStrip";
+            _songEditorBottomToolStrip.Size = new Size(590, 25);
+            _songEditorBottomToolStrip.Stretch = true;
+            _songEditorBottomToolStrip.TabIndex = 0;
             //
             // ToggleElements_EditorSplitBtn
             //
-            ToggleElements_EditorSplitBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            ToggleElements_EditorSplitBtn.DropDownItems.AddRange(new ToolStripItem[] {
-            StarView_EditorBtn,
-            HopoView_EditorBtn,
-            AudioView_EditorBtn});
-            ToggleElements_EditorSplitBtn.ImageTransparentColor = Color.Magenta;
-            ToggleElements_EditorSplitBtn.Name = "ToggleElements_EditorSplitBtn";
-            ToggleElements_EditorSplitBtn.Size = new Size(111, 22);
-            ToggleElements_EditorSplitBtn.Text = "Toggle Elements";
-            ToggleElements_EditorSplitBtn.ButtonClick += ToggleElements_EditorSplitBtn_ButtonClick;
+            _toggleElementsEditorSplitBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            _toggleElementsEditorSplitBtn.DropDownItems.AddRange(new ToolStripItem[] {
+            _starViewEditorBtn,
+            _hopoViewEditorBtn,
+            _audioViewEditorBtn});
+            _toggleElementsEditorSplitBtn.ImageTransparentColor = Color.Magenta;
+            _toggleElementsEditorSplitBtn.Name = "_toggleElementsEditorSplitBtn";
+            _toggleElementsEditorSplitBtn.Size = new Size(111, 22);
+            _toggleElementsEditorSplitBtn.Text = "Toggle Elements";
+            _toggleElementsEditorSplitBtn.ButtonClick += ToggleElements_EditorSplitBtn_ButtonClick;
             //
             // StarView_EditorBtn
             //
-            StarView_EditorBtn.Checked = true;
-            StarView_EditorBtn.CheckOnClick = true;
-            StarView_EditorBtn.CheckState = CheckState.Checked;
-            StarView_EditorBtn.Name = "StarView_EditorBtn";
-            StarView_EditorBtn.Size = new Size(130, 22);
-            StarView_EditorBtn.Text = "Star Power";
-            StarView_EditorBtn.Click += StarView_EditorBtn_Click;
+            _starViewEditorBtn.Checked = true;
+            _starViewEditorBtn.CheckOnClick = true;
+            _starViewEditorBtn.CheckState = CheckState.Checked;
+            _starViewEditorBtn.Name = "_starViewEditorBtn";
+            _starViewEditorBtn.Size = new Size(130, 22);
+            _starViewEditorBtn.Text = "Star Power";
+            _starViewEditorBtn.Click += StarView_EditorBtn_Click;
             //
             // HopoView_EditorBtn
             //
-            HopoView_EditorBtn.Checked = true;
-            HopoView_EditorBtn.CheckOnClick = true;
-            HopoView_EditorBtn.CheckState = CheckState.Checked;
-            HopoView_EditorBtn.Name = "HopoView_EditorBtn";
-            HopoView_EditorBtn.Size = new Size(130, 22);
-            HopoView_EditorBtn.Text = "HoPo";
-            HopoView_EditorBtn.Click += HopoView_EditorBtn_Click;
+            _hopoViewEditorBtn.Checked = true;
+            _hopoViewEditorBtn.CheckOnClick = true;
+            _hopoViewEditorBtn.CheckState = CheckState.Checked;
+            _hopoViewEditorBtn.Name = "_hopoViewEditorBtn";
+            _hopoViewEditorBtn.Size = new Size(130, 22);
+            _hopoViewEditorBtn.Text = "HoPo";
+            _hopoViewEditorBtn.Click += HopoView_EditorBtn_Click;
             //
             // AudioView_EditorBtn
             //
-            AudioView_EditorBtn.Checked = true;
-            AudioView_EditorBtn.CheckOnClick = true;
-            AudioView_EditorBtn.CheckState = CheckState.Checked;
-            AudioView_EditorBtn.Name = "AudioView_EditorBtn";
-            AudioView_EditorBtn.Size = new Size(130, 22);
-            AudioView_EditorBtn.Text = "Audio";
-            AudioView_EditorBtn.Click += AudioView_EditorBtn_Click;
+            _audioViewEditorBtn.Checked = true;
+            _audioViewEditorBtn.CheckOnClick = true;
+            _audioViewEditorBtn.CheckState = CheckState.Checked;
+            _audioViewEditorBtn.Name = "_audioViewEditorBtn";
+            _audioViewEditorBtn.Size = new Size(130, 22);
+            _audioViewEditorBtn.Text = "Audio";
+            _audioViewEditorBtn.Click += AudioView_EditorBtn_Click;
             //
             // toolStripSeparator10
             //
-            toolStripSeparator10.Name = "toolStripSeparator10";
-            toolStripSeparator10.Size = new Size(6, 25);
+            _toolStripSeparator10.Name = "_toolStripSeparator10";
+            _toolStripSeparator10.Size = new Size(6, 25);
             //
             // toolStripLabel1
             //
-            toolStripLabel1.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            toolStripLabel1.Name = "toolStripLabel1";
-            toolStripLabel1.Size = new Size(77, 22);
-            toolStripLabel1.Text = "Beat Size:";
+            _toolStripLabel1.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
+            _toolStripLabel1.Name = "_toolStripLabel1";
+            _toolStripLabel1.Size = new Size(77, 22);
+            _toolStripLabel1.Text = "Beat Size:";
             //
             // BeatSize_EditorTxtBox
             //
-            BeatSize_EditorTxtBox.Name = "BeatSize_EditorTxtBox";
-            BeatSize_EditorTxtBox.Size = new Size(30, 25);
-            BeatSize_EditorTxtBox.Text = "20";
-            BeatSize_EditorTxtBox.TextChanged += BeatSize_EditorTxtBox_TextChanged;
+            _beatSizeEditorTxtBox.Name = "_beatSizeEditorTxtBox";
+            _beatSizeEditorTxtBox.Size = new Size(30, 25);
+            _beatSizeEditorTxtBox.Text = "20";
+            _beatSizeEditorTxtBox.TextChanged += BeatSize_EditorTxtBox_TextChanged;
             //
             // toolStripSeparator12
             //
-            toolStripSeparator12.Name = "toolStripSeparator12";
-            toolStripSeparator12.Size = new Size(6, 25);
+            _toolStripSeparator12.Name = "_toolStripSeparator12";
+            _toolStripSeparator12.Size = new Size(6, 25);
             //
             // toolStripLabel2
             //
-            toolStripLabel2.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            toolStripLabel2.Name = "toolStripLabel2";
-            toolStripLabel2.Size = new Size(56, 22);
-            toolStripLabel2.Text = "Offset:";
+            _toolStripLabel2.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
+            _toolStripLabel2.Name = "_toolStripLabel2";
+            _toolStripLabel2.Size = new Size(56, 22);
+            _toolStripLabel2.Text = "Offset:";
             //
             // Offset_EditorTxtBox
             //
-            Offset_EditorTxtBox.Name = "Offset_EditorTxtBox";
-            Offset_EditorTxtBox.Size = new Size(50, 25);
-            Offset_EditorTxtBox.Text = "20";
-            Offset_EditorTxtBox.TextChanged += Offset_EditorTxtBox_TextChanged;
+            _offsetEditorTxtBox.Name = "_offsetEditorTxtBox";
+            _offsetEditorTxtBox.Size = new Size(50, 25);
+            _offsetEditorTxtBox.Text = "20";
+            _offsetEditorTxtBox.TextChanged += Offset_EditorTxtBox_TextChanged;
             //
             // SongEditor_TopToolStrip
             //
-            SongEditor_TopToolStrip.Dock = DockStyle.None;
-            SongEditor_TopToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            SongEditor_TopToolStrip.Items.AddRange(new ToolStripItem[] {
-            GameMode_EditorBtn,
-            toolStripSeparator5,
-            LoadChart_EditorBtn,
-            SelectedTrack_EditorBox,
-            SongName_EditorLbl,
-            toolStripSeparator2,
-            LoadAudio_EditorBtn,
-            PlayPause_EditorBtn,
-            Stop_EditorBtn,
-            PlayTime_EditorLbl});
-            SongEditor_TopToolStrip.Location = new Point(0, 0);
-            SongEditor_TopToolStrip.Name = "SongEditor_TopToolStrip";
-            SongEditor_TopToolStrip.Size = new Size(590, 25);
-            SongEditor_TopToolStrip.Stretch = true;
-            SongEditor_TopToolStrip.TabIndex = 0;
+            _songEditorTopToolStrip.Dock = DockStyle.None;
+            _songEditorTopToolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            _songEditorTopToolStrip.Items.AddRange(new ToolStripItem[] {
+            _gameModeEditorBtn,
+            _toolStripSeparator5,
+            _loadChartEditorBtn,
+            _selectedTrackEditorBox,
+            _songNameEditorLbl,
+            _toolStripSeparator2,
+            _loadAudioEditorBtn,
+            _playPauseEditorBtn,
+            _stopEditorBtn,
+            _playTimeEditorLbl});
+            _songEditorTopToolStrip.Location = new Point(0, 0);
+            _songEditorTopToolStrip.Name = "_songEditorTopToolStrip";
+            _songEditorTopToolStrip.Size = new Size(590, 25);
+            _songEditorTopToolStrip.Stretch = true;
+            _songEditorTopToolStrip.TabIndex = 0;
             //
             // GameMode_EditorBtn
             //
-            GameMode_EditorBtn.Checked = true;
-            GameMode_EditorBtn.CheckOnClick = true;
-            GameMode_EditorBtn.CheckState = CheckState.Checked;
-            GameMode_EditorBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            GameMode_EditorBtn.ImageTransparentColor = Color.Magenta;
-            GameMode_EditorBtn.Name = "GameMode_EditorBtn";
-            GameMode_EditorBtn.Size = new Size(76, 22);
-            GameMode_EditorBtn.Text = "Game Mode";
-            GameMode_EditorBtn.Click += GameMode_EditorBtn_Click;
+            _gameModeEditorBtn.Checked = true;
+            _gameModeEditorBtn.CheckOnClick = true;
+            _gameModeEditorBtn.CheckState = CheckState.Checked;
+            _gameModeEditorBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            _gameModeEditorBtn.ImageTransparentColor = Color.Magenta;
+            _gameModeEditorBtn.Name = "_gameModeEditorBtn";
+            _gameModeEditorBtn.Size = new Size(76, 22);
+            _gameModeEditorBtn.Text = "Game Mode";
+            _gameModeEditorBtn.Click += GameMode_EditorBtn_Click;
             //
             // toolStripSeparator5
             //
-            toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new Size(6, 25);
+            _toolStripSeparator5.Name = "_toolStripSeparator5";
+            _toolStripSeparator5.Size = new Size(6, 25);
             //
             // LoadChart_EditorBtn
             //
-            LoadChart_EditorBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            LoadChart_EditorBtn.ImageTransparentColor = Color.Magenta;
-            LoadChart_EditorBtn.Name = "LoadChart_EditorBtn";
-            LoadChart_EditorBtn.Size = new Size(69, 22);
-            LoadChart_EditorBtn.Text = "Load Chart";
-            LoadChart_EditorBtn.Click += LoadChart_EditorBtn_Click;
+            _loadChartEditorBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            _loadChartEditorBtn.ImageTransparentColor = Color.Magenta;
+            _loadChartEditorBtn.Name = "_loadChartEditorBtn";
+            _loadChartEditorBtn.Size = new Size(69, 22);
+            _loadChartEditorBtn.Text = "Load Chart";
+            _loadChartEditorBtn.Click += LoadChart_EditorBtn_Click;
             //
             // SelectedTrack_EditorBox
             //
-            SelectedTrack_EditorBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            SelectedTrack_EditorBox.Name = "SelectedTrack_EditorBox";
-            SelectedTrack_EditorBox.Size = new Size(100, 25);
-            SelectedTrack_EditorBox.SelectedIndexChanged += SelectedTrack_EditorBox_SelectedIndexChanged;
+            _selectedTrackEditorBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            _selectedTrackEditorBox.Name = "_selectedTrackEditorBox";
+            _selectedTrackEditorBox.Size = new Size(100, 25);
+            _selectedTrackEditorBox.SelectedIndexChanged += SelectedTrack_EditorBox_SelectedIndexChanged;
             //
             // SongName_EditorLbl
             //
-            SongName_EditorLbl.Name = "SongName_EditorLbl";
-            SongName_EditorLbl.Size = new Size(69, 22);
-            SongName_EditorLbl.Text = "Song Name";
+            _songNameEditorLbl.Name = "_songNameEditorLbl";
+            _songNameEditorLbl.Size = new Size(69, 22);
+            _songNameEditorLbl.Text = "Song Name";
             //
             // toolStripSeparator2
             //
-            toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(6, 25);
+            _toolStripSeparator2.Name = "_toolStripSeparator2";
+            _toolStripSeparator2.Size = new Size(6, 25);
             //
             // LoadAudio_EditorBtn
             //
-            LoadAudio_EditorBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            LoadAudio_EditorBtn.ImageTransparentColor = Color.Magenta;
-            LoadAudio_EditorBtn.Name = "LoadAudio_EditorBtn";
-            LoadAudio_EditorBtn.Size = new Size(72, 22);
-            LoadAudio_EditorBtn.Text = "Load Audio";
-            LoadAudio_EditorBtn.Click += LoadAudio_EditorBtn_Click;
+            _loadAudioEditorBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            _loadAudioEditorBtn.ImageTransparentColor = Color.Magenta;
+            _loadAudioEditorBtn.Name = "_loadAudioEditorBtn";
+            _loadAudioEditorBtn.Size = new Size(72, 22);
+            _loadAudioEditorBtn.Text = "Load Audio";
+            _loadAudioEditorBtn.Click += LoadAudio_EditorBtn_Click;
             //
             // PlayPause_EditorBtn
             //
-            PlayPause_EditorBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            PlayPause_EditorBtn.ImageTransparentColor = Color.Magenta;
-            PlayPause_EditorBtn.Name = "PlayPause_EditorBtn";
-            PlayPause_EditorBtn.Size = new Size(69, 22);
-            PlayPause_EditorBtn.Text = "Play/Pause";
-            PlayPause_EditorBtn.Click += PlayPause_EditorBtn_Click;
+            _playPauseEditorBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            _playPauseEditorBtn.ImageTransparentColor = Color.Magenta;
+            _playPauseEditorBtn.Name = "_playPauseEditorBtn";
+            _playPauseEditorBtn.Size = new Size(69, 22);
+            _playPauseEditorBtn.Text = "Play/Pause";
+            _playPauseEditorBtn.Click += PlayPause_EditorBtn_Click;
             //
             // Stop_EditorBtn
             //
-            Stop_EditorBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            Stop_EditorBtn.ImageTransparentColor = Color.Magenta;
-            Stop_EditorBtn.Name = "Stop_EditorBtn";
-            Stop_EditorBtn.Size = new Size(35, 22);
-            Stop_EditorBtn.Text = "Stop";
-            Stop_EditorBtn.Click += Stop_EditorBtn_Click;
+            _stopEditorBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            _stopEditorBtn.ImageTransparentColor = Color.Magenta;
+            _stopEditorBtn.Name = "_stopEditorBtn";
+            _stopEditorBtn.Size = new Size(35, 22);
+            _stopEditorBtn.Text = "Stop";
+            _stopEditorBtn.Click += Stop_EditorBtn_Click;
             //
             // PlayTime_EditorLbl
             //
-            PlayTime_EditorLbl.Name = "PlayTime_EditorLbl";
-            PlayTime_EditorLbl.Size = new Size(59, 22);
-            PlayTime_EditorLbl.Text = "Play Time";
+            _playTimeEditorLbl.Name = "_playTimeEditorLbl";
+            _playTimeEditorLbl.Size = new Size(59, 22);
+            _playTimeEditorLbl.Text = "Play Time";
             //
             // TierSongs_ListBox
             //
-            TierSongs_ListBox.AllowDrop = true;
-            TierSongs_ListBox.Anchor = ((AnchorStyles.Top | AnchorStyles.Bottom)
+            _tierSongsListBox.AllowDrop = true;
+            _tierSongsListBox.Anchor = ((AnchorStyles.Top | AnchorStyles.Bottom)
                                         | AnchorStyles.Left)
                                        | AnchorStyles.Right;
-            TierSongs_ListBox.FormattingEnabled = true;
-            TierSongs_ListBox.IntegralHeight = false;
-            TierSongs_ListBox.Location = new Point(0, 20);
-            TierSongs_ListBox.Margin = new Padding(0);
-            TierSongs_ListBox.Name = "TierSongs_ListBox";
-            TierSongs_ListBox.ScrollAlwaysVisible = true;
-            TierSongs_ListBox.SelectionMode = SelectionMode.MultiExtended;
-            TierSongs_ListBox.Size = new Size(174, 377);
-            TierSongs_ListBox.TabIndex = 19;
-            TierSongs_ListBox.KeyDown += TierSongs_ListBox_KeyDown;
-            TierSongs_ListBox.MouseDown += TierSongs_ListBox_MouseDown;
+            _tierSongsListBox.FormattingEnabled = true;
+            _tierSongsListBox.IntegralHeight = false;
+            _tierSongsListBox.Location = new Point(0, 20);
+            _tierSongsListBox.Margin = new Padding(0);
+            _tierSongsListBox.Name = "_tierSongsListBox";
+            _tierSongsListBox.ScrollAlwaysVisible = true;
+            _tierSongsListBox.SelectionMode = SelectionMode.MultiExtended;
+            _tierSongsListBox.Size = new Size(174, 377);
+            _tierSongsListBox.TabIndex = 19;
+            _tierSongsListBox.KeyDown += TierSongs_ListBox_KeyDown;
+            _tierSongsListBox.MouseDown += TierSongs_ListBox_MouseDown;
             //
             // HyperSpeed_EditorBar
             //
-            HyperSpeed_EditorBar.Name = "HyperSpeed_EditorBar";
-            HyperSpeed_EditorBar.Size = new Size(104, 22);
-            HyperSpeed_EditorBar.ToolTipText = "HyperSpeed";
+            _hyperSpeedEditorBar.Name = "_hyperSpeedEditorBar";
+            _hyperSpeedEditorBar.Size = new Size(104, 22);
+            _hyperSpeedEditorBar.ToolTipText = "HyperSpeed";
             //
             // FretAngle_EditorBar
             //
-            FretAngle_EditorBar.Name = "FretAngle_EditorBar";
-            FretAngle_EditorBar.Size = new Size(104, 22);
-            FretAngle_EditorBar.ToolTipText = "FretBar Angle";
+            _fretAngleEditorBar.Name = "_fretAngleEditorBar";
+            _fretAngleEditorBar.Size = new Size(104, 22);
+            _fretAngleEditorBar.ToolTipText = "FretBar Angle";
             //
             // SongEditor_Control
             //
-            SongEditor_Control.BackColor = Color.White;
-            SongEditor_Control.Dock = DockStyle.Fill;
-            SongEditor_Control.Location = new Point(0, 0);
-            SongEditor_Control.Name = "SongEditor_Control";
-            SongEditor_Control.Size = new Size(590, 437);
-            SongEditor_Control.TabIndex = 0;
+            _songEditorControl.BackColor = Color.White;
+            _songEditorControl.Dock = DockStyle.Fill;
+            _songEditorControl.Location = new Point(0, 0);
+            _songEditorControl.Name = "_songEditorControl";
+            _songEditorControl.Size = new Size(590, 437);
+            _songEditorControl.TabIndex = 0;
             //
             // SongListBox
             //
-            SongListBox.AllowDrop = true;
-            SongListBox.Dock = DockStyle.Fill;
-            SongListBox.FormattingEnabled = true;
-            SongListBox.IntegralHeight = false;
-            SongListBox.Location = new Point(0, 20);
-            SongListBox.Margin = new Padding(0);
-            SongListBox.Name = "SongListBox";
-            SongListBox.ScrollAlwaysVisible = true;
-            SongListBox.SelectionMode = SelectionMode.MultiExtended;
-            SongListBox.Size = new Size(180, 355);
-            SongListBox.Sorted = true;
-            SongListBox.TabIndex = 1;
-            SongListBox.SelectedIndexChanged += SongListBox_SelectedIndexChanged;
-            SongListBox.KeyDown += SongListBox_KeyDown;
-            SongListBox.MouseDown += SongListBox_MouseDown;
+            _songListBox.AllowDrop = true;
+            _songListBox.Dock = DockStyle.Fill;
+            _songListBox.FormattingEnabled = true;
+            _songListBox.IntegralHeight = false;
+            _songListBox.Location = new Point(0, 20);
+            _songListBox.Margin = new Padding(0);
+            _songListBox.Name = "_songListBox";
+            _songListBox.ScrollAlwaysVisible = true;
+            _songListBox.SelectionMode = SelectionMode.MultiExtended;
+            _songListBox.Size = new Size(180, 355);
+            _songListBox.Sorted = true;
+            _songListBox.TabIndex = 1;
+            _songListBox.SelectedIndexChanged += SongListBox_SelectedIndexChanged;
+            _songListBox.KeyDown += SongListBox_KeyDown;
+            _songListBox.MouseDown += SongListBox_MouseDown;
             //
             // MainMenu
             //
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 565);
-            Controls.Add(MainContainer);
+            Controls.Add(_mainContainer);
             DoubleBuffered = true;
             Icon = ((Icon)(resources.GetObject("$this.Icon")));
-            MainMenuStrip = TopMenuStrip;
+            MainMenuStrip = _topMenuStrip;
             MinimumSize = new Size(800, 600);
             Name = "MainMenu";
             Text = "Guitar Hero Three Control Panel+";
             FormClosing += MainMenu_FormClosing;
             SizeChanged += MainMenu_SizeChanged;
-            rightClickMenu.ResumeLayout(false);
-            TopMenuStrip.ResumeLayout(false);
-            TopMenuStrip.PerformLayout();
-            SidePanel.ResumeLayout(false);
-            SidePanel.PerformLayout();
-            leftClickMenu.ResumeLayout(false);
-            MainContainer.BottomToolStripPanel.ResumeLayout(false);
-            MainContainer.BottomToolStripPanel.PerformLayout();
-            MainContainer.ContentPanel.ResumeLayout(false);
-            MainContainer.TopToolStripPanel.ResumeLayout(false);
-            MainContainer.TopToolStripPanel.PerformLayout();
-            MainContainer.ResumeLayout(false);
-            MainContainer.PerformLayout();
-            StatusStrip.ResumeLayout(false);
-            StatusStrip.PerformLayout();
-            TabControl.ResumeLayout(false);
-            SetlistTab.ResumeLayout(false);
-            SetlistConfig_Container.ContentPanel.ResumeLayout(false);
-            SetlistConfig_Container.TopToolStripPanel.ResumeLayout(false);
-            SetlistConfig_Container.TopToolStripPanel.PerformLayout();
-            SetlistConfig_Container.ResumeLayout(false);
-            SetlistConfig_Container.PerformLayout();
-            SetlistConf_TLPanel.ResumeLayout(false);
-            Setlist_TLPanel.ResumeLayout(false);
-            Setlist_TLPanel.PerformLayout();
-            Tier_TLPanel.ResumeLayout(false);
-            TierProps_Panel.ResumeLayout(false);
-            TierProps_Panel.PerformLayout();
-            ((ISupportInitialize)(TierUnlocked_NumBox)).EndInit();
-            TierSongs_Panel.ResumeLayout(false);
-            TierSongs_Panel.PerformLayout();
-            SetlistStrip.ResumeLayout(false);
-            SetlistStrip.PerformLayout();
-            SongEditorTab.ResumeLayout(false);
-            SongEditor_Container.BottomToolStripPanel.ResumeLayout(false);
-            SongEditor_Container.BottomToolStripPanel.PerformLayout();
-            SongEditor_Container.ContentPanel.ResumeLayout(false);
-            SongEditor_Container.TopToolStripPanel.ResumeLayout(false);
-            SongEditor_Container.TopToolStripPanel.PerformLayout();
-            SongEditor_Container.ResumeLayout(false);
-            SongEditor_Container.PerformLayout();
-            SongEditor_BottomToolStrip.ResumeLayout(false);
-            SongEditor_BottomToolStrip.PerformLayout();
-            SongEditor_TopToolStrip.ResumeLayout(false);
-            SongEditor_TopToolStrip.PerformLayout();
+            _rightClickMenu.ResumeLayout(false);
+            _topMenuStrip.ResumeLayout(false);
+            _topMenuStrip.PerformLayout();
+            _sidePanel.ResumeLayout(false);
+            _sidePanel.PerformLayout();
+            _leftClickMenu.ResumeLayout(false);
+            _mainContainer.BottomToolStripPanel.ResumeLayout(false);
+            _mainContainer.BottomToolStripPanel.PerformLayout();
+            _mainContainer.ContentPanel.ResumeLayout(false);
+            _mainContainer.TopToolStripPanel.ResumeLayout(false);
+            _mainContainer.TopToolStripPanel.PerformLayout();
+            _mainContainer.ResumeLayout(false);
+            _mainContainer.PerformLayout();
+            _statusStrip.ResumeLayout(false);
+            _statusStrip.PerformLayout();
+            _tabControl.ResumeLayout(false);
+            _setlistTab.ResumeLayout(false);
+            _setlistConfigContainer.ContentPanel.ResumeLayout(false);
+            _setlistConfigContainer.TopToolStripPanel.ResumeLayout(false);
+            _setlistConfigContainer.TopToolStripPanel.PerformLayout();
+            _setlistConfigContainer.ResumeLayout(false);
+            _setlistConfigContainer.PerformLayout();
+            _setlistConfTLPanel.ResumeLayout(false);
+            _setlistTLPanel.ResumeLayout(false);
+            _setlistTLPanel.PerformLayout();
+            _tierTLPanel.ResumeLayout(false);
+            _tierPropsPanel.ResumeLayout(false);
+            _tierPropsPanel.PerformLayout();
+            ((ISupportInitialize)(_tierUnlockedNumBox)).EndInit();
+            _tierSongsPanel.ResumeLayout(false);
+            _tierSongsPanel.PerformLayout();
+            _setlistStrip.ResumeLayout(false);
+            _setlistStrip.PerformLayout();
+            _songEditorTab.ResumeLayout(false);
+            _songEditorContainer.BottomToolStripPanel.ResumeLayout(false);
+            _songEditorContainer.BottomToolStripPanel.PerformLayout();
+            _songEditorContainer.ContentPanel.ResumeLayout(false);
+            _songEditorContainer.TopToolStripPanel.ResumeLayout(false);
+            _songEditorContainer.TopToolStripPanel.PerformLayout();
+            _songEditorContainer.ResumeLayout(false);
+            _songEditorContainer.PerformLayout();
+            _songEditorBottomToolStrip.ResumeLayout(false);
+            _songEditorBottomToolStrip.PerformLayout();
+            _songEditorTopToolStrip.ResumeLayout(false);
+            _songEditorTopToolStrip.PerformLayout();
             ResumeLayout(false);
 
 		}
 
         private void LoadMore()
         {
-            TierSongs_ListBox.method_0("Songs");
-            TierSongs_ListBox.method_1(false);
-            TierSongs_ListBox.method_6(method_21);
-            SongListBox.method_0("Songs");
-            SongListBox.method_4(false);
-            SongListBox.method_2(false);
-            SongListBox.method_5(false);
-            SongEditor_Control.Set5NoteLines(false);
-            SongEditor_Control.SetFretboardAngle(0);
-            SongEditor_Control.SetGamemodeView(true);
-            SongEditor_Control.SetHyperspeed(1);
-            SongEditor_Control.SetDoubleFretbarWidth(false);
-            SongEditor_Control.method_29(method_1);
+            _tierSongsListBox.method_0("Songs");
+            _tierSongsListBox.method_1(false);
+            _tierSongsListBox.method_6(method_21);
+            _songListBox.method_0("Songs");
+            _songListBox.method_4(false);
+            _songListBox.method_2(false);
+            _songListBox.method_5(false);
+            _songEditorControl.Set5NoteLines(false);
+            _songEditorControl.SetFretboardAngle(0);
+            _songEditorControl.SetGamemodeView(true);
+            _songEditorControl.SetHyperspeed(1);
+            _songEditorControl.SetDoubleFretbarWidth(false);
+            _songEditorControl.method_29(method_1);
         }
 
-		private void method_12(bool bool_1)
+		private void method_12(bool bool1)
 		{
-			ToolStripItem arg_1F_0 = SaveChart_MenuItem;
-			ToolStripItem arg_19_0 = RebuildSong_MenuItem;
-			DeleteSong_MenuItem.Enabled = false;
-			arg_19_0.Enabled = false;
-			arg_1F_0.Enabled = false;
-			ToolStripItem arg_B3_0 = Add_MenuItem;
-			ToolStripItem arg_AC_0 = ManageGame_MenuItem;
-			ToolStripItem arg_A2_0 = ManageSongs_MenuItem;
-			ToolStripItem arg_98_0 = ExecuteActions_MenuItem;
-			ToolStripItem arg_8E_0 = ClearActions_MenuItem;
-			ToolStripItem arg_84_0 = SaveSGH_MenuItem;
-            ToolStripItem export = exportSetlistAsChartsToolStripMenuItem;
-            ToolStripItem arg_7B_0 = SaveTGH_MenuItem;
-			Control arg_73_0 = SetlistStrip;
-			Control arg_6B_0 = SetlistConf_TLPanel;
-			GH3Folder_MenuItem.Enabled = bool_1;
-			arg_6B_0.Enabled = bool_1;
-			arg_73_0.Enabled = bool_1;
-			arg_7B_0.Enabled = bool_1;
-			arg_84_0.Enabled = bool_1;
-			arg_8E_0.Enabled = bool_1;
-			arg_98_0.Enabled = bool_1;
-			arg_A2_0.Enabled = bool_1;
-			arg_AC_0.Enabled = bool_1;
-			arg_B3_0.Enabled = bool_1;
-            export.Enabled = bool_1;
+			ToolStripItem arg_1F0 = _saveChartMenuItem;
+			ToolStripItem arg190 = _rebuildSongMenuItem;
+			_deleteSongMenuItem.Enabled = false;
+			arg190.Enabled = false;
+			arg_1F0.Enabled = false;
+			ToolStripItem argB30 = _addMenuItem;
+			ToolStripItem argAc0 = _manageGameMenuItem;
+			ToolStripItem argA20 = _manageSongsMenuItem;
+			ToolStripItem arg980 = _executeActionsMenuItem;
+			ToolStripItem arg_8E0 = _clearActionsMenuItem;
+			ToolStripItem arg840 = _saveSghMenuItem;
+            ToolStripItem export = _exportSetlistAsChartsToolStripMenuItem;
+            ToolStripItem arg_7B0 = _saveTghMenuItem;
+			Control arg730 = _setlistStrip;
+			Control arg_6B0 = _setlistConfTLPanel;
+			_gh3FolderMenuItem.Enabled = bool1;
+			arg_6B0.Enabled = bool1;
+			arg730.Enabled = bool1;
+			arg_7B0.Enabled = bool1;
+			arg840.Enabled = bool1;
+			arg_8E0.Enabled = bool1;
+			arg980.Enabled = bool1;
+			argA20.Enabled = bool1;
+			argAc0.Enabled = bool1;
+			argB30.Enabled = bool1;
+            export.Enabled = bool1;
 		}
 
 		public void InitializeLanguageList()
 		{
-			var registryKey = Registry.LocalMachine.CreateSubKey(GhtcpRegistry);
+			var registryKey = Registry.LocalMachine.CreateSubKey(_ghtcpRegistry);
 			string[] array = {
 				"English",
 				"French",
@@ -3738,14 +3738,14 @@ namespace ns15
 			};
 			for (var i = 0; i < array.Length; i++)
 			{
-				registryKey.SetValue(array[i], LanguageList[i]);
+				registryKey.SetValue(array[i], _languageList[i]);
 			}
-			SysEnglish_MenuItem.Text = LanguageList[0];
-			SysFrench_MenuItem.Text = LanguageList[1];
-			SysItalian_MenuItem.Text = LanguageList[2];
-			SysSpanish_MenuItem.Text = LanguageList[3];
-			SysGerman_MenuItem.Text = LanguageList[4];
-			SysKorean_MenuItem.Text = LanguageList[5];
+			_sysEnglishMenuItem.Text = _languageList[0];
+			_sysFrenchMenuItem.Text = _languageList[1];
+			_sysItalianMenuItem.Text = _languageList[2];
+			_sysSpanishMenuItem.Text = _languageList[3];
+			_sysGermanMenuItem.Text = _languageList[4];
+			_sysKoreanMenuItem.Text = _languageList[5];
 		}
 
 		private void OpenGameSettings_MenuItem_Click(object sender, EventArgs e)
@@ -3758,46 +3758,46 @@ namespace ns15
 			LoadCurrentGameSettings(true);
 		}
 
-		private void LoadCurrentGameSettings(bool bool_1)
+		private void LoadCurrentGameSettings(bool bool1)
 		{
-			var loadGameSettings = new LoadGameSettings(LanguageList);
+			var loadGameSettings = new LoadGameSettings(_languageList);
 			if (loadGameSettings.ShowDialog() != DialogResult.OK)
 			{
 				return;
 			}
 			method_15();
-			LanguageList = loadGameSettings.method_2();
+			_languageList = loadGameSettings.method_2();
 			InitializeLanguageList();
 			try
 			{
-				var registryKey = Registry.LocalMachine.OpenSubKey(GameRegistry);
-				DataFolder = (string)registryKey.GetValue("Path") + "\\DATA\\";
-				if (!Directory.Exists(DataFolder))
+				var registryKey = Registry.LocalMachine.OpenSubKey(_gameRegistry);
+				_dataFolder = (string)registryKey.GetValue("Path") + "\\DATA\\";
+				if (!Directory.Exists(_dataFolder))
 				{
 					throw new Exception();
 				}
 			}
 			catch
 			{
-				var text = KeyGenerator.OpenOrSaveFile("Find Guitar Hero " + (IsAerosmith ? "Aerosmith" : "3"), IsAerosmith ? "Guitar Hero Aerosmith Executable|Guitar Hero Aerosmith.exe" : "Guitar Hero 3 Executable|GH3.exe", true);
+				var text = KeyGenerator.OpenOrSaveFile("Find Guitar Hero " + (_isAerosmith ? "Aerosmith" : "3"), _isAerosmith ? "Guitar Hero Aerosmith Executable|Guitar Hero Aerosmith.exe" : "Guitar Hero 3 Executable|GH3.exe", true);
 				if (string.IsNullOrEmpty(text))
 				{
 					return;
 				}
 				try
 				{
-					DataFolder = new FileInfo(text).Directory.FullName;
-					var registryKey = Registry.LocalMachine.CreateSubKey(GameRegistry);
-					registryKey.SetValue("Path", DataFolder);
-					DataFolder += "\\DATA\\";
+					_dataFolder = new FileInfo(text).Directory.FullName;
+					var registryKey = Registry.LocalMachine.CreateSubKey(_gameRegistry);
+					registryKey.SetValue("Path", _dataFolder);
+					_dataFolder += "\\DATA\\";
 				}
 				catch
 				{
-					MessageBox.Show("Guitar Hero " + (IsAerosmith ? "Aerosmith" : "3") + " is not installed properly on this computer.", "Error!");
+					MessageBox.Show("Guitar Hero " + (_isAerosmith ? "Aerosmith" : "3") + " is not installed properly on this computer.", "Error!");
 					return;
 				}
 			}
-			var text2 = list_0[loadGameSettings.method_3()];
+			var text2 = _list0[loadGameSettings.method_3()];
 			var int_ = loadGameSettings.method_3();
 			using (new Class217("QB Parse Operations"))
 			{
@@ -3807,28 +3807,28 @@ namespace ns15
 					{
 						return;
 					}
-					var class2 = new zzPabNode(string.Concat(AppDirectory, BackupName, "originals\\qb", text2, ".pak.xen"), string.Concat(AppDirectory, BackupName, "originals\\qb", text2, ".pab.xen"), false);
-					GH3Songlist gH3Songlist = null;
-					using (class319_0 = new zzPabNode(DataFolder + "PAK\\qb" + text2 + ".pak.xen", DataFolder + "PAK\\qb" + text2 + ".pab.xen", false))
+					var class2 = new ZzPabNode(string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pak.xen"), string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pab.xen"), false);
+					Gh3Songlist gH3Songlist = null;
+					using (Class3190 = new ZzPabNode(_dataFolder + "PAK\\qb" + text2 + ".pak.xen", _dataFolder + "PAK\\qb" + text2 + ".pab.xen", false))
 					{
 						if (method_19(int_).GameSettingsAreValid())
 						{
-							if (!bool_1)
+							if (!bool1)
 							{
 								goto IL_478;
 							}
 						}
 						try
 						{
-							gH3Songlist = new GH3Songlist(class319_0.zzGetNode1("scripts\\guitar\\songlist.qb"), new GH3Songlist(class2.zzGetNode1("scripts\\guitar\\songlist.qb"), null));
-							new zzSetListParser(class319_0, gH3Songlist, IsAerosmith).method_0();
+							gH3Songlist = new Gh3Songlist(Class3190.ZzGetNode1("scripts\\guitar\\songlist.qb"), new Gh3Songlist(class2.ZzGetNode1("scripts\\guitar\\songlist.qb"), null));
+							new ZzSetListParser(Class3190, gH3Songlist, _isAerosmith).method_0();
 						}
 						catch (Exception ex)
 						{
 							Console.WriteLine(ex.ToString());
 						}
-						class319_0.Dispose();
-						class319_0 = null;
+						Class3190.Dispose();
+						Class3190 = null;
 						if (gH3Songlist != null)
 						{
 							var dialogResult = MessageBox.Show("Game Settings files are not compatible, but something can be recovered. Do you wish to recover when starting from backup? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNoCancel);
@@ -3849,44 +3849,44 @@ namespace ns15
 						{
 							return;
 						}
-						KeyGenerator.smethod_19(DataFolder + "PAK\\qb" + text2 + ".pab.xen", string.Concat(AppDirectory, BackupName, "lastedited\\qb", text2, ".pab.xen"), true);
-						KeyGenerator.smethod_19(DataFolder + "PAK\\qb" + text2 + ".pak.xen", string.Concat(AppDirectory, BackupName, "lastedited\\qb", text2, ".pak.xen"), true);
-						KeyGenerator.smethod_19(string.Concat(AppDirectory, BackupName, "originals\\qb", text2, ".pab.xen"), DataFolder + "PAK\\qb" + text2 + ".pab.xen", true);
-						KeyGenerator.smethod_19(string.Concat(AppDirectory, BackupName, "originals\\qb", text2, ".pak.xen"), DataFolder + "PAK\\qb" + text2 + ".pak.xen", true);
+						KeyGenerator.smethod_19(_dataFolder + "PAK\\qb" + text2 + ".pab.xen", string.Concat(_appDirectory, _backupName, "lastedited\\qb", text2, ".pab.xen"), true);
+						KeyGenerator.smethod_19(_dataFolder + "PAK\\qb" + text2 + ".pak.xen", string.Concat(_appDirectory, _backupName, "lastedited\\qb", text2, ".pak.xen"), true);
+						KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pab.xen"), _dataFolder + "PAK\\qb" + text2 + ".pab.xen", true);
+						KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pak.xen"), _dataFolder + "PAK\\qb" + text2 + ".pak.xen", true);
 						IL_478:;
 					}
-					class319_0 = new zzPabNode(DataFolder + "PAK\\qb" + text2 + ".pak.xen", DataFolder + "PAK\\qb" + text2 + ".pab.xen", false);
+					Class3190 = new ZzPabNode(_dataFolder + "PAK\\qb" + text2 + ".pak.xen", _dataFolder + "PAK\\qb" + text2 + ".pab.xen", false);
 					method_20(int_);
-					gh3Songlist = new GH3Songlist(class319_0.zzGetNode1("scripts\\guitar\\songlist.qb"), new GH3Songlist(class2.zzGetNode1("scripts\\guitar\\songlist.qb"), null));
+					_gh3Songlist = new Gh3Songlist(Class3190.ZzGetNode1("scripts\\guitar\\songlist.qb"), new Gh3Songlist(class2.ZzGetNode1("scripts\\guitar\\songlist.qb"), null));
 					class2.Dispose();
 					var flag = false;
 					if (gH3Songlist != null)
 					{
 						foreach (var current in gH3Songlist.Keys)
 						{
-							if (!gh3Songlist.method_3(current))
+							if (!_gh3Songlist.method_3(current))
 							{
-								gh3Songlist.Add(gH3Songlist[current]);
+								_gh3Songlist.Add(gH3Songlist[current]);
 								flag = true;
 							}
 						}
 					}
 					if (flag)
 					{
-						method_4(new Class247(class319_0, gh3Songlist));
+						method_4(new Class247(Class3190, _gh3Songlist));
 					}
-					new CustomMenuCreator(class319_0, IsAerosmith).method_0();
-					new zzSetListParser(class319_0, gh3Songlist, IsAerosmith).method_0();
-					if (flag && gH3Songlist.gh3SetlistList.Count != 0)
+					new CustomMenuCreator(Class3190, _isAerosmith).method_0();
+					new ZzSetListParser(Class3190, _gh3Songlist, _isAerosmith).method_0();
+					if (flag && gH3Songlist.Gh3SetlistList.Count != 0)
 					{
 						var flag2 = false;
-						using (var enumerator2 = gH3Songlist.gh3SetlistList.Keys.GetEnumerator())
+						using (var enumerator2 = gH3Songlist.Gh3SetlistList.Keys.GetEnumerator())
 						{
 							IL_78C:
 							while (enumerator2.MoveNext())
 							{
 								var current2 = enumerator2.Current;
-								var gH3Setlist = gH3Songlist.gh3SetlistList[current2];
+								var gH3Setlist = gH3Songlist.Gh3SetlistList[current2];
 								if (gH3Setlist.method_4())
 								{
 									try
@@ -3898,18 +3898,18 @@ namespace ns15
 										for (var i = 0; ; )
 										{
 											var num = 1 << i;
-                                            if (!((gh3Songlist.CustomBitMask & num) == 0))
+                                            if (!((_gh3Songlist.CustomBitMask & num) == 0))
                                                 goto SKIPIT;
 
-												gh3Songlist.CustomBitMask |= (gH3Setlist.CustomBit = num);
+												_gh3Songlist.CustomBitMask |= (gH3Setlist.CustomBit = num);
 												IL_666:
-												gH3Setlist.prefix = "custom" + (i + 1);
+												gH3Setlist.Prefix = "custom" + (i + 1);
 												int num2;
-												gh3Songlist.gh3SetlistList.Add(num2 = QbSongClass1.AddKeyToDictionary("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
+												_gh3Songlist.Gh3SetlistList.Add(num2 = QbSongClass1.AddKeyToDictionary("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
 												int value;
-												gh3Songlist.dictionary_1.Add(value = QbSongClass1.AddKeyToDictionary("custom" + (i + 1) + "_progression"), new GHLink(num2));
-												gh3Songlist.class214_0.Add("Custom Setlist " + (i + 1), value);
-												method_4(new Class246(value, class319_0, gh3Songlist, true));
+												_gh3Songlist.Dictionary1.Add(value = QbSongClass1.AddKeyToDictionary("custom" + (i + 1) + "_progression"), new GhLink(num2));
+												_gh3Songlist.Class2140.Add("Custom Setlist " + (i + 1), value);
+												method_4(new Class246(value, Class3190, _gh3Songlist, true));
 												flag2 = true;
 												goto IL_78C;
 
@@ -3929,46 +3929,46 @@ namespace ns15
 								}
 								if (gH3Setlist.method_2() == "scripts\\guitar\\guitar_download.qb")
 								{
-									gh3Songlist.gh3SetlistList[current2].method_0().AddRange(gH3Setlist.method_0());
-									method_4(new zzSetListUpdater(current2, class319_0, gh3Songlist));
+									_gh3Songlist.Gh3SetlistList[current2].method_0().AddRange(gH3Setlist.method_0());
+									method_4(new ZzSetListUpdater(current2, Class3190, _gh3Songlist));
 								}
 							}
 						}
 						if (flag2)
 						{
-							method_4(new UpdateSetlistSwitcher(class319_0, gh3Songlist, IsAerosmith));
+							method_4(new UpdateSetlistSwitcher(Class3190, _gh3Songlist, _isAerosmith));
 						}
 					}
-					new Class249(class319_0).method_0();
-					new QbDatabaseInitialModifier(class319_0, IsAerosmith).method_0();
+					new Class249(Class3190).method_0();
+					new QbDatabaseInitialModifier(Class3190, _isAerosmith).method_0();
 					method_0();
 				}
 				catch (Exception ex3)
 				{
-					if (class319_0 != null)
+					if (Class3190 != null)
 					{
-						class319_0.Dispose();
-						class319_0 = null;
+						Class3190.Dispose();
+						Class3190 = null;
 					}
 					Console.WriteLine(ex3.Message);
 					if (DialogResult.Yes == MessageBox.Show("Game Settings files are corrupt. Do you wish to start from backup? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNo) && method_16(int_))
 					{
-						KeyGenerator.smethod_19(string.Concat(AppDirectory, BackupName, "originals\\qb", text2, ".pab.xen"), DataFolder + "PAK\\qb" + text2 + ".pab.xen", true);
-						KeyGenerator.smethod_19(string.Concat(AppDirectory, BackupName, "originals\\qb", text2, ".pak.xen"), DataFolder + "PAK\\qb" + text2 + ".pak.xen", true);
+						KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pab.xen"), _dataFolder + "PAK\\qb" + text2 + ".pab.xen", true);
+						KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pak.xen"), _dataFolder + "PAK\\qb" + text2 + ".pak.xen", true);
 					}
 					return;
 				}
 			}
-			foreach (var current3 in gh3Songlist.class214_0.Keys)
+			foreach (var current3 in _gh3Songlist.Class2140.Keys)
 			{
-				Setlist_DropBox.Items.Add(current3);
+				_setlistDropBox.Items.Add(current3);
 			}
 			method_12(true);
-			if (Setlist_DropBox.Items.Count != 0)
+			if (_setlistDropBox.Items.Count != 0)
 			{
-				Setlist_DropBox.SelectedIndex = 0;
+				_setlistDropBox.SelectedIndex = 0;
 			}
-			TabControl.SelectedIndex = 1;
+			_tabControl.SelectedIndex = 1;
 		}
 
 		private void ClearGameSettings_MenuItem_Click(object sender, EventArgs e)
@@ -3982,51 +3982,51 @@ namespace ns15
 		private void method_15()
 		{
 			method_12(false);
-			if (gh3Songlist != null)
+			if (_gh3Songlist != null)
 			{
-				gh3Songlist.Clear();
-				gh3Songlist.gh3SetlistList.Clear();
+				_gh3Songlist.Clear();
+				_gh3Songlist.Gh3SetlistList.Clear();
 			}
-			gh3Songlist = null;
-			SongListBox.Items.Clear();
-			Setlist_DropBox.Items.Clear();
-			ActionRequests_ListBox.Items.Clear();
+			_gh3Songlist = null;
+			_songListBox.Items.Clear();
+			_setlistDropBox.Items.Clear();
+			_actionRequestsListBox.Items.Clear();
             //this.notifyIcon_0.Visible = false;
 			method_23();
-			if (!Directory.Exists(AppDirectory + "log"))
+			if (!Directory.Exists(_appDirectory + "log"))
 			{
-				Directory.CreateDirectory(AppDirectory + "log");
+				Directory.CreateDirectory(_appDirectory + "log");
 			}
-			Class216.smethod_0(AppDirectory + "log\\");
+			Class216.smethod_0(_appDirectory + "log\\");
 			Class216.smethod_2();
-			if (class319_0 != null)
+			if (Class3190 != null)
 			{
-				class319_0.Dispose();
+				Class3190.Dispose();
 			}
-			class319_0 = null;
+			Class3190 = null;
 			GC.Collect();
 		}
 
-		private bool method_16(int int_3)
+		private bool method_16(int int3)
 		{
-			var text = string.Concat(AppDirectory, BackupName, "originals\\qb", list_0[int_3], ".pab.xen");
-			var icollection_ = IsAerosmith ? int_2[int_3] : int_1[int_3];
-			return File.Exists(text) && File.Exists(text.Replace(".pab.xen", ".pak.xen")) && KeyGenerator.smethod_53(KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection_);
+			var text = string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[int3], ".pab.xen");
+			var icollection = _isAerosmith ? _int2[int3] : _int1[int3];
+			return File.Exists(text) && File.Exists(text.Replace(".pab.xen", ".pak.xen")) && KeyGenerator.smethod_53(KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection);
 		}
 
-		private bool method_17(int int_3)
+		private bool method_17(int int3)
 		{
-			var text = DataFolder + "PAK\\qb" + list_0[int_3] + ".pab.xen";
-			var icollection_ = IsAerosmith ? int_2[int_3] : int_1[int_3];
-			while (!File.Exists(text) || !File.Exists(text.Replace(".pab.xen", ".pak.xen")) || !KeyGenerator.smethod_53(KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection_))
+			var text = _dataFolder + "PAK\\qb" + _list0[int3] + ".pab.xen";
+			var icollection = _isAerosmith ? _int2[int3] : _int1[int3];
+			while (!File.Exists(text) || !File.Exists(text.Replace(".pab.xen", ".pak.xen")) || !KeyGenerator.smethod_53(KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection))
 			{
-				if ((text = KeyGenerator.OpenOrSaveFile("Find The Original V1.3 Game Settings.", "Original V1.3 Game Settings|qb" + list_0[int_3] + ".pab.xen", true)).Equals(""))
+				if ((text = KeyGenerator.OpenOrSaveFile("Find The Original V1.3 Game Settings.", "Original V1.3 Game Settings|qb" + _list0[int3] + ".pab.xen", true)).Equals(""))
 				{
 					return false;
 				}
 			}
-			KeyGenerator.smethod_19(text, string.Concat(AppDirectory, BackupName, "originals\\qb", list_0[int_3], ".pab.xen"), true);
-			KeyGenerator.smethod_19(text.Replace(".pab.xen", ".pak.xen"), string.Concat(AppDirectory, BackupName, "originals\\qb", list_0[int_3], ".pak.xen"), true);
+			KeyGenerator.smethod_19(text, string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[int3], ".pab.xen"), true);
+			KeyGenerator.smethod_19(text.Replace(".pab.xen", ".pak.xen"), string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[int3], ".pak.xen"), true);
 			return true;
 		}
 
@@ -4035,8 +4035,8 @@ namespace ns15
 			bool result;
 			try
 			{
-				GameSettingsChecker.SignHash(class319_0);
-				class319_0.vmethod_1();
+				GameSettingsChecker.SignHash(Class3190);
+				Class3190.vmethod_1();
 				GC.Collect();
 				result = true;
 			}
@@ -4048,16 +4048,16 @@ namespace ns15
 			return result;
 		}
 
-		private GameSettingsChecker method_19(int int_3)
+		private GameSettingsChecker method_19(int int3)
 		{
-			if (File.Exists(class319_0.string_0) && File.Exists(class319_0.string_2) && KeyGenerator.smethod_53(KeyGenerator.smethod_21(KeyGenerator.HashStream(class319_0.string_2)), IsAerosmith ? int_2[int_3] : int_1[int_3]))
+			if (File.Exists(Class3190.String0) && File.Exists(Class3190.String2) && KeyGenerator.smethod_53(KeyGenerator.smethod_21(KeyGenerator.HashStream(Class3190.String2)), _isAerosmith ? _int2[int3] : _int1[int3]))
 			{
 				return new GameSettingsChecker(true);
 			}
 			GameSettingsChecker result;
 			try
 			{
-				result = new GameSettingsChecker(class319_0);
+				result = new GameSettingsChecker(Class3190);
 			}
 			catch
 			{
@@ -4066,7 +4066,7 @@ namespace ns15
 			return result;
 		}
 
-		private void method_20(int int_3)
+		private void method_20(int int3)
 		{
 		}
 
@@ -4076,13 +4076,13 @@ namespace ns15
 			{
 				return;
 			}
-			var text = KeyGenerator.GetFileNameNoExt(class319_0.string_0);
-			var int_ = new List<string>(list_0).IndexOf(text.Replace("qb", ""));
+			var text = KeyGenerator.GetFileNameNoExt(Class3190.String0);
+			var int_ = new List<string>(_list0).IndexOf(text.Replace("qb", ""));
 			if (method_16(int_))
 			{
 				method_15();
-				KeyGenerator.smethod_19(string.Concat(AppDirectory, BackupName, "originals\\", text, ".pak.xen"), DataFolder + "PAK\\" + text + ".pak.xen", true);
-				KeyGenerator.smethod_19(string.Concat(AppDirectory, BackupName, "originals\\", text, ".pab.xen"), DataFolder + "PAK\\" + text + ".pab.xen", true);
+				KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\", text, ".pak.xen"), _dataFolder + "PAK\\" + text + ".pak.xen", true);
+				KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\", text, ".pab.xen"), _dataFolder + "PAK\\" + text + ".pab.xen", true);
 				return;
 			}
 			method_17(int_);
@@ -4094,12 +4094,12 @@ namespace ns15
 			{
 				return;
 			}
-			var text = KeyGenerator.GetFileNameNoExt(class319_0.string_0);
-			if (File.Exists(string.Concat(AppDirectory, BackupName, "lastedited\\", text, ".pak.xen")) && File.Exists(string.Concat(AppDirectory, BackupName, "lastedited\\", text, ".pab.xen")))
+			var text = KeyGenerator.GetFileNameNoExt(Class3190.String0);
+			if (File.Exists(string.Concat(_appDirectory, _backupName, "lastedited\\", text, ".pak.xen")) && File.Exists(string.Concat(_appDirectory, _backupName, "lastedited\\", text, ".pab.xen")))
 			{
 				method_15();
-				KeyGenerator.smethod_19(string.Concat(AppDirectory, BackupName, "lastedited\\", text, ".pak.xen"), DataFolder + "PAK\\" + text + ".pak.xen", true);
-				KeyGenerator.smethod_19(string.Concat(AppDirectory, BackupName, "lastedited\\", text, ".pab.xen"), DataFolder + "PAK\\" + text + ".pab.xen", true);
+				KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "lastedited\\", text, ".pak.xen"), _dataFolder + "PAK\\" + text + ".pak.xen", true);
+				KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "lastedited\\", text, ".pab.xen"), _dataFolder + "PAK\\" + text + ".pab.xen", true);
 				return;
 			}
 			MessageBox.Show("Last Game Settings were never backuped.", "Error!");
@@ -4125,133 +4125,133 @@ namespace ns15
 				return;
 			}
 			var num = loadGameSettings.method_3();
-			var text = KeyGenerator.GetFileNameNoExt(class319_0.string_0);
+			var text = KeyGenerator.GetFileNameNoExt(Class3190.String0);
 			if (!method_16(num) && DialogResult.Yes == MessageBox.Show("A proper backup doesn't exist. Do you wish to start backup creation? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNo) && !method_17(num))
 			{
 				return;
 			}
-			new List<string>(list_0).IndexOf(text.Replace("qb", ""));
+			new List<string>(_list0).IndexOf(text.Replace("qb", ""));
 			method_15();
-			using (var @class = new zzPabNode(string.Concat(AppDirectory, BackupName, "originals\\qb", list_0[num], ".pak.xen"), string.Concat(AppDirectory, BackupName, "originals\\qb", list_0[num], ".pab.xen"), false))
+			using (var @class = new ZzPabNode(string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[num], ".pak.xen"), string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[num], ".pab.xen"), false))
 			{
 				GameSettingsChecker.SignHash(@class);
-				@class.method_20(DataFolder + "PAK\\" + text + ".pak.xen", DataFolder + "PAK\\" + text + ".pab.xen");
+				@class.method_20(_dataFolder + "PAK\\" + text + ".pak.xen", _dataFolder + "PAK\\" + text + ".pab.xen");
 			}
 			GC.Collect();
 		}
 
 		private void method_21(object sender, EventArgs2 e)
 		{
-			TierApply_Btn.Enabled = true;
+			_tierApplyBtn.Enabled = true;
 		}
 
         private void TierSongs_ListBox_DragDrop(object sender, DragEventArgs e) {
-            TierApply_Btn.Enabled = true;
+            _tierApplyBtn.Enabled = true;
         }
 
         private void TierSongs_ListBox_MouseDown(object sender, MouseEventArgs e)
 		{
-            var num = TierSongs_ListBox.IndexFromPoint(e.Location);
-			if (num >= 0 && num < TierSongs_ListBox.Items.Count && e.Clicks == 2 && e.Button == MouseButtons.Right)
+            var num = _tierSongsListBox.IndexFromPoint(e.Location);
+			if (num >= 0 && num < _tierSongsListBox.Items.Count && e.Clicks == 2 && e.Button == MouseButtons.Right)
 			{
-				TierSongs_ListBox.Items.RemoveAt(num);
-				TierApply_Btn.Enabled = true;
+				_tierSongsListBox.Items.RemoveAt(num);
+				_tierApplyBtn.Enabled = true;
 			}
 		}
 
 		private void TierSongs_ListBox_KeyDown(object sender, KeyEventArgs e)
 		{
-			if (e.KeyCode == Keys.Delete && SongListBox.SelectedItems.Count != 0 && DialogResult.Yes == MessageBox.Show("The selected songs will be deleted from the Tier!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
+			if (e.KeyCode == Keys.Delete && _songListBox.SelectedItems.Count != 0 && DialogResult.Yes == MessageBox.Show("The selected songs will be deleted from the Tier!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
 			{
-				TierSongs_ListBox.method_3();
-				TierApply_Btn.Enabled = true;
+				_tierSongsListBox.method_3();
+				_tierApplyBtn.Enabled = true;
 			}
 		}
 
-		private void method_22(GH3Tier gh3Tier_0)
+		private void method_22(Gh3Tier gh3Tier0)
 		{
-			Tier_TLPanel.Enabled = true;
-			TierTitle_TxtBox.Text = gh3Tier_0.title;
-			TierUnlocked_NumBox.Value = gh3Tier_0.defaultunlocked;
-			TierCompMovie_TxtBox.Text = gh3Tier_0.completion_movie;
-			TierIcon_DropBox.SelectedItem = gh3Tier_0.setlist_icon;
-			TierStage_DropBox.SelectedItem = gh3Tier_0.level;
-			TierEncorep1_CheckBox.Checked = gh3Tier_0.encorep1;
-			TierEncorep2_CheckBox.Checked = (gh3Tier_0.encorep2 || gh3Tier_0.aerosmith_encore_p1);
-			TierBoss_CheckBox.Checked = gh3Tier_0.boss;
-			NoCash_CheckBox.Checked = gh3Tier_0.nocash;
-			UnlockAll_CheckBox.Checked = gh3Tier_0.unlockall;
-			TierSongs_ListBox.Items.Clear();
-			TierSongs_ListBox.Items.AddRange(gh3Tier_0.songs.ToArray());
-			TierApply_Btn.Enabled = false;
+			_tierTLPanel.Enabled = true;
+			_tierTitleTxtBox.Text = gh3Tier0.Title;
+			_tierUnlockedNumBox.Value = gh3Tier0.Defaultunlocked;
+			_tierCompMovieTxtBox.Text = gh3Tier0.CompletionMovie;
+			_tierIconDropBox.SelectedItem = gh3Tier0.SetlistIcon;
+			_tierStageDropBox.SelectedItem = gh3Tier0.Level;
+			_tierEncorep1CheckBox.Checked = gh3Tier0.Encorep1;
+			_tierEncorep2CheckBox.Checked = (gh3Tier0.Encorep2 || gh3Tier0.AerosmithEncoreP1);
+			_tierBossCheckBox.Checked = gh3Tier0.Boss;
+			_noCashCheckBox.Checked = gh3Tier0.Nocash;
+			_unlockAllCheckBox.Checked = gh3Tier0.Unlockall;
+			_tierSongsListBox.Items.Clear();
+			_tierSongsListBox.Items.AddRange(gh3Tier0.Songs.ToArray());
+			_tierApplyBtn.Enabled = false;
 		}
 
 		private void method_23()
 		{
-			TierBox.SelectedIndex = -1;
-			Tier_TLPanel.Enabled = false;
-			TierTitle_TxtBox.Text = "";
-			TierUnlocked_NumBox.Value = 0m;
-			TierCompMovie_TxtBox.Text = "";
-			TierIcon_DropBox.SelectedIndex = -1;
-			TierStage_DropBox.SelectedIndex = -1;
-			TierEncorep1_CheckBox.Checked = false;
-			TierEncorep2_CheckBox.Checked = false;
-			TierBoss_CheckBox.Checked = false;
-			NoCash_CheckBox.Checked = false;
-			UnlockAll_CheckBox.Checked = false;
-			TierSongs_ListBox.Items.Clear();
-			TierApply_Btn.Enabled = false;
+			_tierBox.SelectedIndex = -1;
+			_tierTLPanel.Enabled = false;
+			_tierTitleTxtBox.Text = "";
+			_tierUnlockedNumBox.Value = 0m;
+			_tierCompMovieTxtBox.Text = "";
+			_tierIconDropBox.SelectedIndex = -1;
+			_tierStageDropBox.SelectedIndex = -1;
+			_tierEncorep1CheckBox.Checked = false;
+			_tierEncorep2CheckBox.Checked = false;
+			_tierBossCheckBox.Checked = false;
+			_noCashCheckBox.Checked = false;
+			_unlockAllCheckBox.Checked = false;
+			_tierSongsListBox.Items.Clear();
+			_tierApplyBtn.Enabled = false;
 		}
 
 		private void TierBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (TierBox.SelectedIndex >= 0)
+			if (_tierBox.SelectedIndex >= 0)
 			{
-				method_22((GH3Tier)TierBox.Items[TierBox.SelectedIndex]);
+				method_22((Gh3Tier)_tierBox.Items[_tierBox.SelectedIndex]);
 			}
 		}
 
 		private void TierEncorep1_CheckBox_CheckedChanged(object sender, EventArgs e)
 		{
-			TierApply_Btn.Enabled = true;
+			_tierApplyBtn.Enabled = true;
 		}
 
 		private void TierUnlockedSet_Btn_Click(object sender, EventArgs e)
 		{
-			TierUnlocked_NumBox.Value = TierSongs_ListBox.Items.Count;
+			_tierUnlockedNumBox.Value = _tierSongsListBox.Items.Count;
 		}
 
 		private void TierApply_Btn_Click(object sender, EventArgs e)
 		{
-			var gH3Tier = (GH3Tier)TierBox.Items[TierBox.SelectedIndex];
-			gH3Tier.title = TierTitle_TxtBox.Text;
-			gH3Tier.defaultunlocked = Convert.ToInt32(TierUnlocked_NumBox.Value);
-			gH3Tier.completion_movie = TierCompMovie_TxtBox.Text;
-			gH3Tier.setlist_icon = (string)TierIcon_DropBox.SelectedItem;
-			gH3Tier.level = (string)TierStage_DropBox.SelectedItem;
-			gH3Tier.boss = TierBoss_CheckBox.Checked;
-			gH3Tier.nocash = NoCash_CheckBox.Checked;
-			gH3Tier.unlockall = UnlockAll_CheckBox.Checked;
-			gH3Tier.encorep1 = TierEncorep1_CheckBox.Checked;
-			if (IsAerosmith)
+			var gH3Tier = (Gh3Tier)_tierBox.Items[_tierBox.SelectedIndex];
+			gH3Tier.Title = _tierTitleTxtBox.Text;
+			gH3Tier.Defaultunlocked = Convert.ToInt32(_tierUnlockedNumBox.Value);
+			gH3Tier.CompletionMovie = _tierCompMovieTxtBox.Text;
+			gH3Tier.SetlistIcon = (string)_tierIconDropBox.SelectedItem;
+			gH3Tier.Level = (string)_tierStageDropBox.SelectedItem;
+			gH3Tier.Boss = _tierBossCheckBox.Checked;
+			gH3Tier.Nocash = _noCashCheckBox.Checked;
+			gH3Tier.Unlockall = _unlockAllCheckBox.Checked;
+			gH3Tier.Encorep1 = _tierEncorep1CheckBox.Checked;
+			if (_isAerosmith)
 			{
-				gH3Tier.aerosmith_encore_p1 = TierEncorep2_CheckBox.Checked;
+				gH3Tier.AerosmithEncoreP1 = _tierEncorep2CheckBox.Checked;
 			}
 			else
 			{
-				gH3Tier.encorep2 = TierEncorep2_CheckBox.Checked;
+				gH3Tier.Encorep2 = _tierEncorep2CheckBox.Checked;
 			}
-			gH3Tier.songs.Clear();
-			foreach (GH3Song item in TierSongs_ListBox.Items)
+			gH3Tier.Songs.Clear();
+			foreach (Gh3Song item in _tierSongsListBox.Items)
 			{
-				gH3Tier.songs.Add(item);
+				gH3Tier.Songs.Add(item);
 			}
-			TierApply_Btn.Enabled = false;
-			method_4(new zzSetListUpdater(SelectedSetlist, class319_0, gh3Songlist));
-			if (HideUsed_MenuItem.Checked)
+			_tierApplyBtn.Enabled = false;
+			method_4(new ZzSetListUpdater(_selectedSetlist, Class3190, _gh3Songlist));
+			if (_hideUsedMenuItem.Checked)
 			{
-				gh3Songlist.HideUsed = true;
+				_gh3Songlist.HideUsed = true;
 				method_0();
 			}
 		}

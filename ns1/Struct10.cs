@@ -4,14 +4,14 @@ namespace ns1
 {
 	public struct Struct10 : IComparable, ICloneable
 	{
-		public float float_0;
+		public float Float0;
 
-		public float float_1;
+		public float Float1;
 
-		public Struct10(Struct10 struct10_0)
+		public Struct10(Struct10 struct100)
 		{
-			float_0 = struct10_0.float_0;
-			float_1 = struct10_0.float_1;
+			Float0 = struct100.Float0;
+			Float1 = struct100.Float1;
 		}
 
 		object ICloneable.Clone()
@@ -21,27 +21,27 @@ namespace ns1
 
 		public float method_0()
 		{
-			var num = float_0;
-			var num2 = float_1;
+			var num = Float0;
+			var num2 = Float1;
 			return (float)Math.Sqrt(num * num + num2 * num2);
 		}
 
-		public static bool smethod_0(Struct10 struct10_0, Struct10 struct10_1)
+		public static bool smethod_0(Struct10 struct100, Struct10 struct101)
 		{
-			return struct10_0.float_0 == struct10_1.float_0 && struct10_0.float_1 == struct10_1.float_1;
+			return struct100.Float0 == struct101.Float0 && struct100.Float1 == struct101.Float1;
 		}
 
 		public override int GetHashCode()
 		{
-			return float_0.GetHashCode() ^ float_1.GetHashCode();
+			return Float0.GetHashCode() ^ Float1.GetHashCode();
 		}
 
 		public override bool Equals(object obj)
 		{
 			if (obj is Struct10)
 			{
-				var struct10_ = (Struct10)obj;
-				return smethod_0(this, struct10_);
+				var struct10 = (Struct10)obj;
+				return smethod_0(this, struct10);
 			}
 			return false;
 		}
@@ -73,7 +73,7 @@ namespace ns1
 
 		public override string ToString()
 		{
-			return string.Format("( {0}, {1}i )", float_0, float_1);
+			return string.Format("( {0}, {1}i )", Float0, Float1);
 		}
 	}
 }

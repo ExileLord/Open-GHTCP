@@ -5,46 +5,46 @@ using ns21;
 namespace GuitarHero
 {
 	[Serializable]
-	public class GHLink
+	public class GhLink
 	{
-		public string path;
+		public string Path;
 
-		public int setlist;
+		public int Setlist;
 
-		public int progression;
+		public int Progression;
 
-		public GHLink(int int_0) : this(int_0, -2140143824)
+		public GhLink(int int0) : this(int0, -2140143824)
 		{
 		}
 
-		public GHLink(int int_0, int int_1) : this("scripts\\guitar\\custom_menu\\guitar_custom_progression.qb", int_0, int_1)
+		public GhLink(int int0, int int1) : this("scripts\\guitar\\custom_menu\\guitar_custom_progression.qb", int0, int1)
 		{
 		}
 
-		public GHLink(string string_0, int int_0, int int_1)
+		public GhLink(string string0, int int0, int int1)
 		{
-			path = string_0;
-			setlist = int_0;
-			progression = int_1;
+			Path = string0;
+			Setlist = int0;
+			Progression = int1;
 		}
 
-		public GHLink(string string_0, StructureHeaderNode class286_0)
+		public GhLink(string string0, StructureHeaderNode class2860)
 		{
-			path = string_0;
-			method_0(class286_0);
+			Path = string0;
+			method_0(class2860);
 		}
 
-		public void method_0(StructureHeaderNode class286_0)
+		public void method_0(StructureHeaderNode class2860)
 		{
-			setlist = class286_0.method_5(new TagStructureNode("tier_global")).method_10();
-			progression = class286_0.method_5(new TagStructureNode("progression_global")).method_10();
+			Setlist = class2860.method_5(new TagStructureNode("tier_global")).method_10();
+			Progression = class2860.method_5(new TagStructureNode("progression_global")).method_10();
 		}
 
 		public StructureHeaderNode method_1()
 		{
 			var @class = new StructureHeaderNode();
-			@class.method_3(new TagStructureNode("tier_global", setlist));
-			@class.method_3(new TagStructureNode("progression_global", progression));
+			@class.method_3(new TagStructureNode("tier_global", Setlist));
+			@class.method_3(new TagStructureNode("progression_global", Progression));
 			return @class;
 		}
 	}

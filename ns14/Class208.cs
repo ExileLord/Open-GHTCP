@@ -6,7 +6,7 @@ namespace ns14
 {
 	public class Class208 : Class207
 	{
-		private byte[] byte_0;
+		private byte[] _byte0;
 
 		public override int BlockSize
 		{
@@ -27,11 +27,11 @@ namespace ns14
 		{
 			get
 			{
-				if (byte_0 == null)
+				if (_byte0 == null)
 				{
 					GenerateKey();
 				}
-				return (byte[])byte_0.Clone();
+				return (byte[])_byte0.Clone();
 			}
 			set
 			{
@@ -43,7 +43,7 @@ namespace ns14
 				{
 					throw new CryptographicException("Key size is illegal");
 				}
-				byte_0 = (byte[])value.Clone();
+				_byte0 = (byte[])value.Clone();
 			}
 		}
 
@@ -75,20 +75,20 @@ namespace ns14
 
 		public override void GenerateKey()
 		{
-			byte_0 = new byte[12];
+			_byte0 = new byte[12];
 			var random = new Random();
-			random.NextBytes(byte_0);
+			random.NextBytes(_byte0);
 		}
 
-		public override ICryptoTransform CreateEncryptor(byte[] rgbKey, byte[] rgbIV)
+		public override ICryptoTransform CreateEncryptor(byte[] rgbKey, byte[] rgbIv)
 		{
-			byte_0 = rgbKey;
+			_byte0 = rgbKey;
 			return new Class210(Key);
 		}
 
-		public override ICryptoTransform CreateDecryptor(byte[] rgbKey, byte[] rgbIV)
+		public override ICryptoTransform CreateDecryptor(byte[] rgbKey, byte[] rgbIv)
 		{
-			byte_0 = rgbKey;
+			_byte0 = rgbKey;
 			return new Class211(Key);
 		}
 	}

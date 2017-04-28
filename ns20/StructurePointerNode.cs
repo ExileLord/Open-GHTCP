@@ -3,31 +3,31 @@ using ns21;
 
 namespace ns20
 {
-	public class StructurePointerNode : zzUnkNode300
+	public class StructurePointerNode : ZzUnkNode300
 	{
 		public StructurePointerNode()
 		{
 			vmethod_0();
 		}
 
-		public StructurePointerNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
+		public StructurePointerNode(string string0) : this(QbSongClass1.AddKeyToDictionary(string0))
 		{
 		}
 
-		public StructurePointerNode(int int_1)
+		public StructurePointerNode(int int1)
 		{
-			int_0 = int_1;
+			Int0 = int1;
 			vmethod_0();
 		}
 
-		public StructurePointerNode(string string_0, StructureHeaderNode class286_0) : this(QbSongClass1.AddKeyToDictionary(string_0), class286_0)
+		public StructurePointerNode(string string0, StructureHeaderNode class2860) : this(QbSongClass1.AddKeyToDictionary(string0), class2860)
 		{
 		}
 
-		public StructurePointerNode(int int_1, StructureHeaderNode class286_0)
+		public StructurePointerNode(int int1, StructureHeaderNode class2860)
 		{
-			int_0 = int_1;
-			Nodes.Add(class286_0);
+			Int0 = int1;
+			Nodes.Add(class2860);
 			vmethod_0();
 		}
 

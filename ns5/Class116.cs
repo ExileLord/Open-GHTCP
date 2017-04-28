@@ -76,54 +76,54 @@ namespace ns5
 		{
 		}
 
-		public static Struct48 struct48_0;
+		public static Struct48 Struct480;
 
-		public static Struct49 struct49_0;
+		public static Struct49 Struct490;
 
-		public static Struct50 struct50_0;
+		public static Struct50 Struct500;
 
-		public static Struct51 struct51_0;
+		public static Struct51 Struct510;
 
-		public static Struct52 struct52_0;
+		public static Struct52 Struct520;
 
-		public static Struct53 struct53_0;
+		public static Struct53 Struct530;
 
-		public static Struct54 struct54_0;
+		public static Struct54 Struct540;
 
-		public static Struct55 struct55_0;
+		public static Struct55 Struct550;
 
-		public static Struct56 struct56_0;
+		public static Struct56 Struct560;
 
-		public static Struct56 struct56_1;
+		public static Struct56 Struct561;
 
-		public static Struct56 struct56_2;
+		public static Struct56 Struct562;
 
-		public static Struct53 struct53_1;
+		public static Struct53 Struct531;
 
-		public static Struct57 struct57_0;
+		public static Struct57 Struct570;
 
-		public static Struct57 struct57_1;
+		public static Struct57 Struct571;
 
-		public static Struct57 struct57_2;
+		public static Struct57 Struct572;
 
-		public static Struct58 struct58_0;
+		public static Struct58 Struct580;
 
-		public static Struct59 struct59_0;
+		public static Struct59 Struct590;
 
-		public static Struct55 struct55_1;
+		public static Struct55 Struct551;
 
-		public static Struct57 struct57_3;
+		public static Struct57 Struct573;
 
-		public static Struct59 struct59_1;
+		public static Struct59 Struct591;
 
-		public static Struct59 struct59_2;
+		public static Struct59 Struct592;
 
-		public static Struct59 struct59_3;
+		public static Struct59 Struct593;
 
-		public static Struct60 struct60_0;
+		public static Struct60 Struct600;
 
-		public static Struct61 struct61_0;
+		public static Struct61 Struct610;
 
-		public static Struct58 struct58_1;
+		public static Struct58 Struct581;
 	}
 }

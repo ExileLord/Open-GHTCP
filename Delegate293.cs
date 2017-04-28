@@ -1,3 +1,3 @@
 using System.Reflection;
 
-public delegate Assembly Delegate293(byte[] byte_0);
+public delegate Assembly Delegate293(byte[] byte0);

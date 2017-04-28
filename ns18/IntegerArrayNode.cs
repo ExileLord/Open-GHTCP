@@ -3,17 +3,17 @@ using ns21;
 
 namespace ns18
 {
-	public class IntegerArrayNode : zzUnkNode278<IntegerValueNode>
+	public class IntegerArrayNode : ZzUnkNode278<IntegerValueNode>
 	{
-		public int this[int int_0]
+		public int this[int int0]
 		{
 			get
 			{
-				return ((IntegerValueNode)Nodes[int_0]).int_0;
+				return ((IntegerValueNode)Nodes[int0]).Int0;
 			}
 			set
 			{
-				((IntegerValueNode)Nodes[int_0]).int_0 = value;
+				((IntegerValueNode)Nodes[int0]).Int0 = value;
 			}
 		}
 
@@ -22,9 +22,9 @@ namespace ns18
 			vmethod_0();
 		}
 
-		public IntegerArrayNode(IEnumerable<int> ienumerable_0)
+		public IntegerArrayNode(IEnumerable<int> ienumerable0)
 		{
-			method_11(ienumerable_0);
+			method_11(ienumerable0);
 		}
 
 		public override int vmethod_1()
@@ -32,19 +32,19 @@ namespace ns18
 			return 12;
 		}
 
-		public void method_11(IEnumerable<int> ienumerable_0)
+		public void method_11(IEnumerable<int> ienumerable0)
 		{
-			foreach (var current in ienumerable_0)
+			foreach (var current in ienumerable0)
 			{
 				Nodes.Add(new IntegerValueNode(current));
 			}
 			vmethod_0();
 		}
 
-		public void method_12(IEnumerable<int> ienumerable_0)
+		public void method_12(IEnumerable<int> ienumerable0)
 		{
 			Nodes.Clear();
-			method_11(ienumerable_0);
+			method_11(ienumerable0);
 		}
 
 		public override byte vmethod_15()

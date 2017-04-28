@@ -1,3 +1,3 @@
 using System.Drawing;
 
-public delegate Graphics Delegate420(object object_0);
+public delegate Graphics Delegate420(object object0);

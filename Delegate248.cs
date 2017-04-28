@@ -1,1 +1,1 @@
-public delegate uint Delegate248(int int_0);
+public delegate uint Delegate248(int int0);

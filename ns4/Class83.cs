@@ -2,63 +2,63 @@ namespace ns4
 {
 	public class Class83
 	{
-		private readonly byte[] byte_0;
+		private readonly byte[] _byte0;
 
-		private readonly int[] int_0;
+		private readonly int[] _int0;
 
-		private readonly int int_1;
+		private readonly int _int1;
 
-		public int int_2;
+		public int Int2;
 
-		private readonly double double_0;
+		private readonly double _double0;
 
-		public Class83(byte[] byte_1, int int_3)
+		public Class83(byte[] byte1, int int3)
 		{
-			byte_0 = byte_1;
-			int_2 = int_3;
-			double_0 = 1.0 / byte_1.Length;
+			_byte0 = byte1;
+			Int2 = int3;
+			_double0 = 1.0 / byte1.Length;
 		}
 
-		public Class83(int[] int_3, short short_0)
+		public Class83(int[] int3, short short0)
 		{
-			int_0 = int_3;
-			int_1 = short_0;
-			double_0 = 1.0 / int_3.Length;
+			_int0 = int3;
+			_int1 = short0;
+			_double0 = 1.0 / int3.Length;
 		}
 
-		public int method_0(double double_1)
+		public int method_0(double double1)
 		{
 			var num = 0;
 			var num2 = 0;
 			var num3 = 0.0;
-			if (byte_0 == null)
+			if (_byte0 == null)
 			{
-				while (num3 <= double_1)
+				while (num3 <= double1)
 				{
-					num2 += int_0[num++];
-					num3 += double_0;
+					num2 += _int0[num++];
+					num3 += _double0;
 				}
-				return num2 - (int)(int_0[num - 1] * ((num3 - double_1) / double_0 + 0.5 / int_1));
+				return num2 - (int)(_int0[num - 1] * ((num3 - double1) / _double0 + 0.5 / _int1));
 			}
-			if (double_1 == 0.0)
+			if (double1 == 0.0)
 			{
 				return 0;
 			}
-			if (double_1 == 1.0)
+			if (double1 == 1.0)
 			{
-				return int_2;
+				return Int2;
 			}
-			num3 = double_1 * 100.0;
+			num3 = double1 * 100.0;
 			num = (int)num3;
-			if (num >= byte_0.Length - 1)
+			if (num >= _byte0.Length - 1)
 			{
-				return (int)(byte_0[byte_0.Length - 1] / 256.0 * int_2);
+				return (int)(_byte0[_byte0.Length - 1] / 256.0 * Int2);
 			}
 			if (num == num3)
 			{
-				return (int)(byte_0[num] / 256.0 * int_2);
+				return (int)(_byte0[num] / 256.0 * Int2);
 			}
-			return (int)((byte_0[num] + (num3 - num) * (byte_0[num + 1] - byte_0[num])) / 256.0 * int_2);
+			return (int)((_byte0[num] + (num3 - num) * (_byte0[num + 1] - _byte0[num])) / 256.0 * Int2);
 		}
 	}
 }

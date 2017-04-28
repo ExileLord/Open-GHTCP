@@ -5,64 +5,64 @@ namespace ns1
 {
 	public class Class16
 	{
-		public readonly short short_0;
+		public readonly short Short0;
 
-		public readonly int int_0;
+		public readonly int Int0;
 
-		public readonly uint uint_0;
+		public readonly uint Uint0;
 
-		public readonly TimeSpan timeSpan_0;
+		public readonly TimeSpan TimeSpan0;
 
-		public readonly uint uint_1;
+		public readonly uint Uint1;
 
-		public readonly uint uint_2;
+		public readonly uint Uint2;
 
-		public readonly uint uint_3;
+		public readonly uint Uint3;
 
-		public readonly WaveFormat waveFormat_0;
+		public readonly WaveFormat WaveFormat0;
 
 		public short method_0()
 		{
-			return waveFormat_0.short_0;
+			return WaveFormat0.short_0;
 		}
 
 		public short method_1()
 		{
-			return waveFormat_0.short_1;
+			return WaveFormat0.short_1;
 		}
 
 		public short method_2()
 		{
-			return waveFormat_0.short_2;
+			return WaveFormat0.short_2;
 		}
 
 		public int method_3()
 		{
-			return waveFormat_0.int_0;
+			return WaveFormat0.int_0;
 		}
 
-		public Class16(WaveFormat waveFormat_1, uint uint_4, uint uint_5, int int_1)
+		public Class16(WaveFormat waveFormat1, uint uint4, uint uint5, int int1)
 		{
-			waveFormat_0 = waveFormat_1;
-			short_0 = (short)(method_1() / method_0());
-			int_0 = int_1;
-			timeSpan_0 = TimeSpan.FromSeconds((uint_5 - uint_4) / (int_1 / 8.0));
-			uint_0 = Convert.ToUInt32(method_3() * timeSpan_0.TotalSeconds);
-			uint_1 = uint_4;
-			uint_3 = uint_0 * (uint)method_1();
-			uint_2 = uint_5 - uint_1;
+			WaveFormat0 = waveFormat1;
+			Short0 = (short)(method_1() / method_0());
+			Int0 = int1;
+			TimeSpan0 = TimeSpan.FromSeconds((uint5 - uint4) / (int1 / 8.0));
+			Uint0 = Convert.ToUInt32(method_3() * TimeSpan0.TotalSeconds);
+			Uint1 = uint4;
+			Uint3 = Uint0 * (uint)method_1();
+			Uint2 = uint5 - Uint1;
 		}
 
-		public Class16(WaveFormat waveFormat_1, uint uint_4, uint uint_5)
+		public Class16(WaveFormat waveFormat1, uint uint4, uint uint5)
 		{
-			waveFormat_0 = waveFormat_1;
-			short_0 = (short)(method_1() / method_0());
-			int_0 = method_0() * method_3() * method_2();
-			uint_0 = Convert.ToUInt32((long)(uint_5 / (ulong)method_1()));
-			timeSpan_0 = TimeSpan.FromSeconds(uint_0 / (double)method_3());
-			uint_1 = uint_4;
-			uint_3 = uint_5 - uint_1;
-			uint_2 = 0u;
+			WaveFormat0 = waveFormat1;
+			Short0 = (short)(method_1() / method_0());
+			Int0 = method_0() * method_3() * method_2();
+			Uint0 = Convert.ToUInt32((long)(uint5 / (ulong)method_1()));
+			TimeSpan0 = TimeSpan.FromSeconds(Uint0 / (double)method_3());
+			Uint1 = uint4;
+			Uint3 = uint5 - Uint1;
+			Uint2 = 0u;
 		}
 	}
 }

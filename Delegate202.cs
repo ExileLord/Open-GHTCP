@@ -1,3 +1,3 @@
 using System.Drawing;
 
-public delegate void Delegate202(object object_0, Icon icon_0);
+public delegate void Delegate202(object object0, Icon icon0);

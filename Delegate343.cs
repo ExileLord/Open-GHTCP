@@ -1,3 +1,3 @@
 using System;
 
-public delegate double Delegate343(object object_0, IFormatProvider iformatProvider_0);
+public delegate double Delegate343(object object0, IFormatProvider iformatProvider0);

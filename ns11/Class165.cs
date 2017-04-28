@@ -7,31 +7,31 @@ namespace ns11
 {
 	public class Class165 : IDisposable
 	{
-		public Class165 class165_0;
+		public Class165 Class1650;
 
-		private readonly AutoResetEvent autoResetEvent_0 = new AutoResetEvent(false);
+		private readonly AutoResetEvent _autoResetEvent0 = new AutoResetEvent(false);
 
-		private readonly IntPtr intptr_0;
+		private readonly IntPtr _intptr0;
 
-		private Struct66 struct66_0;
+		private Struct66 _struct660;
 
-		private readonly byte[] byte_0;
+		private readonly byte[] _byte0;
 
-		private GCHandle gchandle_0;
+		private GCHandle _gchandle0;
 
-		private GCHandle gchandle_1;
+		private GCHandle _gchandle1;
 
-		private bool bool_0;
+		private bool _bool0;
 
-		private readonly object object_0 = new object();
+		private readonly object _object0 = new object();
 
-		public static void smethod_0(IntPtr intptr_1, Class162.Enum16 enum16_0, int int_0, ref Struct66 struct66_1, int int_1)
+		public static void smethod_0(IntPtr intptr1, Class162.Enum16 enum160, int int0, ref Struct66 struct661, int int1)
 		{
-			if (enum16_0 == Class162.Enum16.const_1)
+			if (enum160 == Class162.Enum16.Const1)
 			{
 				try
 				{
-					var @class = (Class165)((GCHandle)struct66_1.intptr_1).Target;
+					var @class = (Class165)((GCHandle)struct661.Intptr1).Target;
 					@class.method_4();
 				}
 				catch
@@ -40,16 +40,16 @@ namespace ns11
 			}
 		}
 
-		public Class165(IntPtr intptr_1, int int_0)
+		public Class165(IntPtr intptr1, int int0)
 		{
-			intptr_0 = intptr_1;
-			gchandle_0 = GCHandle.Alloc(struct66_0, GCHandleType.Pinned);
-			struct66_0.intptr_1 = (IntPtr)GCHandle.Alloc(this);
-			byte_0 = new byte[int_0];
-			gchandle_1 = GCHandle.Alloc(byte_0, GCHandleType.Pinned);
-			struct66_0.intptr_0 = gchandle_1.AddrOfPinnedObject();
-			struct66_0.int_0 = int_0;
-			Exception4.smethod_1(Class162.waveOutPrepareHeader(intptr_0, ref struct66_0, Marshal.SizeOf(struct66_0)), "waveOutPrepareHeader");
+			_intptr0 = intptr1;
+			_gchandle0 = GCHandle.Alloc(_struct660, GCHandleType.Pinned);
+			_struct660.Intptr1 = (IntPtr)GCHandle.Alloc(this);
+			_byte0 = new byte[int0];
+			_gchandle1 = GCHandle.Alloc(_byte0, GCHandleType.Pinned);
+			_struct660.Intptr0 = _gchandle1.AddrOfPinnedObject();
+			_struct660.Int0 = int0;
+			Exception4.smethod_1(Class162.waveOutPrepareHeader(_intptr0, ref _struct660, Marshal.SizeOf(_struct660)), "waveOutPrepareHeader");
 		}
 
 		~Class165()
@@ -59,45 +59,45 @@ namespace ns11
 
 		public void Dispose()
 		{
-			if (struct66_0.intptr_0 != IntPtr.Zero)
+			if (_struct660.Intptr0 != IntPtr.Zero)
 			{
-				Class162.waveOutUnprepareHeader(intptr_0, ref struct66_0, Marshal.SizeOf(struct66_0));
-				gchandle_0.Free();
-				struct66_0.intptr_0 = IntPtr.Zero;
+				Class162.waveOutUnprepareHeader(_intptr0, ref _struct660, Marshal.SizeOf(_struct660));
+				_gchandle0.Free();
+				_struct660.Intptr0 = IntPtr.Zero;
 			}
-			autoResetEvent_0.Close();
-			if (gchandle_1.IsAllocated)
+			_autoResetEvent0.Close();
+			if (_gchandle1.IsAllocated)
 			{
-				gchandle_1.Free();
+				_gchandle1.Free();
 			}
 			GC.SuppressFinalize(this);
 		}
 
 		public int method_0()
 		{
-			return struct66_0.int_0;
+			return _struct660.Int0;
 		}
 
 		public IntPtr method_1()
 		{
-			return struct66_0.intptr_0;
+			return _struct660.Intptr0;
 		}
 
 		public bool method_2()
 		{
-			lock (object_0)
+			lock (_object0)
 			{
-				autoResetEvent_0.Reset();
-				bool_0 = (Class162.waveOutWrite(intptr_0, ref struct66_0, Marshal.SizeOf(struct66_0)) == Enum18.const_0);
+				_autoResetEvent0.Reset();
+				_bool0 = (Class162.waveOutWrite(_intptr0, ref _struct660, Marshal.SizeOf(_struct660)) == Enum18.Const0);
 			}
-			return bool_0;
+			return _bool0;
 		}
 
 		public void method_3()
 		{
-			if (bool_0)
+			if (_bool0)
 			{
-				bool_0 = autoResetEvent_0.WaitOne();
+				_bool0 = _autoResetEvent0.WaitOne();
 				return;
 			}
 			Thread.Sleep(0);
@@ -105,8 +105,8 @@ namespace ns11
 
 		public void method_4()
 		{
-			autoResetEvent_0.Set();
-			bool_0 = false;
+			_autoResetEvent0.Set();
+			_bool0 = false;
 		}
 	}
 }

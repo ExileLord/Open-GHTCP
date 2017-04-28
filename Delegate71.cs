@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate void Delegate71(object object_0, KeyPressEventHandler keyPressEventHandler_0);
+public delegate void Delegate71(object object0, KeyPressEventHandler keyPressEventHandler0);

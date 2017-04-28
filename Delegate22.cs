@@ -1,1 +1,1 @@
-public delegate double Delegate22(string string_0);
+public delegate double Delegate22(string string0);

@@ -1,3 +1,3 @@
 using System;
 
-public delegate DateTime Delegate89(int int_0);
+public delegate DateTime Delegate89(int int0);

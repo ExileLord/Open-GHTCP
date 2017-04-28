@@ -5,45 +5,45 @@ namespace ns14
 {
 	public class Track<TKey, TValue> : SortedList<TKey, TValue> where TKey : IComparable<TKey>
 	{
-		public new TValue this[TKey gparam_0]
+		public new TValue this[TKey gparam0]
 		{
 			get
 			{
-                if (!ContainsKey(gparam_0))
+                if (!ContainsKey(gparam0))
 				{
-					return base[Keys[method_1(gparam_0)]];
+					return base[Keys[method_1(gparam0)]];
 				}
-				return base[gparam_0];
+				return base[gparam0];
 			}
 			set
 			{
-				if (ContainsKey(gparam_0))
+				if (ContainsKey(gparam0))
 				{
-					base[gparam_0] = value;
+					base[gparam0] = value;
 					return;
 				}
-				Add(gparam_0, value);
+				Add(gparam0, value);
 			}
 		}
 
-        private bool method_0(ref int int_0, ref int int_1, ref int int_2, TKey offset)
+        private bool method_0(ref int int0, ref int int1, ref int int2, TKey offset)
 		{
-            while (int_0 <= int_1)
+            while (int0 <= int1)
 			{
-				int_2 = (int_0 + int_1) / 2;
-                var tKey = Keys[int_2];
+				int2 = (int0 + int1) / 2;
+                var tKey = Keys[int2];
                 if (tKey.CompareTo(offset) < 0)
 				{
-                    int_0 = int_2 + 1;
+                    int0 = int2 + 1;
                 }
 				else
 				{
-                    var tKey2 = Keys[int_2];
+                    var tKey2 = Keys[int2];
                     if (tKey2.CompareTo(offset) <= 0)
 					{
                         return true;
 					}
-					int_1 = int_2 - 1;
+					int1 = int2 - 1;
 				}
 			}
             return false;
@@ -84,22 +84,22 @@ namespace ns14
 			return Count - 1;
 		}
 
-		public int method_3(TKey gparam_0, TKey gparam_1)
+		public int method_3(TKey gparam0, TKey gparam1)
 		{
 			var num = 0;
 			var num2 = Count - 1;
 			var num3 = 0;
-			var num4 = method_0(ref num, ref num2, ref num3, gparam_0) ? num3 : num;
+			var num4 = method_0(ref num, ref num2, ref num3, gparam0) ? num3 : num;
 			num = num4;
 			num2 = Count - 1;
 			num3 = 0;
-			var num5 = method_0(ref num, ref num2, ref num3, gparam_1) ? (num3 + 1) : num;
+			var num5 = method_0(ref num, ref num2, ref num3, gparam1) ? (num3 + 1) : num;
 			return num5 - num4;
 		}
 
-		public bool method_4(TKey gparam_0)
+		public bool method_4(TKey gparam0)
 		{
-			return ContainsKey(gparam_0);
+			return ContainsKey(gparam0);
 		}
 	}
 }

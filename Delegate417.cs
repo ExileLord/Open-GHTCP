@@ -1,4 +1,4 @@
 using System.Reflection;
 using System.Reflection.Emit;
 
-public delegate void Delegate417(object object_0, OpCode opCode_0, MethodInfo methodInfo_0);
+public delegate void Delegate417(object object0, OpCode opCode0, MethodInfo methodInfo0);

@@ -9,20 +9,20 @@ namespace MidiConverter
     class Midi2Chart
     {
 
-        public static QBCParser LoadMidiSong(string fileName, bool forceRB3)
+        public static QbcParser LoadMidiSong(string fileName, bool forceRb3)
         {
-            QBCParser qbc = null;
+            QbcParser qbc = null;
             Song song = null;
             try {
                 song = MidReader.ReadMidi(fileName);
-                var chartFile = ChartWriter.writeChart(song, "", false, forceRB3).ToString();
+                var chartFile = ChartWriter.writeChart(song, "", false, forceRb3).ToString();
                 var chartParser = new ChartParser(chartFile, false);
-                qbc = chartParser.ConvertToQBC();
+                qbc = chartParser.ConvertToQbc();
             }
             catch(Exception e)
             {
                 MessageBox.Show("Error using the new MIDI importer.\nReverting to original GHTCP method. \n\n" + e, "MIDI Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                qbc = new MIDIParser(fileName).LoadMidi().ConvertToQBC();
+                qbc = new MidiParser(fileName).LoadMidi().ConvertToQbc();
             }
             return qbc;
         }

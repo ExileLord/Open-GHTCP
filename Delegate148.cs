@@ -1,1 +1,1 @@
-public delegate int Delegate148(int int_0, int int_1, ref int int_2);
+public delegate int Delegate148(int int0, int int1, ref int int2);

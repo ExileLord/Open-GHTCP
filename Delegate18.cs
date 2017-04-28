@@ -1,1 +1,1 @@
-public delegate void Delegate18(object object_0, byte byte_0);
+public delegate void Delegate18(object object0, byte byte0);

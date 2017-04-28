@@ -1,1 +1,1 @@
-public delegate uint Delegate330(uint uint_0, uint uint_1);
+public delegate uint Delegate330(uint uint0, uint uint1);

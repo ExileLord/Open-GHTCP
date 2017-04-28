@@ -1,3 +1,3 @@
 using System.Drawing.Imaging;
 
-public delegate void Delegate424(object object_0, string string_0, ImageFormat imageFormat_0);
+public delegate void Delegate424(object object0, string string0, ImageFormat imageFormat0);

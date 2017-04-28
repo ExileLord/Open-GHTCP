@@ -2,10 +2,10 @@ namespace ns12
 {
 	public enum Enum31
 	{
-		const_0,
-		const_1 = 8,
-		const_2,
-		const_3 = 11,
-		const_4 = 99
+		Const0,
+		Const1 = 8,
+		Const2,
+		Const3 = 11,
+		Const4 = 99
 	}
 }

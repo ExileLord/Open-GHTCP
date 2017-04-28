@@ -9,15 +9,15 @@ namespace ns15
 	{
 		private IContainer icontainer_0;
 
-		private ListBox listQB;
+		private ListBox _listQb;
 
-		private Button OK_Btn;
+		private Button _okBtn;
 
-		private Button Cancel_Btn;
+		private Button _cancelBtn;
 
-		private TextBox editBox;
+		private TextBox _editBox;
 
-		private int int_0 = -1;
+		private int _int0 = -1;
 
         protected override void Dispose(bool disposing)
 		{
@@ -30,46 +30,46 @@ namespace ns15
 
 		private void InitializeComponent()
 		{
-			listQB = new ListBox();
-			OK_Btn = new Button();
-			Cancel_Btn = new Button();
-			editBox = new TextBox();
+			_listQb = new ListBox();
+			_okBtn = new Button();
+			_cancelBtn = new Button();
+			_editBox = new TextBox();
 			SuspendLayout();
-			listQB.FormattingEnabled = true;
-			listQB.Location = new Point(12, 12);
-			listQB.Name = "listQB";
-			listQB.Size = new Size(204, 82);
-			listQB.TabIndex = 0;
-			listQB.SelectedIndexChanged += listQB_SelectedIndexChanged;
-			listQB.DoubleClick += listQB_DoubleClick;
-			OK_Btn.DialogResult = DialogResult.OK;
-			OK_Btn.Enabled = false;
-			OK_Btn.Location = new Point(12, 100);
-			OK_Btn.Name = "OK_Btn";
-			OK_Btn.Size = new Size(75, 23);
-			OK_Btn.TabIndex = 1;
-			OK_Btn.Text = "OK";
-			OK_Btn.UseVisualStyleBackColor = true;
-			Cancel_Btn.DialogResult = DialogResult.Cancel;
-			Cancel_Btn.Location = new Point(141, 100);
-			Cancel_Btn.Name = "Cancel_Btn";
-			Cancel_Btn.Size = new Size(75, 23);
-			Cancel_Btn.TabIndex = 2;
-			Cancel_Btn.Text = "Cancel";
-			Cancel_Btn.UseVisualStyleBackColor = true;
-			editBox.BorderStyle = BorderStyle.FixedSingle;
-			editBox.Location = new Point(28, 12);
-			editBox.Name = "editBox";
-			editBox.Size = new Size(168, 20);
-			editBox.TabIndex = 3;
-			editBox.Visible = false;
+			_listQb.FormattingEnabled = true;
+			_listQb.Location = new Point(12, 12);
+			_listQb.Name = "_listQb";
+			_listQb.Size = new Size(204, 82);
+			_listQb.TabIndex = 0;
+			_listQb.SelectedIndexChanged += listQB_SelectedIndexChanged;
+			_listQb.DoubleClick += listQB_DoubleClick;
+			_okBtn.DialogResult = DialogResult.OK;
+			_okBtn.Enabled = false;
+			_okBtn.Location = new Point(12, 100);
+			_okBtn.Name = "_okBtn";
+			_okBtn.Size = new Size(75, 23);
+			_okBtn.TabIndex = 1;
+			_okBtn.Text = "OK";
+			_okBtn.UseVisualStyleBackColor = true;
+			_cancelBtn.DialogResult = DialogResult.Cancel;
+			_cancelBtn.Location = new Point(141, 100);
+			_cancelBtn.Name = "_cancelBtn";
+			_cancelBtn.Size = new Size(75, 23);
+			_cancelBtn.TabIndex = 2;
+			_cancelBtn.Text = "Cancel";
+			_cancelBtn.UseVisualStyleBackColor = true;
+			_editBox.BorderStyle = BorderStyle.FixedSingle;
+			_editBox.Location = new Point(28, 12);
+			_editBox.Name = "_editBox";
+			_editBox.Size = new Size(168, 20);
+			_editBox.TabIndex = 3;
+			_editBox.Visible = false;
 			AutoScaleDimensions = new SizeF(6f, 13f);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(228, 133);
-			Controls.Add(editBox);
-			Controls.Add(Cancel_Btn);
-			Controls.Add(OK_Btn);
-			Controls.Add(listQB);
+			Controls.Add(_editBox);
+			Controls.Add(_cancelBtn);
+			Controls.Add(_okBtn);
+			Controls.Add(_listQb);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
 			MaximizeBox = false;
 			MinimizeBox = false;
@@ -79,10 +79,10 @@ namespace ns15
 			PerformLayout();
 		}
 
-		public LoadGameSettings(string[] string_0)
+		public LoadGameSettings(string[] string0)
 		{
 			InitializeComponent();
-			method_1(string_0);
+			method_1(string0);
 		}
 
 		private void listQB_DoubleClick(object sender, EventArgs e)
@@ -92,47 +92,47 @@ namespace ns15
 
 		private void method_0()
 		{
-			int_0 = listQB.SelectedIndex;
-			if (int_0 < 0)
+			_int0 = _listQb.SelectedIndex;
+			if (_int0 < 0)
 			{
 				return;
 			}
-			var itemRectangle = listQB.GetItemRectangle(int_0);
-			var text = (string)listQB.Items[int_0];
-			editBox.Location = new Point(itemRectangle.X + 30, itemRectangle.Y + 10);
-			editBox.Show();
-			editBox.Text = text;
-			editBox.Focus();
-			editBox.SelectAll();
-			editBox.LostFocus += editBox_LostFocus;
+			var itemRectangle = _listQb.GetItemRectangle(_int0);
+			var text = (string)_listQb.Items[_int0];
+			_editBox.Location = new Point(itemRectangle.X + 30, itemRectangle.Y + 10);
+			_editBox.Show();
+			_editBox.Text = text;
+			_editBox.Focus();
+			_editBox.SelectAll();
+			_editBox.LostFocus += editBox_LostFocus;
 		}
 
 		private void editBox_LostFocus(object sender, EventArgs e)
 		{
-			listQB.Items[int_0] = editBox.Text;
-			editBox.Hide();
+			_listQb.Items[_int0] = _editBox.Text;
+			_editBox.Hide();
 		}
 
-		public void method_1(string[] string_0)
+		public void method_1(string[] string0)
 		{
-			listQB.Items.AddRange(string_0);
+			_listQb.Items.AddRange(string0);
 		}
 
 		public string[] method_2()
 		{
-			var array = new string[listQB.Items.Count];
-			listQB.Items.CopyTo(array, 0);
+			var array = new string[_listQb.Items.Count];
+			_listQb.Items.CopyTo(array, 0);
 			return array;
 		}
 
 		public int method_3()
 		{
-			return listQB.SelectedIndex;
+			return _listQb.SelectedIndex;
 		}
 
 		private void listQB_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			OK_Btn.Enabled = (listQB.SelectedIndex > -1);
+			_okBtn.Enabled = (_listQb.SelectedIndex > -1);
 		}
 	}
 }

@@ -1,3 +1,3 @@
 using System.IO;
 
-public delegate void Delegate208(TextWriter textWriter_0);
+public delegate void Delegate208(TextWriter textWriter0);

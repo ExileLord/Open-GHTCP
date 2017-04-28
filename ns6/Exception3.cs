@@ -8,7 +8,7 @@ namespace ns6
 		{
 		}
 
-		public Exception3(string string_0) : base(string_0)
+		public Exception3(string string0) : base(string0)
 		{
 		}
 	}

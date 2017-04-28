@@ -5,16 +5,16 @@ namespace ns21
 {
 	public class IntegerValueNode : AbstractTreeNode2
 	{
-		public int int_0;
+		public int Int0;
 
 		public IntegerValueNode()
 		{
 			vmethod_0();
 		}
 
-		public IntegerValueNode(int int_1)
+		public IntegerValueNode(int int1)
 		{
-			int_0 = int_1;
+			Int0 = int1;
 			vmethod_0();
 		}
 
@@ -25,22 +25,22 @@ namespace ns21
 
 		public override object vmethod_7()
 		{
-			return int_0;
+			return Int0;
 		}
 
 		public override byte[] vmethod_8()
 		{
-			return BitConverter.GetBytes(int_0);
+			return BitConverter.GetBytes(Int0);
 		}
 
-		public override void vmethod_9(byte[] byte_0)
+		public override void vmethod_9(byte[] byte0)
 		{
-			int_0 = BitConverter.ToInt32(byte_0, 0);
+			Int0 = BitConverter.ToInt32(byte0, 0);
 		}
 
 		public override string GetText()
 		{
-			return string.Concat(int_0);
+			return string.Concat(Int0);
 		}
 
 		public override string GetNodeText()
@@ -48,9 +48,9 @@ namespace ns21
 			return "Integer Value";
 		}
 
-		public override void vmethod_2(ref int int_1)
+		public override void vmethod_2(ref int int1)
 		{
-			int_1 += 4;
+			int1 += 4;
 		}
 	}
 }

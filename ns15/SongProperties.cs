@@ -8,247 +8,247 @@ namespace ns15
 {
 	public class SongProperties : Form
 	{
-		private readonly GH3Song Song;
+		private readonly Gh3Song _song;
 
 		private IContainer icontainer_0;
 
-		private TextBox YearTxt;
+		private TextBox _yearTxt;
 
-		private NumericUpDown OffsetBox;
+		private NumericUpDown _offsetBox;
 
-		private TextBox TitleTxt;
+		private TextBox _titleTxt;
 
-		private ComboBox SingerBox;
+		private ComboBox _singerBox;
 
-		private ComboBox CountOffBox;
+		private ComboBox _countOffBox;
 
-		private Label label10;
+		private Label _label10;
 
-		private Label label9;
+		private Label _label9;
 
-		private Label label8;
+		private Label _label8;
 
-		private Label label6;
+		private Label _label6;
 
-		private Label label7;
+		private Label _label7;
 
-		private TextBox ArtistTxt;
+		private TextBox _artistTxt;
 
-		private Label label1;
+		private Label _label1;
 
-		private ComboBox BassistBox;
+		private ComboBox _bassistBox;
 
-		private Label label2;
+		private Label _label2;
 
-		private NumericUpDown BandVolBox;
+		private NumericUpDown _bandVolBox;
 
-		private Label label3;
+		private Label _label3;
 
-		private Label label4;
+		private Label _label4;
 
-		private NumericUpDown HammerOnBox;
+		private NumericUpDown _hammerOnBox;
 
-		private Label label5;
+		private Label _label5;
 
-		private RadioButton ByBtn;
+		private RadioButton _byBtn;
 
-		private RadioButton FamousByBtn;
+		private RadioButton _famousByBtn;
 
-		private RadioButton CustomTxtBtn;
+		private RadioButton _customTxtBtn;
 
-		private TextBox ArtistTextBox;
+		private TextBox _artistTextBox;
 
-		private Label label11;
+		private Label _label11;
 
-		private CheckBox chkOriginal;
+		private CheckBox _chkOriginal;
 
-		private CheckBox chkRhythm;
+		private CheckBox _chkRhythm;
 
-		private CheckBox chkCoop;
+		private CheckBox _chkCoop;
 
-		private Button btnApply;
+		private Button _btnApply;
 
-		private Button btnCancel;
+		private Button _btnCancel;
 
-		private CheckBox chkKeyboard;
+		private CheckBox _chkKeyboard;
 
-		private RadioButton rBtnBass;
+		private RadioButton _rBtnBass;
 
-		private RadioButton rBtnRhythm;
+		private RadioButton _rBtnRhythm;
 
-		private ComboBox BossBox;
+		private ComboBox _bossBox;
 
-		private Label label12;
+		private Label _label12;
 
-		private Panel panel1;
+		private Panel _panel1;
 
-		private Panel panel2;
+		private Panel _panel2;
 
-		private NumericUpDown GuitarVolBox;
+		private NumericUpDown _guitarVolBox;
 
-		private GroupBox AeroGroupBox;
+		private GroupBox _aeroGroupBox;
 
-		private NumericUpDown BPM8NoteBox;
+		private NumericUpDown _bpm8NoteBox;
 
-		private Label label13;
+		private Label _label13;
 
-		private TextBox CoveredTxt;
+		private TextBox _coveredTxt;
 
-		private Label label15;
+		private Label _label15;
 
-		private ComboBox BandBox;
+		private ComboBox _bandBox;
 
-		private Label label16;
+		private Label _label16;
 
-		private CheckBox AeroGuitaristBox;
+		private CheckBox _aeroGuitaristBox;
 
-		private CheckBox PerryMicBox;
+		private CheckBox _perryMicBox;
 
-		private TextBox SingAnimPakTxt;
+		private TextBox _singAnimPakTxt;
 
-		private Label label14;
+		private Label _label14;
 
 		public SongProperties(string songName)
 		{
 			InitializeComponent();
-			Song = new GH3Song();
+			_song = new Gh3Song();
 			Text = Text + " (" + songName + ")";
-			SingerBox.SelectedIndex = 0;
-			CountOffBox.SelectedIndex = 0;
-			BassistBox.SelectedIndex = 0;
-			BossBox.SelectedIndex = 0;
+			_singerBox.SelectedIndex = 0;
+			_countOffBox.SelectedIndex = 0;
+			_bassistBox.SelectedIndex = 0;
+			_bossBox.SelectedIndex = 0;
 		}
 
-		public SongProperties(GH3Song song) : this(song.name)
+		public SongProperties(Gh3Song song) : this(song.Name)
 		{
-			Song = song;
-			if (Song is GHASong)
+			_song = song;
+			if (_song is GhaSong)
 			{
-				BassistBox.Enabled = false;
-				BossBox.Items.Add("Joe Perry Props");
-				BossBox.Items.Add("Tom Morello Props");
+				_bassistBox.Enabled = false;
+				_bossBox.Items.Add("Joe Perry Props");
+				_bossBox.Items.Add("Tom Morello Props");
 			}
 			else
 			{
-				AeroGroupBox.Enabled = false;
-				SingerBox.Items.Add("Bret Michaels");
-				BossBox.Items.Add("Tom Morello Props");
-				BossBox.Items.Add("Slash Props");
-				BossBox.Items.Add("Lou Props");
+				_aeroGroupBox.Enabled = false;
+				_singerBox.Items.Add("Bret Michaels");
+				_bossBox.Items.Add("Tom Morello Props");
+				_bossBox.Items.Add("Slash Props");
+				_bossBox.Items.Add("Lou Props");
 			}
-            btnApply.Enabled = true; // this.gh3Song_0.editable;
-			TitleTxt.Text = Song.title;
-			ArtistTxt.Text = Song.artist;
-			YearTxt.Text = Song.year;
-			chkOriginal.Checked = Song.original_artist;
-			chkRhythm.Checked = !Song.no_rhythm_track;
-			chkKeyboard.Checked = Song.keyboard;
-			chkCoop.Checked = Song.use_coop_notetracks;
-			rBtnBass.Checked = !(rBtnRhythm.Checked = Song.not_bass);
-			if (Song.artist_text is bool)
+            _btnApply.Enabled = true; // this.gh3Song_0.editable;
+			_titleTxt.Text = _song.Title;
+			_artistTxt.Text = _song.Artist;
+			_yearTxt.Text = _song.Year;
+			_chkOriginal.Checked = _song.OriginalArtist;
+			_chkRhythm.Checked = !_song.NoRhythmTrack;
+			_chkKeyboard.Checked = _song.Keyboard;
+			_chkCoop.Checked = _song.UseCoopNotetracks;
+			_rBtnBass.Checked = !(_rBtnRhythm.Checked = _song.NotBass);
+			if (_song.ArtistText is bool)
 			{
-				FamousByBtn.Checked = !(ByBtn.Checked = (bool)Song.artist_text);
+				_famousByBtn.Checked = !(_byBtn.Checked = (bool)_song.ArtistText);
 			}
 			else
 			{
-				ArtistTextBox.Text = (string)Song.artist_text;
-				CustomTxtBtn.Checked = true;
+				_artistTextBox.Text = (string)_song.ArtistText;
+				_customTxtBtn.Checked = true;
 			}
-			GuitarVolBox.Value = (decimal)Song.guitar_vol;
-			BandVolBox.Value = (decimal)Song.band_vol;
-			HammerOnBox.Value = (decimal)Song.hammer_on;
-			OffsetBox.Value = Song.gem_offset;
-			if (Song.singer.Equals(""))
+			_guitarVolBox.Value = (decimal)_song.GuitarVol;
+			_bandVolBox.Value = (decimal)_song.BandVol;
+			_hammerOnBox.Value = (decimal)_song.HammerOn;
+			_offsetBox.Value = _song.GemOffset;
+			if (_song.Singer.Equals(""))
 			{
-				SingerBox.SelectedIndex = 0;
+				_singerBox.SelectedIndex = 0;
 			}
-			else if (Song.singer.Equals("male"))
+			else if (_song.Singer.Equals("male"))
 			{
-				SingerBox.SelectedIndex = 1;
+				_singerBox.SelectedIndex = 1;
 			}
-			else if (Song.singer.Equals("female"))
+			else if (_song.Singer.Equals("female"))
 			{
-				SingerBox.SelectedIndex = 2;
+				_singerBox.SelectedIndex = 2;
 			}
-			else if (Song.singer.Equals("bret"))
+			else if (_song.Singer.Equals("bret"))
 			{
-				SingerBox.SelectedItem = "Bret Michaels";
+				_singerBox.SelectedItem = "Bret Michaels";
 			}
-			CountOffBox.SelectedItem = Song.countoff.ToLower();
-			BassistBox.SelectedItem = Song.bassist;
-			if (Song.boss.Equals(""))
+			_countOffBox.SelectedItem = _song.Countoff.ToLower();
+			_bassistBox.SelectedItem = _song.Bassist;
+			if (_song.Boss.Equals(""))
 			{
-				BossBox.SelectedIndex = 0;
+				_bossBox.SelectedIndex = 0;
 			}
-			else if (Song.boss.Equals("boss_tommorello_props"))
+			else if (_song.Boss.Equals("boss_tommorello_props"))
 			{
-				BossBox.SelectedItem = "Tom Morello Props";
+				_bossBox.SelectedItem = "Tom Morello Props";
 			}
-			else if (Song.boss.Equals("boss_slash_props"))
+			else if (_song.Boss.Equals("boss_slash_props"))
 			{
-				BossBox.SelectedItem = "Slash Props";
+				_bossBox.SelectedItem = "Slash Props";
 			}
-			else if (Song.boss.Equals("boss_devil_props"))
+			else if (_song.Boss.Equals("boss_devil_props"))
 			{
-				BossBox.SelectedItem = "Lou Props";
+				_bossBox.SelectedItem = "Lou Props";
 			}
-			else if (Song.boss.Equals("boss_joe_props"))
+			else if (_song.Boss.Equals("boss_joe_props"))
 			{
-				BossBox.SelectedItem = "Joe Perry Props";
+				_bossBox.SelectedItem = "Joe Perry Props";
 			}
-			if (AeroGroupBox.Enabled)
+			if (_aeroGroupBox.Enabled)
 			{
-				var gHASong = (GHASong)Song;
-				CoveredTxt.Text = gHASong.covered_by;
-				SingAnimPakTxt.Text = gHASong.singer_anim_pak;
-				BandBox.SelectedItem = gHASong.band;
-				BPM8NoteBox.Value = gHASong.thin_fretbar_8note_params_high_bpm;
-				AeroGuitaristBox.Checked = gHASong.guitarist_checksum;
-				PerryMicBox.Checked = gHASong.perry_mic_stand;
+				var gHaSong = (GhaSong)_song;
+				_coveredTxt.Text = gHaSong.CoveredBy;
+				_singAnimPakTxt.Text = gHaSong.SingerAnimPak;
+				_bandBox.SelectedItem = gHaSong.Band;
+				_bpm8NoteBox.Value = gHaSong.ThinFretbar_8NoteParamsHighBpm;
+				_aeroGuitaristBox.Checked = gHaSong.GuitaristChecksum;
+				_perryMicBox.Checked = gHaSong.PerryMicStand;
 			}
 		}
 
         void btnApply_Click(Object sender, EventArgs e)
         {
-            if ( !Song.isEditable() && (MainMenu.MsgBoxEditDefaultSongs() != DialogResult.Yes) )
+            if ( !_song.IsEditable() && (MainMenu.MsgBoxEditDefaultSongs() != DialogResult.Yes) )
             {
                 DialogResult = DialogResult.None;
             }
         }
 
-		public GH3Song GetSongWithChanges()
+		public Gh3Song GetSongWithChanges()
 		{
-			Song.title = TitleTxt.Text;
-			Song.artist = ArtistTxt.Text;
-			Song.year = YearTxt.Text;
-			Song.original_artist = chkOriginal.Checked;
-			Song.no_rhythm_track = !chkRhythm.Checked;
-			Song.keyboard = chkKeyboard.Checked;
-			Song.use_coop_notetracks = chkCoop.Checked;
-			Song.not_bass = rBtnRhythm.Checked;
-			if (CustomTxtBtn.Checked)
+			_song.Title = _titleTxt.Text;
+			_song.Artist = _artistTxt.Text;
+			_song.Year = _yearTxt.Text;
+			_song.OriginalArtist = _chkOriginal.Checked;
+			_song.NoRhythmTrack = !_chkRhythm.Checked;
+			_song.Keyboard = _chkKeyboard.Checked;
+			_song.UseCoopNotetracks = _chkCoop.Checked;
+			_song.NotBass = _rBtnRhythm.Checked;
+			if (_customTxtBtn.Checked)
 			{
-				Song.artist_text = ArtistTextBox.Text;
+				_song.ArtistText = _artistTextBox.Text;
 			}
 			else
 			{
-				Song.artist_text = ByBtn.Checked;
+				_song.ArtistText = _byBtn.Checked;
 			}
-			Song.guitar_vol = (float)GuitarVolBox.Value;
-			Song.band_vol = (float)BandVolBox.Value;
-			Song.hammer_on = (float)HammerOnBox.Value;
-			Song.input_offset = (Song.gem_offset = (int)OffsetBox.Value);
-			Song.singer = (new[]
+			_song.GuitarVol = (float)_guitarVolBox.Value;
+			_song.BandVol = (float)_bandVolBox.Value;
+			_song.HammerOn = (float)_hammerOnBox.Value;
+			_song.InputOffset = (_song.GemOffset = (int)_offsetBox.Value);
+			_song.Singer = (new[]
 			{
 				"",
 				"male",
 				"female",
 				"bret"
-			})[SingerBox.SelectedIndex];
-			Song.countoff = (string)CountOffBox.SelectedItem;
-			Song.bassist = (string)BassistBox.SelectedItem;
+			})[_singerBox.SelectedIndex];
+			_song.Countoff = (string)_countOffBox.SelectedItem;
+			_song.Bassist = (string)_bassistBox.SelectedItem;
 			string a;
-			if ((a = (string)BossBox.SelectedItem) != null)
+			if ((a = (string)_bossBox.SelectedItem) != null)
 			{
 				if (!(a == "Tom Morello Props"))
 				{
@@ -258,50 +258,50 @@ namespace ns15
 						{
 							if (a == "Joe Perry Props")
 							{
-								Song.boss = "boss_joe_props";
+								_song.Boss = "boss_joe_props";
 							}
 						}
 						else
 						{
-							Song.boss = "boss_devil_props";
+							_song.Boss = "boss_devil_props";
 						}
 					}
 					else
 					{
-						Song.boss = "boss_slash_props";
+						_song.Boss = "boss_slash_props";
 					}
 				}
 				else
 				{
-					Song.boss = "boss_tommorello_props";
+					_song.Boss = "boss_tommorello_props";
 				}
 			}
-			if (Song is GHASong)
+			if (_song is GhaSong)
 			{
-				var song = (GHASong)Song;
-				song.covered_by = CoveredTxt.Text;
-				song.singer_anim_pak = SingAnimPakTxt.Text;
-				song.band = (string)BandBox.SelectedItem;
-				BPM8NoteBox.Value = song.thin_fretbar_8note_params_high_bpm;
-				AeroGuitaristBox.Checked = song.guitarist_checksum;
-				PerryMicBox.Checked = song.perry_mic_stand;
+				var song = (GhaSong)_song;
+				song.CoveredBy = _coveredTxt.Text;
+				song.SingerAnimPak = _singAnimPakTxt.Text;
+				song.Band = (string)_bandBox.SelectedItem;
+				_bpm8NoteBox.Value = song.ThinFretbar_8NoteParamsHighBpm;
+				_aeroGuitaristBox.Checked = song.GuitaristChecksum;
+				_perryMicBox.Checked = song.PerryMicStand;
 			}
-			return Song;
+			return _song;
 		}
 
 		private void ByBtn_CheckedChanged(object sender, EventArgs e)
 		{
-			ArtistTextBox.Enabled = false;
+			_artistTextBox.Enabled = false;
 		}
 
 		private void FamousByBtn_CheckedChanged(object sender, EventArgs e)
 		{
-			ArtistTextBox.Enabled = false;
+			_artistTextBox.Enabled = false;
 		}
 
 		private void CustomTxtBtn_CheckedChanged(object sender, EventArgs e)
 		{
-			ArtistTextBox.Enabled = true;
+			_artistTextBox.Enabled = true;
 		}
 
         protected override void Dispose(bool disposing)
@@ -315,101 +315,101 @@ namespace ns15
 
 		private void InitializeComponent()
 		{
-			YearTxt = new TextBox();
-			OffsetBox = new NumericUpDown();
-			TitleTxt = new TextBox();
-			SingerBox = new ComboBox();
-			CountOffBox = new ComboBox();
-			label10 = new Label();
-			label9 = new Label();
-			label8 = new Label();
-			label6 = new Label();
-			label7 = new Label();
-			ArtistTxt = new TextBox();
-			label1 = new Label();
-			BassistBox = new ComboBox();
-			label2 = new Label();
-			BandVolBox = new NumericUpDown();
-			label3 = new Label();
-			GuitarVolBox = new NumericUpDown();
-			label4 = new Label();
-			HammerOnBox = new NumericUpDown();
-			label5 = new Label();
-			ByBtn = new RadioButton();
-			FamousByBtn = new RadioButton();
-			CustomTxtBtn = new RadioButton();
-			ArtistTextBox = new TextBox();
-			label11 = new Label();
-			chkOriginal = new CheckBox();
-			chkRhythm = new CheckBox();
-			chkCoop = new CheckBox();
-			btnApply = new Button();
-			btnCancel = new Button();
-			chkKeyboard = new CheckBox();
-			rBtnBass = new RadioButton();
-			rBtnRhythm = new RadioButton();
-			BossBox = new ComboBox();
-			label12 = new Label();
-			panel1 = new Panel();
-			panel2 = new Panel();
-			AeroGroupBox = new GroupBox();
-			SingAnimPakTxt = new TextBox();
-			label14 = new Label();
-			PerryMicBox = new CheckBox();
-			AeroGuitaristBox = new CheckBox();
-			BandBox = new ComboBox();
-			label16 = new Label();
-			CoveredTxt = new TextBox();
-			label15 = new Label();
-			BPM8NoteBox = new NumericUpDown();
-			label13 = new Label();
-			((ISupportInitialize)OffsetBox).BeginInit();
-			((ISupportInitialize)BandVolBox).BeginInit();
-			((ISupportInitialize)GuitarVolBox).BeginInit();
-			((ISupportInitialize)HammerOnBox).BeginInit();
-			panel1.SuspendLayout();
-			panel2.SuspendLayout();
-			AeroGroupBox.SuspendLayout();
-			((ISupportInitialize)BPM8NoteBox).BeginInit();
+			_yearTxt = new TextBox();
+			_offsetBox = new NumericUpDown();
+			_titleTxt = new TextBox();
+			_singerBox = new ComboBox();
+			_countOffBox = new ComboBox();
+			_label10 = new Label();
+			_label9 = new Label();
+			_label8 = new Label();
+			_label6 = new Label();
+			_label7 = new Label();
+			_artistTxt = new TextBox();
+			_label1 = new Label();
+			_bassistBox = new ComboBox();
+			_label2 = new Label();
+			_bandVolBox = new NumericUpDown();
+			_label3 = new Label();
+			_guitarVolBox = new NumericUpDown();
+			_label4 = new Label();
+			_hammerOnBox = new NumericUpDown();
+			_label5 = new Label();
+			_byBtn = new RadioButton();
+			_famousByBtn = new RadioButton();
+			_customTxtBtn = new RadioButton();
+			_artistTextBox = new TextBox();
+			_label11 = new Label();
+			_chkOriginal = new CheckBox();
+			_chkRhythm = new CheckBox();
+			_chkCoop = new CheckBox();
+			_btnApply = new Button();
+			_btnCancel = new Button();
+			_chkKeyboard = new CheckBox();
+			_rBtnBass = new RadioButton();
+			_rBtnRhythm = new RadioButton();
+			_bossBox = new ComboBox();
+			_label12 = new Label();
+			_panel1 = new Panel();
+			_panel2 = new Panel();
+			_aeroGroupBox = new GroupBox();
+			_singAnimPakTxt = new TextBox();
+			_label14 = new Label();
+			_perryMicBox = new CheckBox();
+			_aeroGuitaristBox = new CheckBox();
+			_bandBox = new ComboBox();
+			_label16 = new Label();
+			_coveredTxt = new TextBox();
+			_label15 = new Label();
+			_bpm8NoteBox = new NumericUpDown();
+			_label13 = new Label();
+			((ISupportInitialize)_offsetBox).BeginInit();
+			((ISupportInitialize)_bandVolBox).BeginInit();
+			((ISupportInitialize)_guitarVolBox).BeginInit();
+			((ISupportInitialize)_hammerOnBox).BeginInit();
+			_panel1.SuspendLayout();
+			_panel2.SuspendLayout();
+			_aeroGroupBox.SuspendLayout();
+			((ISupportInitialize)_bpm8NoteBox).BeginInit();
 			SuspendLayout();
-			YearTxt.Location = new Point(64, 66);
-			YearTxt.Name = "YearTxt";
-			YearTxt.Size = new Size(156, 20);
-			YearTxt.TabIndex = 2;
-			OffsetBox.Location = new Point(130, 175);
-			var arg_2EA_0 = OffsetBox;
+			_yearTxt.Location = new Point(64, 66);
+			_yearTxt.Name = "_yearTxt";
+			_yearTxt.Size = new Size(156, 20);
+			_yearTxt.TabIndex = 2;
+			_offsetBox.Location = new Point(130, 175);
+			var arg_2Ea0 = _offsetBox;
 			var array = new int[4];
 			array[0] = 30000;
-			arg_2EA_0.Maximum = new decimal(array);
-			OffsetBox.Minimum = new decimal(new[]
+			arg_2Ea0.Maximum = new decimal(array);
+			_offsetBox.Minimum = new decimal(new[]
 			{
 				30000,
 				0,
 				0,
 				-2147483648
 			});
-			OffsetBox.Name = "OffsetBox";
-			OffsetBox.Size = new Size(50, 20);
-			OffsetBox.TabIndex = 9;
-			TitleTxt.Location = new Point(63, 10);
-			TitleTxt.Name = "TitleTxt";
-			TitleTxt.Size = new Size(157, 20);
-			TitleTxt.TabIndex = 0;
-			SingerBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			SingerBox.FormattingEnabled = true;
-			SingerBox.Items.AddRange(new object[]
+			_offsetBox.Name = "_offsetBox";
+			_offsetBox.Size = new Size(50, 20);
+			_offsetBox.TabIndex = 9;
+			_titleTxt.Location = new Point(63, 10);
+			_titleTxt.Name = "_titleTxt";
+			_titleTxt.Size = new Size(157, 20);
+			_titleTxt.TabIndex = 0;
+			_singerBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_singerBox.FormattingEnabled = true;
+			_singerBox.Items.AddRange(new object[]
 			{
 				"No Singer",
 				"Male",
 				"Female"
 			});
-			SingerBox.Location = new Point(309, 10);
-			SingerBox.Name = "SingerBox";
-			SingerBox.Size = new Size(143, 21);
-			SingerBox.TabIndex = 3;
-			CountOffBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			CountOffBox.FormattingEnabled = true;
-			CountOffBox.Items.AddRange(new object[]
+			_singerBox.Location = new Point(309, 10);
+			_singerBox.Name = "_singerBox";
+			_singerBox.Size = new Size(143, 21);
+			_singerBox.TabIndex = 3;
+			_countOffBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_countOffBox.FormattingEnabled = true;
+			_countOffBox.Items.AddRange(new object[]
 			{
 				"sticks_tiny",
 				"sticks_normal",
@@ -419,65 +419,65 @@ namespace ns15
 				"hihat03",
 				"shaker"
 			});
-			CountOffBox.Location = new Point(332, 38);
-			CountOffBox.Name = "CountOffBox";
-			CountOffBox.Size = new Size(120, 21);
-			CountOffBox.TabIndex = 4;
-			label10.AutoSize = true;
-			label10.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label10.Location = new Point(246, 37);
-			label10.Name = "label10";
-			label10.Size = new Size(80, 19);
-			label10.TabIndex = 27;
-			label10.Text = "Count Off:";
-			label10.TextAlign = ContentAlignment.MiddleCenter;
-			label9.AutoSize = true;
-			label9.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label9.Location = new Point(246, 9);
-			label9.Name = "label9";
-			label9.Size = new Size(57, 19);
-			label9.TabIndex = 26;
-			label9.Text = "Singer:";
-			label9.TextAlign = ContentAlignment.MiddleCenter;
-			label8.AutoSize = true;
-			label8.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label8.Location = new Point(12, 65);
-			label8.Name = "label8";
-			label8.Size = new Size(46, 19);
-			label8.TabIndex = 25;
-			label8.Text = "Year:";
-			label8.TextAlign = ContentAlignment.MiddleCenter;
-			label6.AutoSize = true;
-			label6.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label6.Location = new Point(12, 9);
-			label6.Name = "label6";
-			label6.Size = new Size(45, 19);
-			label6.TabIndex = 23;
-			label6.Text = "Title:";
-			label6.TextAlign = ContentAlignment.MiddleCenter;
-			label7.AutoSize = true;
-			label7.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label7.Location = new Point(68, 176);
-			label7.Name = "label7";
-			label7.Size = new Size(56, 19);
-			label7.TabIndex = 32;
-			label7.Text = "Offset:";
-			label7.TextAlign = ContentAlignment.MiddleCenter;
-			ArtistTxt.Location = new Point(70, 38);
-			ArtistTxt.Name = "ArtistTxt";
-			ArtistTxt.Size = new Size(150, 20);
-			ArtistTxt.TabIndex = 1;
-			label1.AutoSize = true;
-			label1.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label1.Location = new Point(12, 37);
-			label1.Name = "label1";
-			label1.Size = new Size(52, 19);
-			label1.TabIndex = 24;
-			label1.Text = "Artist:";
-			label1.TextAlign = ContentAlignment.MiddleCenter;
-			BassistBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			BassistBox.FormattingEnabled = true;
-			BassistBox.Items.AddRange(new object[]
+			_countOffBox.Location = new Point(332, 38);
+			_countOffBox.Name = "_countOffBox";
+			_countOffBox.Size = new Size(120, 21);
+			_countOffBox.TabIndex = 4;
+			_label10.AutoSize = true;
+			_label10.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label10.Location = new Point(246, 37);
+			_label10.Name = "_label10";
+			_label10.Size = new Size(80, 19);
+			_label10.TabIndex = 27;
+			_label10.Text = "Count Off:";
+			_label10.TextAlign = ContentAlignment.MiddleCenter;
+			_label9.AutoSize = true;
+			_label9.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label9.Location = new Point(246, 9);
+			_label9.Name = "_label9";
+			_label9.Size = new Size(57, 19);
+			_label9.TabIndex = 26;
+			_label9.Text = "Singer:";
+			_label9.TextAlign = ContentAlignment.MiddleCenter;
+			_label8.AutoSize = true;
+			_label8.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label8.Location = new Point(12, 65);
+			_label8.Name = "_label8";
+			_label8.Size = new Size(46, 19);
+			_label8.TabIndex = 25;
+			_label8.Text = "Year:";
+			_label8.TextAlign = ContentAlignment.MiddleCenter;
+			_label6.AutoSize = true;
+			_label6.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label6.Location = new Point(12, 9);
+			_label6.Name = "_label6";
+			_label6.Size = new Size(45, 19);
+			_label6.TabIndex = 23;
+			_label6.Text = "Title:";
+			_label6.TextAlign = ContentAlignment.MiddleCenter;
+			_label7.AutoSize = true;
+			_label7.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label7.Location = new Point(68, 176);
+			_label7.Name = "_label7";
+			_label7.Size = new Size(56, 19);
+			_label7.TabIndex = 32;
+			_label7.Text = "Offset:";
+			_label7.TextAlign = ContentAlignment.MiddleCenter;
+			_artistTxt.Location = new Point(70, 38);
+			_artistTxt.Name = "_artistTxt";
+			_artistTxt.Size = new Size(150, 20);
+			_artistTxt.TabIndex = 1;
+			_label1.AutoSize = true;
+			_label1.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label1.Location = new Point(12, 37);
+			_label1.Name = "_label1";
+			_label1.Size = new Size(52, 19);
+			_label1.TabIndex = 24;
+			_label1.Text = "Artist:";
+			_label1.TextAlign = ContentAlignment.MiddleCenter;
+			_bassistBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_bassistBox.FormattingEnabled = true;
+			_bassistBox.Items.AddRange(new object[]
 			{
 				"Generic Bassist",
 				"Axel",
@@ -494,314 +494,314 @@ namespace ns15
 				"RockGod",
 				"Ripper"
 			});
-			BassistBox.Location = new Point(315, 66);
-			BassistBox.Name = "BassistBox";
-			BassistBox.Size = new Size(137, 21);
-			BassistBox.TabIndex = 5;
-			label2.AutoSize = true;
-			label2.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label2.Location = new Point(246, 65);
-			label2.Name = "label2";
-			label2.Size = new Size(63, 19);
-			label2.TabIndex = 28;
-			label2.Text = "Bassist:";
-			label2.TextAlign = ContentAlignment.MiddleCenter;
-			BandVolBox.DecimalPlaces = 2;
-			BandVolBox.Increment = new decimal(new[]
+			_bassistBox.Location = new Point(315, 66);
+			_bassistBox.Name = "_bassistBox";
+			_bassistBox.Size = new Size(137, 21);
+			_bassistBox.TabIndex = 5;
+			_label2.AutoSize = true;
+			_label2.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label2.Location = new Point(246, 65);
+			_label2.Name = "_label2";
+			_label2.Size = new Size(63, 19);
+			_label2.TabIndex = 28;
+			_label2.Text = "Bassist:";
+			_label2.TextAlign = ContentAlignment.MiddleCenter;
+			_bandVolBox.DecimalPlaces = 2;
+			_bandVolBox.Increment = new decimal(new[]
 			{
 				25,
 				0,
 				0,
 				131072
 			});
-			BandVolBox.Location = new Point(130, 124);
-			var arg_A56_0 = BandVolBox;
+			_bandVolBox.Location = new Point(130, 124);
+			var argA560 = _bandVolBox;
 			var array2 = new int[4];
 			array2[0] = 5;
-			arg_A56_0.Maximum = new decimal(array2);
-			BandVolBox.Minimum = new decimal(new[]
+			argA560.Maximum = new decimal(array2);
+			_bandVolBox.Minimum = new decimal(new[]
 			{
 				5,
 				0,
 				0,
 				-2147483648
 			});
-			BandVolBox.Name = "BandVolBox";
-			BandVolBox.ReadOnly = true;
-			BandVolBox.Size = new Size(49, 20);
-			BandVolBox.TabIndex = 7;
-			label3.AutoSize = true;
-			label3.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label3.Location = new Point(20, 125);
-			label3.Name = "label3";
-			label3.Size = new Size(104, 19);
-			label3.TabIndex = 30;
-			label3.Text = "Band Volume:";
-			label3.TextAlign = ContentAlignment.MiddleCenter;
-			GuitarVolBox.DecimalPlaces = 2;
-			GuitarVolBox.Increment = new decimal(new[]
+			_bandVolBox.Name = "_bandVolBox";
+			_bandVolBox.ReadOnly = true;
+			_bandVolBox.Size = new Size(49, 20);
+			_bandVolBox.TabIndex = 7;
+			_label3.AutoSize = true;
+			_label3.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label3.Location = new Point(20, 125);
+			_label3.Name = "_label3";
+			_label3.Size = new Size(104, 19);
+			_label3.TabIndex = 30;
+			_label3.Text = "Band Volume:";
+			_label3.TextAlign = ContentAlignment.MiddleCenter;
+			_guitarVolBox.DecimalPlaces = 2;
+			_guitarVolBox.Increment = new decimal(new[]
 			{
 				25,
 				0,
 				0,
 				131072
 			});
-			GuitarVolBox.Location = new Point(130, 99);
-			var arg_BB0_0 = GuitarVolBox;
+			_guitarVolBox.Location = new Point(130, 99);
+			var argBb00 = _guitarVolBox;
 			var array3 = new int[4];
 			array3[0] = 5;
-			arg_BB0_0.Maximum = new decimal(array3);
-			GuitarVolBox.Minimum = new decimal(new[]
+			argBb00.Maximum = new decimal(array3);
+			_guitarVolBox.Minimum = new decimal(new[]
 			{
 				5,
 				0,
 				0,
 				-2147483648
 			});
-			GuitarVolBox.Name = "GuitarVolBox";
-			GuitarVolBox.ReadOnly = true;
-			GuitarVolBox.Size = new Size(49, 20);
-			GuitarVolBox.TabIndex = 6;
-			label4.AutoSize = true;
-			label4.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label4.Location = new Point(12, 100);
-			label4.Name = "label4";
-			label4.Size = new Size(112, 19);
-			label4.TabIndex = 29;
-			label4.Text = "Guitar Volume:";
-			label4.TextAlign = ContentAlignment.MiddleCenter;
-			HammerOnBox.DecimalPlaces = 2;
-			HammerOnBox.Increment = new decimal(new[]
+			_guitarVolBox.Name = "_guitarVolBox";
+			_guitarVolBox.ReadOnly = true;
+			_guitarVolBox.Size = new Size(49, 20);
+			_guitarVolBox.TabIndex = 6;
+			_label4.AutoSize = true;
+			_label4.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label4.Location = new Point(12, 100);
+			_label4.Name = "_label4";
+			_label4.Size = new Size(112, 19);
+			_label4.TabIndex = 29;
+			_label4.Text = "Guitar Volume:";
+			_label4.TextAlign = ContentAlignment.MiddleCenter;
+			_hammerOnBox.DecimalPlaces = 2;
+			_hammerOnBox.Increment = new decimal(new[]
 			{
 				5,
 				0,
 				0,
 				131072
 			});
-			HammerOnBox.Location = new Point(130, 150);
-			var arg_D0C_0 = HammerOnBox;
+			_hammerOnBox.Location = new Point(130, 150);
+			var argD0C0 = _hammerOnBox;
 			var array4 = new int[4];
 			array4[0] = 5;
-			arg_D0C_0.Maximum = new decimal(array4);
-			HammerOnBox.Minimum = new decimal(new[]
+			argD0C0.Maximum = new decimal(array4);
+			_hammerOnBox.Minimum = new decimal(new[]
 			{
 				5,
 				0,
 				0,
 				-2147483648
 			});
-			HammerOnBox.Name = "HammerOnBox";
-			HammerOnBox.ReadOnly = true;
-			HammerOnBox.Size = new Size(49, 20);
-			HammerOnBox.TabIndex = 8;
-			label5.AutoSize = true;
-			label5.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label5.Location = new Point(28, 151);
-			label5.Name = "label5";
-			label5.Size = new Size(96, 19);
-			label5.TabIndex = 31;
-			label5.Text = "Hammer On:";
-			label5.TextAlign = ContentAlignment.MiddleCenter;
-			ByBtn.AutoSize = true;
-			ByBtn.Checked = true;
-			ByBtn.Location = new Point(89, 14);
-			ByBtn.Name = "ByBtn";
-			ByBtn.Size = new Size(46, 17);
-			ByBtn.TabIndex = 11;
-			ByBtn.TabStop = true;
-			ByBtn.Text = "\"by\"";
-			ByBtn.UseVisualStyleBackColor = true;
-			ByBtn.CheckedChanged += ByBtn_CheckedChanged;
-			FamousByBtn.AutoSize = true;
-			FamousByBtn.Location = new Point(141, 14);
-			FamousByBtn.Name = "FamousByBtn";
-			FamousByBtn.Size = new Size(126, 17);
-			FamousByBtn.TabIndex = 12;
-			FamousByBtn.TabStop = true;
-			FamousByBtn.Text = "\"as made famous by\"";
-			FamousByBtn.UseVisualStyleBackColor = true;
-			FamousByBtn.CheckedChanged += FamousByBtn_CheckedChanged;
-			CustomTxtBtn.AutoSize = true;
-			CustomTxtBtn.Location = new Point(89, 43);
-			CustomTxtBtn.Name = "CustomTxtBtn";
-			CustomTxtBtn.Size = new Size(60, 17);
-			CustomTxtBtn.TabIndex = 13;
-			CustomTxtBtn.TabStop = true;
-			CustomTxtBtn.Text = "Custom";
-			CustomTxtBtn.UseVisualStyleBackColor = true;
-			CustomTxtBtn.CheckedChanged += CustomTxtBtn_CheckedChanged;
-			ArtistTextBox.Enabled = false;
-			ArtistTextBox.Location = new Point(155, 41);
-			ArtistTextBox.Name = "ArtistTextBox";
-			ArtistTextBox.Size = new Size(104, 20);
-			ArtistTextBox.TabIndex = 14;
-			label11.AutoSize = true;
-			label11.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label11.Location = new Point(-4, 24);
-			label11.Name = "label11";
-			label11.Size = new Size(87, 19);
-			label11.TabIndex = 34;
-			label11.Text = "Artist Text:";
-			label11.TextAlign = ContentAlignment.MiddleCenter;
-			chkOriginal.AutoSize = true;
-			chkOriginal.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			chkOriginal.Location = new Point(16, 302);
-			chkOriginal.Name = "Original_CheckBox";
-			chkOriginal.Size = new Size(124, 23);
-			chkOriginal.TabIndex = 15;
-			chkOriginal.Text = "Original Artist";
-			chkOriginal.UseVisualStyleBackColor = true;
+			_hammerOnBox.Name = "_hammerOnBox";
+			_hammerOnBox.ReadOnly = true;
+			_hammerOnBox.Size = new Size(49, 20);
+			_hammerOnBox.TabIndex = 8;
+			_label5.AutoSize = true;
+			_label5.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label5.Location = new Point(28, 151);
+			_label5.Name = "_label5";
+			_label5.Size = new Size(96, 19);
+			_label5.TabIndex = 31;
+			_label5.Text = "Hammer On:";
+			_label5.TextAlign = ContentAlignment.MiddleCenter;
+			_byBtn.AutoSize = true;
+			_byBtn.Checked = true;
+			_byBtn.Location = new Point(89, 14);
+			_byBtn.Name = "_byBtn";
+			_byBtn.Size = new Size(46, 17);
+			_byBtn.TabIndex = 11;
+			_byBtn.TabStop = true;
+			_byBtn.Text = "\"by\"";
+			_byBtn.UseVisualStyleBackColor = true;
+			_byBtn.CheckedChanged += ByBtn_CheckedChanged;
+			_famousByBtn.AutoSize = true;
+			_famousByBtn.Location = new Point(141, 14);
+			_famousByBtn.Name = "_famousByBtn";
+			_famousByBtn.Size = new Size(126, 17);
+			_famousByBtn.TabIndex = 12;
+			_famousByBtn.TabStop = true;
+			_famousByBtn.Text = "\"as made famous by\"";
+			_famousByBtn.UseVisualStyleBackColor = true;
+			_famousByBtn.CheckedChanged += FamousByBtn_CheckedChanged;
+			_customTxtBtn.AutoSize = true;
+			_customTxtBtn.Location = new Point(89, 43);
+			_customTxtBtn.Name = "_customTxtBtn";
+			_customTxtBtn.Size = new Size(60, 17);
+			_customTxtBtn.TabIndex = 13;
+			_customTxtBtn.TabStop = true;
+			_customTxtBtn.Text = "Custom";
+			_customTxtBtn.UseVisualStyleBackColor = true;
+			_customTxtBtn.CheckedChanged += CustomTxtBtn_CheckedChanged;
+			_artistTextBox.Enabled = false;
+			_artistTextBox.Location = new Point(155, 41);
+			_artistTextBox.Name = "_artistTextBox";
+			_artistTextBox.Size = new Size(104, 20);
+			_artistTextBox.TabIndex = 14;
+			_label11.AutoSize = true;
+			_label11.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label11.Location = new Point(-4, 24);
+			_label11.Name = "_label11";
+			_label11.Size = new Size(87, 19);
+			_label11.TabIndex = 34;
+			_label11.Text = "Artist Text:";
+			_label11.TextAlign = ContentAlignment.MiddleCenter;
+			_chkOriginal.AutoSize = true;
+			_chkOriginal.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_chkOriginal.Location = new Point(16, 302);
+			_chkOriginal.Name = "Original_CheckBox";
+			_chkOriginal.Size = new Size(124, 23);
+			_chkOriginal.TabIndex = 15;
+			_chkOriginal.Text = "Original Artist";
+			_chkOriginal.UseVisualStyleBackColor = true;
 
-			chkRhythm.AutoSize = true;
-			chkRhythm.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			chkRhythm.Location = new Point(16, 331);
-			chkRhythm.Name = "Rhythm_CheckBox";
-			chkRhythm.Size = new Size(125, 23);
-			chkRhythm.TabIndex = 18;
-			chkRhythm.Text = "Rhythm Track";
-			chkRhythm.UseVisualStyleBackColor = true;
+			_chkRhythm.AutoSize = true;
+			_chkRhythm.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_chkRhythm.Location = new Point(16, 331);
+			_chkRhythm.Name = "Rhythm_CheckBox";
+			_chkRhythm.Size = new Size(125, 23);
+			_chkRhythm.TabIndex = 18;
+			_chkRhythm.Text = "Rhythm Track";
+			_chkRhythm.UseVisualStyleBackColor = true;
 
-			chkCoop.AutoSize = true;
-			chkCoop.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			chkCoop.Location = new Point(246, 302);
-			chkCoop.Name = "Coop_CheckBox";
-			chkCoop.Size = new Size(63, 23);
-			chkCoop.TabIndex = 17;
-			chkCoop.Text = "Coop";
-			chkCoop.UseVisualStyleBackColor = true;
+			_chkCoop.AutoSize = true;
+			_chkCoop.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_chkCoop.Location = new Point(246, 302);
+			_chkCoop.Name = "Coop_CheckBox";
+			_chkCoop.Size = new Size(63, 23);
+			_chkCoop.TabIndex = 17;
+			_chkCoop.Text = "Coop";
+			_chkCoop.UseVisualStyleBackColor = true;
 
-            btnApply.Click += btnApply_Click;
-			btnApply.DialogResult = DialogResult.OK;
-			btnApply.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			btnApply.Location = new Point(318, 327);
-			btnApply.Name = "ApplyBtn";
-			btnApply.Size = new Size(65, 27);
-			btnApply.TabIndex = 21;
-			btnApply.Text = "Apply";
-			btnApply.UseVisualStyleBackColor = true;
+            _btnApply.Click += btnApply_Click;
+			_btnApply.DialogResult = DialogResult.OK;
+			_btnApply.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_btnApply.Location = new Point(318, 327);
+			_btnApply.Name = "ApplyBtn";
+			_btnApply.Size = new Size(65, 27);
+			_btnApply.TabIndex = 21;
+			_btnApply.Text = "Apply";
+			_btnApply.UseVisualStyleBackColor = true;
 
-			btnCancel.DialogResult = DialogResult.Cancel;
-			btnCancel.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			btnCancel.Location = new Point(389, 327);
-			btnCancel.Name = "CancelBtn";
-			btnCancel.Size = new Size(65, 27);
-			btnCancel.TabIndex = 22;
-			btnCancel.Text = "Cancel";
-			btnCancel.UseVisualStyleBackColor = true;
+			_btnCancel.DialogResult = DialogResult.Cancel;
+			_btnCancel.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_btnCancel.Location = new Point(389, 327);
+			_btnCancel.Name = "CancelBtn";
+			_btnCancel.Size = new Size(65, 27);
+			_btnCancel.TabIndex = 22;
+			_btnCancel.Text = "Cancel";
+			_btnCancel.UseVisualStyleBackColor = true;
 
-			chkKeyboard.AutoSize = true;
-			chkKeyboard.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			chkKeyboard.Location = new Point(146, 302);
-			chkKeyboard.Name = "Keyboard_CheckBox";
-			chkKeyboard.Size = new Size(94, 23);
-			chkKeyboard.TabIndex = 16;
-			chkKeyboard.Text = "Keyboard";
-			chkKeyboard.UseVisualStyleBackColor = true;
+			_chkKeyboard.AutoSize = true;
+			_chkKeyboard.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_chkKeyboard.Location = new Point(146, 302);
+			_chkKeyboard.Name = "Keyboard_CheckBox";
+			_chkKeyboard.Size = new Size(94, 23);
+			_chkKeyboard.TabIndex = 16;
+			_chkKeyboard.Text = "Keyboard";
+			_chkKeyboard.UseVisualStyleBackColor = true;
 
-			rBtnBass.AutoSize = true;
-			rBtnBass.Checked = true;
-			rBtnBass.Location = new Point(67, 3);
-			rBtnBass.Name = "BassBtn";
-			rBtnBass.Size = new Size(48, 17);
-			rBtnBass.TabIndex = 20;
-			rBtnBass.TabStop = true;
-			rBtnBass.Text = "Bass";
-			rBtnBass.UseVisualStyleBackColor = true;
+			_rBtnBass.AutoSize = true;
+			_rBtnBass.Checked = true;
+			_rBtnBass.Location = new Point(67, 3);
+			_rBtnBass.Name = "BassBtn";
+			_rBtnBass.Size = new Size(48, 17);
+			_rBtnBass.TabIndex = 20;
+			_rBtnBass.TabStop = true;
+			_rBtnBass.Text = "Bass";
+			_rBtnBass.UseVisualStyleBackColor = true;
 
-			rBtnRhythm.AutoSize = true;
-			rBtnRhythm.Location = new Point(0, 3);
-			rBtnRhythm.Name = "RhythmBtn";
-			rBtnRhythm.Size = new Size(61, 17);
-			rBtnRhythm.TabIndex = 19;
-			rBtnRhythm.TabStop = true;
-			rBtnRhythm.Text = "Rhythm";
-			rBtnRhythm.UseVisualStyleBackColor = true;
+			_rBtnRhythm.AutoSize = true;
+			_rBtnRhythm.Location = new Point(0, 3);
+			_rBtnRhythm.Name = "RhythmBtn";
+			_rBtnRhythm.Size = new Size(61, 17);
+			_rBtnRhythm.TabIndex = 19;
+			_rBtnRhythm.TabStop = true;
+			_rBtnRhythm.Text = "Rhythm";
+			_rBtnRhythm.UseVisualStyleBackColor = true;
 
-			BossBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			BossBox.FormattingEnabled = true;
-			BossBox.Items.AddRange(new object[]
+			_bossBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_bossBox.FormattingEnabled = true;
+			_bossBox.Items.AddRange(new object[]
 			{
 				"Not a boss battle"
 			});
-			BossBox.Location = new Point(315, 101);
-			BossBox.Name = "BossBox";
-			BossBox.Size = new Size(137, 21);
-			BossBox.TabIndex = 10;
+			_bossBox.Location = new Point(315, 101);
+			_bossBox.Name = "_bossBox";
+			_bossBox.Size = new Size(137, 21);
+			_bossBox.TabIndex = 10;
 
-			label12.AutoSize = true;
-			label12.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label12.Location = new Point(189, 100);
-			label12.Name = "label12";
-			label12.Size = new Size(120, 19);
-			label12.TabIndex = 54;
-			label12.Text = "Boss Properties:";
-			label12.TextAlign = ContentAlignment.MiddleCenter;
+			_label12.AutoSize = true;
+			_label12.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label12.Location = new Point(189, 100);
+			_label12.Name = "_label12";
+			_label12.Size = new Size(120, 19);
+			_label12.TabIndex = 54;
+			_label12.Text = "Boss Properties:";
+			_label12.TextAlign = ContentAlignment.MiddleCenter;
 
-			panel1.Controls.Add(label11);
-			panel1.Controls.Add(ByBtn);
-			panel1.Controls.Add(FamousByBtn);
-			panel1.Controls.Add(CustomTxtBtn);
-			panel1.Controls.Add(ArtistTextBox);
-			panel1.Location = new Point(193, 127);
-			panel1.Name = "panel1";
-			panel1.Size = new Size(267, 68);
-			panel1.TabIndex = 33;
+			_panel1.Controls.Add(_label11);
+			_panel1.Controls.Add(_byBtn);
+			_panel1.Controls.Add(_famousByBtn);
+			_panel1.Controls.Add(_customTxtBtn);
+			_panel1.Controls.Add(_artistTextBox);
+			_panel1.Location = new Point(193, 127);
+			_panel1.Name = "_panel1";
+			_panel1.Size = new Size(267, 68);
+			_panel1.TabIndex = 33;
 
-			panel2.Controls.Add(rBtnRhythm);
-			panel2.Controls.Add(rBtnBass);
-			panel2.Location = new Point(146, 331);
-			panel2.Name = "panel2";
-			panel2.Size = new Size(117, 23);
-			panel2.TabIndex = 35;
+			_panel2.Controls.Add(_rBtnRhythm);
+			_panel2.Controls.Add(_rBtnBass);
+			_panel2.Location = new Point(146, 331);
+			_panel2.Name = "_panel2";
+			_panel2.Size = new Size(117, 23);
+			_panel2.TabIndex = 35;
 
-			AeroGroupBox.Controls.Add(SingAnimPakTxt);
-			AeroGroupBox.Controls.Add(label14);
-			AeroGroupBox.Controls.Add(PerryMicBox);
-			AeroGroupBox.Controls.Add(AeroGuitaristBox);
-			AeroGroupBox.Controls.Add(BandBox);
-			AeroGroupBox.Controls.Add(label16);
-			AeroGroupBox.Controls.Add(CoveredTxt);
-			AeroGroupBox.Controls.Add(label15);
-			AeroGroupBox.Controls.Add(BPM8NoteBox);
-			AeroGroupBox.Controls.Add(label13);
-			AeroGroupBox.Location = new Point(3, 198);
-			AeroGroupBox.Name = "AeroGroupBox";
-			AeroGroupBox.Size = new Size(457, 98);
-			AeroGroupBox.TabIndex = 55;
-			AeroGroupBox.TabStop = false;
-			AeroGroupBox.Text = "Aerosmith";
+			_aeroGroupBox.Controls.Add(_singAnimPakTxt);
+			_aeroGroupBox.Controls.Add(_label14);
+			_aeroGroupBox.Controls.Add(_perryMicBox);
+			_aeroGroupBox.Controls.Add(_aeroGuitaristBox);
+			_aeroGroupBox.Controls.Add(_bandBox);
+			_aeroGroupBox.Controls.Add(_label16);
+			_aeroGroupBox.Controls.Add(_coveredTxt);
+			_aeroGroupBox.Controls.Add(_label15);
+			_aeroGroupBox.Controls.Add(_bpm8NoteBox);
+			_aeroGroupBox.Controls.Add(_label13);
+			_aeroGroupBox.Location = new Point(3, 198);
+			_aeroGroupBox.Name = "_aeroGroupBox";
+			_aeroGroupBox.Size = new Size(457, 98);
+			_aeroGroupBox.TabIndex = 55;
+			_aeroGroupBox.TabStop = false;
+			_aeroGroupBox.Text = "Aerosmith";
 
-			SingAnimPakTxt.Location = new Point(174, 45);
-			SingAnimPakTxt.Name = "SingAnimPakTxt";
-			SingAnimPakTxt.Size = new Size(275, 20);
-			SingAnimPakTxt.TabIndex = 41;
-			label14.AutoSize = true;
-			label14.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label14.Location = new Point(9, 46);
-			label14.Name = "label14";
-			label14.Size = new Size(159, 19);
-			label14.TabIndex = 42;
-			label14.Text = "Singer Animation Pak:";
-			label14.TextAlign = ContentAlignment.MiddleCenter;
-			PerryMicBox.AutoSize = true;
-			PerryMicBox.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			PerryMicBox.Location = new Point(311, 71);
-			PerryMicBox.Name = "PerryMicBox";
-			PerryMicBox.Size = new Size(138, 23);
-			PerryMicBox.TabIndex = 40;
-			PerryMicBox.Text = "Perry Mic Stand";
-			PerryMicBox.UseVisualStyleBackColor = true;
-			AeroGuitaristBox.AutoSize = true;
-			AeroGuitaristBox.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			AeroGuitaristBox.Location = new Point(218, 71);
-			AeroGuitaristBox.Name = "AeroGuitaristBox";
-			AeroGuitaristBox.Size = new Size(87, 23);
-			AeroGuitaristBox.TabIndex = 39;
-			AeroGuitaristBox.Text = "Guitarist";
-			AeroGuitaristBox.UseVisualStyleBackColor = true;
-			BandBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			BandBox.FormattingEnabled = true;
-			BandBox.Items.AddRange(new object[]
+			_singAnimPakTxt.Location = new Point(174, 45);
+			_singAnimPakTxt.Name = "_singAnimPakTxt";
+			_singAnimPakTxt.Size = new Size(275, 20);
+			_singAnimPakTxt.TabIndex = 41;
+			_label14.AutoSize = true;
+			_label14.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label14.Location = new Point(9, 46);
+			_label14.Name = "_label14";
+			_label14.Size = new Size(159, 19);
+			_label14.TabIndex = 42;
+			_label14.Text = "Singer Animation Pak:";
+			_label14.TextAlign = ContentAlignment.MiddleCenter;
+			_perryMicBox.AutoSize = true;
+			_perryMicBox.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_perryMicBox.Location = new Point(311, 71);
+			_perryMicBox.Name = "_perryMicBox";
+			_perryMicBox.Size = new Size(138, 23);
+			_perryMicBox.TabIndex = 40;
+			_perryMicBox.Text = "Perry Mic Stand";
+			_perryMicBox.UseVisualStyleBackColor = true;
+			_aeroGuitaristBox.AutoSize = true;
+			_aeroGuitaristBox.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_aeroGuitaristBox.Location = new Point(218, 71);
+			_aeroGuitaristBox.Name = "_aeroGuitaristBox";
+			_aeroGuitaristBox.Size = new Size(87, 23);
+			_aeroGuitaristBox.TabIndex = 39;
+			_aeroGuitaristBox.Text = "Guitarist";
+			_aeroGuitaristBox.UseVisualStyleBackColor = true;
+			_bandBox.DropDownStyle = ComboBoxStyle.DropDownList;
+			_bandBox.FormattingEnabled = true;
+			_bandBox.Items.AddRange(new object[]
 			{
 				"default_band",
 				"aerosmith_band_backinthesaddle",
@@ -836,107 +836,107 @@ namespace ns15
 				"aerosmith_band_walkthisway",
 				"aerosmith_band_walkthiswaydmc"
 			});
-			BandBox.Location = new Point(298, 18);
-			BandBox.Name = "BandBox";
-			BandBox.Size = new Size(151, 21);
-			BandBox.TabIndex = 37;
-			label16.AutoSize = true;
-			label16.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label16.Location = new Point(243, 20);
-			label16.Name = "label16";
-			label16.Size = new Size(49, 19);
-			label16.TabIndex = 38;
-			label16.Text = "Band:";
-			label16.TextAlign = ContentAlignment.MiddleCenter;
-			CoveredTxt.Location = new Point(109, 19);
-			CoveredTxt.Name = "CoveredTxt";
-			CoveredTxt.Size = new Size(108, 20);
-			CoveredTxt.TabIndex = 35;
-			label15.AutoSize = true;
-			label15.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label15.Location = new Point(9, 20);
-			label15.Name = "label15";
-			label15.Size = new Size(94, 19);
-			label15.TabIndex = 36;
-			label15.Text = "Covered By:";
-			label15.TextAlign = ContentAlignment.MiddleCenter;
-			var arg_1D9F_0 = BPM8NoteBox;
+			_bandBox.Location = new Point(298, 18);
+			_bandBox.Name = "_bandBox";
+			_bandBox.Size = new Size(151, 21);
+			_bandBox.TabIndex = 37;
+			_label16.AutoSize = true;
+			_label16.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label16.Location = new Point(243, 20);
+			_label16.Name = "_label16";
+			_label16.Size = new Size(49, 19);
+			_label16.TabIndex = 38;
+			_label16.Text = "Band:";
+			_label16.TextAlign = ContentAlignment.MiddleCenter;
+			_coveredTxt.Location = new Point(109, 19);
+			_coveredTxt.Name = "_coveredTxt";
+			_coveredTxt.Size = new Size(108, 20);
+			_coveredTxt.TabIndex = 35;
+			_label15.AutoSize = true;
+			_label15.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label15.Location = new Point(9, 20);
+			_label15.Name = "_label15";
+			_label15.Size = new Size(94, 19);
+			_label15.TabIndex = 36;
+			_label15.Text = "Covered By:";
+			_label15.TextAlign = ContentAlignment.MiddleCenter;
+			var arg_1D9F0 = _bpm8NoteBox;
 			var array5 = new int[4];
 			array5[0] = 5;
-			arg_1D9F_0.Increment = new decimal(array5);
-			BPM8NoteBox.Location = new Point(127, 71);
-			var arg_1DD6_0 = BPM8NoteBox;
+			arg_1D9F0.Increment = new decimal(array5);
+			_bpm8NoteBox.Location = new Point(127, 71);
+			var arg_1Dd60 = _bpm8NoteBox;
 			var array6 = new int[4];
 			array6[0] = 500;
-			arg_1DD6_0.Maximum = new decimal(array6);
-			BPM8NoteBox.Minimum = new decimal(new[]
+			arg_1Dd60.Maximum = new decimal(array6);
+			_bpm8NoteBox.Minimum = new decimal(new[]
 			{
 				500,
 				0,
 				0,
 				-2147483648
 			});
-			BPM8NoteBox.Name = "BPM8NoteBox";
-			BPM8NoteBox.Size = new Size(49, 20);
-			BPM8NoteBox.TabIndex = 32;
-			label13.AutoSize = true;
-			label13.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label13.Location = new Point(22, 72);
-			label13.Name = "label13";
-			label13.Size = new Size(99, 19);
-			label13.TabIndex = 33;
-			label13.Text = "8 Note BPM:";
-			label13.TextAlign = ContentAlignment.MiddleCenter;
+			_bpm8NoteBox.Name = "_bpm8NoteBox";
+			_bpm8NoteBox.Size = new Size(49, 20);
+			_bpm8NoteBox.TabIndex = 32;
+			_label13.AutoSize = true;
+			_label13.Font = new Font("Times New Roman", 12f, FontStyle.Bold, GraphicsUnit.Point, 0);
+			_label13.Location = new Point(22, 72);
+			_label13.Name = "_label13";
+			_label13.Size = new Size(99, 19);
+			_label13.TabIndex = 33;
+			_label13.Text = "8 Note BPM:";
+			_label13.TextAlign = ContentAlignment.MiddleCenter;
 			AutoScaleDimensions = new SizeF(6f, 13f);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(466, 358);
-			Controls.Add(chkRhythm);
-			Controls.Add(AeroGroupBox);
-			Controls.Add(panel2);
-			Controls.Add(panel1);
-			Controls.Add(BossBox);
-			Controls.Add(label12);
-			Controls.Add(HammerOnBox);
-			Controls.Add(label5);
-			Controls.Add(GuitarVolBox);
-			Controls.Add(label4);
-			Controls.Add(BandVolBox);
-			Controls.Add(label3);
-			Controls.Add(BassistBox);
-			Controls.Add(label2);
-			Controls.Add(chkKeyboard);
-			Controls.Add(ArtistTxt);
-			Controls.Add(label1);
-			Controls.Add(btnCancel);
-			Controls.Add(btnApply);
-			Controls.Add(YearTxt);
-			Controls.Add(OffsetBox);
-			Controls.Add(TitleTxt);
-			Controls.Add(SingerBox);
-			Controls.Add(CountOffBox);
-			Controls.Add(chkCoop);
-			Controls.Add(chkOriginal);
-			Controls.Add(label10);
-			Controls.Add(label9);
-			Controls.Add(label8);
-			Controls.Add(label6);
-			Controls.Add(label7);
+			Controls.Add(_chkRhythm);
+			Controls.Add(_aeroGroupBox);
+			Controls.Add(_panel2);
+			Controls.Add(_panel1);
+			Controls.Add(_bossBox);
+			Controls.Add(_label12);
+			Controls.Add(_hammerOnBox);
+			Controls.Add(_label5);
+			Controls.Add(_guitarVolBox);
+			Controls.Add(_label4);
+			Controls.Add(_bandVolBox);
+			Controls.Add(_label3);
+			Controls.Add(_bassistBox);
+			Controls.Add(_label2);
+			Controls.Add(_chkKeyboard);
+			Controls.Add(_artistTxt);
+			Controls.Add(_label1);
+			Controls.Add(_btnCancel);
+			Controls.Add(_btnApply);
+			Controls.Add(_yearTxt);
+			Controls.Add(_offsetBox);
+			Controls.Add(_titleTxt);
+			Controls.Add(_singerBox);
+			Controls.Add(_countOffBox);
+			Controls.Add(_chkCoop);
+			Controls.Add(_chkOriginal);
+			Controls.Add(_label10);
+			Controls.Add(_label9);
+			Controls.Add(_label8);
+			Controls.Add(_label6);
+			Controls.Add(_label7);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
 			MaximizeBox = false;
 			MinimizeBox = false;
 			Name = "SongProperties";
 			Text = "Song Properties";
-			((ISupportInitialize)OffsetBox).EndInit();
-			((ISupportInitialize)BandVolBox).EndInit();
-			((ISupportInitialize)GuitarVolBox).EndInit();
-			((ISupportInitialize)HammerOnBox).EndInit();
-			panel1.ResumeLayout(false);
-			panel1.PerformLayout();
-			panel2.ResumeLayout(false);
-			panel2.PerformLayout();
-			AeroGroupBox.ResumeLayout(false);
-			AeroGroupBox.PerformLayout();
-			((ISupportInitialize)BPM8NoteBox).EndInit();
+			((ISupportInitialize)_offsetBox).EndInit();
+			((ISupportInitialize)_bandVolBox).EndInit();
+			((ISupportInitialize)_guitarVolBox).EndInit();
+			((ISupportInitialize)_hammerOnBox).EndInit();
+			_panel1.ResumeLayout(false);
+			_panel1.PerformLayout();
+			_panel2.ResumeLayout(false);
+			_panel2.PerformLayout();
+			_aeroGroupBox.ResumeLayout(false);
+			_aeroGroupBox.PerformLayout();
+			((ISupportInitialize)_bpm8NoteBox).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}

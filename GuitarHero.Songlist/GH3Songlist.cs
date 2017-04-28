@@ -11,16 +11,16 @@ using ns22;
 namespace GuitarHero.Songlist
 {
 	[Serializable]
-	public class GH3Songlist : SortedDictionary<string, GH3Song>
+	public class Gh3Songlist : SortedDictionary<string, Gh3Song>
 	{
 		[NonSerialized]
-		public Dictionary<int, GH3Setlist> gh3SetlistList = new Dictionary<int, GH3Setlist>();
+		public Dictionary<int, Gh3Setlist> Gh3SetlistList = new Dictionary<int, Gh3Setlist>();
 
 		[NonSerialized]
-		public Dictionary<int, GHLink> dictionary_1 = new Dictionary<int, GHLink>();
+		public Dictionary<int, GhLink> Dictionary1 = new Dictionary<int, GhLink>();
 
 		[NonSerialized]
-		public zzCollection214<string, int> class214_0 = new zzCollection214<string, int>();
+		public ZzCollection214<string, int> Class2140 = new ZzCollection214<string, int>();
 
 		public int CustomBitMask;
 
@@ -52,44 +52,44 @@ namespace GuitarHero.Songlist
 			QbSongClass1.AddKeyToDictionary("timrapptest")
 		});
 
-		public GH3Songlist(zzGenericNode1 class308_0, GH3Songlist gh3Songlist_0)
+		public Gh3Songlist(ZzGenericNode1 class3080, Gh3Songlist gh3Songlist0)
 		{
-			findEditableSongs(class308_0, gh3Songlist_0);
+			FindEditableSongs(class3080, gh3Songlist0);
 		}
 
-		public void Add(GH3Song gh3Song_0)
+		public void Add(Gh3Song gh3Song0)
 		{
-			if (!ContainsKey(gh3Song_0.getSongName()))
+			if (!ContainsKey(gh3Song0.GetSongName()))
 			{
-				base.Add(gh3Song_0.getSongName(), gh3Song_0);
-				QbSongClass1.AddKeyToDictionary(gh3Song_0.getSongName());
+				base.Add(gh3Song0.GetSongName(), gh3Song0);
+				QbSongClass1.AddKeyToDictionary(gh3Song0.GetSongName());
 			}
 		}
 
-		public void method_0(GH3Song gh3Song_0, bool bool_0)
+		public void method_0(Gh3Song gh3Song0, bool bool0)
 		{
-			if (!ContainsKey(gh3Song_0.getSongName()))
+			if (!ContainsKey(gh3Song0.GetSongName()))
 			{
-				base.Add(gh3Song_0.getSongName(), gh3Song_0);
-				QbSongClass1.AddKeyToDictionary(gh3Song_0.getSongName());
+				base.Add(gh3Song0.GetSongName(), gh3Song0);
+				QbSongClass1.AddKeyToDictionary(gh3Song0.GetSongName());
 				return;
 			}
-			if (base[gh3Song_0.getSongName()].isEditable() && bool_0)
+			if (base[gh3Song0.GetSongName()].IsEditable() && bool0)
 			{
-				base[gh3Song_0.getSongName()].vmethod_0(gh3Song_0);
+				base[gh3Song0.GetSongName()].vmethod_0(gh3Song0);
 			}
 		}
 
-		public List<int> method_1(GH3Song gh3Song_0)
+		public List<int> method_1(Gh3Song gh3Song0)
 		{
 			var list = new List<int>();
-			foreach (var current in gh3SetlistList.Keys)
+			foreach (var current in Gh3SetlistList.Keys)
 			{
-				foreach (var current2 in gh3SetlistList[current].method_0())
+				foreach (var current2 in Gh3SetlistList[current].method_0())
 				{
-					if (current2.method_0().Contains(gh3Song_0))
+					if (current2.method_0().Contains(gh3Song0))
 					{
-						current2.method_0().Remove(gh3Song_0);
+						current2.method_0().Remove(gh3Song0);
 						if (!list.Contains(current))
 						{
 							list.Add(current);
@@ -97,18 +97,18 @@ namespace GuitarHero.Songlist
 					}
 				}
 			}
-			Remove(gh3Song_0.getSongName());
+			Remove(gh3Song0.GetSongName());
 			return list;
 		}
 
-		public GH3Song[] getSongs()
+		public Gh3Song[] GetSongs()
 		{
-			var songList = new List<GH3Song>(Values);
+			var songList = new List<Gh3Song>(Values);
 			if (songList.Count != 0)
 			{
 				if (HideUsed)
 				{
-					foreach (var current in gh3SetlistList.Values)
+					foreach (var current in Gh3SetlistList.Values)
 					{
 						foreach (var current2 in current.method_0())
 						{
@@ -126,7 +126,7 @@ namespace GuitarHero.Songlist
 				{
 					foreach (var current4 in Values)
 					{
-						if (!current4.isEditable())
+						if (!current4.IsEditable())
 						{
 							songList.Remove(current4);
 						}
@@ -134,7 +134,7 @@ namespace GuitarHero.Songlist
 				}
 				foreach (var current5 in Values)
 				{
-					if (!current5.isVisible())
+					if (!current5.IsVisible())
 					{
 						songList.Remove(current5);
 					}
@@ -143,34 +143,34 @@ namespace GuitarHero.Songlist
 			return songList.ToArray();
 		}
 
-		public bool method_3(string string_0)
+		public bool method_3(string string0)
 		{
-			return ContainsKey(string_0);
+			return ContainsKey(string0);
 		}
 
-		public GH3Setlist method_4(string string_0, StructurePointerRootNode class266_0)
+		public Gh3Setlist method_4(string string0, StructurePointerRootNode class2660)
 		{
-			var gH3Setlist = new GH3Setlist(class266_0.method_7(), this);
-			gH3Setlist.method_3(string_0);
-			gh3SetlistList.Add(class266_0.int_0, gH3Setlist);
+			var gH3Setlist = new Gh3Setlist(class2660.method_7(), this);
+			gH3Setlist.method_3(string0);
+			Gh3SetlistList.Add(class2660.Int0, gH3Setlist);
 			return gH3Setlist;
 		}
 
-		public GHLink method_5(string string_0, StructurePointerRootNode class266_0)
+		public GhLink method_5(string string0, StructurePointerRootNode class2660)
 		{
-			var gHLink = new GHLink(string_0, class266_0.method_7());
-			dictionary_1.Add(class266_0.int_0, gHLink);
+			var gHLink = new GhLink(string0, class2660.method_7());
+			Dictionary1.Add(class2660.Int0, gHLink);
 			return gHLink;
 		}
 
-		public void method_6(StructureArrayNode class292_0)
+		public void method_6(StructureArrayNode class2920)
 		{
-			foreach (StructureHeaderNode @class in class292_0.Nodes)
+			foreach (StructureHeaderNode @class in class2920.Nodes)
 			{
 				var num = @class.method_5(new TagStructureNode("tag")).method_10();
-				if (dictionary_1.ContainsKey(num))
+				if (Dictionary1.ContainsKey(num))
 				{
-					class214_0.Add(@class.method_5(new UnicodeStructureNode("text")).method_8(), num);
+					Class2140.Add(@class.method_5(new UnicodeStructureNode("text")).method_8(), num);
 				}
 			}
 		}
@@ -178,72 +178,72 @@ namespace GuitarHero.Songlist
 		public StructureArrayNode method_7()
 		{
 			var @class = new StructureArrayNode();
-			foreach (var current in class214_0.Keys)
+			foreach (var current in Class2140.Keys)
 			{
-				@class.method_3(new StructureHeaderNode(new List<zzUnkNode294>
+				@class.method_3(new StructureHeaderNode(new List<ZzUnkNode294>
 				{
-					new TagStructureNode("tag", class214_0[current]),
+					new TagStructureNode("tag", Class2140[current]),
 					new UnicodeStructureNode("text", current)
 				}));
 			}
 			return @class;
 		}
 
-		public string method_8(int int_0)
+		public string method_8(int int0)
 		{
-			foreach (var current in dictionary_1.Keys)
+			foreach (var current in Dictionary1.Keys)
 			{
-				if (dictionary_1[current].setlist == int_0)
+				if (Dictionary1[current].Setlist == int0)
 				{
-					return class214_0.method_0(current);
+					return Class2140.method_0(current);
 				}
 			}
 			return "No Name";
 		}
 
-		public int method_9(string string_0)
+		public int method_9(string string0)
 		{
-			return dictionary_1[class214_0[string_0]].setlist;
+			return Dictionary1[Class2140[string0]].Setlist;
 		}
 
-		public int method_10(int int_0)
+		public int method_10(int int0)
 		{
-			return dictionary_1[int_0].setlist;
+			return Dictionary1[int0].Setlist;
 		}
 
-		public GH3Setlist method_11(int int_0)
+		public Gh3Setlist method_11(int int0)
 		{
-			return gh3SetlistList[dictionary_1[int_0].setlist];
+			return Gh3SetlistList[Dictionary1[int0].Setlist];
 		}
 
-		public void findEditableSongs(zzGenericNode1 class308_0, GH3Songlist gh3Songlist_0)
+		public void FindEditableSongs(ZzGenericNode1 class3080, Gh3Songlist gh3Songlist0)
 		{
-			var @class = class308_0.method_5(new StructurePointerRootNode("permanent_songlist_props")).method_7();
-			var flag = class308_0.method_5(new TagStructureNode("band")) != null;
+			var @class = class3080.method_5(new StructurePointerRootNode("permanent_songlist_props")).method_7();
+			var flag = class3080.method_5(new TagStructureNode("band")) != null;
 			Clear();
 			foreach (StructurePointerNode class2 in @class.Nodes)
 			{
-				var gH3Song = flag ? new GHASong(class2) : new GH3Song(class2);
-				if (gh3Songlist_0 != null)
+				var gH3Song = flag ? new GhaSong(class2) : new Gh3Song(class2);
+				if (gh3Songlist0 != null)
 				{
-					gH3Song.setEditable(!gh3Songlist_0.method_3(gH3Song.getSongName()));
+					gH3Song.SetEditable(!gh3Songlist0.method_3(gH3Song.GetSongName()));
 				}
-				gH3Song.setVisible(!IgnoreSongs.Contains(class2.int_0));
+				gH3Song.SetVisible(!IgnoreSongs.Contains(class2.Int0));
 				Add(gH3Song);
 			}
 		}
 
-		public void method_13(zzGenericNode1 class308_0)
+		public void method_13(ZzGenericNode1 class3080)
 		{
 			var list = new List<int>();
-			var list2 = new List<zzUnkNode294>();
+			var list2 = new List<ZzUnkNode294>();
 			foreach (var current in Keys)
 			{
 				list.Add(QbSongClass1.AddKeyToDictionary(current));
 				list2.Add(base[current].vmethod_5());
 			}
-			((TagArray)class308_0.method_5(new ArrayPointerRootNode("gh3_songlist")).method_7()).method_12(list);
-			class308_0.method_5(new StructurePointerRootNode("permanent_songlist_props")).method_7().method_9(list2);
+			((TagArray)class3080.method_5(new ArrayPointerRootNode("gh3_songlist")).method_7()).method_12(list);
+			class3080.method_5(new StructurePointerRootNode("permanent_songlist_props")).method_7().method_9(list2);
 		}
 	}
 }

@@ -1,1 +1,1 @@
-public delegate string Delegate297(int int_0, int int_1);
+public delegate string Delegate297(int int0, int int1);

@@ -4,9 +4,9 @@ using ns9;
 
 namespace ns22
 {
-	public class UnusedStreamClass2 : IDisposable, EmptyInterface1
+	public class UnusedStreamClass2 : IDisposable, IEmptyInterface1
 	{
-		private static readonly double[,] double_0 = {
+		private static readonly double[,] Double0 = {
 			{
 				0.0,
 				0.0
@@ -29,16 +29,16 @@ namespace ns22
 			}
 		};
 
-		private Class352[] class352_0;
+		private Class352[] _class3520;
 
-		private Stream stream_0;
+		private Stream _stream0;
 
 		public void Dispose()
 		{
-			stream_0.Dispose();
-			for (var i = 0; i < class352_0.Length; i++)
+			_stream0.Dispose();
+			for (var i = 0; i < _class3520.Length; i++)
 			{
-				class352_0[i].Dispose();
+				_class3520[i].Dispose();
 			}
 		}
 	}

@@ -1,8 +1,8 @@
 namespace ns2
 {
-	public class OGGClass3
+	public class OggClass3
 	{
-		private static readonly int[] int_0 = {
+		private static readonly int[] Int0 = {
 			0,
 			1,
 			3,
@@ -38,50 +38,50 @@ namespace ns2
 			-1
 		};
 
-		private int int_1;
+		private int _int1;
 
-		private byte[] byte_0;
+		private byte[] _byte0;
 
-		private int int_2;
+		private int _int2;
 
-		private int int_3;
+		private int _int3;
 
-		private int int_4;
+		private int _int4;
 
 		public void method_0()
 		{
-			byte_0 = new byte[256];
-			int_1 = 0;
-			byte_0[0] = 0;
-			int_4 = 256;
+			_byte0 = new byte[256];
+			_int1 = 0;
+			_byte0[0] = 0;
+			_int4 = 256;
 		}
 
 		public void method_1()
 		{
-			byte_0 = null;
+			_byte0 = null;
 		}
 
-		public int method_2(int int_5)
+		public int method_2(int int5)
 		{
-			var num = int_0[int_5];
-			int_5 += int_2;
-			if (int_3 + 4 >= int_4 && int_3 + (int_5 - 1) / 8 >= int_4)
+			var num = Int0[int5];
+			int5 += _int2;
+			if (_int3 + 4 >= _int4 && _int3 + (int5 - 1) / 8 >= _int4)
 			{
 				return -1;
 			}
-			var num2 = (byte_0[int_1] & 255) >> int_2;
-			if (int_5 > 8)
+			var num2 = (_byte0[_int1] & 255) >> _int2;
+			if (int5 > 8)
 			{
-				num2 |= (byte_0[int_1 + 1] & 255) << 8 - int_2;
-				if (int_5 > 16)
+				num2 |= (_byte0[_int1 + 1] & 255) << 8 - _int2;
+				if (int5 > 16)
 				{
-					num2 |= (byte_0[int_1 + 2] & 255) << 16 - int_2;
-					if (int_5 > 24)
+					num2 |= (_byte0[_int1 + 2] & 255) << 16 - _int2;
+					if (int5 > 24)
 					{
-						num2 |= (byte_0[int_1 + 3] & 255) << 24 - int_2;
-						if (int_5 > 32 && int_2 != 0)
+						num2 |= (_byte0[_int1 + 3] & 255) << 24 - _int2;
+						if (int5 > 32 && _int2 != 0)
 						{
-							num2 |= (byte_0[int_1 + 4] & 255) << 32 - int_2;
+							num2 |= (_byte0[_int1 + 4] & 255) << 32 - _int2;
 						}
 					}
 				}
@@ -89,94 +89,94 @@ namespace ns2
 			return num2 & num;
 		}
 
-		public void method_3(int int_5)
+		public void method_3(int int5)
 		{
-			int_5 += int_2;
-			int_1 += int_5 / 8;
-			int_3 += int_5 / 8;
-			int_2 = (int_5 & 7);
+			int5 += _int2;
+			_int1 += int5 / 8;
+			_int3 += int5 / 8;
+			_int2 = (int5 & 7);
 		}
 
-		public void method_4(byte[] byte_1, int int_5, int int_6)
+		public void method_4(byte[] byte1, int int5, int int6)
 		{
-			int_1 = int_5;
-			byte_0 = byte_1;
-			int_3 = 0;
-			int_2 = 0;
-			int_4 = int_6;
+			_int1 = int5;
+			_byte0 = byte1;
+			_int3 = 0;
+			_int2 = 0;
+			_int4 = int6;
 		}
 
-		public void method_5(byte[] byte_1, int int_5)
+		public void method_5(byte[] byte1, int int5)
 		{
 			var num = 0;
-			while (int_5-- != 0)
+			while (int5-- != 0)
 			{
-				byte_1[num++] = (byte)method_6(8);
+				byte1[num++] = (byte)method_6(8);
 			}
 		}
 
-		public int method_6(int int_5)
+		public int method_6(int int5)
 		{
-			var num = int_0[int_5];
-			int_5 += int_2;
+			var num = Int0[int5];
+			int5 += _int2;
 			int num2;
-			if (int_3 + 4 >= int_4)
+			if (_int3 + 4 >= _int4)
 			{
 				num2 = -1;
-				if (int_3 + (int_5 - 1) / 8 >= int_4)
+				if (_int3 + (int5 - 1) / 8 >= _int4)
 				{
-					int_1 += int_5 / 8;
-					int_3 += int_5 / 8;
-					int_2 = (int_5 & 7);
+					_int1 += int5 / 8;
+					_int3 += int5 / 8;
+					_int2 = (int5 & 7);
 					return num2;
 				}
 			}
-			num2 = (byte_0[int_1] & 255) >> int_2;
-			if (int_5 > 8)
+			num2 = (_byte0[_int1] & 255) >> _int2;
+			if (int5 > 8)
 			{
-				num2 |= (byte_0[int_1 + 1] & 255) << 8 - int_2;
-				if (int_5 > 16)
+				num2 |= (_byte0[_int1 + 1] & 255) << 8 - _int2;
+				if (int5 > 16)
 				{
-					num2 |= (byte_0[int_1 + 2] & 255) << 16 - int_2;
-					if (int_5 > 24)
+					num2 |= (_byte0[_int1 + 2] & 255) << 16 - _int2;
+					if (int5 > 24)
 					{
-						num2 |= (byte_0[int_1 + 3] & 255) << 24 - int_2;
-						if (int_5 > 32 && int_2 != 0)
+						num2 |= (_byte0[_int1 + 3] & 255) << 24 - _int2;
+						if (int5 > 32 && _int2 != 0)
 						{
-							num2 |= (byte_0[int_1 + 4] & 255) << 32 - int_2;
+							num2 |= (_byte0[_int1 + 4] & 255) << 32 - _int2;
 						}
 					}
 				}
 			}
 			num2 &= num;
-			int_1 += int_5 / 8;
-			int_3 += int_5 / 8;
-			int_2 = (int_5 & 7);
+			_int1 += int5 / 8;
+			_int3 += int5 / 8;
+			_int2 = (int5 & 7);
 			return num2;
 		}
 
 		public int method_7()
 		{
 			int result;
-			if (int_3 >= int_4)
+			if (_int3 >= _int4)
 			{
 				result = -1;
-				int_2++;
-				if (int_2 > 7)
+				_int2++;
+				if (_int2 > 7)
 				{
-					int_2 = 0;
-					int_1++;
-					int_3++;
+					_int2 = 0;
+					_int1++;
+					_int3++;
 				}
 				return result;
 			}
-			result = (byte_0[int_1] >> int_2 & 1);
-			int_2++;
-			if (int_2 > 7)
+			result = (_byte0[_int1] >> _int2 & 1);
+			_int2++;
+			if (_int2 > 7)
 			{
-				int_2 = 0;
-				int_1++;
-				int_3++;
+				_int2 = 0;
+				_int1++;
+				_int3++;
 			}
 			return result;
 		}

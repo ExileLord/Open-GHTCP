@@ -6,32 +6,32 @@ namespace ns15
 {
 	public class NoteEventInterpreter
 	{
-		public Track<int, NotesAtOffset> noteList = new Track<int, NotesAtOffset>();
+		public Track<int, NotesAtOffset> NoteList = new Track<int, NotesAtOffset>();
 
         //SP
-		public Track<int, int> class228_1 = new Track<int, int>();
+		public Track<int, int> Class2281 = new Track<int, int>();
 
         //SP
-        public Track<int, int> class228_2 = new Track<int, int>();
+        public Track<int, int> Class2282 = new Track<int, int>();
 
         //SP
-        public Track<int, int> class228_3 = new Track<int, int>();
+        public Track<int, int> Class2283 = new Track<int, int>();
 
         //SP
-        public Track<int, int> class228_4 = new Track<int, int>();
+        public Track<int, int> Class2284 = new Track<int, int>();
 
         //SP
-        public Track<int, int> class228_5 = new Track<int, int>();
+        public Track<int, int> Class2285 = new Track<int, int>();
 
         //SP
-        public Track<int, int> class228_6 = new Track<int, int>();
+        public Track<int, int> Class2286 = new Track<int, int>();
 
         //Events
-        public Track<int, List<string>> eventList = new Track<int, List<string>>();
+        public Track<int, List<string>> EventList = new Track<int, List<string>>();
 
-		public bool alwaysTrue = true;
+		public bool AlwaysTrue = true;
 
-		private readonly string currentEventLine;
+		private readonly string _currentEventLine;
 
 		public NoteEventInterpreter()
 		{
@@ -39,7 +39,7 @@ namespace ns15
 
 		public NoteEventInterpreter(string[] stringImported, int constant480)
 		{
-			if (!(alwaysTrue = (stringImported.Length == 0)))//If string is empty
+			if (!(AlwaysTrue = (stringImported.Length == 0)))//If string is empty
 			{
                 //Cycles through the string array imported (All notes/SP)
 				for (var i = 0; i < stringImported.Length; i++)
@@ -52,15 +52,15 @@ namespace ns15
                     2=Note Value
                     3=Sustain Length
                     */
-					var NotesEventsArray = currentString.Split(new[]
+					var notesEventsArray = currentString.Split(new[]
 					{
 						' ',
 						'\t',
 						'='
 					}, StringSplitOptions.RemoveEmptyEntries);
-					var offset = ChartParser.getNoteFromResolution(NotesEventsArray[0]);
+					var offset = ChartParser.GetNoteFromResolution(notesEventsArray[0]);
 					string eventType;
-					if ((eventType = NotesEventsArray[1]) != null)
+					if ((eventType = notesEventsArray[1]) != null)
 					{
 						if (!(eventType == "N"))
 						{
@@ -69,66 +69,66 @@ namespace ns15
 								if (eventType == "E")
 								{
                                     //Interprets Events
-									if (eventList.ContainsKey(offset))
+									if (EventList.ContainsKey(offset))
 									{
-										currentEventLine = NotesEventsArray[2];
-                                        for (var j = 3; j < NotesEventsArray.Length; j++)
+										_currentEventLine = notesEventsArray[2];
+                                        for (var j = 3; j < notesEventsArray.Length; j++)
 										{
-											currentEventLine = currentEventLine + " " + NotesEventsArray[j];
+											_currentEventLine = _currentEventLine + " " + notesEventsArray[j];
 										}
-                                        eventList[offset].Add(currentEventLine);
+                                        EventList[offset].Add(_currentEventLine);
 									}
 									else
 									{
-										currentEventLine = NotesEventsArray[2];
-										for (var k = 3; k < NotesEventsArray.Length; k++)
+										_currentEventLine = notesEventsArray[2];
+										for (var k = 3; k < notesEventsArray.Length; k++)
 										{
-											currentEventLine = currentEventLine + " " + NotesEventsArray[k];
+											_currentEventLine = _currentEventLine + " " + notesEventsArray[k];
 										}
-										eventList.Add(offset, new List<string>());
-										eventList[offset].Add(currentEventLine);
+										EventList.Add(offset, new List<string>());
+										EventList[offset].Add(_currentEventLine);
 									}
 								}
 							}
                             //Interprets Starpower
                             else
                             {
-								switch (Convert.ToInt32(NotesEventsArray[2]))
+								switch (Convert.ToInt32(notesEventsArray[2]))
 								{
 								case 0:
-									if (!class228_2.ContainsKey(offset))
+									if (!Class2282.ContainsKey(offset))
 									{
-										class228_2.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
+										Class2282.Add(offset, ChartParser.GetNoteFromResolution(notesEventsArray[3]));
 									}
 									break;
 								case 1:
-									if (!class228_3.ContainsKey(offset))
+									if (!Class2283.ContainsKey(offset))
 									{
-										class228_3.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
+										Class2283.Add(offset, ChartParser.GetNoteFromResolution(notesEventsArray[3]));
 									}
 									break;
 								case 2:
-									if (!class228_1.ContainsKey(offset))
+									if (!Class2281.ContainsKey(offset))
 									{
-										class228_1.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
+										Class2281.Add(offset, ChartParser.GetNoteFromResolution(notesEventsArray[3]));
 									}
 									break;
 								case 3:
-									if (!class228_4.ContainsKey(offset))
+									if (!Class2284.ContainsKey(offset))
 									{
-										class228_4.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
+										Class2284.Add(offset, ChartParser.GetNoteFromResolution(notesEventsArray[3]));
 									}
 									break;
 								case 4:
-									if (!class228_5.ContainsKey(offset))
+									if (!Class2285.ContainsKey(offset))
 									{
-										class228_5.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
+										Class2285.Add(offset, ChartParser.GetNoteFromResolution(notesEventsArray[3]));
 									}
 									break;
 								case 5:
-									if (!class228_6.ContainsKey(offset))
+									if (!Class2286.ContainsKey(offset))
 									{
-										class228_6.Add(offset, ChartParser.getNoteFromResolution(NotesEventsArray[3]));
+										Class2286.Add(offset, ChartParser.GetNoteFromResolution(notesEventsArray[3]));
 									}
 									break;
 								}
@@ -145,26 +145,26 @@ namespace ns15
                          else
                         {
                             var notes = new bool[32];
-							var sustainLength = ChartParser.getNoteFromResolution(NotesEventsArray[3]);
+							var sustainLength = ChartParser.GetNoteFromResolution(notesEventsArray[3]);
                             if (sustainLength <= constant480 / 4)
 							{
 								sustainLength = 0;
 							}
-							if (!noteList.ContainsKey(offset))
+							if (!NoteList.ContainsKey(offset))
 							{
-								noteList.Add(offset, new NotesAtOffset(notes, sustainLength));
+								NoteList.Add(offset, new NotesAtOffset(notes, sustainLength));
 							}
 							else
 							{
-								var currentSustainLength = noteList[offset].sustainLength;
+								var currentSustainLength = NoteList[offset].SustainLength;
                                 //Updates sustain length
 								if (currentSustainLength < sustainLength)
 								{
-									noteList[offset].sustainLength = sustainLength;
+									NoteList[offset].SustainLength = sustainLength;
 								}
 							}
-                            var note = Convert.ToInt32(NotesEventsArray[2]);
-							noteList[offset].noteValues[note] = true;
+                            var note = Convert.ToInt32(notesEventsArray[2]);
+							NoteList[offset].NoteValues[note] = true;
                         }
 					}
 				}

@@ -1,1 +1,1 @@
-public delegate char Delegate313(char char_0);
+public delegate char Delegate313(char char0);

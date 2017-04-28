@@ -1,1 +1,1 @@
-public delegate string Delegate182(int int_0);
+public delegate string Delegate182(int int0);

@@ -2,24 +2,24 @@ namespace ns2
 {
 	public class Class32
 	{
-		private static readonly int int_0 = 63;
+		private static readonly int Int0 = 63;
 
-		public int[] int_1 = new int[int_0 + 2];
+		public int[] Int1 = new int[Int0 + 2];
 
-		public int[] int_2 = new int[int_0 + 2];
+		public int[] Int2 = new int[Int0 + 2];
 
-		public int[] int_3 = new int[int_0 + 2];
+		public int[] Int3 = new int[Int0 + 2];
 
-		public int[] int_4 = new int[int_0];
+		public int[] Int4 = new int[Int0];
 
-		public int[] int_5 = new int[int_0];
+		public int[] Int5 = new int[Int0];
 
-		public int int_6;
+		public int Int6;
 
-		public int int_7;
+		public int Int7;
 
-		public int int_8;
+		public int Int8;
 
-		public Class31 class31_0;
+		public Class31 Class310;
 	}
 }

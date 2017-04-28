@@ -3,17 +3,17 @@ using ns20;
 
 namespace ns18
 {
-	public class FloatArrayNode : zzUnkNode278<FloatValueNode>
+	public class FloatArrayNode : ZzUnkNode278<FloatValueNode>
 	{
-		public float this[int int_0]
+		public float this[int int0]
 		{
 			get
 			{
-				return ((FloatValueNode)Nodes[int_0]).float_0;
+				return ((FloatValueNode)Nodes[int0]).Float0;
 			}
 			set
 			{
-				((FloatValueNode)Nodes[int_0]).float_0 = value;
+				((FloatValueNode)Nodes[int0]).Float0 = value;
 			}
 		}
 
@@ -22,9 +22,9 @@ namespace ns18
 			vmethod_0();
 		}
 
-		public FloatArrayNode(IEnumerable<float> ienumerable_0)
+		public FloatArrayNode(IEnumerable<float> ienumerable0)
 		{
-			method_11(ienumerable_0);
+			method_11(ienumerable0);
 		}
 
 		public override int vmethod_1()
@@ -32,9 +32,9 @@ namespace ns18
 			return 13;
 		}
 
-		public void method_11(IEnumerable<float> ienumerable_0)
+		public void method_11(IEnumerable<float> ienumerable0)
 		{
-			foreach (var float_ in ienumerable_0)
+			foreach (var float_ in ienumerable0)
 			{
 				Nodes.Add(new FloatValueNode(float_));
 			}

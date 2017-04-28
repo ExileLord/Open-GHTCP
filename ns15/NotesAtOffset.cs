@@ -2,28 +2,28 @@ namespace ns15
 {
 	public class NotesAtOffset
 	{
-		public bool[] noteValues;
+		public bool[] NoteValues;
 
-		public int sustainLength;
+		public int SustainLength;
 
-		public NotesAtOffset(bool[] bool_1, int sL)
+		public NotesAtOffset(bool[] bool1, int sL)
 		{
-			noteValues = bool_1;
-			sustainLength = sL;
+			NoteValues = bool1;
+			SustainLength = sL;
 		}
 
-		public NotesAtOffset(int int_1, int int_2)
+		public NotesAtOffset(int int1, int int2)
 		{
-			setNote(int_1);
-			sustainLength = int_2;
+			SetNote(int1);
+			SustainLength = int2;
 		}
 
 		public int method_0()
 		{
 			var num = 0u;//0
-			for (var i = 0; i < noteValues.Length; i++)
+			for (var i = 0; i < NoteValues.Length; i++)
 			{
-				if (noteValues[i])
+				if (NoteValues[i])
 				{
 					num |= 1u << i;
 				}
@@ -31,14 +31,14 @@ namespace ns15
 			return (int)num;
 		}
 
-		public void setNote(int int_1)
+		public void SetNote(int int1)
 		{
-            noteValues = new bool[32];
+            NoteValues = new bool[32];
 			for (var i = 0; i < 32; i++)
 			{
-				if ((int_1 >> i & 1) != 0)
+				if ((int1 >> i & 1) != 0)
 				{
-					noteValues[i] = true;
+					NoteValues[i] = true;
 				}
 			}
 		}

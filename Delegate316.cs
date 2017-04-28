@@ -1,1 +1,1 @@
-public delegate int Delegate316(long long_0);
+public delegate int Delegate316(long long0);

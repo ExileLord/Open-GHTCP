@@ -1,3 +1,3 @@
 using System.Drawing;
 
-public delegate void Delegate104(object object_0, Brush brush_0, Region region_0);
+public delegate void Delegate104(object object0, Brush brush0, Region region0);

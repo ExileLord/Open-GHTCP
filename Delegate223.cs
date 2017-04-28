@@ -1,1 +1,1 @@
-public delegate byte[] Delegate223(uint uint_0);
+public delegate byte[] Delegate223(uint uint0);

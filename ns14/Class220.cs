@@ -5,13 +5,13 @@ namespace ns14
 {
 	public abstract class Class220 : IEnumerator
 	{
-		public Array array_0;
+		public Array Array0;
 
-		public int[] int_0;
+		public int[] Int0;
 
-		public Array array_1;
+		public Array Array1;
 
-		public bool bool_0;
+		public bool Bool0;
 
 		public object Current
 		{
@@ -29,23 +29,23 @@ namespace ns14
 
 		public void Reset()
 		{
-			bool_0 = false;
+			Bool0 = false;
 		}
 
-		public abstract int[] vmethod_0(bool bool_1);
+		public abstract int[] vmethod_0(bool bool1);
 
 		public Array method_0()
 		{
-			if (!bool_0)
+			if (!Bool0)
 			{
 				throw new InvalidOperationException("CombinatorialBase collection must be Reset() before usage");
 			}
-			for (var i = 0; i < int_0.Length; i++)
+			for (var i = 0; i < Int0.Length; i++)
 			{
-				var index = int_0[i];
-				array_1.SetValue(array_0.GetValue(index), i);
+				var index = Int0[i];
+				Array1.SetValue(Array0.GetValue(index), i);
 			}
-			return array_1;
+			return Array1;
 		}
 	}
 }

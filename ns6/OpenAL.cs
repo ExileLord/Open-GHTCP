@@ -8,7 +8,7 @@ using SharpAudio.ADI.OpenAL;
 
 namespace ns6
 {
-	public static class OpenAL
+	public static class OpenAl
 	{
 		[SuppressUnmanagedCodeSecurity]
 		[DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
@@ -46,15 +46,15 @@ namespace ns6
 		[DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi, ExactSpelling = true)]
 		private static extern IntPtr alcGetString([In] IntPtr device, Enum7 param);
 
-		public static string smethod_0(IntPtr intptr_0, Enum7 enum7_0)
+		public static string smethod_0(IntPtr intptr0, Enum7 enum70)
 		{
-			return Marshal.PtrToStringAnsi(alcGetString(intptr_0, enum7_0));
+			return Marshal.PtrToStringAnsi(alcGetString(intptr0, enum70));
 		}
 
-		public static IList<string> smethod_1(IntPtr intptr_0, Enum8 enum8_0)
+		public static IList<string> smethod_1(IntPtr intptr0, Enum8 enum80)
 		{
 			var list = new List<string>();
-			var ptr = alcGetString(IntPtr.Zero, (Enum7)enum8_0);
+			var ptr = alcGetString(IntPtr.Zero, (Enum7)enum80);
 			var stringBuilder = new StringBuilder();
 			var ofs = 0;
 			while (true)

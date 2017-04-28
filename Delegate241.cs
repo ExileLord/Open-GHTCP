@@ -1,1 +1,1 @@
-public delegate void Delegate241(string string_0, byte[] byte_0);
+public delegate void Delegate241(string string0, byte[] byte0);

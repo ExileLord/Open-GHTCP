@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate TableLayoutRowStyleCollection Delegate290(object object_0);
+public delegate TableLayoutRowStyleCollection Delegate290(object object0);

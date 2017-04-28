@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate void Delegate338(object object_0, AutoScaleMode autoScaleMode_0);
+public delegate void Delegate338(object object0, AutoScaleMode autoScaleMode0);

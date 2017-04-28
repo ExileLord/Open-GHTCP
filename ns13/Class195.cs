@@ -5,31 +5,31 @@ namespace ns13
 {
 	public class Class195 : IDisposable
 	{
-		private string string_0 = string.Empty;
+		private string _string0 = string.Empty;
 
-		private string string_1 = string.Empty;
+		private string _string1 = string.Empty;
 
-		private Stream21 stream21_0;
+		private Stream21 _stream210;
 
-		private Stream24 stream24_0;
+		private Stream24 _stream240;
 
-		private bool bool_0;
+		private bool _bool0;
 
-	    public virtual void vmethod_0(bool bool_1)
+	    public virtual void vmethod_0(bool bool1)
 		{
-			if (!bool_0)
+			if (!_bool0)
 			{
-				bool_0 = true;
-				if (bool_1)
+				_bool0 = true;
+				if (bool1)
 				{
-					if (stream24_0 != null)
+					if (_stream240 != null)
 					{
-						stream24_0.Flush();
-						stream24_0.Close();
+						_stream240.Flush();
+						_stream240.Close();
 					}
-					if (stream21_0 != null)
+					if (_stream210 != null)
 					{
-						stream21_0.Close();
+						_stream210.Close();
 					}
 				}
 			}

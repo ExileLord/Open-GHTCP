@@ -5,13 +5,13 @@ namespace ns8
 {
 	public class Stream18 : Stream
 	{
-		private Stream stream_0;
+		private Stream _stream0;
 
-		private readonly long long_0;
+		private readonly long _long0;
 
-		private readonly long long_1;
+		private readonly long _long1;
 
-		private long long_2;
+		private long _long2;
 
 		public override bool CanRead
 		{
@@ -41,7 +41,7 @@ namespace ns8
 		{
 			get
 			{
-				return long_1;
+				return _long1;
 			}
 		}
 
@@ -49,7 +49,7 @@ namespace ns8
 		{
 			get
 			{
-				return long_2 - long_0;
+				return _long2 - _long0;
 			}
 			set
 			{
@@ -57,31 +57,31 @@ namespace ns8
 				{
 					throw new ArgumentException("Position < 0");
 				}
-				long_2 = long_0 + value;
+				_long2 = _long0 + value;
 			}
 		}
 
 		public Stream method_0()
 		{
-			return stream_0;
+			return _stream0;
 		}
 
-		private void method_1(Stream stream_1)
+		private void method_1(Stream stream1)
 		{
-			stream_0 = stream_1;
+			_stream0 = stream1;
 		}
 
 		private long method_2()
 		{
-			return Math.Max(long_0 + long_1 - long_2, 0L);
+			return Math.Max(_long0 + _long1 - _long2, 0L);
 		}
 
-		public Stream18(Stream stream_1, long long_3, long long_4)
+		public Stream18(Stream stream1, long long3, long long4)
 		{
-			method_1(stream_1);
-			long_0 = long_3;
-			long_1 = long_4;
-			long_2 = long_3;
+			method_1(stream1);
+			_long0 = long3;
+			_long1 = long4;
+			_long2 = long3;
 		}
 
 		public override void Flush()
@@ -97,13 +97,13 @@ namespace ns8
 			int result;
 			lock (method_0())
 			{
-				if (method_0().Position != long_2)
+				if (method_0().Position != _long2)
 				{
-					method_0().Seek(long_2, SeekOrigin.Begin);
+					method_0().Seek(_long2, SeekOrigin.Begin);
 				}
 				count = (int)Math.Min(count, method_2());
 				var num = method_0().Read(buffer, offset, count);
-				long_2 += num;
+				_long2 += num;
 				result = num;
 			}
 			return result;
@@ -113,16 +113,16 @@ namespace ns8
 		{
 			lock (method_0())
 			{
-				if (method_0().Position != long_2)
+				if (method_0().Position != _long2)
 				{
-					method_0().Seek(long_2, SeekOrigin.Begin);
+					method_0().Seek(_long2, SeekOrigin.Begin);
 				}
 				if (count > method_2())
 				{
 					throw new EndOfStreamException();
 				}
 				method_0().Write(buffer, offset, count);
-				long_2 += count;
+				_long2 += count;
 			}
 		}
 
@@ -131,10 +131,10 @@ namespace ns8
 			switch (origin)
 			{
 			case SeekOrigin.Current:
-				offset += long_2 - long_0;
+				offset += _long2 - _long0;
 				break;
 			case SeekOrigin.End:
-				offset += long_1;
+				offset += _long1;
 				break;
 			}
 			Position = offset;

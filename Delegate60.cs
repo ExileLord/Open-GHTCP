@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate void Delegate60(object object_0, DockStyle dockStyle_0);
+public delegate void Delegate60(object object0, DockStyle dockStyle0);

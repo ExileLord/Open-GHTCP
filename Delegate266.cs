@@ -1,1 +1,1 @@
-public delegate int Delegate266(object object_0, byte[] byte_0, int int_0, int int_1);
+public delegate int Delegate266(object object0, byte[] byte0, int int0, int int1);

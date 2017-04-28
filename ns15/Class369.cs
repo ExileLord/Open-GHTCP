@@ -17,32 +17,32 @@ namespace ns15
 		{
 		}
 
-		public static Dictionary<string, int> dictionary_0;
+		public static Dictionary<string, int> Dictionary0;
 
-		public static Dictionary<string, int> dictionary_1;
+		public static Dictionary<string, int> Dictionary1;
 
-		public static Struct94 struct94_0;
+		public static Struct94 Struct940;
 
-		public static Struct94 struct94_1;
+		public static Struct94 Struct941;
 
-		public static Struct94 struct94_2;
+		public static Struct94 Struct942;
 
-		public static Struct94 struct94_3;
+		public static Struct94 Struct943;
 
-		public static Struct94 struct94_4;
+		public static Struct94 Struct944;
 
-		public static Struct94 struct94_5;
+		public static Struct94 Struct945;
 
-		public static Struct94 struct94_6;
+		public static Struct94 Struct946;
 
-		public static Struct94 struct94_7;
+		public static Struct94 Struct947;
 
-		public static Struct95 struct95_0;
+		public static Struct95 Struct950;
 
-		public static Struct94 struct94_8;
+		public static Struct94 Struct948;
 
-		public static Dictionary<string, int> dictionary_2;
+		public static Dictionary<string, int> Dictionary2;
 
-		public static Struct94 struct94_9;
+		public static Struct94 Struct949;
 	}
 }

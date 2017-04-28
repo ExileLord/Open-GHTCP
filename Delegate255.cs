@@ -1,1 +1,1 @@
-public delegate bool Delegate255(object object_0, string string_0);
+public delegate bool Delegate255(object object0, string string0);

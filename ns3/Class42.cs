@@ -2,11 +2,11 @@ namespace ns3
 {
 	public class Class42 : Class41
 	{
-		private static int int_0 = 140;
+		private static int _int0 = 140;
 
-		private static int int_1 = 63;
+		private static int _int1 = 63;
 
-		private static readonly float[] float_0 = {
+		private static readonly float[] Float0 = {
 			1.06498632E-07f,
 			1.1341951E-07f,
 			1.20790148E-07f,
@@ -265,7 +265,7 @@ namespace ns3
 			1f
 		};
 
-		public override void vmethod_0(object object_0)
+		public override void vmethod_0(object object0)
 		{
 		}
 	}

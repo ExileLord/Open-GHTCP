@@ -3,13 +3,13 @@ using System.IO;
 
 namespace ns8
 {
-	public class FSBClass2 : Stream
+	public class FsbClass2 : Stream
 	{
-		public Stream stream_0;
+		public Stream Stream0;
 
-		public byte[] byte_0;
+		public byte[] Byte0;
 
-		private static readonly byte[] byte_1 = {
+		private static readonly byte[] Byte1 = {
 			0,
 			128,
 			64,
@@ -272,7 +272,7 @@ namespace ns8
 		{
 			get
 			{
-				return stream_0.CanRead;
+				return Stream0.CanRead;
 			}
 		}
 
@@ -280,7 +280,7 @@ namespace ns8
 		{
 			get
 			{
-				return stream_0.CanSeek;
+				return Stream0.CanSeek;
 			}
 		}
 
@@ -288,7 +288,7 @@ namespace ns8
 		{
 			get
 			{
-				return stream_0.CanWrite;
+				return Stream0.CanWrite;
 			}
 		}
 
@@ -296,7 +296,7 @@ namespace ns8
 		{
 			get
 			{
-				return stream_0.Length;
+				return Stream0.Length;
 			}
 		}
 
@@ -304,51 +304,51 @@ namespace ns8
 		{
 			get
 			{
-				return stream_0.Position;
+				return Stream0.Position;
 			}
 			set
 			{
-				stream_0.Position = value;
+				Stream0.Position = value;
 			}
 		}
 
 		public long method_0()
 		{
-			return stream_0.Position % byte_0.LongLength;
+			return Stream0.Position % Byte0.LongLength;
 		}
 
-		public FSBClass2(Stream stream_1, byte[] byte_2)
+		public FsbClass2(Stream stream1, byte[] byte2)
 		{
-			if (stream_1 == null)
+			if (stream1 == null)
 			{
 				throw new ArgumentNullException("BaseStream", "Fsb Encryption");
 			}
-			if (byte_2 == null)
+			if (byte2 == null)
 			{
 				throw new ArgumentNullException("Key", "Fsb Encryption");
 			}
-			stream_0 = stream_1;
-			byte_0 = byte_2;
+			Stream0 = stream1;
+			Byte0 = byte2;
 		}
 
-		public FSBClass2(Stream stream_1) : this(stream_1, smethod_0(stream_1))
+		public FsbClass2(Stream stream1) : this(stream1, smethod_0(stream1))
 		{
 		}
 
-		private static byte[] smethod_0(Stream stream_1)
+		private static byte[] smethod_0(Stream stream1)
 		{
-			var position = stream_1.Position;
+			var position = stream1.Position;
 			var array = new byte[65536];
-			var num = stream_1.Read(array, 0, array.Length);
+			var num = stream1.Read(array, 0, array.Length);
 			Array.Resize(ref array, num);
 			var i = 2;
 			while (i < 50)
 			{
 				var result = smethod_1(array, i);
-				stream_1.Position = position;
+				stream1.Position = position;
 				try
 				{
-					FSBClass1.smethod_1(stream_1, result);
+					FsbClass1.smethod_1(stream1, result);
 					goto IL_FD;
 				}
 				catch
@@ -357,7 +357,7 @@ namespace ns8
 				i++;
 				continue;
 				IL_FD:
-				stream_1.Position = position;
+				stream1.Position = position;
 				return result;
 			}
 			if (num > 1000)
@@ -367,10 +367,10 @@ namespace ns8
 				while (j < 50)
 				{
 					var result2 = smethod_1(array, j);
-					stream_1.Position = position;
+					stream1.Position = position;
 					try
 					{
-						FSBClass1.smethod_1(stream_1, result2);
+						FsbClass1.smethod_1(stream1, result2);
 						goto IL_9A;
 					}
 					catch
@@ -379,7 +379,7 @@ namespace ns8
 					j++;
 					continue;
 					IL_9A:
-					stream_1.Position = position;
+					stream1.Position = position;
 					return result2;
 				}
 			}
@@ -390,10 +390,10 @@ namespace ns8
 				while (k < 50)
 				{
 					var result3 = smethod_1(array, k);
-					stream_1.Position = position;
+					stream1.Position = position;
 					try
 					{
-						FSBClass1.smethod_1(stream_1, result3);
+						FsbClass1.smethod_1(stream1, result3);
 						goto IL_EA;
 					}
 					catch
@@ -402,26 +402,26 @@ namespace ns8
 					k++;
 					continue;
 					IL_EA:
-					stream_1.Position = position;
+					stream1.Position = position;
 					return result3;
 				}
 			}
-			stream_1.Position = position;
+			stream1.Position = position;
 			return null;
 		}
 
-		private static byte[] smethod_1(byte[] byte_2, int int_0)
+		private static byte[] smethod_1(byte[] byte2, int int0)
 		{
-			var array = new byte[int_0];
+			var array = new byte[int0];
 			var array2 = new uint[256];
-			for (var i = 0; i < int_0; i++)
+			for (var i = 0; i < int0; i++)
 			{
 				Array.Clear(array2, 0, array2.Length);
 				var num = 0;
-				while (i + num < byte_2.Length)
+				while (i + num < byte2.Length)
 				{
-					array2[byte_2[i + num]] += 1u;
-					num += int_0;
+					array2[byte2[i + num]] += 1u;
+					num += int0;
 				}
 				var num2 = 0;
 				for (var j = 0; j < array2.Length; j++)
@@ -436,50 +436,50 @@ namespace ns8
 			return array;
 		}
 
-		public byte method_1(byte byte_2, ref long long_0)
+		public byte method_1(byte byte2, ref long long0)
 		{
-			var arg_1A_0 = byte_2;
-			var arg_19_0 = byte_0;
+			var arg_1A0 = byte2;
+			var arg190 = Byte0;
 			long num;
-			long_0 = (num = long_0) + 1L;
-            byte_2 = (byte)(arg_1A_0 ^ arg_19_0[(int)((IntPtr)num)]);
-			if (long_0 == byte_0.LongLength)
+			long0 = (num = long0) + 1L;
+            byte2 = (byte)(arg_1A0 ^ arg190[(int)((IntPtr)num)]);
+			if (long0 == Byte0.LongLength)
 			{
-				long_0 = 0L;
+				long0 = 0L;
 			}
-			return byte_2;
+			return byte2;
 		}
 
-		public byte method_2(byte byte_2, ref long long_0)
+		public byte method_2(byte byte2, ref long long0)
 		{
-			return method_1(byte_1[byte_2], ref long_0);
+			return method_1(Byte1[byte2], ref long0);
 		}
 
-		public byte method_3(byte byte_2, ref long long_0)
+		public byte method_3(byte byte2, ref long long0)
 		{
-			return byte_1[method_1(byte_2, ref long_0)];
+			return Byte1[method_1(byte2, ref long0)];
 		}
 
-		public void method_4(byte[] byte_2, int int_0, int int_1, long long_0)
+		public void method_4(byte[] byte2, int int0, int int1, long long0)
 		{
-			for (var i = int_0; i < int_1; i++)
+			for (var i = int0; i < int1; i++)
 			{
-				byte_2[i] = method_2(byte_2[i], ref long_0);
+				byte2[i] = method_2(byte2[i], ref long0);
 			}
 		}
 
-		public void method_5(byte[] byte_2, int int_0, int int_1, long long_0)
+		public void method_5(byte[] byte2, int int0, int int1, long long0)
 		{
-			for (var i = int_0; i < int_1; i++)
+			for (var i = int0; i < int1; i++)
 			{
-				byte_2[i] = method_3(byte_2[i], ref long_0);
+				byte2[i] = method_3(byte2[i], ref long0);
 			}
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
 			var long_ = method_0();
-			var num = stream_0.Read(buffer, offset, count);
+			var num = Stream0.Read(buffer, offset, count);
 			method_5(buffer, offset, num, long_);
 			return num;
 		}
@@ -487,41 +487,41 @@ namespace ns8
 		public override int ReadByte()
 		{
 			var num = method_0();
-			return method_3(byte_0[(int)((IntPtr)method_0())], ref num);
+			return method_3(Byte0[(int)((IntPtr)method_0())], ref num);
 		}
 
 		public override void Write(byte[] buffer, int offset, int count)
 		{
 			method_4(buffer, offset, count, method_0());
-			stream_0.Write(buffer, offset, count);
+			Stream0.Write(buffer, offset, count);
 		}
 
 		public override void WriteByte(byte value)
 		{
 			var num = method_0();
-			stream_0.WriteByte(method_2(value, ref num));
+			Stream0.WriteByte(method_2(value, ref num));
 		}
 
 		public override void Flush()
 		{
-			stream_0.Flush();
+			Stream0.Flush();
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
 		{
-			return stream_0.Seek(offset, origin);
+			return Stream0.Seek(offset, origin);
 		}
 
 		public override void SetLength(long value)
 		{
-			stream_0.SetLength(value);
+			Stream0.SetLength(value);
 		}
 
         protected override void Dispose(bool disposing)
 		{
 			if (disposing)
 			{
-				stream_0.Close();
+				Stream0.Close();
 			}
 			base.Dispose(disposing);
 		}

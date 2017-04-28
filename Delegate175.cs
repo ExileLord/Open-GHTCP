@@ -1,1 +1,1 @@
-public delegate decimal Delegate175(double double_0);
+public delegate decimal Delegate175(double double0);

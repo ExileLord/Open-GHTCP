@@ -1,3 +1,3 @@
 using System;
 
-public delegate object Delegate180(object object_0, Delegate delegate_0, object[] object_1);
+public delegate object Delegate180(object object0, Delegate delegate0, object[] object1);

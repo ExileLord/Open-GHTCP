@@ -1,1 +1,1 @@
-public delegate void Delegate172(long long_0);
+public delegate void Delegate172(long long0);

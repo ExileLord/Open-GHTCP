@@ -2,7 +2,7 @@ namespace ns7
 {
 	public class Class149
 	{
-		private static readonly byte[] byte_0 = {
+		private static readonly byte[] Byte0 = {
 			0,
 			7,
 			14,
@@ -261,12 +261,12 @@ namespace ns7
 			243
 		};
 
-		public static byte smethod_0(byte[] byte_1, int int_0)
+		public static byte smethod_0(byte[] byte1, int int0)
 		{
 			byte b = 0;
-			for (var i = 0; i < int_0; i++)
+			for (var i = 0; i < int0; i++)
 			{
-				b = byte_0[(b ^ byte_1[i]) & 255];
+				b = Byte0[(b ^ byte1[i]) & 255];
 			}
 			return b;
 		}

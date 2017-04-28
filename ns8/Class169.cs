@@ -11,6 +11,6 @@ namespace ns8
 		{
 		}
 
-		public static Struct68 struct68_0;
+		public static Struct68 Struct680;
 	}
 }

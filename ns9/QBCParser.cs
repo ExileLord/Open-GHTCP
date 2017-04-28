@@ -13,51 +13,51 @@ using ns22;
 
 namespace ns9
 {
-	public class QBCParser
+	public class QbcParser
 	{
-		public Dictionary<string, Track<int, NotesAtOffset>> noteList = new Dictionary<string, Track<int, NotesAtOffset>>();
+		public Dictionary<string, Track<int, NotesAtOffset>> NoteList = new Dictionary<string, Track<int, NotesAtOffset>>();
 
-		public Dictionary<string, Track<int, int[]>> spList = new Dictionary<string, Track<int, int[]>>();
+		public Dictionary<string, Track<int, int[]>> SpList = new Dictionary<string, Track<int, int[]>>();
 
-		public Dictionary<string, Track<int, int[]>> battleNoteList = new Dictionary<string, Track<int, int[]>>();
+		public Dictionary<string, Track<int, int[]>> BattleNoteList = new Dictionary<string, Track<int, int[]>>();
 
 		public Fretbar<int> FretbarList;
 
-		public Track<int, int[]> tsList = new Track<int, int[]>();
+		public Track<int, int[]> TsList = new Track<int, int[]>();
 
-		public Track<int, string> class228_1 = new Track<int, string>();
+		public Track<int, string> Class2281 = new Track<int, string>();
 
-		public Track<int, int> class228_2 = new Track<int, int>();
+		public Track<int, int> Class2282 = new Track<int, int>();
 
-		public Track<int, int> class228_3 = new Track<int, int>();
+		public Track<int, int> Class2283 = new Track<int, int>();
 
-		public Track<int, int> bpmList = new Track<int, int>();
+		public Track<int, int> BpmList = new Track<int, int>();
 
-		public Track<int, int> class228_5 = new Track<int, int>();
+		public Track<int, int> Class2285 = new Track<int, int>();
 
-		public int int_0;
+		public int Int0;
 
-		public int int_1 = 480;
+		public int Int1 = 480;
 
-		public static float float_0 = 2.82352948f;
+		public static float Float0 = 2.82352948f;
 
-		public GH3Song gh3Song_0 = new GH3Song();
+		public Gh3Song Gh3Song0 = new Gh3Song();
 
-		private Track<int, int> class228_6;
+		private Track<int, int> _class2286;
 
-		private readonly FloatListNode class287_0 = new FloatListNode(true);
+		private readonly FloatListNode _class2870 = new FloatListNode(true);
 
-		public QBCParser()
+		public QbcParser()
 		{
 			FretbarList = new Fretbar<int>();
 		}
 
-		public QBCParser(GH3Song gh3Song_1) : this()
+		public QbcParser(Gh3Song gh3Song1) : this()
 		{
-			gh3Song_0 = gh3Song_1;
+			Gh3Song0 = gh3Song1;
 		}
 
-		public QBCParser(string fileName)
+		public QbcParser(string fileName)
 		{
 			var list = new List<string>();
 			var streamReader = File.OpenText(fileName);
@@ -82,9 +82,9 @@ namespace ns9
 						{
 							goto IL_8AA;
 						}
-						if (Class369.dictionary_0 == null)
+						if (Class369.Dictionary0 == null)
 						{
-							Class369.dictionary_0 = new Dictionary<string, int>(8)
+							Class369.Dictionary0 = new Dictionary<string, int>(8)
 							{
 								{
 									"Song",
@@ -121,12 +121,12 @@ namespace ns9
 							};
 						}
 						int num;
-						if (Class369.dictionary_0.TryGetValue(key, out num))
+						if (Class369.Dictionary0.TryGetValue(key, out num))
 						{
 							switch (num)
 							{
 							case 0:
-								gh3Song_0.editable = true;
+								Gh3Song0.Editable = true;
 								using (var enumerator = list.GetEnumerator())
 								{
 									while (enumerator.MoveNext())
@@ -145,60 +145,60 @@ namespace ns9
 											switch (key2 = text3)
 											{
 											case "name":
-												gh3Song_0.title = text4;
+												Gh3Song0.Title = text4;
 												break;
 											case "artist":
-												gh3Song_0.artist = text4;
+												Gh3Song0.Artist = text4;
 												break;
 											case "year":
-												gh3Song_0.year = text4;
+												Gh3Song0.Year = text4;
 												break;
 											case "player2":
-												gh3Song_0.not_bass = !text4.ToLower().Equals("bass");
+												Gh3Song0.NotBass = !text4.ToLower().Equals("bass");
 												break;
 											case "artisttext":
 												if (text4.Equals("by"))
 												{
-													gh3Song_0.artist_text = true;
+													Gh3Song0.ArtistText = true;
 												}
 												else if (text4.Equals("as made famous by"))
 												{
-													gh3Song_0.artist_text = false;
+													Gh3Song0.ArtistText = false;
 												}
 												else
 												{
-													gh3Song_0.artist_text = text4;
+													Gh3Song0.ArtistText = text4;
 												}
 												break;
 											case "offset":
-												gh3Song_0.input_offset = (gh3Song_0.gem_offset = Convert.ToInt32(Convert.ToDouble(text4) * -1000.0));
+												Gh3Song0.InputOffset = (Gh3Song0.GemOffset = Convert.ToInt32(Convert.ToDouble(text4) * -1000.0));
 												break;
 											case "singer":
-												gh3Song_0.singer = text4;
+												Gh3Song0.Singer = text4;
 												break;
 											case "bassist":
-												gh3Song_0.bassist = text4;
+												Gh3Song0.Bassist = text4;
 												break;
 											case "boss":
-												gh3Song_0.boss = text4;
+												Gh3Song0.Boss = text4;
 												break;
 											case "countoff":
-												gh3Song_0.countoff = text4;
+												Gh3Song0.Countoff = text4;
 												break;
 											case "guitarvol":
-												gh3Song_0.guitar_vol = Convert.ToSingle(text4);
+												Gh3Song0.GuitarVol = Convert.ToSingle(text4);
 												break;
 											case "bandvol":
-												gh3Song_0.band_vol = Convert.ToSingle(text4);
+												Gh3Song0.BandVol = Convert.ToSingle(text4);
 												break;
 											case "hopo":
-												gh3Song_0.hammer_on = Convert.ToSingle(text4);
+												Gh3Song0.HammerOn = Convert.ToSingle(text4);
 												break;
 											case "originalartist":
-												gh3Song_0.original_artist = text4.Equals("true");
+												Gh3Song0.OriginalArtist = text4.Equals("true");
 												break;
 											case "resolution":
-												int_1 = Convert.ToInt32(text4);
+												Int1 = Convert.ToInt32(text4);
 												break;
 											}
 										}
@@ -225,7 +225,7 @@ namespace ns9
 										string a;
 										if ((a = array2[1]) != null && a == "S")
 										{
-											class228_1.Add(Convert.ToInt32(array2[0]), array2[2]);
+											Class2281.Add(Convert.ToInt32(array2[0]), array2[2]);
 										}
 									}
 									goto IL_A3C;
@@ -256,7 +256,7 @@ namespace ns9
 									string a2;
 									if ((a2 = array3[1]) != null && a2 == "F")
 									{
-										class228_2.Add(Convert.ToInt32(array3[0]), Convert.ToInt32(array3[2]));
+										Class2282.Add(Convert.ToInt32(array3[0]), Convert.ToInt32(array3[2]));
 									}
 								}
 								goto IL_A3C;
@@ -268,7 +268,7 @@ namespace ns9
 							{
 								FretbarList.method_1(Convert.ToInt32(current4.Trim(' ', '\t', '=')));
 							}
-							int_0 = (FretbarList[1] - FretbarList[0]) / 4;
+							Int0 = (FretbarList[1] - FretbarList[0]) / 4;
 							goto IL_A3C;
 							IL_514:
 							using (var enumerator5 = list.GetEnumerator())
@@ -285,7 +285,7 @@ namespace ns9
 									string a3;
 									if ((a3 = array4[1]) != null && a3 == "TS")
 									{
-										tsList.Add(Convert.ToInt32(array4[0]), new[]
+										TsList.Add(Convert.ToInt32(array4[0]), new[]
 										{
 											Convert.ToInt32(array4[2]),
 											Convert.ToInt32(array4[3])
@@ -310,7 +310,7 @@ namespace ns9
 									string a4;
 									if ((a4 = array5[1]) != null && a4 == "F")
 									{
-										class228_3.Add(Convert.ToInt32(array5[0]), Convert.ToInt32(array5[2]));
+										Class2283.Add(Convert.ToInt32(array5[0]), Convert.ToInt32(array5[2]));
 									}
 								}
 								goto IL_A3C;
@@ -330,7 +330,7 @@ namespace ns9
 									string a5;
 									if ((a5 = array6[1]) != null && a5 == "B")
 									{
-										bpmList.Add(Convert.ToInt32(array6[0]), Convert.ToInt32(array6[2]));
+										BpmList.Add(Convert.ToInt32(array6[0]), Convert.ToInt32(array6[2]));
 									}
 								}
 								goto IL_A3C;
@@ -350,7 +350,7 @@ namespace ns9
 									string a6;
 									if ((a6 = array7[1]) != null && a6 == "B")
 									{
-										class228_5.Add(Convert.ToInt32(array7[0]), Convert.ToInt32(array7[2]));
+										Class2285.Add(Convert.ToInt32(array7[0]), Convert.ToInt32(array7[2]));
 									}
 								}
 								goto IL_A3C;
@@ -363,7 +363,7 @@ namespace ns9
 						continue;
 						IL_8AA:
 						text = text.ToLower();
-						if (!this.noteList.ContainsKey(text))
+						if (!this.NoteList.ContainsKey(text))
 						{
 							var noteList = new Track<int, NotesAtOffset>();
 							var spList = new Track<int, int[]>();
@@ -407,9 +407,9 @@ namespace ns9
 									}
 								}
 							}
-							this.noteList.Add(text, noteList);
-							this.spList.Add(text, spList);
-							battleNoteList.Add(text, battleNote);
+							this.NoteList.Add(text, noteList);
+							this.SpList.Add(text, spList);
+							BattleNoteList.Add(text, battleNote);
 						}
 						goto IL_A3C;
 					}
@@ -422,15 +422,15 @@ namespace ns9
 			streamReader.Close();
 		}
 
-		public QBCParser(string string_0, zzGenericNode1 class308_0) : this(string_0, class308_0, null)
+		public QbcParser(string string0, ZzGenericNode1 class3080) : this(string0, class3080, null)
 		{
 		}
 
-		public QBCParser(string gh3SongName, zzGenericNode1 class308_0, zzGenericNode1 class308_1) : this(gh3SongName, class308_0, class308_1, null)
+		public QbcParser(string gh3SongName, ZzGenericNode1 class3080, ZzGenericNode1 class3081) : this(gh3SongName, class3080, class3081, null)
 		{
 		}
 
-		public QBCParser(string string_0, zzGenericNode1 class308_0, zzGenericNode1 class308_1, zzGenericNode1 class308_2)
+		public QbcParser(string string0, ZzGenericNode1 class3080, ZzGenericNode1 class3081, ZzGenericNode1 class3082)
 		{
 			string[] array = {
 				"Easy",
@@ -458,7 +458,7 @@ namespace ns9
 					{
 						var text2 = array4[k];
 						var text3 = (text.ToLower() + ((a == "Double") ? "coop" : "") + "_" + text2.ToLower()).Replace("guitar_", "");
-						@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_song_" + text3));
+						@class = class3080.method_5(new ArrayPointerRootNode(string0 + "_song_" + text3));
 						if (@class != null && @class.method_7() is IntegerArrayNode)
 						{
 							var class2 = new Track<int, NotesAtOffset>();
@@ -467,9 +467,9 @@ namespace ns9
 							{
 								class2.Add(array5[l], new NotesAtOffset(array5[l + 2], array5[l + 1]));
 							}
-							noteList.Add(text3, class2);
+							NoteList.Add(text3, class2);
 						}
-						@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_" + text3 + "_star"));
+						@class = class3080.method_5(new ArrayPointerRootNode(string0 + "_" + text3 + "_star"));
 						if (@class != null && @class.method_7() is ListArrayNode)
 						{
 							var class3 = new Track<int, int[]>();
@@ -481,9 +481,9 @@ namespace ns9
 									current[2]
 								});
 							}
-							spList.Add(text3, class3);
+							SpList.Add(text3, class3);
 						}
-						@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_" + text3 + "_starbattlemode"));
+						@class = class3080.method_5(new ArrayPointerRootNode(string0 + "_" + text3 + "_starbattlemode"));
 						if (@class != null && @class.method_7() is ListArrayNode)
 						{
 							var class4 = new Track<int, int[]>();
@@ -495,76 +495,76 @@ namespace ns9
 									current2[2]
 								});
 							}
-							battleNoteList.Add(text3, class4);
+							BattleNoteList.Add(text3, class4);
 						}
 					}
 				}
 			}
-			@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_faceoffp1"));
+			@class = class3080.method_5(new ArrayPointerRootNode(string0 + "_faceoffp1"));
 			if (@class != null && @class.method_7() is ListArrayNode)
 			{
 				foreach (var current3 in @class.method_7().method_8<IntegerArrayNode>())
 				{
-					class228_2.Add(current3[0], current3[1]);
+					Class2282.Add(current3[0], current3[1]);
 				}
 			}
-			@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_faceoffp2"));
+			@class = class3080.method_5(new ArrayPointerRootNode(string0 + "_faceoffp2"));
 			if (@class != null && @class.method_7() is ListArrayNode)
 			{
 				foreach (var current4 in @class.method_7().method_8<IntegerArrayNode>())
 				{
-					class228_3.Add(current4[0], current4[1]);
+					Class2283.Add(current4[0], current4[1]);
 				}
 			}
-			@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_bossbattlep1"));
+			@class = class3080.method_5(new ArrayPointerRootNode(string0 + "_bossbattlep1"));
 			if (@class != null && @class.method_7() is ListArrayNode)
 			{
 				foreach (var current5 in @class.method_7().method_8<IntegerArrayNode>())
 				{
-					bpmList.Add(current5[0], current5[1]);
+					BpmList.Add(current5[0], current5[1]);
 				}
 			}
-			@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_bossbattlep2"));
+			@class = class3080.method_5(new ArrayPointerRootNode(string0 + "_bossbattlep2"));
 			if (@class != null && @class.method_7() is ListArrayNode)
 			{
 				foreach (var current6 in @class.method_7().method_8<IntegerArrayNode>())
 				{
-					class228_5.Add(current6[0], current6[1]);
+					Class2285.Add(current6[0], current6[1]);
 				}
 			}
-			@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_timesig"));
+			@class = class3080.method_5(new ArrayPointerRootNode(string0 + "_timesig"));
 			if (@class != null && @class.method_7() is ListArrayNode)
 			{
 				foreach (var current7 in @class.method_7().method_8<IntegerArrayNode>())
 				{
-					tsList.Add(current7[0], new[]
+					TsList.Add(current7[0], new[]
 					{
 						current7[1],
 						current7[2]
 					});
 				}
 			}
-			@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_fretbars"));
+			@class = class3080.method_5(new ArrayPointerRootNode(string0 + "_fretbars"));
 			if (@class != null && @class.method_7() is IntegerArrayNode)
 			{
 				FretbarList = new Fretbar<int>(@class.method_7().method_8<int>());
-				int_0 = (FretbarList[1] - FretbarList[0]) / 4;
+				Int0 = (FretbarList[1] - FretbarList[0]) / 4;
 				try
 				{
 					var dictionary = new Dictionary<int, string>();
-					@class = class308_0.method_5(new ArrayPointerRootNode(string_0 + "_markers"));
-					if (class308_1 != null && @class != null && @class.method_7() is StructureArrayNode)
+					@class = class3080.method_5(new ArrayPointerRootNode(string0 + "_markers"));
+					if (class3081 != null && @class != null && @class.method_7() is StructureArrayNode)
 					{
-						foreach (UnicodeRootNode class5 in class308_1.Nodes)
+						foreach (UnicodeRootNode class5 in class3081.Nodes)
 						{
-							dictionary.Add(class5.int_0, class5.method_7());
+							dictionary.Add(class5.Int0, class5.method_7());
 						}
 						using (var enumerator9 = @class.method_7().method_8<StructureHeaderNode>().GetEnumerator())
 						{
 							while (enumerator9.MoveNext())
 							{
 								var current8 = enumerator9.Current;
-								class228_1.Add(((IntegerStructureNode)current8[0]).method_8(), dictionary[((FileTagStructureNode)current8[1]).method_9()]);
+								Class2281.Add(((IntegerStructureNode)current8[0]).method_8(), dictionary[((FileTagStructureNode)current8[1]).method_9()]);
 							}
 							goto IL_7C2;
 						}
@@ -573,7 +573,7 @@ namespace ns9
 					{
 						foreach (var current9 in @class.method_7().method_8<StructureHeaderNode>())
 						{
-							class228_1.Add(((IntegerStructureNode)current9[0]).method_8(), ((UnicodeStructureNode)current9[1]).method_8());
+							Class2281.Add(((IntegerStructureNode)current9[0]).method_8(), ((UnicodeStructureNode)current9[1]).method_8());
 						}
 					}
 					IL_7C2:;
@@ -583,9 +583,9 @@ namespace ns9
 				}
 				try
 				{
-					if (class308_2 != null)
+					if (class3082 != null)
 					{
-						gh3Song_0 = new GH3Song(class308_2.method_5(new StructurePointerNode(string_0)));
+						Gh3Song0 = new Gh3Song(class3082.method_5(new StructurePointerNode(string0)));
 					}
 					return;
 				}
@@ -597,10 +597,10 @@ namespace ns9
 			throw new Exception("Not a MID.QB!");
 		}
 
-		private int method_0(int int_2)
+		private int method_0(int int2)
 		{
-			var num = class228_6.method_1(int_2);
-			return Convert.ToInt32((num + (int_2 - class228_6.Keys[num]) / (double)class228_6.Values[num]) * int_1);
+			var num = _class2286.method_1(int2);
+			return Convert.ToInt32((num + (int2 - _class2286.Keys[num]) / (double)_class2286.Values[num]) * Int1);
 		}
 
 		public ChartParser method_1()
@@ -608,15 +608,15 @@ namespace ns9
 			return method_2(null);
 		}
 
-		public ChartParser method_2(GH3Song gh3Song_1)
+		public ChartParser method_2(Gh3Song gh3Song1)
 		{
-			var @class = new ChartParser(gh3Song_0);
-			@class.constant480 = int_1;
-			if (gh3Song_1 != null)
+			var @class = new ChartParser(Gh3Song0);
+			@class.Constant480 = Int1;
+			if (gh3Song1 != null)
 			{
-				@class.gh3SongInfo.vmethod_0(gh3Song_1);
+				@class.Gh3SongInfo.vmethod_0(gh3Song1);
 			}
-			class228_6 = new Track<int, int>();
+			_class2286 = new Track<int, int>();
 			if (FretbarList != null)
 			{
 				var value = FretbarList[0];
@@ -628,51 +628,51 @@ namespace ns9
 					var num3 = Convert.ToInt32(60000000.0 / num2);
 					if (num3 != num)
 					{
-						@class.bpmInterpreter.bpmList.Add((i - 1) * int_1, num3);
+						@class.BpmInterpreter.BpmList.Add((i - 1) * Int1, num3);
 						num = num3;
 					}
-					class228_6.Add(FretbarList[i - 1], num2);
+					_class2286.Add(FretbarList[i - 1], num2);
 				}
 				FretbarList[0] = value;
-				@class.sectionInterpreter.otherList.Add(method_0(FretbarList[FretbarList.Count - 1]), new List<string>(new[]
+				@class.SectionInterpreter.OtherList.Add(method_0(FretbarList[FretbarList.Count - 1]), new List<string>(new[]
 				{
 					"end"
 				}));
-				foreach (var current in class228_1.Keys)
+				foreach (var current in Class2281.Keys)
 				{
-					@class.sectionInterpreter.sectionList.Add(method_0(current), class228_1[current]);
+					@class.SectionInterpreter.SectionList.Add(method_0(current), Class2281[current]);
 				}
-				foreach (var current2 in tsList.Keys)
+				foreach (var current2 in TsList.Keys)
 				{
-					@class.bpmInterpreter.TSList.Add(method_0(current2), tsList[current2][0]);
+					@class.BpmInterpreter.TsList.Add(method_0(current2), TsList[current2][0]);
 				}
 				var class2 = new Track<int, int>();
 				var class3 = new Track<int, int>();
-				foreach (var current3 in class228_2.Keys)
+				foreach (var current3 in Class2282.Keys)
 				{
 					var num4 = method_0(current3);
-					var num5 = method_0(current3 + class228_2[current3] - int_0) - num4;
-					class2.Add(num4, (num5 <= int_1 / 4) ? 0 : num5);
+					var num5 = method_0(current3 + Class2282[current3] - Int0) - num4;
+					class2.Add(num4, (num5 <= Int1 / 4) ? 0 : num5);
 				}
-				foreach (var current4 in class228_3.Keys)
+				foreach (var current4 in Class2283.Keys)
 				{
 					var num4 = method_0(current4);
-					var num5 = method_0(current4 + class228_3[current4] - int_0) - num4;
-					class3.Add(num4, (num5 <= int_1 / 4) ? 0 : num5);
+					var num5 = method_0(current4 + Class2283[current4] - Int0) - num4;
+					class3.Add(num4, (num5 <= Int1 / 4) ? 0 : num5);
 				}
 				var class4 = new Track<int, int>();
 				var class5 = new Track<int, int>();
-				foreach (var current5 in bpmList.Keys)
+				foreach (var current5 in BpmList.Keys)
 				{
 					var num4 = method_0(current5);
-					var num5 = method_0(current5 + bpmList[current5] - int_0) - num4;
-					class4.Add(num4, (num5 <= int_1 / 4) ? 0 : num5);
+					var num5 = method_0(current5 + BpmList[current5] - Int0) - num4;
+					class4.Add(num4, (num5 <= Int1 / 4) ? 0 : num5);
 				}
-				foreach (var current6 in class228_5.Keys)
+				foreach (var current6 in Class2285.Keys)
 				{
 					var num4 = method_0(current6);
-					var num5 = method_0(current6 + class228_5[current6] - int_0) - num4;
-					class5.Add(num4, (num5 <= int_1 / 4) ? 0 : num5);
+					var num5 = method_0(current6 + Class2285[current6] - Int0) - num4;
+					class5.Add(num4, (num5 <= Int1 / 4) ? 0 : num5);
 				}
 				string[] array = {
 					"Easy",
@@ -699,89 +699,89 @@ namespace ns9
 						{
 							var text3 = array4[l];
 							var key = (text2.ToLower() + ((text == "Double") ? "coop" : "") + "_" + text3.ToLower()).Replace("guitar_", "");
-							if (noteList.ContainsKey(key))
+							if (NoteList.ContainsKey(key))
 							{
 								var class6 = new NoteEventInterpreter();
-								var class7 = noteList[key];
+								var class7 = NoteList[key];
 								foreach (var current7 in class7.Keys)
 								{
 									var num4 = method_0(current7);
-									var num5 = method_0(current7 + class7[current7].sustainLength - int_0) - num4;
-									class6.noteList.Add(num4, new NotesAtOffset(class7[current7].noteValues, (num5 <= int_1 / 4) ? 0 : num5));
+									var num5 = method_0(current7 + class7[current7].SustainLength - Int0) - num4;
+									class6.NoteList.Add(num4, new NotesAtOffset(class7[current7].NoteValues, (num5 <= Int1 / 4) ? 0 : num5));
 								}
-								class6.alwaysTrue = false;
-								if (spList.ContainsKey(key))
+								class6.AlwaysTrue = false;
+								if (SpList.ContainsKey(key))
 								{
-									var class8 = spList[key];
+									var class8 = SpList[key];
 									foreach (var current8 in class8.Keys)
 									{
 										var num4 = method_0(current8);
-										var num5 = method_0(current8 + class8[current8][0] - int_0) - num4;
-										class6.class228_1.Add(num4, (num5 <= int_1 / 4) ? 0 : num5);
+										var num5 = method_0(current8 + class8[current8][0] - Int0) - num4;
+										class6.Class2281.Add(num4, (num5 <= Int1 / 4) ? 0 : num5);
 									}
 								}
-								if (battleNoteList.ContainsKey(key))
+								if (BattleNoteList.ContainsKey(key))
 								{
-									var class9 = spList[key];
+									var class9 = SpList[key];
 									foreach (var current9 in class9.Keys)
 									{
 										var num4 = method_0(current9);
-										var num5 = method_0(current9 + class9[current9][0] - int_0) - num4;
-										class6.class228_4.Add(num4, (num5 <= int_1 / 4) ? 0 : num5);
+										var num5 = method_0(current9 + class9[current9][0] - Int0) - num4;
+										class6.Class2284.Add(num4, (num5 <= Int1 / 4) ? 0 : num5);
 									}
 								}
-								class6.class228_2 = class2;
-								class6.class228_3 = class3;
-								class6.class228_5 = class4;
-								class6.class228_6 = class5;
-								@class.difficultyWithNotes.Add(text3 + text + text2, class6);
+								class6.Class2282 = class2;
+								class6.Class2283 = class3;
+								class6.Class2285 = class4;
+								class6.Class2286 = class5;
+								@class.DifficultyWithNotes.Add(text3 + text + text2, class6);
 							}
 						}
 					}
 				}
-				class228_6.Clear();
-				class228_6 = null;
+				_class2286.Clear();
+				_class2286 = null;
 				return @class;
 			}
 			return null;
 		}
 
-        public void qbcCreator(string fileLocation, GH3Song song)
+        public void QbcCreator(string fileLocation, Gh3Song song)
         {
-            gh3Song_0 = song;
+            Gh3Song0 = song;
             var streamWriter = new StreamWriter(fileLocation);
             streamWriter.WriteLine("[Song]");
             streamWriter.WriteLine("{");
-            streamWriter.WriteLine("\tName = \"" + gh3Song_0.title + "\"");
-            streamWriter.WriteLine("\tArtist = \"" + gh3Song_0.artist + "\"");
-            streamWriter.WriteLine("\tYear = \"" + gh3Song_0.year + "\"");
-            streamWriter.WriteLine("\tPlayer2 = " + (gh3Song_0.not_bass ? "Rhythm" : "Bass"));
-            streamWriter.WriteLine("\tArtistText = \"" + ((gh3Song_0.artist_text is bool) ? (((bool)gh3Song_0.artist_text) ? "by" : "as made famous by") : ((string)gh3Song_0.artist_text)) + "\"");
-            streamWriter.WriteLine("\tOffset = " + gh3Song_0.input_offset / -1000.0);
-            if (!gh3Song_0.singer.Equals(""))
+            streamWriter.WriteLine("\tName = \"" + Gh3Song0.Title + "\"");
+            streamWriter.WriteLine("\tArtist = \"" + Gh3Song0.Artist + "\"");
+            streamWriter.WriteLine("\tYear = \"" + Gh3Song0.Year + "\"");
+            streamWriter.WriteLine("\tPlayer2 = " + (Gh3Song0.NotBass ? "Rhythm" : "Bass"));
+            streamWriter.WriteLine("\tArtistText = \"" + ((Gh3Song0.ArtistText is bool) ? (((bool)Gh3Song0.ArtistText) ? "by" : "as made famous by") : ((string)Gh3Song0.ArtistText)) + "\"");
+            streamWriter.WriteLine("\tOffset = " + Gh3Song0.InputOffset / -1000.0);
+            if (!Gh3Song0.Singer.Equals(""))
             {
-                streamWriter.WriteLine("\tSinger = \"" + gh3Song_0.singer + "\"");
+                streamWriter.WriteLine("\tSinger = \"" + Gh3Song0.Singer + "\"");
             }
-            if (!gh3Song_0.bassist.Equals("Generic Bassist"))
+            if (!Gh3Song0.Bassist.Equals("Generic Bassist"))
             {
-                streamWriter.WriteLine("\tBassist = \"" + gh3Song_0.bassist + "\"");
+                streamWriter.WriteLine("\tBassist = \"" + Gh3Song0.Bassist + "\"");
             }
-            if (!gh3Song_0.boss.Equals(""))
+            if (!Gh3Song0.Boss.Equals(""))
             {
-                streamWriter.WriteLine("\tBoss = \"" + gh3Song_0.boss + "\"");
+                streamWriter.WriteLine("\tBoss = \"" + Gh3Song0.Boss + "\"");
             }
-            streamWriter.WriteLine("\tCountOff = \"" + gh3Song_0.countoff + "\"");
-            streamWriter.WriteLine("\tGuitarVol = " + gh3Song_0.guitar_vol);
-            streamWriter.WriteLine("\tBandVol = " + gh3Song_0.band_vol);
-            streamWriter.WriteLine("\tHoPo = " + gh3Song_0.hammer_on);
-            streamWriter.WriteLine("\tOriginalArtist = " + (gh3Song_0.original_artist ? "true" : "false"));
-            streamWriter.WriteLine("\tResolution = " + int_1);
+            streamWriter.WriteLine("\tCountOff = \"" + Gh3Song0.Countoff + "\"");
+            streamWriter.WriteLine("\tGuitarVol = " + Gh3Song0.GuitarVol);
+            streamWriter.WriteLine("\tBandVol = " + Gh3Song0.BandVol);
+            streamWriter.WriteLine("\tHoPo = " + Gh3Song0.HammerOn);
+            streamWriter.WriteLine("\tOriginalArtist = " + (Gh3Song0.OriginalArtist ? "true" : "false"));
+            streamWriter.WriteLine("\tResolution = " + Int1);
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[SyncTrack]");
             streamWriter.WriteLine("{");
-            foreach (var current in tsList.Keys)
+            foreach (var current in TsList.Keys)
             {
-                streamWriter.WriteLine(string.Concat("\t", current, " = TS ", tsList[current][0], " ", tsList[current][1]));
+                streamWriter.WriteLine(string.Concat("\t", current, " = TS ", TsList[current][0], " ", TsList[current][1]));
             }
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[FretBars]");
@@ -793,9 +793,9 @@ namespace ns9
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[Events]");
             streamWriter.WriteLine("{");
-            foreach (var current3 in class228_1.Keys)
+            foreach (var current3 in Class2281.Keys)
             {
-                streamWriter.WriteLine(string.Concat("\t", current3, " = S \"", class228_1[current3], "\""));
+                streamWriter.WriteLine(string.Concat("\t", current3, " = S \"", Class2281[current3], "\""));
             }
             streamWriter.WriteLine("}");
             string[] array = {
@@ -817,9 +817,9 @@ namespace ns9
                 {
                     var str2 = array2[j];
                     var text = str + str2;
-                    var @class = noteList.ContainsKey(text) ? noteList[text] : new Track<int, NotesAtOffset>();
-                    var class2 = spList.ContainsKey(text) ? spList[text] : new Track<int, int[]>();
-                    var class3 = battleNoteList.ContainsKey(text) ? battleNoteList[text] : new Track<int, int[]>();
+                    var @class = NoteList.ContainsKey(text) ? NoteList[text] : new Track<int, NotesAtOffset>();
+                    var class2 = SpList.ContainsKey(text) ? SpList[text] : new Track<int, int[]>();
+                    var class3 = BattleNoteList.ContainsKey(text) ? BattleNoteList[text] : new Track<int, int[]>();
                     var class4 = new Class221<int>(@class.Keys);
                     class4.vmethod_1(class2.Keys);
                     class4.vmethod_1(class3.Keys);
@@ -836,7 +836,7 @@ namespace ns9
                     {
                         if (@class.ContainsKey(current4))
                         {
-                            streamWriter.WriteLine(string.Concat("\t", current4, " = N ", @class[current4].method_0(), " ", @class[current4].sustainLength));
+                            streamWriter.WriteLine(string.Concat("\t", current4, " = N ", @class[current4].method_0(), " ", @class[current4].SustainLength));
                         }
                         if (class2.ContainsKey(current4))
                         {
@@ -852,39 +852,39 @@ namespace ns9
             }
             streamWriter.WriteLine("[FaceOffP1]");
             streamWriter.WriteLine("{");
-            foreach (var current5 in class228_2.Keys)
+            foreach (var current5 in Class2282.Keys)
             {
-                streamWriter.WriteLine(string.Concat("\t", current5, " = F ", class228_2[current5]));
+                streamWriter.WriteLine(string.Concat("\t", current5, " = F ", Class2282[current5]));
             }
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[FaceOffP2]");
             streamWriter.WriteLine("{");
-            foreach (var current6 in class228_3.Keys)
+            foreach (var current6 in Class2283.Keys)
             {
-                streamWriter.WriteLine(string.Concat("\t", current6, " = F ", class228_3[current6]));
+                streamWriter.WriteLine(string.Concat("\t", current6, " = F ", Class2283[current6]));
             }
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[BossBattleP1]");
             streamWriter.WriteLine("{");
-            foreach (var current7 in bpmList.Keys)
+            foreach (var current7 in BpmList.Keys)
             {
-                streamWriter.WriteLine(string.Concat("\t", current7, " = B ", bpmList[current7]));
+                streamWriter.WriteLine(string.Concat("\t", current7, " = B ", BpmList[current7]));
             }
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[BossBattleP2]");
             streamWriter.WriteLine("{");
-            foreach (var current8 in class228_5.Keys)
+            foreach (var current8 in Class2285.Keys)
             {
-                streamWriter.WriteLine(string.Concat("\t", current8, " = B ", class228_5[current8]));
+                streamWriter.WriteLine(string.Concat("\t", current8, " = B ", Class2285[current8]));
             }
             streamWriter.WriteLine("}");
             streamWriter.Close();
         }
 
-        public zzGenericNode1 method_4(string string_0)
+        public ZzGenericNode1 method_4(string string0)
 		{
-			var @class = new zzGenericNode1();
-			var int_ = QbSongClass1.AddKeyToDictionary("songs\\" + string_0 + ".mid.qb");
+			var @class = new ZzGenericNode1();
+			var int_ = QbSongClass1.AddKeyToDictionary("songs\\" + string0 + ".mid.qb");
 			string[] array = {
 				"",
 				"rhythm_",
@@ -905,156 +905,156 @@ namespace ns9
 				{
 					var str2 = array2[j];
 					var text = str + str2;
-					if (noteList.ContainsKey(text))
+					if (NoteList.ContainsKey(text))
 					{
-						method_5(int_, string_0 + "_song_" + text, @class, noteList[text]);
+						method_5(int_, string0 + "_song_" + text, @class, NoteList[text]);
 					}
 					else
 					{
-						method_11(int_, string_0 + "_song_" + text, @class);
+						method_11(int_, string0 + "_song_" + text, @class);
 					}
-					if (spList.ContainsKey(text))
+					if (SpList.ContainsKey(text))
 					{
-						method_6(int_, string_0 + "_" + text + "_star", @class, spList[text]);
-					}
-					else
-					{
-						method_11(int_, string_0 + "_" + text + "_star", @class);
-					}
-					if (battleNoteList.ContainsKey(text))
-					{
-						method_6(int_, string_0 + "_" + text + "_starbattlemode", @class, battleNoteList[text]);
+						method_6(int_, string0 + "_" + text + "_star", @class, SpList[text]);
 					}
 					else
 					{
-						method_11(int_, string_0 + "_" + text + "_starbattlemode", @class);
+						method_11(int_, string0 + "_" + text + "_star", @class);
+					}
+					if (BattleNoteList.ContainsKey(text))
+					{
+						method_6(int_, string0 + "_" + text + "_starbattlemode", @class, BattleNoteList[text]);
+					}
+					else
+					{
+						method_11(int_, string0 + "_" + text + "_starbattlemode", @class);
 					}
 				}
 			}
-			method_7(int_, string_0 + "_faceoffp1", @class, class228_2);
-			method_7(int_, string_0 + "_faceoffp2", @class, class228_3);
-			method_7(int_, string_0 + "_bossbattlep1", @class, bpmList);
-			method_7(int_, string_0 + "_bossbattlep2", @class, class228_5);
-			method_8(int_, string_0 + "_timesig", @class);
-			method_9(int_, string_0 + "_fretbars", @class);
-			method_10(int_, string_0 + "_markers", @class);
-			method_11(int_, string_0 + "_scripts_notes", @class);
-			method_11(int_, string_0 + "_anim_notes", @class);
-			method_11(int_, string_0 + "_triggers_notes", @class);
-			method_11(int_, string_0 + "_cameras_notes", @class);
-			method_11(int_, string_0 + "_lightshow_notes", @class);
-			method_11(int_, string_0 + "_crowd_notes", @class);
-			method_11(int_, string_0 + "_drums_notes", @class);
-			method_11(int_, string_0 + "_performance_notes", @class);
-			method_11(int_, string_0 + "_scripts", @class);
-			method_11(int_, string_0 + "_anim", @class);
-			method_11(int_, string_0 + "_triggers", @class);
-			method_11(int_, string_0 + "_cameras", @class);
-			method_11(int_, string_0 + "_lightshow", @class);
-			method_11(int_, string_0 + "_crowd", @class);
-			method_11(int_, string_0 + "_drums", @class);
-			method_11(int_, string_0 + "_performance", @class);
+			method_7(int_, string0 + "_faceoffp1", @class, Class2282);
+			method_7(int_, string0 + "_faceoffp2", @class, Class2283);
+			method_7(int_, string0 + "_bossbattlep1", @class, BpmList);
+			method_7(int_, string0 + "_bossbattlep2", @class, Class2285);
+			method_8(int_, string0 + "_timesig", @class);
+			method_9(int_, string0 + "_fretbars", @class);
+			method_10(int_, string0 + "_markers", @class);
+			method_11(int_, string0 + "_scripts_notes", @class);
+			method_11(int_, string0 + "_anim_notes", @class);
+			method_11(int_, string0 + "_triggers_notes", @class);
+			method_11(int_, string0 + "_cameras_notes", @class);
+			method_11(int_, string0 + "_lightshow_notes", @class);
+			method_11(int_, string0 + "_crowd_notes", @class);
+			method_11(int_, string0 + "_drums_notes", @class);
+			method_11(int_, string0 + "_performance_notes", @class);
+			method_11(int_, string0 + "_scripts", @class);
+			method_11(int_, string0 + "_anim", @class);
+			method_11(int_, string0 + "_triggers", @class);
+			method_11(int_, string0 + "_cameras", @class);
+			method_11(int_, string0 + "_lightshow", @class);
+			method_11(int_, string0 + "_crowd", @class);
+			method_11(int_, string0 + "_drums", @class);
+			method_11(int_, string0 + "_performance", @class);
 			return @class;
 		}
 
-		private void method_5(int int_2, string string_0, zzGenericNode1 class308_0, Track<int, NotesAtOffset> class228_7)
+		private void method_5(int int2, string string0, ZzGenericNode1 class3080, Track<int, NotesAtOffset> class2287)
 		{
-			if (class228_7.Keys.Count == 0)
+			if (class2287.Keys.Count == 0)
 			{
-				method_11(int_2, string_0, class308_0);
+				method_11(int2, string0, class3080);
 				return;
 			}
 			var list = new List<int>();
-			foreach (var current in class228_7.Keys)
+			foreach (var current in class2287.Keys)
 			{
 				list.Add(current);
-				list.Add(class228_7[current].sustainLength);
-				list.Add(class228_7[current].method_0());
+				list.Add(class2287[current].SustainLength);
+				list.Add(class2287[current].method_0());
 			}
-			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, new IntegerArrayNode(list)));
+			class3080.method_3(new ArrayPointerRootNode(string0, int2, new IntegerArrayNode(list)));
 		}
 
-		private void method_6(int int_2, string string_0, zzGenericNode1 class308_0, Track<int, int[]> class228_7)
+		private void method_6(int int2, string string0, ZzGenericNode1 class3080, Track<int, int[]> class2287)
 		{
-			if (class228_7.Keys.Count == 0)
+			if (class2287.Keys.Count == 0)
 			{
-				method_11(int_2, string_0, class308_0);
+				method_11(int2, string0, class3080);
 				return;
 			}
 			var @class = new ListArrayNode();
-			foreach (var current in class228_7.Keys)
+			foreach (var current in class2287.Keys)
 			{
 				@class.method_3(new IntegerArrayNode(new[]
 				{
 					current,
-					class228_7[current][0],
-					class228_7[current][1]
+					class2287[current][0],
+					class2287[current][1]
 				}));
 			}
-			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, @class));
+			class3080.method_3(new ArrayPointerRootNode(string0, int2, @class));
 		}
 
-		private void method_7(int int_2, string string_0, zzGenericNode1 class308_0, Track<int, int> class228_7)
+		private void method_7(int int2, string string0, ZzGenericNode1 class3080, Track<int, int> class2287)
 		{
-			if (class228_7.Keys.Count == 0)
+			if (class2287.Keys.Count == 0)
 			{
-				method_11(int_2, string_0, class308_0);
+				method_11(int2, string0, class3080);
 				return;
 			}
 			var @class = new ListArrayNode();
-			foreach (var current in class228_7.Keys)
+			foreach (var current in class2287.Keys)
 			{
 				@class.method_3(new IntegerArrayNode(new[]
 				{
 					current,
-					class228_7[current]
+					class2287[current]
 				}));
 			}
-			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, @class));
+			class3080.method_3(new ArrayPointerRootNode(string0, int2, @class));
 		}
 
-		private void method_8(int int_2, string string_0, zzGenericNode1 class308_0)
+		private void method_8(int int2, string string0, ZzGenericNode1 class3080)
 		{
 			var @class = new ListArrayNode();
-			foreach (var current in tsList.Keys)
+			foreach (var current in TsList.Keys)
 			{
 				@class.method_3(new IntegerArrayNode(new[]
 				{
 					current,
-					tsList[current][0],
-					tsList[current][1]
+					TsList[current][0],
+					TsList[current][1]
 				}));
 			}
-			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, @class));
+			class3080.method_3(new ArrayPointerRootNode(string0, int2, @class));
 		}
 
-		private void method_9(int int_2, string string_0, zzGenericNode1 class308_0)
+		private void method_9(int int2, string string0, ZzGenericNode1 class3080)
 		{
-			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, new IntegerArrayNode(FretbarList)));
+			class3080.method_3(new ArrayPointerRootNode(string0, int2, new IntegerArrayNode(FretbarList)));
 		}
 
-		private void method_10(int int_2, string string_0, zzGenericNode1 class308_0)
+		private void method_10(int int2, string string0, ZzGenericNode1 class3080)
 		{
-			if (class228_1.Keys.Count == 0)
+			if (Class2281.Keys.Count == 0)
 			{
-				method_11(int_2, string_0, class308_0);
+				method_11(int2, string0, class3080);
 				return;
 			}
 			var @class = new StructureArrayNode();
-			foreach (var current in class228_1.Keys)
+			foreach (var current in Class2281.Keys)
 			{
-				@class.method_3(new StructureHeaderNode(new zzUnkNode294[]
+				@class.method_3(new StructureHeaderNode(new ZzUnkNode294[]
 				{
 					new IntegerStructureNode("time", current),
-					new UnicodeStructureNode("marker", class228_1[current])
+					new UnicodeStructureNode("marker", Class2281[current])
 				}));
 			}
-			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, @class));
+			class3080.method_3(new ArrayPointerRootNode(string0, int2, @class));
 		}
 
-		private void method_11(int int_2, string string_0, zzGenericNode1 class308_0)
+		private void method_11(int int2, string string0, ZzGenericNode1 class3080)
 		{
-			class308_0.method_3(new ArrayPointerRootNode(string_0, int_2, class287_0));
+			class3080.method_3(new ArrayPointerRootNode(string0, int2, _class2870));
 		}
 	}
 }

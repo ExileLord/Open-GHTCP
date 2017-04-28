@@ -1,1 +1,1 @@
-public delegate string Delegate194(object object_0, byte[] byte_0, int int_0, int int_1);
+public delegate string Delegate194(object object0, byte[] byte0, int int0, int int1);

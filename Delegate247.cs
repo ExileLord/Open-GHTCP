@@ -1,1 +1,1 @@
-public delegate float Delegate247(double double_0);
+public delegate float Delegate247(double double0);

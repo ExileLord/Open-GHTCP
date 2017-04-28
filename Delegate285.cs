@@ -1,3 +1,3 @@
 using System;
 
-public delegate int Delegate285(object object_0, Version version_0);
+public delegate int Delegate285(object object0, Version version0);

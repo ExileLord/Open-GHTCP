@@ -4,17 +4,17 @@ namespace ns18
 {
 	public abstract class AbstractTreeNode2 : AbstractBaseTreeNode1
 	{
-		private static bool colorFlipFlopper;
+		private static bool _colorFlipFlopper;
 
 		public abstract object vmethod_7();
 
 		public abstract byte[] vmethod_8();
 
-		public abstract void vmethod_9(byte[] byte_0);
+		public abstract void vmethod_9(byte[] byte0);
 
-		public string IntToHex32Bit(int int_0) // This is kind of dumb because this is implemented elsewhere already
+		public string IntToHex32Bit(int int0) // This is kind of dumb because this is implemented elsewhere already
 		{
-			var text = int_0.ToString("x");
+			var text = int0.ToString("x");
 			while (text.Length < 8)
 			{
 				text = "0" + text;
@@ -24,7 +24,7 @@ namespace ns18
 
 		public override Color GetColor()
 		{
-			if (colorFlipFlopper = !colorFlipFlopper) //why would you do this max
+			if (_colorFlipFlopper = !_colorFlipFlopper) //why would you do this max
 			{
 				return Color.Ivory;
 			}

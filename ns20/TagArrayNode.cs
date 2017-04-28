@@ -4,17 +4,17 @@ using ns21;
 
 namespace ns20
 {
-	public class TagArray : zzUnkNode278<TagValueNode>
+	public class TagArray : ZzUnkNode278<TagValueNode>
 	{
-		public int this[int int_0]
+		public int this[int int0]
 		{
 			get
 			{
-				return ((TagValueNode)Nodes[int_0]).int_0;
+				return ((TagValueNode)Nodes[int0]).Int0;
 			}
 			set
 			{
-				((TagValueNode)Nodes[int_0]).int_0 = value;
+				((TagValueNode)Nodes[int0]).Int0 = value;
 			}
 		}
 
@@ -23,9 +23,9 @@ namespace ns20
 			vmethod_0();
 		}
 
-		public TagArray(IEnumerable<int> ienumerable_0)
+		public TagArray(IEnumerable<int> ienumerable0)
 		{
-			method_11(ienumerable_0);
+			method_11(ienumerable0);
 		}
 
 		public override int vmethod_1()
@@ -33,19 +33,19 @@ namespace ns20
 			return 14;
 		}
 
-		public void method_11(IEnumerable<int> ienumerable_0)
+		public void method_11(IEnumerable<int> ienumerable0)
 		{
-			foreach (var current in ienumerable_0)
+			foreach (var current in ienumerable0)
 			{
 				Nodes.Add(new TagValueNode(current));
 			}
 			vmethod_0();
 		}
 
-		public void method_12(IEnumerable<int> ienumerable_0)
+		public void method_12(IEnumerable<int> ienumerable0)
 		{
 			Nodes.Clear();
-			method_11(ienumerable_0);
+			method_11(ienumerable0);
 		}
 
 		public override byte vmethod_15()

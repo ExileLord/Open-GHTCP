@@ -1,1 +1,1 @@
-public delegate void Delegate291(object object_0, string string_0, short short_0);
+public delegate void Delegate291(object object0, string string0, short short0);

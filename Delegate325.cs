@@ -1,1 +1,1 @@
-public delegate long Delegate325(int int_0);
+public delegate long Delegate325(int int0);

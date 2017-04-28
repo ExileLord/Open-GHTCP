@@ -9,7 +9,7 @@ namespace SharpAudio.ASC.Flac.LibFlac
 		{
 		}
 
-		public FrameDecodeException(string string_0) : base(string_0)
+		public FrameDecodeException(string string0) : base(string0)
 		{
 		}
 	}

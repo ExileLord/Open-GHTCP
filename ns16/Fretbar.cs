@@ -5,32 +5,32 @@ namespace ns16
 {
 	public class Fretbar<T> : List<T>, ICloneable where T : IComparable<T>
 	{
-		private bool bool_0;
+		private bool _bool0;
 
-		private bool bool_1;
+		private bool _bool1;
 
-		private bool bool_2;
+		private bool _bool2;
 
-		public new T this[int int_0]
+		public new T this[int int0]
 		{
 			get
 			{
-				return base[int_0];
+				return base[int0];
 			}
 			set
 			{
 				if (method_5(value))
 				{
-					base[int_0] = value;
-					if (int_0 > 0)
+					base[int0] = value;
+					if (int0 > 0)
 					{
-						var t = base[int_0 - 1];
+						var t = base[int0 - 1];
 						if (t.CompareTo(value) > 0)
 						{
 							goto IL_54;
 						}
 					}
-					if (int_0 >= Count - 1 || value.CompareTo(base[int_0 + 1]) <= 0)
+					if (int0 >= Count - 1 || value.CompareTo(base[int0 + 1]) <= 0)
 					{
 						return;
 					}
@@ -45,12 +45,12 @@ namespace ns16
 			method_0();
 		}
 
-		public Fretbar(int int_0) : base(int_0)
+		public Fretbar(int int0) : base(int0)
 		{
 			method_0();
 		}
 
-		public Fretbar(IEnumerable<T> ienumerable_0) : base(ienumerable_0)
+		public Fretbar(IEnumerable<T> ienumerable0) : base(ienumerable0)
 		{
 			Sort();
 			method_0();
@@ -58,52 +58,52 @@ namespace ns16
 
 		private void method_0()
 		{
-			bool_0 = true;
-			bool_1 = true;
-			bool_2 = true;
+			_bool0 = true;
+			_bool1 = true;
+			_bool2 = true;
 		}
 
-		public void method_1(T gparam_0)
+		public void method_1(T gparam0)
 		{
-			if (method_5(gparam_0))
+			if (method_5(gparam0))
 			{
-				if (bool_1)
+				if (_bool1)
 				{
-					var num = method_3(gparam_0);
+					var num = method_3(gparam0);
 					var num2 = (num >= 0) ? num : (-num - 1);
 					if (num2 >= Count)
 					{
-						Add(gparam_0);
+						Add(gparam0);
 						return;
 					}
-					Insert(num2, gparam_0);
+					Insert(num2, gparam0);
 				}
 				else
 				{
-					bool_0 = false;
-					Add(gparam_0);
+					_bool0 = false;
+					Add(gparam0);
 				}
 			}
 		}
 
-		public bool method_2(T gparam_0)
+		public bool method_2(T gparam0)
 		{
-			if (!bool_0)
+			if (!_bool0)
 			{
-				return Contains(gparam_0);
+				return Contains(gparam0);
 			}
-			return BinarySearch(gparam_0) >= 0;
+			return BinarySearch(gparam0) >= 0;
 		}
 
-		public int method_3(T gparam_0)
+		public int method_3(T gparam0)
 		{
 			int i;
-			if (bool_0)
+			if (_bool0)
 			{
-				for (i = BinarySearch(gparam_0); i > 0; i--)
+				for (i = BinarySearch(gparam0); i > 0; i--)
 				{
 					var t = base[i - 1];
-					if (!t.Equals(gparam_0))
+					if (!t.Equals(gparam0))
 					{
 						break;
 					}
@@ -111,7 +111,7 @@ namespace ns16
 			}
 			else
 			{
-				i = IndexOf(gparam_0);
+				i = IndexOf(gparam0);
 			}
 			return i;
 		}
@@ -121,9 +121,9 @@ namespace ns16
 			var text = "{";
 			for (var i = 0; i < Count; i++)
 			{
-				var arg_37_0 = text;
+				var arg370 = text;
 				var t = base[i];
-				text = arg_37_0 + t + ((i != Count - 1) ? "; " : "}");
+				text = arg370 + t + ((i != Count - 1) ? "; " : "}");
 			}
 			return text;
 		}
@@ -153,59 +153,59 @@ namespace ns16
 
 		public void method_4()
 		{
-			if (bool_0)
+			if (_bool0)
 			{
 				return;
 			}
 			Sort();
-			bool_0 = true;
+			_bool0 = true;
 		}
 
-		private bool method_5(T gparam_0)
+		private bool method_5(T gparam0)
 		{
-			return bool_2 || !method_2(gparam_0);
+			return _bool2 || !method_2(gparam0);
 		}
 
 		public object Clone()
 		{
 			return new Fretbar<T>(this)
 			{
-				bool_2 = bool_2,
-				bool_0 = bool_0,
-				bool_1 = bool_1
+				_bool2 = _bool2,
+				_bool0 = _bool0,
+				_bool1 = _bool1
 			};
 		}
 
-		private bool method_6(ref int int_0, ref int int_1, ref int int_2, T gparam_0)
+		private bool method_6(ref int int0, ref int int1, ref int int2, T gparam0)
 		{
 			method_4();
-			while (int_0 <= int_1)
+			while (int0 <= int1)
 			{
-				int_2 = (int_0 + int_1) / 2;
-				var t = base[int_2];
-				if (t.CompareTo(gparam_0) < 0)
+				int2 = (int0 + int1) / 2;
+				var t = base[int2];
+				if (t.CompareTo(gparam0) < 0)
 				{
-					int_0 = int_2 + 1;
+					int0 = int2 + 1;
 				}
 				else
 				{
-					var t2 = base[int_2];
-					if (t2.CompareTo(gparam_0) <= 0)
+					var t2 = base[int2];
+					if (t2.CompareTo(gparam0) <= 0)
 					{
 						return true;
 					}
-					int_1 = int_2 - 1;
+					int1 = int2 - 1;
 				}
 			}
 			return false;
 		}
 
-		public int method_7(T gparam_0)
+		public int method_7(T gparam0)
 		{
 			var num = 0;
 			var num2 = Count - 1;
 			var num3 = 0;
-			num3 = (method_6(ref num, ref num2, ref num3, gparam_0) ? num3 : num2);
+			num3 = (method_6(ref num, ref num2, ref num3, gparam0) ? num3 : num2);
 			if (num3 >= 0)
 			{
 				return num3;

@@ -1,1 +1,1 @@
-public delegate byte Delegate275(object object_0);
+public delegate byte Delegate275(object object0);

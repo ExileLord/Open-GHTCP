@@ -1,1 +1,1 @@
-public delegate void Delegate174(object object_0, bool bool_0);
+public delegate void Delegate174(object object0, bool bool0);

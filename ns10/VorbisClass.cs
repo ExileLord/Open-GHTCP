@@ -4,99 +4,99 @@ namespace ns10
 {
 	public class VorbisClass
 	{
-		private static int int_0 = -136;
+		private static int _int0 = -136;
 
-		private static int int_1 = -135;
+		private static int _int1 = -135;
 
-		private static string string_0 = "vorbis";
+		private static string _string0 = "vorbis";
 
-		private static int int_2 = 1;
+		private static int _int2 = 1;
 
-		private static int int_3 = 2;
+		private static int _int3 = 2;
 
-		private static int int_4 = 3;
+		private static int _int4 = 3;
 
-		private static int int_5 = 1;
+		private static int _int5 = 1;
 
-		private static int int_6 = 1;
+		private static int _int6 = 1;
 
-		public int[] int_7 = new int[2];
+		public int[] Int7 = new int[2];
 
-		public int int_8;
+		public int Int8;
 
-		public int int_9;
+		public int Int9;
 
-		public int int_10;
+		public int Int10;
 
-		public int int_11;
+		public int Int11;
 
-		public int int_12;
+		public int Int12;
 
-		public int int_13;
+		public int Int13;
 
-		public int int_14;
+		public int Int14;
 
-		public Class64[] class64_0;
+		public Class64[] Class640;
 
-		public int[] int_15;
+		public int[] Int15;
 
-		public object[] object_0;
+		public object[] Object0;
 
-		public int[] int_16;
+		public int[] Int16;
 
-		public object[] object_1;
+		public object[] Object1;
 
-		public int[] int_17;
+		public int[] Int17;
 
-		public object[] object_2;
+		public object[] Object2;
 
-		public int[] int_18;
+		public int[] Int18;
 
-		public object[] object_3;
+		public object[] Object3;
 
-		public Class76[] class76_0;
+		public Class76[] Class760;
 
-		public Class53[] class53_0 = new Class53[64];
+		public Class53[] Class530 = new Class53[64];
 
 		public void method_0()
 		{
-			for (var i = 0; i < int_8; i++)
+			for (var i = 0; i < Int8; i++)
 			{
-				class64_0[i] = null;
+				Class640[i] = null;
 			}
-			class64_0 = null;
-			for (var j = 0; j < int_9; j++)
+			Class640 = null;
+			for (var j = 0; j < Int9; j++)
 			{
-				Class45.class45_0[int_15[j]].vmethod_0(object_0[j]);
+				Class45.Class450[Int15[j]].vmethod_0(Object0[j]);
 			}
-			object_0 = null;
-			for (var k = 0; k < int_10; k++)
+			Object0 = null;
+			for (var k = 0; k < Int10; k++)
 			{
-				Class72.class72_0[int_16[k]].vmethod_0(object_1[k]);
+				Class72.Class720[Int16[k]].vmethod_0(Object1[k]);
 			}
-			object_1 = null;
-			for (var l = 0; l < int_11; l++)
+			Object1 = null;
+			for (var l = 0; l < Int11; l++)
 			{
-				Class41.class41_0[int_17[l]].vmethod_0(object_2[l]);
+				Class41.Class410[Int17[l]].vmethod_0(Object2[l]);
 			}
-			object_2 = null;
-			for (var m = 0; m < int_12; m++)
+			Object2 = null;
+			for (var m = 0; m < Int12; m++)
 			{
-				Class57.class57_0[int_18[m]].vmethod_0(object_3[m]);
+				Class57.Class570[Int18[m]].vmethod_0(Object3[m]);
 			}
-			object_3 = null;
-			for (var n = 0; n < int_13; n++)
+			Object3 = null;
+			for (var n = 0; n < Int13; n++)
 			{
-				if (class76_0[n] != null)
+				if (Class760[n] != null)
 				{
-					class76_0[n].method_0();
-					class76_0[n] = null;
+					Class760[n].method_0();
+					Class760[n] = null;
 				}
 			}
-			class76_0 = null;
-			for (var num = 0; num < int_14; num++)
+			Class760 = null;
+			for (var num = 0; num < Int14; num++)
 			{
-				class53_0[num].method_0();
+				Class530[num].method_0();
 			}
 		}
 	}

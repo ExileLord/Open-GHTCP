@@ -5,7 +5,7 @@ using System.Drawing;
 
 namespace ns18
 {
-	public abstract class AbsTreeNode1_1 : AbstractTreeNode1
+	public abstract class AbsTreeNode11 : AbstractTreeNode1
 	{
 		public override int CompareTo(object target)
 		{
@@ -13,7 +13,7 @@ namespace ns18
 			{
 				return -1;
 			}
-			if (((AbsTreeNode1_1)target).Text == Text)
+			if (((AbsTreeNode11)target).Text == Text)
 			{
 				return 0;
 			}

@@ -6,146 +6,146 @@ using ns14;
 
 namespace ns12
 {
-	public class ZIPCompressor : Stream19
+	public class ZipCompressor : Stream19
 	{
 		private delegate int Delegate5(byte[] b, int offset, int length);
 
-		private Delegate5 delegate5_0;
+		private Delegate5 _delegate50;
 
-		private Class192 class192_0 = new Class192();
+		private Class192 _class1920 = new Class192();
 
-		private Class193 class193_0;
+		private Class193 _class1930;
 
-		private long long_1;
+		private long _long1;
 
-		private int int_0;
+		private int _int0;
 
-		private int int_1;
+		private int _int1;
 
-		private string password;
+		private string _password;
 
 		public override long Length
 		{
 			get
 			{
-				if (class193_0 == null)
+				if (_class1930 == null)
 				{
 					throw new InvalidOperationException("No current entry");
 				}
-				if (class193_0.method_21() < 0L)
+				if (_class1930.method_21() < 0L)
 				{
 					throw new ZipException("Length not available for the current entry");
 				}
-				return class193_0.method_21();
+				return _class1930.method_21();
 			}
 		}
 
-		public ZIPCompressor(Stream stream_1) : base(stream_1, new Class196(true))
+		public ZipCompressor(Stream stream1) : base(stream1, new Class196(true))
 		{
-			delegate5_0 = method_9;
+			_delegate50 = method_9;
 		}
 
 		public void method_3(string password)
 		{
-			this.password = password;
+			this._password = password;
 		}
 
 		public bool method_4()
 		{
-			return class193_0 != null && class193_0.method_12();
+			return _class1930 != null && _class1930.method_12();
 		}
 
 		public Class193 method_5()
 		{
-			if (class192_0 == null)
+			if (_class1920 == null)
 			{
 				throw new InvalidOperationException("Closed.");
 			}
-			if (class193_0 != null)
+			if (_class1930 != null)
 			{
 				method_8();
 			}
-			var num = class201_0.method_10();
+			var num = Class2010.method_10();
 			if (num != 33639248 && num != 101010256 && num != 84233040 && num != 117853008)
 			{
 				if (num != 101075792)
 				{
 					if (num == 808471376 || num == 134695760)
 					{
-						num = class201_0.method_10();
+						num = Class2010.method_10();
 					}
 					if (num != 67324752)
 					{
 						throw new ZipException("Wrong Local header signature: 0x" + string.Format("{0:X}", num));
 					}
-					var int_ = (short)class201_0.method_9();
-					int_1 = class201_0.method_9();
-					int_0 = class201_0.method_9();
-					var num2 = (uint)class201_0.method_10();
-					var num3 = class201_0.method_10();
-					long_0 = class201_0.method_10();
-					long_1 = class201_0.method_10();
-					var num4 = class201_0.method_9();
-					var num5 = class201_0.method_9();
-					var flag = (int_1 & 1) == 1;
+					var int_ = (short)Class2010.method_9();
+					_int1 = Class2010.method_9();
+					_int0 = Class2010.method_9();
+					var num2 = (uint)Class2010.method_10();
+					var num3 = Class2010.method_10();
+					Long0 = Class2010.method_10();
+					_long1 = Class2010.method_10();
+					var num4 = Class2010.method_9();
+					var num5 = Class2010.method_9();
+					var flag = (_int1 & 1) == 1;
 					var array = new byte[num4];
-					class201_0.method_5(array);
-					var string_ = Class186.smethod_2(int_1, array);
-					class193_0 = new Class193(string_, int_);
-					class193_0.method_5(int_1);
-					class193_0.method_28((Enum31)int_0);
-					if ((int_1 & 8) == 0)
+					Class2010.method_5(array);
+					var string_ = Class186.smethod_2(_int1, array);
+					_class1930 = new Class193(string_, int_);
+					_class1930.method_5(_int1);
+					_class1930.method_28((Enum31)_int0);
+					if ((_int1 & 8) == 0)
 					{
-						class193_0.method_26(num3 & 4294967295L);
-						class193_0.method_22(long_1 & 4294967295L);
-						class193_0.method_24(long_0 & 4294967295L);
-						class193_0.method_3((byte)(num3 >> 24 & 255));
+						_class1930.method_26(num3 & 4294967295L);
+						_class1930.method_22(_long1 & 4294967295L);
+						_class1930.method_24(Long0 & 4294967295L);
+						_class1930.method_3((byte)(num3 >> 24 & 255));
 					}
 					else
 					{
 						if (num3 != 0)
 						{
-							class193_0.method_26(num3 & 4294967295L);
+							_class1930.method_26(num3 & 4294967295L);
 						}
-						if (long_1 != 0L)
+						if (_long1 != 0L)
 						{
-							class193_0.method_22(long_1 & 4294967295L);
+							_class1930.method_22(_long1 & 4294967295L);
 						}
-						if (long_0 != 0L)
+						if (Long0 != 0L)
 						{
-							class193_0.method_24(long_0 & 4294967295L);
+							_class1930.method_24(Long0 & 4294967295L);
 						}
-						class193_0.method_3((byte)(num2 >> 8 & 255u));
+						_class1930.method_3((byte)(num2 >> 8 & 255u));
 					}
-					class193_0.method_18(num2);
+					_class1930.method_18(num2);
 					if (num5 > 0)
 					{
 						var array2 = new byte[num5];
-						class201_0.method_5(array2);
-						class193_0.method_30(array2);
+						Class2010.method_5(array2);
+						_class1930.method_30(array2);
 					}
-					class193_0.method_31(true);
-					if (class193_0.method_23() >= 0L)
+					_class1930.method_31(true);
+					if (_class1930.method_23() >= 0L)
 					{
-						long_0 = class193_0.method_23();
+						Long0 = _class1930.method_23();
 					}
-					if (class193_0.method_21() >= 0L)
+					if (_class1930.method_21() >= 0L)
 					{
-						long_1 = class193_0.method_21();
+						_long1 = _class1930.method_21();
 					}
-					if (int_0 == 0 && ((!flag && long_0 != long_1) || (flag && long_0 - 12L != long_1)))
+					if (_int0 == 0 && ((!flag && Long0 != _long1) || (flag && Long0 - 12L != _long1)))
 					{
 						throw new ZipException("Stored, but compressed != uncompressed");
 					}
-					if (class193_0.method_34())
+					if (_class1930.method_34())
 					{
-						delegate5_0 = method_11;
+						_delegate50 = method_11;
 					}
 					else
 					{
-						delegate5_0 = method_10;
+						_delegate50 = method_10;
 					}
-					return class193_0;
+					return _class1930;
 				}
 			}
 			Close();
@@ -154,58 +154,58 @@ namespace ns12
 
 		private void method_6()
 		{
-			if (class201_0.method_10() != 134695760)
+			if (Class2010.method_10() != 134695760)
 			{
 				throw new ZipException("Data descriptor signature not found");
 			}
-			class193_0.method_26(class201_0.method_10() & 4294967295L);
-			if (class193_0.method_15())
+			_class1930.method_26(Class2010.method_10() & 4294967295L);
+			if (_class1930.method_15())
 			{
-				long_0 = class201_0.method_11();
-				long_1 = class201_0.method_11();
+				Long0 = Class2010.method_11();
+				_long1 = Class2010.method_11();
 			}
 			else
 			{
-				long_0 = class201_0.method_10();
-				long_1 = class201_0.method_10();
+				Long0 = Class2010.method_10();
+				_long1 = Class2010.method_10();
 			}
-			class193_0.method_24(long_0);
-			class193_0.method_22(long_1);
+			_class1930.method_24(Long0);
+			_class1930.method_22(_long1);
 		}
 
-		private void method_7(bool bool_2)
+		private void method_7(bool bool2)
 		{
 			method_1();
-			if ((int_1 & 8) != 0)
+			if ((_int1 & 8) != 0)
 			{
 				method_6();
 			}
-			long_1 = 0L;
-			if (bool_2 && (class192_0.vmethod_0() & 4294967295L) != class193_0.method_25() && class193_0.method_25() != -1L)
+			_long1 = 0L;
+			if (bool2 && (_class1920.vmethod_0() & 4294967295L) != _class1930.method_25() && _class1930.method_25() != -1L)
 			{
 				throw new ZipException("CRC mismatch");
 			}
-			class192_0.vmethod_1();
-			if (int_0 == 8)
+			_class1920.vmethod_1();
+			if (_int0 == 8)
 			{
-				class196_0.method_0();
+				Class1960.method_0();
 			}
-			class193_0 = null;
+			_class1930 = null;
 		}
 
 		public void method_8()
 		{
-			if (class192_0 == null)
+			if (_class1920 == null)
 			{
 				throw new InvalidOperationException("Closed");
 			}
-			if (class193_0 == null)
+			if (_class1930 == null)
 			{
 				return;
 			}
-			if (int_0 == 8)
+			if (_int0 == 8)
 			{
-				if ((int_1 & 8) != 0)
+				if ((_int1 & 8) != 0)
 				{
 					var array = new byte[2048];
 					while (Read(array, 0, array.Length) > 0)
@@ -213,26 +213,26 @@ namespace ns12
 					}
 					return;
 				}
-				long_0 -= class196_0.method_12();
-				var expr_67 = class201_0;
-				expr_67.method_2(expr_67.method_1() + class196_0.method_13());
+				Long0 -= Class1960.method_12();
+				var expr67 = Class2010;
+				expr67.method_2(expr67.method_1() + Class1960.method_13());
 			}
-			if (class201_0.method_1() > long_0 && long_0 >= 0L)
+			if (Class2010.method_1() > Long0 && Long0 >= 0L)
 			{
-				class201_0.method_2((int)(class201_0.method_1() - long_0));
+				Class2010.method_2((int)(Class2010.method_1() - Long0));
 			}
 			else
 			{
-				long_0 -= class201_0.method_1();
-				class201_0.method_2(0);
-				while (long_0 != 0L)
+				Long0 -= Class2010.method_1();
+				Class2010.method_2(0);
+				while (Long0 != 0L)
 				{
-					var num = (int)method_0(long_0 & 4294967295L);
+					var num = (int)method_0(Long0 & 4294967295L);
 					if (num <= 0)
 					{
 						throw new ZipException("Zip archive ends early.");
 					}
-					long_0 -= num;
+					Long0 -= num;
 				}
 			}
 			method_7(false);
@@ -248,56 +248,56 @@ namespace ns12
 			return array[0] & 255;
 		}
 
-		private int method_9(byte[] byte_0, int int_2, int int_3)
+		private int method_9(byte[] byte0, int int2, int int3)
 		{
 			throw new InvalidOperationException("Unable to read from this stream");
 		}
 
-		private int method_10(byte[] byte_0, int int_2, int int_3)
+		private int method_10(byte[] byte0, int int2, int int3)
 		{
 			throw new ZipException("The compression method for this entry is not supported");
 		}
 
-		private int method_11(byte[] byte_0, int int_2, int int_3)
+		private int method_11(byte[] byte0, int int2, int int3)
 		{
 			if (!method_4())
 			{
-				throw new ZipException("Library cannot extract this entry. Version required is (" + class193_0.method_11() + ")");
+				throw new ZipException("Library cannot extract this entry. Version required is (" + _class1930.method_11() + ")");
 			}
-			if (class193_0.method_0())
+			if (_class1930.method_0())
 			{
-				if (password == null)
+				if (_password == null)
 				{
 					throw new ZipException("No password set.");
 				}
 				var @class = new Class208();
-				var rgbKey = Class207.smethod_0(Class186.smethod_3(password));
-				class201_0.method_12(@class.CreateDecryptor(rgbKey, null));
+				var rgbKey = Class207.smethod_0(Class186.smethod_3(_password));
+				Class2010.method_12(@class.CreateDecryptor(rgbKey, null));
 				var array = new byte[12];
-				class201_0.method_7(array, 0, 12);
-				if (array[11] != class193_0.method_2())
+				Class2010.method_7(array, 0, 12);
+				if (array[11] != _class1930.method_2())
 				{
 					throw new ZipException("Invalid password");
 				}
-				if (long_0 >= 12L)
+				if (Long0 >= 12L)
 				{
-					long_0 -= 12L;
+					Long0 -= 12L;
 				}
-				else if ((class193_0.method_4() & 8) == 0)
+				else if ((_class1930.method_4() & 8) == 0)
 				{
-					throw new ZipException(string.Format("Entry compressed size {0} too small for encryption", long_0));
+					throw new ZipException(string.Format("Entry compressed size {0} too small for encryption", Long0));
 				}
 			}
 			else
 			{
-				class201_0.method_12(null);
+				Class2010.method_12(null);
 			}
-			if (int_0 == 8 && class201_0.method_1() > 0)
+			if (_int0 == 8 && Class2010.method_1() > 0)
 			{
-				class201_0.method_3(class196_0);
+				Class2010.method_3(Class1960);
 			}
-			delegate5_0 = method_12;
-			return method_12(byte_0, int_2, int_3);
+			_delegate50 = method_12;
+			return method_12(byte0, int2, int3);
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
@@ -318,86 +318,86 @@ namespace ns12
 			{
 				throw new ArgumentException("Invalid offset/count combination");
 			}
-			return delegate5_0(buffer, offset, count);
+			return _delegate50(buffer, offset, count);
 		}
 
-		private int method_12(byte[] byte_0, int int_2, int int_3)
+		private int method_12(byte[] byte0, int int2, int int3)
 		{
-			if (class192_0 == null)
+			if (_class1920 == null)
 			{
 				throw new InvalidOperationException("Closed");
 			}
-			if (class193_0 == null || int_3 <= 0)
+			if (_class1930 == null || int3 <= 0)
 			{
 				return 0;
 			}
-			if (int_2 + int_3 > byte_0.Length)
+			if (int2 + int3 > byte0.Length)
 			{
 				throw new ArgumentException("Offset + count exceeds buffer size");
 			}
 			var flag = false;
-			var num = int_0;
+			var num = _int0;
 			if (num != 0)
 			{
 				if (num == 8)
 				{
-					int_3 = base.Read(byte_0, int_2, int_3);
-					if (int_3 <= 0)
+					int3 = base.Read(byte0, int2, int3);
+					if (int3 <= 0)
 					{
-						if (!class196_0.method_10())
+						if (!Class1960.method_10())
 						{
 							throw new ZipException("Inflater not finished!");
 						}
-						class201_0.method_2(class196_0.method_13());
-						if ((int_1 & 8) == 0 && (class196_0.method_12() != long_0 || class196_0.method_11() != long_1))
+						Class2010.method_2(Class1960.method_13());
+						if ((_int1 & 8) == 0 && (Class1960.method_12() != Long0 || Class1960.method_11() != _long1))
 						{
-							throw new ZipException(string.Concat("Size mismatch: ", long_0, ";", long_1, " <-> ", class196_0.method_12(), ";", class196_0.method_11()));
+							throw new ZipException(string.Concat("Size mismatch: ", Long0, ";", _long1, " <-> ", Class1960.method_12(), ";", Class1960.method_11()));
 						}
-						class196_0.method_0();
+						Class1960.method_0();
 						flag = true;
 					}
 				}
 			}
 			else
 			{
-				if (int_3 > long_0 && long_0 >= 0L)
+				if (int3 > Long0 && Long0 >= 0L)
 				{
-					int_3 = (int)long_0;
+					int3 = (int)Long0;
 				}
-				if (int_3 > 0)
+				if (int3 > 0)
 				{
-					int_3 = class201_0.method_7(byte_0, int_2, int_3);
-					if (int_3 > 0)
+					int3 = Class2010.method_7(byte0, int2, int3);
+					if (int3 > 0)
 					{
-						long_0 -= int_3;
-						long_1 -= int_3;
+						Long0 -= int3;
+						_long1 -= int3;
 					}
 				}
-				if (long_0 == 0L)
+				if (Long0 == 0L)
 				{
 					flag = true;
 				}
-				else if (int_3 < 0)
+				else if (int3 < 0)
 				{
 					throw new ZipException("EOF in stored block");
 				}
 			}
-			if (int_3 > 0)
+			if (int3 > 0)
 			{
-				class192_0.vmethod_3(byte_0, int_2, int_3);
+				_class1920.vmethod_3(byte0, int2, int3);
 			}
 			if (flag)
 			{
 				method_7(true);
 			}
-			return int_3;
+			return int3;
 		}
 
 		public override void Close()
 		{
-			delegate5_0 = method_9;
-			class192_0 = null;
-			class193_0 = null;
+			_delegate50 = method_9;
+			_class1920 = null;
+			_class1930 = null;
 			base.Close();
 		}
 	}

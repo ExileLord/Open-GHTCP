@@ -4,21 +4,21 @@ using ns22;
 
 namespace ns9
 {
-	public class Class357 : IDisposable, EmptyInterface1
+	public class Class357 : IDisposable, IEmptyInterface1
 	{
-		private Class352[] class352_0;
+		private Class352[] _class3520;
 
-		private readonly List<EmptyInterface1> list_0;
+		private readonly List<IEmptyInterface1> _list0;
 
 		public void Dispose()
 		{
-			foreach (var current in list_0)
+			foreach (var current in _list0)
 			{
 				current.Dispose();
 			}
-			for (var i = 0; i < class352_0.Length; i++)
+			for (var i = 0; i < _class3520.Length; i++)
 			{
-				class352_0[i].Dispose();
+				_class3520[i].Dispose();
 			}
 		}
 	}

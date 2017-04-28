@@ -5,11 +5,11 @@ namespace ns18
 {
 	public abstract class AbstractBaseTreeNode1 : TreeNode
 	{
-		public static bool bool_0 = true;
+		public static bool Bool0 = true;
 
 		public virtual void vmethod_0()
 		{
-			if (!bool_0)
+			if (!Bool0)
 			{
 				return;
 			}
@@ -21,7 +21,7 @@ namespace ns18
 
 		public abstract int vmethod_1();
 
-		public abstract void vmethod_2(ref int int_0);
+		public abstract void vmethod_2(ref int int0);
 
 		public virtual string GetText() 
 		{

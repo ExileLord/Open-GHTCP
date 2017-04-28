@@ -18,100 +18,100 @@ namespace ns20
 	{
 		private IContainer icontainer_0;
 
-		private PictureBox ImagePreviewBox;
+		private PictureBox _imagePreviewBox;
 
-		private GroupBox ImageInfoBox;
+		private GroupBox _imageInfoBox;
 
-		private TextBox WidthTxt;
+		private TextBox _widthTxt;
 
-		private TextBox MipMapTxt;
+		private TextBox _mipMapTxt;
 
-		private TextBox BPPTxt;
+		private TextBox _bppTxt;
 
-		private ListBox ImgList;
+		private ListBox _imgList;
 
-		private TreeView DataFolder_TreeView;
+		private TreeView _dataFolderTreeView;
 
-		private TextBox FormatTxt;
+		private TextBox _formatTxt;
 
-		private TextBox HeightTxt;
+		private TextBox _heightTxt;
 
-		private Label lblHeight;
+		private Label _lblHeight;
 
-		private Label lblWidth;
+		private Label _lblWidth;
 
-		private Label lblBPP;
+		private Label _lblBpp;
 
-		private Label lblMipMaps;
+		private Label _lblMipMaps;
 
-		private Label lblFormat;
+		private Label _lblFormat;
 
-		private Button ReplaceImgBtn;
+		private Button _replaceImgBtn;
 
-		private Button RebuildBtn;
+		private Button _rebuildBtn;
 
-		private Button ExtractImgBtn;
+		private Button _extractImgBtn;
 
-		private TableLayoutPanel tableLayoutPanel1;
+		private TableLayoutPanel _tableLayoutPanel1;
 
-		private TableLayoutPanel tableLayoutPanel2;
+		private TableLayoutPanel _tableLayoutPanel2;
 
-		private TableLayoutPanel tableLayoutPanel3;
+		private TableLayoutPanel _tableLayoutPanel3;
 
-		private TableLayoutPanel tableLayoutPanel4;
+		private TableLayoutPanel _tableLayoutPanel4;
 
-		private ToolStripContainer TreeViewContainer;
+		private ToolStripContainer _treeViewContainer;
 
-		private ToolStrip Search_ToolStrip;
+		private ToolStrip _searchToolStrip;
 
-		private ToolStripTextBox Search_TxtBox;
+		private ToolStripTextBox _searchTxtBox;
 
-		private ToolStripButton PrevSearch_Btn;
+		private ToolStripButton _prevSearchBtn;
 
-		private ToolStripButton NextSearch_Btn;
+		private ToolStripButton _nextSearchBtn;
 
-		private ToolStripLabel SearchPos_Lbl;
+		private ToolStripLabel _searchPosLbl;
 
-		private ToolStripButton Search_Btn;
+		private ToolStripButton _searchBtn;
 
-		private readonly string string_0;
+		private readonly string _string0;
 
 		private TexFile _currentTexFile;
 
         private TextureMetadata _currentImgFile;
 
-		private Thread thread_0;
+		private Thread _thread0;
 
-		private Size size_0;
+		private Size _size0;
 
-		private IMGPixelFormat _currentTexturePixelFormat;
+		private ImgPixelFormat _currentTexturePixelFormat;
 
-		private string string_1;
+		private string _string1;
 
-		private readonly List<TreeNode> nodeList = new List<TreeNode>();
-        private GroupBox groupBox1;
-        private Label label1;
-        private Label label6;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private CheckBox chkEditMetadata;
-        private TextBox txtWidth;
-        private TextBox txtKey;
-        private TextBox txtLength;
-        private TextBox txtStart;
-        private TextBox txtUnk4;
-        private TextBox txtMipMaps;
-        private TextBox txtUnk3;
-        private TextBox txtHeight;
-        private TextBox txtFlags;
-        private Label label9;
-        private Label label8;
-        private Label label7;
-        private Button btnCloneImage;
-        private TableLayoutPanel tblImageList;
-        private int count;
+		private readonly List<TreeNode> _nodeList = new List<TreeNode>();
+        private GroupBox _groupBox1;
+        private Label _label1;
+        private Label _label6;
+        private Label _label5;
+        private Label _label4;
+        private Label _label3;
+        private Label _label2;
+        private CheckBox _chkEditMetadata;
+        private TextBox _txtWidth;
+        private TextBox _txtKey;
+        private TextBox _txtLength;
+        private TextBox _txtStart;
+        private TextBox _txtUnk4;
+        private TextBox _txtMipMaps;
+        private TextBox _txtUnk3;
+        private TextBox _txtHeight;
+        private TextBox _txtFlags;
+        private Label _label9;
+        private Label _label8;
+        private Label _label7;
+        private Button _btnCloneImage;
+        private TableLayoutPanel _tblImageList;
+        private int _count;
 
         protected override void Dispose(bool disposing)
 		{
@@ -124,662 +124,662 @@ namespace ns20
 
 		private void InitializeComponent()
 		{
-            ImagePreviewBox = new PictureBox();
-            ImageInfoBox = new GroupBox();
-            ExtractImgBtn = new Button();
-            ReplaceImgBtn = new Button();
-            lblHeight = new Label();
-            lblWidth = new Label();
-            lblBPP = new Label();
-            lblMipMaps = new Label();
-            lblFormat = new Label();
-            HeightTxt = new TextBox();
-            FormatTxt = new TextBox();
-            WidthTxt = new TextBox();
-            MipMapTxt = new TextBox();
-            BPPTxt = new TextBox();
-            ImgList = new ListBox();
-            DataFolder_TreeView = new TreeView();
-            RebuildBtn = new Button();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            tableLayoutPanel4 = new TableLayoutPanel();
-            groupBox1 = new GroupBox();
-            chkEditMetadata = new CheckBox();
-            txtWidth = new TextBox();
-            txtKey = new TextBox();
-            txtLength = new TextBox();
-            txtStart = new TextBox();
-            txtUnk4 = new TextBox();
-            txtMipMaps = new TextBox();
-            txtUnk3 = new TextBox();
-            txtHeight = new TextBox();
-            txtFlags = new TextBox();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            tblImageList = new TableLayoutPanel();
-            btnCloneImage = new Button();
-            TreeViewContainer = new ToolStripContainer();
-            Search_ToolStrip = new ToolStrip();
-            Search_TxtBox = new ToolStripTextBox();
-            Search_Btn = new ToolStripButton();
-            PrevSearch_Btn = new ToolStripButton();
-            NextSearch_Btn = new ToolStripButton();
-            SearchPos_Lbl = new ToolStripLabel();
-            ((ISupportInitialize)(ImagePreviewBox)).BeginInit();
-            ImageInfoBox.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
-            tableLayoutPanel4.SuspendLayout();
-            groupBox1.SuspendLayout();
-            tblImageList.SuspendLayout();
-            TreeViewContainer.ContentPanel.SuspendLayout();
-            TreeViewContainer.TopToolStripPanel.SuspendLayout();
-            TreeViewContainer.SuspendLayout();
-            Search_ToolStrip.SuspendLayout();
+            _imagePreviewBox = new PictureBox();
+            _imageInfoBox = new GroupBox();
+            _extractImgBtn = new Button();
+            _replaceImgBtn = new Button();
+            _lblHeight = new Label();
+            _lblWidth = new Label();
+            _lblBpp = new Label();
+            _lblMipMaps = new Label();
+            _lblFormat = new Label();
+            _heightTxt = new TextBox();
+            _formatTxt = new TextBox();
+            _widthTxt = new TextBox();
+            _mipMapTxt = new TextBox();
+            _bppTxt = new TextBox();
+            _imgList = new ListBox();
+            _dataFolderTreeView = new TreeView();
+            _rebuildBtn = new Button();
+            _tableLayoutPanel1 = new TableLayoutPanel();
+            _tableLayoutPanel2 = new TableLayoutPanel();
+            _tableLayoutPanel3 = new TableLayoutPanel();
+            _tableLayoutPanel4 = new TableLayoutPanel();
+            _groupBox1 = new GroupBox();
+            _chkEditMetadata = new CheckBox();
+            _txtWidth = new TextBox();
+            _txtKey = new TextBox();
+            _txtLength = new TextBox();
+            _txtStart = new TextBox();
+            _txtUnk4 = new TextBox();
+            _txtMipMaps = new TextBox();
+            _txtUnk3 = new TextBox();
+            _txtHeight = new TextBox();
+            _txtFlags = new TextBox();
+            _label9 = new Label();
+            _label8 = new Label();
+            _label7 = new Label();
+            _label6 = new Label();
+            _label5 = new Label();
+            _label4 = new Label();
+            _label3 = new Label();
+            _label2 = new Label();
+            _label1 = new Label();
+            _tblImageList = new TableLayoutPanel();
+            _btnCloneImage = new Button();
+            _treeViewContainer = new ToolStripContainer();
+            _searchToolStrip = new ToolStrip();
+            _searchTxtBox = new ToolStripTextBox();
+            _searchBtn = new ToolStripButton();
+            _prevSearchBtn = new ToolStripButton();
+            _nextSearchBtn = new ToolStripButton();
+            _searchPosLbl = new ToolStripLabel();
+            ((ISupportInitialize)(_imagePreviewBox)).BeginInit();
+            _imageInfoBox.SuspendLayout();
+            _tableLayoutPanel1.SuspendLayout();
+            _tableLayoutPanel2.SuspendLayout();
+            _tableLayoutPanel3.SuspendLayout();
+            _tableLayoutPanel4.SuspendLayout();
+            _groupBox1.SuspendLayout();
+            _tblImageList.SuspendLayout();
+            _treeViewContainer.ContentPanel.SuspendLayout();
+            _treeViewContainer.TopToolStripPanel.SuspendLayout();
+            _treeViewContainer.SuspendLayout();
+            _searchToolStrip.SuspendLayout();
             SuspendLayout();
             // 
             // ImagePreviewBox
             // 
-            ImagePreviewBox.BackColor = Color.Transparent;
-            ImagePreviewBox.BorderStyle = BorderStyle.FixedSingle;
-            ImagePreviewBox.Dock = DockStyle.Fill;
-            ImagePreviewBox.Location = new Point(103, 3);
-            ImagePreviewBox.Name = "ImagePreviewBox";
-            ImagePreviewBox.Size = new Size(1015, 511);
-            ImagePreviewBox.SizeMode = PictureBoxSizeMode.CenterImage;
-            ImagePreviewBox.TabIndex = 7;
-            ImagePreviewBox.TabStop = false;
-            ImagePreviewBox.Click += ImagePreviewBox_Click;
+            _imagePreviewBox.BackColor = Color.Transparent;
+            _imagePreviewBox.BorderStyle = BorderStyle.FixedSingle;
+            _imagePreviewBox.Dock = DockStyle.Fill;
+            _imagePreviewBox.Location = new Point(103, 3);
+            _imagePreviewBox.Name = "_imagePreviewBox";
+            _imagePreviewBox.Size = new Size(1015, 511);
+            _imagePreviewBox.SizeMode = PictureBoxSizeMode.CenterImage;
+            _imagePreviewBox.TabIndex = 7;
+            _imagePreviewBox.TabStop = false;
+            _imagePreviewBox.Click += ImagePreviewBox_Click;
             // 
             // ImageInfoBox
             // 
-            ImageInfoBox.Controls.Add(ExtractImgBtn);
-            ImageInfoBox.Controls.Add(ReplaceImgBtn);
-            ImageInfoBox.Controls.Add(lblHeight);
-            ImageInfoBox.Controls.Add(lblWidth);
-            ImageInfoBox.Controls.Add(lblBPP);
-            ImageInfoBox.Controls.Add(lblMipMaps);
-            ImageInfoBox.Controls.Add(lblFormat);
-            ImageInfoBox.Controls.Add(HeightTxt);
-            ImageInfoBox.Controls.Add(FormatTxt);
-            ImageInfoBox.Controls.Add(WidthTxt);
-            ImageInfoBox.Controls.Add(MipMapTxt);
-            ImageInfoBox.Controls.Add(BPPTxt);
-            ImageInfoBox.Enabled = false;
-            ImageInfoBox.Location = new Point(1030, 3);
-            ImageInfoBox.Name = "ImageInfoBox";
-            ImageInfoBox.Size = new Size(288, 100);
-            ImageInfoBox.TabIndex = 8;
-            ImageInfoBox.TabStop = false;
-            ImageInfoBox.Text = "Image Information";
+            _imageInfoBox.Controls.Add(_extractImgBtn);
+            _imageInfoBox.Controls.Add(_replaceImgBtn);
+            _imageInfoBox.Controls.Add(_lblHeight);
+            _imageInfoBox.Controls.Add(_lblWidth);
+            _imageInfoBox.Controls.Add(_lblBpp);
+            _imageInfoBox.Controls.Add(_lblMipMaps);
+            _imageInfoBox.Controls.Add(_lblFormat);
+            _imageInfoBox.Controls.Add(_heightTxt);
+            _imageInfoBox.Controls.Add(_formatTxt);
+            _imageInfoBox.Controls.Add(_widthTxt);
+            _imageInfoBox.Controls.Add(_mipMapTxt);
+            _imageInfoBox.Controls.Add(_bppTxt);
+            _imageInfoBox.Enabled = false;
+            _imageInfoBox.Location = new Point(1030, 3);
+            _imageInfoBox.Name = "_imageInfoBox";
+            _imageInfoBox.Size = new Size(288, 100);
+            _imageInfoBox.TabIndex = 8;
+            _imageInfoBox.TabStop = false;
+            _imageInfoBox.Text = "Image Information";
             // 
             // ExtractImgBtn
             // 
-            ExtractImgBtn.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ExtractImgBtn.Location = new Point(215, 67);
-            ExtractImgBtn.Name = "ExtractImgBtn";
-            ExtractImgBtn.Size = new Size(67, 27);
-            ExtractImgBtn.TabIndex = 46;
-            ExtractImgBtn.Text = "Extract";
-            ExtractImgBtn.UseVisualStyleBackColor = true;
-            ExtractImgBtn.Click += ExtractImgBtn_Click;
+            _extractImgBtn.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _extractImgBtn.Location = new Point(215, 67);
+            _extractImgBtn.Name = "_extractImgBtn";
+            _extractImgBtn.Size = new Size(67, 27);
+            _extractImgBtn.TabIndex = 46;
+            _extractImgBtn.Text = "Extract";
+            _extractImgBtn.UseVisualStyleBackColor = true;
+            _extractImgBtn.Click += ExtractImgBtn_Click;
             // 
             // ReplaceImgBtn
             // 
-            ReplaceImgBtn.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ReplaceImgBtn.Location = new Point(137, 67);
-            ReplaceImgBtn.Name = "ReplaceImgBtn";
-            ReplaceImgBtn.Size = new Size(72, 27);
-            ReplaceImgBtn.TabIndex = 45;
-            ReplaceImgBtn.Text = "Replace";
-            ReplaceImgBtn.UseVisualStyleBackColor = true;
-            ReplaceImgBtn.Click += ReplaceImgBtn_Click;
+            _replaceImgBtn.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _replaceImgBtn.Location = new Point(137, 67);
+            _replaceImgBtn.Name = "_replaceImgBtn";
+            _replaceImgBtn.Size = new Size(72, 27);
+            _replaceImgBtn.TabIndex = 45;
+            _replaceImgBtn.Text = "Replace";
+            _replaceImgBtn.UseVisualStyleBackColor = true;
+            _replaceImgBtn.Click += ReplaceImgBtn_Click;
             // 
             // lblHeight
             // 
-            lblHeight.AutoSize = true;
-            lblHeight.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHeight.Location = new Point(163, 44);
-            lblHeight.Name = "lblHeight";
-            lblHeight.Size = new Size(59, 19);
-            lblHeight.TabIndex = 44;
-            lblHeight.Text = "Height:";
-            lblHeight.TextAlign = ContentAlignment.MiddleCenter;
+            _lblHeight.AutoSize = true;
+            _lblHeight.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _lblHeight.Location = new Point(163, 44);
+            _lblHeight.Name = "_lblHeight";
+            _lblHeight.Size = new Size(59, 19);
+            _lblHeight.TabIndex = 44;
+            _lblHeight.Text = "Height:";
+            _lblHeight.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblWidth
             // 
-            lblWidth.AutoSize = true;
-            lblWidth.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblWidth.Location = new Point(168, 18);
-            lblWidth.Name = "lblWidth";
-            lblWidth.Size = new Size(54, 19);
-            lblWidth.TabIndex = 43;
-            lblWidth.Text = "Width:";
-            lblWidth.TextAlign = ContentAlignment.MiddleCenter;
+            _lblWidth.AutoSize = true;
+            _lblWidth.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _lblWidth.Location = new Point(168, 18);
+            _lblWidth.Name = "_lblWidth";
+            _lblWidth.Size = new Size(54, 19);
+            _lblWidth.TabIndex = 43;
+            _lblWidth.Text = "Width:";
+            _lblWidth.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblBPP
             // 
-            lblBPP.AutoSize = true;
-            lblBPP.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBPP.Location = new Point(44, 44);
-            lblBPP.Name = "lblBPP";
-            lblBPP.Size = new Size(43, 19);
-            lblBPP.TabIndex = 42;
-            lblBPP.Text = "BPP:";
-            lblBPP.TextAlign = ContentAlignment.MiddleCenter;
+            _lblBpp.AutoSize = true;
+            _lblBpp.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _lblBpp.Location = new Point(44, 44);
+            _lblBpp.Name = "_lblBpp";
+            _lblBpp.Size = new Size(43, 19);
+            _lblBpp.TabIndex = 42;
+            _lblBpp.Text = "BPP:";
+            _lblBpp.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblMipMaps
             // 
-            lblMipMaps.AutoSize = true;
-            lblMipMaps.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMipMaps.Location = new Point(6, 71);
-            lblMipMaps.Name = "lblMipMaps";
-            lblMipMaps.Size = new Size(81, 19);
-            lblMipMaps.TabIndex = 41;
-            lblMipMaps.Text = "MipMaps:";
-            lblMipMaps.TextAlign = ContentAlignment.MiddleCenter;
+            _lblMipMaps.AutoSize = true;
+            _lblMipMaps.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _lblMipMaps.Location = new Point(6, 71);
+            _lblMipMaps.Name = "_lblMipMaps";
+            _lblMipMaps.Size = new Size(81, 19);
+            _lblMipMaps.TabIndex = 41;
+            _lblMipMaps.Text = "MipMaps:";
+            _lblMipMaps.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblFormat
             // 
-            lblFormat.AutoSize = true;
-            lblFormat.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFormat.Location = new Point(25, 18);
-            lblFormat.Name = "lblFormat";
-            lblFormat.Size = new Size(62, 19);
-            lblFormat.TabIndex = 40;
-            lblFormat.Text = "Format:";
-            lblFormat.TextAlign = ContentAlignment.MiddleCenter;
+            _lblFormat.AutoSize = true;
+            _lblFormat.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _lblFormat.Location = new Point(25, 18);
+            _lblFormat.Name = "_lblFormat";
+            _lblFormat.Size = new Size(62, 19);
+            _lblFormat.TabIndex = 40;
+            _lblFormat.Text = "Format:";
+            _lblFormat.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // HeightTxt
             // 
-            HeightTxt.Location = new Point(228, 45);
-            HeightTxt.Name = "HeightTxt";
-            HeightTxt.ReadOnly = true;
-            HeightTxt.Size = new Size(53, 20);
-            HeightTxt.TabIndex = 13;
+            _heightTxt.Location = new Point(228, 45);
+            _heightTxt.Name = "_heightTxt";
+            _heightTxt.ReadOnly = true;
+            _heightTxt.Size = new Size(53, 20);
+            _heightTxt.TabIndex = 13;
             // 
             // FormatTxt
             // 
-            FormatTxt.Location = new Point(93, 17);
-            FormatTxt.Name = "FormatTxt";
-            FormatTxt.ReadOnly = true;
-            FormatTxt.Size = new Size(64, 20);
-            FormatTxt.TabIndex = 11;
+            _formatTxt.Location = new Point(93, 17);
+            _formatTxt.Name = "_formatTxt";
+            _formatTxt.ReadOnly = true;
+            _formatTxt.Size = new Size(64, 20);
+            _formatTxt.TabIndex = 11;
             // 
             // WidthTxt
             // 
-            WidthTxt.Location = new Point(228, 19);
-            WidthTxt.Name = "WidthTxt";
-            WidthTxt.ReadOnly = true;
-            WidthTxt.Size = new Size(53, 20);
-            WidthTxt.TabIndex = 5;
+            _widthTxt.Location = new Point(228, 19);
+            _widthTxt.Name = "_widthTxt";
+            _widthTxt.ReadOnly = true;
+            _widthTxt.Size = new Size(53, 20);
+            _widthTxt.TabIndex = 5;
             // 
             // MipMapTxt
             // 
-            MipMapTxt.Location = new Point(93, 72);
-            MipMapTxt.Name = "MipMapTxt";
-            MipMapTxt.ReadOnly = true;
-            MipMapTxt.Size = new Size(38, 20);
-            MipMapTxt.TabIndex = 3;
+            _mipMapTxt.Location = new Point(93, 72);
+            _mipMapTxt.Name = "_mipMapTxt";
+            _mipMapTxt.ReadOnly = true;
+            _mipMapTxt.Size = new Size(38, 20);
+            _mipMapTxt.TabIndex = 3;
             // 
             // BPPTxt
             // 
-            BPPTxt.Location = new Point(93, 45);
-            BPPTxt.Name = "BPPTxt";
-            BPPTxt.ReadOnly = true;
-            BPPTxt.Size = new Size(64, 20);
-            BPPTxt.TabIndex = 2;
+            _bppTxt.Location = new Point(93, 45);
+            _bppTxt.Name = "_bppTxt";
+            _bppTxt.ReadOnly = true;
+            _bppTxt.Size = new Size(64, 20);
+            _bppTxt.TabIndex = 2;
             // 
             // ImgList
             // 
-            ImgList.Dock = DockStyle.Fill;
-            ImgList.FormattingEnabled = true;
-            ImgList.IntegralHeight = false;
-            ImgList.Location = new Point(3, 3);
-            ImgList.Name = "ImgList";
-            ImgList.Size = new Size(88, 465);
-            ImgList.TabIndex = 9;
-            ImgList.SelectedIndexChanged += ImgList_SelectedIndexChanged;
+            _imgList.Dock = DockStyle.Fill;
+            _imgList.FormattingEnabled = true;
+            _imgList.IntegralHeight = false;
+            _imgList.Location = new Point(3, 3);
+            _imgList.Name = "_imgList";
+            _imgList.Size = new Size(88, 465);
+            _imgList.TabIndex = 9;
+            _imgList.SelectedIndexChanged += ImgList_SelectedIndexChanged;
             // 
             // DataFolder_TreeView
             // 
-            DataFolder_TreeView.Dock = DockStyle.Fill;
-            DataFolder_TreeView.Location = new Point(0, 0);
-            DataFolder_TreeView.Name = "DataFolder_TreeView";
-            DataFolder_TreeView.Size = new Size(230, 610);
-            DataFolder_TreeView.TabIndex = 10;
-            DataFolder_TreeView.DoubleClick += DataFolder_TreeView_DoubleClick;
+            _dataFolderTreeView.Dock = DockStyle.Fill;
+            _dataFolderTreeView.Location = new Point(0, 0);
+            _dataFolderTreeView.Name = "_dataFolderTreeView";
+            _dataFolderTreeView.Size = new Size(230, 610);
+            _dataFolderTreeView.TabIndex = 10;
+            _dataFolderTreeView.DoubleClick += DataFolder_TreeView_DoubleClick;
             // 
             // RebuildBtn
             // 
-            RebuildBtn.Dock = DockStyle.Fill;
-            RebuildBtn.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            RebuildBtn.Location = new Point(3, 3);
-            RebuildBtn.Name = "RebuildBtn";
-            RebuildBtn.Size = new Size(1021, 100);
-            RebuildBtn.TabIndex = 46;
-            RebuildBtn.Text = "Rebuild Container";
-            RebuildBtn.UseVisualStyleBackColor = true;
-            RebuildBtn.Click += RebuildBtn_Click;
+            _rebuildBtn.Dock = DockStyle.Fill;
+            _rebuildBtn.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            _rebuildBtn.Location = new Point(3, 3);
+            _rebuildBtn.Name = "_rebuildBtn";
+            _rebuildBtn.Size = new Size(1021, 100);
+            _rebuildBtn.TabIndex = 46;
+            _rebuildBtn.Text = "Rebuild Container";
+            _rebuildBtn.UseVisualStyleBackColor = true;
+            _rebuildBtn.Click += RebuildBtn_Click;
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 236F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 0);
-            tableLayoutPanel1.Controls.Add(TreeViewContainer, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1569, 641);
-            tableLayoutPanel1.TabIndex = 47;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+            _tableLayoutPanel1.ColumnCount = 2;
+            _tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 236F));
+            _tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            _tableLayoutPanel1.Controls.Add(_tableLayoutPanel2, 1, 0);
+            _tableLayoutPanel1.Controls.Add(_treeViewContainer, 0, 0);
+            _tableLayoutPanel1.Dock = DockStyle.Fill;
+            _tableLayoutPanel1.Location = new Point(0, 0);
+            _tableLayoutPanel1.Name = "_tableLayoutPanel1";
+            _tableLayoutPanel1.RowCount = 1;
+            _tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            _tableLayoutPanel1.Size = new Size(1569, 641);
+            _tableLayoutPanel1.TabIndex = 47;
+            _tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Controls.Add(tableLayoutPanel3, 0, 1);
-            tableLayoutPanel2.Controls.Add(tableLayoutPanel4, 0, 0);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(239, 3);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 112F));
-            tableLayoutPanel2.Size = new Size(1327, 635);
-            tableLayoutPanel2.TabIndex = 0;
+            _tableLayoutPanel2.ColumnCount = 1;
+            _tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            _tableLayoutPanel2.Controls.Add(_tableLayoutPanel3, 0, 1);
+            _tableLayoutPanel2.Controls.Add(_tableLayoutPanel4, 0, 0);
+            _tableLayoutPanel2.Dock = DockStyle.Fill;
+            _tableLayoutPanel2.Location = new Point(239, 3);
+            _tableLayoutPanel2.Name = "_tableLayoutPanel2";
+            _tableLayoutPanel2.RowCount = 2;
+            _tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            _tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 112F));
+            _tableLayoutPanel2.Size = new Size(1327, 635);
+            _tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
-            tableLayoutPanel3.ColumnCount = 2;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel3.Controls.Add(RebuildBtn, 0, 0);
-            tableLayoutPanel3.Controls.Add(ImageInfoBox, 1, 0);
-            tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(3, 526);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(1321, 106);
-            tableLayoutPanel3.TabIndex = 0;
+            _tableLayoutPanel3.ColumnCount = 2;
+            _tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            _tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
+            _tableLayoutPanel3.Controls.Add(_rebuildBtn, 0, 0);
+            _tableLayoutPanel3.Controls.Add(_imageInfoBox, 1, 0);
+            _tableLayoutPanel3.Dock = DockStyle.Fill;
+            _tableLayoutPanel3.Location = new Point(3, 526);
+            _tableLayoutPanel3.Name = "_tableLayoutPanel3";
+            _tableLayoutPanel3.RowCount = 1;
+            _tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            _tableLayoutPanel3.Size = new Size(1321, 106);
+            _tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel4
             // 
-            tableLayoutPanel4.ColumnCount = 3;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
-            tableLayoutPanel4.Controls.Add(ImagePreviewBox, 1, 0);
-            tableLayoutPanel4.Controls.Add(groupBox1, 2, 0);
-            tableLayoutPanel4.Controls.Add(tblImageList, 0, 0);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(3, 3);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 1;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 632F));
-            tableLayoutPanel4.Size = new Size(1321, 517);
-            tableLayoutPanel4.TabIndex = 1;
-            tableLayoutPanel4.Paint += tableLayoutPanel4_Paint;
+            _tableLayoutPanel4.ColumnCount = 3;
+            _tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            _tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            _tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
+            _tableLayoutPanel4.Controls.Add(_imagePreviewBox, 1, 0);
+            _tableLayoutPanel4.Controls.Add(_groupBox1, 2, 0);
+            _tableLayoutPanel4.Controls.Add(_tblImageList, 0, 0);
+            _tableLayoutPanel4.Dock = DockStyle.Fill;
+            _tableLayoutPanel4.Location = new Point(3, 3);
+            _tableLayoutPanel4.Name = "_tableLayoutPanel4";
+            _tableLayoutPanel4.RowCount = 1;
+            _tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            _tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 632F));
+            _tableLayoutPanel4.Size = new Size(1321, 517);
+            _tableLayoutPanel4.TabIndex = 1;
+            _tableLayoutPanel4.Paint += tableLayoutPanel4_Paint;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(chkEditMetadata);
-            groupBox1.Controls.Add(txtWidth);
-            groupBox1.Controls.Add(txtKey);
-            groupBox1.Controls.Add(txtLength);
-            groupBox1.Controls.Add(txtStart);
-            groupBox1.Controls.Add(txtUnk4);
-            groupBox1.Controls.Add(txtMipMaps);
-            groupBox1.Controls.Add(txtUnk3);
-            groupBox1.Controls.Add(txtHeight);
-            groupBox1.Controls.Add(txtFlags);
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(1124, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(194, 283);
-            groupBox1.TabIndex = 10;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Metadata";
+            _groupBox1.Controls.Add(_chkEditMetadata);
+            _groupBox1.Controls.Add(_txtWidth);
+            _groupBox1.Controls.Add(_txtKey);
+            _groupBox1.Controls.Add(_txtLength);
+            _groupBox1.Controls.Add(_txtStart);
+            _groupBox1.Controls.Add(_txtUnk4);
+            _groupBox1.Controls.Add(_txtMipMaps);
+            _groupBox1.Controls.Add(_txtUnk3);
+            _groupBox1.Controls.Add(_txtHeight);
+            _groupBox1.Controls.Add(_txtFlags);
+            _groupBox1.Controls.Add(_label9);
+            _groupBox1.Controls.Add(_label8);
+            _groupBox1.Controls.Add(_label7);
+            _groupBox1.Controls.Add(_label6);
+            _groupBox1.Controls.Add(_label5);
+            _groupBox1.Controls.Add(_label4);
+            _groupBox1.Controls.Add(_label3);
+            _groupBox1.Controls.Add(_label2);
+            _groupBox1.Controls.Add(_label1);
+            _groupBox1.Location = new Point(1124, 3);
+            _groupBox1.Name = "_groupBox1";
+            _groupBox1.Size = new Size(194, 283);
+            _groupBox1.TabIndex = 10;
+            _groupBox1.TabStop = false;
+            _groupBox1.Text = "Metadata";
             // 
             // chkEditMetadata
             // 
-            chkEditMetadata.AutoSize = true;
-            chkEditMetadata.Location = new Point(62, 254);
-            chkEditMetadata.Name = "chkEditMetadata";
-            chkEditMetadata.Size = new Size(86, 17);
-            chkEditMetadata.TabIndex = 10;
-            chkEditMetadata.Text = "Allow Editing";
-            chkEditMetadata.UseVisualStyleBackColor = true;
-            chkEditMetadata.CheckedChanged += chkEditMetadata_CheckedChanged;
+            _chkEditMetadata.AutoSize = true;
+            _chkEditMetadata.Location = new Point(62, 254);
+            _chkEditMetadata.Name = "_chkEditMetadata";
+            _chkEditMetadata.Size = new Size(86, 17);
+            _chkEditMetadata.TabIndex = 10;
+            _chkEditMetadata.Text = "Allow Editing";
+            _chkEditMetadata.UseVisualStyleBackColor = true;
+            _chkEditMetadata.CheckedChanged += chkEditMetadata_CheckedChanged;
             // 
             // txtWidth
             // 
-            txtWidth.Location = new Point(62, 72);
-            txtWidth.Name = "txtWidth";
-            txtWidth.ReadOnly = true;
-            txtWidth.Size = new Size(125, 20);
-            txtWidth.TabIndex = 9;
+            _txtWidth.Location = new Point(62, 72);
+            _txtWidth.Name = "_txtWidth";
+            _txtWidth.ReadOnly = true;
+            _txtWidth.Size = new Size(125, 20);
+            _txtWidth.TabIndex = 9;
             // 
             // txtKey
             // 
-            txtKey.Location = new Point(62, 46);
-            txtKey.Name = "txtKey";
-            txtKey.ReadOnly = true;
-            txtKey.Size = new Size(125, 20);
-            txtKey.TabIndex = 9;
-            txtKey.TextChanged += txtKey_TextChanged;
+            _txtKey.Location = new Point(62, 46);
+            _txtKey.Name = "_txtKey";
+            _txtKey.ReadOnly = true;
+            _txtKey.Size = new Size(125, 20);
+            _txtKey.TabIndex = 9;
+            _txtKey.TextChanged += txtKey_TextChanged;
             // 
             // txtLength
             // 
-            txtLength.Location = new Point(62, 228);
-            txtLength.Name = "txtLength";
-            txtLength.ReadOnly = true;
-            txtLength.Size = new Size(125, 20);
-            txtLength.TabIndex = 9;
+            _txtLength.Location = new Point(62, 228);
+            _txtLength.Name = "_txtLength";
+            _txtLength.ReadOnly = true;
+            _txtLength.Size = new Size(125, 20);
+            _txtLength.TabIndex = 9;
             // 
             // txtStart
             // 
-            txtStart.Location = new Point(62, 202);
-            txtStart.Name = "txtStart";
-            txtStart.ReadOnly = true;
-            txtStart.Size = new Size(125, 20);
-            txtStart.TabIndex = 9;
+            _txtStart.Location = new Point(62, 202);
+            _txtStart.Name = "_txtStart";
+            _txtStart.ReadOnly = true;
+            _txtStart.Size = new Size(125, 20);
+            _txtStart.TabIndex = 9;
             // 
             // txtUnk4
             // 
-            txtUnk4.Location = new Point(62, 176);
-            txtUnk4.Name = "txtUnk4";
-            txtUnk4.ReadOnly = true;
-            txtUnk4.Size = new Size(125, 20);
-            txtUnk4.TabIndex = 9;
+            _txtUnk4.Location = new Point(62, 176);
+            _txtUnk4.Name = "_txtUnk4";
+            _txtUnk4.ReadOnly = true;
+            _txtUnk4.Size = new Size(125, 20);
+            _txtUnk4.TabIndex = 9;
             // 
             // txtMipMaps
             // 
-            txtMipMaps.Location = new Point(62, 150);
-            txtMipMaps.Name = "txtMipMaps";
-            txtMipMaps.ReadOnly = true;
-            txtMipMaps.Size = new Size(125, 20);
-            txtMipMaps.TabIndex = 9;
+            _txtMipMaps.Location = new Point(62, 150);
+            _txtMipMaps.Name = "_txtMipMaps";
+            _txtMipMaps.ReadOnly = true;
+            _txtMipMaps.Size = new Size(125, 20);
+            _txtMipMaps.TabIndex = 9;
             // 
             // txtUnk3
             // 
-            txtUnk3.Location = new Point(62, 124);
-            txtUnk3.Name = "txtUnk3";
-            txtUnk3.ReadOnly = true;
-            txtUnk3.Size = new Size(125, 20);
-            txtUnk3.TabIndex = 9;
+            _txtUnk3.Location = new Point(62, 124);
+            _txtUnk3.Name = "_txtUnk3";
+            _txtUnk3.ReadOnly = true;
+            _txtUnk3.Size = new Size(125, 20);
+            _txtUnk3.TabIndex = 9;
             // 
             // txtHeight
             // 
-            txtHeight.Location = new Point(62, 98);
-            txtHeight.Name = "txtHeight";
-            txtHeight.ReadOnly = true;
-            txtHeight.Size = new Size(125, 20);
-            txtHeight.TabIndex = 9;
+            _txtHeight.Location = new Point(62, 98);
+            _txtHeight.Name = "_txtHeight";
+            _txtHeight.ReadOnly = true;
+            _txtHeight.Size = new Size(125, 20);
+            _txtHeight.TabIndex = 9;
             // 
             // txtFlags
             // 
-            txtFlags.Location = new Point(62, 20);
-            txtFlags.Name = "txtFlags";
-            txtFlags.ReadOnly = true;
-            txtFlags.Size = new Size(125, 20);
-            txtFlags.TabIndex = 9;
+            _txtFlags.Location = new Point(62, 20);
+            _txtFlags.Name = "_txtFlags";
+            _txtFlags.ReadOnly = true;
+            _txtFlags.Size = new Size(125, 20);
+            _txtFlags.TabIndex = 9;
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(8, 231);
-            label9.Name = "label9";
-            label9.Size = new Size(43, 13);
-            label9.TabIndex = 8;
-            label9.Text = "Length:";
+            _label9.AutoSize = true;
+            _label9.Location = new Point(8, 231);
+            _label9.Name = "_label9";
+            _label9.Size = new Size(43, 13);
+            _label9.TabIndex = 8;
+            _label9.Text = "Length:";
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(8, 205);
-            label8.Name = "label8";
-            label8.Size = new Size(32, 13);
-            label8.TabIndex = 7;
-            label8.Text = "Start:";
+            _label8.AutoSize = true;
+            _label8.Location = new Point(8, 205);
+            _label8.Name = "_label8";
+            _label8.Size = new Size(32, 13);
+            _label8.TabIndex = 7;
+            _label8.Text = "Start:";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(8, 179);
-            label7.Name = "label7";
-            label7.Size = new Size(36, 13);
-            label7.TabIndex = 6;
-            label7.Text = "Unk4:";
+            _label7.AutoSize = true;
+            _label7.Location = new Point(8, 179);
+            _label7.Name = "_label7";
+            _label7.Size = new Size(36, 13);
+            _label7.TabIndex = 6;
+            _label7.Text = "Unk4:";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(6, 153);
-            label6.Name = "label6";
-            label6.Size = new Size(53, 13);
-            label6.TabIndex = 5;
-            label6.Text = "MipMaps:";
+            _label6.AutoSize = true;
+            _label6.Location = new Point(6, 153);
+            _label6.Name = "_label6";
+            _label6.Size = new Size(53, 13);
+            _label6.TabIndex = 5;
+            _label6.Text = "MipMaps:";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(6, 127);
-            label5.Name = "label5";
-            label5.Size = new Size(36, 13);
-            label5.TabIndex = 4;
-            label5.Text = "Unk3:";
+            _label5.AutoSize = true;
+            _label5.Location = new Point(6, 127);
+            _label5.Name = "_label5";
+            _label5.Size = new Size(36, 13);
+            _label5.TabIndex = 4;
+            _label5.Text = "Unk3:";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(6, 101);
-            label4.Name = "label4";
-            label4.Size = new Size(41, 13);
-            label4.TabIndex = 3;
-            label4.Text = "Height:";
+            _label4.AutoSize = true;
+            _label4.Location = new Point(6, 101);
+            _label4.Name = "_label4";
+            _label4.Size = new Size(41, 13);
+            _label4.TabIndex = 3;
+            _label4.Text = "Height:";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(6, 75);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 13);
-            label3.TabIndex = 2;
-            label3.Text = "Width:";
+            _label3.AutoSize = true;
+            _label3.Location = new Point(6, 75);
+            _label3.Name = "_label3";
+            _label3.Size = new Size(38, 13);
+            _label3.TabIndex = 2;
+            _label3.Text = "Width:";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(6, 49);
-            label2.Name = "label2";
-            label2.Size = new Size(28, 13);
-            label2.TabIndex = 1;
-            label2.Text = "Key:";
+            _label2.AutoSize = true;
+            _label2.Location = new Point(6, 49);
+            _label2.Name = "_label2";
+            _label2.Size = new Size(28, 13);
+            _label2.TabIndex = 1;
+            _label2.Text = "Key:";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 23);
-            label1.Name = "label1";
-            label1.Size = new Size(35, 13);
-            label1.TabIndex = 0;
-            label1.Text = "Flags:";
+            _label1.AutoSize = true;
+            _label1.Location = new Point(6, 23);
+            _label1.Name = "_label1";
+            _label1.Size = new Size(35, 13);
+            _label1.TabIndex = 0;
+            _label1.Text = "Flags:";
             // 
             // tblImageList
             // 
-            tblImageList.ColumnCount = 1;
-            tblImageList.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tblImageList.Controls.Add(ImgList, 0, 0);
-            tblImageList.Controls.Add(btnCloneImage, 0, 1);
-            tblImageList.Dock = DockStyle.Fill;
-            tblImageList.Location = new Point(3, 3);
-            tblImageList.Name = "tblImageList";
-            tblImageList.RowCount = 2;
-            tblImageList.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tblImageList.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tblImageList.Size = new Size(94, 511);
-            tblImageList.TabIndex = 11;
-            tblImageList.Paint += tableLayoutPanel5_Paint;
+            _tblImageList.ColumnCount = 1;
+            _tblImageList.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            _tblImageList.Controls.Add(_imgList, 0, 0);
+            _tblImageList.Controls.Add(_btnCloneImage, 0, 1);
+            _tblImageList.Dock = DockStyle.Fill;
+            _tblImageList.Location = new Point(3, 3);
+            _tblImageList.Name = "_tblImageList";
+            _tblImageList.RowCount = 2;
+            _tblImageList.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            _tblImageList.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            _tblImageList.Size = new Size(94, 511);
+            _tblImageList.TabIndex = 11;
+            _tblImageList.Paint += tableLayoutPanel5_Paint;
             // 
             // btnCloneImage
             // 
-            btnCloneImage.Location = new Point(3, 474);
-            btnCloneImage.Name = "btnCloneImage";
-            btnCloneImage.Size = new Size(88, 34);
-            btnCloneImage.TabIndex = 11;
-            btnCloneImage.Text = "Clone";
-            btnCloneImage.UseVisualStyleBackColor = true;
-            btnCloneImage.Click += btnCloneImage_Click;
+            _btnCloneImage.Location = new Point(3, 474);
+            _btnCloneImage.Name = "_btnCloneImage";
+            _btnCloneImage.Size = new Size(88, 34);
+            _btnCloneImage.TabIndex = 11;
+            _btnCloneImage.Text = "Clone";
+            _btnCloneImage.UseVisualStyleBackColor = true;
+            _btnCloneImage.Click += btnCloneImage_Click;
             // 
             // TreeViewContainer
             // 
-            TreeViewContainer.BottomToolStripPanelVisible = false;
+            _treeViewContainer.BottomToolStripPanelVisible = false;
             // 
             // TreeViewContainer.ContentPanel
             // 
-            TreeViewContainer.ContentPanel.Controls.Add(DataFolder_TreeView);
-            TreeViewContainer.ContentPanel.Size = new Size(230, 610);
-            TreeViewContainer.Dock = DockStyle.Fill;
-            TreeViewContainer.LeftToolStripPanelVisible = false;
-            TreeViewContainer.Location = new Point(3, 3);
-            TreeViewContainer.Name = "TreeViewContainer";
-            TreeViewContainer.RightToolStripPanelVisible = false;
-            TreeViewContainer.Size = new Size(230, 635);
-            TreeViewContainer.TabIndex = 11;
-            TreeViewContainer.Text = "toolStripContainer1";
+            _treeViewContainer.ContentPanel.Controls.Add(_dataFolderTreeView);
+            _treeViewContainer.ContentPanel.Size = new Size(230, 610);
+            _treeViewContainer.Dock = DockStyle.Fill;
+            _treeViewContainer.LeftToolStripPanelVisible = false;
+            _treeViewContainer.Location = new Point(3, 3);
+            _treeViewContainer.Name = "_treeViewContainer";
+            _treeViewContainer.RightToolStripPanelVisible = false;
+            _treeViewContainer.Size = new Size(230, 635);
+            _treeViewContainer.TabIndex = 11;
+            _treeViewContainer.Text = "toolStripContainer1";
             // 
             // TreeViewContainer.TopToolStripPanel
             // 
-            TreeViewContainer.TopToolStripPanel.Controls.Add(Search_ToolStrip);
+            _treeViewContainer.TopToolStripPanel.Controls.Add(_searchToolStrip);
             // 
             // Search_ToolStrip
             // 
-            Search_ToolStrip.Dock = DockStyle.None;
-            Search_ToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            Search_ToolStrip.Items.AddRange(new ToolStripItem[] {
-            Search_TxtBox,
-            Search_Btn,
-            PrevSearch_Btn,
-            NextSearch_Btn,
-            SearchPos_Lbl});
-            Search_ToolStrip.Location = new Point(0, 0);
-            Search_ToolStrip.Name = "Search_ToolStrip";
-            Search_ToolStrip.Size = new Size(230, 25);
-            Search_ToolStrip.Stretch = true;
-            Search_ToolStrip.TabIndex = 0;
+            _searchToolStrip.Dock = DockStyle.None;
+            _searchToolStrip.GripStyle = ToolStripGripStyle.Hidden;
+            _searchToolStrip.Items.AddRange(new ToolStripItem[] {
+            _searchTxtBox,
+            _searchBtn,
+            _prevSearchBtn,
+            _nextSearchBtn,
+            _searchPosLbl});
+            _searchToolStrip.Location = new Point(0, 0);
+            _searchToolStrip.Name = "_searchToolStrip";
+            _searchToolStrip.Size = new Size(230, 25);
+            _searchToolStrip.Stretch = true;
+            _searchToolStrip.TabIndex = 0;
             // 
             // Search_TxtBox
             // 
-            Search_TxtBox.Name = "Search_TxtBox";
-            Search_TxtBox.Size = new Size(70, 25);
+            _searchTxtBox.Name = "_searchTxtBox";
+            _searchTxtBox.Size = new Size(70, 25);
             // 
             // Search_Btn
             // 
-            Search_Btn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            Search_Btn.ImageTransparentColor = Color.Magenta;
-            Search_Btn.Name = "Search_Btn";
-            Search_Btn.Size = new Size(46, 22);
-            Search_Btn.Text = "Search";
-            Search_Btn.Click += Search_Btn_Click;
+            _searchBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            _searchBtn.ImageTransparentColor = Color.Magenta;
+            _searchBtn.Name = "_searchBtn";
+            _searchBtn.Size = new Size(46, 22);
+            _searchBtn.Text = "Search";
+            _searchBtn.Click += Search_Btn_Click;
             // 
             // PrevSearch_Btn
             // 
-            PrevSearch_Btn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            PrevSearch_Btn.ImageTransparentColor = Color.Magenta;
-            PrevSearch_Btn.Name = "PrevSearch_Btn";
-            PrevSearch_Btn.Size = new Size(34, 22);
-            PrevSearch_Btn.Text = "Prev";
-            PrevSearch_Btn.Click += PrevSearch_Btn_Click;
+            _prevSearchBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            _prevSearchBtn.ImageTransparentColor = Color.Magenta;
+            _prevSearchBtn.Name = "_prevSearchBtn";
+            _prevSearchBtn.Size = new Size(34, 22);
+            _prevSearchBtn.Text = "Prev";
+            _prevSearchBtn.Click += PrevSearch_Btn_Click;
             // 
             // NextSearch_Btn
             // 
-            NextSearch_Btn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            NextSearch_Btn.ImageTransparentColor = Color.Magenta;
-            NextSearch_Btn.Name = "NextSearch_Btn";
-            NextSearch_Btn.Size = new Size(35, 22);
-            NextSearch_Btn.Text = "Next";
-            NextSearch_Btn.Click += NextSearch_Btn_Click;
+            _nextSearchBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            _nextSearchBtn.ImageTransparentColor = Color.Magenta;
+            _nextSearchBtn.Name = "_nextSearchBtn";
+            _nextSearchBtn.Size = new Size(35, 22);
+            _nextSearchBtn.Text = "Next";
+            _nextSearchBtn.Click += NextSearch_Btn_Click;
             // 
             // SearchPos_Lbl
             // 
-            SearchPos_Lbl.Name = "SearchPos_Lbl";
-            SearchPos_Lbl.Size = new Size(24, 22);
-            SearchPos_Lbl.Text = "0/0";
+            _searchPosLbl.Name = "_searchPosLbl";
+            _searchPosLbl.Size = new Size(24, 22);
+            _searchPosLbl.Text = "0/0";
             // 
             // TexExplorer
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1569, 641);
-            Controls.Add(tableLayoutPanel1);
+            Controls.Add(_tableLayoutPanel1);
             Name = "TexExplorer";
             Text = "Texture Explorer";
-            ((ISupportInitialize)(ImagePreviewBox)).EndInit();
-            ImageInfoBox.ResumeLayout(false);
-            ImageInfoBox.PerformLayout();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel4.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            tblImageList.ResumeLayout(false);
-            TreeViewContainer.ContentPanel.ResumeLayout(false);
-            TreeViewContainer.TopToolStripPanel.ResumeLayout(false);
-            TreeViewContainer.TopToolStripPanel.PerformLayout();
-            TreeViewContainer.ResumeLayout(false);
-            TreeViewContainer.PerformLayout();
-            Search_ToolStrip.ResumeLayout(false);
-            Search_ToolStrip.PerformLayout();
+            ((ISupportInitialize)(_imagePreviewBox)).EndInit();
+            _imageInfoBox.ResumeLayout(false);
+            _imageInfoBox.PerformLayout();
+            _tableLayoutPanel1.ResumeLayout(false);
+            _tableLayoutPanel2.ResumeLayout(false);
+            _tableLayoutPanel3.ResumeLayout(false);
+            _tableLayoutPanel4.ResumeLayout(false);
+            _groupBox1.ResumeLayout(false);
+            _groupBox1.PerformLayout();
+            _tblImageList.ResumeLayout(false);
+            _treeViewContainer.ContentPanel.ResumeLayout(false);
+            _treeViewContainer.TopToolStripPanel.ResumeLayout(false);
+            _treeViewContainer.TopToolStripPanel.PerformLayout();
+            _treeViewContainer.ResumeLayout(false);
+            _treeViewContainer.PerformLayout();
+            _searchToolStrip.ResumeLayout(false);
+            _searchToolStrip.PerformLayout();
             ResumeLayout(false);
 
 		}
 
-		public TexExplorer(string string_2)
+		public TexExplorer(string string2)
 		{
 			InitializeComponent();
-			string_0 = string_2;
+			_string0 = string2;
 			Closed += TexExplorer_Closed;
 			Text = "Texture Explorer - LOOKING FOR TEXTURES (PLEASE WAIT!)";
-			var @class = new ZonePakLoader(string_0);
+			var @class = new ZonePakLoader(_string0);
 			@class.method_1(UpdateSearchText);
 			@class.method_0(AddNode);
-			thread_0 = new Thread(@class.method_2);
-			thread_0.Start();
+			_thread0 = new Thread(@class.method_2);
+			_thread0.Start();
 		}
 
 		private void TexExplorer_Closed(object sender, EventArgs e)
 		{
 			DisposeTexFile();
-			if (thread_0 != null && thread_0.IsAlive)
+			if (_thread0 != null && _thread0.IsAlive)
 			{
-				thread_0.Abort();
-				thread_0 = null;
+				_thread0.Abort();
+				_thread0 = null;
 			}
 		}
 
@@ -802,9 +802,9 @@ namespace ns20
 				Invoke(method, treeNode);
 				return;
 			}
-			DataFolder_TreeView.Nodes.Add(treeNode);
+			_dataFolderTreeView.Nodes.Add(treeNode);
 			Text = "Texture Explorer";
-			DataFolder_TreeView.Sort();
+			_dataFolderTreeView.Sort();
 		}
 
 		private void DisposeTexFile()
@@ -815,47 +815,47 @@ namespace ns20
 				_currentTexFile = null;
                 CurrentImgFile = null;
 			}
-			ImgList.Items.Clear();
-			ImgList.SelectedIndex = -1;
+			_imgList.Items.Clear();
+			_imgList.SelectedIndex = -1;
 			
-			ImageInfoBox.Enabled = false;
+			_imageInfoBox.Enabled = false;
 			//this.RebuildBtn.Enabled = false;
-			ImagePreviewBox.Image = null;
+			_imagePreviewBox.Image = null;
 		}
 
 		private void DataFolder_TreeView_DoubleClick(object sender, EventArgs e)
 		{
-			if (DataFolder_TreeView.SelectedNode != null)
+			if (_dataFolderTreeView.SelectedNode != null)
 			{
-				if (DataFolder_TreeView.SelectedNode.Tag is int && DataFolder_TreeView.SelectedNode.ToolTipText != "")
+				if (_dataFolderTreeView.SelectedNode.Tag is int && _dataFolderTreeView.SelectedNode.ToolTipText != "")
 				{
 					DisposeTexFile();
-					var toolTipText = DataFolder_TreeView.SelectedNode.ToolTipText;
-					zzPakNode2 pakNode;
+					var toolTipText = _dataFolderTreeView.SelectedNode.ToolTipText;
+					ZzPakNode2 pakNode;
 					if (File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")))
 					{
-						pakNode = new zzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false);
+						pakNode = new ZzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false);
 					}
 					else
 					{
-						pakNode = new zzPakNode2(toolTipText, false);
+						pakNode = new ZzPakNode2(toolTipText, false);
 					}
-					_currentTexFile = new TexFile(pakNode.method_13((int)DataFolder_TreeView.SelectedNode.Tag));
+					_currentTexFile = new TexFile(pakNode.method_13((int)_dataFolderTreeView.SelectedNode.Tag));
 
 					for (var i = 1; i <= _currentTexFile.TextureCount(); i++)
 					{
-						ImgList.Items.Add("Image " + i);
+						_imgList.Items.Add("Image " + i);
 					}
 					pakNode.Dispose();
 					return;
 				}
-				if (DataFolder_TreeView.SelectedNode.ToolTipText != "")
+				if (_dataFolderTreeView.SelectedNode.ToolTipText != "")
 				{
 					DisposeTexFile();
-					_currentTexFile = new TexFile(DataFolder_TreeView.SelectedNode.ToolTipText);
+					_currentTexFile = new TexFile(_dataFolderTreeView.SelectedNode.ToolTipText);
 					for (var j = 1; j <= _currentTexFile.TextureCount(); j++)
 					{
-						ImgList.Items.Add("Image " + j);
+						_imgList.Items.Add("Image " + j);
 					}
 				}
 			}
@@ -863,53 +863,53 @@ namespace ns20
 
 		private void ImgList_SelectedIndexChanged(object sender, EventArgs e)
 		{
-            var index = ImgList.SelectedIndex;
+            var index = _imgList.SelectedIndex;
 
 
             if (index >= 0)
 			{
 				var texture = _currentTexFile[index];
 				_currentTexturePixelFormat = texture.PixelFormat;
-				BPPTxt.Text = string.Concat(texture.BPP);
+				_bppTxt.Text = string.Concat(texture.Bpp);
 
                 switch(texture.PixelFormat)
                 {
-                    case IMGPixelFormat.Dxt1:
-                        FormatTxt.Text = "DXT1";
+                    case ImgPixelFormat.Dxt1:
+                        _formatTxt.Text = "DXT1";
                         break;
 
-                    case IMGPixelFormat.Dxt3:
-                        FormatTxt.Text = "DXT3";
+                    case ImgPixelFormat.Dxt3:
+                        _formatTxt.Text = "DXT3";
                         break;
 
-                    case IMGPixelFormat.Dxt5:
-                        FormatTxt.Text = "DXT5";
+                    case ImgPixelFormat.Dxt5:
+                        _formatTxt.Text = "DXT5";
                         break;
 
                     default:
-                        FormatTxt.Text = "A8R8G8B8";
+                        _formatTxt.Text = "A8R8G8B8";
                         break;
                 }
 
-				MipMapTxt.Text = string.Concat(texture.MipMapCount);
-				WidthTxt.Text = string.Concat(texture.Size.Width);
-				HeightTxt.Text = string.Concat(texture.Size.Height);
+				_mipMapTxt.Text = string.Concat(texture.MipMapCount);
+				_widthTxt.Text = string.Concat(texture.Size.Width);
+				_heightTxt.Text = string.Concat(texture.Size.Height);
 
 				var image = texture.GetImage();
-				size_0 = image.Size;
-				if (image.Width > ImagePreviewBox.Width || image.Height > ImagePreviewBox.Height)
+				_size0 = image.Size;
+				if (image.Width > _imagePreviewBox.Width || image.Height > _imagePreviewBox.Height)
 				{
-					image = KeyGenerator.ScaleImageFixedRatio(image, ImagePreviewBox.Size);
+					image = KeyGenerator.ScaleImageFixedRatio(image, _imagePreviewBox.Size);
 				}
-				ImagePreviewBox.Image = image;
-				ImageInfoBox.Enabled = true;
+				_imagePreviewBox.Image = image;
+				_imageInfoBox.Enabled = true;
 
                 var metadata = _currentTexFile.TextureList[index];
                 CurrentImgFile = metadata;
             }
             else
             {
-                ImageInfoBox.Enabled = false;
+                _imageInfoBox.Enabled = false;
             }
 			
 		}
@@ -928,18 +928,18 @@ namespace ns20
 			Image image;
 			if (text.EndsWith(".dds", StringComparison.OrdinalIgnoreCase))
 			{
-				image = new DDSTexture(text).GetImage();
+				image = new DdsTexture(text).GetImage();
 			}
 			else
 			{
 				image = Image.FromFile(text);
 			}
-			if (!image.Size.Equals(size_0) && DialogResult.Yes == MessageBox.Show("The image dimensions don't match. Do you wish scale to the original dimension? (Ratio may change!)", "Replace Texture", MessageBoxButtons.YesNo))
+			if (!image.Size.Equals(_size0) && DialogResult.Yes == MessageBox.Show("The image dimensions don't match. Do you wish scale to the original dimension? (Ratio may change!)", "Replace Texture", MessageBoxButtons.YesNo))
 			{
-				image = KeyGenerator.ScaleImage(image, size_0);
+				image = KeyGenerator.ScaleImage(image, _size0);
 			}
-			_currentTexFile.ReplaceTexture(ImgList.SelectedIndex, image, _currentTexturePixelFormat);
-			RebuildBtn.Enabled = true;
+			_currentTexFile.ReplaceTexture(_imgList.SelectedIndex, image, _currentTexturePixelFormat);
+			_rebuildBtn.Enabled = true;
 		}
 
 		public ImageFormat GetImageFormat(string fileName)
@@ -972,10 +972,10 @@ namespace ns20
 			}
 			if (fileName.EndsWith(".dds", StringComparison.OrdinalIgnoreCase))
 			{
-				_currentTexFile.WriteBytes(ImgList.SelectedIndex, fileName);
+				_currentTexFile.WriteBytes(_imgList.SelectedIndex, fileName);
 				return;
 			}
-			_currentTexFile[ImgList.SelectedIndex].GetImage().Save(fileName, GetImageFormat(fileName));
+			_currentTexFile[_imgList.SelectedIndex].GetImage().Save(fileName, GetImageFormat(fileName));
 		}
 
 		private void RebuildBtn_Click(object sender, EventArgs e)
@@ -990,149 +990,149 @@ namespace ns20
 			}
 			else
 			{
-				var toolTipText = DataFolder_TreeView.SelectedNode.ToolTipText;
-				var pakNode = File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")) ? new zzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false) : new zzPakNode2(toolTipText, false);
-				pakNode.method_11((int)DataFolder_TreeView.SelectedNode.Tag).imethod_17(_currentTexFile.ToStream().ReadEverything());
+				var toolTipText = _dataFolderTreeView.SelectedNode.ToolTipText;
+				var pakNode = File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")) ? new ZzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false) : new ZzPakNode2(toolTipText, false);
+				pakNode.method_11((int)_dataFolderTreeView.SelectedNode.Tag).imethod_17(_currentTexFile.ToStream().ReadEverything());
 				pakNode.vmethod_1();
 				pakNode.Dispose();
 			}
-			ImgList.Items.Clear();
+			_imgList.Items.Clear();
 			DisposeTexFile();
 		}
 
 		private void NextSearch_Btn_Click(object sender, EventArgs e)
 		{
-			if (DataFolder_TreeView.SelectedNode == null)
+			if (_dataFolderTreeView.SelectedNode == null)
 			{
 				return;
 			}
-			if (Search_TxtBox.Text.Equals(""))
+			if (_searchTxtBox.Text.Equals(""))
 			{
-				foreach (var current in nodeList)
+				foreach (var current in _nodeList)
 				{
 					current.BackColor = Color.Empty;
 				}
-				nodeList.Clear();
-				string_1 = "";
-				SearchPos_Lbl.Text = "0/0";
+				_nodeList.Clear();
+				_string1 = "";
+				_searchPosLbl.Text = "0/0";
 				return;
 			}
-			if (!Search_TxtBox.Text.Equals(string_1))
+			if (!_searchTxtBox.Text.Equals(_string1))
 			{
-				foreach (var current2 in nodeList)
+				foreach (var current2 in _nodeList)
 				{
 					current2.BackColor = Color.Transparent;
 				}
-				nodeList.Clear();
-				string_1 = Search_TxtBox.Text;
+				_nodeList.Clear();
+				_string1 = _searchTxtBox.Text;
 			}
-			if (nodeList.Count == 0)
+			if (_nodeList.Count == 0)
 			{
 				if (!method_4())
 				{
 					MessageBox.Show("Value not found!");
-					SearchPos_Lbl.Text = "0/0";
+					_searchPosLbl.Text = "0/0";
 					return;
 				}
-				count = -1;
+				_count = -1;
 			}
-			count++;
-			var treeView = DataFolder_TreeView;
-			var node = nodeList;
-			int arg_16B_1;
-			if (nodeList.Count <= count)
+			_count++;
+			var treeView = _dataFolderTreeView;
+			var node = _nodeList;
+			int arg16B1;
+			if (_nodeList.Count <= _count)
 			{
-				count = 0;
-				arg_16B_1 = 0;
+				_count = 0;
+				arg16B1 = 0;
 			}
 			else
 			{
-				arg_16B_1 = count;
+				arg16B1 = _count;
 			}
-			treeView.SelectedNode = node[arg_16B_1];
-			SearchPos_Lbl.Text = count + 1 + "/" + nodeList.Count;
-			DataFolder_TreeView.Focus();
+			treeView.SelectedNode = node[arg16B1];
+			_searchPosLbl.Text = _count + 1 + "/" + _nodeList.Count;
+			_dataFolderTreeView.Focus();
 		}
 
 		private void PrevSearch_Btn_Click(object sender, EventArgs e)
 		{
-			if (DataFolder_TreeView.SelectedNode == null)
+			if (_dataFolderTreeView.SelectedNode == null)
 			{
 				return;
 			}
-			if (Search_TxtBox.Text.Equals(""))
+			if (_searchTxtBox.Text.Equals(""))
 			{
-				foreach (var current in nodeList)
+				foreach (var current in _nodeList)
 				{
 					current.BackColor = Color.Empty;
 				}
-				nodeList.Clear();
-				string_1 = "";
-				SearchPos_Lbl.Text = "0/0";
+				_nodeList.Clear();
+				_string1 = "";
+				_searchPosLbl.Text = "0/0";
 				return;
 			}
-			if (!Search_TxtBox.Text.Equals(string_1))
+			if (!_searchTxtBox.Text.Equals(_string1))
 			{
-				foreach (var current2 in nodeList)
+				foreach (var current2 in _nodeList)
 				{
 					current2.BackColor = Color.Empty;
 				}
-				nodeList.Clear();
-				string_1 = Search_TxtBox.Text;
+				_nodeList.Clear();
+				_string1 = _searchTxtBox.Text;
 			}
-			if (nodeList.Count == 0)
+			if (_nodeList.Count == 0)
 			{
 				if (!method_4())
 				{
 					MessageBox.Show("Value not found!");
-					SearchPos_Lbl.Text = "0/0";
+					_searchPosLbl.Text = "0/0";
 					return;
 				}
-				count = nodeList.Count;
+				_count = _nodeList.Count;
 			}
-			count--;
-			DataFolder_TreeView.SelectedNode = nodeList[(0 <= count) ? count : (count = nodeList.Count - 1)];
-			SearchPos_Lbl.Text = count + 1 + "/" + nodeList.Count;
-			DataFolder_TreeView.Focus();
+			_count--;
+			_dataFolderTreeView.SelectedNode = _nodeList[(0 <= _count) ? _count : (_count = _nodeList.Count - 1)];
+			_searchPosLbl.Text = _count + 1 + "/" + _nodeList.Count;
+			_dataFolderTreeView.Focus();
 		}
 
 		private void Search_Btn_Click(object sender, EventArgs e)
 		{
-			if (DataFolder_TreeView.SelectedNode == null)
+			if (_dataFolderTreeView.SelectedNode == null)
 			{
 				return;
 			}
-			foreach (var current in nodeList)
+			foreach (var current in _nodeList)
 			{
 				current.BackColor = Color.Empty;
 			}
-			nodeList.Clear();
-			string_1 = Search_TxtBox.Text;
-			if (string_1.Equals(""))
+			_nodeList.Clear();
+			_string1 = _searchTxtBox.Text;
+			if (_string1.Equals(""))
 			{
-				SearchPos_Lbl.Text = "0/0";
+				_searchPosLbl.Text = "0/0";
 				return;
 			}
 			if (!method_4())
 			{
 				MessageBox.Show("Value not found!");
-				SearchPos_Lbl.Text = "0/0";
+				_searchPosLbl.Text = "0/0";
 				return;
 			}
-			count = 0;
-			DataFolder_TreeView.SelectedNode = nodeList[count];
-			SearchPos_Lbl.Text = count + 1 + "/" + nodeList.Count;
-			DataFolder_TreeView.Focus();
+			_count = 0;
+			_dataFolderTreeView.SelectedNode = _nodeList[_count];
+			_searchPosLbl.Text = _count + 1 + "/" + _nodeList.Count;
+			_dataFolderTreeView.Focus();
 		}
 
 		private bool method_4()
 		{
-			AddNodeToContainerIfItHasThisString(DataFolder_TreeView.SelectedNode, string_1, nodeList);
-			foreach (var current in nodeList)
+			AddNodeToContainerIfItHasThisString(_dataFolderTreeView.SelectedNode, _string1, _nodeList);
+			foreach (var current in _nodeList)
 			{
 				current.BackColor = Color.YellowGreen;
 			}
-			return nodeList.Count != 0;
+			return _nodeList.Count != 0;
 		}
 
 		private static void AddNodeToContainerIfItHasThisString(TreeNode node, string str, ICollection<TreeNode> nodeCollection)
@@ -1154,15 +1154,15 @@ namespace ns20
 
         private void chkEditMetadata_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkEditMetadata.Checked)
+            if (_chkEditMetadata.Checked)
             { 
                 if (MessageBox.Show("Are you sure you want to edit the image metadata? You could corrupt your pak file!", "Warning!", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
-                    chkEditMetadata.Checked = false;
+                    _chkEditMetadata.Checked = false;
                 }
             }
 
-            MetadataReadonly = !chkEditMetadata.Checked;
+            MetadataReadonly = !_chkEditMetadata.Checked;
 
         }
 
@@ -1176,29 +1176,29 @@ namespace ns20
                 _currentImgFile = value;
                 if (value != null)
                 {
-                    MetadataReadonly = !chkEditMetadata.Checked;
-                    txtFlags.Text = value.unkFlags.ToString("X4");
-                    txtKey.Text = value.Key.ToString("X8");
-                    txtWidth.Text = value.Width.ToString();
-                    txtHeight.Text = value.Height.ToString();
-                    txtMipMaps.Text = value.MipMapCount.ToString();
-                    txtStart.Text = value.StartIndex.ToString("X8");
-                    txtLength.Text = value.Length.ToString();
-                    txtUnk3.Text = value.unkShort3.ToString("X4");
-                    txtUnk4.Text = value.unkShort4.ToString("X4");
+                    MetadataReadonly = !_chkEditMetadata.Checked;
+                    _txtFlags.Text = value.UnkFlags.ToString("X4");
+                    _txtKey.Text = value.Key.ToString("X8");
+                    _txtWidth.Text = value.Width.ToString();
+                    _txtHeight.Text = value.Height.ToString();
+                    _txtMipMaps.Text = value.MipMapCount.ToString();
+                    _txtStart.Text = value.StartIndex.ToString("X8");
+                    _txtLength.Text = value.Length.ToString();
+                    _txtUnk3.Text = value.UnkShort3.ToString("X4");
+                    _txtUnk4.Text = value.UnkShort4.ToString("X4");
                 }
                 else
                 {
                     MetadataReadonly = true;
-                    txtFlags.Text = "";
-                    txtKey.Text = "";
-                    txtWidth.Text = "";
-                    txtHeight.Text = "";
-                    txtMipMaps.Text = "";
-                    txtStart.Text = "";
-                    txtLength.Text = "";
-                    txtUnk3.Text = "";
-                    txtUnk4.Text = "";
+                    _txtFlags.Text = "";
+                    _txtKey.Text = "";
+                    _txtWidth.Text = "";
+                    _txtHeight.Text = "";
+                    _txtMipMaps.Text = "";
+                    _txtStart.Text = "";
+                    _txtLength.Text = "";
+                    _txtUnk3.Text = "";
+                    _txtUnk4.Text = "";
                 }
 
             }
@@ -1213,22 +1213,22 @@ namespace ns20
         {
             set
             {
-                txtFlags.ReadOnly = value;
-                txtKey.ReadOnly = value;
-                txtWidth.ReadOnly = value;
-                txtHeight.ReadOnly = value;
-                txtMipMaps.ReadOnly = value;
-                txtStart.ReadOnly = value;
-                txtLength.ReadOnly = value;
-                txtUnk3.ReadOnly = value;
-                txtUnk4.ReadOnly = value;
+                _txtFlags.ReadOnly = value;
+                _txtKey.ReadOnly = value;
+                _txtWidth.ReadOnly = value;
+                _txtHeight.ReadOnly = value;
+                _txtMipMaps.ReadOnly = value;
+                _txtStart.ReadOnly = value;
+                _txtLength.ReadOnly = value;
+                _txtUnk3.ReadOnly = value;
+                _txtUnk4.ReadOnly = value;
             }
         }
 
         private void txtKey_TextChanged(object sender, EventArgs e)
         {
             int newKey;
-            if (Int32.TryParse(txtKey.Text, NumberStyles.HexNumber | NumberStyles.AllowHexSpecifier, null, out newKey))
+            if (Int32.TryParse(_txtKey.Text, NumberStyles.HexNumber | NumberStyles.AllowHexSpecifier, null, out newKey))
             {
                 _currentImgFile.Key = newKey;
             }
@@ -1251,14 +1251,14 @@ namespace ns20
 
         private void btnCloneImage_Click(object sender, EventArgs e)
         {
-            if (ImgList.Items.Count <= 0)
+            if (_imgList.Items.Count <= 0)
                 return;
 
-            if (ImgList.SelectedIndex < 0 || ImgList.SelectedIndex >= _currentTexFile.TextureCount())
+            if (_imgList.SelectedIndex < 0 || _imgList.SelectedIndex >= _currentTexFile.TextureCount())
                 return;
 
-            var cloneIndex = _currentTexFile.CloneTextureElement(ImgList.SelectedIndex);
-            ImgList.Items.Add("Image " + (cloneIndex + 1) );
+            var cloneIndex = _currentTexFile.CloneTextureElement(_imgList.SelectedIndex);
+            _imgList.Items.Add("Image " + (cloneIndex + 1) );
         }
     }
 }

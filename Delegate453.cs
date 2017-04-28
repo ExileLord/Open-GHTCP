@@ -1,4 +1,4 @@
 using System;
 using System.Reflection;
 
-public delegate MethodBase Delegate453(RuntimeMethodHandle runtimeMethodHandle_0);
+public delegate MethodBase Delegate453(RuntimeMethodHandle runtimeMethodHandle0);

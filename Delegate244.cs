@@ -1,3 +1,3 @@
 using System;
 
-public delegate byte Delegate244(object object_0, IFormatProvider iformatProvider_0);
+public delegate byte Delegate244(object object0, IFormatProvider iformatProvider0);

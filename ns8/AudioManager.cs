@@ -16,24 +16,24 @@ namespace ns8
 {
 	public class AudioManager : IDisposable
 	{
-		private readonly List<PlayableAudio> list_0;
+		private readonly List<IPlayableAudio> _list0;
 
 		public AudioManager()
 		{
-			list_0 = new List<PlayableAudio>();
+			_list0 = new List<IPlayableAudio>();
 		}
 
-		public static PlayableAudio LoadPlayableAudio(Enum25 enum25_0, GenericAudioStream audioStream)
+		public static IPlayableAudio LoadPlayableAudio(Enum25 enum250, GenericAudioStream audioStream)
 		{
-            switch (enum25_0)
+            switch (enum250)
 			{
-			case Enum25.const_1:
+			case Enum25.Const1:
 				return new WaveOutput(audioStream);
-			case Enum25.const_2:
-				return new MP3Output(audioStream);
-			case Enum25.const_3:
+			case Enum25.Const2:
+				return new Mp3Output(audioStream);
+			case Enum25.Const3:
 				return new WaveOutput(audioStream);
-			case Enum25.const_5:
+			case Enum25.Const5:
 				return new WaveOutput(audioStream);
 			}
             var flag = Type.GetType("Mono.Runtime") != null;
@@ -45,14 +45,14 @@ namespace ns8
 			case 2:
 			case 3:
 			{
-				PlayableAudio result;
+				IPlayableAudio result;
 				try
 				{
 					result = new WaveOutput(audioStream);
 				}
 				catch
 				{
-					result = new OGGOutput(audioStream);
+					result = new OggOutput(audioStream);
 				}
 				return result;
 			}
@@ -80,55 +80,55 @@ namespace ns8
 			switch (fileExtension = fileInfo.Extension.ToLower())
 			{
 			case ".mp3":
-				return AudioTypeEnum.const_1;
+				return AudioTypeEnum.Const1;
 			case ".ogg":
-				return AudioTypeEnum.const_2;
+				return AudioTypeEnum.Const2;
 			case ".wav":
-				return AudioTypeEnum.const_3;
+				return AudioTypeEnum.Const3;
 			case ".flac":
-				return AudioTypeEnum.const_4;
+				return AudioTypeEnum.Const4;
 			case ".ac3":
-				return AudioTypeEnum.const_5;
+				return AudioTypeEnum.Const5;
 			case ".fsb":
-				return AudioTypeEnum.const_6;
+				return AudioTypeEnum.Const6;
 			case ".vgs":
-				return AudioTypeEnum.const_7;
+				return AudioTypeEnum.Const7;
 			case ".vag":
-				return AudioTypeEnum.const_8;
+				return AudioTypeEnum.Const8;
 			case ".msv":
-				return AudioTypeEnum.const_9;
+				return AudioTypeEnum.Const9;
 			case ".imf":
-				return AudioTypeEnum.const_10;
+				return AudioTypeEnum.Const10;
 			}
-			return AudioTypeEnum.const_0;
+			return AudioTypeEnum.Const0;
 		}
 
-		public static Class16 smethod_2(string string_0)
+		public static Class16 smethod_2(string string0)
 		{
 			Class16 result;
-			using (var stream = getAudioStream(string_0))
+			using (var stream = GetAudioStream(string0))
 			{
 				result = stream.vmethod_1();
 			}
 			return result;
 		}
 
-		public static Class16 smethod_3(Stream stream_0)
+		public static Class16 smethod_3(Stream stream0)
 		{
-			var position = stream_0.Position;
+			var position = stream0.Position;
 			Class16 result;
 			try
 			{
-				result = smethod_5(stream_0).vmethod_1();
+				result = smethod_5(stream0).vmethod_1();
 			}
 			finally
 			{
-				stream_0.Position = position;
+				stream0.Position = position;
 			}
 			return result;
 		}
 
-		public static GenericAudioStream getAudioStream(string fileName)
+		public static GenericAudioStream GetAudioStream(string fileName)
 		{
             var fileInfo = new FileInfo(fileName);
 			string fileExtension;
@@ -136,15 +136,15 @@ namespace ns8
 			{
 				if (fileExtension == ".mp3")
 				{
-					return new MP3Stream(fileName);
+					return new Mp3Stream(fileName);
 				}
 				if (fileExtension == ".ogg")
 				{
-                    return new OGGStream(fileName);
+                    return new OggStream(fileName);
                 }
 				if (fileExtension == ".wav")
 				{
-					return new WAVStream(fileName);
+					return new WavStream(fileName);
 				}
 				if (fileExtension == ".flac")
 				{
@@ -153,11 +153,11 @@ namespace ns8
 				}
 				if (fileExtension == ".ac3")
 				{
-					return new AC3Stream(fileName);
+					return new Ac3Stream(fileName);
 				}
 				if (fileExtension == ".fsb")
 				{
-					return new FSBStream(fileName);
+					return new FsbStream(fileName);
 				}
 			}
             throw new NotSupportedException("Audio Engine: " + fileName);
@@ -171,39 +171,39 @@ namespace ns8
 			audioStream.Position = position;
 			if (array[0] == 255 && array[1] >= 240)
 			{
-				return new MP3Stream(audioStream);
+				return new Mp3Stream(audioStream);
 			}
 			if (array[0] == 11 && array[1] == 119)
 			{
-				return new AC3Stream(audioStream);
+				return new Ac3Stream(audioStream);
 			}
 			string @string;
 			if ((@string = Encoding.UTF8.GetString(array, 0, 3)) != null)
 			{
 				if (@string == "Ogg")
 				{
-					return new OGGStream(audioStream);
+					return new OggStream(audioStream);
 				}
 				if (@string == "RIF")
 				{
-					return new WAVStream(audioStream);
+					return new WavStream(audioStream);
 				}
 				if (@string == "ID3")
 				{
-					return new MP3Stream(audioStream);
+					return new Mp3Stream(audioStream);
 				}
 				if (@string == "fLa")
 				{
-					return new FLACStream(audioStream);
+					return new FlacStream(audioStream);
 				}
 				if (@string == "FSB")
 				{
-					return new FSBStream(audioStream);
+					return new FsbStream(audioStream);
 				}
 			}
 			try
 			{
-				return new FSBStream(audioStream);
+				return new FsbStream(audioStream);
 			}
 			catch
 			{
@@ -217,9 +217,9 @@ namespace ns8
 			method_0(false);
 		}
 
-		public void method_0(bool bool_0)
+		public void method_0(bool bool0)
 		{
-			foreach (var current in list_0)
+			foreach (var current in _list0)
 			{
 				current.Dispose();
 			}

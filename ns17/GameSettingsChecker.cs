@@ -11,87 +11,87 @@ namespace ns17
 {
 	public class GameSettingsChecker
 	{
-		public readonly DateTime date;
+		public readonly DateTime Date;
 
-		public readonly Version version;
+		public readonly Version Version;
 
-		public readonly int[] unkBuffer;
+		public readonly int[] UnkBuffer;
 
-		public readonly bool _GameSettingsUntampered;
+		public readonly bool GameSettingsUntampered;
 
-		public readonly bool _AssemblyVersionMatches;
+		public readonly bool AssemblyVersionMatches;
 
-		public readonly bool _LoadedSuccessfully;
+		public readonly bool LoadedSuccessfully;
 
-		private static readonly string _hashPath = "script\\ghtcp\\ghtcp.hash";
+		private static readonly string HashPath = "script\\ghtcp\\ghtcp.hash";
 
 		public bool GameSettingsAreValid()
 		{
-			return _LoadedSuccessfully && _AssemblyVersionMatches && _GameSettingsUntampered;
+			return LoadedSuccessfully && AssemblyVersionMatches && GameSettingsUntampered;
 		}
 
-		public GameSettingsChecker(bool AlreadyLoaded)
+		public GameSettingsChecker(bool alreadyLoaded)
 		{
-			_LoadedSuccessfully = AlreadyLoaded;
-			_AssemblyVersionMatches = AlreadyLoaded;
-			_GameSettingsUntampered = AlreadyLoaded;
+			LoadedSuccessfully = alreadyLoaded;
+			AssemblyVersionMatches = alreadyLoaded;
+			GameSettingsUntampered = alreadyLoaded;
 		}
 
-		public GameSettingsChecker(zzPakNode2 class318_0)
+		public GameSettingsChecker(ZzPakNode2 class3180)
 		{
-			if (!class318_0.method_6(_hashPath))
+			if (!class3180.method_6(HashPath))
 			{
 				return;
 			}
-			var @class = new zzGenericNode1(_hashPath, KeyGenerator.smethod_8(class318_0.method_12(_hashPath), "MaC39SubInfo1245"));
-			version = new Version(@class.method_5(new UnicodeRootNode("version")).method_7());
+			var @class = new ZzGenericNode1(HashPath, KeyGenerator.smethod_8(class3180.method_12(HashPath), "MaC39SubInfo1245"));
+			Version = new Version(@class.method_5(new UnicodeRootNode("version")).method_7());
 			var array = @class.method_5(new ArrayPointerRootNode("date")).method_7().method_7<float>();
-			date = new DateTime((int)array[0], (int)array[1], (int)array[2]);
-			unkBuffer = @class.method_5(new ArrayPointerRootNode("hash")).method_7().method_7<int>();
-			class318_0.method_7(_hashPath);
-			using (var stream = class318_0.method_17())
+			Date = new DateTime((int)array[0], (int)array[1], (int)array[2]);
+			UnkBuffer = @class.method_5(new ArrayPointerRootNode("hash")).method_7().method_7<int>();
+			class3180.method_7(HashPath);
+			using (var stream = class3180.method_17())
 			{
 				stream.Position = 0L;
                 // Ignore checks for external tools modifying game settings because we're not children who will dictate how people can play their game
                 // Possibly turn this on later softly for warning the player of possible data integrity issues
                 // this._GameSettingsUntampered = Class244.smethod_53<int>(Class244.smethod_21(Class244.smethod_43(stream.stream_0)), this.int_0);
-                _GameSettingsUntampered = true;
+                GameSettingsUntampered = true;
 			}
 			GC.Collect();
-			_AssemblyVersionMatches = (Assembly.GetExecutingAssembly().GetName().Version.CompareTo(version) == 0);
-			_LoadedSuccessfully = true;
-			if (!_AssemblyVersionMatches)
+			AssemblyVersionMatches = (Assembly.GetExecutingAssembly().GetName().Version.CompareTo(Version) == 0);
+			LoadedSuccessfully = true;
+			if (!AssemblyVersionMatches)
 			{
 				MessageBox.Show("The game settings were created under a different version.");
 			}
-			if (!_GameSettingsUntampered)
+			if (!GameSettingsUntampered)
 			{
 				MessageBox.Show("The game settings were modified by an external tool!"); 
 			}
 		}
 
-		public static void SignHash(zzPakNode2 pakNode)
+		public static void SignHash(ZzPakNode2 pakNode)
 		{
-			if (pakNode.method_6(_hashPath))
+			if (pakNode.method_6(HashPath))
 			{
-				pakNode.method_7(_hashPath);
+				pakNode.method_7(HashPath);
 			}
-			var @class = new zzGenericNode1();
-			@class.method_3(new UnicodeRootNode("version", _hashPath, Assembly.GetExecutingAssembly().GetName().Version.ToString()));
+			var @class = new ZzGenericNode1();
+			@class.method_3(new UnicodeRootNode("version", HashPath, Assembly.GetExecutingAssembly().GetName().Version.ToString()));
 			using (var stream = pakNode.method_17())
 			{
 				stream.Position = 0L;
-				@class.method_3(new ArrayPointerRootNode("hash", _hashPath, new IntegerArrayNode(KeyGenerator.smethod_21(KeyGenerator.HashStream(stream._stream)))));
+				@class.method_3(new ArrayPointerRootNode("hash", HashPath, new IntegerArrayNode(KeyGenerator.smethod_21(KeyGenerator.HashStream(stream.Stream)))));
 			}
 			GC.Collect();
 			var now = DateTime.Now;
-			@class.method_3(new ArrayPointerRootNode("date", _hashPath, new FloatArrayNode(new[]
+			@class.method_3(new ArrayPointerRootNode("date", HashPath, new FloatArrayNode(new[]
 			{
 				now.Year,
 				now.Month,
 				(float)now.Day
 			})));
-			pakNode.method_1(_hashPath, new zzCocoaNode12(_hashPath, KeyGenerator.smethod_2(@class.method_8(), "MaC39SubInfo1245")));
+			pakNode.method_1(HashPath, new ZzCocoaNode12(HashPath, KeyGenerator.smethod_2(@class.method_8(), "MaC39SubInfo1245")));
 		}
 	}
 }

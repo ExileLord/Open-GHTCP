@@ -11,29 +11,29 @@ namespace ns1
 
 		private delegate int Delegate1(byte[] buffer, int index, int count);
 
-		private readonly GenericAudioStream stream1_0;
+		private readonly GenericAudioStream _stream10;
 
-		private readonly int int_2;
+		private readonly int _int2;
 
-		private readonly int int_3;
+		private readonly int _int3;
 
-		private readonly long long_0;
+		private readonly long _long0;
 
-		private readonly double double_0 = 1.0;
+		private readonly double _double0 = 1.0;
 
-		private readonly bool bool_0;
+		private readonly bool _bool0;
 
-		private readonly bool bool_1;
+		private readonly bool _bool1;
 
-		private readonly Delegate0 delegate0_0;
+		private readonly Delegate0 _delegate00;
 
-		private readonly Delegate1 delegate1_0;
+		private readonly Delegate1 _delegate10;
 
 		public override bool CanRead
 		{
 			get
 			{
-				return stream1_0.CanRead;
+				return _stream10.CanRead;
 			}
 		}
 
@@ -41,7 +41,7 @@ namespace ns1
 		{
 			get
 			{
-				return stream1_0.CanSeek;
+				return _stream10.CanSeek;
 			}
 		}
 
@@ -49,7 +49,7 @@ namespace ns1
 		{
 			get
 			{
-				return stream1_0.CanWrite;
+				return _stream10.CanWrite;
 			}
 		}
 
@@ -57,7 +57,7 @@ namespace ns1
 		{
 			get
 			{
-				return long_0;
+				return _long0;
 			}
 		}
 
@@ -65,275 +65,275 @@ namespace ns1
 		{
 			get
 			{
-				var position = stream1_0.Position;
-				if (!bool_0)
+				var position = _stream10.Position;
+				if (!_bool0)
 				{
 					return position;
 				}
-				return (long)(position * double_0);
+				return (long)(position * _double0);
 			}
 			set
 			{
-				stream1_0.Position = (bool_0 ? ((long)(value / double_0)) : value);
+				_stream10.Position = (_bool0 ? ((long)(value / _double0)) : value);
 			}
 		}
 
-		public Stream4(GenericAudioStream stream1_1, int int_4)
+		public Stream4(GenericAudioStream stream11, int int4)
 		{
-			stream1_0 = stream1_1;
-			fileStream = stream1_1;
-			waveFormat_0 = stream1_1.vmethod_0();
-			int_3 = int_4 + 7 >> 3;
-			int_2 = waveFormat_0.short_2 + 7 >> 3;
-			bool_1 = (waveFormat_0.waveFormatTag_0 == WaveFormatTag.IEEEFloat);
-			bool_0 = (waveFormat_0.waveFormatTag_0 != WaveFormatTag.PCM || int_2 != int_3);
-			if (!bool_0)
+			_stream10 = stream11;
+			FileStream = stream11;
+			WaveFormat0 = stream11.vmethod_0();
+			_int3 = int4 + 7 >> 3;
+			_int2 = WaveFormat0.short_2 + 7 >> 3;
+			_bool1 = (WaveFormat0.waveFormatTag_0 == WaveFormatTag.IeeeFloat);
+			_bool0 = (WaveFormat0.waveFormatTag_0 != WaveFormatTag.Pcm || _int2 != _int3);
+			if (!_bool0)
 			{
-				delegate1_0 = stream1_0.Read;
-				long_0 = stream1_1.Length;
+				_delegate10 = _stream10.Read;
+				_long0 = stream11.Length;
 				return;
 			}
-			waveFormat_0 = new WaveFormat(stream1_1.vmethod_0().int_0, int_4, stream1_1.vmethod_0().short_0);
-			double_0 = int_3 / (double)int_2;
-			long_0 = (long)(stream1_1.Length * double_0);
-			if (!bool_1)
+			WaveFormat0 = new WaveFormat(stream11.vmethod_0().int_0, int4, stream11.vmethod_0().short_0);
+			_double0 = _int3 / (double)_int2;
+			_long0 = (long)(stream11.Length * _double0);
+			if (!_bool1)
 			{
-				switch (int_3)
+				switch (_int3)
 				{
 				case 1:
-					switch (int_2)
+					switch (_int2)
 					{
 					case 2:
-						delegate1_0 = method_2;
+						_delegate10 = method_2;
 						return;
 					case 3:
-						delegate1_0 = method_1;
+						_delegate10 = method_1;
 						return;
 					case 4:
-						delegate1_0 = method_0;
+						_delegate10 = method_0;
 						return;
 					default:
 						return;
 					}
 					break;
 				case 2:
-					switch (int_2)
+					switch (_int2)
 					{
 					case 1:
-						delegate0_0 = smethod_8;
+						_delegate00 = smethod_8;
 						break;
 					case 3:
-						delegate0_0 = smethod_7;
+						_delegate00 = smethod_7;
 						break;
 					case 4:
-						delegate0_0 = smethod_6;
+						_delegate00 = smethod_6;
 						break;
 					}
 					break;
 				case 3:
-					switch (int_2)
+					switch (_int2)
 					{
 					case 1:
-						delegate0_0 = smethod_5;
+						_delegate00 = smethod_5;
 						break;
 					case 2:
-						delegate0_0 = smethod_4;
+						_delegate00 = smethod_4;
 						break;
 					case 4:
-						delegate0_0 = smethod_3;
+						_delegate00 = smethod_3;
 						break;
 					}
 					break;
 				case 4:
-					switch (int_2)
+					switch (_int2)
 					{
 					case 1:
-						delegate0_0 = smethod_2;
+						_delegate00 = smethod_2;
 						break;
 					case 2:
-						delegate0_0 = smethod_1;
+						_delegate00 = smethod_1;
 						break;
 					case 3:
-						delegate0_0 = smethod_0;
+						_delegate00 = smethod_0;
 						break;
 					}
 					break;
 				}
-				delegate1_0 = method_3;
+				_delegate10 = method_3;
 				return;
 			}
-			switch (int_3)
+			switch (_int3)
 			{
 			case 1:
-				delegate1_0 = method_7;
+				_delegate10 = method_7;
 				return;
 			case 2:
-				delegate1_0 = method_6;
+				_delegate10 = method_6;
 				return;
 			case 3:
-				delegate1_0 = method_5;
+				_delegate10 = method_5;
 				return;
 			case 4:
-				delegate1_0 = method_4;
+				_delegate10 = method_4;
 				return;
 			default:
 				return;
 			}
 		}
 
-		private int method_0(byte[] byte_0, int int_4, int int_5)
+		private int method_0(byte[] byte0, int int4, int int5)
 		{
-			var array = new byte[int_5 << 2];
-			var num = stream1_0.Read(array, 0, array.Length);
+			var array = new byte[int5 << 2];
+			var num = _stream10.Read(array, 0, array.Length);
 			var i = 0;
 			while (i < num)
 			{
-				byte_0[int_4] = Class11.smethod_12(BitConverter.ToInt32(byte_0, i));
+				byte0[int4] = Class11.smethod_12(BitConverter.ToInt32(byte0, i));
 				i += 4;
-				int_4++;
+				int4++;
 			}
 			return num >> 2;
 		}
 
-		private int method_1(byte[] byte_0, int int_4, int int_5)
+		private int method_1(byte[] byte0, int int4, int int5)
 		{
-			var array = new byte[int_5 + int_5 + int_5];
-			var num = stream1_0.Read(array, 0, array.Length);
+			var array = new byte[int5 + int5 + int5];
+			var num = _stream10.Read(array, 0, array.Length);
 			var i = 0;
 			while (i < num)
 			{
-				byte_0[int_4] = Class11.smethod_8(Struct8.smethod_2(byte_0, i));
+				byte0[int4] = Class11.smethod_8(Struct8.smethod_2(byte0, i));
 				i += 3;
-				int_4++;
+				int4++;
 			}
 			return num / 3;
 		}
 
-		private int method_2(byte[] byte_0, int int_4, int int_5)
+		private int method_2(byte[] byte0, int int4, int int5)
 		{
-			var array = new byte[int_5 << 1];
-			var num = stream1_0.Read(array, 0, array.Length);
+			var array = new byte[int5 << 1];
+			var num = _stream10.Read(array, 0, array.Length);
 			var i = 0;
 			while (i < num)
 			{
-				byte_0[int_4] = Class11.smethod_4(BitConverter.ToInt16(byte_0, i));
+				byte0[int4] = Class11.smethod_4(BitConverter.ToInt16(byte0, i));
 				i += 2;
-				int_4++;
+				int4++;
 			}
 			return num >> 1;
 		}
 
-		private static byte[] smethod_0(byte[] byte_0, int int_4)
+		private static byte[] smethod_0(byte[] byte0, int int4)
 		{
-			return BitConverter.GetBytes(Class11.smethod_10(Struct8.smethod_2(byte_0, int_4)));
+			return BitConverter.GetBytes(Class11.smethod_10(Struct8.smethod_2(byte0, int4)));
 		}
 
-		private static byte[] smethod_1(byte[] byte_0, int int_4)
+		private static byte[] smethod_1(byte[] byte0, int int4)
 		{
-			return BitConverter.GetBytes(Class11.smethod_6(BitConverter.ToInt16(byte_0, int_4)));
+			return BitConverter.GetBytes(Class11.smethod_6(BitConverter.ToInt16(byte0, int4)));
 		}
 
-		private static byte[] smethod_2(byte[] byte_0, int int_4)
+		private static byte[] smethod_2(byte[] byte0, int int4)
 		{
-			return BitConverter.GetBytes(Class11.smethod_2(byte_0[int_4]));
+			return BitConverter.GetBytes(Class11.smethod_2(byte0[int4]));
 		}
 
-		private static byte[] smethod_3(byte[] byte_0, int int_4)
+		private static byte[] smethod_3(byte[] byte0, int int4)
 		{
-			return Struct8.smethod_4(Class11.smethod_14(BitConverter.ToInt32(byte_0, int_4)));
+			return Struct8.smethod_4(Class11.smethod_14(BitConverter.ToInt32(byte0, int4)));
 		}
 
-		private static byte[] smethod_4(byte[] byte_0, int int_4)
+		private static byte[] smethod_4(byte[] byte0, int int4)
 		{
-			return Struct8.smethod_4(Class11.smethod_5(BitConverter.ToInt16(byte_0, int_4)));
+			return Struct8.smethod_4(Class11.smethod_5(BitConverter.ToInt16(byte0, int4)));
 		}
 
-		private static byte[] smethod_5(byte[] byte_0, int int_4)
+		private static byte[] smethod_5(byte[] byte0, int int4)
 		{
-			return Struct8.smethod_4(Class11.smethod_1(byte_0[int_4]));
+			return Struct8.smethod_4(Class11.smethod_1(byte0[int4]));
 		}
 
-		private static byte[] smethod_6(byte[] byte_0, int int_4)
+		private static byte[] smethod_6(byte[] byte0, int int4)
 		{
-			return BitConverter.GetBytes(Class11.smethod_13(BitConverter.ToInt32(byte_0, int_4)));
+			return BitConverter.GetBytes(Class11.smethod_13(BitConverter.ToInt32(byte0, int4)));
 		}
 
-		private static byte[] smethod_7(byte[] byte_0, int int_4)
+		private static byte[] smethod_7(byte[] byte0, int int4)
 		{
-			return BitConverter.GetBytes(Class11.smethod_9(Struct8.smethod_2(byte_0, int_4)));
+			return BitConverter.GetBytes(Class11.smethod_9(Struct8.smethod_2(byte0, int4)));
 		}
 
-		private static byte[] smethod_8(byte[] byte_0, int int_4)
+		private static byte[] smethod_8(byte[] byte0, int int4)
 		{
-			return BitConverter.GetBytes(Class11.smethod_0(byte_0[int_4]));
+			return BitConverter.GetBytes(Class11.smethod_0(byte0[int4]));
 		}
 
-		private int method_3(byte[] byte_0, int int_4, int int_5)
+		private int method_3(byte[] byte0, int int4, int int5)
 		{
-			var array = new byte[(int)(int_5 / double_0)];
-			var num = stream1_0.Read(array, 0, array.Length);
+			var array = new byte[(int)(int5 / _double0)];
+			var num = _stream10.Read(array, 0, array.Length);
 			var i = 0;
 			while (i < num)
 			{
-				Buffer.BlockCopy(delegate0_0(array, i), 0, byte_0, int_4, int_3);
-				i += int_2;
-				int_4 += int_3;
+				Buffer.BlockCopy(_delegate00(array, i), 0, byte0, int4, _int3);
+				i += _int2;
+				int4 += _int3;
 			}
-			return (int)(num * double_0);
+			return (int)(num * _double0);
 		}
 
-		private int method_4(byte[] byte_0, int int_4, int int_5)
+		private int method_4(byte[] byte0, int int4, int int5)
 		{
-			var array = new float[int_5 >> 2];
-			var num = stream1_0.vmethod_4(array, 0, array.Length);
+			var array = new float[int5 >> 2];
+			var num = _stream10.vmethod_4(array, 0, array.Length);
 			var i = 0;
 			while (i < num)
 			{
-				Buffer.BlockCopy(BitConverter.GetBytes(Class11.smethod_25(array[i])), 0, byte_0, int_4, 4);
+				Buffer.BlockCopy(BitConverter.GetBytes(Class11.smethod_25(array[i])), 0, byte0, int4, 4);
 				i++;
-				int_4 += 4;
+				int4 += 4;
 			}
 			return num << 2;
 		}
 
-		private int method_5(byte[] byte_0, int int_4, int int_5)
+		private int method_5(byte[] byte0, int int4, int int5)
 		{
-			var array = new float[int_5 / 3];
-			var num = stream1_0.vmethod_4(array, 0, array.Length);
+			var array = new float[int5 / 3];
+			var num = _stream10.vmethod_4(array, 0, array.Length);
 			var i = 0;
 			while (i < num)
 			{
-				Buffer.BlockCopy(Struct8.smethod_4(Class11.smethod_23(array[i])), 0, byte_0, int_4, 3);
+				Buffer.BlockCopy(Struct8.smethod_4(Class11.smethod_23(array[i])), 0, byte0, int4, 3);
 				i++;
-				int_4 += 3;
+				int4 += 3;
 			}
 			return num + num + num;
 		}
 
-		private int method_6(byte[] byte_0, int int_4, int int_5)
+		private int method_6(byte[] byte0, int int4, int int5)
 		{
-			var array = new float[int_5 >> 1];
-			var num = stream1_0.vmethod_4(array, 0, array.Length);
+			var array = new float[int5 >> 1];
+			var num = _stream10.vmethod_4(array, 0, array.Length);
 			var i = 0;
 			while (i < num)
 			{
-				Buffer.BlockCopy(BitConverter.GetBytes(Class11.smethod_21(array[i])), 0, byte_0, int_4, 2);
+				Buffer.BlockCopy(BitConverter.GetBytes(Class11.smethod_21(array[i])), 0, byte0, int4, 2);
 				i++;
-				int_4 += 2;
+				int4 += 2;
 			}
 			return num << 1;
 		}
 
-		private int method_7(byte[] byte_0, int int_4, int int_5)
+		private int method_7(byte[] byte0, int int4, int int5)
 		{
-			var array = new float[int_5];
-			var num = stream1_0.vmethod_4(array, 0, array.Length);
+			var array = new float[int5];
+			var num = _stream10.vmethod_4(array, 0, array.Length);
 			var i = 0;
 			while (i < num)
 			{
-				byte_0[int_4] = Class11.smethod_17(array[i]);
+				byte0[int4] = Class11.smethod_17(array[i]);
 				i++;
-				int_4++;
+				int4++;
 			}
 			return num;
 		}
@@ -348,27 +348,27 @@ namespace ns1
 			throw new NotImplementedException();
 		}
 
-		public override int vmethod_3(IntPtr intptr_0, int int_4)
+		public override int vmethod_3(IntPtr intptr0, int int4)
 		{
-			var array = new byte[int_4];
-			var num = Read(array, 0, int_4);
-			Marshal.Copy(array, 0, intptr_0, num);
+			var array = new byte[int4];
+			var num = Read(array, 0, int4);
+			Marshal.Copy(array, 0, intptr0, num);
 			return num;
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)
 		{
-			return delegate1_0(buffer, offset, count);
+			return _delegate10(buffer, offset, count);
 		}
 
-		public override int vmethod_4(float[] float_0, int int_4, int int_5)
+		public override int vmethod_4(float[] float0, int int4, int int5)
 		{
-			return stream1_0.vmethod_4(float_0, int_4, int_5);
+			return _stream10.vmethod_4(float0, int4, int5);
 		}
 
-		public override float[][] vmethod_5(int int_4)
+		public override float[][] vmethod_5(int int4)
 		{
-			return stream1_0.vmethod_5(int_4);
+			return _stream10.vmethod_5(int4);
 		}
 	}
 }

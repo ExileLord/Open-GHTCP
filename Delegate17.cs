@@ -1,4 +1,4 @@
 using System;
 using Microsoft.DirectX.DirectSound;
 
-public delegate void Delegate17(object object_0, IntPtr intptr_0, CooperativeLevel cooperativeLevel_0);
+public delegate void Delegate17(object object0, IntPtr intptr0, CooperativeLevel cooperativeLevel0);

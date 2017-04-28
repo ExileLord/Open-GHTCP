@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate TreeNodeCollection Delegate163(object object_0);
+public delegate TreeNodeCollection Delegate163(object object0);

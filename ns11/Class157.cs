@@ -5,9 +5,9 @@ namespace ns11
 {
 	public class Class157 : IDisposable
 	{
-		private Class154 class154_0;
+		private Class154 _class1540;
 
-		public Stream14 stream14_0;
+		public Stream14 Stream140;
 
 		~Class157()
 		{
@@ -16,15 +16,15 @@ namespace ns11
 
 		public void method_0()
 		{
-			if (class154_0 != null)
+			if (_class1540 != null)
 			{
 				try
 				{
-					class154_0.Dispose();
+					_class1540.Dispose();
 				}
 				finally
 				{
-					class154_0 = null;
+					_class1540 = null;
 				}
 			}
 		}
@@ -32,15 +32,15 @@ namespace ns11
 		public void Dispose()
 		{
 			method_0();
-			if (stream14_0 != null)
+			if (Stream140 != null)
 			{
 				try
 				{
-					stream14_0.Close();
+					Stream140.Close();
 				}
 				finally
 				{
-					stream14_0 = null;
+					Stream140 = null;
 				}
 			}
 		}

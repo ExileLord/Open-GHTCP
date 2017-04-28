@@ -5,18 +5,18 @@ namespace SharpAudio.ASC.Mp3.Lame
 	[Serializable]
 	public struct MP3
 	{
-		public uint dwSampleRate;
+		public uint DwSampleRate;
 
-		public byte byMode;
+		public byte ByMode;
 
-		public ushort wBitrate;
+		public ushort WBitrate;
 
-		public int bPrivate;
+		public int BPrivate;
 
-		public int bCRC;
+		public int BCrc;
 
-		public int bCopyright;
+		public int BCopyright;
 
-		public int bOriginal;
+		public int BOriginal;
 	}
 }

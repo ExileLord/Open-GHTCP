@@ -5,8 +5,8 @@ namespace SharpAudio.ASC.Mp3.Decoding
 		UnknownError = 256,
 		UnknownSampleRate,
 		StreamError,
-		UnexpectedEOF,
-		StreamEOF,
+		UnexpectedEof,
+		StreamEof,
 		InvalidFrame,
 		BitStreamLast = 511
 	}

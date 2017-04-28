@@ -9,38 +9,38 @@ namespace ns6
 	{
 		private enum Enum13
 		{
-			const_0,
-			const_1
+			Const0,
+			Const1
 		}
 
-		private bool bool_0;
+		private bool _bool0;
 
-		private bool bool_1;
+		private bool _bool1;
 
-		private IntPtr intptr_0;
+		private IntPtr _intptr0;
 
-		private Struct62 struct62_0;
+		private Struct62 _struct620;
 
-		private bool bool_2;
+		private bool _bool2;
 
-		private string string_0;
+		private string _string0;
 
-		private static readonly object object_0;
+		private static readonly object Object0;
 
-		private static readonly List<string> list_0;
+		private static readonly List<string> List0;
 
-		private static readonly Dictionary<Struct62, Class120> dictionary_0;
+		private static readonly Dictionary<Struct62, Class120> Dictionary0;
 
-		private static bool bool_3;
+		private static bool _bool3;
 
-		private static Enum13 enum13_0;
+		private static Enum13 _enum130;
 
 		static Class120()
 		{
-			object_0 = new object();
-			list_0 = new List<string>();
-			dictionary_0 = new Dictionary<Struct62, Class120>();
-			bool_3 = true;
+			Object0 = new object();
+			List0 = new List<string>();
+			Dictionary0 = new Dictionary<Struct62, Class120>();
+			_bool3 = true;
 			smethod_0();
 		}
 
@@ -48,166 +48,166 @@ namespace ns6
 		{
 		}
 
-		public Class120(string string_1, int int_0, int int_1, bool bool_4, bool bool_5)
+		public Class120(string string1, int int0, int int1, bool bool4, bool bool5)
 		{
-			method_0(string_1, int_0, int_1, bool_4, bool_5);
+			method_0(string1, int0, int1, bool4, bool5);
 		}
 
 		private static void smethod_0()
 		{
-			lock (object_0)
+			lock (Object0)
 			{
-				if (list_0.Count == 0)
+				if (List0.Count == 0)
 				{
 					try
 					{
-						if (OpenAL.alcIsExtensionPresent(IntPtr.Zero, "ALC_ENUMERATION_EXT"))
+						if (OpenAl.alcIsExtensionPresent(IntPtr.Zero, "ALC_ENUMERATION_EXT"))
 						{
-							enum13_0 = Enum13.const_1;
-							list_0.AddRange(OpenAL.smethod_1(IntPtr.Zero, Enum8.const_1));
+							_enum130 = Enum13.Const1;
+							List0.AddRange(OpenAl.smethod_1(IntPtr.Zero, Enum8.Const1));
 						}
 						else
 						{
-							enum13_0 = Enum13.const_0;
+							_enum130 = Enum13.Const0;
 						}
-						foreach (var arg_65_0 in list_0)
+						foreach (var arg650 in List0)
 						{
 						}
 					}
 					catch (DllNotFoundException)
 					{
-						bool_3 = false;
+						_bool3 = false;
 					}
 				}
 			}
 		}
 
-		private void method_0(string string_1, int int_0, int int_1, bool bool_4, bool bool_5)
+		private void method_0(string string1, int int0, int int1, bool bool4, bool bool5)
 		{
-			if (!bool_3)
+			if (!_bool3)
 			{
 				throw new DllNotFoundException("openal32.dll");
 			}
-			if (enum13_0 == Enum13.const_1 && list_0.Count == 0)
+			if (_enum130 == Enum13.Const1 && List0.Count == 0)
 			{
 				throw new NotSupportedException("No audio hardware is available.");
 			}
-			if (bool_2)
+			if (_bool2)
 			{
 				throw new NotSupportedException("Multiple AudioContexts are not supported.");
 			}
-			if (int_0 < 0)
+			if (int0 < 0)
 			{
-				throw new ArgumentOutOfRangeException("freq", int_0, "Should be greater than zero.");
+				throw new ArgumentOutOfRangeException("freq", int0, "Should be greater than zero.");
 			}
-			if (int_1 < 0)
+			if (int1 < 0)
 			{
-				throw new ArgumentOutOfRangeException("refresh", int_1, "Should be greater than zero.");
+				throw new ArgumentOutOfRangeException("refresh", int1, "Should be greater than zero.");
 			}
-			if (!string.IsNullOrEmpty(string_1))
+			if (!string.IsNullOrEmpty(string1))
 			{
-				intptr_0 = OpenAL.alcOpenDevice(string_1);
+				_intptr0 = OpenAl.alcOpenDevice(string1);
 			}
-			if (intptr_0 == IntPtr.Zero)
+			if (_intptr0 == IntPtr.Zero)
 			{
-				intptr_0 = OpenAL.alcOpenDevice(null);
+				_intptr0 = OpenAl.alcOpenDevice(null);
 			}
-			if (intptr_0 == IntPtr.Zero)
+			if (_intptr0 == IntPtr.Zero)
 			{
-				OpenAL.alcOpenDevice(OpenAL.smethod_0(IntPtr.Zero, Enum7.const_0));
+				OpenAl.alcOpenDevice(OpenAl.smethod_0(IntPtr.Zero, Enum7.Const0));
 			}
-			if (intptr_0 == IntPtr.Zero && list_0.Count > 0)
+			if (_intptr0 == IntPtr.Zero && List0.Count > 0)
 			{
-				intptr_0 = OpenAL.alcOpenDevice(list_0[0]);
+				_intptr0 = OpenAl.alcOpenDevice(List0[0]);
 			}
-			if (intptr_0 == IntPtr.Zero)
+			if (_intptr0 == IntPtr.Zero)
 			{
-				throw new Exception2(string.Format("Audio device '{0}' does not exist or is tied up by another application.", string.IsNullOrEmpty(string_1) ? "default" : string_1));
+				throw new Exception2(string.Format("Audio device '{0}' does not exist or is tied up by another application.", string.IsNullOrEmpty(string1) ? "default" : string1));
 			}
 			method_1();
 			var list = new List<int>();
-			if (int_0 != 0)
+			if (int0 != 0)
 			{
 				list.Add(4103);
-				list.Add(int_0);
+				list.Add(int0);
 			}
-			if (int_1 != 0)
+			if (int1 != 0)
 			{
 				list.Add(4104);
-				list.Add(int_1);
+				list.Add(int1);
 			}
 			list.Add(4105);
-			list.Add(bool_4 ? 1 : 0);
-			if (bool_5 && OpenAL.alcIsExtensionPresent(intptr_0, "ALC_EXT_EFX"))
+			list.Add(bool4 ? 1 : 0);
+			if (bool5 && OpenAl.alcIsExtensionPresent(_intptr0, "ALC_EXT_EFX"))
 			{
 				int item;
-				OpenAL.alcGetIntegerv(intptr_0, Enum9.const_7, 1, out item);
+				OpenAl.alcGetIntegerv(_intptr0, Enum9.Const7, 1, out item);
 				list.Add(131075);
 				list.Add(item);
 			}
 			list.Add(0);
-			struct62_0 = OpenAL.alcCreateContext(intptr_0, list.ToArray());
-			if (Struct62.smethod_1(struct62_0, Struct62.struct62_0))
+			_struct620 = OpenAl.alcCreateContext(_intptr0, list.ToArray());
+			if (Struct62.smethod_1(_struct620, Struct62.Struct620))
 			{
-				OpenAL.alcCloseDevice(intptr_0);
+				OpenAl.alcCloseDevice(_intptr0);
 				throw new Exception3("The audio context could not be created with the specified parameters.");
 			}
 			method_1();
-			if (list_0.Count > 0)
+			if (List0.Count > 0)
 			{
 				method_4();
 			}
 			method_1();
-			string_0 = OpenAL.smethod_0(intptr_0, Enum7.const_5);
+			_string0 = OpenAl.smethod_0(_intptr0, Enum7.Const5);
 			int num;
-			OpenAL.alcGetIntegerv(intptr_0, Enum9.const_2, 4, out num);
+			OpenAl.alcGetIntegerv(_intptr0, Enum9.Const2, 4, out num);
 			if (num > 0)
 			{
 				var array = new int[num];
-				OpenAL.alcGetIntegerv(intptr_0, Enum9.const_3, array.Length * 4, out array[0]);
+				OpenAl.alcGetIntegerv(_intptr0, Enum9.Const3, array.Length * 4, out array[0]);
 				var array2 = array;
 				for (var i = 0; i < array2.Length; i++)
 				{
 					var num2 = array2[i];
 					var @enum = (Enum6)num2;
-					if (@enum == Enum6.const_2)
+					if (@enum == Enum6.Const2)
 					{
 						method_5(true);
 					}
 				}
 			}
-			lock (object_0)
+			lock (Object0)
 			{
-				dictionary_0.Add(struct62_0, this);
-				bool_2 = true;
+				Dictionary0.Add(_struct620, this);
+				_bool2 = true;
 			}
 		}
 
 		private void method_1()
 		{
-			var alcError = OpenAL.alcGetError(intptr_0);
+			var alcError = OpenAl.alcGetError(_intptr0);
 			if (alcError != AlcError.NoError)
 			{
 				throw new Exception3(alcError.ToString());
 			}
 		}
 
-		private static void smethod_1(Class120 class120_0)
+		private static void smethod_1(Class120 class1200)
 		{
-			lock (object_0)
+			lock (Object0)
 			{
-				if (!OpenAL.alcMakeContextCurrent((class120_0 != null) ? class120_0.struct62_0 : Struct62.struct62_0))
+				if (!OpenAl.alcMakeContextCurrent((class1200 != null) ? class1200._struct620 : Struct62.Struct620))
 				{
 					//Delegate129.delegate129_0;
 					//"ALC {0} error detected at {1}.";
-					OpenAL.alcGetError((class120_0 != null) ? Struct62.smethod_0(class120_0.struct62_0) : IntPtr.Zero).ToString();
-					if (class120_0 == null)
+					OpenAl.alcGetError((class1200 != null) ? Struct62.smethod_0(class1200._struct620) : IntPtr.Zero).ToString();
+					if (class1200 == null)
 					{
 						//"null";
 					}
 					else
 					{
-						class120_0.ToString();
+						class1200.ToString();
 					}
 					throw null;
 				}
@@ -217,9 +217,9 @@ namespace ns6
 		public bool method_2()
 		{
 			bool result;
-			lock (object_0)
+			lock (Object0)
 			{
-				if (dictionary_0.Count == 0)
+				if (Dictionary0.Count == 0)
 				{
 					result = false;
 				}
@@ -231,9 +231,9 @@ namespace ns6
 			return result;
 		}
 
-		public void method_3(bool bool_4)
+		public void method_3(bool bool4)
 		{
-			if (bool_4)
+			if (bool4)
 			{
 				smethod_1(this);
 				return;
@@ -246,24 +246,24 @@ namespace ns6
 			smethod_1(this);
 		}
 
-		private void method_5(bool bool_4)
+		private void method_5(bool bool4)
 		{
-			bool_1 = bool_4;
+			_bool1 = bool4;
 		}
 
 		public static Class120 smethod_2()
 		{
 			Class120 result;
-			lock (object_0)
+			lock (Object0)
 			{
-				if (dictionary_0.Count == 0)
+				if (Dictionary0.Count == 0)
 				{
 					result = null;
 				}
 				else
 				{
 					Class120 @class;
-					dictionary_0.TryGetValue(OpenAL.alcGetCurrentContext(), out @class);
+					Dictionary0.TryGetValue(OpenAl.alcGetCurrentContext(), out @class);
 					result = @class;
 				}
 			}
@@ -276,24 +276,24 @@ namespace ns6
 			GC.SuppressFinalize(this);
 		}
 
-		private void method_6(bool bool_4)
+		private void method_6(bool bool4)
 		{
-			if (!bool_0)
+			if (!_bool0)
 			{
 				if (method_2())
 				{
 					method_3(false);
 				}
-				if (Struct62.smethod_2(struct62_0, Struct62.struct62_0))
+				if (Struct62.smethod_2(_struct620, Struct62.Struct620))
 				{
-					dictionary_0.Remove(struct62_0);
-					OpenAL.alcDestroyContext(struct62_0);
+					Dictionary0.Remove(_struct620);
+					OpenAl.alcDestroyContext(_struct620);
 				}
-				if (intptr_0 != IntPtr.Zero)
+				if (_intptr0 != IntPtr.Zero)
 				{
-					OpenAL.alcCloseDevice(intptr_0);
+					OpenAl.alcCloseDevice(_intptr0);
 				}
-				bool_0 = true;
+				_bool0 = true;
 			}
 		}
 
@@ -314,7 +314,7 @@ namespace ns6
 
 		public override string ToString()
 		{
-			return string.Format("{0} (handle: {1}, device: {2})", string_0, struct62_0, intptr_0);
+			return string.Format("{0} (handle: {1}, device: {2})", _string0, _struct620, _intptr0);
 		}
 	}
 }

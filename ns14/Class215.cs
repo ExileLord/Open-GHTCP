@@ -6,17 +6,17 @@ namespace ns14
 {
 	public class Class215<TKey, TValue> : IEnumerator<KeyValuePair<TKey, TValue>>, IEnumerator, IDisposable
 	{
-		private List<TKey> list_0;
+		private List<TKey> _list0;
 
-		private List<TValue> list_1;
+		private List<TValue> _list1;
 
-		private int int_0 = -1;
+		private int _int0 = -1;
 
 		public KeyValuePair<TKey, TValue> Current
 		{
 			get
 			{
-				return new KeyValuePair<TKey, TValue>(list_0[int_0], list_1[int_0]);
+				return new KeyValuePair<TKey, TValue>(_list0[_int0], _list1[_int0]);
 			}
 		}
 
@@ -28,27 +28,27 @@ namespace ns14
 			}
 		}
 
-		public Class215(List<TKey> list_2, List<TValue> list_3)
+		public Class215(List<TKey> list2, List<TValue> list3)
 		{
-			list_0 = list_2;
-			list_1 = list_3;
+			_list0 = list2;
+			_list1 = list3;
 		}
 
 		public void Dispose()
 		{
-			list_0 = null;
-			list_1 = null;
+			_list0 = null;
+			_list1 = null;
 		}
 
 		public bool MoveNext()
 		{
-			int_0++;
-			return int_0 < list_0.Count;
+			_int0++;
+			return _int0 < _list0.Count;
 		}
 
 		public void Reset()
 		{
-			int_0 = -1;
+			_int0 = -1;
 		}
 	}
 }

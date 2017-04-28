@@ -10,78 +10,78 @@ using NeversoftTools.Texture.DDS;
 
 namespace ns21
 {
-	public class DDSTexture
+	public class DdsTexture
 	{
-		public struct DDSPixelFormat
+		public struct DdsPixelFormat
 		{
 			public uint size;
 
-			public uint flags;
+			public uint Flags;
 
-			public uint fourCC;
+			public uint FourCc;
 
-			public uint rgbBitCount;
+			public uint RgbBitCount;
 
-			public uint redBitMask;
+			public uint RedBitMask;
 
-			public uint greenBitMask;
+			public uint GreenBitMask;
 
 			public uint BlueBitMask;
 
 			public uint AlphaBitMask;
 		}
 
-		public struct DDSHeader
+		public struct DdsHeader
 		{
 			public uint size;
 
-			public uint flags;
+			public uint Flags;
 
-			public uint height;
+			public uint Height;
 
-			public uint width;
+			public uint Width;
 
-			public uint pitchOrLinearSize;
+			public uint PitchOrLinearSize;
 
-			public uint depth;
+			public uint Depth;
 
 			public uint mipMapCount;
 
-			public DDSPixelFormat pixelFormat;
+			public DdsPixelFormat pixelFormat;
 
-			public uint unk1;
+			public uint Unk1;
 
-			public uint unk2;
+			public uint Unk2;
 		}
 
-		public IMGPixelFormat PixelFormat;
+		public ImgPixelFormat PixelFormat;
 
-		public int BPP;
+		public int Bpp;
 
 		public int MipMapCount;
 
 		public Size Size;
 
-		public byte[] data;
+		public byte[] Data;
 
-		public DDSTexture(string string_0) : this(File.OpenRead(string_0), false)
+		public DdsTexture(string string0) : this(File.OpenRead(string0), false)
 		{
 		}
 
-		public DDSTexture(Stream stream_0) : this(stream_0, false)
+		public DdsTexture(Stream stream0) : this(stream0, false)
 		{
 		}
 
-		public DDSTexture(Stream stream, bool leaveOpen)
+		public DdsTexture(Stream stream, bool leaveOpen)
 		{
 			Load(stream, leaveOpen);
 		}
 
-		public DDSTexture(Image image_0, int int_2, IMGPixelFormat imgpixelFormat_1) : this(image_0, int_2, imgpixelFormat_1, true)
+		public DdsTexture(Image image0, int int2, ImgPixelFormat imgpixelFormat1) : this(image0, int2, imgpixelFormat1, true)
 		{
 		}
 
-		public DDSTexture(Image image, int mipMapCount, IMGPixelFormat pixelFormat, bool unkBool1)
+		public DdsTexture(Image image, int mipMapCount, ImgPixelFormat pixelFormat, bool unkBool1)
 		{
 			MipMapCount = mipMapCount;
 			PixelFormat = pixelFormat;
@@ -96,33 +96,33 @@ namespace ns21
 			{
 				throw new FileLoadException("Invalid DDS file");
 			}
-			DDSHeader header;
+			DdsHeader header;
 			header.size = binaryReader.ReadUInt32();
-			header.flags = binaryReader.ReadUInt32();
-			header.height = binaryReader.ReadUInt32();
-			header.width = binaryReader.ReadUInt32();
-			header.pitchOrLinearSize = binaryReader.ReadUInt32();
-			header.depth = binaryReader.ReadUInt32();
+			header.Flags = binaryReader.ReadUInt32();
+			header.Height = binaryReader.ReadUInt32();
+			header.Width = binaryReader.ReadUInt32();
+			header.PitchOrLinearSize = binaryReader.ReadUInt32();
+			header.Depth = binaryReader.ReadUInt32();
 			header.mipMapCount = binaryReader.ReadUInt32();
 
 			binaryReader.ReadBytes(44);
 			header.pixelFormat.size = binaryReader.ReadUInt32();
-			header.pixelFormat.flags = binaryReader.ReadUInt32();
-			header.pixelFormat.fourCC = binaryReader.ReadUInt32();
-			header.pixelFormat.rgbBitCount = binaryReader.ReadUInt32();
-			header.pixelFormat.redBitMask = binaryReader.ReadUInt32();
-			header.pixelFormat.greenBitMask = binaryReader.ReadUInt32();
+			header.pixelFormat.Flags = binaryReader.ReadUInt32();
+			header.pixelFormat.FourCc = binaryReader.ReadUInt32();
+			header.pixelFormat.RgbBitCount = binaryReader.ReadUInt32();
+			header.pixelFormat.RedBitMask = binaryReader.ReadUInt32();
+			header.pixelFormat.GreenBitMask = binaryReader.ReadUInt32();
 			header.pixelFormat.BlueBitMask = binaryReader.ReadUInt32();
 			header.pixelFormat.AlphaBitMask = binaryReader.ReadUInt32();
-			header.unk1 = binaryReader.ReadUInt32();
-			header.unk2 = binaryReader.ReadUInt32();
+			header.Unk1 = binaryReader.ReadUInt32();
+			header.Unk2 = binaryReader.ReadUInt32();
 			binaryReader.ReadBytes(12);
 
 			if (header.size == 124u)
 			{
 				if (header.pixelFormat.size == 32u)
 				{
-					if ((header.flags & 131072u) != 0u)
+					if ((header.Flags & 131072u) != 0u)
 					{
 						MipMapCount = (int)header.mipMapCount;
 					}
@@ -130,18 +130,18 @@ namespace ns21
 					{
 						MipMapCount = 1;
 					}
-					Size = new Size((int)header.width, (int)header.height);
-					if ((header.pixelFormat.flags & 4u) != 0u)
+					Size = new Size((int)header.Width, (int)header.Height);
+					if ((header.pixelFormat.Flags & 4u) != 0u)
 					{
-						var uint_ = header.pixelFormat.fourCC;
+						var uint_ = header.pixelFormat.FourCc;
 						if (uint_ > 116u)
 						{
 							if (uint_ <= 844388420u)
 							{
 								if (uint_ == 827611204u)
 								{
-									PixelFormat = IMGPixelFormat.Dxt1;
-									BPP = 8;
+									PixelFormat = ImgPixelFormat.Dxt1;
+									Bpp = 8;
 									goto IL_3BE;
 								}
 								if (uint_ != 844388420u)
@@ -155,12 +155,12 @@ namespace ns21
 								{
 									goto IL_2D5;
 								}
-								PixelFormat = IMGPixelFormat.Dxt5;
-								BPP = 16;
+								PixelFormat = ImgPixelFormat.Dxt5;
+								Bpp = 16;
 								goto IL_3BE;
 							}
-							PixelFormat = IMGPixelFormat.Dxt3;
-							BPP = 16;
+							PixelFormat = ImgPixelFormat.Dxt3;
+							Bpp = 16;
 							goto IL_3BE;
 						}
 						if (uint_ <= 28u)
@@ -168,24 +168,24 @@ namespace ns21
 							switch (uint_)
 							{
 							case 20u:
-								PixelFormat = IMGPixelFormat.Bgr24;
-								BPP = 3;
+								PixelFormat = ImgPixelFormat.Bgr24;
+								Bpp = 3;
 								goto IL_3BE;
 							case 21u:
-								PixelFormat = IMGPixelFormat.Bgra32;
-								BPP = 4;
+								PixelFormat = ImgPixelFormat.Bgra32;
+								Bpp = 4;
 								goto IL_3BE;
 							case 22u:
 								break;
 							case 23u:
-								PixelFormat = IMGPixelFormat.Bgr16;
-								BPP = 2;
+								PixelFormat = ImgPixelFormat.Bgr16;
+								Bpp = 2;
 								goto IL_3BE;
 							default:
 								if (uint_ == 28u)
 								{
-									PixelFormat = IMGPixelFormat.Alpha8;
-									BPP = 1;
+									PixelFormat = ImgPixelFormat.Alpha8;
+									Bpp = 1;
 									goto IL_3BE;
 								}
 								break;
@@ -195,48 +195,48 @@ namespace ns21
 						{
 							if (uint_ == 50u)
 							{
-								PixelFormat = IMGPixelFormat.Luminance8;
-								BPP = 1;
+								PixelFormat = ImgPixelFormat.Luminance8;
+								Bpp = 1;
 								goto IL_3BE;
 							}
 							if (uint_ == 113u)
 							{
-								PixelFormat = IMGPixelFormat.Rgba64Float;
-								BPP = 8;
+								PixelFormat = ImgPixelFormat.Rgba64Float;
+								Bpp = 8;
 								goto IL_3BE;
 							}
 							if (uint_ == 116u)
 							{
-								PixelFormat = IMGPixelFormat.Rgba128Float;
-								BPP = 16;
+								PixelFormat = ImgPixelFormat.Rgba128Float;
+								Bpp = 16;
 								goto IL_3BE;
 							}
 						}
 						IL_2D5:
-						PixelFormat = IMGPixelFormat.Bgra32;
-						BPP = 4;
+						PixelFormat = ImgPixelFormat.Bgra32;
+						Bpp = 4;
 					}
 					else
 					{
-						if (header.pixelFormat.rgbBitCount == 8u && header.pixelFormat.AlphaBitMask == 255u)
+						if (header.pixelFormat.RgbBitCount == 8u && header.pixelFormat.AlphaBitMask == 255u)
 						{
-							PixelFormat = IMGPixelFormat.Alpha8;
-							BPP = 1;
+							PixelFormat = ImgPixelFormat.Alpha8;
+							Bpp = 1;
 						}
-						if (header.pixelFormat.rgbBitCount == 32u && header.pixelFormat.redBitMask == 16711680u && header.pixelFormat.greenBitMask == 65280u && header.pixelFormat.BlueBitMask == 255u && header.pixelFormat.AlphaBitMask == 4278190080u)
+						if (header.pixelFormat.RgbBitCount == 32u && header.pixelFormat.RedBitMask == 16711680u && header.pixelFormat.GreenBitMask == 65280u && header.pixelFormat.BlueBitMask == 255u && header.pixelFormat.AlphaBitMask == 4278190080u)
 						{
-							PixelFormat = IMGPixelFormat.Bgra32;
-							BPP = 4;
+							PixelFormat = ImgPixelFormat.Bgra32;
+							Bpp = 4;
 						}
-						if (BPP == 0)
+						if (Bpp == 0)
 						{
 							throw new FileLoadException("Invalid Texture Format");
 						}
 					}
 					IL_3BE:
-					var array = new byte[header.width * header.height * (uint)BPP];
+					var array = new byte[header.Width * header.Height * (uint)Bpp];
 					stream.Read(array, 0, array.Length);
-					data = array;
+					Data = array;
 					if (leaveOpen)
 					{
 						return;
@@ -252,26 +252,26 @@ namespace ns21
 		public Image GetImage()
 		{
             var bitmap = new Bitmap(Size.Width, Size.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-			if (PixelFormat == IMGPixelFormat.Bgra32)
+			if (PixelFormat == ImgPixelFormat.Bgra32)
 			{
 				var bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
-				Marshal.Copy(data, 0, bitmapData.Scan0, bitmapData.Stride * bitmap.Height);
+				Marshal.Copy(Data, 0, bitmapData.Scan0, bitmapData.Stride * bitmap.Height);
 				bitmap.UnlockBits(bitmapData);
 				var stream = new MemoryStream();
 				bitmap.Save(stream, ImageFormat.Bmp);
 				return Image.FromStream(stream);
 			}
-			if (PixelFormat != IMGPixelFormat.Dxt1 && PixelFormat != IMGPixelFormat.Dxt3)
+			if (PixelFormat != ImgPixelFormat.Dxt1 && PixelFormat != ImgPixelFormat.Dxt3)
 			{
-				if (PixelFormat != IMGPixelFormat.Dxt5)
+				if (PixelFormat != ImgPixelFormat.Dxt5)
 				{
 					throw new Exception("Can't decode DDS, Unknown format: " + PixelFormat);
 				}
 			}
 			var unk = new ImageRelatedClass(bitmap);
 			unk.method_4();
-			var binaryReader = new BinaryReader(new MemoryStream(data));
-			zzTextureClass.smethod_17(binaryReader, unk, PixelFormat);
+			var binaryReader = new BinaryReader(new MemoryStream(Data));
+			ZzTextureClass.smethod_17(binaryReader, unk, PixelFormat);
 			binaryReader.Close();
 			unk.method_5(true);
 			var stream2 = new MemoryStream();
@@ -279,31 +279,31 @@ namespace ns21
 			return Image.FromStream(stream2);
 		}
 
-        int ClampMipMaps(int MipMapCount, int Width, int Height)
+        int ClampMipMaps(int mipMapCount, int width, int height)
         {
-            var minDimension = Math.Min(Width, Height);
+            var minDimension = Math.Min(width, height);
 
-            while ((1 << MipMapCount) > minDimension)
-                --MipMapCount;
+            while ((1 << mipMapCount) > minDimension)
+                --mipMapCount;
 
-            return MipMapCount;
+            return mipMapCount;
         }
 
    
 
 
-		public void ChangeImageProbably(Image img, int MipMaps, IMGPixelFormat imgpixelFormat_1, bool bool_0)
+		public void ChangeImageProbably(Image img, int mipMaps, ImgPixelFormat imgpixelFormat1, bool bool0)
 		{
 			var memoryStream = new MemoryStream();
 			var binaryWriter = new BinaryWriter(memoryStream);
 
-            MipMaps = ClampMipMaps(MipMapCount, img.Width, img.Height);
+            mipMaps = ClampMipMaps(MipMapCount, img.Width, img.Height);
 
             //Generate mipmaps
-            for (var i = 0; i < MipMaps; i++)
+            for (var i = 0; i < mipMaps; i++)
 			{
 				var bitmap = KeyGenerator.ScaleImageFixedRatio(img, Math.Max(1, img.Width >> i), Math.Max(1, img.Height >> i));
-				if (imgpixelFormat_1 == IMGPixelFormat.Bgra32)
+				if (imgpixelFormat1 == ImgPixelFormat.Bgra32)
 				{
 					var bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
 					var array = new byte[bitmapData.Stride * bitmap.Height];
@@ -313,22 +313,22 @@ namespace ns21
 				}
 				else
 				{
-					zzTextureClass.smethod_16(bitmap, binaryWriter, imgpixelFormat_1, bool_0);
+					ZzTextureClass.smethod_16(bitmap, binaryWriter, imgpixelFormat1, bool0);
 				}
 			}
-			MipMapCount = MipMaps;
-			PixelFormat = imgpixelFormat_1;
-			data = memoryStream.ToArray();
+			MipMapCount = mipMaps;
+			PixelFormat = imgpixelFormat1;
+			Data = memoryStream.ToArray();
 		}
 
 		public byte[] ToByteArray()
 		{
 			var memoryStream = new MemoryStream();
-			WriteDDS(memoryStream);
+			WriteDds(memoryStream);
 			return memoryStream.ToArray();
 		}
 
-		public void WriteDDS(Stream stream, bool leaveOpen = false)
+		public void WriteDds(Stream stream, bool leaveOpen = false)
 		{
 			var binaryWriter = new BinaryWriter(stream);
 			binaryWriter.Write(0x20534444);           // DDS Magic word
@@ -342,7 +342,7 @@ namespace ns21
 
             //Pixel Format
 			binaryWriter.Write(32); //size 
-			if (PixelFormat == IMGPixelFormat.Bgra32)
+			if (PixelFormat == ImgPixelFormat.Bgra32)
 			{
 				binaryWriter.Write(65);
 				binaryWriter.Write(new byte[4]);
@@ -360,13 +360,13 @@ namespace ns21
 				binaryWriter.Write(4);
 				switch (PixelFormat)
 				{
-				case IMGPixelFormat.Dxt1:
+				case ImgPixelFormat.Dxt1:
 					binaryWriter.Write(827611204);
 					break;
-				case IMGPixelFormat.Dxt3:
+				case ImgPixelFormat.Dxt3:
 					binaryWriter.Write(861165636);
 					break;
-				case IMGPixelFormat.Dxt5:
+				case ImgPixelFormat.Dxt5:
 					binaryWriter.Write(894720068);
 					break;
 				default:
@@ -376,7 +376,7 @@ namespace ns21
 				binaryWriter.Write(4198408);
 				binaryWriter.Write(new byte[16]);
 			}
-			binaryWriter.Write(data);
+			binaryWriter.Write(Data);
 			if (!leaveOpen)
 			{
 				binaryWriter.Close();

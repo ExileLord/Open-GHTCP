@@ -2,7 +2,7 @@ namespace ns21
 {
 	public class TextureMetadata
 	{
-		public short unkFlags; // Only used on loading and saving. Value of 0x200 (512) for green note
+		public short UnkFlags; // Only used on loading and saving. Value of 0x200 (512) for green note
 
 		public int Key;      // Only used on loading and saving. Value of 0x151ee874 for green note
 
@@ -10,11 +10,11 @@ namespace ns21
 
 		public short Height;
 
-		public short unkShort3; // Only used on loading and saving. Value of 0x01 for green note. Maybe number of frames?
+		public short UnkShort3; // Only used on loading and saving. Value of 0x01 for green note. Maybe number of frames?
 
 		public byte MipMapCount;    
 
-		public short unkShort4; // Only used on loading and saving. Value of 0x0805 for green note
+		public short UnkShort4; // Only used on loading and saving. Value of 0x0805 for green note
 
 		public int StartIndex;
 
@@ -22,17 +22,17 @@ namespace ns21
 
 		public byte[] Data;
 
-		public TextureMetadata(short unkFlags, int key, short Width, short Height, short unkShort3, byte MipMapCount, short unkShort4, int StartIndex, int Length)
+		public TextureMetadata(short unkFlags, int key, short width, short height, short unkShort3, byte mipMapCount, short unkShort4, int startIndex, int length)
 		{
-			this.unkFlags = unkFlags;
+			this.UnkFlags = unkFlags;
 			Key = key;
-			this.Width = Width;
-			this.Height = Height;
-			this.unkShort3 = unkShort3;
-			this.MipMapCount = MipMapCount;
-			this.unkShort4 = unkShort4;
-			this.StartIndex = StartIndex;
-			this.Length = Length;
+			this.Width = width;
+			this.Height = height;
+			this.UnkShort3 = unkShort3;
+			this.MipMapCount = mipMapCount;
+			this.UnkShort4 = unkShort4;
+			this.StartIndex = startIndex;
+			this.Length = length;
 		}
 	}
 }

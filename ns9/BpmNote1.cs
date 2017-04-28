@@ -4,22 +4,22 @@ namespace ns9
 {
 	public class BpmNote1 : AbstractNoteClass
 	{
-		private readonly int int_1;
+		private readonly int _int1;
 
-		public BpmNote1(int int_2, int int_3)
+		public BpmNote1(int int2, int int3)
 		{
-			int_0 = int_2;
-			int_1 = int_3;
+			Int0 = int2;
+			_int1 = int3;
 		}
 
 		public int method_1()
 		{
-			return int_1;
+			return _int1;
 		}
 
 		public override string ToString()
 		{
-			return string.Format("{0}: {1} BPM", method_0(), ByteFiddler.DivideSixtyMillionBy(int_1));
+			return string.Format("{0}: {1} BPM", method_0(), ByteFiddler.DivideSixtyMillionBy(_int1));
 		}
 	}
 }

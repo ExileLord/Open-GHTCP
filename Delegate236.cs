@@ -1,1 +1,1 @@
-public delegate bool Delegate236(char char_0);
+public delegate bool Delegate236(char char0);

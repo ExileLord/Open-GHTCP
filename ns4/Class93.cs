@@ -6,110 +6,110 @@ namespace ns4
 	{
 		public class Class98 : Class94
 		{
-			public static readonly float[] float_1;
+			public static readonly float[] Float1;
 
-			public static readonly float[] float_2;
+			public static readonly float[] Float2;
 
-			public static readonly float[] float_3;
+			public static readonly float[] Float3;
 
-			public static readonly int[] int_0;
+			public static readonly int[] Int0;
 
-			public static readonly float[][] float_4;
+			public static readonly float[][] Float4;
 
-			public static readonly float[] float_5;
+			public static readonly float[] Float5;
 
-			public static readonly float[] float_6;
+			public static readonly float[] Float6;
 
-			public static readonly float[] float_7;
+			public static readonly float[] Float7;
 
-			public static readonly float[][] float_8;
+			public static readonly float[][] Float8;
 
-			public static readonly int[] int_1;
+			public static readonly int[] Int1;
 
-			public static readonly float[] float_9;
+			public static readonly float[] Float9;
 
-			public static readonly float[] float_10;
+			public static readonly float[] Float10;
 
-			public static readonly float[] float_11;
+			public static readonly float[] Float11;
 
-			public static readonly int[] int_2;
+			public static readonly int[] Int2;
 
-			public static readonly float[] float_12;
+			public static readonly float[] Float12;
 
-			public static readonly float[] float_13;
+			public static readonly float[] Float13;
 
-			public static readonly float[] float_14;
+			public static readonly float[] Float14;
 
-			public static readonly int[] int_3;
+			public static readonly int[] Int3;
 
-			public static readonly float[] float_15;
+			public static readonly float[] Float15;
 
-			public static readonly float[] float_16;
+			public static readonly float[] Float16;
 
-			public static readonly float[] float_17;
+			public static readonly float[] Float17;
 
-			public static readonly int[] int_4;
+			public static readonly int[] Int4;
 
-			public static readonly float[][] float_18;
+			public static readonly float[][] Float18;
 
-			public static readonly float[] float_19;
+			public static readonly float[] Float19;
 
-			public static readonly float[] float_20;
+			public static readonly float[] Float20;
 
-			public static readonly float[] float_21;
+			public static readonly float[] Float21;
 
-			public readonly int int_5;
+			public readonly int Int5;
 
-			public int int_6;
+			public int Int6;
 
-			public int int_7;
+			public int Int7;
 
-			public float float_22;
+			public float Float22;
 
-			public float float_23;
+			public float Float23;
 
-			public float float_24;
+			public float Float24;
 
-			public readonly int[] int_8;
+			public readonly int[] Int8;
 
-			public readonly float[][] float_25;
+			public readonly float[][] Float25;
 
-			public readonly float[] float_26;
+			public readonly float[] Float26;
 
-			public int int_9;
+			public int Int9;
 
-			public int int_10;
+			public int Int10;
 
-			public readonly float[] float_27;
+			public readonly float[] Float27;
 
-			public readonly float[] float_28;
+			public readonly float[] Float28;
 
-			public readonly float[] float_29;
+			public readonly float[] Float29;
 
-			public Class98(int int_11)
+			public Class98(int int11)
 			{
 				var array = new int[1];
-				int_8 = array;
-				float_25 = new float[2][];
+				Int8 = array;
+				Float25 = new float[2][];
 				var array2 = new float[1];
-				float_26 = array2;
-				float_27 = new float[3];
+				Float26 = array2;
+				Float27 = new float[3];
 				var array3 = new float[1];
-				float_28 = array3;
+				Float28 = array3;
 				var array4 = new float[1];
-				float_29 = array4;
+				Float29 = array4;
 				//base..ctor();
-				int_5 = int_11;
-				int_10 = 0;
-				int_9 = 0;
+				Int5 = int11;
+				Int10 = 0;
+				Int9 = 0;
 			}
 
-			public virtual int vmethod_4(zzSoundClass class107_0)
+			public virtual int vmethod_4(ZzSoundClass class1070)
 			{
-				if (class107_0.method_3() == Enum3.const_1)
+				if (class1070.method_3() == Enum3.Const1)
 				{
-					var num = class107_0.method_5();
-					if (class107_0.method_8() != Enum5.const_3)
+					var num = class1070.method_5();
+					if (class1070.method_8() != Enum5.Const3)
 					{
 						if (num == 4)
 						{
@@ -124,38 +124,38 @@ namespace ns4
 					{
 						if (num != 2)
 						{
-							if (int_5 <= 10)
+							if (Int5 <= 10)
 							{
 								return 4;
 							}
-							if (int_5 > 22)
+							if (Int5 > 22)
 							{
 								return 2;
 							}
 							return 3;
 						}
 					}
-					if (int_5 > 1)
+					if (Int5 > 1)
 					{
 						return 3;
 					}
 					return 4;
 				}
-			    if (int_5 <= 3)
+			    if (Int5 <= 3)
 			    {
 			        return 4;
 			    }
-			    if (int_5 > 10)
+			    if (Int5 > 10)
 			    {
 			        return 2;
 			    }
 			    return 3;
 			}
 
-			public virtual void vmethod_5(zzSoundClass class107_0, int int_11, int int_12, float[] float_30, int[] int_13, float[] float_31, float[] float_32)
+			public virtual void vmethod_5(ZzSoundClass class1070, int int11, int int12, float[] float30, int[] int13, float[] float31, float[] float32)
 			{
-				var num = class107_0.method_5();
-				if (class107_0.method_8() != Enum5.const_3)
+				var num = class1070.method_5();
+				if (class1070.method_8() != Enum5.Const3)
 				{
 					if (num == 4)
 					{
@@ -170,107 +170,107 @@ namespace ns4
 				{
 					if (num != 2)
 					{
-						if (int_5 <= 2)
+						if (Int5 <= 2)
 						{
-							float_25[int_12] = float_4[int_11];
-							float_30[0] = float_5[int_11];
-							int_13[0] = int_0[int_11];
-							float_31[0] = float_6[int_11];
-							float_32[0] = float_7[int_11];
+							Float25[int12] = Float4[int11];
+							float30[0] = Float5[int11];
+							int13[0] = Int0[int11];
+							float31[0] = Float6[int11];
+							float32[0] = Float7[int11];
 							return;
 						}
-						float_25[int_12] = float_8[int_11];
-						if (int_5 <= 10)
+						Float25[int12] = Float8[int11];
+						if (Int5 <= 10)
 						{
-							float_30[0] = float_9[int_11];
-							int_13[0] = int_1[int_11];
-							float_31[0] = float_10[int_11];
-							float_32[0] = float_11[int_11];
+							float30[0] = Float9[int11];
+							int13[0] = Int1[int11];
+							float31[0] = Float10[int11];
+							float32[0] = Float11[int11];
 							return;
 						}
-						if (int_5 <= 22)
+						if (Int5 <= 22)
 						{
-							float_30[0] = float_12[int_11];
-							int_13[0] = int_2[int_11];
-							float_31[0] = float_13[int_11];
-							float_32[0] = float_14[int_11];
+							float30[0] = Float12[int11];
+							int13[0] = Int2[int11];
+							float31[0] = Float13[int11];
+							float32[0] = Float14[int11];
 							return;
 						}
-						float_30[0] = float_15[int_11];
-						int_13[0] = int_3[int_11];
-						float_31[0] = float_16[int_11];
-						float_32[0] = float_17[int_11];
+						float30[0] = Float15[int11];
+						int13[0] = Int3[int11];
+						float31[0] = Float16[int11];
+						float32[0] = Float17[int11];
 						return;
 					}
 				}
-				float_25[int_12] = float_18[int_11];
-				float_30[0] = float_19[int_11];
-				int_13[0] = int_4[int_11];
-				float_31[0] = float_20[int_11];
-				float_32[0] = float_21[int_11];
+				Float25[int12] = Float18[int11];
+				float30[0] = Float19[int11];
+				int13[0] = Int4[int11];
+				float31[0] = Float20[int11];
+				float32[0] = Float21[int11];
 			}
 
-			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
+			public override void vmethod_0(Class82 class820, ZzSoundClass class1070, Class101 class1010)
 			{
-				var num = vmethod_4(class107_0);
-				int_6 = class82_0.method_13(num);
-				if (class101_0 != null)
+				var num = vmethod_4(class1070);
+				Int6 = class820.method_13(num);
+				if (class1010 != null)
 				{
-					class101_0.method_0(int_6, num);
+					class1010.method_0(Int6, num);
 				}
 			}
 
-			public virtual void vmethod_6(Class82 class82_0, Class101 class101_0)
+			public virtual void vmethod_6(Class82 class820, Class101 class1010)
 			{
-				if (int_6 == 0)
+				if (Int6 == 0)
 				{
 					return;
 				}
-				int_7 = class82_0.method_13(2);
-				if (class101_0 != null)
+				Int7 = class820.method_13(2);
+				if (class1010 != null)
 				{
-					class101_0.method_0(int_7, 2);
+					class1010.method_0(Int7, 2);
 				}
 			}
 
-			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
+			public override void vmethod_1(Class82 class820, ZzSoundClass class1070)
 			{
-				if (int_6 == 0)
+				if (Int6 == 0)
 				{
 					return;
 				}
-				switch (int_7)
+				switch (Int7)
 				{
 				case 0:
-					float_22 = float_0[class82_0.method_13(6)];
-					float_23 = float_0[class82_0.method_13(6)];
-					float_24 = float_0[class82_0.method_13(6)];
+					Float22 = Float0[class820.method_13(6)];
+					Float23 = Float0[class820.method_13(6)];
+					Float24 = Float0[class820.method_13(6)];
 					break;
 				case 1:
-					float_22 = (float_23 = float_0[class82_0.method_13(6)]);
-					float_24 = float_0[class82_0.method_13(6)];
+					Float22 = (Float23 = Float0[class820.method_13(6)]);
+					Float24 = Float0[class820.method_13(6)];
 					break;
 				case 2:
-					float_22 = (float_23 = (float_24 = float_0[class82_0.method_13(6)]));
+					Float22 = (Float23 = (Float24 = Float0[class820.method_13(6)]));
 					break;
 				case 3:
-					float_22 = float_0[class82_0.method_13(6)];
-					float_23 = (float_24 = float_0[class82_0.method_13(6)]);
+					Float22 = Float0[class820.method_13(6)];
+					Float23 = (Float24 = Float0[class820.method_13(6)]);
 					break;
 				}
-				vmethod_5(class107_0, int_6, 0, float_26, int_8, float_28, float_29);
+				vmethod_5(class1070, Int6, 0, Float26, Int8, Float28, Float29);
 			}
 
-			public override bool vmethod_2(Class82 class82_0)
+			public override bool vmethod_2(Class82 class820)
 			{
-				if (int_6 != 0)
+				if (Int6 != 0)
 				{
-					if (float_25[0] != null)
+					if (Float25[0] != null)
 					{
-						var num = class82_0.method_13(int_8[0]);
+						var num = class820.method_13(Int8[0]);
 						num += num << 1;
-						var array = float_27;
-						var array2 = float_25[0];
+						var array = Float27;
+						var array2 = Float25[0];
 						var num2 = 0;
 						var num3 = num;
 						if (num3 > array2.Length - 3)
@@ -287,44 +287,44 @@ namespace ns4
 					}
 					else
 					{
-						float_27[0] = class82_0.method_13(int_8[0]) * float_26[0] - 1f;
-						float_27[1] = class82_0.method_13(int_8[0]) * float_26[0] - 1f;
-						float_27[2] = class82_0.method_13(int_8[0]) * float_26[0] - 1f;
+						Float27[0] = class820.method_13(Int8[0]) * Float26[0] - 1f;
+						Float27[1] = class820.method_13(Int8[0]) * Float26[0] - 1f;
+						Float27[2] = class820.method_13(Int8[0]) * Float26[0] - 1f;
 					}
 				}
-				int_10 = 0;
-				return ++int_9 == 12;
+				Int10 = 0;
+				return ++Int9 == 12;
 			}
 
-			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
+			public override bool vmethod_3(Enum4 enum40, Class80 class800, Class80 class801)
 			{
-				if (int_6 != 0 && enum4_0 != Enum4.const_2)
+				if (Int6 != 0 && enum40 != Enum4.Const2)
 				{
-					var num = float_27[int_10];
-					if (float_25[0] == null)
+					var num = Float27[Int10];
+					if (Float25[0] == null)
 					{
-						num = (num + float_29[0]) * float_28[0];
+						num = (num + Float29[0]) * Float28[0];
 					}
-					if (int_9 <= 4)
+					if (Int9 <= 4)
 					{
-						num *= float_22;
+						num *= Float22;
 					}
-					else if (int_9 <= 8)
+					else if (Int9 <= 8)
 					{
-						num *= float_23;
+						num *= Float23;
 					}
 					else
 					{
-						num *= float_24;
+						num *= Float24;
 					}
-					class80_0.method_2(num, int_5);
+					class800.method_2(num, Int5);
 				}
-				return ++int_10 == 3;
+				return ++Int10 == 3;
 			}
 
 			static Class98()
 			{
-				float_1 = new[]
+				Float1 = new[]
 				{
 					-0.6666667f,
 					-0.6666667f,
@@ -408,7 +408,7 @@ namespace ns4
 					0.6666667f,
 					0.6666667f
 				};
-				float_2 = new[]
+				Float2 = new[]
 				{
 					-0.8f,
 					-0.8f,
@@ -786,7 +786,7 @@ namespace ns4
 					0.8f,
 					0.8f
 				};
-				float_3 = new[]
+				Float3 = new[]
 				{
 					-0.8888889f,
 					-0.8888889f,
@@ -2976,7 +2976,7 @@ namespace ns4
 					0.8888889f,
 					0.8888889f
 				};
-				int_0 = new[]
+				Int0 = new[]
 				{
 					0,
 					5,
@@ -2995,7 +2995,7 @@ namespace ns4
 					15,
 					16
 				};
-				float_5 = new[]
+				Float5 = new[]
 				{
 					0f,
 					0.5f,
@@ -3014,7 +3014,7 @@ namespace ns4
 					6.10351563E-05f,
 					3.05175781E-05f
 				};
-				float_6 = new[]
+				Float6 = new[]
 				{
 					0f,
 					1.33333337f,
@@ -3033,7 +3033,7 @@ namespace ns4
 					1.00003052f,
 					1.00001526f
 				};
-				float_7 = new[]
+				Float7 = new[]
 				{
 					0f,
 					0.5f,
@@ -3052,7 +3052,7 @@ namespace ns4
 					6.103516E-05f,
 					3.051758E-05f
 				};
-				int_1 = new[]
+				Int1 = new[]
 				{
 					0,
 					5,
@@ -3071,7 +3071,7 @@ namespace ns4
 					13,
 					16
 				};
-				float_9 = new[]
+				Float9 = new[]
 				{
 					0f,
 					0.5f,
@@ -3090,7 +3090,7 @@ namespace ns4
 					0.000244140625f,
 					3.05175781E-05f
 				};
-				float_10 = new[]
+				Float10 = new[]
 				{
 					0f,
 					1.33333337f,
@@ -3109,7 +3109,7 @@ namespace ns4
 					1.00012207f,
 					1.00001526f
 				};
-				float_11 = new[]
+				Float11 = new[]
 				{
 					0f,
 					0.5f,
@@ -3128,7 +3128,7 @@ namespace ns4
 					0.000244140625f,
 					3.051758E-05f
 				};
-				int_2 = new[]
+				Int2 = new[]
 				{
 					0,
 					5,
@@ -3139,7 +3139,7 @@ namespace ns4
 					5,
 					16
 				};
-				float_12 = new[]
+				Float12 = new[]
 				{
 					0f,
 					0.5f,
@@ -3150,7 +3150,7 @@ namespace ns4
 					0.0625f,
 					3.05175781E-05f
 				};
-				float_13 = new[]
+				Float13 = new[]
 				{
 					0f,
 					1.33333337f,
@@ -3161,7 +3161,7 @@ namespace ns4
 					1.032258f,
 					1.00001526f
 				};
-				float_14 = new[]
+				Float14 = new[]
 				{
 					0f,
 					0.5f,
@@ -3172,35 +3172,35 @@ namespace ns4
 					0.0625f,
 					3.051758E-05f
 				};
-				int_3 = new[]
+				Int3 = new[]
 				{
 					0,
 					5,
 					7,
 					16
 				};
-				float_15 = new[]
+				Float15 = new[]
 				{
 					0f,
 					0.5f,
 					0.25f,
 					3.05175781E-05f
 				};
-				float_16 = new[]
+				Float16 = new[]
 				{
 					0f,
 					1.33333337f,
 					1.6f,
 					1.00001526f
 				};
-				float_17 = new[]
+				Float17 = new[]
 				{
 					0f,
 					0.5f,
 					0.5f,
 					3.051758E-05f
 				};
-				int_4 = new[]
+				Int4 = new[]
 				{
 					0,
 					5,
@@ -3219,7 +3219,7 @@ namespace ns4
 					14,
 					15
 				};
-				float_19 = new[]
+				Float19 = new[]
 				{
 					0f,
 					0.5f,
@@ -3238,7 +3238,7 @@ namespace ns4
 					0.000122070313f,
 					6.10351563E-05f
 				};
-				float_20 = new[]
+				Float20 = new[]
 				{
 					0f,
 					1.33333337f,
@@ -3257,7 +3257,7 @@ namespace ns4
 					1.000061f,
 					1.00003052f
 				};
-				float_21 = new[]
+				Float21 = new[]
 				{
 					0f,
 					0.5f,
@@ -3277,264 +3277,264 @@ namespace ns4
 					6.103516E-05f
 				};
 				var array = new float[16][];
-				array[1] = float_1;
-				float_4 = array;
+				array[1] = Float1;
+				Float4 = array;
 				var array2 = new float[16][];
-				array2[1] = float_1;
-				array2[2] = float_2;
-				array2[4] = float_3;
-				float_8 = array2;
+				array2[1] = Float1;
+				array2[2] = Float2;
+				array2[4] = Float3;
+				Float8 = array2;
 				var array3 = new float[16][];
-				array3[1] = float_1;
-				array3[2] = float_2;
-				array3[3] = float_3;
-				float_18 = array3;
+				array3[1] = Float1;
+				array3[2] = Float2;
+				array3[3] = Float3;
+				Float18 = array3;
 			}
 		}
 
 		public class Class99 : Class98
 		{
-			public int int_11;
+			public int Int11;
 
-			public float float_30;
+			public float Float30;
 
-			public float float_31;
+			public float Float31;
 
-			public float float_32;
+			public float Float32;
 
-			public Class99(int int_12) : base(int_12)
+			public Class99(int int12) : base(int12)
 			{
 			}
 
-			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
+			public override void vmethod_0(Class82 class820, ZzSoundClass class1070, Class101 class1010)
 			{
-				base.vmethod_0(class82_0, class107_0, class101_0);
+				base.vmethod_0(class820, class1070, class1010);
 			}
 
-			public override void vmethod_6(Class82 class82_0, Class101 class101_0)
+			public override void vmethod_6(Class82 class820, Class101 class1010)
 			{
-				if (int_6 == 0)
+				if (Int6 == 0)
 				{
 					return;
 				}
-				int_7 = class82_0.method_13(2);
-				int_11 = class82_0.method_13(2);
-				if (class101_0 != null)
+				Int7 = class820.method_13(2);
+				Int11 = class820.method_13(2);
+				if (class1010 != null)
 				{
-					class101_0.method_0(int_7, 2);
-					class101_0.method_0(int_11, 2);
+					class1010.method_0(Int7, 2);
+					class1010.method_0(Int11, 2);
 				}
 			}
 
-			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
+			public override void vmethod_1(Class82 class820, ZzSoundClass class1070)
 			{
-				if (int_6 == 0)
+				if (Int6 == 0)
 				{
 					return;
 				}
-				base.vmethod_1(class82_0, class107_0);
-				switch (int_11)
+				base.vmethod_1(class820, class1070);
+				switch (Int11)
 				{
 				case 0:
-					float_30 = float_0[class82_0.method_13(6)];
-					float_31 = float_0[class82_0.method_13(6)];
-					float_32 = float_0[class82_0.method_13(6)];
+					Float30 = Float0[class820.method_13(6)];
+					Float31 = Float0[class820.method_13(6)];
+					Float32 = Float0[class820.method_13(6)];
 					return;
 				case 1:
-					float_30 = (float_31 = float_0[class82_0.method_13(6)]);
-					float_32 = float_0[class82_0.method_13(6)];
+					Float30 = (Float31 = Float0[class820.method_13(6)]);
+					Float32 = Float0[class820.method_13(6)];
 					return;
 				case 2:
-					float_30 = (float_31 = (float_32 = float_0[class82_0.method_13(6)]));
+					Float30 = (Float31 = (Float32 = Float0[class820.method_13(6)]));
 					return;
 				case 3:
-					float_30 = float_0[class82_0.method_13(6)];
-					float_31 = (float_32 = float_0[class82_0.method_13(6)]);
+					Float30 = Float0[class820.method_13(6)];
+					Float31 = (Float32 = Float0[class820.method_13(6)]);
 					return;
 				default:
 					return;
 				}
 			}
 
-			public override bool vmethod_2(Class82 class82_0)
+			public override bool vmethod_2(Class82 class820)
 			{
-				return base.vmethod_2(class82_0);
+				return base.vmethod_2(class820);
 			}
 
-			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
+			public override bool vmethod_3(Enum4 enum40, Class80 class800, Class80 class801)
 			{
-				if (int_6 != 0)
+				if (Int6 != 0)
 				{
-					var num = float_27[int_10];
-					if (float_25[0] == null)
+					var num = Float27[Int10];
+					if (Float25[0] == null)
 					{
-						num = (num + float_29[0]) * float_28[0];
+						num = (num + Float29[0]) * Float28[0];
 					}
-					if (enum4_0 == Enum4.const_0)
+					if (enum40 == Enum4.Const0)
 					{
 						var num2 = num;
-						if (int_9 <= 4)
+						if (Int9 <= 4)
 						{
-							num *= float_22;
-							num2 *= float_30;
+							num *= Float22;
+							num2 *= Float30;
 						}
-						else if (int_9 <= 8)
+						else if (Int9 <= 8)
 						{
-							num *= float_23;
-							num2 *= float_31;
+							num *= Float23;
+							num2 *= Float31;
 						}
 						else
 						{
-							num *= float_24;
-							num2 *= float_32;
+							num *= Float24;
+							num2 *= Float32;
 						}
-						class80_0.method_2(num, int_5);
-						class80_1.method_2(num2, int_5);
+						class800.method_2(num, Int5);
+						class801.method_2(num2, Int5);
 					}
-					else if (enum4_0 == Enum4.const_1)
+					else if (enum40 == Enum4.Const1)
 					{
-						if (int_9 <= 4)
+						if (Int9 <= 4)
 						{
-							num *= float_22;
+							num *= Float22;
 						}
-						else if (int_9 <= 8)
+						else if (Int9 <= 8)
 						{
-							num *= float_23;
+							num *= Float23;
 						}
 						else
 						{
-							num *= float_24;
+							num *= Float24;
 						}
-						class80_0.method_2(num, int_5);
+						class800.method_2(num, Int5);
 					}
 					else
 					{
-						if (int_9 <= 4)
+						if (Int9 <= 4)
 						{
-							num *= float_30;
+							num *= Float30;
 						}
-						else if (int_9 <= 8)
+						else if (Int9 <= 8)
 						{
-							num *= float_31;
+							num *= Float31;
 						}
 						else
 						{
-							num *= float_32;
+							num *= Float32;
 						}
-						class80_0.method_2(num, int_5);
+						class800.method_2(num, Int5);
 					}
 				}
-				return ++int_10 == 3;
+				return ++Int10 == 3;
 			}
 		}
 
 		public class Class100 : Class98
 		{
-			public int int_11;
+			public int Int11;
 
-			public int int_12;
+			public int Int12;
 
-			public float float_30;
+			public float Float30;
 
-			public float float_31;
+			public float Float31;
 
-			public float float_32;
+			public float Float32;
 
-			public int[] int_13;
+			public int[] Int13;
 
-			public float[] float_33;
+			public float[] Float33;
 
-			public float[] float_34;
+			public float[] Float34;
 
-			public float[] float_35;
+			public float[] Float35;
 
-			public float[] float_36;
+			public float[] Float36;
 
-			public Class100(int int_14) : base(int_14)
+			public Class100(int int14) : base(int14)
 			{
 				var array = new int[1];
-				int_13 = array;
+				Int13 = array;
 				var array2 = new float[1];
-				float_33 = array2;
+				Float33 = array2;
 				var array3 = new float[1];
-				float_35 = array3;
+				Float35 = array3;
 				var array4 = new float[1];
-				float_36 = array4;
+				Float36 = array4;
 				//base..ctor(int_14);
-				float_34 = new float[3];
+				Float34 = new float[3];
 			}
 
-			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
+			public override void vmethod_0(Class82 class820, ZzSoundClass class1070, Class101 class1010)
 			{
-				var num = vmethod_4(class107_0);
-				int_6 = class82_0.method_13(num);
-				int_11 = class82_0.method_13(num);
-				if (class101_0 != null)
+				var num = vmethod_4(class1070);
+				Int6 = class820.method_13(num);
+				Int11 = class820.method_13(num);
+				if (class1010 != null)
 				{
-					class101_0.method_0(int_6, num);
-					class101_0.method_0(int_11, num);
+					class1010.method_0(Int6, num);
+					class1010.method_0(Int11, num);
 				}
 			}
 
-			public override void vmethod_6(Class82 class82_0, Class101 class101_0)
+			public override void vmethod_6(Class82 class820, Class101 class1010)
 			{
-				if (int_6 != 0)
+				if (Int6 != 0)
 				{
-					int_7 = class82_0.method_13(2);
-					if (class101_0 != null)
+					Int7 = class820.method_13(2);
+					if (class1010 != null)
 					{
-						class101_0.method_0(int_7, 2);
+						class1010.method_0(Int7, 2);
 					}
 				}
-				if (int_11 != 0)
+				if (Int11 != 0)
 				{
-					int_12 = class82_0.method_13(2);
-					if (class101_0 != null)
+					Int12 = class820.method_13(2);
+					if (class1010 != null)
 					{
-						class101_0.method_0(int_12, 2);
+						class1010.method_0(Int12, 2);
 					}
 				}
 			}
 
-			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
+			public override void vmethod_1(Class82 class820, ZzSoundClass class1070)
 			{
-				base.vmethod_1(class82_0, class107_0);
-				if (int_11 != 0)
+				base.vmethod_1(class820, class1070);
+				if (Int11 != 0)
 				{
-					switch (int_12)
+					switch (Int12)
 					{
 					case 0:
-						float_30 = float_0[class82_0.method_13(6)];
-						float_31 = float_0[class82_0.method_13(6)];
-						float_32 = float_0[class82_0.method_13(6)];
+						Float30 = Float0[class820.method_13(6)];
+						Float31 = Float0[class820.method_13(6)];
+						Float32 = Float0[class820.method_13(6)];
 						break;
 					case 1:
-						float_30 = (float_31 = float_0[class82_0.method_13(6)]);
-						float_32 = float_0[class82_0.method_13(6)];
+						Float30 = (Float31 = Float0[class820.method_13(6)]);
+						Float32 = Float0[class820.method_13(6)];
 						break;
 					case 2:
-						float_30 = (float_31 = (float_32 = float_0[class82_0.method_13(6)]));
+						Float30 = (Float31 = (Float32 = Float0[class820.method_13(6)]));
 						break;
 					case 3:
-						float_30 = float_0[class82_0.method_13(6)];
-						float_31 = (float_32 = float_0[class82_0.method_13(6)]);
+						Float30 = Float0[class820.method_13(6)];
+						Float31 = (Float32 = Float0[class820.method_13(6)]);
 						break;
 					}
-					vmethod_5(class107_0, int_11, 1, float_33, int_13, float_35, float_36);
+					vmethod_5(class1070, Int11, 1, Float33, Int13, Float35, Float36);
 				}
 			}
 
-			public override bool vmethod_2(Class82 class82_0)
+			public override bool vmethod_2(Class82 class820)
 			{
-				var result = base.vmethod_2(class82_0);
-				if (int_11 != 0)
+				var result = base.vmethod_2(class820);
+				if (Int11 != 0)
 				{
-					if (float_25[1] != null)
+					if (Float25[1] != null)
 					{
-						var num = class82_0.method_13(int_13[0]);
+						var num = class820.method_13(Int13[0]);
 						num += num << 1;
-						var array = float_34;
-						var array2 = float_25[1];
+						var array = Float34;
+						var array2 = Float25[1];
 						var num2 = num;
 						array[0] = array2[num2++];
 						array[1] = array2[num2++];
@@ -3542,43 +3542,43 @@ namespace ns4
 					}
 					else
 					{
-						float_34[0] = class82_0.method_13(int_13[0]) * float_33[0] - 1f;
-						float_34[1] = class82_0.method_13(int_13[0]) * float_33[0] - 1f;
-						float_34[2] = class82_0.method_13(int_13[0]) * float_33[0] - 1f;
+						Float34[0] = class820.method_13(Int13[0]) * Float33[0] - 1f;
+						Float34[1] = class820.method_13(Int13[0]) * Float33[0] - 1f;
+						Float34[2] = class820.method_13(Int13[0]) * Float33[0] - 1f;
 					}
 				}
 				return result;
 			}
 
-			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
+			public override bool vmethod_3(Enum4 enum40, Class80 class800, Class80 class801)
 			{
-				var result = base.vmethod_3(enum4_0, class80_0, class80_1);
-				if (int_11 != 0 && enum4_0 != Enum4.const_1)
+				var result = base.vmethod_3(enum40, class800, class801);
+				if (Int11 != 0 && enum40 != Enum4.Const1)
 				{
-					var num = float_34[int_10 - 1];
-					if (float_25[1] == null)
+					var num = Float34[Int10 - 1];
+					if (Float25[1] == null)
 					{
-						num = (num + float_36[0]) * float_35[0];
+						num = (num + Float36[0]) * Float35[0];
 					}
-					if (int_9 <= 4)
+					if (Int9 <= 4)
 					{
-						num *= float_30;
+						num *= Float30;
 					}
-					else if (int_9 <= 8)
+					else if (Int9 <= 8)
 					{
-						num *= float_31;
-					}
-					else
-					{
-						num *= float_32;
-					}
-					if (enum4_0 == Enum4.const_0)
-					{
-						class80_1.method_2(num, int_5);
+						num *= Float31;
 					}
 					else
 					{
-						class80_0.method_2(num, int_5);
+						num *= Float32;
+					}
+					if (enum40 == Enum4.Const0)
+					{
+						class801.method_2(num, Int5);
+					}
+					else
+					{
+						class800.method_2(num, Int5);
 					}
 				}
 				return result;
@@ -3587,40 +3587,40 @@ namespace ns4
 
 		public override void vmethod_1()
 		{
-			switch (enum5_0)
+			switch (Enum50)
 			{
-			case Enum5.const_1:
+			case Enum5.Const1:
 			{
 				int i;
-				for (i = 0; i < class107_0.method_26(); i++)
+				for (i = 0; i < Class1070.method_26(); i++)
 				{
-					class94_0[i] = new Class100(i);
+					Class940[i] = new Class100(i);
 				}
-				while (i < int_0)
+				while (i < Int0)
 				{
-					class94_0[i] = new Class99(i);
+					Class940[i] = new Class99(i);
 					i++;
 				}
 				return;
 			}
-			case Enum5.const_3:
-				for (var i = 0; i < int_0; i++)
+			case Enum5.Const3:
+				for (var i = 0; i < Int0; i++)
 				{
-					class94_0[i] = new Class98(i);
+					Class940[i] = new Class98(i);
 				}
 				return;
 			}
-			for (var i = 0; i < int_0; i++)
+			for (var i = 0; i < Int0; i++)
 			{
-				class94_0[i] = new Class100(i);
+				Class940[i] = new Class100(i);
 			}
 		}
 
 		public override void vmethod_3()
 		{
-			for (var i = 0; i < int_0; i++)
+			for (var i = 0; i < Int0; i++)
 			{
-				((Class98)class94_0[i]).vmethod_6(class82_0, class101_0);
+				((Class98)Class940[i]).vmethod_6(Class820, Class1010);
 			}
 		}
 	}

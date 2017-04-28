@@ -3,13 +3,13 @@ using SharpAudio.ASC;
 
 namespace ns1
 {
-	public interface PlayableAudio
+	public interface IPlayableAudio
 	{
 		TimeSpan AudioLength();
 
-		void SetStartingTime(TimeSpan timeSpan_0);
+		void SetStartingTime(TimeSpan timeSpan0);
 
-		void SetStartingTimeBasedOnSomeValue(int int_0);
+		void SetStartingTimeBasedOnSomeValue(int int0);
 
 		void DifferentStartPlaying();
 
@@ -21,7 +21,7 @@ namespace ns1
 
 		WaveFormat GetWaveFormat();
 
-		void SetVolume(float float_0);
+		void SetVolume(float float0);
 
 		void Dispose();
 	}

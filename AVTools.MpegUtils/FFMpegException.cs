@@ -3,9 +3,9 @@ using System;
 namespace AVTools.MpegUtils
 {
 	[Serializable]
-	public class FFMpegException : Exception
+	public class FfMpegException : Exception
 	{
-		public FFMpegException(string string_0) : base(string_0)
+		public FfMpegException(string string0) : base(string0)
 		{
 		}
 	}

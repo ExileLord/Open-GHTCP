@@ -2,13 +2,13 @@ namespace ns5
 {
 	public enum Enum9
 	{
-		const_0 = 4096,
-		const_1,
-		const_2,
-		const_3,
-		const_4 = 786,
-		const_5 = 131073,
-		const_6,
-		const_7
+		Const0 = 4096,
+		Const1,
+		Const2,
+		Const3,
+		Const4 = 786,
+		Const5 = 131073,
+		Const6,
+		Const7
 	}
 }

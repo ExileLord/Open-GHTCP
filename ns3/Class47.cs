@@ -4,56 +4,56 @@ namespace ns3
 {
 	public class Class47
 	{
-		private static string string_0 = "vorbis";
+		private static string _string0 = "vorbis";
 
-		private static int int_0 = -130;
+		private static int _int0 = -130;
 
-		public byte[][] byte_0;
+		public byte[][] Byte0;
 
-		public int[] int_1;
+		public int[] Int1;
 
-		public int int_2;
+		public int Int2;
 
-		public byte[] byte_1;
+		public byte[] Byte1;
 
 		public void method_0()
 		{
-			byte_0 = null;
-			int_2 = 0;
-			byte_1 = null;
+			Byte0 = null;
+			Int2 = 0;
+			Byte1 = null;
 		}
 
-		public int method_1(OGGClass3 class38_0)
+		public int method_1(OggClass3 class380)
 		{
-			var num = class38_0.method_6(32);
+			var num = class380.method_6(32);
 			if (num < 0)
 			{
 				method_2();
 				return -1;
 			}
-			byte_1 = new byte[num + 1];
-			class38_0.method_5(byte_1, num);
-			int_2 = class38_0.method_6(32);
-			if (int_2 < 0)
+			Byte1 = new byte[num + 1];
+			class380.method_5(Byte1, num);
+			Int2 = class380.method_6(32);
+			if (Int2 < 0)
 			{
 				method_2();
 				return -1;
 			}
-			byte_0 = new byte[int_2 + 1][];
-			int_1 = new int[int_2 + 1];
-			for (var i = 0; i < int_2; i++)
+			Byte0 = new byte[Int2 + 1][];
+			Int1 = new int[Int2 + 1];
+			for (var i = 0; i < Int2; i++)
 			{
-				var num2 = class38_0.method_6(32);
+				var num2 = class380.method_6(32);
 				if (num2 < 0)
 				{
 					method_2();
 					return -1;
 				}
-				int_1[i] = num2;
-				byte_0[i] = new byte[num2 + 1];
-				class38_0.method_5(byte_0[i], num2);
+				Int1[i] = num2;
+				Byte0[i] = new byte[num2 + 1];
+				class380.method_5(Byte0[i], num2);
 			}
-			if (class38_0.method_6(1) != 1)
+			if (class380.method_6(1) != 1)
 			{
 				method_2();
 				return -1;
@@ -63,12 +63,12 @@ namespace ns3
 
 		public void method_2()
 		{
-			for (var i = 0; i < int_2; i++)
+			for (var i = 0; i < Int2; i++)
 			{
-				byte_0[i] = null;
+				Byte0[i] = null;
 			}
-			byte_0 = null;
-			byte_1 = null;
+			Byte0 = null;
+			Byte1 = null;
 		}
 	}
 }

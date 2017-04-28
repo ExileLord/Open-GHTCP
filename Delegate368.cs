@@ -1,3 +1,3 @@
 using System.Drawing;
 
-public delegate void Delegate368(object object_0, SizeF sizeF_0);
+public delegate void Delegate368(object object0, SizeF sizeF0);

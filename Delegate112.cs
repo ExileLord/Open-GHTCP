@@ -1,3 +1,3 @@
 using System;
 
-public delegate IntPtr Delegate112(object object_0);
+public delegate IntPtr Delegate112(object object0);

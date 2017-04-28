@@ -18,16 +18,16 @@ namespace ns19
 
 		private bool _unkFlag0 = true;
 
-		public DDSTexture this[int index]
+		public DdsTexture this[int index]
 		{
 			get
 			{
 				if (TextureList[index].Data != null)
 				{
-					return new DDSTexture(new MemoryStream(TextureList[index].Data));
+					return new DdsTexture(new MemoryStream(TextureList[index].Data));
 				}
 				_fileStream.Position = TextureList[index].StartIndex;
-				return new DDSTexture(_fileStream._stream, true);
+				return new DdsTexture(_fileStream.Stream, true);
 			}
 		}
 
@@ -35,15 +35,15 @@ namespace ns19
 		{
 		}
 
-		public TexFile(string string_1)
+		public TexFile(string string1)
 		{
-			_fileName = string_1;
+			_fileName = string1;
 			Initialize();
 		}
 
-		public TexFile(byte[] byte_0)
+		public TexFile(byte[] byte0)
 		{
-			_fileStream = new Stream26(byte_0, true);
+			_fileStream = new Stream26(byte0, true);
 			Initialize();
 		}
 
@@ -81,15 +81,15 @@ namespace ns19
                         _fileStream.ReadInt()));
 				num3 += 40;
 			}
-			_fileStream._reverseEndianness = false;
+			_fileStream.ReverseEndianness = false;
 		}
 
-		public void ReplaceTexture(int index, Image img, IMGPixelFormat format)
+		public void ReplaceTexture(int index, Image img, ImgPixelFormat format)
 		{
 			var texMetaData = TextureList[index];
 			texMetaData.Height = (short)img.Height;
 			texMetaData.Width = (short)img.Width;
-			texMetaData.Data = new DDSTexture(img, texMetaData.MipMapCount, format).ToByteArray();
+			texMetaData.Data = new DdsTexture(img, texMetaData.MipMapCount, format).ToByteArray();
 		}
 
 		public byte[] GetRawTextureData(int index)
@@ -161,16 +161,16 @@ namespace ns19
 				var tex = TextureList[i];
 				var array = GetRawTextureData(i);
 				stream.WriteShortAt(textureMetaDataOffset + 40 * i, 2600);
-				stream.WriteShort(tex.unkFlags);
+				stream.WriteShort(tex.UnkFlags);
 				stream.WriteInt(tex.Key);
 				stream.WriteShort(tex.Width);
 				stream.WriteShort(tex.Height);
-				stream.WriteShort(tex.unkShort3);
+				stream.WriteShort(tex.UnkShort3);
 				stream.WriteShort(tex.Width);
 				stream.WriteShort(tex.Height);
-				stream.WriteShort(tex.unkShort3);
+				stream.WriteShort(tex.UnkShort3);
 				stream.WriteByte2(tex.MipMapCount);
-				stream.WriteShort(tex.unkShort4);
+				stream.WriteShort(tex.UnkShort4);
 				stream.WriteNBytes(0, 5);
 				stream.WriteInt((int)stream.Length);
 				stream.WriteInt(array.Length);
@@ -207,7 +207,7 @@ namespace ns19
         public int CloneTextureElement(int index)
         {
             var original = TextureList[index];
-            var newMeta = new TextureMetadata(original.unkFlags, original.Key, original.Width, original.Height, original.unkShort3, original.MipMapCount, original.unkShort4, original.StartIndex, original.Length);
+            var newMeta = new TextureMetadata(original.UnkFlags, original.Key, original.Width, original.Height, original.UnkShort3, original.MipMapCount, original.UnkShort4, original.StartIndex, original.Length);
             TextureList.Add(newMeta);
             return TextureList.Count-1;
         }

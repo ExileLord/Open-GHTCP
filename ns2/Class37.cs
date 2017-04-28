@@ -4,16 +4,16 @@ namespace ns2
 {
 	public class Class37
 	{
-		public int int_0;
+		public int Int0;
 
-		public int int_1;
+		public int Int1;
 
-		public int int_2;
+		public int Int2;
 
-		public int[] int_3;
+		public int[] Int3;
 
-		public Class36 class36_0;
+		public Class36 Class360;
 
-		public Class63 class63_0 = new Class63();
+		public Class63 Class630 = new Class63();
 	}
 }

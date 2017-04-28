@@ -2,26 +2,26 @@ namespace ns4
 {
 	public class Class101
 	{
-		private short short_0;
+		private short _short0;
 
 		public Class101()
 		{
-			short_0 = -1;
+			_short0 = -1;
 		}
 
-		public void method_0(int int_0, int int_1)
+		public void method_0(int int0, int int1)
 		{
-			var num = 1 << int_1 - 1;
+			var num = 1 << int1 - 1;
 			do
 			{
-				if ((short_0 & 32768) == 0 ^ (int_0 & num) == 0)
+				if ((_short0 & 32768) == 0 ^ (int0 & num) == 0)
 				{
-					short_0 = (short)(short_0 << 1);
-					short_0 ^= -32763;
+					_short0 = (short)(_short0 << 1);
+					_short0 ^= -32763;
 				}
 				else
 				{
-					short_0 = (short)(short_0 << 1);
+					_short0 = (short)(_short0 << 1);
 				}
 			}
 			while ((num >>= 1) != 0);
@@ -29,8 +29,8 @@ namespace ns4
 
 		public short method_1()
 		{
-			var result = short_0;
-			short_0 = -1;
+			var result = _short0;
+			_short0 = -1;
 			return result;
 		}
 	}

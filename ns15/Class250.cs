@@ -6,39 +6,39 @@ namespace ns15
 {
 	public class Class250 : QbEditor
 	{
-		public QBCParser class362_0;
+		public QbcParser Class3620;
 
-		private zzPakNode2 class318_0;
+		private ZzPakNode2 _class3180;
 
-		private readonly string string_0;
+		private readonly string _string0;
 
-		private readonly string string_1;
+		private readonly string _string1;
 
-		public Class250(string string_2, QBCParser class362_1, zzPakNode2 class318_1, string string_3)
+		public Class250(string string2, QbcParser class3621, ZzPakNode2 class3181, string string3)
 		{
-			string_0 = string_2;
-			class318_0 = class318_1;
-			class362_0 = class362_1;
-			string_1 = string_3;
+			_string0 = string2;
+			_class3180 = class3181;
+			Class3620 = class3621;
+			_string1 = string3;
 		}
 
 		public override void vmethod_0()
 		{
-			using (var @class = new zzPakNode2())
+			using (var @class = new ZzPakNode2())
 			{
-				@class.method_0("songs\\" + string_0 + ".mid.qb", class362_0.method_4(string_0));
-				@class.method_16(string_1 + "songs\\" + string_0 + "_song.pak.xen");
+				@class.method_0("songs\\" + _string0 + ".mid.qb", Class3620.method_4(_string0));
+				@class.method_16(_string1 + "songs\\" + _string0 + "_song.pak.xen");
 			}
 		}
 
 		public override string ToString()
 		{
-			return "Create Game Track: " + string_0;
+			return "Create Game Track: " + _string0;
 		}
 
 		public override bool Equals(QbEditor other)
 		{
-			return other is Class250 && (other as Class250).string_0 == string_0;
+			return other is Class250 && (other as Class250)._string0 == _string0;
 		}
 	}
 }

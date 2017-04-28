@@ -1,1 +1,1 @@
-public delegate float Delegate280(float float_0);
+public delegate float Delegate280(float float0);

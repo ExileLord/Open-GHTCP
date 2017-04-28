@@ -1,1 +1,1 @@
-public delegate char Delegate110(object object_0, int int_0);
+public delegate char Delegate110(object object0, int int0);

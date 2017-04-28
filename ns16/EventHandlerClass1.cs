@@ -13,9 +13,9 @@ namespace ns16
 	{
 		private class HandlerBuddy : NativeWindow, IDisposable
 		{
-			private static readonly int int_0 = 786;
+			private static readonly int Int0 = 786;
 
-			private EventHandler<EventArgs1> eventHandler_0;
+			private EventHandler<EventArgs1> _eventHandler0;
 
 			public HandlerBuddy()
 			{
@@ -25,26 +25,26 @@ namespace ns16
             protected override void WndProc(ref Message m)
 			{
 				base.WndProc(ref m);
-				if (m.Msg == int_0)
+				if (m.Msg == Int0)
 				{
-					var keys_ = (Keys)((int)m.LParam >> 16 & 65535);
-					var modKeys_ = (ModKeys)((int)m.LParam & 65535);
-					if (eventHandler_0 != null)
+					var keys = (Keys)((int)m.LParam >> 16 & 65535);
+					var modKeys = (ModKeys)((int)m.LParam & 65535);
+					if (_eventHandler0 != null)
 					{
-						eventHandler_0(this, new EventArgs1(modKeys_, keys_));
+						_eventHandler0(this, new EventArgs1(modKeys, keys));
 					}
 				}
 			}
 
-			public void method_0(EventHandler<EventArgs1> eventHandler_1)
+			public void method_0(EventHandler<EventArgs1> eventHandler1)
 			{
-				var eventHandler = eventHandler_0;
+				var eventHandler = _eventHandler0;
 				EventHandler<EventArgs1> eventHandler2;
 				do
 				{
 					eventHandler2 = eventHandler;
-					var value = (EventHandler<EventArgs1>)Delegate.Combine(eventHandler2, eventHandler_1);
-					eventHandler = Interlocked.CompareExchange(ref eventHandler_0, value, eventHandler2);
+					var value = (EventHandler<EventArgs1>)Delegate.Combine(eventHandler2, eventHandler1);
+					eventHandler = Interlocked.CompareExchange(ref _eventHandler0, value, eventHandler2);
 				}
 				while (eventHandler != eventHandler2);
 			}
@@ -55,43 +55,43 @@ namespace ns16
 			}
 		}
 
-		private readonly HandlerBuddy class234_0 = new HandlerBuddy();
+		private readonly HandlerBuddy _class2340 = new HandlerBuddy();
 
-		private readonly Dictionary<EventArgs1, int> dictionary_0 = new Dictionary<EventArgs1, int>();
+		private readonly Dictionary<EventArgs1, int> _dictionary0 = new Dictionary<EventArgs1, int>();
 
-		private EventHandler<EventArgs1> eventHandler_0;
+		private EventHandler<EventArgs1> _eventHandler0;
 
 		public EventHandlerClass1()
 		{
-			var arg_32_0 = class234_0;
-			EventHandler<EventArgs1> eventHandler_ = method_1;
-			arg_32_0.method_0(eventHandler_);
+			var arg320 = _class2340;
+			EventHandler<EventArgs1> eventHandler = method_1;
+			arg320.method_0(eventHandler);
 		}
 
 		[DllImport("user32.dll")]
-		private static extern bool UnregisterHotKey(IntPtr intptr_0, int int_0);
+		private static extern bool UnregisterHotKey(IntPtr intptr0, int int0);
 
 		public void method_0()
 		{
-			foreach (var current in dictionary_0.Values)
+			foreach (var current in _dictionary0.Values)
 			{
-				UnregisterHotKey(class234_0.Handle, current);
+				UnregisterHotKey(_class2340.Handle, current);
 			}
-			dictionary_0.Clear();
+			_dictionary0.Clear();
 		}
 
 		public void Dispose()
 		{
 			method_0();
-			class234_0.Dispose();
+			_class2340.Dispose();
 		}
 
 		[CompilerGenerated]
 		private void method_1(object sender, EventArgs1 e)
 		{
-			if (eventHandler_0 != null)
+			if (_eventHandler0 != null)
 			{
-				eventHandler_0(this, e);
+				_eventHandler0(this, e);
 			}
 		}
 	}

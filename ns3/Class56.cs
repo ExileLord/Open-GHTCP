@@ -5,41 +5,41 @@ namespace ns3
 {
 	public class Class56
 	{
-		private byte[] byte_0;
+		private byte[] _byte0;
 
-		private int int_0;
+		private int _int0;
 
-		private int int_1;
+		private int _int1;
 
-		private int int_2;
+		private int _int2;
 
-		private int[] int_3;
+		private int[] _int3;
 
-		private long[] long_0;
+		private long[] _long0;
 
-		private int int_4;
+		private int _int4;
 
-		private int int_5;
+		private int _int5;
 
-		private int int_6;
+		private int _int6;
 
-		private int int_7;
+		private int _int7;
 
-		private readonly byte[] byte_1 = new byte[282];
+		private readonly byte[] _byte1 = new byte[282];
 
-		private int int_8;
+		private int _int8;
 
-		public int int_9;
+		public int Int9;
 
-		private int int_10;
+		private int _int10;
 
-		private int int_11;
+		private int _int11;
 
-		private int int_12;
+		private int _int12;
 
-		private long long_1;
+		private long _long1;
 
-		private long long_2;
+		private long _long2;
 
 		public Class56()
 		{
@@ -53,146 +53,146 @@ namespace ns3
 
 		private void method_0()
 		{
-			int_0 = 16384;
-			byte_0 = new byte[int_0];
-			int_4 = 1024;
-			int_3 = new int[int_4];
-			long_0 = new long[int_4];
+			_int0 = 16384;
+			_byte0 = new byte[_int0];
+			_int4 = 1024;
+			_int3 = new int[_int4];
+			_long0 = new long[_int4];
 		}
 
-		public void method_1(int int_13)
+		public void method_1(int int13)
 		{
-			if (byte_0 == null)
+			if (_byte0 == null)
 			{
 				method_0();
 			}
 			else
 			{
-				for (var i = 0; i < byte_0.Length; i++)
+				for (var i = 0; i < _byte0.Length; i++)
 				{
-					byte_0[i] = 0;
+					_byte0[i] = 0;
 				}
-				for (var j = 0; j < int_3.Length; j++)
+				for (var j = 0; j < _int3.Length; j++)
 				{
-					int_3[j] = 0;
+					_int3[j] = 0;
 				}
-				for (var k = 0; k < long_0.Length; k++)
+				for (var k = 0; k < _long0.Length; k++)
 				{
-					long_0[k] = 0L;
+					_long0[k] = 0L;
 				}
 			}
-			int_11 = int_13;
+			_int11 = int13;
 		}
 
 		public void method_2()
 		{
-			byte_0 = null;
-			int_3 = null;
-			long_0 = null;
+			_byte0 = null;
+			_int3 = null;
+			_long0 = null;
 		}
 
-		private void method_3(int int_13)
+		private void method_3(int int13)
 		{
-			if (int_0 <= int_1 + int_13)
+			if (_int0 <= _int1 + int13)
 			{
-				int_0 += int_13 + 1024;
-				var dst = new byte[int_0];
-				Buffer.BlockCopy(byte_0, 0, dst, 0, byte_0.Length);
-				byte_0 = dst;
+				_int0 += int13 + 1024;
+				var dst = new byte[_int0];
+				Buffer.BlockCopy(_byte0, 0, dst, 0, _byte0.Length);
+				_byte0 = dst;
 			}
 		}
 
-		private void method_4(int int_13)
+		private void method_4(int int13)
 		{
-			if (int_4 <= int_5 + int_13)
+			if (_int4 <= _int5 + int13)
 			{
-				int_4 += int_13 + 32;
-				var dst = new int[int_4];
-				Buffer.BlockCopy(int_3, 0, dst, 0, int_3.Length << 2);
-				int_3 = dst;
-				var dst2 = new long[int_4];
-				Buffer.BlockCopy(long_0, 0, dst2, 0, long_0.Length << 3);
-				long_0 = dst2;
+				_int4 += int13 + 32;
+				var dst = new int[_int4];
+				Buffer.BlockCopy(_int3, 0, dst, 0, _int3.Length << 2);
+				_int3 = dst;
+				var dst2 = new long[_int4];
+				Buffer.BlockCopy(_long0, 0, dst2, 0, _long0.Length << 3);
+				_long0 = dst2;
 			}
 		}
 
-		public int method_5(Class67 class67_0)
+		public int method_5(Class67 class670)
 		{
-			var num = int_7;
-			if (int_6 <= num)
+			var num = _int7;
+			if (_int6 <= num)
 			{
 				return 0;
 			}
-			if ((int_3[num] & 1024) != 0)
+			if ((_int3[num] & 1024) != 0)
 			{
-				int_7++;
-				long_1 += 1L;
+				_int7++;
+				_long1 += 1L;
 				return -1;
 			}
-			var num2 = int_3[num] & 255;
-			class67_0.byte_0 = byte_0;
-			class67_0.int_0 = int_2;
-			class67_0.int_3 = (int_3[num] & 512);
-			class67_0.int_2 = (int_3[num] & 256);
+			var num2 = _int3[num] & 255;
+			class670.Byte0 = _byte0;
+			class670.Int0 = _int2;
+			class670.Int3 = (_int3[num] & 512);
+			class670.Int2 = (_int3[num] & 256);
 			var num3 = 0 + num2;
 			while (num2 == 255)
 			{
-				var num4 = int_3[++num];
+				var num4 = _int3[++num];
 				num2 = (num4 & 255);
 				if ((num4 & 512) != 0)
 				{
-					class67_0.int_3 = 512;
+					class670.Int3 = 512;
 				}
 				num3 += num2;
 			}
-			class67_0.long_1 = long_1;
-			class67_0.long_0 = long_0[num];
-			class67_0.int_1 = num3;
-			int_2 += num3;
-			int_7 = num + 1;
-			long_1 += 1L;
+			class670.Long1 = _long1;
+			class670.Long0 = _long0[num];
+			class670.Int1 = num3;
+			_int2 += num3;
+			_int7 = num + 1;
+			_long1 += 1L;
 			return 1;
 		}
 
-		public bool method_6(Class48 class48_0)
+		public bool method_6(Class48 class480)
 		{
-			var array = class48_0.byte_0;
-			var num = class48_0.int_0;
-			var src = class48_0.byte_1;
-			var num2 = class48_0.int_2;
-			var num3 = class48_0.int_3;
+			var array = class480.Byte0;
+			var num = class480.Int0;
+			var src = class480.Byte1;
+			var num2 = class480.Int2;
+			var num3 = class480.Int3;
 			var i = 0;
-			var num4 = class48_0.method_0();
-			var num5 = class48_0.method_1();
-			var num6 = class48_0.method_2();
-			var num7 = class48_0.method_3();
-			var num8 = class48_0.method_4();
-			var num9 = class48_0.method_5();
-			var num10 = class48_0.method_6();
+			var num4 = class480.method_0();
+			var num5 = class480.method_1();
+			var num6 = class480.method_2();
+			var num7 = class480.method_3();
+			var num8 = class480.method_4();
+			var num9 = class480.method_5();
+			var num10 = class480.method_6();
 			var num11 = array[num + 26] & 255;
-			var num12 = int_7;
-			var num13 = int_2;
+			var num12 = _int7;
+			var num13 = _int2;
 			if (num13 != 0)
 			{
-				int_1 -= num13;
-				if (int_1 != 0)
+				_int1 -= num13;
+				if (_int1 != 0)
 				{
-					Buffer.BlockCopy(byte_0, num13, byte_0, 0, int_1);
+					Buffer.BlockCopy(_byte0, num13, _byte0, 0, _int1);
 				}
-				int_2 = 0;
+				_int2 = 0;
 			}
 			if (num12 != 0)
 			{
-				if (int_5 - num12 != 0)
+				if (_int5 - num12 != 0)
 				{
-					Buffer.BlockCopy(int_3, num12 << 2, int_3, 0, int_5 - num12 << 2);
-					Buffer.BlockCopy(long_0, num12 << 3, long_0, 0, int_5 - num12 << 3);
+					Buffer.BlockCopy(_int3, num12 << 2, _int3, 0, _int5 - num12 << 2);
+					Buffer.BlockCopy(_long0, num12 << 3, _long0, 0, _int5 - num12 << 3);
 				}
-				int_5 -= num12;
-				int_6 -= num12;
-				int_7 = 0;
+				_int5 -= num12;
+				_int6 -= num12;
+				_int7 = 0;
 			}
-			if (num9 != int_11)
+			if (num9 != _int11)
 			{
 				return false;
 			}
@@ -201,17 +201,17 @@ namespace ns3
 				return false;
 			}
 			method_4(num11 + 1);
-			if (num10 != int_12)
+			if (num10 != _int12)
 			{
-				for (var j = int_6; j < int_5; j++)
+				for (var j = _int6; j < _int5; j++)
 				{
-					int_1 -= (int_3[j] & 255);
+					_int1 -= (_int3[j] & 255);
 				}
-				int_5 = int_6;
-				if (int_12 != -1)
+				_int5 = _int6;
+				if (_int12 != -1)
 				{
-					int_3[int_5++] = 1024;
-					int_6++;
+					_int3[_int5++] = 1024;
+					_int6++;
 				}
 				if (num5 != 0)
 				{
@@ -233,60 +233,60 @@ namespace ns3
 			if (num3 != 0)
 			{
 				method_3(num3);
-				Buffer.BlockCopy(src, num2, byte_0, int_1, num3);
-				int_1 += num3;
+				Buffer.BlockCopy(src, num2, _byte0, _int1, num3);
+				_int1 += num3;
 			}
 			var num15 = -1;
 			while (i < num11)
 			{
 				var num16 = array[num + 27 + i] & 255;
-				int_3[int_5] = num16;
-				long_0[int_5] = -1L;
+				_int3[_int5] = num16;
+				_long0[_int5] = -1L;
 				if (num6 != 0)
 				{
-					int_3[int_5] |= 256;
+					_int3[_int5] |= 256;
 					num6 = 0;
 				}
 				if (num16 < 255)
 				{
-					num15 = int_5;
+					num15 = _int5;
 				}
-				int_5++;
+				_int5++;
 				i++;
 				if (num16 < 255)
 				{
-					int_6 = int_5;
+					_int6 = _int5;
 				}
 			}
 			if (num15 != -1)
 			{
-				long_0[num15] = num8;
+				_long0[num15] = num8;
 			}
 			if (num7 != 0)
 			{
-				int_9 = 1;
-				if (int_5 > 0)
+				Int9 = 1;
+				if (_int5 > 0)
 				{
-					int_3[int_5 - 1] |= 512;
+					_int3[_int5 - 1] |= 512;
 				}
 			}
-			int_12 = num10 + 1;
+			_int12 = num10 + 1;
 			return true;
 		}
 
 		public bool method_7()
 		{
-			int_1 = 0;
-			int_2 = 0;
-			int_5 = 0;
-			int_6 = 0;
-			int_7 = 0;
-			int_8 = 0;
-			int_9 = 0;
-			int_10 = 0;
-			int_12 = -1;
-			long_1 = 0L;
-			long_2 = 0L;
+			_int1 = 0;
+			_int2 = 0;
+			_int5 = 0;
+			_int6 = 0;
+			_int7 = 0;
+			_int8 = 0;
+			Int9 = 0;
+			_int10 = 0;
+			_int12 = -1;
+			_long1 = 0L;
+			_long2 = 0L;
 			return true;
 		}
 	}

@@ -8,68 +8,68 @@ namespace ns13
 	{
 		private class Class191
 		{
-			public readonly short[] short_0;
+			public readonly short[] Short0;
 
-			public byte[] byte_0;
+			public byte[] Byte0;
 
-			public readonly int int_0;
+			public readonly int Int0;
 
-			public int int_1;
+			public int Int1;
 
-			private short[] short_1;
+			private short[] _short1;
 
-			private readonly int[] int_2;
+			private readonly int[] _int2;
 
-			private readonly int int_3;
+			private readonly int _int3;
 
-			private readonly Class190 class190_0;
+			private readonly Class190 _class1900;
 
-			public Class191(Class190 class190_1, int int_4, int int_5, int int_6)
+			public Class191(Class190 class1901, int int4, int int5, int int6)
 			{
-				class190_0 = class190_1;
-				int_0 = int_5;
-				int_3 = int_6;
-				short_0 = new short[int_4];
-				int_2 = new int[int_6];
+				_class1900 = class1901;
+				Int0 = int5;
+				_int3 = int6;
+				Short0 = new short[int4];
+				_int2 = new int[int6];
 			}
 
 			public void method_0()
 			{
-				for (var i = 0; i < short_0.Length; i++)
+				for (var i = 0; i < Short0.Length; i++)
 				{
-					short_0[i] = 0;
+					Short0[i] = 0;
 				}
-				short_1 = null;
-				byte_0 = null;
+				_short1 = null;
+				Byte0 = null;
 			}
 
-			public void method_1(int int_4)
+			public void method_1(int int4)
 			{
-				class190_0.class189_0.method_5(short_1[int_4] & 65535, byte_0[int_4]);
+				_class1900.Class1890.method_5(_short1[int4] & 65535, Byte0[int4]);
 			}
 
-			public void method_2(short[] short_2, byte[] byte_1)
+			public void method_2(short[] short2, byte[] byte1)
 			{
-				short_1 = short_2;
-				byte_0 = byte_1;
+				_short1 = short2;
+				Byte0 = byte1;
 			}
 
 			public void method_3()
 			{
-				var array = new int[int_3];
+				var array = new int[_int3];
 				var num = 0;
-				short_1 = new short[short_0.Length];
-				for (var i = 0; i < int_3; i++)
+				_short1 = new short[Short0.Length];
+				for (var i = 0; i < _int3; i++)
 				{
 					array[i] = num;
-					num += int_2[i] << 15 - i;
+					num += _int2[i] << 15 - i;
 				}
-				for (var j = 0; j < int_1; j++)
+				for (var j = 0; j < Int1; j++)
 				{
-					int num2 = byte_0[j];
+					int num2 = Byte0[j];
 					if (num2 > 0)
 					{
-						short_1[j] = smethod_0(array[num2 - 1]);
+						_short1[j] = smethod_0(array[num2 - 1]);
 						array[num2 - 1] += 1 << 16 - num2;
 					}
 				}
@@ -77,18 +77,18 @@ namespace ns13
 
 			public void method_4()
 			{
-				var num = short_0.Length;
+				var num = Short0.Length;
 				var array = new int[num];
 				var i = 0;
 				var num2 = 0;
 				for (var j = 0; j < num; j++)
 				{
-					int num3 = short_0[j];
+					int num3 = Short0[j];
 					if (num3 != 0)
 					{
 						var num4 = i++;
 						int num5;
-						while (num4 > 0 && short_0[array[num5 = (num4 - 1) / 2]] > num3)
+						while (num4 > 0 && Short0[array[num5 = (num4 - 1) / 2]] > num3)
 						{
 							array[num4] = array[num5];
 							num4 = num5;
@@ -102,7 +102,7 @@ namespace ns13
 					var num6 = (num2 < 2) ? (++num2) : 0;
 					array[i++] = num6;
 				}
-				int_1 = Math.Max(num2 + 1, int_0);
+				Int1 = Math.Max(num2 + 1, Int0);
 				var num7 = i;
 				var array2 = new int[4 * i - 2];
 				var array3 = new int[2 * i - 1];
@@ -112,7 +112,7 @@ namespace ns13
 					var num9 = array[k];
 					array2[2 * k] = num9;
 					array2[2 * k + 1] = -1;
-					array3[k] = short_0[num9] << 8;
+					array3[k] = Short0[num9] << 8;
 					array[k] = k;
 				}
 				do
@@ -169,21 +169,21 @@ namespace ns13
 			public int method_5()
 			{
 				var num = 0;
-				for (var i = 0; i < short_0.Length; i++)
+				for (var i = 0; i < Short0.Length; i++)
 				{
-					num += short_0[i] * byte_0[i];
+					num += Short0[i] * Byte0[i];
 				}
 				return num;
 			}
 
-			public void method_6(Class191 class191_0)
+			public void method_6(Class191 class1910)
 			{
 				var num = -1;
 				var i = 0;
-				while (i < int_1)
+				while (i < Int1)
 				{
 					var num2 = 1;
-					int num3 = byte_0[i];
+					int num3 = Byte0[i];
 					int num4;
 					int num5;
 					if (num3 == 0)
@@ -197,17 +197,17 @@ namespace ns13
 						num5 = 3;
 						if (num != num3)
 						{
-							var expr_3B_cp_0 = class191_0.short_0;
-							var expr_3B_cp_1 = num3;
-							expr_3B_cp_0[expr_3B_cp_1] += 1;
+							var expr_3BCp0 = class1910.Short0;
+							var expr_3BCp1 = num3;
+							expr_3BCp0[expr_3BCp1] += 1;
 							num2 = 0;
 						}
 					}
 					num = num3;
 					i++;
-					while (i < int_1)
+					while (i < Int1)
 					{
-						if (num != byte_0[i])
+						if (num != Byte0[i])
 						{
 							break;
 						}
@@ -219,39 +219,39 @@ namespace ns13
 					}
 					if (num2 < num5)
 					{
-						var expr_8C_cp_0 = class191_0.short_0;
-						var expr_8C_cp_1 = num;
-						expr_8C_cp_0[expr_8C_cp_1] += (short)num2;
+						var expr_8CCp0 = class1910.Short0;
+						var expr_8CCp1 = num;
+						expr_8CCp0[expr_8CCp1] += (short)num2;
 					}
 					else if (num != 0)
 					{
-						var expr_AD_cp_0 = class191_0.short_0;
-						var expr_AD_cp_1 = 16;
-						expr_AD_cp_0[expr_AD_cp_1] += 1;
+						var exprAdCp0 = class1910.Short0;
+						var exprAdCp1 = 16;
+						exprAdCp0[exprAdCp1] += 1;
 					}
 					else if (num2 <= 10)
 					{
-						var expr_CF_cp_0 = class191_0.short_0;
-						var expr_CF_cp_1 = 17;
-						expr_CF_cp_0[expr_CF_cp_1] += 1;
+						var exprCfCp0 = class1910.Short0;
+						var exprCfCp1 = 17;
+						exprCfCp0[exprCfCp1] += 1;
 					}
 					else
 					{
-						var expr_EC_cp_0 = class191_0.short_0;
-						var expr_EC_cp_1 = 18;
-						expr_EC_cp_0[expr_EC_cp_1] += 1;
+						var exprEcCp0 = class1910.Short0;
+						var exprEcCp1 = 18;
+						exprEcCp0[exprEcCp1] += 1;
 					}
 				}
 			}
 
-			public void method_7(Class191 class191_0)
+			public void method_7(Class191 class1910)
 			{
 				var num = -1;
 				var i = 0;
-				while (i < int_1)
+				while (i < Int1)
 				{
 					var num2 = 1;
-					int num3 = byte_0[i];
+					int num3 = Byte0[i];
 					int num4;
 					int num5;
 					if (num3 == 0)
@@ -265,15 +265,15 @@ namespace ns13
 						num5 = 3;
 						if (num != num3)
 						{
-							class191_0.method_1(num3);
+							class1910.method_1(num3);
 							num2 = 0;
 						}
 					}
 					num = num3;
 					i++;
-					while (i < int_1)
+					while (i < Int1)
 					{
-						if (num != byte_0[i])
+						if (num != Byte0[i])
 						{
 							break;
 						}
@@ -287,92 +287,92 @@ namespace ns13
 					{
 						while (num2-- > 0)
 						{
-							class191_0.method_1(num);
+							class1910.method_1(num);
 						}
 					}
 					else if (num != 0)
 					{
-						class191_0.method_1(16);
-						class190_0.class189_0.method_5(num2 - 3, 2);
+						class1910.method_1(16);
+						_class1900.Class1890.method_5(num2 - 3, 2);
 					}
 					else if (num2 <= 10)
 					{
-						class191_0.method_1(17);
-						class190_0.class189_0.method_5(num2 - 3, 3);
+						class1910.method_1(17);
+						_class1900.Class1890.method_5(num2 - 3, 3);
 					}
 					else
 					{
-						class191_0.method_1(18);
-						class190_0.class189_0.method_5(num2 - 11, 7);
+						class1910.method_1(18);
+						_class1900.Class1890.method_5(num2 - 11, 7);
 					}
 				}
 			}
 
-			private void method_8(int[] int_4)
+			private void method_8(int[] int4)
 			{
-				byte_0 = new byte[short_0.Length];
-				var num = int_4.Length / 2;
+				Byte0 = new byte[Short0.Length];
+				var num = int4.Length / 2;
 				var num2 = (num + 1) / 2;
 				var num3 = 0;
-				for (var i = 0; i < int_3; i++)
+				for (var i = 0; i < _int3; i++)
 				{
-					int_2[i] = 0;
+					_int2[i] = 0;
 				}
 				var array = new int[num];
 				array[num - 1] = 0;
 				for (var j = num - 1; j >= 0; j--)
 				{
-					if (int_4[2 * j + 1] != -1)
+					if (int4[2 * j + 1] != -1)
 					{
 						var num4 = array[j] + 1;
-						if (num4 > int_3)
+						if (num4 > _int3)
 						{
-							num4 = int_3;
+							num4 = _int3;
 							num3++;
 						}
-						array[int_4[2 * j]] = (array[int_4[2 * j + 1]] = num4);
+						array[int4[2 * j]] = (array[int4[2 * j + 1]] = num4);
 					}
 					else
 					{
 						var num5 = array[j];
-						int_2[num5 - 1]++;
-						byte_0[int_4[2 * j]] = (byte)array[j];
+						_int2[num5 - 1]++;
+						Byte0[int4[2 * j]] = (byte)array[j];
 					}
 				}
 				if (num3 == 0)
 				{
 					return;
 				}
-				var num6 = int_3 - 1;
+				var num6 = _int3 - 1;
 				while (true)
 				{
-					if (int_2[--num6] != 0)
+					if (_int2[--num6] != 0)
 					{
 						do
 						{
-							int_2[num6]--;
-							int_2[++num6]++;
-							num3 -= 1 << int_3 - 1 - num6;
+							_int2[num6]--;
+							_int2[++num6]++;
+							num3 -= 1 << _int3 - 1 - num6;
 						}
-						while (num3 > 0 && num6 < int_3 - 1);
+						while (num3 > 0 && num6 < _int3 - 1);
 						if (num3 <= 0)
 						{
 							break;
 						}
 					}
 				}
-				int_2[int_3 - 1] += num3;
-				int_2[int_3 - 2] -= num3;
+				_int2[_int3 - 1] += num3;
+				_int2[_int3 - 2] -= num3;
 				var num7 = 2 * num2;
-				for (var num8 = int_3; num8 != 0; num8--)
+				for (var num8 = _int3; num8 != 0; num8--)
 				{
-					var k = int_2[num8 - 1];
+					var k = _int2[num8 - 1];
 					while (k > 0)
 					{
-						var num9 = 2 * int_4[num7++];
-						if (int_4[num9 + 1] == -1)
+						var num9 = 2 * int4[num7++];
+						if (int4[num9 + 1] == -1)
 						{
-							byte_0[int_4[num9]] = (byte)num8;
+							Byte0[int4[num9]] = (byte)num8;
 							k--;
 						}
 					}
@@ -380,37 +380,37 @@ namespace ns13
 			}
 		}
 
-		private static readonly int[] int_0;
+		private static readonly int[] Int0;
 
-		private static readonly byte[] byte_0;
+		private static readonly byte[] Byte0;
 
-		private static readonly short[] short_0;
+		private static readonly short[] Short0;
 
-		private static readonly byte[] byte_1;
+		private static readonly byte[] Byte1;
 
-		private static readonly short[] short_1;
+		private static readonly short[] Short1;
 
-		private static readonly byte[] byte_2;
+		private static readonly byte[] Byte2;
 
-		public Class189 class189_0;
+		public Class189 Class1890;
 
-		private readonly Class191 class191_0;
+		private readonly Class191 _class1910;
 
-		private readonly Class191 class191_1;
+		private readonly Class191 _class1911;
 
-		private readonly Class191 class191_2;
+		private readonly Class191 _class1912;
 
-		private readonly short[] short_2;
+		private readonly short[] _short2;
 
-		private readonly byte[] byte_3;
+		private readonly byte[] _byte3;
 
-		private int int_1;
+		private int _int1;
 
-		private int int_2;
+		private int _int2;
 
 		static Class190()
 		{
-			int_0 = new[]
+			Int0 = new[]
 			{
 				16,
 				17,
@@ -432,7 +432,7 @@ namespace ns13
 				1,
 				15
 			};
-			byte_0 = new byte[]
+			Byte0 = new byte[]
 			{
 				0,
 				8,
@@ -451,161 +451,161 @@ namespace ns13
 				7,
 				15
 			};
-			short_0 = new short[286];
-			byte_1 = new byte[286];
+			Short0 = new short[286];
+			Byte1 = new byte[286];
 			var i = 0;
 			while (i < 144)
 			{
-				short_0[i] = smethod_0(48 + i << 8);
-				byte_1[i++] = 8;
+				Short0[i] = smethod_0(48 + i << 8);
+				Byte1[i++] = 8;
 			}
 			while (i < 256)
 			{
-				short_0[i] = smethod_0(256 + i << 7);
-				byte_1[i++] = 9;
+				Short0[i] = smethod_0(256 + i << 7);
+				Byte1[i++] = 9;
 			}
 			while (i < 280)
 			{
-				short_0[i] = smethod_0(-256 + i << 9);
-				byte_1[i++] = 7;
+				Short0[i] = smethod_0(-256 + i << 9);
+				Byte1[i++] = 7;
 			}
 			while (i < 286)
 			{
-				short_0[i] = smethod_0(-88 + i << 8);
-				byte_1[i++] = 8;
+				Short0[i] = smethod_0(-88 + i << 8);
+				Byte1[i++] = 8;
 			}
-			short_1 = new short[30];
-			byte_2 = new byte[30];
+			Short1 = new short[30];
+			Byte2 = new byte[30];
 			for (i = 0; i < 30; i++)
 			{
-				short_1[i] = smethod_0(i << 11);
-				byte_2[i] = 5;
+				Short1[i] = smethod_0(i << 11);
+				Byte2[i] = 5;
 			}
 		}
 
-		public Class190(Class189 class189_1)
+		public Class190(Class189 class1891)
 		{
-			class189_0 = class189_1;
-			class191_0 = new Class191(this, 286, 257, 15);
-			class191_1 = new Class191(this, 30, 1, 15);
-			class191_2 = new Class191(this, 19, 4, 7);
-			short_2 = new short[16384];
-			byte_3 = new byte[16384];
+			Class1890 = class1891;
+			_class1910 = new Class191(this, 286, 257, 15);
+			_class1911 = new Class191(this, 30, 1, 15);
+			_class1912 = new Class191(this, 19, 4, 7);
+			_short2 = new short[16384];
+			_byte3 = new byte[16384];
 		}
 
 		public void method_0()
 		{
-			int_1 = 0;
-			int_2 = 0;
-			class191_0.method_0();
-			class191_1.method_0();
-			class191_2.method_0();
+			_int1 = 0;
+			_int2 = 0;
+			_class1910.method_0();
+			_class1911.method_0();
+			_class1912.method_0();
 		}
 
-		public void method_1(int int_3)
+		public void method_1(int int3)
 		{
-			class191_2.method_3();
-			class191_0.method_3();
-			class191_1.method_3();
-			class189_0.method_5(class191_0.int_1 - 257, 5);
-			class189_0.method_5(class191_1.int_1 - 1, 5);
-			class189_0.method_5(int_3 - 4, 4);
-			for (var i = 0; i < int_3; i++)
+			_class1912.method_3();
+			_class1910.method_3();
+			_class1911.method_3();
+			Class1890.method_5(_class1910.Int1 - 257, 5);
+			Class1890.method_5(_class1911.Int1 - 1, 5);
+			Class1890.method_5(int3 - 4, 4);
+			for (var i = 0; i < int3; i++)
 			{
-				class189_0.method_5(class191_2.byte_0[int_0[i]], 3);
+				Class1890.method_5(_class1912.Byte0[Int0[i]], 3);
 			}
-			class191_0.method_7(class191_2);
-			class191_1.method_7(class191_2);
+			_class1910.method_7(_class1912);
+			_class1911.method_7(_class1912);
 		}
 
 		public void method_2()
 		{
-			for (var i = 0; i < int_1; i++)
+			for (var i = 0; i < _int1; i++)
 			{
-				var num = byte_3[i] & 255;
-				int num2 = short_2[i];
+				var num = _byte3[i] & 255;
+				int num2 = _short2[i];
 				if (num2-- != 0)
 				{
 					var num3 = smethod_1(num);
-					class191_0.method_1(num3);
+					_class1910.method_1(num3);
 					var num4 = (num3 - 261) / 4;
 					if (num4 > 0 && num4 <= 5)
 					{
-						class189_0.method_5(num & (1 << num4) - 1, num4);
+						Class1890.method_5(num & (1 << num4) - 1, num4);
 					}
 					var num5 = smethod_2(num2);
-					class191_1.method_1(num5);
+					_class1911.method_1(num5);
 					num4 = num5 / 2 - 1;
 					if (num4 > 0)
 					{
-						class189_0.method_5(num2 & (1 << num4) - 1, num4);
+						Class1890.method_5(num2 & (1 << num4) - 1, num4);
 					}
 				}
 				else
 				{
-					class191_0.method_1(num);
+					_class1910.method_1(num);
 				}
 			}
-			class191_0.method_1(256);
+			_class1910.method_1(256);
 		}
 
-		public void method_3(byte[] byte_4, int int_3, int int_4, bool bool_0)
+		public void method_3(byte[] byte4, int int3, int int4, bool bool0)
 		{
-			class189_0.method_5(bool_0 ? 1 : 0, 3);
-			class189_0.method_4();
-			class189_0.method_1(int_4);
-			class189_0.method_1(~int_4);
-			class189_0.method_2(byte_4, int_3, int_4);
+			Class1890.method_5(bool0 ? 1 : 0, 3);
+			Class1890.method_4();
+			Class1890.method_1(int4);
+			Class1890.method_1(~int4);
+			Class1890.method_2(byte4, int3, int4);
 			method_0();
 		}
 
-		public void method_4(byte[] byte_4, int int_3, int int_4, bool bool_0)
+		public void method_4(byte[] byte4, int int3, int int4, bool bool0)
 		{
-			var expr_15_cp_0 = class191_0.short_0;
-			var expr_15_cp_1 = 256;
-			expr_15_cp_0[expr_15_cp_1] += 1;
-			class191_0.method_4();
-			class191_1.method_4();
-			class191_0.method_6(class191_2);
-			class191_1.method_6(class191_2);
-			class191_2.method_4();
+			var expr15Cp0 = _class1910.Short0;
+			var expr15Cp1 = 256;
+			expr15Cp0[expr15Cp1] += 1;
+			_class1910.method_4();
+			_class1911.method_4();
+			_class1910.method_6(_class1912);
+			_class1911.method_6(_class1912);
+			_class1912.method_4();
 			var num = 4;
 			for (var i = 18; i > num; i--)
 			{
-				if (class191_2.byte_0[int_0[i]] > 0)
+				if (_class1912.Byte0[Int0[i]] > 0)
 				{
 					num = i + 1;
 				}
 			}
-			var num2 = 14 + num * 3 + class191_2.method_5() + class191_0.method_5() + class191_1.method_5() + int_2;
-			var num3 = int_2;
+			var num2 = 14 + num * 3 + _class1912.method_5() + _class1910.method_5() + _class1911.method_5() + _int2;
+			var num3 = _int2;
 			for (var j = 0; j < 286; j++)
 			{
-				num3 += class191_0.short_0[j] * byte_1[j];
+				num3 += _class1910.Short0[j] * Byte1[j];
 			}
 			for (var k = 0; k < 30; k++)
 			{
-				num3 += class191_1.short_0[k] * byte_2[k];
+				num3 += _class1911.Short0[k] * Byte2[k];
 			}
 			if (num2 >= num3)
 			{
 				num2 = num3;
 			}
-			if (int_3 >= 0 && int_4 + 4 < num2 >> 3)
+			if (int3 >= 0 && int4 + 4 < num2 >> 3)
 			{
-				method_3(byte_4, int_3, int_4, bool_0);
+				method_3(byte4, int3, int4, bool0);
 				return;
 			}
 			if (num2 == num3)
 			{
-				class189_0.method_5(2 + (bool_0 ? 1 : 0), 3);
-				class191_0.method_2(short_0, byte_1);
-				class191_1.method_2(short_1, byte_2);
+				Class1890.method_5(2 + (bool0 ? 1 : 0), 3);
+				_class1910.method_2(Short0, Byte1);
+				_class1911.method_2(Short1, Byte2);
 				method_2();
 				method_0();
 				return;
 			}
-			class189_0.method_5(4 + (bool_0 ? 1 : 0), 3);
+			Class1890.method_5(4 + (bool0 ? 1 : 0), 3);
 			method_1(num);
 			method_2();
 			method_0();
@@ -613,70 +613,70 @@ namespace ns13
 
 		public bool method_5()
 		{
-			return int_1 >= 16384;
+			return _int1 >= 16384;
 		}
 
-		public bool method_6(int int_3)
+		public bool method_6(int int3)
 		{
-			short_2[int_1] = 0;
-			byte_3[int_1++] = (byte)int_3;
-			var expr_39_cp_0 = class191_0.short_0;
-			expr_39_cp_0[int_3] += 1;
+			_short2[_int1] = 0;
+			_byte3[_int1++] = (byte)int3;
+			var expr39Cp0 = _class1910.Short0;
+			expr39Cp0[int3] += 1;
 			return method_5();
 		}
 
-		public bool method_7(int int_3, int int_4)
+		public bool method_7(int int3, int int4)
 		{
-			short_2[int_1] = (short)int_3;
-			byte_3[int_1++] = (byte)(int_4 - 3);
-			var num = smethod_1(int_4 - 3);
-			var expr_45_cp_0 = class191_0.short_0;
-			var expr_45_cp_1 = num;
-			expr_45_cp_0[expr_45_cp_1] += 1;
+			_short2[_int1] = (short)int3;
+			_byte3[_int1++] = (byte)(int4 - 3);
+			var num = smethod_1(int4 - 3);
+			var expr45Cp0 = _class1910.Short0;
+			var expr45Cp1 = num;
+			expr45Cp0[expr45Cp1] += 1;
 			if (num >= 265 && num < 285)
 			{
-				int_2 += (num - 261) / 4;
+				_int2 += (num - 261) / 4;
 			}
-			var num2 = smethod_2(int_3 - 1);
-			var expr_93_cp_0 = class191_1.short_0;
-			var expr_93_cp_1 = num2;
-			expr_93_cp_0[expr_93_cp_1] += 1;
+			var num2 = smethod_2(int3 - 1);
+			var expr93Cp0 = _class1911.Short0;
+			var expr93Cp1 = num2;
+			expr93Cp0[expr93Cp1] += 1;
 			if (num2 >= 4)
 			{
-				int_2 += num2 / 2 - 1;
+				_int2 += num2 / 2 - 1;
 			}
 			return method_5();
 		}
 
-		public static short smethod_0(int int_3)
+		public static short smethod_0(int int3)
 		{
-			return (short)(byte_0[int_3 & 15] << 12 | byte_0[int_3 >> 4 & 15] << 8 | byte_0[int_3 >> 8 & 15] << 4 | byte_0[int_3 >> 12]);
+			return (short)(Byte0[int3 & 15] << 12 | Byte0[int3 >> 4 & 15] << 8 | Byte0[int3 >> 8 & 15] << 4 | Byte0[int3 >> 12]);
 		}
 
-		private static int smethod_1(int int_3)
+		private static int smethod_1(int int3)
 		{
-			if (int_3 == 255)
+			if (int3 == 255)
 			{
 				return 285;
 			}
 			var num = 257;
-			while (int_3 >= 8)
+			while (int3 >= 8)
 			{
 				num += 4;
-				int_3 >>= 1;
+				int3 >>= 1;
 			}
-			return num + int_3;
+			return num + int3;
 		}
 
-		private static int smethod_2(int int_3)
+		private static int smethod_2(int int3)
 		{
 			var num = 0;
-			while (int_3 >= 4)
+			while (int3 >= 4)
 			{
 				num += 2;
-				int_3 >>= 1;
+				int3 >>= 1;
 			}
-			return num + int_3;
+			return num + int3;
 		}
 	}
 }

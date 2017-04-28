@@ -11,248 +11,248 @@ namespace ns9
 	{
 		public enum Enum40
 		{
-			const_0,
-			const_1,
-			const_2,
-			const_3
+			Const0,
+			Const1,
+			Const2,
+			Const3
 		}
 
-		private EventHandler eventHandler_0;
+		private EventHandler _eventHandler0;
 
-		private ScrollEventHandler scrollEventHandler_0;
+		private ScrollEventHandler _scrollEventHandler0;
 
-		private bool bool_0;
+		private bool _bool0;
 
-		private Orientation orientation_0;
+		private Orientation _orientation0;
 
-		private bool bool_1;
+		private bool _bool1;
 
-		private bool bool_2;
+		private bool _bool2;
 
-		private readonly ToolTip toolTip_0 = new ToolTip();
+		private readonly ToolTip _toolTip0 = new ToolTip();
 
-		private string string_0 = "{0}";
+		private string _string0 = "{0}";
 
-		private bool bool_3;
+		private bool _bool3;
 
-		private readonly bool bool_4 = true;
+		private readonly bool _bool4 = true;
 
-		private int int_0 = 10;
+		private int _int0 = 10;
 
-		private RectangleF rectangleF_0;
+		private RectangleF _rectangleF0;
 
-		private RectangleF rectangleF_1;
+		private RectangleF _rectangleF1;
 
-		private RectangleF rectangleF_2;
+		private RectangleF _rectangleF2;
 
-		private RectangleF rectangleF_3;
+		private RectangleF _rectangleF3;
 
-		private RectangleF rectangleF_4;
+		private RectangleF _rectangleF4;
 
-		private int int_1 = 15;
+		private int _int1 = 15;
 
-		private GraphicsPath graphicsPath_0;
+		private GraphicsPath _graphicsPath0;
 
-		private SizeF sizeF_0 = new SizeF(50f, 50f);
+		private SizeF _sizeF0 = new SizeF(50f, 50f);
 
-		private readonly bool bool_5 = true;
+		private readonly bool _bool5 = true;
 
-		private Image image_0;
+		private Image _image0;
 
-		private Color color_0 = Color.White;
+		private Color _color0 = Color.White;
 
-		private Color color_1 = Color.Gainsboro;
+		private Color _color1 = Color.Gainsboro;
 
-		private Color color_2 = Color.Silver;
+		private Color _color2 = Color.Silver;
 
-		private float float_0 = 100f;
+		private float _float0 = 100f;
 
-		private float float_1 = 33f;
+		private float _float1 = 33f;
 
-		private Color color_3 = Color.SkyBlue;
+		private Color _color3 = Color.SkyBlue;
 
-		private Color color_4 = Color.DarkSlateBlue;
+		private Color _color4 = Color.DarkSlateBlue;
 
-		private Color color_5 = Color.Gainsboro;
+		private Color _color5 = Color.Gainsboro;
 
-		private Color color_6 = Color.DarkGreen;
+		private Color _color6 = Color.DarkGreen;
 
-		private Color color_7 = Color.Chartreuse;
+		private Color _color7 = Color.Chartreuse;
 
-		private int int_2 = 50;
+		private int _int2 = 50;
 
-		private int int_3;
+		private int _int3;
 
-		private int int_4 = 100;
+		private int _int4 = 100;
 
-		private uint uint_0 = 1u;
+		private uint _uint0 = 1u;
 
-		private uint uint_1 = 5u;
+		private uint _uint1 = 5u;
 
-		private readonly Color[,] color_8;
+		private readonly Color[,] _color8;
 
-		private Enum40 enum40_0;
+		private Enum40 _enum400;
 
-		private float float_2;
+		private float _float2;
 
-		private bool bool_6;
+		private bool _bool6;
 
-		private bool bool_7;
+		private bool _bool7;
 
-		private int int_5;
+		private int _int5;
 
-		private int int_6;
+		private int _int6;
 
-		private int int_7;
+		private int _int7;
 
-		private static readonly Class361 class361_0 = new Class361();
+		private static readonly Class361 Class3610 = new Class361();
 
 		private IContainer icontainer_0;
 
-		public void method_0(EventHandler eventHandler_1)
+		public void method_0(EventHandler eventHandler1)
 		{
-			var eventHandler = eventHandler_0;
+			var eventHandler = _eventHandler0;
 			EventHandler eventHandler2;
 			do
 			{
 				eventHandler2 = eventHandler;
-				var value = (EventHandler)Delegate.Combine(eventHandler2, eventHandler_1);
-				eventHandler = Interlocked.CompareExchange(ref eventHandler_0, value, eventHandler2);
+				var value = (EventHandler)Delegate.Combine(eventHandler2, eventHandler1);
+				eventHandler = Interlocked.CompareExchange(ref _eventHandler0, value, eventHandler2);
 			}
 			while (eventHandler != eventHandler2);
 		}
 
-		public void method_1(string string_1)
+		public void method_1(string string1)
 		{
-			string_0 = string_1;
+			_string0 = string1;
 			Invalidate();
 		}
 
-		public void method_2(bool bool_8)
+		public void method_2(bool bool8)
 		{
-			bool_3 = bool_8;
+			_bool3 = bool8;
 			Invalidate();
 		}
 
 		public string method_3()
 		{
-			if (!bool_3)
+			if (!_bool3)
 			{
-				return string.Format(string_0, method_13());
+				return string.Format(_string0, method_13());
 			}
-			return smethod_4(TimeSpan.FromSeconds(method_13()), string_0);
+			return smethod_4(TimeSpan.FromSeconds(method_13()), _string0);
 		}
 
-		public void method_4(int int_8)
+		public void method_4(int int8)
 		{
-			if (int_8 <= 0)
+			if (int8 <= 0)
 			{
 				throw new ArgumentOutOfRangeException("MouseWheelBarPartitions has to be greater than zero");
 			}
-			int_0 = int_8;
+			_int0 = int8;
 		}
 
-		public void method_5(int int_8)
+		public void method_5(int int8)
 		{
-			if (!(int_8 > 0 & int_8 < ((orientation_0 == Orientation.Horizontal) ? ClientRectangle.Width : ClientRectangle.Height)))
+			if (!(int8 > 0 & int8 < ((_orientation0 == Orientation.Horizontal) ? ClientRectangle.Width : ClientRectangle.Height)))
 			{
 				throw new ArgumentOutOfRangeException("TrackSize has to be greater than zero and lower than half of Slider width");
 			}
-			int_1 = int_8;
+			_int1 = int8;
 			Invalidate();
 		}
 
-		public void method_6(SizeF sizeF_1)
+		public void method_6(SizeF sizeF1)
 		{
-			sizeF_0.Width = ((sizeF_1.Width < 1f) ? 1f : ((sizeF_1.Width > 100f) ? 100f : sizeF_1.Width));
-			sizeF_0.Height = ((sizeF_1.Height < 1f) ? 1f : ((sizeF_1.Height > 100f) ? 100f : sizeF_1.Height));
+			_sizeF0.Width = ((sizeF1.Width < 1f) ? 1f : ((sizeF1.Width > 100f) ? 100f : sizeF1.Width));
+			_sizeF0.Height = ((sizeF1.Height < 1f) ? 1f : ((sizeF1.Height > 100f) ? 100f : sizeF1.Height));
 			Invalidate();
 		}
 
-		public void method_7(float float_3)
+		public void method_7(float float3)
 		{
-			float_0 = ((float_3 < 1f) ? 1f : ((float_3 > 100f) ? 100f : float_3));
+			_float0 = ((float3 < 1f) ? 1f : ((float3 > 100f) ? 100f : float3));
 			Invalidate();
 		}
 
-		public void method_8(float float_3)
+		public void method_8(float float3)
 		{
-			float_1 = ((float_3 < 0f) ? 0f : ((float_3 > 100f) ? 100f : float_3));
+			_float1 = ((float3 < 0f) ? 0f : ((float3 > 100f) ? 100f : float3));
 			Invalidate();
 		}
 
-		public void method_9(Color color_9)
+		public void method_9(Color color9)
 		{
-			color_3 = color_9;
+			_color3 = color9;
 			Invalidate();
 		}
 
-		public void method_10(Color color_9)
+		public void method_10(Color color9)
 		{
-			color_4 = color_9;
+			_color4 = color9;
 			Invalidate();
 		}
 
-		public void method_11(Color color_9)
+		public void method_11(Color color9)
 		{
-			color_6 = color_9;
+			_color6 = color9;
 			Invalidate();
 		}
 
-		public void method_12(Color color_9)
+		public void method_12(Color color9)
 		{
-			color_7 = color_9;
+			_color7 = color9;
 			Invalidate();
 		}
 
 		public int method_13()
 		{
-			if (!bool_0)
+			if (!_bool0)
 			{
-				return int_2;
+				return _int2;
 			}
-			return method_17() - int_2 + method_15();
+			return method_17() - _int2 + method_15();
 		}
 
-		public void method_14(int int_8)
+		public void method_14(int int8)
 		{
-			if (int_8 < int_3)
+			if (int8 < _int3)
 			{
-				int_2 = int_3;
+				_int2 = _int3;
 			}
-			else if (int_8 > int_4)
+			else if (int8 > _int4)
 			{
-				int_2 = int_4;
+				_int2 = _int4;
 			}
 			else
 			{
-				int_2 = (bool_0 ? (method_17() - int_8 + method_15()) : int_8);
+				_int2 = (_bool0 ? (method_17() - int8 + method_15()) : int8);
 			}
-			if (eventHandler_0 != null)
+			if (_eventHandler0 != null)
 			{
-				eventHandler_0(this, new EventArgs());
+				_eventHandler0(this, new EventArgs());
 			}
 			Invalidate();
 		}
 
 		public int method_15()
 		{
-			return int_3;
+			return _int3;
 		}
 
-		public void method_16(int int_8)
+		public void method_16(int int8)
 		{
-			if (int_8 >= int_4)
+			if (int8 >= _int4)
 			{
 				throw new ArgumentOutOfRangeException("Minimal value is greater than maximal one");
 			}
-			int_3 = int_8;
-			if (int_2 < int_3)
+			_int3 = int8;
+			if (_int2 < _int3)
 			{
-				int_2 = int_3;
-				if (eventHandler_0 != null)
+				_int2 = _int3;
+				if (_eventHandler0 != null)
 				{
-					eventHandler_0(this, new EventArgs());
+					_eventHandler0(this, new EventArgs());
 				}
 			}
 			Invalidate();
@@ -260,53 +260,53 @@ namespace ns9
 
 		public int method_17()
 		{
-			return int_4;
+			return _int4;
 		}
 
-		public void method_18(int int_8)
+		public void method_18(int int8)
 		{
-			if (int_8 <= int_3)
+			if (int8 <= _int3)
 			{
-				int_4 = int_3;
+				_int4 = _int3;
 			}
-			int_4 = int_8;
-			if (int_2 > int_4)
+			_int4 = int8;
+			if (_int2 > _int4)
 			{
-				int_2 = int_4;
-				if (eventHandler_0 != null)
+				_int2 = _int4;
+				if (_eventHandler0 != null)
 				{
-					eventHandler_0(this, new EventArgs());
+					_eventHandler0(this, new EventArgs());
 				}
 			}
 			Invalidate();
 		}
 
-		public void method_19(uint uint_2)
+		public void method_19(uint uint2)
 		{
-			uint_0 = uint_2;
+			_uint0 = uint2;
 		}
 
-		public void method_20(uint uint_2)
+		public void method_20(uint uint2)
 		{
-			uint_1 = uint_2;
+			_uint1 = uint2;
 		}
 
-		public void method_21(Enum40 enum40_1)
+		public void method_21(Enum40 enum401)
 		{
-			enum40_0 = enum40_1;
-			var b = (byte)enum40_1;
-			color_0 = color_8[b, 0];
-			color_1 = color_8[b, 1];
-			color_2 = color_8[b, 2];
-			color_3 = color_8[b, 3];
-			color_4 = color_8[b, 4];
-			color_5 = color_8[b, 5];
-			color_6 = color_8[b, 6];
-			color_7 = color_8[b, 7];
+			_enum400 = enum401;
+			var b = (byte)enum401;
+			_color0 = _color8[b, 0];
+			_color1 = _color8[b, 1];
+			_color2 = _color8[b, 2];
+			_color3 = _color8[b, 3];
+			_color4 = _color8[b, 4];
+			_color5 = _color8[b, 5];
+			_color6 = _color8[b, 6];
+			_color7 = _color8[b, 7];
 			Invalidate();
 		}
 
-		public Control1(int int_8, int int_9, int int_10)
+		public Control1(int int8, int int9, int int10)
 		{
 			var array = new Color[4, 8];
 			array[0, 0] = Color.White;
@@ -341,14 +341,14 @@ namespace ns9
 			array[3, 5] = Color.Gainsboro;
 			array[3, 6] = Color.DarkViolet;
 			array[3, 7] = Color.Violet;
-			color_8 = array;
+			_color8 = array;
 
 			method_24();
 			SetStyle(ControlStyles.UserPaint | ControlStyles.ResizeRedraw | ControlStyles.Selectable | ControlStyles.UserMouse | ControlStyles.SupportsTransparentBackColor | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
 			BackColor = Color.Transparent;
-			method_16(int_8);
-			method_18(int_9);
-			method_14(int_10);
+			method_16(int8);
+			method_18(int9);
+			method_14(int10);
 		}
 
 		public Control1() : this(0, 100, 50)
@@ -361,194 +361,194 @@ namespace ns9
 			{
 				var array = smethod_1(new[]
 				{
-					color_0,
-					color_1,
-					color_2,
-					bool_0 ? color_6 : color_3,
-					bool_0 ? color_7 : color_4,
-					color_5,
-					bool_0 ? color_3 : color_6,
-					bool_0 ? color_4 : color_7
+					_color0,
+					_color1,
+					_color2,
+					_bool0 ? _color6 : _color3,
+					_bool0 ? _color7 : _color4,
+					_color5,
+					_bool0 ? _color3 : _color6,
+					_bool0 ? _color4 : _color7
 				});
 				method_22(e, array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7]);
 				return;
 			}
-			if (bool_4 && bool_6)
+			if (_bool4 && _bool6)
 			{
 				var array2 = smethod_2(new[]
 				{
-					color_0,
-					color_1,
-					color_2,
-					bool_0 ? color_6 : color_3,
-					bool_0 ? color_7 : color_4,
-					color_5,
-					bool_0 ? color_3 : color_6,
-					bool_0 ? color_4 : color_7
+					_color0,
+					_color1,
+					_color2,
+					_bool0 ? _color6 : _color3,
+					_bool0 ? _color7 : _color4,
+					_color5,
+					_bool0 ? _color3 : _color6,
+					_bool0 ? _color4 : _color7
 				});
 				method_22(e, array2[0], array2[1], array2[2], array2[3], array2[4], array2[5], array2[6], array2[7]);
 				return;
 			}
-			method_22(e, color_0, color_1, color_2, bool_0 ? color_6 : color_3, bool_0 ? color_7 : color_4, color_5, bool_0 ? color_3 : color_6, bool_0 ? color_4 : color_7);
+			method_22(e, _color0, _color1, _color2, _bool0 ? _color6 : _color3, _bool0 ? _color7 : _color4, _color5, _bool0 ? _color3 : _color6, _bool0 ? _color4 : _color7);
 		}
 
-		private void method_22(PaintEventArgs paintEventArgs_0, Color color_9, Color color_10, Color color_11, Color color_12, Color color_13, Color color_14, Color color_15, Color color_16)
+		private void method_22(PaintEventArgs paintEventArgs0, Color color9, Color color10, Color color11, Color color12, Color color13, Color color14, Color color15, Color color16)
 		{
 			try
 			{
-				if (orientation_0 == Orientation.Horizontal)
+				if (_orientation0 == Orientation.Horizontal)
 				{
-					var x = (int_2 - int_3) * (ClientRectangle.Width - int_1) / (float)(int_4 - int_3);
-					rectangleF_0 = new RectangleF(x, 1f, int_1 - 1, ClientRectangle.Height - 2);
+					var x = (_int2 - _int3) * (ClientRectangle.Width - _int1) / (float)(_int4 - _int3);
+					_rectangleF0 = new RectangleF(x, 1f, _int1 - 1, ClientRectangle.Height - 2);
 				}
 				else
 				{
-					var y = (int_2 - int_3) * (ClientRectangle.Height - int_1) / (float)(int_4 - int_3);
-					rectangleF_0 = new RectangleF(1f, y, ClientRectangle.Width - 2, int_1 - 1);
+					var y = (_int2 - _int3) * (ClientRectangle.Height - _int1) / (float)(_int4 - _int3);
+					_rectangleF0 = new RectangleF(1f, y, ClientRectangle.Width - 2, _int1 - 1);
 				}
-				rectangleF_1 = ClientRectangle;
-				rectangleF_3 = rectangleF_0;
+				_rectangleF1 = ClientRectangle;
+				_rectangleF3 = _rectangleF0;
 				LinearGradientMode linearGradientMode;
-				SizeF sizeF_;
-				if (orientation_0 == Orientation.Horizontal)
+				SizeF sizeF;
+				if (_orientation0 == Orientation.Horizontal)
 				{
-					rectangleF_1.Inflate(-1f, -rectangleF_1.Height * (100f - float_1) / 200f - 1f);
-					rectangleF_2 = rectangleF_1;
-					rectangleF_2.Height = rectangleF_2.Height / 2f;
+					_rectangleF1.Inflate(-1f, -_rectangleF1.Height * (100f - _float1) / 200f - 1f);
+					_rectangleF2 = _rectangleF1;
+					_rectangleF2.Height = _rectangleF2.Height / 2f;
 					linearGradientMode = LinearGradientMode.Vertical;
-					rectangleF_3.Height = rectangleF_3.Height / 2f;
-					rectangleF_4 = rectangleF_1;
-					rectangleF_4.Width = rectangleF_0.Left + int_1 / 2f;
-					sizeF_ = new SizeF(rectangleF_1.Height * float_0 / 50f, rectangleF_1.Height * float_0 / 50f);
+					_rectangleF3.Height = _rectangleF3.Height / 2f;
+					_rectangleF4 = _rectangleF1;
+					_rectangleF4.Width = _rectangleF0.Left + _int1 / 2f;
+					sizeF = new SizeF(_rectangleF1.Height * _float0 / 50f, _rectangleF1.Height * _float0 / 50f);
 				}
 				else
 				{
-					rectangleF_1.Inflate(-rectangleF_1.Width * (100f - float_1) / 200f - 1f, -1f);
-					rectangleF_2 = rectangleF_1;
-					rectangleF_2.Width = rectangleF_2.Width / 2f;
+					_rectangleF1.Inflate(-_rectangleF1.Width * (100f - _float1) / 200f - 1f, -1f);
+					_rectangleF2 = _rectangleF1;
+					_rectangleF2.Width = _rectangleF2.Width / 2f;
 					linearGradientMode = LinearGradientMode.Horizontal;
-					rectangleF_3.Width = rectangleF_3.Width / 2f;
-					rectangleF_4 = rectangleF_1;
-					rectangleF_4.Height = rectangleF_0.Top + int_1 / 2f;
-					sizeF_ = new SizeF(rectangleF_1.Width * float_0 / 50f, rectangleF_1.Width * float_0 / 50f);
+					_rectangleF3.Width = _rectangleF3.Width / 2f;
+					_rectangleF4 = _rectangleF1;
+					_rectangleF4.Height = _rectangleF0.Top + _int1 / 2f;
+					sizeF = new SizeF(_rectangleF1.Width * _float0 / 50f, _rectangleF1.Width * _float0 / 50f);
 				}
-				if (string_0.Length > 0 && (Capture || bool_7))
+				if (_string0.Length > 0 && (Capture || _bool7))
 				{
-					if (orientation_0 == Orientation.Horizontal)
+					if (_orientation0 == Orientation.Horizontal)
 					{
-						if (rectangleF_0.X != float_2)
+						if (_rectangleF0.X != _float2)
 						{
-							toolTip_0.Show(method_3(), this, (int)((float_2 = rectangleF_0.X) + rectangleF_0.Width * 5f / 4f), (int)rectangleF_0.Y);
+							_toolTip0.Show(method_3(), this, (int)((_float2 = _rectangleF0.X) + _rectangleF0.Width * 5f / 4f), (int)_rectangleF0.Y);
 						}
 					}
-					else if (rectangleF_0.Y != float_2)
+					else if (_rectangleF0.Y != _float2)
 					{
-						toolTip_0.Show(method_3(), this, (int)(rectangleF_0.X + rectangleF_0.Width * 5f / 4f), (int)(float_2 = rectangleF_0.Y));
+						_toolTip0.Show(method_3(), this, (int)(_rectangleF0.X + _rectangleF0.Width * 5f / 4f), (int)(_float2 = _rectangleF0.Y));
 					}
 				}
-				else if (string_0.Length > 0 && bool_6)
+				else if (_string0.Length > 0 && _bool6)
 				{
-					var text = bool_3 ? smethod_4(TimeSpan.FromSeconds(int_7), string_0) : string.Format(string_0, int_7);
-					if (orientation_0 == Orientation.Horizontal)
+					var text = _bool3 ? smethod_4(TimeSpan.FromSeconds(_int7), _string0) : string.Format(_string0, _int7);
+					if (_orientation0 == Orientation.Horizontal)
 					{
-						if (int_5 != float_2)
+						if (_int5 != _float2)
 						{
-							toolTip_0.Show(text, this, (int)((float_2 = int_5) + 25f), int_6);
+							_toolTip0.Show(text, this, (int)((_float2 = _int5) + 25f), _int6);
 						}
 					}
-					else if (int_5 != float_2)
+					else if (_int5 != _float2)
 					{
-						toolTip_0.Show(text, this, int_5 + 25, (int)(float_2 = int_6));
+						_toolTip0.Show(text, this, _int5 + 25, (int)(_float2 = _int6));
 					}
 				}
 				else
 				{
-					toolTip_0.Hide(this);
-					float_2 = -1f;
+					_toolTip0.Hide(this);
+					_float2 = -1f;
 				}
 				GraphicsPath graphicsPath;
-				if (graphicsPath_0 == null)
+				if (_graphicsPath0 == null)
 				{
-					graphicsPath = smethod_0(rectangleF_0, new SizeF(rectangleF_0.Width * sizeF_0.Width / 50f, rectangleF_0.Height * sizeF_0.Height / 50f));
+					graphicsPath = smethod_0(_rectangleF0, new SizeF(_rectangleF0.Width * _sizeF0.Width / 50f, _rectangleF0.Height * _sizeF0.Height / 50f));
 				}
 				else
 				{
-					graphicsPath = graphicsPath_0;
+					graphicsPath = _graphicsPath0;
 					var matrix = new Matrix();
-					matrix.Translate(rectangleF_0.Left - graphicsPath.GetBounds().Left, rectangleF_0.Top - graphicsPath.GetBounds().Top);
+					matrix.Translate(_rectangleF0.Left - graphicsPath.GetBounds().Left, _rectangleF0.Top - graphicsPath.GetBounds().Top);
 					graphicsPath.Transform(matrix);
 				}
-				paintEventArgs_0.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-				using (var graphicsPath2 = smethod_0(rectangleF_1, sizeF_))
+				paintEventArgs0.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+				using (var graphicsPath2 = smethod_0(_rectangleF1, sizeF))
 				{
-					using (var linearGradientBrush = new LinearGradientBrush(rectangleF_2, color_12, color_13, linearGradientMode))
+					using (var linearGradientBrush = new LinearGradientBrush(_rectangleF2, color12, color13, linearGradientMode))
 					{
 						linearGradientBrush.WrapMode = WrapMode.TileFlipXY;
-						paintEventArgs_0.Graphics.FillPath(linearGradientBrush, graphicsPath2);
-						using (var graphicsPath3 = smethod_0(rectangleF_4, sizeF_))
+						paintEventArgs0.Graphics.FillPath(linearGradientBrush, graphicsPath2);
+						using (var graphicsPath3 = smethod_0(_rectangleF4, sizeF))
 						{
-							using (var linearGradientBrush2 = new LinearGradientBrush(rectangleF_2, color_15, color_16, linearGradientMode))
+							using (var linearGradientBrush2 = new LinearGradientBrush(_rectangleF2, color15, color16, linearGradientMode))
 							{
 								linearGradientBrush2.WrapMode = WrapMode.TileFlipXY;
-								if (Capture && bool_5)
+								if (Capture && _bool5)
 								{
 									var region = new Region(graphicsPath3);
 									region.Exclude(graphicsPath);
-									paintEventArgs_0.Graphics.FillRegion(linearGradientBrush2, region);
+									paintEventArgs0.Graphics.FillRegion(linearGradientBrush2, region);
 								}
 								else
 								{
-									paintEventArgs_0.Graphics.FillPath(linearGradientBrush2, graphicsPath3);
+									paintEventArgs0.Graphics.FillPath(linearGradientBrush2, graphicsPath3);
 								}
 							}
 						}
-						using (var pen = new Pen(color_14, 0.5f))
+						using (var pen = new Pen(color14, 0.5f))
 						{
-							paintEventArgs_0.Graphics.DrawPath(pen, graphicsPath2);
+							paintEventArgs0.Graphics.DrawPath(pen, graphicsPath2);
 						}
 					}
 				}
-				var color = color_9;
-				var color2 = color_10;
-				if (Capture && bool_5)
+				var color = color9;
+				var color2 = color10;
+				if (Capture && _bool5)
 				{
-					color = Color.FromArgb(175, color_9);
-					color2 = Color.FromArgb(175, color_10);
+					color = Color.FromArgb(175, color9);
+					color2 = Color.FromArgb(175, color10);
 				}
-				using (var linearGradientBrush3 = new LinearGradientBrush(rectangleF_3, color, color2, linearGradientMode))
+				using (var linearGradientBrush3 = new LinearGradientBrush(_rectangleF3, color, color2, linearGradientMode))
 				{
 					linearGradientBrush3.WrapMode = WrapMode.TileFlipXY;
-					paintEventArgs_0.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-					var color3 = color_11;
-					if (bool_4 && (Capture || bool_7))
+					paintEventArgs0.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+					var color3 = color11;
+					if (_bool4 && (Capture || _bool7))
 					{
 						color3 = ControlPaint.Dark(color3);
 					}
 					using (var pen2 = new Pen(color3))
 					{
-						if (image_0 != null)
+						if (_image0 != null)
 						{
-							paintEventArgs_0.Graphics.DrawImage(image_0, rectangleF_0);
+							paintEventArgs0.Graphics.DrawImage(_image0, _rectangleF0);
 						}
 						else
 						{
-							paintEventArgs_0.Graphics.FillPath(linearGradientBrush3, graphicsPath);
-							paintEventArgs_0.Graphics.DrawPath(pen2, graphicsPath);
+							paintEventArgs0.Graphics.FillPath(linearGradientBrush3, graphicsPath);
+							paintEventArgs0.Graphics.DrawPath(pen2, graphicsPath);
 						}
 					}
 				}
-				if (Focused & bool_1)
+				if (Focused & _bool1)
 				{
-					using (var pen3 = new Pen(Color.FromArgb(200, color_14)))
+					using (var pen3 = new Pen(Color.FromArgb(200, color14)))
 					{
 						pen3.DashStyle = DashStyle.Dot;
-						RectangleF rectangleF_ = ClientRectangle;
-						rectangleF_.Width -= 2f;
-						rectangleF_.Height -= 1f;
-						rectangleF_.X += 1f;
-						using (var graphicsPath4 = smethod_0(rectangleF_, sizeF_))
+						RectangleF rectangleF = ClientRectangle;
+						rectangleF.Width -= 2f;
+						rectangleF.Height -= 1f;
+						rectangleF.X += 1f;
+						using (var graphicsPath4 = smethod_0(rectangleF, sizeF))
 						{
-							paintEventArgs_0.Graphics.DrawPath(pen3, graphicsPath4);
+							paintEventArgs0.Graphics.DrawPath(pen3, graphicsPath4);
 						}
 					}
 				}
@@ -568,15 +568,15 @@ namespace ns9
 		protected override void OnMouseEnter(EventArgs e)
 		{
 			base.OnMouseEnter(e);
-			bool_6 = true;
+			_bool6 = true;
 			Invalidate();
 		}
 
         protected override void OnMouseLeave(EventArgs e)
 		{
 			base.OnMouseLeave(e);
-			bool_6 = false;
-			bool_7 = false;
+			_bool6 = false;
+			_bool7 = false;
 			Invalidate();
 		}
 
@@ -586,13 +586,13 @@ namespace ns9
 			if (e.Button == MouseButtons.Left)
 			{
 				Capture = true;
-				if (scrollEventHandler_0 != null)
+				if (_scrollEventHandler0 != null)
 				{
-					scrollEventHandler_0(this, new ScrollEventArgs(ScrollEventType.ThumbTrack, int_2));
+					_scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.ThumbTrack, _int2));
 				}
-				if (eventHandler_0 != null)
+				if (_eventHandler0 != null)
 				{
-					eventHandler_0(this, new EventArgs());
+					_eventHandler0(this, new EventArgs());
 				}
 				OnMouseMove(e);
 			}
@@ -601,49 +601,49 @@ namespace ns9
         protected override void OnMouseMove(MouseEventArgs e)
 		{
 			base.OnMouseMove(e);
-			int_5 = e.X;
-			int_6 = e.Y;
-			bool_7 = smethod_3(e.Location, rectangleF_0);
+			_int5 = e.X;
+			_int6 = e.Y;
+			_bool7 = smethod_3(e.Location, _rectangleF0);
 			var location = e.Location;
-			var num = (orientation_0 == Orientation.Horizontal) ? location.X : location.Y;
-			var num2 = int_1 >> 1;
+			var num = (_orientation0 == Orientation.Horizontal) ? location.X : location.Y;
+			var num2 = _int1 >> 1;
 			num -= num2;
-			var num3 = (int_4 - int_3) / (float)(((orientation_0 == Orientation.Horizontal) ? ClientSize.Width : ClientSize.Height) - 2 * num2);
-			int_7 = (int)(num * num3 + int_3);
+			var num3 = (_int4 - _int3) / (float)(((_orientation0 == Orientation.Horizontal) ? ClientSize.Width : ClientSize.Height) - 2 * num2);
+			_int7 = (int)(num * num3 + _int3);
 			if (Capture & e.Button == MouseButtons.Left)
 			{
 				var type = ScrollEventType.ThumbPosition;
-				int_2 = int_7;
-				if (int_2 <= int_3)
+				_int2 = _int7;
+				if (_int2 <= _int3)
 				{
-					int_2 = int_3;
+					_int2 = _int3;
 					type = ScrollEventType.First;
 				}
-				else if (int_2 >= int_4)
+				else if (_int2 >= _int4)
 				{
-					int_2 = int_4;
+					_int2 = _int4;
 					type = ScrollEventType.Last;
 				}
-				if (scrollEventHandler_0 != null)
+				if (_scrollEventHandler0 != null)
 				{
-					scrollEventHandler_0(this, new ScrollEventArgs(type, int_2));
+					_scrollEventHandler0(this, new ScrollEventArgs(type, _int2));
 				}
-				if (eventHandler_0 != null)
+				if (_eventHandler0 != null)
 				{
-					eventHandler_0(this, new EventArgs());
+					_eventHandler0(this, new EventArgs());
 				}
 			}
-			if (int_7 < int_3)
+			if (_int7 < _int3)
 			{
-				int_7 = int_3;
+				_int7 = _int3;
 			}
-			else if (int_7 > int_4)
+			else if (_int7 > _int4)
 			{
-				int_7 = int_4;
+				_int7 = _int4;
 			}
-			if (bool_0)
+			if (_bool0)
 			{
-				int_7 = int_4 - int_7 + int_3;
+				_int7 = _int4 - _int7 + _int3;
 			}
 			Invalidate();
 		}
@@ -652,28 +652,28 @@ namespace ns9
 		{
 			base.OnMouseUp(e);
 			Capture = false;
-			bool_7 = smethod_3(e.Location, rectangleF_0);
-			if (scrollEventHandler_0 != null)
+			_bool7 = smethod_3(e.Location, _rectangleF0);
+			if (_scrollEventHandler0 != null)
 			{
-				scrollEventHandler_0(this, new ScrollEventArgs(ScrollEventType.EndScroll, int_2));
+				_scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.EndScroll, _int2));
 			}
-			if (eventHandler_0 != null)
+			if (_eventHandler0 != null)
 			{
-				eventHandler_0(this, new EventArgs());
+				_eventHandler0(this, new EventArgs());
 			}
 			Invalidate();
 		}
 
 		protected override void OnMouseWheel(MouseEventArgs e)
 		{
-			if (bool_2)
+			if (_bool2)
 			{
 				base.OnMouseWheel(e);
-				var num = e.Delta / SystemInformation.MouseWheelScrollDelta * (int_4 - int_3) / int_0;
+				var num = e.Delta / SystemInformation.MouseWheelScrollDelta * (_int4 - _int3) / _int0;
 				method_23(method_13() + num);
-				if (scrollEventHandler_0 != null)
+				if (_scrollEventHandler0 != null)
 				{
-					scrollEventHandler_0(this, new ScrollEventArgs(ScrollEventType.EndScroll, int_2));
+					_scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.EndScroll, _int2));
 				}
 			}
 		}
@@ -696,49 +696,49 @@ namespace ns9
 			switch (e.KeyCode)
 			{
 			case Keys.Prior:
-				method_23(method_13() + (int)uint_1);
-				if (scrollEventHandler_0 != null)
+				method_23(method_13() + (int)_uint1);
+				if (_scrollEventHandler0 != null)
 				{
-					scrollEventHandler_0(this, new ScrollEventArgs(ScrollEventType.LargeIncrement, method_13()));
+					_scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.LargeIncrement, method_13()));
 				}
 				break;
 			case Keys.Next:
-				method_23(method_13() - (int)uint_1);
-				if (scrollEventHandler_0 != null)
+				method_23(method_13() - (int)_uint1);
+				if (_scrollEventHandler0 != null)
 				{
-					scrollEventHandler_0(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, method_13()));
+					_scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, method_13()));
 				}
 				break;
 			case Keys.End:
-				method_14(int_4);
+				method_14(_int4);
 				break;
 			case Keys.Home:
-				method_14(int_3);
+				method_14(_int3);
 				break;
 			case Keys.Left:
 			case Keys.Down:
-				method_23(method_13() - (int)uint_0);
-				if (scrollEventHandler_0 != null)
+				method_23(method_13() - (int)_uint0);
+				if (_scrollEventHandler0 != null)
 				{
-					scrollEventHandler_0(this, new ScrollEventArgs(ScrollEventType.SmallDecrement, method_13()));
+					_scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.SmallDecrement, method_13()));
 				}
 				break;
 			case Keys.Up:
 			case Keys.Right:
-				method_23(method_13() + (int)uint_0);
-				if (scrollEventHandler_0 != null)
+				method_23(method_13() + (int)_uint0);
+				if (_scrollEventHandler0 != null)
 				{
-					scrollEventHandler_0(this, new ScrollEventArgs(ScrollEventType.SmallIncrement, method_13()));
+					_scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.SmallIncrement, method_13()));
 				}
 				break;
 			}
-			if (scrollEventHandler_0 != null && method_13() == int_3)
+			if (_scrollEventHandler0 != null && method_13() == _int3)
 			{
-				scrollEventHandler_0(this, new ScrollEventArgs(ScrollEventType.First, method_13()));
+				_scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.First, method_13()));
 			}
-			if (scrollEventHandler_0 != null && method_13() == int_4)
+			if (_scrollEventHandler0 != null && method_13() == _int4)
 			{
-				scrollEventHandler_0(this, new ScrollEventArgs(ScrollEventType.Last, method_13()));
+				_scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.Last, method_13()));
 			}
 			var point = PointToClient(Cursor.Position);
 			OnMouseMove(new MouseEventArgs(MouseButtons.None, 0, point.X, point.Y, 0));
@@ -754,62 +754,62 @@ namespace ns9
 			return true;
 		}
 
-		public static GraphicsPath smethod_0(RectangleF rectangleF_5, SizeF sizeF_1)
+		public static GraphicsPath smethod_0(RectangleF rectangleF5, SizeF sizeF1)
 		{
 			var graphicsPath = new GraphicsPath();
-			graphicsPath.AddLine(rectangleF_5.Left + sizeF_1.Width / 2f, rectangleF_5.Top, rectangleF_5.Right - sizeF_1.Width / 2f, rectangleF_5.Top);
-			graphicsPath.AddArc(rectangleF_5.Right - sizeF_1.Width, rectangleF_5.Top, sizeF_1.Width, sizeF_1.Height, 270f, 90f);
-			graphicsPath.AddLine(rectangleF_5.Right, rectangleF_5.Top + sizeF_1.Height / 2f, rectangleF_5.Right, rectangleF_5.Bottom - sizeF_1.Height / 2f);
-			graphicsPath.AddArc(rectangleF_5.Right - sizeF_1.Width, rectangleF_5.Bottom - sizeF_1.Height, sizeF_1.Width, sizeF_1.Height, 0f, 90f);
-			graphicsPath.AddLine(rectangleF_5.Right - sizeF_1.Width / 2f, rectangleF_5.Bottom, rectangleF_5.Left + sizeF_1.Width / 2f, rectangleF_5.Bottom);
-			graphicsPath.AddArc(rectangleF_5.Left, rectangleF_5.Bottom - sizeF_1.Height, sizeF_1.Width, sizeF_1.Height, 90f, 90f);
-			graphicsPath.AddLine(rectangleF_5.Left, rectangleF_5.Bottom - sizeF_1.Height / 2f, rectangleF_5.Left, rectangleF_5.Top + sizeF_1.Height / 2f);
-			graphicsPath.AddArc(rectangleF_5.Left, rectangleF_5.Top, sizeF_1.Width, sizeF_1.Height, 180f, 90f);
+			graphicsPath.AddLine(rectangleF5.Left + sizeF1.Width / 2f, rectangleF5.Top, rectangleF5.Right - sizeF1.Width / 2f, rectangleF5.Top);
+			graphicsPath.AddArc(rectangleF5.Right - sizeF1.Width, rectangleF5.Top, sizeF1.Width, sizeF1.Height, 270f, 90f);
+			graphicsPath.AddLine(rectangleF5.Right, rectangleF5.Top + sizeF1.Height / 2f, rectangleF5.Right, rectangleF5.Bottom - sizeF1.Height / 2f);
+			graphicsPath.AddArc(rectangleF5.Right - sizeF1.Width, rectangleF5.Bottom - sizeF1.Height, sizeF1.Width, sizeF1.Height, 0f, 90f);
+			graphicsPath.AddLine(rectangleF5.Right - sizeF1.Width / 2f, rectangleF5.Bottom, rectangleF5.Left + sizeF1.Width / 2f, rectangleF5.Bottom);
+			graphicsPath.AddArc(rectangleF5.Left, rectangleF5.Bottom - sizeF1.Height, sizeF1.Width, sizeF1.Height, 90f, 90f);
+			graphicsPath.AddLine(rectangleF5.Left, rectangleF5.Bottom - sizeF1.Height / 2f, rectangleF5.Left, rectangleF5.Top + sizeF1.Height / 2f);
+			graphicsPath.AddArc(rectangleF5.Left, rectangleF5.Top, sizeF1.Width, sizeF1.Height, 180f, 90f);
 			return graphicsPath;
 		}
 
-		public static Color[] smethod_1(Color[] color_9)
+		public static Color[] smethod_1(Color[] color9)
 		{
-			var array = new Color[color_9.Length];
-			for (var i = 0; i < color_9.Length; i++)
+			var array = new Color[color9.Length];
+			for (var i = 0; i < color9.Length; i++)
 			{
-				var num = (int)(color_9[i].R * 0.3 + color_9[i].G * 0.6 + color_9[i].B * 0.1);
+				var num = (int)(color9[i].R * 0.3 + color9[i].G * 0.6 + color9[i].B * 0.1);
 				array[i] = Color.FromArgb(-65793 * (255 - num) - 1);
 			}
 			return array;
 		}
 
-		public static Color[] smethod_2(Color[] color_9)
+		public static Color[] smethod_2(Color[] color9)
 		{
-			var array = new Color[color_9.Length];
-			for (var i = 0; i < color_9.Length; i++)
+			var array = new Color[color9.Length];
+			for (var i = 0; i < color9.Length; i++)
 			{
-				array[i] = ((color_9[i] == Color.FromKnownColor(KnownColor.Transparent)) ? color_9[i] : ControlPaint.Light(color_9[i]));
+				array[i] = ((color9[i] == Color.FromKnownColor(KnownColor.Transparent)) ? color9[i] : ControlPaint.Light(color9[i]));
 			}
 			return array;
 		}
 
-		private void method_23(int int_8)
+		private void method_23(int int8)
 		{
-			method_14((int_8 < int_3) ? int_3 : ((int_8 > int_4) ? int_4 : int_8));
+			method_14((int8 < _int3) ? _int3 : ((int8 > _int4) ? _int4 : int8));
 		}
 
-		private static bool smethod_3(Point point_0, RectangleF rectangleF_5)
+		private static bool smethod_3(Point point0, RectangleF rectangleF5)
 		{
-			return point_0.X > rectangleF_5.Left && point_0.X < rectangleF_5.Right && point_0.Y > rectangleF_5.Top && point_0.Y < rectangleF_5.Bottom;
+			return point0.X > rectangleF5.Left && point0.X < rectangleF5.Right && point0.Y > rectangleF5.Top && point0.Y < rectangleF5.Bottom;
 		}
 
-		private static string smethod_4(TimeSpan timeSpan_0, string string_1)
+		private static string smethod_4(TimeSpan timeSpan0, string string1)
 		{
-			if (string_1.Length == 0)
+			if (string1.Length == 0)
 			{
 				return string.Empty;
 			}
-			if (!(string_1 == "{0}"))
+			if (!(string1 == "{0}"))
 			{
-				return string.Format(class361_0, string_1, timeSpan_0);
+				return string.Format(Class3610, string1, timeSpan0);
 			}
-			return timeSpan_0.ToString();
+			return timeSpan0.ToString();
 		}
 
         protected override void Dispose(bool disposing)

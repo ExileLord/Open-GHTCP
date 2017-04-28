@@ -1,3 +1,3 @@
 using System;
 
-public delegate decimal Delegate206(object object_0, IFormatProvider iformatProvider_0);
+public delegate decimal Delegate206(object object0, IFormatProvider iformatProvider0);

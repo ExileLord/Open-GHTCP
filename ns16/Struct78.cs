@@ -4,14 +4,14 @@ namespace ns16
 {
 	public struct Struct78 : IComparable, ICloneable
 	{
-		public float float_0;
+		public float Float0;
 
-		public float float_1;
+		public float Float1;
 
-		public Struct78(Struct78 struct78_0)
+		public Struct78(Struct78 struct780)
 		{
-			float_0 = struct78_0.float_0;
-			float_1 = struct78_0.float_1;
+			Float0 = struct780.Float0;
+			Float1 = struct780.Float1;
 		}
 
 		object ICloneable.Clone()
@@ -21,27 +21,27 @@ namespace ns16
 
 		public float method_0()
 		{
-			var num = float_0;
-			var num2 = float_1;
+			var num = Float0;
+			var num2 = Float1;
 			return (float)Math.Sqrt(num * num + num2 * num2);
 		}
 
-		public static bool smethod_0(Struct78 struct78_0, Struct78 struct78_1)
+		public static bool smethod_0(Struct78 struct780, Struct78 struct781)
 		{
-			return struct78_0.float_0 == struct78_1.float_0 && struct78_0.float_1 == struct78_1.float_1;
+			return struct780.Float0 == struct781.Float0 && struct780.Float1 == struct781.Float1;
 		}
 
 		public override int GetHashCode()
 		{
-			return float_0.GetHashCode() ^ float_1.GetHashCode();
+			return Float0.GetHashCode() ^ Float1.GetHashCode();
 		}
 
 		public override bool Equals(object obj)
 		{
 			if (obj is Struct78)
 			{
-				var struct78_ = (Struct78)obj;
-				return smethod_0(this, struct78_);
+				var struct78 = (Struct78)obj;
+				return smethod_0(this, struct78);
 			}
 			return false;
 		}
@@ -73,7 +73,7 @@ namespace ns16
 
 		public override string ToString()
 		{
-			return string.Format("( {0}, {1}i )", float_0, float_1);
+			return string.Format("( {0}, {1}i )", Float0, Float1);
 		}
 	}
 }

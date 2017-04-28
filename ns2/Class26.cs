@@ -4,19 +4,19 @@ namespace ns2
 {
 	public class Class26 : Class24
 	{
-		public override int vmethod_3(OGGClass6 class71_0, object object_0, float[][] float_0, int[] int_1, int int_2)
+		public override int vmethod_3(OggClass6 class710, object object0, float[][] float0, int[] int1, int int2)
 		{
 			var num = 0;
-			for (var i = 0; i < int_2; i++)
+			for (var i = 0; i < int2; i++)
 			{
-				if (int_1[i] != 0)
+				if (int1[i] != 0)
 				{
-					float_0[num++] = float_0[i];
+					float0[num++] = float0[i];
 				}
 			}
 			if (num != 0)
 			{
-				return smethod_0(class71_0, object_0, float_0, num, 1);
+				return smethod_0(class710, object0, float0, num, 1);
 			}
 			return 0;
 		}

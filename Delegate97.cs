@@ -1,3 +1,3 @@
 using System;
 
-public delegate Delegate Delegate97(Delegate delegate_0, Delegate delegate_1);
+public delegate Delegate Delegate97(Delegate delegate0, Delegate delegate1);

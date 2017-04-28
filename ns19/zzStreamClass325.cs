@@ -2,47 +2,47 @@ using ns16;
 
 namespace ns19
 {
-	public class zzStreamClass325 : Class324
+	public class ZzStreamClass325 : Class324
 	{
-		public override void vmethod_0(Stream26 stream26_0)
+		public override void vmethod_0(Stream26 stream260)
 		{
-			byte_0 = stream26_0.ReadByte2();
-			int_0 = new[]
+			Byte0 = stream260.ReadByte2();
+			Int0 = new[]
 			{
-				stream26_0.ReadInt()
+				stream260.ReadInt()
 			};
-			var byte_ = byte_0;
+			var byte_ = Byte0;
 			switch (byte_)
 			{
 			case 1:
-				object_0 = stream26_0.ReadInt();
+				Object0 = stream260.ReadInt();
 				return;
 			case 2:
-				object_0 = stream26_0.ReadFloat();
+				Object0 = stream260.ReadFloat();
 				return;
 			case 3:
 				break;
 			case 4:
-				object_0 = stream26_0.ReadUnicodeString();
+				Object0 = stream260.ReadUnicodeString();
 				return;
 			default:
 				switch (byte_)
 				{
 				case 13:
-					int_0 = new[]
+					Int0 = new[]
 					{
-						int_0[0],
-						stream26_0.ReadInt()
+						Int0[0],
+						stream260.ReadInt()
 					};
 					return;
 				case 14:
 				case 16:
-					object_0 = stream26_0.ReadByte2();
+					Object0 = stream260.ReadByte2();
 					return;
 				case 15:
 					break;
 				case 17:
-					object_0 = stream26_0.ReadShort();
+					Object0 = stream260.ReadShort();
 					break;
 				default:
 					return;
@@ -51,40 +51,40 @@ namespace ns19
 			}
 		}
 
-		public override void vmethod_1(Stream26 stream26_0)
+		public override void vmethod_1(Stream26 stream260)
 		{
-			stream26_0.WriteByte2(byte_0);
-			stream26_0.WriteInt(int_0[0]);
-			var byte_ = byte_0;
+			stream260.WriteByte2(Byte0);
+			stream260.WriteInt(Int0[0]);
+			var byte_ = Byte0;
 			switch (byte_)
 			{
 			case 1:
-				stream26_0.WriteInt((int)object_0);
+				stream260.WriteInt((int)Object0);
 				return;
 			case 2:
-				stream26_0.WriteFloat((float)object_0);
+				stream260.WriteFloat((float)Object0);
 				return;
 			case 3:
 				break;
 			case 4:
-				stream26_0.WriteString((string)object_0, false);
-				stream26_0.WriteByte2(0);
-				stream26_0.WriteByte2(0);
+				stream260.WriteString((string)Object0, false);
+				stream260.WriteByte2(0);
+				stream260.WriteByte2(0);
 				return;
 			default:
 				switch (byte_)
 				{
 				case 13:
-					stream26_0.WriteInt(int_0[1]);
+					stream260.WriteInt(Int0[1]);
 					return;
 				case 14:
 				case 16:
-					stream26_0.WriteByte2((byte)object_0);
+					stream260.WriteByte2((byte)Object0);
 					return;
 				case 15:
 					break;
 				case 17:
-					stream26_0.WriteShort((short)object_0);
+					stream260.WriteShort((short)Object0);
 					break;
 				default:
 					return;

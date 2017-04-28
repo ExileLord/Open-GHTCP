@@ -2,15 +2,15 @@ namespace ns3
 {
 	public class Class61
 	{
-		public byte[] byte_0;
+		public byte[] Byte0;
 
-		private readonly Class44 class44_0 = new Class44();
+		private readonly Class44 _class440 = new Class44();
 
-		private readonly byte[] byte_1 = new byte[4];
+		private readonly byte[] _byte1 = new byte[4];
 
 		public int method_0()
 		{
-			byte_0 = null;
+			Byte0 = null;
 			return 0;
 		}
 	}

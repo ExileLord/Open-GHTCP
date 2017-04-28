@@ -2,7 +2,7 @@ using ns19;
 
 namespace ns20
 {
-	public class PairPointerNode : zzUnkNode300
+	public class PairPointerNode : ZzUnkNode300
 	{
 		public PairPointerNode()
 		{

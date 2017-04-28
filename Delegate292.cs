@@ -1,3 +1,3 @@
 using System.IO;
 
-public delegate DirectoryInfo Delegate292(object object_0);
+public delegate DirectoryInfo Delegate292(object object0);

@@ -5,59 +5,59 @@ using System.Windows.Forms;
 
 namespace ns14
 {
-	public class zzDrawingClass230
+	public class ZzDrawingClass230
 	{
-		public static class GDI
+		public static class Gdi
 		{
 			[DllImport("gdi32.dll", CallingConvention = CallingConvention.StdCall)]
-			public static extern int SetROP2(IntPtr intptr_0, int int_0);
+			public static extern int SetROP2(IntPtr intptr0, int int0);
 
 			[DllImport("user32.dll", CallingConvention = CallingConvention.StdCall)]
-			public static extern IntPtr GetDC(IntPtr intptr_0);
+			public static extern IntPtr GetDC(IntPtr intptr0);
 
 			[DllImport("user32.dll", CallingConvention = CallingConvention.StdCall)]
-			public static extern IntPtr ReleaseDC(IntPtr intptr_0, IntPtr intptr_1);
+			public static extern IntPtr ReleaseDC(IntPtr intptr0, IntPtr intptr1);
 
 			[DllImport("gdi32.dll", CallingConvention = CallingConvention.StdCall)]
-			public static extern bool MoveToEx(IntPtr intptr_0, int int_0, int int_1, IntPtr intptr_1);
+			public static extern bool MoveToEx(IntPtr intptr0, int int0, int int1, IntPtr intptr1);
 
 			[DllImport("gdi32.dll", CallingConvention = CallingConvention.StdCall)]
-			public static extern bool LineTo(IntPtr intptr_0, int int_0, int int_1);
+			public static extern bool LineTo(IntPtr intptr0, int int0, int int1);
 		}
 
-		private readonly ListBox listBox_0;
+		private readonly ListBox _listBox0;
 
-		private int int_0 = -1;
+		private int _int0 = -1;
 
-		public zzDrawingClass230(ListBox listBox_1)
+		public ZzDrawingClass230(ListBox listBox1)
 		{
-			listBox_0 = listBox_1;
+			_listBox0 = listBox1;
 		}
 
 		public int method_0()
 		{
-			return int_0;
+			return _int0;
 		}
 
 		public void method_1()
 		{
-			if (int_0 != -1)
+			if (_int0 != -1)
 			{
-				method_2(int_0);
-				int_0 = -1;
+				method_2(_int0);
+				_int0 = -1;
 			}
 		}
 
-		public void method_2(int int_1)
+		public void method_2(int int1)
 		{
 			Point point;
 			Point point2;
 			Point point3;
 			Point point4;
-			if (listBox_0.Sorted)
+			if (_listBox0.Sorted)
 			{
-				var r = listBox_0.ClientRectangle;
-				r = listBox_0.RectangleToScreen(r);
+				var r = _listBox0.ClientRectangle;
+				r = _listBox0.RectangleToScreen(r);
 				point = new Point(r.Left, r.Top);
 				point2 = new Point(r.Left, r.Bottom);
 				point3 = new Point(r.Left + 1, r.Top);
@@ -66,38 +66,38 @@ namespace ns14
 			else
 			{
 				Rectangle r;
-				if (listBox_0.Items.Count == 0)
+				if (_listBox0.Items.Count == 0)
 				{
-					r = listBox_0.ClientRectangle;
+					r = _listBox0.ClientRectangle;
 				}
-				else if (int_1 < listBox_0.Items.Count)
+				else if (int1 < _listBox0.Items.Count)
 				{
-					r = listBox_0.GetItemRectangle(int_1);
+					r = _listBox0.GetItemRectangle(int1);
 				}
 				else
 				{
-					r = listBox_0.GetItemRectangle(listBox_0.Items.Count - 1);
+					r = _listBox0.GetItemRectangle(_listBox0.Items.Count - 1);
 					r.Y += r.Height;
 				}
 				r.Y--;
-				if (r.Y < listBox_0.ClientRectangle.Y)
+				if (r.Y < _listBox0.ClientRectangle.Y)
 				{
-					r.Y = listBox_0.ClientRectangle.Y;
+					r.Y = _listBox0.ClientRectangle.Y;
 				}
-				r = listBox_0.RectangleToScreen(r);
+				r = _listBox0.RectangleToScreen(r);
 				point = new Point(r.Left, r.Top);
 				point2 = new Point(r.Right, r.Top);
 				point3 = new Point(r.Left, r.Top + 1);
 				point4 = new Point(r.Right, r.Top + 1);
 			}
-			var dC = GDI.GetDC(IntPtr.Zero);
-			GDI.SetROP2(dC, 6);
-			GDI.MoveToEx(dC, point.X, point.Y, IntPtr.Zero);
-			GDI.LineTo(dC, point2.X, point2.Y);
-			GDI.MoveToEx(dC, point3.X, point3.Y, IntPtr.Zero);
-			GDI.LineTo(dC, point4.X, point4.Y);
-			GDI.ReleaseDC(IntPtr.Zero, dC);
-			int_0 = int_1;
+			var dC = Gdi.GetDC(IntPtr.Zero);
+			Gdi.SetROP2(dC, 6);
+			Gdi.MoveToEx(dC, point.X, point.Y, IntPtr.Zero);
+			Gdi.LineTo(dC, point2.X, point2.Y);
+			Gdi.MoveToEx(dC, point3.X, point3.Y, IntPtr.Zero);
+			Gdi.LineTo(dC, point4.X, point4.Y);
+			Gdi.ReleaseDC(IntPtr.Zero, dC);
+			_int0 = int1;
 		}
 	}
 }

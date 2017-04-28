@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate Control.ControlCollection Delegate232(object object_0);
+public delegate Control.ControlCollection Delegate232(object object0);

@@ -1,1 +1,1 @@
-public delegate string Delegate401(byte[] byte_0);
+public delegate string Delegate401(byte[] byte0);

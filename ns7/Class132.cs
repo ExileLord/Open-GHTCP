@@ -4,20 +4,20 @@ namespace ns7
 {
 	public class Class132 : Class131
 	{
-		private readonly int int_1;
+		private readonly int _int1;
 
-		public Class132(Class144 class144_0, Class140 class140_1, Class136 class136_0, int int_2, int int_3) : base(class140_1, int_3)
+		public Class132(Class144 class1440, Class140 class1401, Class136 class1360, int int2, int int3) : base(class1401, int3)
 		{
-			int_1 = class144_0.vmethod_12(int_2);
-			for (var i = 0; i < class140_1.int_0; i++)
+			_int1 = class1440.vmethod_12(int2);
+			for (var i = 0; i < class1401.Int0; i++)
 			{
-				class136_0.vmethod_0()[i] = int_1;
+				class1360.vmethod_0()[i] = _int1;
 			}
 		}
 
 		public override string ToString()
 		{
-			return string.Concat("ChannelConstant: Value=", int_1, " WastedBits=", int_0);
+			return string.Concat("ChannelConstant: Value=", _int1, " WastedBits=", Int0);
 		}
 	}
 }

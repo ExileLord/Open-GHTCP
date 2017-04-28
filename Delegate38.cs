@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate void Delegate38(object object_0, Padding padding_0);
+public delegate void Delegate38(object object0, Padding padding0);

@@ -4,18 +4,18 @@ namespace ns6
 {
 	public struct Struct62 : IEquatable<Struct62>, IComparable<Struct62>
 	{
-		private readonly IntPtr intptr_0;
+		private readonly IntPtr _intptr0;
 
-		public static readonly Struct62 struct62_0 = new Struct62(IntPtr.Zero);
+		public static readonly Struct62 Struct620 = new Struct62(IntPtr.Zero);
 
 		public IntPtr method_0()
 		{
-			return intptr_0;
+			return _intptr0;
 		}
 
-		public Struct62(IntPtr intptr_1)
+		public Struct62(IntPtr intptr1)
 		{
-			intptr_0 = intptr_1;
+			_intptr0 = intptr1;
 		}
 
 		public override string ToString()
@@ -33,28 +33,28 @@ namespace ns6
 			return method_0().GetHashCode();
 		}
 
-		public static IntPtr smethod_0(Struct62 struct62_1)
+		public static IntPtr smethod_0(Struct62 struct621)
 		{
-			if (!smethod_2(struct62_1, struct62_0))
+			if (!smethod_2(struct621, Struct620))
 			{
 				return IntPtr.Zero;
 			}
-			return struct62_1.intptr_0;
+			return struct621._intptr0;
 		}
 
-		public static bool smethod_1(Struct62 struct62_1, Struct62 struct62_2)
+		public static bool smethod_1(Struct62 struct621, Struct62 struct622)
 		{
-			return struct62_1.Equals(struct62_2);
+			return struct621.Equals(struct622);
 		}
 
-		public static bool smethod_2(Struct62 struct62_1, Struct62 struct62_2)
+		public static bool smethod_2(Struct62 struct621, Struct62 struct622)
 		{
-			return !struct62_1.Equals(struct62_2);
+			return !struct621.Equals(struct622);
 		}
 
 		public int CompareTo(Struct62 other)
 		{
-			return (int)other.intptr_0 - (int)intptr_0;
+			return (int)other._intptr0 - (int)_intptr0;
 		}
 
 		public bool Equals(Struct62 other)

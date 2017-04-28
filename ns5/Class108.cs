@@ -136,174 +136,174 @@ namespace ns5
 		{
 		}
 
-		public static Struct22 struct22_0;
+		public static Struct22 Struct220;
 
-		public static Struct23 struct23_0;
+		public static Struct23 Struct230;
 
-		public static Struct24 struct24_0;
+		public static Struct24 Struct240;
 
-		public static Struct25 struct25_0;
+		public static Struct25 Struct250;
 
-		public static Struct24 struct24_1;
+		public static Struct24 Struct241;
 
-		public static Struct25 struct25_1;
+		public static Struct25 Struct251;
 
-		public static Struct24 struct24_2;
+		public static Struct24 Struct242;
 
-		public static Struct25 struct25_2;
+		public static Struct25 Struct252;
 
-		public static Struct24 struct24_3;
+		public static Struct24 Struct243;
 
-		public static Struct25 struct25_3;
+		public static Struct25 Struct253;
 
-		public static Struct24 struct24_4;
+		public static Struct24 Struct244;
 
-		public static Struct25 struct25_4;
+		public static Struct25 Struct254;
 
-		public static Struct24 struct24_5;
+		public static Struct24 Struct245;
 
-		public static Struct25 struct25_5;
+		public static Struct25 Struct255;
 
-		public static Struct24 struct24_6;
+		public static Struct24 Struct246;
 
-		public static Struct25 struct25_6;
+		public static Struct25 Struct256;
 
-		public static Struct24 struct24_7;
+		public static Struct24 Struct247;
 
-		public static Struct25 struct25_7;
+		public static Struct25 Struct257;
 
-		public static Struct24 struct24_8;
+		public static Struct24 Struct248;
 
-		public static Struct25 struct25_8;
+		public static Struct25 Struct258;
 
-		public static Struct26 struct26_0;
+		public static Struct26 Struct260;
 
-		public static Struct27 struct27_0;
+		public static Struct27 Struct270;
 
-		public static Struct28 struct28_0;
+		public static Struct28 Struct280;
 
-		public static Struct29 struct29_0;
+		public static Struct29 Struct290;
 
-		public static Struct27 struct27_1;
+		public static Struct27 Struct271;
 
-		public static Struct27 struct27_2;
+		public static Struct27 Struct272;
 
-		public static Struct30 struct30_0;
+		public static Struct30 Struct300;
 
-		public static Struct31 struct31_0;
+		public static Struct31 Struct310;
 
-		public static Struct31 struct31_1;
+		public static Struct31 Struct311;
 
-		public static Struct32 struct32_0;
+		public static Struct32 Struct320;
 
-		public static Struct32 struct32_1;
+		public static Struct32 Struct321;
 
-		public static Struct33 struct33_0;
+		public static Struct33 Struct330;
 
-		public static Struct33 struct33_1;
+		public static Struct33 Struct331;
 
-		public static Struct33 struct33_2;
+		public static Struct33 Struct332;
 
-		public static Struct33 struct33_3;
+		public static Struct33 Struct333;
 
-		public static Struct34 struct34_0;
+		public static Struct34 Struct340;
 
-		public static Struct29 struct29_1;
+		public static Struct29 Struct291;
 
-		public static Struct35 struct35_0;
+		public static Struct35 Struct350;
 
-		public static Struct35 struct35_1;
+		public static Struct35 Struct351;
 
-		public static Struct36 struct36_0;
+		public static Struct36 Struct360;
 
-		public static Struct37 struct37_0;
+		public static Struct37 Struct370;
 
-		public static Struct38 struct38_0;
+		public static Struct38 Struct380;
 
-		public static Struct30 struct30_1;
+		public static Struct30 Struct301;
 
-		public static Struct30 struct30_2;
+		public static Struct30 Struct302;
 
-		public static Struct30 struct30_3;
+		public static Struct30 Struct303;
 
-		public static Struct30 struct30_4;
+		public static Struct30 Struct304;
 
-		public static Struct30 struct30_5;
+		public static Struct30 Struct305;
 
-		public static Struct30 struct30_6;
+		public static Struct30 Struct306;
 
-		public static Struct30 struct30_7;
+		public static Struct30 Struct307;
 
-		public static Struct30 struct30_8;
+		public static Struct30 Struct308;
 
-		public static Struct32 struct32_2;
+		public static Struct32 Struct322;
 
-		public static Struct32 struct32_3;
+		public static Struct32 Struct323;
 
-		public static Struct32 struct32_4;
+		public static Struct32 Struct324;
 
-		public static Struct32 struct32_5;
+		public static Struct32 Struct325;
 
-		public static Struct39 struct39_0;
+		public static Struct39 Struct390;
 
-		public static Struct39 struct39_1;
+		public static Struct39 Struct391;
 
-		public static Struct39 struct39_2;
+		public static Struct39 Struct392;
 
-		public static Struct39 struct39_3;
+		public static Struct39 Struct393;
 
-		public static Struct30 struct30_9;
+		public static Struct30 Struct309;
 
-		public static Struct30 struct30_10;
+		public static Struct30 Struct3010;
 
-		public static Struct30 struct30_11;
+		public static Struct30 Struct3011;
 
-		public static Struct30 struct30_12;
+		public static Struct30 Struct3012;
 
-		public static Struct25 struct25_9;
+		public static Struct25 Struct259;
 
-		public static Struct40 struct40_0;
+		public static Struct40 Struct400;
 
-		public static Struct40 struct40_1;
+		public static Struct40 Struct401;
 
-		public static Struct41 struct41_0;
+		public static Struct41 Struct410;
 
-		public static Struct41 struct41_1;
+		public static Struct41 Struct411;
 
-		public static Struct42 struct42_0;
+		public static Struct42 Struct420;
 
-		public static Struct42 struct42_1;
+		public static Struct42 Struct421;
 
-		public static Struct42 struct42_2;
+		public static Struct42 Struct422;
 
-		public static Struct43 struct43_0;
+		public static Struct43 Struct430;
 
-		public static Struct43 struct43_1;
+		public static Struct43 Struct431;
 
-		public static Struct43 struct43_2;
+		public static Struct43 Struct432;
 
-		public static Struct44 struct44_0;
+		public static Struct44 Struct440;
 
-		public static Struct44 struct44_1;
+		public static Struct44 Struct441;
 
-		public static Struct44 struct44_2;
+		public static Struct44 Struct442;
 
-		public static Struct45 struct45_0;
+		public static Struct45 Struct450;
 
-		public static Struct41 struct41_2;
+		public static Struct41 Struct412;
 
-		public static Struct41 struct41_3;
+		public static Struct41 Struct413;
 
-		public static Struct32 struct32_6;
+		public static Struct32 Struct326;
 
-		public static Struct46 struct46_0;
+		public static Struct46 Struct460;
 
-		public static Struct39 struct39_4;
+		public static Struct39 Struct394;
 
-		public static Struct39 struct39_5;
+		public static Struct39 Struct395;
 
-		public static Struct39 struct39_6;
+		public static Struct39 Struct396;
 
-		public static Struct47 struct47_0;
+		public static Struct47 Struct470;
 	}
 }

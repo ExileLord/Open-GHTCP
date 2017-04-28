@@ -6,9 +6,9 @@ using SharpAudio.ASC.Mp3.Decoding;
 
 namespace ns5
 {
-	public class zzSoundClass
+	public class ZzSoundClass
 	{
-		public static readonly int[][] int_0 = {
+		public static readonly int[][] Int0 = {
 			new[]
 			{
 				22050,
@@ -32,60 +32,60 @@ namespace ns5
 			}
 		};
 
-		private int int_1;
+		private int _int1;
 
-		private int int_2;
+		private int _int2;
 
-		private int int_3;
+		private int _int3;
 
-		private int int_4;
+		private int _int4;
 
-		private int int_5;
+		private int _int5;
 
-		private Enum3 enum3_0;
+		private Enum3 _enum30;
 
-		private Enum5 enum5_0;
+		private Enum5 _enum50;
 
-		private int int_6;
+		private int _int6;
 
-		private int int_7;
+		private int _int7;
 
-		private int int_8;
+		private int _int8;
 
-		private bool bool_0;
+		private bool _bool0;
 
-		private bool bool_1;
+		private bool _bool1;
 
-		private readonly double[] double_0 = {
+		private readonly double[] _double0 = {
 			-1.0,
 			384.0,
 			1152.0,
 			1152.0
 		};
 
-		private bool bool_2;
+		private bool _bool2;
 
-		private int int_9;
+		private int _int9;
 
-		private int int_10;
+		private int _int10;
 
-		private int int_11;
+		private int _int11;
 
-		private Class83 class83_0;
+		private Class83 _class830;
 
-		private byte byte_0;
+		private byte _byte0;
 
-		private Class101 class101_0;
+		private Class101 _class1010;
 
-		public short short_0;
+		public short Short0;
 
-		public int int_12;
+		public int Int12;
 
-		public int int_13;
+		public int Int13;
 
-		private int int_14 = -1;
+		private int _int14 = -1;
 
-		public static readonly int[,,] int_15 = {
+		public static readonly int[,,] Int15 = {
 			{
 				{
 					0,
@@ -256,7 +256,7 @@ namespace ns5
 			}
 		};
 
-		public static readonly string[][][] string_0 = {
+		public static readonly string[][][] String0 = {
 			new[]
 			{
 				new[]
@@ -441,10 +441,10 @@ namespace ns5
 
 		private void method_0()
 		{
-			byte_0 = Class82.byte_1;
+			_byte0 = Class82.Byte1;
 		}
 
-		public zzSoundClass()
+		public ZzSoundClass()
 		{
 			method_0();
 		}
@@ -471,59 +471,59 @@ namespace ns5
 			return stringBuilder.ToString();
 		}
 
-		public void method_1(Class82 class82_0, Class101[] class101_1)
+		public void method_1(Class82 class820, Class101[] class1011)
 		{
 			var flag = false;
 			while (true)
 			{
-				var num = class82_0.method_9(byte_0);
-				int_14 = num;
-				if (byte_0 == Class82.byte_1)
+				var num = class820.method_9(_byte0);
+				_int14 = num;
+				if (_byte0 == Class82.Byte1)
 				{
-					enum3_0 = (Enum3)(num >> 19 & 1);
+					_enum30 = (Enum3)(num >> 19 & 1);
 					if ((num >> 20 & 1) == 0)
 					{
-						if (enum3_0 != Enum3.const_0)
+						if (_enum30 != Enum3.Const0)
 						{
 							goto IL_1EE;
 						}
-						enum3_0 = Enum3.const_2;
+						_enum30 = Enum3.Const2;
 					}
-					if ((int_6 = (num >> 10 & 3)) == 3)
+					if ((_int6 = (num >> 10 & 3)) == 3)
 					{
 						goto Block_20;
 					}
 				}
-				int_1 = (4 - (num >> 17) & 3);
-				int_2 = (num >> 16 & 1);
-				int_3 = (num >> 12 & 15);
-				int_4 = (num >> 9 & 1);
-				enum5_0 = (Enum5)(num >> 6 & 3);
-				int_5 = (num >> 4 & 3);
-				if (enum5_0 == Enum5.const_1)
+				_int1 = (4 - (num >> 17) & 3);
+				_int2 = (num >> 16 & 1);
+				_int3 = (num >> 12 & 15);
+				_int4 = (num >> 9 & 1);
+				_enum50 = (Enum5)(num >> 6 & 3);
+				_int5 = (num >> 4 & 3);
+				if (_enum50 == Enum5.Const1)
 				{
-					int_8 = (int_5 << 2) + 4;
+					_int8 = (_int5 << 2) + 4;
 				}
 				else
 				{
-					int_8 = 0;
+					_int8 = 0;
 				}
 				if ((num >> 3 & 1) == 1)
 				{
-					bool_0 = true;
+					_bool0 = true;
 				}
 				if ((num >> 2 & 1) == 1)
 				{
-					bool_1 = true;
+					_bool1 = true;
 				}
-				if (int_1 == 1)
+				if (_int1 == 1)
 				{
-					int_7 = 32;
+					_int7 = 32;
 				}
 				else
 				{
-					var num2 = int_3;
-					if (enum5_0 != Enum5.const_3)
+					var num2 = _int3;
+					if (_enum50 != Enum5.Const3)
 					{
 						if (num2 == 4)
 						{
@@ -538,40 +538,40 @@ namespace ns5
 					{
 						if (num2 != 2)
 						{
-							if (int_6 != 1 && (num2 < 3 || num2 > 5))
+							if (_int6 != 1 && (num2 < 3 || num2 > 5))
 							{
-								int_7 = 30;
+								_int7 = 30;
 								goto IL_102;
 							}
-							int_7 = 27;
+							_int7 = 27;
 							goto IL_102;
 						}
 					}
-					int_7 = ((int_6 == 2) ? 12 : 8);
+					_int7 = ((_int6 == 2) ? 12 : 8);
 				}
 				IL_102:
-				if (int_8 > int_7)
+				if (_int8 > _int7)
 				{
-					int_8 = int_7;
+					_int8 = _int7;
 				}
 				method_15();
-				var num3 = class82_0.method_11(int_12);
-				if (int_12 >= 0 && num3 != int_12)
+				var num3 = class820.method_11(Int12);
+				if (Int12 >= 0 && num3 != Int12)
 				{
 					break;
 				}
-				if (class82_0.method_8(byte_0))
+				if (class820.method_8(_byte0))
 				{
-					if (byte_0 == Class82.byte_1)
+					if (_byte0 == Class82.Byte1)
 					{
-						byte_0 = Class82.byte_2;
-						class82_0.method_14(num & -521024);
+						_byte0 = Class82.Byte2;
+						class820.method_14(num & -521024);
 					}
 					flag = true;
 				}
 				else
 				{
-					class82_0.method_6();
+					class820.method_6();
 				}
 				if (flag)
 				{
@@ -580,21 +580,21 @@ namespace ns5
 			}
 			throw new BitstreamException(BitstreamError.InvalidFrame);
 			Block_17:
-			class82_0.method_12();
-			if (int_2 == 0)
+			class820.method_12();
+			if (_int2 == 0)
 			{
-				short_0 = (short)class82_0.method_13(16);
-				if (class101_0 == null)
+				Short0 = (short)class820.method_13(16);
+				if (_class1010 == null)
 				{
-					class101_0 = new Class101();
+					_class1010 = new Class101();
 				}
 				var num=0;
-				class101_0.method_0(num, 16);
-				class101_1[0] = class101_0;
+				_class1010.method_0(num, 16);
+				class1011[0] = _class1010;
 			}
 			else
 			{
-				class101_1[0] = null;
+				class1011[0] = null;
 			}
 			return;
 			Block_20:
@@ -603,72 +603,72 @@ namespace ns5
 			throw new BitstreamException(BitstreamError.UnknownError);
 		}
 
-		public void method_2(byte[] byte_1)
+		public void method_2(byte[] byte1)
 		{
 			int num;
-			if (enum3_0 == Enum3.const_1)
+			if (_enum30 == Enum3.Const1)
 			{
-				num = ((enum5_0 == Enum5.const_3) ? 17 : 32);
+				num = ((_enum50 == Enum5.Const3) ? 17 : 32);
 			}
 			else
 			{
-				num = ((enum5_0 == Enum5.const_3) ? 9 : 17);
+				num = ((_enum50 == Enum5.Const3) ? 9 : 17);
 			}
 			try
 			{
-				var @string = Encoding.UTF8.GetString(byte_1, num, 4);
+				var @string = Encoding.UTF8.GetString(byte1, num, 4);
 				if (@string.Equals("Xing") || @string.Equals("Info"))
 				{
-					bool_2 = true;
-					int_9 = -1;
-					int_11 = -1;
-					int_10 = -1;
+					_bool2 = true;
+					_int9 = -1;
+					_int11 = -1;
+					_int10 = -1;
 					var array = new byte[100];
-					var num2 = smethod_0(BitConverter.ToInt32(byte_1, num + 4));
+					var num2 = smethod_0(BitConverter.ToInt32(byte1, num + 4));
 					var num3 = 8;
 					if ((num2 & 1) != 0)
 					{
-						int_9 = smethod_0(BitConverter.ToInt32(byte_1, num + num3));
+						_int9 = smethod_0(BitConverter.ToInt32(byte1, num + num3));
 						num3 += 4;
 					}
 					if ((num2 & 2) != 0)
 					{
-						int_11 = smethod_0(BitConverter.ToInt32(byte_1, num + num3));
+						_int11 = smethod_0(BitConverter.ToInt32(byte1, num + num3));
 						num3 += 4;
 					}
 					if ((num2 & 4) != 0)
 					{
-						Buffer.BlockCopy(byte_1, num + num3, array, 0, array.Length);
+						Buffer.BlockCopy(byte1, num + num3, array, 0, array.Length);
 						num3 += array.Length;
-						class83_0 = new Class83(array, int_11);
+						_class830 = new Class83(array, _int11);
 					}
 					if ((num2 & 8) != 0)
 					{
-						int_10 = smethod_0(BitConverter.ToInt32(byte_1, num + num3));
+						_int10 = smethod_0(BitConverter.ToInt32(byte1, num + num3));
 						num3 += 4;
 					}
 				}
 			}
-			catch (IndexOutOfRangeException exception_)
+			catch (IndexOutOfRangeException exception)
 			{
-				throw new BitstreamException("Xing Header Corrupted", exception_);
+				throw new BitstreamException("Xing Header Corrupted", exception);
 			}
 			num = 32;
 			try
 			{
-				if (Encoding.UTF8.GetString(byte_1, num, 4).Equals("VBRI"))
+				if (Encoding.UTF8.GetString(byte1, num, 4).Equals("VBRI"))
 				{
-					bool_2 = true;
-					int_9 = -1;
-					int_11 = -1;
-					int_10 = -1;
-					int_10 = smethod_1(BitConverter.ToInt16(byte_1, num + 8));
-					int_11 = smethod_0(BitConverter.ToInt32(byte_1, num + 10));
-					int_9 = smethod_0(BitConverter.ToInt32(byte_1, num + 14));
-					var array2 = new int[smethod_1(BitConverter.ToInt16(byte_1, num + 18))];
-					var num4 = smethod_1(BitConverter.ToInt16(byte_1, num + 20));
-					var num5 = smethod_1(BitConverter.ToInt16(byte_1, num + 22));
-					var num6 = smethod_1(BitConverter.ToInt16(byte_1, num + 24));
+					_bool2 = true;
+					_int9 = -1;
+					_int11 = -1;
+					_int10 = -1;
+					_int10 = smethod_1(BitConverter.ToInt16(byte1, num + 8));
+					_int11 = smethod_0(BitConverter.ToInt32(byte1, num + 10));
+					_int9 = smethod_0(BitConverter.ToInt32(byte1, num + 14));
+					var array2 = new int[smethod_1(BitConverter.ToInt16(byte1, num + 18))];
+					var num4 = smethod_1(BitConverter.ToInt16(byte1, num + 20));
+					var num5 = smethod_1(BitConverter.ToInt16(byte1, num + 22));
+					var num6 = smethod_1(BitConverter.ToInt16(byte1, num + 24));
 					var num7 = 26;
 					switch (num5)
 					{
@@ -677,7 +677,7 @@ namespace ns5
 						var i = 0;
 						while (i < array2.Length)
 						{
-							array2[i] = byte_1[num + num7] * num4;
+							array2[i] = byte1[num + num7] * num4;
 							i++;
 							num7++;
 						}
@@ -688,7 +688,7 @@ namespace ns5
 						var j = 0;
 						while (j < array2.Length)
 						{
-							array2[j] = smethod_1(BitConverter.ToInt16(byte_1, num + num7)) * num4;
+							array2[j] = smethod_1(BitConverter.ToInt16(byte1, num + num7)) * num4;
 							j++;
 							num7 += 2;
 						}
@@ -699,7 +699,7 @@ namespace ns5
 						var k = 0;
 						while (k < array2.Length)
 						{
-							array2[k] = Struct8.smethod_0(Struct8.smethod_3(byte_1, num + num7, true)) * num4;
+							array2[k] = Struct8.smethod_0(Struct8.smethod_3(byte1, num + num7, true)) * num4;
 							k++;
 							num7 += 3;
 						}
@@ -710,7 +710,7 @@ namespace ns5
 						var l = 0;
 						while (l < array2.Length)
 						{
-							array2[l] = smethod_0(BitConverter.ToInt32(byte_1, num + num7)) * num4;
+							array2[l] = smethod_0(BitConverter.ToInt32(byte1, num + num7)) * num4;
 							l++;
 							num7 += 4;
 						}
@@ -719,155 +719,155 @@ namespace ns5
 					default:
 						throw new Exception("Size per table entry in bytes - is bigger then 4: " + num5);
 					}
-					class83_0 = new Class83(array2, num6);
+					_class830 = new Class83(array2, num6);
 				}
 			}
-			catch (IndexOutOfRangeException exception_2)
+			catch (IndexOutOfRangeException exception2)
 			{
-				throw new BitstreamException("VBRI Header Corrupted", exception_2);
+				throw new BitstreamException("VBRI Header Corrupted", exception2);
 			}
 		}
 
-		private static int smethod_0(int int_16)
+		private static int smethod_0(int int16)
 		{
 			if (!BitConverter.IsLittleEndian)
 			{
-				return int_16;
+				return int16;
 			}
-			return (smethod_1((short)int_16) & 65535) << 16 | (smethod_1((short)(int_16 >> 16)) & 65535);
+			return (smethod_1((short)int16) & 65535) << 16 | (smethod_1((short)(int16 >> 16)) & 65535);
 		}
 
-		private static short smethod_1(short short_1)
+		private static short smethod_1(short short1)
 		{
 			if (!BitConverter.IsLittleEndian)
 			{
-				return short_1;
+				return short1;
 			}
-			return (short)((short_1 & 255) << 8 | (short_1 >> 8 & 255));
+			return (short)((short1 & 255) << 8 | (short1 >> 8 & 255));
 		}
 
 		public Enum3 method_3()
 		{
-			return enum3_0;
+			return _enum30;
 		}
 
 		public int method_4()
 		{
-			return int_1;
+			return _int1;
 		}
 
 		public int method_5()
 		{
-			return int_3;
+			return _int3;
 		}
 
 		public int method_6()
 		{
-			return int_6;
+			return _int6;
 		}
 
 		public int method_7()
 		{
-			return int_0[(int)enum3_0][int_6];
+			return Int0[(int)_enum30][_int6];
 		}
 
 		public Enum5 method_8()
 		{
-			return enum5_0;
+			return _enum50;
 		}
 
 		public bool method_9()
 		{
-			return int_2 == 0;
+			return _int2 == 0;
 		}
 
 		public bool method_10()
 		{
-			return bool_2;
+			return _bool2;
 		}
 
 		public Class83 method_11()
 		{
-			return class83_0;
+			return _class830;
 		}
 
 		public bool method_12()
 		{
-			return short_0 == class101_0.method_1();
+			return Short0 == _class1010.method_1();
 		}
 
 		public int method_13()
 		{
-			return int_13;
+			return Int13;
 		}
 
 		public int method_14()
 		{
-			return int_5;
+			return _int5;
 		}
 
 		public int method_15()
 		{
-			if (int_1 == 1)
+			if (_int1 == 1)
 			{
-				int_12 = 12 * int_15[(int)enum3_0, 0, int_3] / int_0[(int)enum3_0][int_6];
-				if (int_4 != 0)
+				Int12 = 12 * Int15[(int)_enum30, 0, _int3] / Int0[(int)_enum30][_int6];
+				if (_int4 != 0)
 				{
-					int_12++;
+					Int12++;
 				}
-				int_12 <<= 2;
-				int_13 = 0;
+				Int12 <<= 2;
+				Int13 = 0;
 			}
 			else
 			{
-				int_12 = 144 * int_15[(int)enum3_0, int_1 - 1, int_3] / int_0[(int)enum3_0][int_6];
-				if (enum3_0 == Enum3.const_0 || enum3_0 == Enum3.const_2)
+				Int12 = 144 * Int15[(int)_enum30, _int1 - 1, _int3] / Int0[(int)_enum30][_int6];
+				if (_enum30 == Enum3.Const0 || _enum30 == Enum3.Const2)
 				{
-					int_12 >>= 1;
+					Int12 >>= 1;
 				}
-				if (int_4 != 0)
+				if (_int4 != 0)
 				{
-					int_12++;
+					Int12++;
 				}
-				if (int_1 == 3)
+				if (_int1 == 3)
 				{
-					if (enum3_0 == Enum3.const_1)
+					if (_enum30 == Enum3.Const1)
 					{
-						int_13 = int_12 - ((enum5_0 == Enum5.const_3) ? 17 : 32) - ((int_2 != 0) ? 0 : 2) - 4;
+						Int13 = Int12 - ((_enum50 == Enum5.Const3) ? 17 : 32) - ((_int2 != 0) ? 0 : 2) - 4;
 					}
 					else
 					{
-						int_13 = int_12 - ((enum5_0 == Enum5.const_3) ? 9 : 17) - ((int_2 != 0) ? 0 : 2) - 4;
+						Int13 = Int12 - ((_enum50 == Enum5.Const3) ? 9 : 17) - ((_int2 != 0) ? 0 : 2) - 4;
 					}
 				}
 				else
 				{
-					int_13 = 0;
+					Int13 = 0;
 				}
 			}
-			int_12 -= 4;
-			return int_12;
+			Int12 -= 4;
+			return Int12;
 		}
 
-		public int method_16(int int_16)
+		public int method_16(int int16)
 		{
-			if (bool_2)
+			if (_bool2)
 			{
-				return int_9;
+				return _int9;
 			}
-			if (int_12 + 4 - int_4 == 0)
+			if (Int12 + 4 - _int4 == 0)
 			{
 				return 0;
 			}
-			return int_16 / (int_12 + 4 - int_4);
+			return int16 / (Int12 + 4 - _int4);
 		}
 
 		public double method_17()
 		{
-			if (bool_2)
+			if (_bool2)
 			{
-				var num = double_0[method_4()] / method_7();
-				if (enum3_0 == Enum3.const_0 || enum3_0 == Enum3.const_2)
+				var num = _double0[method_4()] / method_7();
+				if (_enum30 == Enum3.Const0 || _enum30 == Enum3.Const2)
 				{
 					num /= 2.0;
 				}
@@ -890,17 +890,17 @@ namespace ns5
 					36f
 				}
 			};
-			return array[int_1 - 1, int_6];
+			return array[_int1 - 1, _int6];
 		}
 
-		public double method_18(int int_16)
+		public double method_18(int int16)
 		{
-			return method_16(int_16) * method_17();
+			return method_16(int16) * method_17();
 		}
 
 		public string method_19()
 		{
-			switch (int_1)
+			switch (_int1)
 			{
 			case 1:
 				return "I";
@@ -915,52 +915,52 @@ namespace ns5
 
 		public string method_20()
 		{
-			if (bool_2)
+			if (_bool2)
 			{
 				return Convert.ToString(method_21() / 1000) + " kb/s";
 			}
-			return string_0[(int)enum3_0][int_1 - 1][int_3];
+			return String0[(int)_enum30][_int1 - 1][_int3];
 		}
 
 		public int method_21()
 		{
-			if (bool_2)
+			if (_bool2)
 			{
-				return (int)(int_11 * 8 / (method_17() * int_9)) * 1000;
+				return (int)(_int11 * 8 / (method_17() * _int9)) * 1000;
 			}
-			return int_15[(int)enum3_0, int_1 - 1, int_3];
+			return Int15[(int)_enum30, _int1 - 1, _int3];
 		}
 
 		public string method_22()
 		{
-			switch (int_6)
+			switch (_int6)
 			{
 			case 0:
-				if (enum3_0 == Enum3.const_1)
+				if (_enum30 == Enum3.Const1)
 				{
 					return "44.1 kHz";
 				}
-				if (enum3_0 == Enum3.const_0)
+				if (_enum30 == Enum3.Const0)
 				{
 					return "22.05 kHz";
 				}
 				return "11.025 kHz";
 			case 1:
-				if (enum3_0 == Enum3.const_1)
+				if (_enum30 == Enum3.Const1)
 				{
 					return "48 kHz";
 				}
-				if (enum3_0 == Enum3.const_0)
+				if (_enum30 == Enum3.Const0)
 				{
 					return "24 kHz";
 				}
 				return "12 kHz";
 			case 2:
-				if (enum3_0 == Enum3.const_1)
+				if (_enum30 == Enum3.Const1)
 				{
 					return "32 kHz";
 				}
-				if (enum3_0 == Enum3.const_0)
+				if (_enum30 == Enum3.Const0)
 				{
 					return "16 kHz";
 				}
@@ -972,15 +972,15 @@ namespace ns5
 
 		public string method_23()
 		{
-			switch (enum5_0)
+			switch (_enum50)
 			{
-			case Enum5.const_0:
+			case Enum5.Const0:
 				return "Stereo";
-			case Enum5.const_1:
+			case Enum5.Const1:
 				return "Joint stereo";
-			case Enum5.const_2:
+			case Enum5.Const2:
 				return "Dual channel";
-			case Enum5.const_3:
+			case Enum5.Const3:
 				return "Single channel";
 			default:
 				return null;
@@ -989,13 +989,13 @@ namespace ns5
 
 		public string method_24()
 		{
-			switch (enum3_0)
+			switch (_enum30)
 			{
-			case Enum3.const_0:
+			case Enum3.Const0:
 				return "MPEG-2 LSF";
-			case Enum3.const_1:
+			case Enum3.Const1:
 				return "MPEG-1";
-			case Enum3.const_2:
+			case Enum3.Const2:
 				return "MPEG-2.5 LSF";
 			default:
 				return null;
@@ -1004,12 +1004,12 @@ namespace ns5
 
 		public int method_25()
 		{
-			return int_7;
+			return _int7;
 		}
 
 		public int method_26()
 		{
-			return int_8;
+			return _int8;
 		}
 	}
 }

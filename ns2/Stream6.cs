@@ -10,17 +10,17 @@ namespace ns2
 {
 	public class Stream6 : GenericAudioStream, IDisposable
 	{
-		private readonly Class16 class16_0;
+		private readonly Class16 _class160;
 
-		private readonly Class61 class61_0;
+		private readonly Class61 _class610;
 
-		private readonly Class78 class78_0;
+		private readonly Class78 _class780;
 
-		private readonly VorbisClass class75_0;
+		private readonly VorbisClass _class750;
 
-		private readonly Class33 class33_0;
+		private readonly Class33 _class330;
 
-		private readonly Class74 class74_0;
+		private readonly Class74 _class740;
 
 		public override bool CanRead
 		{
@@ -68,18 +68,18 @@ namespace ns2
 
 		public override Class16 vmethod_1()
 		{
-			return class16_0;
+			return _class160;
 		}
 
 		public void method_0()
 		{
-			class78_0.method_1();
-			class74_0.method_0();
-			class33_0.method_0();
-			class75_0.method_0();
-			class61_0.method_0();
+			_class780.method_1();
+			_class740.method_0();
+			_class330.method_0();
+			_class750.method_0();
+			_class610.method_0();
 			Console.WriteLine("Done.");
-			fileStream.Close();
+			FileStream.Close();
 		}
 
 		public override long Seek(long offset, SeekOrigin origin)
@@ -102,9 +102,9 @@ namespace ns2
 			throw new InvalidOperationException();
 		}
 
-		private void method_1(bool bool_0)
+		private void method_1(bool bool0)
 		{
-			if (bool_0)
+			if (bool0)
 			{
 				method_0();
 			}

@@ -1,1 +1,1 @@
-public delegate double Delegate209(double double_0, double double_1);
+public delegate double Delegate209(double double0, double double1);

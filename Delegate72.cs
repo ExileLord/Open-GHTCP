@@ -1,1 +1,1 @@
-public delegate void Delegate72(object object_0, int int_0, bool bool_0);
+public delegate void Delegate72(object object0, int int0, bool bool0);

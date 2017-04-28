@@ -1,3 +1,3 @@
 using System;
 
-public delegate void Delegate415(Array array_0, int int_0, Array array_1, int int_1, int int_2);
+public delegate void Delegate415(Array array0, int int0, Array array1, int int1, int int2);

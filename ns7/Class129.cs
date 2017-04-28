@@ -5,35 +5,35 @@ namespace ns7
 {
 	public class Class129 : Class121
 	{
-		public byte[] byte_0 = new byte[0];
+		public byte[] Byte0 = new byte[0];
 
-		public int int_0;
+		public int Int0;
 
-		public Class146[] class146_0;
+		public Class146[] Class1460;
 
-		public Class129(Class144 class144_0, int int_1, bool bool_1) : base(bool_1)
+		public Class129(Class144 class1440, int int1, bool bool1) : base(bool1)
 		{
-			var num = class144_0.vmethod_14();
-			byte_0 = new byte[num];
-			class144_0.vmethod_15(byte_0, byte_0.Length);
-			int_0 = class144_0.vmethod_14();
-			if (int_0 > 0)
+			var num = class1440.vmethod_14();
+			Byte0 = new byte[num];
+			class1440.vmethod_15(Byte0, Byte0.Length);
+			Int0 = class1440.vmethod_14();
+			if (Int0 > 0)
 			{
-				class146_0 = new Class146[int_0];
+				Class1460 = new Class146[Int0];
 			}
-			for (var i = 0; i < int_0; i++)
+			for (var i = 0; i < Int0; i++)
 			{
-				class146_0[i] = new Class146(class144_0);
+				Class1460[i] = new Class146(class1440);
 			}
 		}
 
 		public override string ToString()
 		{
-			var stringBuilder = new StringBuilder("VendorString '" + byte_0 + "'\n");
-			stringBuilder.Append("VorbisComment (count=" + int_0 + ")");
-			for (var i = 0; i < int_0; i++)
+			var stringBuilder = new StringBuilder("VendorString '" + Byte0 + "'\n");
+			stringBuilder.Append("VorbisComment (count=" + Int0 + ")");
+			for (var i = 0; i < Int0; i++)
 			{
-				stringBuilder.Append("\n\t" + class146_0[i]);
+				stringBuilder.Append("\n\t" + Class1460[i]);
 			}
 			return stringBuilder.ToString();
 		}

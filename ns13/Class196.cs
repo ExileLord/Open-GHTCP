@@ -6,7 +6,7 @@ namespace ns13
 {
 	public class Class196
 	{
-		private static readonly int[] int_0 = {
+		private static readonly int[] Int0 = {
 			3,
 			4,
 			5,
@@ -38,7 +38,7 @@ namespace ns13
 			258
 		};
 
-		private static readonly int[] int_1 = {
+		private static readonly int[] Int1 = {
 			0,
 			0,
 			0,
@@ -70,7 +70,7 @@ namespace ns13
 			0
 		};
 
-		private static readonly int[] int_2 = {
+		private static readonly int[] Int2 = {
 			1,
 			2,
 			3,
@@ -103,7 +103,7 @@ namespace ns13
 			24577
 		};
 
-		private static readonly int[] int_3 = {
+		private static readonly int[] Int3 = {
 			0,
 			0,
 			0,
@@ -136,73 +136,73 @@ namespace ns13
 			13
 		};
 
-		private int int_4;
+		private int _int4;
 
-		private int int_5;
+		private int _int5;
 
-		private int int_6;
+		private int _int6;
 
-		private int int_7;
+		private int _int7;
 
-		private int int_8;
+		private int _int8;
 
-		private int int_9;
+		private int _int9;
 
-		private bool bool_0;
+		private bool _bool0;
 
-		private long long_0;
+		private long _long0;
 
-		private long long_1;
+		private long _long1;
 
-		private readonly bool bool_1;
+		private readonly bool _bool1;
 
-		private readonly Class187 class187_0;
+		private readonly Class187 _class1870;
 
-		private readonly Class203 class203_0;
+		private readonly Class203 _class2030;
 
-		private Class198 class198_0;
+		private Class198 _class1980;
 
-		private Class197 class197_0;
+		private Class197 _class1970;
 
-		private Class197 class197_1;
+		private Class197 _class1971;
 
-		private readonly Class200 class200_0;
+		private readonly Class200 _class2000;
 
 		public Class196() : this(false)
 		{
 		}
 
-		public Class196(bool bool_2)
+		public Class196(bool bool2)
 		{
-			bool_1 = bool_2;
-			class200_0 = new Class200();
-			class187_0 = new Class187();
-			class203_0 = new Class203();
-			int_4 = (bool_2 ? 2 : 0);
+			_bool1 = bool2;
+			_class2000 = new Class200();
+			_class1870 = new Class187();
+			_class2030 = new Class203();
+			_int4 = (bool2 ? 2 : 0);
 		}
 
 		public void method_0()
 		{
-			int_4 = (bool_1 ? 2 : 0);
-			long_1 = 0L;
-			long_0 = 0L;
-			class187_0.method_7();
-			class203_0.method_7();
-			class198_0 = null;
-			class197_0 = null;
-			class197_1 = null;
-			bool_0 = false;
-			class200_0.vmethod_1();
+			_int4 = (_bool1 ? 2 : 0);
+			_long1 = 0L;
+			_long0 = 0L;
+			_class1870.method_7();
+			_class2030.method_7();
+			_class1980 = null;
+			_class1970 = null;
+			_class1971 = null;
+			_bool0 = false;
+			_class2000.vmethod_1();
 		}
 
 		private bool method_1()
 		{
-			var num = class187_0.method_0(16);
+			var num = _class1870.method_0(16);
 			if (num < 0)
 			{
 				return false;
 			}
-			class187_0.method_1(16);
+			_class1870.method_1(16);
 			num = ((num << 8 | num >> 8) & 65535);
 			if (num % 31 != 0)
 			{
@@ -214,44 +214,44 @@ namespace ns13
 			}
 			if ((num & 32) == 0)
 			{
-				int_4 = 2;
+				_int4 = 2;
 			}
 			else
 			{
-				int_4 = 1;
-				int_6 = 32;
+				_int4 = 1;
+				_int6 = 32;
 			}
 			return true;
 		}
 
 		private bool method_2()
 		{
-			while (int_6 > 0)
+			while (_int6 > 0)
 			{
-				var num = class187_0.method_0(8);
+				var num = _class1870.method_0(8);
 				if (num < 0)
 				{
 					return false;
 				}
-				class187_0.method_1(8);
-				int_5 = (int_5 << 8 | num);
-				int_6 -= 8;
+				_class1870.method_1(8);
+				_int5 = (_int5 << 8 | num);
+				_int6 -= 8;
 			}
 			return false;
 		}
 
 		private bool method_3()
 		{
-			var i = class203_0.method_4();
+			var i = _class2030.method_4();
 			while (i >= 258)
 			{
 				int num;
-				switch (int_4)
+				switch (_int4)
 				{
 				case 7:
-					while (((num = class197_0.method_1(class187_0)) & -256) == 0)
+					while (((num = _class1970.method_1(_class1870)) & -256) == 0)
 					{
-						class203_0.method_0(num);
+						_class2030.method_0(num);
 						if (--i < 258)
 						{
 							return true;
@@ -261,8 +261,8 @@ namespace ns13
 					{
 						try
 						{
-							int_7 = int_0[num - 257];
-							int_6 = int_1[num - 257];
+							_int7 = Int0[num - 257];
+							_int6 = Int1[num - 257];
 						}
 						catch (Exception)
 						{
@@ -274,9 +274,9 @@ namespace ns13
 					{
 						return false;
 					}
-					class197_1 = null;
-					class197_0 = null;
-					int_4 = 2;
+					_class1971 = null;
+					_class1970 = null;
+					_int4 = 2;
 					return true;
 				case 8:
 					goto IL_AC;
@@ -288,29 +288,29 @@ namespace ns13
 					throw new SharpZipBaseException("Inflater unknown mode");
 				}
 				IL_13D:
-				if (int_6 > 0)
+				if (_int6 > 0)
 				{
-					int_4 = 10;
-					var num2 = class187_0.method_0(int_6);
+					_int4 = 10;
+					var num2 = _class1870.method_0(_int6);
 					if (num2 < 0)
 					{
 						return false;
 					}
-					class187_0.method_1(int_6);
-					int_8 += num2;
+					_class1870.method_1(_int6);
+					_int8 += num2;
 				}
-				class203_0.method_2(int_7, int_8);
-				i -= int_7;
-				int_4 = 7;
+				_class2030.method_2(_int7, _int8);
+				i -= _int7;
+				_int4 = 7;
 				continue;
 				IL_FC:
-				num = class197_1.method_1(class187_0);
+				num = _class1971.method_1(_class1870);
 				if (num >= 0)
 				{
 					try
 					{
-						int_8 = int_2[num];
-						int_6 = int_3[num];
+						_int8 = Int2[num];
+						_int6 = Int3[num];
 					}
 					catch (Exception)
 					{
@@ -320,18 +320,18 @@ namespace ns13
 				}
 				return false;
 				IL_AC:
-				if (int_6 > 0)
+				if (_int6 > 0)
 				{
-					int_4 = 8;
-					var num3 = class187_0.method_0(int_6);
+					_int4 = 8;
+					var num3 = _class1870.method_0(_int6);
 					if (num3 < 0)
 					{
 						return false;
 					}
-					class187_0.method_1(int_6);
-					int_7 += num3;
+					_class1870.method_1(_int6);
+					_int7 += num3;
 				}
-				int_4 = 9;
+				_int4 = 9;
 				goto IL_FC;
 			}
 			return true;
@@ -339,72 +339,72 @@ namespace ns13
 
 		private bool method_4()
 		{
-			while (int_6 > 0)
+			while (_int6 > 0)
 			{
-				var num = class187_0.method_0(8);
+				var num = _class1870.method_0(8);
 				if (num < 0)
 				{
 					return false;
 				}
-				class187_0.method_1(8);
-				int_5 = (int_5 << 8 | num);
-				int_6 -= 8;
+				_class1870.method_1(8);
+				_int5 = (_int5 << 8 | num);
+				_int6 -= 8;
 			}
-			if ((int)class200_0.vmethod_0() != int_5)
+			if ((int)_class2000.vmethod_0() != _int5)
 			{
-				throw new SharpZipBaseException(string.Concat("Adler chksum doesn't match: ", (int)class200_0.vmethod_0(), " vs. ", int_5));
+				throw new SharpZipBaseException(string.Concat("Adler chksum doesn't match: ", (int)_class2000.vmethod_0(), " vs. ", _int5));
 			}
-			int_4 = 12;
+			_int4 = 12;
 			return false;
 		}
 
 		private bool method_5()
 		{
-			switch (int_4)
+			switch (_int4)
 			{
 			case 0:
 				return method_1();
 			case 1:
 				return method_2();
 			case 2:
-				if (bool_0)
+				if (_bool0)
 				{
-					if (bool_1)
+					if (_bool1)
 					{
-						int_4 = 12;
+						_int4 = 12;
 						return false;
 					}
-					class187_0.method_4();
-					int_6 = 32;
-					int_4 = 11;
+					_class1870.method_4();
+					_int6 = 32;
+					_int4 = 11;
 					return true;
 				}
 				else
 				{
-					var num = class187_0.method_0(3);
+					var num = _class1870.method_0(3);
 					if (num < 0)
 					{
 						return false;
 					}
-					class187_0.method_1(3);
+					_class1870.method_1(3);
 					if ((num & 1) != 0)
 					{
-						bool_0 = true;
+						_bool0 = true;
 					}
 					switch (num >> 1)
 					{
 					case 0:
-						class187_0.method_4();
-						int_4 = 3;
+						_class1870.method_4();
+						_int4 = 3;
 						break;
 					case 1:
-						class197_0 = Class197.class197_0;
-						class197_1 = Class197.class197_1;
-						int_4 = 7;
+						_class1970 = Class197.Class1970;
+						_class1971 = Class197.Class1971;
+						_int4 = 7;
 						break;
 					case 2:
-						class198_0 = new Class198();
-						int_4 = 6;
+						_class1980 = new Class198();
+						_int4 = 6;
 						break;
 					default:
 						throw new SharpZipBaseException("Unknown block type " + num);
@@ -413,25 +413,25 @@ namespace ns13
 				}
 				break;
 			case 3:
-				if ((int_9 = class187_0.method_0(16)) < 0)
+				if ((_int9 = _class1870.method_0(16)) < 0)
 				{
 					return false;
 				}
-				class187_0.method_1(16);
-				int_4 = 4;
+				_class1870.method_1(16);
+				_int4 = 4;
 				break;
 			case 4:
 				break;
 			case 5:
 				goto IL_1A4;
 			case 6:
-				if (!class198_0.method_0(class187_0))
+				if (!_class1980.method_0(_class1870))
 				{
 					return false;
 				}
-				class197_0 = class198_0.method_1();
-				class197_1 = class198_0.method_2();
-				int_4 = 7;
+				_class1970 = _class1980.method_1();
+				_class1971 = _class1980.method_2();
+				_int4 = 7;
 				goto IL_228;
 			case 7:
 			case 8:
@@ -445,55 +445,55 @@ namespace ns13
 			default:
 				throw new SharpZipBaseException("Inflater.Decode unknown mode");
 			}
-			var num2 = class187_0.method_0(16);
+			var num2 = _class1870.method_0(16);
 			if (num2 < 0)
 			{
 				return false;
 			}
-			class187_0.method_1(16);
-			if (num2 != (int_9 ^ 65535))
+			_class1870.method_1(16);
+			if (num2 != (_int9 ^ 65535))
 			{
 				throw new SharpZipBaseException("broken uncompressed block");
 			}
-			int_4 = 5;
+			_int4 = 5;
 			IL_1A4:
-			var num3 = class203_0.method_3(class187_0, int_9);
-			int_9 -= num3;
-			if (int_9 == 0)
+			var num3 = _class2030.method_3(_class1870, _int9);
+			_int9 -= num3;
+			if (_int9 == 0)
 			{
-				int_4 = 2;
+				_int4 = 2;
 				return true;
 			}
-			return !class187_0.method_5();
+			return !_class1870.method_5();
 			IL_228:
 			return method_3();
 		}
 
-		public void method_6(byte[] byte_0, int int_10, int int_11)
+		public void method_6(byte[] byte0, int int10, int int11)
 		{
-			class187_0.method_8(byte_0, int_10, int_11);
-			long_1 += int_11;
+			_class1870.method_8(byte0, int10, int11);
+			_long1 += int11;
 		}
 
-		public int method_7(byte[] byte_0, int int_10, int int_11)
+		public int method_7(byte[] byte0, int int10, int int11)
 		{
-			if (byte_0 == null)
+			if (byte0 == null)
 			{
 				throw new ArgumentNullException("buffer");
 			}
-			if (int_11 < 0)
+			if (int11 < 0)
 			{
 				throw new ArgumentOutOfRangeException("count", "count cannot be negative");
 			}
-			if (int_10 < 0)
+			if (int10 < 0)
 			{
 				throw new ArgumentOutOfRangeException("offset", "offset cannot be negative");
 			}
-			if (int_10 + int_11 > byte_0.Length)
+			if (int10 + int11 > byte0.Length)
 			{
 				throw new ArgumentException("count exceeds buffer bounds");
 			}
-			if (int_11 == 0)
+			if (int11 == 0)
 			{
 				if (!method_10())
 				{
@@ -504,17 +504,17 @@ namespace ns13
 			var num = 0;
 			while (true)
 			{
-				if (int_4 != 11)
+				if (_int4 != 11)
 				{
-					var num2 = class203_0.method_6(byte_0, int_10, int_11);
+					var num2 = _class2030.method_6(byte0, int10, int11);
 					if (num2 > 0)
 					{
-						class200_0.vmethod_2(byte_0, int_10, num2);
-						int_10 += num2;
+						_class2000.vmethod_2(byte0, int10, num2);
+						int10 += num2;
 						num += num2;
-						long_0 += num2;
-						int_11 -= num2;
-						if (int_11 == 0)
+						_long0 += num2;
+						int11 -= num2;
+						if (int11 == 0)
 						{
 							return num;
 						}
@@ -522,11 +522,11 @@ namespace ns13
 				}
 				if (!method_5())
 				{
-					if (class203_0.method_5() <= 0)
+					if (_class2030.method_5() <= 0)
 					{
 						break;
 					}
-					if (int_4 == 11)
+					if (_int4 == 11)
 					{
 						break;
 					}
@@ -537,32 +537,32 @@ namespace ns13
 
 		public bool method_8()
 		{
-			return class187_0.method_5();
+			return _class1870.method_5();
 		}
 
 		public bool method_9()
 		{
-			return int_4 == 1 && int_6 == 0;
+			return _int4 == 1 && _int6 == 0;
 		}
 
 		public bool method_10()
 		{
-			return int_4 == 12 && class203_0.method_5() == 0;
+			return _int4 == 12 && _class2030.method_5() == 0;
 		}
 
 		public long method_11()
 		{
-			return long_0;
+			return _long0;
 		}
 
 		public long method_12()
 		{
-			return long_1 - method_13();
+			return _long1 - method_13();
 		}
 
 		public int method_13()
 		{
-			return class187_0.method_3();
+			return _class1870.method_3();
 		}
 	}
 }

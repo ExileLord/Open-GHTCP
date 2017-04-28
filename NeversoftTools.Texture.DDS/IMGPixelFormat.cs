@@ -1,6 +1,6 @@
 namespace NeversoftTools.Texture.DDS
 {
-	public enum IMGPixelFormat
+	public enum ImgPixelFormat
 	{
 		Other,
 		Bgra32,

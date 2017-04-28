@@ -9,9 +9,9 @@ namespace ns20
 {
 	public static class QbSongClass1
 	{
-		private static readonly Dictionary<int, string> _keyDict1 = new Dictionary<int, string>();
+		private static readonly Dictionary<int, string> KeyDict1 = new Dictionary<int, string>();
 
-		private static readonly Dictionary<int, string> _keyDict2 = new Dictionary<int, string>();
+		private static readonly Dictionary<int, string> KeyDict2 = new Dictionary<int, string>();
 
 		public static bool Dirty; //This hasn't been saved yet?..
 
@@ -21,7 +21,7 @@ namespace ns20
 			{
 				return;
 			}
-			AddAllLinesToDictionary(new MemoryStream(ZIPManager.smethod_5(KeyGenerator.cryptoMethod(Assembly.GetExecutingAssembly().GetManifestResourceStream("NeversoftTools.NSTreeView.nstags.aes"), "MinimizedNSTags1245"), "nstags.ids")));
+			AddAllLinesToDictionary(new MemoryStream(ZipManager.smethod_5(KeyGenerator.CryptoMethod(Assembly.GetExecutingAssembly().GetManifestResourceStream("NeversoftTools.NSTreeView.nstags.aes"), "MinimizedNSTags1245"), "nstags.ids")));
 			Dirty = true;
 		}
 
@@ -35,15 +35,15 @@ namespace ns20
 					if (!text.Equals(""))
 					{
 						var key = KeyGenerator.GetQbKey(text, true);
-						if (!_keyDict1.ContainsKey(key) && !_keyDict2.ContainsKey(key))
+						if (!KeyDict1.ContainsKey(key) && !KeyDict2.ContainsKey(key))
 						{
 							if (useSecondDictionary)
 							{
-								_keyDict2.Add(key, text);
+								KeyDict2.Add(key, text);
 							}
 							else
 							{
-								_keyDict1.Add(key, text);
+								KeyDict1.Add(key, text);
 							}
 						}
 					}
@@ -53,51 +53,51 @@ namespace ns20
 
 		public static bool ContainsKey(int key)
 		{
-			return _keyDict1.ContainsKey(key) || _keyDict2.ContainsKey(key);
+			return KeyDict1.ContainsKey(key) || KeyDict2.ContainsKey(key);
 		}
 
-		public static bool smethod_4(string string_0)
+		public static bool smethod_4(string string0)
 		{
-			return _keyDict1.ContainsValue(string_0.ToLower());
+			return KeyDict1.ContainsValue(string0.ToLower());
 		}
 
 		public static string GetDictString(int key)
 		{
-			if (_keyDict1.ContainsKey(key))
+			if (KeyDict1.ContainsKey(key))
 			{
-				return _keyDict1[key];
+				return KeyDict1[key];
 			}
-			if (_keyDict2.ContainsKey(key))
+			if (KeyDict2.ContainsKey(key))
 			{
-				return _keyDict2[key];
+				return KeyDict2[key];
 			}
 			return null;
 		}
 
-		public static int smethod_6(string string_0)
+		public static int smethod_6(string string0)
 		{
-			if (!(string_0 == ""))
+			if (!(string0 == ""))
 			{
-				return KeyGenerator.GetQbKey(Encoding.Unicode.GetBytes(string_0), true);
+				return KeyGenerator.GetQbKey(Encoding.Unicode.GetBytes(string0), true);
 			}
 			return 0;
 		}
 
 		public static void AddStringToDictionary(string str, bool addToTheOtherDictionaryToo = true)
 		{
-			if (_keyDict1.ContainsValue(str) || _keyDict2.ContainsValue(str))
+			if (KeyDict1.ContainsValue(str) || KeyDict2.ContainsValue(str))
 			{
 				return;
 			}
 			var key = KeyGenerator.GetQbKey(str, true);
-			if (addToTheOtherDictionaryToo && !_keyDict2.ContainsKey(key))
+			if (addToTheOtherDictionaryToo && !KeyDict2.ContainsKey(key))
 			{
-				_keyDict2.Add(key, str);
+				KeyDict2.Add(key, str);
 				return;
 			}
-			if (!_keyDict1.ContainsKey(key))
+			if (!KeyDict1.ContainsKey(key))
 			{
-				_keyDict1.Add(key, str);
+				KeyDict1.Add(key, str);
 			}
 		}
 
@@ -107,7 +107,7 @@ namespace ns20
 			var key = KeyGenerator.GetQbKey(qbName, true);
 			if (!ContainsKey(key))
 			{
-				_keyDict2.Add(key, qbName);
+				KeyDict2.Add(key, qbName);
 			}
 			return key;
 		}

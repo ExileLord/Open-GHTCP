@@ -1,17 +1,17 @@
 namespace ns2
 {
-	public class OGGData
+	public class OggData
 	{
-		public int[] int_0;
+		public int[] Int0;
 
-		public int[] int_1;
+		public int[] Int1;
 
-		public int int_2;
+		public int Int2;
 
-		public int[] int_3;
+		public int[] Int3;
 
-		public int[] int_4;
+		public int[] Int4;
 
-		public int int_5;
+		public int Int5;
 	}
 }

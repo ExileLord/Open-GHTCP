@@ -2,17 +2,17 @@ using ns18;
 
 namespace ns21
 {
-	public class FileTagArrayNode : zzUnkNode278<TagValueNode>
+	public class FileTagArrayNode : ZzUnkNode278<TagValueNode>
 	{
-		public int this[int int_0]
+		public int this[int int0]
 		{
 			get
 			{
-				return ((TagValueNode)Nodes[int_0]).int_0;
+				return ((TagValueNode)Nodes[int0]).Int0;
 			}
 			set
 			{
-				((TagValueNode)Nodes[int_0]).int_0 = value;
+				((TagValueNode)Nodes[int0]).Int0 = value;
 			}
 		}
 

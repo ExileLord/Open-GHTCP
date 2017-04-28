@@ -8,97 +8,97 @@ namespace ns12
 	{
 		public enum Enum26
 		{
-			const_0 = 1,
-			const_1,
-			const_2
+			Const0 = 1,
+			Const1,
+			Const2
 		}
 
 		public enum Enum27
 		{
-			const_0 = -2,
-			const_1 = 1,
-			const_2,
-			const_3
+			Const0 = -2,
+			Const1 = 1,
+			Const2,
+			Const3
 		}
 
-		private readonly Enum26 enum26_0;
+		private readonly Enum26 _enum260;
 
-		private readonly Enum27 enum27_0;
+		private readonly Enum27 _enum270;
 
-		private readonly bool bool_0;
+		private readonly bool _bool0;
 
-		private readonly float float_0;
+		private readonly float _float0;
 
-		private readonly float float_1;
+		private readonly float _float1;
 
-		private readonly Struct11[] struct11_0;
+		private readonly Struct11[] _struct110;
 
-		public Class173(Enum26 enum26_1, Enum27 enum27_1, float float_2, bool bool_1, Struct11[] struct11_1)
+		public Class173(Enum26 enum261, Enum27 enum271, float float2, bool bool1, Struct11[] struct111)
 		{
-			enum26_0 = enum26_1;
-			enum27_0 = enum27_1;
-			float_0 = float_2;
-			float_1 = 1f - float_2;
-			bool_0 = bool_1;
-			struct11_0 = struct11_1;
+			_enum260 = enum261;
+			_enum270 = enum271;
+			_float0 = float2;
+			_float1 = 1f - float2;
+			_bool0 = bool1;
+			_struct110 = struct111;
 		}
 
-		public Class173(Enum26 enum26_1, Struct11[] struct11_1) : this(enum26_1, Enum27.const_1, 0f, false, struct11_1)
+		public Class173(Enum26 enum261, Struct11[] struct111) : this(enum261, Enum27.Const1, 0f, false, struct111)
 		{
 		}
 
-		private float method_0(float float_2)
+		private float method_0(float float2)
 		{
-			switch (enum27_0)
+			switch (_enum270)
 			{
-			case Enum27.const_0:
-				return (float)Math.Sqrt(float_2);
-			case Enum27.const_1:
-				return float_2;
-			case Enum27.const_2:
-				return float_2 * float_2;
-			case Enum27.const_3:
-				return float_2 * float_2 * float_2;
+			case Enum27.Const0:
+				return (float)Math.Sqrt(float2);
+			case Enum27.Const1:
+				return float2;
+			case Enum27.Const2:
+				return float2 * float2;
+			case Enum27.Const3:
+				return float2 * float2 * float2;
 			}
-			return float_2;
+			return float2;
 		}
 
-		public override void vmethod_0(Class13 class13_0)
+		public override void vmethod_0(Class13 class130)
 		{
-			var @struct = new Struct11(class13_0.int_0 + class13_0.method_0(), class13_0.int_0 + class13_0.method_0() + class13_0.method_2());
-			if (struct11_0.Length != 0)
+			var @struct = new Struct11(class130.Int0 + class130.method_0(), class130.Int0 + class130.method_0() + class130.method_2());
+			if (_struct110.Length != 0)
 			{
-				var array = struct11_0;
+				var array = _struct110;
 				for (var i = 0; i < array.Length; i++)
 				{
 					var struct2 = array[i];
 					var struct3 = struct2.method_0(@struct);
 					if (!struct3.method_1())
 					{
-						method_1(ref class13_0.float_0, struct3.method_2() - class13_0.int_0, struct3.method_3(), struct3.method_2() - struct2.method_2(), struct2.method_3());
+						method_1(ref class130.Float0, struct3.method_2() - class130.Int0, struct3.method_3(), struct3.method_2() - struct2.method_2(), struct2.method_3());
 					}
 				}
 				return;
 			}
-			method_1(ref class13_0.float_0, class13_0.method_0(), class13_0.method_2(), 0, class13_0.method_2());
+			method_1(ref class130.Float0, class130.method_0(), class130.method_2(), 0, class130.method_2());
 		}
 
-		private void method_1(ref float[] float_2, int int_0, int int_1, int int_2, float float_3)
+		private void method_1(ref float[] float2, int int0, int int1, int int2, float float3)
 		{
-			switch (enum26_0)
+			switch (_enum260)
 			{
-			case Enum26.const_0:
+			case Enum26.Const0:
 				try
 				{
-					for (var i = 0; i < int_1; i++)
+					for (var i = 0; i < int1; i++)
 					{
-						float_2[int_0 + i] *= method_0((int_2 + i) / float_3) * float_1 + float_0;
+						float2[int0 + i] *= method_0((int2 + i) / float3) * _float1 + _float0;
 					}
-					if (bool_0)
+					if (_bool0)
 					{
-						for (var j = 0; j < int_0; j++)
+						for (var j = 0; j < int0; j++)
 						{
-							float_2[j] *= float_0;
+							float2[j] *= _float0;
 						}
 					}
 					return;
@@ -108,24 +108,24 @@ namespace ns12
 					return;
 				}
 				break;
-			case Enum26.const_1:
+			case Enum26.Const1:
 				break;
-			case Enum26.const_2:
+			case Enum26.Const2:
 				goto IL_117;
 			default:
 				return;
 			}
 			try
 			{
-				for (var k = 0; k < int_1; k++)
+				for (var k = 0; k < int1; k++)
 				{
-					float_2[int_0 + k] *= method_0(1f - (int_2 + k) / float_3) * float_1 + float_0;
+					float2[int0 + k] *= method_0(1f - (int2 + k) / float3) * _float1 + _float0;
 				}
-				if (bool_0)
+				if (_bool0)
 				{
-					for (var l = int_0 + int_1; l < float_2.Length; l++)
+					for (var l = int0 + int1; l < float2.Length; l++)
 					{
-						float_2[l] *= float_0;
+						float2[l] *= _float0;
 					}
 				}
 				return;
@@ -135,28 +135,28 @@ namespace ns12
 				return;
 			}
 			IL_117:
-			var num = int_1 / 2;
-			float_3 = num;
-			var array = new float[float_2.Length - num];
+			var num = int1 / 2;
+			float3 = num;
+			var array = new float[float2.Length - num];
 			try
 			{
 				for (var m = 0; m < num; m++)
 				{
-					float_2[int_0 + m] = method_0((num - m) / float_3) * float_2[int_0 + m] + method_0(m / float_3) * float_2[int_0 + num + m];
+					float2[int0 + m] = method_0((num - m) / float3) * float2[int0 + m] + method_0(m / float3) * float2[int0 + num + m];
 				}
-				for (var n = 0; n < int_0 + num; n++)
+				for (var n = 0; n < int0 + num; n++)
 				{
-					array[n] = float_2[n];
+					array[n] = float2[n];
 				}
-				for (var num2 = int_0 + int_1; num2 < float_2.Length; num2++)
+				for (var num2 = int0 + int1; num2 < float2.Length; num2++)
 				{
-					array[num2 - num] = float_2[num2];
+					array[num2 - num] = float2[num2];
 				}
 			}
 			catch (IndexOutOfRangeException)
 			{
 			}
-			float_2 = array;
+			float2 = array;
 		}
 	}
 }

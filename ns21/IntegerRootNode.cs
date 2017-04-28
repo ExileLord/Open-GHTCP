@@ -9,25 +9,25 @@ namespace ns21
 			vmethod_0();
 		}
 
-		public IntegerRootNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
+		public IntegerRootNode(string string0) : this(QbSongClass1.AddKeyToDictionary(string0))
 		{
 		}
 
-		public IntegerRootNode(int int_2)
+		public IntegerRootNode(int int2)
 		{
-			int_0 = int_2;
+			Int0 = int2;
 			vmethod_0();
 		}
 
-		public IntegerRootNode(string string_0, string string_1, int int_2) : this(QbSongClass1.AddKeyToDictionary(string_0), QbSongClass1.AddKeyToDictionary(string_1), int_2)
+		public IntegerRootNode(string string0, string string1, int int2) : this(QbSongClass1.AddKeyToDictionary(string0), QbSongClass1.AddKeyToDictionary(string1), int2)
 		{
 		}
 
-		public IntegerRootNode(int int_2, int int_3, int int_4)
+		public IntegerRootNode(int int2, int int3, int int4)
 		{
-			int_0 = int_2;
-			int_1 = int_3;
-			Nodes.Add(new IntegerValueNode(int_4));
+			Int0 = int2;
+			Int1 = int3;
+			Nodes.Add(new IntegerValueNode(int4));
 			vmethod_0();
 		}
 
@@ -40,19 +40,19 @@ namespace ns21
 		{
 			if (Nodes.Count != 0)
 			{
-				return ((IntegerValueNode)FirstNode).int_0;
+				return ((IntegerValueNode)FirstNode).Int0;
 			}
 			return 0;
 		}
 
-		public void method_8(int int_2)
+		public void method_8(int int2)
 		{
 			if (Nodes.Count != 0)
 			{
-				((IntegerValueNode)FirstNode).int_0 = int_2;
+				((IntegerValueNode)FirstNode).Int0 = int2;
 				return;
 			}
-			Nodes.Add(new IntegerValueNode(int_2));
+			Nodes.Add(new IntegerValueNode(int2));
 		}
 
 		public override string GetNodeText()

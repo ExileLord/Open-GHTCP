@@ -10,9 +10,9 @@ namespace ns12
 	{
 		private enum Enum28
 		{
-			const_0,
-			const_1,
-			const_2
+			Const0,
+			Const1,
+			Const2
 		}
 
 		private class Class180 : IComparer
@@ -39,8 +39,8 @@ namespace ns12
 				}
 				else
 				{
-					var num2 = (@class.method_1() == Enum28.const_0 || @class.method_1() == Enum28.const_1) ? 0 : 1;
-					var num3 = (class2.method_1() == Enum28.const_0 || class2.method_1() == Enum28.const_1) ? 0 : 1;
+					var num2 = (@class.method_1() == Enum28.Const0 || @class.method_1() == Enum28.Const1) ? 0 : 1;
+					var num3 = (class2.method_1() == Enum28.Const0 || class2.method_1() == Enum28.Const1) ? 0 : 1;
 					num = num2 - num3;
 					if (num == 0)
 					{
@@ -65,81 +65,81 @@ namespace ns12
 
 		private class Class181
 		{
-			private Class193 class193_0;
+			private Class193 _class1930;
 
-			private Enum28 enum28_0;
+			private Enum28 _enum280;
 
 			public Class193 method_0()
 			{
-				return class193_0;
+				return _class1930;
 			}
 
 			public Enum28 method_1()
 			{
-				return enum28_0;
+				return _enum280;
 			}
 		}
 
 		private class Class182 : IEnumerator
 		{
-			private readonly Class193[] class193_0;
+			private readonly Class193[] _class1930;
 
-			private int int_0 = -1;
+			private int _int0 = -1;
 
 			public object Current
 			{
 				get
 				{
-					return class193_0[int_0];
+					return _class1930[_int0];
 				}
 			}
 
-			public Class182(Class193[] class193_1)
+			public Class182(Class193[] class1931)
 			{
-				class193_0 = class193_1;
+				_class1930 = class1931;
 			}
 
 			public void Reset()
 			{
-				int_0 = -1;
+				_int0 = -1;
 			}
 
 			public bool MoveNext()
 			{
-				return ++int_0 < class193_0.Length;
+				return ++_int0 < _class1930.Length;
 			}
 		}
 
-		private bool bool_0;
+		private bool _bool0;
 
-		private Stream stream_0;
+		private Stream _stream0;
 
-		private bool bool_1;
+		private bool _bool1;
 
-		private Class193[] class193_0;
+		private Class193[] _class1930;
 
-		private bool bool_2;
+		private bool _bool2;
 
-		private Enum30 enum30_0 = Enum30.const_2;
+		private Enum30 _enum300 = Enum30.Const2;
 
-		private int int_0 = 4096;
+		private int _int0 = 4096;
 
-		private Interface9 interface9_0 = new Class212();
+		private INterface9 _interface90 = new Class212();
 
-		private string string_0 = string.Empty;
+		private string _string0 = string.Empty;
 
-		public Class193 this[int int_1]
+		public Class193 this[int int1]
 		{
 			get
 			{
-				return (Class193)class193_0[int_1].Clone();
+				return (Class193)_class1930[int1].Clone();
 			}
 		}
 
 		public Class179()
 		{
-			class193_0 = new Class193[0];
-			bool_2 = true;
+			_class1930 = new Class193[0];
+			_bool2 = true;
 		}
 
 		~Class179()
@@ -155,16 +155,16 @@ namespace ns12
 
 		public bool method_1()
 		{
-			return bool_1;
+			return _bool1;
 		}
 
 		public IEnumerator GetEnumerator()
 		{
-			if (class193_0 == null)
+			if (_class1930 == null)
 			{
 				throw new InvalidOperationException("ZipFile has closed");
 			}
-			return new Class182(class193_0);
+			return new Class182(_class1930);
 		}
 
 		void IDisposable.Dispose()
@@ -172,25 +172,25 @@ namespace ns12
 			method_0();
 		}
 
-		private void method_2(bool bool_3)
+		private void method_2(bool bool3)
 		{
-			if (!bool_0)
+			if (!_bool0)
 			{
-				bool_0 = true;
-				class193_0 = null;
-				if (method_1() && stream_0 != null)
+				_bool0 = true;
+				_class1930 = null;
+				if (method_1() && _stream0 != null)
 				{
-					lock (stream_0)
+					lock (_stream0)
 					{
-						stream_0.Close();
+						_stream0.Close();
 					}
 				}
 			}
 		}
 
-		public virtual void vmethod_0(bool bool_3)
+		public virtual void vmethod_0(bool bool3)
 		{
-			method_2(bool_3);
+			method_2(bool3);
 		}
 	}
 }

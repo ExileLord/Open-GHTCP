@@ -3,31 +3,31 @@ using ns20;
 
 namespace ns19
 {
-	public class ArrayPointerNode : zzUnkNode300
+	public class ArrayPointerNode : ZzUnkNode300
 	{
 		public ArrayPointerNode()
 		{
 			vmethod_0();
 		}
 
-		public ArrayPointerNode(string string_0) : this(QbSongClass1.AddKeyToDictionary(string_0))
+		public ArrayPointerNode(string string0) : this(QbSongClass1.AddKeyToDictionary(string0))
 		{
 		}
 
-		public ArrayPointerNode(int int_1)
+		public ArrayPointerNode(int int1)
 		{
-			int_0 = int_1;
+			Int0 = int1;
 			vmethod_0();
 		}
 
-		public ArrayPointerNode(string string_0, AbsTreeNode1_1 class276_0) : this(QbSongClass1.AddKeyToDictionary(string_0), class276_0)
+		public ArrayPointerNode(string string0, AbsTreeNode11 class2760) : this(QbSongClass1.AddKeyToDictionary(string0), class2760)
 		{
 		}
 
-		public ArrayPointerNode(int int_1, AbsTreeNode1_1 class276_0)
+		public ArrayPointerNode(int int1, AbsTreeNode11 class2760)
 		{
-			int_0 = int_1;
-			Nodes.Add(class276_0);
+			Int0 = int1;
+			Nodes.Add(class2760);
 			vmethod_0();
 		}
 
@@ -36,11 +36,11 @@ namespace ns19
 			return 28;
 		}
 
-		public AbsTreeNode1_1 method_8()
+		public AbsTreeNode11 method_8()
 		{
 			if (Nodes.Count != 0)
 			{
-				return (AbsTreeNode1_1)FirstNode;
+				return (AbsTreeNode11)FirstNode;
 			}
 			return null;
 		}

@@ -1,1 +1,1 @@
-public delegate int Delegate219(decimal decimal_0);
+public delegate int Delegate219(decimal decimal0);

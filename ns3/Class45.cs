@@ -4,10 +4,10 @@ namespace ns3
 {
 	public abstract class Class45
 	{
-		public static Class45[] class45_0 = {
+		public static Class45[] Class450 = {
 			new Class46()
 		};
 
-		public abstract void vmethod_0(object object_0);
+		public abstract void vmethod_0(object object0);
 	}
 }

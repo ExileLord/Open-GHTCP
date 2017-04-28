@@ -7,34 +7,34 @@ namespace ns0
 	{
 		public struct Struct6
 		{
-			public int int_0;
+			public int Int0;
 
-			public int int_1;
+			public int Int1;
 		}
 
 		public struct Struct7
 		{
-			public Struct6 struct6_0;
+			public Struct6 Struct60;
 
-			public long long_0;
+			public long Long0;
 
-			public Guid guid_0;
+			public Guid Guid0;
 
-			public Struct6 struct6_1;
+			public Struct6 Struct61;
 
-			public int int_0;
+			public int Int0;
 
-			public int int_1;
+			public int Int1;
 
-			public int int_2;
+			public int Int2;
 
-			public Struct6 struct6_2;
+			public Struct6 Struct62;
 
-			public string string_0;
+			public string String0;
 
-			public int int_3;
+			public int Int3;
 
-			public int int_4;
+			public int Int4;
 		}
 
 		[Guid("0000000c-0000-0000-C000-000000000046"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
@@ -84,10 +84,10 @@ namespace ns0
 		public interface Interface2
 		{
 			[PreserveSig]
-			int imethod_0(uint PropertyId, IntPtr pvProperty, uint cbProperty);
+			int imethod_0(uint propertyId, IntPtr pvProperty, uint cbProperty);
 
 			[PreserveSig]
-			int imethod_1(uint PropertyId, IntPtr pvProperty, ref uint pcbProperty);
+			int imethod_1(uint propertyId, IntPtr pvProperty, ref uint pcbProperty);
 
 			[PreserveSig]
 			int imethod_2();
@@ -96,7 +96,7 @@ namespace ns0
 			int imethod_3(IntPtr szDisplayName, ref uint pccDisplayName, uint dwDisplayFlags);
 
 			[PreserveSig]
-			int imethod_4(object refIID, object pAsmBindSink, Interface1 pApplicationContext, [MarshalAs(UnmanagedType.LPWStr)] string szCodeBase, long llFlags, int pvReserved, uint cbReserved, out int ppv);
+			int imethod_4(object refIid, object pAsmBindSink, Interface1 pApplicationContext, [MarshalAs(UnmanagedType.LPWStr)] string szCodeBase, long llFlags, int pvReserved, uint cbReserved, out int ppv);
 
 			[PreserveSig]
 			int imethod_5(out uint lpcwBuffer, out int pwzName);
@@ -147,7 +147,7 @@ namespace ns0
 		[DllImport("fusion", CharSet = CharSet.Auto)]
 		public static extern int CreateAssemblyCache(out Interface4 ppAsmCache, uint dwReserved);
 
-		public static bool smethod_0(string string_0)
+		public static bool smethod_0(string string0)
 		{
 			Interface4 @interface = null;
 			var num = CreateAssemblyCache(out @interface, 0u);
@@ -155,7 +155,7 @@ namespace ns0
 			{
 				return false;
 			}
-			num = @interface.imethod_4(0u, string_0, IntPtr.Zero);
+			num = @interface.imethod_4(0u, string0, IntPtr.Zero);
 			return num == 0;
 		}
 	}

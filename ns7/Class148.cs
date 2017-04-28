@@ -2,15 +2,15 @@ namespace ns7
 {
 	public class Class148
 	{
-		public long long_0;
+		public long Long0;
 
-		public byte byte_0;
+		public byte Byte0;
 
-		public Class148(Class144 class144_0)
+		public Class148(Class144 class1440)
 		{
-			long_0 = class144_0.vmethod_13(64);
-			byte_0 = (byte)class144_0.vmethod_10(8);
-			class144_0.vmethod_5(24);
+			Long0 = class1440.vmethod_13(64);
+			Byte0 = (byte)class1440.vmethod_10(8);
+			class1440.vmethod_5(24);
 		}
 	}
 }

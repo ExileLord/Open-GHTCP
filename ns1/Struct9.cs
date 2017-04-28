@@ -2,14 +2,14 @@ namespace ns1
 {
 	public struct Struct9
 	{
-		public float float_0;
+		public float Float0;
 
-		public float float_1;
+		public float Float1;
 
-		public Struct9(float float_2, float float_3)
+		public Struct9(float float2, float float3)
 		{
-			float_0 = float_2;
-			float_1 = float_3;
+			Float0 = float2;
+			Float1 = float3;
 		}
 	}
 }

@@ -5,109 +5,109 @@ namespace ns3
 {
 	public class Class35 : Class34
 	{
-		private readonly object object_0 = new object();
+		private readonly object _object0 = new object();
 
-		private float[][] float_0;
+		private float[][] _float0;
 
-		private int[] int_0;
+		private int[] _int0;
 
-		private int[] int_1;
+		private int[] _int1;
 
-		private object[] object_1;
+		private object[] _object1;
 
-		public override void vmethod_2(object object_2)
+		public override void vmethod_2(object object2)
 		{
 		}
 
-		public override object vmethod_1(OGGClass1 class66_0, Class27 class27_0, object object_2)
+		public override object vmethod_1(OggClass1 class660, Class27 class270, object object2)
 		{
-			var class49_ = class66_0.oggClass5;
+			var class49 = class660.OggClass5;
 			var @class = new Class55();
-			var class2 = @class.class54_0 = (Class54)object_2;
-			@class.class27_0 = class27_0;
-			@class.object_0 = new object[class2.int_0];
-			@class.object_1 = new object[class2.int_0];
-			@class.object_2 = new object[class2.int_0];
-			@class.class50_0 = new Class50[class2.int_0];
-			@class.class28_0 = new Class28[class2.int_0];
-			@class.class23_0 = new Class23[class2.int_0];
-			for (var i = 0; i < class2.int_0; i++)
+			var class2 = @class.Class540 = (Class54)object2;
+			@class.Class270 = class270;
+			@class.Object0 = new object[class2.Int0];
+			@class.Object1 = new object[class2.Int0];
+			@class.Object2 = new object[class2.Int0];
+			@class.Class500 = new Class50[class2.Int0];
+			@class.Class280 = new Class28[class2.Int0];
+			@class.Class230 = new Class23[class2.Int0];
+			for (var i = 0; i < class2.Int0; i++)
 			{
-				var num = class2.int_2[i];
-				var num2 = class2.int_3[i];
-				var num3 = class2.int_4[i];
-				@class.class50_0[i] = Class50.class50_0[class49_.int_22[num]];
-				@class.object_0[i] = @class.class50_0[i].vmethod_1(class66_0, class27_0, class49_.object_1[num]);
-				@class.class28_0[i] = Class28.class28_0[class49_.int_23[num2]];
-				@class.object_1[i] = @class.class28_0[i].vmethod_1(class66_0, class27_0, class49_.object_2[num2]);
-				@class.class23_0[i] = Class23.class23_0[class49_.int_24[num3]];
-				@class.object_2[i] = @class.class23_0[i].vmethod_1(class66_0, class27_0, class49_.object_3[num3]);
+				var num = class2.Int2[i];
+				var num2 = class2.Int3[i];
+				var num3 = class2.Int4[i];
+				@class.Class500[i] = Class50.Class500[class49.Int22[num]];
+				@class.Object0[i] = @class.Class500[i].vmethod_1(class660, class270, class49.Object1[num]);
+				@class.Class280[i] = Class28.Class280[class49.Int23[num2]];
+				@class.Object1[i] = @class.Class280[i].vmethod_1(class660, class270, class49.Object2[num2]);
+				@class.Class230[i] = Class23.Class230[class49.Int24[num3]];
+				@class.Object2[i] = @class.Class230[i].vmethod_1(class660, class270, class49.Object3[num3]);
 			}
-			if (class49_.int_20 == 0)
+			if (class49.Int20 == 0)
 			{
 			}
-			@class.int_0 = class49_.int_8;
+			@class.Int0 = class49.Int8;
 			return @class;
 		}
 
-		public override object vmethod_0(OGGClass5 class49_0, OGGClass3 class38_0)
+		public override object vmethod_0(OggClass5 class490, OggClass3 class380)
 		{
 			var @class = new Class54();
-			if (class38_0.method_6(1) != 0)
+			if (class380.method_6(1) != 0)
 			{
-				@class.int_0 = class38_0.method_6(4) + 1;
+				@class.Int0 = class380.method_6(4) + 1;
 			}
 			else
 			{
-				@class.int_0 = 1;
+				@class.Int0 = 1;
 			}
-			if (class38_0.method_6(1) != 0)
+			if (class380.method_6(1) != 0)
 			{
-				@class.int_6 = class38_0.method_6(8) + 1;
-				for (var i = 0; i < @class.int_6; i++)
+				@class.Int6 = class380.method_6(8) + 1;
+				for (var i = 0; i < @class.Int6; i++)
 				{
-					var num = @class.int_7[i] = class38_0.method_6(smethod_0(class49_0.int_8));
-					var num2 = @class.int_8[i] = class38_0.method_6(smethod_0(class49_0.int_8));
-					if (num < 0 || num2 < 0 || num == num2 || num >= class49_0.int_8 || num2 >= class49_0.int_8)
+					var num = @class.Int7[i] = class380.method_6(smethod_0(class490.Int8));
+					var num2 = @class.Int8[i] = class380.method_6(smethod_0(class490.Int8));
+					if (num < 0 || num2 < 0 || num == num2 || num >= class490.Int8 || num2 >= class490.Int8)
 					{
 						@class.method_0();
 						return null;
 					}
 				}
 			}
-			if (class38_0.method_6(2) > 0)
+			if (class380.method_6(2) > 0)
 			{
 				@class.method_0();
 				return null;
 			}
-			if (@class.int_0 > 1)
+			if (@class.Int0 > 1)
 			{
-				for (var j = 0; j < class49_0.int_8; j++)
+				for (var j = 0; j < class490.Int8; j++)
 				{
-					@class.int_1[j] = class38_0.method_6(4);
-					if (@class.int_1[j] >= @class.int_0)
+					@class.Int1[j] = class380.method_6(4);
+					if (@class.Int1[j] >= @class.Int0)
 					{
 						@class.method_0();
 						return null;
 					}
 				}
 			}
-			for (var k = 0; k < @class.int_0; k++)
+			for (var k = 0; k < @class.Int0; k++)
 			{
-				@class.int_2[k] = class38_0.method_6(8);
-				if (@class.int_2[k] >= class49_0.int_16)
+				@class.Int2[k] = class380.method_6(8);
+				if (@class.Int2[k] >= class490.Int16)
 				{
 					@class.method_0();
 					return null;
 				}
-				@class.int_3[k] = class38_0.method_6(8);
-				if (@class.int_3[k] >= class49_0.int_17)
+				@class.Int3[k] = class380.method_6(8);
+				if (@class.Int3[k] >= class490.Int17)
 				{
 					@class.method_0();
 					return null;
 				}
-				@class.int_4[k] = class38_0.method_6(8);
-				if (@class.int_4[k] >= class49_0.int_18)
+				@class.Int4[k] = class380.method_6(8);
+				if (@class.Int4[k] >= class490.Int18)
 				{
 					@class.method_0();
 					return null;
@@ -116,75 +116,75 @@ namespace ns3
 			return @class;
 		}
 
-		public override int vmethod_3(OGGClass6 class71_0, object object_2)
+		public override int vmethod_3(OggClass6 class710, object object2)
 		{
 			int result;
-			lock (object_0)
+			lock (_object0)
 			{
-				var class66_ = class71_0.oggClass1;
-				var class49_ = class66_.oggClass5;
-				var @class = (Class55)object_2;
-				var class54_ = @class.class54_0;
-				var class27_ = @class.class27_0;
-				var num = class71_0.int_3 = class49_.int_13[class71_0.int_1];
-				var array = class66_.float_2[class71_0.int_1][class71_0.int_0][class71_0.int_2][class27_.int_1];
-				if (float_0 == null || float_0.Length < class49_.int_8)
+				var class66 = class710.OggClass1;
+				var class49 = class66.OggClass5;
+				var @class = (Class55)object2;
+				var class54 = @class.Class540;
+				var class27 = @class.Class270;
+				var num = class710.Int3 = class49.Int13[class710.Int1];
+				var array = class66.Float2[class710.Int1][class710.Int0][class710.Int2][class27.Int1];
+				if (_float0 == null || _float0.Length < class49.Int8)
 				{
-					float_0 = new float[class49_.int_8][];
-					int_1 = new int[class49_.int_8];
-					int_0 = new int[class49_.int_8];
-					object_1 = new object[class49_.int_8];
+					_float0 = new float[class49.Int8][];
+					_int1 = new int[class49.Int8];
+					_int0 = new int[class49.Int8];
+					_object1 = new object[class49.Int8];
 				}
-				for (var i = 0; i < class49_.int_8; i++)
+				for (var i = 0; i < class49.Int8; i++)
 				{
-					var array2 = class71_0.float_0[i];
-					var num2 = class54_.int_1[i];
-					object_1[i] = @class.class28_0[num2].vmethod_3(class71_0, @class.object_1[num2], object_1[i]);
-					if (object_1[i] != null)
+					var array2 = class710.Float0[i];
+					var num2 = class54.Int1[i];
+					_object1[i] = @class.Class280[num2].vmethod_3(class710, @class.Object1[num2], _object1[i]);
+					if (_object1[i] != null)
 					{
-						int_1[i] = 1;
+						_int1[i] = 1;
 					}
 					else
 					{
-						int_1[i] = 0;
+						_int1[i] = 0;
 					}
 					for (var j = 0; j < num / 2; j++)
 					{
 						array2[j] = 0f;
 					}
 				}
-				for (var k = 0; k < class54_.int_6; k++)
+				for (var k = 0; k < class54.Int6; k++)
 				{
-					if (int_1[class54_.int_7[k]] != 0 || int_1[class54_.int_8[k]] != 0)
+					if (_int1[class54.Int7[k]] != 0 || _int1[class54.Int8[k]] != 0)
 					{
-						int_1[class54_.int_7[k]] = 1;
-						int_1[class54_.int_8[k]] = 1;
+						_int1[class54.Int7[k]] = 1;
+						_int1[class54.Int8[k]] = 1;
 					}
 				}
-				for (var l = 0; l < class54_.int_0; l++)
+				for (var l = 0; l < class54.Int0; l++)
 				{
 					var num3 = 0;
-					for (var m = 0; m < class49_.int_8; m++)
+					for (var m = 0; m < class49.Int8; m++)
 					{
-						if (class54_.int_1[m] == l)
+						if (class54.Int1[m] == l)
 						{
-							if (int_1[m] != 0)
+							if (_int1[m] != 0)
 							{
-								int_0[num3] = 1;
+								_int0[num3] = 1;
 							}
 							else
 							{
-								int_0[num3] = 0;
+								_int0[num3] = 0;
 							}
-							float_0[num3++] = class71_0.float_0[m];
+							_float0[num3++] = class710.Float0[m];
 						}
 					}
-					@class.class23_0[l].vmethod_3(class71_0, @class.object_2[l], float_0, int_0, num3);
+					@class.Class230[l].vmethod_3(class710, @class.Object2[l], _float0, _int0, num3);
 				}
-				for (var n = class54_.int_6 - 1; n >= 0; n--)
+				for (var n = class54.Int6 - 1; n >= 0; n--)
 				{
-					var array3 = class71_0.float_0[class54_.int_7[n]];
-					var array4 = class71_0.float_0[class54_.int_8[n]];
+					var array3 = class710.Float0[class54.Int7[n]];
+					var array4 = class710.Float0[class54.Int8[n]];
 					for (var num4 = 0; num4 < num / 2; num4++)
 					{
 						var num5 = array3[num4];
@@ -214,21 +214,21 @@ namespace ns3
 						}
 					}
 				}
-				for (var num7 = 0; num7 < class49_.int_8; num7++)
+				for (var num7 = 0; num7 < class49.Int8; num7++)
 				{
-					var array5 = class71_0.float_0[num7];
-					var num8 = class54_.int_1[num7];
-					@class.class28_0[num8].vmethod_4(class71_0, @class.object_1[num8], object_1[num7], array5);
+					var array5 = class710.Float0[num7];
+					var num8 = class54.Int1[num7];
+					@class.Class280[num8].vmethod_4(class710, @class.Object1[num8], _object1[num7], array5);
 				}
-				for (var num9 = 0; num9 < class49_.int_8; num9++)
+				for (var num9 = 0; num9 < class49.Int8; num9++)
 				{
-					var array6 = class71_0.float_0[num9];
-					((Class68)class66_.object_0[class71_0.int_1][0]).method_1(array6, array6);
+					var array6 = class710.Float0[num9];
+					((Class68)class66.Object0[class710.Int1][0]).method_1(array6, array6);
 				}
-				for (var num10 = 0; num10 < class49_.int_8; num10++)
+				for (var num10 = 0; num10 < class49.Int8; num10++)
 				{
-					var array7 = class71_0.float_0[num10];
-					if (int_1[num10] != 0)
+					var array7 = class710.Float0[num10];
+					if (_int1[num10] != 0)
 					{
 						for (var num11 = 0; num11 < num; num11++)
 						{
@@ -248,13 +248,13 @@ namespace ns3
 			return result;
 		}
 
-		private static int smethod_0(int int_2)
+		private static int smethod_0(int int2)
 		{
 			var num = 0;
-			while (int_2 > 1)
+			while (int2 > 1)
 			{
 				num++;
-				int_2 = (int)((uint)int_2 >> 1);
+				int2 = (int)((uint)int2 >> 1);
 			}
 			return num;
 		}

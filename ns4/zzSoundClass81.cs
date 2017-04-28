@@ -3,112 +3,112 @@ using SharpAudio.ASC.Mp3.Decoding;
 
 namespace ns4
 {
-	public class zzSoundClass81
+	public class ZzSoundClass81
 	{
-		private static readonly Class104 class104_0 = new Class104();
+		private static readonly Class104 Class1040 = new Class104();
 
-		private Class84 class84_0;
+		private Class84 _class840;
 
-		private Class80 class80_0;
+		private Class80 _class800;
 
-		private Class80 class80_1;
+		private Class80 _class801;
 
-		private Class85 class85_0;
+		private Class85 _class850;
 
-		private Class93 class93_0;
+		private Class93 _class930;
 
-		private Class92 class92_0;
+		private Class92 _class920;
 
-		private int int_0;
+		private int _int0;
 
-		private int int_1;
+		private int _int1;
 
-		private readonly Class105 class105_0 = new Class105();
+		private readonly Class105 _class1050 = new Class105();
 
-		private readonly Class104 class104_1;
+		private readonly Class104 _class1041;
 
-		private bool bool_0;
+		private bool _bool0;
 
 		public Class84 method_0()
 		{
-			return class84_0;
+			return _class840;
 		}
 
 		public int method_1()
 		{
-			return int_0;
+			return _int0;
 		}
 
 		public int method_2()
 		{
-			return int_1;
+			return _int1;
 		}
 
-		public zzSoundClass81() : this(null)
+		public ZzSoundClass81() : this(null)
 		{
 		}
 
-		public zzSoundClass81(Class104 class104_2)
+		public ZzSoundClass81(Class104 class1042)
 		{
-			if (class104_2 == null)
+			if (class1042 == null)
 			{
-				class104_2 = class104_0;
+				class1042 = Class1040;
 			}
-			class104_1 = class104_2;
-			var @class = class104_1.method_1();
+			_class1041 = class1042;
+			var @class = _class1041.method_1();
 			if (@class != null)
 			{
-				class105_0.method_2(@class);
+				_class1050.method_2(@class);
 			}
 		}
 
-		private void method_3(zzSoundClass class107_0)
+		private void method_3(ZzSoundClass class1070)
 		{
-			var @enum = class107_0.method_8();
-			class107_0.method_4();
-			var num = (@enum == Enum5.const_3 || class104_1.method_0() != Enum4.const_0) ? 1 : 2;
-			if (class84_0 == null)
+			var @enum = class1070.method_8();
+			class1070.method_4();
+			var num = (@enum == Enum5.Const3 || _class1041.method_0() != Enum4.Const0) ? 1 : 2;
+			if (_class840 == null)
 			{
-				class84_0 = new Class84(num);
+				_class840 = new Class84(num);
 			}
-			var float_ = class105_0.method_0();
-			class80_0 = new Class80(0, float_);
+			var float_ = _class1050.method_0();
+			_class800 = new Class80(0, float_);
 			if (num == 2)
 			{
-				class80_1 = new Class80(1, float_);
+				_class801 = new Class80(1, float_);
 			}
-			int_1 = num;
-			int_0 = class107_0.method_7();
-			bool_0 = true;
+			_int1 = num;
+			_int0 = class1070.method_7();
+			_bool0 = true;
 		}
 
-		private Interface7 method_4(zzSoundClass class107_0, Class82 class82_0, int int_2)
+		private INterface7 method_4(ZzSoundClass class1070, Class82 class820, int int2)
 		{
-			Interface7 @interface = null;
-			switch (int_2)
+			INterface7 @interface = null;
+			switch (int2)
 			{
 			case 1:
-				if (class92_0 == null)
+				if (_class920 == null)
 				{
-					class92_0 = new Class92();
-					class92_0.vmethod_0(class82_0, class107_0, class80_0, class80_1, class84_0, class104_1.method_0());
+					_class920 = new Class92();
+					_class920.vmethod_0(class820, class1070, _class800, _class801, _class840, _class1041.method_0());
 				}
-				@interface = class92_0;
+				@interface = _class920;
 				break;
 			case 2:
-				if (class93_0 == null)
+				if (_class930 == null)
 				{
-					class93_0 = new Class93();
-					class93_0.vmethod_0(class82_0, class107_0, class80_0, class80_1, class84_0, class104_1.method_0());
+					_class930 = new Class93();
+					_class930.vmethod_0(class820, class1070, _class800, _class801, _class840, _class1041.method_0());
 				}
-				@interface = class93_0;
+				@interface = _class930;
 				break;
 			case 3:
-				if (class85_0 == null)
+				if (_class850 == null)
 				{
-					class85_0 = new Class85(class82_0, class107_0, class80_0, class80_1, class84_0, class104_1.method_0());
+					_class850 = new Class85(class820, class1070, _class800, _class801, _class840, _class1041.method_0());
 				}
-				@interface = class85_0;
+				@interface = _class850;
 				break;
 			}
 			if (@interface == null)
@@ -118,18 +118,18 @@ namespace ns4
 			return @interface;
 		}
 
-		public Class84 method_5(zzSoundClass class107_0, Class82 class82_0)
+		public Class84 method_5(ZzSoundClass class1070, Class82 class820)
 		{
-			if (!bool_0)
+			if (!_bool0)
 			{
-				method_3(class107_0);
+				method_3(class1070);
 			}
-			var int_ = class107_0.method_4();
-			class84_0.method_6();
-			var @interface = method_4(class107_0, class82_0, int_);
+			var int_ = class1070.method_4();
+			_class840.method_6();
+			var @interface = method_4(class1070, class820, int_);
 			@interface.imethod_0();
-			class84_0.method_5();
-			return class84_0;
+			_class840.method_5();
+			return _class840;
 		}
 	}
 }

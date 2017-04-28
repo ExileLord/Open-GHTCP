@@ -1,3 +1,3 @@
 using System.IO;
 
-public delegate void Delegate125(string string_0, FileAttributes fileAttributes_0);
+public delegate void Delegate125(string string0, FileAttributes fileAttributes0);

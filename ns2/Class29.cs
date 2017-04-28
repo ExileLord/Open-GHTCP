@@ -6,11 +6,11 @@ namespace ns2
 {
 	public class Class29 : Class28
 	{
-		private static int int_0 = 140;
+		private static int _int0 = 140;
 
-		private static readonly int int_1 = 63;
+		private static readonly int Int1 = 63;
 
-		private static readonly float[] float_0 = {
+		private static readonly float[] Float0 = {
 			1.06498632E-07f,
 			1.1341951E-07f,
 			1.20790148E-07f,
@@ -269,58 +269,58 @@ namespace ns2
 			1f
 		};
 
-		public override object vmethod_0(OGGClass5 class49_0, OGGClass3 class38_0)
+		public override object vmethod_0(OggClass5 class490, OggClass3 class380)
 		{
 			var num = 0;
 			var num2 = -1;
 			var @class = new Class31();
-			@class.int_0 = class38_0.method_6(5);
-			for (var i = 0; i < @class.int_0; i++)
+			@class.Int0 = class380.method_6(5);
+			for (var i = 0; i < @class.Int0; i++)
 			{
-				@class.int_1[i] = class38_0.method_6(4);
-				if (num2 < @class.int_1[i])
+				@class.Int1[i] = class380.method_6(4);
+				if (num2 < @class.Int1[i])
 				{
-					num2 = @class.int_1[i];
+					num2 = @class.Int1[i];
 				}
 			}
 			for (var j = 0; j < num2 + 1; j++)
 			{
-				@class.int_2[j] = class38_0.method_6(3) + 1;
-				@class.int_3[j] = class38_0.method_6(2);
-				if (@class.int_3[j] < 0)
+				@class.Int2[j] = class380.method_6(3) + 1;
+				@class.Int3[j] = class380.method_6(2);
+				if (@class.Int3[j] < 0)
 				{
 					@class.method_0();
 					return null;
 				}
-				if (@class.int_3[j] != 0)
+				if (@class.Int3[j] != 0)
 				{
-					@class.int_4[j] = class38_0.method_6(8);
+					@class.Int4[j] = class380.method_6(8);
 				}
-				if (@class.int_4[j] < 0 || @class.int_4[j] >= class49_0.int_19)
+				if (@class.Int4[j] < 0 || @class.Int4[j] >= class490.Int19)
 				{
 					@class.method_0();
 					return null;
 				}
-				for (var k = 0; k < 1 << @class.int_3[j]; k++)
+				for (var k = 0; k < 1 << @class.Int3[j]; k++)
 				{
-					@class.int_5[j][k] = class38_0.method_6(8) - 1;
-					if (@class.int_5[j][k] < -1 || @class.int_5[j][k] >= class49_0.int_19)
+					@class.Int5[j][k] = class380.method_6(8) - 1;
+					if (@class.Int5[j][k] < -1 || @class.Int5[j][k] >= class490.Int19)
 					{
 						@class.method_0();
 						return null;
 					}
 				}
 			}
-			@class.int_6 = class38_0.method_6(2) + 1;
-			var num3 = class38_0.method_6(4);
+			@class.Int6 = class380.method_6(2) + 1;
+			var num3 = class380.method_6(4);
 			var l = 0;
 			var m = 0;
-			while (l < @class.int_0)
+			while (l < @class.Int0)
 			{
-				num += @class.int_2[@class.int_1[l]];
+				num += @class.Int2[@class.Int1[l]];
 				while (m < num)
 				{
-					var num4 = @class.int_7[m + 2] = class38_0.method_6(num3);
+					var num4 = @class.Int7[m + 2] = class380.method_6(num3);
 					if (num4 < 0 || num4 >= 1 << num3)
 					{
 						@class.method_0();
@@ -330,25 +330,25 @@ namespace ns2
 				}
 				l++;
 			}
-			@class.int_7[0] = 0;
-			@class.int_7[1] = 1 << num3;
+			@class.Int7[0] = 0;
+			@class.Int7[1] = 1 << num3;
 			return @class;
 		}
 
-		public override object vmethod_1(OGGClass1 class66_0, Class27 class27_0, object object_0)
+		public override object vmethod_1(OggClass1 class660, Class27 class270, object object0)
 		{
 			var num = 0;
-			var array = new int[int_1 + 2];
-			var @class = (Class31)object_0;
+			var array = new int[Int1 + 2];
+			var @class = (Class31)object0;
 			var class2 = new Class32();
-			class2.class31_0 = @class;
-			class2.int_7 = @class.int_7[1];
-			for (var i = 0; i < @class.int_0; i++)
+			class2.Class310 = @class;
+			class2.Int7 = @class.Int7[1];
+			for (var i = 0; i < @class.Int0; i++)
 			{
-				num += @class.int_2[@class.int_1[i]];
+				num += @class.Int2[@class.Int1[i]];
 			}
 			num += 2;
-			class2.int_6 = num;
+			class2.Int6 = num;
 			for (var j = 0; j < num; j++)
 			{
 				array[j] = j;
@@ -357,7 +357,7 @@ namespace ns2
 			{
 				for (var l = k; l < num; l++)
 				{
-					if (@class.int_7[array[k]] > @class.int_7[array[l]])
+					if (@class.Int7[array[k]] > @class.Int7[array[l]])
 					{
 						var num2 = array[l];
 						array[l] = array[k];
@@ -367,32 +367,32 @@ namespace ns2
 			}
 			for (var m = 0; m < num; m++)
 			{
-				class2.int_2[m] = array[m];
+				class2.Int2[m] = array[m];
 			}
 			for (var n = 0; n < num; n++)
 			{
-				class2.int_3[class2.int_2[n]] = n;
+				class2.Int3[class2.Int2[n]] = n;
 			}
 			for (var num3 = 0; num3 < num; num3++)
 			{
-				class2.int_1[num3] = @class.int_7[class2.int_2[num3]];
+				class2.Int1[num3] = @class.Int7[class2.Int2[num3]];
 			}
-			switch (@class.int_6)
+			switch (@class.Int6)
 			{
 			case 1:
-				class2.int_8 = 256;
+				class2.Int8 = 256;
 				break;
 			case 2:
-				class2.int_8 = 128;
+				class2.Int8 = 128;
 				break;
 			case 3:
-				class2.int_8 = 86;
+				class2.Int8 = 86;
 				break;
 			case 4:
-				class2.int_8 = 64;
+				class2.Int8 = 64;
 				break;
 			default:
-				class2.int_8 = -1;
+				class2.Int8 = -1;
 				break;
 			}
 			for (var num4 = 0; num4 < num - 2; num4++)
@@ -400,11 +400,11 @@ namespace ns2
 				var num5 = 0;
 				var num6 = 1;
 				var num7 = 0;
-				var num8 = class2.int_7;
-				var num9 = @class.int_7[num4 + 2];
+				var num8 = class2.Int7;
+				var num9 = @class.Int7[num4 + 2];
 				for (var num10 = 0; num10 < num4 + 2; num10++)
 				{
-					var num11 = @class.int_7[num10];
+					var num11 = @class.Int7[num10];
 					if (num11 > num7 && num11 < num9)
 					{
 						num5 = num10;
@@ -416,29 +416,29 @@ namespace ns2
 						num8 = num11;
 					}
 				}
-				class2.int_5[num4] = num5;
-				class2.int_4[num4] = num6;
+				class2.Int5[num4] = num5;
+				class2.Int4[num4] = num6;
 			}
 			return class2;
 		}
 
-		public override void vmethod_2(object object_0)
+		public override void vmethod_2(object object0)
 		{
 		}
 
-		public override object vmethod_3(OGGClass6 class71_0, object object_0, object object_1)
+		public override object vmethod_3(OggClass6 class710, object object0, object object1)
 		{
-			var @class = (Class32)object_0;
-			var class31_ = @class.class31_0;
-			var class21_ = class71_0.oggClass1.oggClass4;
-			if (class71_0.oggClass3.method_6(1) == 1)
+			var @class = (Class32)object0;
+			var class31 = @class.Class310;
+			var class21 = class710.OggClass1.OggClass4;
+			if (class710.OggClass3.method_6(1) == 1)
 			{
 				int[] array = null;
-				if (object_1 is int[])
+				if (object1 is int[])
 				{
-					array = (int[])object_1;
+					array = (int[])object1;
 				}
-				if (array != null && array.Length >= @class.int_6)
+				if (array != null && array.Length >= @class.Int6)
 				{
 					for (var i = 0; i < array.Length; i++)
 					{
@@ -447,22 +447,22 @@ namespace ns2
 				}
 				else
 				{
-					array = new int[@class.int_6];
+					array = new int[@class.Int6];
 				}
-				array[0] = class71_0.oggClass3.method_6(smethod_2(@class.int_8 - 1));
-				array[1] = class71_0.oggClass3.method_6(smethod_2(@class.int_8 - 1));
+				array[0] = class710.OggClass3.method_6(smethod_2(@class.Int8 - 1));
+				array[1] = class710.OggClass3.method_6(smethod_2(@class.Int8 - 1));
 				var j = 0;
 				var num = 2;
-				while (j < class31_.int_0)
+				while (j < class31.Int0)
 				{
-					var num2 = class31_.int_1[j];
-					var num3 = class31_.int_2[num2];
-					var num4 = class31_.int_3[num2];
+					var num2 = class31.Int1[j];
+					var num3 = class31.Int2[num2];
+					var num4 = class31.Int3[num2];
 					var num5 = 1 << num4;
 					var num6 = 0;
 					if (num4 != 0)
 					{
-						num6 = class21_[class31_.int_4[num2]].method_4(class71_0.oggClass3);
+						num6 = class21[class31.Int4[num2]].method_4(class710.OggClass3);
 						if (num6 == -1)
 						{
 							return null;
@@ -470,11 +470,11 @@ namespace ns2
 					}
 					for (var k = 0; k < num3; k++)
 					{
-						var num7 = class31_.int_5[num2][num6 & num5 - 1];
+						var num7 = class31.Int5[num2][num6 & num5 - 1];
 						num6 = (int)((uint)num6 >> num4);
 						if (num7 >= 0)
 						{
-							if ((array[num + k] = class21_[num7].method_4(class71_0.oggClass3)) == -1)
+							if ((array[num + k] = class21[num7].method_4(class710.OggClass3)) == -1)
 							{
 								return null;
 							}
@@ -487,10 +487,10 @@ namespace ns2
 					num += num3;
 					j++;
 				}
-				for (var l = 2; l < @class.int_6; l++)
+				for (var l = 2; l < @class.Int6; l++)
 				{
-					var num8 = smethod_0(class31_.int_7[@class.int_5[l - 2]], class31_.int_7[@class.int_4[l - 2]], array[@class.int_5[l - 2]], array[@class.int_4[l - 2]], class31_.int_7[l]);
-					var num9 = @class.int_8 - num8;
+					var num8 = smethod_0(class31.Int7[@class.Int5[l - 2]], class31.Int7[@class.Int4[l - 2]], array[@class.Int5[l - 2]], array[@class.Int4[l - 2]], class31.Int7[l]);
+					var num9 = @class.Int8 - num8;
 					var num10 = num8;
 					var num11 = ((num9 < num10) ? num9 : num10) << 1;
 					var num12 = array[l];
@@ -516,8 +516,8 @@ namespace ns2
 							num12 >>= 1;
 						}
 						array[l] = num12 + num8;
-						array[@class.int_5[l - 2]] &= 32767;
-						array[@class.int_4[l - 2]] &= 32767;
+						array[@class.Int5[l - 2]] &= 32767;
+						array[@class.Int4[l - 2]] &= 32767;
 					}
 					else
 					{
@@ -529,72 +529,72 @@ namespace ns2
 			return null;
 		}
 
-		private static int smethod_0(int int_2, int int_3, int int_4, int int_5, int int_6)
+		private static int smethod_0(int int2, int int3, int int4, int int5, int int6)
 		{
-			int_4 &= 32767;
-			int_5 &= 32767;
-			var num = int_5 - int_4;
-			var num2 = int_3 - int_2;
+			int4 &= 32767;
+			int5 &= 32767;
+			var num = int5 - int4;
+			var num2 = int3 - int2;
 			var num3 = Math.Abs(num);
-			var num4 = num3 * (int_6 - int_2);
+			var num4 = num3 * (int6 - int2);
 			var num5 = num4 / num2;
 			if (num < 0)
 			{
-				return int_4 - num5;
+				return int4 - num5;
 			}
-			return int_4 + num5;
+			return int4 + num5;
 		}
 
-		public override int vmethod_4(OGGClass6 class71_0, object object_0, object object_1, float[] float_1)
+		public override int vmethod_4(OggClass6 class710, object object0, object object1, float[] float1)
 		{
-			var @class = (Class32)object_0;
-			var class31_ = @class.class31_0;
-			var num = class71_0.oggClass1.oggClass5.int_13[class71_0.int_4] / 2;
-			if (object_1 != null)
+			var @class = (Class32)object0;
+			var class31 = @class.Class310;
+			var num = class710.OggClass1.OggClass5.Int13[class710.Int4] / 2;
+			if (object1 != null)
 			{
-				var array = (int[])object_1;
+				var array = (int[])object1;
 				var num2 = 0;
 				var int_ = 0;
-				var int_2 = array[0] * class31_.int_6;
-				for (var i = 1; i < @class.int_6; i++)
+				var int2 = array[0] * class31.Int6;
+				for (var i = 1; i < @class.Int6; i++)
 				{
-					var num3 = @class.int_2[i];
+					var num3 = @class.Int2[i];
 					var num4 = array[num3] & 32767;
 					if (num4 == array[num3])
 					{
-						num4 *= class31_.int_6;
-						num2 = class31_.int_7[num3];
-						smethod_1(int_, num2, int_2, num4, float_1);
+						num4 *= class31.Int6;
+						num2 = class31.Int7[num3];
+						smethod_1(int_, num2, int2, num4, float1);
 						int_ = num2;
-						int_2 = num4;
+						int2 = num4;
 					}
 				}
 				for (var j = num2; j < num; j++)
 				{
-					float_1[j] *= float_1[j - 1];
+					float1[j] *= float1[j - 1];
 				}
 				return 1;
 			}
 			for (var k = 0; k < num; k++)
 			{
-				float_1[k] = 0f;
+				float1[k] = 0f;
 			}
 			return 0;
 		}
 
-		private static void smethod_1(int int_2, int int_3, int int_4, int int_5, float[] float_1)
+		private static void smethod_1(int int2, int int3, int int4, int int5, float[] float1)
 		{
-			var num = int_5 - int_4;
-			var num2 = int_3 - int_2;
+			var num = int5 - int4;
+			var num2 = int3 - int2;
 			var num3 = Math.Abs(num);
 			var num4 = num / num2;
 			var num5 = (num < 0) ? (num4 - 1) : (num4 + 1);
-			var num6 = int_2;
-			var num7 = int_4;
+			var num6 = int2;
+			var num7 = int4;
 			var num8 = 0;
 			num3 -= Math.Abs(num4 * num2);
-			float_1[num6] *= float_0[num7];
-			while (++num6 < int_3)
+			float1[num6] *= Float0[num7];
+			while (++num6 < int3)
 			{
 				num8 += num3;
 				if (num8 >= num2)
@@ -606,17 +606,17 @@ namespace ns2
 				{
 					num7 += num4;
 				}
-				float_1[num6] *= float_0[num7];
+				float1[num6] *= Float0[num7];
 			}
 		}
 
-		private static int smethod_2(int int_2)
+		private static int smethod_2(int int2)
 		{
 			var num = 0;
-			while (int_2 != 0)
+			while (int2 != 0)
 			{
 				num++;
-				int_2 = (int)((uint)int_2 >> 1);
+				int2 = (int)((uint)int2 >> 1);
 			}
 			return num;
 		}

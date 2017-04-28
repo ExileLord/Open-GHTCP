@@ -2,27 +2,27 @@ using ns22;
 
 namespace ns9
 {
-	public class Class358 : Interface14
+	public class Class358 : INterface14
 	{
-		private readonly int int_0;
+		private readonly int _int0;
 
-		private readonly EmptyInterface1 interface13_0;
+		private readonly IEmptyInterface1 _interface130;
 
-		private readonly int int_1;
+		private readonly int _int1;
 
-		private readonly int int_2;
+		private readonly int _int2;
 
-		public Class358(EmptyInterface1 interface13_1, int int_3, int int_4, int int_5)
+		public Class358(IEmptyInterface1 interface131, int int3, int int4, int int5)
 		{
-			interface13_0 = interface13_1;
-			int_0 = int_3;
-			int_1 = int_4;
-			int_2 = int_5;
+			_interface130 = interface131;
+			_int0 = int3;
+			_int1 = int4;
+			_int2 = int5;
 		}
 
 		public int imethod_0()
 		{
-			return int_2;
+			return _int2;
 		}
 	}
 }

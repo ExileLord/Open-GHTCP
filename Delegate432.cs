@@ -1,3 +1,3 @@
 using System;
 
-public delegate void Delegate432(EventHandler eventHandler_0);
+public delegate void Delegate432(EventHandler eventHandler0);

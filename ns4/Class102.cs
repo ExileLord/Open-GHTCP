@@ -2,99 +2,99 @@ namespace ns4
 {
 	public class Class102
 	{
-		private static readonly int int_0 = 32767;
+		private static readonly int Int0 = 32767;
 
-		private int int_1;
+		private int _int1;
 
-		private int int_2;
+		private int _int2;
 
-		private int int_3;
+		private int _int3;
 
-		private readonly int[] int_4 = new int[32768];
+		private readonly int[] _int4 = new int[32768];
 
 		public Class102()
 		{
-			int_1 = 0;
-			int_2 = 0;
-			int_3 = 0;
+			_int1 = 0;
+			_int2 = 0;
+			_int3 = 0;
 		}
 
 		public int method_0()
 		{
-			return int_2;
+			return _int2;
 		}
 
-		public int method_1(int int_5)
+		public int method_1(int int5)
 		{
-			int_2 += int_5;
+			_int2 += int5;
 			var num = 0;
-			var num2 = int_3;
-			if (num2 + int_5 < 32768)
+			var num2 = _int3;
+			if (num2 + int5 < 32768)
 			{
-				while (int_5-- > 0)
+				while (int5-- > 0)
 				{
 					num <<= 1;
-					num |= ((int_4[num2++] != 0) ? 1 : 0);
+					num |= ((_int4[num2++] != 0) ? 1 : 0);
 				}
 			}
 			else
 			{
-				while (int_5-- > 0)
+				while (int5-- > 0)
 				{
 					num <<= 1;
-					num |= ((int_4[num2] != 0) ? 1 : 0);
-					num2 = (num2 + 1 & int_0);
+					num |= ((_int4[num2] != 0) ? 1 : 0);
+					num2 = (num2 + 1 & Int0);
 				}
 			}
-			int_3 = num2;
+			_int3 = num2;
 			return num;
 		}
 
 		public int method_2()
 		{
-			int_2++;
-			var result = int_4[int_3];
-			int_3 = (int_3 + 1 & int_0);
+			_int2++;
+			var result = _int4[_int3];
+			_int3 = (_int3 + 1 & Int0);
 			return result;
 		}
 
-		public void method_3(int int_5)
+		public void method_3(int int5)
 		{
-			var num = int_1;
-			int_4[num++] = (int_5 & 128);
-			int_4[num++] = (int_5 & 64);
-			int_4[num++] = (int_5 & 32);
-			int_4[num++] = (int_5 & 16);
-			int_4[num++] = (int_5 & 8);
-			int_4[num++] = (int_5 & 4);
-			int_4[num++] = (int_5 & 2);
-			int_4[num++] = (int_5 & 1);
+			var num = _int1;
+			_int4[num++] = (int5 & 128);
+			_int4[num++] = (int5 & 64);
+			_int4[num++] = (int5 & 32);
+			_int4[num++] = (int5 & 16);
+			_int4[num++] = (int5 & 8);
+			_int4[num++] = (int5 & 4);
+			_int4[num++] = (int5 & 2);
+			_int4[num++] = (int5 & 1);
 			if (num == 32768)
 			{
-				int_1 = 0;
+				_int1 = 0;
 				return;
 			}
-			int_1 = num;
+			_int1 = num;
 		}
 
-		public void method_4(int int_5)
+		public void method_4(int int5)
 		{
-			int_2 -= int_5;
-			int_3 -= int_5;
-			if (int_3 < 0)
+			_int2 -= int5;
+			_int3 -= int5;
+			if (_int3 < 0)
 			{
-				int_3 += 32768;
+				_int3 += 32768;
 			}
 		}
 
-		public void method_5(int int_5)
+		public void method_5(int int5)
 		{
-			var num = int_5 << 3;
-			int_2 -= num;
-			int_3 -= num;
-			if (int_3 < 0)
+			var num = int5 << 3;
+			_int2 -= num;
+			_int3 -= num;
+			if (_int3 < 0)
 			{
-				int_3 += 32768;
+				_int3 += 32768;
 			}
 		}
 	}

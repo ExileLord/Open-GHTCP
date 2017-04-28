@@ -2,10 +2,10 @@ namespace ns7
 {
 	public class BlackMagic
 	{
-		public static void CopyArrayOffset(int[] source, int sourceSize, int int_2, int[] destination, int offset)
+		public static void CopyArrayOffset(int[] source, int sourceSize, int int2, int[] destination, int offset)
 		{
             //This is black magic. Not sure what it's used for yet
-			switch (int_2)
+			switch (int2)
 			{
 			case 0:
 				for (var i = 0; i < sourceSize; i++)

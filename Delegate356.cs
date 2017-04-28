@@ -1,1 +1,1 @@
-public delegate double Delegate356(byte[] byte_0, int int_0);
+public delegate double Delegate356(byte[] byte0, int int0);

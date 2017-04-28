@@ -8,7 +8,7 @@ namespace ns2
 		{
 		}
 
-		public Exception0(string string_0) : base("csorbis: " + string_0)
+		public Exception0(string string0) : base("csorbis: " + string0)
 		{
 		}
 	}

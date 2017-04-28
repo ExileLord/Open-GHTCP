@@ -9,34 +9,34 @@ namespace ns9
 {
 	public class Stream16 : Stream15
 	{
-		private bool bool_0;
+		private bool _bool0;
 
-		private readonly BE_CONFIG be_CONFIG_0;
+		private readonly BeConfig _beConfig0;
 
-		private readonly uint uint_0;
+		private readonly uint _uint0;
 
-		private readonly uint uint_1;
+		private readonly uint _uint1;
 
-		private readonly uint uint_2;
+		private readonly uint _uint2;
 
-		private readonly byte[] byte_0;
+		private readonly byte[] _byte0;
 
-		private int int_2;
+		private int _int2;
 
-		private readonly byte[] byte_1;
+		private readonly byte[] _byte1;
 
-		public Stream16(Stream stream_1, WaveFormat waveFormat_1, BE_CONFIG be_CONFIG_1) : base(stream_1, waveFormat_1)
+		public Stream16(Stream stream1, WaveFormat waveFormat1, BeConfig beConfig1) : base(stream1, waveFormat1)
 		{
 			try
 			{
-				be_CONFIG_0 = be_CONFIG_1;
-				var num = LameEncoder.beInitStream(be_CONFIG_0, ref uint_1, ref uint_2, ref uint_0);
+				_beConfig0 = beConfig1;
+				var num = LameEncoder.beInitStream(_beConfig0, ref _uint1, ref _uint2, ref _uint0);
 				if (num != 0u)
 				{
 					throw new ApplicationException(string.Format("Lame_encDll.beInitStream failed with the error code {0}", num));
 				}
-				byte_0 = new byte[uint_1 * 2u];
-				byte_1 = new byte[uint_2];
+				_byte0 = new byte[_uint1 * 2u];
+				_byte1 = new byte[_uint2];
 			}
 			catch
 			{
@@ -47,32 +47,32 @@ namespace ns9
 
 		public override int vmethod_0()
 		{
-			return byte_0.Length;
+			return _byte0.Length;
 		}
 
 		public void method_1()
 		{
-			if (!bool_0)
+			if (!_bool0)
 			{
 				try
 				{
 					var num = 0u;
-					if (int_2 > 0 && LameEncoder.smethod_0(uint_0, byte_0, 0, (uint)int_2, byte_1, ref num) == 0u && num > 0u)
+					if (_int2 > 0 && LameEncoder.smethod_0(_uint0, _byte0, 0, (uint)_int2, _byte1, ref num) == 0u && num > 0u)
 					{
-						base.Write(byte_1, 0, (int)num);
+						base.Write(_byte1, 0, (int)num);
 					}
 					num = 0u;
-					if (LameEncoder.beDeinitStream(uint_0, byte_1, ref num) == 0u && num > 0u)
+					if (LameEncoder.beDeinitStream(_uint0, _byte1, ref num) == 0u && num > 0u)
 					{
-						base.Write(byte_1, 0, (int)num);
+						base.Write(_byte1, 0, (int)num);
 					}
 				}
 				finally
 				{
-					LameEncoder.beCloseStream(uint_0);
+					LameEncoder.beCloseStream(_uint0);
 				}
 			}
-			bool_0 = true;
+			_bool0 = true;
 		}
 
 		public override void Close()
@@ -86,71 +86,71 @@ namespace ns9
 			var num = 0u;
 			while (count > 0)
 			{
-				if (int_2 > 0)
+				if (_int2 > 0)
 				{
-					var num2 = Math.Min(count, byte_0.Length - int_2);
-					Buffer.BlockCopy(buffer, offset, byte_0, int_2, num2);
-					int_2 += num2;
+					var num2 = Math.Min(count, _byte0.Length - _int2);
+					Buffer.BlockCopy(buffer, offset, _byte0, _int2, num2);
+					_int2 += num2;
 					offset += num2;
 					count -= num2;
-					if (int_2 >= byte_0.Length)
+					if (_int2 >= _byte0.Length)
 					{
-						int_2 = 0;
-						var num3 = LameEncoder.smethod_1(uint_0, byte_0, byte_1, ref num);
+						_int2 = 0;
+						var num3 = LameEncoder.smethod_1(_uint0, _byte0, _byte1, ref num);
 						if (num3 != 0u)
 						{
 							throw new ApplicationException("Lame_encDll.EncodeChunk failed with the error code " + num3);
 						}
 						if (num > 0u)
 						{
-							stream_0.Write(byte_1, 0, (int)num);
+							Stream0.Write(_byte1, 0, (int)num);
 						}
 					}
 				}
-				else if (count >= byte_0.Length)
+				else if (count >= _byte0.Length)
 				{
-					var num3 = LameEncoder.smethod_0(uint_0, buffer, offset, (uint)byte_0.Length, byte_1, ref num);
+					var num3 = LameEncoder.smethod_0(_uint0, buffer, offset, (uint)_byte0.Length, _byte1, ref num);
 					if (num3 != 0u)
 					{
 						throw new ApplicationException("Lame_encDll.EncodeChunk failed with the error code " + num3);
 					}
 					if (num > 0u)
 					{
-						stream_0.Write(byte_1, 0, (int)num);
+						Stream0.Write(_byte1, 0, (int)num);
 					}
-					count -= byte_0.Length;
-					offset += byte_0.Length;
+					count -= _byte0.Length;
+					offset += _byte0.Length;
 				}
 				else
 				{
-					Buffer.BlockCopy(buffer, offset, byte_0, 0, count);
-					int_2 = count;
+					Buffer.BlockCopy(buffer, offset, _byte0, 0, count);
+					_int2 = count;
 					offset += count;
 					count = 0;
 				}
 			}
 		}
 
-		public static Class16 smethod_0(GenericAudioStream stream1_0, Stream stream_1, int int_3, int int_4)
+		public static Class16 smethod_0(GenericAudioStream stream10, Stream stream1, int int3, int int4)
 		{
-			var waveFormat = stream1_0.vmethod_0();
-			if (waveFormat.waveFormatTag_0 != WaveFormatTag.PCM || waveFormat.short_2 != 16)
+			var waveFormat = stream10.vmethod_0();
+			if (waveFormat.waveFormatTag_0 != WaveFormatTag.Pcm || waveFormat.short_2 != 16)
 			{
-				stream1_0 = new Stream4(stream1_0, 16);
-				waveFormat = stream1_0.vmethod_0();
+				stream10 = new Stream4(stream10, 16);
+				waveFormat = stream10.vmethod_0();
 			}
-			var stream = new Stream16(stream_1, waveFormat, (waveFormat.int_0 == int_3) ? new BE_CONFIG(waveFormat, (uint)int_4) : new BE_CONFIG(waveFormat, (uint)int_4, (uint)int_3));
+			var stream = new Stream16(stream1, waveFormat, (waveFormat.int_0 == int3) ? new BeConfig(waveFormat, (uint)int4) : new BeConfig(waveFormat, (uint)int4, (uint)int3));
 			var uint_ = (uint)stream.vmethod_1().Position;
 			var array = new byte[stream.method_0() * 2];
 			Class16 result;
 			try
 			{
 				int count;
-				while ((count = stream1_0.Read(array, 0, array.Length)) > 0)
+				while ((count = stream10.Read(array, 0, array.Length)) > 0)
 				{
 					stream.Write(array, 0, count);
 				}
-				result = new Class16(new WaveFormat(int_3, waveFormat.short_0), uint_, (uint)stream.vmethod_1().Length, int_4 * 1000);
+				result = new Class16(new WaveFormat(int3, waveFormat.short_0), uint_, (uint)stream.vmethod_1().Length, int4 * 1000);
 			}
 			finally
 			{
@@ -159,29 +159,29 @@ namespace ns9
 			return result;
 		}
 
-		public static Class16 smethod_1(Stream stream_1, Class16 class16_0, int int_3)
+		public static Class16 smethod_1(Stream stream1, Class16 class160, int int3)
 		{
-			return smethod_2(stream_1, class16_0.timeSpan_0, class16_0.method_3(), int_3, false);
+			return smethod_2(stream1, class160.TimeSpan0, class160.method_3(), int3, false);
 		}
 
-		public static Class16 smethod_2(Stream stream_1, TimeSpan timeSpan_0, int int_3, int int_4, bool bool_1)
+		public static Class16 smethod_2(Stream stream1, TimeSpan timeSpan0, int int3, int int4, bool bool1)
 		{
-			var waveFormat = new WaveFormat(int_3, 16, bool_1 ? 2 : 1);
-			var stream = new Stream16(stream_1, waveFormat, new BE_CONFIG(waveFormat, (uint)int_4));
+			var waveFormat = new WaveFormat(int3, 16, bool1 ? 2 : 1);
+			var stream = new Stream16(stream1, waveFormat, new BeConfig(waveFormat, (uint)int4));
 			var uint_ = (uint)stream.vmethod_1().Position;
 			var array = new byte[stream.method_0() * 2];
 			Class16 result;
 			try
 			{
 				var num = 0;
-				var num2 = (int)(timeSpan_0.TotalSeconds * waveFormat.int_1);
+				var num2 = (int)(timeSpan0.TotalSeconds * waveFormat.int_1);
 				int count;
 				while ((count = Math.Min(num2 - num - array.Length, array.Length)) > 0)
 				{
 					stream.Write(array, 0, count);
 					num += array.Length;
 				}
-				result = new Class16(waveFormat, uint_, (uint)stream.vmethod_1().Length, int_4 * 1000);
+				result = new Class16(waveFormat, uint_, (uint)stream.vmethod_1().Length, int4 * 1000);
 			}
 			finally
 			{

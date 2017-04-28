@@ -5,18 +5,18 @@ namespace ns1
 {
 	public class Class19 : IDisposable
 	{
-		private readonly Class17 class17_0;
+		private readonly Class17 _class170;
 
-		private readonly GCHandle gchandle_0;
+		private readonly GCHandle _gchandle0;
 
-		private readonly IntPtr intptr_0;
+		private readonly IntPtr _intptr0;
 
-		public Class19(int int_0)
+		public Class19(int int0)
 		{
-			class17_0 = new Class17(int_0);
-			class17_0.method_4(int_0);
-			gchandle_0 = GCHandle.Alloc(class17_0.method_0(), GCHandleType.Pinned);
-			intptr_0 = gchandle_0.AddrOfPinnedObject();
+			_class170 = new Class17(int0);
+			_class170.method_4(int0);
+			_gchandle0 = GCHandle.Alloc(_class170.method_0(), GCHandleType.Pinned);
+			_intptr0 = _gchandle0.AddrOfPinnedObject();
 		}
 
 		~Class19()
@@ -30,22 +30,22 @@ namespace ns1
 			method_0(true);
 		}
 
-		public void method_0(bool bool_0)
+		public void method_0(bool bool0)
 		{
-			if (gchandle_0.IsAllocated)
+			if (_gchandle0.IsAllocated)
 			{
-				gchandle_0.Free();
+				_gchandle0.Free();
 			}
 		}
 
-		public static short[] smethod_0(Class19 class19_0)
+		public static short[] smethod_0(Class19 class190)
 		{
-			return Class17.smethod_0(class19_0.class17_0);
+			return Class17.smethod_0(class190._class170);
 		}
 
-		public static IntPtr smethod_1(Class19 class19_0)
+		public static IntPtr smethod_1(Class19 class190)
 		{
-			return class19_0.intptr_0;
+			return class190._intptr0;
 		}
 	}
 }

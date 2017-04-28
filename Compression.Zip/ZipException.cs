@@ -6,7 +6,7 @@ namespace Compression.Zip
 	[Serializable]
 	public class ZipException : SharpZipBaseException
 	{
-		public ZipException(SerializationInfo serializationInfo_0, StreamingContext streamingContext_0) : base(serializationInfo_0, streamingContext_0)
+		public ZipException(SerializationInfo serializationInfo0, StreamingContext streamingContext0) : base(serializationInfo0, streamingContext0)
 		{
 		}
 
@@ -14,7 +14,7 @@ namespace Compression.Zip
 		{
 		}
 
-		public ZipException(string string_0) : base(string_0)
+		public ZipException(string string0) : base(string0)
 		{
 		}
 	}

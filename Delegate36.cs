@@ -1,1 +1,1 @@
-public delegate void Delegate36(object object_0, decimal decimal_0);
+public delegate void Delegate36(object object0, decimal decimal0);

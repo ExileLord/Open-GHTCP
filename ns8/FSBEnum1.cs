@@ -1,11 +1,11 @@
 namespace ns8
 {
-	public enum FSBEnum1
+	public enum FsbEnum1
 	{
-		const_0,
-		const_1,
-		const_2,
-		const_3,
-		const_4
+		Const0,
+		Const1,
+		Const2,
+		Const3,
+		Const4
 	}
 }

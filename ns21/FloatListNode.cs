@@ -8,19 +8,19 @@ using ns22;
 
 namespace ns21
 {
-	public class FloatListNode : AbsTreeNode1_1_<FloatValueNode>
+	public class FloatListNode : AbsTreeNode11<FloatValueNode>
 	{
 		public FloatListNode()
 		{
 			vmethod_0();
 		}
 
-		public FloatListNode(bool bool_1) : this()
+		public FloatListNode(bool bool1) : this()
 		{
-			if (bool_1)
+			if (bool1)
 			{
-				var ienumerable_ = new float[2];
-				method_11(ienumerable_);
+				var ienumerable = new float[2];
+				method_11(ienumerable);
 			}
 		}
 
@@ -29,40 +29,40 @@ namespace ns21
 			return 20;
 		}
 
-		public void method_11(IEnumerable<float> ienumerable_0)
+		public void method_11(IEnumerable<float> ienumerable0)
 		{
-			foreach (var float_ in ienumerable_0)
+			foreach (var float_ in ienumerable0)
 			{
 				Nodes.Add(new FloatValueNode(float_));
 			}
 			vmethod_0();
 		}
 
-		public override void vmethod_13(Stream26 stream26_0)
+		public override void vmethod_13(Stream26 stream260)
 		{
-			Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
-			Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
+			Nodes.Add(new FloatValueNode(stream260.ReadFloat()));
+			Nodes.Add(new FloatValueNode(stream260.ReadFloat()));
 			if (method_1() is VectorArrayNode || method_1() is VectorPointerRootNode || method_1() is VectorPointerNode)
 			{
-				Nodes.Add(new FloatValueNode(stream26_0.ReadFloat()));
+				Nodes.Add(new FloatValueNode(stream260.ReadFloat()));
 			}
 			method_1().BackColor = Color.Gray;
 		}
 
-		public override void vmethod_14(Stream26 stream26_0)
+		public override void vmethod_14(Stream26 stream260)
 		{
 			var array = new byte[4];
 			array[1] = 1;
-			stream26_0.WriteByteArray(array, false);
-			foreach (FloatValueNode class313_ in Nodes)
+			stream260.WriteByteArray(array, false);
+			foreach (FloatValueNode class313 in Nodes)
 			{
-				stream26_0.WriteFloat(FloatValueNode.smethod_0(class313_));
+				stream260.WriteFloat(FloatValueNode.smethod_0(class313));
 			}
 		}
 
-		public override void vmethod_2(ref int int_0)
+		public override void vmethod_2(ref int int0)
 		{
-			int_0 += 4 + 4 * Nodes.Count;
+			int0 += 4 + 4 * Nodes.Count;
 		}
 
 		public override string GetNodeText()

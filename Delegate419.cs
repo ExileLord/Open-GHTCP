@@ -1,3 +1,3 @@
 using System.Drawing;
 
-public delegate void Delegate419(object object_0, Brush brush_0, PointF[] pointF_0);
+public delegate void Delegate419(object object0, Brush brush0, PointF[] pointF0);

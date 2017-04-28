@@ -3,136 +3,136 @@ using ns2;
 
 namespace ns3
 {
-	public class OGGClass5
+	public class OggClass5
 	{
-		private static int int_0 = -136;
+		private static int _int0 = -136;
 
-		private static int int_1 = -135;
+		private static int _int1 = -135;
 
-		private static string string_0 = "vorbis";
+		private static string _string0 = "vorbis";
 
-		private static readonly int int_2 = 1;
+		private static readonly int Int2 = 1;
 
-		private static readonly int int_3 = 2;
+		private static readonly int Int3 = 2;
 
-		private static readonly int int_4 = 3;
+		private static readonly int Int4 = 3;
 
-		private static readonly int int_5 = 1;
+		private static readonly int Int5 = 1;
 
-		private static readonly int int_6 = 1;
+		private static readonly int Int6 = 1;
 
-		public int int_7;
+		public int Int7;
 
-		public int int_8;
+		public int Int8;
 
-		public int int_9;
+		public int Int9;
 
-		public int int_10;
+		public int Int10;
 
-		public int int_11;
+		public int Int11;
 
-		public int int_12;
+		public int Int12;
 
-		public int[] int_13 = new int[2];
+		public int[] Int13 = new int[2];
 
-		public int int_14;
+		public int Int14;
 
-		public int int_15;
+		public int Int15;
 
-		public int int_16;
+		public int Int16;
 
-		public int int_17;
+		public int Int17;
 
-		public int int_18;
+		public int Int18;
 
-		public int int_19;
+		public int Int19;
 
-		public int int_20;
+		public int Int20;
 
-		public Class27[] class27_0;
+		public Class27[] Class270;
 
-		public int[] int_21;
+		public int[] Int21;
 
-		public object[] object_0;
+		public object[] Object0;
 
-		public int[] int_22;
+		public int[] Int22;
 
-		public object[] object_1;
+		public object[] Object1;
 
-		public int[] int_23;
+		public int[] Int23;
 
-		public object[] object_2;
+		public object[] Object2;
 
-		public int[] int_24;
+		public int[] Int24;
 
-		public object[] object_3;
+		public object[] Object3;
 
-		public OGGClass2[] oggClass2;
+		public OggClass2[] OggClass2;
 
-		public Class70[] class70_0 = new Class70[64];
+		public Class70[] Class700 = new Class70[64];
 
 		public void method_0()
 		{
-			int_9 = 0;
+			Int9 = 0;
 		}
 
 		public void method_1()
 		{
-			for (var i = 0; i < int_14; i++)
+			for (var i = 0; i < Int14; i++)
 			{
-				class27_0[i] = null;
+				Class270[i] = null;
 			}
-			class27_0 = null;
-			for (var j = 0; j < int_15; j++)
+			Class270 = null;
+			for (var j = 0; j < Int15; j++)
 			{
-				Class34.class34_0[int_21[j]].vmethod_2(object_0[j]);
+				Class34.Class340[Int21[j]].vmethod_2(Object0[j]);
 			}
-			object_0 = null;
-			for (var k = 0; k < int_16; k++)
+			Object0 = null;
+			for (var k = 0; k < Int16; k++)
 			{
-				Class50.class50_0[int_22[k]].vmethod_2(object_1[k]);
+				Class50.Class500[Int22[k]].vmethod_2(Object1[k]);
 			}
-			object_1 = null;
-			for (var l = 0; l < int_17; l++)
+			Object1 = null;
+			for (var l = 0; l < Int17; l++)
 			{
-				Class28.class28_0[int_23[l]].vmethod_2(object_2[l]);
+				Class28.Class280[Int23[l]].vmethod_2(Object2[l]);
 			}
-			object_2 = null;
-			for (var m = 0; m < int_18; m++)
+			Object2 = null;
+			for (var m = 0; m < Int18; m++)
 			{
-				Class23.class23_0[int_24[m]].vmethod_2(object_3[m]);
+				Class23.Class230[Int24[m]].vmethod_2(Object3[m]);
 			}
-			object_3 = null;
-			for (var n = 0; n < int_19; n++)
+			Object3 = null;
+			for (var n = 0; n < Int19; n++)
 			{
-				if (oggClass2[n] != null)
+				if (OggClass2[n] != null)
 				{
-					oggClass2[n].method_2();
-					oggClass2[n] = null;
+					OggClass2[n].method_2();
+					OggClass2[n] = null;
 				}
 			}
-			oggClass2 = null;
-			for (var num = 0; num < int_20; num++)
+			OggClass2 = null;
+			for (var num = 0; num < Int20; num++)
 			{
-				class70_0[num].method_0();
+				Class700[num].method_0();
 			}
 		}
 
-		private int method_2(OGGClass3 oggClass3)
+		private int method_2(OggClass3 oggClass3)
 		{
-			int_7 = oggClass3.method_6(32);
-			if (int_7 != 0)
+			Int7 = oggClass3.method_6(32);
+			if (Int7 != 0)
 			{
 				return -1;
 			}
-			int_8 = oggClass3.method_6(8);
-			int_9 = oggClass3.method_6(32);
-			int_10 = oggClass3.method_6(32);
-			int_11 = oggClass3.method_6(32);
-			int_12 = oggClass3.method_6(32);
-			int_13[0] = 1 << oggClass3.method_6(4);
-			int_13[1] = 1 << oggClass3.method_6(4);
-			if (int_9 >= 1 && int_8 >= 1 && int_13[0] >= 8 && int_13[1] >= int_13[0])
+			Int8 = oggClass3.method_6(8);
+			Int9 = oggClass3.method_6(32);
+			Int10 = oggClass3.method_6(32);
+			Int11 = oggClass3.method_6(32);
+			Int12 = oggClass3.method_6(32);
+			Int13[0] = 1 << oggClass3.method_6(4);
+			Int13[1] = 1 << oggClass3.method_6(4);
+			if (Int9 >= 1 && Int8 >= 1 && Int13[0] >= 8 && Int13[1] >= Int13[0])
 			{
 				if (oggClass3.method_6(1) == 1)
 				{
@@ -143,131 +143,131 @@ namespace ns3
 			return -1;
 		}
 
-		private int method_3(OGGClass3 oggClass3)
+		private int method_3(OggClass3 oggClass3)
 		{
-			int_19 = oggClass3.method_6(8) + 1;
-			if (oggClass2 == null || oggClass2.Length != int_19)
+			Int19 = oggClass3.method_6(8) + 1;
+			if (OggClass2 == null || OggClass2.Length != Int19)
 			{
-				oggClass2 = new OGGClass2[int_19];
+				OggClass2 = new OggClass2[Int19];
 			}
-			for (var i = 0; i < int_19; i++)
+			for (var i = 0; i < Int19; i++)
 			{
-				oggClass2[i] = new OGGClass2();
-				if (oggClass2[i].method_0(oggClass3) != 0)
+				OggClass2[i] = new OggClass2();
+				if (OggClass2[i].method_0(oggClass3) != 0)
 				{
 					method_1();
 					return -1;
 				}
 			}
-			int_16 = oggClass3.method_6(6) + 1;
-			if (int_22 == null || int_22.Length != int_16)
+			Int16 = oggClass3.method_6(6) + 1;
+			if (Int22 == null || Int22.Length != Int16)
 			{
-				int_22 = new int[int_16];
+				Int22 = new int[Int16];
 			}
-			if (object_1 == null || object_1.Length != int_16)
+			if (Object1 == null || Object1.Length != Int16)
 			{
-				object_1 = new object[int_16];
+				Object1 = new object[Int16];
 			}
-			for (var j = 0; j < int_16; j++)
+			for (var j = 0; j < Int16; j++)
 			{
-				int_22[j] = oggClass3.method_6(16);
-				if (int_22[j] < 0 || int_22[j] >= int_2)
+				Int22[j] = oggClass3.method_6(16);
+				if (Int22[j] < 0 || Int22[j] >= Int2)
 				{
 					method_1();
 					return -1;
 				}
-				object_1[j] = Class50.class50_0[int_22[j]].vmethod_0(this, oggClass3);
-				if (object_1[j] == null)
-				{
-					method_1();
-					return -1;
-				}
-			}
-			int_17 = oggClass3.method_6(6) + 1;
-			if (int_23 == null || int_23.Length != int_17)
-			{
-				int_23 = new int[int_17];
-			}
-			if (object_2 == null || object_2.Length != int_17)
-			{
-				object_2 = new object[int_17];
-			}
-			for (var k = 0; k < int_17; k++)
-			{
-				int_23[k] = oggClass3.method_6(16);
-				if (int_23[k] < 0 || int_23[k] >= int_3)
-				{
-					method_1();
-					return -1;
-				}
-				object_2[k] = Class28.class28_0[int_23[k]].vmethod_0(this, oggClass3);
-				if (object_2[k] == null)
+				Object1[j] = Class50.Class500[Int22[j]].vmethod_0(this, oggClass3);
+				if (Object1[j] == null)
 				{
 					method_1();
 					return -1;
 				}
 			}
-			int_18 = oggClass3.method_6(6) + 1;
-			if (int_24 == null || int_24.Length != int_18)
+			Int17 = oggClass3.method_6(6) + 1;
+			if (Int23 == null || Int23.Length != Int17)
 			{
-				int_24 = new int[int_18];
+				Int23 = new int[Int17];
 			}
-			if (object_3 == null || object_3.Length != int_18)
+			if (Object2 == null || Object2.Length != Int17)
 			{
-				object_3 = new object[int_18];
+				Object2 = new object[Int17];
 			}
-			for (var l = 0; l < int_18; l++)
+			for (var k = 0; k < Int17; k++)
 			{
-				int_24[l] = oggClass3.method_6(16);
-				if (int_24[l] < 0 || int_24[l] >= int_4)
+				Int23[k] = oggClass3.method_6(16);
+				if (Int23[k] < 0 || Int23[k] >= Int3)
 				{
 					method_1();
 					return -1;
 				}
-				object_3[l] = Class23.class23_0[int_24[l]].vmethod_0(this, oggClass3);
-				if (object_3[l] == null)
-				{
-					method_1();
-					return -1;
-				}
-			}
-			int_15 = oggClass3.method_6(6) + 1;
-			if (int_21 == null || int_21.Length != int_15)
-			{
-				int_21 = new int[int_15];
-			}
-			if (object_0 == null || object_0.Length != int_15)
-			{
-				object_0 = new object[int_15];
-			}
-			for (var m = 0; m < int_15; m++)
-			{
-				int_21[m] = oggClass3.method_6(16);
-				if (int_21[m] < 0 || int_21[m] >= int_5)
-				{
-					method_1();
-					return -1;
-				}
-				object_0[m] = Class34.class34_0[int_21[m]].vmethod_0(this, oggClass3);
-				if (object_0[m] == null)
+				Object2[k] = Class28.Class280[Int23[k]].vmethod_0(this, oggClass3);
+				if (Object2[k] == null)
 				{
 					method_1();
 					return -1;
 				}
 			}
-			int_14 = oggClass3.method_6(6) + 1;
-			if (class27_0 == null || class27_0.Length != int_14)
+			Int18 = oggClass3.method_6(6) + 1;
+			if (Int24 == null || Int24.Length != Int18)
 			{
-				class27_0 = new Class27[int_14];
+				Int24 = new int[Int18];
 			}
-			for (var n = 0; n < int_14; n++)
+			if (Object3 == null || Object3.Length != Int18)
 			{
-				class27_0[n] = new Class27();
-				class27_0[n].int_0 = oggClass3.method_6(1);
-				class27_0[n].int_1 = oggClass3.method_6(16);
-				class27_0[n].int_2 = oggClass3.method_6(16);
-				class27_0[n].int_3 = oggClass3.method_6(8);
-				if (class27_0[n].int_1 >= int_6 || class27_0[n].int_2 >= int_6 || class27_0[n].int_3 >= int_15)
+				Object3 = new object[Int18];
+			}
+			for (var l = 0; l < Int18; l++)
+			{
+				Int24[l] = oggClass3.method_6(16);
+				if (Int24[l] < 0 || Int24[l] >= Int4)
+				{
+					method_1();
+					return -1;
+				}
+				Object3[l] = Class23.Class230[Int24[l]].vmethod_0(this, oggClass3);
+				if (Object3[l] == null)
+				{
+					method_1();
+					return -1;
+				}
+			}
+			Int15 = oggClass3.method_6(6) + 1;
+			if (Int21 == null || Int21.Length != Int15)
+			{
+				Int21 = new int[Int15];
+			}
+			if (Object0 == null || Object0.Length != Int15)
+			{
+				Object0 = new object[Int15];
+			}
+			for (var m = 0; m < Int15; m++)
+			{
+				Int21[m] = oggClass3.method_6(16);
+				if (Int21[m] < 0 || Int21[m] >= Int5)
+				{
+					method_1();
+					return -1;
+				}
+				Object0[m] = Class34.Class340[Int21[m]].vmethod_0(this, oggClass3);
+				if (Object0[m] == null)
+				{
+					method_1();
+					return -1;
+				}
+			}
+			Int14 = oggClass3.method_6(6) + 1;
+			if (Class270 == null || Class270.Length != Int14)
+			{
+				Class270 = new Class27[Int14];
+			}
+			for (var n = 0; n < Int14; n++)
+			{
+				Class270[n] = new Class27();
+				Class270[n].Int0 = oggClass3.method_6(1);
+				Class270[n].Int1 = oggClass3.method_6(16);
+				Class270[n].Int2 = oggClass3.method_6(16);
+				Class270[n].Int3 = oggClass3.method_6(8);
+				if (Class270[n].Int1 >= Int6 || Class270[n].Int2 >= Int6 || Class270[n].Int3 >= Int15)
 				{
 					method_1();
 					return -1;
@@ -281,12 +281,12 @@ namespace ns3
 			return 0;
 		}
 
-		public int method_4(Class47 class47_0, Class67 class67_0)
+		public int method_4(Class47 class470, Class67 class670)
 		{
-			var @class = new OGGClass3();
-			if (class67_0 != null)
+			var @class = new OggClass3();
+			if (class670 != null)
 			{
-				@class.method_4(class67_0.byte_0, class67_0.int_0, class67_0.int_1);
+				@class.method_4(class670.Byte0, class670.Int0, class670.Int1);
 				var array = new byte[6];
 				var num = @class.method_6(8);
 				@class.method_5(array, 6);
@@ -297,11 +297,11 @@ namespace ns3
 						switch (num)
 						{
 						case 1:
-							if (class67_0.int_2 == 0)
+							if (class670.Int2 == 0)
 							{
 								return -1;
 							}
-							if (int_9 != 0)
+							if (Int9 != 0)
 							{
 								return -1;
 							}
@@ -310,13 +310,13 @@ namespace ns3
 						case 4:
 							return -1;
 						case 3:
-							if (int_9 == 0)
+							if (Int9 == 0)
 							{
 								return -1;
 							}
-							return class47_0.method_1(@class);
+							return class470.method_1(@class);
 						case 5:
-							if (int_9 != 0 && class47_0.byte_1 != null)
+							if (Int9 != 0 && class470.Byte1 != null)
 							{
 								return method_3(@class);
 							}

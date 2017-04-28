@@ -1,1 +1,1 @@
-public delegate decimal Delegate339(int int_0);
+public delegate decimal Delegate339(int int0);

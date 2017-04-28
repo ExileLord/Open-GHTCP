@@ -1,4 +1,4 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-public delegate void Delegate48(object object_0, Control control_0, Point point_0, ToolStripDropDownDirection toolStripDropDownDirection_0);
+public delegate void Delegate48(object object0, Control control0, Point point0, ToolStripDropDownDirection toolStripDropDownDirection0);

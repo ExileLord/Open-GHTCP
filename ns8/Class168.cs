@@ -7,66 +7,66 @@ namespace ns8
 	{
 		public string FileName;
 
-		public uint uint_0;
+		public uint Uint0;
 
-		public uint uint_1;
+		public uint Uint1;
 
-		public uint uint_2;
+		public uint Uint2;
 
-		public FSBFlags2 enum22_0;
+		public FsbFlags2 Enum220;
 
-		public int int_0;
+		public int Int0;
 
-		public ushort ushort_0;
+		public ushort Ushort0;
 
-		public short short_0;
+		public short Short0;
 
-		public float float_0 = -1f;
+		public float Float0 = -1f;
 
-		public float float_1 = 1f;
+		public float Float1 = 1f;
 
-		public ushort ushort_1;
+		public ushort Ushort1;
 
-		public uint uint_3;
+		public uint Uint3;
 
-		public float float_2;
+		public float Float2;
 
-		public float float_3;
+		public float Float3;
 
-		public int int_1;
+		public int Int1;
 
-		public short short_1;
+		public short Short1;
 
-		public short short_2;
+		public short Short2;
 
-		public Stream stream_0;
+		public Stream Stream0;
 
-		public Stream stream_1;
+		public Stream Stream1;
 
 		public Class168()
 		{
 			FileName = "";
-			uint_0 = 0u;
-			uint_1 = 0u;
-			uint_2 = 0u;
-			enum22_0 = FSBFlags2.flag_33;
-			int_0 = 0;
-			ushort_0 = 255;
-			short_0 = -1;
-			ushort_1 = 128;
-			uint_3 = 2u;
-			float_2 = 1f;
-			float_3 = 10000f;
-			int_1 = 0;
-			short_1 = 0;
-			short_2 = 0;
-			stream_0 = Stream.Null;
-			stream_1 = Stream.Null;
+			Uint0 = 0u;
+			Uint1 = 0u;
+			Uint2 = 0u;
+			Enum220 = FsbFlags2.Flag33;
+			Int0 = 0;
+			Ushort0 = 255;
+			Short0 = -1;
+			Ushort1 = 128;
+			Uint3 = 2u;
+			Float2 = 1f;
+			Float3 = 10000f;
+			Int1 = 0;
+			Short1 = 0;
+			Short2 = 0;
+			Stream0 = Stream.Null;
+			Stream1 = Stream.Null;
 		}
 
 		public override string ToString()
 		{
-			return string.Concat("FsbSubFile:\nName = ", FileName, "\nNumSamples = ", uint_0, "\nLoopStartPoint = ", uint_1, "\nLoopEndPoint = ", uint_2, "\nFlags = ", enum22_0, "\nFrequency = ", int_0, "\nVolume = ", ushort_0, "\nPan = ", short_0, "\nPriority = ", ushort_1, "\nNumChannels = ", uint_3, "\nMinDistance = ", float_2, "\nMaxDistance = ", float_3, "\nFrequencyVariation = ", int_1, "\nVolumeVariation = ", short_1, "\nPanVariation = ", short_2, "\nExtraData.Length = ", stream_0.Length, "\nAudioData.Length = ", stream_1.Length, "\n");
+			return string.Concat("FsbSubFile:\nName = ", FileName, "\nNumSamples = ", Uint0, "\nLoopStartPoint = ", Uint1, "\nLoopEndPoint = ", Uint2, "\nFlags = ", Enum220, "\nFrequency = ", Int0, "\nVolume = ", Ushort0, "\nPan = ", Short0, "\nPriority = ", Ushort1, "\nNumChannels = ", Uint3, "\nMinDistance = ", Float2, "\nMaxDistance = ", Float3, "\nFrequencyVariation = ", Int1, "\nVolumeVariation = ", Short1, "\nPanVariation = ", Short2, "\nExtraData.Length = ", Stream0.Length, "\nAudioData.Length = ", Stream1.Length, "\n");
 		}
 
 		~Class168()
@@ -80,12 +80,12 @@ namespace ns8
 			GC.SuppressFinalize(this);
 		}
 
-		public void method_0(bool bool_0)
+		public void method_0(bool bool0)
 		{
-			if (bool_0)
+			if (bool0)
 			{
-				stream_0.Dispose();
-				stream_1.Dispose();
+				Stream0.Dispose();
+				Stream1.Dispose();
 			}
 		}
 	}

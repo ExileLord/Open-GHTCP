@@ -1,3 +1,3 @@
 using System.Threading;
 
-public delegate void Delegate81(object object_0, ThreadPriority threadPriority_0);
+public delegate void Delegate81(object object0, ThreadPriority threadPriority0);

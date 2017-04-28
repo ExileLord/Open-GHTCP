@@ -1,3 +1,3 @@
 using System;
 
-public delegate void Delegate254(Array array_0, RuntimeFieldHandle runtimeFieldHandle_0);
+public delegate void Delegate254(Array array0, RuntimeFieldHandle runtimeFieldHandle0);

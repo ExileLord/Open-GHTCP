@@ -3,7 +3,7 @@ using ns19;
 
 namespace ns18
 {
-	public class TextRootNode : zzUnkNode260
+	public class TextRootNode : ZzUnkNode260
 	{
 		public TextRootNode()
 		{
@@ -28,31 +28,31 @@ namespace ns18
 		{
 			if (Nodes.Count != 0)
 			{
-				return ((TextValueNode)FirstNode).int_0;
+				return ((TextValueNode)FirstNode).Int0;
 			}
 			return 0;
 		}
 
-		public override void vmethod_13(Stream26 stream26_0)
+		public override void vmethod_13(Stream26 stream260)
 		{
-			int_0 = stream26_0.ReadInt();
-			int_1 = stream26_0.ReadInt();
-			Nodes.Add(new TextValueNode(stream26_0.ReadInt(), vmethod_10()));
-			stream26_0.ReadInt();
+			Int0 = stream260.ReadInt();
+			Int1 = stream260.ReadInt();
+			Nodes.Add(new TextValueNode(stream260.ReadInt(), vmethod_10()));
+			stream260.ReadInt();
 		}
 
-		public override void vmethod_14(Stream26 stream26_0)
+		public override void vmethod_14(Stream26 stream260)
 		{
 			vmethod_9(true);
 			var array = new byte[4];
             array[1] = (vmethod_7() ? (byte)32 : (byte)4);
 			array[2] = 28;
-			stream26_0.WriteByteArray(array, false);
-			stream26_0.WriteInt(int_0);
-			stream26_0.WriteInt(int_1);
+			stream260.WriteByteArray(array, false);
+			stream260.WriteInt(Int0);
+			stream260.WriteInt(Int1);
 			if (Nodes.Count != 0)
 			{
-				stream26_0.WriteInt(method_8());
+				stream260.WriteInt(method_8());
 				if (method_7() != null)
 				{
 					vmethod_10()[method_8()] = method_7();
@@ -60,9 +60,9 @@ namespace ns18
 			}
 			else
 			{
-				stream26_0.WriteInt(0);
+				stream260.WriteInt(0);
 			}
-			stream26_0.WriteInt(0);
+			stream260.WriteInt(0);
 		}
 
 		public override string GetNodeText()
@@ -70,9 +70,9 @@ namespace ns18
 			return "Text Root";
 		}
 
-		public override void vmethod_2(ref int int_2)
+		public override void vmethod_2(ref int int2)
 		{
-			int_2 += 20;
+			int2 += 20;
 		}
 	}
 }

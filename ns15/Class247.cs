@@ -7,20 +7,20 @@ namespace ns15
 {
 	public class Class247 : QbEditor
 	{
-		private readonly GH3Songlist gh3Songlist_0;
+		private readonly Gh3Songlist _gh3Songlist0;
 
-		private readonly zzPakNode2 class318_0;
+		private readonly ZzPakNode2 _class3180;
 
-		public Class247(zzPakNode2 class318_1, GH3Songlist gh3Songlist_1)
+		public Class247(ZzPakNode2 class3181, Gh3Songlist gh3Songlist1)
 		{
-			class318_0 = class318_1;
-			gh3Songlist_0 = gh3Songlist_1;
+			_class3180 = class3181;
+			_gh3Songlist0 = gh3Songlist1;
 		}
 
 		public override void vmethod_0()
 		{
-			zzGenericNode1 class308_ = class318_0.zzGetNode1("scripts\\guitar\\songlist.qb");
-			gh3Songlist_0.method_13(class308_);
+			ZzGenericNode1 class308 = _class3180.ZzGetNode1("scripts\\guitar\\songlist.qb");
+			_gh3Songlist0.method_13(class308);
 		}
 
 		public override string ToString()

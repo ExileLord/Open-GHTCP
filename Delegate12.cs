@@ -1,3 +1,3 @@
 using System.Diagnostics;
 
-public delegate Process Delegate12(string string_0);
+public delegate Process Delegate12(string string0);

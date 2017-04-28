@@ -3,114 +3,114 @@ using ns3;
 
 namespace ns10
 {
-	public class OGGClass6
+	public class OggClass6
 	{
-		public float[][] float_0 = new float[0][];
+		public float[][] Float0 = new float[0][];
 
-		public OGGClass3 oggClass3 = new OGGClass3();
+		public OggClass3 OggClass3 = new OggClass3();
 
-		public int int_0;
+		public int Int0;
 
-		public int int_1;
+		public int Int1;
 
-		public int int_2;
+		public int Int2;
 
-		public int int_3;
+		public int Int3;
 
-		public int int_4;
+		public int Int4;
 
-		public int int_5;
+		public int Int5;
 
-		public long long_0;
+		public long Long0;
 
-		public long long_1;
+		public long Long1;
 
-		public OGGClass1 oggClass1;
+		public OggClass1 OggClass1;
 
-		public int int_6;
+		public int Int6;
 
-		public int int_7;
+		public int Int7;
 
-		public int int_8;
+		public int Int8;
 
-		public int int_9;
+		public int Int9;
 
-		public OGGClass6(OGGClass1 oggClass1)
+		public OggClass6(OggClass1 oggClass1)
 		{
-			this.oggClass1 = oggClass1;
-			if (oggClass1.int_2 != 0)
+			this.OggClass1 = oggClass1;
+			if (oggClass1.Int2 != 0)
 			{
-				oggClass3.method_0();
+				OggClass3.method_0();
 			}
 		}
 
-		public void method_0(OGGClass1 oggClass1)
+		public void method_0(OggClass1 oggClass1)
 		{
-			this.oggClass1 = oggClass1;
+			this.OggClass1 = oggClass1;
 		}
 
 		public int method_1()
 		{
-			if (oggClass1 != null && oggClass1.int_2 != 0)
+			if (OggClass1 != null && OggClass1.Int2 != 0)
 			{
-				oggClass3.method_1();
+				OggClass3.method_1();
 			}
 			return 0;
 		}
 
-		public int method_2(Class67 class67_0)
+		public int method_2(Class67 class670)
 		{
-			var oggClass5 = oggClass1.oggClass5;
-			oggClass3.method_4(class67_0.byte_0, class67_0.int_0, class67_0.int_1);
-			if (oggClass3.method_6(1) != 0)
+			var oggClass5 = OggClass1.OggClass5;
+			OggClass3.method_4(class670.Byte0, class670.Int0, class670.Int1);
+			if (OggClass3.method_6(1) != 0)
 			{
 				return -1;
 			}
-			var num = oggClass3.method_6(oggClass1.int_3);
+			var num = OggClass3.method_6(OggClass1.Int3);
 			if (num == -1)
 			{
 				return -1;
 			}
-			int_4 = num;
-			int_1 = oggClass5.class27_0[int_4].int_0;
-			if (int_1 != 0)
+			Int4 = num;
+			Int1 = oggClass5.Class270[Int4].Int0;
+			if (Int1 != 0)
 			{
-				int_0 = oggClass3.method_6(1);
-				int_2 = oggClass3.method_6(1);
-				if (int_2 == -1)
+				Int0 = OggClass3.method_6(1);
+				Int2 = OggClass3.method_6(1);
+				if (Int2 == -1)
 				{
 					return -1;
 				}
 			}
 			else
 			{
-				int_0 = 0;
-				int_2 = 0;
+				Int0 = 0;
+				Int2 = 0;
 			}
-			long_0 = class67_0.long_0;
-			long_1 = class67_0.long_1 - 3L;
-			int_5 = class67_0.int_3;
-			int_3 = oggClass5.int_13[int_1];
-			if (float_0.Length < oggClass5.int_8)
+			Long0 = class670.Long0;
+			Long1 = class670.Long1 - 3L;
+			Int5 = class670.Int3;
+			Int3 = oggClass5.Int13[Int1];
+			if (Float0.Length < oggClass5.Int8)
 			{
-				float_0 = new float[oggClass5.int_8][];
+				Float0 = new float[oggClass5.Int8][];
 			}
-			for (var i = 0; i < oggClass5.int_8; i++)
+			for (var i = 0; i < oggClass5.Int8; i++)
 			{
-				if (float_0[i] != null && float_0[i].Length >= int_3)
+				if (Float0[i] != null && Float0[i].Length >= Int3)
 				{
-					for (var j = 0; j < int_3; j++)
+					for (var j = 0; j < Int3; j++)
 					{
-						float_0[i][j] = 0f;
+						Float0[i][j] = 0f;
 					}
 				}
 				else
 				{
-					float_0[i] = new float[int_3];
+					Float0[i] = new float[Int3];
 				}
 			}
-			var num2 = oggClass5.int_21[oggClass5.class27_0[int_4].int_3];
-			return Class34.class34_0[num2].vmethod_3(this, oggClass1.object_1[int_4]);
+			var num2 = oggClass5.Int21[oggClass5.Class270[Int4].Int3];
+			return Class34.Class340[num2].vmethod_3(this, OggClass1.Object1[Int4]);
 		}
 	}
 }

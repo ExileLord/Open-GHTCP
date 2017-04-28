@@ -2,17 +2,17 @@ namespace ns4
 {
 	public class Class78
 	{
-		private byte[] byte_0;
+		private byte[] _byte0;
 
-		private int int_0;
+		private int _int0;
 
-		private int[] int_1;
+		private int[] _int1;
 
-		private long[] long_0;
+		private long[] _long0;
 
-		private int int_2;
+		private int _int2;
 
-		private readonly byte[] byte_1 = new byte[282];
+		private readonly byte[] _byte1 = new byte[282];
 
 		public Class78()
 		{
@@ -21,18 +21,18 @@ namespace ns4
 
 		private void method_0()
 		{
-			int_0 = 16384;
-			byte_0 = new byte[int_0];
-			int_2 = 1024;
-			int_1 = new int[int_2];
-			long_0 = new long[int_2];
+			_int0 = 16384;
+			_byte0 = new byte[_int0];
+			_int2 = 1024;
+			_int1 = new int[_int2];
+			_long0 = new long[_int2];
 		}
 
 		public void method_1()
 		{
-			byte_0 = null;
-			int_1 = null;
-			long_0 = null;
+			_byte0 = null;
+			_int1 = null;
+			_long0 = null;
 		}
 	}
 }

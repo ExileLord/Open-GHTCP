@@ -1,1 +1,1 @@
-public delegate ushort Delegate408(int int_0);
+public delegate ushort Delegate408(int int0);

@@ -6,7 +6,7 @@ namespace ns5
 		{
 		}
 
-		public Exception2(string string_0) : base(string_0)
+		public Exception2(string string0) : base(string0)
 		{
 		}
 	}

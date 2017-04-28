@@ -4,9 +4,9 @@ namespace ns13
 {
 	public class Class192
 	{
-		private static readonly uint uint_0 = 4294967295u;
+		private static readonly uint Uint0 = 4294967295u;
 
-		private static readonly uint[] uint_1 = {
+		private static readonly uint[] Uint1 = {
 			0u,
 			1996959894u,
 			3993919788u,
@@ -265,50 +265,50 @@ namespace ns13
 			755167117u
 		};
 
-		private uint uint_2;
+		private uint _uint2;
 
-		public static uint smethod_0(uint uint_3, byte byte_0)
+		public static uint smethod_0(uint uint3, byte byte0)
 		{
-			return uint_1[(int)((UIntPtr)((uint_3 ^ byte_0) & 255u))] ^ uint_3 >> 8;
+			return Uint1[(int)((UIntPtr)((uint3 ^ byte0) & 255u))] ^ uint3 >> 8;
 		}
 
 		public long vmethod_0()
 		{
-			return uint_2;
+			return _uint2;
 		}
 
 		public void vmethod_1()
 		{
-			uint_2 = 0u;
+			_uint2 = 0u;
 		}
 
-		public void vmethod_2(byte[] byte_0)
+		public void vmethod_2(byte[] byte0)
 		{
-			if (byte_0 == null)
+			if (byte0 == null)
 			{
 				throw new ArgumentNullException("buffer");
 			}
-			vmethod_3(byte_0, 0, byte_0.Length);
+			vmethod_3(byte0, 0, byte0.Length);
 		}
 
-		public void vmethod_3(byte[] byte_0, int int_0, int int_1)
+		public void vmethod_3(byte[] byte0, int int0, int int1)
 		{
-			if (byte_0 == null)
+			if (byte0 == null)
 			{
 				throw new ArgumentNullException("buffer");
 			}
-			if (int_1 < 0)
+			if (int1 < 0)
 			{
 				throw new ArgumentOutOfRangeException("count", "Count cannot be less than zero");
 			}
-			if (int_0 >= 0 && int_0 + int_1 <= byte_0.Length)
+			if (int0 >= 0 && int0 + int1 <= byte0.Length)
 			{
-				uint_2 ^= uint_0;
-				while (--int_1 >= 0)
+				_uint2 ^= Uint0;
+				while (--int1 >= 0)
 				{
-					uint_2 = (uint_1[(int)((UIntPtr)((uint_2 ^ byte_0[int_0++]) & 255u))] ^ uint_2 >> 8);
+					_uint2 = (Uint1[(int)((UIntPtr)((_uint2 ^ byte0[int0++]) & 255u))] ^ _uint2 >> 8);
 				}
-				uint_2 ^= uint_0;
+				_uint2 ^= Uint0;
 				return;
 			}
 			throw new ArgumentOutOfRangeException("offset");

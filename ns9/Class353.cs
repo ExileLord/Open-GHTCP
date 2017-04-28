@@ -3,53 +3,53 @@ using ns22;
 
 namespace ns9
 {
-	public class MIDILine
+	public class MidiLine
 	{
-		public string string_0;
+		public string String0;
 
-		public int int_0;
+		public int Int0;
 
-		public List<AbstractNoteClass> list_0;
+		public List<AbstractNoteClass> List0;
 
-		public MIDILine(int int_1) : this("", int_1, null)
+		public MidiLine(int int1) : this("", int1, null)
 		{
 		}
 
-		public MIDILine(string string_1, int int_1, IEnumerable<AbstractNoteClass> ienumerable_0)
+		public MidiLine(string string1, int int1, IEnumerable<AbstractNoteClass> ienumerable0)
 		{
-			string_0 = string_1;
-			int_0 = int_1;
-			if (ienumerable_0 == null)
+			String0 = string1;
+			Int0 = int1;
+			if (ienumerable0 == null)
 			{
-				list_0 = new List<AbstractNoteClass>();
+				List0 = new List<AbstractNoteClass>();
 				return;
 			}
-			list_0 = new List<AbstractNoteClass>(ienumerable_0);
+			List0 = new List<AbstractNoteClass>(ienumerable0);
 		}
 
 		public List<AbstractNoteClass> method_0()
 		{
-			return list_0;
+			return List0;
 		}
 
-		public void method_1(List<AbstractNoteClass> list_1)
+		public void method_1(List<AbstractNoteClass> list1)
 		{
-			list_0 = list_1;
+			List0 = list1;
 		}
 
 		public string method_2()
 		{
-			return string_0;
+			return String0;
 		}
 
-		public void method_3(string string_1)
+		public void method_3(string string1)
 		{
-			string_0 = string_1;
+			String0 = string1;
 		}
 
 		public override string ToString()
 		{
-			return string_0;
+			return String0;
 		}
 	}
 }

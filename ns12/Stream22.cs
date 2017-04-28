@@ -9,19 +9,19 @@ namespace ns12
 {
 	public class Stream22 : Stream
 	{
-		private string password;
+		private string _password;
 
-		private ICryptoTransform icryptoTransform_0;
+		private ICryptoTransform _icryptoTransform0;
 
-		private readonly byte[] byte_0;
+		private readonly byte[] _byte0;
 
-		public Class194 class194_0;
+		public Class194 Class1940;
 
-		public Stream stream_0;
+		public Stream Stream0;
 
-		private bool bool_0;
+		private bool _bool0;
 
-		private readonly bool bool_1 = true;
+		private readonly bool _bool1 = true;
 
 		public override bool CanRead
 		{
@@ -43,7 +43,7 @@ namespace ns12
 		{
 			get
 			{
-				return stream_0.CanWrite;
+				return Stream0.CanWrite;
 			}
 		}
 
@@ -51,7 +51,7 @@ namespace ns12
 		{
 			get
 			{
-				return stream_0.Length;
+				return Stream0.Length;
 			}
 		}
 
@@ -59,7 +59,7 @@ namespace ns12
 		{
 			get
 			{
-				return stream_0.Position;
+				return Stream0.Position;
 			}
 			set
 			{
@@ -67,109 +67,109 @@ namespace ns12
 			}
 		}
 
-		public Stream22(Stream stream_1, Class194 class194_1) : this(stream_1, class194_1, 512)
+		public Stream22(Stream stream1, Class194 class1941) : this(stream1, class1941, 512)
 		{
 		}
 
-		public Stream22(Stream stream_1, Class194 class194_1, int int_0)
+		public Stream22(Stream stream1, Class194 class1941, int int0)
 		{
-			if (stream_1 == null)
+			if (stream1 == null)
 			{
 				throw new ArgumentNullException("baseOutputStream");
 			}
-			if (!stream_1.CanWrite)
+			if (!stream1.CanWrite)
 			{
 				throw new ArgumentException("Must support writing", "baseOutputStream");
 			}
-			if (class194_1 == null)
+			if (class1941 == null)
 			{
 				throw new ArgumentNullException("deflater");
 			}
-			if (int_0 <= 0)
+			if (int0 <= 0)
 			{
 				throw new ArgumentOutOfRangeException("bufferSize");
 			}
-			stream_0 = stream_1;
-			byte_0 = new byte[int_0];
-			class194_0 = class194_1;
+			Stream0 = stream1;
+			_byte0 = new byte[int0];
+			Class1940 = class1941;
 		}
 
 		public virtual void vmethod_0()
 		{
-			class194_0.method_3();
-			while (!class194_0.method_4())
+			Class1940.method_3();
+			while (!Class1940.method_4())
 			{
-				var num = class194_0.method_9(byte_0, 0, byte_0.Length);
+				var num = Class1940.method_9(_byte0, 0, _byte0.Length);
 				if (num <= 0)
 				{
 					break;
 				}
-				if (icryptoTransform_0 != null)
+				if (_icryptoTransform0 != null)
 				{
-					method_3(byte_0, 0, num);
+					method_3(_byte0, 0, num);
 				}
-				stream_0.Write(byte_0, 0, num);
+				Stream0.Write(_byte0, 0, num);
 			}
-			if (!class194_0.method_4())
+			if (!Class1940.method_4())
 			{
 				throw new SharpZipBaseException("Can't deflate all input?");
 			}
-			stream_0.Flush();
-			if (icryptoTransform_0 != null)
+			Stream0.Flush();
+			if (_icryptoTransform0 != null)
 			{
-				icryptoTransform_0.Dispose();
-				icryptoTransform_0 = null;
+				_icryptoTransform0.Dispose();
+				_icryptoTransform0 = null;
 			}
 		}
 
 		public bool method_0()
 		{
-			return stream_0.CanSeek;
+			return Stream0.CanSeek;
 		}
 
 		public string method_1()
 		{
-			return password;
+			return _password;
 		}
 
 		public void method_2(string password)
 		{
 			if (password != null && password.Length == 0)
 			{
-				this.password = null;
+				this._password = null;
 				return;
 			}
-			this.password = password;
+			this._password = password;
 		}
 
-		public void method_3(byte[] byte_1, int int_0, int int_1)
+		public void method_3(byte[] byte1, int int0, int int1)
 		{
-			icryptoTransform_0.TransformBlock(byte_1, 0, int_1, byte_1, 0);
+			_icryptoTransform0.TransformBlock(byte1, 0, int1, byte1, 0);
 		}
 
-		public void method_4(string string_1)
+		public void method_4(string string1)
 		{
 			var @class = new Class208();
-			var rgbKey = Class207.smethod_0(Class186.smethod_3(string_1));
-			icryptoTransform_0 = @class.CreateEncryptor(rgbKey, null);
+			var rgbKey = Class207.smethod_0(Class186.smethod_3(string1));
+			_icryptoTransform0 = @class.CreateEncryptor(rgbKey, null);
 		}
 
 		public void method_5()
 		{
-			while (!class194_0.method_5())
+			while (!Class1940.method_5())
 			{
-				var num = class194_0.method_9(byte_0, 0, byte_0.Length);
+				var num = Class1940.method_9(_byte0, 0, _byte0.Length);
 				if (num <= 0)
 				{
 					break;
 				}
-				if (icryptoTransform_0 != null)
+				if (_icryptoTransform0 != null)
 				{
-					method_3(byte_0, 0, num);
+					method_3(_byte0, 0, num);
 				}
-				stream_0.Write(byte_0, 0, num);
+				Stream0.Write(_byte0, 0, num);
 			}
-			if (!class194_0.method_5())
+			if (!Class1940.method_5())
 			{
 				throw new SharpZipBaseException("DeflaterOutputStream can't deflate all input?");
 			}
@@ -207,30 +207,30 @@ namespace ns12
 
 		public override void Flush()
 		{
-			class194_0.method_2();
+			Class1940.method_2();
 			method_5();
-			stream_0.Flush();
+			Stream0.Flush();
 		}
 
 		public override void Close()
 		{
-			if (!bool_0)
+			if (!_bool0)
 			{
-				bool_0 = true;
+				_bool0 = true;
 				try
 				{
 					vmethod_0();
-					if (icryptoTransform_0 != null)
+					if (_icryptoTransform0 != null)
 					{
-						icryptoTransform_0.Dispose();
-						icryptoTransform_0 = null;
+						_icryptoTransform0.Dispose();
+						_icryptoTransform0 = null;
 					}
 				}
 				finally
 				{
-					if (bool_1)
+					if (_bool1)
 					{
-						stream_0.Close();
+						Stream0.Close();
 					}
 				}
 			}
@@ -246,7 +246,7 @@ namespace ns12
 
 		public override void Write(byte[] buffer, int offset, int count)
 		{
-			class194_0.method_6(buffer, offset, count);
+			Class1940.method_6(buffer, offset, count);
 			method_5();
 		}
 	}

@@ -2,12 +2,12 @@ namespace ns5
 {
 	public enum Enum7
 	{
-		const_0 = 4100,
-		const_1 = 4102,
-		const_2 = 785,
-		const_3 = 4114,
-		const_4 = 784,
-		const_5 = 4101,
-		const_6 = 4115
+		Const0 = 4100,
+		Const1 = 4102,
+		Const2 = 785,
+		Const3 = 4114,
+		Const4 = 784,
+		Const5 = 4101,
+		Const6 = 4115
 	}
 }

@@ -1,3 +1,3 @@
 using System.Windows.Forms;
 
-public delegate void Delegate39(object object_0, Orientation orientation_0);
+public delegate void Delegate39(object object0, Orientation orientation0);

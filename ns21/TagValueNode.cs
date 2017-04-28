@@ -6,22 +6,22 @@ namespace ns21
 {
 	public class TagValueNode : AbstractTreeNode2
 	{
-		public int int_0;
+		public int Int0;
 
 		public TagValueNode()
 		{
 			vmethod_0();
 		}
 
-		public TagValueNode(int int_1)
+		public TagValueNode(int int1)
 		{
-			int_0 = int_1;
+			Int0 = int1;
 			vmethod_0();
 		}
 
-		public TagValueNode(string string_0)
+		public TagValueNode(string string0)
 		{
-			method_3(string_0);
+			method_3(string0);
 			vmethod_0();
 		}
 
@@ -37,12 +37,12 @@ namespace ns21
 
 		public override byte[] vmethod_8()
 		{
-			return BitConverter.GetBytes(int_0);
+			return BitConverter.GetBytes(Int0);
 		}
 
-		public override void vmethod_9(byte[] byte_0)
+		public override void vmethod_9(byte[] byte0)
 		{
-			int_0 = BitConverter.ToInt32(byte_0, 0);
+			Int0 = BitConverter.ToInt32(byte0, 0);
 		}
 
 		public override string GetText()
@@ -52,16 +52,16 @@ namespace ns21
 
 		public string method_2()
 		{
-			if (QbSongClass1.ContainsKey(int_0))
+			if (QbSongClass1.ContainsKey(Int0))
 			{
-				return QbSongClass1.GetDictString(int_0);
+				return QbSongClass1.GetDictString(Int0);
 			}
-			return "0x" + IntToHex32Bit(int_0);
+			return "0x" + IntToHex32Bit(Int0);
 		}
 
-		public void method_3(string string_0)
+		public void method_3(string string0)
 		{
-			int_0 = QbSongClass1.AddKeyToDictionary(string_0);
+			Int0 = QbSongClass1.AddKeyToDictionary(string0);
 		}
 
 		public override string GetNodeText()
@@ -69,9 +69,9 @@ namespace ns21
 			return "Tag Value";
 		}
 
-		public override void vmethod_2(ref int int_1)
+		public override void vmethod_2(ref int int1)
 		{
-			int_1 += 4;
+			int1 += 4;
 		}
 	}
 }

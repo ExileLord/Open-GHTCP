@@ -1,3 +1,3 @@
 using System.Drawing;
 
-public delegate Color Delegate429(KnownColor knownColor_0);
+public delegate Color Delegate429(KnownColor knownColor0);

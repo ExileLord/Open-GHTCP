@@ -3,13 +3,13 @@ using System.Reflection;
 
 namespace ns0
 {
-	public static class QBModifiedCheck
+	public static class QbModifiedCheck
 	{
-		private static ModuleHandle moduleHandle_0;
+		private static ModuleHandle _moduleHandle0;
 
-		private static char[] char_0;
+		private static char[] _char0;
 
-		public static void smethod_0(int int_0)
+		public static void smethod_0(int int0)
 		{
             throw new Exception("FUCK IT GOT CALLED");
 
@@ -147,9 +147,9 @@ namespace ns0
 // 			}
 		}
 
-		static QBModifiedCheck()
+		static QbModifiedCheck()
 		{
-			char_0 = new[]
+			_char0 = new[]
 			{
 				'\u0001',
 				'\u0002',
@@ -213,7 +213,7 @@ namespace ns0
 			var typeFromHandle = typeof(MulticastDelegate);
 			if (typeFromHandle != null)
 			{
-				moduleHandle_0 = Assembly.GetExecutingAssembly().GetModules()[0].ModuleHandle;
+				_moduleHandle0 = Assembly.GetExecutingAssembly().GetModules()[0].ModuleHandle;
 			}
 		}
 	}

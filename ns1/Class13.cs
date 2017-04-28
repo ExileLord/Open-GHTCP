@@ -8,25 +8,25 @@ namespace ns1
 	{
 		public enum Enum0
 		{
-			const_0 = 1,
-			const_1,
-			const_2,
-			const_3 = -1
+			Const0 = 1,
+			Const1,
+			Const2,
+			Const3 = -1
 		}
 
 		public class Class14 : IEnumerator<float>, IEnumerator, IDisposable
 		{
-			private Class13 class13_0;
+			private Class13 _class130;
 
-			private int int_0;
+			private int _int0;
 
-			private int int_1;
+			private int _int1;
 
 			public float Current
 			{
 				get
 				{
-					return class13_0.float_0[int_0];
+					return _class130.Float0[_int0];
 				}
 			}
 
@@ -38,178 +38,178 @@ namespace ns1
 				}
 			}
 
-			public Class14(Class13 class13_1)
+			public Class14(Class13 class131)
 			{
-				class13_0 = class13_1;
+				_class130 = class131;
 				Reset();
 			}
 
 			public void Dispose()
 			{
-				class13_0 = null;
+				_class130 = null;
 			}
 
 			public bool MoveNext()
 			{
-				return int_0++ < int_1;
+				return _int0++ < _int1;
 			}
 
 			public void Reset()
 			{
-				int_0 = class13_0.int_1 - 1;
-				int_1 = class13_0.int_1 + class13_0.int_2;
+				_int0 = _class130._int1 - 1;
+				_int1 = _class130._int1 + _class130._int2;
 			}
 		}
 
-		public float[] float_0;
+		public float[] Float0;
 
-		public int int_0;
+		public int Int0;
 
-		private int int_1;
+		private int _int1;
 
-		private int int_2;
+		private int _int2;
 
-		public bool bool_0 = true;
+		public bool Bool0 = true;
 
-		private List<Struct9> list_0;
+		private List<Struct9> _list0;
 
-		private bool bool_1;
+		private bool _bool1;
 
-		private int int_3 = -1;
+		private int _int3 = -1;
 
-		private float[] float_1;
+		private float[] _float1;
 
-		private float[] float_2;
+		private float[] _float2;
 
-		private bool bool_2;
+		private bool _bool2;
 
-		private static readonly Enum0 enum0_0 = Enum0.const_0;
+		private static readonly Enum0 Enum00 = Enum0.Const0;
 
-		public float this[int int_4]
+		public float this[int int4]
 		{
 			get
 			{
-				return float_0[int_1 + int_4];
+				return Float0[_int1 + int4];
 			}
 			set
 			{
-				float_0[int_1 + int_4] = value;
+				Float0[_int1 + int4] = value;
 			}
 		}
 
 		public int method_0()
 		{
-			return int_1;
+			return _int1;
 		}
 
-		public void method_1(int int_4)
+		public void method_1(int int4)
 		{
-			if (int_4 < 0 || int_4 >= float_0.Length)
+			if (int4 < 0 || int4 >= Float0.Length)
 			{
-				throw new IndexOutOfRangeException("Channel: Offset is out of range -> " + int_4 + ".");
+				throw new IndexOutOfRangeException("Channel: Offset is out of range -> " + int4 + ".");
 			}
-			int_1 = int_4;
+			_int1 = int4;
 		}
 
 		public int method_2()
 		{
-			return int_2;
+			return _int2;
 		}
 
-		public void method_3(int int_4)
+		public void method_3(int int4)
 		{
-			if (int_4 <= 0 || int_1 + int_4 > float_0.Length)
+			if (int4 <= 0 || _int1 + int4 > Float0.Length)
 			{
-				throw new IndexOutOfRangeException("Channel: Length is out of range -> " + int_4 + ".");
+				throw new IndexOutOfRangeException("Channel: Length is out of range -> " + int4 + ".");
 			}
-			int_2 = int_4;
+			_int2 = int4;
 		}
 
-		public Class13(int int_4, float[] float_3) : this(int_4, float_3, 0, float_3.Length)
+		public Class13(int int4, float[] float3) : this(int4, float3, 0, float3.Length)
 		{
 		}
 
-		public Class13(int int_4, float[] float_3, int int_5, int int_6)
+		public Class13(int int4, float[] float3, int int5, int int6)
 		{
-			int_0 = int_4;
-			float_0 = float_3;
-			method_1(int_5);
-			method_3(int_6);
+			Int0 = int4;
+			Float0 = float3;
+			method_1(int5);
+			method_3(int6);
 			method_4();
 		}
 
-		public virtual float vmethod_0(int int_4)
+		public virtual float vmethod_0(int int4)
 		{
-			if (!bool_1)
+			if (!_bool1)
 			{
 				return 1f;
 			}
-			if (bool_2)
+			if (_bool2)
 			{
-				float_1 = new float[list_0.Count];
-				float_2 = new float[list_0.Count];
-				for (var i = 0; i < list_0.Count; i++)
+				_float1 = new float[_list0.Count];
+				_float2 = new float[_list0.Count];
+				for (var i = 0; i < _list0.Count; i++)
 				{
-					float_1[i] = list_0[i].float_0;
-					float_2[i] = list_0[i].float_1;
+					_float1[i] = _list0[i].Float0;
+					_float2[i] = _list0[i].Float1;
 				}
-				bool_2 = false;
+				_bool2 = false;
 			}
-			var num = Class15.smethod_3(float_1, float_2, (int_4 - (float)method_0()) / method_2());
-			switch (enum0_0)
+			var num = Class15.smethod_3(_float1, _float2, (int4 - (float)method_0()) / method_2());
+			switch (Enum00)
 			{
-			case Enum0.const_3:
+			case Enum0.Const3:
 				return (float)Math.Sqrt(num);
-			case Enum0.const_1:
+			case Enum0.Const1:
 				return num * num;
-			case Enum0.const_2:
+			case Enum0.Const2:
 				return num * num * num;
 			}
 			return num;
 		}
 
-		public virtual float vmethod_1(int int_4, float float_3, float float_4)
+		public virtual float vmethod_1(int int4, float float3, float float4)
 		{
-			var num = vmethod_0(int_4);
-			return float_4 * num + float_3 * (1f - num);
+			var num = vmethod_0(int4);
+			return float4 * num + float3 * (1f - num);
 		}
 
 		private void method_4()
 		{
-			if (list_0 == null)
+			if (_list0 == null)
 			{
-				list_0 = new List<Struct9>();
+				_list0 = new List<Struct9>();
 				vmethod_2();
 			}
 		}
 
 		public virtual void vmethod_2()
 		{
-			list_0.Clear();
-			list_0.Add(new Struct9(0f, 1f));
-			list_0.Add(new Struct9(1f, 1f));
-			bool_2 = true;
-			bool_1 = false;
+			_list0.Clear();
+			_list0.Add(new Struct9(0f, 1f));
+			_list0.Add(new Struct9(1f, 1f));
+			_bool2 = true;
+			_bool1 = false;
 		}
 
-		public bool method_5(int int_4)
+		public bool method_5(int int4)
 		{
-			return int_4 >= 0 && int_4 < method_2();
+			return int4 >= 0 && int4 < method_2();
 		}
 
-		public virtual void vmethod_3(float float_3, int int_4)
+		public virtual void vmethod_3(float float3, int int4)
 		{
-			if (method_5(int_4))
+			if (method_5(int4))
 			{
-				float_0[int_4] = float_3;
+				Float0[int4] = float3;
 			}
 		}
 
-		public virtual float vmethod_4(int int_4)
+		public virtual float vmethod_4(int int4)
 		{
-			if (method_5(int_4) && bool_0)
+			if (method_5(int4) && Bool0)
 			{
-				return float_0[int_4];
+				return Float0[int4];
 			}
 			return 0f;
 		}

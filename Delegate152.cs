@@ -1,1 +1,1 @@
-public delegate string Delegate152(object object_0, byte[] byte_0);
+public delegate string Delegate152(object object0, byte[] byte0);

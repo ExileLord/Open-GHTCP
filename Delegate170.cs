@@ -1,3 +1,3 @@
 using System;
 
-public delegate DateTime Delegate170(DateTime dateTime_0, TimeSpan timeSpan_0);
+public delegate DateTime Delegate170(DateTime dateTime0, TimeSpan timeSpan0);

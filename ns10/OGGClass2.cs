@@ -3,40 +3,40 @@ using ns2;
 
 namespace ns10
 {
-	public class OGGClass2
+	public class OggClass2
 	{
-		public int int_0;
+		public int Int0;
 
-		public int int_1;
+		public int Int1;
 
-		public int[] int_2;
+		public int[] Int2;
 
-		public int int_3;
+		public int Int3;
 
-		public int int_4;
+		public int Int4;
 
-		public int int_5;
+		public int Int5;
 
-		public int int_6;
+		public int Int6;
 
-		public int int_7;
+		public int Int7;
 
-		public int[] int_8;
+		public int[] Int8;
 
-		private static readonly int int_9 = 21;
+		private static readonly int Int9 = 21;
 
-		private static readonly int int_10 = 768;
+		private static readonly int Int10 = 768;
 
-	    public int method_0(OGGClass3 oggClass3)
+	    public int method_0(OggClass3 oggClass3)
 		{
 			if (oggClass3.method_6(24) != 5653314)
 			{
 				method_2();
 				return -1;
 			}
-			int_0 = oggClass3.method_6(16);
-			int_1 = oggClass3.method_6(24);
-			if (int_1 == -1)
+			Int0 = oggClass3.method_6(16);
+			Int1 = oggClass3.method_6(24);
+			if (Int1 == -1)
 			{
 				method_2();
 				return -1;
@@ -44,10 +44,10 @@ namespace ns10
 			switch (oggClass3.method_6(1))
 			{
 			case 0:
-				int_2 = new int[int_1];
+				Int2 = new int[Int1];
 				if (oggClass3.method_6(1) != 0)
 				{
-					for (var i = 0; i < int_1; i++)
+					for (var i = 0; i < Int1; i++)
 					{
 						if (oggClass3.method_6(1) != 0)
 						{
@@ -57,17 +57,17 @@ namespace ns10
 								method_2();
 								return -1;
 							}
-							int_2[i] = num + 1;
+							Int2[i] = num + 1;
 						}
 						else
 						{
-							int_2[i] = 0;
+							Int2[i] = 0;
 						}
 					}
 				}
 				else
 				{
-					for (var i = 0; i < int_1; i++)
+					for (var i = 0; i < Int1; i++)
 					{
 						var num2 = oggClass3.method_6(5);
 						if (num2 == -1)
@@ -75,18 +75,18 @@ namespace ns10
 							method_2();
 							return -1;
 						}
-						int_2[i] = num2 + 1;
+						Int2[i] = num2 + 1;
 					}
 				}
 				break;
 			case 1:
 			{
 				var num3 = oggClass3.method_6(5) + 1;
-				int_2 = new int[int_1];
+				Int2 = new int[Int1];
 				var i = 0;
-				while (i < int_1)
+				while (i < Int1)
 				{
-					var num4 = oggClass3.method_6(smethod_0(int_1 - i));
+					var num4 = oggClass3.method_6(smethod_0(Int1 - i));
 					if (num4 == -1)
 					{
 						method_2();
@@ -95,7 +95,7 @@ namespace ns10
 					var j = 0;
 					while (j < num4)
 					{
-						int_2[i] = num3;
+						Int2[i] = num3;
 						j++;
 						i++;
 					}
@@ -106,33 +106,33 @@ namespace ns10
 			default:
 				return -1;
 			}
-			switch (int_3 = oggClass3.method_6(4))
+			switch (Int3 = oggClass3.method_6(4))
 			{
 			case 0:
 				break;
 			case 1:
 			case 2:
 			{
-				int_4 = oggClass3.method_6(32);
-				int_5 = oggClass3.method_6(32);
-				int_6 = oggClass3.method_6(4) + 1;
-				int_7 = oggClass3.method_6(1);
+				Int4 = oggClass3.method_6(32);
+				Int5 = oggClass3.method_6(32);
+				Int6 = oggClass3.method_6(4) + 1;
+				Int7 = oggClass3.method_6(1);
 				var num5 = 0;
-				switch (int_3)
+				switch (Int3)
 				{
 				case 1:
 					num5 = method_1();
 					break;
 				case 2:
-					num5 = int_1 * int_0;
+					num5 = Int1 * Int0;
 					break;
 				}
-				int_8 = new int[num5];
+				Int8 = new int[num5];
 				for (var i = 0; i < num5; i++)
 				{
-					int_8[i] = oggClass3.method_6(int_6);
+					Int8[i] = oggClass3.method_6(Int6);
 				}
-				if (int_8[num5 - 1] == -1)
+				if (Int8[num5 - 1] == -1)
 				{
 					method_2();
 					return -1;
@@ -148,21 +148,21 @@ namespace ns10
 
 		public int method_1()
 		{
-			var num = (int)Math.Floor(Math.Pow(int_1, 1.0 / int_0));
+			var num = (int)Math.Floor(Math.Pow(Int1, 1.0 / Int0));
 			while (true)
 			{
 				var num2 = 1;
 				var num3 = 1;
-				for (var i = 0; i < int_0; i++)
+				for (var i = 0; i < Int0; i++)
 				{
 					num2 *= num;
 					num3 *= num + 1;
 				}
-				if (num2 <= int_1 && num3 > int_1)
+				if (num2 <= Int1 && num3 > Int1)
 				{
 					break;
 				}
-                if (num2 > int_1)
+                if (num2 > Int1)
 				{
 					num--;
 				}
@@ -180,53 +180,53 @@ namespace ns10
 
 		public float[] method_3()
 		{
-			if (int_3 != 1)
+			if (Int3 != 1)
 			{
-				if (int_3 != 2)
+				if (Int3 != 2)
 				{
 					return null;
 				}
 			}
-			var num = smethod_1(int_4);
-			var num2 = smethod_1(int_5);
-			var array = new float[int_1 * int_0];
-			switch (int_3)
+			var num = smethod_1(Int4);
+			var num2 = smethod_1(Int5);
+			var array = new float[Int1 * Int0];
+			switch (Int3)
 			{
 			case 1:
 			{
 				var num3 = method_1();
-				for (var i = 0; i < int_1; i++)
+				for (var i = 0; i < Int1; i++)
 				{
 					var num4 = 0f;
 					var num5 = 1;
-					for (var j = 0; j < int_0; j++)
+					for (var j = 0; j < Int0; j++)
 					{
 						var num6 = i / num5 % num3;
-						float num7 = int_8[num6];
+						float num7 = Int8[num6];
 						num7 = Math.Abs(num7) * num2 + num + num4;
-						if (int_7 != 0)
+						if (Int7 != 0)
 						{
 							num4 = num7;
 						}
-						array[i * int_0 + j] = num7;
+						array[i * Int0 + j] = num7;
 						num5 *= num3;
 					}
 				}
 				break;
 			}
 			case 2:
-				for (var k = 0; k < int_1; k++)
+				for (var k = 0; k < Int1; k++)
 				{
 					var num8 = 0f;
-					for (var l = 0; l < int_0; l++)
+					for (var l = 0; l < Int0; l++)
 					{
-						float num9 = int_8[k * int_0 + l];
+						float num9 = Int8[k * Int0 + l];
 						num9 = Math.Abs(num9) * num2 + num + num8;
-						if (int_7 != 0)
+						if (Int7 != 0)
 						{
 							num8 = num9;
 						}
-						array[k * int_0 + l] = num9;
+						array[k * Int0 + l] = num9;
 					}
 				}
 				break;
@@ -234,31 +234,31 @@ namespace ns10
 			return array;
 		}
 
-		public static int smethod_0(int int_11)
+		public static int smethod_0(int int11)
 		{
 			var num = 0;
-			while (int_11 != 0)
+			while (int11 != 0)
 			{
 				num++;
-				int_11 = (int)((uint)int_11 >> 1);
+				int11 = (int)((uint)int11 >> 1);
 			}
 			return num;
 		}
 
-		public static float smethod_1(int int_11)
+		public static float smethod_1(int int11)
 		{
-			float num = int_11 & 2097151;
-			float num2 = (uint)(int_11 & 2145386496) >> int_9;
-			if ((int_11 & 2147483648L) != 0L)
+			float num = int11 & 2097151;
+			float num2 = (uint)(int11 & 2145386496) >> Int9;
+			if ((int11 & 2147483648L) != 0L)
 			{
 				num = -num;
 			}
-			return smethod_2(num, (int)num2 - (int_9 - 1) - int_10);
+			return smethod_2(num, (int)num2 - (Int9 - 1) - Int10);
 		}
 
-		public static float smethod_2(float float_0, int int_11)
+		public static float smethod_2(float float0, int int11)
 		{
-			return (float)(float_0 * Math.Pow(2.0, int_11));
+			return (float)(float0 * Math.Pow(2.0, int11));
 		}
 	}
 }

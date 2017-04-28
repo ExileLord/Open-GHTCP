@@ -1,3 +1,3 @@
 using System;
 
-public delegate Type Delegate354(RuntimeTypeHandle runtimeTypeHandle_0);
+public delegate Type Delegate354(RuntimeTypeHandle runtimeTypeHandle0);

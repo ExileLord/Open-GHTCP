@@ -4,20 +4,20 @@ namespace ns13
 {
 	public class Class205 : ICloneable
 	{
-		private string string_0;
+		private string _string0;
 
-		private Class204 class204_0;
+		private Class204 _class2040;
 
 		private Class205()
 		{
-			class204_0 = new Class204();
+			_class2040 = new Class204();
 		}
 
 		public object Clone()
 		{
 			var @class = new Class205();
-			@class.string_0 = string_0;
-			@class.class204_0 = (Class204)class204_0.Clone();
+			@class._string0 = _string0;
+			@class._class2040 = (Class204)_class2040.Clone();
 			@class.method_1(method_0());
 			return @class;
 		}
@@ -35,12 +35,12 @@ namespace ns13
 
 		public string method_0()
 		{
-			return class204_0.method_0();
+			return _class2040.method_0();
 		}
 
-		public void method_1(string string_1)
+		public void method_1(string string1)
 		{
-			class204_0.method_1(string_1);
+			_class2040.method_1(string1);
 		}
 	}
 }

@@ -5,35 +5,35 @@ namespace ns7
 {
 	public class Class127 : Class121
 	{
-		public Class142[] class142_0;
+		public Class142[] Class1420;
 
-		public Class127(Class144 class144_0, int int_0, bool bool_1) : base(bool_1)
+		public Class127(Class144 class1440, int int0, bool bool1) : base(bool1)
 		{
-			var num = int_0 / 18;
-			class142_0 = new Class142[num];
-			for (var i = 0; i < class142_0.Length; i++)
+			var num = int0 / 18;
+			Class1420 = new Class142[num];
+			for (var i = 0; i < Class1420.Length; i++)
 			{
-				class142_0[i] = new Class142(class144_0);
+				Class1420[i] = new Class142(class1440);
 			}
-			int_0 -= int_0 * 18;
-			if (int_0 > 0)
+			int0 -= int0 * 18;
+			if (int0 > 0)
 			{
-				class144_0.vmethod_15(null, int_0);
+				class1440.vmethod_15(null, int0);
 			}
 		}
 
 		public virtual int vmethod_1()
 		{
-			return class142_0.Length;
+			return Class1420.Length;
 		}
 
 		public override string ToString()
 		{
 			var stringBuilder = new StringBuilder();
-			stringBuilder.Append("SeekTable: points=" + class142_0.Length + "\n");
-			for (var i = 0; i < class142_0.Length; i++)
+			stringBuilder.Append("SeekTable: points=" + Class1420.Length + "\n");
+			for (var i = 0; i < Class1420.Length; i++)
 			{
-				stringBuilder.Append("\tPoint " + class142_0[i] + "\n");
+				stringBuilder.Append("\tPoint " + Class1420[i] + "\n");
 			}
 			return stringBuilder.ToString();
 		}

@@ -1,1 +1,1 @@
-public delegate void Delegate127(object object_0, int int_0, char char_0);
+public delegate void Delegate127(object object0, int int0, char char0);

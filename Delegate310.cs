@@ -1,3 +1,3 @@
 using System.IO;
 
-public delegate FileStream Delegate310(string string_0);
+public delegate FileStream Delegate310(string string0);

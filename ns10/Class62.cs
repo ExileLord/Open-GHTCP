@@ -2,9 +2,9 @@ namespace ns10
 {
 	public class Class62
 	{
-		private static int int_0 = 256;
+		private static int _int0 = 256;
 
-		private static readonly uint[] uint_0 = {
+		private static readonly uint[] Uint0 = {
 			0u,
 			1u,
 			3u,
@@ -40,11 +40,11 @@ namespace ns10
 			4294967295u
 		};
 
-		private byte[] byte_0;
+		private byte[] _byte0;
 
 		public void method_0()
 		{
-			byte_0 = null;
+			_byte0 = null;
 		}
 	}
 }

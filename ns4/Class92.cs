@@ -3,11 +3,11 @@ using SharpAudio.ASC.Mp3.Decoding;
 
 namespace ns4
 {
-	public class Class92 : Interface7
+	public class Class92 : INterface7
 	{
 		public abstract class Class94
 		{
-			public static readonly float[] float_0 = {
+			public static readonly float[] Float0 = {
 				2f,
 				1.587401f,
 				1.25992107f,
@@ -74,18 +74,18 @@ namespace ns4
 				0f
 			};
 
-			public abstract void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0);
+			public abstract void vmethod_0(Class82 class820, ZzSoundClass class1070, Class101 class1010);
 
-			public abstract void vmethod_1(Class82 class82_0, zzSoundClass class107_0);
+			public abstract void vmethod_1(Class82 class820, ZzSoundClass class1070);
 
-			public abstract bool vmethod_2(Class82 class82_0);
+			public abstract bool vmethod_2(Class82 class820);
 
-			public abstract bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1);
+			public abstract bool vmethod_3(Enum4 enum40, Class80 class800, Class80 class801);
 		}
 
 		public class Class95 : Class94
 		{
-			public static readonly float[] float_1 = {
+			public static readonly float[] Float1 = {
 				0f,
 				0.6666667f,
 				0.2857143f,
@@ -103,7 +103,7 @@ namespace ns4
 				6.103702E-05f
 			};
 
-			public static readonly float[] float_2 = {
+			public static readonly float[] Float2 = {
 				0f,
 				-0.6666667f,
 				-0.857142866f,
@@ -121,74 +121,74 @@ namespace ns4
 				-0.9999695f
 			};
 
-			public readonly int int_0;
+			public readonly int Int0;
 
-			public int int_1;
+			public int Int1;
 
-			public int int_2;
+			public int Int2;
 
-			public float float_3;
+			public float Float3;
 
-			public int int_3;
+			public int Int3;
 
-			public float float_4;
+			public float Float4;
 
-			public float float_5;
+			public float Float5;
 
-			public float float_6;
+			public float Float6;
 
-			public Class95(int int_4)
+			public Class95(int int4)
 			{
-				int_0 = int_4;
-				int_1 = 0;
+				Int0 = int4;
+				Int1 = 0;
 			}
 
-			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
+			public override void vmethod_0(Class82 class820, ZzSoundClass class1070, Class101 class1010)
 			{
-				if ((int_2 = class82_0.method_13(4)) == 15)
+				if ((Int2 = class820.method_13(4)) == 15)
 				{
 					throw new DecoderException(DecoderError.IllegalSubbandAllocation, null);
 				}
-				if (class101_0 != null)
+				if (class1010 != null)
 				{
-					class101_0.method_0(int_2, 4);
+					class1010.method_0(Int2, 4);
 				}
-				if (int_2 != 0)
+				if (Int2 != 0)
 				{
-					int_3 = int_2 + 1;
-					float_5 = float_1[int_2];
-					float_6 = float_2[int_2];
-				}
-			}
-
-			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
-			{
-				if (int_2 != 0)
-				{
-					float_3 = float_0[class82_0.method_13(6)];
+					Int3 = Int2 + 1;
+					Float5 = Float1[Int2];
+					Float6 = Float2[Int2];
 				}
 			}
 
-			public override bool vmethod_2(Class82 class82_0)
+			public override void vmethod_1(Class82 class820, ZzSoundClass class1070)
 			{
-				if (int_2 != 0)
+				if (Int2 != 0)
 				{
-					float_4 = class82_0.method_13(int_3);
+					Float3 = Float0[class820.method_13(6)];
 				}
-				if (++int_1 == 12)
+			}
+
+			public override bool vmethod_2(Class82 class820)
+			{
+				if (Int2 != 0)
 				{
-					int_1 = 0;
+					Float4 = class820.method_13(Int3);
+				}
+				if (++Int1 == 12)
+				{
+					Int1 = 0;
 					return true;
 				}
 				return false;
 			}
 
-			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
+			public override bool vmethod_3(Enum4 enum40, Class80 class800, Class80 class801)
 			{
-				if (int_2 != 0 && enum4_0 != Enum4.const_2)
+				if (Int2 != 0 && enum40 != Enum4.Const2)
 				{
-					var float_ = (float_4 * float_5 + float_6) * float_3;
-					class80_0.method_2(float_, int_0);
+					var float_ = (Float4 * Float5 + Float6) * Float3;
+					class800.method_2(float_, Int0);
 				}
 				return true;
 			}
@@ -196,48 +196,48 @@ namespace ns4
 
 		public class Class96 : Class95
 		{
-			public float float_7;
+			public float Float7;
 
-			public Class96(int int_4) : base(int_4)
+			public Class96(int int4) : base(int4)
 			{
 			}
 
-			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
+			public override void vmethod_0(Class82 class820, ZzSoundClass class1070, Class101 class1010)
 			{
-				base.vmethod_0(class82_0, class107_0, class101_0);
+				base.vmethod_0(class820, class1070, class1010);
 			}
 
-			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
+			public override void vmethod_1(Class82 class820, ZzSoundClass class1070)
 			{
-				if (int_2 == 0)
+				if (Int2 == 0)
 				{
 					return;
 				}
-				float_3 = float_0[class82_0.method_13(6)];
-				float_7 = float_0[class82_0.method_13(6)];
+				Float3 = Float0[class820.method_13(6)];
+				Float7 = Float0[class820.method_13(6)];
 			}
 
-			public override bool vmethod_2(Class82 class82_0)
+			public override bool vmethod_2(Class82 class820)
 			{
-				return base.vmethod_2(class82_0);
+				return base.vmethod_2(class820);
 			}
 
-			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
+			public override bool vmethod_3(Enum4 enum40, Class80 class800, Class80 class801)
 			{
-				if (int_2 != 0)
+				if (Int2 != 0)
 				{
-					float_4 = float_4 * float_5 + float_6;
-					switch (enum4_0)
+					Float4 = Float4 * Float5 + Float6;
+					switch (enum40)
 					{
-					case Enum4.const_0:
-						class80_0.method_2(float_4 * float_3, int_0);
-						class80_1.method_2(float_4 * float_7, int_0);
+					case Enum4.Const0:
+						class800.method_2(Float4 * Float3, Int0);
+						class801.method_2(Float4 * Float7, Int0);
 						break;
-					case Enum4.const_1:
-						class80_0.method_2(float_4 * float_3, int_0);
+					case Enum4.Const1:
+						class800.method_2(Float4 * Float3, Int0);
 						break;
 					default:
-						class80_0.method_2(float_4 * float_7, int_0);
+						class800.method_2(Float4 * Float7, Int0);
 						break;
 					}
 				}
@@ -247,132 +247,132 @@ namespace ns4
 
 		public class Class97 : Class95
 		{
-			public int int_4;
+			public int Int4;
 
-			public float float_7;
+			public float Float7;
 
-			public int int_5;
+			public int Int5;
 
-			public float float_8;
+			public float Float8;
 
-			public float float_9;
+			public float Float9;
 
-			public float float_10;
+			public float Float10;
 
-			public Class97(int int_6) : base(int_6)
+			public Class97(int int6) : base(int6)
 			{
 			}
 
-			public override void vmethod_0(Class82 class82_0, zzSoundClass class107_0, Class101 class101_0)
+			public override void vmethod_0(Class82 class820, ZzSoundClass class1070, Class101 class1010)
 			{
-				int_2 = class82_0.method_13(4);
-				int_4 = class82_0.method_13(4);
-				if (class101_0 != null)
+				Int2 = class820.method_13(4);
+				Int4 = class820.method_13(4);
+				if (class1010 != null)
 				{
-					class101_0.method_0(int_2, 4);
-					class101_0.method_0(int_4, 4);
+					class1010.method_0(Int2, 4);
+					class1010.method_0(Int4, 4);
 				}
-				if (int_2 != 0)
+				if (Int2 != 0)
 				{
-					int_3 = int_2 + 1;
-					float_5 = float_1[int_2];
-					float_6 = float_2[int_2];
+					Int3 = Int2 + 1;
+					Float5 = Float1[Int2];
+					Float6 = Float2[Int2];
 				}
-				if (int_4 != 0)
+				if (Int4 != 0)
 				{
-					int_5 = int_4 + 1;
-					float_9 = float_1[int_4];
-					float_10 = float_2[int_4];
+					Int5 = Int4 + 1;
+					Float9 = Float1[Int4];
+					Float10 = Float2[Int4];
 				}
 			}
 
-			public override void vmethod_1(Class82 class82_0, zzSoundClass class107_0)
+			public override void vmethod_1(Class82 class820, ZzSoundClass class1070)
 			{
-				if (int_2 != 0)
+				if (Int2 != 0)
 				{
-					float_3 = float_0[class82_0.method_13(6)];
+					Float3 = Float0[class820.method_13(6)];
 				}
-				if (int_4 != 0)
+				if (Int4 != 0)
 				{
-					float_7 = float_0[class82_0.method_13(6)];
+					Float7 = Float0[class820.method_13(6)];
 				}
 			}
 
-			public override bool vmethod_2(Class82 class82_0)
+			public override bool vmethod_2(Class82 class820)
 			{
-				var result = base.vmethod_2(class82_0);
-				if (int_4 != 0)
+				var result = base.vmethod_2(class820);
+				if (Int4 != 0)
 				{
-					float_8 = class82_0.method_13(int_5);
+					Float8 = class820.method_13(Int5);
 				}
 				return result;
 			}
 
-			public override bool vmethod_3(Enum4 enum4_0, Class80 class80_0, Class80 class80_1)
+			public override bool vmethod_3(Enum4 enum40, Class80 class800, Class80 class801)
 			{
-				base.vmethod_3(enum4_0, class80_0, class80_1);
-				if (int_4 != 0 && enum4_0 != Enum4.const_1)
+				base.vmethod_3(enum40, class800, class801);
+				if (Int4 != 0 && enum40 != Enum4.Const1)
 				{
-					var num = (float_8 * float_9 + float_10) * float_7;
-					if (enum4_0 == Enum4.const_0)
+					var num = (Float8 * Float9 + Float10) * Float7;
+					if (enum40 == Enum4.Const0)
 					{
-						class80_1.method_2(num, int_0);
+						class801.method_2(num, Int0);
 					}
 					else
 					{
-						class80_0.method_2(num, int_0);
+						class800.method_2(num, Int0);
 					}
 				}
 				return true;
 			}
 		}
 
-		public Class82 class82_0;
+		public Class82 Class820;
 
-		public zzSoundClass class107_0;
+		public ZzSoundClass Class1070;
 
-		public Class80 class80_0;
+		public Class80 Class800;
 
-		public Class80 class80_1;
+		public Class80 Class801;
 
-		public Class84 class84_0;
+		public Class84 Class840;
 
-		public Enum4 enum4_0;
+		public Enum4 Enum40;
 
-		public Enum5 enum5_0;
+		public Enum5 Enum50;
 
-		public int int_0;
+		public int Int0;
 
-		public Class94[] class94_0;
+		public Class94[] Class940;
 
-		public readonly Class101 class101_0;
+		public readonly Class101 Class1010;
 
 		public Class92()
 		{
-			class101_0 = new Class101();
+			Class1010 = new Class101();
 		}
 
-		public virtual void vmethod_0(Class82 class82_1, zzSoundClass class107_1, Class80 class80_2, Class80 class80_3, Class84 class84_1, Enum4 enum4_1)
+		public virtual void vmethod_0(Class82 class821, ZzSoundClass class1071, Class80 class802, Class80 class803, Class84 class841, Enum4 enum41)
 		{
-			class82_0 = class82_1;
-			class107_0 = class107_1;
-			class80_0 = class80_2;
-			class80_1 = class80_3;
-			class84_0 = class84_1;
-			enum4_0 = enum4_1;
+			Class820 = class821;
+			Class1070 = class1071;
+			Class800 = class802;
+			Class801 = class803;
+			Class840 = class841;
+			Enum40 = enum41;
 		}
 
 		public virtual void imethod_0()
 		{
 			try
 			{
-				int_0 = class107_0.method_25();
-				class94_0 = new Class94[32];
-				enum5_0 = class107_0.method_8();
+				Int0 = Class1070.method_25();
+				Class940 = new Class94[32];
+				Enum50 = Class1070.method_8();
 				vmethod_1();
 				vmethod_2();
 				vmethod_3();
-				if (class101_0 != null || class107_0.method_12())
+				if (Class1010 != null || Class1070.method_12())
 				{
 					vmethod_4();
 					vmethod_5();
@@ -385,39 +385,39 @@ namespace ns4
 
 		public virtual void vmethod_1()
 		{
-			if (enum5_0 == Enum5.const_3)
+			if (Enum50 == Enum5.Const3)
 			{
-				for (var i = 0; i < int_0; i++)
+				for (var i = 0; i < Int0; i++)
 				{
-					class94_0[i] = new Class95(i);
+					Class940[i] = new Class95(i);
 				}
 				return;
 			}
-			if (enum5_0 == Enum5.const_1)
+			if (Enum50 == Enum5.Const1)
 			{
 				int i;
-				for (i = 0; i < class107_0.method_26(); i++)
+				for (i = 0; i < Class1070.method_26(); i++)
 				{
-					class94_0[i] = new Class97(i);
+					Class940[i] = new Class97(i);
 				}
-				while (i < int_0)
+				while (i < Int0)
 				{
-					class94_0[i] = new Class96(i);
+					Class940[i] = new Class96(i);
 					i++;
 				}
 				return;
 			}
-			for (var i = 0; i < int_0; i++)
+			for (var i = 0; i < Int0; i++)
 			{
-				class94_0[i] = new Class97(i);
+				Class940[i] = new Class97(i);
 			}
 		}
 
 		public virtual void vmethod_2()
 		{
-			for (var i = 0; i < int_0; i++)
+			for (var i = 0; i < Int0; i++)
 			{
-				class94_0[i].vmethod_0(class82_0, class107_0, class101_0);
+				Class940[i].vmethod_0(Class820, Class1070, Class1010);
 			}
 		}
 
@@ -427,9 +427,9 @@ namespace ns4
 
 		public virtual void vmethod_4()
 		{
-			for (var i = 0; i < int_0; i++)
+			for (var i = 0; i < Int0; i++)
 			{
-				class94_0[i].vmethod_1(class82_0, class107_0);
+				Class940[i].vmethod_1(Class820, Class1070);
 			}
 		}
 
@@ -437,23 +437,23 @@ namespace ns4
 		{
 			var flag = false;
 			var flag2 = false;
-			var @enum = class107_0.method_8();
+			var @enum = Class1070.method_8();
 			do
 			{
-				for (var i = 0; i < int_0; i++)
+				for (var i = 0; i < Int0; i++)
 				{
-					flag = class94_0[i].vmethod_2(class82_0);
+					flag = Class940[i].vmethod_2(Class820);
 				}
 				do
 				{
-					for (var i = 0; i < int_0; i++)
+					for (var i = 0; i < Int0; i++)
 					{
-						flag2 = class94_0[i].vmethod_3(enum4_0, class80_0, class80_1);
+						flag2 = Class940[i].vmethod_3(Enum40, Class800, Class801);
 					}
-					class80_0.method_22(class84_0);
-					if (enum4_0 == Enum4.const_0 && @enum != Enum5.const_3)
+					Class800.method_22(Class840);
+					if (Enum40 == Enum4.Const0 && @enum != Enum5.Const3)
 					{
-						class80_1.method_22(class84_0);
+						Class801.method_22(Class840);
 					}
 				}
 				while (!flag2);

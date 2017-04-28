@@ -1,1 +1,1 @@
-public delegate long Delegate198(long long_0, long long_1);
+public delegate long Delegate198(long long0, long long1);

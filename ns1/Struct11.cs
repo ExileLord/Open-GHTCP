@@ -4,20 +4,20 @@ namespace ns1
 {
 	public struct Struct11
 	{
-		private readonly int int_0;
+		private readonly int _int0;
 
-		private readonly int int_1;
+		private readonly int _int1;
 
-		public Struct11(int int_2, int int_3)
+		public Struct11(int int2, int int3)
 		{
-			int_0 = int_2;
-			int_1 = int_3;
+			_int0 = int2;
+			_int1 = int3;
 		}
 
-		public Struct11 method_0(Struct11 struct11_0)
+		public Struct11 method_0(Struct11 struct110)
 		{
-			var num = Math.Max(int_0, struct11_0.int_0);
-			var num2 = Math.Min(int_1, struct11_0.int_1);
+			var num = Math.Max(_int0, struct110._int0);
+			var num2 = Math.Min(_int1, struct110._int1);
 			if (num2 > num)
 			{
 				return new Struct11(num, num2);
@@ -27,17 +27,17 @@ namespace ns1
 
 		public bool method_1()
 		{
-			return int_0 == -1 || int_1 == -1;
+			return _int0 == -1 || _int1 == -1;
 		}
 
 		public int method_2()
 		{
-			return int_0;
+			return _int0;
 		}
 
 		public int method_3()
 		{
-			return int_1 - int_0;
+			return _int1 - _int0;
 		}
 	}
 }

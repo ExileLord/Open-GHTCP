@@ -3,14 +3,14 @@ using System;
 namespace SharpAudio.ASC.Mp3.Lame
 {
 	[Serializable]
-	public struct ACC
+	public struct Acc
 	{
-		public uint dwSampleRate;
+		public uint DwSampleRate;
 
-		public byte byMode;
+		public byte ByMode;
 
-		public ushort wBitrate;
+		public ushort WBitrate;
 
-		public byte byEncodingMethod;
+		public byte ByEncodingMethod;
 	}
 }

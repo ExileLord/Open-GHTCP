@@ -5,13 +5,13 @@ namespace ns13
 {
 	public abstract class Class207 : SymmetricAlgorithm
 	{
-		public static byte[] smethod_0(byte[] byte_0)
+		public static byte[] smethod_0(byte[] byte0)
 		{
-			if (byte_0 == null)
+			if (byte0 == null)
 			{
 				throw new ArgumentNullException("seed");
 			}
-			if (byte_0.Length == 0)
+			if (byte0.Length == 0)
 			{
 				throw new ArgumentException("Length is zero", "seed");
 			}
@@ -20,9 +20,9 @@ namespace ns13
 				591751049u,
 				878082192u
 			};
-			for (var i = 0; i < byte_0.Length; i++)
+			for (var i = 0; i < byte0.Length; i++)
 			{
-				array[0] = Class192.smethod_0(array[0], byte_0[i]);
+				array[0] = Class192.smethod_0(array[0], byte0[i]);
 				array[1] = array[1] + (byte)array[0];
 				array[1] = array[1] * 134775813u + 1u;
 				array[2] = Class192.smethod_0(array[2], (byte)(array[1] >> 24));

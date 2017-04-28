@@ -1,3 +1,3 @@
 using System.Text;
 
-public delegate StringBuilder Delegate307(object object_0, int int_0);
+public delegate StringBuilder Delegate307(object object0, int int0);

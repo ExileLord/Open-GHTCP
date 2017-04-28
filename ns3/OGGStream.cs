@@ -8,91 +8,91 @@ using SharpAudio.ASC;
 
 namespace ns3
 {
-	public class OGGStream : GenericAudioStream
+	public class OggStream : GenericAudioStream
 	{
-		private static readonly int int_2 = 8500;
+		private static readonly int Int2 = 8500;
 
-		private static int int_3;
+		private static int _int3;
 
-		private static int int_4 = 1;
+		private static int _int4 = 1;
 
-		private static readonly int int_5 = 2;
+		private static readonly int Int5 = 2;
 
-		private static readonly int int_6 = -1;
+		private static readonly int Int6 = -1;
 
-		private static readonly int int_7 = -2;
+		private static readonly int Int7 = -2;
 
-		private static int int_8 = -3;
+		private static int _int8 = -3;
 
-		private static readonly int int_9 = -128;
+		private static readonly int Int9 = -128;
 
-		private static readonly int int_10 = -129;
+		private static readonly int Int10 = -129;
 
-		private static int int_11 = -130;
+		private static int _int11 = -130;
 
-		private static int int_12 = -131;
+		private static int _int12 = -131;
 
-		private static readonly int int_13 = -132;
+		private static readonly int Int13 = -132;
 
-		private static int int_14 = -133;
+		private static int _int14 = -133;
 
-		private static int int_15 = -134;
+		private static int _int15 = -134;
 
-		private static int int_16 = -135;
+		private static int _int16 = -135;
 
-		private static int int_17 = -136;
+		private static int _int17 = -136;
 
-		private static int int_18 = -137;
+		private static int _int18 = -137;
 
-		private static int int_19 = -138;
+		private static int _int19 = -138;
 
-		private bool bool_0;
+		private bool _bool0;
 
-		private long long_0;
+		private long _long0;
 
-		private readonly Class52 class52_0 = new Class52();
+		private readonly Class52 _class520 = new Class52();
 
-		private int int_20;
+		private int _int20;
 
-		private long[] long_1;
+		private long[] _long1;
 
-		private long[] long_2;
+		private long[] _long2;
 
-		private int[] int_21;
+		private int[] _int21;
 
-		private long[] long_3;
+		private long[] _long3;
 
-		private OGGClass5[] oggClass5;
+		private OggClass5[] _oggClass5;
 
-		private Class47[] class47_0;
+		private Class47[] _class470;
 
-		private long long_4;
+		private long _long4;
 
-		private long long_5;
+		private long _long5;
 
-		private bool bool_1;
+		private bool _bool1;
 
-		private int int_22;
+		private int _int22;
 
-		private int int_23;
+		private int _int23;
 
-		private double double_0;
+		private double _double0;
 
-		private float float_0;
+		private float _float0;
 
-		private float float_1;
+		private float _float1;
 
-		private readonly Class56 class56_0;
+		private readonly Class56 _class560;
 
-		private readonly OGGClass1 oggClass1;
+		private readonly OggClass1 _oggClass1;
 
-		private readonly OGGClass6 oggClass6;
+		private readonly OggClass6 _oggClass6;
 
 		public override bool CanRead
 		{
 			get
 			{
-				return fileStream.CanRead;
+				return FileStream.CanRead;
 			}
 		}
 
@@ -100,7 +100,7 @@ namespace ns3
 		{
 			get
 			{
-				return fileStream.CanSeek;
+				return FileStream.CanSeek;
 			}
 		}
 
@@ -108,7 +108,7 @@ namespace ns3
 		{
 			get
 			{
-				return fileStream.CanWrite;
+				return FileStream.CanWrite;
 			}
 		}
 
@@ -116,7 +116,7 @@ namespace ns3
 		{
 			get
 			{
-				return long_5;
+				return _long5;
 			}
 		}
 
@@ -124,15 +124,15 @@ namespace ns3
 		{
 			get
 			{
-				return method_19() * waveFormat_0.short_1;
+				return method_19() * WaveFormat0.short_1;
 			}
 			set
 			{
 				try
 				{
-					if (method_18(value / waveFormat_0.short_1) < 0)
+					if (method_18(value / WaveFormat0.short_1) < 0)
 					{
-						method_17(Convert.ToInt32(value / double_0));
+						method_17(Convert.ToInt32(value / _double0));
 					}
 				}
 				catch
@@ -141,14 +141,14 @@ namespace ns3
 			}
 		}
 
-		private OGGStream()
+		private OggStream()
 		{
-			class56_0 = new Class56();
-			oggClass1 = new OGGClass1();
-			oggClass6 = new OGGClass6(oggClass1);
+			_class560 = new Class56();
+			_oggClass1 = new OggClass1();
+			_oggClass6 = new OggClass6(_oggClass1);
 		}
 
-		public OGGStream(string fileName) : this()
+		public OggStream(string fileName) : this()
 		{
 			FileStream fileData = null;
 			try
@@ -166,77 +166,77 @@ namespace ns3
 			}
 		}
 
-		public OGGStream(Stream stream_1) : this(stream_1, null, 0)
+		public OggStream(Stream stream1) : this(stream1, null, 0)
 		{
 		}
 
-		public OGGStream(Stream stream_1, byte[] byte_0, int int_24) : this()
+		public OggStream(Stream stream1, byte[] byte0, int int24) : this()
 		{
-			var num = method_9(stream_1, byte_0, int_24);
+			var num = method_9(stream1, byte0, int24);
 			if (num == -1)
 			{
 				throw new Exception0("OggStream: open return -1");
 			}
 		}
 
-		private int method_0(Class48 class48_0, long long_6)
+		private int method_0(Class48 class480, long long6)
 		{
-			if (long_6 > 0L)
+			if (long6 > 0L)
 			{
-				long_6 += long_0;
+				long6 += _long0;
 			}
-			while (long_6 <= 0L || long_0 < long_6)
+			while (long6 <= 0L || _long0 < long6)
 			{
-				var num = class52_0.method_3(class48_0);
+				var num = _class520.method_3(class480);
 				if (num < 0)
 				{
-					long_0 -= num;
+					_long0 -= num;
 				}
 				else
 				{
 					if (num != 0)
 					{
-						var result = (int)long_0;
-						long_0 += num;
+						var result = (int)_long0;
+						_long0 += num;
 						return result;
 					}
-					if (long_6 == 0L)
+					if (long6 == 0L)
 					{
-						return int_6;
+						return Int6;
 					}
 					var num2 = method_7();
 					if (num2 == 0)
 					{
-						return int_7;
+						return Int7;
 					}
 					if (num2 < 0)
 					{
-						return int_9;
+						return Int9;
 					}
 				}
 			}
-			return int_6;
+			return Int6;
 		}
 
-		private int method_1(Class48 class48_0)
+		private int method_1(Class48 class480)
 		{
-			var num = long_0;
+			var num = _long0;
 			var num2 = -1;
 			int num3;
 			while (num2 == -1)
 			{
-				num -= int_2;
+				num -= Int2;
 				if (num < 0L)
 				{
 					num = 0L;
 				}
 				method_8(num);
-				while (long_0 < num + int_2)
+				while (_long0 < num + Int2)
 				{
-					num3 = method_0(class48_0, num + int_2 - long_0);
-					if (num3 == int_9)
+					num3 = method_0(class480, num + Int2 - _long0);
+					if (num3 == Int9)
 					{
-						return int_9;
+						return Int9;
 					}
 					if (num3 < 0)
 					{
@@ -246,45 +246,45 @@ namespace ns3
 				}
 			}
 			method_8(num2);
-			num3 = method_0(class48_0, int_2);
+			num3 = method_0(class480, Int2);
 			if (num3 < 0)
 			{
-				return int_10;
+				return Int10;
 			}
 			return num2;
 		}
 
-		private int method_2(OGGClass5 oggClass5, Class47 class47_1, int[] int_24, Class48 class48_0)
+		private int method_2(OggClass5 oggClass5, Class47 class471, int[] int24, Class48 class480)
 		{
 			var @class = new Class48();
-			var class67_ = new Class67();
-			if (class48_0 == null)
+			var class67 = new Class67();
+			if (class480 == null)
 			{
-				var num = method_0(@class, int_2);
-				if (num == int_9)
+				var num = method_0(@class, Int2);
+				if (num == Int9)
 				{
-					return int_9;
+					return Int9;
 				}
 				if (num < 0)
 				{
-					return int_13;
+					return Int13;
 				}
-				class48_0 = @class;
+				class480 = @class;
 			}
-			if (int_24 != null)
+			if (int24 != null)
 			{
-				int_24[0] = class48_0.method_5();
+				int24[0] = class480.method_5();
 			}
-			class56_0.method_1(class48_0.method_5());
+			_class560.method_1(class480.method_5());
 			oggClass5.method_0();
-			class47_1.method_0();
+			class471.method_0();
 			var i = 0;
 			while (i < 3)
 			{
-				class56_0.method_6(class48_0);
+				_class560.method_6(class480);
 				while (i < 3)
 				{
-					var num2 = class56_0.method_5(class67_);
+					var num2 = _class560.method_5(class67);
 					if (num2 == 0)
 					{
 						break;
@@ -293,64 +293,64 @@ namespace ns3
 					{
 						Console.Error.WriteLine("Corrupt header in logical bitstream.");
 						oggClass5.method_1();
-						class47_1.method_2();
-						class56_0.method_2();
+						class471.method_2();
+						_class560.method_2();
 						return -1;
 					}
-					if (oggClass5.method_4(class47_1, class67_) != 0)
+					if (oggClass5.method_4(class471, class67) != 0)
 					{
 						Console.Error.WriteLine("Illegal header in logical bitstream.");
 						oggClass5.method_1();
-						class47_1.method_2();
-						class56_0.method_2();
+						class471.method_2();
+						_class560.method_2();
 						return -1;
 					}
 					i++;
 				}
-				if (i < 3 && method_0(class48_0, 1L) < 0)
+				if (i < 3 && method_0(class480, 1L) < 0)
 				{
 					Console.Error.WriteLine("Missing header in logical bitstream.");
 					oggClass5.method_1();
-					class47_1.method_2();
-					class56_0.method_2();
+					class471.method_2();
+					_class560.method_2();
 					return -1;
 				}
 			}
 			return 0;
 		}
 
-		private void method_3(OGGClass5 class49_1, Class47 class47_1, int int_24)
+		private void method_3(OggClass5 class491, Class47 class471, int int24)
 		{
 			var @class = new Class48();
-            oggClass5 = new OGGClass5[int_20];
-			class47_0 = new Class47[int_20];
-			long_2 = new long[int_20];
-			long_3 = new long[int_20];
-			int_21 = new int[int_20];
+            _oggClass5 = new OggClass5[_int20];
+			_class470 = new Class47[_int20];
+			_long2 = new long[_int20];
+			_long3 = new long[_int20];
+			_int21 = new int[_int20];
 			var i = 0;
-			while (i < int_20)
+			while (i < _int20)
 			{
-                if (class49_1 != null && class47_1 != null && i == 0)
+                if (class491 != null && class471 != null && i == 0)
 				{
-					oggClass5[i] = class49_1;
-					class47_0[i] = class47_1;
-					long_2[i] = int_24;
+					_oggClass5[i] = class491;
+					_class470[i] = class471;
+					_long2[i] = int24;
 				}
 				else
 				{
-					method_8(long_1[i]);
-					if (method_2(oggClass5[i], class47_0[i], null, null) == -1)
+					method_8(_long1[i]);
+					if (method_2(_oggClass5[i], _class470[i], null, null) == -1)
 					{
 						Console.Error.WriteLine("Error opening logical bitstream #" + (i + 1) + "\n");
-						long_2[i] = -1L;
+						_long2[i] = -1L;
 					}
 					else
 					{
-						long_2[i] = long_0;
-						class56_0.method_2();
+						_long2[i] = _long0;
+						_class560.method_2();
 					}
 				}
-                var long_ = long_1[i + 1];
+                var long_ = _long1[i + 1];
 				method_8(long_);
 				long num2;
                 while (true)
@@ -370,60 +370,60 @@ namespace ns3
 				i++;
                 continue;
 				Block_5:
-                int_21[i] = @class.method_5();
-                long_3[i] = num2;
+                _int21[i] = @class.method_5();
+                _long3[i] = num2;
 				goto IL_189;
 				Block_6:
 				Console.Error.WriteLine("Could not find last page of logical bitstream #" + i + "\n");
-                oggClass5[i].method_1();
-				class47_0[i].method_2();
+                _oggClass5[i].method_1();
+				_class470[i].method_2();
 				goto IL_189;
 			}
 		}
 
 		private int method_4()
 		{
-			if (bool_1)
+			if (_bool1)
 			{
 				return 1;
 			}
-            oggClass1.method_1(oggClass5[0]);
-            oggClass6.method_0(oggClass1);
-            bool_1 = true;
+            _oggClass1.method_1(_oggClass5[0]);
+            _oggClass6.method_0(_oggClass1);
+            _bool1 = true;
 			return 0;
 		}
 
 		private void method_5()
 		{
-			class56_0.method_2();
-			oggClass1.method_7();
-			oggClass6.method_1();
-			bool_1 = false;
-			float_0 = 0f;
-			float_1 = 0f;
+			_class560.method_2();
+			_oggClass1.method_7();
+			_oggClass6.method_1();
+			_bool1 = false;
+			_float0 = 0f;
+			_float1 = 0f;
 		}
 
-		private int method_6(int int_24)
+		private int method_6(int int24)
 		{
             var @class = new Class48();
 			Class67 class2;
 			long num2;
 			while (true)
 			{
-                if (bool_1)
+                if (_bool1)
 				{
                     class2 = new Class67();
-					var num = class56_0.method_5(class2);
+					var num = _class560.method_5(class2);
 					if (num > 0)
 					{
-						num2 = class2.long_0;
-						if (oggClass6.method_2(class2) == 0)
+						num2 = class2.Long0;
+						if (_oggClass6.method_2(class2) == 0)
 						{
 							goto Block_11;
 						}
 					}
 				}
-                if (int_24 == 0)
+                if (int24 == 0)
 				{
 					return 0;
 				}
@@ -431,81 +431,81 @@ namespace ns3
 				{
 					return 0;
 				}
-                float_0 += @class.int_1 << 3;
-				if (bool_1 && int_22 != @class.method_5())
+                _float0 += @class.Int1 << 3;
+				if (_bool1 && _int22 != @class.method_5())
 				{
                     method_5();
 				}
-                if (!bool_1)
+                if (!_bool1)
 				{
-                    if (bool_0)
+                    if (_bool0)
 					{
-                        int_22 = @class.method_5();
+                        _int22 = @class.method_5();
 						var num3 = 0;
-						while (num3 < int_20 && int_21[num3] != int_22)
+						while (num3 < _int20 && _int21[num3] != _int22)
 						{
 							num3++;
 						}
-						if (num3 == int_20)
+						if (num3 == _int20)
 						{
 							break;
 						}
-						int_23 = num3;
-						class56_0.method_1(int_22);
-						class56_0.method_7();
+						_int23 = num3;
+						_class560.method_1(_int22);
+						_class560.method_7();
                     }
 					else
 					{
                         var array = new int[1];
-						var num4 = method_2(oggClass5[0], class47_0[0], array, @class);
-						int_22 = array[0];
+						var num4 = method_2(_oggClass5[0], _class470[0], array, @class);
+						_int22 = array[0];
 						if (num4 != 0)
 						{
 							return num4;
 						}
-						int_23++;
+						_int23++;
                     }
                     method_4();
                 }
-                class56_0.method_6(@class);
+                _class560.method_6(@class);
             }
 			return -1;
 			Block_11:
-            var num5 = oggClass1.method_3();
-			oggClass1.method_2(oggClass6);
-			float_1 += oggClass1.method_3() - num5;
-			float_0 += class2.int_1 * 8;
-            if (num2 != -1L && class2.int_3 == 0)
+            var num5 = _oggClass1.method_3();
+			_oggClass1.method_2(_oggClass6);
+			_float1 += _oggClass1.method_3() - num5;
+			_float0 += class2.Int1 * 8;
+            if (num2 != -1L && class2.Int3 == 0)
 			{
-				var num6 = bool_0 ? int_23 : 0;
-				var num7 = oggClass1.method_3();
+				var num6 = _bool0 ? _int23 : 0;
+				var num7 = _oggClass1.method_3();
 				num2 -= num7;
 				for (var i = 0; i < num6; i++)
 				{
-					num2 += long_3[i];
+					num2 += _long3[i];
 				}
-				long_4 = num2;
+				_long4 = num2;
 			}
 			return 1;
 		}
 
-		private static int smethod_0(Stream stream_1, long long_6, int int_24)
+		private static int smethod_0(Stream stream1, long long6, int int24)
 		{
-			if (stream_1.CanSeek)
+			if (stream1.CanSeek)
 			{
 				try
 				{
-					if (int_24 == int_3)
+					if (int24 == _int3)
 					{
-						stream_1.Seek(long_6, SeekOrigin.Begin);
+						stream1.Seek(long6, SeekOrigin.Begin);
 					}
-					else if (int_24 == int_5)
+					else if (int24 == Int5)
 					{
-						stream_1.Seek(stream_1.Length - long_6, SeekOrigin.Begin);
+						stream1.Seek(stream1.Length - long6, SeekOrigin.Begin);
 					}
 					else
 					{
-						Console.Error.WriteLine("seek: " + int_24 + " is not supported");
+						Console.Error.WriteLine("seek: " + int24 + " is not supported");
 					}
 				}
 				catch (Exception ex)
@@ -517,11 +517,11 @@ namespace ns3
 			int result;
 			try
 			{
-				if (int_24 == 0)
+				if (int24 == 0)
 				{
-					stream_1.Seek(0L, SeekOrigin.Begin);
+					stream1.Seek(0L, SeekOrigin.Begin);
 				}
-				stream_1.Seek(long_6, SeekOrigin.Begin);
+				stream1.Seek(long6, SeekOrigin.Begin);
 				return 0;
 			}
 			catch (Exception ex2)
@@ -532,13 +532,13 @@ namespace ns3
 			return result;
 		}
 
-		private static long smethod_1(Stream stream_1)
+		private static long smethod_1(Stream stream1)
 		{
 			try
 			{
-				if (stream_1.CanSeek)
+				if (stream1.CanSeek)
 				{
-					return stream_1.Position;
+					return stream1.Position;
 				}
 			}
 			catch (Exception ex)
@@ -550,23 +550,23 @@ namespace ns3
 
 		private int method_7()
 		{
-			var offset = class52_0.method_1(int_2);
-			var byte_ = class52_0.byte_0;
+			var offset = _class520.method_1(Int2);
+			var byte_ = _class520.Byte0;
 			var num = 0;
 			int result;
 			try
 			{
-				num = fileStream.Read(byte_, offset, int_2);
+				num = FileStream.Read(byte_, offset, Int2);
 				goto IL_51;
 			}
 			catch (Exception ex)
 			{
 				Console.Error.WriteLine(ex.Message);
-				result = int_9;
+				result = Int9;
 			}
 			return result;
 			IL_51:
-			class52_0.method_2(num);
+			_class520.method_2(num);
 			if (num == -1)
 			{
 				num = 0;
@@ -574,11 +574,11 @@ namespace ns3
 			return num;
 		}
 
-		private void method_8(long long_6)
+		private void method_8(long long6)
 		{
-			smethod_0(fileStream, long_6, int_3);
-			long_0 = long_6;
-			class52_0.method_4();
+			smethod_0(FileStream, long6, _int3);
+			_long0 = long6;
+			_class520.method_4();
 		}
 
 		private int method_9(Stream fileStream, byte[] nullArray, int zero)
@@ -588,13 +588,13 @@ namespace ns3
 
 		private int method_10(Stream fileStream, byte[] nullArray, int zero)
 		{
-            this.fileStream = fileStream;
-            class52_0.method_5();
+            this.FileStream = fileStream;
+            _class520.method_5();
             if (nullArray != null)
 			{
-                var dstOffset = class52_0.method_1(zero);
-                Buffer.BlockCopy(nullArray, 0, class52_0.byte_0, dstOffset, zero);
-				class52_0.method_2(zero);
+                var dstOffset = _class520.method_1(zero);
+                Buffer.BlockCopy(nullArray, 0, _class520.Byte0, dstOffset, zero);
+				_class520.method_2(zero);
 			}
             int num;
             if (fileStream.CanSeek)
@@ -607,16 +607,16 @@ namespace ns3
             }
             //int num = stream_1.CanSeek ? this.method_11() : this.method_12();
             var @class = method_21(-1);
-            waveFormat_0 = new WaveFormat(@class.int_9, @class.int_8);
-			double_0 = waveFormat_0.int_0 * waveFormat_0.short_1 / (method_20(-1) / 8.0);
-            long_5 = method_15(-1) * waveFormat_0.short_1;
-            if (long_5 <= 0L)
+            WaveFormat0 = new WaveFormat(@class.Int9, @class.Int8);
+			_double0 = WaveFormat0.int_0 * WaveFormat0.short_1 / (method_20(-1) / 8.0);
+            _long5 = method_15(-1) * WaveFormat0.short_1;
+            if (_long5 <= 0L)
 			{
-				long_5 = Convert.ToInt64(method_14(-1) * double_0);
+				_long5 = Convert.ToInt64(method_14(-1) * _double0);
 			}
             if (num != 0)
 			{
-				this.fileStream = null;
+				this.FileStream = null;
 				method_22();
 			}
             return num;
@@ -624,197 +624,197 @@ namespace ns3
 
 		private int method_11()
 		{
-			var oggClass5 = new OGGClass5();
-			var class47_ = new Class47();
+			var oggClass5 = new OggClass5();
+			var class47 = new Class47();
 			var @class = new Class48();
 			var array = new int[1];
-            var num = method_2(oggClass5, class47_, array, null);
+            var num = method_2(oggClass5, class47, array, null);
             var num2 = array[0];
-			var int_ = (int)long_0;
-			class56_0.method_2();
+			var int_ = (int)_long0;
+			_class560.method_2();
             if (num == -1)
 			{
 				return -1;
 			}
-			bool_0 = true;
-            smethod_0(fileStream, 0L, int_5);
-            long_0 = smethod_1(fileStream);
-			var num3 = long_0;
+			_bool0 = true;
+            smethod_0(FileStream, 0L, Int5);
+            _long0 = smethod_1(FileStream);
+			var num3 = _long0;
             num3 = method_1(@class);
             if (@class.method_5() != num2)
 			{
 				if (method_13(0L, 0L, num3 + 1L, num2, 0) < 0)
 				{
 					method_22();
-					return int_9;
+					return Int9;
 				}
 			}
 			else if (method_13(0L, num3, num3 + 1L, num2, 0) < 0)
 			{
 				method_22();
-				return int_9;
+				return Int9;
 			}
-            method_3(oggClass5, class47_, int_);
+            method_3(oggClass5, class47, int_);
             return method_17(0);
 		}
 
 		private int method_12()
 		{
-			int_20 = 1;
-			oggClass5 = new OGGClass5[int_20];
-			oggClass5[0] = new OGGClass5();
-			class47_0 = new Class47[int_20];
-			class47_0[0] = new Class47();
+			_int20 = 1;
+			_oggClass5 = new OggClass5[_int20];
+			_oggClass5[0] = new OggClass5();
+			_class470 = new Class47[_int20];
+			_class470[0] = new Class47();
 			var array = new int[1];
-			if (method_2(oggClass5[0], class47_0[0], array, null) == -1)
+			if (method_2(_oggClass5[0], _class470[0], array, null) == -1)
 			{
 				return -1;
 			}
-			int_22 = array[0];
+			_int22 = array[0];
 			method_4();
 			return 0;
 		}
 
-		private int method_13(long long_6, long long_7, long long_8, int int_24, int int_25)
+		private int method_13(long long6, long long7, long long8, int int24, int int25)
 		{
-			var num = long_8;
-			var long_9 = long_8;
+			var num = long8;
+			var long9 = long8;
 			var @class = new Class48();
 			int num3;
-			while (long_7 < num)
+			while (long7 < num)
 			{
 				long num2;
-				if (num - long_7 < int_2)
+				if (num - long7 < Int2)
 				{
-					num2 = long_7;
+					num2 = long7;
 				}
 				else
 				{
-					num2 = (long_7 + num) / 2L;
+					num2 = (long7 + num) / 2L;
 				}
 				method_8(num2);
 				num3 = method_0(@class, -1L);
-				if (num3 == int_9)
+				if (num3 == Int9)
 				{
-					return int_9;
+					return Int9;
 				}
 				if (num3 >= 0)
 				{
-					if (@class.method_5() == int_24)
+					if (@class.method_5() == int24)
 					{
-						long_7 = num3 + @class.int_1 + @class.int_3;
+						long7 = num3 + @class.Int1 + @class.Int3;
 						continue;
 					}
 				}
 				num = num2;
 				if (num3 >= 0)
 				{
-					long_9 = num3;
+					long9 = num3;
 				}
 			}
-			method_8(long_9);
+			method_8(long9);
 			num3 = method_0(@class, -1L);
-			if (num3 == int_9)
+			if (num3 == Int9)
 			{
-				return int_9;
+				return Int9;
 			}
-			if (long_7 < long_8)
+			if (long7 < long8)
 			{
 				if (num3 != -1)
 				{
-					num3 = method_13(long_9, long_0, long_8, @class.method_5(), int_25 + 1);
-					if (num3 == int_9)
+					num3 = method_13(long9, _long0, long8, @class.method_5(), int25 + 1);
+					if (num3 == Int9)
 					{
-						return int_9;
+						return Int9;
 					}
 					goto IL_FF;
 				}
 			}
-			int_20 = int_25 + 1;
-			long_1 = new long[int_25 + 2];
-			long_1[int_25 + 1] = long_7;
+			_int20 = int25 + 1;
+			_long1 = new long[int25 + 2];
+			_long1[int25 + 1] = long7;
 			IL_FF:
-			long_1[int_25] = long_6;
+			_long1[int25] = long6;
 			return 0;
 		}
 
-		public long method_14(int int_24)
+		public long method_14(int int24)
 		{
-			if (!bool_0 || int_24 >= int_20)
+			if (!_bool0 || int24 >= _int20)
 			{
 				return -1L;
 			}
-			if (int_24 < 0)
+			if (int24 < 0)
 			{
 				var num = 0L;
-				for (var i = 0; i < int_20; i++)
+				for (var i = 0; i < _int20; i++)
 				{
 					num += method_14(i);
 				}
 				return num;
 			}
-			return long_1[int_24 + 1] - long_1[int_24];
+			return _long1[int24 + 1] - _long1[int24];
 		}
 
-		public long method_15(int int_24)
+		public long method_15(int int24)
 		{
-			if (!bool_0 || int_24 >= int_20)
+			if (!_bool0 || int24 >= _int20)
 			{
 				return -1L;
 			}
-			if (int_24 < 0)
+			if (int24 < 0)
 			{
 				var num = 0L;
-				for (var i = 0; i < int_20; i++)
+				for (var i = 0; i < _int20; i++)
 				{
 					num += method_15(i);
 				}
 				return num;
 			}
-			return long_3[int_24];
+			return _long3[int24];
 		}
 
-		public float method_16(int int_24)
+		public float method_16(int int24)
 		{
-			if (!bool_0 || int_24 >= int_20)
+			if (!_bool0 || int24 >= _int20)
 			{
 				return -1f;
 			}
-			if (int_24 < 0)
+			if (int24 < 0)
 			{
 				var num = 0f;
-				for (var i = 0; i < int_20; i++)
+				for (var i = 0; i < _int20; i++)
 				{
 					num += method_16(i);
 				}
 				return num;
 			}
-			return long_3[int_24] / (float)oggClass5[int_24].int_9;
+			return _long3[int24] / (float)_oggClass5[int24].Int9;
 		}
 
-		public int method_17(int int_24)
+		public int method_17(int int24)
 		{
-            if (!bool_0)
+            if (!_bool0)
 			{
 				return -1;
 			}
-			if (int_24 < 0 || int_24 > long_1[int_20])
+			if (int24 < 0 || int24 > _long1[_int20])
 			{
-				long_4 = -1L;
+				_long4 = -1L;
 				method_5();
 				return -1;
 			}
-			long_4 = -1L;
+			_long4 = -1L;
 			method_5();
-			method_8(int_24);
+			method_8(int24);
             switch (method_6(1))
 			{
 			case -1:
-				long_4 = -1L;
+				_long4 = -1L;
 				method_5();
 				return -1;
 			case 0:
-				long_4 = method_15(-1);
+				_long4 = method_15(-1);
 				return 0;
 			default:
 				while (true)
@@ -829,43 +829,43 @@ namespace ns3
 				}
 
 				IL_77:
-				long_4 = -1L;
+				_long4 = -1L;
 				method_5();
 				return -1;
 			}
 		}
 
-		public int method_18(long long_6)
+		public int method_18(long long6)
 		{
 			var num = method_15(-1);
-			if (!bool_0)
+			if (!_bool0)
 			{
 				return -1;
 			}
-			if (long_6 < 0L || long_6 > num)
+			if (long6 < 0L || long6 > num)
 			{
-				long_4 = -1L;
+				_long4 = -1L;
 				method_5();
 				return -1;
 			}
 			int i;
-			for (i = int_20 - 1; i >= 0; i--)
+			for (i = _int20 - 1; i >= 0; i--)
 			{
-				num -= long_3[i];
-				if (long_6 >= num)
+				num -= _long3[i];
+				if (long6 >= num)
 				{
 					break;
 				}
 			}
-			var num2 = long_6 - num;
-			var num3 = long_1[i + 1];
-			var num4 = long_1[i];
+			var num2 = long6 - num;
+			var num3 = _long1[i + 1];
+			var num4 = _long1[i];
 			var int_ = (int)num4;
 			var @class = new Class48();
 			while (num4 < num3)
 			{
 				long num5;
-				if (num3 - num4 < int_2)
+				if (num3 - num4 < Int2)
 				{
 					num5 = num4;
 				}
@@ -885,7 +885,7 @@ namespace ns3
 					if (num7 < num2)
 					{
 						int_ = num6;
-						num4 = long_0;
+						num4 = _long0;
 					}
 					else
 					{
@@ -895,35 +895,35 @@ namespace ns3
 			}
 			if (method_17(int_) != 0)
 			{
-				long_4 = -1L;
+				_long4 = -1L;
 				method_5();
 				return -1;
 			}
-			if (long_4 >= long_6)
+			if (_long4 >= long6)
 			{
-				long_4 = -1L;
+				_long4 = -1L;
 				method_5();
 				return -1;
 			}
-			if (long_6 > method_15(-1))
+			if (long6 > method_15(-1))
 			{
-				long_4 = -1L;
+				_long4 = -1L;
 				method_5();
 				return -1;
 			}
-			while (long_4 < long_6)
+			while (_long4 < long6)
 			{
-				var num8 = (int)(long_6 - long_4);
-				var num9 = oggClass1.method_3();
+				var num8 = (int)(long6 - _long4);
+				var num9 = _oggClass1.method_3();
 				if (num9 > num8)
 				{
 					num9 = num8;
 				}
-				oggClass1.method_6(num9);
-				long_4 += num9;
+				_oggClass1.method_6(num9);
+				_long4 += num9;
 				if (num9 < num8 && method_6(1) == 0)
 				{
-					long_4 = method_15(-1);
+					_long4 = method_15(-1);
 				}
 			}
 			return 0;
@@ -931,114 +931,114 @@ namespace ns3
 
 		public long method_19()
 		{
-			if (long_4 >= 0L)
+			if (_long4 >= 0L)
 			{
-				return long_4;
+				return _long4;
 			}
 			return 0L;
 		}
 
-		public int method_20(int int_24)
+		public int method_20(int int24)
 		{
-			if (int_24 >= int_20)
+			if (int24 >= _int20)
 			{
 				return -1;
 			}
-			if (!bool_0 && int_24 != 0)
+			if (!_bool0 && int24 != 0)
 			{
 				return method_20(0);
 			}
-			if (int_24 < 0)
+			if (int24 < 0)
 			{
 				var num = 0L;
-				for (var i = 0; i < int_20; i++)
+				for (var i = 0; i < _int20; i++)
 				{
-					num += (long_1[i + 1] - long_2[i]) * 8L;
+					num += (_long1[i + 1] - _long2[i]) * 8L;
 				}
 				return (int)Math.Round(num / method_16(-1));
 			}
-			if (bool_0)
+			if (_bool0)
 			{
-				return (int)Math.Round((long_1[int_24 + 1] - long_2[int_24]) * 8L / method_16(int_24));
+				return (int)Math.Round((_long1[int24 + 1] - _long2[int24]) * 8L / method_16(int24));
 			}
-			if (oggClass5[int_24].int_11 > 0)
+			if (_oggClass5[int24].Int11 > 0)
 			{
-				return oggClass5[int_24].int_11;
+				return _oggClass5[int24].Int11;
 			}
-			if (oggClass5[int_24].int_10 <= 0)
+			if (_oggClass5[int24].Int10 <= 0)
 			{
 				return -1;
 			}
-			if (oggClass5[int_24].int_12 > 0)
+			if (_oggClass5[int24].Int12 > 0)
 			{
-				return (oggClass5[int_24].int_10 + oggClass5[int_24].int_12) / 2;
+				return (_oggClass5[int24].Int10 + _oggClass5[int24].Int12) / 2;
 			}
-			return oggClass5[int_24].int_10;
+			return _oggClass5[int24].Int10;
 		}
 
-		public OGGClass5 method_21(int int_24)
+		public OggClass5 method_21(int int24)
 		{
-			if (bool_0)
+			if (_bool0)
 			{
-				if (int_24 < 0)
+				if (int24 < 0)
 				{
-					if (!bool_1)
+					if (!_bool1)
 					{
 						return null;
 					}
-					return oggClass5[int_23];
+					return _oggClass5[_int23];
 				}
-			    if (int_24 >= int_20)
+			    if (int24 >= _int20)
 			    {
 			        return null;
 			    }
-			    return oggClass5[int_24];
+			    return _oggClass5[int24];
 			}
-		    if (!bool_1)
+		    if (!_bool1)
 		    {
 		        return null;
 		    }
-		    return oggClass5[0];
+		    return _oggClass5[0];
 		}
 
 		private int method_22()
 		{
-			oggClass6.method_1();
-			oggClass1.method_7();
-			class56_0.method_2();
-			if (oggClass5 != null && int_20 != 0)
+			_oggClass6.method_1();
+			_oggClass1.method_7();
+			_class560.method_2();
+			if (_oggClass5 != null && _int20 != 0)
 			{
-				for (var i = 0; i < int_20; i++)
+				for (var i = 0; i < _int20; i++)
 				{
-					oggClass5[i].method_1();
-					class47_0[i].method_2();
+					_oggClass5[i].method_1();
+					_class470[i].method_2();
 				}
-				oggClass5 = null;
-				class47_0 = null;
+				_oggClass5 = null;
+				_class470 = null;
 			}
-			if (long_2 != null)
+			if (_long2 != null)
 			{
-				long_2 = null;
+				_long2 = null;
 			}
-			if (long_3 != null)
+			if (_long3 != null)
 			{
-				long_3 = null;
+				_long3 = null;
 			}
-			if (int_21 != null)
+			if (_int21 != null)
 			{
-				int_21 = null;
+				_int21 = null;
 			}
-			if (long_1 != null)
+			if (_long1 != null)
 			{
-				long_1 = null;
+				_long1 = null;
 			}
-			class52_0.method_0();
+			_class520.method_0();
 			return 0;
 		}
 
 		public override void Flush()
 		{
-			fileStream.Flush();
+			FileStream.Flush();
 		}
 
 		public override void SetLength(long value)
@@ -1054,7 +1054,7 @@ namespace ns3
 		public override void Close()
 		{
 			method_22();
-			fileStream.Close();
+			FileStream.Close();
 		}
 
         protected override void Dispose(bool disposing)
@@ -1071,16 +1071,16 @@ namespace ns3
 			GC.SuppressFinalize(this);
 		}
 
-		public override int vmethod_3(IntPtr intptr_0, int int_24)
+		public override int vmethod_3(IntPtr intptr0, int int24)
 		{
-			int_24 >>= 2;
-			var source = new float[int_24];
-			var num = vmethod_4(source, 0, int_24);
+			int24 >>= 2;
+			var source = new float[int24];
+			var num = vmethod_4(source, 0, int24);
 			if (num == 0)
 			{
 				return 0;
 			}
-			Marshal.Copy(source, 0, intptr_0, num);
+			Marshal.Copy(source, 0, intptr0, num);
 			return num << 2;
 		}
 
@@ -1092,20 +1092,20 @@ namespace ns3
 			return num;
 		}
 
-		public override int vmethod_4(float[] float_2, int int_24, int int_25)
+		public override int vmethod_4(float[] float2, int int24, int int25)
 		{
-			var num = int_24;
-			var num2 = int_24 + int_25;
-			int short_ = waveFormat_0.short_0;
+			var num = int24;
+			var num2 = int24 + int25;
+			int short_ = WaveFormat0.short_0;
 			do
 			{
-				if (bool_1)
+				if (_bool1)
 				{
-					var num3 = oggClass1.method_4(float_2, num, num2);
+					var num3 = _oggClass1.method_4(float2, num, num2);
 					if (num3 != 0)
 					{
-						oggClass1.method_6(num3);
-						long_4 += num3;
+						_oggClass1.method_6(num3);
+						_long4 += num3;
 						num += num3 * short_;
 						if (num >= num2)
 						{
@@ -1115,28 +1115,28 @@ namespace ns3
 				}
 			}
 			while (method_6(1) >= 1);
-			return num - int_24;
+			return num - int24;
 		}
 
-		public override float[][] vmethod_5(int int_24)
+		public override float[][] vmethod_5(int int24)
 		{
-			var array = new float[waveFormat_0.short_0][];
+			var array = new float[WaveFormat0.short_0][];
 			for (var i = 0; i < array.Length; i++)
 			{
-				array[i] = new float[int_24];
+				array[i] = new float[int24];
 			}
 			var num = 0;
 			do
 			{
-				if (bool_1)
+				if (_bool1)
 				{
-					var num2 = oggClass1.method_5(array, num, int_24);
+					var num2 = _oggClass1.method_5(array, num, int24);
 					if (num2 != 0)
 					{
 						num += num2;
-						long_4 += num2;
-						oggClass1.method_6(num2);
-						if (num >= int_24)
+						_long4 += num2;
+						_oggClass1.method_6(num2);
+						if (num >= int24)
 						{
 							break;
 						}
@@ -1148,7 +1148,7 @@ namespace ns3
 			{
 				return null;
 			}
-			if (num < int_24)
+			if (num < int24)
 			{
 				for (var j = 0; j < array.Length; j++)
 				{

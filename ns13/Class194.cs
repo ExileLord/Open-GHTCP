@@ -5,178 +5,178 @@ namespace ns13
 {
 	public class Class194
 	{
-		private int int_0;
+		private int _int0;
 
-		private readonly bool bool_0;
+		private readonly bool _bool0;
 
-		private int int_1;
+		private int _int1;
 
-		private long long_0;
+		private long _long0;
 
-		private readonly Class189 class189_0;
+		private readonly Class189 _class1890;
 
-		private readonly Class184 class184_0;
+		private readonly Class184 _class1840;
 
 		public Class194() : this(-1, false)
 		{
 		}
 
-		public Class194(int int_2, bool bool_1)
+		public Class194(int int2, bool bool1)
 		{
-			if (int_2 == -1)
+			if (int2 == -1)
 			{
-				int_2 = 6;
+				int2 = 6;
 			}
-			else if (int_2 < 0 || int_2 > 9)
+			else if (int2 < 0 || int2 > 9)
 			{
 				throw new ArgumentOutOfRangeException("level");
 			}
-			class189_0 = new Class189();
-			class184_0 = new Class184(class189_0);
-			bool_0 = bool_1;
-			method_8(Enum29.const_0);
-			method_7(int_2);
+			_class1890 = new Class189();
+			_class1840 = new Class184(_class1890);
+			_bool0 = bool1;
+			method_8(Enum29.Const0);
+			method_7(int2);
 			method_0();
 		}
 
 		public void method_0()
 		{
-			int_1 = (bool_0 ? 16 : 0);
-			long_0 = 0L;
-			class189_0.method_0();
-			class184_0.method_3();
+			_int1 = (_bool0 ? 16 : 0);
+			_long0 = 0L;
+			_class1890.method_0();
+			_class1840.method_3();
 		}
 
 		public long method_1()
 		{
-			return long_0;
+			return _long0;
 		}
 
 		public void method_2()
 		{
-			int_1 |= 4;
+			_int1 |= 4;
 		}
 
 		public void method_3()
 		{
-			int_1 |= 12;
+			_int1 |= 12;
 		}
 
 		public bool method_4()
 		{
-			return int_1 == 30 && class189_0.method_7();
+			return _int1 == 30 && _class1890.method_7();
 		}
 
 		public bool method_5()
 		{
-			return class184_0.method_2();
+			return _class1840.method_2();
 		}
 
-		public void method_6(byte[] byte_0, int int_2, int int_3)
+		public void method_6(byte[] byte0, int int2, int int3)
 		{
-			if ((int_1 & 8) != 0)
+			if ((_int1 & 8) != 0)
 			{
 				throw new InvalidOperationException("Finish() already called");
 			}
-			class184_0.method_1(byte_0, int_2, int_3);
+			_class1840.method_1(byte0, int2, int3);
 		}
 
-		public void method_7(int int_2)
+		public void method_7(int int2)
 		{
-			if (int_2 == -1)
+			if (int2 == -1)
 			{
-				int_2 = 6;
+				int2 = 6;
 			}
-			else if (int_2 < 0 || int_2 > 9)
+			else if (int2 < 0 || int2 > 9)
 			{
 				throw new ArgumentOutOfRangeException("level");
 			}
-			if (int_0 != int_2)
+			if (_int0 != int2)
 			{
-				int_0 = int_2;
-				class184_0.method_6(int_2);
+				_int0 = int2;
+				_class1840.method_6(int2);
 			}
 		}
 
-		public void method_8(Enum29 enum29_0)
+		public void method_8(Enum29 enum290)
 		{
-			class184_0.method_5(enum29_0);
+			_class1840.method_5(enum290);
 		}
 
-		public int method_9(byte[] byte_0, int int_2, int int_3)
+		public int method_9(byte[] byte0, int int2, int int3)
 		{
-			var num = int_3;
-			if (int_1 == 127)
+			var num = int3;
+			if (_int1 == 127)
 			{
 				throw new InvalidOperationException("Deflater closed");
 			}
-			if (int_1 < 16)
+			if (_int1 < 16)
 			{
 				var num2 = 30720;
-				var num3 = int_0 - 1 >> 1;
+				var num3 = _int0 - 1 >> 1;
 				if (num3 < 0 || num3 > 3)
 				{
 					num3 = 3;
 				}
 				num2 |= num3 << 6;
-				if ((int_1 & 1) != 0)
+				if ((_int1 & 1) != 0)
 				{
 					num2 |= 32;
 				}
 				num2 += 31 - num2 % 31;
-				class189_0.method_6(num2);
-				if ((int_1 & 1) != 0)
+				_class1890.method_6(num2);
+				if ((_int1 & 1) != 0)
 				{
-					var num4 = class184_0.method_4();
-					class184_0.ResetAdler();
-					class189_0.method_6(num4 >> 16);
-					class189_0.method_6(num4 & 65535);
+					var num4 = _class1840.method_4();
+					_class1840.ResetAdler();
+					_class1890.method_6(num4 >> 16);
+					_class1890.method_6(num4 & 65535);
 				}
-				int_1 = (16 | (int_1 & 12));
+				_int1 = (16 | (_int1 & 12));
 			}
 			while (true)
 			{
-				var num5 = class189_0.method_8(byte_0, int_2, int_3);
-				int_2 += num5;
-				long_0 += num5;
-				int_3 -= num5;
-				if (int_3 == 0 || int_1 == 30)
+				var num5 = _class1890.method_8(byte0, int2, int3);
+				int2 += num5;
+				_long0 += num5;
+				int3 -= num5;
+				if (int3 == 0 || _int1 == 30)
 				{
 					goto IL_1E2;
 				}
-				if (!class184_0.method_0((int_1 & 4) != 0, (int_1 & 8) != 0))
+				if (!_class1840.method_0((_int1 & 4) != 0, (_int1 & 8) != 0))
 				{
-					if (int_1 == 16)
+					if (_int1 == 16)
 					{
 						break;
 					}
-					if (int_1 == 20)
+					if (_int1 == 20)
 					{
-						if (int_0 != 0)
+						if (_int0 != 0)
 						{
-							for (var i = 8 + (-class189_0.method_3() & 7); i > 0; i -= 10)
+							for (var i = 8 + (-_class1890.method_3() & 7); i > 0; i -= 10)
 							{
-								class189_0.method_5(2, 10);
+								_class1890.method_5(2, 10);
 							}
 						}
-						int_1 = 16;
+						_int1 = 16;
 					}
-					else if (int_1 == 28)
+					else if (_int1 == 28)
 					{
-						class189_0.method_4();
-						if (!bool_0)
+						_class1890.method_4();
+						if (!_bool0)
 						{
-							var num6 = class184_0.method_4();
-							class189_0.method_6(num6 >> 16);
-							class189_0.method_6(num6 & 65535);
+							var num6 = _class1840.method_4();
+							_class1890.method_6(num6 >> 16);
+							_class1890.method_6(num6 & 65535);
 						}
-						int_1 = 30;
+						_int1 = 30;
 					}
 				}
 			}
-			return num - int_3;
+			return num - int3;
 			IL_1E2:
-			return num - int_3;
+			return num - int3;
 		}
 	}
 }

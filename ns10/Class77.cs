@@ -14,33 +14,33 @@ namespace ns10
 			public int int_0;
 		}
 
-		private static readonly float float_0 = 3.14159274f;
+		private static readonly float Float0 = 3.14159274f;
 
-		public static void smethod_0(float[] float_1, int[] int_0, int int_1, int int_2, float[] float_2, int int_3, float float_3, float float_4)
+		public static void smethod_0(float[] float1, int[] int0, int int1, int int2, float[] float2, int int3, float float3, float float4)
 		{
-			var num = float_0 / int_2;
+			var num = Float0 / int2;
 			int i;
-			for (i = 0; i < int_3; i++)
+			for (i = 0; i < int3; i++)
 			{
-				float_2[i] = Class69.smethod_0(float_2[i]);
+				float2[i] = Class69.smethod_0(float2[i]);
 			}
-			var num2 = int_3 / 2 * 2;
+			var num2 = int3 / 2 * 2;
 			i = 0;
-			while (i < int_1)
+			while (i < int1)
 			{
 				var @struct = default(Struct15);
-				var num3 = int_0[i];
+				var num3 = int0[i];
 				var num4 = 0.707106769f;
 				var num5 = 0.707106769f;
 				var num6 = Class69.smethod_0(num * num3);
 				for (var j = 0; j < num2; j += 2)
 				{
-					num5 *= float_2[j] - num6;
-					num4 *= float_2[j + 1] - num6;
+					num5 *= float2[j] - num6;
+					num4 *= float2[j + 1] - num6;
 				}
-				if ((int_3 & 1) != 0)
+				if ((int3 & 1) != 0)
 				{
-					num5 *= float_2[int_3 - 1] - num6;
+					num5 *= float2[int3 - 1] - num6;
 					num5 *= num5;
 					num4 *= num4 * (1f - num6 * num6);
 				}
@@ -69,17 +69,17 @@ namespace ns10
 					@struct.int_0 = num7;
 					num5 = @struct.float_0;
 				}
-				num5 = Class69.smethod_3(float_3 * Class69.smethod_1(num5) * Class69.smethod_2(num9 + int_3) - float_4);
+				num5 = Class69.smethod_3(float3 * Class69.smethod_1(num5) * Class69.smethod_2(num9 + int3) - float4);
 				do
 				{
-					float_1[i] *= num5;
+					float1[i] *= num5;
 					i++;
-					if (i >= int_1)
+					if (i >= int1)
 					{
 						break;
 					}
 				}
-				while (int_0[i] == num3);
+				while (int0[i] == num3);
 			}
 		}
 	}

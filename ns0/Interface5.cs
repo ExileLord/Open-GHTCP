@@ -2,8 +2,8 @@ using ns1;
 
 namespace ns0
 {
-	public interface Interface5
+	public interface INterface5
 	{
-		void imethod_0(Class13[] class13_0);
+		void imethod_0(Class13[] class130);
 	}
 }

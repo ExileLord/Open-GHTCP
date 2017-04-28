@@ -1,1 +1,1 @@
-public delegate string Delegate334(object[] object_0);
+public delegate string Delegate334(object[] object0);
