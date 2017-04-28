@@ -1,6 +1,6 @@
 namespace GHNamespace5
 {
-	public interface INterface8
-	{
-	}
+    public interface INterface8
+    {
+    }
 }

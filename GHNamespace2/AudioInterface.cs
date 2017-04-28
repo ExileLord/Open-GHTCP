@@ -3,26 +3,26 @@ using SharpAudio.ASC;
 
 namespace GHNamespace2
 {
-	public interface IPlayableAudio
-	{
-		TimeSpan AudioLength();
+    public interface IPlayableAudio
+    {
+        TimeSpan AudioLength();
 
-		void SetStartingTime(TimeSpan timeSpan0);
+        void SetStartingTime(TimeSpan timeSpan0);
 
-		void SetStartingTimeBasedOnSomeValue(int int0);
+        void SetStartingTimeBasedOnSomeValue(int int0);
 
-		void DifferentStartPlaying();
+        void DifferentStartPlaying();
 
-		void StartPlaying();
+        void StartPlaying();
 
-		void StopPlaying();
+        void StopPlaying();
 
-		AudioStatus GetStatus();
+        AudioStatus GetStatus();
 
-		WaveFormat GetWaveFormat();
+        WaveFormat GetWaveFormat();
 
-		void SetVolume(float float0);
+        void SetVolume(float float0);
 
-		void Dispose();
-	}
+        void Dispose();
+    }
 }

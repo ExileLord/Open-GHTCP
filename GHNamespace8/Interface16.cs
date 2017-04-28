@@ -1,6 +1,6 @@
 namespace GHNamespace8
 {
-	public interface INterface16
-	{
-	}
+    public interface INterface16
+    {
+    }
 }

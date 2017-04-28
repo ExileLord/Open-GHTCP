@@ -14,81 +14,81 @@ using NeversoftTools.Texture.DDS;
 
 namespace GHNamespaceE
 {
-	public class TexExplorer : Form
-	{
-		private IContainer icontainer_0;
+    public class TexExplorer : Form
+    {
+        private IContainer icontainer_0;
 
-		private PictureBox _imagePreviewBox;
+        private PictureBox _imagePreviewBox;
 
-		private GroupBox _imageInfoBox;
+        private GroupBox _imageInfoBox;
 
-		private TextBox _widthTxt;
+        private TextBox _widthTxt;
 
-		private TextBox _mipMapTxt;
+        private TextBox _mipMapTxt;
 
-		private TextBox _bppTxt;
+        private TextBox _bppTxt;
 
-		private ListBox _imgList;
+        private ListBox _imgList;
 
-		private TreeView _dataFolderTreeView;
+        private TreeView _dataFolderTreeView;
 
-		private TextBox _formatTxt;
+        private TextBox _formatTxt;
 
-		private TextBox _heightTxt;
+        private TextBox _heightTxt;
 
-		private Label _lblHeight;
+        private Label _lblHeight;
 
-		private Label _lblWidth;
+        private Label _lblWidth;
 
-		private Label _lblBpp;
+        private Label _lblBpp;
 
-		private Label _lblMipMaps;
+        private Label _lblMipMaps;
 
-		private Label _lblFormat;
+        private Label _lblFormat;
 
-		private Button _replaceImgBtn;
+        private Button _replaceImgBtn;
 
-		private Button _rebuildBtn;
+        private Button _rebuildBtn;
 
-		private Button _extractImgBtn;
+        private Button _extractImgBtn;
 
-		private TableLayoutPanel _tableLayoutPanel1;
+        private TableLayoutPanel _tableLayoutPanel1;
 
-		private TableLayoutPanel _tableLayoutPanel2;
+        private TableLayoutPanel _tableLayoutPanel2;
 
-		private TableLayoutPanel _tableLayoutPanel3;
+        private TableLayoutPanel _tableLayoutPanel3;
 
-		private TableLayoutPanel _tableLayoutPanel4;
+        private TableLayoutPanel _tableLayoutPanel4;
 
-		private ToolStripContainer _treeViewContainer;
+        private ToolStripContainer _treeViewContainer;
 
-		private ToolStrip _searchToolStrip;
+        private ToolStrip _searchToolStrip;
 
-		private ToolStripTextBox _searchTxtBox;
+        private ToolStripTextBox _searchTxtBox;
 
-		private ToolStripButton _prevSearchBtn;
+        private ToolStripButton _prevSearchBtn;
 
-		private ToolStripButton _nextSearchBtn;
+        private ToolStripButton _nextSearchBtn;
 
-		private ToolStripLabel _searchPosLbl;
+        private ToolStripLabel _searchPosLbl;
 
-		private ToolStripButton _searchBtn;
+        private ToolStripButton _searchBtn;
 
-		private readonly string _string0;
+        private readonly string _string0;
 
-		private TexFile _currentTexFile;
+        private TexFile _currentTexFile;
 
         private TextureMetadata _currentImgFile;
 
-		private Thread _thread0;
+        private Thread _thread0;
 
-		private Size _size0;
+        private Size _size0;
 
-		private ImgPixelFormat _currentTexturePixelFormat;
+        private ImgPixelFormat _currentTexturePixelFormat;
 
-		private string _string1;
+        private string _string1;
 
-		private readonly List<TreeNode> _nodeList = new List<TreeNode>();
+        private readonly List<TreeNode> _nodeList = new List<TreeNode>();
         private GroupBox _groupBox1;
         private Label _label1;
         private Label _label6;
@@ -114,16 +114,16 @@ namespace GHNamespaceE
         private int _count;
 
         protected override void Dispose(bool disposing)
-		{
-			if (disposing && icontainer_0 != null)
-			{
-				icontainer_0.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        {
+            if (disposing && icontainer_0 != null)
+            {
+                icontainer_0.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		private void InitializeComponent()
-		{
+        private void InitializeComponent()
+        {
             _imagePreviewBox = new PictureBox();
             _imageInfoBox = new GroupBox();
             _extractImgBtn = new Button();
@@ -174,7 +174,7 @@ namespace GHNamespaceE
             _prevSearchBtn = new ToolStripButton();
             _nextSearchBtn = new ToolStripButton();
             _searchPosLbl = new ToolStripLabel();
-            ((ISupportInitialize)(_imagePreviewBox)).BeginInit();
+            ((ISupportInitialize) (_imagePreviewBox)).BeginInit();
             _imageInfoBox.SuspendLayout();
             _tableLayoutPanel1.SuspendLayout();
             _tableLayoutPanel2.SuspendLayout();
@@ -681,12 +681,14 @@ namespace GHNamespaceE
             // 
             _searchToolStrip.Dock = DockStyle.None;
             _searchToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            _searchToolStrip.Items.AddRange(new ToolStripItem[] {
-            _searchTxtBox,
-            _searchBtn,
-            _prevSearchBtn,
-            _nextSearchBtn,
-            _searchPosLbl});
+            _searchToolStrip.Items.AddRange(new ToolStripItem[]
+            {
+                _searchTxtBox,
+                _searchBtn,
+                _prevSearchBtn,
+                _nextSearchBtn,
+                _searchPosLbl
+            });
             _searchToolStrip.Location = new Point(0, 0);
             _searchToolStrip.Name = "_searchToolStrip";
             _searchToolStrip.Size = new Size(230, 25);
@@ -739,7 +741,7 @@ namespace GHNamespaceE
             Controls.Add(_tableLayoutPanel1);
             Name = "TexExplorer";
             Text = "Texture Explorer";
-            ((ISupportInitialize)(_imagePreviewBox)).EndInit();
+            ((ISupportInitialize) (_imagePreviewBox)).EndInit();
             _imageInfoBox.ResumeLayout(false);
             _imageInfoBox.PerformLayout();
             _tableLayoutPanel1.ResumeLayout(false);
@@ -757,122 +759,122 @@ namespace GHNamespaceE
             _searchToolStrip.ResumeLayout(false);
             _searchToolStrip.PerformLayout();
             ResumeLayout(false);
+        }
 
-		}
+        public TexExplorer(string string2)
+        {
+            InitializeComponent();
+            _string0 = string2;
+            Closed += TexExplorer_Closed;
+            Text = "Texture Explorer - LOOKING FOR TEXTURES (PLEASE WAIT!)";
+            var @class = new ZonePakLoader(_string0);
+            @class.method_1(UpdateSearchText);
+            @class.method_0(AddNode);
+            _thread0 = new Thread(@class.method_2);
+            _thread0.Start();
+        }
 
-		public TexExplorer(string string2)
-		{
-			InitializeComponent();
-			_string0 = string2;
-			Closed += TexExplorer_Closed;
-			Text = "Texture Explorer - LOOKING FOR TEXTURES (PLEASE WAIT!)";
-			var @class = new ZonePakLoader(_string0);
-			@class.method_1(UpdateSearchText);
-			@class.method_0(AddNode);
-			_thread0 = new Thread(@class.method_2);
-			_thread0.Start();
-		}
+        private void TexExplorer_Closed(object sender, EventArgs e)
+        {
+            DisposeTexFile();
+            if (_thread0 != null && _thread0.IsAlive)
+            {
+                _thread0.Abort();
+                _thread0 = null;
+            }
+        }
 
-		private void TexExplorer_Closed(object sender, EventArgs e)
-		{
-			DisposeTexFile();
-			if (_thread0 != null && _thread0.IsAlive)
-			{
-				_thread0.Abort();
-				_thread0 = null;
-			}
-		}
+        private void UpdateSearchText(int percentComplete, string currentFile)
+        {
+            if (InvokeRequired)
+            {
+                ZonePakLoader.Delegate9 method = UpdateSearchText;
+                Invoke(method, percentComplete, currentFile);
+                return;
+            }
+            Text = string.Concat("Texture Explorer - LOOKING FOR TEXTURES - ", percentComplete, "% - (", currentFile,
+                ")");
+        }
 
-		private void UpdateSearchText(int percentComplete, string currentFile)
-		{
-			if (InvokeRequired)
-			{
-				ZonePakLoader.Delegate9 method = UpdateSearchText;
-				Invoke(method, percentComplete, currentFile);
-				return;
-			}
-			Text = string.Concat("Texture Explorer - LOOKING FOR TEXTURES - ", percentComplete, "% - (", currentFile, ")");
-		}
+        private void AddNode(TreeNode treeNode)
+        {
+            if (InvokeRequired)
+            {
+                ZonePakLoader.Delegate8 method = AddNode;
+                Invoke(method, treeNode);
+                return;
+            }
+            _dataFolderTreeView.Nodes.Add(treeNode);
+            Text = "Texture Explorer";
+            _dataFolderTreeView.Sort();
+        }
 
-		private void AddNode(TreeNode treeNode)
-		{
-			if (InvokeRequired)
-			{
-				ZonePakLoader.Delegate8 method = AddNode;
-				Invoke(method, treeNode);
-				return;
-			}
-			_dataFolderTreeView.Nodes.Add(treeNode);
-			Text = "Texture Explorer";
-			_dataFolderTreeView.Sort();
-		}
-
-		private void DisposeTexFile()
-		{
-			if (_currentTexFile != null)
-			{
-				_currentTexFile.Dispose();
-				_currentTexFile = null;
+        private void DisposeTexFile()
+        {
+            if (_currentTexFile != null)
+            {
+                _currentTexFile.Dispose();
+                _currentTexFile = null;
                 CurrentImgFile = null;
-			}
-			_imgList.Items.Clear();
-			_imgList.SelectedIndex = -1;
-			
-			_imageInfoBox.Enabled = false;
-			//this.RebuildBtn.Enabled = false;
-			_imagePreviewBox.Image = null;
-		}
+            }
+            _imgList.Items.Clear();
+            _imgList.SelectedIndex = -1;
 
-		private void DataFolder_TreeView_DoubleClick(object sender, EventArgs e)
-		{
-			if (_dataFolderTreeView.SelectedNode != null)
-			{
-				if (_dataFolderTreeView.SelectedNode.Tag is int && _dataFolderTreeView.SelectedNode.ToolTipText != "")
-				{
-					DisposeTexFile();
-					var toolTipText = _dataFolderTreeView.SelectedNode.ToolTipText;
-					ZzPakNode2 pakNode;
-					if (File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")))
-					{
-						pakNode = new ZzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false);
-					}
-					else
-					{
-						pakNode = new ZzPakNode2(toolTipText, false);
-					}
-					_currentTexFile = new TexFile(pakNode.method_13((int)_dataFolderTreeView.SelectedNode.Tag));
+            _imageInfoBox.Enabled = false;
+            //this.RebuildBtn.Enabled = false;
+            _imagePreviewBox.Image = null;
+        }
 
-					for (var i = 1; i <= _currentTexFile.TextureCount(); i++)
-					{
-						_imgList.Items.Add("Image " + i);
-					}
-					pakNode.Dispose();
-					return;
-				}
-				if (_dataFolderTreeView.SelectedNode.ToolTipText != "")
-				{
-					DisposeTexFile();
-					_currentTexFile = new TexFile(_dataFolderTreeView.SelectedNode.ToolTipText);
-					for (var j = 1; j <= _currentTexFile.TextureCount(); j++)
-					{
-						_imgList.Items.Add("Image " + j);
-					}
-				}
-			}
-		}
+        private void DataFolder_TreeView_DoubleClick(object sender, EventArgs e)
+        {
+            if (_dataFolderTreeView.SelectedNode != null)
+            {
+                if (_dataFolderTreeView.SelectedNode.Tag is int && _dataFolderTreeView.SelectedNode.ToolTipText != "")
+                {
+                    DisposeTexFile();
+                    var toolTipText = _dataFolderTreeView.SelectedNode.ToolTipText;
+                    ZzPakNode2 pakNode;
+                    if (File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")))
+                    {
+                        pakNode = new ZzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false);
+                    }
+                    else
+                    {
+                        pakNode = new ZzPakNode2(toolTipText, false);
+                    }
+                    _currentTexFile = new TexFile(pakNode.method_13((int) _dataFolderTreeView.SelectedNode.Tag));
 
-		private void ImgList_SelectedIndexChanged(object sender, EventArgs e)
-		{
+                    for (var i = 1; i <= _currentTexFile.TextureCount(); i++)
+                    {
+                        _imgList.Items.Add("Image " + i);
+                    }
+                    pakNode.Dispose();
+                    return;
+                }
+                if (_dataFolderTreeView.SelectedNode.ToolTipText != "")
+                {
+                    DisposeTexFile();
+                    _currentTexFile = new TexFile(_dataFolderTreeView.SelectedNode.ToolTipText);
+                    for (var j = 1; j <= _currentTexFile.TextureCount(); j++)
+                    {
+                        _imgList.Items.Add("Image " + j);
+                    }
+                }
+            }
+        }
+
+        private void ImgList_SelectedIndexChanged(object sender, EventArgs e)
+        {
             var index = _imgList.SelectedIndex;
 
 
             if (index >= 0)
-			{
-				var texture = _currentTexFile[index];
-				_currentTexturePixelFormat = texture.PixelFormat;
-				_bppTxt.Text = string.Concat(texture.Bpp);
+            {
+                var texture = _currentTexFile[index];
+                _currentTexturePixelFormat = texture.PixelFormat;
+                _bppTxt.Text = string.Concat(texture.Bpp);
 
-                switch(texture.PixelFormat)
+                switch (texture.PixelFormat)
                 {
                     case ImgPixelFormat.Dxt1:
                         _formatTxt.Text = "DXT1";
@@ -891,18 +893,18 @@ namespace GHNamespaceE
                         break;
                 }
 
-				_mipMapTxt.Text = string.Concat(texture.MipMapCount);
-				_widthTxt.Text = string.Concat(texture.Size.Width);
-				_heightTxt.Text = string.Concat(texture.Size.Height);
+                _mipMapTxt.Text = string.Concat(texture.MipMapCount);
+                _widthTxt.Text = string.Concat(texture.Size.Width);
+                _heightTxt.Text = string.Concat(texture.Size.Height);
 
-				var image = texture.GetImage();
-				_size0 = image.Size;
-				if (image.Width > _imagePreviewBox.Width || image.Height > _imagePreviewBox.Height)
-				{
-					image = KeyGenerator.ScaleImageFixedRatio(image, _imagePreviewBox.Size);
-				}
-				_imagePreviewBox.Image = image;
-				_imageInfoBox.Enabled = true;
+                var image = texture.GetImage();
+                _size0 = image.Size;
+                if (image.Width > _imagePreviewBox.Width || image.Height > _imagePreviewBox.Height)
+                {
+                    image = KeyGenerator.ScaleImageFixedRatio(image, _imagePreviewBox.Size);
+                }
+                _imagePreviewBox.Image = image;
+                _imageInfoBox.Enabled = true;
 
                 var metadata = _currentTexFile.TextureList[index];
                 CurrentImgFile = metadata;
@@ -911,259 +913,268 @@ namespace GHNamespaceE
             {
                 _imageInfoBox.Enabled = false;
             }
-			
-		}
+        }
 
 
+        private void ReplaceImgBtn_Click(object sender, EventArgs e)
+        {
+            var text = KeyGenerator.OpenOrSaveFile("Select the image file to replace the texture.",
+                "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png",
+                true);
+            if (text == "")
+            {
+                return;
+            }
+            Image image;
+            if (text.EndsWith(".dds", StringComparison.OrdinalIgnoreCase))
+            {
+                image = new DdsTexture(text).GetImage();
+            }
+            else
+            {
+                image = Image.FromFile(text);
+            }
+            if (!image.Size.Equals(_size0) && DialogResult.Yes ==
+                MessageBox.Show(
+                    "The image dimensions don't match. Do you wish scale to the original dimension? (Ratio may change!)",
+                    "Replace Texture", MessageBoxButtons.YesNo))
+            {
+                image = KeyGenerator.ScaleImage(image, _size0);
+            }
+            _currentTexFile.ReplaceTexture(_imgList.SelectedIndex, image, _currentTexturePixelFormat);
+            _rebuildBtn.Enabled = true;
+        }
 
+        public ImageFormat GetImageFormat(string fileName)
+        {
+            var ext = KeyGenerator.GetExtension(fileName, 1).ToLower();
+            if (ext != null)
+            {
+                if (ext == "jpg")
+                {
+                    return ImageFormat.Jpeg;
+                }
+                if (ext == "gif")
+                {
+                    return ImageFormat.Gif;
+                }
+                if (ext == "png")
+                {
+                    return ImageFormat.Png;
+                }
+            }
+            return ImageFormat.Bmp;
+        }
 
+        private void ExtractImgBtn_Click(object sender, EventArgs e)
+        {
+            var fileName = KeyGenerator.OpenOrSaveFile("Select location to export the texture.",
+                "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png",
+                false);
+            if (fileName == "")
+            {
+                return;
+            }
+            if (fileName.EndsWith(".dds", StringComparison.OrdinalIgnoreCase))
+            {
+                _currentTexFile.WriteBytes(_imgList.SelectedIndex, fileName);
+                return;
+            }
+            _currentTexFile[_imgList.SelectedIndex].GetImage().Save(fileName, GetImageFormat(fileName));
+        }
 
-		private void ReplaceImgBtn_Click(object sender, EventArgs e)
-		{
-			var text = KeyGenerator.OpenOrSaveFile("Select the image file to replace the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", true);
-			if (text == "")
-			{
-				return;
-			}
-			Image image;
-			if (text.EndsWith(".dds", StringComparison.OrdinalIgnoreCase))
-			{
-				image = new DdsTexture(text).GetImage();
-			}
-			else
-			{
-				image = Image.FromFile(text);
-			}
-			if (!image.Size.Equals(_size0) && DialogResult.Yes == MessageBox.Show("The image dimensions don't match. Do you wish scale to the original dimension? (Ratio may change!)", "Replace Texture", MessageBoxButtons.YesNo))
-			{
-				image = KeyGenerator.ScaleImage(image, _size0);
-			}
-			_currentTexFile.ReplaceTexture(_imgList.SelectedIndex, image, _currentTexturePixelFormat);
-			_rebuildBtn.Enabled = true;
-		}
+        private void RebuildBtn_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes != MessageBox.Show(
+                    "Are you sure you wish to rebuild the container? (Overwriting File!)", "Replace Textures",
+                    MessageBoxButtons.YesNo))
+            {
+                return;
+            }
+            if (_currentTexFile.CanWrite())
+            {
+                _currentTexFile.WriteEverythingToFile();
+            }
+            else
+            {
+                var toolTipText = _dataFolderTreeView.SelectedNode.ToolTipText;
+                var pakNode = File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen"))
+                    ? new ZzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false)
+                    : new ZzPakNode2(toolTipText, false);
+                pakNode.method_11((int) _dataFolderTreeView.SelectedNode.Tag)
+                    .imethod_17(_currentTexFile.ToStream().ReadEverything());
+                pakNode.vmethod_1();
+                pakNode.Dispose();
+            }
+            _imgList.Items.Clear();
+            DisposeTexFile();
+        }
 
-		public ImageFormat GetImageFormat(string fileName)
-		{
-			var ext = KeyGenerator.GetExtension(fileName, 1).ToLower();
-			if (ext != null)
-			{
-				if (ext == "jpg")
-				{
-					return ImageFormat.Jpeg;
-				}
-				if (ext == "gif")
-				{
-					return ImageFormat.Gif;
-				}
-				if (ext == "png")
-				{
-					return ImageFormat.Png;
-				}
-			}
-			return ImageFormat.Bmp;
-		}
+        private void NextSearch_Btn_Click(object sender, EventArgs e)
+        {
+            if (_dataFolderTreeView.SelectedNode == null)
+            {
+                return;
+            }
+            if (_searchTxtBox.Text.Equals(""))
+            {
+                foreach (var current in _nodeList)
+                {
+                    current.BackColor = Color.Empty;
+                }
+                _nodeList.Clear();
+                _string1 = "";
+                _searchPosLbl.Text = "0/0";
+                return;
+            }
+            if (!_searchTxtBox.Text.Equals(_string1))
+            {
+                foreach (var current2 in _nodeList)
+                {
+                    current2.BackColor = Color.Transparent;
+                }
+                _nodeList.Clear();
+                _string1 = _searchTxtBox.Text;
+            }
+            if (_nodeList.Count == 0)
+            {
+                if (!method_4())
+                {
+                    MessageBox.Show("Value not found!");
+                    _searchPosLbl.Text = "0/0";
+                    return;
+                }
+                _count = -1;
+            }
+            _count++;
+            var treeView = _dataFolderTreeView;
+            var node = _nodeList;
+            int arg16B1;
+            if (_nodeList.Count <= _count)
+            {
+                _count = 0;
+                arg16B1 = 0;
+            }
+            else
+            {
+                arg16B1 = _count;
+            }
+            treeView.SelectedNode = node[arg16B1];
+            _searchPosLbl.Text = _count + 1 + "/" + _nodeList.Count;
+            _dataFolderTreeView.Focus();
+        }
 
-		private void ExtractImgBtn_Click(object sender, EventArgs e)
-		{
-			var fileName = KeyGenerator.OpenOrSaveFile("Select location to export the texture.", "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png", false);
-			if (fileName == "")
-			{
-				return;
-			}
-			if (fileName.EndsWith(".dds", StringComparison.OrdinalIgnoreCase))
-			{
-				_currentTexFile.WriteBytes(_imgList.SelectedIndex, fileName);
-				return;
-			}
-			_currentTexFile[_imgList.SelectedIndex].GetImage().Save(fileName, GetImageFormat(fileName));
-		}
+        private void PrevSearch_Btn_Click(object sender, EventArgs e)
+        {
+            if (_dataFolderTreeView.SelectedNode == null)
+            {
+                return;
+            }
+            if (_searchTxtBox.Text.Equals(""))
+            {
+                foreach (var current in _nodeList)
+                {
+                    current.BackColor = Color.Empty;
+                }
+                _nodeList.Clear();
+                _string1 = "";
+                _searchPosLbl.Text = "0/0";
+                return;
+            }
+            if (!_searchTxtBox.Text.Equals(_string1))
+            {
+                foreach (var current2 in _nodeList)
+                {
+                    current2.BackColor = Color.Empty;
+                }
+                _nodeList.Clear();
+                _string1 = _searchTxtBox.Text;
+            }
+            if (_nodeList.Count == 0)
+            {
+                if (!method_4())
+                {
+                    MessageBox.Show("Value not found!");
+                    _searchPosLbl.Text = "0/0";
+                    return;
+                }
+                _count = _nodeList.Count;
+            }
+            _count--;
+            _dataFolderTreeView.SelectedNode = _nodeList[(0 <= _count) ? _count : (_count = _nodeList.Count - 1)];
+            _searchPosLbl.Text = _count + 1 + "/" + _nodeList.Count;
+            _dataFolderTreeView.Focus();
+        }
 
-		private void RebuildBtn_Click(object sender, EventArgs e)
-		{
-			if (DialogResult.Yes != MessageBox.Show("Are you sure you wish to rebuild the container? (Overwriting File!)", "Replace Textures", MessageBoxButtons.YesNo))
-			{
-				return;
-			}
-			if (_currentTexFile.CanWrite())
-			{
-				_currentTexFile.WriteEverythingToFile();
-			}
-			else
-			{
-				var toolTipText = _dataFolderTreeView.SelectedNode.ToolTipText;
-				var pakNode = File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")) ? new ZzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false) : new ZzPakNode2(toolTipText, false);
-				pakNode.method_11((int)_dataFolderTreeView.SelectedNode.Tag).imethod_17(_currentTexFile.ToStream().ReadEverything());
-				pakNode.vmethod_1();
-				pakNode.Dispose();
-			}
-			_imgList.Items.Clear();
-			DisposeTexFile();
-		}
+        private void Search_Btn_Click(object sender, EventArgs e)
+        {
+            if (_dataFolderTreeView.SelectedNode == null)
+            {
+                return;
+            }
+            foreach (var current in _nodeList)
+            {
+                current.BackColor = Color.Empty;
+            }
+            _nodeList.Clear();
+            _string1 = _searchTxtBox.Text;
+            if (_string1.Equals(""))
+            {
+                _searchPosLbl.Text = "0/0";
+                return;
+            }
+            if (!method_4())
+            {
+                MessageBox.Show("Value not found!");
+                _searchPosLbl.Text = "0/0";
+                return;
+            }
+            _count = 0;
+            _dataFolderTreeView.SelectedNode = _nodeList[_count];
+            _searchPosLbl.Text = _count + 1 + "/" + _nodeList.Count;
+            _dataFolderTreeView.Focus();
+        }
 
-		private void NextSearch_Btn_Click(object sender, EventArgs e)
-		{
-			if (_dataFolderTreeView.SelectedNode == null)
-			{
-				return;
-			}
-			if (_searchTxtBox.Text.Equals(""))
-			{
-				foreach (var current in _nodeList)
-				{
-					current.BackColor = Color.Empty;
-				}
-				_nodeList.Clear();
-				_string1 = "";
-				_searchPosLbl.Text = "0/0";
-				return;
-			}
-			if (!_searchTxtBox.Text.Equals(_string1))
-			{
-				foreach (var current2 in _nodeList)
-				{
-					current2.BackColor = Color.Transparent;
-				}
-				_nodeList.Clear();
-				_string1 = _searchTxtBox.Text;
-			}
-			if (_nodeList.Count == 0)
-			{
-				if (!method_4())
-				{
-					MessageBox.Show("Value not found!");
-					_searchPosLbl.Text = "0/0";
-					return;
-				}
-				_count = -1;
-			}
-			_count++;
-			var treeView = _dataFolderTreeView;
-			var node = _nodeList;
-			int arg16B1;
-			if (_nodeList.Count <= _count)
-			{
-				_count = 0;
-				arg16B1 = 0;
-			}
-			else
-			{
-				arg16B1 = _count;
-			}
-			treeView.SelectedNode = node[arg16B1];
-			_searchPosLbl.Text = _count + 1 + "/" + _nodeList.Count;
-			_dataFolderTreeView.Focus();
-		}
+        private bool method_4()
+        {
+            AddNodeToContainerIfItHasThisString(_dataFolderTreeView.SelectedNode, _string1, _nodeList);
+            foreach (var current in _nodeList)
+            {
+                current.BackColor = Color.YellowGreen;
+            }
+            return _nodeList.Count != 0;
+        }
 
-		private void PrevSearch_Btn_Click(object sender, EventArgs e)
-		{
-			if (_dataFolderTreeView.SelectedNode == null)
-			{
-				return;
-			}
-			if (_searchTxtBox.Text.Equals(""))
-			{
-				foreach (var current in _nodeList)
-				{
-					current.BackColor = Color.Empty;
-				}
-				_nodeList.Clear();
-				_string1 = "";
-				_searchPosLbl.Text = "0/0";
-				return;
-			}
-			if (!_searchTxtBox.Text.Equals(_string1))
-			{
-				foreach (var current2 in _nodeList)
-				{
-					current2.BackColor = Color.Empty;
-				}
-				_nodeList.Clear();
-				_string1 = _searchTxtBox.Text;
-			}
-			if (_nodeList.Count == 0)
-			{
-				if (!method_4())
-				{
-					MessageBox.Show("Value not found!");
-					_searchPosLbl.Text = "0/0";
-					return;
-				}
-				_count = _nodeList.Count;
-			}
-			_count--;
-			_dataFolderTreeView.SelectedNode = _nodeList[(0 <= _count) ? _count : (_count = _nodeList.Count - 1)];
-			_searchPosLbl.Text = _count + 1 + "/" + _nodeList.Count;
-			_dataFolderTreeView.Focus();
-		}
-
-		private void Search_Btn_Click(object sender, EventArgs e)
-		{
-			if (_dataFolderTreeView.SelectedNode == null)
-			{
-				return;
-			}
-			foreach (var current in _nodeList)
-			{
-				current.BackColor = Color.Empty;
-			}
-			_nodeList.Clear();
-			_string1 = _searchTxtBox.Text;
-			if (_string1.Equals(""))
-			{
-				_searchPosLbl.Text = "0/0";
-				return;
-			}
-			if (!method_4())
-			{
-				MessageBox.Show("Value not found!");
-				_searchPosLbl.Text = "0/0";
-				return;
-			}
-			_count = 0;
-			_dataFolderTreeView.SelectedNode = _nodeList[_count];
-			_searchPosLbl.Text = _count + 1 + "/" + _nodeList.Count;
-			_dataFolderTreeView.Focus();
-		}
-
-		private bool method_4()
-		{
-			AddNodeToContainerIfItHasThisString(_dataFolderTreeView.SelectedNode, _string1, _nodeList);
-			foreach (var current in _nodeList)
-			{
-				current.BackColor = Color.YellowGreen;
-			}
-			return _nodeList.Count != 0;
-		}
-
-		private static void AddNodeToContainerIfItHasThisString(TreeNode node, string str, ICollection<TreeNode> nodeCollection)
-		{
-			if (node.Text.ToUpper().Contains(str.ToUpper()))
-			{
-				nodeCollection.Add(node);
-			}
-			for (var i = 0; i < node.Nodes.Count; i++)
-			{
-				AddNodeToContainerIfItHasThisString(node.Nodes[i], str, nodeCollection);
-			}
-		}
+        private static void AddNodeToContainerIfItHasThisString(TreeNode node, string str,
+            ICollection<TreeNode> nodeCollection)
+        {
+            if (node.Text.ToUpper().Contains(str.ToUpper()))
+            {
+                nodeCollection.Add(node);
+            }
+            for (var i = 0; i < node.Nodes.Count; i++)
+            {
+                AddNodeToContainerIfItHasThisString(node.Nodes[i], str, nodeCollection);
+            }
+        }
 
         private void ImagePreviewBox_Click(object sender, EventArgs e)
         {
-
         }
 
         private void chkEditMetadata_CheckedChanged(object sender, EventArgs e)
         {
             if (_chkEditMetadata.Checked)
-            { 
-                if (MessageBox.Show("Are you sure you want to edit the image metadata? You could corrupt your pak file!", "Warning!", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            {
+                if (MessageBox.Show(
+                        "Are you sure you want to edit the image metadata? You could corrupt your pak file!",
+                        "Warning!", MessageBoxButtons.YesNo) != DialogResult.Yes)
                 {
                     _chkEditMetadata.Checked = false;
                 }
             }
 
             MetadataReadonly = !_chkEditMetadata.Checked;
-
         }
 
 
@@ -1200,7 +1211,6 @@ namespace GHNamespaceE
                     _txtUnk3.Text = "";
                     _txtUnk4.Text = "";
                 }
-
             }
 
             get => _currentImgFile;
@@ -1233,17 +1243,14 @@ namespace GHNamespaceE
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void btnCloneImage_Click(object sender, EventArgs e)
@@ -1255,7 +1262,7 @@ namespace GHNamespaceE
                 return;
 
             var cloneIndex = _currentTexFile.CloneTextureElement(_imgList.SelectedIndex);
-            _imgList.Items.Add("Image " + (cloneIndex + 1) );
+            _imgList.Items.Add("Image " + (cloneIndex + 1));
         }
     }
 }

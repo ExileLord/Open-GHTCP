@@ -1,6 +1,6 @@
 namespace GHNamespaceK
 {
-	public abstract class Class137
-	{
-	}
+    public abstract class Class137
+    {
+    }
 }

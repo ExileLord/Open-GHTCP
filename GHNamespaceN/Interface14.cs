@@ -1,7 +1,7 @@
 namespace GHNamespaceN
 {
-	public interface INterface14
-	{
-		int imethod_0();
-	}
+    public interface INterface14
+    {
+        int imethod_0();
+    }
 }

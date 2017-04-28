@@ -1,6 +1,6 @@
 namespace GHNamespaceG
 {
-	public abstract class EmptyAbstractClass1
-	{
-	}
+    public abstract class EmptyAbstractClass1
+    {
+    }
 }

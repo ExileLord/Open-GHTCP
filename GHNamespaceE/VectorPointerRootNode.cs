@@ -2,26 +2,26 @@ using GHNamespaceC;
 
 namespace GHNamespaceE
 {
-	public class VectorPointerRootNode : ProbablyRootNode
-	{
-		public VectorPointerRootNode()
-		{
-			vmethod_0();
-		}
+    public class VectorPointerRootNode : ProbablyRootNode
+    {
+        public VectorPointerRootNode()
+        {
+            vmethod_0();
+        }
 
-		public override int vmethod_1()
-		{
-			return 9;
-		}
+        public override int vmethod_1()
+        {
+            return 9;
+        }
 
-		public override string GetNodeText()
-		{
-			return "Vector Pointer Root";
-		}
+        public override string GetNodeText()
+        {
+            return "Vector Pointer Root";
+        }
 
-		public override byte vmethod_16()
-		{
-			return 6;
-		}
-	}
+        public override byte vmethod_16()
+        {
+            return 6;
+        }
+    }
 }

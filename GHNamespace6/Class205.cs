@@ -2,45 +2,45 @@ using System;
 
 namespace GHNamespace6
 {
-	public class Class205 : ICloneable
-	{
-		private string _string0;
+    public class Class205 : ICloneable
+    {
+        private string _string0;
 
-		private Class204 _class2040;
+        private Class204 _class2040;
 
-		private Class205()
-		{
-			_class2040 = new Class204();
-		}
+        private Class205()
+        {
+            _class2040 = new Class204();
+        }
 
-		public object Clone()
-		{
-			var @class = new Class205();
-			@class._string0 = _string0;
-			@class._class2040 = (Class204)_class2040.Clone();
-			@class.method_1(method_0());
-			return @class;
-		}
+        public object Clone()
+        {
+            var @class = new Class205();
+            @class._string0 = _string0;
+            @class._class2040 = (Class204) _class2040.Clone();
+            @class.method_1(method_0());
+            return @class;
+        }
 
-		public override bool Equals(object obj)
-		{
-			var @class = obj as Class205;
-			return @class != null && method_0().Equals(@class.method_0());
-		}
+        public override bool Equals(object obj)
+        {
+            var @class = obj as Class205;
+            return @class != null && method_0().Equals(@class.method_0());
+        }
 
-		public override int GetHashCode()
-		{
-			return method_0().GetHashCode();
-		}
+        public override int GetHashCode()
+        {
+            return method_0().GetHashCode();
+        }
 
-		public string method_0()
-		{
-			return _class2040.method_0();
-		}
+        public string method_0()
+        {
+            return _class2040.method_0();
+        }
 
-		public void method_1(string string1)
-		{
-			_class2040.method_1(string1);
-		}
-	}
+        public void method_1(string string1)
+        {
+            _class2040.method_1(string1);
+        }
+    }
 }

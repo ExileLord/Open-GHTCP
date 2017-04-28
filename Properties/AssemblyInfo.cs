@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Permissions;
 
-[assembly: AssemblyVersion("2.0.4.7")]//Old Version 2.0.4.6
+[assembly: AssemblyVersion("2.0.4.7")] //Old Version 2.0.4.6
 [assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
 [assembly: AssemblyCompany("Sigma Inc. (Plus Version by No1mann and Exilelord. Updated by fallk)")]
 [assembly: AssemblyCopyright("Copyright © Sigma Inc. Production 2008-2010")]

@@ -4,11 +4,12 @@ using System.Runtime.CompilerServices;
 
 namespace SharpAudio.ASC.Ac3.Properties
 {
-	[GeneratedCode("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0"), CompilerGenerated]
-	public class Settings : ApplicationSettingsBase
-	{
-		private static readonly Settings Settings0 = (Settings)Synchronized(new Settings());
+    [GeneratedCode("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0"),
+     CompilerGenerated]
+    public class Settings : ApplicationSettingsBase
+    {
+        private static readonly Settings Settings0 = (Settings) Synchronized(new Settings());
 
-		public static Settings Default => Settings0;
-	}
+        public static Settings Default => Settings0;
+    }
 }

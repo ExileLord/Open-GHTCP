@@ -4,22 +4,22 @@ using GHNamespaceG;
 
 namespace GHNamespaceN
 {
-	public class Class357 : IDisposable, IEmptyInterface1
-	{
-		private Class352[] _class3520;
+    public class Class357 : IDisposable, IEmptyInterface1
+    {
+        private Class352[] _class3520;
 
-		private readonly List<IEmptyInterface1> _list0;
+        private readonly List<IEmptyInterface1> _list0;
 
-		public void Dispose()
-		{
-			foreach (var current in _list0)
-			{
-				current.Dispose();
-			}
-			for (var i = 0; i < _class3520.Length; i++)
-			{
-				_class3520[i].Dispose();
-			}
-		}
-	}
+        public void Dispose()
+        {
+            foreach (var current in _list0)
+            {
+                current.Dispose();
+            }
+            for (var i = 0; i < _class3520.Length; i++)
+            {
+                _class3520[i].Dispose();
+            }
+        }
+    }
 }

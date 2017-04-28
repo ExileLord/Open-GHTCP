@@ -1,6 +1,6 @@
 namespace GHNamespace3
 {
-	public class Class64
-	{
-	}
+    public class Class64
+    {
+    }
 }

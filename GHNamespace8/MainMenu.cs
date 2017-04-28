@@ -27,185 +27,185 @@ using MidiConverter;
 
 namespace GHNamespace8
 {
-	public class MainMenu : Form
-	{
-		private readonly string _appDirectory;
+    public class MainMenu : Form
+    {
+        private readonly string _appDirectory;
 
-		private readonly string _gameRegistry;
+        private readonly string _gameRegistry;
 
-		private readonly string _ghtcpRegistry;
+        private readonly string _ghtcpRegistry;
 
-		private readonly string _backupName;
+        private readonly string _backupName;
 
-		private string _dataFolder;
+        private string _dataFolder;
 
-		private string _priority;
+        private string _priority;
 
-		private string[] _languageList;
+        private string[] _languageList;
 
-		private Gh3Songlist _gh3Songlist;
+        private Gh3Songlist _gh3Songlist;
 
-		private int _selectedSetlist;
+        private int _selectedSetlist;
 
-		private readonly bool _isAerosmith;
+        private readonly bool _isAerosmith;
 
-		public ZzPabNode Class3190;
+        public ZzPabNode Class3190;
 
-		private ActionsWindow _actionsWindow0;
+        private ActionsWindow _actionsWindow0;
 
-		private IContainer icontainer_0;
+        private IContainer icontainer_0;
 
-		private ContextMenuStrip _rightClickMenu;
+        private ContextMenuStrip _rightClickMenu;
 
-		private MenuStrip _topMenuStrip;
+        private MenuStrip _topMenuStrip;
 
-		private ToolStripMenuItem _fileMenuItem;
+        private ToolStripMenuItem _fileMenuItem;
 
-		private ToolStripMenuItem _openGameSettingsMenuItem;
+        private ToolStripMenuItem _openGameSettingsMenuItem;
 
-		private ToolStripMenuItem _executeActionsMenuItem;
+        private ToolStripMenuItem _executeActionsMenuItem;
 
-		private ToolStripMenuItem _exitMenuItem;
+        private ToolStripMenuItem _exitMenuItem;
 
-		private ToolStripMenuItem _addMenuItem;
+        private ToolStripMenuItem _addMenuItem;
 
-		private ToolStripMenuItem _manageGameMenuItem;
+        private ToolStripMenuItem _manageGameMenuItem;
 
-		private ListBox _actionRequestsListBox;
+        private ListBox _actionRequestsListBox;
 
-		private Label _label1;
+        private Label _label1;
 
-		private ToolStripSeparator _toolStripSeparator1;
+        private ToolStripSeparator _toolStripSeparator1;
 
-		private ToolStripMenuItem _newSongMenuItem;
+        private ToolStripMenuItem _newSongMenuItem;
 
-		private ToolStripMenuItem _tierMenuItem;
+        private ToolStripMenuItem _tierMenuItem;
 
-		private ToolStripMenuItem _manageTiersMenuItem;
+        private ToolStripMenuItem _manageTiersMenuItem;
 
-		private Label _label3;
+        private Label _label3;
 
-		private ToolStripMenuItem _helpMenuItem;
+        private ToolStripMenuItem _helpMenuItem;
 
-		private ToolStripMenuItem _guideMenuItem;
+        private ToolStripMenuItem _guideMenuItem;
 
-		private ToolStripSeparator _toolStripSeparator3;
+        private ToolStripSeparator _toolStripSeparator3;
 
-		private ToolStripMenuItem _aboutMenuItem;
+        private ToolStripMenuItem _aboutMenuItem;
 
-		private ToolStripMenuItem _scoreHeroMenuItem;
+        private ToolStripMenuItem _scoreHeroMenuItem;
 
-		private TableLayoutPanel _sidePanel;
+        private TableLayoutPanel _sidePanel;
 
-		private ToolStripMenuItem _newTierMenuItem;
+        private ToolStripMenuItem _newTierMenuItem;
 
-		private ToolStripMenuItem _legacyImporterMenuItem;
+        private ToolStripMenuItem _legacyImporterMenuItem;
 
-		private ToolStripMenuItem _tghImportMenuItem;
+        private ToolStripMenuItem _tghImportMenuItem;
 
-		private ToolStripMenuItem _sghSwitchMenuItem;
+        private ToolStripMenuItem _sghSwitchMenuItem;
 
-		private ToolStripSeparator _toolStripSeparator4;
+        private ToolStripSeparator _toolStripSeparator4;
 
-		private ToolStripMenuItem _tghSwitchMenuItem;
+        private ToolStripMenuItem _tghSwitchMenuItem;
 
-		private ToolStripMenuItem _texExplorerMenuItem;
+        private ToolStripMenuItem _texExplorerMenuItem;
 
-		private ToolStripSeparator _toolStripSeparator6;
+        private ToolStripSeparator _toolStripSeparator6;
 
-		private ToolStripMenuItem _manageSongsMenuItem;
+        private ToolStripMenuItem _manageSongsMenuItem;
 
-		private ToolStripMenuItem _songPropsMenuItem;
+        private ToolStripMenuItem _songPropsMenuItem;
 
-		private ToolStripSeparator _toolStripSeparator7;
+        private ToolStripSeparator _toolStripSeparator7;
 
-		private ToolStripMenuItem _saveTghMenuItem;
+        private ToolStripMenuItem _saveTghMenuItem;
 
-		private ToolStripMenuItem _saveSghMenuItem;
+        private ToolStripMenuItem _saveSghMenuItem;
 
-		private ToolStripMenuItem _massImporterMenuItem;
+        private ToolStripMenuItem _massImporterMenuItem;
 
-		private ToolStripMenuItem _clearActionsMenuItem;
+        private ToolStripMenuItem _clearActionsMenuItem;
 
-		private ToolStripMenuItem _disclaimerMenuItem;
+        private ToolStripMenuItem _disclaimerMenuItem;
 
-		private ToolStripMenuItem _sysExitMenuItem;
+        private ToolStripMenuItem _sysExitMenuItem;
 
-		private NotifyIcon _notifyIcon0;
+        private NotifyIcon _notifyIcon0;
 
-		private FontDialog _fontDialog0;
+        private FontDialog _fontDialog0;
 
-		private ToolStripMenuItem _sysEnglishMenuItem;
+        private ToolStripMenuItem _sysEnglishMenuItem;
 
-		private ToolStripMenuItem _sysFrenchMenuItem;
+        private ToolStripMenuItem _sysFrenchMenuItem;
 
-		private ToolStripMenuItem _sysItalianMenuItem;
+        private ToolStripMenuItem _sysItalianMenuItem;
 
-		private ToolStripMenuItem _sysSpanishMenuItem;
+        private ToolStripMenuItem _sysSpanishMenuItem;
 
-		private ToolStripMenuItem _sysGermanMenuItem;
+        private ToolStripMenuItem _sysGermanMenuItem;
 
-		private ContextMenuStrip _leftClickMenu;
+        private ContextMenuStrip _leftClickMenu;
 
-		private ToolStripMenuItem _sysHighMenuItem;
+        private ToolStripMenuItem _sysHighMenuItem;
 
-		private ToolStripMenuItem _sysAboveMenuItem;
+        private ToolStripMenuItem _sysAboveMenuItem;
 
-		private ToolStripMenuItem _sysNormalMenuItem;
+        private ToolStripMenuItem _sysNormalMenuItem;
 
-		private ToolStripMenuItem _sysBelowMenuItem;
+        private ToolStripMenuItem _sysBelowMenuItem;
 
-		private ToolStripSeparator _toolStripSeparator8;
+        private ToolStripSeparator _toolStripSeparator8;
 
-		private ToolStripContainer _mainContainer;
+        private ToolStripContainer _mainContainer;
 
-		private StatusStrip _statusStrip;
+        private StatusStrip _statusStrip;
 
-		private ToolStripStatusLabel _toolStripStatusLbl;
+        private ToolStripStatusLabel _toolStripStatusLbl;
 
-		private ToolStripMenuItem _rebuildSongMenuItem;
+        private ToolStripMenuItem _rebuildSongMenuItem;
 
-		private ToolStripSeparator _removeSongToolStripMenuItem;
+        private ToolStripSeparator _removeSongToolStripMenuItem;
 
-		private ToolStripMenuItem _hideUsedMenuItem;
+        private ToolStripMenuItem _hideUsedMenuItem;
 
-		private ToolStripMenuItem _byTitleMenuItem;
+        private ToolStripMenuItem _byTitleMenuItem;
 
-		private ToolStripMenuItem _clearGameSettingsMenuItem;
+        private ToolStripMenuItem _clearGameSettingsMenuItem;
 
-		private ToolStripMenuItem _deleteSongMenuItem;
+        private ToolStripMenuItem _deleteSongMenuItem;
 
-		private ToolStripMenuItem _saveChartMenuItem;
+        private ToolStripMenuItem _saveChartMenuItem;
 
-		private ToolStripMenuItem _hideUnEditMenuItem;
+        private ToolStripMenuItem _hideUnEditMenuItem;
 
-		private ToolStripMenuItem _gameSettingsSwitchMenuItem;
+        private ToolStripMenuItem _gameSettingsSwitchMenuItem;
 
-		private ToolStripMenuItem _restoreLastMenuItem;
+        private ToolStripMenuItem _restoreLastMenuItem;
 
-		private ToolStripSeparator _toolStripSeparator11;
+        private ToolStripSeparator _toolStripSeparator11;
 
-		private ToolStripMenuItem _restoreOriginalMenuItem;
+        private ToolStripMenuItem _restoreOriginalMenuItem;
 
-		private ToolStripMenuItem _saveFileControlMenuItem;
+        private ToolStripMenuItem _saveFileControlMenuItem;
 
-		private ToolStripMenuItem _sysKoreanMenuItem;
+        private ToolStripMenuItem _sysKoreanMenuItem;
 
-		private ToolStripMenuItem _recoverGameSettingsMenuItem;
+        private ToolStripMenuItem _recoverGameSettingsMenuItem;
 
-		private ToolStripMenuItem _gh3FolderMenuItem;
+        private ToolStripMenuItem _gh3FolderMenuItem;
 
-		private ZzListBox238 _songListBox;
+        private ZzListBox238 _songListBox;
 
-		private ToolStripMenuItem _silentGuitarMenuItem;
+        private ToolStripMenuItem _silentGuitarMenuItem;
 
-		private ToolStripMenuItem _recoverSonglistMenuItem;
+        private ToolStripMenuItem _recoverSonglistMenuItem;
 
-		private ToolStripMenuItem _minToTrayMenuItem;
+        private ToolStripMenuItem _minToTrayMenuItem;
 
-		private ToolStripMenuItem _fxSpeedBoostMenuItem;
+        private ToolStripMenuItem _fxSpeedBoostMenuItem;
 
-		private ToolStripMenuItem _forceMp3ConversionMenuItem;
+        private ToolStripMenuItem _forceMp3ConversionMenuItem;
 
         private ToolStripMenuItem _exportSetlistAsChartsToolStripMenuItem;
 
@@ -213,131 +213,133 @@ namespace GHNamespace8
 
 
         private readonly List<string> _list0 = new List<string>(new[]
-		{
-			"",
-			"_f",
-			"_i",
-			"_s",
-			"_g",
-			"_k"
-		});
+        {
+            "",
+            "_f",
+            "_i",
+            "_s",
+            "_g",
+            "_k"
+        });
 
-		private readonly int[][] _int1 = {
-			new[]
-			{
-				829593536,
-				697043826,
-				-1837107027,
-				1318637149,
-				-539680678,
-				1171873709,
-				1653292043,
-				459358182,
-				556340579,
-				-1642812599,
-				-742193873,
-				175271819,
-				1331363290,
-				570416556,
-				29153329,
-				1819319387
-			},
-			new[]
-			{
-				1836059490,
-				1771483454,
-				-673998631,
-				641462861,
-				1900654009,
-				1709986031,
-				33390903,
-				304427717,
-				1304990069,
-				-1785474702,
-				-1337258443,
-				324473326,
-				1965474355,
-				916367820,
-				1499003735,
-				1352803218
-			},
-			new[]
-			{
-				1269522022,
-				-131210374,
-				1629838035,
-				202858366,
-				1666554359,
-				636669508,
-				714264300,
-				-404205300,
-				1876358717,
-				-1515833711,
-				-209857640,
-				-1024635964,
-				1825789822,
-				1897957965,
-				-1290348488,
-				1190923125
-			},
-			new[]
-			{
-				-887973262,
-				1466517696,
-				1012345538,
-				1334047578,
-				1479192262,
-				777644331,
-				55893077,
-				-645061064,
-				1149500538,
-				-893692966,
-				1279451696,
-				1784565148,
-				-585817907,
-				-796356986,
-				-850594579,
-				978230305
-			},
-			new[]
-			{
-				2116291983,
-				1856446224,
-				1972458884,
-				-348513475,
-				-1540514032,
-				-1152881742,
-				-1084710889,
-				-927384332,
-				1257846839,
-				-1329362414,
-				1892002220,
-				-1156746513,
-				996577931,
-				1529160761,
-				470653622,
-				-1505612085
-			},
-			new[]
-			{
-				-1021830939,
-				1913508896,
-				125205333,
-				379146835,
-				1188636734,
-				1617165582,
-				-722858410,
-				849002028,
-				-1131773601,
-				1209604138,
-				-338256082,
-				-1855979794,
-				-221145881,
-				-1691900572,
-				1804265874,
-				50178858
-			}
-		};
+        private readonly int[][] _int1 =
+        {
+            new[]
+            {
+                829593536,
+                697043826,
+                -1837107027,
+                1318637149,
+                -539680678,
+                1171873709,
+                1653292043,
+                459358182,
+                556340579,
+                -1642812599,
+                -742193873,
+                175271819,
+                1331363290,
+                570416556,
+                29153329,
+                1819319387
+            },
+            new[]
+            {
+                1836059490,
+                1771483454,
+                -673998631,
+                641462861,
+                1900654009,
+                1709986031,
+                33390903,
+                304427717,
+                1304990069,
+                -1785474702,
+                -1337258443,
+                324473326,
+                1965474355,
+                916367820,
+                1499003735,
+                1352803218
+            },
+            new[]
+            {
+                1269522022,
+                -131210374,
+                1629838035,
+                202858366,
+                1666554359,
+                636669508,
+                714264300,
+                -404205300,
+                1876358717,
+                -1515833711,
+                -209857640,
+                -1024635964,
+                1825789822,
+                1897957965,
+                -1290348488,
+                1190923125
+            },
+            new[]
+            {
+                -887973262,
+                1466517696,
+                1012345538,
+                1334047578,
+                1479192262,
+                777644331,
+                55893077,
+                -645061064,
+                1149500538,
+                -893692966,
+                1279451696,
+                1784565148,
+                -585817907,
+                -796356986,
+                -850594579,
+                978230305
+            },
+            new[]
+            {
+                2116291983,
+                1856446224,
+                1972458884,
+                -348513475,
+                -1540514032,
+                -1152881742,
+                -1084710889,
+                -927384332,
+                1257846839,
+                -1329362414,
+                1892002220,
+                -1156746513,
+                996577931,
+                1529160761,
+                470653622,
+                -1505612085
+            },
+            new[]
+            {
+                -1021830939,
+                1913508896,
+                125205333,
+                379146835,
+                1188636734,
+                1617165582,
+                -722858410,
+                849002028,
+                -1131773601,
+                1209604138,
+                -338256082,
+                -1855979794,
+                -221145881,
+                -1691900572,
+                1804265874,
+                50178858
+            }
+        };
+
         private IContainer components;
         private TabControl _tabControl;
         private TabPage _setlistTab;
@@ -409,683 +411,731 @@ namespace GHNamespace8
         private ToolStripButton _playPauseEditorBtn;
         private ToolStripButton _stopEditorBtn;
         private ToolStripLabel _playTimeEditorLbl;
-        private readonly int[][] _int2 = {
-			new[]
-			{
-				1437566472,
-				-1061079748,
-				-1111592754,
-				-1966717168,
-				-1428950520,
-				1212724879,
-				740255143,
-				715944313,
-				2111189242,
-				-1451656433,
-				-15320960,
-				-763814429,
-				-1818972422,
-				682353600,
-				996166890,
-				2016473740
-			},
-			new[]
-			{
-				305200924,
-				-1196737699,
-				-1987906763,
-				1679742203,
-				1982146584,
-				759844203,
-				1351130681,
-				757831823,
-				-363786259,
-				2087242606,
-				-118476920,
-				1285472074,
-				1638750453,
-				458284014,
-				1046153972,
-				2026010499
-			},
-			new[]
-			{
-				934530828,
-				-980895192,
-				-362462945,
-				-1205732614,
-				1435566503,
-				723105985,
-				1914552563,
-				703888743,
-				-2112510328,
-				130444503,
-				-11435175,
-				1470528751,
-				1564837879,
-				-271089057,
-				-1789758487,
-				-1075631989
-			},
-			new[]
-			{
-				-1709924020,
-				-643193285,
-				-309917039,
-				-289393289,
-				444317537,
-				480082408,
-				1513307172,
-				609246245,
-				-160900291,
-				750978047,
-				-1163119017,
-				-1840466690,
-				446893618,
-				-1892840172,
-				-444827469,
-				-713549917
-			},
-			new[]
-			{
-				-352783955,
-				980938386,
-				1545708568,
-				-1993984026,
-				1402693583,
-				-1214301264,
-				-1414365273,
-				-945991889,
-				-274266520,
-				1601334973,
-				-1624586832,
-				-227904233,
-				-2024051484,
-				-1955644985,
-				-1038381726,
-				1539206104
-			},
-			new[]
-			{
-				-1888660237,
-				1331936703,
-				463303036,
-				806620738,
-				1028153509,
-				774209744,
-				-511465646,
-				1872831595,
-				-127158240,
-				1527098556,
-				-621058351,
-				-2069209528,
-				-2108293886,
-				-45253186,
-				1502196519,
-				687435827
-			}
-		};
 
-		private void SongListBox_MouseDown(object sender, MouseEventArgs e)
-		{
-			var num = _songListBox.IndexFromPoint(e.X, e.Y);
-			if (num >= 0 && num < _songListBox.Items.Count)
-			{
-				if (e.Clicks == 2 && e.Button == MouseButtons.Left)
-				{
-					SongProperties songProperties;
-					if ((songProperties = new SongProperties((Gh3Song)_songListBox.Items[num])).ShowDialog() == DialogResult.OK)
-					{
-						songProperties.GetSongWithChanges();
-						method_4(new Class247(Class3190, _gh3Songlist));
-					}
-				}
-				else if (e.Clicks == 2 && e.Button == MouseButtons.Right)
-				{
-					var gH3Song = (Gh3Song)_songListBox.Items[num];
-					if (gH3Song.Editable && DialogResult.Yes == MessageBox.Show(gH3Song.Name.ToUpper() + " will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
-					{
-						_songListBox.Items.Remove(gH3Song);
-						foreach (var current in _gh3Songlist.method_1(gH3Song))
-						{
-							method_4(new ZzSetListUpdater(current, Class3190, _gh3Songlist));
-						}
-						method_4(new Class247(Class3190, _gh3Songlist));
-					}
-				}
-			}
-		}
+        private readonly int[][] _int2 =
+        {
+            new[]
+            {
+                1437566472,
+                -1061079748,
+                -1111592754,
+                -1966717168,
+                -1428950520,
+                1212724879,
+                740255143,
+                715944313,
+                2111189242,
+                -1451656433,
+                -15320960,
+                -763814429,
+                -1818972422,
+                682353600,
+                996166890,
+                2016473740
+            },
+            new[]
+            {
+                305200924,
+                -1196737699,
+                -1987906763,
+                1679742203,
+                1982146584,
+                759844203,
+                1351130681,
+                757831823,
+                -363786259,
+                2087242606,
+                -118476920,
+                1285472074,
+                1638750453,
+                458284014,
+                1046153972,
+                2026010499
+            },
+            new[]
+            {
+                934530828,
+                -980895192,
+                -362462945,
+                -1205732614,
+                1435566503,
+                723105985,
+                1914552563,
+                703888743,
+                -2112510328,
+                130444503,
+                -11435175,
+                1470528751,
+                1564837879,
+                -271089057,
+                -1789758487,
+                -1075631989
+            },
+            new[]
+            {
+                -1709924020,
+                -643193285,
+                -309917039,
+                -289393289,
+                444317537,
+                480082408,
+                1513307172,
+                609246245,
+                -160900291,
+                750978047,
+                -1163119017,
+                -1840466690,
+                446893618,
+                -1892840172,
+                -444827469,
+                -713549917
+            },
+            new[]
+            {
+                -352783955,
+                980938386,
+                1545708568,
+                -1993984026,
+                1402693583,
+                -1214301264,
+                -1414365273,
+                -945991889,
+                -274266520,
+                1601334973,
+                -1624586832,
+                -227904233,
+                -2024051484,
+                -1955644985,
+                -1038381726,
+                1539206104
+            },
+            new[]
+            {
+                -1888660237,
+                1331936703,
+                463303036,
+                806620738,
+                1028153509,
+                774209744,
+                -511465646,
+                1872831595,
+                -127158240,
+                1527098556,
+                -621058351,
+                -2069209528,
+                -2108293886,
+                -45253186,
+                1502196519,
+                687435827
+            }
+        };
 
-		private void HideUnEdit_MenuItem_Click(object sender, EventArgs e)
-		{
-			var arg_1D0 = _gh3Songlist;
-			var expr_0C = _hideUnEditMenuItem;
-			arg_1D0.HideUnEditable = (expr_0C.Checked = !expr_0C.Checked);
-			RefreshSongListBox();
-		}
+        private void SongListBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            var num = _songListBox.IndexFromPoint(e.X, e.Y);
+            if (num >= 0 && num < _songListBox.Items.Count)
+            {
+                if (e.Clicks == 2 && e.Button == MouseButtons.Left)
+                {
+                    SongProperties songProperties;
+                    if ((songProperties = new SongProperties((Gh3Song) _songListBox.Items[num])).ShowDialog() ==
+                        DialogResult.OK)
+                    {
+                        songProperties.GetSongWithChanges();
+                        method_4(new Class247(Class3190, _gh3Songlist));
+                    }
+                }
+                else if (e.Clicks == 2 && e.Button == MouseButtons.Right)
+                {
+                    var gH3Song = (Gh3Song) _songListBox.Items[num];
+                    if (gH3Song.Editable && DialogResult.Yes ==
+                        MessageBox.Show(
+                            gH3Song.Name.ToUpper() +
+                            " will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!",
+                            MessageBoxButtons.YesNo))
+                    {
+                        _songListBox.Items.Remove(gH3Song);
+                        foreach (var current in _gh3Songlist.method_1(gH3Song))
+                        {
+                            method_4(new ZzSetListUpdater(current, Class3190, _gh3Songlist));
+                        }
+                        method_4(new Class247(Class3190, _gh3Songlist));
+                    }
+                }
+            }
+        }
 
-		private void HideUsed_MenuItem_Click(object sender, EventArgs e)
-		{
-			var arg_1D0 = _gh3Songlist;
-			var expr_0C = _hideUsedMenuItem;
-			arg_1D0.HideUsed = (expr_0C.Checked = !expr_0C.Checked);
-			RefreshSongListBox();
-		}
+        private void HideUnEdit_MenuItem_Click(object sender, EventArgs e)
+        {
+            var arg_1D0 = _gh3Songlist;
+            var expr_0C = _hideUnEditMenuItem;
+            arg_1D0.HideUnEditable = (expr_0C.Checked = !expr_0C.Checked);
+            RefreshSongListBox();
+        }
 
-		private void ByTitle_MenuItem_Click(object sender, EventArgs e)
-		{
-			var expr06 = _byTitleMenuItem;
-			Gh3Song.Bool0 = (expr06.Checked = !expr06.Checked);
-			RefreshSongListBox();
-		}
+        private void HideUsed_MenuItem_Click(object sender, EventArgs e)
+        {
+            var arg_1D0 = _gh3Songlist;
+            var expr_0C = _hideUsedMenuItem;
+            arg_1D0.HideUsed = (expr_0C.Checked = !expr_0C.Checked);
+            RefreshSongListBox();
+        }
 
-		private void SongListBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			if (_songListBox.SelectedItems.Count != 0)
-			{
-				var enabled = false;
-				foreach (Gh3Song song in _songListBox.SelectedItems)
-				{
-					if (song.Editable)
-					{
-						enabled = true;
-					}
-				}
+        private void ByTitle_MenuItem_Click(object sender, EventArgs e)
+        {
+            var expr06 = _byTitleMenuItem;
+            Gh3Song.Bool0 = (expr06.Checked = !expr06.Checked);
+            RefreshSongListBox();
+        }
+
+        private void SongListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_songListBox.SelectedItems.Count != 0)
+            {
+                var enabled = false;
+                foreach (Gh3Song song in _songListBox.SelectedItems)
+                {
+                    if (song.Editable)
+                    {
+                        enabled = true;
+                    }
+                }
                 _saveChartMenuItem.Enabled = (_rebuildSongMenuItem.Enabled = true);
                 _deleteSongMenuItem.Enabled = enabled;
-			}
-		}
+            }
+        }
 
         public static DialogResult MsgBoxEditDefaultSongs()
         {
-            return MessageBox.Show("Do you really wish to edit a default song? Editing default songs is dangerous and should only be done if you understand the consequences of doing so.", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            return MessageBox.Show(
+                "Do you really wish to edit a default song? Editing default songs is dangerous and should only be done if you understand the consequences of doing so.",
+                "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         }
 
-		private void SongProps_MenuItem_Click(object sender, EventArgs e)
-		{
-			SongProperties songProperties;
-            if (!((Gh3Song)_songListBox.Items[_songListBox.SelectedIndex]).IsEditable())
+        private void SongProps_MenuItem_Click(object sender, EventArgs e)
+        {
+            SongProperties songProperties;
+            if (!((Gh3Song) _songListBox.Items[_songListBox.SelectedIndex]).IsEditable())
             {
                 if (MsgBoxEditDefaultSongs() != DialogResult.Yes)
                     return;
             }
-            if (_songListBox.SelectedIndex >= 0 && (songProperties = new SongProperties((Gh3Song)_songListBox.Items[_songListBox.SelectedIndex])).ShowDialog() == DialogResult.OK)
-			{
-				songProperties.GetSongWithChanges();
-				method_4(new Class247(Class3190, _gh3Songlist));
-			}
-		}
+            if (_songListBox.SelectedIndex >= 0 && (songProperties =
+                    new SongProperties((Gh3Song) _songListBox.Items[_songListBox.SelectedIndex])).ShowDialog() ==
+                DialogResult.OK)
+            {
+                songProperties.GetSongWithChanges();
+                method_4(new Class247(Class3190, _gh3Songlist));
+            }
+        }
 
-		private void RebuildSong_MenuItem_Click(object sender, EventArgs e)
-		{
-			var song = (Gh3Song)_songListBox.Items[_songListBox.SelectedIndex];
+        private void RebuildSong_MenuItem_Click(object sender, EventArgs e)
+        {
+            var song = (Gh3Song) _songListBox.Items[_songListBox.SelectedIndex];
             SongData songData;
             if (!song.IsEditable())
             {
                 if (MsgBoxEditDefaultSongs() != DialogResult.Yes)
                     return;
             }
-            if (_songListBox.SelectedIndex >= 0 && (songData = new SongData(song.Name, false, false)).ShowDialog() == DialogResult.OK)
-			{
-				if (songData.Bool1)
-				{
-					var @class = songData.method_1(Class3190, _dataFolder);
-					method_4(@class);
-					if (DialogResult.Yes == MessageBox.Show("Do you wish to get the song properties from the game track? (Current properties will be overwritten | Mid files have no properties!)", "Tier Exporting", MessageBoxButtons.YesNo))
-					{
-						var noRhythmTrack = song.NoRhythmTrack;
-						var useCoopNotetracks = song.UseCoopNotetracks;
-						song.vmethod_0(@class.Class3620.Gh3Song0);
-						song.NoRhythmTrack = noRhythmTrack;
-						song.UseCoopNotetracks = useCoopNotetracks;
-						method_4(new Class247(Class3190, _gh3Songlist));
-					}
-				}
-				if (songData.Bool0)
-				{
-					var class2 = songData.method_0(_dataFolder);
-					method_4(class2);
-					song.NoRhythmTrack = !class2.Bool0;
-					song.UseCoopNotetracks = class2.Bool1;
-					method_4(new Class247(Class3190, _gh3Songlist));
-				}
-			}
-		}
-
-		private void SongListBox_KeyDown(object sender, KeyEventArgs e)
-		{
-			if (e.Shift && e.KeyCode == Keys.Delete && _songListBox.SelectedItems.Count != 0 && DialogResult.Yes == MessageBox.Show("The selected songs will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
-			{
-				var array = _songListBox.imethod_3();
-				for (var i = 0; i < array.Length; i++)
-				{
-					var gh3Song = (Gh3Song)array[i];
-					if (gh3Song.Editable)
-					{
-						_songListBox.Items.Remove(gh3Song);
-						foreach (var current in _gh3Songlist.method_1(gh3Song))
-						{
-							method_4(new ZzSetListUpdater(current, Class3190, _gh3Songlist));
-						}
-						method_4(new Class247(Class3190, _gh3Songlist));
-					}
-				}
-			}
-		}
-
-		private void DeleteSong_MenuItem_Click(object sender, EventArgs e)
-		{
-			var array = _songListBox.imethod_3();
-			for (var i = 0; i < array.Length; i++)
-			{
-				var gH3Song = (Gh3Song)array[i];
-				if (gH3Song.Editable && DialogResult.Yes == MessageBox.Show(gH3Song.Name.ToUpper() + " will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
-				{
-					_songListBox.Items.Remove(gH3Song);
-					foreach (var current in _gh3Songlist.method_1(gH3Song))
-					{
-						method_4(new ZzSetListUpdater(current, Class3190, _gh3Songlist));
-					}
-					method_4(new Class247(Class3190, _gh3Songlist));
-				}
-			}
-		}
-
-		private void NewSong_MenuItem_Click(object sender, EventArgs e)
-		{
-			var songData = new SongData(_gh3Songlist, _forceRb3MidConversionToolStripMenuItem.Checked);
-			if (songData.ShowDialog() == DialogResult.OK)
-			{
-				var gH3Song = _isAerosmith ? new GhaSong() : new Gh3Song();
-				if (songData.Bool1)
-				{
-					var @class = songData.method_1(Class3190, _dataFolder);
-					method_4(@class);
-					gH3Song.vmethod_0(@class.Class3620.Gh3Song0);
-				}
-				if (songData.Bool0)
-				{
-					var class2 = songData.method_0(_dataFolder);
-					method_4(class2);
-					gH3Song.Name = class2.String1;
-					gH3Song.NoRhythmTrack = !class2.Bool0;
-					gH3Song.UseCoopNotetracks = class2.Bool1;
-					gH3Song.Version = 3;
-					gH3Song.Leaderboard = true;
-					gH3Song.Editable = true;
-				}
-				var songProperties = new SongProperties(gH3Song);
-				if (songProperties.ShowDialog() == DialogResult.OK)
-				{
-					songProperties.GetSongWithChanges();
-				}
-				_gh3Songlist.Add(gH3Song.Name, gH3Song);
-				method_4(new Class247(Class3190, _gh3Songlist));
-				RefreshSongListBox();
-			}
-		}
-
-		private void RecoverSonglist_MenuItem_Click(object sender, EventArgs e)
-		{
-			var flag = false;
-			var files = Directory.GetFiles(_dataFolder + "music\\", "*.dat.xen", SearchOption.AllDirectories);
-			for (var i = 0; i < files.Length; i++)
-			{
-				var text = files[i];
-				var text2 = KeyGenerator.GetFileNameNoExt(text);
-				if (File.Exists(_dataFolder + "music\\" + text2 + ".fsb.xen") && File.Exists(_dataFolder + "songs\\" + text2 + "_song.pak.xen") && !_gh3Songlist.method_3(text2) && !QbSongClass1.smethod_4(text2) && !Gh3Songlist.IgnoreSongs.Contains(QbSongClass1.AddKeyToDictionary(text2)))
-				{
-					try
-					{
-						var gH3Song = _isAerosmith ? new GhaSong(text2) : new Gh3Song(text2);
-						var list = new List<string>(new ZzQbSongObject(text).String1);
-						gH3Song.NoRhythmTrack = !list.Contains(text2 + "_rhythm");
-						gH3Song.UseCoopNotetracks = list.Contains(text2 + "_coop_song");
-						_gh3Songlist.Add(text2, gH3Song);
-						flag = true;
-					}
-					catch
-					{
-					}
-				}
-			}
-			if (flag)
-			{
-				method_4(new Class247(Class3190, _gh3Songlist));
-				RefreshSongListBox();
-			}
-		}
-
-		private void RefreshSongListBox()
-		{
-			_songListBox.Items.Clear();
-			_songListBox.Items.AddRange(_gh3Songlist.GetSongs());
-		}
-
-		private void LoadChart_EditorBtn_Click(object sender, EventArgs e)
-		{
-			string fileName;
-			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the game track file.", "Any Supported Game Track Formats|*.qbc;*.dbc;*_song.pak.xen;*.mid;*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc|GH3 Game Track file|*_song.pak.xen|GH standard Midi file|*.mid|dB standard or GH3CP Chart file|*.chart", true)).Equals(""))
-			{
-				QbcParser qbcParser;
-				try
-				{
-					if (fileName.EndsWith("_song.pak.xen"))
-					{
-						var str = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
-						using (var @class = new ZzPakNode2(fileName, false))
-						{
-							if (!@class.method_6("songs\\" + str + ".mid.qb"))
-							{
-								throw new Exception("MID.QB song file not found.");
-							}
-							qbcParser = new QbcParser(str, @class.ZzGetNode1("songs\\" + str + ".mid.qb"));
-							goto IL_DA;
-						}
-					}
-					if (fileName.EndsWith(".qbc"))
-					{
-						qbcParser = new QbcParser(fileName);
-					}
-					else if (fileName.EndsWith(".mid"))
-					{
-                        qbcParser = Midi2Chart.LoadMidiSong(fileName, _forceRb3MidConversionToolStripMenuItem.Checked);
-					}
-					else
-					{
-						qbcParser = new ChartParser(fileName).ConvertToQbc();
+            if (_songListBox.SelectedIndex >= 0 && (songData = new SongData(song.Name, false, false)).ShowDialog() ==
+                DialogResult.OK)
+            {
+                if (songData.Bool1)
+                {
+                    var @class = songData.method_1(Class3190, _dataFolder);
+                    method_4(@class);
+                    if (DialogResult.Yes == MessageBox.Show(
+                            "Do you wish to get the song properties from the game track? (Current properties will be overwritten | Mid files have no properties!)",
+                            "Tier Exporting", MessageBoxButtons.YesNo))
+                    {
+                        var noRhythmTrack = song.NoRhythmTrack;
+                        var useCoopNotetracks = song.UseCoopNotetracks;
+                        song.vmethod_0(@class.Class3620.Gh3Song0);
+                        song.NoRhythmTrack = noRhythmTrack;
+                        song.UseCoopNotetracks = useCoopNotetracks;
+                        method_4(new Class247(Class3190, _gh3Songlist));
                     }
-					IL_DA:;
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show("Error loading game track file!\n" + ex.Message);
-					return;
-				}
-				_songNameEditorLbl.Text = qbcParser.Gh3Song0.Title;
-				_selectedTrackEditorBox.Items.Clear();
-				foreach (var current in qbcParser.NoteList.Keys)
-				{
-					_selectedTrackEditorBox.Items.Add(current);
-				}
+                }
+                if (songData.Bool0)
+                {
+                    var class2 = songData.method_0(_dataFolder);
+                    method_4(class2);
+                    song.NoRhythmTrack = !class2.Bool0;
+                    song.UseCoopNotetracks = class2.Bool1;
+                    method_4(new Class247(Class3190, _gh3Songlist));
+                }
+            }
+        }
+
+        private void SongListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Shift && e.KeyCode == Keys.Delete && _songListBox.SelectedItems.Count != 0 && DialogResult.Yes ==
+                MessageBox.Show(
+                    "The selected songs will be deleted from the Songlist!\nAre you sure you wish to continue?",
+                    "Warning!", MessageBoxButtons.YesNo))
+            {
+                var array = _songListBox.imethod_3();
+                for (var i = 0; i < array.Length; i++)
+                {
+                    var gh3Song = (Gh3Song) array[i];
+                    if (gh3Song.Editable)
+                    {
+                        _songListBox.Items.Remove(gh3Song);
+                        foreach (var current in _gh3Songlist.method_1(gh3Song))
+                        {
+                            method_4(new ZzSetListUpdater(current, Class3190, _gh3Songlist));
+                        }
+                        method_4(new Class247(Class3190, _gh3Songlist));
+                    }
+                }
+            }
+        }
+
+        private void DeleteSong_MenuItem_Click(object sender, EventArgs e)
+        {
+            var array = _songListBox.imethod_3();
+            for (var i = 0; i < array.Length; i++)
+            {
+                var gH3Song = (Gh3Song) array[i];
+                if (gH3Song.Editable && DialogResult.Yes ==
+                    MessageBox.Show(
+                        gH3Song.Name.ToUpper() +
+                        " will be deleted from the Songlist!\nAre you sure you wish to continue?", "Warning!",
+                        MessageBoxButtons.YesNo))
+                {
+                    _songListBox.Items.Remove(gH3Song);
+                    foreach (var current in _gh3Songlist.method_1(gH3Song))
+                    {
+                        method_4(new ZzSetListUpdater(current, Class3190, _gh3Songlist));
+                    }
+                    method_4(new Class247(Class3190, _gh3Songlist));
+                }
+            }
+        }
+
+        private void NewSong_MenuItem_Click(object sender, EventArgs e)
+        {
+            var songData = new SongData(_gh3Songlist, _forceRb3MidConversionToolStripMenuItem.Checked);
+            if (songData.ShowDialog() == DialogResult.OK)
+            {
+                var gH3Song = _isAerosmith ? new GhaSong() : new Gh3Song();
+                if (songData.Bool1)
+                {
+                    var @class = songData.method_1(Class3190, _dataFolder);
+                    method_4(@class);
+                    gH3Song.vmethod_0(@class.Class3620.Gh3Song0);
+                }
+                if (songData.Bool0)
+                {
+                    var class2 = songData.method_0(_dataFolder);
+                    method_4(class2);
+                    gH3Song.Name = class2.String1;
+                    gH3Song.NoRhythmTrack = !class2.Bool0;
+                    gH3Song.UseCoopNotetracks = class2.Bool1;
+                    gH3Song.Version = 3;
+                    gH3Song.Leaderboard = true;
+                    gH3Song.Editable = true;
+                }
+                var songProperties = new SongProperties(gH3Song);
+                if (songProperties.ShowDialog() == DialogResult.OK)
+                {
+                    songProperties.GetSongWithChanges();
+                }
+                _gh3Songlist.Add(gH3Song.Name, gH3Song);
+                method_4(new Class247(Class3190, _gh3Songlist));
+                RefreshSongListBox();
+            }
+        }
+
+        private void RecoverSonglist_MenuItem_Click(object sender, EventArgs e)
+        {
+            var flag = false;
+            var files = Directory.GetFiles(_dataFolder + "music\\", "*.dat.xen", SearchOption.AllDirectories);
+            for (var i = 0; i < files.Length; i++)
+            {
+                var text = files[i];
+                var text2 = KeyGenerator.GetFileNameNoExt(text);
+                if (File.Exists(_dataFolder + "music\\" + text2 + ".fsb.xen") &&
+                    File.Exists(_dataFolder + "songs\\" + text2 + "_song.pak.xen") && !_gh3Songlist.method_3(text2) &&
+                    !QbSongClass1.smethod_4(text2) &&
+                    !Gh3Songlist.IgnoreSongs.Contains(QbSongClass1.AddKeyToDictionary(text2)))
+                {
+                    try
+                    {
+                        var gH3Song = _isAerosmith ? new GhaSong(text2) : new Gh3Song(text2);
+                        var list = new List<string>(new ZzQbSongObject(text).String1);
+                        gH3Song.NoRhythmTrack = !list.Contains(text2 + "_rhythm");
+                        gH3Song.UseCoopNotetracks = list.Contains(text2 + "_coop_song");
+                        _gh3Songlist.Add(text2, gH3Song);
+                        flag = true;
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            if (flag)
+            {
+                method_4(new Class247(Class3190, _gh3Songlist));
+                RefreshSongListBox();
+            }
+        }
+
+        private void RefreshSongListBox()
+        {
+            _songListBox.Items.Clear();
+            _songListBox.Items.AddRange(_gh3Songlist.GetSongs());
+        }
+
+        private void LoadChart_EditorBtn_Click(object sender, EventArgs e)
+        {
+            string fileName;
+            if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the game track file.",
+                "Any Supported Game Track Formats|*.qbc;*.dbc;*_song.pak.xen;*.mid;*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc|GH3 Game Track file|*_song.pak.xen|GH standard Midi file|*.mid|dB standard or GH3CP Chart file|*.chart",
+                true)).Equals(""))
+            {
+                QbcParser qbcParser;
+                try
+                {
+                    if (fileName.EndsWith("_song.pak.xen"))
+                    {
+                        var str = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
+                        using (var @class = new ZzPakNode2(fileName, false))
+                        {
+                            if (!@class.method_6("songs\\" + str + ".mid.qb"))
+                            {
+                                throw new Exception("MID.QB song file not found.");
+                            }
+                            qbcParser = new QbcParser(str, @class.ZzGetNode1("songs\\" + str + ".mid.qb"));
+                            goto IL_DA;
+                        }
+                    }
+                    if (fileName.EndsWith(".qbc"))
+                    {
+                        qbcParser = new QbcParser(fileName);
+                    }
+                    else if (fileName.EndsWith(".mid"))
+                    {
+                        qbcParser = Midi2Chart.LoadMidiSong(fileName, _forceRb3MidConversionToolStripMenuItem.Checked);
+                    }
+                    else
+                    {
+                        qbcParser = new ChartParser(fileName).ConvertToQbc();
+                    }
+                    IL_DA:
+                    ;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading game track file!\n" + ex.Message);
+                    return;
+                }
+                _songNameEditorLbl.Text = qbcParser.Gh3Song0.Title;
+                _selectedTrackEditorBox.Items.Clear();
+                foreach (var current in qbcParser.NoteList.Keys)
+                {
+                    _selectedTrackEditorBox.Items.Add(current);
+                }
                 _songEditorControl.LoadChart(qbcParser);
                 _selectedTrackEditorBox.SelectedIndex = 0;
-				_offsetEditorTxtBox.Text = string.Concat(qbcParser.Gh3Song0.GemOffset);
-			}
-		}
-
-		private void BeatSize_EditorTxtBox_TextChanged(object sender, EventArgs e)
-		{
-			int num;
-			try
-			{
-				num = Convert.ToInt32(_beatSizeEditorTxtBox.Text);
-			}
-			catch
-			{
-				return;
-			}
-			if (num != 0)
-			{
-				_songEditorControl.SetBeatSize(num);
-			}
-		}
-
-		private void Offset_EditorTxtBox_TextChanged(object sender, EventArgs e)
-		{
-			int int_;
-			try
-			{
-				int_ = Convert.ToInt32(_offsetEditorTxtBox.Text);
-			}
-			catch
-			{
-				return;
-			}
-			_songEditorControl.SetOffset(int_);
-		}
-
-		private void PlayPause_EditorBtn_Click(object sender, EventArgs e)
-		{
-			if (_songEditorControl.AudioLoaded())
-			{
-				if (_songEditorControl.GetAudioStatus() != AudioStatus.ShouldStartAudio)
-				{
-					_songEditorControl.DifferentStartPlaying();
-					return;
-				}
-				_songEditorControl.StartPlaying();
-			}
-		}
-
-		private void Stop_EditorBtn_Click(object sender, EventArgs e)
-		{
-			if (_songEditorControl.AudioLoaded())
-			{
-				_songEditorControl.StopAudio();
-			}
-		}
-
-		private void LoadAudio_EditorBtn_Click(object sender, EventArgs e)
-		{
-			string fileName;
-			if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Audio track file.", "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio File|*.mp3|Waveform Audio File|*.wav|Ogg Vorbis Audio File|*.ogg|FLAC Audio File|*.flac", true)).Equals(""))
-			{
-				_songEditorControl.LoadAudio(fileName);
+                _offsetEditorTxtBox.Text = string.Concat(qbcParser.Gh3Song0.GemOffset);
             }
-		}
+        }
 
-		private void SelectedTrack_EditorBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			_songEditorControl.Difficulty = (string)_selectedTrackEditorBox.SelectedItem;
-		}
+        private void BeatSize_EditorTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            int num;
+            try
+            {
+                num = Convert.ToInt32(_beatSizeEditorTxtBox.Text);
+            }
+            catch
+            {
+                return;
+            }
+            if (num != 0)
+            {
+                _songEditorControl.SetBeatSize(num);
+            }
+        }
 
-		private void method_1(object sender, EventArgs e)
-		{
-			_playTimeEditorLbl.Text = string.Concat((int)sender / 1000f);
-		}
+        private void Offset_EditorTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            int int_;
+            try
+            {
+                int_ = Convert.ToInt32(_offsetEditorTxtBox.Text);
+            }
+            catch
+            {
+                return;
+            }
+            _songEditorControl.SetOffset(int_);
+        }
 
-		private void GameMode_EditorBtn_Click(object sender, EventArgs e)
-		{
-			_songEditorControl.SetGamemodeView(_gameModeEditorBtn.Checked);
-		}
+        private void PlayPause_EditorBtn_Click(object sender, EventArgs e)
+        {
+            if (_songEditorControl.AudioLoaded())
+            {
+                if (_songEditorControl.GetAudioStatus() != AudioStatus.ShouldStartAudio)
+                {
+                    _songEditorControl.DifferentStartPlaying();
+                    return;
+                }
+                _songEditorControl.StartPlaying();
+            }
+        }
 
-		private void ToggleElements_EditorSplitBtn_ButtonClick(object sender, EventArgs e)
-		{
-			var arg_1D0 = _songEditorControl;
-			var expr_0C = _starViewEditorBtn;
-			arg_1D0.LoadStarpowerTextures = (expr_0C.Checked = !expr_0C.Checked);
-			var arg_3F0 = _songEditorControl;
-			var expr_2E = _hopoViewEditorBtn;
-			arg_3F0.LoadHopoTextures = (expr_2E.Checked = !expr_2E.Checked);
-			var arg610 = _songEditorControl;
-			var expr50 = _audioViewEditorBtn;
-			arg610.ShowAudioOnFretboard = (expr50.Checked = !expr50.Checked);
-		}
+        private void Stop_EditorBtn_Click(object sender, EventArgs e)
+        {
+            if (_songEditorControl.AudioLoaded())
+            {
+                _songEditorControl.StopAudio();
+            }
+        }
 
-		private void StarView_EditorBtn_Click(object sender, EventArgs e)
-		{
-			_songEditorControl.LoadStarpowerTextures = _starViewEditorBtn.Checked;
-		}
+        private void LoadAudio_EditorBtn_Click(object sender, EventArgs e)
+        {
+            string fileName;
+            if (!(fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Audio track file.",
+                "Any Supported Audio Formats|*.mp3;*.wav;*.ogg;*.flac|MPEG Layer-3 Audio File|*.mp3|Waveform Audio File|*.wav|Ogg Vorbis Audio File|*.ogg|FLAC Audio File|*.flac",
+                true)).Equals(""))
+            {
+                _songEditorControl.LoadAudio(fileName);
+            }
+        }
 
-		private void HopoView_EditorBtn_Click(object sender, EventArgs e)
-		{
-			_songEditorControl.LoadHopoTextures = _hopoViewEditorBtn.Checked;
-		}
+        private void SelectedTrack_EditorBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _songEditorControl.Difficulty = (string) _selectedTrackEditorBox.SelectedItem;
+        }
 
-		private void AudioView_EditorBtn_Click(object sender, EventArgs e)
-		{
-			_songEditorControl.ShowAudioOnFretboard = _audioViewEditorBtn.Checked;
-		}
+        private void method_1(object sender, EventArgs e)
+        {
+            _playTimeEditorLbl.Text = string.Concat((int) sender / 1000f);
+        }
 
-		private void method_2(object sender, EventArgs e)
-		{
-			_songEditorControl.SetFretboardAngle(_fretAngleEditorBar.method_4());
-		}
+        private void GameMode_EditorBtn_Click(object sender, EventArgs e)
+        {
+            _songEditorControl.SetGamemodeView(_gameModeEditorBtn.Checked);
+        }
 
-		private void method_3(object sender, EventArgs e)
-		{
-			if (_hyperSpeedEditorBar.method_4() == 0)
-			{
-				_songEditorControl.SetHyperspeed(1.0);
-				return;
-			}
-			if (_hyperSpeedEditorBar.method_4() < 0)
-			{
-				_songEditorControl.SetHyperspeed(1.0 - _hyperSpeedEditorBar.method_4() / (double)(_hyperSpeedEditorBar.method_1() * 2));
-				return;
-			}
-			if (_hyperSpeedEditorBar.method_4() > 0)
-			{
-				_songEditorControl.SetHyperspeed(1.0 + _hyperSpeedEditorBar.method_4() * _hyperSpeedEditorBar.method_4() / 10.0);
-			}
-		}
+        private void ToggleElements_EditorSplitBtn_ButtonClick(object sender, EventArgs e)
+        {
+            var arg_1D0 = _songEditorControl;
+            var expr_0C = _starViewEditorBtn;
+            arg_1D0.LoadStarpowerTextures = (expr_0C.Checked = !expr_0C.Checked);
+            var arg_3F0 = _songEditorControl;
+            var expr_2E = _hopoViewEditorBtn;
+            arg_3F0.LoadHopoTextures = (expr_2E.Checked = !expr_2E.Checked);
+            var arg610 = _songEditorControl;
+            var expr50 = _audioViewEditorBtn;
+            arg610.ShowAudioOnFretboard = (expr50.Checked = !expr50.Checked);
+        }
 
-		private void SaveChart_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (_songListBox.SelectedIndex >= 0)
-			{
-				var gh3Song = (Gh3Song)_songListBox.SelectedItem;
-                var fileLocation = KeyGenerator.OpenOrSaveFile("Select where to save the song chart.", "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
-				if (!fileLocation.Equals("") && File.Exists(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen"))
-				{
-					using (var @class = new ZzPakNode2(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen", false))
-					{
-						if (fileLocation.EndsWith(".qbc"))
-						{
-							new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb")).QbcCreator(fileLocation, gh3Song);
-						}
+        private void StarView_EditorBtn_Click(object sender, EventArgs e)
+        {
+            _songEditorControl.LoadStarpowerTextures = _starViewEditorBtn.Checked;
+        }
+
+        private void HopoView_EditorBtn_Click(object sender, EventArgs e)
+        {
+            _songEditorControl.LoadHopoTextures = _hopoViewEditorBtn.Checked;
+        }
+
+        private void AudioView_EditorBtn_Click(object sender, EventArgs e)
+        {
+            _songEditorControl.ShowAudioOnFretboard = _audioViewEditorBtn.Checked;
+        }
+
+        private void method_2(object sender, EventArgs e)
+        {
+            _songEditorControl.SetFretboardAngle(_fretAngleEditorBar.method_4());
+        }
+
+        private void method_3(object sender, EventArgs e)
+        {
+            if (_hyperSpeedEditorBar.method_4() == 0)
+            {
+                _songEditorControl.SetHyperspeed(1.0);
+                return;
+            }
+            if (_hyperSpeedEditorBar.method_4() < 0)
+            {
+                _songEditorControl.SetHyperspeed(1.0 - _hyperSpeedEditorBar.method_4() /
+                                                 (double) (_hyperSpeedEditorBar.method_1() * 2));
+                return;
+            }
+            if (_hyperSpeedEditorBar.method_4() > 0)
+            {
+                _songEditorControl.SetHyperspeed(1.0 + _hyperSpeedEditorBar.method_4() *
+                                                 _hyperSpeedEditorBar.method_4() / 10.0);
+            }
+        }
+
+        private void SaveChart_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (_songListBox.SelectedIndex >= 0)
+            {
+                var gh3Song = (Gh3Song) _songListBox.SelectedItem;
+                var fileLocation = KeyGenerator.OpenOrSaveFile("Select where to save the song chart.",
+                    "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
+                if (!fileLocation.Equals("") && File.Exists(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen"))
+                {
+                    using (var @class = new ZzPakNode2(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen", false))
+                    {
+                        if (fileLocation.EndsWith(".qbc"))
+                        {
+                            new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb"))
+                                .QbcCreator(fileLocation, gh3Song);
+                        }
                         else if (fileLocation.EndsWith(".chart"))
                         {
-                            new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb")).method_1().ChartCreator(fileLocation, gh3Song);
+                            new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb"))
+                                .method_1()
+                                .ChartCreator(fileLocation, gh3Song);
                         }
                         else
-						{
-							new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb")).method_1().DbcCreator(fileLocation, gh3Song);
-						}
-					}
-				}
-			}
-		}
+                        {
+                            new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb"))
+                                .method_1()
+                                .DbcCreator(fileLocation, gh3Song);
+                        }
+                    }
+                }
+            }
+        }
 
-		private void SaveTGH_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (_tierBox.SelectedIndex >= 0)
-			{
-				var text = KeyGenerator.OpenOrSaveFile("Select where to save the tier.", "GH3CP Tier File|*.tgh", false, _tierTitleTxtBox.Text);
-				if (text.Equals(""))
-				{
-					return;
-				}
-				TghManager @class;
-				if (DialogResult.Yes == MessageBox.Show("Do you wish to include all used song data (Music & Game Tracks)?", "Tier Exporting", MessageBoxButtons.YesNo))
-				{
-					@class = new TghManager(_gh3Songlist, (Gh3Tier)_tierBox.SelectedItem, text, _dataFolder);
-				}
-				else
-				{
-					@class = new TghManager(_gh3Songlist, (Gh3Tier)_tierBox.SelectedItem, text);
-				}
-				@class.method_1();
-			}
-		}
+        private void SaveTGH_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (_tierBox.SelectedIndex >= 0)
+            {
+                var text = KeyGenerator.OpenOrSaveFile("Select where to save the tier.", "GH3CP Tier File|*.tgh", false,
+                    _tierTitleTxtBox.Text);
+                if (text.Equals(""))
+                {
+                    return;
+                }
+                TghManager @class;
+                if (DialogResult.Yes == MessageBox.Show(
+                        "Do you wish to include all used song data (Music & Game Tracks)?", "Tier Exporting",
+                        MessageBoxButtons.YesNo))
+                {
+                    @class = new TghManager(_gh3Songlist, (Gh3Tier) _tierBox.SelectedItem, text, _dataFolder);
+                }
+                else
+                {
+                    @class = new TghManager(_gh3Songlist, (Gh3Tier) _tierBox.SelectedItem, text);
+                }
+                @class.method_1();
+            }
+        }
 
         private void exportSetlistAsChartsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void TGHSwitch_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (_tierBox.SelectedIndex >= 0)
-			{
-				var text = KeyGenerator.OpenFile("Select the tier to switch too.", "GH3CP Tier File|*.tgh");
-				if (text.Equals(""))
-				{
-					return;
-				}
-				var gH3Tier = new Gh3Tier();
-				try
-				{
-					TghManager tghManager;
-					if (DialogResult.Yes == MessageBox.Show("Do you wish to import all contained song data (Music & Game Tracks)? Data and properties will be overwritten!", "Tier Switching", MessageBoxButtons.YesNo))
-					{
-						tghManager = new TghManager(_gh3Songlist, gH3Tier, text, _dataFolder);
-					}
-					else
-					{
-						tghManager = new TghManager(_gh3Songlist, gH3Tier, text);
-					}
-					tghManager.method_0();
-					_tierBox.Items[_tierBox.SelectedIndex] = gH3Tier;
-					_tierBox.SelectedIndex = _tierBox.SelectedIndex;
-					_setlistApplyBtn.Enabled = true;
-					method_4(new Class247(Class3190, _gh3Songlist));
-					RefreshSongListBox();
-				}
-				catch
-				{
-					MessageBox.Show("File not compatible! Tier Switch failed.", "Tier Switching");
-				}
-			}
-		}
+        {
+            if (_tierBox.SelectedIndex >= 0)
+            {
+                var text = KeyGenerator.OpenFile("Select the tier to switch too.", "GH3CP Tier File|*.tgh");
+                if (text.Equals(""))
+                {
+                    return;
+                }
+                var gH3Tier = new Gh3Tier();
+                try
+                {
+                    TghManager tghManager;
+                    if (DialogResult.Yes == MessageBox.Show(
+                            "Do you wish to import all contained song data (Music & Game Tracks)? Data and properties will be overwritten!",
+                            "Tier Switching", MessageBoxButtons.YesNo))
+                    {
+                        tghManager = new TghManager(_gh3Songlist, gH3Tier, text, _dataFolder);
+                    }
+                    else
+                    {
+                        tghManager = new TghManager(_gh3Songlist, gH3Tier, text);
+                    }
+                    tghManager.method_0();
+                    _tierBox.Items[_tierBox.SelectedIndex] = gH3Tier;
+                    _tierBox.SelectedIndex = _tierBox.SelectedIndex;
+                    _setlistApplyBtn.Enabled = true;
+                    method_4(new Class247(Class3190, _gh3Songlist));
+                    RefreshSongListBox();
+                }
+                catch
+                {
+                    MessageBox.Show("File not compatible! Tier Switch failed.", "Tier Switching");
+                }
+            }
+        }
 
-		private void TGHImport_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
-			{
-				var text = KeyGenerator.OpenFile("Select the tier to import.", "GH3CP Tier File|*.tgh");
-				if (text.Equals(""))
-				{
-					return;
-				}
-				var gH3Tier = new Gh3Tier();
-				try
-				{
-					TghManager @class;
-					if (DialogResult.Yes == MessageBox.Show("Do you wish to import all contained song data (Music & Game Tracks) and properties? Data will be overwritten!", "Tier Importing", MessageBoxButtons.YesNo))
-					{
-						@class = new TghManager(_gh3Songlist, gH3Tier, text, _dataFolder);
-					}
-					else
-					{
-						@class = new TghManager(_gh3Songlist, gH3Tier, text);
-					}
-					@class.method_0();
-					_tierBox.Items.Add(gH3Tier);
-					_tierBox.SelectedIndex = _tierBox.Items.Count - 1;
-					_setlistApplyBtn.Enabled = true;
-					method_4(new Class247(Class3190, _gh3Songlist));
-					RefreshSongListBox();
-				}
-				catch
-				{
-					MessageBox.Show("File not compatible! Tier Import failed.", "Tier Importing");
-				}
-			}
-		}
+        private void TGHImport_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
+            {
+                var text = KeyGenerator.OpenFile("Select the tier to import.", "GH3CP Tier File|*.tgh");
+                if (text.Equals(""))
+                {
+                    return;
+                }
+                var gH3Tier = new Gh3Tier();
+                try
+                {
+                    TghManager @class;
+                    if (DialogResult.Yes == MessageBox.Show(
+                            "Do you wish to import all contained song data (Music & Game Tracks) and properties? Data will be overwritten!",
+                            "Tier Importing", MessageBoxButtons.YesNo))
+                    {
+                        @class = new TghManager(_gh3Songlist, gH3Tier, text, _dataFolder);
+                    }
+                    else
+                    {
+                        @class = new TghManager(_gh3Songlist, gH3Tier, text);
+                    }
+                    @class.method_0();
+                    _tierBox.Items.Add(gH3Tier);
+                    _tierBox.SelectedIndex = _tierBox.Items.Count - 1;
+                    _setlistApplyBtn.Enabled = true;
+                    method_4(new Class247(Class3190, _gh3Songlist));
+                    RefreshSongListBox();
+                }
+                catch
+                {
+                    MessageBox.Show("File not compatible! Tier Import failed.", "Tier Importing");
+                }
+            }
+        }
 
-		private void SaveSGH_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
-			{
-				var saveLocation = KeyGenerator.OpenOrSaveFile("Select where to save the setlist.", "GH3CP Setlist File|*.sgh", false, _setlistTitleTxtBox.Text);
-				if (saveLocation.Equals(""))
-				{
-					return;
-				}
-				SghManager sghManager;
-				if (DialogResult.Yes == MessageBox.Show("Do you wish to include all used song data (Music & Game Tracks)?", "Setlist Exporting", MessageBoxButtons.YesNo))
-				{
-					sghManager = new SghManager(_gh3Songlist, _gh3Songlist.Gh3SetlistList[_selectedSetlist], saveLocation, _dataFolder);
-				}
-				else
-				{
-					sghManager = new SghManager(_gh3Songlist, _gh3Songlist.Gh3SetlistList[_selectedSetlist], saveLocation);
-				}
-				sghManager.method_1();
-			}
-		}
+        private void SaveSGH_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
+            {
+                var saveLocation = KeyGenerator.OpenOrSaveFile("Select where to save the setlist.",
+                    "GH3CP Setlist File|*.sgh", false, _setlistTitleTxtBox.Text);
+                if (saveLocation.Equals(""))
+                {
+                    return;
+                }
+                SghManager sghManager;
+                if (DialogResult.Yes == MessageBox.Show(
+                        "Do you wish to include all used song data (Music & Game Tracks)?", "Setlist Exporting",
+                        MessageBoxButtons.YesNo))
+                {
+                    sghManager = new SghManager(_gh3Songlist, _gh3Songlist.Gh3SetlistList[_selectedSetlist],
+                        saveLocation, _dataFolder);
+                }
+                else
+                {
+                    sghManager = new SghManager(_gh3Songlist, _gh3Songlist.Gh3SetlistList[_selectedSetlist],
+                        saveLocation);
+                }
+                sghManager.method_1();
+            }
+        }
 
         private void exportSetlistAsChartsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -1104,14 +1154,17 @@ namespace GHNamespace8
                 {
                     return;
                 }
-                foreach(var tier in _gh3Songlist.Gh3SetlistList[_selectedSetlist].Tiers)
+                foreach (var tier in _gh3Songlist.Gh3SetlistList[_selectedSetlist].Tiers)
                 {
                     foreach (var gh3Song in tier.Songs)
                     {
                         var fileLocation = saveLocation + "\\" + gh3Song.Name + ".chart";
-                        using (var @class = new ZzPakNode2(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen", false))
+                        using (var @class = new ZzPakNode2(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen",
+                            false))
                         {
-                            new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb")).method_1().ChartCreator(fileLocation, gh3Song);
+                            new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb"))
+                                .method_1()
+                                .ChartCreator(fileLocation, gh3Song);
                         }
                     }
                 }
@@ -1119,812 +1172,859 @@ namespace GHNamespace8
         }
 
         private void SGHSwitch_MenuItem_Click(object sender, EventArgs e)
-		{
-		    if (!_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist)) return;
-		    var text = KeyGenerator.OpenFile("Select the setlist to switch to.", "GH3CP Setlist File|*.sgh");
-		    if (text.Equals(""))
-		    {
-		        return;
-		    }
-		    Console.WriteLine("Found file: " + text);
-		    var gH3Setlist = new Gh3Setlist();
-		    try
-		    {
-		        var sghManager = DialogResult.Yes == MessageBox.Show("Do you wish to import all contained song data (Music & Game Tracks)? Data and properties will be overwritten!", "Setlist Switching", MessageBoxButtons.YesNo)
-		            ? new SghManager(_gh3Songlist, gH3Setlist, text, _dataFolder)
-		            : new SghManager(_gh3Songlist, gH3Setlist, text);
-		        sghManager.ImportSGH();
-		        _tierBox.Items.Clear();
-		        _tierBox.Items.AddRange(gH3Setlist.Tiers.ToArray());
-		        if (_tierBox.Items.Count != 0)
-		        {
-		            _tierBox.SelectedIndex = 0;
-		        }
-		        else
-		        {
-		            method_23();
-		        }
-		        _setlistTitleTxtBox.Text = KeyGenerator.GetFileName(text, 1);
-		        _setlistApplyBtn.Enabled = true;
-		        method_4(new Class247(Class3190, _gh3Songlist));
-		        RefreshSongListBox();
-		    }
-		    catch (Exception exception)
-		    {
-		        MessageBox.Show("File not compatible! Setlist Switch failed.\n" + exception, "Setlist Switching");
-		    }
-		}
+        {
+            if (!_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist)) return;
+            var text = KeyGenerator.OpenFile("Select the setlist to switch to.", "GH3CP Setlist File|*.sgh");
+            if (text.Equals(""))
+            {
+                return;
+            }
+            Console.WriteLine("Found file: " + text);
+            var gH3Setlist = new Gh3Setlist();
+            try
+            {
+                var sghManager = DialogResult.Yes ==
+                                 MessageBox.Show(
+                                     "Do you wish to import all contained song data (Music & Game Tracks)? Data and properties will be overwritten!",
+                                     "Setlist Switching", MessageBoxButtons.YesNo)
+                    ? new SghManager(_gh3Songlist, gH3Setlist, text, _dataFolder)
+                    : new SghManager(_gh3Songlist, gH3Setlist, text);
+                sghManager.ImportSGH();
+                _tierBox.Items.Clear();
+                _tierBox.Items.AddRange(gH3Setlist.Tiers.ToArray());
+                if (_tierBox.Items.Count != 0)
+                {
+                    _tierBox.SelectedIndex = 0;
+                }
+                else
+                {
+                    method_23();
+                }
+                _setlistTitleTxtBox.Text = KeyGenerator.GetFileName(text, 1);
+                _setlistApplyBtn.Enabled = true;
+                method_4(new Class247(Class3190, _gh3Songlist));
+                RefreshSongListBox();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("File not compatible! Setlist Switch failed.\n" + exception, "Setlist Switching");
+            }
+        }
 
-		private static void LegacyImporter_MenuItem_Click(object sender, EventArgs e)
-		{
-		}
+        private static void LegacyImporter_MenuItem_Click(object sender, EventArgs e)
+        {
+        }
 
-		private void MassImporter_MenuItem_Click(object sender, EventArgs e)
-		{
-		    var folderBrowserDialog = new FolderBrowserDialog
-		    {
-		        ShowNewFolderButton = false,
-		        Description = "Please select a folder that contains the folder structure for mass song importing.",
-		        RootFolder = Environment.SpecialFolder.DesktopDirectory
-		    };
-		    if (folderBrowserDialog.ShowDialog() != DialogResult.OK)
-			{
-				return;
-			}
-			var directories = Directory.GetDirectories(folderBrowserDialog.SelectedPath, "*", SearchOption.TopDirectoryOnly);
-			var list = new List<string>(directories);
-			var array = directories;
-			foreach (var file in array)
-			{
-			    try
-			    {
-			        var list2 = KeyGenerator.CheckFile(file, "*.mid;*.chart;*.qbc;*.dbc", true);
-			        var list3 = KeyGenerator.CheckFile(file, "*.wav;*.mp3;*.ogg", true);
-			        var files = Directory.GetFiles(file, "*.dat", SearchOption.TopDirectoryOnly);
-			        if (list2.Count == 0 || (list3.Count == 0 && files.Length == 0)) continue;
-			        var gH3Song = _isAerosmith ? new GhaSong() : new Gh3Song();
-			        gH3Song.Name = KeyGenerator.GetFileName(file).ToLower().Replace(" ", "").Replace('.', '_');
-			        if (gH3Song.Name.Length > 30)
-			        {
-			            gH3Song.Name = gH3Song.Name.Remove(30);
-			        }
-			        if (QbSongClass1.smethod_4(gH3Song.Name) || _gh3Songlist.method_3(gH3Song.Name))
-			        {
-			            var num = 2;
-			            while (QbSongClass1.smethod_4(gH3Song.Name + num) || _gh3Songlist.method_3(gH3Song.Name + num))
-			            {
-			                num++;
-			            }
-			            var expr176 = gH3Song;
-			            expr176.Name += num;
-			        }
-			        QbcParser qbcParser = null;
-			        foreach (var current in list2)
-			        {
-			            try
-			            {
-			                if (current.EndsWith(".qbc"))
-			                {
-			                    qbcParser = new QbcParser(current);
-			                }
-			                else if (current.EndsWith(".mid"))
-			                {
-			                    qbcParser = Midi2Chart.LoadMidiSong(current, _forceRb3MidConversionToolStripMenuItem.Checked);
-			                }
-			                else
-			                {
-			                    qbcParser = new ChartParser(current).ConvertToQbc();
-			                }
-			                break;
-			            }
-			            catch
-			            {
-			            }
-			        }
-			        if (qbcParser == null) continue;
-			        ZzQbSongObject class2 = null;
-			        if (files.Length != 0)
-			        {
-			            var array2 = files;
-			            foreach (var text2 in array2)
-			            {
-			                try
-			                {
-			                    if (!File.Exists(text2.Replace(".dat.xen", ".fsb.xen"))) continue;
-			                    class2 = new ZzQbSongObject(text2);
-			                    if ((int)new FileInfo(text2.Replace(".dat.xen", ".fsb.xen")).Length == class2.Int0)
-			                    {
-			                        break;
-			                    }
-			                }
-			                catch
-			                {
-			                }
-			            }
-			        }
-			        if (class2 == null && list3.Count == 0) continue;
-			        var songData = new SongData(gH3Song.Name, qbcParser, class2, list3.ToArray());
-			        var class3 = songData.method_1(Class3190, _dataFolder);
-			        var class4 = songData.method_0(_dataFolder);
-			        gH3Song.vmethod_0(class3.Class3620.Gh3Song0);
-			        if (File.Exists(file + "\\song.ini"))
-			        {
-			            var array3 = File.ReadAllLines(file + "\\song.ini");
-			            foreach (var text3 in array3)
-			            {
-			                if (text3.StartsWith("name"))
-			                {
-			                    gH3Song.Title = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
-			                }
-			                else if (text3.StartsWith("artist"))
-			                {
-			                    gH3Song.Artist = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
-			                }
-			            }
-			        }
-			        gH3Song.NoRhythmTrack = !class4.Bool0;
-			        gH3Song.UseCoopNotetracks = class4.Bool1;
-			        gH3Song.Version = 3;
-			        gH3Song.Leaderboard = true;
-			        gH3Song.Editable = true;
-			        method_4(class3);
-			        method_4(class4);
-			        _gh3Songlist.Add(gH3Song.Name, gH3Song);
-			        list.Remove(file);
-			    }
-			    catch
-			    {
-			    }
-			}
-			method_4(new Class247(Class3190, _gh3Songlist));
-			RefreshSongListBox();
-		    if (list.Count == 0) return;
-		    var text4 = list.Aggregate("The follwing songs (by folder name) failed:", (current, current2) => current + "\n" + KeyGenerator.GetFileName(current2));
-		    MessageBox.Show(text4, "Error!");
-		}
+        private void MassImporter_MenuItem_Click(object sender, EventArgs e)
+        {
+            var folderBrowserDialog = new FolderBrowserDialog
+            {
+                ShowNewFolderButton = false,
+                Description = "Please select a folder that contains the folder structure for mass song importing.",
+                RootFolder = Environment.SpecialFolder.DesktopDirectory
+            };
+            if (folderBrowserDialog.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+            var directories = Directory.GetDirectories(folderBrowserDialog.SelectedPath, "*",
+                SearchOption.TopDirectoryOnly);
+            var list = new List<string>(directories);
+            var array = directories;
+            foreach (var file in array)
+            {
+                try
+                {
+                    var list2 = KeyGenerator.CheckFile(file, "*.mid;*.chart;*.qbc;*.dbc", true);
+                    var list3 = KeyGenerator.CheckFile(file, "*.wav;*.mp3;*.ogg", true);
+                    var files = Directory.GetFiles(file, "*.dat", SearchOption.TopDirectoryOnly);
+                    if (list2.Count == 0 || (list3.Count == 0 && files.Length == 0)) continue;
+                    var gH3Song = _isAerosmith ? new GhaSong() : new Gh3Song();
+                    gH3Song.Name = KeyGenerator.GetFileName(file).ToLower().Replace(" ", "").Replace('.', '_');
+                    if (gH3Song.Name.Length > 30)
+                    {
+                        gH3Song.Name = gH3Song.Name.Remove(30);
+                    }
+                    if (QbSongClass1.smethod_4(gH3Song.Name) || _gh3Songlist.method_3(gH3Song.Name))
+                    {
+                        var num = 2;
+                        while (QbSongClass1.smethod_4(gH3Song.Name + num) || _gh3Songlist.method_3(gH3Song.Name + num))
+                        {
+                            num++;
+                        }
+                        var expr176 = gH3Song;
+                        expr176.Name += num;
+                    }
+                    QbcParser qbcParser = null;
+                    foreach (var current in list2)
+                    {
+                        try
+                        {
+                            if (current.EndsWith(".qbc"))
+                            {
+                                qbcParser = new QbcParser(current);
+                            }
+                            else if (current.EndsWith(".mid"))
+                            {
+                                qbcParser =
+                                    Midi2Chart.LoadMidiSong(current, _forceRb3MidConversionToolStripMenuItem.Checked);
+                            }
+                            else
+                            {
+                                qbcParser = new ChartParser(current).ConvertToQbc();
+                            }
+                            break;
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    if (qbcParser == null) continue;
+                    ZzQbSongObject class2 = null;
+                    if (files.Length != 0)
+                    {
+                        var array2 = files;
+                        foreach (var text2 in array2)
+                        {
+                            try
+                            {
+                                if (!File.Exists(text2.Replace(".dat.xen", ".fsb.xen"))) continue;
+                                class2 = new ZzQbSongObject(text2);
+                                if ((int) new FileInfo(text2.Replace(".dat.xen", ".fsb.xen")).Length == class2.Int0)
+                                {
+                                    break;
+                                }
+                            }
+                            catch
+                            {
+                            }
+                        }
+                    }
+                    if (class2 == null && list3.Count == 0) continue;
+                    var songData = new SongData(gH3Song.Name, qbcParser, class2, list3.ToArray());
+                    var class3 = songData.method_1(Class3190, _dataFolder);
+                    var class4 = songData.method_0(_dataFolder);
+                    gH3Song.vmethod_0(class3.Class3620.Gh3Song0);
+                    if (File.Exists(file + "\\song.ini"))
+                    {
+                        var array3 = File.ReadAllLines(file + "\\song.ini");
+                        foreach (var text3 in array3)
+                        {
+                            if (text3.StartsWith("name"))
+                            {
+                                gH3Song.Title = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
+                            }
+                            else if (text3.StartsWith("artist"))
+                            {
+                                gH3Song.Artist = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
+                            }
+                        }
+                    }
+                    gH3Song.NoRhythmTrack = !class4.Bool0;
+                    gH3Song.UseCoopNotetracks = class4.Bool1;
+                    gH3Song.Version = 3;
+                    gH3Song.Leaderboard = true;
+                    gH3Song.Editable = true;
+                    method_4(class3);
+                    method_4(class4);
+                    _gh3Songlist.Add(gH3Song.Name, gH3Song);
+                    list.Remove(file);
+                }
+                catch
+                {
+                }
+            }
+            method_4(new Class247(Class3190, _gh3Songlist));
+            RefreshSongListBox();
+            if (list.Count == 0) return;
+            var text4 = list.Aggregate("The follwing songs (by folder name) failed:",
+                (current, current2) => current + "\n" + KeyGenerator.GetFileName(current2));
+            MessageBox.Show(text4, "Error!");
+        }
 
-		public MainMenu()
-		{
+        public MainMenu()
+        {
             //Creates GUI
-			InitializeComponent();
+            InitializeComponent();
             LoadMore();
-			AbstractBaseTreeNode1.Bool0 = false;
-			try
-			{
-				string text = null;
-				string text2 = null;
-				using (var streamReader = new StreamReader(new WebClient().OpenRead("http://sites.google.com/site/sigmaincproduction/ghtcp_latest.txt")))
-				{
-					string text3;
-					while ((text3 = streamReader.ReadLine()) != null)
-					{
-						if (text3.StartsWith("version: "))
-						{
-							text = text3.Replace("version: ", "");
-						}
-						else if (text3.StartsWith("link: "))
-						{
-							text2 = text3.Replace("link: ", "");
-						}
-					}
-				}
-				if (text != null && text2 != null && Assembly.GetExecutingAssembly().GetName().Version.CompareTo(new Version(text)) < 0 && DialogResult.Yes == MessageBox.Show("Would you like to download the latest version?", "GHTCP: Version " + text + " is available!", MessageBoxButtons.YesNo))
-				{
-					Process.Start(text2);
-				}
-			}
-		    catch
-		    {
-		        // ignored
-		    }
-		    if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero III\\") != null)
-			{
-				_gameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero III\\";
-				if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\") != null && MessageBox.Show("Do you wish to load GH3 Aerosmith?", "GH3 Aerosmith found!", MessageBoxButtons.YesNo) == DialogResult.Yes)
-				{
-					_gameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\";
-					_isAerosmith = true;
-				}
-			}
-			else if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Aspyr\\Guitar Hero III\\") != null)
-			{
-				_gameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero III\\";
-				if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\") != null && MessageBox.Show("Do you wish to load GH3 Aerosmith?", "GH3 Aerosmith found!", MessageBoxButtons.YesNo) == DialogResult.Yes)
-				{
-					_gameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\";
-					_isAerosmith = true;
-				}
-			}
-			else if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\") != null)
-			{
-				_gameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\";
-				_isAerosmith = true;
-			}
-			else if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\") != null)
-			{
-				_gameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\";
-				_isAerosmith = true;
-			}
-			else
-			{
-				MessageBox.Show("Guitar Hero III is not installed properly! Please re/install and run again.");
-				formClosing();
-			}
-			_ghtcpRegistry = (_isAerosmith ? "SOFTWARE\\SigmaInc\\GHTCPAero\\" : "SOFTWARE\\SigmaInc\\GHTCP\\");
-			_backupName = (_isAerosmith ? "backupAero\\" : "backup\\");
-			ZzQbScriptZipperClass.GameName = (_isAerosmith ? "GHA" : "GH3");
-			if (_isAerosmith)
-			{
-				Text += " - Aerosmith";
-				_tierIconDropBox.Items.AddRange(new[]
-				{
-					"setlist_icon_01",
-					"setlist_icon_02",
-					"setlist_icon_03",
-					"setlist_icon_04",
-					"setlist_icon_05",
-					"setlist_icon_06"
-				});
-				_tierStageDropBox.Items.AddRange(new[]
-				{
-					"load_z_hof",
-					"load_z_nine_lives",
-					"load_z_jpplay",
-					"load_z_nipmuc",
-					"load_z_maxskc",
-					"load_z_fenway",
-					"viewer",
-					"load_z_credits",
-					"load_z_viewer"
-				});
-				_tierEncorep2CheckBox.Text = "P1 Aerosmith Encore";
-			}
-			else
-			{
-				Text += " - Legends of Rock";
-				_tierIconDropBox.Items.AddRange(new[]
-				{
-					"setlist_icon_backyard",
-					"setlist_icon_bar",
-					"setlist_icon_videoshoot",
-					"setlist_icon_odeon",
-					"setlist_icon_prison",
-					"setlist_icon_desert",
-					"setlist_icon_megadome",
-					"setlist_icon_hell"
-				});
-				_tierStageDropBox.Items.AddRange(new[]
-				{
-					"load_z_artdeco",
-					"load_z_budokan",
-					"load_z_dive",
-					"load_z_hell",
-					"load_z_party",
-					"load_z_prison",
-					"load_z_video",
-					"load_z_wikker",
-					"load_z_soundcheck",
-					"viewer",
-					"load_z_credits",
-					"load_z_viewer"
-				});
-			}
-			if (method_9() == null)
-			{
-				throw new Exception("GH3 Language setting missing from registry!");
-			}
-			QbSongClass1.smethod_0();
-			_appDirectory = Directory.GetCurrentDirectory() + "\\";
-			method_12(false);
-			var registryKey = Registry.LocalMachine.CreateSubKey(_ghtcpRegistry);
-			method_10((string)registryKey.GetValue("Priority"));
-			if (!new List<string>(new[]
-			{
-				"high",
-				"above",
-				"normal",
-				"below"
-			}).Contains(_priority))
-			{
-				method_10("normal");
-			}
-			var list = new List<string>(new[]
-			{
-				(string)registryKey.GetValue("English"),
-				(string)registryKey.GetValue("French"),
-				(string)registryKey.GetValue("Italian"),
-				(string)registryKey.GetValue("Spanish"),
-				(string)registryKey.GetValue("German"),
-				(string)registryKey.GetValue("Korean")
-			});
-			if (list.Contains(null))
-			{
-				_languageList = new[]
-				{
-					"Guitar Hero III (English)",
-					"Guitar Hero III (French)",
-					"Guitar Hero III (Italian)",
-					"Guitar Hero III (Spanish)",
-					"Guitar Hero III (German)",
-					"Guitar Hero III (Korean)"
-				};
-			}
-			else
-			{
-				_languageList = list.ToArray();
-			}
-			InitializeLanguageList();
-			_silentGuitarMenuItem.Checked = (Class248.Bool2 = ((((int?)registryKey.GetValue("SilentGuitar")) ?? 0) != 0));
-			_minToTrayMenuItem.Checked = ((((int?)registryKey.GetValue("MinimizeToTray")) ?? 0) != 0);
-			_silentGuitarMenuItem.Checked = (Class248.Bool3 = ((((int?)registryKey.GetValue("ForceConversion")) ?? 0) != 0));
-			if (!Directory.Exists(_appDirectory + _backupName))
-			{
-				Directory.CreateDirectory(_appDirectory + _backupName);
-			}
-			if (!Directory.Exists(_appDirectory + _backupName + "originals"))
-			{
-				Directory.CreateDirectory(_appDirectory + _backupName + "originals");
-			}
-			if (!Directory.Exists(_appDirectory + _backupName + "lastedited"))
-			{
-				Directory.CreateDirectory(_appDirectory + _backupName + "lastedited");
-			}
-			if (!File.Exists(_appDirectory + "lame_enc.dll"))
-			{
-				try
-				{
-					ZipManager.smethod_8(new WebClient().OpenRead("http://spaghetticode.org/lame/libmp3lame-win-3.97.zip"), _appDirectory + "lame_enc.dll", "libmp3lame-3.97/lame_enc.dll");
-				}
-				catch
-				{
-					Process.Start("http://lame.buanzo.com.ar/");
-					MessageBox.Show("Please download the file under \"ZIP OPTION:\" and select it: libmp3lame-win-#.#.zip", "MP3 Encoding Library Missing!");
-					try
-					{
-						var text4 = KeyGenerator.OpenOrSaveFile("Locate MP3 Encoding Library (file will be deleted after!)", "MP3 Lame Zip|*.zip", true);
-						var text5 = KeyGenerator.GetFileNameNoExt(text4);
-						ZipManager.smethod_4(text4, _appDirectory + "lame_enc.dll", "libmp3lame" + text5.Substring(text5.LastIndexOf('-')) + "/lame_enc.dll");
-						try
-						{
-							KeyGenerator.smethod_20(text4);
-						}
-						catch
-						{
-						}
-					}
-					catch
-					{
-						MessageBox.Show("MP3 Encoding Library could not be extracted, Audio conversion will fail without it!", "MP3 Encoding Library Missing!");
-					}
-				}
-			}
-		}
-
-		private void TexExplorer_MenuItem_Click(object sender, EventArgs e)
-		{
-			new TexExplorer(_dataFolder).ShowDialog();
-		}
-
-		private void SaveFileControl_MenuItem_Click(object sender, EventArgs e)
-		{
-			var a = KeyGenerator.OpenOrSaveFile("Select Save File to Import. Current Save File will be Overwritten!", "GH3 Save File|s000.d", true);
-			if (a != "")
-			{
-				var @class = new Class324(a);
-				@class.method_0(new Class324(872398018)).List0[0].Int0[1] = -1;
-				var text = "Progress" + (new[]
-				{
-					"A",
-					"B",
-					"C",
-					"D",
-					"E"
-				})[_list0.IndexOf(KeyGenerator.GetFileNameNoExt(Class3190.String0).Remove(0, 2))];
-				text = string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "\\Aspyr\\Guitar Hero III\\Save\\", text, "}{", text);
-				if (!Directory.Exists(text))
-				{
-					Directory.CreateDirectory(text);
-				}
-				@class.method_1(text);
-			}
-		}
-
-		private void method_4(QbEditor class2450)
-		{
-			foreach (QbEditor @class in _actionRequestsListBox.Items)
-			{
-				if (@class.Equals(class2450))
-				{
-					_actionRequestsListBox.Items.Remove(@class);
-					break;
-				}
-			}
-			_actionRequestsListBox.Items.Add(class2450);
-		}
-
-		private void ClearActions_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (_actionRequestsListBox.Items.Count != 0 && DialogResult.Yes == MessageBox.Show("Are You sure you want to delete all Actions?", "Warning!", MessageBoxButtons.YesNo))
-			{
-				_actionRequestsListBox.Items.Clear();
-				GC.Collect();
-			}
-		}
-
-		private void ExecuteActions_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (_actionRequestsListBox.Items.Count != 0)
-			{
-				if (DialogResult.Yes == MessageBox.Show("Are You sure you want to Execute Actions?", "Warning!", MessageBoxButtons.YesNo))
-				{
-					var list = new List<QbEditor>();
-					foreach (QbEditor item in _actionRequestsListBox.Items)
-					{
-						list.Add(item);
-					}
-					_actionsWindow0 = new ActionsWindow(list);
-					_actionsWindow0.method_0(method_5);
-					_actionsWindow0.Show();
-					_actionsWindow0.method_1();
-				}
-			}
-		}
-
-		private void method_5(object sender, EventArgs e)
-		{
-			if ((!_actionsWindow0.Bool0 || DialogResult.Yes == MessageBox.Show("Some of the action requests failed!\nDo you still wish to rebuild the game settings?", "Warning!", MessageBoxButtons.YesNo)) && method_18())
-			{
-				_actionsWindow0 = null;
-				_actionRequestsListBox.Items.Clear();
-				GC.Collect();
-			}
-		}
-
-		private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			if (_actionRequestsListBox.Items.Count != 0 && DialogResult.Yes != MessageBox.Show("Any actions that are not executed will be erased! Are you sure you wish to quit?", "Warning!", MessageBoxButtons.YesNo))
-			{
-				e.Cancel = true;
-				return;
-			}
-			formClosing();
-		}
-
-		public void MainMenu_SizeChanged(object sender, EventArgs e)
-		{
-			Console.WriteLine(WindowState);
-			if (WindowState == FormWindowState.Minimized && _minToTrayMenuItem.Checked)
-			{
-				Hide();
-				return;
-			}
-			if (!Visible)
-			{
-				BringToFront();
-				base.Show();
-				Focus();
-				WindowState = FormWindowState.Normal;
-			}
-		}
-
-		[DllImport("User32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-		public static extern bool SetForegroundWindow(HandleRef handleRef0);
-
-		private void notifyIcon_0_MouseDown(object sender, MouseEventArgs e)
-		{
-			if (e.Clicks == 2)
-			{
-				_leftClickMenu.Hide();
-				_rightClickMenu.Hide();
-				if (e.Button == MouseButtons.Left)
-				{
-					BringToFront();
-					base.Show();
-					Focus();
-					WindowState = FormWindowState.Normal;
-					return;
-				}
-				if (e.Button != MouseButtons.Right)
-				{
-					return;
-				}
-				try
-				{
-					var registryKey = Registry.LocalMachine.OpenSubKey(_gameRegistry);
-					var process = new Process();
-					process.StartInfo = new ProcessStartInfo((string)registryKey.GetValue("Path") + (_isAerosmith ? "Guitar Hero Aerosmith.exe" : "GH3.exe"));
-					process.Start();
-					if (_priority != "normal")
-					{
-						process.PriorityClass = ((_priority == "high") ? ProcessPriorityClass.High : ((_priority == "above") ? ProcessPriorityClass.AboveNormal : ((_priority == "below") ? ProcessPriorityClass.BelowNormal : ProcessPriorityClass.Normal)));
-					}
-					return;
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show(ex.Message);
-					return;
-				}
-			}
-			SetForegroundWindow(new HandleRef(this, Handle));
-			if (e.Button == MouseButtons.Left)
-			{
-				_leftClickMenu.Show(this, PointToClient(Cursor.Position), ToolStripDropDownDirection.AboveLeft);
-				return;
-			}
-			if (e.Button == MouseButtons.Right)
-			{
-				_rightClickMenu.Show(this, PointToClient(Cursor.Position), ToolStripDropDownDirection.AboveRight);
-			}
-		}
-
-		private void formClosing()
-		{
+            AbstractBaseTreeNode1.Bool0 = false;
+            try
+            {
+                string text = null;
+                string text2 = null;
+                using (var streamReader = new StreamReader(
+                    new WebClient().OpenRead("http://sites.google.com/site/sigmaincproduction/ghtcp_latest.txt")))
+                {
+                    string text3;
+                    while ((text3 = streamReader.ReadLine()) != null)
+                    {
+                        if (text3.StartsWith("version: "))
+                        {
+                            text = text3.Replace("version: ", "");
+                        }
+                        else if (text3.StartsWith("link: "))
+                        {
+                            text2 = text3.Replace("link: ", "");
+                        }
+                    }
+                }
+                if (text != null && text2 != null &&
+                    Assembly.GetExecutingAssembly().GetName().Version.CompareTo(new Version(text)) < 0 &&
+                    DialogResult.Yes == MessageBox.Show("Would you like to download the latest version?",
+                        "GHTCP: Version " + text + " is available!", MessageBoxButtons.YesNo))
+                {
+                    Process.Start(text2);
+                }
+            }
+            catch
+            {
+                // ignored
+            }
+            if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero III\\") != null)
+            {
+                _gameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero III\\";
+                if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\") != null &&
+                    MessageBox.Show("Do you wish to load GH3 Aerosmith?", "GH3 Aerosmith found!",
+                        MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    _gameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\";
+                    _isAerosmith = true;
+                }
+            }
+            else if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Aspyr\\Guitar Hero III\\") != null)
+            {
+                _gameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero III\\";
+                if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\") != null &&
+                    MessageBox.Show("Do you wish to load GH3 Aerosmith?", "GH3 Aerosmith found!",
+                        MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    _gameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\";
+                    _isAerosmith = true;
+                }
+            }
+            else if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\") != null)
+            {
+                _gameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\";
+                _isAerosmith = true;
+            }
+            else if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\") != null)
+            {
+                _gameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\";
+                _isAerosmith = true;
+            }
+            else
+            {
+                MessageBox.Show("Guitar Hero III is not installed properly! Please re/install and run again.");
+                formClosing();
+            }
+            _ghtcpRegistry = (_isAerosmith ? "SOFTWARE\\SigmaInc\\GHTCPAero\\" : "SOFTWARE\\SigmaInc\\GHTCP\\");
+            _backupName = (_isAerosmith ? "backupAero\\" : "backup\\");
+            ZzQbScriptZipperClass.GameName = (_isAerosmith ? "GHA" : "GH3");
+            if (_isAerosmith)
+            {
+                Text += " - Aerosmith";
+                _tierIconDropBox.Items.AddRange(new[]
+                {
+                    "setlist_icon_01",
+                    "setlist_icon_02",
+                    "setlist_icon_03",
+                    "setlist_icon_04",
+                    "setlist_icon_05",
+                    "setlist_icon_06"
+                });
+                _tierStageDropBox.Items.AddRange(new[]
+                {
+                    "load_z_hof",
+                    "load_z_nine_lives",
+                    "load_z_jpplay",
+                    "load_z_nipmuc",
+                    "load_z_maxskc",
+                    "load_z_fenway",
+                    "viewer",
+                    "load_z_credits",
+                    "load_z_viewer"
+                });
+                _tierEncorep2CheckBox.Text = "P1 Aerosmith Encore";
+            }
+            else
+            {
+                Text += " - Legends of Rock";
+                _tierIconDropBox.Items.AddRange(new[]
+                {
+                    "setlist_icon_backyard",
+                    "setlist_icon_bar",
+                    "setlist_icon_videoshoot",
+                    "setlist_icon_odeon",
+                    "setlist_icon_prison",
+                    "setlist_icon_desert",
+                    "setlist_icon_megadome",
+                    "setlist_icon_hell"
+                });
+                _tierStageDropBox.Items.AddRange(new[]
+                {
+                    "load_z_artdeco",
+                    "load_z_budokan",
+                    "load_z_dive",
+                    "load_z_hell",
+                    "load_z_party",
+                    "load_z_prison",
+                    "load_z_video",
+                    "load_z_wikker",
+                    "load_z_soundcheck",
+                    "viewer",
+                    "load_z_credits",
+                    "load_z_viewer"
+                });
+            }
+            if (method_9() == null)
+            {
+                throw new Exception("GH3 Language setting missing from registry!");
+            }
+            QbSongClass1.smethod_0();
+            _appDirectory = Directory.GetCurrentDirectory() + "\\";
+            method_12(false);
             var registryKey = Registry.LocalMachine.CreateSubKey(_ghtcpRegistry);
-			registryKey.SetValue("Priority", _priority);
-			registryKey.SetValue("SilentGuitar", Class248.Bool2 ? 1 : 0);
-			registryKey.SetValue("MinimizeToTray", _minToTrayMenuItem.Checked ? 1 : 0);
-			registryKey.SetValue("ForceConversion", Class248.Bool3 ? 1 : 0);
-			method_15();
-			_songEditorControl.Dispose();
+            method_10((string) registryKey.GetValue("Priority"));
+            if (!new List<string>(new[]
+            {
+                "high",
+                "above",
+                "normal",
+                "below"
+            }).Contains(_priority))
+            {
+                method_10("normal");
+            }
+            var list = new List<string>(new[]
+            {
+                (string) registryKey.GetValue("English"),
+                (string) registryKey.GetValue("French"),
+                (string) registryKey.GetValue("Italian"),
+                (string) registryKey.GetValue("Spanish"),
+                (string) registryKey.GetValue("German"),
+                (string) registryKey.GetValue("Korean")
+            });
+            if (list.Contains(null))
+            {
+                _languageList = new[]
+                {
+                    "Guitar Hero III (English)",
+                    "Guitar Hero III (French)",
+                    "Guitar Hero III (Italian)",
+                    "Guitar Hero III (Spanish)",
+                    "Guitar Hero III (German)",
+                    "Guitar Hero III (Korean)"
+                };
+            }
+            else
+            {
+                _languageList = list.ToArray();
+            }
+            InitializeLanguageList();
+            _silentGuitarMenuItem.Checked = (Class248.Bool2 =
+                ((((int?) registryKey.GetValue("SilentGuitar")) ?? 0) != 0));
+            _minToTrayMenuItem.Checked = ((((int?) registryKey.GetValue("MinimizeToTray")) ?? 0) != 0);
+            _silentGuitarMenuItem.Checked = (Class248.Bool3 =
+                ((((int?) registryKey.GetValue("ForceConversion")) ?? 0) != 0));
+            if (!Directory.Exists(_appDirectory + _backupName))
+            {
+                Directory.CreateDirectory(_appDirectory + _backupName);
+            }
+            if (!Directory.Exists(_appDirectory + _backupName + "originals"))
+            {
+                Directory.CreateDirectory(_appDirectory + _backupName + "originals");
+            }
+            if (!Directory.Exists(_appDirectory + _backupName + "lastedited"))
+            {
+                Directory.CreateDirectory(_appDirectory + _backupName + "lastedited");
+            }
+            if (!File.Exists(_appDirectory + "lame_enc.dll"))
+            {
+                try
+                {
+                    ZipManager.smethod_8(
+                        new WebClient().OpenRead("http://spaghetticode.org/lame/libmp3lame-win-3.97.zip"),
+                        _appDirectory + "lame_enc.dll", "libmp3lame-3.97/lame_enc.dll");
+                }
+                catch
+                {
+                    Process.Start("http://lame.buanzo.com.ar/");
+                    MessageBox.Show(
+                        "Please download the file under \"ZIP OPTION:\" and select it: libmp3lame-win-#.#.zip",
+                        "MP3 Encoding Library Missing!");
+                    try
+                    {
+                        var text4 =
+                            KeyGenerator.OpenOrSaveFile("Locate MP3 Encoding Library (file will be deleted after!)",
+                                "MP3 Lame Zip|*.zip", true);
+                        var text5 = KeyGenerator.GetFileNameNoExt(text4);
+                        ZipManager.smethod_4(text4, _appDirectory + "lame_enc.dll",
+                            "libmp3lame" + text5.Substring(text5.LastIndexOf('-')) + "/lame_enc.dll");
+                        try
+                        {
+                            KeyGenerator.smethod_20(text4);
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show(
+                            "MP3 Encoding Library could not be extracted, Audio conversion will fail without it!",
+                            "MP3 Encoding Library Missing!");
+                    }
+                }
+            }
+        }
+
+        private void TexExplorer_MenuItem_Click(object sender, EventArgs e)
+        {
+            new TexExplorer(_dataFolder).ShowDialog();
+        }
+
+        private void SaveFileControl_MenuItem_Click(object sender, EventArgs e)
+        {
+            var a = KeyGenerator.OpenOrSaveFile("Select Save File to Import. Current Save File will be Overwritten!",
+                "GH3 Save File|s000.d", true);
+            if (a != "")
+            {
+                var @class = new Class324(a);
+                @class.method_0(new Class324(872398018)).List0[0].Int0[1] = -1;
+                var text = "Progress" + (new[]
+                {
+                    "A",
+                    "B",
+                    "C",
+                    "D",
+                    "E"
+                })[_list0.IndexOf(KeyGenerator.GetFileNameNoExt(Class3190.String0).Remove(0, 2))];
+                text = string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.Personal),
+                    "\\Aspyr\\Guitar Hero III\\Save\\", text, "}{", text);
+                if (!Directory.Exists(text))
+                {
+                    Directory.CreateDirectory(text);
+                }
+                @class.method_1(text);
+            }
+        }
+
+        private void method_4(QbEditor class2450)
+        {
+            foreach (QbEditor @class in _actionRequestsListBox.Items)
+            {
+                if (@class.Equals(class2450))
+                {
+                    _actionRequestsListBox.Items.Remove(@class);
+                    break;
+                }
+            }
+            _actionRequestsListBox.Items.Add(class2450);
+        }
+
+        private void ClearActions_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (_actionRequestsListBox.Items.Count != 0 && DialogResult.Yes ==
+                MessageBox.Show("Are You sure you want to delete all Actions?", "Warning!", MessageBoxButtons.YesNo))
+            {
+                _actionRequestsListBox.Items.Clear();
+                GC.Collect();
+            }
+        }
+
+        private void ExecuteActions_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (_actionRequestsListBox.Items.Count != 0)
+            {
+                if (DialogResult.Yes == MessageBox.Show("Are You sure you want to Execute Actions?", "Warning!",
+                        MessageBoxButtons.YesNo))
+                {
+                    var list = new List<QbEditor>();
+                    foreach (QbEditor item in _actionRequestsListBox.Items)
+                    {
+                        list.Add(item);
+                    }
+                    _actionsWindow0 = new ActionsWindow(list);
+                    _actionsWindow0.method_0(method_5);
+                    _actionsWindow0.Show();
+                    _actionsWindow0.method_1();
+                }
+            }
+        }
+
+        private void method_5(object sender, EventArgs e)
+        {
+            if ((!_actionsWindow0.Bool0 || DialogResult.Yes ==
+                 MessageBox.Show("Some of the action requests failed!\nDo you still wish to rebuild the game settings?",
+                     "Warning!", MessageBoxButtons.YesNo)) && method_18())
+            {
+                _actionsWindow0 = null;
+                _actionRequestsListBox.Items.Clear();
+                GC.Collect();
+            }
+        }
+
+        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_actionRequestsListBox.Items.Count != 0 && DialogResult.Yes !=
+                MessageBox.Show("Any actions that are not executed will be erased! Are you sure you wish to quit?",
+                    "Warning!", MessageBoxButtons.YesNo))
+            {
+                e.Cancel = true;
+                return;
+            }
+            formClosing();
+        }
+
+        public void MainMenu_SizeChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine(WindowState);
+            if (WindowState == FormWindowState.Minimized && _minToTrayMenuItem.Checked)
+            {
+                Hide();
+                return;
+            }
+            if (!Visible)
+            {
+                BringToFront();
+                base.Show();
+                Focus();
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        [DllImport("User32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        public static extern bool SetForegroundWindow(HandleRef handleRef0);
+
+        private void notifyIcon_0_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Clicks == 2)
+            {
+                _leftClickMenu.Hide();
+                _rightClickMenu.Hide();
+                if (e.Button == MouseButtons.Left)
+                {
+                    BringToFront();
+                    base.Show();
+                    Focus();
+                    WindowState = FormWindowState.Normal;
+                    return;
+                }
+                if (e.Button != MouseButtons.Right)
+                {
+                    return;
+                }
+                try
+                {
+                    var registryKey = Registry.LocalMachine.OpenSubKey(_gameRegistry);
+                    var process = new Process();
+                    process.StartInfo =
+                        new ProcessStartInfo((string) registryKey.GetValue("Path") +
+                                             (_isAerosmith ? "Guitar Hero Aerosmith.exe" : "GH3.exe"));
+                    process.Start();
+                    if (_priority != "normal")
+                    {
+                        process.PriorityClass = ((_priority == "high")
+                            ? ProcessPriorityClass.High
+                            : ((_priority == "above")
+                                ? ProcessPriorityClass.AboveNormal
+                                : ((_priority == "below")
+                                    ? ProcessPriorityClass.BelowNormal
+                                    : ProcessPriorityClass.Normal)));
+                    }
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+            }
+            SetForegroundWindow(new HandleRef(this, Handle));
+            if (e.Button == MouseButtons.Left)
+            {
+                _leftClickMenu.Show(this, PointToClient(Cursor.Position), ToolStripDropDownDirection.AboveLeft);
+                return;
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                _rightClickMenu.Show(this, PointToClient(Cursor.Position), ToolStripDropDownDirection.AboveRight);
+            }
+        }
+
+        private void formClosing()
+        {
+            var registryKey = Registry.LocalMachine.CreateSubKey(_ghtcpRegistry);
+            registryKey.SetValue("Priority", _priority);
+            registryKey.SetValue("SilentGuitar", Class248.Bool2 ? 1 : 0);
+            registryKey.SetValue("MinimizeToTray", _minToTrayMenuItem.Checked ? 1 : 0);
+            registryKey.SetValue("ForceConversion", Class248.Bool3 ? 1 : 0);
+            method_15();
+            _songEditorControl.Dispose();
             _notifyIcon0.Visible = false;
             Dispose(true);
         }
 
-		private void Exit_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (_actionRequestsListBox.Items.Count != 0 && DialogResult.Yes != MessageBox.Show("Any actions that are not executed will be erased! Are you sure you wish to quit?", "Warning!", MessageBoxButtons.YesNo))
-			{
-				return;
-			}
-			formClosing();
-		}
+        private void Exit_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (_actionRequestsListBox.Items.Count != 0 && DialogResult.Yes !=
+                MessageBox.Show("Any actions that are not executed will be erased! Are you sure you wish to quit?",
+                    "Warning!", MessageBoxButtons.YesNo))
+            {
+                return;
+            }
+            formClosing();
+        }
 
-		private void method_7(string string7)
-		{
-			_sysEnglishMenuItem.Checked = (string7 == "en");
-			_sysFrenchMenuItem.Checked = (string7 == "fr");
-			_sysItalianMenuItem.Checked = (string7 == "it");
-			_sysSpanishMenuItem.Checked = (string7 == "es");
-			_sysGermanMenuItem.Checked = (string7 == "de");
-			_sysKoreanMenuItem.Checked = (string7 == "ko");
-		}
+        private void method_7(string string7)
+        {
+            _sysEnglishMenuItem.Checked = (string7 == "en");
+            _sysFrenchMenuItem.Checked = (string7 == "fr");
+            _sysItalianMenuItem.Checked = (string7 == "it");
+            _sysSpanishMenuItem.Checked = (string7 == "es");
+            _sysGermanMenuItem.Checked = (string7 == "de");
+            _sysKoreanMenuItem.Checked = (string7 == "ko");
+        }
 
-		private void method_8(string string7)
-		{
-			var registryKey = Registry.LocalMachine.CreateSubKey(_gameRegistry);
-			registryKey.SetValue("Language", string7);
-			method_7(string7);
-		}
+        private void method_8(string string7)
+        {
+            var registryKey = Registry.LocalMachine.CreateSubKey(_gameRegistry);
+            registryKey.SetValue("Language", string7);
+            method_7(string7);
+        }
 
-		private string method_9()
-		{
-			var registryKey = Registry.LocalMachine.CreateSubKey(_gameRegistry);
-			var text = (string)registryKey.GetValue("Language");
-			method_7(text);
-			return text;
-		}
+        private string method_9()
+        {
+            var registryKey = Registry.LocalMachine.CreateSubKey(_gameRegistry);
+            var text = (string) registryKey.GetValue("Language");
+            method_7(text);
+            return text;
+        }
 
-		private void SysKorean_MenuItem_Click(object sender, EventArgs e)
-		{
-			method_8((string)((ToolStripMenuItem)sender).Tag);
-		}
+        private void SysKorean_MenuItem_Click(object sender, EventArgs e)
+        {
+            method_8((string) ((ToolStripMenuItem) sender).Tag);
+        }
 
-		private void method_10(string string7)
-		{
-			_priority = string7;
-			_sysHighMenuItem.Checked = (_priority == "high");
-			_sysAboveMenuItem.Checked = (_priority == "above");
-			_sysNormalMenuItem.Checked = (_priority == "normal");
-			_sysBelowMenuItem.Checked = (_priority == "below");
-		}
+        private void method_10(string string7)
+        {
+            _priority = string7;
+            _sysHighMenuItem.Checked = (_priority == "high");
+            _sysAboveMenuItem.Checked = (_priority == "above");
+            _sysNormalMenuItem.Checked = (_priority == "normal");
+            _sysBelowMenuItem.Checked = (_priority == "below");
+        }
 
-		private void SysBelow_MenuItem_Click(object sender, EventArgs e)
-		{
-			method_10((string)((ToolStripMenuItem)sender).Tag);
-		}
+        private void SysBelow_MenuItem_Click(object sender, EventArgs e)
+        {
+            method_10((string) ((ToolStripMenuItem) sender).Tag);
+        }
 
-		private void Guide_MenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://www.scorehero.com/forum/viewtopic.php?t=72367");
-		}
+        private void Guide_MenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://www.scorehero.com/forum/viewtopic.php?t=72367");
+        }
 
-		private void ScoreHero_MenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://www.scorehero.com/forum/viewtopic.php?t=69818");
-		}
+        private void ScoreHero_MenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://www.scorehero.com/forum/viewtopic.php?t=69818");
+        }
 
-		private void GH3Folder_MenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start(_dataFolder);
-		}
+        private void GH3Folder_MenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(_dataFolder);
+        }
 
-		private void Disclaimer_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (new Disclaimer().ShowDialog() != DialogResult.OK)
-			{
-				formClosing();
-			}
-		}
+        private void Disclaimer_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (new Disclaimer().ShowDialog() != DialogResult.OK)
+            {
+                formClosing();
+            }
+        }
 
-		private void About_MenuItem_Click(object sender, EventArgs e)
-		{
-			new About().ShowDialog();
-		}
+        private void About_MenuItem_Click(object sender, EventArgs e)
+        {
+            new About().ShowDialog();
+        }
 
-		private void SilentGuitar_MenuItem_Click(object sender, EventArgs e)
-		{
-			var expr06 = _silentGuitarMenuItem;
-			Class248.Bool2 = (expr06.Checked = !expr06.Checked);
-		}
+        private void SilentGuitar_MenuItem_Click(object sender, EventArgs e)
+        {
+            var expr06 = _silentGuitarMenuItem;
+            Class248.Bool2 = (expr06.Checked = !expr06.Checked);
+        }
 
-		private void FxSpeedBoost_MenuItem_Click(object sender, EventArgs e)
-		{
-			method_4(new ZzFxBoost(Class3190));
-		}
+        private void FxSpeedBoost_MenuItem_Click(object sender, EventArgs e)
+        {
+            method_4(new ZzFxBoost(Class3190));
+        }
 
-		private void ForceMp3Conversion_MenuItem_Click(object sender, EventArgs e)
-		{
-			var expr06 = _forceMp3ConversionMenuItem;
-			Class248.Bool3 = (expr06.Checked = !expr06.Checked);
-		}
+        private void ForceMp3Conversion_MenuItem_Click(object sender, EventArgs e)
+        {
+            var expr06 = _forceMp3ConversionMenuItem;
+            Class248.Bool3 = (expr06.Checked = !expr06.Checked);
+        }
 
         //Disables Buttons
-		private void method_11(Gh3Setlist gh3Setlist0)
-		{
-			_setlistTitleTxtBox.Text = (string)_setlistDropBox.SelectedItem;
-			_setlistTitleTxtBox.Enabled = (_deleteSetlistBtn.Enabled = gh3Setlist0.method_4());
-			//this.CreateSetlist_Btn.Enabled = (this.gh3Songlist_0.CustomBitMask != -1);
-			_setlistPrefixTxtBox.Text = gh3Setlist0.Prefix;
-			_setlistInitMovieTxtBox.Text = gh3Setlist0.InitialMovie;
-			_tierBox.Items.Clear();
-			_tierBox.Items.AddRange(gh3Setlist0.Tiers.ToArray());
-			if (_tierBox.Items.Count != 0)
-			{
-				_tierBox.SelectedIndex = 0;
-			}
-			else
-			{
-				method_23();
-			}
-			_setlistApplyBtn.Enabled = false;
-		}
+        private void method_11(Gh3Setlist gh3Setlist0)
+        {
+            _setlistTitleTxtBox.Text = (string) _setlistDropBox.SelectedItem;
+            _setlistTitleTxtBox.Enabled = (_deleteSetlistBtn.Enabled = gh3Setlist0.method_4());
+            //this.CreateSetlist_Btn.Enabled = (this.gh3Songlist_0.CustomBitMask != -1);
+            _setlistPrefixTxtBox.Text = gh3Setlist0.Prefix;
+            _setlistInitMovieTxtBox.Text = gh3Setlist0.InitialMovie;
+            _tierBox.Items.Clear();
+            _tierBox.Items.AddRange(gh3Setlist0.Tiers.ToArray());
+            if (_tierBox.Items.Count != 0)
+            {
+                _tierBox.SelectedIndex = 0;
+            }
+            else
+            {
+                method_23();
+            }
+            _setlistApplyBtn.Enabled = false;
+        }
 
-		private void Setlist_DropBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			method_11(_gh3Songlist.Gh3SetlistList[_selectedSetlist = _gh3Songlist.method_9((string)_setlistDropBox.SelectedItem)]);
-		}
+        private void Setlist_DropBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            method_11(_gh3Songlist.Gh3SetlistList[
+                _selectedSetlist = _gh3Songlist.method_9((string) _setlistDropBox.SelectedItem)]);
+        }
 
-		private void CreateSetlist_Btn_Click(object sender, EventArgs e)
-		{
-			if (_gh3Songlist.CustomBitMask == -1)
-			{
-				return;
-			}
-			var gH3Setlist = new Gh3Setlist();
-			gH3Setlist.method_3("scripts\\guitar\\custom_menu\\guitar_custom_progression.qb");
-			gH3Setlist.InitialMovie = "";
-			gH3Setlist.Tiers.Add(new Gh3Tier());
-			for (var i = 0; ; )
-			{
+        private void CreateSetlist_Btn_Click(object sender, EventArgs e)
+        {
+            if (_gh3Songlist.CustomBitMask == -1)
+            {
+                return;
+            }
+            var gH3Setlist = new Gh3Setlist();
+            gH3Setlist.method_3("scripts\\guitar\\custom_menu\\guitar_custom_progression.qb");
+            gH3Setlist.InitialMovie = "";
+            gH3Setlist.Tiers.Add(new Gh3Tier());
+            for (var i = 0;;)
+            {
                 //num = 2^numOfSetlists
-				var num = 1 << i;
-                if ((_gh3Songlist.CustomBitMask & num) != 0) {
+                var num = 1 << i;
+                if ((_gh3Songlist.CustomBitMask & num) != 0)
+                {
                     goto SKIPIT;
                 }
                 //2^numOfSetlists - 1
 
-                    _gh3Songlist.CustomBitMask |= (gH3Setlist.CustomBit = num);
+                _gh3Songlist.CustomBitMask |= (gH3Setlist.CustomBit = num);
 
-                    IL_7E:
-                    gH3Setlist.Prefix = "custom" + (i + 1);
-					int num2;
-					_gh3Songlist.Gh3SetlistList.Add(num2 = QbSongClass1.AddKeyToDictionary("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
-					int value;
-					_gh3Songlist.Dictionary1.Add(value = QbSongClass1.AddKeyToDictionary("custom" + (i + 1) + "_progression"), new GhLink(num2));
-					string text;
-					_gh3Songlist.Class2140.Add(text = "Custom Setlist " + (i + 1), value);
-					_setlistDropBox.Items.Add(text);
-					_setlistDropBox.SelectedItem = text;
-					method_4(new Class246(value, Class3190, _gh3Songlist, true));
-					method_4(new UpdateSetlistSwitcher(Class3190, _gh3Songlist, _isAerosmith));
-					return;
-            SKIPIT:
+                IL_7E:
+                gH3Setlist.Prefix = "custom" + (i + 1);
+                int num2;
+                _gh3Songlist.Gh3SetlistList.Add(
+                    num2 = QbSongClass1.AddKeyToDictionary("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
+                int value;
+                _gh3Songlist.Dictionary1.Add(
+                    value = QbSongClass1.AddKeyToDictionary("custom" + (i + 1) + "_progression"), new GhLink(num2));
+                string text;
+                _gh3Songlist.Class2140.Add(text = "Custom Setlist " + (i + 1), value);
+                _setlistDropBox.Items.Add(text);
+                _setlistDropBox.SelectedItem = text;
+                method_4(new Class246(value, Class3190, _gh3Songlist, true));
+                method_4(new UpdateSetlistSwitcher(Class3190, _gh3Songlist, _isAerosmith));
+                return;
+                SKIPIT:
                 i++;
                 if (i >= 32)
                 {
                     goto IL_7E;
                 }
-			}
+            }
+        }
 
-		}
+        private void DeleteSetlist_Btn_Click(object sender, EventArgs e)
+        {
+            if (!_gh3Songlist.Gh3SetlistList[_selectedSetlist].method_4())
+            {
+                return;
+            }
+            var text = (string) _setlistDropBox.SelectedItem;
+            _setlistDropBox.SelectedIndex--;
+            _setlistDropBox.Items.Remove(text);
+            method_4(new Class246(_gh3Songlist.Class2140[text], Class3190, _gh3Songlist, false));
+            method_4(new UpdateSetlistSwitcher(Class3190, _gh3Songlist, _isAerosmith));
+        }
 
-		private void DeleteSetlist_Btn_Click(object sender, EventArgs e)
-		{
-			if (!_gh3Songlist.Gh3SetlistList[_selectedSetlist].method_4())
-			{
-				return;
-			}
-			var text = (string)_setlistDropBox.SelectedItem;
-			_setlistDropBox.SelectedIndex--;
-			_setlistDropBox.Items.Remove(text);
-			method_4(new Class246(_gh3Songlist.Class2140[text], Class3190, _gh3Songlist, false));
-			method_4(new UpdateSetlistSwitcher(Class3190, _gh3Songlist, _isAerosmith));
-		}
+        private void SetlistTitle_TxtBox_TextChanged(object sender, EventArgs e)
+        {
+            _setlistApplyBtn.Enabled = true;
+        }
 
-		private void SetlistTitle_TxtBox_TextChanged(object sender, EventArgs e)
-		{
-			_setlistApplyBtn.Enabled = true;
-		}
+        private void SetlistApply_Btn_Click(object sender, EventArgs e)
+        {
+            var gH3Setlist = _gh3Songlist.Gh3SetlistList[_selectedSetlist];
+            gH3Setlist.InitialMovie = _setlistInitMovieTxtBox.Text;
+            gH3Setlist.Tiers.Clear();
+            foreach (Gh3Tier item in _tierBox.Items)
+            {
+                gH3Setlist.Tiers.Add(item);
+            }
+            if (_setlistTitleTxtBox.Text != (string) _setlistDropBox.SelectedItem)
+            {
+                _gh3Songlist.Class2140.Add(_setlistTitleTxtBox.Text,
+                    _gh3Songlist.Class2140[(string) _setlistDropBox.SelectedItem]);
+                _gh3Songlist.Class2140.Remove((string) _setlistDropBox.SelectedItem);
+                method_4(new UpdateSetlistSwitcher(Class3190, _gh3Songlist, _isAerosmith));
+                _setlistDropBox.Items[_setlistDropBox.SelectedIndex] = _setlistTitleTxtBox.Text;
+            }
+            _setlistApplyBtn.Enabled = false;
+            method_4(new ZzSetListUpdater(_selectedSetlist, Class3190, _gh3Songlist));
+        }
 
-		private void SetlistApply_Btn_Click(object sender, EventArgs e)
-		{
-			var gH3Setlist = _gh3Songlist.Gh3SetlistList[_selectedSetlist];
-			gH3Setlist.InitialMovie = _setlistInitMovieTxtBox.Text;
-			gH3Setlist.Tiers.Clear();
-			foreach (Gh3Tier item in _tierBox.Items)
-			{
-				gH3Setlist.Tiers.Add(item);
-			}
-			if (_setlistTitleTxtBox.Text != (string)_setlistDropBox.SelectedItem)
-			{
-				_gh3Songlist.Class2140.Add(_setlistTitleTxtBox.Text, _gh3Songlist.Class2140[(string)_setlistDropBox.SelectedItem]);
-				_gh3Songlist.Class2140.Remove((string)_setlistDropBox.SelectedItem);
-				method_4(new UpdateSetlistSwitcher(Class3190, _gh3Songlist, _isAerosmith));
-				_setlistDropBox.Items[_setlistDropBox.SelectedIndex] = _setlistTitleTxtBox.Text;
-			}
-			_setlistApplyBtn.Enabled = false;
-			method_4(new ZzSetListUpdater(_selectedSetlist, Class3190, _gh3Songlist));
-		}
+        private void NewTier_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
+            {
+                _tierBox.Items.Add(new Gh3Tier());
+                _tierBox.SelectedIndex = _tierBox.Items.Count - 1;
+                _setlistApplyBtn.Enabled = true;
+            }
+        }
 
-		private void NewTier_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
-			{
-				_tierBox.Items.Add(new Gh3Tier());
-				_tierBox.SelectedIndex = _tierBox.Items.Count - 1;
-				_setlistApplyBtn.Enabled = true;
-			}
-		}
-
-		private void ManageTiers_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (_tierBox.SelectedIndex >= 0)
-			{
-				var list = new List<Gh3Tier>();
-				foreach (Gh3Tier item in _tierBox.Items)
-				{
-					list.Add(item);
-				}
-				var tierManagement = new TierManagement((string)_setlistDropBox.SelectedItem, list.ToArray());
-				if (tierManagement.ShowDialog() == DialogResult.OK)
-				{
-					_tierBox.Items.Clear();
-					_tierBox.Items.AddRange(tierManagement.method_0());
-					if (_tierBox.Items.Count != 0)
-					{
-						_tierBox.SelectedIndex = 0;
-					}
-					else
-					{
-						method_23();
-					}
-					_setlistApplyBtn.Enabled = true;
-				}
-			}
-		}
+        private void ManageTiers_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (_tierBox.SelectedIndex >= 0)
+            {
+                var list = new List<Gh3Tier>();
+                foreach (Gh3Tier item in _tierBox.Items)
+                {
+                    list.Add(item);
+                }
+                var tierManagement = new TierManagement((string) _setlistDropBox.SelectedItem, list.ToArray());
+                if (tierManagement.ShowDialog() == DialogResult.OK)
+                {
+                    _tierBox.Items.Clear();
+                    _tierBox.Items.AddRange(tierManagement.method_0());
+                    if (_tierBox.Items.Count != 0)
+                    {
+                        _tierBox.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        method_23();
+                    }
+                    _setlistApplyBtn.Enabled = true;
+                }
+            }
+        }
 
         protected override void Dispose(bool disposing)
-		{
-			if (disposing && icontainer_0 != null)
-			{
-				icontainer_0.Dispose();
-			}
-			base.Dispose(disposing);
-		}
+        {
+            if (disposing && icontainer_0 != null)
+            {
+                icontainer_0.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-		private void InitializeComponent()
-		{
+        private void InitializeComponent()
+        {
             components = new Container();
             var resources = new ComponentResourceManager(typeof(MainMenu));
             _rightClickMenu = new ContextMenuStrip(components);
@@ -2093,7 +2193,7 @@ namespace GHNamespace8
             _setlistTLPanel.SuspendLayout();
             _tierTLPanel.SuspendLayout();
             _tierPropsPanel.SuspendLayout();
-            ((ISupportInitialize)(_tierUnlockedNumBox)).BeginInit();
+            ((ISupportInitialize) (_tierUnlockedNumBox)).BeginInit();
             _tierSongsPanel.SuspendLayout();
             _setlistStrip.SuspendLayout();
             _songEditorTab.SuspendLayout();
@@ -2107,14 +2207,16 @@ namespace GHNamespace8
             //
             // rightClickMenu
             //
-            _rightClickMenu.Items.AddRange(new ToolStripItem[] {
-            _sysHighMenuItem,
-            _sysAboveMenuItem,
-            _sysNormalMenuItem,
-            _sysBelowMenuItem,
-            _toolStripSeparator8,
-            _minToTrayMenuItem,
-            _sysExitMenuItem});
+            _rightClickMenu.Items.AddRange(new ToolStripItem[]
+            {
+                _sysHighMenuItem,
+                _sysAboveMenuItem,
+                _sysNormalMenuItem,
+                _sysBelowMenuItem,
+                _toolStripSeparator8,
+                _minToTrayMenuItem,
+                _sysExitMenuItem
+            });
             _rightClickMenu.Name = "_rightClickMenu";
             _rightClickMenu.Size = new Size(167, 142);
             //
@@ -2177,12 +2279,14 @@ namespace GHNamespace8
             // TopMenuStrip
             //
             _topMenuStrip.Dock = DockStyle.None;
-            _topMenuStrip.Items.AddRange(new ToolStripItem[] {
-            _fileMenuItem,
-            _addMenuItem,
-            _manageGameMenuItem,
-            _manageSongsMenuItem,
-            _helpMenuItem});
+            _topMenuStrip.Items.AddRange(new ToolStripItem[]
+            {
+                _fileMenuItem,
+                _addMenuItem,
+                _manageGameMenuItem,
+                _manageSongsMenuItem,
+                _helpMenuItem
+            });
             _topMenuStrip.Location = new Point(0, 0);
             _topMenuStrip.Name = "_topMenuStrip";
             _topMenuStrip.Size = new Size(784, 24);
@@ -2191,19 +2295,21 @@ namespace GHNamespace8
             //
             // File_MenuItem
             //
-            _fileMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            _openGameSettingsMenuItem,
-            _recoverGameSettingsMenuItem,
-            _clearGameSettingsMenuItem,
-            _executeActionsMenuItem,
-            _clearActionsMenuItem,
-            _toolStripSeparator1,
-            _saveTghMenuItem,
-            _saveSghMenuItem,
-            _saveChartMenuItem,
-            _exportSetlistAsChartsToolStripMenuItem,
-            _toolStripSeparator6,
-            _exitMenuItem});
+            _fileMenuItem.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                _openGameSettingsMenuItem,
+                _recoverGameSettingsMenuItem,
+                _clearGameSettingsMenuItem,
+                _executeActionsMenuItem,
+                _clearActionsMenuItem,
+                _toolStripSeparator1,
+                _saveTghMenuItem,
+                _saveSghMenuItem,
+                _saveChartMenuItem,
+                _exportSetlistAsChartsToolStripMenuItem,
+                _toolStripSeparator6,
+                _exitMenuItem
+            });
             _fileMenuItem.Name = "_fileMenuItem";
             _fileMenuItem.Size = new Size(37, 20);
             _fileMenuItem.Text = "File";
@@ -2283,7 +2389,7 @@ namespace GHNamespace8
             //
             _exportSetlistAsChartsToolStripMenuItem.Name = "_exportSetlistAsChartsToolStripMenuItem";
             _exportSetlistAsChartsToolStripMenuItem.ShortcutKeys = (Keys.Control | Keys.Shift)
-                                                                  | Keys.S;
+                                                                   | Keys.S;
             _exportSetlistAsChartsToolStripMenuItem.Size = new Size(264, 22);
             _exportSetlistAsChartsToolStripMenuItem.Text = "Export Setlist as Charts";
             _exportSetlistAsChartsToolStripMenuItem.Click += exportSetlistAsChartsToolStripMenuItem_Click_1;
@@ -2302,12 +2408,14 @@ namespace GHNamespace8
             //
             // Add_MenuItem
             //
-            _addMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            _newSongMenuItem,
-            _tierMenuItem,
-            _massImporterMenuItem,
-            _legacyImporterMenuItem,
-            _recoverSonglistMenuItem});
+            _addMenuItem.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                _newSongMenuItem,
+                _tierMenuItem,
+                _massImporterMenuItem,
+                _legacyImporterMenuItem,
+                _recoverSonglistMenuItem
+            });
             _addMenuItem.Name = "_addMenuItem";
             _addMenuItem.Size = new Size(41, 20);
             _addMenuItem.Text = "Add";
@@ -2322,9 +2430,11 @@ namespace GHNamespace8
             //
             // Tier_MenuItem
             //
-            _tierMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            _newTierMenuItem,
-            _tghImportMenuItem});
+            _tierMenuItem.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                _newTierMenuItem,
+                _tghImportMenuItem
+            });
             _tierMenuItem.Name = "_tierMenuItem";
             _tierMenuItem.Size = new Size(167, 22);
             _tierMenuItem.Text = "Tier";
@@ -2368,19 +2478,21 @@ namespace GHNamespace8
             //
             // ManageGame_MenuItem
             //
-            _manageGameMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            _manageTiersMenuItem,
-            _toolStripSeparator4,
-            _tghSwitchMenuItem,
-            _sghSwitchMenuItem,
-            _toolStripSeparator11,
-            _gameSettingsSwitchMenuItem,
-            _restoreLastMenuItem,
-            _restoreOriginalMenuItem,
-            _toolStripSeparator7,
-            _saveFileControlMenuItem,
-            _texExplorerMenuItem,
-            _fxSpeedBoostMenuItem});
+            _manageGameMenuItem.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                _manageTiersMenuItem,
+                _toolStripSeparator4,
+                _tghSwitchMenuItem,
+                _sghSwitchMenuItem,
+                _toolStripSeparator11,
+                _gameSettingsSwitchMenuItem,
+                _restoreLastMenuItem,
+                _restoreOriginalMenuItem,
+                _toolStripSeparator7,
+                _saveFileControlMenuItem,
+                _texExplorerMenuItem,
+                _fxSpeedBoostMenuItem
+            });
             _manageGameMenuItem.Name = "_manageGameMenuItem";
             _manageGameMenuItem.Size = new Size(124, 20);
             _manageGameMenuItem.Text = "Game Management";
@@ -2468,17 +2580,19 @@ namespace GHNamespace8
             //
             // ManageSongs_MenuItem
             //
-            _manageSongsMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            _songPropsMenuItem,
-            _rebuildSongMenuItem,
-            _silentGuitarMenuItem,
-            _forceMp3ConversionMenuItem,
-            _forceRb3MidConversionToolStripMenuItem,
-            _deleteSongMenuItem,
-            _removeSongToolStripMenuItem,
-            _hideUnEditMenuItem,
-            _hideUsedMenuItem,
-            _byTitleMenuItem});
+            _manageSongsMenuItem.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                _songPropsMenuItem,
+                _rebuildSongMenuItem,
+                _silentGuitarMenuItem,
+                _forceMp3ConversionMenuItem,
+                _forceRb3MidConversionToolStripMenuItem,
+                _deleteSongMenuItem,
+                _removeSongToolStripMenuItem,
+                _hideUnEditMenuItem,
+                _hideUsedMenuItem,
+                _byTitleMenuItem
+            });
             _manageSongsMenuItem.Name = "_manageSongsMenuItem";
             _manageSongsMenuItem.Size = new Size(135, 20);
             _manageSongsMenuItem.Text = "Songlist Management";
@@ -2559,13 +2673,15 @@ namespace GHNamespace8
             //
             // Help_MenuItem
             //
-            _helpMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
-            _guideMenuItem,
-            _scoreHeroMenuItem,
-            _gh3FolderMenuItem,
-            _toolStripSeparator3,
-            _disclaimerMenuItem,
-            _aboutMenuItem});
+            _helpMenuItem.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                _guideMenuItem,
+                _scoreHeroMenuItem,
+                _gh3FolderMenuItem,
+                _toolStripSeparator3,
+                _disclaimerMenuItem,
+                _aboutMenuItem
+            });
             _helpMenuItem.Name = "_helpMenuItem";
             _helpMenuItem.Size = new Size(44, 20);
             _helpMenuItem.Text = "Help";
@@ -2676,7 +2792,7 @@ namespace GHNamespace8
             //
             // notifyIcon_0
             //
-            _notifyIcon0.Icon = ((Icon)(resources.GetObject("notifyIcon_0.Icon")));
+            _notifyIcon0.Icon = ((Icon) (resources.GetObject("notifyIcon_0.Icon")));
             _notifyIcon0.Text = "Guitar Hero Three Control Panel+";
             _notifyIcon0.Visible = true;
             _notifyIcon0.MouseDown += notifyIcon_0_MouseDown;
@@ -2689,13 +2805,15 @@ namespace GHNamespace8
             //
             // leftClickMenu
             //
-            _leftClickMenu.Items.AddRange(new ToolStripItem[] {
-            _sysEnglishMenuItem,
-            _sysFrenchMenuItem,
-            _sysItalianMenuItem,
-            _sysSpanishMenuItem,
-            _sysGermanMenuItem,
-            _sysKoreanMenuItem});
+            _leftClickMenu.Items.AddRange(new ToolStripItem[]
+            {
+                _sysEnglishMenuItem,
+                _sysFrenchMenuItem,
+                _sysItalianMenuItem,
+                _sysSpanishMenuItem,
+                _sysGermanMenuItem,
+                _sysKoreanMenuItem
+            });
             _leftClickMenu.Name = "_leftClickMenu";
             _leftClickMenu.Size = new Size(118, 136);
             //
@@ -2781,8 +2899,10 @@ namespace GHNamespace8
             // StatusStrip
             //
             _statusStrip.Dock = DockStyle.None;
-            _statusStrip.Items.AddRange(new ToolStripItem[] {
-            _toolStripStatusLbl});
+            _statusStrip.Items.AddRange(new ToolStripItem[]
+            {
+                _toolStripStatusLbl
+            });
             _statusStrip.Location = new Point(0, 0);
             _statusStrip.Name = "StatusStrip";
             _statusStrip.Size = new Size(784, 22);
@@ -3096,11 +3216,13 @@ namespace GHNamespace8
             // TierUnlocked_NumBox
             //
             _tierUnlockedNumBox.Location = new Point(193, 55);
-            _tierUnlockedNumBox.Maximum = new decimal(new[] {
-            65536,
-            0,
-            0,
-            0});
+            _tierUnlockedNumBox.Maximum = new decimal(new[]
+            {
+                65536,
+                0,
+                0,
+                0
+            });
             _tierUnlockedNumBox.Name = "_tierUnlockedNumBox";
             _tierUnlockedNumBox.Size = new Size(43, 20);
             _tierUnlockedNumBox.TabIndex = 9;
@@ -3118,8 +3240,10 @@ namespace GHNamespace8
             //
             _tierIconDropBox.DropDownStyle = ComboBoxStyle.DropDownList;
             _tierIconDropBox.FormattingEnabled = true;
-            _tierIconDropBox.Items.AddRange(new object[] {
-            "No Icon"});
+            _tierIconDropBox.Items.AddRange(new object[]
+            {
+                "No Icon"
+            });
             _tierIconDropBox.Location = new Point(93, 112);
             _tierIconDropBox.Name = "_tierIconDropBox";
             _tierIconDropBox.Size = new Size(182, 21);
@@ -3130,8 +3254,10 @@ namespace GHNamespace8
             //
             _tierStageDropBox.DropDownStyle = ComboBoxStyle.DropDownList;
             _tierStageDropBox.FormattingEnabled = true;
-            _tierStageDropBox.Items.AddRange(new object[] {
-            "No Preset Stage"});
+            _tierStageDropBox.Items.AddRange(new object[]
+            {
+                "No Preset Stage"
+            });
             _tierStageDropBox.Location = new Point(70, 141);
             _tierStageDropBox.Name = "_tierStageDropBox";
             _tierStageDropBox.Size = new Size(205, 21);
@@ -3260,11 +3386,13 @@ namespace GHNamespace8
             //
             _setlistStrip.Dock = DockStyle.None;
             _setlistStrip.GripStyle = ToolStripGripStyle.Hidden;
-            _setlistStrip.Items.AddRange(new ToolStripItem[] {
-            _setlistLbl,
-            _setlistDropBox,
-            _createSetlistBtn,
-            _deleteSetlistBtn});
+            _setlistStrip.Items.AddRange(new ToolStripItem[]
+            {
+                _setlistLbl,
+                _setlistDropBox,
+                _createSetlistBtn,
+                _deleteSetlistBtn
+            });
             _setlistStrip.Location = new Point(0, 0);
             _setlistStrip.Name = "_setlistStrip";
             _setlistStrip.Size = new Size(590, 25);
@@ -3342,16 +3470,18 @@ namespace GHNamespace8
             //
             _songEditorBottomToolStrip.Dock = DockStyle.None;
             _songEditorBottomToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            _songEditorBottomToolStrip.Items.AddRange(new ToolStripItem[] {
-            _toggleElementsEditorSplitBtn,
-            _toolStripSeparator10,
-            _toolStripLabel1,
-            _beatSizeEditorTxtBox,
-            _hyperSpeedEditorBar,
-            _fretAngleEditorBar,
-            _toolStripSeparator12,
-            _toolStripLabel2,
-            _offsetEditorTxtBox});
+            _songEditorBottomToolStrip.Items.AddRange(new ToolStripItem[]
+            {
+                _toggleElementsEditorSplitBtn,
+                _toolStripSeparator10,
+                _toolStripLabel1,
+                _beatSizeEditorTxtBox,
+                _hyperSpeedEditorBar,
+                _fretAngleEditorBar,
+                _toolStripSeparator12,
+                _toolStripLabel2,
+                _offsetEditorTxtBox
+            });
             _songEditorBottomToolStrip.Location = new Point(0, 0);
             _songEditorBottomToolStrip.Name = "_songEditorBottomToolStrip";
             _songEditorBottomToolStrip.Size = new Size(590, 25);
@@ -3361,10 +3491,12 @@ namespace GHNamespace8
             // ToggleElements_EditorSplitBtn
             //
             _toggleElementsEditorSplitBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            _toggleElementsEditorSplitBtn.DropDownItems.AddRange(new ToolStripItem[] {
-            _starViewEditorBtn,
-            _hopoViewEditorBtn,
-            _audioViewEditorBtn});
+            _toggleElementsEditorSplitBtn.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                _starViewEditorBtn,
+                _hopoViewEditorBtn,
+                _audioViewEditorBtn
+            });
             _toggleElementsEditorSplitBtn.ImageTransparentColor = Color.Magenta;
             _toggleElementsEditorSplitBtn.Name = "_toggleElementsEditorSplitBtn";
             _toggleElementsEditorSplitBtn.Size = new Size(111, 22);
@@ -3443,17 +3575,19 @@ namespace GHNamespace8
             //
             _songEditorTopToolStrip.Dock = DockStyle.None;
             _songEditorTopToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-            _songEditorTopToolStrip.Items.AddRange(new ToolStripItem[] {
-            _gameModeEditorBtn,
-            _toolStripSeparator5,
-            _loadChartEditorBtn,
-            _selectedTrackEditorBox,
-            _songNameEditorLbl,
-            _toolStripSeparator2,
-            _loadAudioEditorBtn,
-            _playPauseEditorBtn,
-            _stopEditorBtn,
-            _playTimeEditorLbl});
+            _songEditorTopToolStrip.Items.AddRange(new ToolStripItem[]
+            {
+                _gameModeEditorBtn,
+                _toolStripSeparator5,
+                _loadChartEditorBtn,
+                _selectedTrackEditorBox,
+                _songNameEditorLbl,
+                _toolStripSeparator2,
+                _loadAudioEditorBtn,
+                _playPauseEditorBtn,
+                _stopEditorBtn,
+                _playTimeEditorLbl
+            });
             _songEditorTopToolStrip.Location = new Point(0, 0);
             _songEditorTopToolStrip.Name = "_songEditorTopToolStrip";
             _songEditorTopToolStrip.Size = new Size(590, 25);
@@ -3601,7 +3735,7 @@ namespace GHNamespace8
             ClientSize = new Size(784, 565);
             Controls.Add(_mainContainer);
             DoubleBuffered = true;
-            Icon = ((Icon)(resources.GetObject("$this.Icon")));
+            Icon = ((Icon) (resources.GetObject("$this.Icon")));
             MainMenuStrip = _topMenuStrip;
             MinimumSize = new Size(800, 600);
             Name = "MainMenu";
@@ -3636,7 +3770,7 @@ namespace GHNamespace8
             _tierTLPanel.ResumeLayout(false);
             _tierPropsPanel.ResumeLayout(false);
             _tierPropsPanel.PerformLayout();
-            ((ISupportInitialize)(_tierUnlockedNumBox)).EndInit();
+            ((ISupportInitialize) (_tierUnlockedNumBox)).EndInit();
             _tierSongsPanel.ResumeLayout(false);
             _tierSongsPanel.PerformLayout();
             _setlistStrip.ResumeLayout(false);
@@ -3654,8 +3788,7 @@ namespace GHNamespace8
             _songEditorTopToolStrip.ResumeLayout(false);
             _songEditorTopToolStrip.PerformLayout();
             ResumeLayout(false);
-
-		}
+        }
 
         private void LoadMore()
         {
@@ -3674,570 +3807,634 @@ namespace GHNamespace8
             _songEditorControl.method_29(method_1);
         }
 
-		private void method_12(bool bool1)
-		{
-			ToolStripItem arg_1F0 = _saveChartMenuItem;
-			ToolStripItem arg190 = _rebuildSongMenuItem;
-			_deleteSongMenuItem.Enabled = false;
-			arg190.Enabled = false;
-			arg_1F0.Enabled = false;
-			ToolStripItem argB30 = _addMenuItem;
-			ToolStripItem argAc0 = _manageGameMenuItem;
-			ToolStripItem argA20 = _manageSongsMenuItem;
-			ToolStripItem arg980 = _executeActionsMenuItem;
-			ToolStripItem arg_8E0 = _clearActionsMenuItem;
-			ToolStripItem arg840 = _saveSghMenuItem;
+        private void method_12(bool bool1)
+        {
+            ToolStripItem arg_1F0 = _saveChartMenuItem;
+            ToolStripItem arg190 = _rebuildSongMenuItem;
+            _deleteSongMenuItem.Enabled = false;
+            arg190.Enabled = false;
+            arg_1F0.Enabled = false;
+            ToolStripItem argB30 = _addMenuItem;
+            ToolStripItem argAc0 = _manageGameMenuItem;
+            ToolStripItem argA20 = _manageSongsMenuItem;
+            ToolStripItem arg980 = _executeActionsMenuItem;
+            ToolStripItem arg_8E0 = _clearActionsMenuItem;
+            ToolStripItem arg840 = _saveSghMenuItem;
             ToolStripItem export = _exportSetlistAsChartsToolStripMenuItem;
             ToolStripItem arg_7B0 = _saveTghMenuItem;
-			Control arg730 = _setlistStrip;
-			Control arg_6B0 = _setlistConfTLPanel;
-			_gh3FolderMenuItem.Enabled = bool1;
-			arg_6B0.Enabled = bool1;
-			arg730.Enabled = bool1;
-			arg_7B0.Enabled = bool1;
-			arg840.Enabled = bool1;
-			arg_8E0.Enabled = bool1;
-			arg980.Enabled = bool1;
-			argA20.Enabled = bool1;
-			argAc0.Enabled = bool1;
-			argB30.Enabled = bool1;
+            Control arg730 = _setlistStrip;
+            Control arg_6B0 = _setlistConfTLPanel;
+            _gh3FolderMenuItem.Enabled = bool1;
+            arg_6B0.Enabled = bool1;
+            arg730.Enabled = bool1;
+            arg_7B0.Enabled = bool1;
+            arg840.Enabled = bool1;
+            arg_8E0.Enabled = bool1;
+            arg980.Enabled = bool1;
+            argA20.Enabled = bool1;
+            argAc0.Enabled = bool1;
+            argB30.Enabled = bool1;
             export.Enabled = bool1;
-		}
+        }
 
-		public void InitializeLanguageList()
-		{
-			var registryKey = Registry.LocalMachine.CreateSubKey(_ghtcpRegistry);
-			string[] array = {
-				"English",
-				"French",
-				"Italian",
-				"Spanish",
-				"German",
-				"Korean"
-			};
-			for (var i = 0; i < array.Length; i++)
-			{
-				registryKey.SetValue(array[i], _languageList[i]);
-			}
-			_sysEnglishMenuItem.Text = _languageList[0];
-			_sysFrenchMenuItem.Text = _languageList[1];
-			_sysItalianMenuItem.Text = _languageList[2];
-			_sysSpanishMenuItem.Text = _languageList[3];
-			_sysGermanMenuItem.Text = _languageList[4];
-			_sysKoreanMenuItem.Text = _languageList[5];
-		}
+        public void InitializeLanguageList()
+        {
+            var registryKey = Registry.LocalMachine.CreateSubKey(_ghtcpRegistry);
+            string[] array =
+            {
+                "English",
+                "French",
+                "Italian",
+                "Spanish",
+                "German",
+                "Korean"
+            };
+            for (var i = 0; i < array.Length; i++)
+            {
+                registryKey.SetValue(array[i], _languageList[i]);
+            }
+            _sysEnglishMenuItem.Text = _languageList[0];
+            _sysFrenchMenuItem.Text = _languageList[1];
+            _sysItalianMenuItem.Text = _languageList[2];
+            _sysSpanishMenuItem.Text = _languageList[3];
+            _sysGermanMenuItem.Text = _languageList[4];
+            _sysKoreanMenuItem.Text = _languageList[5];
+        }
 
-		private void OpenGameSettings_MenuItem_Click(object sender, EventArgs e)
-		{
-			LoadCurrentGameSettings(false);
-		}
+        private void OpenGameSettings_MenuItem_Click(object sender, EventArgs e)
+        {
+            LoadCurrentGameSettings(false);
+        }
 
-		private void RecoverGameSettings_MenuItem_Click(object sender, EventArgs e)
-		{
-			LoadCurrentGameSettings(true);
-		}
+        private void RecoverGameSettings_MenuItem_Click(object sender, EventArgs e)
+        {
+            LoadCurrentGameSettings(true);
+        }
 
-		private void LoadCurrentGameSettings(bool bool1)
-		{
-			var loadGameSettings = new LoadGameSettings(_languageList);
-			if (loadGameSettings.ShowDialog() != DialogResult.OK)
-			{
-				return;
-			}
-			method_15();
-			_languageList = loadGameSettings.method_2();
-			InitializeLanguageList();
-			try
-			{
-				var registryKey = Registry.LocalMachine.OpenSubKey(_gameRegistry);
-				_dataFolder = (string)registryKey.GetValue("Path") + "\\DATA\\";
-				if (!Directory.Exists(_dataFolder))
-				{
-					throw new Exception();
-				}
-			}
-			catch
-			{
-				var text = KeyGenerator.OpenOrSaveFile("Find Guitar Hero " + (_isAerosmith ? "Aerosmith" : "3"), _isAerosmith ? "Guitar Hero Aerosmith Executable|Guitar Hero Aerosmith.exe" : "Guitar Hero 3 Executable|GH3.exe", true);
-				if (string.IsNullOrEmpty(text))
-				{
-					return;
-				}
-				try
-				{
-					_dataFolder = new FileInfo(text).Directory.FullName;
-					var registryKey = Registry.LocalMachine.CreateSubKey(_gameRegistry);
-					registryKey.SetValue("Path", _dataFolder);
-					_dataFolder += "\\DATA\\";
-				}
-				catch
-				{
-					MessageBox.Show("Guitar Hero " + (_isAerosmith ? "Aerosmith" : "3") + " is not installed properly on this computer.", "Error!");
-					return;
-				}
-			}
-			var text2 = _list0[loadGameSettings.method_3()];
-			var int_ = loadGameSettings.method_3();
-			using (new Class217("QB Parse Operations"))
-			{
-				try
-				{
-					if (!method_16(int_) && DialogResult.Yes == MessageBox.Show("A proper backup doesn't exist. Do you wish to start backup creation? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNo) && !method_17(int_))
-					{
-						return;
-					}
-					var class2 = new ZzPabNode(string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pak.xen"), string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pab.xen"), false);
-					Gh3Songlist gH3Songlist = null;
-					using (Class3190 = new ZzPabNode(_dataFolder + "PAK\\qb" + text2 + ".pak.xen", _dataFolder + "PAK\\qb" + text2 + ".pab.xen", false))
-					{
-						if (method_19(int_).GameSettingsAreValid())
-						{
-							if (!bool1)
-							{
-								goto IL_478;
-							}
-						}
-						try
-						{
-							gH3Songlist = new Gh3Songlist(Class3190.ZzGetNode1("scripts\\guitar\\songlist.qb"), new Gh3Songlist(class2.ZzGetNode1("scripts\\guitar\\songlist.qb"), null));
-							new ZzSetListParser(Class3190, gH3Songlist, _isAerosmith).method_0();
-						}
-						catch (Exception ex)
-						{
-							Console.WriteLine(ex.ToString());
-						}
-						Class3190.Dispose();
-						Class3190 = null;
-						if (gH3Songlist != null)
-						{
-							var dialogResult = MessageBox.Show("Game Settings files are not compatible, but something can be recovered. Do you wish to recover when starting from backup? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNoCancel);
-							if (dialogResult == DialogResult.Cancel)
-							{
-								return;
-							}
-							if (dialogResult == DialogResult.No)
-							{
-								gH3Songlist = null;
-							}
-						}
-						else if (DialogResult.No == MessageBox.Show("Game Settings files are not compatible, and nothing can be recovered. Do you wish to start from backup? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNo))
-						{
-							return;
-						}
-						if (!method_16(int_))
-						{
-							return;
-						}
-						KeyGenerator.smethod_19(_dataFolder + "PAK\\qb" + text2 + ".pab.xen", string.Concat(_appDirectory, _backupName, "lastedited\\qb", text2, ".pab.xen"), true);
-						KeyGenerator.smethod_19(_dataFolder + "PAK\\qb" + text2 + ".pak.xen", string.Concat(_appDirectory, _backupName, "lastedited\\qb", text2, ".pak.xen"), true);
-						KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pab.xen"), _dataFolder + "PAK\\qb" + text2 + ".pab.xen", true);
-						KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pak.xen"), _dataFolder + "PAK\\qb" + text2 + ".pak.xen", true);
-						IL_478:;
-					}
-					Class3190 = new ZzPabNode(_dataFolder + "PAK\\qb" + text2 + ".pak.xen", _dataFolder + "PAK\\qb" + text2 + ".pab.xen", false);
-					method_20(int_);
-					_gh3Songlist = new Gh3Songlist(Class3190.ZzGetNode1("scripts\\guitar\\songlist.qb"), new Gh3Songlist(class2.ZzGetNode1("scripts\\guitar\\songlist.qb"), null));
-					class2.Dispose();
-					var flag = false;
-					if (gH3Songlist != null)
-					{
-						foreach (var current in gH3Songlist.Keys)
-						{
-							if (!_gh3Songlist.method_3(current))
-							{
-								_gh3Songlist.Add(gH3Songlist[current]);
-								flag = true;
-							}
-						}
-					}
-					if (flag)
-					{
-						method_4(new Class247(Class3190, _gh3Songlist));
-					}
-					new CustomMenuCreator(Class3190, _isAerosmith).method_0();
-					new ZzSetListParser(Class3190, _gh3Songlist, _isAerosmith).method_0();
-					if (flag && gH3Songlist.Gh3SetlistList.Count != 0)
-					{
-						var flag2 = false;
-						using (var enumerator2 = gH3Songlist.Gh3SetlistList.Keys.GetEnumerator())
-						{
-							IL_78C:
-							while (enumerator2.MoveNext())
-							{
-								var current2 = enumerator2.Current;
-								var gH3Setlist = gH3Songlist.Gh3SetlistList[current2];
-								if (gH3Setlist.method_4())
-								{
-									try
-									{
-										/*if (this.gh3Songlist_0.CustomBitMask == -1)
-										{
-											break;
-										}*/
-										for (var i = 0; ; )
-										{
-											var num = 1 << i;
+        private void LoadCurrentGameSettings(bool bool1)
+        {
+            var loadGameSettings = new LoadGameSettings(_languageList);
+            if (loadGameSettings.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+            method_15();
+            _languageList = loadGameSettings.method_2();
+            InitializeLanguageList();
+            try
+            {
+                var registryKey = Registry.LocalMachine.OpenSubKey(_gameRegistry);
+                _dataFolder = (string) registryKey.GetValue("Path") + "\\DATA\\";
+                if (!Directory.Exists(_dataFolder))
+                {
+                    throw new Exception();
+                }
+            }
+            catch
+            {
+                var text = KeyGenerator.OpenOrSaveFile("Find Guitar Hero " + (_isAerosmith ? "Aerosmith" : "3"),
+                    _isAerosmith
+                        ? "Guitar Hero Aerosmith Executable|Guitar Hero Aerosmith.exe"
+                        : "Guitar Hero 3 Executable|GH3.exe", true);
+                if (string.IsNullOrEmpty(text))
+                {
+                    return;
+                }
+                try
+                {
+                    _dataFolder = new FileInfo(text).Directory.FullName;
+                    var registryKey = Registry.LocalMachine.CreateSubKey(_gameRegistry);
+                    registryKey.SetValue("Path", _dataFolder);
+                    _dataFolder += "\\DATA\\";
+                }
+                catch
+                {
+                    MessageBox.Show(
+                        "Guitar Hero " + (_isAerosmith ? "Aerosmith" : "3") +
+                        " is not installed properly on this computer.", "Error!");
+                    return;
+                }
+            }
+            var text2 = _list0[loadGameSettings.method_3()];
+            var int_ = loadGameSettings.method_3();
+            using (new Class217("QB Parse Operations"))
+            {
+                try
+                {
+                    if (!method_16(int_) && DialogResult.Yes ==
+                        MessageBox.Show(
+                            "A proper backup doesn't exist. Do you wish to start backup creation? (Overwriting!)",
+                            "Loading Game Settings", MessageBoxButtons.YesNo) && !method_17(int_))
+                    {
+                        return;
+                    }
+                    var class2 = new ZzPabNode(
+                        string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pak.xen"),
+                        string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pab.xen"), false);
+                    Gh3Songlist gH3Songlist = null;
+                    using (Class3190 = new ZzPabNode(_dataFolder + "PAK\\qb" + text2 + ".pak.xen",
+                        _dataFolder + "PAK\\qb" + text2 + ".pab.xen", false))
+                    {
+                        if (method_19(int_).GameSettingsAreValid())
+                        {
+                            if (!bool1)
+                            {
+                                goto IL_478;
+                            }
+                        }
+                        try
+                        {
+                            gH3Songlist = new Gh3Songlist(Class3190.ZzGetNode1("scripts\\guitar\\songlist.qb"),
+                                new Gh3Songlist(class2.ZzGetNode1("scripts\\guitar\\songlist.qb"), null));
+                            new ZzSetListParser(Class3190, gH3Songlist, _isAerosmith).method_0();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.ToString());
+                        }
+                        Class3190.Dispose();
+                        Class3190 = null;
+                        if (gH3Songlist != null)
+                        {
+                            var dialogResult =
+                                MessageBox.Show(
+                                    "Game Settings files are not compatible, but something can be recovered. Do you wish to recover when starting from backup? (Overwriting!)",
+                                    "Loading Game Settings", MessageBoxButtons.YesNoCancel);
+                            if (dialogResult == DialogResult.Cancel)
+                            {
+                                return;
+                            }
+                            if (dialogResult == DialogResult.No)
+                            {
+                                gH3Songlist = null;
+                            }
+                        }
+                        else if (DialogResult.No ==
+                                 MessageBox.Show(
+                                     "Game Settings files are not compatible, and nothing can be recovered. Do you wish to start from backup? (Overwriting!)",
+                                     "Loading Game Settings", MessageBoxButtons.YesNo))
+                        {
+                            return;
+                        }
+                        if (!method_16(int_))
+                        {
+                            return;
+                        }
+                        KeyGenerator.smethod_19(_dataFolder + "PAK\\qb" + text2 + ".pab.xen",
+                            string.Concat(_appDirectory, _backupName, "lastedited\\qb", text2, ".pab.xen"), true);
+                        KeyGenerator.smethod_19(_dataFolder + "PAK\\qb" + text2 + ".pak.xen",
+                            string.Concat(_appDirectory, _backupName, "lastedited\\qb", text2, ".pak.xen"), true);
+                        KeyGenerator.smethod_19(
+                            string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pab.xen"),
+                            _dataFolder + "PAK\\qb" + text2 + ".pab.xen", true);
+                        KeyGenerator.smethod_19(
+                            string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pak.xen"),
+                            _dataFolder + "PAK\\qb" + text2 + ".pak.xen", true);
+                        IL_478:
+                        ;
+                    }
+                    Class3190 = new ZzPabNode(_dataFolder + "PAK\\qb" + text2 + ".pak.xen",
+                        _dataFolder + "PAK\\qb" + text2 + ".pab.xen", false);
+                    method_20(int_);
+                    _gh3Songlist = new Gh3Songlist(Class3190.ZzGetNode1("scripts\\guitar\\songlist.qb"),
+                        new Gh3Songlist(class2.ZzGetNode1("scripts\\guitar\\songlist.qb"), null));
+                    class2.Dispose();
+                    var flag = false;
+                    if (gH3Songlist != null)
+                    {
+                        foreach (var current in gH3Songlist.Keys)
+                        {
+                            if (!_gh3Songlist.method_3(current))
+                            {
+                                _gh3Songlist.Add(gH3Songlist[current]);
+                                flag = true;
+                            }
+                        }
+                    }
+                    if (flag)
+                    {
+                        method_4(new Class247(Class3190, _gh3Songlist));
+                    }
+                    new CustomMenuCreator(Class3190, _isAerosmith).method_0();
+                    new ZzSetListParser(Class3190, _gh3Songlist, _isAerosmith).method_0();
+                    if (flag && gH3Songlist.Gh3SetlistList.Count != 0)
+                    {
+                        var flag2 = false;
+                        using (var enumerator2 = gH3Songlist.Gh3SetlistList.Keys.GetEnumerator())
+                        {
+                            IL_78C:
+                            while (enumerator2.MoveNext())
+                            {
+                                var current2 = enumerator2.Current;
+                                var gH3Setlist = gH3Songlist.Gh3SetlistList[current2];
+                                if (gH3Setlist.method_4())
+                                {
+                                    try
+                                    {
+                                        /*if (this.gh3Songlist_0.CustomBitMask == -1)
+                                        {
+                                            break;
+                                        }*/
+                                        for (var i = 0;;)
+                                        {
+                                            var num = 1 << i;
                                             if (!((_gh3Songlist.CustomBitMask & num) == 0))
                                                 goto SKIPIT;
 
-												_gh3Songlist.CustomBitMask |= (gH3Setlist.CustomBit = num);
-												IL_666:
-												gH3Setlist.Prefix = "custom" + (i + 1);
-												int num2;
-												_gh3Songlist.Gh3SetlistList.Add(num2 = QbSongClass1.AddKeyToDictionary("gh3_custom" + (i + 1) + "_songs"), gH3Setlist);
-												int value;
-												_gh3Songlist.Dictionary1.Add(value = QbSongClass1.AddKeyToDictionary("custom" + (i + 1) + "_progression"), new GhLink(num2));
-												_gh3Songlist.Class2140.Add("Custom Setlist " + (i + 1), value);
-												method_4(new Class246(value, Class3190, _gh3Songlist, true));
-												flag2 = true;
-												goto IL_78C;
+                                            _gh3Songlist.CustomBitMask |= (gH3Setlist.CustomBit = num);
+                                            IL_666:
+                                            gH3Setlist.Prefix = "custom" + (i + 1);
+                                            int num2;
+                                            _gh3Songlist.Gh3SetlistList.Add(
+                                                num2 =
+                                                    QbSongClass1.AddKeyToDictionary("gh3_custom" + (i + 1) + "_songs"),
+                                                gH3Setlist);
+                                            int value;
+                                            _gh3Songlist.Dictionary1.Add(
+                                                value =
+                                                    QbSongClass1.AddKeyToDictionary(
+                                                        "custom" + (i + 1) + "_progression"), new GhLink(num2));
+                                            _gh3Songlist.Class2140.Add("Custom Setlist " + (i + 1), value);
+                                            method_4(new Class246(value, Class3190, _gh3Songlist, true));
+                                            flag2 = true;
+                                            goto IL_78C;
 
 
-                                        SKIPIT:
+                                            SKIPIT:
                                             i++;
                                             if (i >= 32)
                                                 goto IL_666;
-										}
+                                        }
+                                    }
+                                    catch (Exception ex2)
+                                    {
+                                        Console.WriteLine(ex2.ToString());
+                                        continue;
+                                    }
+                                }
+                                if (gH3Setlist.method_2() == "scripts\\guitar\\guitar_download.qb")
+                                {
+                                    _gh3Songlist.Gh3SetlistList[current2].method_0().AddRange(gH3Setlist.method_0());
+                                    method_4(new ZzSetListUpdater(current2, Class3190, _gh3Songlist));
+                                }
+                            }
+                        }
+                        if (flag2)
+                        {
+                            method_4(new UpdateSetlistSwitcher(Class3190, _gh3Songlist, _isAerosmith));
+                        }
+                    }
+                    new Class249(Class3190).method_0();
+                    new QbDatabaseInitialModifier(Class3190, _isAerosmith).method_0();
+                    RefreshSongListBox();
+                }
+                catch (Exception ex3)
+                {
+                    if (Class3190 != null)
+                    {
+                        Class3190.Dispose();
+                        Class3190 = null;
+                    }
+                    Console.WriteLine(ex3.Message);
+                    if (DialogResult.Yes == MessageBox.Show(
+                            "Game Settings files are corrupt. Do you wish to start from backup? (Overwriting!)",
+                            "Loading Game Settings", MessageBoxButtons.YesNo) && method_16(int_))
+                    {
+                        KeyGenerator.smethod_19(
+                            string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pab.xen"),
+                            _dataFolder + "PAK\\qb" + text2 + ".pab.xen", true);
+                        KeyGenerator.smethod_19(
+                            string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pak.xen"),
+                            _dataFolder + "PAK\\qb" + text2 + ".pak.xen", true);
+                    }
+                    return;
+                }
+            }
+            foreach (var current3 in _gh3Songlist.Class2140.Keys)
+            {
+                _setlistDropBox.Items.Add(current3);
+            }
+            method_12(true);
+            if (_setlistDropBox.Items.Count != 0)
+            {
+                _setlistDropBox.SelectedIndex = 0;
+            }
+            _tabControl.SelectedIndex = 1;
+        }
 
-									}
-									catch (Exception ex2)
-									{
-										Console.WriteLine(ex2.ToString());
-										continue;
-									}
-								}
-								if (gH3Setlist.method_2() == "scripts\\guitar\\guitar_download.qb")
-								{
-									_gh3Songlist.Gh3SetlistList[current2].method_0().AddRange(gH3Setlist.method_0());
-									method_4(new ZzSetListUpdater(current2, Class3190, _gh3Songlist));
-								}
-							}
-						}
-						if (flag2)
-						{
-							method_4(new UpdateSetlistSwitcher(Class3190, _gh3Songlist, _isAerosmith));
-						}
-					}
-					new Class249(Class3190).method_0();
-					new QbDatabaseInitialModifier(Class3190, _isAerosmith).method_0();
-					RefreshSongListBox();
-				}
-				catch (Exception ex3)
-				{
-					if (Class3190 != null)
-					{
-						Class3190.Dispose();
-						Class3190 = null;
-					}
-					Console.WriteLine(ex3.Message);
-					if (DialogResult.Yes == MessageBox.Show("Game Settings files are corrupt. Do you wish to start from backup? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNo) && method_16(int_))
-					{
-						KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pab.xen"), _dataFolder + "PAK\\qb" + text2 + ".pab.xen", true);
-						KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\qb", text2, ".pak.xen"), _dataFolder + "PAK\\qb" + text2 + ".pak.xen", true);
-					}
-					return;
-				}
-			}
-			foreach (var current3 in _gh3Songlist.Class2140.Keys)
-			{
-				_setlistDropBox.Items.Add(current3);
-			}
-			method_12(true);
-			if (_setlistDropBox.Items.Count != 0)
-			{
-				_setlistDropBox.SelectedIndex = 0;
-			}
-			_tabControl.SelectedIndex = 1;
-		}
+        private void ClearGameSettings_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Are You sure you want to Clear All Game Settings?", "Warning!",
+                    MessageBoxButtons.YesNo))
+            {
+                method_15();
+            }
+        }
 
-		private void ClearGameSettings_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (DialogResult.Yes == MessageBox.Show("Are You sure you want to Clear All Game Settings?", "Warning!", MessageBoxButtons.YesNo))
-			{
-				method_15();
-			}
-		}
-
-		private void method_15()
-		{
-			method_12(false);
-			if (_gh3Songlist != null)
-			{
-				_gh3Songlist.Clear();
-				_gh3Songlist.Gh3SetlistList.Clear();
-			}
-			_gh3Songlist = null;
-			_songListBox.Items.Clear();
-			_setlistDropBox.Items.Clear();
-			_actionRequestsListBox.Items.Clear();
+        private void method_15()
+        {
+            method_12(false);
+            if (_gh3Songlist != null)
+            {
+                _gh3Songlist.Clear();
+                _gh3Songlist.Gh3SetlistList.Clear();
+            }
+            _gh3Songlist = null;
+            _songListBox.Items.Clear();
+            _setlistDropBox.Items.Clear();
+            _actionRequestsListBox.Items.Clear();
             //this.notifyIcon_0.Visible = false;
-			method_23();
-			if (!Directory.Exists(_appDirectory + "log"))
-			{
-				Directory.CreateDirectory(_appDirectory + "log");
-			}
-			Class216.smethod_0(_appDirectory + "log\\");
-			Class216.smethod_2();
-			if (Class3190 != null)
-			{
-				Class3190.Dispose();
-			}
-			Class3190 = null;
-			GC.Collect();
-		}
+            method_23();
+            if (!Directory.Exists(_appDirectory + "log"))
+            {
+                Directory.CreateDirectory(_appDirectory + "log");
+            }
+            Class216.smethod_0(_appDirectory + "log\\");
+            Class216.smethod_2();
+            if (Class3190 != null)
+            {
+                Class3190.Dispose();
+            }
+            Class3190 = null;
+            GC.Collect();
+        }
 
-		private bool method_16(int int3)
-		{
-			var text = string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[int3], ".pab.xen");
-			var icollection = _isAerosmith ? _int2[int3] : _int1[int3];
-			return File.Exists(text) && File.Exists(text.Replace(".pab.xen", ".pak.xen")) && KeyGenerator.smethod_53(KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection);
-		}
+        private bool method_16(int int3)
+        {
+            var text = string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[int3], ".pab.xen");
+            var icollection = _isAerosmith ? _int2[int3] : _int1[int3];
+            return File.Exists(text) && File.Exists(text.Replace(".pab.xen", ".pak.xen")) && KeyGenerator.smethod_53(
+                       KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection);
+        }
 
-		private bool method_17(int int3)
-		{
-			var text = _dataFolder + "PAK\\qb" + _list0[int3] + ".pab.xen";
-			var icollection = _isAerosmith ? _int2[int3] : _int1[int3];
-			while (!File.Exists(text) || !File.Exists(text.Replace(".pab.xen", ".pak.xen")) || !KeyGenerator.smethod_53(KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection))
-			{
-				if ((text = KeyGenerator.OpenOrSaveFile("Find The Original V1.3 Game Settings.", "Original V1.3 Game Settings|qb" + _list0[int3] + ".pab.xen", true)).Equals(""))
-				{
-					return false;
-				}
-			}
-			KeyGenerator.smethod_19(text, string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[int3], ".pab.xen"), true);
-			KeyGenerator.smethod_19(text.Replace(".pab.xen", ".pak.xen"), string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[int3], ".pak.xen"), true);
-			return true;
-		}
+        private bool method_17(int int3)
+        {
+            var text = _dataFolder + "PAK\\qb" + _list0[int3] + ".pab.xen";
+            var icollection = _isAerosmith ? _int2[int3] : _int1[int3];
+            while (!File.Exists(text) || !File.Exists(text.Replace(".pab.xen", ".pak.xen")) || !KeyGenerator.smethod_53(
+                       KeyGenerator.smethod_21(KeyGenerator.HashStream(text)), icollection))
+            {
+                if ((text = KeyGenerator.OpenOrSaveFile("Find The Original V1.3 Game Settings.",
+                    "Original V1.3 Game Settings|qb" + _list0[int3] + ".pab.xen", true)).Equals(""))
+                {
+                    return false;
+                }
+            }
+            KeyGenerator.smethod_19(text,
+                string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[int3], ".pab.xen"), true);
+            KeyGenerator.smethod_19(text.Replace(".pab.xen", ".pak.xen"),
+                string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[int3], ".pak.xen"), true);
+            return true;
+        }
 
-		private bool method_18()
-		{
-			bool result;
-			try
-			{
-				GameSettingsChecker.SignHash(Class3190);
-				Class3190.vmethod_1();
-				GC.Collect();
-				result = true;
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message);
-				result = false;
-			}
-			return result;
-		}
+        private bool method_18()
+        {
+            bool result;
+            try
+            {
+                GameSettingsChecker.SignHash(Class3190);
+                Class3190.vmethod_1();
+                GC.Collect();
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                result = false;
+            }
+            return result;
+        }
 
-		private GameSettingsChecker method_19(int int3)
-		{
-			if (File.Exists(Class3190.String0) && File.Exists(Class3190.String2) && KeyGenerator.smethod_53(KeyGenerator.smethod_21(KeyGenerator.HashStream(Class3190.String2)), _isAerosmith ? _int2[int3] : _int1[int3]))
-			{
-				return new GameSettingsChecker(true);
-			}
-			GameSettingsChecker result;
-			try
-			{
-				result = new GameSettingsChecker(Class3190);
-			}
-			catch
-			{
-				result = new GameSettingsChecker(false);
-			}
-			return result;
-		}
+        private GameSettingsChecker method_19(int int3)
+        {
+            if (File.Exists(Class3190.String0) && File.Exists(Class3190.String2) && KeyGenerator.smethod_53(
+                    KeyGenerator.smethod_21(KeyGenerator.HashStream(Class3190.String2)),
+                    _isAerosmith ? _int2[int3] : _int1[int3]))
+            {
+                return new GameSettingsChecker(true);
+            }
+            GameSettingsChecker result;
+            try
+            {
+                result = new GameSettingsChecker(Class3190);
+            }
+            catch
+            {
+                result = new GameSettingsChecker(false);
+            }
+            return result;
+        }
 
-		private void method_20(int int3)
-		{
-		}
+        private void method_20(int int3)
+        {
+        }
 
-		private void RestoreOriginal_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (DialogResult.Yes != MessageBox.Show("Do you wish to continue with Original Game Settings Restoration? Current Game Settings will be overwritten!", "Original Game Settings Restoration", MessageBoxButtons.YesNo))
-			{
-				return;
-			}
-			var text = KeyGenerator.GetFileNameNoExt(Class3190.String0);
-			var int_ = new List<string>(_list0).IndexOf(text.Replace("qb", ""));
-			if (method_16(int_))
-			{
-				method_15();
-				KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\", text, ".pak.xen"), _dataFolder + "PAK\\" + text + ".pak.xen", true);
-				KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\", text, ".pab.xen"), _dataFolder + "PAK\\" + text + ".pab.xen", true);
-				return;
-			}
-			method_17(int_);
-		}
+        private void RestoreOriginal_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes != MessageBox.Show(
+                    "Do you wish to continue with Original Game Settings Restoration? Current Game Settings will be overwritten!",
+                    "Original Game Settings Restoration", MessageBoxButtons.YesNo))
+            {
+                return;
+            }
+            var text = KeyGenerator.GetFileNameNoExt(Class3190.String0);
+            var int_ = new List<string>(_list0).IndexOf(text.Replace("qb", ""));
+            if (method_16(int_))
+            {
+                method_15();
+                KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\", text, ".pak.xen"),
+                    _dataFolder + "PAK\\" + text + ".pak.xen", true);
+                KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "originals\\", text, ".pab.xen"),
+                    _dataFolder + "PAK\\" + text + ".pab.xen", true);
+                return;
+            }
+            method_17(int_);
+        }
 
-		private void RestoreLast_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (DialogResult.Yes != MessageBox.Show("Do you wish to continue with Last Game Settings Restoration? Current Game Settings will be overwritten!", "Last Game Settings Restoration", MessageBoxButtons.YesNo))
-			{
-				return;
-			}
-			var text = KeyGenerator.GetFileNameNoExt(Class3190.String0);
-			if (File.Exists(string.Concat(_appDirectory, _backupName, "lastedited\\", text, ".pak.xen")) && File.Exists(string.Concat(_appDirectory, _backupName, "lastedited\\", text, ".pab.xen")))
-			{
-				method_15();
-				KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "lastedited\\", text, ".pak.xen"), _dataFolder + "PAK\\" + text + ".pak.xen", true);
-				KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "lastedited\\", text, ".pab.xen"), _dataFolder + "PAK\\" + text + ".pab.xen", true);
-				return;
-			}
-			MessageBox.Show("Last Game Settings were never backuped.", "Error!");
-		}
+        private void RestoreLast_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes != MessageBox.Show(
+                    "Do you wish to continue with Last Game Settings Restoration? Current Game Settings will be overwritten!",
+                    "Last Game Settings Restoration", MessageBoxButtons.YesNo))
+            {
+                return;
+            }
+            var text = KeyGenerator.GetFileNameNoExt(Class3190.String0);
+            if (File.Exists(string.Concat(_appDirectory, _backupName, "lastedited\\", text, ".pak.xen")) && File.Exists(
+                    string.Concat(_appDirectory, _backupName, "lastedited\\", text, ".pab.xen")))
+            {
+                method_15();
+                KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "lastedited\\", text, ".pak.xen"),
+                    _dataFolder + "PAK\\" + text + ".pak.xen", true);
+                KeyGenerator.smethod_19(string.Concat(_appDirectory, _backupName, "lastedited\\", text, ".pab.xen"),
+                    _dataFolder + "PAK\\" + text + ".pab.xen", true);
+                return;
+            }
+            MessageBox.Show("Last Game Settings were never backuped.", "Error!");
+        }
 
-		private void GameSettingsSwitch_MenuItem_Click(object sender, EventArgs e)
-		{
-			if (DialogResult.Yes != MessageBox.Show("Do you wish to switch Game Settings to a different language? Current Game Settings will be overwritten and you will start from a backup!", "Game Settings Switch", MessageBoxButtons.YesNo))
-			{
-				return;
-			}
-			var loadGameSettings = new LoadGameSettings(new[]
-			{
-				"English",
-				"French",
-				"Italian",
-				"Spanish",
-				"German",
-				"Korean"
-			});
-			if (loadGameSettings.ShowDialog() != DialogResult.OK)
-			{
-				return;
-			}
-			var num = loadGameSettings.method_3();
-			var text = KeyGenerator.GetFileNameNoExt(Class3190.String0);
-			if (!method_16(num) && DialogResult.Yes == MessageBox.Show("A proper backup doesn't exist. Do you wish to start backup creation? (Overwriting!)", "Loading Game Settings", MessageBoxButtons.YesNo) && !method_17(num))
-			{
-				return;
-			}
-			new List<string>(_list0).IndexOf(text.Replace("qb", ""));
-			method_15();
-			using (var @class = new ZzPabNode(string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[num], ".pak.xen"), string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[num], ".pab.xen"), false))
-			{
-				GameSettingsChecker.SignHash(@class);
-				@class.method_20(_dataFolder + "PAK\\" + text + ".pak.xen", _dataFolder + "PAK\\" + text + ".pab.xen");
-			}
-			GC.Collect();
-		}
+        private void GameSettingsSwitch_MenuItem_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes != MessageBox.Show(
+                    "Do you wish to switch Game Settings to a different language? Current Game Settings will be overwritten and you will start from a backup!",
+                    "Game Settings Switch", MessageBoxButtons.YesNo))
+            {
+                return;
+            }
+            var loadGameSettings = new LoadGameSettings(new[]
+            {
+                "English",
+                "French",
+                "Italian",
+                "Spanish",
+                "German",
+                "Korean"
+            });
+            if (loadGameSettings.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+            var num = loadGameSettings.method_3();
+            var text = KeyGenerator.GetFileNameNoExt(Class3190.String0);
+            if (!method_16(num) && DialogResult.Yes ==
+                MessageBox.Show("A proper backup doesn't exist. Do you wish to start backup creation? (Overwriting!)",
+                    "Loading Game Settings", MessageBoxButtons.YesNo) && !method_17(num))
+            {
+                return;
+            }
+            new List<string>(_list0).IndexOf(text.Replace("qb", ""));
+            method_15();
+            using (var @class = new ZzPabNode(
+                string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[num], ".pak.xen"),
+                string.Concat(_appDirectory, _backupName, "originals\\qb", _list0[num], ".pab.xen"), false))
+            {
+                GameSettingsChecker.SignHash(@class);
+                @class.method_20(_dataFolder + "PAK\\" + text + ".pak.xen", _dataFolder + "PAK\\" + text + ".pab.xen");
+            }
+            GC.Collect();
+        }
 
-		private void method_21(object sender, EventArgs2 e)
-		{
-			_tierApplyBtn.Enabled = true;
-		}
+        private void method_21(object sender, EventArgs2 e)
+        {
+            _tierApplyBtn.Enabled = true;
+        }
 
-        private void TierSongs_ListBox_DragDrop(object sender, DragEventArgs e) {
+        private void TierSongs_ListBox_DragDrop(object sender, DragEventArgs e)
+        {
             _tierApplyBtn.Enabled = true;
         }
 
         private void TierSongs_ListBox_MouseDown(object sender, MouseEventArgs e)
-		{
+        {
             var num = _tierSongsListBox.IndexFromPoint(e.Location);
-			if (num >= 0 && num < _tierSongsListBox.Items.Count && e.Clicks == 2 && e.Button == MouseButtons.Right)
-			{
-				_tierSongsListBox.Items.RemoveAt(num);
-				_tierApplyBtn.Enabled = true;
-			}
-		}
+            if (num >= 0 && num < _tierSongsListBox.Items.Count && e.Clicks == 2 && e.Button == MouseButtons.Right)
+            {
+                _tierSongsListBox.Items.RemoveAt(num);
+                _tierApplyBtn.Enabled = true;
+            }
+        }
 
-		private void TierSongs_ListBox_KeyDown(object sender, KeyEventArgs e)
-		{
-			if (e.KeyCode == Keys.Delete && _songListBox.SelectedItems.Count != 0 && DialogResult.Yes == MessageBox.Show("The selected songs will be deleted from the Tier!\nAre you sure you wish to continue?", "Warning!", MessageBoxButtons.YesNo))
-			{
-				_tierSongsListBox.method_3();
-				_tierApplyBtn.Enabled = true;
-			}
-		}
+        private void TierSongs_ListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete && _songListBox.SelectedItems.Count != 0 && DialogResult.Yes ==
+                MessageBox.Show("The selected songs will be deleted from the Tier!\nAre you sure you wish to continue?",
+                    "Warning!", MessageBoxButtons.YesNo))
+            {
+                _tierSongsListBox.method_3();
+                _tierApplyBtn.Enabled = true;
+            }
+        }
 
-		private void method_22(Gh3Tier gh3Tier0)
-		{
-			_tierTLPanel.Enabled = true;
-			_tierTitleTxtBox.Text = gh3Tier0.Title;
-			_tierUnlockedNumBox.Value = gh3Tier0.Defaultunlocked;
-			_tierCompMovieTxtBox.Text = gh3Tier0.CompletionMovie;
-			_tierIconDropBox.SelectedItem = gh3Tier0.SetlistIcon;
-			_tierStageDropBox.SelectedItem = gh3Tier0.Level;
-			_tierEncorep1CheckBox.Checked = gh3Tier0.Encorep1;
-			_tierEncorep2CheckBox.Checked = (gh3Tier0.Encorep2 || gh3Tier0.AerosmithEncoreP1);
-			_tierBossCheckBox.Checked = gh3Tier0.Boss;
-			_noCashCheckBox.Checked = gh3Tier0.Nocash;
-			_unlockAllCheckBox.Checked = gh3Tier0.Unlockall;
-			_tierSongsListBox.Items.Clear();
-			_tierSongsListBox.Items.AddRange(gh3Tier0.Songs.ToArray());
-			_tierApplyBtn.Enabled = false;
-		}
+        private void method_22(Gh3Tier gh3Tier0)
+        {
+            _tierTLPanel.Enabled = true;
+            _tierTitleTxtBox.Text = gh3Tier0.Title;
+            _tierUnlockedNumBox.Value = gh3Tier0.Defaultunlocked;
+            _tierCompMovieTxtBox.Text = gh3Tier0.CompletionMovie;
+            _tierIconDropBox.SelectedItem = gh3Tier0.SetlistIcon;
+            _tierStageDropBox.SelectedItem = gh3Tier0.Level;
+            _tierEncorep1CheckBox.Checked = gh3Tier0.Encorep1;
+            _tierEncorep2CheckBox.Checked = (gh3Tier0.Encorep2 || gh3Tier0.AerosmithEncoreP1);
+            _tierBossCheckBox.Checked = gh3Tier0.Boss;
+            _noCashCheckBox.Checked = gh3Tier0.Nocash;
+            _unlockAllCheckBox.Checked = gh3Tier0.Unlockall;
+            _tierSongsListBox.Items.Clear();
+            _tierSongsListBox.Items.AddRange(gh3Tier0.Songs.ToArray());
+            _tierApplyBtn.Enabled = false;
+        }
 
-		private void method_23()
-		{
-			_tierBox.SelectedIndex = -1;
-			_tierTLPanel.Enabled = false;
-			_tierTitleTxtBox.Text = "";
-			_tierUnlockedNumBox.Value = 0m;
-			_tierCompMovieTxtBox.Text = "";
-			_tierIconDropBox.SelectedIndex = -1;
-			_tierStageDropBox.SelectedIndex = -1;
-			_tierEncorep1CheckBox.Checked = false;
-			_tierEncorep2CheckBox.Checked = false;
-			_tierBossCheckBox.Checked = false;
-			_noCashCheckBox.Checked = false;
-			_unlockAllCheckBox.Checked = false;
-			_tierSongsListBox.Items.Clear();
-			_tierApplyBtn.Enabled = false;
-		}
+        private void method_23()
+        {
+            _tierBox.SelectedIndex = -1;
+            _tierTLPanel.Enabled = false;
+            _tierTitleTxtBox.Text = "";
+            _tierUnlockedNumBox.Value = 0m;
+            _tierCompMovieTxtBox.Text = "";
+            _tierIconDropBox.SelectedIndex = -1;
+            _tierStageDropBox.SelectedIndex = -1;
+            _tierEncorep1CheckBox.Checked = false;
+            _tierEncorep2CheckBox.Checked = false;
+            _tierBossCheckBox.Checked = false;
+            _noCashCheckBox.Checked = false;
+            _unlockAllCheckBox.Checked = false;
+            _tierSongsListBox.Items.Clear();
+            _tierApplyBtn.Enabled = false;
+        }
 
-		private void TierBox_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			if (_tierBox.SelectedIndex >= 0)
-			{
-				method_22((Gh3Tier)_tierBox.Items[_tierBox.SelectedIndex]);
-			}
-		}
+        private void TierBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_tierBox.SelectedIndex >= 0)
+            {
+                method_22((Gh3Tier) _tierBox.Items[_tierBox.SelectedIndex]);
+            }
+        }
 
-		private void TierEncorep1_CheckBox_CheckedChanged(object sender, EventArgs e)
-		{
-			_tierApplyBtn.Enabled = true;
-		}
+        private void TierEncorep1_CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            _tierApplyBtn.Enabled = true;
+        }
 
-		private void TierUnlockedSet_Btn_Click(object sender, EventArgs e)
-		{
-			_tierUnlockedNumBox.Value = _tierSongsListBox.Items.Count;
-		}
+        private void TierUnlockedSet_Btn_Click(object sender, EventArgs e)
+        {
+            _tierUnlockedNumBox.Value = _tierSongsListBox.Items.Count;
+        }
 
-		private void TierApply_Btn_Click(object sender, EventArgs e)
-		{
-			var gH3Tier = (Gh3Tier)_tierBox.Items[_tierBox.SelectedIndex];
-			gH3Tier.Title = _tierTitleTxtBox.Text;
-			gH3Tier.Defaultunlocked = Convert.ToInt32(_tierUnlockedNumBox.Value);
-			gH3Tier.CompletionMovie = _tierCompMovieTxtBox.Text;
-			gH3Tier.SetlistIcon = (string)_tierIconDropBox.SelectedItem;
-			gH3Tier.Level = (string)_tierStageDropBox.SelectedItem;
-			gH3Tier.Boss = _tierBossCheckBox.Checked;
-			gH3Tier.Nocash = _noCashCheckBox.Checked;
-			gH3Tier.Unlockall = _unlockAllCheckBox.Checked;
-			gH3Tier.Encorep1 = _tierEncorep1CheckBox.Checked;
-			if (_isAerosmith)
-			{
-				gH3Tier.AerosmithEncoreP1 = _tierEncorep2CheckBox.Checked;
-			}
-			else
-			{
-				gH3Tier.Encorep2 = _tierEncorep2CheckBox.Checked;
-			}
-			gH3Tier.Songs.Clear();
-			foreach (Gh3Song item in _tierSongsListBox.Items)
-			{
-				gH3Tier.Songs.Add(item);
-			}
-			_tierApplyBtn.Enabled = false;
-			method_4(new ZzSetListUpdater(_selectedSetlist, Class3190, _gh3Songlist));
-			if (_hideUsedMenuItem.Checked)
-			{
-				_gh3Songlist.HideUsed = true;
-				RefreshSongListBox();
-			}
-		}
+        private void TierApply_Btn_Click(object sender, EventArgs e)
+        {
+            var gH3Tier = (Gh3Tier) _tierBox.Items[_tierBox.SelectedIndex];
+            gH3Tier.Title = _tierTitleTxtBox.Text;
+            gH3Tier.Defaultunlocked = Convert.ToInt32(_tierUnlockedNumBox.Value);
+            gH3Tier.CompletionMovie = _tierCompMovieTxtBox.Text;
+            gH3Tier.SetlistIcon = (string) _tierIconDropBox.SelectedItem;
+            gH3Tier.Level = (string) _tierStageDropBox.SelectedItem;
+            gH3Tier.Boss = _tierBossCheckBox.Checked;
+            gH3Tier.Nocash = _noCashCheckBox.Checked;
+            gH3Tier.Unlockall = _unlockAllCheckBox.Checked;
+            gH3Tier.Encorep1 = _tierEncorep1CheckBox.Checked;
+            if (_isAerosmith)
+            {
+                gH3Tier.AerosmithEncoreP1 = _tierEncorep2CheckBox.Checked;
+            }
+            else
+            {
+                gH3Tier.Encorep2 = _tierEncorep2CheckBox.Checked;
+            }
+            gH3Tier.Songs.Clear();
+            foreach (Gh3Song item in _tierSongsListBox.Items)
+            {
+                gH3Tier.Songs.Add(item);
+            }
+            _tierApplyBtn.Enabled = false;
+            method_4(new ZzSetListUpdater(_selectedSetlist, Class3190, _gh3Songlist));
+            if (_hideUsedMenuItem.Checked)
+            {
+                _gh3Songlist.HideUsed = true;
+                RefreshSongListBox();
+            }
+        }
 
         private void forceRB3MidConversionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
