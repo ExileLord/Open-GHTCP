@@ -3806,49 +3806,68 @@ namespace GHNamespace8
 
         private void BulkSGHSwitch_MenuItem_Click(object sender, EventArgs e)
         {
-            CreateSetlist_Btn_Click(sender,e);
-            _setlistDropBox.SelectedIndex = _setlistDropBox.Items.Count-1;
-            //Setlist_DropBox_SelectedIndexChanged(sender, e);
-            //SGHSwitch_MenuItem_Click
-            if (!_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
+
+            var dialog = new OpenFileDialog
             {
-                MessageBox.Show("Something weird happened: setlistlist does not contain selected setlist.");
+                Multiselect = true,
+                Title = "Select the setlists to import",
+                Filter = "GH3CP Setlist Files|*.sgh"
+            };
+            var result = dialog.ShowDialog();
+            if (result == DialogResult.Cancel || result == DialogResult.No)
+            {
                 return;
             }
-            var text = @"C:\Users\Rafael\Downloads\guitar hero 3 setlists\more\impossibleshit.sgh";
+            //var text = @"C:\Users\Rafael\Downloads\guitar hero 3 setlists\more\impossibleshit.sgh";
 
-            var gH3Setlist = new Gh3Setlist();
-            try
+            var files = dialog.FileNames;
+
+            foreach (var text in files)
             {
-                var sghManager = /*DialogResult.Yes ==
-                                 MessageBox.Show(
-                                     "Do you wish to import all contained song data (Music & Game Tracks)? Data and properties will be overwritten!",
-                                     "Setlist Switching", MessageBoxButtons.YesNo)
-                    ? */new SghManager(_gh3Songlist, gH3Setlist, text, _dataFolder)
-/*                    : new SghManager(_gh3Songlist, gH3Setlist, text)*/;
-
-                sghManager.ImportSGH();
-                _tierBox.Items.Clear();
-                _tierBox.Items.AddRange(gH3Setlist.Tiers.ToArray());
-                if (_tierBox.Items.Count != 0)
+                CreateSetlist_Btn_Click(sender,e);
+                _setlistDropBox.SelectedIndex = _setlistDropBox.Items.Count-1;
+                //Setlist_DropBox_SelectedIndexChanged(sender, e);
+                //SGHSwitch_MenuItem_Click
+                if (!_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
                 {
-                    _tierBox.SelectedIndex = 0;
+                    MessageBox.Show("Something weird happened: setlistlist does not contain selected setlist.");
+                    return;
                 }
-                else
-                {
-                    method_23();
-                }
-                _setlistTitleTxtBox.Text = KeyGenerator.GetFileName(text, 1);
-                _setlistApplyBtn.Enabled = true;
-                method_4(new Class247(Class3190, _gh3Songlist));
-                RefreshSongListBox();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("File not compatible! Setlist Switch failed.\n" + exception, "Setlist Switching");
-            }
 
-            // SetlistApply_Btn_Click
+                var gH3Setlist = new Gh3Setlist();
+                try
+                {
+                    var sghManager = /*DialogResult.Yes ==
+                                     MessageBox.Show(
+                                         "Do you wish to import all contained song data (Music & Game Tracks)? Data and properties will be overwritten!",
+                                         "Setlist Switching", MessageBoxButtons.YesNo)
+                        ? */new SghManager(_gh3Songlist, gH3Setlist, text, _dataFolder)
+    /*                    : new SghManager(_gh3Songlist, gH3Setlist, text)*/;
+
+                    sghManager.ImportSGH();
+                    _tierBox.Items.Clear();
+                    _tierBox.Items.AddRange(gH3Setlist.Tiers.ToArray());
+                    if (_tierBox.Items.Count != 0)
+                    {
+                        _tierBox.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        method_23();
+                    }
+                    _setlistTitleTxtBox.Text = KeyGenerator.GetFileName(text, 1);
+                    _setlistApplyBtn.Enabled = true;
+                    method_4(new Class247(Class3190, _gh3Songlist));
+                    RefreshSongListBox();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("File not compatible! Setlist Switch failed.\n" + exception, "Setlist Switching");
+                }
+
+                SetlistApply_Btn_Click(sender, e);
+                // SetlistApply_Btn_Click
+            }
         }
 
         private void LoadMore()
