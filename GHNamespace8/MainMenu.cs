@@ -1179,6 +1179,9 @@ namespace GHNamespace8
             {
                 return;
             }
+            MessageBox.Show("Found file: " + text);
+            Trace.WriteLine("Found file: " + text);
+            Debug.WriteLine("Found file: " + text);
             Console.WriteLine("Found file: " + text);
             var gH3Setlist = new Gh3Setlist();
             try
@@ -2524,6 +2527,17 @@ namespace GHNamespace8
             _sghSwitchMenuItem.Text = "SGH Setlist Switch";
             _sghSwitchMenuItem.Click += SGHSwitch_MenuItem_Click;
             //
+            // Bulk SGH switch
+            //
+            var bulkSghSwitchMenuItem = new ToolStripMenuItem
+            {
+                Name = "bulkSghSwitchMenuItem",
+                Size = new Size(237, 22),
+                Text = "Bulk add SGH setlists"
+            };
+            bulkSghSwitchMenuItem.Click += BulkSGHSwitch_MenuItem_Click;
+            _manageGameMenuItem.DropDownItems.Add(bulkSghSwitchMenuItem);
+            //
             // toolStripSeparator11
             //
             _toolStripSeparator11.Name = "_toolStripSeparator11";
@@ -3788,6 +3802,53 @@ namespace GHNamespace8
             _songEditorTopToolStrip.ResumeLayout(false);
             _songEditorTopToolStrip.PerformLayout();
             ResumeLayout(false);
+        }
+
+        private void BulkSGHSwitch_MenuItem_Click(object sender, EventArgs e)
+        {
+            CreateSetlist_Btn_Click(sender,e);
+            _setlistDropBox.SelectedIndex = _setlistDropBox.Items.Count-1;
+            //Setlist_DropBox_SelectedIndexChanged(sender, e);
+            //SGHSwitch_MenuItem_Click
+            if (!_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
+            {
+                MessageBox.Show("Something weird happened: setlistlist does not contain selected setlist.");
+                return;
+            }
+            var text = @"C:\Users\Rafael\Downloads\guitar hero 3 setlists\more\impossibleshit.sgh";
+
+            var gH3Setlist = new Gh3Setlist();
+            try
+            {
+                var sghManager = /*DialogResult.Yes ==
+                                 MessageBox.Show(
+                                     "Do you wish to import all contained song data (Music & Game Tracks)? Data and properties will be overwritten!",
+                                     "Setlist Switching", MessageBoxButtons.YesNo)
+                    ? */new SghManager(_gh3Songlist, gH3Setlist, text, _dataFolder)
+/*                    : new SghManager(_gh3Songlist, gH3Setlist, text)*/;
+
+                sghManager.ImportSGH();
+                _tierBox.Items.Clear();
+                _tierBox.Items.AddRange(gH3Setlist.Tiers.ToArray());
+                if (_tierBox.Items.Count != 0)
+                {
+                    _tierBox.SelectedIndex = 0;
+                }
+                else
+                {
+                    method_23();
+                }
+                _setlistTitleTxtBox.Text = KeyGenerator.GetFileName(text, 1);
+                _setlistApplyBtn.Enabled = true;
+                method_4(new Class247(Class3190, _gh3Songlist));
+                RefreshSongListBox();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("File not compatible! Setlist Switch failed.\n" + exception, "Setlist Switching");
+            }
+
+            // SetlistApply_Btn_Click
         }
 
         private void LoadMore()
