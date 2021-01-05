@@ -4225,7 +4225,7 @@ namespace GHNamespace8
             {
                 _setlistDropBox.SelectedIndex = 0;
             }
-            _tabControl.SelectedIndex = 1;
+            _tabControl.SelectedIndex = 0;
         }
 
         private void ClearGameSettings_MenuItem_Click(object sender, EventArgs e)
