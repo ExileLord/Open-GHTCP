@@ -61,8 +61,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.DirectX.DirectSound" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AVTools.MpegUtils\FFMpegException.cs" />
@@ -666,6 +668,12 @@
     <Compile Include="GHNamespace8\SongProperties.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GHNamespace8\SortSongListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GHNamespace8\SortSongListForm.Designer.cs">
+      <DependentUpon>SortSongListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GHNamespace8\TierManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1109,6 +1117,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GHNamespace8\SongProperties.resources" />
+    <EmbeddedResource Include="GHNamespace8\SortSongListForm.resx">
+      <DependentUpon>SortSongListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GHNamespace8\TierManagement.resources" />
     <EmbeddedResource Include="GHNamespace9\ActionsWindow.resources" />
     <EmbeddedResource Include="GHNamespaceA\About.resources" />
