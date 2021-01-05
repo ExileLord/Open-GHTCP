@@ -20,7 +20,7 @@ namespace GHNamespaceB
             {
                 Nodes.Add(new IntegerValueNode(stream260.ReadInt()));
             }
-            else if (this is TagStructureNode || this is FileTagStructureNode)
+            else if (this is StructItemQbKey || this is FileTagStructureNode)
             {
                 Nodes.Add(new TagValueNode(stream260.ReadInt()));
             }

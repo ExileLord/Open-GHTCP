@@ -18,82 +18,82 @@ namespace GHNamespaceA
         {
             _class3180 = class3181;
             var @class = ((StructureHeaderNode) _class3180.ZzGetNode1("scripts\\guitar\\guitar_events.qb")
-                .method_5(new TagStructureNode("event", "star_power_on"))
-                .Parent).method_5(new TagStructureNode("scr"));
+                .zzFindNode(new StructItemQbKey("event", "star_power_on"))
+                .Parent).zzFindNode(new StructItemQbKey("scr"));
             _bool0 = (@class.method_8() == "guitarevent_starpoweron");
         }
 
-        public override void vmethod_0()
+        public override void CreateCustomMenu()
         {
             ZzGenericNode1 @class = _class3180.ZzGetNode1("scripts\\guitar\\guitar_events.qb");
-            ((StructureHeaderNode) @class.method_5(new TagStructureNode("event", "star_power_on")).Parent)
-                .method_5(new TagStructureNode("scr"))
+            ((StructureHeaderNode) @class.zzFindNode(new StructItemQbKey("event", "star_power_on")).Parent)
+                .zzFindNode(new StructItemQbKey("scr"))
                 .method_9(_bool0 ? "guitarevent_starpoweroff" : "guitarevent_starpoweron");
             if (!_bool0)
             {
-                @class.method_5(new ScriptRootNode("hit_note_fx")).Int0 =
+                @class.zzFindNode(new ScriptRootNode("hit_note_fx")).Int0 =
                     QbSongClass1.AddKeyToDictionary("hit_note_fx_empty");
-                @class.method_5(new ScriptRootNode("guitarevent_starsequencebonus")).Int0 =
+                @class.zzFindNode(new ScriptRootNode("guitarevent_starsequencebonus")).Int0 =
                     QbSongClass1.AddKeyToDictionary("guitarevent_starsequencebonus_empty");
-                @class.method_5(new ScriptRootNode("guitarevent_multiplier4xon_spawned")).Int0 =
+                @class.zzFindNode(new ScriptRootNode("guitarevent_multiplier4xon_spawned")).Int0 =
                     QbSongClass1.AddKeyToDictionary("guitarevent_multiplier4xon_spawned_empty");
-                @class.method_5(new ScriptRootNode("first_gem_fx")).Int0 =
+                @class.zzFindNode(new ScriptRootNode("first_gem_fx")).Int0 =
                     QbSongClass1.AddKeyToDictionary("first_gem_fx_empty");
-                @class.method_5(new ScriptRootNode("hit_note_fx_original")).Int0 =
+                @class.zzFindNode(new ScriptRootNode("hit_note_fx_original")).Int0 =
                     QbSongClass1.AddKeyToDictionary("hit_note_fx");
-                @class.method_5(new ScriptRootNode("guitarevent_starsequencebonus_original")).Int0 =
+                @class.zzFindNode(new ScriptRootNode("guitarevent_starsequencebonus_original")).Int0 =
                     QbSongClass1.AddKeyToDictionary("guitarevent_starsequencebonus");
-                @class.method_5(new ScriptRootNode("guitarevent_multiplier4xon_spawned_original")).Int0 =
+                @class.zzFindNode(new ScriptRootNode("guitarevent_multiplier4xon_spawned_original")).Int0 =
                     QbSongClass1.AddKeyToDictionary("guitarevent_multiplier4xon_spawned");
-                @class.method_5(new ScriptRootNode("first_gem_fx_original")).Int0 =
+                @class.zzFindNode(new ScriptRootNode("first_gem_fx_original")).Int0 =
                     QbSongClass1.AddKeyToDictionary("first_gem_fx");
                 return;
             }
-            @class.method_5(new ScriptRootNode("hit_note_fx")).Int0 =
+            @class.zzFindNode(new ScriptRootNode("hit_note_fx")).Int0 =
                 QbSongClass1.AddKeyToDictionary("hit_note_fx_original");
-            @class.method_5(new ScriptRootNode("guitarevent_starsequencebonus")).Int0 =
+            @class.zzFindNode(new ScriptRootNode("guitarevent_starsequencebonus")).Int0 =
                 QbSongClass1.AddKeyToDictionary("guitarevent_starsequencebonus_original");
-            @class.method_5(new ScriptRootNode("guitarevent_multiplier4xon_spawned")).Int0 =
+            @class.zzFindNode(new ScriptRootNode("guitarevent_multiplier4xon_spawned")).Int0 =
                 QbSongClass1.AddKeyToDictionary("guitarevent_multiplier4xon_spawned_original");
-            @class.method_5(new ScriptRootNode("first_gem_fx")).Int0 =
+            @class.zzFindNode(new ScriptRootNode("first_gem_fx")).Int0 =
                 QbSongClass1.AddKeyToDictionary("first_gem_fx_original");
-            var class2 = @class.method_5(new ScriptRootNode("hit_note_fx_empty"));
+            var class2 = @class.zzFindNode(new ScriptRootNode("hit_note_fx_empty"));
             if (class2 != null)
             {
                 class2.Int0 = QbSongClass1.AddKeyToDictionary("hit_note_fx");
             }
             else
             {
-                @class.method_3(new ScriptRootNode("hit_note_fx", "scripts\\guitar\\guitar_events.qb",
+                @class.addChild(new ScriptRootNode("hit_note_fx", "scripts\\guitar\\guitar_events.qb",
                     new QbScriptNode()));
             }
-            class2 = @class.method_5(new ScriptRootNode("guitarevent_starsequencebonus_empty"));
+            class2 = @class.zzFindNode(new ScriptRootNode("guitarevent_starsequencebonus_empty"));
             if (class2 != null)
             {
                 class2.Int0 = QbSongClass1.AddKeyToDictionary("guitarevent_starsequencebonus");
             }
             else
             {
-                @class.method_3(new ScriptRootNode("guitarevent_starsequencebonus", "scripts\\guitar\\guitar_events.qb",
+                @class.addChild(new ScriptRootNode("guitarevent_starsequencebonus", "scripts\\guitar\\guitar_events.qb",
                     new QbScriptNode()));
             }
-            class2 = @class.method_5(new ScriptRootNode("guitarevent_multiplier4xon_spawned_empty"));
+            class2 = @class.zzFindNode(new ScriptRootNode("guitarevent_multiplier4xon_spawned_empty"));
             if (class2 != null)
             {
                 class2.Int0 = QbSongClass1.AddKeyToDictionary("guitarevent_multiplier4xon_spawned");
             }
             else
             {
-                @class.method_3(new ScriptRootNode("guitarevent_multiplier4xon_spawned",
+                @class.addChild(new ScriptRootNode("guitarevent_multiplier4xon_spawned",
                     "scripts\\guitar\\guitar_events.qb", new QbScriptNode()));
             }
-            class2 = @class.method_5(new ScriptRootNode("first_gem_fx_empty"));
+            class2 = @class.zzFindNode(new ScriptRootNode("first_gem_fx_empty"));
             if (class2 != null)
             {
                 class2.Int0 = QbSongClass1.AddKeyToDictionary("first_gem_fx");
                 return;
             }
-            @class.method_3(new ScriptRootNode("first_gem_fx", "scripts\\guitar\\guitar_events.qb",
+            @class.addChild(new ScriptRootNode("first_gem_fx", "scripts\\guitar\\guitar_events.qb",
                 new QbScriptNode()));
         }
 

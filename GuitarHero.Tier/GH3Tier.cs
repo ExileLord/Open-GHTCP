@@ -74,32 +74,32 @@ namespace GuitarHero.Tier
         {
             UnicodeStructureNode @class;
             Title =
-                (((@class = class2860.method_5(new UnicodeStructureNode("title"))) != null) ? @class.method_8() : "");
+                (((@class = class2860.zzFindNode(new UnicodeStructureNode("title"))) != null) ? @class.method_8() : "");
             AsciiStructureNode class2;
-            CompletionMovie = (((class2 = class2860.method_5(new AsciiStructureNode("completion_movie"))) != null)
+            CompletionMovie = (((class2 = class2860.zzFindNode(new AsciiStructureNode("completion_movie"))) != null)
                 ? class2.method_8()
                 : "");
             IntegerStructureNode class3;
-            Defaultunlocked = (((class3 = class2860.method_5(new IntegerStructureNode("defaultunlocked"))) != null)
+            Defaultunlocked = (((class3 = class2860.zzFindNode(new IntegerStructureNode("defaultunlocked"))) != null)
                 ? class3.method_8()
                 : 0);
-            TagStructureNode class4;
-            Level = (((class4 = class2860.method_5(new TagStructureNode("level"))) != null)
+            StructItemQbKey class4;
+            Level = (((class4 = class2860.zzFindNode(new StructItemQbKey("level"))) != null)
                 ? class4.method_8()
                 : "No Preset Stage");
-            SetlistIcon = (((class4 = class2860.method_5(new TagStructureNode("setlist_icon"))) != null)
+            SetlistIcon = (((class4 = class2860.zzFindNode(new StructItemQbKey("setlist_icon"))) != null)
                 ? class4.method_8()
                 : "No Icon");
-            Encorep1 = (class2860.method_5(new TagStructureNode(0, "encorep1")) != null);
-            Encorep2 = (class2860.method_5(new TagStructureNode(0, "encorep2")) != null);
-            AerosmithEncoreP1 = (class2860.method_5(new TagStructureNode(0, "aerosmith_encore_p1")) != null);
-            Boss = (class2860.method_5(new TagStructureNode(0, "boss")) != null);
-            Nocash = (class2860.method_5(new TagStructureNode(0, "nocash")) != null);
-            Unlockall = (class2860.method_5(new TagStructureNode(0, "unlockall")) != null);
+            Encorep1 = (class2860.zzFindNode(new StructItemQbKey(0, "encorep1")) != null);
+            Encorep2 = (class2860.zzFindNode(new StructItemQbKey(0, "encorep2")) != null);
+            AerosmithEncoreP1 = (class2860.zzFindNode(new StructItemQbKey(0, "aerosmith_encore_p1")) != null);
+            Boss = (class2860.zzFindNode(new StructItemQbKey(0, "boss")) != null);
+            Nocash = (class2860.zzFindNode(new StructItemQbKey(0, "nocash")) != null);
+            Unlockall = (class2860.zzFindNode(new StructItemQbKey(0, "unlockall")) != null);
             var class5 = new ArrayPointerNode("songs");
-            if (class2860.method_6(ref class5) && !(class5.method_8() is FloatListNode))
+            if (class2860.method_6(ref class5) && !(class5.GetFirstChild() is FloatListNode))
             {
-                foreach (var current in class5.method_8().method_8<string>())
+                foreach (var current in class5.GetFirstChild().method_8<string>())
                 {
                     if (gh3Songlist0.ContainsKey(current))
                     {
@@ -116,10 +116,10 @@ namespace GuitarHero.Tier
         public StructureHeaderNode method_3()
         {
             var @class = new StructureHeaderNode();
-            @class.method_3(new UnicodeStructureNode("title", Title));
+            @class.addChild(new UnicodeStructureNode("title", Title));
             if (Songs.Count == 0)
             {
-                @class.method_3(new ArrayPointerNode("songs", new FloatListNode(true)));
+                @class.addChild(new ArrayPointerNode("songs", new FloatListNode(true)));
             }
             else
             {
@@ -128,47 +128,47 @@ namespace GuitarHero.Tier
                 {
                     list.Add(QbSongClass1.AddKeyToDictionary(current.Name));
                 }
-                @class.method_3(new ArrayPointerNode("songs", new TagArray(list)));
+                @class.addChild(new ArrayPointerNode("songs", new TagArray(list)));
             }
             if (Boss)
             {
-                @class.method_3(new TagStructureNode(0, "boss"));
+                @class.addChild(new StructItemQbKey(0, "boss"));
             }
             if (Encorep1)
             {
-                @class.method_3(new TagStructureNode(0, "encorep1"));
+                @class.addChild(new StructItemQbKey(0, "encorep1"));
             }
             if (Encorep2)
             {
-                @class.method_3(new TagStructureNode(0, "encorep2"));
+                @class.addChild(new StructItemQbKey(0, "encorep2"));
             }
             if (AerosmithEncoreP1)
             {
-                @class.method_3(new TagStructureNode(0, "aerosmith_encore_p1"));
+                @class.addChild(new StructItemQbKey(0, "aerosmith_encore_p1"));
             }
             if (Level != null && Level != "No Preset Stage")
             {
-                @class.method_3(new TagStructureNode("level", Level));
+                @class.addChild(new StructItemQbKey("level", Level));
             }
             if (Defaultunlocked != 0)
             {
-                @class.method_3(new IntegerStructureNode("defaultunlocked", Defaultunlocked));
+                @class.addChild(new IntegerStructureNode("defaultunlocked", Defaultunlocked));
             }
             if (!CompletionMovie.Equals(""))
             {
-                @class.method_3(new AsciiStructureNode("completion_movie", CompletionMovie));
+                @class.addChild(new AsciiStructureNode("completion_movie", CompletionMovie));
             }
             if (!SetlistIcon.Equals("No Icon"))
             {
-                @class.method_3(new TagStructureNode("setlist_icon", SetlistIcon));
+                @class.addChild(new StructItemQbKey("setlist_icon", SetlistIcon));
             }
             if (Nocash)
             {
-                @class.method_3(new TagStructureNode(0, "nocash"));
+                @class.addChild(new StructItemQbKey(0, "nocash"));
             }
             if (Unlockall)
             {
-                @class.method_3(new TagStructureNode(0, "unlockall"));
+                @class.addChild(new StructItemQbKey(0, "unlockall"));
             }
             return @class;
         }

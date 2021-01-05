@@ -68,7 +68,7 @@ namespace GHNamespace8
             Bool1 = (_string0.Length == 6);
         }
 
-        public override void vmethod_0()
+        public override void CreateCustomMenu()
         {
             if (_class3230 != null)
             {

@@ -23,10 +23,10 @@ namespace GHNamespaceA
             _gh3Songlist0 = gh3Songlist1;
         }
 
-        public override void vmethod_0()
+        public override void CreateCustomMenu()
         {
             ZzGenericNode1 @class = _class3180.ZzGetNode1(_gh3Songlist0.Gh3SetlistList[_int0].method_2());
-            @class.method_5(new StructurePointerRootNode(_int0))
+            @class.zzFindNode(new StructurePointerRootNode(_int0))
                 .method_8(_gh3Songlist0.Gh3SetlistList[_int0].method_6());
         }
 

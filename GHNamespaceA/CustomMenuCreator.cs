@@ -9,81 +9,81 @@ namespace GHNamespaceA
 {
     public class CustomMenuCreator : QbEditor
     {
-        private readonly ZzPakNode2 _class3180;
+        private readonly ZzPakNode2 _zzQbPak;
 
-        private bool _bool0;
+        private bool _created;
 
-        private readonly bool _bool1;
+        private readonly bool _isGHA;
 
-        public CustomMenuCreator(ZzPakNode2 class3181, bool bool2)
+        public CustomMenuCreator(ZzPakNode2 zzQbPak, bool isGHA)
         {
-            _class3180 = class3181;
-            _bool1 = bool2;
+            _zzQbPak = zzQbPak;
+            _isGHA = isGHA;
         }
 
-        public override void vmethod_0()
+        public override void CreateCustomMenu()
         {
             Console.WriteLine("-=- " + ToString() + " -=-");
-            if (!_bool0)
+            if (!_created)
             {
-                _bool0 = _class3180.method_6("scripts\\guitar\\custom_menu\\guitar_custom_menu.qb");
+                _created = _zzQbPak.zzQbFileExists("scripts\\guitar\\custom_menu\\guitar_custom_menu.qb");
             }
-            if (!_bool0)
+            if (!_created)
             {
                 Console.WriteLine("Creating Custom Menu.");
-                _class3180.method_0("scripts\\guitar\\custom_menu\\guitar_custom_menu.qb",
-                    ZzQbScriptZipperClass.smethod_3("guitar_custom_menu"));
-                _class3180.method_0("scripts\\guitar\\custom_menu\\guitar_custom_gem_scale.qb",
-                    ZzQbScriptZipperClass.smethod_3("guitar_custom_gem_scale"));
-                _class3180.method_0("scripts\\guitar\\custom_menu\\guitar_custom_menu_credits.qb",
-                    ZzQbScriptZipperClass.smethod_3("guitar_custom_menu_credits"));
-                _class3180.method_0("scripts\\guitar\\custom_menu\\guitar_custom_menu_cutoff_viewer.qb",
-                    ZzQbScriptZipperClass.smethod_3("guitar_custom_menu_cutoff_viewer"));
-                _class3180.method_0("scripts\\guitar\\custom_menu\\guitar_custom_menu_gfx_options.qb",
-                    ZzQbScriptZipperClass.smethod_3("guitar_custom_menu_gfx_options"));
-                _class3180.method_0("scripts\\guitar\\custom_menu\\guitar_custom_menu_setlist_switcher.qb",
-                    ZzQbScriptZipperClass.smethod_3("guitar_custom_menu_setlist_switcher"));
-                ZzGenericNode1 @class = _class3180.ZzGetNode1(_bool1
+                _zzQbPak.zzCreateQbFileFrom("scripts\\guitar\\custom_menu\\guitar_custom_menu.qb",
+                    zzEmbeddedResourceDB.unpackQbFile("guitar_custom_menu"));
+                _zzQbPak.zzCreateQbFileFrom("scripts\\guitar\\custom_menu\\guitar_custom_gem_scale.qb",
+                    zzEmbeddedResourceDB.unpackQbFile("guitar_custom_gem_scale"));
+                _zzQbPak.zzCreateQbFileFrom("scripts\\guitar\\custom_menu\\guitar_custom_menu_credits.qb",
+                    zzEmbeddedResourceDB.unpackQbFile("guitar_custom_menu_credits"));
+                _zzQbPak.zzCreateQbFileFrom("scripts\\guitar\\custom_menu\\guitar_custom_menu_cutoff_viewer.qb",
+                    zzEmbeddedResourceDB.unpackQbFile("guitar_custom_menu_cutoff_viewer"));
+                _zzQbPak.zzCreateQbFileFrom("scripts\\guitar\\custom_menu\\guitar_custom_menu_gfx_options.qb",
+                    zzEmbeddedResourceDB.unpackQbFile("guitar_custom_menu_gfx_options"));
+                _zzQbPak.zzCreateQbFileFrom("scripts\\guitar\\custom_menu\\guitar_custom_menu_setlist_switcher.qb",
+                    zzEmbeddedResourceDB.unpackQbFile("guitar_custom_menu_setlist_switcher"));
+                ZzGenericNode1 activeQbFile = _zzQbPak.ZzGetNode1(_isGHA
                     ? "scripts\\guitar\\menu\\menu_main.qb"
                     : "scripts\\guitar\\guitar_menu.qb");
-                ZzQbScriptZipperClass.smethod_1(@class.method_5(new ScriptRootNode("create_main_menu")));
-                @class = _class3180.ZzGetNode1("scripts\\guitar\\guitar_progression.qb");
-                ZzQbScriptZipperClass.smethod_1(@class.method_5(new ScriptRootNode("get_progression_globals")));
-                @class = _class3180.ZzGetNode1("scripts\\guitar\\guitar_gems.qb");
-                ZzQbScriptZipperClass.smethod_1(@class.method_5(new ScriptRootNode("load_venue")));
-                ZzQbScriptZipperClass.smethod_1(@class.method_5(new ScriptRootNode("start_gem_scroller")));
-                ZzQbScriptZipperClass.smethod_1(@class.method_5(new ScriptRootNode("kill_gem_scroller")));
-                @class = _class3180.ZzGetNode1("scripts\\guitar\\guitar_events.qb");
-                ZzQbScriptZipperClass.smethod_1(@class.method_5(new ScriptRootNode("guitarevent_songwon_spawned")));
-                @class = _class3180.ZzGetNode1("scripts\\game\\net\\guitar_net.qb");
-                ZzQbScriptZipperClass.smethod_1(@class.method_5(new ScriptRootNode("net_write_single_player_stats")));
-                @class = _class3180.ZzGetNode1("scripts\\guitar\\guitar_globaltags.qb");
-                ZzQbScriptZipperClass.smethod_1(@class.method_5(new ScriptRootNode("setup_globaltags")));
-                ZzQbScriptZipperClass.smethod_1(@class.method_5(new ScriptRootNode("setup_songtags")));
-                ZzQbScriptZipperClass.smethod_1(@class.method_5(new ScriptRootNode("push_bandtags")));
-                @class = _class3180.ZzGetNode1("scripts\\guitar\\menu\\menu_credits.qb");
-                ZzQbScriptZipperClass.smethod_1(@class.method_5(new ScriptRootNode("scrolling_list_add_item")));
-                if (!_bool1)
+                zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(new ScriptRootNode("create_main_menu")));
+                activeQbFile = _zzQbPak.ZzGetNode1("scripts\\guitar\\guitar_progression.qb");
+                zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(new ScriptRootNode("get_progression_globals")));
+                activeQbFile = _zzQbPak.ZzGetNode1("scripts\\guitar\\guitar_gems.qb");
+                zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(new ScriptRootNode("load_venue")));
+                zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(new ScriptRootNode("start_gem_scroller")));
+                zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(new ScriptRootNode("kill_gem_scroller")));
+                activeQbFile = _zzQbPak.ZzGetNode1("scripts\\guitar\\guitar_events.qb");
+                zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(new ScriptRootNode("guitarevent_songwon_spawned")));
+                activeQbFile = _zzQbPak.ZzGetNode1("scripts\\game\\net\\guitar_net.qb");
+                zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(new ScriptRootNode("net_write_single_player_stats")));
+                activeQbFile = _zzQbPak.ZzGetNode1("scripts\\guitar\\guitar_globaltags.qb");
+                zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(new ScriptRootNode("setup_globaltags")));
+                zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(new ScriptRootNode("setup_songtags")));
+                zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(new ScriptRootNode("push_bandtags")));
+                activeQbFile = _zzQbPak.ZzGetNode1("scripts\\guitar\\menu\\menu_credits.qb");
+                zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(new ScriptRootNode("scrolling_list_add_item")));
+                if (!_isGHA)
                 {
-                    ZzQbScriptZipperClass.smethod_1(@class.method_5(new ScriptRootNode("start_team_photos")));
+                    zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(new ScriptRootNode("start_team_photos")));
                 }
-                if (_bool1)
+                if (_isGHA)
                 {
-                    @class = _class3180.ZzGetNode1("scripts\\guitar\\custom_menu\\guitar_custom_menu_cutoff_viewer.qb");
-                    ZzQbScriptZipperClass.smethod_1(
-                        @class.method_5(new ScriptRootNode("custom_menu_cutoff_viewer_create_paper")));
-                    ZzQbScriptZipperClass.smethod_1(
-                        @class.method_5(new ScriptRootNode("custom_menu_cutoff_viewer_create_poster")));
+                    activeQbFile = _zzQbPak.ZzGetNode1("scripts\\guitar\\custom_menu\\guitar_custom_menu_cutoff_viewer.qb");
+                    zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(
+                        new ScriptRootNode("custom_menu_cutoff_viewer_create_paper")));
+                    zzEmbeddedResourceDB.unpackQbScriptTo(activeQbFile.zzFindNode(
+                        new ScriptRootNode("custom_menu_cutoff_viewer_create_poster")));
                 }
-                @class = _class3180.ZzGetNode1("scripts\\guitar\\menu\\main_menu_flow.qb");
-                var class2 = new StructureHeaderNode();
-                class2.method_3(new TagStructureNode("action", "select_custom_menu"));
-                class2.method_3(new TagStructureNode("flow_state", "custom_menu_fs"));
-                class2.method_3(new TagStructureNode(0, "transition_right"));
-                @class.method_5(new StructurePointerRootNode("main_menu_fs"))
-                    .method_5(new ArrayPointerNode("actions"))
-                    .method_8()
-                    .method_3(class2);
+                activeQbFile = _zzQbPak.ZzGetNode1("scripts\\guitar\\menu\\main_menu_flow.qb");
+                var customMenuFS = new StructureHeaderNode();
+                customMenuFS.addChild(new StructItemQbKey("action", "select_custom_menu"));
+                customMenuFS.addChild(new StructItemQbKey("flow_state", "custom_menu_fs"));
+                customMenuFS.addChild(new StructItemQbKey(0, "transition_right"));
+                activeQbFile.zzFindNode(new StructurePointerRootNode("main_menu_fs"))
+                    .zzFindNode(new ArrayPointerNode("actions"))
+                    .GetFirstChild()
+                    .addChild(customMenuFS);
             }
         }
 

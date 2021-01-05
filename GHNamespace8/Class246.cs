@@ -27,15 +27,15 @@ namespace GHNamespace8
             _bool0 = bool1;
         }
 
-        public override void vmethod_0()
+        public override void CreateCustomMenu()
         {
             string text;
             ZzGenericNode1 @class;
-            if (!_class3180.method_6(text = "scripts\\guitar\\custom_menu\\guitar_custom_progression.qb"))
+            if (!_class3180.zzQbFileExists(text = "scripts\\guitar\\custom_menu\\guitar_custom_progression.qb"))
             {
-                _class3180.method_0(text, new ZzGenericNode1());
+                _class3180.zzCreateQbFileFrom(text, new ZzGenericNode1());
                 @class = _class3180.ZzGetNode1(text);
-                @class.method_3(new IntegerRootNode("custom_setlist_bitmask", text, 0));
+                @class.addChild(new IntegerRootNode("custom_setlist_bitmask", text, 0));
             }
             else
             {
@@ -43,16 +43,16 @@ namespace GHNamespace8
             }
             if (_bool0)
             {
-                @class.method_3(new StructurePointerRootNode(_int0, text, _gh3Songlist0.Dictionary1[_int0].method_1()));
-                @class.method_3(new StructurePointerRootNode(_gh3Songlist0.method_10(_int0), text,
+                @class.addChild(new StructurePointerRootNode(_int0, text, _gh3Songlist0.Dictionary1[_int0].method_1()));
+                @class.addChild(new StructurePointerRootNode(_gh3Songlist0.method_10(_int0), text,
                     _gh3Songlist0.method_11(_int0).method_6()));
             }
             else
             {
                 try
                 {
-                    @class.method_5(new StructurePointerRootNode(_int0)).Remove();
-                    @class.method_5(new StructurePointerRootNode(_gh3Songlist0.method_10(_int0))).Remove();
+                    @class.zzFindNode(new StructurePointerRootNode(_int0)).Remove();
+                    @class.zzFindNode(new StructurePointerRootNode(_gh3Songlist0.method_10(_int0))).Remove();
                 }
                 catch
                 {
@@ -62,7 +62,7 @@ namespace GHNamespace8
                 _gh3Songlist0.Dictionary1.Remove(_int0);
                 _gh3Songlist0.Class2140.Remove(_gh3Songlist0.Class2140.method_0(_int0));
             }
-            @class.method_5(new IntegerRootNode("custom_setlist_bitmask")).method_8(_gh3Songlist0.CustomBitMask);
+            @class.zzFindNode(new IntegerRootNode("custom_setlist_bitmask")).method_8(_gh3Songlist0.CustomBitMask);
         }
 
         public override string ToString()

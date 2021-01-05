@@ -46,7 +46,7 @@ namespace GHNamespaceB
             return (AbstractBaseTreeNode1) Nodes[int0];
         }
 
-        public int method_3(AbstractBaseTreeNode1 class2580)
+        public int addChild(AbstractBaseTreeNode1 class2580)
         {
             return Nodes.Add(class2580);
         }
@@ -66,7 +66,7 @@ namespace GHNamespaceB
 
         public abstract void vmethod_14(Stream26 stream260);
 
-        public T method_5<T>(T gparam0) where T : AbstractTreeNode1
+        public T zzFindNode<T>(T gparam0) where T : AbstractTreeNode1
         {
             if (CompareTo(gparam0) == 0)
             {
@@ -82,7 +82,7 @@ namespace GHNamespaceB
                     {
                         var @class = (AbstractTreeNode1) enumerator.Current;
                         T t;
-                        if ((t = @class.method_5(gparam0)) != null)
+                        if ((t = @class.zzFindNode(gparam0)) != null)
                         {
                             result = t;
                             return result;

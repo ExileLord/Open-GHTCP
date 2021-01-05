@@ -3,38 +3,38 @@ using GHNamespaceF;
 
 namespace GHNamespaceB
 {
-    public class TagStructureNode : ZzUnkNode295
+    public class StructItemQbKey : ZzUnkNode295
     {
-        public TagStructureNode()
+        public StructItemQbKey()
         {
             vmethod_0();
         }
 
-        public TagStructureNode(string string0) : this(QbSongClass1.AddKeyToDictionary(string0))
+        public StructItemQbKey(string string0) : this(QbSongClass1.AddKeyToDictionary(string0))
         {
         }
 
-        public TagStructureNode(int int1)
+        public StructItemQbKey(int int1)
         {
             Int0 = int1;
             vmethod_0();
         }
 
-        public TagStructureNode(int int1, string string0)
+        public StructItemQbKey(int int1, string string0)
         {
             Int0 = int1;
             Nodes.Add(new TagValueNode(string0));
             vmethod_0();
         }
 
-        public TagStructureNode(string string0, string string1)
+        public StructItemQbKey(string string0, string string1)
         {
             Int0 = QbSongClass1.AddKeyToDictionary(string0);
             Nodes.Add(new TagValueNode(string1));
             vmethod_0();
         }
 
-        public TagStructureNode(string string0, int int1)
+        public StructItemQbKey(string string0, int int1)
         {
             Int0 = QbSongClass1.AddKeyToDictionary(string0);
             Nodes.Add(new TagValueNode(int1));

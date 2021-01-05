@@ -32,7 +32,7 @@ namespace GHNamespaceC
             SelectedImageIndex = 38;
         }
 
-        public void method_0(string string0, ZzGenericNode1 class3080)
+        public void zzCreateQbFileFrom(string string0, ZzGenericNode1 class3080)
         {
             method_1(string0, new Class309(string0, class3080));
         }

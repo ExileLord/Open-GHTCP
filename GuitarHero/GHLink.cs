@@ -37,15 +37,15 @@ namespace GuitarHero
 
         public void method_0(StructureHeaderNode class2860)
         {
-            Setlist = class2860.method_5(new TagStructureNode("tier_global")).method_10();
-            Progression = class2860.method_5(new TagStructureNode("progression_global")).method_10();
+            Setlist = class2860.zzFindNode(new StructItemQbKey("tier_global")).method_10();
+            Progression = class2860.zzFindNode(new StructItemQbKey("progression_global")).method_10();
         }
 
         public StructureHeaderNode method_1()
         {
             var @class = new StructureHeaderNode();
-            @class.method_3(new TagStructureNode("tier_global", Setlist));
-            @class.method_3(new TagStructureNode("progression_global", Progression));
+            @class.addChild(new StructItemQbKey("tier_global", Setlist));
+            @class.addChild(new StructItemQbKey("progression_global", Progression));
             return @class;
         }
     }

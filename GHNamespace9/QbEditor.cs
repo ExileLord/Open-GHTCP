@@ -11,7 +11,7 @@ namespace GHNamespace9
             bool result;
             try
             {
-                vmethod_0();
+                CreateCustomMenu();
                 return true;
             }
             catch (Exception ex)
@@ -22,7 +22,7 @@ namespace GHNamespace9
             return result;
         }
 
-        public abstract void vmethod_0();
+        public abstract void CreateCustomMenu();
 
         public abstract override string ToString();
 

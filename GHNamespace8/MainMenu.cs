@@ -805,7 +805,7 @@ namespace GHNamespace8
                         var str = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
                         using (var @class = new ZzPakNode2(fileName, false))
                         {
-                            if (!@class.method_6("songs\\" + str + ".mid.qb"))
+                            if (!@class.zzQbFileExists("songs\\" + str + ".mid.qb"))
                             {
                                 throw new Exception("MID.QB song file not found.");
                             }
@@ -1424,7 +1424,7 @@ namespace GHNamespace8
             }
             _ghtcpRegistry = (_isAerosmith ? "SOFTWARE\\SigmaInc\\GHTCPAero\\" : "SOFTWARE\\SigmaInc\\GHTCP\\");
             _backupName = (_isAerosmith ? "backupAero\\" : "backup\\");
-            ZzQbScriptZipperClass.GameName = (_isAerosmith ? "GHA" : "GH3");
+            zzEmbeddedResourceDB.GameName = (_isAerosmith ? "GHA" : "GH3");
             if (_isAerosmith)
             {
                 Text += " - Aerosmith";

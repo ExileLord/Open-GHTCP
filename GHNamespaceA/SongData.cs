@@ -1466,7 +1466,7 @@ namespace GHNamespaceA
                         var text2 = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
                         using (var @class = new ZzPakNode2(fileName, false))
                         {
-                            if (!@class.method_6("songs\\" + text2 + ".mid.qb"))
+                            if (!@class.zzQbFileExists("songs\\" + text2 + ".mid.qb"))
                             {
                                 throw new Exception("MID.QB song file not found.");
                             }

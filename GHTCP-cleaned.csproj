@@ -713,7 +713,7 @@
     <Compile Include="GHNamespaceA\zzSetListUpdater.cs" />
     <Compile Include="GHNamespaceA\UpdateSetlistSwitcher.cs" />
     <Compile Include="GHNamespaceA\Main.cs" />
-    <Compile Include="GHNamespaceA\zzQbScriptZipperClass.cs" />
+    <Compile Include="GHNamespaceA\zzEmbeddedResourceDB.cs" />
     <Compile Include="GHNamespaceA\TGHManager.cs" />
     <Compile Include="GHNamespaceA\GameSettingsChecker.cs" />
     <Compile Include="GHNamespaceA\CompilerClass376.cs" />
@@ -737,7 +737,7 @@
     <Compile Include="GHNamespaceB\IntegerArrayNode.cs" />
     <Compile Include="GHNamespaceB\zzUnkNode294.cs" />
     <Compile Include="GHNamespaceB\zzUnkNode295.cs" />
-    <Compile Include="GHNamespaceB\TagStructureNode.cs" />
+    <Compile Include="GHNamespaceB\StructItemQbKey.cs" />
     <Compile Include="GHNamespaceB\AbstractTreeNode2.cs" />
     <Compile Include="GHNamespaceB\Enum34.cs" />
     <Compile Include="GHNamespaceB\EventArgs1.cs" />

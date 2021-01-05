@@ -22,11 +22,11 @@ namespace GHNamespace8
             _string1 = string3;
         }
 
-        public override void vmethod_0()
+        public override void CreateCustomMenu()
         {
             using (var @class = new ZzPakNode2())
             {
-                @class.method_0("songs\\" + _string0 + ".mid.qb", Class3620.method_4(_string0));
+                @class.zzCreateQbFileFrom("songs\\" + _string0 + ".mid.qb", Class3620.method_4(_string0));
                 @class.method_16(_string1 + "songs\\" + _string0 + "_song.pak.xen");
             }
         }

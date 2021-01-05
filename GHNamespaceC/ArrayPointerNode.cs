@@ -37,7 +37,7 @@ namespace GHNamespaceC
             return 28;
         }
 
-        public AbsTreeNode11 method_8()
+        public AbsTreeNode11 GetFirstChild()
         {
             if (Nodes.Count != 0)
             {

@@ -17,7 +17,7 @@ namespace GHNamespace8
             _gh3Songlist0 = gh3Songlist1;
         }
 
-        public override void vmethod_0()
+        public override void CreateCustomMenu()
         {
             ZzGenericNode1 class308 = _class3180.ZzGetNode1("scripts\\guitar\\songlist.qb");
             _gh3Songlist0.method_13(class308);

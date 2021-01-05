@@ -18,17 +18,17 @@ namespace GHNamespace8
             _class3180 = class3181;
         }
 
-        public override void vmethod_0()
+        public override void CreateCustomMenu()
         {
             Console.WriteLine("-=- " + ToString() + " -=-");
             ZzGenericNode1 @class = _class3180.ZzGetNode1("scripts\\guitar\\menu\\menu_cheats.qb");
-            foreach (var current in @class.method_5(new ArrayPointerRootNode("guitar_hero_cheats"))
+            foreach (var current in @class.zzFindNode(new ArrayPointerRootNode("guitar_hero_cheats"))
                 .method_7()
                 .method_8<StructureHeaderNode>())
             {
-                var flag = current.method_5(new TagStructureNode("name", "unlockall")) != null;
-                var flag2 = current.method_5(new TagStructureNode("name", "unlockalleverything")) != null;
-                var class2 = current.method_5(new ArrayPointerNode("unlock_pattern")).method_8() as IntegerArrayNode;
+                var flag = current.zzFindNode(new StructItemQbKey("name", "unlockall")) != null;
+                var flag2 = current.zzFindNode(new StructItemQbKey("name", "unlockalleverything")) != null;
+                var class2 = current.zzFindNode(new ArrayPointerNode("unlock_pattern")).GetFirstChild() as IntegerArrayNode;
                 if (class2.Nodes.Count == 1)
                 {
                     _bool0 = true;

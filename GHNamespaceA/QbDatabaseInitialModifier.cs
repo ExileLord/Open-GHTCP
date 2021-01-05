@@ -23,7 +23,7 @@ namespace GHNamespaceA
             _bool1 = bool2;
         }
 
-        public override void vmethod_0()
+        public override void CreateCustomMenu()
         {
             Console.WriteLine("-=- " + ToString() + " -=-");
             ZzGenericNode1 @class = _pakNode.ZzGetNode1("scripts\\guitar\\guitar_globaltags.qb");
@@ -57,7 +57,7 @@ namespace GHNamespaceA
             while (num < 5 && !_qbDatabaseAlreadyEdited)
             {
                 Console.WriteLine(array[num]);
-                var class2 = @class.method_5(new UnicodeStructureNode("name" + (num + 1)));
+                var class2 = @class.zzFindNode(new UnicodeStructureNode("name" + (num + 1)));
                 if (class2.method_8().Equals(_bool1 ? array3[num] : array2[num]))
                 {
                     class2.method_9(array[num]);
@@ -73,9 +73,9 @@ namespace GHNamespaceA
             {
                 ZzGenericNode1 class3 = _pakNode.ZzGetNode1("scripts\\guitar\\guitar_memcard.qb");
                 Console.WriteLine("Changing Save File Size to 5MB.");
-                class3.method_5(new IntegerStructureNode("fixed_size")).method_9(5242880);
+                class3.zzFindNode(new IntegerStructureNode("fixed_size")).method_9(5242880);
                 Console.WriteLine("Changing Save Folder Name.");
-                class3.method_5(new UnicodeRootNode("memcard_content_name"))
+                class3.zzFindNode(new UnicodeRootNode("memcard_content_name"))
                     .method_8(string.Format("Progress{0}", (new[]
                     {
                         "A",
@@ -98,24 +98,24 @@ namespace GHNamespaceA
             {
                 ZzGenericNode1 class4 = _pakNode.ZzGetNode1("scripts\\guitar\\menu\\menu_setlist.qb");
                 Console.WriteLine("Changing Setlist Scroller.");
-                ZzQbScriptZipperClass.smethod_1(class4.method_5(new ScriptRootNode("setlist_scroll")));
+                zzEmbeddedResourceDB.unpackQbScriptTo(class4.zzFindNode(new ScriptRootNode("setlist_scroll")));
                 Console.WriteLine("Changing Tier Name Display.");
-                ZzQbScriptZipperClass.smethod_1(class4.method_5(new ScriptRootNode("create_sl_assets")));
+                zzEmbeddedResourceDB.unpackQbScriptTo(class4.zzFindNode(new ScriptRootNode("create_sl_assets")));
             }
             if (!_qbDatabaseAlreadyEdited)
             {
                 ZzGenericNode1 node = _pakNode.ZzGetNode1("scripts\\guitar\\guitar.qb");
-                node.method_5(new StructurePointerNode("load_z_soundcheck"))
-                    .method_5(new UnicodeStructureNode("title"))
+                node.zzFindNode(new StructurePointerNode("load_z_soundcheck"))
+                    .zzFindNode(new UnicodeStructureNode("title"))
                     .method_9("Sound Check");
-                node.method_5(new StructurePointerNode("load_z_credits"))
-                    .method_5(new UnicodeStructureNode("title"))
+                node.zzFindNode(new StructurePointerNode("load_z_credits"))
+                    .zzFindNode(new UnicodeStructureNode("title"))
                     .method_9("Guitar Hero Tower");
-                node.method_5(new StructurePointerNode("viewer"))
-                    .method_5(new UnicodeStructureNode("title"))
+                node.zzFindNode(new StructurePointerNode("viewer"))
+                    .zzFindNode(new UnicodeStructureNode("title"))
                     .method_9("Black Background");
-                node.method_5(new StructurePointerNode("load_z_viewer"))
-                    .method_5(new UnicodeStructureNode("title"))
+                node.zzFindNode(new StructurePointerNode("load_z_viewer"))
+                    .zzFindNode(new UnicodeStructureNode("title"))
                     .method_9("Black Background");
             }
         }

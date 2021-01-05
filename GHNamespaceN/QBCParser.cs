@@ -468,7 +468,7 @@ namespace GHNamespaceN
                         var text3 =
                             (text.ToLower() + ((a == "Double") ? "coop" : "") + "_" + text2.ToLower())
                             .Replace("guitar_", "");
-                        @class = class3080.method_5(new ArrayPointerRootNode(string0 + "_song_" + text3));
+                        @class = class3080.zzFindNode(new ArrayPointerRootNode(string0 + "_song_" + text3));
                         if (@class != null && @class.method_7() is IntegerArrayNode)
                         {
                             var class2 = new Track<int, NotesAtOffset>();
@@ -479,7 +479,7 @@ namespace GHNamespaceN
                             }
                             NoteList.Add(text3, class2);
                         }
-                        @class = class3080.method_5(new ArrayPointerRootNode(string0 + "_" + text3 + "_star"));
+                        @class = class3080.zzFindNode(new ArrayPointerRootNode(string0 + "_" + text3 + "_star"));
                         if (@class != null && @class.method_7() is ListArrayNode)
                         {
                             var class3 = new Track<int, int[]>();
@@ -493,7 +493,7 @@ namespace GHNamespaceN
                             }
                             SpList.Add(text3, class3);
                         }
-                        @class = class3080.method_5(
+                        @class = class3080.zzFindNode(
                             new ArrayPointerRootNode(string0 + "_" + text3 + "_starbattlemode"));
                         if (@class != null && @class.method_7() is ListArrayNode)
                         {
@@ -511,7 +511,7 @@ namespace GHNamespaceN
                     }
                 }
             }
-            @class = class3080.method_5(new ArrayPointerRootNode(string0 + "_faceoffp1"));
+            @class = class3080.zzFindNode(new ArrayPointerRootNode(string0 + "_faceoffp1"));
             if (@class != null && @class.method_7() is ListArrayNode)
             {
                 foreach (var current3 in @class.method_7().method_8<IntegerArrayNode>())
@@ -519,7 +519,7 @@ namespace GHNamespaceN
                     Class2282.Add(current3[0], current3[1]);
                 }
             }
-            @class = class3080.method_5(new ArrayPointerRootNode(string0 + "_faceoffp2"));
+            @class = class3080.zzFindNode(new ArrayPointerRootNode(string0 + "_faceoffp2"));
             if (@class != null && @class.method_7() is ListArrayNode)
             {
                 foreach (var current4 in @class.method_7().method_8<IntegerArrayNode>())
@@ -527,7 +527,7 @@ namespace GHNamespaceN
                     Class2283.Add(current4[0], current4[1]);
                 }
             }
-            @class = class3080.method_5(new ArrayPointerRootNode(string0 + "_bossbattlep1"));
+            @class = class3080.zzFindNode(new ArrayPointerRootNode(string0 + "_bossbattlep1"));
             if (@class != null && @class.method_7() is ListArrayNode)
             {
                 foreach (var current5 in @class.method_7().method_8<IntegerArrayNode>())
@@ -535,7 +535,7 @@ namespace GHNamespaceN
                     BpmList.Add(current5[0], current5[1]);
                 }
             }
-            @class = class3080.method_5(new ArrayPointerRootNode(string0 + "_bossbattlep2"));
+            @class = class3080.zzFindNode(new ArrayPointerRootNode(string0 + "_bossbattlep2"));
             if (@class != null && @class.method_7() is ListArrayNode)
             {
                 foreach (var current6 in @class.method_7().method_8<IntegerArrayNode>())
@@ -543,7 +543,7 @@ namespace GHNamespaceN
                     Class2285.Add(current6[0], current6[1]);
                 }
             }
-            @class = class3080.method_5(new ArrayPointerRootNode(string0 + "_timesig"));
+            @class = class3080.zzFindNode(new ArrayPointerRootNode(string0 + "_timesig"));
             if (@class != null && @class.method_7() is ListArrayNode)
             {
                 foreach (var current7 in @class.method_7().method_8<IntegerArrayNode>())
@@ -555,7 +555,7 @@ namespace GHNamespaceN
                     });
                 }
             }
-            @class = class3080.method_5(new ArrayPointerRootNode(string0 + "_fretbars"));
+            @class = class3080.zzFindNode(new ArrayPointerRootNode(string0 + "_fretbars"));
             if (@class != null && @class.method_7() is IntegerArrayNode)
             {
                 FretbarList = new Fretbar<int>(@class.method_7().method_8<int>());
@@ -563,7 +563,7 @@ namespace GHNamespaceN
                 try
                 {
                     var dictionary = new Dictionary<int, string>();
-                    @class = class3080.method_5(new ArrayPointerRootNode(string0 + "_markers"));
+                    @class = class3080.zzFindNode(new ArrayPointerRootNode(string0 + "_markers"));
                     if (class3081 != null && @class != null && @class.method_7() is StructureArrayNode)
                     {
                         foreach (UnicodeRootNode class5 in class3081.Nodes)
@@ -599,7 +599,7 @@ namespace GHNamespaceN
                 {
                     if (class3082 != null)
                     {
-                        Gh3Song0 = new Gh3Song(class3082.method_5(new StructurePointerNode(string0)));
+                        Gh3Song0 = new Gh3Song(class3082.zzFindNode(new StructurePointerNode(string0)));
                     }
                     return;
                 }
@@ -1001,7 +1001,7 @@ namespace GHNamespaceN
                 list.Add(class2287[current].SustainLength);
                 list.Add(class2287[current].method_0());
             }
-            class3080.method_3(new ArrayPointerRootNode(string0, int2, new IntegerArrayNode(list)));
+            class3080.addChild(new ArrayPointerRootNode(string0, int2, new IntegerArrayNode(list)));
         }
 
         private void method_6(int int2, string string0, ZzGenericNode1 class3080, Track<int, int[]> class2287)
@@ -1014,14 +1014,14 @@ namespace GHNamespaceN
             var @class = new ListArrayNode();
             foreach (var current in class2287.Keys)
             {
-                @class.method_3(new IntegerArrayNode(new[]
+                @class.addChild(new IntegerArrayNode(new[]
                 {
                     current,
                     class2287[current][0],
                     class2287[current][1]
                 }));
             }
-            class3080.method_3(new ArrayPointerRootNode(string0, int2, @class));
+            class3080.addChild(new ArrayPointerRootNode(string0, int2, @class));
         }
 
         private void method_7(int int2, string string0, ZzGenericNode1 class3080, Track<int, int> class2287)
@@ -1034,13 +1034,13 @@ namespace GHNamespaceN
             var @class = new ListArrayNode();
             foreach (var current in class2287.Keys)
             {
-                @class.method_3(new IntegerArrayNode(new[]
+                @class.addChild(new IntegerArrayNode(new[]
                 {
                     current,
                     class2287[current]
                 }));
             }
-            class3080.method_3(new ArrayPointerRootNode(string0, int2, @class));
+            class3080.addChild(new ArrayPointerRootNode(string0, int2, @class));
         }
 
         private void method_8(int int2, string string0, ZzGenericNode1 class3080)
@@ -1048,19 +1048,19 @@ namespace GHNamespaceN
             var @class = new ListArrayNode();
             foreach (var current in TsList.Keys)
             {
-                @class.method_3(new IntegerArrayNode(new[]
+                @class.addChild(new IntegerArrayNode(new[]
                 {
                     current,
                     TsList[current][0],
                     TsList[current][1]
                 }));
             }
-            class3080.method_3(new ArrayPointerRootNode(string0, int2, @class));
+            class3080.addChild(new ArrayPointerRootNode(string0, int2, @class));
         }
 
         private void method_9(int int2, string string0, ZzGenericNode1 class3080)
         {
-            class3080.method_3(new ArrayPointerRootNode(string0, int2, new IntegerArrayNode(FretbarList)));
+            class3080.addChild(new ArrayPointerRootNode(string0, int2, new IntegerArrayNode(FretbarList)));
         }
 
         private void method_10(int int2, string string0, ZzGenericNode1 class3080)
@@ -1073,18 +1073,18 @@ namespace GHNamespaceN
             var @class = new StructureArrayNode();
             foreach (var current in Class2281.Keys)
             {
-                @class.method_3(new StructureHeaderNode(new ZzUnkNode294[]
+                @class.addChild(new StructureHeaderNode(new ZzUnkNode294[]
                 {
                     new IntegerStructureNode("time", current),
                     new UnicodeStructureNode("marker", Class2281[current])
                 }));
             }
-            class3080.method_3(new ArrayPointerRootNode(string0, int2, @class));
+            class3080.addChild(new ArrayPointerRootNode(string0, int2, @class));
         }
 
         private void method_11(int int2, string string0, ZzGenericNode1 class3080)
         {
-            class3080.method_3(new ArrayPointerRootNode(string0, int2, _class2870));
+            class3080.addChild(new ArrayPointerRootNode(string0, int2, _class2870));
         }
     }
 }

@@ -243,7 +243,7 @@ namespace GHNamespaceC
             return "";
         }
 
-        public bool method_6(string string2)
+        public bool zzQbFileExists(string string2)
         {
             return method_10(string2) != null;
         }
@@ -428,7 +428,7 @@ namespace GHNamespaceC
                 if (current2 is Class309 && (current2 as Class309).vmethod_8())
                 {
                     var string_ = current2.imethod_9().Replace(".qb", ".qs");
-                    if (!Class3180.method_6(string_))
+                    if (!Class3180.zzQbFileExists(string_))
                     {
                         if (!current2.imethod_18())
                         {

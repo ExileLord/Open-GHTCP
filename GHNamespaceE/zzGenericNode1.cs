@@ -259,7 +259,7 @@ namespace GHNamespaceE
                         }
                         if (num == 27)
                         {
-                            return new TagStructureNode();
+                            return new StructItemQbKey();
                         }
                         if (num == 53)
                         {
@@ -309,7 +309,7 @@ namespace GHNamespaceE
                     }
                     if (num2 == 13)
                     {
-                        return new TagStructureNode();
+                        return new StructItemQbKey();
                     }
                     throw ex;
                 }

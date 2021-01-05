@@ -108,7 +108,7 @@ namespace GHNamespaceF
                 }
                 if (num2 == 13)
                 {
-                    return new TagStructureNode();
+                    return new StructItemQbKey();
                 }
                 if (num2 == 26)
                 {
@@ -156,7 +156,7 @@ namespace GHNamespaceF
                 }
                 if (num == 27)
                 {
-                    return new TagStructureNode();
+                    return new StructItemQbKey();
                 }
                 if (num == 53)
                 {
@@ -206,7 +206,7 @@ namespace GHNamespaceF
             }
             if (num2 == 13)
             {
-                return new TagStructureNode();
+                return new StructItemQbKey();
             }
             throw ex;
         }

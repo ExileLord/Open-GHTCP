@@ -182,7 +182,7 @@ namespace GHNamespaceE
                     var string_ = imethod_9().Contains(".qb")
                         ? imethod_9().Replace(".qb", ".qs")
                         : (imethod_9() + ".qs");
-                    if ((treeNode as ZzPakNode2).Class3180.method_6(string_))
+                    if ((treeNode as ZzPakNode2).Class3180.zzQbFileExists(string_))
                     {
                         @class = new ZzGenericNode1("TempFile", stream26,
                             (treeNode as ZzPakNode2).Class3180.method_9(string_).Dictionary0);

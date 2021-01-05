@@ -39,16 +39,16 @@ namespace GHNamespaceA
 
         public GameSettingsChecker(ZzPakNode2 class3180)
         {
-            if (!class3180.method_6(HashPath))
+            if (!class3180.zzQbFileExists(HashPath))
             {
                 return;
             }
             var @class = new ZzGenericNode1(HashPath,
                 KeyGenerator.smethod_8(class3180.method_12(HashPath), "MaC39SubInfo1245"));
-            Version = new Version(@class.method_5(new UnicodeRootNode("version")).method_7());
-            var array = @class.method_5(new ArrayPointerRootNode("date")).method_7().method_7<float>();
+            Version = new Version(@class.zzFindNode(new UnicodeRootNode("version")).method_7());
+            var array = @class.zzFindNode(new ArrayPointerRootNode("date")).method_7().method_7<float>();
             Date = new DateTime((int) array[0], (int) array[1], (int) array[2]);
-            UnkBuffer = @class.method_5(new ArrayPointerRootNode("hash")).method_7().method_7<int>();
+            UnkBuffer = @class.zzFindNode(new ArrayPointerRootNode("hash")).method_7().method_7<int>();
             class3180.method_7(HashPath);
             using (var stream = class3180.method_17())
             {
@@ -73,22 +73,22 @@ namespace GHNamespaceA
 
         public static void SignHash(ZzPakNode2 pakNode)
         {
-            if (pakNode.method_6(HashPath))
+            if (pakNode.zzQbFileExists(HashPath))
             {
                 pakNode.method_7(HashPath);
             }
             var @class = new ZzGenericNode1();
-            @class.method_3(new UnicodeRootNode("version", HashPath,
+            @class.addChild(new UnicodeRootNode("version", HashPath,
                 Assembly.GetExecutingAssembly().GetName().Version.ToString()));
             using (var stream = pakNode.method_17())
             {
                 stream.Position = 0L;
-                @class.method_3(new ArrayPointerRootNode("hash", HashPath,
+                @class.addChild(new ArrayPointerRootNode("hash", HashPath,
                     new IntegerArrayNode(KeyGenerator.smethod_21(KeyGenerator.HashStream(stream.Stream)))));
             }
             GC.Collect();
             var now = DateTime.Now;
-            @class.method_3(new ArrayPointerRootNode("date", HashPath, new FloatArrayNode(new[]
+            @class.addChild(new ArrayPointerRootNode("date", HashPath, new FloatArrayNode(new[]
             {
                 now.Year,
                 now.Month,

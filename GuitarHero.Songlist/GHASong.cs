@@ -58,25 +58,25 @@ namespace GuitarHero.Songlist
         {
             base.vmethod_4(class3020);
             UnicodeStructureNode @class;
-            CoveredBy = (((@class = class3020.method_5(new UnicodeStructureNode("covered_by"))) != null)
+            CoveredBy = (((@class = class3020.zzFindNode(new UnicodeStructureNode("covered_by"))) != null)
                 ? @class.method_8()
                 : "");
-            TagStructureNode class2;
-            Band = (((class2 = class3020.method_5(new TagStructureNode("band"))) != null)
+            StructItemQbKey class2;
+            Band = (((class2 = class3020.zzFindNode(new StructItemQbKey("band"))) != null)
                 ? class2.method_8()
                 : "default_band");
-            GuitaristChecksum = ((class2 = class3020.method_5(new TagStructureNode("guitarist_checksum"))) != null &&
+            GuitaristChecksum = ((class2 = class3020.zzFindNode(new StructItemQbKey("guitarist_checksum"))) != null &&
                                  class2.method_8() == "aerosmith");
             AsciiStructureNode class3;
-            SingerAnimPak = (((class3 = class3020.method_5(new AsciiStructureNode("singer_anim_pak"))) != null)
+            SingerAnimPak = (((class3 = class3020.zzFindNode(new AsciiStructureNode("singer_anim_pak"))) != null)
                 ? class3.method_8()
                 : "");
             IntegerStructureNode class4;
             ThinFretbar_8NoteParamsHighBpm =
-            (((class4 = class3020.method_5(new IntegerStructureNode("thin_fretbar_8note_params_high_bpm"))) != null)
+            (((class4 = class3020.zzFindNode(new IntegerStructureNode("thin_fretbar_8note_params_high_bpm"))) != null)
                 ? class4.method_8()
                 : 0);
-            PerryMicStand = ((class4 = class3020.method_5(new IntegerStructureNode("perry_mic_stand"))) != null &&
+            PerryMicStand = ((class4 = class3020.zzFindNode(new IntegerStructureNode("perry_mic_stand"))) != null &&
                              class4.method_8() == 1);
         }
 
@@ -86,24 +86,24 @@ namespace GuitarHero.Songlist
             var class2 = @class.method_8();
             if (!CoveredBy.Equals(""))
             {
-                class2.method_3(new UnicodeStructureNode("covered_by", CoveredBy));
+                class2.addChild(new UnicodeStructureNode("covered_by", CoveredBy));
             }
-            class2.method_3(new TagStructureNode("band", Band));
+            class2.addChild(new StructItemQbKey("band", Band));
             if (GuitaristChecksum)
             {
-                class2.method_3(new TagStructureNode("guitarist_checksum", "aerosmith"));
+                class2.addChild(new StructItemQbKey("guitarist_checksum", "aerosmith"));
             }
             if (!SingerAnimPak.Equals(""))
             {
-                class2.method_3(new AsciiStructureNode("singer_anim_pak", SingerAnimPak));
+                class2.addChild(new AsciiStructureNode("singer_anim_pak", SingerAnimPak));
             }
             if (ThinFretbar_8NoteParamsHighBpm != 0)
             {
-                class2.method_3(new IntegerStructureNode("band_playback_volume", ThinFretbar_8NoteParamsHighBpm));
+                class2.addChild(new IntegerStructureNode("band_playback_volume", ThinFretbar_8NoteParamsHighBpm));
             }
             if (PerryMicStand)
             {
-                class2.method_3(new IntegerStructureNode("band_playback_volume", 1));
+                class2.addChild(new IntegerStructureNode("band_playback_volume", 1));
             }
             return @class;
         }
