@@ -2,11 +2,11 @@ using System;
 
 namespace AVTools.MpegUtils
 {
-	[Serializable]
-	public class FFMpegException : Exception
-	{
-		public FFMpegException(string string_0) : base(string_0)
-		{
-		}
-	}
+    [Serializable]
+    public class FfMpegException : Exception
+    {
+        public FfMpegException(string string0) : base(string0)
+        {
+        }
+    }
 }

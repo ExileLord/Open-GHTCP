@@ -2,15 +2,15 @@ using System;
 
 namespace SharpAudio.ASC.Flac.LibFlac.frame
 {
-	[Serializable]
-	public class BadHeaderException : Exception
-	{
-		public BadHeaderException()
-		{
-		}
+    [Serializable]
+    public class BadHeaderException : Exception
+    {
+        public BadHeaderException()
+        {
+        }
 
-		public BadHeaderException(string string_0) : base(string_0)
-		{
-		}
-	}
+        public BadHeaderException(string string0) : base(string0)
+        {
+        }
+    }
 }

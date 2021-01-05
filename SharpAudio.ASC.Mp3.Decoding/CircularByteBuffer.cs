@@ -2,102 +2,89 @@ using System;
 
 namespace SharpAudio.ASC.Mp3.Decoding
 {
-	[Serializable]
-	public class CircularByteBuffer
-	{
-		private byte[] dataArray;
+    [Serializable]
+    public class CircularByteBuffer
+    {
+        private readonly byte[] _dataArray;
 
-		private int length = 1;
+        private readonly int _length = 1;
 
-		private int index;
+        private int _index;
 
-		private int numValid;
+        private int _numValid;
 
-		private readonly object lockObj = new object();
+        private readonly object _lockObj = new object();
 
-		public byte this[int int_0]
-		{
-			get
-			{
-				return this.method_1(-1 - int_0);
-			}
-			set
-			{
-				this.method_2(-1 - int_0, value);
-			}
-		}
+        public byte this[int int0]
+        {
+            get => method_1(-1 - int0);
+            set => method_2(-1 - int0, value);
+        }
 
-		public CircularByteBuffer(int int_0)
-		{
-			this.dataArray = new byte[int_0];
-			this.length = int_0;
-		}
+        public CircularByteBuffer(int int0)
+        {
+            _dataArray = new byte[int0];
+            _length = int0;
+        }
 
-		public byte method_0(byte byte_0)
-		{
-			byte result;
-			lock (this.lockObj)
-			{
-				result = this.method_1(this.length);
-				this.dataArray[this.index] = byte_0;
-				this.numValid++;
-				if (this.numValid > this.length)
-				{
-					this.numValid = this.length;
-				}
-				this.index++;
-				this.index %= this.length;
-			}
-			return result;
-		}
+        public byte method_0(byte byte0)
+        {
+            byte result;
+            lock (_lockObj)
+            {
+                result = method_1(_length);
+                _dataArray[_index] = byte0;
+                _numValid++;
+                if (_numValid > _length)
+                {
+                    _numValid = _length;
+                }
+                _index++;
+                _index %= _length;
+            }
+            return result;
+        }
 
-		private byte method_1(int int_0)
-		{
-			int i;
-			for (i = this.index + int_0; i >= this.length; i -= this.length)
-			{
-			}
-			while (i < 0)
-			{
-				i += this.length;
-			}
-			return this.dataArray[i];
-		}
+        private byte method_1(int int0)
+        {
+            int i;
+            for (i = _index + int0; i >= _length; i -= _length)
+            {
+            }
+            while (i < 0)
+            {
+                i += _length;
+            }
+            return _dataArray[i];
+        }
 
-		private void method_2(int int_0, byte byte_0)
-		{
-			int i;
-			for (i = this.index + int_0; i > this.length; i -= this.length)
-			{
-			}
-			while (i < 0)
-			{
-				i += this.length;
-			}
-			this.dataArray[i] = byte_0;
-		}
+        private void method_2(int int0, byte byte0)
+        {
+            int i;
+            for (i = _index + int0; i > _length; i -= _length)
+            {
+            }
+            while (i < 0)
+            {
+                i += _length;
+            }
+            _dataArray[i] = byte0;
+        }
 
-		public int method_3()
-		{
-			return this.numValid;
-		}
+        public int method_3()
+        {
+            return _numValid;
+        }
 
-		public override string ToString()
-		{
-			string text = "";
-			for (int i = 0; i < this.dataArray.Length; i++)
-			{
-				text = text + this.dataArray[i] + " ";
-			}
-			object obj = text;
-			return string.Concat(new object[]
-			{
-				obj,
-				"\n index = ",
-				this.index,
-				" numValid = ",
-				this.method_3()
-			});
-		}
-	}
+        public override string ToString()
+        {
+            var text = "";
+            for (var i = 0; i < _dataArray.Length; i++)
+            {
+                text = text + _dataArray[i] + " ";
+            }
+            object obj = text;
+            return string.Concat(obj, "\n index = ", _index, " numValid = ", method_3());
+        }
+    }
 }

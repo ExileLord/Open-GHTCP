@@ -1,13 +1,13 @@
-using AVTools.MpegUtils;
 using System;
+using AVTools.MpegUtils;
 
 namespace SharpAudio.ASC.Ac3.Decoding
 {
-	[Serializable]
-	public class AC3Exception : FFMpegException
-	{
-		public AC3Exception(string string_0) : base(string_0)
-		{
-		}
-	}
+    [Serializable]
+    public class Ac3Exception : FfMpegException
+    {
+        public Ac3Exception(string string0) : base(string0)
+        {
+        }
+    }
 }

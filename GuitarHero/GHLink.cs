@@ -1,51 +1,52 @@
-using ns18;
-using ns21;
 using System;
+using GHNamespaceB;
+using GHNamespaceF;
 
 namespace GuitarHero
 {
-	[Serializable]
-	public class GHLink
-	{
-		public string path;
+    [Serializable]
+    public class GhLink
+    {
+        public string Path;
 
-		public int setlist;
+        public int Setlist;
 
-		public int progression;
+        public int Progression;
 
-		public GHLink(int int_0) : this(int_0, -2140143824)
-		{
-		}
+        public GhLink(int int0) : this(int0, -2140143824)
+        {
+        }
 
-		public GHLink(int int_0, int int_1) : this("scripts\\guitar\\custom_menu\\guitar_custom_progression.qb", int_0, int_1)
-		{
-		}
+        public GhLink(int int0, int int1) : this("scripts\\guitar\\custom_menu\\guitar_custom_progression.qb", int0,
+            int1)
+        {
+        }
 
-		public GHLink(string string_0, int int_0, int int_1)
-		{
-			this.path = string_0;
-			this.setlist = int_0;
-			this.progression = int_1;
-		}
+        public GhLink(string string0, int int0, int int1)
+        {
+            Path = string0;
+            Setlist = int0;
+            Progression = int1;
+        }
 
-		public GHLink(string string_0, StructureHeaderNode class286_0)
-		{
-			this.path = string_0;
-			this.method_0(class286_0);
-		}
+        public GhLink(string string0, StructureHeaderNode class2860)
+        {
+            Path = string0;
+            method_0(class2860);
+        }
 
-		public void method_0(StructureHeaderNode class286_0)
-		{
-			this.setlist = class286_0.method_5<TagStructureNode>(new TagStructureNode("tier_global")).method_10();
-			this.progression = class286_0.method_5<TagStructureNode>(new TagStructureNode("progression_global")).method_10();
-		}
+        public void method_0(StructureHeaderNode class2860)
+        {
+            Setlist = class2860.method_5(new TagStructureNode("tier_global")).method_10();
+            Progression = class2860.method_5(new TagStructureNode("progression_global")).method_10();
+        }
 
-		public StructureHeaderNode method_1()
-		{
-			StructureHeaderNode @class = new StructureHeaderNode();
-			@class.method_3(new TagStructureNode("tier_global", this.setlist));
-			@class.method_3(new TagStructureNode("progression_global", this.progression));
-			return @class;
-		}
-	}
+        public StructureHeaderNode method_1()
+        {
+            var @class = new StructureHeaderNode();
+            @class.method_3(new TagStructureNode("tier_global", Setlist));
+            @class.method_3(new TagStructureNode("progression_global", Progression));
+            return @class;
+        }
+    }
 }
