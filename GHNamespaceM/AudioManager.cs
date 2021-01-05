@@ -149,9 +149,7 @@ namespace GHNamespaceM
                 }
                 if (fileExtension == ".flac")
                 {
-                    MessageBox.Show("FLACs are current broken, will fix later", "FLAC Info", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    return null;
+                    return new FlacStream(fileName);
                 }
                 if (fileExtension == ".ac3")
                 {

@@ -1389,7 +1389,7 @@ namespace GHNamespace8
             {
                 _gameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero III\\";
                 if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\") != null &&
-                    MessageBox.Show("Do you wish to load GH3 Aerosmith?", "GH3 Aerosmith found!",
+                    MessageBox.Show("Do you wish to load GH Aerosmith?", "GH Aerosmith found!",
                         MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     _gameRegistry = "SOFTWARE\\Wow6432Node\\Aspyr\\Guitar Hero Aerosmith\\";
@@ -1400,7 +1400,7 @@ namespace GHNamespace8
             {
                 _gameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero III\\";
                 if (Registry.LocalMachine.OpenSubKey("SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\") != null &&
-                    MessageBox.Show("Do you wish to load GH3 Aerosmith?", "GH3 Aerosmith found!",
+                    MessageBox.Show("Do you wish to load GH Aerosmith?", "GH Aerosmith found!",
                         MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     _gameRegistry = "SOFTWARE\\Aspyr\\Guitar Hero Aerosmith\\";
@@ -3911,6 +3911,7 @@ namespace GHNamespace8
             _songEditorControl.method_29(method_1);
         }
 
+        // Disables majority of interface before opening game settings
         private void method_12(bool bool1)
         {
             ToolStripItem arg_1F0 = _saveChartMenuItem;
