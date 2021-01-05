@@ -2828,9 +2828,9 @@ namespace GHNamespace8
             _sidePanel.Size = new Size(180, 519);
             _sidePanel.TabIndex = 7;
             //
-            // notifyIcon_0
+            // _notifyIcon0
             //
-            _notifyIcon0.Icon = ((Icon) (resources.GetObject("notifyIcon_0.Icon")));
+            _notifyIcon0.Icon = ((Icon) (resources.GetObject("_notifyIcon0.Icon")));
             _notifyIcon0.Text = "Guitar Hero Three Control Panel+";
             _notifyIcon0.Visible = true;
             _notifyIcon0.MouseDown += notifyIcon_0_MouseDown;
