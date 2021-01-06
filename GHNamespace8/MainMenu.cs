@@ -982,7 +982,8 @@ namespace GHNamespace8
             {
                 var gh3Song = (Gh3Song) _songListBox.SelectedItem;
                 var fileLocation = KeyGenerator.OpenOrSaveFile("Select where to save the song chart.",
-                    "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false);
+                    "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false,
+                    _songListBox.Text);
                 if (!fileLocation.Equals("") && File.Exists(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen"))
                 {
                     using (var @class = new ZzPakNode2(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen", false))
