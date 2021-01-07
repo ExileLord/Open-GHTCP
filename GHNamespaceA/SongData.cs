@@ -1521,6 +1521,11 @@ namespace GHNamespaceA
                     _chartFileTxt.Text = fileName;
                     _chartFileTxt.SelectionStart = _chartFileTxt.TextLength;
                     _bool4 = true;
+                    _songNameTxt.Text = Path.GetFileName(Path.GetDirectoryName(fileName)).ToLower().Replace(" ", "").Replace('.', '_');
+                    if (_songNameTxt.Text.Length > 30)
+                    {
+                        _songNameTxt.Text = _songNameTxt.Text.Remove(30);
+                    }
                     method_7();
                 }
                 catch (Exception ex)
