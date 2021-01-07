@@ -221,6 +221,10 @@ namespace GHNamespace8
             _song.Title = _titleTxt.Text;
             _song.Artist = _artistTxt.Text;
             _song.Year = _yearTxt.Text;
+            if (_yearTxt.Text.Length > 1 && _yearTxt.Text[0] != ',')
+            {
+                _song.Year = ", " + _yearTxt.Text;
+            }
             _song.OriginalArtist = _chkOriginal.Checked;
             _song.NoRhythmTrack = !_chkRhythm.Checked;
             _song.Keyboard = _chkKeyboard.Checked;
