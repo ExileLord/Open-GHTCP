@@ -625,12 +625,10 @@
     <Compile Include="GHNamespace7\Class210.cs" />
     <Compile Include="GHNamespace7\Class211.cs" />
     <Compile Include="GHNamespace7\Class212.cs" />
-    <Compile Include="GHNamespace7\CompilerClass213.cs" />
     <Compile Include="GHNamespace7\zzCollection214.cs" />
     <Compile Include="GHNamespace7\Class215.cs" />
     <Compile Include="GHNamespace7\Class216.cs" />
     <Compile Include="GHNamespace7\Class217.cs" />
-    <Compile Include="GHNamespace7\UnusedClass218.cs" />
     <Compile Include="GHNamespace7\Class219.cs" />
     <Compile Include="GHNamespace7\Class220.cs" />
     <Compile Include="GHNamespace7\Class221.cs" />
@@ -689,7 +687,6 @@
     </Compile>
     <Compile Include="GHNamespace9\Fretbar.cs" />
     <Compile Include="GHNamespace9\zzList240.cs" />
-    <Compile Include="GHNamespace9\UnusedDictionaryClass.cs" />
     <Compile Include="GHNamespace9\zzKeyedCollection243.cs" />
     <Compile Include="GHNamespace9\KeyGenerator.cs" />
     <Compile Include="GHNamespace9\QbEditor.cs" />
@@ -717,14 +714,12 @@
     <Compile Include="GHNamespaceA\zzEmbeddedResourceDB.cs" />
     <Compile Include="GHNamespaceA\TGHManager.cs" />
     <Compile Include="GHNamespaceA\GameSettingsChecker.cs" />
-    <Compile Include="GHNamespaceA\CompilerClass376.cs" />
     <Compile Include="GHNamespaceA\SongData.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GHNamespaceA\SongEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GHNamespaceB\UnusedCompilerClass2.cs" />
     <Compile Include="GHNamespaceB\AbstractBaseTreeNode1.cs" />
     <Compile Include="GHNamespaceB\AbstractTreeNode1.cs" />
     <Compile Include="GHNamespaceB\zzUnkNode260.cs" />
@@ -831,7 +826,6 @@
     <Compile Include="GHNamespaceG\StructureArrayNode.cs" />
     <Compile Include="GHNamespaceG\PairArrayNode.cs" />
     <Compile Include="GHNamespaceG\VectorPointerNode.cs" />
-    <Compile Include="GHNamespaceG\CompilerClass1.cs" />
     <Compile Include="GHNamespaceG\AbstractNoteClass.cs" />
     <Compile Include="GHNamespaceG\MIDINote.cs" />
     <Compile Include="GHNamespaceG\zzNote1.cs" />
@@ -996,7 +990,6 @@
     <Compile Include="GHNamespaceN\Class356.cs" />
     <Compile Include="GHNamespaceN\Class357.cs" />
     <Compile Include="GHNamespaceN\Class358.cs" />
-    <Compile Include="GHNamespaceN\CompilerClass359.cs" />
     <Compile Include="GHNamespaceN\LameEncoder.cs" />
     <Compile Include="GHNamespaceN\Class361.cs" />
     <Compile Include="GHNamespaceN\QBCParser.cs" />

@@ -109,6 +109,8 @@ namespace GHNamespace8
 
         private ToolStripMenuItem _tghSwitchMenuItem;
 
+        private ToolStripMenuItem _bulkSghSwitchMenuItem;
+
         private ToolStripMenuItem _texExplorerMenuItem;
 
         private ToolStripSeparator _toolStripSeparator6;
@@ -680,11 +682,11 @@ namespace GHNamespace8
                 var array = _songListBox.imethod_3();
                 for (var i = 0; i < array.Length; i++)
                 {
-                    var gh3Song = (Gh3Song) array[i];
-                    if (gh3Song.Editable)
+                    var gH3Song = (Gh3Song) array[i];
+                    if (gH3Song.Editable)
                     {
-                        _songListBox.Items.Remove(gh3Song);
-                        foreach (var current in _gh3Songlist.method_1(gh3Song))
+                        _songListBox.Items.Remove(gH3Song);
+                        foreach (var current in _gh3Songlist.method_1(gH3Song))
                         {
                             method_4(new ZzSetListUpdater(current, Class3190, _gh3Songlist));
                         }
@@ -980,30 +982,30 @@ namespace GHNamespace8
         {
             if (_songListBox.SelectedIndex >= 0)
             {
-                var gh3Song = (Gh3Song) _songListBox.SelectedItem;
+                var gH3Song = (Gh3Song) _songListBox.SelectedItem;
                 var fileLocation = KeyGenerator.OpenOrSaveFile("Select where to save the song chart.",
                     "GH3 Chart File|*.chart|GH3CP QB Based Chart File|*.qbc|GH3CP dB Based Chart File|*.dbc", false,
                     _songListBox.Text);
-                if (!fileLocation.Equals("") && File.Exists(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen"))
+                if (!fileLocation.Equals("") && File.Exists(_dataFolder + "songs\\" + gH3Song.Name + "_song.pak.xen"))
                 {
-                    using (var @class = new ZzPakNode2(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen", false))
+                    using (var @class = new ZzPakNode2(_dataFolder + "songs\\" + gH3Song.Name + "_song.pak.xen", false))
                     {
                         if (fileLocation.EndsWith(".qbc"))
                         {
-                            new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb"))
-                                .QbcCreator(fileLocation, gh3Song);
+                            new QbcParser(gH3Song.Name, @class.ZzGetNode1("songs\\" + gH3Song.Name + ".mid.qb"))
+                                .QbcCreator(fileLocation, gH3Song);
                         }
                         else if (fileLocation.EndsWith(".chart"))
                         {
-                            new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb"))
+                            new QbcParser(gH3Song.Name, @class.ZzGetNode1("songs\\" + gH3Song.Name + ".mid.qb"))
                                 .method_1()
-                                .ChartCreator(fileLocation, gh3Song);
+                                .ChartCreator(fileLocation, gH3Song);
                         }
                         else
                         {
-                            new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb"))
+                            new QbcParser(gH3Song.Name, @class.ZzGetNode1("songs\\" + gH3Song.Name + ".mid.qb"))
                                 .method_1()
-                                .DbcCreator(fileLocation, gh3Song);
+                                .DbcCreator(fileLocation, gH3Song);
                         }
                     }
                 }
@@ -1043,7 +1045,7 @@ namespace GHNamespace8
         {
             if (_tierBox.SelectedIndex >= 0)
             {
-                var text = KeyGenerator.OpenFile("Select the tier to switch too.", "GH3CP Tier File|*.tgh");
+                var text = KeyGenerator.OpenFile("Select the tier to switch to.", "GH3CP Tier File|*.tgh");
                 if (text.Equals(""))
                 {
                     return;
@@ -1159,15 +1161,15 @@ namespace GHNamespace8
                 }
                 foreach (var tier in _gh3Songlist.Gh3SetlistList[_selectedSetlist].Tiers)
                 {
-                    foreach (var gh3Song in tier.Songs)
+                    foreach (var gH3Song in tier.Songs)
                     {
-                        var fileLocation = saveLocation + "\\" + gh3Song.Name + ".chart";
-                        using (var @class = new ZzPakNode2(_dataFolder + "songs\\" + gh3Song.Name + "_song.pak.xen",
+                        var fileLocation = saveLocation + "\\" + gH3Song.Name + ".chart";
+                        using (var @class = new ZzPakNode2(_dataFolder + "songs\\" + gH3Song.Name + "_song.pak.xen",
                             false))
                         {
-                            new QbcParser(gh3Song.Name, @class.ZzGetNode1("songs\\" + gh3Song.Name + ".mid.qb"))
+                            new QbcParser(gH3Song.Name, @class.ZzGetNode1("songs\\" + gH3Song.Name + ".mid.qb"))
                                 .method_1()
-                                .ChartCreator(fileLocation, gh3Song);
+                                .ChartCreator(fileLocation, gH3Song);
                         }
                     }
                 }
@@ -2056,6 +2058,7 @@ namespace GHNamespace8
             _toolStripSeparator4 = new ToolStripSeparator();
             _tghSwitchMenuItem = new ToolStripMenuItem();
             _sghSwitchMenuItem = new ToolStripMenuItem();
+            _bulkSghSwitchMenuItem = new ToolStripMenuItem();
             _toolStripSeparator11 = new ToolStripSeparator();
             _gameSettingsSwitchMenuItem = new ToolStripMenuItem();
             _restoreLastMenuItem = new ToolStripMenuItem();
@@ -2490,6 +2493,13 @@ namespace GHNamespace8
             _recoverSonglistMenuItem.Text = "Recover Songlist";
             _recoverSonglistMenuItem.Click += RecoverSonglist_MenuItem_Click;
             //
+            // Bulk SGH switch
+            //
+            _bulkSghSwitchMenuItem.Name = "bulkSghSwitchMenuItem";
+            _bulkSghSwitchMenuItem.Size = new Size(237, 22);
+            _bulkSghSwitchMenuItem.Text = "Bulk add SGH setlists";
+            _bulkSghSwitchMenuItem.Click += BulkSGHSwitch_MenuItem_Click;
+            //
             // ManageGame_MenuItem
             //
             _manageGameMenuItem.DropDownItems.AddRange(new ToolStripItem[]
@@ -2498,6 +2508,7 @@ namespace GHNamespace8
                 _toolStripSeparator4,
                 _tghSwitchMenuItem,
                 _sghSwitchMenuItem,
+                _bulkSghSwitchMenuItem,
                 _toolStripSeparator11,
                 _gameSettingsSwitchMenuItem,
                 _restoreLastMenuItem,
@@ -2537,17 +2548,6 @@ namespace GHNamespace8
             _sghSwitchMenuItem.Size = new Size(237, 22);
             _sghSwitchMenuItem.Text = "SGH Setlist Switch";
             _sghSwitchMenuItem.Click += SGHSwitch_MenuItem_Click;
-            //
-            // Bulk SGH switch
-            //
-            var bulkSghSwitchMenuItem = new ToolStripMenuItem
-            {
-                Name = "bulkSghSwitchMenuItem",
-                Size = new Size(237, 22),
-                Text = "Bulk add SGH setlists"
-            };
-            bulkSghSwitchMenuItem.Click += BulkSGHSwitch_MenuItem_Click;
-            _manageGameMenuItem.DropDownItems.Add(bulkSghSwitchMenuItem);
             //
             // toolStripSeparator11
             //
@@ -3817,11 +3817,10 @@ namespace GHNamespace8
 
         private void BulkSGHSwitch_MenuItem_Click(object sender, EventArgs e)
         {
-
             var dialog = new OpenFileDialog
             {
                 Multiselect = true,
-                Title = "Select the setlists to import",
+                Title = "Select the setlists to import.",
                 Filter = "GH3CP Setlist Files|*.sgh"
             };
             var result = dialog.ShowDialog();
@@ -3829,16 +3828,12 @@ namespace GHNamespace8
             {
                 return;
             }
-            //var text = @"C:\Users\Rafael\Downloads\guitar hero 3 setlists\more\impossibleshit.sgh";
 
             var files = dialog.FileNames;
-
-            foreach (var text in files)
+            foreach (var saveLocation in files)
             {
                 CreateSetlist_Btn_Click(sender,e);
-                _setlistDropBox.SelectedIndex = _setlistDropBox.Items.Count-1;
-                //Setlist_DropBox_SelectedIndexChanged(sender, e);
-                //SGHSwitch_MenuItem_Click
+                _setlistDropBox.SelectedIndex = _setlistDropBox.Items.Count - 1;
                 if (!_gh3Songlist.Gh3SetlistList.ContainsKey(_selectedSetlist))
                 {
                     MessageBox.Show("Something weird happened: setlistlist does not contain selected setlist.");
@@ -3848,12 +3843,7 @@ namespace GHNamespace8
                 var gH3Setlist = new Gh3Setlist();
                 try
                 {
-                    var sghManager = /*DialogResult.Yes ==
-                                     MessageBox.Show(
-                                         "Do you wish to import all contained song data (Music & Game Tracks)? Data and properties will be overwritten!",
-                                         "Setlist Switching", MessageBoxButtons.YesNo)
-                        ? */new SghManager(_gh3Songlist, gH3Setlist, text, _dataFolder)
-    /*                    : new SghManager(_gh3Songlist, gH3Setlist, text)*/;
+                    var sghManager = new SghManager(_gh3Songlist, gH3Setlist, saveLocation, _dataFolder);
 
                     sghManager.ImportSGH();
                     _tierBox.Items.Clear();
@@ -3866,7 +3856,7 @@ namespace GHNamespace8
                     {
                         method_23();
                     }
-                    _setlistTitleTxtBox.Text = KeyGenerator.GetFileName(text, 1);
+                    _setlistTitleTxtBox.Text = KeyGenerator.GetFileName(saveLocation, 1);
                     _setlistApplyBtn.Enabled = true;
                     method_4(new Class247(Class3190, _gh3Songlist));
                     RefreshSongListBox();
@@ -3877,7 +3867,6 @@ namespace GHNamespace8
                 }
 
                 SetlistApply_Btn_Click(sender, e);
-                // SetlistApply_Btn_Click
             }
         }
 
@@ -4549,7 +4538,7 @@ namespace GHNamespace8
                 {
                     if (myStream == null)
                     {
-                        MessageBox.Show("Couldn't open file for writing");
+                        MessageBox.Show("Couldn't open file for writing.");
                         return;
                     }
 
@@ -4579,7 +4568,7 @@ namespace GHNamespace8
                     }
                 }
 
-                MessageBox.Show("Done.");
+                MessageBox.Show("Songlist exported.");
             }
         }
 
@@ -4592,7 +4581,7 @@ namespace GHNamespace8
 
             SaveFileDialog saveFileDlg = new SaveFileDialog();
             saveFileDlg.Filter = "CSV files (*.csv)|*.csv";
-            saveFileDlg.Title = "Please select where you would like to save the songlist";
+            saveFileDlg.Title = "Please select where you would like to save the songlist.";
             saveFileDlg.FileName = "songlist.csv";
             if (saveFileDlg.ShowDialog() != DialogResult.OK)
             {
@@ -4604,7 +4593,7 @@ namespace GHNamespace8
             {
                 if (myStream == null)
                 {
-                    MessageBox.Show("Couldn't open file for writing");
+                    MessageBox.Show("Couldn't open file for writing.");
                     return;
                 }
 
@@ -4646,7 +4635,7 @@ namespace GHNamespace8
                 }
             }
 
-            MessageBox.Show("Done.");
+            MessageBox.Show("Songlist exported.");
         }
     }
 }

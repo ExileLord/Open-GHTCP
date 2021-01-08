@@ -679,9 +679,9 @@ namespace GHNamespace8
             return name;
         }
 
-        public void DbcCreator(string fileLocation, Gh3Song gh3Song)
+        public void DbcCreator(string fileLocation, Gh3Song gH3Song)
         {
-            Gh3SongInfo = gh3Song;
+            Gh3SongInfo = gH3Song;
             var streamWriter = new StreamWriter(fileLocation);
             streamWriter.WriteLine("[Song]");
             streamWriter.WriteLine("{");

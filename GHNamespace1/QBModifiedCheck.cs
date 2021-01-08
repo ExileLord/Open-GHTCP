@@ -12,8 +12,7 @@ namespace GHNamespace1
         public static void smethod_0(int int0)
         {
             throw new Exception("FUCK IT GOT CALLED");
-
-//             MethodInfo methodInfo;
+//          MethodInfo methodInfo;
 // 			Type typeFromHandle;
 // 			try
 // 			{
@@ -44,7 +43,6 @@ namespace GHNamespace1
 //                     IL_A4:
 // 						try
 // 						{
-// 							
 // 							methodInfo = (MethodInfo)MethodBase.GetMethodFromHandle(Class0.moduleHandle_0.ResolveMethodHandle(num + 167772161));
 // 						}
 // 						catch
@@ -136,7 +134,6 @@ namespace GHNamespace1
 // 				//goto IL_A4;
 //                 try
 //                 {
-// 
 //                     methodInfo = (MethodInfo)MethodBase.GetMethodFromHandle(Class0.moduleHandle_0.ResolveMethodHandle(num + 167772161));
 //                 }
 //                 catch
