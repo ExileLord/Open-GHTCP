@@ -22,11 +22,10 @@ namespace GHNamespaceK
             return alIsExtensionPresent("AL_EXT_MCFORMATS");
         }
 
-        [CLSCompliant(true), SuppressUnmanagedCodeSecurity]
+        [SuppressUnmanagedCodeSecurity]
         [DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void alGenSources(int n, out IntPtr sources);
 
-        [CLSCompliant(true)]
         public static IntPtr smethod_2()
         {
             IntPtr result;
@@ -34,21 +33,20 @@ namespace GHNamespaceK
             return result;
         }
 
-        [CLSCompliant(true), SuppressUnmanagedCodeSecurity]
+        [SuppressUnmanagedCodeSecurity]
         [DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void alDeleteSources(int int0, ref IntPtr intptr0);
 
-        [CLSCompliant(true)]
         public static void smethod_3(IntPtr intptr0)
         {
             alDeleteSources(1, ref intptr0);
         }
 
-        [CLSCompliant(false), SuppressUnmanagedCodeSecurity]
+        [SuppressUnmanagedCodeSecurity]
         [DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void alSourcef(IntPtr intptr0, Enum10 enum100, float float0);
 
-        [CLSCompliant(true), SuppressUnmanagedCodeSecurity]
+        [SuppressUnmanagedCodeSecurity]
         [DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void alGetSourcei(IntPtr sid, Enum11 param, out int value);
 
@@ -59,15 +57,15 @@ namespace GHNamespaceK
             return result;
         }
 
-        [CLSCompliant(true), SuppressUnmanagedCodeSecurity]
+        [SuppressUnmanagedCodeSecurity]
         [DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void alSourcePlay(IntPtr intptr0);
 
-        [CLSCompliant(true), SuppressUnmanagedCodeSecurity]
+        [SuppressUnmanagedCodeSecurity]
         [DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void alSourceStop(IntPtr intptr0);
 
-        [CLSCompliant(true), SuppressUnmanagedCodeSecurity]
+        [SuppressUnmanagedCodeSecurity]
         [DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void alSourcePause(IntPtr intptr0);
 
@@ -115,7 +113,6 @@ namespace GHNamespaceK
         [DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void alGenBuffers(int n, [Out] IntPtr[] buffers);
 
-        [CLSCompliant(true)]
         public static IntPtr[] smethod_8(int int0)
         {
             var array = new IntPtr[int0];
@@ -127,7 +124,6 @@ namespace GHNamespaceK
         [DllImport("openal32.dll", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void alDeleteBuffers(int n, [In] IntPtr[] buffers);
 
-        [CLSCompliant(true)]
         public static void smethod_9(IntPtr[] intptr0)
         {
             if (intptr0 == null)

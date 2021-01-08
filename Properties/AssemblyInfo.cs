@@ -16,5 +16,4 @@ using System.Security.Permissions;
 [assembly: CompilationRelaxations(8)]
 [assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
 [assembly: Guid("2ea4daa3-fbad-426d-b260-1bfc38a7c320")]
-[assembly: CLSCompliant(true)]
 [module: UnverifiableCode]
