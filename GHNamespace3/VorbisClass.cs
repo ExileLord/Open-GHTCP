@@ -4,22 +4,6 @@ namespace GHNamespace3
 {
     public class VorbisClass
     {
-        private static int _int0 = -136;
-
-        private static int _int1 = -135;
-
-        private static string _string0 = "vorbis";
-
-        private static int _int2 = 1;
-
-        private static int _int3 = 2;
-
-        private static int _int4 = 3;
-
-        private static int _int5 = 1;
-
-        private static int _int6 = 1;
-
         public int[] Int7 = new int[2];
 
         public int Int8;

@@ -14,37 +14,17 @@ namespace GHNamespaceH
 
         private static int _int3;
 
-        private static int _int4 = 1;
-
         private static readonly int Int5 = 2;
 
         private static readonly int Int6 = -1;
 
         private static readonly int Int7 = -2;
 
-        private static int _int8 = -3;
-
         private static readonly int Int9 = -128;
 
         private static readonly int Int10 = -129;
 
-        private static int _int11 = -130;
-
-        private static int _int12 = -131;
-
         private static readonly int Int13 = -132;
-
-        private static int _int14 = -133;
-
-        private static int _int15 = -134;
-
-        private static int _int16 = -135;
-
-        private static int _int17 = -136;
-
-        private static int _int18 = -137;
-
-        private static int _int19 = -138;
 
         private bool _bool0;
 

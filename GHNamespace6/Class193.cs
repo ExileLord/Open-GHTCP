@@ -43,8 +43,6 @@ namespace GHNamespace6
 
         private int _int1;
 
-        private long _long0 = -1L;
-
         private long _long1;
 
         private bool _bool0;

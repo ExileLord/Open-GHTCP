@@ -2,10 +2,6 @@ namespace GHNamespaceH
 {
     public class Class42 : Class41
     {
-        private static int _int0 = 140;
-
-        private static int _int1 = 63;
-
         private static readonly float[] Float0 =
         {
             1.06498632E-07f,

@@ -6,8 +6,6 @@ namespace GHNamespaceD
 {
     public class Class29 : Class28
     {
-        private static int _int0 = 140;
-
         private static readonly int Int1 = 63;
 
         private static readonly float[] Float0 =

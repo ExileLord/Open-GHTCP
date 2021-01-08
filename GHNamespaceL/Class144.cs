@@ -643,7 +643,7 @@ namespace GHNamespaceL
                     class1520.vmethod_1((byte) num);
                 }
                 num2 <<= 6;
-                num2 |= num & 63;
+                num2 |= (uint)num & 63;
                 i--;
             }
             return num2;

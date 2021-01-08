@@ -63,8 +63,6 @@ namespace GHNamespace2
 
         private bool _bool1;
 
-        private int _int3 = -1;
-
         private float[] _float1;
 
         private float[] _float2;

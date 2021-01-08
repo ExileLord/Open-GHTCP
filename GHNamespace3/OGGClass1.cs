@@ -26,13 +26,9 @@ namespace GHNamespace3
 
         private int _int6;
 
-        private int _int7;
-
         private int _int8;
 
         private int _int9;
-
-        private int _int10;
 
         private int _int11;
 
@@ -202,7 +198,6 @@ namespace GHNamespace3
             }
             _int8 = _int9;
             _int9 = class710.Int1;
-            _int10 = -1;
             _long2 += class710.Int6;
             _long3 += class710.Int7;
             _long4 += class710.Int8;
@@ -271,10 +266,6 @@ namespace GHNamespace3
             }
             _int11 = num3;
             _int5 = num5;
-            if (class710.Int5 != 0)
-            {
-                _int7 = 1;
-            }
             return 0;
         }
 

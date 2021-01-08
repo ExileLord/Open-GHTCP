@@ -2,12 +2,6 @@ namespace GHNamespaceD
 {
     public class Class33
     {
-        private static float _float0 = 3.14159274f;
-
-        private static int _int0 = 1;
-
-        private static int _int1 = 1;
-
         public int Int2;
 
         public float[][][][][] Float1;

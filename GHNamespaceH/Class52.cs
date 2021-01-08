@@ -12,8 +12,6 @@ namespace GHNamespaceH
 
         private int _int2;
 
-        private int _int3;
-
         private int _int4;
 
         private int _int5;
@@ -171,7 +169,6 @@ namespace GHNamespaceH
                 class481.Int2 = num + _int4;
                 class481.Int3 = _int5;
             }
-            _int3 = 0;
             _int2 += (num2 = _int4 + _int5);
             _int4 = 0;
             _int5 = 0;
@@ -182,7 +179,6 @@ namespace GHNamespaceH
         {
             _int1 = 0;
             _int2 = 0;
-            _int3 = 0;
             _int4 = 0;
             _int5 = 0;
             return 0;

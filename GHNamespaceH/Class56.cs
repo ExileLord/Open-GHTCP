@@ -27,19 +27,13 @@ namespace GHNamespaceH
 
         private readonly byte[] _byte1 = new byte[282];
 
-        private int _int8;
-
         public int Int9;
-
-        private int _int10;
 
         private int _int11;
 
         private int _int12;
 
         private long _long1;
-
-        private long _long2;
 
         public Class56()
         {
@@ -281,12 +275,9 @@ namespace GHNamespaceH
             _int5 = 0;
             _int6 = 0;
             _int7 = 0;
-            _int8 = 0;
             Int9 = 0;
-            _int10 = 0;
             _int12 = -1;
             _long1 = 0L;
-            _long2 = 0L;
             return true;
         }
     }

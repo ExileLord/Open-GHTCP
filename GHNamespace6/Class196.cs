@@ -416,7 +416,6 @@ namespace GHNamespace6
                         }
                         return true;
                     }
-                    break;
                 case 3:
                     if ((_int9 = _class1870.method_0(16)) < 0)
                     {

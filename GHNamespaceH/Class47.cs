@@ -4,10 +4,6 @@ namespace GHNamespaceH
 {
     public class Class47
     {
-        private static string _string0 = "vorbis";
-
-        private static int _int0 = -130;
-
         public byte[][] Byte0;
 
         public int[] Int1;

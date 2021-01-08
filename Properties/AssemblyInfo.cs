@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -15,5 +16,5 @@ using System.Security.Permissions;
 [assembly: CompilationRelaxations(8)]
 [assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
 [assembly: Guid("2ea4daa3-fbad-426d-b260-1bfc38a7c320")]
-[assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
+[assembly: CLSCompliant(true)]
 [module: UnverifiableCode]

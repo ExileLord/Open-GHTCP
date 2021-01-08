@@ -2,8 +2,6 @@ namespace GHNamespace3
 {
     public class Class62
     {
-        private static int _int0 = 256;
-
         private static readonly uint[] Uint0 =
         {
             0u,
@@ -41,11 +39,8 @@ namespace GHNamespace3
             4294967295u
         };
 
-        private byte[] _byte0;
-
         public void method_0()
         {
-            _byte0 = null;
         }
     }
 }

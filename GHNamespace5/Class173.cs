@@ -109,7 +109,6 @@ namespace GHNamespace5
                     {
                         return;
                     }
-                    break;
                 case Enum26.Const1:
                     break;
                 case Enum26.Const2:

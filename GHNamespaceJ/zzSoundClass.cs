@@ -53,10 +53,6 @@ namespace GHNamespaceJ
 
         private int _int8;
 
-        private bool _bool0;
-
-        private bool _bool1;
-
         private readonly double[] _double0 =
         {
             -1.0,
@@ -511,14 +507,6 @@ namespace GHNamespaceJ
                 else
                 {
                     _int8 = 0;
-                }
-                if ((num >> 3 & 1) == 1)
-                {
-                    _bool0 = true;
-                }
-                if ((num >> 2 & 1) == 1)
-                {
-                    _bool1 = true;
                 }
                 if (_int1 == 1)
                 {

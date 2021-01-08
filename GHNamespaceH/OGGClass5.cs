@@ -5,12 +5,6 @@ namespace GHNamespaceH
 {
     public class OggClass5
     {
-        private static int _int0 = -136;
-
-        private static int _int1 = -135;
-
-        private static string _string0 = "vorbis";
-
         private static readonly int Int2 = 1;
 
         private static readonly int Int3 = 2;

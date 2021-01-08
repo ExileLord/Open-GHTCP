@@ -8,10 +8,6 @@ namespace GHNamespaceJ
     {
         public int Int0;
 
-        private static double _double0;
-
-        private static double _double1;
-
         private static readonly double Double2;
 
         private static readonly double Double3;
@@ -1416,8 +1412,6 @@ namespace GHNamespaceJ
 
         static Ac3Class1()
         {
-            _double0 = 2.0;
-            _double1 = 1.4142135623730951;
             Double2 = 0.70710678118654757;
             Double3 = 0.59460355750136051;
             Double4 = 0.5;

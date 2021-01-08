@@ -146,7 +146,6 @@ namespace GHNamespace8
                                 }
                                 goto IL_4D5;
                             }
-                            goto IL_477;
                         }
                         if (!(a == "SyncTrack"))
                         {
@@ -298,7 +297,6 @@ namespace GHNamespace8
                                 }
                                 goto IL_4D5;
                             }
-                            goto IL_477;
                         }
                         if (!(a == "SyncTrack"))
                         {

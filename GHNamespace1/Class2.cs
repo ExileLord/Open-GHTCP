@@ -954,21 +954,9 @@ namespace GHNamespace1
 
         public class Class8
         {
-            private static int _int0;
-
             private static readonly int Int1;
 
             private static readonly int Int2;
-
-            private static int _int3;
-
-            private static int _int4;
-
-            private static int _int5;
-
-            private static int _int6;
-
-            private static int _int7;
 
             private static int[] _int8;
 
@@ -990,14 +978,8 @@ namespace GHNamespace1
 
             static Class8()
             {
-                _int0 = 16384;
                 Int1 = 286;
                 Int2 = 30;
-                _int3 = 19;
-                _int4 = 16;
-                _int5 = 17;
-                _int6 = 18;
-                _int7 = 256;
                 _int8 = new[]
                 {
                     16,

@@ -9,13 +9,7 @@ namespace GHNamespace4
 
         private Class156 _class1560;
 
-        private Class156 _class1561;
-
         private Thread _thread0;
-
-        private Delegate2 _delegate20;
-
-        private bool _bool0;
 
         ~Class154()
         {
@@ -28,14 +22,12 @@ namespace GHNamespace4
             {
                 try
                 {
-                    _bool0 = true;
                     if (_intptr0 != IntPtr.Zero)
                     {
                         Class162.waveInReset(_intptr0);
                     }
                     method_1();
                     _thread0.Join();
-                    _delegate20 = null;
                     method_0();
                     if (_intptr0 != IntPtr.Zero)
                     {
@@ -53,7 +45,6 @@ namespace GHNamespace4
 
         private void method_0()
         {
-            _class1561 = null;
             if (_class1560 != null)
             {
                 var @class = _class1560;

@@ -11,8 +11,6 @@ namespace GHNamespace8
     {
         private readonly ZzPakNode2 _class3180;
 
-        private bool _bool0;
-
         public Class249(ZzPakNode2 class3181)
         {
             _class3180 = class3181;
@@ -31,7 +29,6 @@ namespace GHNamespace8
                 var class2 = current.zzFindNode(new ArrayPointerNode("unlock_pattern")).GetFirstChild() as IntegerArrayNode;
                 if (class2.Nodes.Count == 1)
                 {
-                    _bool0 = true;
                     Console.WriteLine("QB Database is already edited.");
                     break;
                 }

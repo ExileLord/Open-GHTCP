@@ -2378,7 +2378,6 @@ namespace GHNamespaceI
                 switch (_enum40)
                 {
                     case Enum4.Const0:
-                        IL_4E3:
                         _int8 = 0;
                         _int9 = 1;
                         goto IL_521;
@@ -2392,7 +2391,6 @@ namespace GHNamespaceI
                         _int8 = 1;
                         goto IL_521;
                 }
-                //  goto IL_4E3
                 _int8 = 0;
                 _int9 = 1;
                 goto IL_521;

@@ -12,10 +12,6 @@ namespace GHNamespace1
 
         public WaveFormat WaveFormat0;
 
-        private static int _int0 = 368;
-
-        private static int _int1 = 264;
-
         public virtual WaveFormat vmethod_0()
         {
             return WaveFormat0;

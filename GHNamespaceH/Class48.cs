@@ -68,13 +68,13 @@ namespace GHNamespaceH
         public long method_4()
         {
             long num = Byte0[Int0 + 13] & 255;
-            num = (num << 8 | Byte0[Int0 + 12] & 255);
-            num = (num << 8 | Byte0[Int0 + 11] & 255);
-            num = (num << 8 | Byte0[Int0 + 10] & 255);
-            num = (num << 8 | Byte0[Int0 + 9] & 255);
-            num = (num << 8 | Byte0[Int0 + 8] & 255);
-            num = (num << 8 | Byte0[Int0 + 7] & 255);
-            return num << 8 | Byte0[Int0 + 6] & 255;
+            num = ((int)num << 8 | Byte0[Int0 + 12] & 255);
+            num = ((int)num << 8 | Byte0[Int0 + 11] & 255);
+            num = ((int)num << 8 | Byte0[Int0 + 10] & 255);
+            num = ((int)num << 8 | Byte0[Int0 + 9] & 255);
+            num = ((int)num << 8 | Byte0[Int0 + 8] & 255);
+            num = ((int)num << 8 | Byte0[Int0 + 7] & 255);
+            return (int)num << 8 | Byte0[Int0 + 6] & 255;
         }
 
         public int method_5()

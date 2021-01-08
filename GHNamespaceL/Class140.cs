@@ -188,12 +188,12 @@ namespace GHNamespaceL
             }
             else
             {
-                var num7 = class1440.vmethod_18(@class);
+                uint num7 = (uint)class1440.vmethod_18(@class);
                 if (num7 == 4294967295L)
                 {
                     throw new BadHeaderException("Bad Last Frame");
                 }
-                Long0 = class1220.vmethod_2() * (long) num7;
+                Long0 = class1220.vmethod_2() * num7;
             }
             if (num != 0)
             {

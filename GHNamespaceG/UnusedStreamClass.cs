@@ -53,8 +53,6 @@ namespace GHNamespaceG
             185
         };
 
-        private bool _bool0;
-
         private readonly Stream _stream0;
 
         public void Dispose()
@@ -66,7 +64,6 @@ namespace GHNamespaceG
             catch
             {
             }
-            _bool0 = true;
         }
     }
 }

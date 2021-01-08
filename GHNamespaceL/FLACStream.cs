@@ -28,8 +28,6 @@ namespace GHNamespaceL
 
         private int _int3;
 
-        private int _int4;
-
         private long _long0;
 
         private Class122 _class1220;
@@ -103,7 +101,6 @@ namespace GHNamespaceL
             _class1360 = new Class136[8];
             FileStream = stream1;
             _class1440 = new Class144(stream1);
-            _int4 = 0;
             _long0 = 0L;
             method_1();
             WaveFormat0 = new WaveFormat(_class1220.vmethod_6(), _class1220.vmethod_7(), _class1220.vmethod_8());
@@ -234,7 +231,6 @@ namespace GHNamespaceL
                             _int11++;
                             continue;
                         }
-                        break;
                     }
                     break;
                 }

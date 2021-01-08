@@ -67,13 +67,11 @@ namespace GHNamespace6
                     }
                     goto IL_10D;
                 }
-                goto IL_102;
                 IL_10D:
                 stream.vmethod_0();
                 stream.Close();
                 return;
             }
-            IL_102:
             throw new ArgumentException("Invalid compression rate.");
         }
 

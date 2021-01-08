@@ -112,12 +112,6 @@ namespace GHNamespace5
 
         private Class193[] _class1930;
 
-        private bool _bool2;
-
-        private Enum30 _enum300 = Enum30.Const2;
-
-        private int _int0 = 4096;
-
         private INterface9 _interface90 = new Class212();
 
         private string _string0 = string.Empty;
@@ -127,7 +121,6 @@ namespace GHNamespace5
         public Class179()
         {
             _class1930 = new Class193[0];
-            _bool2 = true;
         }
 
         ~Class179()

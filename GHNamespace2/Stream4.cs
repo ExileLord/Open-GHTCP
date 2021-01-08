@@ -88,7 +88,6 @@ namespace GHNamespace2
                             default:
                                 return;
                         }
-                        break;
                     case 2:
                         switch (_int2)
                         {

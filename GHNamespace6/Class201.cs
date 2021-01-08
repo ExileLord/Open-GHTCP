@@ -178,7 +178,7 @@ namespace GHNamespace6
 
         public long method_11()
         {
-            return (long) ((ulong) method_10() | (ulong) method_10() << 32);
+            return (long) ((uint) method_10() | (ulong) method_10() << 32);
         }
 
         public void method_12(ICryptoTransform icryptoTransform1)

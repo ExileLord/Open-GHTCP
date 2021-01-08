@@ -98,7 +98,6 @@ namespace GHNamespaceB
                         disposable.Dispose();
                     }
                 }
-                return result;
             }
             IL_84:
             return default(T);
@@ -136,7 +135,6 @@ namespace GHNamespaceB
                         disposable.Dispose();
                     }
                 }
-                return result;
             }
             return false;
         }

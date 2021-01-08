@@ -85,7 +85,6 @@ namespace GHNamespaceJ
             _int2 = 0;
             _secondaryBuffer0.Volume = 0;
             _autoResetEvent0 = new AutoResetEvent(false);
-            _bufferPositionNotify1[0].EventNotifyHandle = _autoResetEvent0.Handle;
             _enum10 = AudioStatus.ShouldStopAudio;
         }
 
@@ -211,7 +210,7 @@ namespace GHNamespaceJ
             for (var i = 0; i < int5; i++)
             {
                 _bufferPositionNotify0[i].Offset = (i + 1) * _int0 - 1;
-                _bufferPositionNotify0[i].EventNotifyHandle = _autoResetEvent0.Handle;
+                _bufferPositionNotify0[i].EventNotifyHandle = _autoResetEvent0.SafeWaitHandle.DangerousGetHandle();
             }
             _notify0 = new Notify(_secondaryBuffer0);
             _notify0.SetNotificationPositions(_bufferPositionNotify0);

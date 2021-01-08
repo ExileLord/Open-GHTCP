@@ -208,7 +208,6 @@ namespace GHNamespaceN
                                         }
                                         goto IL_A3C;
                                     }
-                                    goto IL_514;
                                 case 1:
                                     goto IL_514;
                                 case 2:
@@ -233,7 +232,6 @@ namespace GHNamespaceN
                                         }
                                         goto IL_A3C;
                                     }
-                                    break;
                                 case 4:
                                     break;
                                 case 5:
@@ -264,7 +262,6 @@ namespace GHNamespaceN
                                 }
                                 goto IL_A3C;
                             }
-                            goto IL_72D;
                             IL_5AE:
                             FretbarList = new Fretbar<int>();
                             foreach (var current4 in list)
@@ -297,7 +294,6 @@ namespace GHNamespaceN
                                 }
                                 goto IL_A3C;
                             }
-                            goto IL_5AE;
                             IL_72D:
                             using (var enumerator6 = list.GetEnumerator())
                             {
@@ -358,7 +354,6 @@ namespace GHNamespaceN
                                 }
                                 goto IL_A3C;
                             }
-                            goto IL_8AA;
                         }
                         goto IL_8AA;
                         IL_A3C:

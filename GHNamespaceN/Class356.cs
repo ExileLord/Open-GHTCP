@@ -7,8 +7,6 @@ namespace GHNamespaceN
     {
         private DateTime _dateTime0 = DateTime.MinValue;
 
-        private int _int0 = -1;
-
         private DateTime _dateTime1 = DateTime.MinValue;
 
         private Dictionary<string, bool> _dictionary0 = new Dictionary<string, bool>();
