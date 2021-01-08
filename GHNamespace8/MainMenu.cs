@@ -1296,7 +1296,7 @@ namespace GHNamespace8
                             {
                                 if (!File.Exists(text2.Replace(".dat.xen", ".fsb.xen"))) continue;
                                 class2 = new ZzQbSongObject(text2);
-                                if ((int) new FileInfo(text2.Replace(".dat.xen", ".fsb.xen")).Length == class2.Int0)
+                                if ((int)new FileInfo(text2.Replace(".dat.xen", ".fsb.xen")).Length == class2.Int0)
                                 {
                                     break;
                                 }
@@ -1311,21 +1311,7 @@ namespace GHNamespace8
                     var class3 = songData.method_1(Class3190, _dataFolder);
                     var class4 = songData.method_0(_dataFolder);
                     gH3Song.vmethod_0(class3.Class3620.Gh3Song0);
-                    if (File.Exists(file + "\\song.ini"))
-                    {
-                        var array3 = File.ReadAllLines(file + "\\song.ini");
-                        foreach (var text3 in array3)
-                        {
-                            if (text3.StartsWith("name"))
-                            {
-                                gH3Song.Title = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
-                            }
-                            else if (text3.StartsWith("artist"))
-                            {
-                                gH3Song.Artist = text3.Remove(0, text3.IndexOf('=') + 1).Trim();
-                            }
-                        }
-                    }
+                    IniParser.ParseIni(file, gH3Song);
                     gH3Song.NoRhythmTrack = !class4.Bool0;
                     gH3Song.UseCoopNotetracks = class4.Bool1;
                     gH3Song.Version = 3;
@@ -1343,7 +1329,7 @@ namespace GHNamespace8
             method_4(new Class247(Class3190, _gh3Songlist));
             RefreshSongListBox();
             if (list.Count == 0) return;
-            var text4 = list.Aggregate("The follwing songs (by folder name) failed:",
+            var text4 = list.Aggregate("The following songs (by folder name) failed:",
                 (current, current2) => current + "\n" + KeyGenerator.GetFileName(current2));
             MessageBox.Show(text4, "Error!");
         }
@@ -2663,7 +2649,7 @@ namespace GHNamespace8
             //
             _forceMp3ConversionMenuItem.Name = "_forceMp3ConversionMenuItem";
             _forceMp3ConversionMenuItem.Size = new Size(221, 22);
-            _forceMp3ConversionMenuItem.Text = "Force Mp3 Conversion";
+            _forceMp3ConversionMenuItem.Text = "Force MP3 Conversion";
             _forceMp3ConversionMenuItem.Click += ForceMp3Conversion_MenuItem_Click;
             //
             // forceRB3MidConversionToolStripMenuItem

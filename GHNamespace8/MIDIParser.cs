@@ -177,6 +177,7 @@ namespace GHNamespace8
             }
             chartParser.Gh3SongInfo.Title = _songTitle;
             chartParser.Gh3SongInfo.NotBass = _notBass;
+            chartParser.Gh3SongInfo = IniParser.ParseIni(Path.GetDirectoryName(_fileLocation), chartParser.Gh3SongInfo);
             name += "Conversion Complete!";
             Console.WriteLine(name);
             chartParser.RemoveEmptyParts();

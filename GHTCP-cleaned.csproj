@@ -71,6 +71,7 @@
     <Compile Include="Compression.Tar\TarException.cs" />
     <Compile Include="Compression.Zip\ZipException.cs" />
     <Compile Include="Compression\SharpZipBaseException.cs" />
+    <Compile Include="GHNamespace8\IniParser.cs" />
     <Compile Include="GHTCP.Delegates\Delegate100.cs" />
     <Compile Include="GHTCP.Delegates\Delegate101.cs" />
     <Compile Include="GHTCP.Delegates\Delegate102.cs" />

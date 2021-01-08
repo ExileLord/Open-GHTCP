@@ -38,10 +38,10 @@ namespace GHNamespace8
             Gh3SongInfo = gh3Song1;
         }
 
-        public ChartParser(string string0, bool nothing)
+        public ChartParser(string fileName, bool nothing)
         {
             var list = new List<string>();
-            var stringReader = new StringReader(string0);
+            var stringReader = new StringReader(fileName);
             string bracketItems = null;
             string bracketItemsWithBrackets;
             while ((bracketItemsWithBrackets = stringReader.ReadLine()) != null)
@@ -190,10 +190,10 @@ namespace GHNamespace8
             RemoveEmptyParts();
         }
 
-        public ChartParser(string string0)
+        public ChartParser(string fileName)
         {
             var list = new List<string>();
-            var streamReader = File.OpenText(string0);
+            var streamReader = File.OpenText(fileName);
             string bracketItems = null;
             string bracketItemsWithBrackets;
             while ((bracketItemsWithBrackets = streamReader.ReadLine()) != null)
@@ -339,6 +339,7 @@ namespace GHNamespace8
                 }
             }
             streamReader.Close();
+            Gh3SongInfo = IniParser.ParseIni(Path.GetDirectoryName(fileName), Gh3SongInfo);
             RemoveEmptyParts();
         }
 
