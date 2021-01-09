@@ -16,7 +16,7 @@ namespace GHNamespaceM
                 vmethod_0(class130[0]);
                 return;
             }
-            for (var i = 1; i < class130.Length; i++)
+            for (int i = 1; i < class130.Length; i++)
             {
                 vmethod_1(class130[0], class130[i]);
             }

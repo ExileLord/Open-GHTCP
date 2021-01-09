@@ -167,19 +167,19 @@ namespace GHNamespaceE
 
         public void imethod_17(byte[] byte1)
         {
-            var stream26 = new Stream26(byte1);
+            Stream26 stream26 = new Stream26(byte1);
             ZzGenericNode1 @class;
             if (Parent != null && Parent is ZzPakNode1 && !(Parent as ZzPakNode1).Bool0)
             {
                 TreeNode treeNode = this;
-                var level = treeNode.Level;
+                int level = treeNode.Level;
                 while (level-- != 0)
                 {
                     treeNode = treeNode.Parent;
                 }
                 if (treeNode is ZzPakNode2 && (treeNode as ZzPakNode2).Class3180 != null)
                 {
-                    var string_ = imethod_9().Contains(".qb")
+                    string string_ = imethod_9().Contains(".qb")
                         ? imethod_9().Replace(".qb", ".qs")
                         : (imethod_9() + ".qs");
                     if ((treeNode as ZzPakNode2).Class3180.zzQbFileExists(string_))
@@ -254,7 +254,7 @@ namespace GHNamespaceE
 
         public override object Clone()
         {
-            var @interface = (INterface12) base.Clone();
+            INterface12 @interface = (INterface12) base.Clone();
             @interface.imethod_1(_int0);
             @interface.imethod_3(_int1);
             @interface.imethod_5(_int2);

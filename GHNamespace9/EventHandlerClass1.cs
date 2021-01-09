@@ -27,23 +27,20 @@ namespace GHNamespace9
                 base.WndProc(ref m);
                 if (m.Msg == Int0)
                 {
-                    var keys = (Keys) ((int) m.LParam >> 16 & 65535);
-                    var modKeys = (ModKeys) ((int) m.LParam & 65535);
-                    if (_eventHandler0 != null)
-                    {
-                        _eventHandler0(this, new EventArgs1(modKeys, keys));
-                    }
+                    Keys keys = (Keys) ((int) m.LParam >> 16 & 65535);
+                    ModKeys modKeys = (ModKeys) ((int) m.LParam & 65535);
+                    _eventHandler0?.Invoke(this, new EventArgs1(modKeys, keys));
                 }
             }
 
             public void method_0(EventHandler<EventArgs1> eventHandler1)
             {
-                var eventHandler = _eventHandler0;
+                EventHandler<EventArgs1> eventHandler = _eventHandler0;
                 EventHandler<EventArgs1> eventHandler2;
                 do
                 {
                     eventHandler2 = eventHandler;
-                    var value = (EventHandler<EventArgs1>) Delegate.Combine(eventHandler2, eventHandler1);
+                    EventHandler<EventArgs1> value = (EventHandler<EventArgs1>) Delegate.Combine(eventHandler2, eventHandler1);
                     eventHandler = Interlocked.CompareExchange(ref _eventHandler0, value, eventHandler2);
                 } while (eventHandler != eventHandler2);
             }
@@ -58,11 +55,11 @@ namespace GHNamespace9
 
         private readonly Dictionary<EventArgs1, int> _dictionary0 = new Dictionary<EventArgs1, int>();
 
-        private EventHandler<EventArgs1> _eventHandler0;
+        private readonly EventHandler<EventArgs1> _eventHandler0;
 
         public EventHandlerClass1()
         {
-            var arg320 = _class2340;
+            HandlerBuddy arg320 = _class2340;
             EventHandler<EventArgs1> eventHandler = method_1;
             arg320.method_0(eventHandler);
         }
@@ -72,7 +69,7 @@ namespace GHNamespace9
 
         public void method_0()
         {
-            foreach (var current in _dictionary0.Values)
+            foreach (int current in _dictionary0.Values)
             {
                 UnregisterHotKey(_class2340.Handle, current);
             }
@@ -88,10 +85,7 @@ namespace GHNamespace9
         [CompilerGenerated]
         private void method_1(object sender, EventArgs1 e)
         {
-            if (_eventHandler0 != null)
-            {
-                _eventHandler0(this, e);
-            }
+            _eventHandler0?.Invoke(this, e);
         }
     }
 }

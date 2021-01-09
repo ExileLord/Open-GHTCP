@@ -11,7 +11,7 @@ namespace GHNamespaceC
             {
                 stream260.ReadInt()
             };
-            var byte_ = Byte0;
+            byte byte_ = Byte0;
             switch (byte_)
             {
                 case 1:
@@ -55,7 +55,7 @@ namespace GHNamespaceC
         {
             stream260.WriteByte2(Byte0);
             stream260.WriteInt(Int0[0]);
-            var byte_ = Byte0;
+            byte byte_ = Byte0;
             switch (byte_)
             {
                 case 1:

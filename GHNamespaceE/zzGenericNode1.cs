@@ -124,10 +124,10 @@ namespace GHNamespaceE
         {
             while (stream260.Length > stream260.Position)
             {
-                var num = stream260.ReadInt(true);
+                int num = stream260.ReadInt(true);
                 if (num != 0)
                 {
-                    var @class = vmethod_12(num);
+                    AbstractTreeNode1 @class = vmethod_12(num);
                     stream260.ReverseEndianness = vmethod_7();
                     Nodes.Add(@class);
                     @class.method_4(stream260);
@@ -154,8 +154,8 @@ namespace GHNamespaceE
             {
                 return new StructureHeaderNode();
             }
-            var num = int0 >> 16 & 255;
-            var num2 = int0 >> 8 & 255;
+            int num = int0 >> 16 & 255;
+            int num2 = int0 >> 8 & 255;
             if (num == 32)
             {
                 Bool1 = true;
@@ -164,7 +164,7 @@ namespace GHNamespaceE
             {
                 Bool1 = false;
             }
-            var ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32Bit(int0));
+            Exception ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32Bit(int0));
             if (num != 32)
             {
                 if (num != 4)
@@ -374,7 +374,7 @@ namespace GHNamespaceE
 
         public MemoryStream method_8()
         {
-            var memoryStream = new MemoryStream();
+            MemoryStream memoryStream = new MemoryStream();
             method_9(memoryStream);
             memoryStream.Position = 0L;
             return memoryStream;
@@ -395,7 +395,7 @@ namespace GHNamespaceE
 
         public int method_11()
         {
-            var result = 28;
+            int result = 28;
             vmethod_2(ref result);
             return result;
         }

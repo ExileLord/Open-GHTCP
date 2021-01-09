@@ -21,7 +21,7 @@ namespace GHNamespace9
             {
                 throw new ArgumentException("Value is not a SystemTools.Int24 or System.Int32");
             }
-            var num = (int) target;
+            int num = (int) target;
             if (Int2 == num)
             {
                 return 0;

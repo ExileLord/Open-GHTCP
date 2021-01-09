@@ -74,13 +74,13 @@ namespace GHNamespaceB
             }
             if (Nodes.Count != 0 && Nodes[0] is AbstractTreeNode1)
             {
-                var enumerator = Nodes.GetEnumerator();
+                System.Collections.IEnumerator enumerator = Nodes.GetEnumerator();
                 T result;
                 try
                 {
                     while (enumerator.MoveNext())
                     {
-                        var @class = (AbstractTreeNode1) enumerator.Current;
+                        AbstractTreeNode1 @class = (AbstractTreeNode1) enumerator.Current;
                         T t;
                         if ((t = @class.zzFindNode(gparam0)) != null)
                         {
@@ -92,8 +92,7 @@ namespace GHNamespaceB
                 }
                 finally
                 {
-                    var disposable = enumerator as IDisposable;
-                    if (disposable != null)
+                    if (enumerator is IDisposable disposable)
                     {
                         disposable.Dispose();
                     }
@@ -112,13 +111,13 @@ namespace GHNamespaceB
             }
             if (Nodes.Count != 0 && Nodes[0] is AbstractTreeNode1)
             {
-                var enumerator = Nodes.GetEnumerator();
+                System.Collections.IEnumerator enumerator = Nodes.GetEnumerator();
                 bool result;
                 try
                 {
                     while (enumerator.MoveNext())
                     {
-                        var @class = (AbstractTreeNode1) enumerator.Current;
+                        AbstractTreeNode1 @class = (AbstractTreeNode1) enumerator.Current;
                         if (@class.method_6(ref gparam0))
                         {
                             result = true;
@@ -129,8 +128,7 @@ namespace GHNamespaceB
                 }
                 finally
                 {
-                    var disposable = enumerator as IDisposable;
-                    if (disposable != null)
+                    if (enumerator is IDisposable disposable)
                     {
                         disposable.Dispose();
                     }

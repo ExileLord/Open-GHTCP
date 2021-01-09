@@ -44,7 +44,7 @@ namespace GHNamespaceB
         public override void vmethod_14(Stream26 stream260)
         {
             vmethod_9(true);
-            var array = new byte[4];
+            byte[] array = new byte[4];
             array[1] = (vmethod_7() ? (byte) 32 : (byte) 4);
             array[2] = 28;
             stream260.WriteByteArray(array, false);

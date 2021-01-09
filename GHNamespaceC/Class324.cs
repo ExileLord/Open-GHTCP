@@ -53,7 +53,7 @@ namespace GHNamespaceC
                 if (num == 10)
                 {
                     stream260.Position -= 1L;
-                    var @class = new Class324();
+                    Class324 @class = new Class324();
                     @class.vmethod_0(stream260);
                     List0.Add(@class);
                 }
@@ -64,7 +64,7 @@ namespace GHNamespaceC
                         break;
                     }
                     stream260.Position -= 1L;
-                    var class2 = new ZzStreamClass325();
+                    ZzStreamClass325 class2 = new ZzStreamClass325();
                     class2.vmethod_0(stream260);
                     List0.Add(class2);
                 }
@@ -75,7 +75,7 @@ namespace GHNamespaceC
         {
             stream260.WriteByte2(10);
             stream260.WriteInt(Int0[0]);
-            foreach (var current in List0)
+            foreach (Class324 current in List0)
             {
                 current.vmethod_1(stream260);
             }
@@ -89,9 +89,9 @@ namespace GHNamespaceC
             {
                 return this;
             }
-            foreach (var current in List0)
+            foreach (Class324 current in List0)
             {
-                var @class = current.method_0(class3240);
+                Class324 @class = current.method_0(class3240);
                 if (@class != null)
                 {
                     return @class;
@@ -102,11 +102,11 @@ namespace GHNamespaceC
 
         public void method_1(string string0)
         {
-            using (var stream = new Stream26(File.Create(string0 + "\\s000.d")))
+            using (Stream26 stream = new Stream26(File.Create(string0 + "\\s000.d")))
             {
                 vmethod_1(stream);
                 stream.WriteByte2(0);
-                using (var stream2 = new Stream26(File.Create(string0 + "\\toc.dat")))
+                using (Stream26 stream2 = new Stream26(File.Create(string0 + "\\toc.dat")))
                 {
                     stream2.WriteInt(0);
                     stream2.WriteByte2(4);
@@ -133,7 +133,7 @@ namespace GHNamespaceC
                     stream2.WriteInt(756937245);
                     stream2.WriteNBytes(0, 12);
                     stream2.Position = 4L;
-                    var num = KeyGenerator.GetQbKey(stream2, true);
+                    int num = KeyGenerator.GetQbKey(stream2, true);
                     stream2.Position = 0L;
                     stream2.WriteInt(num);
                     stream.Position = stream.Length;

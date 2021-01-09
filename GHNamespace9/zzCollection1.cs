@@ -56,7 +56,7 @@ namespace GHNamespace9
                 }
                 while (_int0 < _class2360._int1)
                 {
-                    var num = _int0++;
+                    int num = _int0++;
                     if (_class2360.method_4(num) != 0)
                     {
                         _gparam0 = _class2360._gparam0[num];
@@ -135,8 +135,8 @@ namespace GHNamespace9
             {
                 if ((int1 & 1) != 0)
                 {
-                    var num = (int) Math.Sqrt(int1);
-                    for (var i = 3; i < num; i += 2)
+                    int num = (int) Math.Sqrt(int1);
+                    for (int i = 3; i < num; i += 2)
                     {
                         if (int1 % i == 0)
                         {
@@ -150,7 +150,7 @@ namespace GHNamespace9
 
             private static int smethod_1(int int1)
             {
-                for (var i = (int1 & -2) - 1; i < Int32.MaxValue; i += 2)
+                for (int i = (int1 & -2) - 1; i < Int32.MaxValue; i += 2)
                 {
                     if (smethod_0(i))
                     {
@@ -162,7 +162,7 @@ namespace GHNamespace9
 
             public static int smethod_2(int int1)
             {
-                for (var i = 0; i < OddPrimeSequence.Length; i++)
+                for (int i = 0; i < OddPrimeSequence.Length; i++)
                 {
                     if (int1 <= OddPrimeSequence[i])
                     {
@@ -215,14 +215,13 @@ namespace GHNamespace9
             {
                 throw new ArgumentNullException("collection");
             }
-            var int_ = 0;
-            var collection = ienumerable0 as ICollection<T>;
-            if (collection != null)
+            int int_ = 0;
+            if (ienumerable0 is ICollection<T> collection)
             {
                 int_ = collection.Count;
             }
             method_0(int_, iequalityComparer1);
-            foreach (var current in ienumerable0)
+            foreach (T current in ienumerable0)
             {
                 vmethod_0(current);
             }
@@ -286,8 +285,8 @@ namespace GHNamespace9
             {
                 throw new ArgumentException("Destination array cannot hold the requested elements!");
             }
-            var num = 0;
-            var num2 = int6 + int7;
+            int num = 0;
+            int num2 = int6 + int7;
             while (num < _int1 && int6 < num2)
             {
                 if (method_4(num) != 0)
@@ -311,22 +310,22 @@ namespace GHNamespace9
 
         private void method_3()
         {
-            var num = Class237.smethod_2(_int0.Length << 1 | 1);
-            var array = new int[num];
-            var array2 = new Struct81[num];
-            for (var i = 0; i < _int0.Length; i++)
+            int num = Class237.smethod_2(_int0.Length << 1 | 1);
+            int[] array = new int[num];
+            Struct81[] array2 = new Struct81[num];
+            for (int i = 0; i < _int0.Length; i++)
             {
-                for (var num2 = _int0[i] - 1; num2 != -1; num2 = _struct810[num2].Int1)
+                for (int num2 = _int0[i] - 1; num2 != -1; num2 = _struct810[num2].Int1)
                 {
-                    var num3 = array2[num2].Int0 = method_5(_gparam0[num2]);
-                    var num4 = (num3 & 2147483647) % num;
+                    int num3 = array2[num2].Int0 = method_5(_gparam0[num2]);
+                    int num4 = (num3 & 2147483647) % num;
                     array2[num2].Int1 = array[num4] - 1;
                     array[num4] = num2 + 1;
                 }
             }
             _int0 = array;
             _struct810 = array2;
-            var destinationArray = new T[num];
+            T[] destinationArray = new T[num];
             Array.Copy(_gparam0, 0, destinationArray, 0, _int1);
             _gparam0 = destinationArray;
             _int4 = (int) (num * 0.9f);
@@ -353,8 +352,8 @@ namespace GHNamespace9
 
         public bool vmethod_0(T gparam1)
         {
-            var num = method_5(gparam1);
-            var num2 = (num & 2147483647) % _int0.Length;
+            int num = method_5(gparam1);
+            int num2 = (num & 2147483647) % _int0.Length;
             if (method_6(num2, num, gparam1))
             {
                 return false;
@@ -364,7 +363,7 @@ namespace GHNamespace9
                 method_3();
                 num2 = (num & 2147483647) % _int0.Length;
             }
-            var num3 = _int2;
+            int num3 = _int2;
             if (num3 == -1)
             {
                 num3 = _int1++;
@@ -383,15 +382,15 @@ namespace GHNamespace9
 
         public bool Contains(T item)
         {
-            var num = method_5(item);
-            var int_ = (num & 2147483647) % _int0.Length;
+            int num = method_5(item);
+            int int_ = (num & 2147483647) % _int0.Length;
             return method_6(int_, num, item);
         }
 
         private bool method_6(int int6, int int7, T gparam1)
         {
             Struct81 @struct;
-            for (var num = _int0[int6] - 1; num != -1; num = @struct.Int1)
+            for (int num = _int0[int6] - 1; num != -1; num = @struct.Int1)
             {
                 @struct = _struct810[num];
                 if (@struct.Int0 == int7 && ((int7 != -2147483648 || (gparam1 != null && _gparam0[num] != null))
@@ -406,17 +405,17 @@ namespace GHNamespace9
 
         public bool Remove(T item)
         {
-            var num = method_5(item);
-            var num2 = (num & 2147483647) % _int0.Length;
-            var num3 = _int0[num2] - 1;
+            int num = method_5(item);
+            int num2 = (num & 2147483647) % _int0.Length;
+            int num3 = _int0[num2] - 1;
             if (num3 == -1)
             {
                 return false;
             }
-            var num4 = -1;
+            int num4 = -1;
             do
             {
-                var @struct = _struct810[num3];
+                Struct81 @struct = _struct810[num3];
                 if (@struct.Int0 == num)
                 {
                     if ((num != -2147483648 || (item != null && _gparam0[num3] != null))

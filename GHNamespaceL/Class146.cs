@@ -9,7 +9,7 @@ namespace GHNamespaceL
 
         public Class146(Class144 class1440)
         {
-            var num = class1440.vmethod_14();
+            int num = class1440.vmethod_14();
             if (num == 0)
             {
                 return;

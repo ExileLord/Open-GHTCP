@@ -8,8 +8,8 @@ namespace GHNamespaceH
 
         private static uint smethod_0(uint uint1)
         {
-            var num = uint1 << 24;
-            for (var i = 0; i < 8; i++)
+            uint num = uint1 << 24;
+            for (int i = 0; i < 8; i++)
             {
                 if ((num & 2147483648u) != 0u)
                 {
@@ -25,7 +25,7 @@ namespace GHNamespaceH
 
         public Class44()
         {
-            var num = 0u;
+            uint num = 0u;
             while (num < (ulong) Uint0.Length)
             {
                 Uint0[(int) ((UIntPtr) num)] = smethod_0(num);

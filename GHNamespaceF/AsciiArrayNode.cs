@@ -23,16 +23,16 @@ namespace GHNamespaceF
 
         public override void vmethod_13(Stream26 stream260)
         {
-            var num = stream260.ReadInt();
+            int num = stream260.ReadInt();
             if (num == 0)
             {
                 return;
             }
-            var array = new int[num];
+            int[] array = new int[num];
             if (num > 1)
             {
                 stream260.Position = stream260.ReadInt();
-                for (var i = 0; i < num; i++)
+                for (int i = 0; i < num; i++)
                 {
                     array[i] = stream260.ReadInt();
                 }
@@ -41,10 +41,10 @@ namespace GHNamespaceF
             {
                 array[0] = stream260.ReadInt();
             }
-            var array2 = array;
-            for (var j = 0; j < array2.Length; j++)
+            int[] array2 = array;
+            for (int j = 0; j < array2.Length; j++)
             {
-                var int_ = array2[j];
+                int int_ = array2[j];
                 Nodes.Add(new AsciiValueNode(stream260.ReadAsciiStringAt(int_)));
             }
             stream260.Position += smethod_0(stream260.Position);
@@ -52,7 +52,7 @@ namespace GHNamespaceF
 
         public override void vmethod_14(Stream26 stream260)
         {
-            var array = new byte[4];
+            byte[] array = new byte[4];
             array[1] = 1;
             array[2] = 3;
             stream260.WriteByteArray(array, false);
@@ -65,8 +65,8 @@ namespace GHNamespaceF
             {
                 stream260.WriteInt((int) stream260.Position + 4);
             }
-            var num = (int) stream260.Position + 4 * Nodes.Count;
-            var stream = new Stream26();
+            int num = (int) stream260.Position + 4 * Nodes.Count;
+            Stream26 stream = new Stream26();
             foreach (AsciiValueNode @class in Nodes)
             {
                 stream260.WriteInt(num);

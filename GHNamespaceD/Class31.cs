@@ -20,7 +20,7 @@ namespace GHNamespaceD
 
         public Class31()
         {
-            for (var i = 0; i < Int5.Length; i++)
+            for (int i = 0; i < Int5.Length; i++)
             {
                 Int5[i] = new int[8];
             }

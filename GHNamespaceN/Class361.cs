@@ -20,18 +20,18 @@ namespace GHNamespaceN
             {
                 throw new ArgumentNullException();
             }
-            var timeSpan = (TimeSpan) arg;
+            TimeSpan timeSpan = (TimeSpan) arg;
             return smethod_0(timeSpan, format);
         }
 
         private static string smethod_0(TimeSpan timeSpan0, string string0)
         {
-            var stringBuilder = new StringBuilder(64);
-            var length = string0.Length;
-            var i = 0;
+            StringBuilder stringBuilder = new StringBuilder(64);
+            int length = string0.Length;
+            int i = 0;
             while (i < length)
             {
-                var c = string0[i];
+                char c = string0[i];
                 if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
                 {
                     int j;
@@ -55,7 +55,7 @@ namespace GHNamespaceN
                     }
                     else
                     {
-                        var flag = false;
+                        bool flag = false;
                         while (!flag)
                         {
                             int j;
@@ -130,8 +130,8 @@ namespace GHNamespaceN
 
         private static void smethod_2(StringBuilder stringBuilder0, int int0, int int1)
         {
-            var num = 10;
-            for (var i = 0; i < int1 - 1; i++)
+            int num = 10;
+            for (int i = 0; i < int1 - 1; i++)
             {
                 if (int0 < num)
                 {

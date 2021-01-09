@@ -24,7 +24,7 @@ namespace GHNamespaceA
 
         public override void CreateCustomMenu()
         {
-            var text = "scripts\\guitar\\guitar_progression.qb";
+            string text = "scripts\\guitar\\guitar_progression.qb";
             ZzGenericNode1 @class = _class3180.ZzGetNode1(text);
             _gh3Songlist0.method_4(text, @class.zzFindNode(new StructurePointerRootNode("gh3_career_songs")));
             _gh3Songlist0.method_4(text, @class.zzFindNode(new StructurePointerRootNode("gh3_general_songs")));
@@ -58,8 +58,8 @@ namespace GHNamespaceA
             if (_class3180.zzQbFileExists(text = "scripts\\guitar\\custom_menu\\guitar_custom_progression.qb"))
             {
                 @class = _class3180.ZzGetNode1(text);
-                var num = @class.zzFindNode(new IntegerRootNode("custom_setlist_bitmask")).method_7();
-                for (var i = 0; i < 32; i++)
+                int num = @class.zzFindNode(new IntegerRootNode("custom_setlist_bitmask")).method_7();
+                for (int i = 0; i < 32; i++)
                 {
                     if (num >> i != 0)
                     {

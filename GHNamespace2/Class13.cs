@@ -128,14 +128,14 @@ namespace GHNamespace2
             {
                 _float1 = new float[_list0.Count];
                 _float2 = new float[_list0.Count];
-                for (var i = 0; i < _list0.Count; i++)
+                for (int i = 0; i < _list0.Count; i++)
                 {
                     _float1[i] = _list0[i].Float0;
                     _float2[i] = _list0[i].Float1;
                 }
                 _bool2 = false;
             }
-            var num = Class15.smethod_3(_float1, _float2, (int4 - (float) method_0()) / method_2());
+            float num = Class15.smethod_3(_float1, _float2, (int4 - (float) method_0()) / method_2());
             switch (Enum00)
             {
                 case Enum0.Const3:
@@ -150,7 +150,7 @@ namespace GHNamespace2
 
         public virtual float vmethod_1(int int4, float float3, float float4)
         {
-            var num = vmethod_0(int4);
+            float num = vmethod_0(int4);
             return float4 * num + float3 * (1f - num);
         }
 

@@ -34,13 +34,14 @@ namespace GHNamespaceA
 
         public void method_0()
         {
-            byte[] byte_;
-            ZipManager.ExtractBytesFrom(_string1, out byte_, "songs.info", "TGH9ZIP2PASS4MXKR");
-            var @class = new ZzGenericNode1("songs", KeyGenerator.smethod_8(byte_, "SNG4AES4KEY9MXKR"));
+            ZipManager.ExtractBytesFrom(_string1, out byte[] byte_, "songs.info", "TGH9ZIP2PASS4MXKR");
+            ZzGenericNode1 @class = new ZzGenericNode1("songs", KeyGenerator.smethod_8(byte_, "SNG4AES4KEY9MXKR"));
             foreach (StructurePointerNode class302 in @class.Nodes)
             {
-                var gH3Song = new Gh3Song(class302);
-                gH3Song.Editable = true;
+                Gh3Song gH3Song = new Gh3Song(class302)
+                {
+                    Editable = true
+                };
                 _gh3Songlist0.method_0(gH3Song, _string0 != null);
             }
             ZipManager.ExtractBytesFrom(_string1, out byte_, "tier.info", "TGH9ZIP2PASS4MXKR");
@@ -49,9 +50,9 @@ namespace GHNamespaceA
                     .Nodes[0], _gh3Songlist0));
             if (_string0 != null)
             {
-                var list = new List<string>();
-                var list2 = new List<string>();
-                foreach (var current in Gh3Tier0.Songs)
+                List<string> list = new List<string>();
+                List<string> list2 = new List<string>();
+                foreach (Gh3Song current in Gh3Tier0.Songs)
                 {
                     if (current.Editable)
                     {
@@ -69,13 +70,13 @@ namespace GHNamespaceA
 
         public void method_1()
         {
-            var list = new List<Stream>();
+            List<Stream> list = new List<Stream>();
             Stream stream = new MemoryStream();
             KeyGenerator.smethod_1(new ZzGenericNode1("tier", Gh3Tier0.method_3()).method_8(), stream,
                 "TIR4AES4KEY9MXKR");
-            var list2 = new List<string>();
-            var list3 = new List<StructurePointerNode>();
-            foreach (var current in Gh3Tier0.Songs)
+            List<string> list2 = new List<string>();
+            List<StructurePointerNode> list3 = new List<StructurePointerNode>();
+            foreach (Gh3Song current in Gh3Tier0.Songs)
             {
                 if (current.Editable)
                 {

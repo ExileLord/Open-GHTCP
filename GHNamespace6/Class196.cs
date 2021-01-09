@@ -201,7 +201,7 @@ namespace GHNamespace6
 
         private bool method_1()
         {
-            var num = _class1870.method_0(16);
+            int num = _class1870.method_0(16);
             if (num < 0)
             {
                 return false;
@@ -232,7 +232,7 @@ namespace GHNamespace6
         {
             while (_int6 > 0)
             {
-                var num = _class1870.method_0(8);
+                int num = _class1870.method_0(8);
                 if (num < 0)
                 {
                     return false;
@@ -246,7 +246,7 @@ namespace GHNamespace6
 
         private bool method_3()
         {
-            var i = _class2030.method_4();
+            int i = _class2030.method_4();
             while (i >= 258)
             {
                 int num;
@@ -295,7 +295,7 @@ namespace GHNamespace6
                 if (_int6 > 0)
                 {
                     _int4 = 10;
-                    var num2 = _class1870.method_0(_int6);
+                    int num2 = _class1870.method_0(_int6);
                     if (num2 < 0)
                     {
                         return false;
@@ -327,7 +327,7 @@ namespace GHNamespace6
                 if (_int6 > 0)
                 {
                     _int4 = 8;
-                    var num3 = _class1870.method_0(_int6);
+                    int num3 = _class1870.method_0(_int6);
                     if (num3 < 0)
                     {
                         return false;
@@ -345,7 +345,7 @@ namespace GHNamespace6
         {
             while (_int6 > 0)
             {
-                var num = _class1870.method_0(8);
+                int num = _class1870.method_0(8);
                 if (num < 0)
                 {
                     return false;
@@ -386,7 +386,7 @@ namespace GHNamespace6
                     }
                     else
                     {
-                        var num = _class1870.method_0(3);
+                        int num = _class1870.method_0(3);
                         if (num < 0)
                         {
                             return false;
@@ -449,7 +449,7 @@ namespace GHNamespace6
                 default:
                     throw new SharpZipBaseException("Inflater.Decode unknown mode");
             }
-            var num2 = _class1870.method_0(16);
+            int num2 = _class1870.method_0(16);
             if (num2 < 0)
             {
                 return false;
@@ -461,7 +461,7 @@ namespace GHNamespace6
             }
             _int4 = 5;
             IL_1A4:
-            var num3 = _class2030.method_3(_class1870, _int9);
+            int num3 = _class2030.method_3(_class1870, _int9);
             _int9 -= num3;
             if (_int9 == 0)
             {
@@ -505,12 +505,12 @@ namespace GHNamespace6
                 }
                 return 0;
             }
-            var num = 0;
+            int num = 0;
             while (true)
             {
                 if (_int4 != 11)
                 {
-                    var num2 = _class2030.method_6(byte0, int10, int11);
+                    int num2 = _class2030.method_6(byte0, int10, int11);
                     if (num2 > 0)
                     {
                         _class2000.vmethod_2(byte0, int10, num2);

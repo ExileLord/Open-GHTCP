@@ -27,7 +27,7 @@ namespace GHNamespaceI
             _int2 = _int1 << 2;
             _int0 = new int[_int1];
             _float0 = new float[_int1][];
-            for (var i = 0; i < _int1; i++)
+            for (int i = 0; i < _int1; i++)
             {
                 _float0[i] = new float[1152];
             }
@@ -37,21 +37,21 @@ namespace GHNamespaceI
         public int method_1(float[] float1, int int5, int int6)
         {
             int6 <<= 2;
-            var num = method_0();
-            var num2 = (int6 > num) ? num : (int6 - int6 % _int2);
+            int num = method_0();
+            int num2 = (int6 > num) ? num : (int6 - int6 % _int2);
             if (_int1 == 1)
             {
                 Buffer.BlockCopy(_float0[0], _int3, float1, int5 << 2, num2);
             }
             else
             {
-                var num3 = _int3 / _int2;
-                var num4 = num2 / _int2 + num3;
-                for (var i = 0; i < _int1; i++)
+                int num3 = _int3 / _int2;
+                int num4 = num2 / _int2 + num3;
+                for (int i = 0; i < _int1; i++)
                 {
-                    var array = _float0[i];
-                    var j = num3;
-                    var num5 = int5 + i;
+                    float[] array = _float0[i];
+                    int j = num3;
+                    int num5 = int5 + i;
                     while (j < num4)
                     {
                         float1[num5] = array[j];
@@ -66,15 +66,15 @@ namespace GHNamespaceI
 
         public int method_2(byte[] byte0, int int5, int int6)
         {
-            var num = method_0();
-            var num2 = (int6 > num) ? num : int6;
+            int num = method_0();
+            int num2 = (int6 > num) ? num : int6;
             if (_int1 == 1)
             {
                 Buffer.BlockCopy(_float0[0], _int3, byte0, int5, num2);
             }
             else
             {
-                var array = new float[num2 >> 2];
+                float[] array = new float[num2 >> 2];
                 method_1(array, 0, array.Length);
                 Buffer.BlockCopy(array, 0, byte0, int5, num2);
             }
@@ -86,18 +86,18 @@ namespace GHNamespaceI
         {
             int5 <<= 2;
             int6 <<= 2;
-            var num = method_0();
-            var num2 = (int6 > num) ? num : (int6 - int6 % _int2);
+            int num = method_0();
+            int num2 = (int6 > num) ? num : (int6 - int6 % _int2);
             if (_int1 == 1)
             {
                 Buffer.BlockCopy(_float0[0], _int3, float1[0], int5, num2);
             }
             else
             {
-                var srcOffset = _int3 / _int1;
-                var count = num2 / _int1;
+                int srcOffset = _int3 / _int1;
+                int count = num2 / _int1;
                 int5 /= _int1;
-                for (var i = 0; i < float1.Length; i++)
+                for (int i = 0; i < float1.Length; i++)
                 {
                     Buffer.BlockCopy(_float0[i], srcOffset, float1[i], int5, count);
                 }

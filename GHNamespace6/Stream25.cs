@@ -57,7 +57,7 @@ namespace GHNamespace6
 
         public override void Close()
         {
-            var stream = _stream0;
+            Stream stream = _stream0;
             _stream0 = null;
             if (_bool0 && stream != null)
             {
@@ -68,7 +68,7 @@ namespace GHNamespace6
 
         public void method_0(long long0, long long1, long long2)
         {
-            var position = _stream0.Position;
+            long position = _stream0.Position;
             method_4(101075792);
             method_6(44L);
             method_2(45);
@@ -120,7 +120,7 @@ namespace GHNamespace6
             {
                 method_4((int) long2);
             }
-            var num = (byte0 != null) ? byte0.Length : 0;
+            int num = (byte0 != null) ? byte0.Length : 0;
             if (num > 65535)
             {
                 throw new ZipException(string.Format("Comment length({0}) is too long can only be 64K", num));

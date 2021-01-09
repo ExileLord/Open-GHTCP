@@ -33,9 +33,9 @@ namespace GHNamespaceL
 
         public override string ToString()
         {
-            var stringBuilder = new StringBuilder();
+            StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("Frame Header: " + Class1400 + "\n");
-            for (var i = 0; i < Class1400.Int2; i++)
+            for (int i = 0; i < Class1400.Int2; i++)
             {
                 stringBuilder.Append("\tFrame Data " + Class1310[i] + "\n");
             }

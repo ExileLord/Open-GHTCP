@@ -326,15 +326,15 @@ namespace GHNamespace3
 
         public static float smethod_0(float float5)
         {
-            var num = float5 * (0.31830989 * Int0);
-            var num2 = (int) num;
+            double num = float5 * (0.31830989 * Int0);
+            int num2 = (int) num;
             return Float0[num2] + (float) (num - num2) * (Float0[num2 + 1] - Float0[num2]);
         }
 
         public static float smethod_1(float float5)
         {
             double num = float5 * (2f * Int1) - Int1;
-            var num2 = (int) num;
+            int num2 = (int) num;
             return Float1[num2] + (float) (num - num2) * (Float1[num2 + 1] - Float1[num2]);
         }
 
@@ -345,7 +345,7 @@ namespace GHNamespace3
 
         public static float smethod_3(float float5)
         {
-            var num = (int) (float5 * -8f);
+            int num = (int) (float5 * -8f);
             if (num < 0)
             {
                 return 1f;

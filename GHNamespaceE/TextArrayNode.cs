@@ -24,7 +24,7 @@ namespace GHNamespaceE
 
         public override void vmethod_13(Stream26 stream260)
         {
-            var num = stream260.ReadInt();
+            int num = stream260.ReadInt();
             if (num == 0)
             {
                 return;
@@ -33,7 +33,7 @@ namespace GHNamespaceE
             {
                 stream260.Position = stream260.ReadInt();
             }
-            for (var i = 0; i < num; i++)
+            for (int i = 0; i < num; i++)
             {
                 Nodes.Add(new TextValueNode(stream260.ReadInt(), vmethod_10()));
             }
@@ -42,7 +42,7 @@ namespace GHNamespaceE
         public override void vmethod_14(Stream26 stream260)
         {
             vmethod_9(true);
-            var array = new byte[4];
+            byte[] array = new byte[4];
             array[1] = 1;
             array[2] = 28;
             stream260.WriteByteArray(array, false);

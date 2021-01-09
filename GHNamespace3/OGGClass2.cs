@@ -47,11 +47,11 @@ namespace GHNamespace3
                     Int2 = new int[Int1];
                     if (oggClass3.method_6(1) != 0)
                     {
-                        for (var i = 0; i < Int1; i++)
+                        for (int i = 0; i < Int1; i++)
                         {
                             if (oggClass3.method_6(1) != 0)
                             {
-                                var num = oggClass3.method_6(5);
+                                int num = oggClass3.method_6(5);
                                 if (num == -1)
                                 {
                                     method_2();
@@ -67,9 +67,9 @@ namespace GHNamespace3
                     }
                     else
                     {
-                        for (var i = 0; i < Int1; i++)
+                        for (int i = 0; i < Int1; i++)
                         {
-                            var num2 = oggClass3.method_6(5);
+                            int num2 = oggClass3.method_6(5);
                             if (num2 == -1)
                             {
                                 method_2();
@@ -81,18 +81,18 @@ namespace GHNamespace3
                     break;
                 case 1:
                 {
-                    var num3 = oggClass3.method_6(5) + 1;
+                        int num3 = oggClass3.method_6(5) + 1;
                     Int2 = new int[Int1];
-                    var i = 0;
+                        int i = 0;
                     while (i < Int1)
                     {
-                        var num4 = oggClass3.method_6(smethod_0(Int1 - i));
+                            int num4 = oggClass3.method_6(smethod_0(Int1 - i));
                         if (num4 == -1)
                         {
                             method_2();
                             return -1;
                         }
-                        var j = 0;
+                            int j = 0;
                         while (j < num4)
                         {
                             Int2[i] = num3;
@@ -117,7 +117,7 @@ namespace GHNamespace3
                     Int5 = oggClass3.method_6(32);
                     Int6 = oggClass3.method_6(4) + 1;
                     Int7 = oggClass3.method_6(1);
-                    var num5 = 0;
+                        int num5 = 0;
                     switch (Int3)
                     {
                         case 1:
@@ -128,7 +128,7 @@ namespace GHNamespace3
                             break;
                     }
                     Int8 = new int[num5];
-                    for (var i = 0; i < num5; i++)
+                    for (int i = 0; i < num5; i++)
                     {
                         Int8[i] = oggClass3.method_6(Int6);
                     }
@@ -148,12 +148,12 @@ namespace GHNamespace3
 
         public int method_1()
         {
-            var num = (int) Math.Floor(Math.Pow(Int1, 1.0 / Int0));
+            int num = (int) Math.Floor(Math.Pow(Int1, 1.0 / Int0));
             while (true)
             {
-                var num2 = 1;
-                var num3 = 1;
-                for (var i = 0; i < Int0; i++)
+                int num2 = 1;
+                int num3 = 1;
+                for (int i = 0; i < Int0; i++)
                 {
                     num2 *= num;
                     num3 *= num + 1;
@@ -187,21 +187,21 @@ namespace GHNamespace3
                     return null;
                 }
             }
-            var num = smethod_1(Int4);
-            var num2 = smethod_1(Int5);
-            var array = new float[Int1 * Int0];
+            float num = smethod_1(Int4);
+            float num2 = smethod_1(Int5);
+            float[] array = new float[Int1 * Int0];
             switch (Int3)
             {
                 case 1:
                 {
-                    var num3 = method_1();
-                    for (var i = 0; i < Int1; i++)
+                        int num3 = method_1();
+                    for (int i = 0; i < Int1; i++)
                     {
-                        var num4 = 0f;
-                        var num5 = 1;
-                        for (var j = 0; j < Int0; j++)
+                            float num4 = 0f;
+                            int num5 = 1;
+                        for (int j = 0; j < Int0; j++)
                         {
-                            var num6 = i / num5 % num3;
+                                int num6 = i / num5 % num3;
                             float num7 = Int8[num6];
                             num7 = Math.Abs(num7) * num2 + num + num4;
                             if (Int7 != 0)
@@ -215,10 +215,10 @@ namespace GHNamespace3
                     break;
                 }
                 case 2:
-                    for (var k = 0; k < Int1; k++)
+                    for (int k = 0; k < Int1; k++)
                     {
-                        var num8 = 0f;
-                        for (var l = 0; l < Int0; l++)
+                        float num8 = 0f;
+                        for (int l = 0; l < Int0; l++)
                         {
                             float num9 = Int8[k * Int0 + l];
                             num9 = Math.Abs(num9) * num2 + num + num8;
@@ -236,7 +236,7 @@ namespace GHNamespace3
 
         public static int smethod_0(int int11)
         {
-            var num = 0;
+            int num = 0;
             while (int11 != 0)
             {
                 num++;

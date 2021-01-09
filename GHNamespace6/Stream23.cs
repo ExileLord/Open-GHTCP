@@ -78,11 +78,11 @@ namespace GHNamespace6
             {
                 throw new ZipException("Too many entries for Zip file");
             }
-            var @enum = class1931.method_27();
-            var int_ = _int0;
+            Enum31 @enum = class1931.method_27();
+            int int_ = _int0;
             class1931.method_5(class1931.method_4() & 2048);
             _bool2 = false;
-            var flag = true;
+            bool flag = true;
             if (@enum == Enum31.Const0)
             {
                 class1931.method_5(class1931.method_4() & -9);
@@ -195,12 +195,12 @@ namespace GHNamespace6
                     method_8(0);
                 }
             }
-            var array = Class186.smethod_4(class1931.method_4(), class1931.method_20());
+            byte[] array = Class186.smethod_4(class1931.method_4(), class1931.method_20());
             if (array.Length > 65535)
             {
                 throw new ZipException("Entry name too long.");
             }
-            var @class = new Class202(class1931.method_29());
+            Class202 @class = new Class202(class1931.method_29());
             if (class1931.method_15() && (flag || _bool2))
             {
                 @class.method_8();
@@ -228,7 +228,7 @@ namespace GHNamespace6
             {
                 @class.method_13(1);
             }
-            var array2 = @class.method_0();
+            byte[] array2 = @class.method_0();
             method_7(array.Length);
             method_7(array2.Length);
             if (array.Length > 0)
@@ -273,7 +273,7 @@ namespace GHNamespace6
             {
                 base.vmethod_0();
             }
-            var num = (_enum310 == Enum31.Const1) ? Class1940.method_1() : _long0;
+            long num = (_enum310 == Enum31.Const1) ? Class1940.method_1() : _long0;
             if (_class1930.method_21() < 0L)
             {
                 _class1930.method_22(_long0);
@@ -303,13 +303,13 @@ namespace GHNamespace6
             _long1 += num;
             if (_class1930.method_0())
             {
-                var expr_1E6 = _class1930;
+                Class193 expr_1E6 = _class1930;
                 expr_1E6.method_24(expr_1E6.method_23() + 12L);
             }
             if (_bool2)
             {
                 _bool2 = false;
-                var position = Stream0.Position;
+                long position = Stream0.Position;
                 Stream0.Seek(_long2, SeekOrigin.Begin);
                 method_8((int) _class1930.method_25());
                 if (_class1930.method_15())
@@ -354,8 +354,8 @@ namespace GHNamespace6
         {
             _long1 += 12L;
             method_4(method_1());
-            var array = new byte[12];
-            var random = new Random();
+            byte[] array = new byte[12];
+            Random random = new Random();
             random.NextBytes(array);
             array[11] = (byte) (long4 >> 24);
             method_3(array, 0, array.Length);
@@ -386,7 +386,7 @@ namespace GHNamespace6
             }
             _class1920.vmethod_3(buffer, offset, count);
             _long0 += count;
-            var @enum = _enum310;
+            Enum31 @enum = _enum310;
             if (@enum != Enum31.Const0)
             {
                 if (@enum != Enum31.Const1)
@@ -408,10 +408,10 @@ namespace GHNamespace6
 
         private void method_13(byte[] byte2, int int1, int int2)
         {
-            var array = new byte[4096];
+            byte[] array = new byte[4096];
             while (int2 > 0)
             {
-                var num = (int2 < 4096) ? int2 : 4096;
+                int num = (int2 < 4096) ? int2 : 4096;
                 Array.Copy(byte2, int1, array, 0, num);
                 method_3(array, 0, num);
                 Stream0.Write(array, 0, num);
@@ -431,7 +431,7 @@ namespace GHNamespace6
                 method_11();
             }
             long num = _arrayList0.Count;
-            var num2 = 0L;
+            long num2 = 0L;
             foreach (Class193 @class in _arrayList0)
             {
                 method_8(33639248);
@@ -457,12 +457,12 @@ namespace GHNamespace6
                 {
                     method_8(-1);
                 }
-                var array = Class186.smethod_4(@class.method_4(), @class.method_20());
+                byte[] array = Class186.smethod_4(@class.method_4(), @class.method_20());
                 if (array.Length > 65535)
                 {
                     throw new ZipException("Name too long.");
                 }
-                var class2 = new Class202(@class.method_29());
+                Class202 class2 = new Class202(@class.method_29());
                 if (@class.method_16())
                 {
                     class2.method_8();
@@ -484,8 +484,8 @@ namespace GHNamespace6
                 {
                     class2.method_13(1);
                 }
-                var array2 = class2.method_0();
-                var array3 = (@class.method_32() != null)
+                byte[] array2 = class2.method_0();
+                byte[] array3 = (@class.method_32() != null)
                     ? Class186.smethod_4(@class.method_4(), @class.method_32())
                     : new byte[0];
                 if (array3.Length > 65535)
@@ -531,7 +531,7 @@ namespace GHNamespace6
                 }
                 num2 += 46 + array.Length + array2.Length + array3.Length;
             }
-            using (var stream = new Stream25(Stream0))
+            using (Stream25 stream = new Stream25(Stream0))
             {
                 stream.method_1(num, num2, _long1, _byte1);
             }

@@ -10,8 +10,7 @@ namespace GHNamespaceF
 
         public short Height;
 
-        public short UnkShort3
-            ; // Only used on loading and saving. Value of 0x01 for green note. Maybe number of frames?
+        public short UnkShort3; // Only used on loading and saving. Value of 0x01 for green note. Maybe number of frames?
 
         public byte MipMapCount;
 

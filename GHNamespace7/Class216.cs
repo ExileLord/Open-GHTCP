@@ -18,9 +18,9 @@ namespace GHNamespace7
         {
             if (SortedDictionary0.Count != 0)
             {
-                using (var streamWriter = File.CreateText(string2 + DateTime.Now.ToString(String1) + ".log"))
+                using (StreamWriter streamWriter = File.CreateText(string2 + DateTime.Now.ToString(String1) + ".log"))
                 {
-                    foreach (var current in SortedDictionary0.Keys)
+                    foreach (string current in SortedDictionary0.Keys)
                     {
                         streamWriter.WriteLine("[" + current + "]");
                         streamWriter.WriteLine("{");

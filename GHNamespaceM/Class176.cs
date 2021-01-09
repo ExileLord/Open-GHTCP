@@ -9,7 +9,7 @@ namespace GHNamespaceM
 
         public void imethod_0(Class13[] class130)
         {
-            for (var i = 0; i < class130.Length; i += 2)
+            for (int i = 0; i < class130.Length; i += 2)
             {
                 vmethod_0(class130[i], class130[i + 1]);
             }

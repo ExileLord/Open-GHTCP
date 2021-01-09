@@ -138,8 +138,8 @@ namespace GHNamespaceI
         public override int vmethod_3(IntPtr intptr0, int int5)
         {
             int5 >>= 2;
-            var array = new float[int5];
-            var num = vmethod_4(array, 0, int5);
+            float[] array = new float[int5];
+            int num = vmethod_4(array, 0, int5);
             Marshal.Copy(array, 0, intptr0, num);
             return num << 2;
         }
@@ -149,7 +149,7 @@ namespace GHNamespaceI
             int result;
             lock (_object0)
             {
-                var num = 0;
+                int num = 0;
                 do
                 {
                     if (_class810.method_0().method_0() <= 0)
@@ -173,13 +173,13 @@ namespace GHNamespaceI
             lock (_object0)
             {
                 int num = vmethod_0().short_0;
-                var array = new float[num][];
-                for (var i = 0; i < num; i++)
+                float[][] array = new float[num][];
+                for (int i = 0; i < num; i++)
                 {
                     array[i] = new float[int5];
                 }
                 int5 *= num;
-                var num2 = 0;
+                int num2 = 0;
                 do
                 {
                     if (_class810.method_0().method_0() <= 0)
@@ -202,7 +202,7 @@ namespace GHNamespaceI
             int result;
             lock (_object0)
             {
-                var num = 0;
+                int num = 0;
                 do
                 {
                     if (_class810.method_0().method_0() <= 0)
@@ -222,7 +222,7 @@ namespace GHNamespaceI
 
         public bool method_0()
         {
-            var @class = _class820.method_3();
+            ZzSoundClass @class = _class820.method_3();
             if (@class == null)
             {
                 return false;

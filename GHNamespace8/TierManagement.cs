@@ -89,7 +89,7 @@ namespace GHNamespace8
             {
                 if (e.Clicks == 2 && e.Button == MouseButtons.Right)
                 {
-                    var num = _tierList.IndexFromPoint(e.X, e.Y);
+                    int num = _tierList.IndexFromPoint(e.X, e.Y);
                     if (num >= 0 && num < _tierList.Items.Count && 1 < _tierList.Items.Count)
                     {
                         _tierList.Items.RemoveAt(num);
@@ -97,7 +97,7 @@ namespace GHNamespace8
                 }
                 return;
             }
-            var num2 = _tierList.IndexFromPoint(e.X, e.Y);
+            int num2 = _tierList.IndexFromPoint(e.X, e.Y);
             if (num2 >= 0 && num2 < _tierList.Items.Count)
             {
                 _tierList.DoDragDrop(_tierList.Items[_int0 = num2], DragDropEffects.Move);
@@ -138,7 +138,7 @@ namespace GHNamespace8
 
         public Gh3Tier[] method_0()
         {
-            var list = new List<Gh3Tier>();
+            List<Gh3Tier> list = new List<Gh3Tier>();
             foreach (Gh3Tier item in _tierList.Items)
             {
                 list.Add(item);

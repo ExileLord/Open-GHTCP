@@ -15,17 +15,18 @@ namespace GHNamespace6
 
         public object Clone()
         {
-            var @class = new Class205();
-            @class._string0 = _string0;
-            @class._class2040 = (Class204) _class2040.Clone();
+            Class205 @class = new Class205
+            {
+                _string0 = _string0,
+                _class2040 = (Class204)_class2040.Clone()
+            };
             @class.method_1(method_0());
             return @class;
         }
 
         public override bool Equals(object obj)
         {
-            var @class = obj as Class205;
-            return @class != null && method_0().Equals(@class.method_0());
+            return obj is Class205 @class && method_0().Equals(@class.method_0());
         }
 
         public override int GetHashCode()

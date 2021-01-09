@@ -17,22 +17,22 @@ namespace GHNamespace3
         public static void smethod_0(float[] float1, int[] int0, int int1, int int2, float[] float2, int int3,
             float float3, float float4)
         {
-            var num = Float0 / int2;
+            float num = Float0 / int2;
             int i;
             for (i = 0; i < int3; i++)
             {
                 float2[i] = Class69.smethod_0(float2[i]);
             }
-            var num2 = int3 / 2 * 2;
+            int num2 = int3 / 2 * 2;
             i = 0;
             while (i < int1)
             {
-                var @struct = default(Struct15);
-                var num3 = int0[i];
-                var num4 = 0.707106769f;
-                var num5 = 0.707106769f;
-                var num6 = Class69.smethod_0(num * num3);
-                for (var j = 0; j < num2; j += 2)
+                Struct15 @struct = default(Struct15);
+                int num3 = int0[i];
+                float num4 = 0.707106769f;
+                float num5 = 0.707106769f;
+                float num6 = Class69.smethod_0(num * num3);
+                for (int j = 0; j < num2; j += 2)
                 {
                     num5 *= float2[j] - num6;
                     num4 *= float2[j + 1] - num6;
@@ -50,9 +50,9 @@ namespace GHNamespace3
                 }
                 num5 = num4 + num5;
                 @struct.float_0 = num5;
-                var num7 = @struct.int_0;
-                var num8 = 2147483647 & num7;
-                var num9 = 0;
+                int num7 = @struct.int_0;
+                int num8 = 2147483647 & num7;
+                int num9 = 0;
                 if (num8 < 2139095040 && num8 != 0)
                 {
                     if (num8 < 8388608)

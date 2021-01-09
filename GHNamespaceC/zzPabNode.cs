@@ -54,34 +54,34 @@ namespace GHNamespaceC
             {
                 Class3180 = new ZzPakNode2(String1, false);
             }
-            using (var stream = new Stream26(File.Open(String0, FileMode.Open, FileAccess.Read, FileShare.Read)))
+            using (Stream26 stream = new Stream26(File.Open(String0, FileMode.Open, FileAccess.Read, FileShare.Read)))
             {
-                var num = 0;
-                var num2 = (int) stream.Length;
+                int num = 0;
+                int num2 = (int) stream.Length;
                 if (num2 == 0)
                 {
                     throw new Exception("Pak File is empty!");
                 }
-                var int_ = stream.ReadInt();
+                int int_ = stream.ReadInt();
                 stream.ReverseEndianness = (Bool2 = (!QbSongClass1.ContainsKey(int_) ||
                                                      !QbSongClass1.GetDictString(int_).StartsWith(".")));
                 Bool3 = (stream.ReadInt() < stream.Length);
-                var @enum = (Enum35) stream.ReadIntAt(28);
+                Enum35 @enum = (Enum35) stream.ReadIntAt(28);
                 Bool1 = ((@enum & Enum35.Flag3) == Enum35.Flag0);
                 Int0 = stream.ReadIntAt(Bool1 ? 12 : 16,
                     Bool2 && (@enum & Enum35.Flag4) == Enum35.Flag0 && (@enum & Enum35.Flag5) == Enum35.Flag0);
                 while (true)
                 {
-                    var enum2 = (Enum35) stream.ReadIntAt(num + 28, false);
-                    var bool_ = Bool2 && (enum2 & Enum35.Flag4) == Enum35.Flag0 &&
+                    Enum35 enum2 = (Enum35) stream.ReadIntAt(num + 28, false);
+                    bool bool_ = Bool2 && (enum2 & Enum35.Flag4) == Enum35.Flag0 &&
                                 (enum2 & Enum35.Flag5) == Enum35.Flag0;
-                    var num3 = stream.ReadIntAt(num, bool_);
+                    int num3 = stream.ReadIntAt(num, bool_);
                     if (QbSongClass1.ContainsKey(num3) && (QbSongClass1.GetDictString(num3).Equals(".last") ||
                                                            QbSongClass1.GetDictString(num3).Equals("last")))
                     {
                         break;
                     }
-                    var num4 = stream.ReadInt(bool_);
+                    int num4 = stream.ReadInt(bool_);
                     if (!Bool3)
                     {
                         num4 = num4 - num2 + num;
@@ -90,16 +90,16 @@ namespace GHNamespaceC
                     {
                         num4 = 0;
                     }
-                    var int2 = stream.ReadInt(bool_);
-                    var num5 = stream.ReadIntAt(num + (Bool1 ? 16 : 12), bool_);
-                    var num6 = stream.ReadIntAt(num + 20, bool_);
-                    var int3 = stream.ReadInt(bool_);
+                    int int2 = stream.ReadInt(bool_);
+                    int num5 = stream.ReadIntAt(num + (Bool1 ? 16 : 12), bool_);
+                    int num6 = stream.ReadIntAt(num + 20, bool_);
+                    int int3 = stream.ReadInt(bool_);
                     stream.Position += 4L;
                     if ((enum2 & Enum35.Flag3) != Enum35.Flag0)
                     {
                         Bool1 = false;
-                        var text = Stream260.ReadString(160);
-                        var num7 = text.IndexOf('\0');
+                        string text = Stream260.ReadString(160);
+                        int num7 = text.IndexOf('\0');
                         if (num7 >= 0)
                         {
                             text = text.Substring(0, num7);
@@ -133,10 +133,10 @@ namespace GHNamespaceC
                         }
                         else
                         {
-                            var text2 = "abcdefghijklmnopqrstuvwxyz";
-                            for (var i = 0; i < text2.Length; i++)
+                            string text2 = "abcdefghijklmnopqrstuvwxyz";
+                            for (int i = 0; i < text2.Length; i++)
                             {
-                                var c = text2[i];
+                                char c = text2[i];
                                 if (num5 == KeyGenerator.GetQbKey(c + text, true))
                                 {
                                     QbSongClass1.AddKeyToDictionary(c + text);
@@ -190,8 +190,8 @@ namespace GHNamespaceC
 
         public void method_20(string string3, string string4)
         {
-            var stream = new Stream26(Bool2);
-            var stream2 = new Stream26();
+            Stream26 stream = new Stream26(Bool2);
+            Stream26 stream2 = new Stream26();
             method_18(stream, stream2);
             if (Stream260 != null && String0 == string3 && String2 == string4)
             {

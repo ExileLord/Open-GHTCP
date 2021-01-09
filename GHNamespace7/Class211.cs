@@ -20,7 +20,7 @@ namespace GHNamespace7
 
         public byte[] TransformFinalBlock(byte[] inputBuffer, int inputOffset, int inputCount)
         {
-            var array = new byte[inputCount];
+            byte[] array = new byte[inputCount];
             TransformBlock(inputBuffer, inputOffset, inputCount, array, 0);
             return array;
         }
@@ -28,9 +28,9 @@ namespace GHNamespace7
         public int TransformBlock(byte[] inputBuffer, int inputOffset, int inputCount, byte[] outputBuffer,
             int outputOffset)
         {
-            for (var i = inputOffset; i < inputOffset + inputCount; i++)
+            for (int i = inputOffset; i < inputOffset + inputCount; i++)
             {
-                var b = (byte) (inputBuffer[i] ^ method_0());
+                byte b = (byte) (inputBuffer[i] ^ method_0());
                 outputBuffer[outputOffset++] = b;
                 method_2(b);
             }

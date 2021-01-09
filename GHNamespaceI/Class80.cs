@@ -546,7 +546,7 @@ namespace GHNamespaceI
             if (_float4 == null)
             {
                 _float4 = new float[32];
-                for (var i = 0; i < 32; i++)
+                for (int i = 0; i < 32; i++)
                 {
                     _float4[i] = 1f;
                 }
@@ -588,7 +588,7 @@ namespace GHNamespaceI
 
         public void method_3(float[] float9)
         {
-            for (var i = 31; i >= 0; i--)
+            for (int i = 31; i >= 0; i--)
             {
                 _float3[i] = float9[i] * _float4[i];
             }
@@ -596,71 +596,71 @@ namespace GHNamespaceI
 
         private void method_4()
         {
-            var array = _float3;
-            var num = array[0];
-            var num2 = array[1];
-            var num3 = array[2];
-            var num4 = array[3];
-            var num5 = array[4];
-            var num6 = array[5];
-            var num7 = array[6];
-            var num8 = array[7];
-            var num9 = array[8];
-            var num10 = array[9];
-            var num11 = array[10];
-            var num12 = array[11];
-            var num13 = array[12];
-            var num14 = array[13];
-            var num15 = array[14];
-            var num16 = array[15];
-            var num17 = array[16];
-            var num18 = array[17];
-            var num19 = array[18];
-            var num20 = array[19];
-            var num21 = array[20];
-            var num22 = array[21];
-            var num23 = array[22];
-            var num24 = array[23];
-            var num25 = array[24];
-            var num26 = array[25];
-            var num27 = array[26];
-            var num28 = array[27];
-            var num29 = array[28];
-            var num30 = array[29];
-            var num31 = array[30];
-            var num32 = array[31];
-            var num33 = num + num32;
-            var num34 = num2 + num31;
-            var num35 = num3 + num30;
-            var num36 = num4 + num29;
-            var num37 = num5 + num28;
-            var num38 = num6 + num27;
-            var num39 = num7 + num26;
-            var num40 = num8 + num25;
-            var num41 = num9 + num24;
-            var num42 = num10 + num23;
-            var num43 = num11 + num22;
-            var num44 = num12 + num21;
-            var num45 = num13 + num20;
-            var num46 = num14 + num19;
-            var num47 = num15 + num18;
-            var num48 = num16 + num17;
-            var num49 = num33 + num48;
-            var num50 = num34 + num47;
-            var num51 = num35 + num46;
-            var num52 = num36 + num45;
-            var num53 = num37 + num44;
-            var num54 = num38 + num43;
-            var num55 = num39 + num42;
-            var num56 = num40 + num41;
-            var num57 = (num33 - num48) * 0.5024193f;
-            var num58 = (num34 - num47) * 0.5224986f;
-            var num59 = (num35 - num46) * 0.566944063f;
-            var num60 = (num36 - num45) * 0.6468218f;
-            var num61 = (num37 - num44) * 0.7881546f;
-            var num62 = (num38 - num43) * 1.06067765f;
-            var num63 = (num39 - num42) * 1.72244716f;
-            var num64 = (num40 - num41) * 5.10114861f;
+            float[] array = _float3;
+            float num = array[0];
+            float num2 = array[1];
+            float num3 = array[2];
+            float num4 = array[3];
+            float num5 = array[4];
+            float num6 = array[5];
+            float num7 = array[6];
+            float num8 = array[7];
+            float num9 = array[8];
+            float num10 = array[9];
+            float num11 = array[10];
+            float num12 = array[11];
+            float num13 = array[12];
+            float num14 = array[13];
+            float num15 = array[14];
+            float num16 = array[15];
+            float num17 = array[16];
+            float num18 = array[17];
+            float num19 = array[18];
+            float num20 = array[19];
+            float num21 = array[20];
+            float num22 = array[21];
+            float num23 = array[22];
+            float num24 = array[23];
+            float num25 = array[24];
+            float num26 = array[25];
+            float num27 = array[26];
+            float num28 = array[27];
+            float num29 = array[28];
+            float num30 = array[29];
+            float num31 = array[30];
+            float num32 = array[31];
+            float num33 = num + num32;
+            float num34 = num2 + num31;
+            float num35 = num3 + num30;
+            float num36 = num4 + num29;
+            float num37 = num5 + num28;
+            float num38 = num6 + num27;
+            float num39 = num7 + num26;
+            float num40 = num8 + num25;
+            float num41 = num9 + num24;
+            float num42 = num10 + num23;
+            float num43 = num11 + num22;
+            float num44 = num12 + num21;
+            float num45 = num13 + num20;
+            float num46 = num14 + num19;
+            float num47 = num15 + num18;
+            float num48 = num16 + num17;
+            float num49 = num33 + num48;
+            float num50 = num34 + num47;
+            float num51 = num35 + num46;
+            float num52 = num36 + num45;
+            float num53 = num37 + num44;
+            float num54 = num38 + num43;
+            float num55 = num39 + num42;
+            float num56 = num40 + num41;
+            float num57 = (num33 - num48) * 0.5024193f;
+            float num58 = (num34 - num47) * 0.5224986f;
+            float num59 = (num35 - num46) * 0.566944063f;
+            float num60 = (num36 - num45) * 0.6468218f;
+            float num61 = (num37 - num44) * 0.7881546f;
+            float num62 = (num38 - num43) * 1.06067765f;
+            float num63 = (num39 - num42) * 1.72244716f;
+            float num64 = (num40 - num41) * 5.10114861f;
             num33 = num49 + num56;
             num34 = num50 + num55;
             num35 = num51 + num54;
@@ -711,21 +711,21 @@ namespace GHNamespaceI
             num48 = (num63 - num64) * 0.707106769f;
             float num67;
             float num66;
-            var num65 = -(num66 = (num67 = num40) + num38) - num39;
-            var num68 = -num39 - num40 - num37;
+            float num65 = -(num66 = (num67 = num40) + num38) - num39;
+            float num68 = -num39 - num40 - num37;
             float num71;
             float num70;
-            var num69 = (num70 = (num71 = num48) + num44) + num46;
+            float num69 = (num70 = (num71 = num48) + num44) + num46;
             float num73;
-            var num72 = -(num73 = num48 + num46 + num42) - num47;
+            float num72 = -(num73 = num48 + num46 + num42) - num47;
             float num75;
-            var num74 = (num75 = -num47 - num48 - num43 - num44) - num46;
-            var num76 = -num47 - num48 - num45 - num41;
-            var num77 = num75 - num45;
-            var num78 = -num33;
-            var num79 = num34;
+            float num74 = (num75 = -num47 - num48 - num43 - num44) - num46;
+            float num76 = -num47 - num48 - num45 - num41;
+            float num77 = num75 - num45;
+            float num78 = -num33;
+            float num79 = num34;
             float num81;
-            var num80 = -(num81 = num36) - num35;
+            float num80 = -(num81 = num36) - num35;
             num33 = (num - num32) * 0.500603f;
             num34 = (num2 - num31) * 0.505470932f;
             num35 = (num3 - num30) * 0.5154473f;
@@ -809,22 +809,22 @@ namespace GHNamespaceI
             float num85;
             float num84;
             float num83;
-            var num82 = (num83 = (num84 = (num85 = num48) + num40) + num44) + num38 + num46;
+            float num82 = (num83 = (num84 = (num85 = num48) + num40) + num44) + num38 + num46;
             float num87;
-            var num86 = (num87 = num48 + num44 + num36) + num46;
+            float num86 = (num87 = num48 + num44 + num36) + num46;
             float num89;
-            var num88 = -(num89 = (num75 = num46 + num48 + num42) + num34) - num47;
+            float num88 = -(num89 = (num75 = num46 + num48 + num42) + num34) - num47;
             float num91;
-            var num90 = -(num91 = num75 + num38 + num40) - num39 - num47;
-            var num92 = (num75 = -num43 - num44 - num47 - num48) - num46 - num35 - num36;
-            var num93 = num75 - num46 - num38 - num39 - num40;
-            var num94 = num75 - num45 - num35 - num36;
+            float num90 = -(num91 = num75 + num38 + num40) - num39 - num47;
+            float num92 = (num75 = -num43 - num44 - num47 - num48) - num46 - num35 - num36;
+            float num93 = num75 - num46 - num38 - num39 - num40;
+            float num94 = num75 - num45 - num35 - num36;
             float num96;
-            var num95 = num75 - num45 - (num96 = num37 + num39 + num40);
-            var num97 = (num75 = -num41 - num45 - num47 - num48) - num33;
-            var num98 = num75 - num96;
-            var array2 = _float2;
-            var num99 = _int0;
+            float num95 = num75 - num45 - (num96 = num37 + num39 + num40);
+            float num97 = (num75 = -num41 - num45 - num47 - num48) - num33;
+            float num98 = num75 - num96;
+            float[] array2 = _float2;
+            int num99 = _int0;
             array2[num99] = num79;
             array2[16 + num99] = num89;
             array2[32 + num99] = num73;
@@ -894,11 +894,11 @@ namespace GHNamespaceI
 
         private void method_5()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[num] * array2[0] + array[15 + num] * array2[1] + array[14 + num] * array2[2] +
                              array[13 + num] * array2[3] + array[12 + num] * array2[4] + array[11 + num] * array2[5] +
                              array[10 + num] * array2[6] + array[9 + num] * array2[7] + array[8 + num] * array2[8] +
@@ -911,11 +911,11 @@ namespace GHNamespaceI
 
         private void method_6()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[1 + num] * array2[0] + array[num] * array2[1] + array[15 + num] * array2[2] +
                              array[14 + num] * array2[3] + array[13 + num] * array2[4] + array[12 + num] * array2[5] +
                              array[11 + num] * array2[6] + array[10 + num] * array2[7] + array[9 + num] * array2[8] +
@@ -928,11 +928,11 @@ namespace GHNamespaceI
 
         private void method_7()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[2 + num] * array2[0] + array[1 + num] * array2[1] + array[num] * array2[2] +
                              array[15 + num] * array2[3] + array[14 + num] * array2[4] + array[13 + num] * array2[5] +
                              array[12 + num] * array2[6] + array[11 + num] * array2[7] + array[10 + num] * array2[8] +
@@ -945,11 +945,11 @@ namespace GHNamespaceI
 
         private void method_8()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[3 + num] * array2[0] + array[2 + num] * array2[1] + array[1 + num] * array2[2] +
                              array[num] * array2[3] + array[15 + num] * array2[4] + array[14 + num] * array2[5] +
                              array[13 + num] * array2[6] + array[12 + num] * array2[7] + array[11 + num] * array2[8] +
@@ -962,11 +962,11 @@ namespace GHNamespaceI
 
         private void method_9()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[4 + num] * array2[0] + array[3 + num] * array2[1] + array[2 + num] * array2[2] +
                              array[1 + num] * array2[3] + array[num] * array2[4] + array[15 + num] * array2[5] +
                              array[14 + num] * array2[6] + array[13 + num] * array2[7] + array[12 + num] * array2[8] +
@@ -979,11 +979,11 @@ namespace GHNamespaceI
 
         private void method_10()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[5 + num] * array2[0] + array[4 + num] * array2[1] + array[3 + num] * array2[2] +
                              array[2 + num] * array2[3] + array[1 + num] * array2[4] + array[num] * array2[5] +
                              array[15 + num] * array2[6] + array[14 + num] * array2[7] + array[13 + num] * array2[8] +
@@ -996,11 +996,11 @@ namespace GHNamespaceI
 
         private void method_11()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[6 + num] * array2[0] + array[5 + num] * array2[1] + array[4 + num] * array2[2] +
                              array[3 + num] * array2[3] + array[2 + num] * array2[4] + array[1 + num] * array2[5] +
                              array[num] * array2[6] + array[15 + num] * array2[7] + array[14 + num] * array2[8] +
@@ -1013,11 +1013,11 @@ namespace GHNamespaceI
 
         private void method_12()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[7 + num] * array2[0] + array[6 + num] * array2[1] + array[5 + num] * array2[2] +
                              array[4 + num] * array2[3] + array[3 + num] * array2[4] + array[2 + num] * array2[5] +
                              array[1 + num] * array2[6] + array[num] * array2[7] + array[15 + num] * array2[8] +
@@ -1030,11 +1030,11 @@ namespace GHNamespaceI
 
         private void method_13()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[8 + num] * array2[0] + array[7 + num] * array2[1] + array[6 + num] * array2[2] +
                              array[5 + num] * array2[3] + array[4 + num] * array2[4] + array[3 + num] * array2[5] +
                              array[2 + num] * array2[6] + array[1 + num] * array2[7] + array[num] * array2[8] +
@@ -1047,11 +1047,11 @@ namespace GHNamespaceI
 
         private void method_14()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[9 + num] * array2[0] + array[8 + num] * array2[1] + array[7 + num] * array2[2] +
                              array[6 + num] * array2[3] + array[5 + num] * array2[4] + array[4 + num] * array2[5] +
                              array[3 + num] * array2[6] + array[2 + num] * array2[7] + array[1 + num] * array2[8] +
@@ -1064,11 +1064,11 @@ namespace GHNamespaceI
 
         private void method_15()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[10 + num] * array2[0] + array[9 + num] * array2[1] + array[8 + num] * array2[2] +
                              array[7 + num] * array2[3] + array[6 + num] * array2[4] + array[5 + num] * array2[5] +
                              array[4 + num] * array2[6] + array[3 + num] * array2[7] + array[2 + num] * array2[8] +
@@ -1081,11 +1081,11 @@ namespace GHNamespaceI
 
         private void method_16()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[11 + num] * array2[0] + array[10 + num] * array2[1] + array[9 + num] * array2[2] +
                              array[8 + num] * array2[3] + array[7 + num] * array2[4] + array[6 + num] * array2[5] +
                              array[5 + num] * array2[6] + array[4 + num] * array2[7] + array[3 + num] * array2[8] +
@@ -1098,11 +1098,11 @@ namespace GHNamespaceI
 
         private void method_17()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[12 + num] * array2[0] + array[11 + num] * array2[1] + array[10 + num] * array2[2] +
                              array[9 + num] * array2[3] + array[8 + num] * array2[4] + array[7 + num] * array2[5] +
                              array[6 + num] * array2[6] + array[5 + num] * array2[7] + array[4 + num] * array2[8] +
@@ -1115,11 +1115,11 @@ namespace GHNamespaceI
 
         private void method_18()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[13 + num] * array2[0] + array[12 + num] * array2[1] + array[11 + num] * array2[2] +
                              array[10 + num] * array2[3] + array[9 + num] * array2[4] + array[8 + num] * array2[5] +
                              array[7 + num] * array2[6] + array[6 + num] * array2[7] + array[5 + num] * array2[8] +
@@ -1132,11 +1132,11 @@ namespace GHNamespaceI
 
         private void method_19()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[14 + num] * array2[0] + array[13 + num] * array2[1] + array[12 + num] * array2[2] +
                              array[11 + num] * array2[3] + array[10 + num] * array2[4] + array[9 + num] * array2[5] +
                              array[8 + num] * array2[6] + array[7 + num] * array2[7] + array[6 + num] * array2[8] +
@@ -1149,11 +1149,11 @@ namespace GHNamespaceI
 
         private void method_20()
         {
-            var array = _float2;
-            var num = 0;
-            for (var i = 0; i < 32; i++)
+            float[] array = _float2;
+            int num = 0;
+            for (int i = 0; i < 32; i++)
             {
-                var array2 = _float7[i];
+                float[] array2 = _float7[i];
                 _float5[i] = array[15 + num] * array2[0] + array[14 + num] * array2[1] + array[13 + num] * array2[2] +
                              array[12 + num] * array2[3] + array[11 + num] * array2[4] + array[10 + num] * array2[5] +
                              array[9 + num] * array2[6] + array[8 + num] * array2[7] + array[7 + num] * array2[8] +
@@ -1234,9 +1234,9 @@ namespace GHNamespaceI
 
         private static float[][] smethod_0(float[] float9, int int2)
         {
-            var num = float9.Length / int2;
-            var array = new float[num][];
-            for (var i = 0; i < num; i++)
+            int num = float9.Length / int2;
+            float[][] array = new float[num][];
+            for (int i = 0; i < num; i++)
             {
                 array[i] = smethod_1(float9, i * int2, int2);
             }
@@ -1253,8 +1253,8 @@ namespace GHNamespaceI
             {
                 int3 = 0;
             }
-            var array = new float[int3];
-            for (var i = 0; i < int3; i++)
+            float[] array = new float[int3];
+            for (int i = 0; i < int3; i++)
             {
                 array[i] = float9[int2 + i];
             }

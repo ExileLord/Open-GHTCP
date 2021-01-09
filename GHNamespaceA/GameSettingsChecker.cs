@@ -43,14 +43,14 @@ namespace GHNamespaceA
             {
                 return;
             }
-            var @class = new ZzGenericNode1(HashPath,
+            ZzGenericNode1 @class = new ZzGenericNode1(HashPath,
                 KeyGenerator.smethod_8(class3180.method_12(HashPath), "MaC39SubInfo1245"));
             Version = new Version(@class.zzFindNode(new UnicodeRootNode("version")).method_7());
-            var array = @class.zzFindNode(new ArrayPointerRootNode("date")).method_7().method_7<float>();
+            float[] array = @class.zzFindNode(new ArrayPointerRootNode("date")).method_7().method_7<float>();
             Date = new DateTime((int) array[0], (int) array[1], (int) array[2]);
             UnkBuffer = @class.zzFindNode(new ArrayPointerRootNode("hash")).method_7().method_7<int>();
             class3180.method_7(HashPath);
-            using (var stream = class3180.method_17())
+            using (Stream26 stream = class3180.method_17())
             {
                 stream.Position = 0L;
                 // Ignore checks for external tools modifying game settings because we're not children who will dictate how people can play their game
@@ -77,17 +77,17 @@ namespace GHNamespaceA
             {
                 pakNode.method_7(HashPath);
             }
-            var @class = new ZzGenericNode1();
+            ZzGenericNode1 @class = new ZzGenericNode1();
             @class.addChild(new UnicodeRootNode("version", HashPath,
                 Assembly.GetExecutingAssembly().GetName().Version.ToString()));
-            using (var stream = pakNode.method_17())
+            using (Stream26 stream = pakNode.method_17())
             {
                 stream.Position = 0L;
                 @class.addChild(new ArrayPointerRootNode("hash", HashPath,
                     new IntegerArrayNode(KeyGenerator.smethod_21(KeyGenerator.HashStream(stream.Stream)))));
             }
             GC.Collect();
-            var now = DateTime.Now;
+            DateTime now = DateTime.Now;
             @class.addChild(new ArrayPointerRootNode("date", HashPath, new FloatArrayNode(new[]
             {
                 now.Year,

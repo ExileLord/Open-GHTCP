@@ -67,25 +67,25 @@ namespace GHNamespace9
 
         public object[] imethod_3()
         {
-            var array = new object[SelectedItems.Count];
+            object[] array = new object[SelectedItems.Count];
             SelectedItems.CopyTo(array, 0);
             return array;
         }
 
         public void method_3()
         {
-            for (var i = SelectedIndices.Count - 1; i >= 0; i--)
+            for (int i = SelectedIndices.Count - 1; i >= 0; i--)
             {
-                var index = SelectedIndices[i];
+                int index = SelectedIndices[i];
                 Items.RemoveAt(index);
             }
         }
 
         public void imethod_4(ref int int1)
         {
-            for (var i = SelectedIndices.Count - 1; i >= 0; i--)
+            for (int i = SelectedIndices.Count - 1; i >= 0; i--)
             {
-                var num = SelectedIndices[i];
+                int num = SelectedIndices[i];
                 Items.RemoveAt(num);
                 if (num < int1)
                 {
@@ -96,11 +96,7 @@ namespace GHNamespace9
 
         public void imethod_5(EventArgs2 eventArgs20)
         {
-            var eventHandler = _eventHandler0;
-            if (eventHandler != null)
-            {
-                eventHandler(this, eventArgs20);
-            }
+            _eventHandler0?.Invoke(this, eventArgs20);
         }
 
         public void method_4(bool bool5)
@@ -117,12 +113,12 @@ namespace GHNamespace9
 
         public void method_6(EventHandler<EventArgs2> eventHandler1)
         {
-            var eventHandler = _eventHandler0;
+            EventHandler<EventArgs2> eventHandler = _eventHandler0;
             EventHandler<EventArgs2> eventHandler2;
             do
             {
                 eventHandler2 = eventHandler;
-                var value = (EventHandler<EventArgs2>) Delegate.Combine(eventHandler2, eventHandler1);
+                EventHandler<EventArgs2> value = (EventHandler<EventArgs2>) Delegate.Combine(eventHandler2, eventHandler1);
                 eventHandler = Interlocked.CompareExchange(ref _eventHandler0, value, eventHandler2);
             } while (eventHandler != eventHandler2);
         }
@@ -131,29 +127,29 @@ namespace GHNamespace9
         {
             base.OnDragDrop(drgevent);
             _class2300.method_1();
-            var @interface = drgevent.Data.GetData("IDragDropSource") as INterface11;
-            var array = @interface.imethod_3();
-            var sorted = Sorted;
+            INterface11 @interface = drgevent.Data.GetData("IDragDropSource") as INterface11;
+            object[] array = @interface.imethod_3();
+            bool sorted = Sorted;
             Sorted = false;
-            var num = method_9(drgevent.Y);
-            var num2 = num;
+            int num = method_9(drgevent.Y);
+            int num2 = num;
             if (num >= Items.Count)
             {
                 Items.AddRange(array);
             }
             else
             {
-                var array2 = array;
-                for (var i = 0; i < array2.Length; i++)
+                object[] array2 = array;
+                for (int i = 0; i < array2.Length; i++)
                 {
-                    var item = array2[i];
+                    object item = array2[i];
                     Items.Insert(num++, item);
                 }
             }
             Enum34 @enum;
             if (drgevent.Effect == DragDropEffects.Move)
             {
-                var num3 = num2;
+                int num3 = num2;
                 @interface.imethod_4(ref num3);
                 if (@interface == this)
                 {
@@ -176,7 +172,7 @@ namespace GHNamespace9
             }
             else if (SelectionMode != SelectionMode.None)
             {
-                for (var j = num2; j < num2 + array.Length; j++)
+                for (int j = num2; j < num2 + array.Length; j++)
                 {
                     SetSelected(j, true);
                 }
@@ -209,7 +205,7 @@ namespace GHNamespace9
             {
                 return;
             }
-            var num = method_9(drgevent.Y);
+            int num = method_9(drgevent.Y);
             if (num != _class2300.method_0())
             {
                 _class2300.method_1();
@@ -232,12 +228,12 @@ namespace GHNamespace9
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
-            var num = IndexFromPoint(e.Location);
+            int num = IndexFromPoint(e.Location);
             if (num >= 0 && MouseButtons == MouseButtons.Left && (_bool1 || _bool2 || _bool3) &&
                 (GetSelected(num) || ModifierKeys == Keys.Shift))
             {
                 method_7(num);
-                var dragSize = SystemInformation.DragSize;
+                Size dragSize = SystemInformation.DragSize;
                 _rectangle0 = new Rectangle(new Point(e.X - dragSize.Width / 2, e.Y - dragSize.Height / 2), dragSize);
             }
         }
@@ -270,10 +266,10 @@ namespace GHNamespace9
                 Array.IndexOf(_int0, int1) >= 0)
             {
                 _bool0 = true;
-                var array = _int0;
-                for (var i = 0; i < array.Length; i++)
+                int[] array = _int0;
+                for (int i = 0; i < array.Length; i++)
                 {
-                    var index = array[i];
+                    int index = array[i];
                     SetSelected(index, true);
                 }
                 SetSelected(int1, true);
@@ -285,7 +281,7 @@ namespace GHNamespace9
         {
             if (!_bool0 && SelectionMode == SelectionMode.MultiExtended)
             {
-                var selectedIndices = SelectedIndices;
+                SelectedIndexCollection selectedIndices = SelectedIndices;
                 if (_int0.Length != selectedIndices.Count)
                 {
                     _int0 = new int[selectedIndices.Count];
@@ -296,7 +292,7 @@ namespace GHNamespace9
 
         private int method_9(int int1)
         {
-            var num = PointToClient(new Point(0, int1)).Y;
+            int num = PointToClient(new Point(0, int1)).Y;
             if (num < 0)
             {
                 num = 0;
@@ -305,17 +301,17 @@ namespace GHNamespace9
             {
                 num = ClientRectangle.Bottom - 1;
             }
-            var num2 = IndexFromPoint(0, num);
+            int num2 = IndexFromPoint(0, num);
             if (num2 == -1)
             {
                 return Items.Count;
             }
-            var itemRectangle = GetItemRectangle(num2);
+            Rectangle itemRectangle = GetItemRectangle(num2);
             if (num > itemRectangle.Top + itemRectangle.Height / 2)
             {
                 num2++;
             }
-            var num3 = TopIndex + ClientRectangle.Height / ItemHeight;
+            int num3 = TopIndex + ClientRectangle.Height / ItemHeight;
             if (num2 > num3)
             {
                 return num3;
@@ -325,9 +321,8 @@ namespace GHNamespace9
 
         private DragDropEffects method_10(DragEventArgs dragEventArgs0)
         {
-            var result = DragDropEffects.None;
-            var @interface = dragEventArgs0.Data.GetData("IDragDropSource") as INterface11;
-            if (@interface != null && _string0 == @interface.imethod_0())
+            DragDropEffects result = DragDropEffects.None;
+            if (dragEventArgs0.Data.GetData("IDragDropSource") is INterface11 @interface && _string0 == @interface.imethod_0())
             {
                 if (@interface == this)
                 {

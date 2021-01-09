@@ -15,17 +15,17 @@ namespace GHNamespace8
 
         public BpmInterpreter(string[] string0)
         {
-            for (var i = 0; i < string0.Length; i++)
+            for (int i = 0; i < string0.Length; i++)
             {
-                var text = string0[i];
-                var array = text.Split(new[]
+                string text = string0[i];
+                string[] array = text.Split(new[]
                 {
                     ' ',
                     '\t',
                     '='
                 }, StringSplitOptions.RemoveEmptyEntries);
-                var num = ChartParser.GetNoteFromResolution(array[0]);
-                var num2 = Convert.ToInt32(array[2]);
+                int num = ChartParser.GetNoteFromResolution(array[0]);
+                int num2 = Convert.ToInt32(array[2]);
                 string a;
                 if ((a = array[1]) != null)
                 {

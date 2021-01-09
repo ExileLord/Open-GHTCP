@@ -82,7 +82,7 @@ namespace GuitarHero.Songlist
         {
             if (interface160 is Gh3Song)
             {
-                var gH3Song = interface160 as Gh3Song;
+                Gh3Song gH3Song = interface160 as Gh3Song;
                 OriginalArtist = gH3Song.OriginalArtist;
                 NotBass = gH3Song.NotBass;
                 NoRhythmTrack = gH3Song.NoRhythmTrack;
@@ -220,7 +220,7 @@ namespace GuitarHero.Songlist
 
         public virtual StructurePointerNode vmethod_5()
         {
-            var @class = new StructureHeaderNode();
+            StructureHeaderNode @class = new StructureHeaderNode();
             @class.addChild(new StructItemQbKey("checksum", Name));
             @class.addChild(new AsciiStructureNode("name", Name));
             @class.addChild(new UnicodeStructureNode("title", Title));

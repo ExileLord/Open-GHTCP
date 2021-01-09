@@ -66,12 +66,12 @@ namespace GuitarHero.Setlist
                 ? @class.method_8()
                 : "");
             IntegerStructureNode class2;
-            var num = ((class2 = class2860.zzFindNode(new IntegerStructureNode("num_tiers"))) != null)
+            int num = ((class2 = class2860.zzFindNode(new IntegerStructureNode("num_tiers"))) != null)
                 ? class2.method_8()
                 : 0;
             try
             {
-                for (var i = 1; i <= num; i++)
+                for (int i = 1; i <= num; i++)
                 {
                     Tiers.Add(new Gh3Tier(class2860.zzFindNode(new StructurePointerNode("tier" + i)).method_8(),
                         gh3Songlist0));
@@ -85,11 +85,11 @@ namespace GuitarHero.Setlist
 
         public StructureHeaderNode method_6()
         {
-            var @class = new StructureHeaderNode();
+            StructureHeaderNode @class = new StructureHeaderNode();
             @class.addChild(new AsciiStructureNode("prefix", Prefix));
             @class.addChild(new IntegerStructureNode("num_tiers", Tiers.Count));
             @class.addChild(new AsciiStructureNode("initial_movie", InitialMovie));
-            for (var i = 0; i < Tiers.Count; i++)
+            for (int i = 0; i < Tiers.Count; i++)
             {
                 @class.addChild(new StructurePointerNode("tier" + (i + 1), Tiers[i].method_3()));
             }

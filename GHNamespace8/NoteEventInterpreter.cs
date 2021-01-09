@@ -42,9 +42,9 @@ namespace GHNamespace8
             if (!(AlwaysTrue = (stringImported.Length == 0))) //If string is empty
             {
                 //Cycles through the string array imported (All notes/SP)
-                for (var i = 0; i < stringImported.Length; i++)
+                for (int i = 0; i < stringImported.Length; i++)
                 {
-                    var currentString = stringImported[i];
+                    string currentString = stringImported[i];
                     /*
                     Indexes:
                     0=Offset
@@ -52,13 +52,13 @@ namespace GHNamespace8
                     2=Note Value
                     3=Sustain Length
                     */
-                    var notesEventsArray = currentString.Split(new[]
+                    string[] notesEventsArray = currentString.Split(new[]
                     {
                         ' ',
                         '\t',
                         '='
                     }, StringSplitOptions.RemoveEmptyEntries);
-                    var offset = ChartParser.GetNoteFromResolution(notesEventsArray[0]);
+                    int offset = ChartParser.GetNoteFromResolution(notesEventsArray[0]);
                     string eventType;
                     if ((eventType = notesEventsArray[1]) != null)
                     {
@@ -72,7 +72,7 @@ namespace GHNamespace8
                                     if (EventList.ContainsKey(offset))
                                     {
                                         _currentEventLine = notesEventsArray[2];
-                                        for (var j = 3; j < notesEventsArray.Length; j++)
+                                        for (int j = 3; j < notesEventsArray.Length; j++)
                                         {
                                             _currentEventLine = _currentEventLine + " " + notesEventsArray[j];
                                         }
@@ -81,7 +81,7 @@ namespace GHNamespace8
                                     else
                                     {
                                         _currentEventLine = notesEventsArray[2];
-                                        for (var k = 3; k < notesEventsArray.Length; k++)
+                                        for (int k = 3; k < notesEventsArray.Length; k++)
                                         {
                                             _currentEventLine = _currentEventLine + " " + notesEventsArray[k];
                                         }
@@ -150,8 +150,8 @@ namespace GHNamespace8
                         */
                         else
                         {
-                            var notes = new bool[32];
-                            var sustainLength = ChartParser.GetNoteFromResolution(notesEventsArray[3]);
+                            bool[] notes = new bool[32];
+                            int sustainLength = ChartParser.GetNoteFromResolution(notesEventsArray[3]);
                             if (sustainLength <= constant480 / 4)
                             {
                                 sustainLength = 0;
@@ -162,14 +162,14 @@ namespace GHNamespace8
                             }
                             else
                             {
-                                var currentSustainLength = NoteList[offset].SustainLength;
+                                int currentSustainLength = NoteList[offset].SustainLength;
                                 //Updates sustain length
                                 if (currentSustainLength < sustainLength)
                                 {
                                     NoteList[offset].SustainLength = sustainLength;
                                 }
                             }
-                            var note = Convert.ToInt32(notesEventsArray[2]);
+                            int note = Convert.ToInt32(notesEventsArray[2]);
                             NoteList[offset].NoteValues[note] = true;
                         }
                     }

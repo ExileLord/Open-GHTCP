@@ -42,21 +42,23 @@ namespace GHNamespace9
 
         public void method_0(EventHandler eventHandler1)
         {
-            var eventHandler = _eventHandler0;
+            EventHandler eventHandler = _eventHandler0;
             EventHandler eventHandler2;
             do
             {
                 eventHandler2 = eventHandler;
-                var value = (EventHandler) Delegate.Combine(eventHandler2, eventHandler1);
+                EventHandler value = (EventHandler) Delegate.Combine(eventHandler2, eventHandler1);
                 eventHandler = Interlocked.CompareExchange(ref _eventHandler0, value, eventHandler2);
             } while (eventHandler != eventHandler2);
         }
 
         public void method_1()
         {
-            _thread0 = new Thread(_actionList.method_1);
-            _thread0.CurrentCulture = Thread.CurrentThread.CurrentCulture;
-            _thread0.CurrentUICulture = Thread.CurrentThread.CurrentUICulture;
+            _thread0 = new Thread(_actionList.method_1)
+            {
+                CurrentCulture = Thread.CurrentThread.CurrentCulture,
+                CurrentUICulture = Thread.CurrentThread.CurrentUICulture
+            };
             _thread0.Start();
         }
 
@@ -68,7 +70,7 @@ namespace GHNamespace9
                 Invoke(method, sender, e);
                 return;
             }
-            var expr34 = _actionsTxt;
+            RichTextBox expr34 = _actionsTxt;
             expr34.Text += e.method_0();
             _actionsTxt.ScrollToCaret();
             _progressBar.Value = e.method_1();

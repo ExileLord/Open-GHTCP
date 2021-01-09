@@ -47,12 +47,12 @@ namespace GHNamespace4
         {
             if (_class1560 != null)
             {
-                var @class = _class1560;
+                Class156 @class = _class1560;
                 _class1560 = null;
-                var class2 = @class;
+                Class156 class2 = @class;
                 do
                 {
-                    var class3 = class2.Class1560;
+                    Class156 class3 = class2.Class1560;
                     class2.Dispose();
                     class2 = class3;
                 } while (class2 != @class);
@@ -61,7 +61,7 @@ namespace GHNamespace4
 
         private void method_1()
         {
-            var @class = _class1560;
+            Class156 @class = _class1560;
             while (@class.Class1560 != _class1560)
             {
                 @class.method_0();

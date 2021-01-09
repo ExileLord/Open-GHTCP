@@ -74,8 +74,8 @@ namespace GHNamespace7
 
             public override void vmethod_0(Class225.Class226 class2262)
             {
-                var @class = (Class227) class2262;
-                var t = Gparam0;
+                Class227 @class = (Class227) class2262;
+                T t = Gparam0;
                 Gparam0 = @class.Gparam0;
                 @class.Gparam0 = t;
             }
@@ -153,7 +153,7 @@ namespace GHNamespace7
             {
                 throw new ArgumentNullException("collection");
             }
-            foreach (var current in ienumerable0)
+            foreach (T current in ienumerable0)
             {
                 vmethod_1(current);
             }
@@ -192,7 +192,7 @@ namespace GHNamespace7
 
         public virtual bool vmethod_2(T gparam0)
         {
-            var @class = new Class227(gparam0);
+            Class227 @class = new Class227(gparam0);
             return _class2250.method_1(gparam0, @class) == @class;
         }
 
@@ -234,11 +234,11 @@ namespace GHNamespace7
             {
                 throw new ArgumentException("destination array cannot hold the requested elements");
             }
-            using (var @struct = _class2250.method_14())
+            using (Class225.Struct77 @struct = _class2250.method_14())
             {
                 while (@struct.MoveNext())
                 {
-                    var @class = (Class227) @struct.Current;
+                    Class227 @class = (Class227) @struct.Current;
                     if (int1-- == 0)
                     {
                         break;
@@ -269,11 +269,11 @@ namespace GHNamespace7
                 {
                     throw new ArgumentException();
                 }
-                using (var @struct = _class2250.method_14())
+                using (Class225.Struct77 @struct = _class2250.method_14())
                 {
                     while (@struct.MoveNext())
                     {
-                        var @class = (Class227) @struct.Current;
+                        Class227 @class = (Class227) @struct.Current;
                         array.SetValue(@class.Gparam0, index++);
                     }
                     return;

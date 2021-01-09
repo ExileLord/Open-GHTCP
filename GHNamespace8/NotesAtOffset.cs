@@ -20,8 +20,8 @@ namespace GHNamespace8
 
         public int method_0()
         {
-            var num = 0u; //0
-            for (var i = 0; i < NoteValues.Length; i++)
+            uint num = 0u; //0
+            for (int i = 0; i < NoteValues.Length; i++)
             {
                 if (NoteValues[i])
                 {
@@ -34,7 +34,7 @@ namespace GHNamespace8
         public void SetNote(int int1)
         {
             NoteValues = new bool[32];
-            for (var i = 0; i < 32; i++)
+            for (int i = 0; i < 32; i++)
             {
                 if ((int1 >> i & 1) != 0)
                 {

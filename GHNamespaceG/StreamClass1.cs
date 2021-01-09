@@ -33,7 +33,7 @@ namespace GHNamespaceG
                 }
             };
 
-            private long _long0;
+            private readonly long _long0;
 
             public long method_0()
             {
@@ -54,9 +54,9 @@ namespace GHNamespaceG
             if (smethod_0(_stream0))
             {
                 UpdateFinalBlocks(_stream0, _interface140.Length, 0L);
-                var array = new int[_interface140.Length];
-                var array2 = new int[_interface140.Length];
-                for (var i = 0; i < _interface140.Length; i++)
+                int[] array = new int[_interface140.Length];
+                int[] array2 = new int[_interface140.Length];
+                for (int i = 0; i < _interface140.Length; i++)
                 {
                     array[i] = (int) _class3430[i].method_0() * 28;
                     array2[i] = _interface140[i].imethod_0();
@@ -77,11 +77,11 @@ namespace GHNamespaceG
             {
                 throw new ApplicationException("UpdateFinalBlocks called with non-updateable stream");
             }
-            var position = stream1.Position;
-            var num = long0 + 128L;
-            var array = new bool[int0];
-            var num2 = 0;
-            var array2 = new byte[16];
+            long position = stream1.Position;
+            long num = long0 + 128L;
+            bool[] array = new bool[int0];
+            int num2 = 0;
+            byte[] array2 = new byte[16];
             stream1.Seek(array2.Length * -1, SeekOrigin.Current);
             while (stream1.Position - num >= 16L && num2 < array.Length)
             {
@@ -89,7 +89,7 @@ namespace GHNamespaceG
                 {
                     Class355.Interface150.imethod_1("Unexpected end of stream trying to read final blocks");
                 }
-                var num3 = array2[1] & -129;
+                int num3 = array2[1] & -129;
                 if (num3 < 0 || num3 > int0)
                 {
                     Class355.Interface150.imethod_1(
@@ -112,8 +112,8 @@ namespace GHNamespaceG
                 }
                 else if (!array[num3])
                 {
-                    var exprF6Cp0 = array2;
-                    var exprF6Cp1 = 1;
+                    byte[] exprF6Cp0 = array2;
+                    int exprF6Cp1 = 1;
                     exprF6Cp0[exprF6Cp1] |= 128;
                     stream1.Seek(array2.Length * -1, SeekOrigin.Current);
                     stream1.Write(array2, 0, array2.Length);
@@ -131,7 +131,7 @@ namespace GHNamespaceG
             {
                 throw new ApplicationException("UpdateFinalBlocks called with non-updateable stream");
             }
-            var position = stream1.Position;
+            long position = stream1.Position;
             stream1.Seek(long0, SeekOrigin.Begin);
             smethod_3(stream1, int0, int1);
             stream1.Seek(position, SeekOrigin.Begin);
@@ -147,7 +147,7 @@ namespace GHNamespaceG
             }
             if (!smethod_0(stream1))
             {
-                for (var i = 0; i < int0.Length; i++)
+                for (int i = 0; i < int0.Length; i++)
                 {
                     if (int0[i] < 1)
                     {
@@ -156,10 +156,10 @@ namespace GHNamespaceG
                     }
                 }
             }
-            var binaryWriter = new BinaryWriter(stream1);
+            BinaryWriter binaryWriter = new BinaryWriter(stream1);
             binaryWriter.Write(Encoding.ASCII.GetBytes("VgS!"));
             binaryWriter.Write(2);
-            for (var j = 0; j < 15; j++)
+            for (int j = 0; j < 15; j++)
             {
                 if (j < int0.Length)
                 {

@@ -43,7 +43,7 @@ namespace GuitarHero
 
         public StructureHeaderNode method_1()
         {
-            var @class = new StructureHeaderNode();
+            StructureHeaderNode @class = new StructureHeaderNode();
             @class.addChild(new StructItemQbKey("tier_global", Setlist));
             @class.addChild(new StructItemQbKey("progression_global", Progression));
             return @class;

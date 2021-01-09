@@ -5,9 +5,9 @@ namespace GHNamespace7
 {
     public class Class212 : INterface9
     {
-        private INterface8 _interface80;
+        private readonly INterface8 _interface80;
 
-        private DateTime _dateTime0 = DateTime.Now;
+        private readonly DateTime _dateTime0 = DateTime.Now;
 
         public Class212()
         {

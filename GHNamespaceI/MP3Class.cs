@@ -51,17 +51,17 @@ namespace GHNamespaceI
                     FileStream.Position = _int2;
                     _class820.method_6();
                     _class820.method_7();
-                    for (var i = 0; i < _class810.Length; i++)
+                    for (int i = 0; i < _class810.Length; i++)
                     {
                         _class810[i].method_0().method_6();
                     }
                     if (_long1 != 0L)
                     {
-                        var num = (long) (value / _double0 + _int2);
-                        var @class = _class820.method_3();
+                        long num = (long) (value / _double0 + _int2);
+                        ZzSoundClass @class = _class820.method_3();
                         while (FileStream.Position + @class.Int12 * _class810.Length < num)
                         {
-                            for (var j = 0; j < _class810.Length; j++)
+                            for (int j = 0; j < _class810.Length; j++)
                             {
                                 _class820.method_7();
                                 @class = _class820.method_3();
@@ -80,7 +80,7 @@ namespace GHNamespaceI
                         {
                             _class820.method_7();
                         }
-                        for (var k = 1; k < _class810.Length; k++)
+                        for (int k = 1; k < _class810.Length; k++)
                         {
                             if (!method_1(k))
                             {
@@ -99,7 +99,7 @@ namespace GHNamespaceI
         public Mp3Class(Stream stream1, int int5, Enum4 enum40, int int6)
         {
             _class810 = new ZzSoundClass81[int5];
-            for (var i = 0; i < _class810.Length; i++)
+            for (int i = 0; i < _class810.Length; i++)
             {
                 _class810[i] = new ZzSoundClass81(new Class104(enum40));
             }
@@ -113,7 +113,7 @@ namespace GHNamespaceI
                 throw new Mp3Exception("Mp3 Decoder: Cannot read header.");
             }
             _short0 = 0;
-            for (var j = 0; j < _class810.Length; j++)
+            for (int j = 0; j < _class810.Length; j++)
             {
                 _short0 += (short) _class810[j].method_2();
             }
@@ -156,8 +156,8 @@ namespace GHNamespaceI
         public override int vmethod_3(IntPtr intptr0, int int5)
         {
             int5 >>= 2;
-            var array = new float[int5];
-            var num = vmethod_4(array, 0, int5);
+            float[] array = new float[int5];
+            int num = vmethod_4(array, 0, int5);
             Marshal.Copy(array, 0, intptr0, num);
             return num << 2;
         }
@@ -169,7 +169,7 @@ namespace GHNamespaceI
                 int result;
                 lock (_object0)
                 {
-                    var num = 0;
+                    int num = 0;
                     do
                     {
                         if (_class810[0].method_0().method_0() <= 0)
@@ -187,8 +187,8 @@ namespace GHNamespaceI
                 return result;
             }
             count >>= 2;
-            var array = new float[count];
-            var num2 = vmethod_4(array, 0, count);
+            float[] array = new float[count];
+            int num2 = vmethod_4(array, 0, count);
             Buffer.BlockCopy(array, 0, buffer, offset, num2);
             return num2 << 2;
         }
@@ -200,7 +200,7 @@ namespace GHNamespaceI
                 int result;
                 lock (_object0)
                 {
-                    var num = 0;
+                    int num = 0;
                     do
                     {
                         if (_class810[0].method_0().method_0() <= 0)
@@ -217,25 +217,25 @@ namespace GHNamespaceI
                 }
                 return result;
             }
-            var array = vmethod_5(int6 / WaveFormat0.short_0);
+            float[][] array = vmethod_5(int6 / WaveFormat0.short_0);
             if (array == null)
             {
                 return 0;
             }
-            var num2 = 0;
-            var array2 = array;
-            for (var i = 0; i < array2.Length; i++)
+            int num2 = 0;
+            float[][] array2 = array;
+            for (int i = 0; i < array2.Length; i++)
             {
-                var array3 = array2[i];
+                float[] array3 = array2[i];
                 num2 = Math.Max(array3.Length, num2);
             }
             num2 *= WaveFormat0.short_0;
-            var num3 = array.Length;
-            for (var j = 0; j < num3; j++)
+            int num3 = array.Length;
+            for (int j = 0; j < num3; j++)
             {
-                var array4 = array[j];
-                var k = 0;
-                var num4 = int5 + j;
+                float[] array4 = array[j];
+                int k = 0;
+                int num4 = int5 + j;
                 while (k < array4.Length)
                 {
                     float0[num4] = array4[k];
@@ -252,13 +252,13 @@ namespace GHNamespaceI
             lock (_object0)
             {
                 int num = vmethod_0().short_0;
-                var array = new float[num][];
-                for (var i = 0; i < num; i++)
+                float[][] array = new float[num][];
+                for (int i = 0; i < num; i++)
                 {
                     array[i] = new float[int5];
                 }
                 int5 *= num;
-                var num2 = 0;
+                int num2 = 0;
                 do
                 {
                     if (_class810[0].method_0().method_0() <= 0)
@@ -268,13 +268,13 @@ namespace GHNamespaceI
                             break;
                         }
                     }
-                    var num3 = 0;
-                    var int6 = num2 / _class810.Length;
-                    var int7 = (int5 - num2) / _class810.Length;
-                    for (var j = 0; j < _class810.Length; j++)
+                    int num3 = 0;
+                    int int6 = num2 / _class810.Length;
+                    int int7 = (int5 - num2) / _class810.Length;
+                    for (int j = 0; j < _class810.Length; j++)
                     {
-                        var array2 = new float[_class810[j].method_2()][];
-                        var k = 0;
+                        float[][] array2 = new float[_class810[j].method_2()][];
+                        int k = 0;
                         while (k < array2.Length)
                         {
                             array2[k] = array[num3];
@@ -292,7 +292,7 @@ namespace GHNamespaceI
 
         public bool method_0()
         {
-            for (var i = 0; i < _class810.Length; i++)
+            for (int i = 0; i < _class810.Length; i++)
             {
                 if (!method_1(i))
                 {
@@ -304,7 +304,7 @@ namespace GHNamespaceI
 
         public bool method_1(int int5)
         {
-            var @class = _class820.method_3();
+            ZzSoundClass @class = _class820.method_3();
             if (@class == null)
             {
                 return false;

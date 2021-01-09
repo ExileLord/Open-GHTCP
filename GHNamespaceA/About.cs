@@ -38,11 +38,11 @@ namespace GHNamespaceA
 
         public string method_0()
         {
-            var customAttributes = Assembly.GetExecutingAssembly()
+            object[] customAttributes = Assembly.GetExecutingAssembly()
                 .GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
             if (customAttributes.Length > 0)
             {
-                var assemblyTitleAttribute = (AssemblyTitleAttribute) customAttributes[0];
+                AssemblyTitleAttribute assemblyTitleAttribute = (AssemblyTitleAttribute) customAttributes[0];
                 if (assemblyTitleAttribute.Title != "")
                 {
                     return assemblyTitleAttribute.Title;
@@ -58,7 +58,7 @@ namespace GHNamespaceA
 
         public string method_2()
         {
-            var customAttributes = Assembly.GetExecutingAssembly()
+            object[] customAttributes = Assembly.GetExecutingAssembly()
                 .GetCustomAttributes(typeof(AssemblyProductAttribute), false);
             if (customAttributes.Length == 0)
             {
@@ -69,7 +69,7 @@ namespace GHNamespaceA
 
         public string method_3()
         {
-            var customAttributes = Assembly.GetExecutingAssembly()
+            object[] customAttributes = Assembly.GetExecutingAssembly()
                 .GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
             if (customAttributes.Length == 0)
             {
@@ -80,7 +80,7 @@ namespace GHNamespaceA
 
         public string method_4()
         {
-            var customAttributes = Assembly.GetExecutingAssembly()
+            object[] customAttributes = Assembly.GetExecutingAssembly()
                 .GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
             if (customAttributes.Length == 0)
             {
@@ -100,7 +100,7 @@ namespace GHNamespaceA
 
         private void InitializeComponent()
         {
-            var componentResourceManager = new ComponentResourceManager(typeof(About));
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(About));
             _tableLayoutPanel = new TableLayoutPanel();
             _logoPictureBox = new PictureBox();
             _labelProductName = new Label();

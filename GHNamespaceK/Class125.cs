@@ -24,7 +24,7 @@ namespace GHNamespaceK
             if (Int0 > 0)
             {
                 Class1470 = new Class147[Int0];
-                for (var i = 0; i < Int0; i++)
+                for (int i = 0; i < Int0; i++)
                 {
                     Class1470[i] = new Class147(class1440);
                 }

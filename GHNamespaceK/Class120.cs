@@ -70,7 +70,7 @@ namespace GHNamespaceK
                         {
                             _enum130 = Enum13.Const0;
                         }
-                        foreach (var arg650 in List0)
+                        foreach (string arg650 in List0)
                         {
                         }
                     }
@@ -127,7 +127,7 @@ namespace GHNamespaceK
                     string.IsNullOrEmpty(string1) ? "default" : string1));
             }
             method_1();
-            var list = new List<int>();
+            List<int> list = new List<int>();
             if (int0 != 0)
             {
                 list.Add(4103);
@@ -142,8 +142,7 @@ namespace GHNamespaceK
             list.Add(bool4 ? 1 : 0);
             if (bool5 && OpenAl.alcIsExtensionPresent(_intptr0, "ALC_EXT_EFX"))
             {
-                int item;
-                OpenAl.alcGetIntegerv(_intptr0, Enum9.Const7, 1, out item);
+                OpenAl.alcGetIntegerv(_intptr0, Enum9.Const7, 1, out int item);
                 list.Add(131075);
                 list.Add(item);
             }
@@ -161,17 +160,16 @@ namespace GHNamespaceK
             }
             method_1();
             _string0 = OpenAl.smethod_0(_intptr0, Enum7.Const5);
-            int num;
-            OpenAl.alcGetIntegerv(_intptr0, Enum9.Const2, 4, out num);
+            OpenAl.alcGetIntegerv(_intptr0, Enum9.Const2, 4, out int num);
             if (num > 0)
             {
-                var array = new int[num];
+                int[] array = new int[num];
                 OpenAl.alcGetIntegerv(_intptr0, Enum9.Const3, array.Length * 4, out array[0]);
-                var array2 = array;
-                for (var i = 0; i < array2.Length; i++)
+                int[] array2 = array;
+                for (int i = 0; i < array2.Length; i++)
                 {
-                    var num2 = array2[i];
-                    var @enum = (Enum6) num2;
+                    int num2 = array2[i];
+                    Enum6 @enum = (Enum6) num2;
                     if (@enum == Enum6.Const2)
                     {
                         method_5(true);
@@ -187,7 +185,7 @@ namespace GHNamespaceK
 
         private void method_1()
         {
-            var alcError = OpenAl.alcGetError(_intptr0);
+            AlcError alcError = OpenAl.alcGetError(_intptr0);
             if (alcError != AlcError.NoError)
             {
                 throw new Exception3(alcError.ToString());
@@ -265,8 +263,7 @@ namespace GHNamespaceK
                 }
                 else
                 {
-                    Class120 @class;
-                    Dictionary0.TryGetValue(OpenAl.alcGetCurrentContext(), out @class);
+                    Dictionary0.TryGetValue(OpenAl.alcGetCurrentContext(), out Class120 @class);
                     result = @class;
                 }
             }

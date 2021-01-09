@@ -62,10 +62,10 @@ namespace GHNamespace6
         public void method_4()
         {
             _int0 = 0;
-            var i = _byte0.Length;
+            int i = _byte0.Length;
             while (i > 0)
             {
-                var num = _stream0.Read(_byte0, _int0, i);
+                int num = _stream0.Read(_byte0, _int0, i);
                 if (num > 0)
                 {
                     _int0 += num;
@@ -103,8 +103,8 @@ namespace GHNamespace6
             {
                 throw new ArgumentOutOfRangeException("length");
             }
-            var num = int3;
-            var i = int4;
+            int num = int3;
+            int i = int4;
             while (i > 0)
             {
                 if (_int2 <= 0)
@@ -115,7 +115,7 @@ namespace GHNamespace6
                         return 0;
                     }
                 }
-                var num2 = Math.Min(i, _int2);
+                int num2 = Math.Min(i, _int2);
                 Array.Copy(_byte0, _int0 - _int2, byte3, num, num2);
                 num += num2;
                 i -= num2;
@@ -130,8 +130,8 @@ namespace GHNamespace6
             {
                 throw new ArgumentOutOfRangeException("length");
             }
-            var num = int3;
-            var i = int4;
+            int num = int3;
+            int i = int4;
             while (i > 0)
             {
                 if (_int2 <= 0)
@@ -142,7 +142,7 @@ namespace GHNamespace6
                         return 0;
                     }
                 }
-                var num2 = Math.Min(i, _int2);
+                int num2 = Math.Min(i, _int2);
                 Array.Copy(_byte1, _int1 - _int2, byte3, num, num2);
                 num += num2;
                 i -= num2;
@@ -161,7 +161,7 @@ namespace GHNamespace6
                     throw new ZipException("EOF in header");
                 }
             }
-            var result = (byte) (_byte0[_int0 - _int2] & 255);
+            byte result = (byte) (_byte0[_int0 - _int2] & 255);
             _int2--;
             return result;
         }

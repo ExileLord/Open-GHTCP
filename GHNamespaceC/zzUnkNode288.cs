@@ -10,16 +10,16 @@ namespace GHNamespaceC
 
         public override void vmethod_13(Stream26 stream260)
         {
-            var num = stream260.ReadInt();
+            int num = stream260.ReadInt();
             if (num == 0)
             {
                 return;
             }
-            var array = new int[num];
+            int[] array = new int[num];
             if (num > 1)
             {
                 stream260.Position = stream260.ReadInt();
-                for (var i = 0; i < num; i++)
+                for (int i = 0; i < num; i++)
                 {
                     array[i] = stream260.ReadInt();
                 }
@@ -28,11 +28,11 @@ namespace GHNamespaceC
             {
                 array[0] = stream260.ReadInt();
             }
-            var array2 = array;
-            for (var j = 0; j < array2.Length; j++)
+            int[] array2 = array;
+            for (int j = 0; j < array2.Length; j++)
             {
-                var int_ = array2[j];
-                var @class = vmethod_12(stream260.ReadIntAt(int_, true));
+                int int_ = array2[j];
+                AbstractTreeNode1 @class = vmethod_12(stream260.ReadIntAt(int_, true));
                 Nodes.Add(@class);
                 @class.method_4(stream260);
             }
@@ -40,7 +40,7 @@ namespace GHNamespaceC
 
         public override void vmethod_14(Stream26 stream260)
         {
-            var array = new byte[4];
+            byte[] array = new byte[4];
             array[1] = 1;
             array[2] = vmethod_15();
             stream260.WriteByteArray(array, false);
@@ -53,15 +53,15 @@ namespace GHNamespaceC
             {
                 stream260.WriteInt((int) stream260.Position + 4);
             }
-            var int_ = (int) stream260.Position;
-            var list = new List<int>(Nodes.Count);
+            int int_ = (int) stream260.Position;
+            List<int> list = new List<int>(Nodes.Count);
             stream260.WriteNBytes(0, 4 * Nodes.Count);
             foreach (AbstractTreeNode1 @class in Nodes)
             {
                 list.Add((int) stream260.Position);
                 @class.vmethod_14(stream260);
             }
-            var num = (int) stream260.Position;
+            int num = (int) stream260.Position;
             stream260.WriteEnumerableIntsAt(int_, list);
             stream260.Position = num;
         }

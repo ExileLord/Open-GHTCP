@@ -493,11 +493,11 @@ namespace GHNamespaceJ
 
         private void method_0()
         {
-            for (var i = 0; i < 8; i++)
+            for (int i = 0; i < 8; i++)
             {
                 _double12[i] = new double[256];
             }
-            for (var j = 0; j < 8; j++)
+            for (int j = 0; j < 8; j++)
             {
                 _double13[j] = new double[256];
             }
@@ -505,8 +505,8 @@ namespace GHNamespaceJ
 
         private void method_1(double[] double14, double[] double15, int int2, int int3)
         {
-            var num = double14[int2];
-            var num2 = double15[int2];
+            double num = double14[int2];
+            double num2 = double15[int2];
             double14[int2] = double14[int3];
             double15[int2] = double15[int3];
             double14[int3] = num;
@@ -515,21 +515,21 @@ namespace GHNamespaceJ
 
         public virtual void vmethod_0(double[] double14, int int2, int int3, double double15)
         {
-            for (var i = 0; i < 128; i++)
+            for (int i = 0; i < 128; i++)
             {
                 _double2[i] = double14[int2 + 256 - 2 * i - 1] * _double8[i] - double14[int2 + 2 * i] * _double9[i];
                 _double3[i] = -1.0 * (double14[int2 + 2 * i] * _double8[i] +
                                       double14[int2 + 256 - 2 * i - 1] * _double9[i]);
             }
-            for (var j = 0; j < 128; j++)
+            for (int j = 0; j < 128; j++)
             {
-                var num = Int0[j];
+                int num = Int0[j];
                 if (num < j)
                 {
                     method_1(_double2, _double3, j, num);
                 }
             }
-            for (var k = 0; k < 7; k++)
+            for (int k = 0; k < 7; k++)
             {
                 int num2;
                 if (k != 0)
@@ -540,17 +540,17 @@ namespace GHNamespaceJ
                 {
                     num2 = 1;
                 }
-                var num3 = 1 << k + 1;
-                for (var l = 0; l < num2; l++)
+                int num3 = 1 << k + 1;
+                for (int l = 0; l < num2; l++)
                 {
-                    for (var m = 0; m < 128; m += num3)
+                    for (int m = 0; m < 128; m += num3)
                     {
-                        var num4 = l + m;
-                        var num5 = num4 + num2;
-                        var num6 = _double2[num4];
-                        var num7 = _double3[num4];
-                        var num8 = _double2[num5] * _double12[k][l] - _double3[num5] * _double13[k][l];
-                        var num9 = _double3[num5] * _double12[k][l] + _double2[num5] * _double13[k][l];
+                        int num4 = l + m;
+                        int num5 = num4 + num2;
+                        double num6 = _double2[num4];
+                        double num7 = _double3[num4];
+                        double num8 = _double2[num5] * _double12[k][l] - _double3[num5] * _double13[k][l];
+                        double num9 = _double3[num5] * _double12[k][l] + _double2[num5] * _double13[k][l];
                         _double2[num4] = num6 + num8;
                         _double3[num4] = num7 + num9;
                         _double2[num5] = num6 - num8;
@@ -558,33 +558,33 @@ namespace GHNamespaceJ
                     }
                 }
             }
-            for (var n = 0; n < 128; n++)
+            for (int n = 0; n < 128; n++)
             {
-                var num6 = _double2[n];
-                var num7 = -1.0 * _double3[n];
+                double num6 = _double2[n];
+                double num7 = -1.0 * _double3[n];
                 _double2[n] = num6 * _double8[n] - num7 * _double9[n];
                 _double3[n] = num6 * _double9[n] + num7 * _double8[n];
             }
-            var num10 = int2;
-            var num11 = int3;
-            var num12 = 0;
-            for (var num13 = 0; num13 < 64; num13++)
+            int num10 = int2;
+            int num11 = int3;
+            int num12 = 0;
+            for (int num13 = 0; num13 < 64; num13++)
             {
                 double14[num10++] = -_double3[64 + num13] * Double1[num12++] + double14[num11++] + double15;
                 double14[num10++] = _double2[64 - num13 - 1] * Double1[num12++] + double14[num11++] + double15;
             }
-            for (var num14 = 0; num14 < 64; num14++)
+            for (int num14 = 0; num14 < 64; num14++)
             {
                 double14[num10++] = -_double2[num14] * Double1[num12++] + double14[num11++] + double15;
                 double14[num10++] = _double3[128 - num14 - 1] * Double1[num12++] + double14[num11++] + double15;
             }
             num11 = int3;
-            for (var num15 = 0; num15 < 64; num15++)
+            for (int num15 = 0; num15 < 64; num15++)
             {
                 double14[num11++] = -_double2[64 + num15] * Double1[--num12];
                 double14[num11++] = _double3[64 - num15 - 1] * Double1[--num12];
             }
-            for (var num16 = 0; num16 < 64; num16++)
+            for (int num16 = 0; num16 < 64; num16++)
             {
                 double14[num11++] = _double3[num16] * Double1[--num12];
                 double14[num11++] = -_double2[128 - num16 - 1] * Double1[--num12];
@@ -593,28 +593,28 @@ namespace GHNamespaceJ
 
         public virtual void vmethod_1(double[] double14, int int2, int int3, double double15)
         {
-            for (var i = 0; i < 64; i++)
+            for (int i = 0; i < 64; i++)
             {
-                var num = 2 * (128 - 2 * i - 1);
-                var num2 = 2 * (2 * i);
+                int num = 2 * (128 - 2 * i - 1);
+                int num2 = 2 * (2 * i);
                 _double4[i] = double14[num] * _double10[i] - double14[num2] * _double11[i];
                 _double5[i] = -1.0 * (double14[num2] * _double10[i] + double14[num] * _double11[i]);
                 _double6[i] = double14[num + 1] * _double10[i] - double14[num2 + 1] * _double11[i];
                 _double7[i] = -1.0 * (double14[num2 + 1] * _double10[i] + double14[num + 1] * _double11[i]);
             }
-            for (var j = 0; j < 64; j++)
+            for (int j = 0; j < 64; j++)
             {
-                var num3 = Int1[j];
+                int num3 = Int1[j];
                 if (num3 < j)
                 {
                     method_1(_double4, _double5, j, num3);
                     method_1(_double6, _double7, j, num3);
                 }
             }
-            for (var k = 0; k < 6; k++)
+            for (int k = 0; k < 6; k++)
             {
-                var num4 = 1 << k;
-                var num5 = 1 << k + 1;
+                int num4 = 1 << k;
+                int num5 = 1 << k + 1;
                 if (k != 0)
                 {
                     num4 = 1 << k;
@@ -623,16 +623,16 @@ namespace GHNamespaceJ
                 {
                     num4 = 1;
                 }
-                for (var l = 0; l < num4; l++)
+                for (int l = 0; l < num4; l++)
                 {
-                    for (var m = 0; m < 64; m += num5)
+                    for (int m = 0; m < 64; m += num5)
                     {
-                        var num6 = l + m;
-                        var num7 = num6 + num4;
-                        var num8 = _double4[num6];
-                        var num9 = _double5[num6];
-                        var num10 = _double4[num7] * _double12[k][l] - _double5[num7] * _double13[k][l];
-                        var num11 = _double5[num7] * _double12[k][l] + _double4[num7] * _double13[k][l];
+                        int num6 = l + m;
+                        int num7 = num6 + num4;
+                        double num8 = _double4[num6];
+                        double num9 = _double5[num6];
+                        double num10 = _double4[num7] * _double12[k][l] - _double5[num7] * _double13[k][l];
+                        double num11 = _double5[num7] * _double12[k][l] + _double4[num7] * _double13[k][l];
                         _double4[num6] = num8 + num10;
                         _double5[num6] = num9 + num11;
                         _double4[num7] = num8 - num10;
@@ -648,10 +648,10 @@ namespace GHNamespaceJ
                     }
                 }
             }
-            for (var n = 0; n < 64; n++)
+            for (int n = 0; n < 64; n++)
             {
-                var num8 = _double4[n];
-                var num9 = -_double5[n];
+                double num8 = _double4[n];
+                double num9 = -_double5[n];
                 _double4[n] = num8 * _double10[n] - num9 * _double11[n];
                 _double5[n] = num8 * _double11[n] + num9 * _double10[n];
                 num8 = _double6[n];
@@ -659,26 +659,26 @@ namespace GHNamespaceJ
                 _double6[n] = num8 * _double10[n] - num9 * _double11[n];
                 _double7[n] = num8 * _double11[n] + num9 * _double10[n];
             }
-            var num12 = int2;
-            var num13 = int3;
-            var num14 = 0;
-            for (var num15 = 0; num15 < 64; num15++)
+            int num12 = int2;
+            int num13 = int3;
+            int num14 = 0;
+            for (int num15 = 0; num15 < 64; num15++)
             {
                 double14[num12++] = -_double5[num15] * Double1[num14++] + double14[num13++] + double15;
                 double14[num12++] = _double4[64 - num15 - 1] * Double1[num14++] + double14[num13++] + double15;
             }
-            for (var num16 = 0; num16 < 64; num16++)
+            for (int num16 = 0; num16 < 64; num16++)
             {
                 double14[num12++] = -_double4[num16] * Double1[num14++] + double14[num13++] + double15;
                 double14[num12++] = _double5[64 - num16 - 1] * Double1[num14++] + double14[num13++] + double15;
             }
             num13 = int3;
-            for (var num17 = 0; num17 < 64; num17++)
+            for (int num17 = 0; num17 < 64; num17++)
             {
                 double14[num13++] = -_double6[num17] * Double1[--num14];
                 double14[num13++] = _double7[64 - num17 - 1] * Double1[--num14];
             }
-            for (var num18 = 0; num18 < 64; num18++)
+            for (int num18 = 0; num18 < 64; num18++)
             {
                 double14[num13++] = _double7[num18] * Double1[--num14];
                 double14[num13++] = -_double6[64 - num18 - 1] * Double1[--num14];
@@ -688,20 +688,20 @@ namespace GHNamespaceJ
         public Class110()
         {
             method_0();
-            for (var i = 0; i < 128; i++)
+            for (int i = 0; i < 128; i++)
             {
                 _double8[i] = -Math.Cos(0.0015339807878856412 * (8 * i + 1));
                 _double9[i] = -Math.Sin(0.0015339807878856412 * (8 * i + 1));
             }
-            for (var i = 0; i < 64; i++)
+            for (int i = 0; i < 64; i++)
             {
                 _double10[i] = -Math.Cos(0.0030679615757712823 * (8 * i + 1));
                 _double11[i] = -Math.Sin(0.0030679615757712823 * (8 * i + 1));
             }
-            for (var i = 0; i < 7; i++)
+            for (int i = 0; i < 7; i++)
             {
-                var num = 1 << i;
-                for (var j = 0; j < num; j++)
+                int num = 1 << i;
+                for (int j = 0; j < num; j++)
                 {
                     _double12[i][j] = Math.Cos(-3.1415926535897931 * j / num);
                     _double13[i][j] = Math.Sin(-3.1415926535897931 * j / num);
@@ -715,13 +715,13 @@ namespace GHNamespaceJ
             {
                 int2 = 2;
             }
-            var num = 0;
-            var array = new byte[int2 * 256 * 2];
-            for (var i = 0; i < 256; i++)
+            int num = 0;
+            byte[] array = new byte[int2 * 256 * 2];
+            for (int i = 0; i < 256; i++)
             {
-                for (var j = 0; j < int2; j++)
+                for (int j = 0; j < int2; j++)
                 {
-                    var num2 = (int) (Double0 * double14[i + 256 * j + 256]);
+                    int num2 = (int) (Double0 * double14[i + 256 * j + 256]);
                     if (num2 > 32767)
                     {
                         num2 = 32767;

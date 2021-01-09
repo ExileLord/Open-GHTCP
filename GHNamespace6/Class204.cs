@@ -16,11 +16,11 @@ namespace GHNamespace6
 
         private long _long0;
 
-        private DateTime _dateTime1;
+        private readonly DateTime _dateTime1;
 
-        private int _int3;
+        private readonly int _int3;
 
-        private byte _byte0;
+        private readonly byte _byte0;
 
         private string _string1;
 
@@ -32,9 +32,9 @@ namespace GHNamespace6
 
         private string _string5;
 
-        private int _int4;
+        private readonly int _int4;
 
-        private int _int5;
+        private readonly int _int5;
 
         public static string String6 = "None";
 
@@ -66,11 +66,7 @@ namespace GHNamespace6
 
         public void method_1(string string9)
         {
-            if (string9 == null)
-            {
-                throw new ArgumentNullException("value");
-            }
-            _string0 = string9;
+            _string0 = string9 ?? throw new ArgumentNullException("value");
         }
 
         public int method_2()
@@ -129,11 +125,7 @@ namespace GHNamespace6
 
         public void method_12(string string9)
         {
-            if (string9 == null)
-            {
-                throw new ArgumentNullException("value");
-            }
-            _string1 = string9;
+            _string1 = string9 ?? throw new ArgumentNullException("value");
         }
 
         public string method_13()
@@ -143,11 +135,7 @@ namespace GHNamespace6
 
         public void method_14(string string9)
         {
-            if (string9 == null)
-            {
-                throw new ArgumentNullException("value");
-            }
-            _string2 = string9;
+            _string2 = string9 ?? throw new ArgumentNullException("value");
         }
 
         public string method_15()
@@ -157,11 +145,7 @@ namespace GHNamespace6
 
         public void method_16(string string9)
         {
-            if (string9 == null)
-            {
-                throw new ArgumentNullException("value");
-            }
-            _string3 = string9;
+            _string3 = string9 ?? throw new ArgumentNullException("value");
         }
 
         public string method_17()
@@ -176,7 +160,7 @@ namespace GHNamespace6
                 _string4 = string9.Substring(0, Math.Min(32, string9.Length));
                 return;
             }
-            var text = Environment.UserName;
+            string text = Environment.UserName;
             if (text.Length > 32)
             {
                 text = text.Substring(0, 32);
@@ -221,8 +205,7 @@ namespace GHNamespace6
 
         public override bool Equals(object obj)
         {
-            var @class = obj as Class204;
-            return @class != null && (_string0 == @class._string0 && _int0 == @class._int0 &&
+            return obj is Class204 @class && (_string0 == @class._string0 && _int0 == @class._int0 &&
                                       method_2() == @class.method_2() && method_4() == @class.method_4() &&
                                       method_6() == @class.method_6() && method_8() == @class.method_8() &&
                                       method_9() == @class.method_9() && method_10() == @class.method_10() &&

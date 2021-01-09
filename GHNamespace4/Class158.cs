@@ -88,8 +88,8 @@ namespace GHNamespace4
             int num;
             lock (_stream10)
             {
-                var arg390 = _stream10;
-                var arg391 = _struct660.Intptr0;
+                GenericAudioStream arg390 = _stream10;
+                IntPtr arg391 = _struct660.Intptr0;
                 int int_;
                 _class170.method_4(int_ = _class170.method_0().Length);
                 num = arg390.vmethod_3(arg391, int_);

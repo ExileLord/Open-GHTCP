@@ -47,8 +47,8 @@ namespace GHNamespaceM
                     break;
                 default:
                 {
-                    var list = new List<GenericAudioStream>();
-                    foreach (var current in class1670.method_33())
+                        List<GenericAudioStream> list = new List<GenericAudioStream>();
+                    foreach (Class168 current in class1670.method_33())
                     {
                         list.Add(smethod_0(current));
                     }
@@ -61,10 +61,10 @@ namespace GHNamespaceM
 
         private static GenericAudioStream smethod_0(Class168 class1680)
         {
-            var flag = (class1680.Enum220 & FsbFlags2.Flag19) != FsbFlags2.Flag0;
-            var stream = class1680.Stream1;
-            var position = stream.Position;
-            var array = new byte[4];
+            bool flag = (class1680.Enum220 & FsbFlags2.Flag19) != FsbFlags2.Flag0;
+            Stream stream = class1680.Stream1;
+            long position = stream.Position;
+            byte[] array = new byte[4];
             stream.Read(array, 0, 4);
             stream.Position = position;
             if (array[0] == 255 && array[1] >= 240)

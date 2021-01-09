@@ -58,8 +58,8 @@ namespace GHNamespace5
 
         public override int ReadByte()
         {
-            var array = new byte[1];
-            var num = Read(array, 0, 1);
+            byte[] array = new byte[1];
+            int num = Read(array, 0, 1);
             if (num <= 0)
             {
                 return -1;
@@ -73,7 +73,7 @@ namespace GHNamespace5
             {
                 throw new ArgumentNullException("buffer");
             }
-            var num = 0;
+            int num = 0;
             if (Long1 >= Long0)
             {
                 return 0;
@@ -85,7 +85,7 @@ namespace GHNamespace5
             }
             if (Byte0 != null)
             {
-                var num3 = (num2 > (long) Byte0.Length) ? Byte0.Length : ((int) num2);
+                int num3 = (num2 > (long) Byte0.Length) ? Byte0.Length : ((int) num2);
                 Array.Copy(Byte0, 0, buffer, offset, num3);
                 if (num3 >= Byte0.Length)
                 {
@@ -93,8 +93,8 @@ namespace GHNamespace5
                 }
                 else
                 {
-                    var num4 = Byte0.Length - num3;
-                    var destinationArray = new byte[num4];
+                    int num4 = Byte0.Length - num3;
+                    byte[] destinationArray = new byte[num4];
                     Array.Copy(Byte0, num3, destinationArray, 0, num4);
                     Byte0 = destinationArray;
                 }
@@ -104,13 +104,13 @@ namespace GHNamespace5
             }
             while (num2 > 0L)
             {
-                var array = Class2060.method_2();
+                byte[] array = Class2060.method_2();
                 if (array == null)
                 {
                     throw new TarException("unexpected EOF with " + num2 + " bytes unread");
                 }
-                var num5 = (int) num2;
-                var num6 = array.Length;
+                int num5 = (int) num2;
+                int num6 = array.Length;
                 if (num6 > num5)
                 {
                     Array.Copy(array, 0, buffer, offset, num5);

@@ -26,23 +26,22 @@ namespace GHNamespaceB
 
         public List<T> method_8<T>()
         {
-            var list = new List<T>();
+            List<T> list = new List<T>();
             if (Nodes[0] is AbstractTreeNode1)
             {
-                var enumerator = Nodes.GetEnumerator();
+                System.Collections.IEnumerator enumerator = Nodes.GetEnumerator();
                 try
                 {
                     while (enumerator.MoveNext())
                     {
-                        var item = (T) enumerator.Current;
+                        T item = (T) enumerator.Current;
                         list.Add(item);
                     }
                     return list;
                 }
                 finally
                 {
-                    var disposable = enumerator as IDisposable;
-                    if (disposable != null)
+                    if (enumerator is IDisposable disposable)
                     {
                         disposable.Dispose();
                     }

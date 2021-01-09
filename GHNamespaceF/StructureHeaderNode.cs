@@ -33,11 +33,11 @@ namespace GHNamespaceF
 
         public override void vmethod_13(Stream26 stream260)
         {
-            var num = stream260.ReadInt();
+            int num = stream260.ReadInt();
             if (num != 0)
             {
                 stream260.Position = num;
-                var @class = method_11(stream260.ReadInt());
+                AbstractTreeNode1 @class = method_11(stream260.ReadInt());
                 Nodes.Add(@class);
                 @class.method_4(stream260);
             }
@@ -45,7 +45,7 @@ namespace GHNamespaceF
 
         public override void vmethod_14(Stream26 stream260)
         {
-            var array = new byte[4];
+            byte[] array = new byte[4];
             array[2] = 1;
             stream260.WriteByteArray(array, false);
             if (Nodes.Count != 0)
@@ -68,9 +68,9 @@ namespace GHNamespaceF
             {
                 return new StructureHeaderNode();
             }
-            var num = int0 >> 16 & 255;
-            var num2 = int0 >> 8 & 255;
-            var ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32Bit(int0));
+            int num = int0 >> 16 & 255;
+            int num2 = int0 >> 8 & 255;
+            Exception ex = new Exception("No QB Node class found for : " + KeyGenerator.ValToHex32Bit(int0));
             if (num == 1)
             {
                 vmethod_9(true);

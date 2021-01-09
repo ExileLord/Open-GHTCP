@@ -28,7 +28,7 @@ namespace GHNamespaceL
             if (Byte2 > 0)
             {
                 Class1480 = new Class148[Byte2];
-                for (var i = 0; i < (int) Byte2; i++)
+                for (int i = 0; i < (int) Byte2; i++)
                 {
                     Class1480[i] = new Class148(class1440);
                 }

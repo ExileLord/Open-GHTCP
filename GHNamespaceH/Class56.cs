@@ -62,15 +62,15 @@ namespace GHNamespaceH
             }
             else
             {
-                for (var i = 0; i < _byte0.Length; i++)
+                for (int i = 0; i < _byte0.Length; i++)
                 {
                     _byte0[i] = 0;
                 }
-                for (var j = 0; j < _int3.Length; j++)
+                for (int j = 0; j < _int3.Length; j++)
                 {
                     _int3[j] = 0;
                 }
-                for (var k = 0; k < _long0.Length; k++)
+                for (int k = 0; k < _long0.Length; k++)
                 {
                     _long0[k] = 0L;
                 }
@@ -90,7 +90,7 @@ namespace GHNamespaceH
             if (_int0 <= _int1 + int13)
             {
                 _int0 += int13 + 1024;
-                var dst = new byte[_int0];
+                byte[] dst = new byte[_int0];
                 Buffer.BlockCopy(_byte0, 0, dst, 0, _byte0.Length);
                 _byte0 = dst;
             }
@@ -101,10 +101,10 @@ namespace GHNamespaceH
             if (_int4 <= _int5 + int13)
             {
                 _int4 += int13 + 32;
-                var dst = new int[_int4];
+                int[] dst = new int[_int4];
                 Buffer.BlockCopy(_int3, 0, dst, 0, _int3.Length << 2);
                 _int3 = dst;
-                var dst2 = new long[_int4];
+                long[] dst2 = new long[_int4];
                 Buffer.BlockCopy(_long0, 0, dst2, 0, _long0.Length << 3);
                 _long0 = dst2;
             }
@@ -112,7 +112,7 @@ namespace GHNamespaceH
 
         public int method_5(Class67 class670)
         {
-            var num = _int7;
+            int num = _int7;
             if (_int6 <= num)
             {
                 return 0;
@@ -123,15 +123,15 @@ namespace GHNamespaceH
                 _long1 += 1L;
                 return -1;
             }
-            var num2 = _int3[num] & 255;
+            int num2 = _int3[num] & 255;
             class670.Byte0 = _byte0;
             class670.Int0 = _int2;
             class670.Int3 = (_int3[num] & 512);
             class670.Int2 = (_int3[num] & 256);
-            var num3 = 0 + num2;
+            int num3 = 0 + num2;
             while (num2 == 255)
             {
-                var num4 = _int3[++num];
+                int num4 = _int3[++num];
                 num2 = (num4 & 255);
                 if ((num4 & 512) != 0)
                 {
@@ -150,22 +150,22 @@ namespace GHNamespaceH
 
         public bool method_6(Class48 class480)
         {
-            var array = class480.Byte0;
-            var num = class480.Int0;
-            var src = class480.Byte1;
-            var num2 = class480.Int2;
-            var num3 = class480.Int3;
-            var i = 0;
-            var num4 = class480.method_0();
-            var num5 = class480.method_1();
-            var num6 = class480.method_2();
-            var num7 = class480.method_3();
-            var num8 = class480.method_4();
-            var num9 = class480.method_5();
-            var num10 = class480.method_6();
-            var num11 = array[num + 26] & 255;
-            var num12 = _int7;
-            var num13 = _int2;
+            byte[] array = class480.Byte0;
+            int num = class480.Int0;
+            byte[] src = class480.Byte1;
+            int num2 = class480.Int2;
+            int num3 = class480.Int3;
+            int i = 0;
+            int num4 = class480.method_0();
+            int num5 = class480.method_1();
+            int num6 = class480.method_2();
+            int num7 = class480.method_3();
+            long num8 = class480.method_4();
+            int num9 = class480.method_5();
+            int num10 = class480.method_6();
+            int num11 = array[num + 26] & 255;
+            int num12 = _int7;
+            int num13 = _int2;
             if (num13 != 0)
             {
                 _int1 -= num13;
@@ -197,7 +197,7 @@ namespace GHNamespaceH
             method_4(num11 + 1);
             if (num10 != _int12)
             {
-                for (var j = _int6; j < _int5; j++)
+                for (int j = _int6; j < _int5; j++)
                 {
                     _int1 -= (_int3[j] & 255);
                 }
@@ -212,7 +212,7 @@ namespace GHNamespaceH
                     num6 = 0;
                     while (i < num11)
                     {
-                        var num14 = array[num + 27 + i] & 255;
+                        int num14 = array[num + 27 + i] & 255;
                         num2 += num14;
                         num3 -= num14;
                         if (num14 < 255)
@@ -230,10 +230,10 @@ namespace GHNamespaceH
                 Buffer.BlockCopy(src, num2, _byte0, _int1, num3);
                 _int1 += num3;
             }
-            var num15 = -1;
+            int num15 = -1;
             while (i < num11)
             {
-                var num16 = array[num + 27 + i] & 255;
+                int num16 = array[num + 27 + i] & 255;
                 _int3[_int5] = num16;
                 _long0[_int5] = -1L;
                 if (num6 != 0)

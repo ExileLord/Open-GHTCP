@@ -13,7 +13,7 @@ namespace GHNamespaceL
 
         public Class129(Class144 class1440, int int1, bool bool1) : base(bool1)
         {
-            var num = class1440.vmethod_14();
+            int num = class1440.vmethod_14();
             Byte0 = new byte[num];
             class1440.vmethod_15(Byte0, Byte0.Length);
             Int0 = class1440.vmethod_14();
@@ -21,7 +21,7 @@ namespace GHNamespaceL
             {
                 Class1460 = new Class146[Int0];
             }
-            for (var i = 0; i < Int0; i++)
+            for (int i = 0; i < Int0; i++)
             {
                 Class1460[i] = new Class146(class1440);
             }
@@ -29,9 +29,9 @@ namespace GHNamespaceL
 
         public override string ToString()
         {
-            var stringBuilder = new StringBuilder("VendorString '" + Byte0 + "'\n");
+            StringBuilder stringBuilder = new StringBuilder("VendorString '" + Byte0 + "'\n");
             stringBuilder.Append("VorbisComment (count=" + Int0 + ")");
-            for (var i = 0; i < Int0; i++)
+            for (int i = 0; i < Int0; i++)
             {
                 stringBuilder.Append("\n\t" + Class1460[i]);
             }

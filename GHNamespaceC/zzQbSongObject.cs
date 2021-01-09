@@ -22,7 +22,7 @@ namespace GHNamespaceC
         public ZzQbSongObject(string newFileName, byte[] newData)
         {
             Data = newData;
-            var list = new List<byte>(Data);
+            List<byte> list = new List<byte>(Data);
             FileName = newFileName;
             String1 = new string[KeyGenerator.smethod_24(list.GetRange(0, 4).ToArray(), true)];
             Int0 = KeyGenerator.smethod_24(list.GetRange(4, 4).ToArray(), true);
@@ -36,17 +36,17 @@ namespace GHNamespaceC
                 FileName + "_coop_guitar",
                 FileName + "_coop_rhythm"
             };
-            var list2 = new List<int>();
-            var array2 = array;
-            for (var i = 0; i < array2.Length; i++)
+            List<int> list2 = new List<int>();
+            string[] array2 = array;
+            for (int i = 0; i < array2.Length; i++)
             {
-                var text = array2[i];
+                string text = array2[i];
                 list2.Add(KeyGenerator.GetQbKey(text, true));
             }
-            var num = 8;
-            for (var j = 0; j < String1.Length; j++)
+            int num = 8;
+            for (int j = 0; j < String1.Length; j++)
             {
-                var num2 = KeyGenerator.smethod_24(list.GetRange(num, 4).ToArray(), true);
+                int num2 = KeyGenerator.smethod_24(list.GetRange(num, 4).ToArray(), true);
                 if (!list2.Contains(num2))
                 {
                     throw new Exception(string.Concat("Dat File Corrupted: unperdictable CRC value (", num2,
@@ -60,7 +60,7 @@ namespace GHNamespaceC
 
         public void method_0(string string2)
         {
-            for (var i = 0; i < String1.Length; i++)
+            for (int i = 0; i < String1.Length; i++)
             {
                 String1[i] = String1[i].Replace(FileName, string2);
             }
@@ -78,14 +78,14 @@ namespace GHNamespaceC
 
         public void method_1()
         {
-            var list = new List<byte>();
+            List<byte> list = new List<byte>();
             list.AddRange(KeyGenerator.smethod_32(String1.Length, true));
             list.AddRange(KeyGenerator.smethod_32(Int0, true));
-            for (var i = 0; i < String1.Length; i++)
+            for (int i = 0; i < String1.Length; i++)
             {
                 list.AddRange(KeyGenerator.smethod_32(KeyGenerator.GetQbKey(String1[i], true), true));
                 list.AddRange(KeyGenerator.smethod_32(i, true));
-                for (var j = 0; j < 12; j++)
+                for (int j = 0; j < 12; j++)
                 {
                     list.Add(0);
                 }

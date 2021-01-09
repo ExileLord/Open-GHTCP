@@ -35,7 +35,7 @@ namespace GHNamespace8
         private void InitializeComponent()
         {
             icontainer_0 = new Container();
-            var componentResourceManager = new ComponentResourceManager(typeof(Disclaimer));
+            ComponentResourceManager componentResourceManager = new ComponentResourceManager(typeof(Disclaimer));
             _richTextBox1 = new RichTextBox();
             _acceptBtn = new Button();
             _tableLayoutPanel1 = new TableLayoutPanel();

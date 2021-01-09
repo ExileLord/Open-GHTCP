@@ -11,7 +11,7 @@ namespace GHNamespaceI
 
         public void method_0(int int0, int int1)
         {
-            var num = 1 << int1 - 1;
+            int num = 1 << int1 - 1;
             do
             {
                 if ((_short0 & 32768) == 0 ^ (int0 & num) == 0)
@@ -28,7 +28,7 @@ namespace GHNamespaceI
 
         public short method_1()
         {
-            var result = _short0;
+            short result = _short0;
             _short0 = -1;
             return result;
         }

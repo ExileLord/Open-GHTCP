@@ -28,7 +28,7 @@ namespace GHNamespaceJ
             }
             if (_byte0.Length - _int1 / 8 < int3 + 8)
             {
-                var dst = new byte[(_byte0.Length + int3) * 2];
+                byte[] dst = new byte[(_byte0.Length + int3) * 2];
                 Buffer.BlockCopy(_byte0, 0, dst, 0, _int1 / 8);
                 Buffer.BlockCopy(byte1, int2, dst, _int1 / 8, int3);
                 _byte0 = dst;
@@ -59,7 +59,7 @@ namespace GHNamespaceJ
 
         public int method_2(int int2)
         {
-            var num = _int0 >> 3;
+            int num = _int0 >> 3;
             int num2 = _byte0[num++];
             int i;
             for (i = int2 - (8 - (_int0 & 7)); i > 0; i -= 8)
@@ -77,7 +77,7 @@ namespace GHNamespaceJ
 
         public int method_3(int int2)
         {
-            var num = _int0 >> 3;
+            int num = _int0 >> 3;
             int num2 = _byte0[num++];
             int i;
             for (i = int2 - (8 - (_int0 & 7)); i > 0; i -= 8)

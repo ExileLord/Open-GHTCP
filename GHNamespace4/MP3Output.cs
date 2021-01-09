@@ -71,7 +71,7 @@ namespace GHNamespace4
 
         public void SetStartingTimeBasedOnSomeValue(int int1)
         {
-            var @enum = _enum10;
+            AudioStatus @enum = _enum10;
             if (@enum != AudioStatus.ShouldStopAudio)
             {
                 StopPlaying();
@@ -178,7 +178,7 @@ namespace GHNamespace4
             {
                 lock (_stream10)
                 {
-                    var num = _stream10.vmethod_3(intptr0, int1);
+                    int num = _stream10.vmethod_3(intptr0, int1);
                     if (num < int1)
                     {
                         bool1 = true;
@@ -224,7 +224,7 @@ namespace GHNamespace4
         [CompilerGenerated]
         private void method_2(object object0)
         {
-            var num = vmethod_1();
+            float num = vmethod_1();
             while (num < _volume)
             {
                 if (_enum10 != AudioStatus.ShouldStartAudio)

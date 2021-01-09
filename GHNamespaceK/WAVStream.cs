@@ -47,14 +47,14 @@ namespace GHNamespaceK
 
         private static string smethod_0(BinaryReader binaryReader0)
         {
-            var array = new byte[4];
+            byte[] array = new byte[4];
             binaryReader0.Read(array, 0, array.Length);
             return Encoding.UTF8.GetString(array);
         }
 
         private void method_0()
         {
-            var binaryReader = new BinaryReader(FileStream, Encoding.UTF8);
+            BinaryReader binaryReader = new BinaryReader(FileStream, Encoding.UTF8);
             if (smethod_0(binaryReader) != "RIFF")
             {
                 throw new Exception("Invalid file format (No Tag RIFF)");
@@ -68,18 +68,20 @@ namespace GHNamespaceK
             {
                 throw new Exception("Invalid file format (No Tag fmt)");
             }
-            var num = binaryReader.ReadInt32();
+            int num = binaryReader.ReadInt32();
             if (num < 16)
             {
                 throw new Exception("Invalid file format (Size of fmt different of 16)");
             }
-            WaveFormat0 = new WaveFormat(22050, 16, 2);
-            WaveFormat0.waveFormatTag_0 = (WaveFormatTag) binaryReader.ReadInt16();
-            WaveFormat0.short_0 = binaryReader.ReadInt16();
-            WaveFormat0.int_0 = binaryReader.ReadInt32();
-            WaveFormat0.int_1 = binaryReader.ReadInt32();
-            WaveFormat0.short_1 = binaryReader.ReadInt16();
-            WaveFormat0.short_2 = binaryReader.ReadInt16();
+            WaveFormat0 = new WaveFormat(22050, 16, 2)
+            {
+                waveFormatTag_0 = (WaveFormatTag)binaryReader.ReadInt16(),
+                short_0 = binaryReader.ReadInt16(),
+                int_0 = binaryReader.ReadInt32(),
+                int_1 = binaryReader.ReadInt32(),
+                short_1 = binaryReader.ReadInt16(),
+                short_2 = binaryReader.ReadInt16()
+            };
             if (num > 16)
             {
                 FileStream.Position += num - 16;

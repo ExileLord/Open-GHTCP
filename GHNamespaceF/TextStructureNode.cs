@@ -38,10 +38,10 @@ namespace GHNamespaceF
         {
             Int0 = stream260.ReadInt();
             Nodes.Add(new TextValueNode(stream260.ReadInt(), vmethod_10()));
-            var num = stream260.ReadInt();
+            int num = stream260.ReadInt();
             if (num != 0)
             {
-                var @class = (Parent is StructureHeaderNode)
+                AbstractTreeNode1 @class = (Parent is StructureHeaderNode)
                     ? (Parent as StructureHeaderNode).method_11(stream260.ReadIntAt(num))
                     : vmethod_12(stream260.ReadIntAt(num, true));
                 method_1().Nodes.Add(@class);
@@ -52,7 +52,7 @@ namespace GHNamespaceF
         public override void vmethod_14(Stream26 stream260)
         {
             vmethod_9(true);
-            var array = new byte[4];
+            byte[] array = new byte[4];
             array[1] = 1;
             array[2] = 28;
             stream260.WriteByteArray(array, false);

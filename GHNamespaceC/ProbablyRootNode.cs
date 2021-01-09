@@ -12,11 +12,11 @@ namespace GHNamespaceC
         {
             Int0 = stream260.ReadInt();
             Int1 = stream260.ReadInt();
-            var num = stream260.ReadInt();
+            int num = stream260.ReadInt();
             stream260.ReadInt();
             if (num != 0)
             {
-                var @class = vmethod_12(stream260.ReadIntAt(num, true));
+                AbstractTreeNode1 @class = vmethod_12(stream260.ReadIntAt(num, true));
                 Nodes.Add(@class);
                 @class.method_4(stream260);
             }
@@ -24,7 +24,7 @@ namespace GHNamespaceC
 
         public override void vmethod_14(Stream26 stream260)
         {
-            var array = new byte[4];
+            byte[] array = new byte[4];
             array[1] = (vmethod_7() ? (byte) 32 : (byte) 4);
             array[2] = vmethod_16();
             stream260.WriteByteArray(array, false);

@@ -23,8 +23,8 @@ namespace GHNamespaceG
 
         public static string smethod_3(string string0, BinaryReader binaryReader0, string string1)
         {
-            var position = binaryReader0.BaseStream.Position;
-            var @string = Encoding.ASCII.GetString(binaryReader0.ReadBytes(string1.Length));
+            long position = binaryReader0.BaseStream.Position;
+            string @string = Encoding.ASCII.GetString(binaryReader0.ReadBytes(string1.Length));
             if (@string != string1)
             {
                 Console.WriteLine("Reading {0} at position {1}: expected {2}, found {3}", string0, position, string1,

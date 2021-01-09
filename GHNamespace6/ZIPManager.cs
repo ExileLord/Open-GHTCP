@@ -28,22 +28,22 @@ namespace GHNamespace6
         {
             if (compressionAmount >= 0 && compressionAmount <= 9)
             {
-                var @class = new Class192();
-                var stream = new Stream23(zipFile);
+                Class192 @class = new Class192();
+                Stream23 stream = new Stream23(zipFile);
                 stream.method_6(compressionAmount);
                 if (password != null)
                 {
                     stream.method_2(password);
                 }
-                var num = 0;
-                using (var enumerator = fileNameList.GetEnumerator())
+                int num = 0;
+                using (IEnumerator<string> enumerator = fileNameList.GetEnumerator())
                 {
                     while (enumerator.MoveNext())
                     {
-                        var current = enumerator.Current;
-                        var class2 = new Class193(current);
+                        string current = enumerator.Current;
+                        Class193 class2 = new Class193(current);
                         class2.method_19(DateTime.Now);
-                        var stream2 = fileStreamList[num++];
+                        Stream stream2 = fileStreamList[num++];
                         byte[] array;
                         if (stream2 is MemoryStream)
                         {
@@ -52,7 +52,7 @@ namespace GHNamespace6
                         else
                         {
                             array = new byte[stream2.Length];
-                            var num2 = stream2.Read(array, 0, array.Length);
+                            int num2 = stream2.Read(array, 0, array.Length);
                             if (num2 < array.Length)
                             {
                                 Array.Resize(ref array, num2);
@@ -92,14 +92,14 @@ namespace GHNamespace6
 
         public static byte[] smethod_6(Stream stream0, string string0)
         {
-            var memoryStream = new MemoryStream();
+            MemoryStream memoryStream = new MemoryStream();
             smethod_9(stream0, memoryStream, string0);
             return memoryStream.ToArray();
         }
 
         public static void ExtractBytes(Stream streamIn, out byte[] bytes, string fileName, string password)
         {
-            var memoryStream = new MemoryStream();
+            MemoryStream memoryStream = new MemoryStream();
             smethod_10(streamIn, memoryStream, fileName, password);
             bytes = memoryStream.ToArray();
         }
@@ -116,12 +116,12 @@ namespace GHNamespace6
 
         public static void smethod_10(Stream zipFile, Stream memoryStream, string fileName, string password)
         {
-            var zipManager = new ZipCompressor(zipFile);
+            ZipCompressor zipManager = new ZipCompressor(zipFile);
             if (password != null)
             {
                 zipManager.method_3(password);
             }
-            var buffer = new byte[2048];
+            byte[] buffer = new byte[2048];
             Class193 @class;
             while ((@class = zipManager.method_5()) != null)
             {
@@ -144,18 +144,18 @@ namespace GHNamespace6
         public static void smethod_11(string string0, List<string> list0, List<string> list1, string string1)
         {
             Stream stream = File.OpenRead(string0);
-            var stream2 = new ZipCompressor(stream);
+            ZipCompressor stream2 = new ZipCompressor(stream);
             if (string1 != null)
             {
                 stream2.method_3(string1);
             }
-            var array = new byte[2048];
+            byte[] array = new byte[2048];
             Class193 @class;
             while ((@class = stream2.method_5()) != null)
             {
                 if (list1.Contains(@class.method_20()))
                 {
-                    var index = list1.IndexOf(@class.method_20());
+                    int index = list1.IndexOf(@class.method_20());
                     using (Stream stream3 = File.Create(list0[index]))
                     {
                         if (stream3.CanWrite)

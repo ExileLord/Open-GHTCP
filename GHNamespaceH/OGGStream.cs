@@ -12,7 +12,7 @@ namespace GHNamespaceH
     {
         private static readonly int Int2 = 8500;
 
-        private static int _int3;
+        private static readonly int _int3;
 
         private static readonly int Int5 = 2;
 
@@ -112,7 +112,7 @@ namespace GHNamespaceH
             {
                 throw new Exception0("OggStream: " + ex.Message);
             }
-            var num = method_9(fileData, null, 0);
+            int num = method_9(fileData, null, 0);
             if (num == -1)
             {
                 throw new Exception0("OggStream: open return -1");
@@ -125,7 +125,7 @@ namespace GHNamespaceH
 
         public OggStream(Stream stream1, byte[] byte0, int int24) : this()
         {
-            var num = method_9(stream1, byte0, int24);
+            int num = method_9(stream1, byte0, int24);
             if (num == -1)
             {
                 throw new Exception0("OggStream: open return -1");
@@ -140,7 +140,7 @@ namespace GHNamespaceH
             }
             while (long6 <= 0L || _long0 < long6)
             {
-                var num = _class520.method_3(class480);
+                int num = _class520.method_3(class480);
                 if (num < 0)
                 {
                     _long0 -= num;
@@ -149,7 +149,7 @@ namespace GHNamespaceH
                 {
                     if (num != 0)
                     {
-                        var result = (int) _long0;
+                        int result = (int) _long0;
                         _long0 += num;
                         return result;
                     }
@@ -157,7 +157,7 @@ namespace GHNamespaceH
                     {
                         return Int6;
                     }
-                    var num2 = method_7();
+                    int num2 = method_7();
                     if (num2 == 0)
                     {
                         return Int7;
@@ -173,8 +173,8 @@ namespace GHNamespaceH
 
         private int method_1(Class48 class480)
         {
-            var num = _long0;
-            var num2 = -1;
+            long num = _long0;
+            int num2 = -1;
             int num3;
             while (num2 == -1)
             {
@@ -209,11 +209,11 @@ namespace GHNamespaceH
 
         private int method_2(OggClass5 oggClass5, Class47 class471, int[] int24, Class48 class480)
         {
-            var @class = new Class48();
-            var class67 = new Class67();
+            Class48 @class = new Class48();
+            Class67 class67 = new Class67();
             if (class480 == null)
             {
-                var num = method_0(@class, Int2);
+                int num = method_0(@class, Int2);
                 if (num == Int9)
                 {
                     return Int9;
@@ -231,13 +231,13 @@ namespace GHNamespaceH
             _class560.method_1(class480.method_5());
             oggClass5.method_0();
             class471.method_0();
-            var i = 0;
+            int i = 0;
             while (i < 3)
             {
                 _class560.method_6(class480);
                 while (i < 3)
                 {
-                    var num2 = _class560.method_5(class67);
+                    int num2 = _class560.method_5(class67);
                     if (num2 == 0)
                     {
                         break;
@@ -274,13 +274,13 @@ namespace GHNamespaceH
 
         private void method_3(OggClass5 class491, Class47 class471, int int24)
         {
-            var @class = new Class48();
+            Class48 @class = new Class48();
             _oggClass5 = new OggClass5[_int20];
             _class470 = new Class47[_int20];
             _long2 = new long[_int20];
             _long3 = new long[_int20];
             _int21 = new int[_int20];
-            var i = 0;
+            int i = 0;
             while (i < _int20)
             {
                 if (class491 != null && class471 != null && i == 0)
@@ -303,12 +303,12 @@ namespace GHNamespaceH
                         _class560.method_2();
                     }
                 }
-                var long_ = _long1[i + 1];
+                long long_ = _long1[i + 1];
                 method_8(long_);
                 long num2;
                 while (true)
                 {
-                    var num = method_1(@class);
+                    int num = method_1(@class);
                     if (num == -1)
                     {
                         goto Block_6;
@@ -358,7 +358,7 @@ namespace GHNamespaceH
 
         private int method_6(int int24)
         {
-            var @class = new Class48();
+            Class48 @class = new Class48();
             Class67 class2;
             long num2;
             while (true)
@@ -366,7 +366,7 @@ namespace GHNamespaceH
                 if (_bool1)
                 {
                     class2 = new Class67();
-                    var num = _class560.method_5(class2);
+                    int num = _class560.method_5(class2);
                     if (num > 0)
                     {
                         num2 = class2.Long0;
@@ -394,7 +394,7 @@ namespace GHNamespaceH
                     if (_bool0)
                     {
                         _int22 = @class.method_5();
-                        var num3 = 0;
+                        int num3 = 0;
                         while (num3 < _int20 && _int21[num3] != _int22)
                         {
                             num3++;
@@ -409,8 +409,8 @@ namespace GHNamespaceH
                     }
                     else
                     {
-                        var array = new int[1];
-                        var num4 = method_2(_oggClass5[0], _class470[0], array, @class);
+                        int[] array = new int[1];
+                        int num4 = method_2(_oggClass5[0], _class470[0], array, @class);
                         _int22 = array[0];
                         if (num4 != 0)
                         {
@@ -424,16 +424,16 @@ namespace GHNamespaceH
             }
             return -1;
             Block_11:
-            var num5 = _oggClass1.method_3();
+            int num5 = _oggClass1.method_3();
             _oggClass1.method_2(_oggClass6);
             _float1 += _oggClass1.method_3() - num5;
             _float0 += class2.Int1 * 8;
             if (num2 != -1L && class2.Int3 == 0)
             {
-                var num6 = _bool0 ? _int23 : 0;
-                var num7 = _oggClass1.method_3();
+                int num6 = _bool0 ? _int23 : 0;
+                int num7 = _oggClass1.method_3();
                 num2 -= num7;
-                for (var i = 0; i < num6; i++)
+                for (int i = 0; i < num6; i++)
                 {
                     num2 += _long3[i];
                 }
@@ -503,9 +503,9 @@ namespace GHNamespaceH
 
         private int method_7()
         {
-            var offset = _class520.method_1(Int2);
-            var byte_ = _class520.Byte0;
-            var num = 0;
+            int offset = _class520.method_1(Int2);
+            byte[] byte_ = _class520.Byte0;
+            int num = 0;
             int result;
             try
             {
@@ -545,7 +545,7 @@ namespace GHNamespaceH
             _class520.method_5();
             if (nullArray != null)
             {
-                var dstOffset = _class520.method_1(zero);
+                int dstOffset = _class520.method_1(zero);
                 Buffer.BlockCopy(nullArray, 0, _class520.Byte0, dstOffset, zero);
                 _class520.method_2(zero);
             }
@@ -559,7 +559,7 @@ namespace GHNamespaceH
                 num = method_12();
             }
             //int num = stream_1.CanSeek ? this.method_11() : this.method_12();
-            var @class = method_21(-1);
+            OggClass5 @class = method_21(-1);
             WaveFormat0 = new WaveFormat(@class.Int9, @class.Int8);
             _double0 = WaveFormat0.int_0 * WaveFormat0.short_1 / (method_20(-1) / 8.0);
             _long5 = method_15(-1) * WaveFormat0.short_1;
@@ -577,13 +577,13 @@ namespace GHNamespaceH
 
         private int method_11()
         {
-            var oggClass5 = new OggClass5();
-            var class47 = new Class47();
-            var @class = new Class48();
-            var array = new int[1];
-            var num = method_2(oggClass5, class47, array, null);
-            var num2 = array[0];
-            var int_ = (int) _long0;
+            OggClass5 oggClass5 = new OggClass5();
+            Class47 class47 = new Class47();
+            Class48 @class = new Class48();
+            int[] array = new int[1];
+            int num = method_2(oggClass5, class47, array, null);
+            int num2 = array[0];
+            int int_ = (int) _long0;
             _class560.method_2();
             if (num == -1)
             {
@@ -592,7 +592,7 @@ namespace GHNamespaceH
             _bool0 = true;
             smethod_0(FileStream, 0L, Int5);
             _long0 = smethod_1(FileStream);
-            var num3 = _long0;
+            long num3 = _long0;
             num3 = method_1(@class);
             if (@class.method_5() != num2)
             {
@@ -618,7 +618,7 @@ namespace GHNamespaceH
             _oggClass5[0] = new OggClass5();
             _class470 = new Class47[_int20];
             _class470[0] = new Class47();
-            var array = new int[1];
+            int[] array = new int[1];
             if (method_2(_oggClass5[0], _class470[0], array, null) == -1)
             {
                 return -1;
@@ -630,9 +630,9 @@ namespace GHNamespaceH
 
         private int method_13(long long6, long long7, long long8, int int24, int int25)
         {
-            var num = long8;
-            var long9 = long8;
-            var @class = new Class48();
+            long num = long8;
+            long long9 = long8;
+            Class48 @class = new Class48();
             int num3;
             while (long7 < num)
             {
@@ -699,8 +699,8 @@ namespace GHNamespaceH
             }
             if (int24 < 0)
             {
-                var num = 0L;
-                for (var i = 0; i < _int20; i++)
+                long num = 0L;
+                for (int i = 0; i < _int20; i++)
                 {
                     num += method_14(i);
                 }
@@ -717,8 +717,8 @@ namespace GHNamespaceH
             }
             if (int24 < 0)
             {
-                var num = 0L;
-                for (var i = 0; i < _int20; i++)
+                long num = 0L;
+                for (int i = 0; i < _int20; i++)
                 {
                     num += method_15(i);
                 }
@@ -735,8 +735,8 @@ namespace GHNamespaceH
             }
             if (int24 < 0)
             {
-                var num = 0f;
-                for (var i = 0; i < _int20; i++)
+                float num = 0f;
+                for (int i = 0; i < _int20; i++)
                 {
                     num += method_16(i);
                 }
@@ -790,7 +790,7 @@ namespace GHNamespaceH
 
         public int method_18(long long6)
         {
-            var num = method_15(-1);
+            long num = method_15(-1);
             if (!_bool0)
             {
                 return -1;
@@ -810,11 +810,11 @@ namespace GHNamespaceH
                     break;
                 }
             }
-            var num2 = long6 - num;
-            var num3 = _long1[i + 1];
-            var num4 = _long1[i];
-            var int_ = (int) num4;
-            var @class = new Class48();
+            long num2 = long6 - num;
+            long num3 = _long1[i + 1];
+            long num4 = _long1[i];
+            int int_ = (int) num4;
+            Class48 @class = new Class48();
             while (num4 < num3)
             {
                 long num5;
@@ -827,14 +827,14 @@ namespace GHNamespaceH
                     num5 = (num3 + num4) / 2L;
                 }
                 method_8(num5);
-                var num6 = method_0(@class, num3 - num5);
+                int num6 = method_0(@class, num3 - num5);
                 if (num6 == -1)
                 {
                     num3 = num5;
                 }
                 else
                 {
-                    var num7 = @class.method_4();
+                    long num7 = @class.method_4();
                     if (num7 < num2)
                     {
                         int_ = num6;
@@ -866,8 +866,8 @@ namespace GHNamespaceH
             }
             while (_long4 < long6)
             {
-                var num8 = (int) (long6 - _long4);
-                var num9 = _oggClass1.method_3();
+                int num8 = (int) (long6 - _long4);
+                int num9 = _oggClass1.method_3();
                 if (num9 > num8)
                 {
                     num9 = num8;
@@ -903,8 +903,8 @@ namespace GHNamespaceH
             }
             if (int24 < 0)
             {
-                var num = 0L;
-                for (var i = 0; i < _int20; i++)
+                long num = 0L;
+                for (int i = 0; i < _int20; i++)
                 {
                     num += (_long1[i + 1] - _long2[i]) * 8L;
                 }
@@ -961,7 +961,7 @@ namespace GHNamespaceH
             _class560.method_2();
             if (_oggClass5 != null && _int20 != 0)
             {
-                for (var i = 0; i < _int20; i++)
+                for (int i = 0; i < _int20; i++)
                 {
                     _oggClass5[i].method_1();
                     _class470[i].method_2();
@@ -1027,8 +1027,8 @@ namespace GHNamespaceH
         public override int vmethod_3(IntPtr intptr0, int int24)
         {
             int24 >>= 2;
-            var source = new float[int24];
-            var num = vmethod_4(source, 0, int24);
+            float[] source = new float[int24];
+            int num = vmethod_4(source, 0, int24);
             if (num == 0)
             {
                 return 0;
@@ -1039,22 +1039,22 @@ namespace GHNamespaceH
 
         public override int Read(byte[] buffer, int offset, int count)
         {
-            var array = new float[count >> 2];
-            var num = vmethod_4(array, 0, array.Length) << 2;
+            float[] array = new float[count >> 2];
+            int num = vmethod_4(array, 0, array.Length) << 2;
             Buffer.BlockCopy(array, 0, buffer, offset, num);
             return num;
         }
 
         public override int vmethod_4(float[] float2, int int24, int int25)
         {
-            var num = int24;
-            var num2 = int24 + int25;
+            int num = int24;
+            int num2 = int24 + int25;
             int short_ = WaveFormat0.short_0;
             do
             {
                 if (_bool1)
                 {
-                    var num3 = _oggClass1.method_4(float2, num, num2);
+                    int num3 = _oggClass1.method_4(float2, num, num2);
                     if (num3 != 0)
                     {
                         _oggClass1.method_6(num3);
@@ -1072,17 +1072,17 @@ namespace GHNamespaceH
 
         public override float[][] vmethod_5(int int24)
         {
-            var array = new float[WaveFormat0.short_0][];
-            for (var i = 0; i < array.Length; i++)
+            float[][] array = new float[WaveFormat0.short_0][];
+            for (int i = 0; i < array.Length; i++)
             {
                 array[i] = new float[int24];
             }
-            var num = 0;
+            int num = 0;
             do
             {
                 if (_bool1)
                 {
-                    var num2 = _oggClass1.method_5(array, num, int24);
+                    int num2 = _oggClass1.method_5(array, num, int24);
                     if (num2 != 0)
                     {
                         num += num2;
@@ -1101,7 +1101,7 @@ namespace GHNamespaceH
             }
             if (num < int24)
             {
-                for (var j = 0; j < array.Length; j++)
+                for (int j = 0; j < array.Length; j++)
                 {
                     Array.Resize(ref array[j], num);
                 }

@@ -10,7 +10,7 @@ namespace GHNamespaceB
 
         public override void vmethod_13(Stream26 stream260)
         {
-            var num = stream260.ReadInt();
+            int num = stream260.ReadInt();
             if (num == 0)
             {
                 return;
@@ -21,7 +21,7 @@ namespace GHNamespaceB
             }
             if (this is FloatArrayNode)
             {
-                for (var i = 0; i < num; i++)
+                for (int i = 0; i < num; i++)
                 {
                     Nodes.Add(new FloatValueNode(stream260.ReadFloat()));
                 }
@@ -29,7 +29,7 @@ namespace GHNamespaceB
             }
             if (this is IntegerArrayNode)
             {
-                for (var j = 0; j < num; j++)
+                for (int j = 0; j < num; j++)
                 {
                     Nodes.Add(new IntegerValueNode(stream260.ReadInt()));
                 }
@@ -37,7 +37,7 @@ namespace GHNamespaceB
             }
             if (this is TagArray || this is FileTagArrayNode)
             {
-                for (var k = 0; k < num; k++)
+                for (int k = 0; k < num; k++)
                 {
                     Nodes.Add(new TagValueNode(stream260.ReadInt()));
                 }
@@ -46,7 +46,7 @@ namespace GHNamespaceB
 
         public override void vmethod_14(Stream26 stream260)
         {
-            var array = new byte[4];
+            byte[] array = new byte[4];
             array[1] = 1;
             array[2] = vmethod_15();
             stream260.WriteByteArray(array, false);

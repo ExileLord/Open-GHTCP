@@ -10,15 +10,15 @@ namespace GHNamespace2
 
         [FieldOffset(4)] private readonly byte[] byte_0;
 
-        [FieldOffset(4)] private float[] float_0;
+        [FieldOffset(4)] private readonly float[] float_0;
 
         [FieldOffset(4)] private short[] short_0;
 
-        [FieldOffset(4)] private int[] int_1;
+        [FieldOffset(4)] private readonly int[] int_1;
 
         public Class17(int int2)
         {
-            var num = int2 & 3;
+            int num = int2 & 3;
             int2 = ((num == 0) ? int2 : (int2 + 4 - num));
             byte_0 = new byte[int2];
             int_0 = 0;
@@ -76,7 +76,7 @@ namespace GHNamespace2
 
         private int method_9(string string0, int int2, int int3)
         {
-            var num = int2 << int3;
+            int num = int2 << int3;
             if ((num & 3) != 0)
             {
                 throw new ArgumentOutOfRangeException(string0,

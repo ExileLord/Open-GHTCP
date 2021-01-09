@@ -15,7 +15,7 @@ namespace GHNamespaceN
         public static MidiReader smethod_0(string fileLocation)
         {
             MidiReader result;
-            using (var fileStream = new FileStream(fileLocation, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            using (FileStream fileStream = new FileStream(fileLocation, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
                 result = new MidiReader(fileStream);
             }
@@ -48,29 +48,29 @@ namespace GHNamespaceN
 
         private void method_3(Stream midiStream)
         {
-            var midiFile = new BinaryReader(midiStream);
+            BinaryReader midiFile = new BinaryReader(midiStream);
             ByteFiddler.smethod_3("MIDI", midiFile, "MThd");
             ByteFiddler.RotateLeft(midiFile.ReadUInt32());
             ByteFiddler.RotateRight(midiFile.ReadUInt16());
             int num = ByteFiddler.RotateRight(midiFile.ReadUInt16());
             method_1(ByteFiddler.RotateRight(midiFile.ReadUInt16()));
             MidiLineList.Clear();
-            for (var i = 0; i < num; i++)
+            for (int i = 0; i < num; i++)
             {
-                var midiLine = new MidiLine(method_0());
+                MidiLine midiLine = new MidiLine(method_0());
                 MidiLineList.Add(midiLine);
-                var list = new List<AbstractNoteClass>();
+                List<AbstractNoteClass> list = new List<AbstractNoteClass>();
                 ByteFiddler.smethod_3("MIDI", midiFile, "MTrk");
-                var num2 = ByteFiddler.RotateLeft(midiFile.ReadUInt32());
-                var position = midiFile.BaseStream.Position;
-                var num3 = 0;
+                uint num2 = ByteFiddler.RotateLeft(midiFile.ReadUInt32());
+                long position = midiFile.BaseStream.Position;
+                int num3 = 0;
                 byte b = 0;
                 while (midiFile.BaseStream.Position < position + num2)
                 {
-                    var num4 = (int) method_4(midiFile);
+                    int num4 = (int) method_4(midiFile);
                     AbstractNoteClass midiNote = null;
                     num3 += num4;
-                    var b2 = midiFile.ReadByte();
+                    byte b2 = midiFile.ReadByte();
                     if (b2 != 255)
                     {
                         byte int_;
@@ -84,7 +84,7 @@ namespace GHNamespaceN
                             int_ = b2;
                             b2 = b;
                         }
-                        var b3 = (byte) (b2 >> 4);
+                        byte b3 = (byte) (b2 >> 4);
                         switch (b3)
                         {
                             case 8:
@@ -101,10 +101,10 @@ namespace GHNamespaceN
                         throw new NotImplementedException(string.Format("Unhandled MIDI command: {0} at position {1}",
                             b3.ToString("X"), midiFile.BaseStream.Position));
                     }
-                    var b4 = midiFile.ReadByte();
-                    var num5 = method_4(midiFile);
-                    var array = midiFile.ReadBytes((int) num5);
-                    var b5 = b4;
+                    byte b4 = midiFile.ReadByte();
+                    long num5 = method_4(midiFile);
+                    byte[] array = midiFile.ReadBytes((int) num5);
+                    byte b5 = b4;
                     if (b5 <= 47)
                     {
                         switch (b5)
@@ -116,7 +116,7 @@ namespace GHNamespaceN
                                 break;
                             case 3:
                             {
-                                var text = Encoding.ASCII.GetString(array).ToUpper();
+                                    string text = Encoding.ASCII.GetString(array).ToUpper();
                                 if (!string.IsNullOrEmpty(text))
                                 {
                                     midiLine.method_3(text);
@@ -151,7 +151,7 @@ namespace GHNamespaceN
                                 string.Format("Expected tempo event to have data length of 3, but found instead {0}",
                                     num5));
                         }
-                        var num6 = array[0] << 16;
+                        int num6 = array[0] << 16;
                         num6 |= array[1] << 8;
                         num6 |= array[2];
                         midiNote = new BpmNote1(num3, num6);
@@ -170,7 +170,7 @@ namespace GHNamespaceN
 
         private long method_4(BinaryReader binaryReader0)
         {
-            var num = 0L;
+            long num = 0L;
             byte b;
             do
             {

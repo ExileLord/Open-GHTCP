@@ -85,11 +85,11 @@ namespace GHNamespaceE
             {
                 return _int1;
             }
-            var num = 2;
+            int num = 2;
             if (Dictionary0.Count != 0)
             {
                 num = Dictionary0.Keys.Count * 12 + 1;
-                foreach (var current in Dictionary0.Keys)
+                foreach (int current in Dictionary0.Keys)
                 {
                     num += Dictionary0[current].Length;
                 }
@@ -179,12 +179,12 @@ namespace GHNamespaceE
 
         public byte[] imethod_16()
         {
-            var memoryStream = new MemoryStream();
-            using (var streamWriter = new StreamWriter(memoryStream, _encoding0))
+            MemoryStream memoryStream = new MemoryStream();
+            using (StreamWriter streamWriter = new StreamWriter(memoryStream, _encoding0))
             {
                 if (Dictionary0 != null && Dictionary0.Count != 0)
                 {
-                    foreach (var current in Dictionary0.Keys)
+                    foreach (int current in Dictionary0.Keys)
                     {
                         streamWriter.Write("{0} \"{1}\"\n", KeyGenerator.ValToHex32Bit(current), Dictionary0[current]);
                     }
@@ -201,14 +201,14 @@ namespace GHNamespaceE
         public void imethod_17(byte[] byte0)
         {
             Dictionary0 = new Dictionary<int, string>();
-            var streamReader = new StreamReader(new MemoryStream(byte0), _encoding0);
+            StreamReader streamReader = new StreamReader(new MemoryStream(byte0), _encoding0);
             _encoding0 = streamReader.CurrentEncoding;
             string text;
             while ((text = streamReader.ReadLine()) != null)
             {
                 if (!(text == ""))
                 {
-                    var array = text.Split(new[]
+                    string[] array = text.Split(new[]
                     {
                         ' '
                     }, 2, StringSplitOptions.RemoveEmptyEntries);
@@ -268,7 +268,7 @@ namespace GHNamespaceE
 
         public override object Clone()
         {
-            var @class = (Class328) base.Clone();
+            Class328 @class = (Class328) base.Clone();
             @class.imethod_1(_int0);
             @class.imethod_3(_int1);
             @class.imethod_5(_int2);

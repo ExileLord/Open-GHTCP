@@ -12,9 +12,9 @@ namespace GHNamespaceJ
 
         public double Double0;
 
-        private bool _bool0;
+        private readonly bool _bool0;
 
-        private int _int3;
+        private readonly int _int3;
 
         private readonly object _object0 = new object();
 
@@ -103,7 +103,7 @@ namespace GHNamespaceJ
             int result;
             lock (_object0)
             {
-                var num = 0;
+                int num = 0;
                 do
                 {
                     if (_memoryStream0.Position == _memoryStream0.Length)
@@ -127,7 +127,7 @@ namespace GHNamespaceJ
 
         public bool method_0()
         {
-            var array = new byte[1792];
+            byte[] array = new byte[1792];
             FileStream.Read(array, 0, 1792);
             _memoryStream0 = new MemoryStream();
             _class1110.vmethod_0(array, _memoryStream0);

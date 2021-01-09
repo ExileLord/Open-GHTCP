@@ -55,12 +55,12 @@ namespace GHNamespace2
             {
                 return float1[0];
             }
-            for (var i = 1; i < float0.Length; i++)
+            for (int i = 1; i < float0.Length; i++)
             {
                 if (float0[i] > float2)
                 {
-                    var num = float0[i] - float0[i - 1];
-                    var num2 = float1[i] - float1[i - 1];
+                    float num = float0[i] - float0[i - 1];
+                    float num2 = float1[i] - float1[i - 1];
                     return float1[i - 1] + (float2 - float0[i - 1]) / num * num2;
                 }
             }
@@ -69,8 +69,8 @@ namespace GHNamespace2
 
         public static float smethod_4(float[] float0, int int3, int int4)
         {
-            var num = 0f;
-            for (var i = 0; i < int4; i++)
+            float num = 0f;
+            for (int i = 0; i < int4; i++)
             {
                 num += float0[int3 + i] * float0[int3 + i];
             }
@@ -84,14 +84,14 @@ namespace GHNamespace2
 
         public static void smethod_6(float[] float0, int int3, int int4, float float1)
         {
-            var num = float0[int3];
-            for (var i = int3; i < int3 + int4; i++)
+            float num = float0[int3];
+            for (int i = int3; i < int3 + int4; i++)
             {
                 num = smethod_5(num, float0[i], float1);
                 float0[i] = num;
             }
             num = float0[int3 + int4 - 1];
-            for (var j = int3 + int4 - 1; j >= int3; j--)
+            for (int j = int3 + int4 - 1; j >= int3; j--)
             {
                 num = smethod_5(num, float0[j], float1);
                 float0[j] = num;
@@ -116,10 +116,10 @@ namespace GHNamespace2
 
         public static float smethod_9(float[] float0, int int3, int int4)
         {
-            var num = 0f;
-            for (var i = 0; i < int4; i++)
+            float num = 0f;
+            for (int i = 0; i < int4; i++)
             {
-                var num2 = Math.Abs(float0[int3 + i]);
+                float num2 = Math.Abs(float0[int3 + i]);
                 if (num2 > num)
                 {
                     num = num2;

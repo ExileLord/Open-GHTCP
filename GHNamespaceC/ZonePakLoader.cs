@@ -22,24 +22,24 @@ namespace GHNamespaceC
 
         public void method_0(Delegate8 delegate81)
         {
-            var @delegate = _delegate80;
+            Delegate8 @delegate = _delegate80;
             Delegate8 delegate2;
             do
             {
                 delegate2 = @delegate;
-                var value = (Delegate8) Delegate.Combine(delegate2, delegate81);
+                Delegate8 value = (Delegate8) Delegate.Combine(delegate2, delegate81);
                 @delegate = Interlocked.CompareExchange(ref _delegate80, value, delegate2);
             } while (@delegate != delegate2);
         }
 
         public void method_1(Delegate9 delegate91)
         {
-            var @delegate = _delegate90;
+            Delegate9 @delegate = _delegate90;
             Delegate9 delegate2;
             do
             {
                 delegate2 = @delegate;
-                var value = (Delegate9) Delegate.Combine(delegate2, delegate91);
+                Delegate9 value = (Delegate9) Delegate.Combine(delegate2, delegate91);
                 @delegate = Interlocked.CompareExchange(ref _delegate90, value, delegate2);
             } while (@delegate != delegate2);
         }
@@ -52,13 +52,13 @@ namespace GHNamespaceC
         public void method_2()
         {
             _delegate90(0, "*.tex.xen");
-            var treeNode = new TreeNode("Data");
-            var files = Directory.GetFiles(_dataDirectory.Remove(_dataDirectory.Length - 1), "*.tex.xen",
+            TreeNode treeNode = new TreeNode("Data");
+            string[] files = Directory.GetFiles(_dataDirectory.Remove(_dataDirectory.Length - 1), "*.tex.xen",
                 SearchOption.AllDirectories);
-            var array = files;
-            for (var i = 0; i < array.Length; i++)
+            string[] array = files;
+            for (int i = 0; i < array.Length; i++)
             {
-                var text = array[i];
+                string text = array[i];
                 method_3(treeNode, new List<string>(text.Substring(_dataDirectory.Length)
                         .Split(new[]
                         {
@@ -71,10 +71,10 @@ namespace GHNamespaceC
             _delegate90(1, "*.img.xen");
             files = Directory.GetFiles(_dataDirectory.Remove(_dataDirectory.Length - 1), "*.img.xen",
                 SearchOption.AllDirectories);
-            var array2 = files;
-            for (var j = 0; j < array2.Length; j++)
+            string[] array2 = files;
+            for (int j = 0; j < array2.Length; j++)
             {
-                var text2 = array2[j];
+                string text2 = array2[j];
                 method_3(treeNode, new List<string>(text2.Substring(_dataDirectory.Length)
                         .Split(new[]
                         {
@@ -84,26 +84,26 @@ namespace GHNamespaceC
                     .ToolTipText = text2;
             }
 
-            var num = QbSongClass1.AddKeyToDictionary(".tex");
-            var num2 = QbSongClass1.AddKeyToDictionary(".img");
+            int num = QbSongClass1.AddKeyToDictionary(".tex");
+            int num2 = QbSongClass1.AddKeyToDictionary(".img");
             files = Directory.GetFiles(_dataDirectory.Remove(_dataDirectory.Length - 1), "*.pak.xen",
                 SearchOption.AllDirectories);
-            var num3 = 0;
-            var array3 = files;
-            for (var k = 0; k < array3.Length; k++)
+            int num3 = 0;
+            string[] array3 = files;
+            for (int k = 0; k < array3.Length; k++)
             {
-                var text3 = array3[k];
+                string text3 = array3[k];
                 _delegate90(1 + (int) (98.0 * ++num3 / files.Length), KeyGenerator.GetFileName(text3));
                 try
                 {
-                    using (var @class = File.Exists(text3.Replace(".pak.xen", ".pab.xen"))
+                    using (ZzPakNode2 @class = File.Exists(text3.Replace(".pak.xen", ".pab.xen"))
                         ? new ZzPabNode(text3, text3.Replace(".pak.xen", ".pab.xen"), false)
                         : new ZzPakNode2(text3, false))
                     {
-                        var list = new List<TreeNode>();
-                        foreach (var current in @class.List0)
+                        List<TreeNode> list = new List<TreeNode>();
+                        foreach (INterface12 current in @class.List0)
                         {
-                            var num4 = current.imethod_7();
+                            int num4 = current.imethod_7();
                             if (current.imethod_4() == num || current.imethod_4() == num2)
                             {
                                 list.Add(new TreeNode(QbSongClass1.ContainsKey(num4)

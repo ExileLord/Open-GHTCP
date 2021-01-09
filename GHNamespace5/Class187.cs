@@ -65,7 +65,7 @@ namespace GHNamespace5
             {
                 throw new InvalidOperationException("Bit buffer is not byte aligned!");
             }
-            var num = 0;
+            int num = 0;
             while (_int2 > 0 && int4 > 0)
             {
                 byte1[int3++] = (byte) _uint0;
@@ -78,7 +78,7 @@ namespace GHNamespace5
             {
                 return num;
             }
-            var num2 = _int1 - _int0;
+            int num2 = _int1 - _int0;
             if (int4 > num2)
             {
                 int4 = num2;
@@ -119,7 +119,7 @@ namespace GHNamespace5
             {
                 throw new InvalidOperationException("Old input was not completely processed");
             }
-            var num = int3 + int4;
+            int num = int3 + int4;
             if (int3 <= num && num <= byte1.Length)
             {
                 if ((int4 & 1) != 0)

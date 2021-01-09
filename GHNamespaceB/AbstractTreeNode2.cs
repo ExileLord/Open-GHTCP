@@ -14,7 +14,7 @@ namespace GHNamespaceB
 
         public string IntToHex32Bit(int int0) // This is kind of dumb because this is implemented elsewhere already
         {
-            var text = int0.ToString("x");
+            string text = int0.ToString("x");
             while (text.Length < 8)
             {
                 text = "0" + text;
@@ -24,7 +24,7 @@ namespace GHNamespaceB
 
         public override Color GetColor()
         {
-            if (_colorFlipFlopper = !_colorFlipFlopper) //why would you do this max
+            if (_colorFlipFlopper = !_colorFlipFlopper) // Why would you do this max
             {
                 return Color.Ivory;
             }
@@ -33,7 +33,7 @@ namespace GHNamespaceB
 
         public override object Clone()
         {
-            var @class = (AbstractTreeNode2) base.Clone();
+            AbstractTreeNode2 @class = (AbstractTreeNode2) base.Clone();
             @class.vmethod_9(vmethod_8());
             return @class;
         }

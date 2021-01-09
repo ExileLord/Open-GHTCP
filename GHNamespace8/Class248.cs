@@ -42,10 +42,10 @@ namespace GHNamespace8
             String1 = _class3230.FileName;
             _string3 = string4;
             _string2 = string5;
-            var array = _class3230.String1;
-            for (var i = 0; i < array.Length; i++)
+            string[] array = _class3230.String1;
+            for (int i = 0; i < array.Length; i++)
             {
-                var text = array[i];
+                string text = array[i];
                 if (text.Equals(_class3230.FileName + "_rhythm"))
                 {
                     Bool0 = true;
@@ -77,8 +77,8 @@ namespace GHNamespace8
             }
             else
             {
-                var list = new List<string>();
-                var list2 = new List<Stream>();
+                List<string> list = new List<string>();
+                List<Stream> list2 = new List<Stream>();
                 GenericAudioStream stream3;
                 if (_string0.Length == 1)
                 {
@@ -110,7 +110,7 @@ namespace GHNamespace8
                 }
                 else
                 {
-                    var list3 = new List<GenericAudioStream>();
+                    List<GenericAudioStream> list3 = new List<GenericAudioStream>();
                     string[] array =
                     {
                         "_song",
@@ -120,7 +120,7 @@ namespace GHNamespace8
                         "_coop_guitar",
                         "_coop_rhythm"
                     };
-                    for (var i = 0; i < _string0.Length; i++)
+                    for (int i = 0; i < _string0.Length; i++)
                     {
                         if (_string0[i] != null && !_string0[i].Equals("") && File.Exists(_string0[i]))
                         {
@@ -144,20 +144,20 @@ namespace GHNamespace8
                         }
                     }
                     stream3 = new Stream2(list3.ToArray());
-                    var num = 0f;
-                    var stream5 = new Stream3(stream3, _timeSpan0, _timeSpan1);
-                    var array2 = stream5.vmethod_5(100);
+                    float num = 0f;
+                    Stream3 stream5 = new Stream3(stream3, _timeSpan0, _timeSpan1);
+                    float[][] array2 = stream5.vmethod_5(100);
                     while (array2 != null && array2.Length > 0)
                     {
-                        var array3 = array2;
-                        for (var j = 0; j < array3.Length; j++)
+                        float[][] array3 = array2;
+                        for (int j = 0; j < array3.Length; j++)
                         {
-                            var array4 = array3[j];
-                            var array5 = array4;
-                            for (var k = 0; k < array5.Length; k++)
+                            float[] array4 = array3[j];
+                            float[] array5 = array4;
+                            for (int k = 0; k < array5.Length; k++)
                             {
-                                var value = array5[k];
-                                var num2 = Math.Abs(value);
+                                float value = array5[k];
+                                float num2 = Math.Abs(value);
                                 if (num2 > num)
                                 {
                                     num = num2;
@@ -171,8 +171,8 @@ namespace GHNamespace8
                         new Class174(3, 1f / num)
                     });
                 }
-                var waveFormat = stream3.vmethod_0();
-                var t = new TimeSpan(0, 0, 1);
+                SharpAudio.ASC.WaveFormat waveFormat = stream3.vmethod_0();
+                TimeSpan t = new TimeSpan(0, 0, 1);
                 Stream stream6 = new Stream27();
                 Stream16.smethod_0(new Stream2(new Stream3(stream3, _timeSpan0, _timeSpan1), new INterface5[]
                 {

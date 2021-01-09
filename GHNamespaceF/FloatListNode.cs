@@ -19,7 +19,7 @@ namespace GHNamespaceF
         {
             if (bool1)
             {
-                var ienumerable = new float[2];
+                float[] ienumerable = new float[2];
                 method_11(ienumerable);
             }
         }
@@ -31,7 +31,7 @@ namespace GHNamespaceF
 
         public void method_11(IEnumerable<float> ienumerable0)
         {
-            foreach (var float_ in ienumerable0)
+            foreach (float float_ in ienumerable0)
             {
                 Nodes.Add(new FloatValueNode(float_));
             }
@@ -51,7 +51,7 @@ namespace GHNamespaceF
 
         public override void vmethod_14(Stream26 stream260)
         {
-            var array = new byte[4];
+            byte[] array = new byte[4];
             array[1] = 1;
             stream260.WriteByteArray(array, false);
             foreach (FloatValueNode class313 in Nodes)

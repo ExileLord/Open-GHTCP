@@ -53,9 +53,9 @@ namespace GHNamespaceC
             {
                 _fileStream = new Stream26(File.Open(_fileName, FileMode.Open, FileAccess.Read, FileShare.Read), true);
             }
-            var num = 1;
-            var num2 = _fileStream.ReadUShort();
-            var num3 = 0;
+            int num = 1;
+            ushort num2 = _fileStream.ReadUShort();
+            int num3 = 0;
             if (num2 == 0xFACE) // Hey man he was in my face
             {
                 _unkFlag0 = false;
@@ -86,7 +86,7 @@ namespace GHNamespaceC
 
         public void ReplaceTexture(int index, Image img, ImgPixelFormat format)
         {
-            var texMetaData = TextureList[index];
+            TextureMetadata texMetaData = TextureList[index];
             texMetaData.Height = (short) img.Height;
             texMetaData.Width = (short) img.Width;
             texMetaData.Data = new DdsTexture(img, texMetaData.MipMapCount, format).ToByteArray();
@@ -128,9 +128,9 @@ namespace GHNamespaceC
 
         public Stream26 ToStream()
         {
-            var stream = new Stream26(true);
-            var textureCount = TextureCount();
-            var textureMetaDataOffset = 0;
+            Stream26 stream = new Stream26(true);
+            int textureCount = TextureCount();
+            int textureMetaDataOffset = 0;
             if (!_unkFlag0)
             {
                 stream.WriteUInt(0xFACECAA7); //meow
@@ -140,7 +140,7 @@ namespace GHNamespaceC
                 stream.WriteInt(0);
                 stream.WriteInt(-1);
 
-                var num3 = 2;
+                int num3 = 2;
                 while (textureCount / Math.Pow(2.0, num3 - 2) > 1.0)
                 {
                     num3++;
@@ -156,10 +156,10 @@ namespace GHNamespaceC
                 stream.Position = textureMetaDataOffset;
             }
             stream.WriteNBytes(0, 40 * textureCount);
-            for (var i = 0; i < textureCount; i++)
+            for (int i = 0; i < textureCount; i++)
             {
-                var tex = TextureList[i];
-                var array = GetRawTextureData(i);
+                TextureMetadata tex = TextureList[i];
+                byte[] array = GetRawTextureData(i);
                 stream.WriteShortAt(textureMetaDataOffset + 40 * i, 2600);
                 stream.WriteShort(tex.UnkFlags);
                 stream.WriteInt(tex.Key);
@@ -182,7 +182,7 @@ namespace GHNamespaceC
 
         public void WriteEverythingToFile(string fileName)
         {
-            var stream = ToStream();
+            Stream26 stream = ToStream();
             if (_fileStream != null && _fileName == fileName)
             {
                 _fileStream.Close();
@@ -206,8 +206,8 @@ namespace GHNamespaceC
 
         public int CloneTextureElement(int index)
         {
-            var original = TextureList[index];
-            var newMeta = new TextureMetadata(original.UnkFlags, original.Key, original.Width, original.Height,
+            TextureMetadata original = TextureList[index];
+            TextureMetadata newMeta = new TextureMetadata(original.UnkFlags, original.Key, original.Width, original.Height,
                 original.UnkShort3, original.MipMapCount, original.UnkShort4, original.StartIndex, original.Length);
             TextureList.Add(newMeta);
             return TextureList.Count - 1;

@@ -767,7 +767,7 @@ namespace GHNamespaceE
             _string0 = string2;
             Closed += TexExplorer_Closed;
             Text = "Texture Explorer - LOOKING FOR TEXTURES (PLEASE WAIT!)";
-            var @class = new ZonePakLoader(_string0);
+            ZonePakLoader @class = new ZonePakLoader(_string0);
             @class.method_1(UpdateSearchText);
             @class.method_0(AddNode);
             _thread0 = new Thread(@class.method_2);
@@ -832,7 +832,7 @@ namespace GHNamespaceE
                 if (_dataFolderTreeView.SelectedNode.Tag is int && _dataFolderTreeView.SelectedNode.ToolTipText != "")
                 {
                     DisposeTexFile();
-                    var toolTipText = _dataFolderTreeView.SelectedNode.ToolTipText;
+                    string toolTipText = _dataFolderTreeView.SelectedNode.ToolTipText;
                     ZzPakNode2 pakNode;
                     if (File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen")))
                     {
@@ -844,7 +844,7 @@ namespace GHNamespaceE
                     }
                     _currentTexFile = new TexFile(pakNode.method_13((int) _dataFolderTreeView.SelectedNode.Tag));
 
-                    for (var i = 1; i <= _currentTexFile.TextureCount(); i++)
+                    for (int i = 1; i <= _currentTexFile.TextureCount(); i++)
                     {
                         _imgList.Items.Add("Image " + i);
                     }
@@ -855,7 +855,7 @@ namespace GHNamespaceE
                 {
                     DisposeTexFile();
                     _currentTexFile = new TexFile(_dataFolderTreeView.SelectedNode.ToolTipText);
-                    for (var j = 1; j <= _currentTexFile.TextureCount(); j++)
+                    for (int j = 1; j <= _currentTexFile.TextureCount(); j++)
                     {
                         _imgList.Items.Add("Image " + j);
                     }
@@ -865,12 +865,12 @@ namespace GHNamespaceE
 
         private void ImgList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var index = _imgList.SelectedIndex;
+            int index = _imgList.SelectedIndex;
 
 
             if (index >= 0)
             {
-                var texture = _currentTexFile[index];
+                DdsTexture texture = _currentTexFile[index];
                 _currentTexturePixelFormat = texture.PixelFormat;
                 _bppTxt.Text = string.Concat(texture.Bpp);
 
@@ -897,7 +897,7 @@ namespace GHNamespaceE
                 _widthTxt.Text = string.Concat(texture.Size.Width);
                 _heightTxt.Text = string.Concat(texture.Size.Height);
 
-                var image = texture.GetImage();
+                Image image = texture.GetImage();
                 _size0 = image.Size;
                 if (image.Width > _imagePreviewBox.Width || image.Height > _imagePreviewBox.Height)
                 {
@@ -906,7 +906,7 @@ namespace GHNamespaceE
                 _imagePreviewBox.Image = image;
                 _imageInfoBox.Enabled = true;
 
-                var metadata = _currentTexFile.TextureList[index];
+                TextureMetadata metadata = _currentTexFile.TextureList[index];
                 CurrentImgFile = metadata;
             }
             else
@@ -918,7 +918,7 @@ namespace GHNamespaceE
 
         private void ReplaceImgBtn_Click(object sender, EventArgs e)
         {
-            var text = KeyGenerator.OpenOrSaveFile("Select the image file to replace the texture.",
+            string text = KeyGenerator.OpenOrSaveFile("Select the image file to replace the texture.",
                 "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png",
                 true);
             if (text == "")
@@ -947,7 +947,7 @@ namespace GHNamespaceE
 
         public ImageFormat GetImageFormat(string fileName)
         {
-            var ext = KeyGenerator.GetExtension(fileName, 1).ToLower();
+            string ext = KeyGenerator.GetExtension(fileName, 1).ToLower();
             if (ext != null)
             {
                 if (ext == "jpg")
@@ -968,7 +968,7 @@ namespace GHNamespaceE
 
         private void ExtractImgBtn_Click(object sender, EventArgs e)
         {
-            var fileName = KeyGenerator.OpenOrSaveFile("Select location to export the texture.",
+            string fileName = KeyGenerator.OpenOrSaveFile("Select location to export the texture.",
                 "All Supported Formats|*.dds;*.bmp;*.jpg;*.gif;*.png|DDS Texture|*.dds|Bitmap|*.bmp|JPEG|*.jpg|Graphics Interchange Format|*.gif|Portable Network Graphics|*.png",
                 false);
             if (fileName == "")
@@ -997,8 +997,8 @@ namespace GHNamespaceE
             }
             else
             {
-                var toolTipText = _dataFolderTreeView.SelectedNode.ToolTipText;
-                var pakNode = File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen"))
+                string toolTipText = _dataFolderTreeView.SelectedNode.ToolTipText;
+                ZzPakNode2 pakNode = File.Exists(toolTipText.Replace(".pak.xen", ".pab.xen"))
                     ? new ZzPabNode(toolTipText, toolTipText.Replace(".pak.xen", ".pab.xen"), false)
                     : new ZzPakNode2(toolTipText, false);
                 pakNode.method_11((int) _dataFolderTreeView.SelectedNode.Tag)
@@ -1018,7 +1018,7 @@ namespace GHNamespaceE
             }
             if (_searchTxtBox.Text.Equals(""))
             {
-                foreach (var current in _nodeList)
+                foreach (TreeNode current in _nodeList)
                 {
                     current.BackColor = Color.Empty;
                 }
@@ -1029,7 +1029,7 @@ namespace GHNamespaceE
             }
             if (!_searchTxtBox.Text.Equals(_string1))
             {
-                foreach (var current2 in _nodeList)
+                foreach (TreeNode current2 in _nodeList)
                 {
                     current2.BackColor = Color.Transparent;
                 }
@@ -1047,8 +1047,8 @@ namespace GHNamespaceE
                 _count = -1;
             }
             _count++;
-            var treeView = _dataFolderTreeView;
-            var node = _nodeList;
+            TreeView treeView = _dataFolderTreeView;
+            List<TreeNode> node = _nodeList;
             int arg16B1;
             if (_nodeList.Count <= _count)
             {
@@ -1072,7 +1072,7 @@ namespace GHNamespaceE
             }
             if (_searchTxtBox.Text.Equals(""))
             {
-                foreach (var current in _nodeList)
+                foreach (TreeNode current in _nodeList)
                 {
                     current.BackColor = Color.Empty;
                 }
@@ -1083,7 +1083,7 @@ namespace GHNamespaceE
             }
             if (!_searchTxtBox.Text.Equals(_string1))
             {
-                foreach (var current2 in _nodeList)
+                foreach (TreeNode current2 in _nodeList)
                 {
                     current2.BackColor = Color.Empty;
                 }
@@ -1112,7 +1112,7 @@ namespace GHNamespaceE
             {
                 return;
             }
-            foreach (var current in _nodeList)
+            foreach (TreeNode current in _nodeList)
             {
                 current.BackColor = Color.Empty;
             }
@@ -1138,7 +1138,7 @@ namespace GHNamespaceE
         private bool method_4()
         {
             AddNodeToContainerIfItHasThisString(_dataFolderTreeView.SelectedNode, _string1, _nodeList);
-            foreach (var current in _nodeList)
+            foreach (TreeNode current in _nodeList)
             {
                 current.BackColor = Color.YellowGreen;
             }
@@ -1152,7 +1152,7 @@ namespace GHNamespaceE
             {
                 nodeCollection.Add(node);
             }
-            for (var i = 0; i < node.Nodes.Count; i++)
+            for (int i = 0; i < node.Nodes.Count; i++)
             {
                 AddNodeToContainerIfItHasThisString(node.Nodes[i], str, nodeCollection);
             }
@@ -1234,8 +1234,7 @@ namespace GHNamespaceE
 
         private void txtKey_TextChanged(object sender, EventArgs e)
         {
-            int newKey;
-            if (Int32.TryParse(_txtKey.Text, NumberStyles.HexNumber | NumberStyles.AllowHexSpecifier, null, out newKey))
+            if (Int32.TryParse(_txtKey.Text, NumberStyles.HexNumber | NumberStyles.AllowHexSpecifier, null, out int newKey))
             {
                 _currentImgFile.Key = newKey;
             }
@@ -1261,7 +1260,7 @@ namespace GHNamespaceE
             if (_imgList.SelectedIndex < 0 || _imgList.SelectedIndex >= _currentTexFile.TextureCount())
                 return;
 
-            var cloneIndex = _currentTexFile.CloneTextureElement(_imgList.SelectedIndex);
+            int cloneIndex = _currentTexFile.CloneTextureElement(_imgList.SelectedIndex);
             _imgList.Items.Add("Image " + (cloneIndex + 1));
         }
     }

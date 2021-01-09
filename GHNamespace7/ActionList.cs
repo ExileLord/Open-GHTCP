@@ -15,12 +15,12 @@ namespace GHNamespace7
 
         public void method_0(Delegate6 delegate61)
         {
-            var @delegate = _delegate60;
+            Delegate6 @delegate = _delegate60;
             Delegate6 delegate2;
             do
             {
                 delegate2 = @delegate;
-                var value = (Delegate6) Delegate.Combine(delegate2, delegate61);
+                Delegate6 value = (Delegate6) Delegate.Combine(delegate2, delegate61);
                 @delegate = Interlocked.CompareExchange(ref _delegate60, value, delegate2);
             } while (@delegate != delegate2);
         }
@@ -33,9 +33,9 @@ namespace GHNamespace7
         public void method_1()
         {
             EventArgs0 e;
-            foreach (var current in _actionList)
+            foreach (QbEditor current in _actionList)
             {
-                var int_ = 100 * _actionList.IndexOf(current) / _actionList.Count;
+                int int_ = 100 * _actionList.IndexOf(current) / _actionList.Count;
                 e = new EventArgs0(current + " Processing...", int_);
                 _delegate60(this, e);
                 string finalStatus;

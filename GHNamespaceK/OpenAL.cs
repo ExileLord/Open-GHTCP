@@ -56,13 +56,13 @@ namespace GHNamespaceK
 
         public static IList<string> smethod_1(IntPtr intptr0, Enum8 enum80)
         {
-            var list = new List<string>();
-            var ptr = alcGetString(IntPtr.Zero, (Enum7) enum80);
-            var stringBuilder = new StringBuilder();
-            var ofs = 0;
+            List<string> list = new List<string>();
+            IntPtr ptr = alcGetString(IntPtr.Zero, (Enum7) enum80);
+            StringBuilder stringBuilder = new StringBuilder();
+            int ofs = 0;
             while (true)
             {
-                var b = Marshal.ReadByte(ptr, ofs++);
+                byte b = Marshal.ReadByte(ptr, ofs++);
                 if (b != 0)
                 {
                     stringBuilder.Append((char) b);

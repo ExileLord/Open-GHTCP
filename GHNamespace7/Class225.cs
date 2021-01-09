@@ -71,7 +71,7 @@ namespace GHNamespace7
                     {
                         return false;
                     }
-                    var class2 = _stack0.Pop();
+                    Class226 class2 = _stack0.Pop();
                     @class = class2.Class2261;
                 }
                 while (@class != null)
@@ -179,10 +179,10 @@ namespace GHNamespace7
             {
                 if (int0 >= 0 && int0 < method_4())
                 {
-                    var class226 = _class2260;
+                    Class226 class226 = _class2260;
                     while (class226 != null)
                     {
-                        var num = (int) ((class226.Class2260 == null) ? 0u : class226.Class2260.method_2());
+                        int num = (int) ((class226.Class2260 == null) ? 0u : class226.Class2260.method_2());
                         if (int0 == num)
                         {
                             return class226;
@@ -236,9 +236,9 @@ namespace GHNamespace7
                 _uint0 += 1u;
                 return _class2260;
             }
-            var list = smethod_0();
-            var int_ = method_5(gparam0, list);
-            var @class = list[list.Count - 1];
+            List<Class226> list = smethod_0();
+            int int_ = method_5(gparam0, list);
+            Class226 @class = list[list.Count - 1];
             if (@class == null)
             {
                 if (class2261 == null)
@@ -257,8 +257,8 @@ namespace GHNamespace7
             {
                 return null;
             }
-            var list = smethod_0();
-            var num = method_5(gparam0, list);
+            List<Class226> list = smethod_0();
+            int num = method_5(gparam0, list);
             Class226 result = null;
             if (num == 0)
             {
@@ -270,7 +270,7 @@ namespace GHNamespace7
 
         public Class226 method_3<T>(T gparam0)
         {
-            var @interface = (INterface10<T>) _object0;
+            INterface10<T> @interface = (INterface10<T>) _object0;
             Class226 @class;
             int num;
             for (@class = _class2260; @class != null; @class = ((num < 0) ? @class.Class2260 : @class.Class2261))
@@ -295,9 +295,9 @@ namespace GHNamespace7
 
         private int method_5<T>(T gparam0, List<Class226> list0)
         {
-            var @interface = (INterface10<T>) _object0;
-            var num = 0;
-            var class226 = _class2260;
+            INterface10<T> @interface = (INterface10<T>) _object0;
+            int num = 0;
+            Class226 class226 = _class2260;
             if (list0 != null)
             {
                 list0.Add(_class2260);
@@ -332,7 +332,7 @@ namespace GHNamespace7
         private Class226 method_6(int int0, Class226 class2261, List<Class226> list0)
         {
             list0[list0.Count - 1] = class2261;
-            var @class = list0[list0.Count - 3];
+            Class226 @class = list0[list0.Count - 3];
             if (int0 < 0)
             {
                 @class.Class2260 = class2261;
@@ -341,9 +341,9 @@ namespace GHNamespace7
             {
                 @class.Class2261 = class2261;
             }
-            for (var i = 0; i < list0.Count - 2; i += 2)
+            for (int i = 0; i < list0.Count - 2; i += 2)
             {
-                var expr_3D = list0[i];
+                Class226 expr_3D = list0[i];
                 expr_3D.method_3(expr_3D.method_2() + 1u);
             }
             if (!@class.method_0())
@@ -360,15 +360,15 @@ namespace GHNamespace7
 
         private Class226 method_7(List<Class226> list0)
         {
-            var num = list0.Count - 1;
-            var @class = list0[num];
+            int num = list0.Count - 1;
+            Class226 @class = list0[num];
             if (@class.Class2260 != null)
             {
-                var class2 = smethod_2(@class.Class2260, @class.Class2261, list0);
+                Class226 class2 = smethod_2(@class.Class2260, @class.Class2261, list0);
                 @class.vmethod_0(class2);
                 if (class2.Class2260 != null)
                 {
-                    var class3 = class2.Class2260;
+                    Class226 class3 = class2.Class2260;
                     list0.Add(null);
                     list0.Add(class3);
                     class2.vmethod_0(class3);
@@ -376,7 +376,7 @@ namespace GHNamespace7
             }
             else if (@class.Class2261 != null)
             {
-                var class226 = @class.Class2261;
+                Class226 class226 = @class.Class2261;
                 list0.Add(null);
                 list0.Add(class226);
                 @class.vmethod_0(class226);
@@ -389,9 +389,9 @@ namespace GHNamespace7
             }
             list0[num] = null;
             method_13((num == 0) ? null : list0[num - 2], @class, 0u, null);
-            for (var i = 0; i < list0.Count - 2; i += 2)
+            for (int i = 0; i < list0.Count - 2; i += 2)
             {
-                var exprD2 = list0[i];
+                Class226 exprD2 = list0[i];
                 exprD2.method_3(exprD2.method_2() - 1u);
             }
             if (@class.method_0())
@@ -412,10 +412,10 @@ namespace GHNamespace7
 
         private void method_8(List<Class226> list0)
         {
-            var num = list0.Count - 1;
+            int num = list0.Count - 1;
             while (list0[num - 3] != null && !list0[num - 3].method_0())
             {
-                var arg340 = list0[num - 2];
+                Class226 arg340 = list0[num - 2];
                 list0[num - 3].method_1(true);
                 arg340.method_1(true);
                 num -= 4;
@@ -434,10 +434,10 @@ namespace GHNamespace7
 
         private void method_9(List<Class226> list0)
         {
-            var num = list0.Count - 1;
+            int num = list0.Count - 1;
             do
             {
-                var @class = list0[num - 1];
+                Class226 @class = list0[num - 1];
                 if (!@class.method_0())
                 {
                     num = method_12(num, list0);
@@ -463,12 +463,12 @@ namespace GHNamespace7
 
         private void method_10(int int0, List<Class226> list0)
         {
-            var @class = list0[int0];
-            var class2 = list0[int0 - 2];
-            var class3 = list0[int0 - 4];
-            var uint_ = class3.method_2();
-            var flag = class2 == class3.Class2260;
-            var flag2 = @class == class2.Class2260;
+            Class226 @class = list0[int0];
+            Class226 class2 = list0[int0 - 2];
+            Class226 class3 = list0[int0 - 4];
+            uint uint_ = class3.method_2();
+            bool flag = class2 == class3.Class2260;
+            bool flag2 = @class == class2.Class2260;
             Class226 class4;
             if (flag && flag2)
             {
@@ -510,10 +510,10 @@ namespace GHNamespace7
 
         private void method_11(int int0, List<Class226> list0)
         {
-            var @class = list0[int0 - 1];
-            var class2 = list0[int0 - 2];
-            var uint_ = class2.method_2();
-            var bool_ = class2.method_0();
+            Class226 @class = list0[int0 - 1];
+            Class226 class2 = list0[int0 - 2];
+            uint uint_ = class2.method_2();
+            bool bool_ = class2.method_0();
             Class226 class3;
             if (class2.Class2261 == @class)
             {
@@ -526,7 +526,7 @@ namespace GHNamespace7
                 }
                 else
                 {
-                    var class4 = @class.Class2260;
+                    Class226 class4 = @class.Class2260;
                     class2.Class2261 = class4.Class2260;
                     class4.Class2260 = class2;
                     @class.Class2260 = class4.Class2261;
@@ -543,7 +543,7 @@ namespace GHNamespace7
             }
             else
             {
-                var class226 = @class.Class2261;
+                Class226 class226 = @class.Class2261;
                 class2.Class2260 = class226.Class2261;
                 class226.Class2261 = class2;
                 @class.Class2261 = class226.Class2260;
@@ -562,10 +562,10 @@ namespace GHNamespace7
 
         private int method_12(int int0, List<Class226> list0)
         {
-            var value = list0[int0];
-            var @class = list0[int0 - 1];
-            var class2 = list0[int0 - 2];
-            var uint_ = class2.method_2();
+            Class226 value = list0[int0];
+            Class226 @class = list0[int0 - 1];
+            Class226 class2 = list0[int0 - 2];
+            uint uint_ = class2.method_2();
             bool flag;
             if (class2.Class2261 == @class)
             {
@@ -643,10 +643,10 @@ namespace GHNamespace7
 
         public Struct77 method_15<T>(T gparam0)
         {
-            var stack = new Stack<Class226>();
-            var @interface = (INterface10<T>) _object0;
+            Stack<Class226> stack = new Stack<Class226>();
+            INterface10<T> @interface = (INterface10<T>) _object0;
             int num;
-            for (var @class = _class2260; @class != null; @class = ((num < 0) ? @class.Class2260 : @class.Class2261))
+            for (Class226 @class = _class2260; @class != null; @class = ((num < 0) ? @class.Class2260 : @class.Class2261))
             {
                 num = @interface.imethod_0(gparam0, @class);
                 if (num <= 0)

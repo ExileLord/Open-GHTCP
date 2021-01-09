@@ -30,7 +30,7 @@ namespace GHNamespaceN
             try
             {
                 _beConfig0 = beConfig1;
-                var num = LameEncoder.beInitStream(_beConfig0, ref _uint1, ref _uint2, ref _uint0);
+                uint num = LameEncoder.beInitStream(_beConfig0, ref _uint1, ref _uint2, ref _uint0);
                 if (num != 0u)
                 {
                     throw new ApplicationException(
@@ -57,7 +57,7 @@ namespace GHNamespaceN
             {
                 try
                 {
-                    var num = 0u;
+                    uint num = 0u;
                     if (_int2 > 0 && LameEncoder.smethod_0(_uint0, _byte0, 0, (uint) _int2, _byte1, ref num) == 0u &&
                         num > 0u)
                     {
@@ -85,12 +85,12 @@ namespace GHNamespaceN
 
         public override void Write(byte[] buffer, int offset, int count)
         {
-            var num = 0u;
+            uint num = 0u;
             while (count > 0)
             {
                 if (_int2 > 0)
                 {
-                    var num2 = Math.Min(count, _byte0.Length - _int2);
+                    int num2 = Math.Min(count, _byte0.Length - _int2);
                     Buffer.BlockCopy(buffer, offset, _byte0, _int2, num2);
                     _int2 += num2;
                     offset += num2;
@@ -98,7 +98,7 @@ namespace GHNamespaceN
                     if (_int2 >= _byte0.Length)
                     {
                         _int2 = 0;
-                        var num3 = LameEncoder.smethod_1(_uint0, _byte0, _byte1, ref num);
+                        uint num3 = LameEncoder.smethod_1(_uint0, _byte0, _byte1, ref num);
                         if (num3 != 0u)
                         {
                             throw new ApplicationException("Lame_encDll.EncodeChunk failed with the error code " +
@@ -112,7 +112,7 @@ namespace GHNamespaceN
                 }
                 else if (count >= _byte0.Length)
                 {
-                    var num3 = LameEncoder.smethod_0(_uint0, buffer, offset, (uint) _byte0.Length, _byte1, ref num);
+                    uint num3 = LameEncoder.smethod_0(_uint0, buffer, offset, (uint) _byte0.Length, _byte1, ref num);
                     if (num3 != 0u)
                     {
                         throw new ApplicationException("Lame_encDll.EncodeChunk failed with the error code " + num3);
@@ -136,18 +136,18 @@ namespace GHNamespaceN
 
         public static Class16 smethod_0(GenericAudioStream stream10, Stream stream1, int int3, int int4)
         {
-            var waveFormat = stream10.vmethod_0();
+            WaveFormat waveFormat = stream10.vmethod_0();
             if (waveFormat.waveFormatTag_0 != WaveFormatTag.Pcm || waveFormat.short_2 != 16)
             {
                 stream10 = new Stream4(stream10, 16);
                 waveFormat = stream10.vmethod_0();
             }
-            var stream = new Stream16(stream1, waveFormat,
+            Stream16 stream = new Stream16(stream1, waveFormat,
                 (waveFormat.int_0 == int3)
                     ? new BeConfig(waveFormat, (uint) int4)
                     : new BeConfig(waveFormat, (uint) int4, (uint) int3));
-            var uint_ = (uint) stream.vmethod_1().Position;
-            var array = new byte[stream.method_0() * 2];
+            uint uint_ = (uint) stream.vmethod_1().Position;
+            byte[] array = new byte[stream.method_0() * 2];
             Class16 result;
             try
             {
@@ -173,15 +173,15 @@ namespace GHNamespaceN
 
         public static Class16 smethod_2(Stream stream1, TimeSpan timeSpan0, int int3, int int4, bool bool1)
         {
-            var waveFormat = new WaveFormat(int3, 16, bool1 ? 2 : 1);
-            var stream = new Stream16(stream1, waveFormat, new BeConfig(waveFormat, (uint) int4));
-            var uint_ = (uint) stream.vmethod_1().Position;
-            var array = new byte[stream.method_0() * 2];
+            WaveFormat waveFormat = new WaveFormat(int3, 16, bool1 ? 2 : 1);
+            Stream16 stream = new Stream16(stream1, waveFormat, new BeConfig(waveFormat, (uint) int4));
+            uint uint_ = (uint) stream.vmethod_1().Position;
+            byte[] array = new byte[stream.method_0() * 2];
             Class16 result;
             try
             {
-                var num = 0;
-                var num2 = (int) (timeSpan0.TotalSeconds * waveFormat.int_1);
+                int num = 0;
+                int num2 = (int) (timeSpan0.TotalSeconds * waveFormat.int_1);
                 int count;
                 while ((count = Math.Min(num2 - num - array.Length, array.Length)) > 0)
                 {

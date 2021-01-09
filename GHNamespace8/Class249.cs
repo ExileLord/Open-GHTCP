@@ -20,13 +20,13 @@ namespace GHNamespace8
         {
             Console.WriteLine("-=- " + ToString() + " -=-");
             ZzGenericNode1 @class = _class3180.ZzGetNode1("scripts\\guitar\\menu\\menu_cheats.qb");
-            foreach (var current in @class.zzFindNode(new ArrayPointerRootNode("guitar_hero_cheats"))
+            foreach (StructureHeaderNode current in @class.zzFindNode(new ArrayPointerRootNode("guitar_hero_cheats"))
                 .method_7()
                 .method_8<StructureHeaderNode>())
             {
-                var flag = current.zzFindNode(new StructItemQbKey("name", "unlockall")) != null;
-                var flag2 = current.zzFindNode(new StructItemQbKey("name", "unlockalleverything")) != null;
-                var class2 = current.zzFindNode(new ArrayPointerNode("unlock_pattern")).GetFirstChild() as IntegerArrayNode;
+                bool flag = current.zzFindNode(new StructItemQbKey("name", "unlockall")) != null;
+                bool flag2 = current.zzFindNode(new StructItemQbKey("name", "unlockalleverything")) != null;
+                IntegerArrayNode class2 = current.zzFindNode(new ArrayPointerNode("unlock_pattern")).GetFirstChild() as IntegerArrayNode;
                 if (class2.Nodes.Count == 1)
                 {
                     Console.WriteLine("QB Database is already edited.");

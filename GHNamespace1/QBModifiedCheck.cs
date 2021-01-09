@@ -7,7 +7,7 @@ namespace GHNamespace1
     {
         private static ModuleHandle _moduleHandle0;
 
-        private static char[] _char0;
+        private static readonly char[] _char0;
 
         public static void smethod_0(int int0)
         {
@@ -207,7 +207,7 @@ namespace GHNamespace1
                 '\u009e',
                 '\u009f'
             };
-            var typeFromHandle = typeof(MulticastDelegate);
+            Type typeFromHandle = typeof(MulticastDelegate);
             if (typeFromHandle != null)
             {
                 _moduleHandle0 = Assembly.GetExecutingAssembly().GetModules()[0].ModuleHandle;

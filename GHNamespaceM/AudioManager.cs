@@ -36,8 +36,8 @@ namespace GHNamespaceM
                 case Enum25.Const5:
                     return new WaveOutput(audioStream);
             }
-            var flag = Type.GetType("Mono.Runtime") != null;
-            var platform = (int) Environment.OSVersion.Platform;
+            bool flag = Type.GetType("Mono.Runtime") != null;
+            int platform = (int) Environment.OSVersion.Platform;
             switch (platform)
             {
                 case 0:
@@ -76,7 +76,7 @@ namespace GHNamespaceM
 
         public static AudioTypeEnum smethod_1(string fileName)
         {
-            var fileInfo = new FileInfo(fileName);
+            FileInfo fileInfo = new FileInfo(fileName);
             string fileExtension;
             switch (fileExtension = fileInfo.Extension.ToLower())
             {
@@ -107,7 +107,7 @@ namespace GHNamespaceM
         public static Class16 smethod_2(string string0)
         {
             Class16 result;
-            using (var stream = GetAudioStream(string0))
+            using (GenericAudioStream stream = GetAudioStream(string0))
             {
                 result = stream.vmethod_1();
             }
@@ -116,7 +116,7 @@ namespace GHNamespaceM
 
         public static Class16 smethod_3(Stream stream0)
         {
-            var position = stream0.Position;
+            long position = stream0.Position;
             Class16 result;
             try
             {
@@ -131,7 +131,7 @@ namespace GHNamespaceM
 
         public static GenericAudioStream GetAudioStream(string fileName)
         {
-            var fileInfo = new FileInfo(fileName);
+            FileInfo fileInfo = new FileInfo(fileName);
             string fileExtension;
             if ((fileExtension = fileInfo.Extension.ToLower()) != null)
             {
@@ -165,8 +165,8 @@ namespace GHNamespaceM
 
         public static GenericAudioStream smethod_5(Stream audioStream)
         {
-            var position = audioStream.Position;
-            var array = new byte[4];
+            long position = audioStream.Position;
+            byte[] array = new byte[4];
             audioStream.Read(array, 0, 4);
             audioStream.Position = position;
             if (array[0] == 255 && array[1] >= 240)
@@ -219,7 +219,7 @@ namespace GHNamespaceM
 
         public void method_0(bool bool0)
         {
-            foreach (var current in _list0)
+            foreach (IPlayableAudio current in _list0)
             {
                 current.Dispose();
             }

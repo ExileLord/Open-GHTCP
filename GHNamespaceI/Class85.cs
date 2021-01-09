@@ -1911,13 +1911,13 @@ namespace GHNamespaceI
         public Class85(Class82 class821, ZzSoundClass class1071, Class80 class802, Class80 class803, Class84 class841,
             Enum4 enum41)
         {
-            var array = new int[1];
+            int[] array = new int[1];
             Int12 = array;
-            var array2 = new int[1];
+            int[] array2 = new int[1];
             Int13 = array2;
-            var array3 = new int[1];
+            int[] array3 = new int[1];
             Int14 = array3;
-            var array4 = new int[1];
+            int[] array4 = new int[1];
             Int15 = array4;
             Int16 = new int[576];
             Float7 = new float[576];
@@ -2340,7 +2340,7 @@ namespace GHNamespaceI
             if (_int22 == null)
             {
                 _int22 = new int[9][];
-                for (var i = 0; i < 9; i++)
+                for (int i = 0; i < 9; i++)
                 {
                     _int22[i] = smethod_1(_class860[i].Int1);
                 }
@@ -2399,8 +2399,8 @@ namespace GHNamespaceI
             _int8 = 0;
             IL_521:
             Array.Clear(_float3, 0, 1152);
-            var arg54B0 = _int3;
-            var arg54B1 = 0;
+            int[] arg54B0 = _int3;
+            int arg54B1 = 0;
             _int3[1] = 576;
             arg54B0[arg54B1] = 576;
             _class1020 = new Class102();
@@ -2414,20 +2414,20 @@ namespace GHNamespaceI
 
         public void method_0()
         {
-            var num = _class1070.method_13();
+            int num = _class1070.method_13();
             method_1();
-            for (var i = 0; i < num; i++)
+            for (int i = 0; i < num; i++)
             {
                 _class1020.method_3(_class820.method_13(8));
             }
-            var num2 = _class1020.method_0() >> 3;
+            int num2 = _class1020.method_0() >> 3;
             int num3;
             if ((num3 = (_class1020.method_0() & 7)) != 0)
             {
                 _class1020.method_1(8 - num3);
                 num2++;
             }
-            var j = _int5 - num2 - _class890.Int0;
+            int j = _int5 - num2 - _class890.Int0;
             _int5 += num;
             if (j < 0)
             {
@@ -2443,7 +2443,7 @@ namespace GHNamespaceI
                 _class1020.method_1(8);
                 j--;
             }
-            for (var k = 0; k < _int4; k++)
+            for (int k = 0; k < _int4; k++)
             {
                 int l;
                 for (l = 0; l < _int7; l++)
@@ -2471,9 +2471,9 @@ namespace GHNamespaceI
                     method_8(_float1[l], l, k);
                     method_10(l, k);
                     method_11(l, k);
-                    for (var m = 18; m < 576; m += 36)
+                    for (int m = 18; m < 576; m += 36)
                     {
-                        for (var n = 1; n < 18; n += 2)
+                        for (int n = 1; n < 18; n += 2)
                         {
                             _float2[m + n] = -_float2[m + n];
                         }
@@ -2486,10 +2486,10 @@ namespace GHNamespaceI
                     {
                         goto IL_241;
                     }
-                    for (var n = 0; n < 18; n++)
+                    for (int n = 0; n < 18; n++)
                     {
-                        var num4 = 0;
-                        for (var m = 0; m < 576; m += 18)
+                        int num4 = 0;
+                        for (int m = 0; m < 576; m += 18)
                         {
                             _float6[num4] = _float2[m + n];
                             num4++;
@@ -2501,10 +2501,10 @@ namespace GHNamespaceI
                     l++;
                     continue;
                     IL_241:
-                    for (var n = 0; n < 18; n++)
+                    for (int n = 0; n < 18; n++)
                     {
-                        var num4 = 0;
-                        for (var m = 0; m < 576; m += 18)
+                        int num4 = 0;
+                        for (int m = 0; m < 576; m += 18)
                         {
                             _float5[num4] = _float2[m + n];
                             num4++;
@@ -2525,16 +2525,16 @@ namespace GHNamespaceI
             {
                 _class890.Int0 = _class820.method_13(9);
                 _class890.Int1 = ((_int7 == 1) ? _class820.method_13(5) : _class820.method_13(3));
-                for (var i = 0; i < _int7; i++)
+                for (int i = 0; i < _int7; i++)
                 {
                     _class890.Class880[i].Int0[0] = _class820.method_13(1);
                     _class890.Class880[i].Int0[1] = _class820.method_13(1);
                     _class890.Class880[i].Int0[2] = _class820.method_13(1);
                     _class890.Class880[i].Int0[3] = _class820.method_13(1);
                 }
-                for (var j = 0; j < 2; j++)
+                for (int j = 0; j < 2; j++)
                 {
-                    for (var i = 0; i < _int7; i++)
+                    for (int i = 0; i < _int7; i++)
                     {
                         _class890.Class880[i].Class870[j].Int0 = _class820.method_13(12);
                         _class890.Class880[i].Class870[j].Int1 = _class820.method_13(9);
@@ -2584,7 +2584,7 @@ namespace GHNamespaceI
             {
                 _class890.Int0 = _class820.method_13(8);
                 _class890.Int1 = ((_int7 == 1) ? _class820.method_13(1) : _class820.method_13(2));
-                for (var i = 0; i < _int7; i++)
+                for (int i = 0; i < _int7; i++)
                 {
                     _class890.Class880[i].Class870[0].Int0 = _class820.method_13(12);
                     _class890.Class880[i].Class870[0].Int1 = _class820.method_13(9);
@@ -2632,10 +2632,10 @@ namespace GHNamespaceI
 
         private void method_2(int int24, int int25)
         {
-            var @class = _class890.Class880[int24].Class870[int25];
-            var num = @class.Int3;
-            var num2 = Int18[0, num];
-            var num3 = Int18[1, num];
+            Class87 @class = _class890.Class880[int24].Class870[int25];
+            int num = @class.Int3;
+            int num2 = Int18[0, num];
+            int num3 = Int18[1, num];
             if (@class.Int4 == 0 || @class.Int5 != 2)
             {
                 if (_class890.Class880[int24].Int0[0] == 0 || int25 == 0)
@@ -2684,20 +2684,20 @@ namespace GHNamespaceI
                 }
                 for (i = 3; i < 6; i++)
                 {
-                    for (var j = 0; j < 3; j++)
+                    for (int j = 0; j < 3; j++)
                     {
                         _class901[int24].Int1[j, i] = _class1020.method_1(Int18[0, @class.Int3]);
                     }
                 }
                 for (i = 6; i < 12; i++)
                 {
-                    for (var j = 0; j < 3; j++)
+                    for (int j = 0; j < 3; j++)
                     {
                         _class901[int24].Int1[j, i] = _class1020.method_1(Int18[1, @class.Int3]);
                     }
                 }
                 i = 12;
-                for (var j = 0; j < 3; j++)
+                for (int j = 0; j < 3; j++)
                 {
                     _class901[int24].Int1[j, i] = 0;
                 }
@@ -2746,10 +2746,10 @@ namespace GHNamespaceI
 
         private void method_3(int int24, int int25)
         {
-            var num = _class1070.method_14();
-            var num2 = 0;
-            var @class = _class890.Class880[int24].Class870[int25];
-            var num3 = @class.Int3;
+            int num = _class1070.method_14();
+            int num2 = 0;
+            Class87 @class = _class890.Class880[int24].Class870[int25];
+            int num3 = @class.Int3;
             int num4;
             if (@class.Int5 == 2)
             {
@@ -2795,11 +2795,10 @@ namespace GHNamespaceI
             }
             if ((num == 1 || num == 3) && int24 == 1)
             {
-                var num5 = num3 >> 1;
+                int num5 = num3 >> 1;
                 if (num5 < 180)
                 {
-                    int a;
-                    _int11[0] = Math.DivRem(num5, 36, out a);
+                    _int11[0] = Math.DivRem(num5, 36, out int a);
                     _int11[1] = Math.DivRem(a, 6, out _int11[2]);
                     _int11[3] = 0;
                     _class890.Class880[int24].Class870[int25].Int11 = 0;
@@ -2807,7 +2806,7 @@ namespace GHNamespaceI
                 }
                 else if (num5 < 244)
                 {
-                    var num6 = num5 - 180;
+                    int num6 = num5 - 180;
                     _int11[0] = (num6 & 63) >> 4;
                     _int11[1] = (num6 & 15) >> 2;
                     _int11[2] = (num6 & 3);
@@ -2824,14 +2823,14 @@ namespace GHNamespaceI
                     num2 = 5;
                 }
             }
-            for (var i = 0; i < 45; i++)
+            for (int i = 0; i < 45; i++)
             {
                 Int0[i] = 0;
             }
-            var num7 = 0;
-            for (var j = 0; j < 4; j++)
+            int num7 = 0;
+            for (int j = 0; j < 4; j++)
             {
-                for (var k = 0; k < Int23[num2, num4, j]; k++)
+                for (int k = 0; k < Int23[num2, num4, j]; k++)
                 {
                     Int0[num7++] = ((_int11[j] == 0) ? 0 : _class1020.method_1(_int11[j]));
                 }
@@ -2840,12 +2839,12 @@ namespace GHNamespaceI
 
         private void method_4(int int24, int int25)
         {
-            var num = 0;
-            var @class = _class890.Class880[int24].Class870[int25];
+            int num = 0;
+            Class87 @class = _class890.Class880[int24].Class870[int25];
             method_3(int24, int25);
             if (@class.Int4 == 0 || @class.Int5 != 2)
             {
-                for (var i = 0; i < 21; i++)
+                for (int i = 0; i < 21; i++)
                 {
                     _class901[int24].Int0[i] = Int0[num++];
                 }
@@ -2855,31 +2854,31 @@ namespace GHNamespaceI
             }
             if (@class.Int6 != 0)
             {
-                for (var i = 0; i < 8; i++)
+                for (int i = 0; i < 8; i++)
                 {
                     _class901[int24].Int0[i] = Int0[num++];
                 }
-                for (var i = 3; i < 12; i++)
+                for (int i = 3; i < 12; i++)
                 {
-                    for (var j = 0; j < 3; j++)
+                    for (int j = 0; j < 3; j++)
                     {
                         _class901[int24].Int1[j, i] = Int0[num++];
                     }
                 }
-                for (var j = 0; j < 3; j++)
+                for (int j = 0; j < 3; j++)
                 {
                     _class901[int24].Int1[j, 12] = 0;
                 }
                 return;
             }
-            for (var i = 0; i < 12; i++)
+            for (int i = 0; i < 12; i++)
             {
-                for (var j = 0; j < 3; j++)
+                for (int j = 0; j < 3; j++)
                 {
                     _class901[int24].Int1[j, i] = Int0[num++];
                 }
             }
-            for (var j = 0; j < 3; j++)
+            for (int j = 0; j < 3; j++)
             {
                 _class901[int24].Int1[j, 12] = 0;
             }
@@ -2891,7 +2890,7 @@ namespace GHNamespaceI
             Int13[0] = 0;
             Int14[0] = 0;
             Int15[0] = 0;
-            var num = _int6 + _class890.Class880[int24].Class870[int25].Int0;
+            int num = _int6 + _class890.Class880[int24].Class870[int25].Int0;
             int num2;
             int num3;
             if (_class890.Class880[int24].Class870[int25].Int4 != 0 &&
@@ -2902,8 +2901,8 @@ namespace GHNamespaceI
             }
             else
             {
-                var num4 = _class890.Class880[int24].Class870[int25].Int9 + 1;
-                var num5 = num4 + _class890.Class880[int24].Class870[int25].Int10 + 1;
+                int num4 = _class890.Class880[int24].Class870[int25].Int9 + 1;
+                int num5 = num4 + _class890.Class880[int24].Class870[int25].Int10 + 1;
                 if (num5 > _class860[_int10].Int0.Length - 1)
                 {
                     num5 = _class860[_int10].Int0.Length - 1;
@@ -2911,8 +2910,8 @@ namespace GHNamespaceI
                 num2 = _class860[_int10].Int0[num4];
                 num3 = _class860[_int10].Int0[num5];
             }
-            var i = 0;
-            var num6 = 0;
+            int i = 0;
+            int num6 = 0;
             Class103 class103;
             while (num6 < _class890.Class880[int24].Class870[int25].Int1 << 1 && i < _int2.Length)
             {
@@ -2935,7 +2934,7 @@ namespace GHNamespaceI
                 num6 += 2;
             }
             class103 = Class103.Class1030[_class890.Class880[int24].Class870[int25].Int13 + 32];
-            var num7 = _class1020.method_0();
+            int num7 = _class1020.method_0();
             while (num7 < num && i < 576)
             {
                 Class103.smethod_1(class103, Int12, Int13, Int14, Int15, _class1020);
@@ -2988,11 +2987,11 @@ namespace GHNamespaceI
 
         private void method_7(float[,] float17, int int24, int int25)
         {
-            var @class = _class890.Class880[int24].Class870[int25];
-            var num = 0;
-            var num2 = 0;
-            var num3 = 0;
-            var num4 = 0;
+            Class87 @class = _class890.Class880[int24].Class870[int25];
+            int num = 0;
+            int num2 = 0;
+            int num3 = 0;
+            int num4 = 0;
             int num5;
             if (@class.Int4 != 0 && @class.Int5 == 2)
             {
@@ -3011,18 +3010,18 @@ namespace GHNamespaceI
             {
                 num5 = _class860[_int10].Int0[1];
             }
-            var num6 = (float) Math.Pow(2.0, 0.25 * (@class.Int2 - 210.0));
-            for (var i = 0; i < _int3[int24]; i++)
+            float num6 = (float) Math.Pow(2.0, 0.25 * (@class.Int2 - 210.0));
+            for (int i = 0; i < _int3[int24]; i++)
             {
-                var num7 = i % 18;
-                var num8 = (i - num7) / 18;
+                int num7 = i % 18;
+                int num8 = (i - num7) / 18;
                 if (_int2[i] == 0)
                 {
                     float17[num8, num7] = 0f;
                 }
                 else
                 {
-                    var num9 = _int2[i];
+                    int num9 = _int2[i];
                     if (num9 < Float11.Length)
                     {
                         if (_int2[i] > 0)
@@ -3048,10 +3047,10 @@ namespace GHNamespaceI
                     }
                 }
             }
-            for (var i = 0; i < _int3[int24]; i++)
+            for (int i = 0; i < _int3[int24]; i++)
             {
-                var num10 = i % 18;
-                var num11 = (i - num10) / 18;
+                int num10 = i % 18;
+                int num11 = (i - num10) / 18;
                 if (num4 == num5)
                 {
                     if (@class.Int4 != 0 && @class.Int5 == 2)
@@ -3097,14 +3096,14 @@ namespace GHNamespaceI
                 if (@class.Int4 != 0 && ((@class.Int5 == 2 && @class.Int6 == 0) ||
                                          (@class.Int5 == 2 && @class.Int6 != 0 && i >= 36)))
                 {
-                    var num12 = (num4 - num2) / num3;
-                    var num13 = _class901[int24].Int1[num12, num] << @class.Int12;
+                    int num12 = (num4 - num2) / num3;
+                    int num13 = _class901[int24].Int1[num12, num] << @class.Int12;
                     num13 += @class.Int8[num12] << 2;
                     float17[num11, num10] *= Float10[num13];
                 }
                 else
                 {
-                    var num14 = _class901[int24].Int0[num];
+                    int num14 = _class901[int24].Int0[num];
                     if (@class.Int11 != 0)
                     {
                         num14 += Int19[num];
@@ -3114,10 +3113,10 @@ namespace GHNamespaceI
                 }
                 num4++;
             }
-            for (var i = _int3[int24]; i < 576; i++)
+            for (int i = _int3[int24]; i < 576; i++)
             {
-                var num15 = i % 18;
-                var num16 = (i - num15) / 18;
+                int num15 = i % 18;
+                int num16 = (i - num15) / 18;
                 if (num15 < 0)
                 {
                     num15 = 0;
@@ -3132,13 +3131,13 @@ namespace GHNamespaceI
 
         private void method_8(float[,] float17, int int24, int int25)
         {
-            var @class = _class890.Class880[int24].Class870[int25];
+            Class87 @class = _class890.Class880[int24].Class870[int25];
             if (@class.Int4 == 0 || @class.Int5 != 2)
             {
-                for (var i = 0; i < 576; i++)
+                for (int i = 0; i < 576; i++)
                 {
-                    var num = i % 18;
-                    var num2 = (i - num) / 18;
+                    int num = i % 18;
+                    int num2 = (i - num) / 18;
                     _float2[i] = float17[num2, num];
                 }
                 return;
@@ -3146,25 +3145,25 @@ namespace GHNamespaceI
             Array.Clear(_float2, 0, 576);
             if (@class.Int6 != 0)
             {
-                for (var i = 0; i < 36; i++)
+                for (int i = 0; i < 36; i++)
                 {
-                    var num3 = i % 18;
-                    var num4 = (i - num3) / 18;
+                    int num3 = i % 18;
+                    int num4 = (i - num3) / 18;
                     _float2[i] = float17[num4, num3];
                 }
-                for (var j = 3; j < 13; j++)
+                for (int j = 3; j < 13; j++)
                 {
-                    var num5 = _class860[_int10].Int1[j];
-                    var num6 = _class860[_int10].Int1[j + 1] - num5;
-                    var num7 = (num5 << 2) - num5;
-                    var k = 0;
-                    var num8 = 0;
+                    int num5 = _class860[_int10].Int1[j];
+                    int num6 = _class860[_int10].Int1[j + 1] - num5;
+                    int num7 = (num5 << 2) - num5;
+                    int k = 0;
+                    int num8 = 0;
                     while (k < num6)
                     {
-                        var num9 = num7 + k;
-                        var num10 = num7 + num8;
-                        var num11 = num9 % 18;
-                        var num12 = (num9 - num11) / 18;
+                        int num9 = num7 + k;
+                        int num10 = num7 + num8;
+                        int num11 = num9 % 18;
+                        int num12 = (num9 - num11) / 18;
                         _float2[num10] = float17[num12, num11];
                         num9 += num6;
                         num10++;
@@ -3182,11 +3181,11 @@ namespace GHNamespaceI
                 }
                 return;
             }
-            for (var i = 0; i < 576; i++)
+            for (int i = 0; i < 576; i++)
             {
-                var num13 = _int22[_int10][i];
-                var num14 = num13 % 18;
-                var num15 = (num13 - num14) / 18;
+                int num13 = _int22[_int10][i];
+                int num14 = num13 % 18;
+                int num15 = (num13 - num14) / 18;
                 _float2[i] = float17[num15, num14];
             }
         }
@@ -3198,12 +3197,12 @@ namespace GHNamespaceI
                 Array.Copy(_float0[0], 0, _float1[0], 0, 576);
                 return;
             }
-            var @class = _class890.Class880[0].Class870[int24];
-            var num = _class1070.method_14();
-            var flag = _class1070.method_8() == Enum5.Const1 && (num & 2) != 0;
-            var flag2 = _class1070.method_8() == Enum5.Const1 && (num & 1) != 0;
-            var flag3 = _class1070.method_3() == Enum3.Const0 || _class1070.method_3() == Enum3.Const2;
-            var int25 = @class.Int3 & 1;
+            Class87 @class = _class890.Class880[0].Class870[int24];
+            int num = _class1070.method_14();
+            bool flag = _class1070.method_8() == Enum5.Const1 && (num & 2) != 0;
+            bool flag2 = _class1070.method_8() == Enum5.Const1 && (num & 1) != 0;
+            bool flag3 = _class1070.method_3() == Enum3.Const0 || _class1070.method_3() == Enum3.Const2;
+            int int25 = @class.Int3 & 1;
             int i;
             for (i = 0; i < 576; i++)
             {
@@ -3216,15 +3215,15 @@ namespace GHNamespaceI
                 {
                     if (@class.Int6 != 0)
                     {
-                        var num2 = 0;
-                        for (var j = 0; j < 3; j++)
+                        int num2 = 0;
+                        for (int j = 0; j < 3; j++)
                         {
-                            var num3 = 2;
+                            int num3 = 2;
                             int k;
                             for (k = 12; k >= 3; k--)
                             {
                                 i = _class860[_int10].Int1[k];
-                                var l = _class860[_int10].Int1[k + 1] - i;
+                                int l = _class860[_int10].Int1[k + 1] - i;
                                 i = (i << 2) - i + (j + 1) * l - 1;
                                 while (l > 0)
                                 {
@@ -3294,8 +3293,8 @@ namespace GHNamespaceI
                         if (num2 <= 3)
                         {
                             i = 2;
-                            var n = 17;
-                            var m = -1;
+                            int n = 17;
+                            int m = -1;
                             while (i >= 0)
                             {
                                 if (_float0[1][i, n] != 0f)
@@ -3318,7 +3317,7 @@ namespace GHNamespaceI
                             {
                                 i++;
                             }
-                            var k = i;
+                            int k = i;
                             i = _class860[_int10].Int0[i];
                             while (k < 8)
                             {
@@ -3344,15 +3343,15 @@ namespace GHNamespaceI
                     }
                     else
                     {
-                        for (var num5 = 0; num5 < 3; num5++)
+                        for (int num5 = 0; num5 < 3; num5++)
                         {
-                            var num6 = -1;
+                            int num6 = -1;
                             int k;
                             int num4;
                             for (k = 12; k >= 0; k--)
                             {
                                 num4 = _class860[_int10].Int1[k];
-                                var l = _class860[_int10].Int1[k + 1] - num4;
+                                int l = _class860[_int10].Int1[k + 1] - num4;
                                 i = (num4 << 2) - num4 + (num5 + 1) * l - 1;
                                 while (l > 0)
                                 {
@@ -3391,7 +3390,7 @@ namespace GHNamespaceI
                                 }
                             }
                             num4 = _class860[_int10].Int1[10];
-                            var num7 = _class860[_int10].Int1[11];
+                            int num7 = _class860[_int10].Int1[11];
                             m = num7 - num4;
                             k = (num4 << 2) - num4 + num5 * m;
                             m = _class860[_int10].Int1[12] - num7;
@@ -3417,8 +3416,8 @@ namespace GHNamespaceI
                 else
                 {
                     i = 31;
-                    var n = 17;
-                    var m = 0;
+                    int n = 17;
+                    int m = 0;
                     while (i >= 0)
                     {
                         if (_float0[1][i, n] != 0f)
@@ -3441,7 +3440,7 @@ namespace GHNamespaceI
                     {
                         i++;
                     }
-                    var k = i;
+                    int k = i;
                     i = _class860[_int10].Int0[i];
                     while (k < 21)
                     {
@@ -3483,9 +3482,9 @@ namespace GHNamespaceI
                 }
             }
             i = 0;
-            for (var m = 0; m < 32; m++)
+            for (int m = 0; m < 32; m++)
             {
-                for (var n = 0; n < 18; n++)
+                for (int n = 0; n < 18; n++)
                 {
                     if (Int16[i] == 7)
                     {
@@ -3520,7 +3519,7 @@ namespace GHNamespaceI
 
         private void method_10(int int24, int int25)
         {
-            var @class = _class890.Class880[int24].Class870[int25];
+            Class87 @class = _class890.Class880[int24].Class870[int25];
             if (@class.Int4 != 0 && @class.Int5 == 2 && @class.Int6 == 0)
             {
                 return;
@@ -3534,14 +3533,14 @@ namespace GHNamespaceI
             {
                 num = 558;
             }
-            for (var i = 0; i < num; i += 18)
+            for (int i = 0; i < num; i += 18)
             {
-                for (var j = 0; j < 8; j++)
+                for (int j = 0; j < 8; j++)
                 {
-                    var num2 = i + 17 - j;
-                    var num3 = i + 18 + j;
-                    var num4 = _float2[num2];
-                    var num5 = _float2[num3];
+                    int num2 = i + 17 - j;
+                    int num3 = i + 18 + j;
+                    float num4 = _float2[num2];
+                    float num5 = _float2[num3];
                     _float2[num2] = num4 * Float14[j] - num5 * Float15[j];
                     _float2[num3] = num5 * Float14[j] + num4 * Float15[j];
                 }
@@ -3550,21 +3549,21 @@ namespace GHNamespaceI
 
         private void method_11(int int24, int int25)
         {
-            var @class = _class890.Class880[int24].Class870[int25];
-            for (var i = 0; i < 576; i += 18)
+            Class87 @class = _class890.Class880[int24].Class870[int25];
+            for (int i = 0; i < 576; i += 18)
             {
-                var int26 = (@class.Int4 == 0 || @class.Int6 == 0 || i >= 36) ? @class.Int5 : 0;
-                var array = _float2;
-                for (var j = 0; j < 18; j++)
+                int int26 = (@class.Int4 == 0 || @class.Int6 == 0 || i >= 36) ? @class.Int5 : 0;
+                float[] array = _float2;
+                for (int j = 0; j < 18; j++)
                 {
                     Float8[j] = array[j + i];
                 }
                 method_13(Float8, Float9, int26);
-                for (var k = 0; k < 18; k++)
+                for (int k = 0; k < 18; k++)
                 {
                     array[k + i] = Float8[k];
                 }
-                var array2 = _float3;
+                float[,] array2 = _float3;
                 array[i] = Float9[0] + array2[int24, i];
                 array2[int24, i] = Float9[18];
                 array[1 + i] = Float9[1] + array2[int24, i + 1];
@@ -3606,9 +3605,9 @@ namespace GHNamespaceI
 
         private void method_12()
         {
-            for (var i = 0; i < 18; i++)
+            for (int i = 0; i < 18; i++)
             {
-                for (var j = 0; j < 18; j += 3)
+                for (int j = 0; j < 18; j += 3)
                 {
                     _float1[0][i, j] = (_float1[0][i, j] + _float1[1][i, j]) * 0.5f;
                     _float1[0][i, j + 1] = (_float1[0][i, j + 1] + _float1[1][i, j + 1]) * 0.5f;
@@ -3634,8 +3633,8 @@ namespace GHNamespaceI
             if (int24 == 2)
             {
                 Array.Clear(float18, 0, 36);
-                var num = 0;
-                for (var i = 0; i < 3; i++)
+                int num = 0;
+                for (int i = 0; i < 3; i++)
                 {
                     float17[15 + i] += float17[12 + i];
                     float17[12 + i] += float17[9 + i];
@@ -3644,9 +3643,9 @@ namespace GHNamespaceI
                     float17[3 + i] += float17[i];
                     float17[15 + i] += float17[9 + i];
                     float17[9 + i] += float17[3 + i];
-                    var num2 = float17[12 + i] * 0.5f;
-                    var num3 = float17[6 + i] * 0.8660254f;
-                    var num4 = float17[i] + num2;
+                    float num2 = float17[12 + i] * 0.5f;
+                    float num3 = float17[6 + i] * 0.8660254f;
+                    float num4 = float17[i] + num2;
                     num5 = float17[i] - float17[12 + i];
                     num6 = num4 + num3;
                     num7 = num4 - num3;
@@ -3659,7 +3658,7 @@ namespace GHNamespaceI
                     num10 *= 1.93185163f;
                     num8 *= 0.707106769f;
                     num9 *= 0.5176381f;
-                    var num11 = num6;
+                    float num11 = num6;
                     num6 += num9;
                     num9 = num11 - num9;
                     num11 = num5;
@@ -3728,52 +3727,52 @@ namespace GHNamespaceI
             float17[7] += float17[5];
             float17[5] += float17[3];
             float17[3] += float17[1];
-            var num18 = float17[0] + float17[0];
-            var num19 = num18 + float17[12];
-            var num20 = num19 + float17[4] * 1.87938523f + float17[8] * 1.53208888f + float17[16] * 0.347296357f;
-            var num21 = num18 + float17[4] - float17[8] - float17[12] - float17[12] - float17[16];
-            var num22 = num19 - float17[4] * 0.347296357f - float17[8] * 1.87938523f + float17[16] * 1.53208888f;
-            var num23 = num19 - float17[4] * 1.53208888f + float17[8] * 0.347296357f - float17[16] * 1.87938523f;
-            var num24 = float17[0] - float17[4] + float17[8] - float17[12] + float17[16];
-            var num25 = float17[6] * 1.73205078f;
-            var num26 = float17[2] * 1.96961546f + num25 + float17[10] * 1.28557527f + float17[14] * 0.6840403f;
-            var num27 = (float17[2] - float17[10] - float17[14]) * 1.73205078f;
-            var num28 = float17[2] * 1.28557527f - num25 - float17[10] * 0.6840403f + float17[14] * 1.96961546f;
-            var num29 = float17[2] * 0.6840403f - num25 + float17[10] * 1.96961546f - float17[14] * 1.28557527f;
-            var num30 = float17[1] + float17[1];
-            var num31 = num30 + float17[13];
-            var num32 = num31 + float17[5] * 1.87938523f + float17[9] * 1.53208888f + float17[17] * 0.347296357f;
-            var num33 = num30 + float17[5] - float17[9] - float17[13] - float17[13] - float17[17];
-            var num34 = num31 - float17[5] * 0.347296357f - float17[9] * 1.87938523f + float17[17] * 1.53208888f;
-            var num35 = num31 - float17[5] * 1.53208888f + float17[9] * 0.347296357f - float17[17] * 1.87938523f;
-            var num36 = (float17[1] - float17[5] + float17[9] - float17[13] + float17[17]) * 0.707106769f;
-            var num37 = float17[7] * 1.73205078f;
-            var num38 = float17[3] * 1.96961546f + num37 + float17[11] * 1.28557527f + float17[15] * 0.6840403f;
-            var num39 = (float17[3] - float17[11] - float17[15]) * 1.73205078f;
-            var num40 = float17[3] * 1.28557527f - num37 - float17[11] * 0.6840403f + float17[15] * 1.96961546f;
-            var num41 = float17[3] * 0.6840403f - num37 + float17[11] * 1.96961546f - float17[15] * 1.28557527f;
-            var num42 = num20 + num26;
-            var num43 = (num32 + num38) * 0.5019099f;
+            float num18 = float17[0] + float17[0];
+            float num19 = num18 + float17[12];
+            float num20 = num19 + float17[4] * 1.87938523f + float17[8] * 1.53208888f + float17[16] * 0.347296357f;
+            float num21 = num18 + float17[4] - float17[8] - float17[12] - float17[12] - float17[16];
+            float num22 = num19 - float17[4] * 0.347296357f - float17[8] * 1.87938523f + float17[16] * 1.53208888f;
+            float num23 = num19 - float17[4] * 1.53208888f + float17[8] * 0.347296357f - float17[16] * 1.87938523f;
+            float num24 = float17[0] - float17[4] + float17[8] - float17[12] + float17[16];
+            float num25 = float17[6] * 1.73205078f;
+            float num26 = float17[2] * 1.96961546f + num25 + float17[10] * 1.28557527f + float17[14] * 0.6840403f;
+            float num27 = (float17[2] - float17[10] - float17[14]) * 1.73205078f;
+            float num28 = float17[2] * 1.28557527f - num25 - float17[10] * 0.6840403f + float17[14] * 1.96961546f;
+            float num29 = float17[2] * 0.6840403f - num25 + float17[10] * 1.96961546f - float17[14] * 1.28557527f;
+            float num30 = float17[1] + float17[1];
+            float num31 = num30 + float17[13];
+            float num32 = num31 + float17[5] * 1.87938523f + float17[9] * 1.53208888f + float17[17] * 0.347296357f;
+            float num33 = num30 + float17[5] - float17[9] - float17[13] - float17[13] - float17[17];
+            float num34 = num31 - float17[5] * 0.347296357f - float17[9] * 1.87938523f + float17[17] * 1.53208888f;
+            float num35 = num31 - float17[5] * 1.53208888f + float17[9] * 0.347296357f - float17[17] * 1.87938523f;
+            float num36 = (float17[1] - float17[5] + float17[9] - float17[13] + float17[17]) * 0.707106769f;
+            float num37 = float17[7] * 1.73205078f;
+            float num38 = float17[3] * 1.96961546f + num37 + float17[11] * 1.28557527f + float17[15] * 0.6840403f;
+            float num39 = (float17[3] - float17[11] - float17[15]) * 1.73205078f;
+            float num40 = float17[3] * 1.28557527f - num37 - float17[11] * 0.6840403f + float17[15] * 1.96961546f;
+            float num41 = float17[3] * 0.6840403f - num37 + float17[11] * 1.96961546f - float17[15] * 1.28557527f;
+            float num42 = num20 + num26;
+            float num43 = (num32 + num38) * 0.5019099f;
             num6 = num42 + num43;
-            var num44 = num42 - num43;
+            float num44 = num42 - num43;
             num42 = num21 + num27;
             num43 = (num33 + num39) * 0.5176381f;
             num5 = num42 + num43;
-            var num45 = num42 - num43;
+            float num45 = num42 - num43;
             num42 = num22 + num28;
             num43 = (num34 + num40) * 0.551688969f;
             num7 = num42 + num43;
-            var num46 = num42 - num43;
+            float num46 = num42 - num43;
             num42 = num23 + num29;
             num43 = (num35 + num41) * 0.610387266f;
             num10 = num42 + num43;
-            var num47 = num42 - num43;
+            float num47 = num42 - num43;
             num8 = num24 + num36;
-            var num48 = num24 - num36;
+            float num48 = num24 - num36;
             num42 = num23 - num29;
             num43 = (num35 - num41) * 0.8717234f;
             num9 = num42 + num43;
-            var num49 = num42 - num43;
+            float num49 = num42 - num43;
             num42 = num22 - num28;
             num43 = (num34 - num40) * 1.18310082f;
             num16 = num42 + num43;
@@ -3786,7 +3785,7 @@ namespace GHNamespaceI
             num43 = (num32 - num38) * 5.73685646f;
             num12 = num42 + num43;
             num13 = num42 - num43;
-            var array = Float16[int24];
+            float[] array = Float16[int24];
             float18[0] = -num13 * array[0];
             float18[1] = -num15 * array[1];
             float18[2] = -num17 * array[2];
@@ -3827,9 +3826,9 @@ namespace GHNamespaceI
 
         private static float[] smethod_0()
         {
-            var array = new float[8192];
-            var y = 1.3333333333333333;
-            for (var i = 0; i < 8192; i++)
+            float[] array = new float[8192];
+            double y = 1.3333333333333333;
+            for (int i = 0; i < 8192; i++)
             {
                 array[i] = (float) Math.Pow(i, y);
             }
@@ -3838,15 +3837,15 @@ namespace GHNamespaceI
 
         public static int[] smethod_1(int[] int24)
         {
-            var num = 0;
-            var array = new int[576];
-            for (var i = 0; i < 13; i++)
+            int num = 0;
+            int[] array = new int[576];
+            for (int i = 0; i < 13; i++)
             {
-                var num2 = int24[i];
-                var num3 = int24[i + 1];
-                for (var j = 0; j < 3; j++)
+                int num2 = int24[i];
+                int num3 = int24[i + 1];
+                for (int j = 0; j < 3; j++)
                 {
-                    for (var k = num2; k < num3; k++)
+                    for (int k = num2; k < num3; k++)
                     {
                         array[3 * k + j] = num++;
                     }

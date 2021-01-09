@@ -37,8 +37,8 @@ namespace GHNamespace6
             {
                 throw new InvalidOperationException("Window full");
             }
-            var num = _int0 - int3 & 32767;
-            var num2 = 32768 - int2;
+            int num = _int0 - int3 & 32767;
+            int num2 = 32768 - int2;
             if (num > num2 || _int0 >= num2)
             {
                 method_1(num, int2, int3);
@@ -59,7 +59,7 @@ namespace GHNamespace6
         public int method_3(Class187 class1870, int int2)
         {
             int2 = Math.Min(Math.Min(int2, 32768 - _int1), class1870.method_3());
-            var num = 32768 - _int0;
+            int num = 32768 - _int0;
             int num2;
             if (int2 > num)
             {
@@ -90,7 +90,7 @@ namespace GHNamespace6
 
         public int method_6(byte[] byte1, int int2, int int3)
         {
-            var num = _int0;
+            int num = _int0;
             if (int3 > _int1)
             {
                 int3 = _int1;
@@ -99,8 +99,8 @@ namespace GHNamespace6
             {
                 num = (_int0 - _int1 + int3 & 32767);
             }
-            var num2 = int3;
-            var num3 = int3 - num;
+            int num2 = int3;
+            int num3 = int3 - num;
             if (num3 > 0)
             {
                 Array.Copy(_byte0, 32768 - num3, byte1, int2, num3);

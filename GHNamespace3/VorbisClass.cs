@@ -44,32 +44,32 @@ namespace GHNamespace3
 
         public void method_0()
         {
-            for (var i = 0; i < Int8; i++)
+            for (int i = 0; i < Int8; i++)
             {
                 Class640[i] = null;
             }
             Class640 = null;
-            for (var j = 0; j < Int9; j++)
+            for (int j = 0; j < Int9; j++)
             {
                 Class45.Class450[Int15[j]].vmethod_0(Object0[j]);
             }
             Object0 = null;
-            for (var k = 0; k < Int10; k++)
+            for (int k = 0; k < Int10; k++)
             {
                 Class72.Class720[Int16[k]].vmethod_0(Object1[k]);
             }
             Object1 = null;
-            for (var l = 0; l < Int11; l++)
+            for (int l = 0; l < Int11; l++)
             {
                 Class41.Class410[Int17[l]].vmethod_0(Object2[l]);
             }
             Object2 = null;
-            for (var m = 0; m < Int12; m++)
+            for (int m = 0; m < Int12; m++)
             {
                 Class57.Class570[Int18[m]].vmethod_0(Object3[m]);
             }
             Object3 = null;
-            for (var n = 0; n < Int13; n++)
+            for (int n = 0; n < Int13; n++)
             {
                 if (Class760[n] != null)
                 {
@@ -78,7 +78,7 @@ namespace GHNamespace3
                 }
             }
             Class760 = null;
-            for (var num = 0; num < Int14; num++)
+            for (int num = 0; num < Int14; num++)
             {
                 Class530[num].method_0();
             }

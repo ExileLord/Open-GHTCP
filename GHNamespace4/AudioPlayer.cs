@@ -18,8 +18,8 @@ namespace GHNamespace4
 
             public void StartListener(object object0)
             {
-                var num = 0f;
-                var num2 = Volume;
+                float num = 0f;
+                float num2 = Volume;
                 while (num < num2)
                 {
                     AudioPlayer.SetVolume(num);
@@ -40,7 +40,7 @@ namespace GHNamespace4
             public void method_0(object object0)
             {
                 GC.KeepAlive(Class1590._delegate40);
-                var intPtr = Intptr0;
+                IntPtr intPtr = Intptr0;
                 while (Class162.waveOutClose(intPtr) != Enum18.Const0)
                 {
                     Thread.Sleep(1000);
@@ -73,8 +73,10 @@ namespace GHNamespace4
         public AudioPlayer(int int0, WaveFormat waveFormat0, int int1, float volume, bool bool3, Delegate3 delegate31)
         {
             WaitCallback waitCallback = null;
-            var volumeListener = new VolumeListener();
-            volumeListener.Volume = volume;
+            VolumeListener volumeListener = new VolumeListener
+            {
+                Volume = volume
+            };
             _delegate40 = Class165.smethod_0;
             _object0 = new object();
             //base..ctor();
@@ -98,7 +100,7 @@ namespace GHNamespace4
 
         public int method_0()
         {
-            var @struct = default(Struct67);
+            Struct67 @struct = default(Struct67);
             @struct.enum14_0 = Enum14.Const2;
             if (_intptr0 != IntPtr.Zero)
             {
@@ -109,7 +111,7 @@ namespace GHNamespace4
 
         public float method_1()
         {
-            var num = 0;
+            int num = 0;
             if (_intptr0 != IntPtr.Zero)
             {
                 Class162.waveOutGetVolume(_intptr0, ref num);
@@ -119,7 +121,7 @@ namespace GHNamespace4
 
         public void SetVolume(float float0)
         {
-            var int_ = (int) (float0 * 65535f) + ((int) (float0 * 65535f) << 16);
+            int int_ = (int) (float0 * 65535f) + ((int) (float0 * 65535f) << 16);
             if (_intptr0 != IntPtr.Zero)
             {
                 Class162.waveOutSetVolume(_intptr0, int_);
@@ -164,9 +166,11 @@ namespace GHNamespace4
                         method_8();
                         if (_intptr0 != IntPtr.Zero)
                         {
-                            var @class = new Class161();
-                            @class.Class1590 = this;
-                            @class.Intptr0 = _intptr0;
+                            Class161 @class = new Class161
+                            {
+                                Class1590 = this,
+                                Intptr0 = _intptr0
+                            };
                             ThreadPool.QueueUserWorkItem(@class.method_0);
                         }
                     }
@@ -195,10 +199,10 @@ namespace GHNamespace4
                 }
                 else
                 {
-                    var array = new byte[_class1651.method_0()];
+                    byte[] array = new byte[_class1651.method_0()];
                     if (_byte0 != 0)
                     {
-                        for (var i = 0; i < array.Length; i++)
+                        for (int i = 0; i < array.Length; i++)
                         {
                             array[i] = _byte0;
                         }
@@ -217,12 +221,12 @@ namespace GHNamespace4
             if (int1 > 0)
             {
                 _class1650 = new Class165(_intptr0, int0);
-                var @class = _class1650;
+                Class165 @class = _class1650;
                 try
                 {
-                    for (var i = 1; i < int1; i++)
+                    for (int i = 1; i < int1; i++)
                     {
-                        var class2 = new Class165(_intptr0, int0);
+                        Class165 class2 = new Class165(_intptr0, int0);
                         @class.Class1650 = class2;
                         @class = class2;
                     }
@@ -239,12 +243,12 @@ namespace GHNamespace4
             _class1651 = null;
             if (_class1650 != null)
             {
-                var @class = _class1650;
+                Class165 @class = _class1650;
                 _class1650 = null;
-                var class2 = @class;
+                Class165 class2 = @class;
                 do
                 {
-                    var class3 = class2.Class1650;
+                    Class165 class3 = class2.Class1650;
                     class2.Dispose();
                     class2 = class3;
                 } while (class2 != @class);
@@ -259,7 +263,7 @@ namespace GHNamespace4
 
         private void method_10()
         {
-            var @class = _class1650;
+            Class165 @class = _class1650;
             while (@class.Class1650 != _class1650)
             {
                 @class.method_3();

@@ -8,7 +8,7 @@ namespace GHNamespace8
     {
         public QbcParser Class3620;
 
-        private ZzPakNode2 _class3180;
+        private readonly ZzPakNode2 _class3180;
 
         private readonly string _string0;
 
@@ -24,7 +24,7 @@ namespace GHNamespace8
 
         public override void CreateCustomMenu()
         {
-            using (var @class = new ZzPakNode2())
+            using (ZzPakNode2 @class = new ZzPakNode2())
             {
                 @class.zzCreateQbFileFrom("songs\\" + _string0 + ".mid.qb", Class3620.method_4(_string0));
                 @class.method_16(_string1 + "songs\\" + _string0 + "_song.pak.xen");

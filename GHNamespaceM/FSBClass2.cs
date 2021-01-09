@@ -290,16 +290,8 @@ namespace GHNamespaceM
 
         public FsbClass2(Stream stream1, byte[] byte2)
         {
-            if (stream1 == null)
-            {
-                throw new ArgumentNullException("BaseStream", "Fsb Encryption");
-            }
-            if (byte2 == null)
-            {
-                throw new ArgumentNullException("Key", "Fsb Encryption");
-            }
-            Stream0 = stream1;
-            Byte0 = byte2;
+            Stream0 = stream1 ?? throw new ArgumentNullException("BaseStream", "Fsb Encryption");
+            Byte0 = byte2 ?? throw new ArgumentNullException("Key", "Fsb Encryption");
         }
 
         public FsbClass2(Stream stream1) : this(stream1, smethod_0(stream1))
@@ -308,14 +300,14 @@ namespace GHNamespaceM
 
         private static byte[] smethod_0(Stream stream1)
         {
-            var position = stream1.Position;
-            var array = new byte[65536];
-            var num = stream1.Read(array, 0, array.Length);
+            long position = stream1.Position;
+            byte[] array = new byte[65536];
+            int num = stream1.Read(array, 0, array.Length);
             Array.Resize(ref array, num);
-            var i = 2;
+            int i = 2;
             while (i < 50)
             {
-                var result = smethod_1(array, i);
+                byte[] result = smethod_1(array, i);
                 stream1.Position = position;
                 try
                 {
@@ -334,10 +326,10 @@ namespace GHNamespaceM
             if (num > 1000)
             {
                 Array.Resize(ref array, 1000);
-                var j = 2;
+                int j = 2;
                 while (j < 50)
                 {
-                    var result2 = smethod_1(array, j);
+                    byte[] result2 = smethod_1(array, j);
                     stream1.Position = position;
                     try
                     {
@@ -357,10 +349,10 @@ namespace GHNamespaceM
             if (num > 500)
             {
                 Array.Resize(ref array, 500);
-                var k = 2;
+                int k = 2;
                 while (k < 50)
                 {
-                    var result3 = smethod_1(array, k);
+                    byte[] result3 = smethod_1(array, k);
                     stream1.Position = position;
                     try
                     {
@@ -383,19 +375,19 @@ namespace GHNamespaceM
 
         private static byte[] smethod_1(byte[] byte2, int int0)
         {
-            var array = new byte[int0];
-            var array2 = new uint[256];
-            for (var i = 0; i < int0; i++)
+            byte[] array = new byte[int0];
+            uint[] array2 = new uint[256];
+            for (int i = 0; i < int0; i++)
             {
                 Array.Clear(array2, 0, array2.Length);
-                var num = 0;
+                int num = 0;
                 while (i + num < byte2.Length)
                 {
                     array2[byte2[i + num]] += 1u;
                     num += int0;
                 }
-                var num2 = 0;
-                for (var j = 0; j < array2.Length; j++)
+                int num2 = 0;
+                for (int j = 0; j < array2.Length; j++)
                 {
                     if (array2[j] >= array2[num2])
                     {
@@ -409,8 +401,8 @@ namespace GHNamespaceM
 
         public byte method_1(byte byte2, ref long long0)
         {
-            var arg_1A0 = byte2;
-            var arg190 = Byte0;
+            byte arg_1A0 = byte2;
+            byte[] arg190 = Byte0;
             long num;
             long0 = (num = long0) + 1L;
             byte2 = (byte) (arg_1A0 ^ arg190[(int) ((IntPtr) num)]);
@@ -433,7 +425,7 @@ namespace GHNamespaceM
 
         public void method_4(byte[] byte2, int int0, int int1, long long0)
         {
-            for (var i = int0; i < int1; i++)
+            for (int i = int0; i < int1; i++)
             {
                 byte2[i] = method_2(byte2[i], ref long0);
             }
@@ -441,7 +433,7 @@ namespace GHNamespaceM
 
         public void method_5(byte[] byte2, int int0, int int1, long long0)
         {
-            for (var i = int0; i < int1; i++)
+            for (int i = int0; i < int1; i++)
             {
                 byte2[i] = method_3(byte2[i], ref long0);
             }
@@ -449,15 +441,15 @@ namespace GHNamespaceM
 
         public override int Read(byte[] buffer, int offset, int count)
         {
-            var long_ = method_0();
-            var num = Stream0.Read(buffer, offset, count);
+            long long_ = method_0();
+            int num = Stream0.Read(buffer, offset, count);
             method_5(buffer, offset, num, long_);
             return num;
         }
 
         public override int ReadByte()
         {
-            var num = method_0();
+            long num = method_0();
             return method_3(Byte0[(int) ((IntPtr) method_0())], ref num);
         }
 
@@ -469,7 +461,7 @@ namespace GHNamespaceM
 
         public override void WriteByte(byte value)
         {
-            var num = method_0();
+            long num = method_0();
             Stream0.WriteByte(method_2(value, ref num));
         }
 

@@ -18,7 +18,7 @@ namespace GHNamespace7
         public ViewLog()
         {
             InitializeComponent();
-            foreach (var current in Class216.SortedDictionary0.Keys)
+            foreach (string current in Class216.SortedDictionary0.Keys)
             {
                 _logListBox.Items.Add(current);
             }

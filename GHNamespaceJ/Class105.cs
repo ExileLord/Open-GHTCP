@@ -14,9 +14,9 @@ namespace GHNamespaceJ
 
         public float[] method_0()
         {
-            var array = new float[Num1];
-            var i = 0;
-            var num = Num1;
+            float[] array = new float[Num1];
+            int i = 0;
+            int num = Num1;
             while (i < num)
             {
                 array[i] = smethod_1(_float1[i]);
@@ -28,8 +28,8 @@ namespace GHNamespaceJ
         public void method_1(float[] float2)
         {
             method_3();
-            var num = (float2.Length > Num1) ? Num1 : float2.Length;
-            for (var i = 0; i < num; i++)
+            int num = (float2.Length > Num1) ? Num1 : float2.Length;
+            for (int i = 0; i < num; i++)
             {
                 _float1[i] = smethod_0(float2[i]);
             }
@@ -45,7 +45,7 @@ namespace GHNamespaceJ
 
         public void method_3()
         {
-            for (var i = 0; i < Num1; i++)
+            for (int i = 0; i < Num1; i++)
             {
                 _float1[i] = 0f;
             }

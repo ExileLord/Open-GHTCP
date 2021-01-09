@@ -28,7 +28,7 @@ namespace GHNamespaceB
 
         public void method_11(IEnumerable<int> ienumerable0)
         {
-            foreach (var current in ienumerable0)
+            foreach (int current in ienumerable0)
             {
                 Nodes.Add(new IntegerValueNode(current));
             }

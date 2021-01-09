@@ -75,7 +75,7 @@ namespace GHNamespaceM
                     method_0().Seek(_long2, SeekOrigin.Begin);
                 }
                 count = (int) Math.Min(count, method_2());
-                var num = method_0().Read(buffer, offset, count);
+                int num = method_0().Read(buffer, offset, count);
                 _long2 += num;
                 result = num;
             }

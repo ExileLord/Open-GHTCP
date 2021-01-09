@@ -9,7 +9,7 @@ namespace GHNamespace7
 
         public byte method_0()
         {
-            var num = (_uint0[2] & 65535u) | 2u;
+            uint num = (_uint0[2] & 65535u) | 2u;
             return (byte) (num * (num ^ 1u) >> 8);
         }
 

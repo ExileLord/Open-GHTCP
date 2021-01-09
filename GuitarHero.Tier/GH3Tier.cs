@@ -96,10 +96,10 @@ namespace GuitarHero.Tier
             Boss = (class2860.zzFindNode(new StructItemQbKey(0, "boss")) != null);
             Nocash = (class2860.zzFindNode(new StructItemQbKey(0, "nocash")) != null);
             Unlockall = (class2860.zzFindNode(new StructItemQbKey(0, "unlockall")) != null);
-            var class5 = new ArrayPointerNode("songs");
+            ArrayPointerNode class5 = new ArrayPointerNode("songs");
             if (class2860.method_6(ref class5) && !(class5.GetFirstChild() is FloatListNode))
             {
-                foreach (var current in class5.GetFirstChild().method_8<string>())
+                foreach (string current in class5.GetFirstChild().method_8<string>())
                 {
                     if (gh3Songlist0.ContainsKey(current))
                     {
@@ -115,7 +115,7 @@ namespace GuitarHero.Tier
 
         public StructureHeaderNode method_3()
         {
-            var @class = new StructureHeaderNode();
+            StructureHeaderNode @class = new StructureHeaderNode();
             @class.addChild(new UnicodeStructureNode("title", Title));
             if (Songs.Count == 0)
             {
@@ -123,8 +123,8 @@ namespace GuitarHero.Tier
             }
             else
             {
-                var list = new List<int>();
-                foreach (var current in Songs)
+                List<int> list = new List<int>();
+                foreach (Gh3Song current in Songs)
                 {
                     list.Add(QbSongClass1.AddKeyToDictionary(current.Name));
                 }

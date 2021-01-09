@@ -20,30 +20,30 @@ namespace GHNamespace4
 
         private readonly int[] _int5 = new int[32];
 
-        private int[] _int6;
+        private readonly int[] _int6;
 
         public Class135(Class144 class1440, Class140 class1401, Class136 class1360, int int7, int int8,
             int int9) : base(class1401, int8)
         {
             _int6 = class1360.vmethod_2();
             _int1 = int9;
-            for (var i = 0; i < int9; i++)
+            for (int i = 0; i < int9; i++)
             {
                 _int5[i] = class1440.vmethod_12(int7);
             }
-            var num = class1440.vmethod_10(4);
+            int num = class1440.vmethod_10(4);
             if (num == 15)
             {
                 throw new IOException("STREAM_DECODER_ERROR_STATUS_LOST_SYNC");
             }
             _int2 = num + 1;
             _int3 = class1440.vmethod_12(5);
-            for (var j = 0; j < int9; j++)
+            for (int j = 0; j < int9; j++)
             {
                 _int4[j] = class1440.vmethod_12(_int2);
             }
-            var num2 = class1440.vmethod_10(2);
-            var num3 = num2;
+            int num2 = class1440.vmethod_10(2);
+            int num3 = num2;
             if (num3 != 0)
             {
                 throw new IOException("STREAM_DECODER_UNPARSEABLE_STREAM");
@@ -75,20 +75,20 @@ namespace GHNamespace4
 
         public override string ToString()
         {
-            var stringBuilder = new StringBuilder(string.Concat("ChannelLPC: Order=", _int1, " WastedBits=", Int0));
+            StringBuilder stringBuilder = new StringBuilder(string.Concat("ChannelLPC: Order=", _int1, " WastedBits=", Int0));
             stringBuilder.Append(string.Concat(" qlpCoeffPrecision=", _int2, " quantizationLevel=", _int3));
             stringBuilder.Append("\n\t\tqlpCoeff: ");
-            for (var i = 0; i < _int1; i++)
+            for (int i = 0; i < _int1; i++)
             {
                 stringBuilder.Append(_int4[i] + " ");
             }
             stringBuilder.Append("\n\t\tWarmup: ");
-            for (var j = 0; j < _int1; j++)
+            for (int j = 0; j < _int1; j++)
             {
                 stringBuilder.Append(_int5[j] + " ");
             }
             stringBuilder.Append("\n\t\tParameter: ");
-            for (var k = 0; k < 1 << ((Class138) _class1370).Int0; k++)
+            for (int k = 0; k < 1 << ((Class138) _class1370).Int0; k++)
             {
                 stringBuilder.Append(((Class138) _class1370).Class1430.Int0[k] + " ");
             }

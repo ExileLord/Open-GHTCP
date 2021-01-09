@@ -93,8 +93,8 @@ namespace SystemTools
                 {
                     throw new ArgumentOutOfRangeException();
                 }
-                var num = index >> 3;
-                var num2 = index & 7;
+                int num = index >> 3;
+                int num2 = index & 7;
                 if (value)
                 {
                     List<byte> list;
@@ -124,7 +124,7 @@ namespace SystemTools
 
         public static byte[] smethod_0<T>(T gparam0) where T : struct
         {
-            var array = new byte[Marshal.SizeOf(gparam0)];
+            byte[] array = new byte[Marshal.SizeOf(gparam0)];
             try
             {
                 T[] src =
@@ -137,7 +137,7 @@ namespace SystemTools
             catch
             {
             }
-            var gCHandle = GCHandle.Alloc(array, GCHandleType.Pinned);
+            GCHandle gCHandle = GCHandle.Alloc(array, GCHandleType.Pinned);
             try
             {
                 Marshal.StructureToPtr(gparam0, gCHandle.AddrOfPinnedObject(), false);
@@ -151,8 +151,8 @@ namespace SystemTools
 
         public void method_0(int int0, byte byte0)
         {
-            var num = int0 >> 3;
-            var num2 = int0 & 7;
+            int num = int0 >> 3;
+            int num2 = int0 & 7;
             if (num2 == 0)
             {
                 _data[num] = byte0;
@@ -190,7 +190,7 @@ namespace SystemTools
         {
             if (_bitLength != 0 && (_bitLength & 7) != 0)
             {
-                foreach (var current in ienumerable0)
+                foreach (byte current in ienumerable0)
                 {
                     method_0(_bitLength, current);
                 }
@@ -202,8 +202,8 @@ namespace SystemTools
 
         public override string ToString()
         {
-            var text = string.Empty;
-            using (var enumerator = GetEnumerator())
+            string text = string.Empty;
+            using (IEnumerator<bool> enumerator = GetEnumerator())
             {
                 while (enumerator.MoveNext())
                 {
@@ -215,13 +215,13 @@ namespace SystemTools
 
         public override bool Equals(object obj)
         {
-            var bitList = (BitList) obj;
+            BitList bitList = (BitList) obj;
             if (_bitLength != bitList._bitLength)
             {
                 return false;
             }
-            var num = (_bitLength >> 3) + 1;
-            for (var i = 0; i < num; i++)
+            int num = (_bitLength >> 3) + 1;
+            for (int i = 0; i < num; i++)
             {
                 if (_data[i] != bitList._data[i])
                 {
@@ -238,7 +238,7 @@ namespace SystemTools
 
         public int IndexOf(bool item)
         {
-            for (var i = 0; i < _bitLength; i++)
+            for (int i = 0; i < _bitLength; i++)
             {
                 if (this[i] == item)
                 {
@@ -263,12 +263,12 @@ namespace SystemTools
             {
                 _data.Add(0);
             }
-            var num = 1;
-            var num2 = 7;
-            var num3 = _data.Count - 1;
-            var num4 = index >> 3;
-            var num5 = index - (num4 << 3);
-            for (var i = num3; i > num4; i--)
+            int num = 1;
+            int num2 = 7;
+            int num3 = _data.Count - 1;
+            int num4 = index >> 3;
+            int num5 = index - (num4 << 3);
+            for (int i = num3; i > num4; i--)
             {
                 _data[i] = (byte) (_data[i] << num | _data[i - 1] >> num2);
             }
@@ -286,13 +286,13 @@ namespace SystemTools
         {
             if (index >= 0 && index < _bitLength)
             {
-                var num = 1;
-                var num2 = 7;
-                var num3 = _data.Count - 1;
-                var num4 = index >> 3;
-                var num5 = index - (num4 << 3);
-                var b = _data[num4];
-                for (var i = num4; i < num3; i++)
+                int num = 1;
+                int num2 = 7;
+                int num3 = _data.Count - 1;
+                int num4 = index >> 3;
+                int num5 = index - (num4 << 3);
+                byte b = _data[num4];
+                for (int i = num4; i < num3; i++)
                 {
                     _data[i] = (byte) (_data[i] >> num | _data[i + 1] << num2);
                 }
@@ -312,7 +312,7 @@ namespace SystemTools
 
         public void Add(bool item)
         {
-            var num = (_data.Count << 3) - _bitLength;
+            int num = (_data.Count << 3) - _bitLength;
             if (num > 0)
             {
                 if (item)
@@ -343,7 +343,7 @@ namespace SystemTools
 
         public bool Contains(bool item)
         {
-            foreach (var current in _data)
+            foreach (byte current in _data)
             {
                 if (item ? (current != 0) : (current != 255))
                 {
@@ -357,7 +357,7 @@ namespace SystemTools
         {
             if (index >= 0 && index + _bitLength < array.Length)
             {
-                for (var i = 0; i < _bitLength; i++)
+                for (int i = 0; i < _bitLength; i++)
                 {
                     array[index + i] = this[i];
                 }
@@ -368,7 +368,7 @@ namespace SystemTools
 
         public bool Remove(bool item)
         {
-            var num = IndexOf(item);
+            int num = IndexOf(item);
             if (num < 0)
             {
                 return false;

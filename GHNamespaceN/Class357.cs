@@ -12,11 +12,11 @@ namespace GHNamespaceN
 
         public void Dispose()
         {
-            foreach (var current in _list0)
+            foreach (IEmptyInterface1 current in _list0)
             {
                 current.Dispose();
             }
-            for (var i = 0; i < _class3520.Length; i++)
+            for (int i = 0; i < _class3520.Length; i++)
             {
                 _class3520[i].Dispose();
             }

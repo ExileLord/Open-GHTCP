@@ -55,7 +55,7 @@ namespace GHNamespaceI
                 class1042 = Class1040;
             }
             _class1041 = class1042;
-            var @class = _class1041.method_1();
+            Class105 @class = _class1041.method_1();
             if (@class != null)
             {
                 _class1050.method_2(@class);
@@ -64,14 +64,14 @@ namespace GHNamespaceI
 
         private void method_3(ZzSoundClass class1070)
         {
-            var @enum = class1070.method_8();
+            Enum5 @enum = class1070.method_8();
             class1070.method_4();
-            var num = (@enum == Enum5.Const3 || _class1041.method_0() != Enum4.Const0) ? 1 : 2;
+            int num = (@enum == Enum5.Const3 || _class1041.method_0() != Enum4.Const0) ? 1 : 2;
             if (_class840 == null)
             {
                 _class840 = new Class84(num);
             }
-            var float_ = _class1050.method_0();
+            float[] float_ = _class1050.method_0();
             _class800 = new Class80(0, float_);
             if (num == 2)
             {
@@ -127,9 +127,9 @@ namespace GHNamespaceI
             {
                 method_3(class1070);
             }
-            var int_ = class1070.method_4();
+            int int_ = class1070.method_4();
             _class840.method_6();
-            var @interface = method_4(class1070, class820, int_);
+            INterface7 @interface = method_4(class1070, class820, int_);
             @interface.imethod_0();
             _class840.method_5();
             return _class840;

@@ -16,8 +16,8 @@ namespace GHNamespace2
 
         public Struct11 method_0(Struct11 struct110)
         {
-            var num = Math.Max(_int0, struct110._int0);
-            var num2 = Math.Min(_int1, struct110._int1);
+            int num = Math.Max(_int0, struct110._int0);
+            int num2 = Math.Min(_int1, struct110._int1);
             if (num2 > num)
             {
                 return new Struct11(num, num2);

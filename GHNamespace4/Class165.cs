@@ -32,7 +32,7 @@ namespace GHNamespace4
             {
                 try
                 {
-                    var @class = (Class165) ((GCHandle) struct661.Intptr1).Target;
+                    Class165 @class = (Class165) ((GCHandle) struct661.Intptr1).Target;
                     @class.method_4();
                 }
                 catch

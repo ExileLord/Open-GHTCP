@@ -72,32 +72,32 @@ namespace GHNamespaceH
 
         public void method_1()
         {
-            for (var i = 0; i < Int14; i++)
+            for (int i = 0; i < Int14; i++)
             {
                 Class270[i] = null;
             }
             Class270 = null;
-            for (var j = 0; j < Int15; j++)
+            for (int j = 0; j < Int15; j++)
             {
                 Class34.Class340[Int21[j]].vmethod_2(Object0[j]);
             }
             Object0 = null;
-            for (var k = 0; k < Int16; k++)
+            for (int k = 0; k < Int16; k++)
             {
                 Class50.Class500[Int22[k]].vmethod_2(Object1[k]);
             }
             Object1 = null;
-            for (var l = 0; l < Int17; l++)
+            for (int l = 0; l < Int17; l++)
             {
                 Class28.Class280[Int23[l]].vmethod_2(Object2[l]);
             }
             Object2 = null;
-            for (var m = 0; m < Int18; m++)
+            for (int m = 0; m < Int18; m++)
             {
                 Class23.Class230[Int24[m]].vmethod_2(Object3[m]);
             }
             Object3 = null;
-            for (var n = 0; n < Int19; n++)
+            for (int n = 0; n < Int19; n++)
             {
                 if (OggClass2[n] != null)
                 {
@@ -106,7 +106,7 @@ namespace GHNamespaceH
                 }
             }
             OggClass2 = null;
-            for (var num = 0; num < Int20; num++)
+            for (int num = 0; num < Int20; num++)
             {
                 Class700[num].method_0();
             }
@@ -144,7 +144,7 @@ namespace GHNamespaceH
             {
                 OggClass2 = new OggClass2[Int19];
             }
-            for (var i = 0; i < Int19; i++)
+            for (int i = 0; i < Int19; i++)
             {
                 OggClass2[i] = new OggClass2();
                 if (OggClass2[i].method_0(oggClass3) != 0)
@@ -162,7 +162,7 @@ namespace GHNamespaceH
             {
                 Object1 = new object[Int16];
             }
-            for (var j = 0; j < Int16; j++)
+            for (int j = 0; j < Int16; j++)
             {
                 Int22[j] = oggClass3.method_6(16);
                 if (Int22[j] < 0 || Int22[j] >= Int2)
@@ -186,7 +186,7 @@ namespace GHNamespaceH
             {
                 Object2 = new object[Int17];
             }
-            for (var k = 0; k < Int17; k++)
+            for (int k = 0; k < Int17; k++)
             {
                 Int23[k] = oggClass3.method_6(16);
                 if (Int23[k] < 0 || Int23[k] >= Int3)
@@ -210,7 +210,7 @@ namespace GHNamespaceH
             {
                 Object3 = new object[Int18];
             }
-            for (var l = 0; l < Int18; l++)
+            for (int l = 0; l < Int18; l++)
             {
                 Int24[l] = oggClass3.method_6(16);
                 if (Int24[l] < 0 || Int24[l] >= Int4)
@@ -234,7 +234,7 @@ namespace GHNamespaceH
             {
                 Object0 = new object[Int15];
             }
-            for (var m = 0; m < Int15; m++)
+            for (int m = 0; m < Int15; m++)
             {
                 Int21[m] = oggClass3.method_6(16);
                 if (Int21[m] < 0 || Int21[m] >= Int5)
@@ -254,13 +254,15 @@ namespace GHNamespaceH
             {
                 Class270 = new Class27[Int14];
             }
-            for (var n = 0; n < Int14; n++)
+            for (int n = 0; n < Int14; n++)
             {
-                Class270[n] = new Class27();
-                Class270[n].Int0 = oggClass3.method_6(1);
-                Class270[n].Int1 = oggClass3.method_6(16);
-                Class270[n].Int2 = oggClass3.method_6(16);
-                Class270[n].Int3 = oggClass3.method_6(8);
+                Class270[n] = new Class27
+                {
+                    Int0 = oggClass3.method_6(1),
+                    Int1 = oggClass3.method_6(16),
+                    Int2 = oggClass3.method_6(16),
+                    Int3 = oggClass3.method_6(8)
+                };
                 if (Class270[n].Int1 >= Int6 || Class270[n].Int2 >= Int6 || Class270[n].Int3 >= Int15)
                 {
                     method_1();
@@ -277,12 +279,12 @@ namespace GHNamespaceH
 
         public int method_4(Class47 class470, Class67 class670)
         {
-            var @class = new OggClass3();
+            OggClass3 @class = new OggClass3();
             if (class670 != null)
             {
                 @class.method_4(class670.Byte0, class670.Int0, class670.Int1);
-                var array = new byte[6];
-                var num = @class.method_6(8);
+                byte[] array = new byte[6];
+                int num = @class.method_6(8);
                 @class.method_5(array, 6);
                 if (array[0] == 118 && array[1] == 111 && array[2] == 114 && array[3] == 98 && array[4] == 105)
                 {

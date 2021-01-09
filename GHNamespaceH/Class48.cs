@@ -20,7 +20,7 @@ namespace GHNamespaceH
 
         public Class48()
         {
-            var num = 0u;
+            uint num = 0u;
             while (num < (ulong) Uint0.Length)
             {
                 Uint0[(int) ((UIntPtr) num)] = smethod_0(num);
@@ -30,8 +30,8 @@ namespace GHNamespaceH
 
         private static uint smethod_0(uint uint1)
         {
-            var num = uint1 << 24;
-            for (var i = 0; i < 8; i++)
+            uint num = uint1 << 24;
+            for (int i = 0; i < 8; i++)
             {
                 if ((num & 2147483648u) != 0u)
                 {
@@ -91,17 +91,17 @@ namespace GHNamespaceH
 
         public void method_7()
         {
-            var num = 0u;
-            for (var i = 0; i < Int1; i++)
+            uint num = 0u;
+            for (int i = 0; i < Int1; i++)
             {
-                var num2 = (uint) (Byte0[Int0 + i] & 255);
-                var num3 = num >> 24 & 255u;
+                uint num2 = (uint) (Byte0[Int0 + i] & 255);
+                uint num3 = num >> 24 & 255u;
                 num = (num << 8 ^ Uint0[(int) ((UIntPtr) (num2 ^ num3))]);
             }
-            for (var j = 0; j < Int3; j++)
+            for (int j = 0; j < Int3; j++)
             {
-                var num2 = (uint) (Byte1[Int2 + j] & 255);
-                var num3 = num >> 24 & 255u;
+                uint num2 = (uint) (Byte1[Int2 + j] & 255);
+                uint num3 = num >> 24 & 255u;
                 num = (num << 8 ^ Uint0[(int) ((UIntPtr) (num2 ^ num3))]);
             }
             Byte0[Int0 + 22] = (byte) num;

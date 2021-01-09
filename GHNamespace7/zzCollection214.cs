@@ -26,8 +26,8 @@ namespace GHNamespace7
             {
                 if (_dictionary0.ContainsKey(key))
                 {
-                    var arg300 = _list1;
-                    var arg301 = _list0.IndexOf(key);
+                    List<TValue> arg300 = _list1;
+                    int arg301 = _list0.IndexOf(key);
                     _dictionary0[key] = value;
                     arg300[arg301] = value;
                     return;
@@ -50,8 +50,8 @@ namespace GHNamespace7
             {
                 if (_dictionary0.Count > int0)
                 {
-                    var arg300 = _dictionary0;
-                    var arg301 = _list0[int0];
+                    Dictionary<TKey, TValue> arg300 = _dictionary0;
+                    TKey arg301 = _list0[int0];
                     _list1[int0] = value;
                     arg300[arg301] = value;
                 }
@@ -65,8 +65,8 @@ namespace GHNamespace7
             {
                 if (_dictionary0.ContainsKey(value))
                 {
-                    var arg300 = _list1;
-                    var arg301 = _list0.IndexOf(value);
+                    List<TValue> arg300 = _list1;
+                    int arg301 = _list0.IndexOf(value);
                     _dictionary0[value] = gparam0;
                     arg300[arg301] = gparam0;
                     return;
@@ -138,7 +138,7 @@ namespace GHNamespace7
 
         public void Add(ICollection<KeyValuePair<TKey, TValue>> icollection0)
         {
-            foreach (var current in icollection0)
+            foreach (KeyValuePair<TKey, TValue> current in icollection0)
             {
                 Add(current);
             }
@@ -155,7 +155,7 @@ namespace GHNamespace7
         {
             if (_dictionary0.ContainsKey(item.Key))
             {
-                var tValue = _dictionary0[item.Key];
+                TValue tValue = _dictionary0[item.Key];
                 return tValue.Equals(item.Value);
             }
             return false;
@@ -163,7 +163,7 @@ namespace GHNamespace7
 
         public void CopyTo(KeyValuePair<TKey, TValue>[] array, int index)
         {
-            for (var i = 0; i < _dictionary0.Count; i++)
+            for (int i = 0; i < _dictionary0.Count; i++)
             {
                 array[index + i] = new KeyValuePair<TKey, TValue>(_list0[i], _list1[i]);
             }

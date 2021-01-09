@@ -190,7 +190,7 @@ namespace GHNamespaceI
             {
                 if (Int2 != 0 && enum40 != Enum4.Const2)
                 {
-                    var float_ = (Float4 * Float5 + Float6) * Float3;
+                    float float_ = (Float4 * Float5 + Float6) * Float3;
                     class800.method_2(float_, Int0);
                 }
                 return true;
@@ -303,7 +303,7 @@ namespace GHNamespaceI
 
             public override bool vmethod_2(Class82 class820)
             {
-                var result = base.vmethod_2(class820);
+                bool result = base.vmethod_2(class820);
                 if (Int4 != 0)
                 {
                     Float8 = class820.method_13(Int5);
@@ -316,7 +316,7 @@ namespace GHNamespaceI
                 base.vmethod_3(enum40, class800, class801);
                 if (Int4 != 0 && enum40 != Enum4.Const1)
                 {
-                    var num = (Float8 * Float9 + Float10) * Float7;
+                    float num = (Float8 * Float9 + Float10) * Float7;
                     if (enum40 == Enum4.Const0)
                     {
                         class801.method_2(num, Int0);
@@ -391,7 +391,7 @@ namespace GHNamespaceI
         {
             if (Enum50 == Enum5.Const3)
             {
-                for (var i = 0; i < Int0; i++)
+                for (int i = 0; i < Int0; i++)
                 {
                     Class940[i] = new Class95(i);
                 }
@@ -411,7 +411,7 @@ namespace GHNamespaceI
                 }
                 return;
             }
-            for (var i = 0; i < Int0; i++)
+            for (int i = 0; i < Int0; i++)
             {
                 Class940[i] = new Class97(i);
             }
@@ -419,7 +419,7 @@ namespace GHNamespaceI
 
         public virtual void vmethod_2()
         {
-            for (var i = 0; i < Int0; i++)
+            for (int i = 0; i < Int0; i++)
             {
                 Class940[i].vmethod_0(Class820, Class1070, Class1010);
             }
@@ -431,7 +431,7 @@ namespace GHNamespaceI
 
         public virtual void vmethod_4()
         {
-            for (var i = 0; i < Int0; i++)
+            for (int i = 0; i < Int0; i++)
             {
                 Class940[i].vmethod_1(Class820, Class1070);
             }
@@ -439,18 +439,18 @@ namespace GHNamespaceI
 
         public virtual void vmethod_5()
         {
-            var flag = false;
-            var flag2 = false;
-            var @enum = Class1070.method_8();
+            bool flag = false;
+            bool flag2 = false;
+            Enum5 @enum = Class1070.method_8();
             do
             {
-                for (var i = 0; i < Int0; i++)
+                for (int i = 0; i < Int0; i++)
                 {
                     flag = Class940[i].vmethod_2(Class820);
                 }
                 do
                 {
-                    for (var i = 0; i < Int0; i++)
+                    for (int i = 0; i < Int0; i++)
                     {
                         flag2 = Class940[i].vmethod_3(Enum40, Class800, Class801);
                     }

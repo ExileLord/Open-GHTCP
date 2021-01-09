@@ -15,11 +15,11 @@ namespace GHNamespaceN
 
         public static uint smethod_0(uint uint0, byte[] byte0, int int0, uint uint1, byte[] byte1, ref uint uint2)
         {
-            var gCHandle = GCHandle.Alloc(byte0, GCHandleType.Pinned);
+            GCHandle gCHandle = GCHandle.Alloc(byte0, GCHandleType.Pinned);
             uint result;
             try
             {
-                var pSamples = (IntPtr) (gCHandle.AddrOfPinnedObject().ToInt32() + int0);
+                IntPtr pSamples = (IntPtr) (gCHandle.AddrOfPinnedObject().ToInt32() + int0);
                 result = beEncodeChunk(uint0, uint1 / 2u, pSamples, byte1, ref uint2);
             }
             finally

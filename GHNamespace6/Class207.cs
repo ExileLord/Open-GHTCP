@@ -21,7 +21,7 @@ namespace GHNamespace6
                 591751049u,
                 878082192u
             };
-            for (var i = 0; i < byte0.Length; i++)
+            for (int i = 0; i < byte0.Length; i++)
             {
                 array[0] = Class192.smethod_0(array[0], byte0[i]);
                 array[1] = array[1] + (byte) array[0];

@@ -97,8 +97,8 @@ namespace GHNamespace8
             {
                 return;
             }
-            var itemRectangle = _listQb.GetItemRectangle(_int0);
-            var text = (string) _listQb.Items[_int0];
+            Rectangle itemRectangle = _listQb.GetItemRectangle(_int0);
+            string text = (string) _listQb.Items[_int0];
             _editBox.Location = new Point(itemRectangle.X + 30, itemRectangle.Y + 10);
             _editBox.Show();
             _editBox.Text = text;
@@ -120,7 +120,7 @@ namespace GHNamespace8
 
         public string[] method_2()
         {
-            var array = new string[_listQb.Items.Count];
+            string[] array = new string[_listQb.Items.Count];
             _listQb.Items.CopyTo(array, 0);
             return array;
         }

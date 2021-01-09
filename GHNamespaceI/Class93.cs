@@ -88,15 +88,15 @@ namespace GHNamespaceI
 
             public Class98(int int11)
             {
-                var array = new int[1];
+                int[] array = new int[1];
                 Int8 = array;
                 Float25 = new float[2][];
-                var array2 = new float[1];
+                float[] array2 = new float[1];
                 Float26 = array2;
                 Float27 = new float[3];
-                var array3 = new float[1];
+                float[] array3 = new float[1];
                 Float28 = array3;
-                var array4 = new float[1];
+                float[] array4 = new float[1];
                 Float29 = array4;
                 //base..ctor();
                 Int5 = int11;
@@ -108,7 +108,7 @@ namespace GHNamespaceI
             {
                 if (class1070.method_3() == Enum3.Const1)
                 {
-                    var num = class1070.method_5();
+                    int num = class1070.method_5();
                     if (class1070.method_8() != Enum5.Const3)
                     {
                         if (num == 4)
@@ -155,7 +155,7 @@ namespace GHNamespaceI
             public virtual void vmethod_5(ZzSoundClass class1070, int int11, int int12, float[] float30, int[] int13,
                 float[] float31, float[] float32)
             {
-                var num = class1070.method_5();
+                int num = class1070.method_5();
                 if (class1070.method_8() != Enum5.Const3)
                 {
                     if (num == 4)
@@ -213,7 +213,7 @@ namespace GHNamespaceI
 
             public override void vmethod_0(Class82 class820, ZzSoundClass class1070, Class101 class1010)
             {
-                var num = vmethod_4(class1070);
+                int num = vmethod_4(class1070);
                 Int6 = class820.method_13(num);
                 if (class1010 != null)
                 {
@@ -268,12 +268,12 @@ namespace GHNamespaceI
                 {
                     if (Float25[0] != null)
                     {
-                        var num = class820.method_13(Int8[0]);
+                        int num = class820.method_13(Int8[0]);
                         num += num << 1;
-                        var array = Float27;
-                        var array2 = Float25[0];
-                        var num2 = 0;
-                        var num3 = num;
+                        float[] array = Float27;
+                        float[] array2 = Float25[0];
+                        int num2 = 0;
+                        int num3 = num;
                         if (num3 > array2.Length - 3)
                         {
                             num3 = array2.Length - 3;
@@ -301,7 +301,7 @@ namespace GHNamespaceI
             {
                 if (Int6 != 0 && enum40 != Enum4.Const2)
                 {
-                    var num = Float27[Int10];
+                    float num = Float27[Int10];
                     if (Float25[0] == null)
                     {
                         num = (num + Float29[0]) * Float28[0];
@@ -3277,15 +3277,15 @@ namespace GHNamespaceI
                     0.000122070313f,
                     6.103516E-05f
                 };
-                var array = new float[16][];
+                float[][] array = new float[16][];
                 array[1] = Float1;
                 Float4 = array;
-                var array2 = new float[16][];
+                float[][] array2 = new float[16][];
                 array2[1] = Float1;
                 array2[2] = Float2;
                 array2[4] = Float3;
                 Float8 = array2;
-                var array3 = new float[16][];
+                float[][] array3 = new float[16][];
                 array3[1] = Float1;
                 array3[2] = Float2;
                 array3[3] = Float3;
@@ -3366,14 +3366,14 @@ namespace GHNamespaceI
             {
                 if (Int6 != 0)
                 {
-                    var num = Float27[Int10];
+                    float num = Float27[Int10];
                     if (Float25[0] == null)
                     {
                         num = (num + Float29[0]) * Float28[0];
                     }
                     if (enum40 == Enum4.Const0)
                     {
-                        var num2 = num;
+                        float num2 = num;
                         if (Int9 <= 4)
                         {
                             num *= Float22;
@@ -3453,13 +3453,13 @@ namespace GHNamespaceI
 
             public Class100(int int14) : base(int14)
             {
-                var array = new int[1];
+                int[] array = new int[1];
                 Int13 = array;
-                var array2 = new float[1];
+                float[] array2 = new float[1];
                 Float33 = array2;
-                var array3 = new float[1];
+                float[] array3 = new float[1];
                 Float35 = array3;
-                var array4 = new float[1];
+                float[] array4 = new float[1];
                 Float36 = array4;
                 //base..ctor(int_14);
                 Float34 = new float[3];
@@ -3467,7 +3467,7 @@ namespace GHNamespaceI
 
             public override void vmethod_0(Class82 class820, ZzSoundClass class1070, Class101 class1010)
             {
-                var num = vmethod_4(class1070);
+                int num = vmethod_4(class1070);
                 Int6 = class820.method_13(num);
                 Int11 = class820.method_13(num);
                 if (class1010 != null)
@@ -3527,16 +3527,16 @@ namespace GHNamespaceI
 
             public override bool vmethod_2(Class82 class820)
             {
-                var result = base.vmethod_2(class820);
+                bool result = base.vmethod_2(class820);
                 if (Int11 != 0)
                 {
                     if (Float25[1] != null)
                     {
-                        var num = class820.method_13(Int13[0]);
+                        int num = class820.method_13(Int13[0]);
                         num += num << 1;
-                        var array = Float34;
-                        var array2 = Float25[1];
-                        var num2 = num;
+                        float[] array = Float34;
+                        float[] array2 = Float25[1];
+                        int num2 = num;
                         array[0] = array2[num2++];
                         array[1] = array2[num2++];
                         array[2] = array2[num2];
@@ -3553,10 +3553,10 @@ namespace GHNamespaceI
 
             public override bool vmethod_3(Enum4 enum40, Class80 class800, Class80 class801)
             {
-                var result = base.vmethod_3(enum40, class800, class801);
+                bool result = base.vmethod_3(enum40, class800, class801);
                 if (Int11 != 0 && enum40 != Enum4.Const1)
                 {
-                    var num = Float34[Int10 - 1];
+                    float num = Float34[Int10 - 1];
                     if (Float25[1] == null)
                     {
                         num = (num + Float36[0]) * Float35[0];
@@ -3605,13 +3605,13 @@ namespace GHNamespaceI
                     return;
                 }
                 case Enum5.Const3:
-                    for (var i = 0; i < Int0; i++)
+                    for (int i = 0; i < Int0; i++)
                     {
                         Class940[i] = new Class98(i);
                     }
                     return;
             }
-            for (var i = 0; i < Int0; i++)
+            for (int i = 0; i < Int0; i++)
             {
                 Class940[i] = new Class100(i);
             }
@@ -3619,7 +3619,7 @@ namespace GHNamespaceI
 
         public override void vmethod_3()
         {
-            for (var i = 0; i < Int0; i++)
+            for (int i = 0; i < Int0; i++)
             {
                 ((Class98) Class940[i]).vmethod_6(Class820, Class1010);
             }

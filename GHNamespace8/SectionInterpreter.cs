@@ -17,10 +17,10 @@ namespace GHNamespace8
 
         public SectionInterpreter(string[] string0)
         {
-            for (var i = 0; i < string0.Length; i++)
+            for (int i = 0; i < string0.Length; i++)
             {
-                var text = string0[i];
-                var array = text.Split(new[]
+                string text = string0[i];
+                string[] array = text.Split(new[]
                 {
                     '=',
                     '"'
@@ -32,7 +32,7 @@ namespace GHNamespace8
                     {
                         array[2] = array[2].Substring(0, array[2].Length - 1);
                     }
-                    var num = ChartParser.GetNoteFromResolution(array[0].Trim());
+                    int num = ChartParser.GetNoteFromResolution(array[0].Trim());
                     if (array[2].StartsWith("section "))
                     {
                         SectionList.Add(num,

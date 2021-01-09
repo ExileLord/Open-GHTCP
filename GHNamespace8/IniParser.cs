@@ -13,8 +13,8 @@ namespace GHNamespace8
         {
             if (File.Exists(file + "\\song.ini"))
             {
-                var iniContents = File.ReadAllLines(file + "\\song.ini");
-                foreach (var line in iniContents)
+                string[] iniContents = File.ReadAllLines(file + "\\song.ini");
+                foreach (string line in iniContents)
                 {
                     if (line.StartsWith("name"))
                     {

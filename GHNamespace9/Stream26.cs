@@ -192,7 +192,7 @@ namespace GHNamespace9
         {
             if (writeBackwards)
             {
-                for (var i = array.Length - 1; i >= 0; i--)
+                for (int i = array.Length - 1; i >= 0; i--)
                 {
                     Stream.WriteByte(array[i]);
                 }
@@ -203,7 +203,7 @@ namespace GHNamespace9
 
         public void WriteEnumerableInts(IEnumerable<int> values, bool reverseEndianness)
         {
-            foreach (var current in values)
+            foreach (int current in values)
             {
                 WriteInt(current, reverseEndianness);
             }
@@ -221,7 +221,7 @@ namespace GHNamespace9
 
         public int ReadInt(bool reverseEndianness)
         {
-            var array = ReadBytes(4, false);
+            byte[] array = ReadBytes(4, false);
             if (!(reverseEndianness ^ BitConverter.IsLittleEndian))
             {
                 return KeyGenerator.BytesToInt(array);
@@ -236,10 +236,10 @@ namespace GHNamespace9
 
         public float ReadFloat(bool reverseEndianness)
         {
-            var array = ReadBytes(4, false);
+            byte[] array = ReadBytes(4, false);
             if (!(reverseEndianness ^ BitConverter.IsLittleEndian))
             {
-                var array2 = array;
+                byte[] array2 = array;
                 array = new[]
                 {
                     array2[3],
@@ -258,7 +258,7 @@ namespace GHNamespace9
 
         public short ReadShort(bool reverseEndianness)
         {
-            var array = ReadBytes(2, false);
+            byte[] array = ReadBytes(2, false);
             if (!(reverseEndianness ^ BitConverter.IsLittleEndian))
             {
                 return KeyGenerator.BytesToShort(array);
@@ -273,7 +273,7 @@ namespace GHNamespace9
 
         public ushort ReadUShort(bool reverseEndianness)
         {
-            var array = ReadBytes(2, false);
+            byte[] array = ReadBytes(2, false);
             if (!(reverseEndianness ^ BitConverter.IsLittleEndian))
             {
                 return (ushort) KeyGenerator.BytesToShort(array);
@@ -283,8 +283,8 @@ namespace GHNamespace9
 
         public string ReadAsciiString()
         {
-            var list = new List<byte>();
-            for (var item = ReadByte2(); item != 0; item = ReadByte2())
+            List<byte> list = new List<byte>();
+            for (byte item = ReadByte2(); item != 0; item = ReadByte2())
             {
                 list.Add(item);
             }
@@ -303,9 +303,9 @@ namespace GHNamespace9
 
         public string ReadUnicodeString(bool reverseEndianness)
         {
-            var list = new List<byte>();
-            var b = ReadByte2();
-            var b2 = ReadByte2();
+            List<byte> list = new List<byte>();
+            byte b = ReadByte2();
+            byte b2 = ReadByte2();
             while (b != 0 || b2 != 0)
             {
                 list.Add(b);
@@ -327,7 +327,7 @@ namespace GHNamespace9
 
         public byte[] ReadBytes(int count, bool reverseEndianness)
         {
-            var array = new byte[count];
+            byte[] array = new byte[count];
             if (Stream.Read(array, 0, count) == 0)
             {
                 throw new EndOfStreamException();

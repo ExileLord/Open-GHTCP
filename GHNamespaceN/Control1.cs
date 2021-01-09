@@ -19,15 +19,15 @@ namespace GHNamespaceN
 
         private EventHandler _eventHandler0;
 
-        private ScrollEventHandler _scrollEventHandler0;
+        private readonly ScrollEventHandler _scrollEventHandler0;
 
         private bool _bool0;
 
-        private Orientation _orientation0;
+        private readonly Orientation _orientation0;
 
-        private bool _bool1;
+        private readonly bool _bool1;
 
-        private bool _bool2;
+        private readonly bool _bool2;
 
         private readonly ToolTip _toolTip0 = new ToolTip();
 
@@ -51,13 +51,13 @@ namespace GHNamespaceN
 
         private int _int1 = 15;
 
-        private GraphicsPath _graphicsPath0;
+        private readonly GraphicsPath _graphicsPath0;
 
         private SizeF _sizeF0 = new SizeF(50f, 50f);
 
         private readonly bool _bool5 = true;
 
-        private Image _image0;
+        private readonly Image _image0;
 
         private Color _color0 = Color.White;
 
@@ -111,12 +111,12 @@ namespace GHNamespaceN
 
         public void method_0(EventHandler eventHandler1)
         {
-            var eventHandler = _eventHandler0;
+            EventHandler eventHandler = _eventHandler0;
             EventHandler eventHandler2;
             do
             {
                 eventHandler2 = eventHandler;
-                var value = (EventHandler) Delegate.Combine(eventHandler2, eventHandler1);
+                EventHandler value = (EventHandler) Delegate.Combine(eventHandler2, eventHandler1);
                 eventHandler = Interlocked.CompareExchange(ref _eventHandler0, value, eventHandler2);
             } while (eventHandler != eventHandler2);
         }
@@ -230,10 +230,7 @@ namespace GHNamespaceN
             {
                 _int2 = (_bool0 ? (method_17() - int8 + method_15()) : int8);
             }
-            if (_eventHandler0 != null)
-            {
-                _eventHandler0(this, new EventArgs());
-            }
+            _eventHandler0?.Invoke(this, new EventArgs());
             Invalidate();
         }
 
@@ -252,10 +249,7 @@ namespace GHNamespaceN
             if (_int2 < _int3)
             {
                 _int2 = _int3;
-                if (_eventHandler0 != null)
-                {
-                    _eventHandler0(this, new EventArgs());
-                }
+                _eventHandler0?.Invoke(this, new EventArgs());
             }
             Invalidate();
         }
@@ -275,10 +269,7 @@ namespace GHNamespaceN
             if (_int2 > _int4)
             {
                 _int2 = _int4;
-                if (_eventHandler0 != null)
-                {
-                    _eventHandler0(this, new EventArgs());
-                }
+                _eventHandler0?.Invoke(this, new EventArgs());
             }
             Invalidate();
         }
@@ -296,7 +287,7 @@ namespace GHNamespaceN
         public void method_21(Enum40 enum401)
         {
             _enum400 = enum401;
-            var b = (byte) enum401;
+            byte b = (byte) enum401;
             _color0 = _color8[b, 0];
             _color1 = _color8[b, 1];
             _color2 = _color8[b, 2];
@@ -310,7 +301,7 @@ namespace GHNamespaceN
 
         public Control1(int int8, int int9, int int10)
         {
-            var array = new Color[4, 8];
+            Color[,] array = new Color[4, 8];
             array[0, 0] = Color.White;
             array[0, 1] = Color.Gainsboro;
             array[0, 2] = Color.Silver;
@@ -364,7 +355,7 @@ namespace GHNamespaceN
         {
             if (!Enabled)
             {
-                var array = smethod_1(new[]
+                Color[] array = smethod_1(new[]
                 {
                     _color0,
                     _color1,
@@ -380,7 +371,7 @@ namespace GHNamespaceN
             }
             if (_bool4 && _bool6)
             {
-                var array2 = smethod_2(new[]
+                Color[] array2 = smethod_2(new[]
                 {
                     _color0,
                     _color1,
@@ -405,12 +396,12 @@ namespace GHNamespaceN
             {
                 if (_orientation0 == Orientation.Horizontal)
                 {
-                    var x = (_int2 - _int3) * (ClientRectangle.Width - _int1) / (float) (_int4 - _int3);
+                    float x = (_int2 - _int3) * (ClientRectangle.Width - _int1) / (float) (_int4 - _int3);
                     _rectangleF0 = new RectangleF(x, 1f, _int1 - 1, ClientRectangle.Height - 2);
                 }
                 else
                 {
-                    var y = (_int2 - _int3) * (ClientRectangle.Height - _int1) / (float) (_int4 - _int3);
+                    float y = (_int2 - _int3) * (ClientRectangle.Height - _int1) / (float) (_int4 - _int3);
                     _rectangleF0 = new RectangleF(1f, y, ClientRectangle.Width - 2, _int1 - 1);
                 }
                 _rectangleF1 = ClientRectangle;
@@ -458,7 +449,7 @@ namespace GHNamespaceN
                 }
                 else if (_string0.Length > 0 && _bool6)
                 {
-                    var text = _bool3
+                    string text = _bool3
                         ? smethod_4(TimeSpan.FromSeconds(_int7), _string0)
                         : string.Format(_string0, _int7);
                     if (_orientation0 == Orientation.Horizontal)
@@ -488,28 +479,28 @@ namespace GHNamespaceN
                 else
                 {
                     graphicsPath = _graphicsPath0;
-                    var matrix = new Matrix();
+                    Matrix matrix = new Matrix();
                     matrix.Translate(_rectangleF0.Left - graphicsPath.GetBounds().Left,
                         _rectangleF0.Top - graphicsPath.GetBounds().Top);
                     graphicsPath.Transform(matrix);
                 }
                 paintEventArgs0.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                using (var graphicsPath2 = smethod_0(_rectangleF1, sizeF))
+                using (GraphicsPath graphicsPath2 = smethod_0(_rectangleF1, sizeF))
                 {
-                    using (var linearGradientBrush =
+                    using (LinearGradientBrush linearGradientBrush =
                         new LinearGradientBrush(_rectangleF2, color12, color13, linearGradientMode))
                     {
                         linearGradientBrush.WrapMode = WrapMode.TileFlipXY;
                         paintEventArgs0.Graphics.FillPath(linearGradientBrush, graphicsPath2);
-                        using (var graphicsPath3 = smethod_0(_rectangleF4, sizeF))
+                        using (GraphicsPath graphicsPath3 = smethod_0(_rectangleF4, sizeF))
                         {
-                            using (var linearGradientBrush2 =
+                            using (LinearGradientBrush linearGradientBrush2 =
                                 new LinearGradientBrush(_rectangleF2, color15, color16, linearGradientMode))
                             {
                                 linearGradientBrush2.WrapMode = WrapMode.TileFlipXY;
                                 if (Capture && _bool5)
                                 {
-                                    var region = new Region(graphicsPath3);
+                                    Region region = new Region(graphicsPath3);
                                     region.Exclude(graphicsPath);
                                     paintEventArgs0.Graphics.FillRegion(linearGradientBrush2, region);
                                 }
@@ -519,30 +510,30 @@ namespace GHNamespaceN
                                 }
                             }
                         }
-                        using (var pen = new Pen(color14, 0.5f))
+                        using (Pen pen = new Pen(color14, 0.5f))
                         {
                             paintEventArgs0.Graphics.DrawPath(pen, graphicsPath2);
                         }
                     }
                 }
-                var color = color9;
-                var color2 = color10;
+                Color color = color9;
+                Color color2 = color10;
                 if (Capture && _bool5)
                 {
                     color = Color.FromArgb(175, color9);
                     color2 = Color.FromArgb(175, color10);
                 }
-                using (var linearGradientBrush3 =
+                using (LinearGradientBrush linearGradientBrush3 =
                     new LinearGradientBrush(_rectangleF3, color, color2, linearGradientMode))
                 {
                     linearGradientBrush3.WrapMode = WrapMode.TileFlipXY;
                     paintEventArgs0.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    var color3 = color11;
+                    Color color3 = color11;
                     if (_bool4 && (Capture || _bool7))
                     {
                         color3 = ControlPaint.Dark(color3);
                     }
-                    using (var pen2 = new Pen(color3))
+                    using (Pen pen2 = new Pen(color3))
                     {
                         if (_image0 != null)
                         {
@@ -557,14 +548,14 @@ namespace GHNamespaceN
                 }
                 if (Focused & _bool1)
                 {
-                    using (var pen3 = new Pen(Color.FromArgb(200, color14)))
+                    using (Pen pen3 = new Pen(Color.FromArgb(200, color14)))
                     {
                         pen3.DashStyle = DashStyle.Dot;
                         RectangleF rectangleF = ClientRectangle;
                         rectangleF.Width -= 2f;
                         rectangleF.Height -= 1f;
                         rectangleF.X += 1f;
-                        using (var graphicsPath4 = smethod_0(rectangleF, sizeF))
+                        using (GraphicsPath graphicsPath4 = smethod_0(rectangleF, sizeF))
                         {
                             paintEventArgs0.Graphics.DrawPath(pen3, graphicsPath4);
                         }
@@ -604,14 +595,8 @@ namespace GHNamespaceN
             if (e.Button == MouseButtons.Left)
             {
                 Capture = true;
-                if (_scrollEventHandler0 != null)
-                {
-                    _scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.ThumbTrack, _int2));
-                }
-                if (_eventHandler0 != null)
-                {
-                    _eventHandler0(this, new EventArgs());
-                }
+                _scrollEventHandler0?.Invoke(this, new ScrollEventArgs(ScrollEventType.ThumbTrack, _int2));
+                _eventHandler0?.Invoke(this, new EventArgs());
                 OnMouseMove(e);
             }
         }
@@ -622,17 +607,17 @@ namespace GHNamespaceN
             _int5 = e.X;
             _int6 = e.Y;
             _bool7 = smethod_3(e.Location, _rectangleF0);
-            var location = e.Location;
-            var num = (_orientation0 == Orientation.Horizontal) ? location.X : location.Y;
-            var num2 = _int1 >> 1;
+            Point location = e.Location;
+            int num = (_orientation0 == Orientation.Horizontal) ? location.X : location.Y;
+            int num2 = _int1 >> 1;
             num -= num2;
-            var num3 = (_int4 - _int3) / (float) (((_orientation0 == Orientation.Horizontal)
+            float num3 = (_int4 - _int3) / (float) (((_orientation0 == Orientation.Horizontal)
                                                       ? ClientSize.Width
                                                       : ClientSize.Height) - 2 * num2);
             _int7 = (int) (num * num3 + _int3);
             if (Capture & e.Button == MouseButtons.Left)
             {
-                var type = ScrollEventType.ThumbPosition;
+                ScrollEventType type = ScrollEventType.ThumbPosition;
                 _int2 = _int7;
                 if (_int2 <= _int3)
                 {
@@ -644,14 +629,8 @@ namespace GHNamespaceN
                     _int2 = _int4;
                     type = ScrollEventType.Last;
                 }
-                if (_scrollEventHandler0 != null)
-                {
-                    _scrollEventHandler0(this, new ScrollEventArgs(type, _int2));
-                }
-                if (_eventHandler0 != null)
-                {
-                    _eventHandler0(this, new EventArgs());
-                }
+                _scrollEventHandler0?.Invoke(this, new ScrollEventArgs(type, _int2));
+                _eventHandler0?.Invoke(this, new EventArgs());
             }
             if (_int7 < _int3)
             {
@@ -673,14 +652,8 @@ namespace GHNamespaceN
             base.OnMouseUp(e);
             Capture = false;
             _bool7 = smethod_3(e.Location, _rectangleF0);
-            if (_scrollEventHandler0 != null)
-            {
-                _scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.EndScroll, _int2));
-            }
-            if (_eventHandler0 != null)
-            {
-                _eventHandler0(this, new EventArgs());
-            }
+            _scrollEventHandler0?.Invoke(this, new ScrollEventArgs(ScrollEventType.EndScroll, _int2));
+            _eventHandler0?.Invoke(this, new EventArgs());
             Invalidate();
         }
 
@@ -689,12 +662,9 @@ namespace GHNamespaceN
             if (_bool2)
             {
                 base.OnMouseWheel(e);
-                var num = e.Delta / SystemInformation.MouseWheelScrollDelta * (_int4 - _int3) / _int0;
+                int num = e.Delta / SystemInformation.MouseWheelScrollDelta * (_int4 - _int3) / _int0;
                 method_23(method_13() + num);
-                if (_scrollEventHandler0 != null)
-                {
-                    _scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.EndScroll, _int2));
-                }
+                _scrollEventHandler0?.Invoke(this, new ScrollEventArgs(ScrollEventType.EndScroll, _int2));
             }
         }
 
@@ -717,17 +687,11 @@ namespace GHNamespaceN
             {
                 case Keys.Prior:
                     method_23(method_13() + (int) _uint1);
-                    if (_scrollEventHandler0 != null)
-                    {
-                        _scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.LargeIncrement, method_13()));
-                    }
+                    _scrollEventHandler0?.Invoke(this, new ScrollEventArgs(ScrollEventType.LargeIncrement, method_13()));
                     break;
                 case Keys.Next:
                     method_23(method_13() - (int) _uint1);
-                    if (_scrollEventHandler0 != null)
-                    {
-                        _scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, method_13()));
-                    }
+                    _scrollEventHandler0?.Invoke(this, new ScrollEventArgs(ScrollEventType.LargeDecrement, method_13()));
                     break;
                 case Keys.End:
                     method_14(_int4);
@@ -738,18 +702,12 @@ namespace GHNamespaceN
                 case Keys.Left:
                 case Keys.Down:
                     method_23(method_13() - (int) _uint0);
-                    if (_scrollEventHandler0 != null)
-                    {
-                        _scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.SmallDecrement, method_13()));
-                    }
+                    _scrollEventHandler0?.Invoke(this, new ScrollEventArgs(ScrollEventType.SmallDecrement, method_13()));
                     break;
                 case Keys.Up:
                 case Keys.Right:
                     method_23(method_13() + (int) _uint0);
-                    if (_scrollEventHandler0 != null)
-                    {
-                        _scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.SmallIncrement, method_13()));
-                    }
+                    _scrollEventHandler0?.Invoke(this, new ScrollEventArgs(ScrollEventType.SmallIncrement, method_13()));
                     break;
             }
             if (_scrollEventHandler0 != null && method_13() == _int3)
@@ -760,7 +718,7 @@ namespace GHNamespaceN
             {
                 _scrollEventHandler0(this, new ScrollEventArgs(ScrollEventType.Last, method_13()));
             }
-            var point = PointToClient(Cursor.Position);
+            Point point = PointToClient(Cursor.Position);
             OnMouseMove(new MouseEventArgs(MouseButtons.None, 0, point.X, point.Y, 0));
         }
 
@@ -776,7 +734,7 @@ namespace GHNamespaceN
 
         public static GraphicsPath smethod_0(RectangleF rectangleF5, SizeF sizeF1)
         {
-            var graphicsPath = new GraphicsPath();
+            GraphicsPath graphicsPath = new GraphicsPath();
             graphicsPath.AddLine(rectangleF5.Left + sizeF1.Width / 2f, rectangleF5.Top,
                 rectangleF5.Right - sizeF1.Width / 2f, rectangleF5.Top);
             graphicsPath.AddArc(rectangleF5.Right - sizeF1.Width, rectangleF5.Top, sizeF1.Width, sizeF1.Height, 270f,
@@ -797,10 +755,10 @@ namespace GHNamespaceN
 
         public static Color[] smethod_1(Color[] color9)
         {
-            var array = new Color[color9.Length];
-            for (var i = 0; i < color9.Length; i++)
+            Color[] array = new Color[color9.Length];
+            for (int i = 0; i < color9.Length; i++)
             {
-                var num = (int) (color9[i].R * 0.3 + color9[i].G * 0.6 + color9[i].B * 0.1);
+                int num = (int) (color9[i].R * 0.3 + color9[i].G * 0.6 + color9[i].B * 0.1);
                 array[i] = Color.FromArgb(-65793 * (255 - num) - 1);
             }
             return array;
@@ -808,8 +766,8 @@ namespace GHNamespaceN
 
         public static Color[] smethod_2(Color[] color9)
         {
-            var array = new Color[color9.Length];
-            for (var i = 0; i < color9.Length; i++)
+            Color[] array = new Color[color9.Length];
+            for (int i = 0; i < color9.Length; i++)
             {
                 array[i] = ((color9[i] == Color.FromKnownColor(KnownColor.Transparent))
                     ? color9[i]

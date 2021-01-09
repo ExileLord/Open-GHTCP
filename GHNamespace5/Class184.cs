@@ -68,7 +68,7 @@ namespace GHNamespace5
             while (true)
             {
                 method_7();
-                var bool3 = bool1 && _int18 == _int19;
+                bool bool3 = bool1 && _int18 == _int19;
                 bool flag;
                 switch (_int16)
                 {
@@ -114,7 +114,7 @@ namespace GHNamespace5
             {
                 throw new InvalidOperationException("Old input was not completely processed");
             }
-            var num = int20 + int21;
+            int num = int20 + int21;
             if (int20 > num || num > byte2.Length)
             {
                 throw new ArgumentOutOfRangeException("count");
@@ -139,11 +139,11 @@ namespace GHNamespace5
             _int17 = 0;
             _bool0 = false;
             _int8 = 2;
-            for (var i = 0; i < 32768; i++)
+            for (int i = 0; i < 32768; i++)
             {
                 _short0[i] = 0;
             }
-            for (var j = 0; j < 32768; j++)
+            for (int j = 0; j < 32768; j++)
             {
                 _short1[j] = 0;
             }
@@ -220,7 +220,7 @@ namespace GHNamespace5
             }
             while (_int11 < 262 && _int18 < _int19)
             {
-                var num = 65536 - _int11 - _int10;
+                int num = 65536 - _int11 - _int10;
                 if (num > _int19 - _int18)
                 {
                     num = _int19 - _int18;
@@ -244,8 +244,8 @@ namespace GHNamespace5
 
         private int method_9()
         {
-            var num = (_int6 << 5 ^ _byte0[_int10 + 2]) & 32767;
-            var num2 = _short1[_int10 & 32767] = _short0[num];
+            int num = (_int6 << 5 ^ _byte0[_int10 + 2]) & 32767;
+            short num2 = _short1[_int10 & 32767] = _short0[num];
             _short0[num] = (short) _int10;
             _int6 = num;
             return num2 & 65535;
@@ -257,30 +257,30 @@ namespace GHNamespace5
             _int7 -= 32768;
             _int10 -= 32768;
             _int9 -= 32768;
-            for (var i = 0; i < 32768; i++)
+            for (int i = 0; i < 32768; i++)
             {
-                var num = _short0[i] & 65535;
+                int num = _short0[i] & 65535;
                 _short0[i] = (short) ((num >= 32768) ? (num - 32768) : 0);
             }
-            for (var j = 0; j < 32768; j++)
+            for (int j = 0; j < 32768; j++)
             {
-                var num2 = _short1[j] & 65535;
+                int num2 = _short1[j] & 65535;
                 _short1[j] = (short) ((num2 >= 32768) ? (num2 - 32768) : 0);
             }
         }
 
         private bool method_11(int int20)
         {
-            var num = _int12;
-            var num2 = _int14;
-            var array = _short1;
-            var num3 = _int10;
-            var num4 = _int10 + _int8;
-            var num5 = Math.Max(_int8, 2);
-            var num6 = Math.Max(_int10 - 32506, 0);
-            var num7 = _int10 + 258 - 1;
-            var b = _byte0[num4 - 1];
-            var b2 = _byte0[num4];
+            int num = _int12;
+            int num2 = _int14;
+            short[] array = _short1;
+            int num3 = _int10;
+            int num4 = _int10 + _int8;
+            int num5 = Math.Max(_int8, 2);
+            int num6 = Math.Max(_int10 - 32506, 0);
+            int num7 = _int10 + 258 - 1;
+            byte b = _byte0[num4 - 1];
+            byte b2 = _byte0[num4];
             if (num5 >= _int15)
             {
                 num >>= 2;
@@ -294,7 +294,7 @@ namespace GHNamespace5
                 if (_byte0[int20 + num5] == b2 && _byte0[int20 + num5 - 1] == b && _byte0[int20] == _byte0[num3] &&
                     _byte0[int20 + 1] == _byte0[num3 + 1])
                 {
-                    var num8 = int20 + 2;
+                    int num8 = int20 + 2;
                     num3 += 2;
                     while (_byte0[++num3] == _byte0[++num8] && _byte0[++num3] == _byte0[++num8] &&
                            _byte0[++num3] == _byte0[++num8] && _byte0[++num3] == _byte0[++num8] &&
@@ -333,12 +333,12 @@ namespace GHNamespace5
             }
             _int10 += _int11;
             _int11 = 0;
-            var num = _int10 - _int9;
+            int num = _int10 - _int9;
             if (num < Int0 && (_int9 >= 32768 || num < 32506) && !bool1)
             {
                 return true;
             }
-            var flag = bool2;
+            bool flag = bool2;
             if (num > Int0)
             {
                 num = Int0;
@@ -371,7 +371,7 @@ namespace GHNamespace5
                 if (_int11 >= 3 && (num = method_9()) != 0 && _enum290 != Enum29.Const2 && _int10 - num <= 32506 &&
                     method_11(num))
                 {
-                    var flag = _class1900.method_7(_int10 - _int7, _int8);
+                    bool flag = _class1900.method_7(_int10 - _int7, _int8);
                     _int11 -= _int8;
                     if (_int8 <= _int13 && _int11 >= 3)
                     {
@@ -404,7 +404,7 @@ namespace GHNamespace5
                 }
                 if (_class1900.method_5())
                 {
-                    var flag2 = bool2 && _int11 == 0;
+                    bool flag2 = bool2 && _int11 == 0;
                     _class1900.method_4(_byte0, _int9, _int10 - _int9, flag2);
                     _int9 = _int10;
                     return !flag2;
@@ -436,11 +436,11 @@ namespace GHNamespace5
                 {
                     method_10();
                 }
-                var num = _int7;
-                var num2 = _int8;
+                int num = _int7;
+                int num2 = _int8;
                 if (_int11 >= 3)
                 {
-                    var num3 = method_9();
+                    int num3 = method_9();
                     if (_enum290 != Enum29.Const2 && num3 != 0 && _int10 - num3 <= 32506 && method_11(num3) &&
                         _int8 <= 5 && (_enum290 == Enum29.Const1 || (_int8 == 3 && _int10 - _int7 > 4096)))
                     {
@@ -477,12 +477,12 @@ namespace GHNamespace5
                 }
                 if (_class1900.method_5())
                 {
-                    var num4 = _int10 - _int9;
+                    int num4 = _int10 - _int9;
                     if (_bool0)
                     {
                         num4--;
                     }
-                    var flag = bool2 && _int11 == 0 && !_bool0;
+                    bool flag = bool2 && _int11 == 0 && !_bool0;
                     _class1900.method_4(_byte0, _int9, num4, flag);
                     _int9 += num4;
                     return !flag;

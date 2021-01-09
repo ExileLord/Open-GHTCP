@@ -14,10 +14,10 @@ namespace GHNamespace8
         {
             if (string0.Length != 0)
             {
-                for (var i = 0; i < string0.Length; i++)
+                for (int i = 0; i < string0.Length; i++)
                 {
-                    var text = string0[i];
-                    var array = text.Split(new[]
+                    string text = string0[i];
+                    string[] array = text.Split(new[]
                     {
                         ' ',
                         '\t',

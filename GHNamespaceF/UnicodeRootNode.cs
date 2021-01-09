@@ -63,7 +63,7 @@ namespace GHNamespaceF
         {
             Int0 = stream260.ReadInt();
             Int1 = stream260.ReadInt();
-            var num = stream260.ReadInt();
+            int num = stream260.ReadInt();
             stream260.ReadInt();
             if (num != 0)
             {
@@ -74,7 +74,7 @@ namespace GHNamespaceF
 
         public override void vmethod_14(Stream26 stream260)
         {
-            var array = new byte[4];
+            byte[] array = new byte[4];
             array[1] = (vmethod_7() ? (byte) 32 : (byte) 4);
             array[2] = 4;
             stream260.WriteByteArray(array, false);

@@ -40,20 +40,12 @@ namespace GHNamespace5
 
         public Stream19(Stream stream1, Class196 class1961, int int0)
         {
-            if (stream1 == null)
-            {
-                throw new ArgumentNullException("baseInputStream");
-            }
-            if (class1961 == null)
-            {
-                throw new ArgumentNullException("inflater");
-            }
             if (int0 <= 0)
             {
                 throw new ArgumentOutOfRangeException("bufferSize");
             }
-            Stream0 = stream1;
-            Class1960 = class1961;
+            Stream0 = stream1 ?? throw new ArgumentNullException("baseInputStream");
+            Class1960 = class1961 ?? throw new ArgumentNullException("inflater");
             Class2010 = new Class201(stream1, int0);
         }
 
@@ -68,12 +60,12 @@ namespace GHNamespace5
                 Stream0.Seek(long1, SeekOrigin.Current);
                 return long1;
             }
-            var num = 2048;
+            int num = 2048;
             if (long1 < 2048L)
             {
                 num = (int) long1;
             }
-            var array = new byte[num];
+            byte[] array = new byte[num];
             return Stream0.Read(array, 0, array.Length);
         }
 
@@ -137,10 +129,10 @@ namespace GHNamespace5
             {
                 throw new SharpZipBaseException("Need a dictionary");
             }
-            var num = count;
+            int num = count;
             while (true)
             {
-                var num2 = Class1960.method_7(buffer, offset, num);
+                int num2 = Class1960.method_7(buffer, offset, num);
                 offset += num2;
                 num -= num2;
                 if (num == 0 || Class1960.method_10())

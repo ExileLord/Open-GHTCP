@@ -451,7 +451,7 @@ namespace GHNamespaceJ
 
         public override string ToString()
         {
-            var stringBuilder = new StringBuilder(200);
+            StringBuilder stringBuilder = new StringBuilder(200);
             stringBuilder.Append("Layer ");
             stringBuilder.Append(method_19());
             stringBuilder.Append(" frame ");
@@ -473,10 +473,10 @@ namespace GHNamespaceJ
 
         public void method_1(Class82 class820, Class101[] class1011)
         {
-            var flag = false;
+            bool flag = false;
             while (true)
             {
-                var num = class820.method_9(_byte0);
+                int num = class820.method_9(_byte0);
                 _int14 = num;
                 if (_byte0 == Class82.Byte1)
                 {
@@ -514,7 +514,7 @@ namespace GHNamespaceJ
                 }
                 else
                 {
-                    var num2 = _int3;
+                    int num2 = _int3;
                     if (_enum50 != Enum5.Const3)
                     {
                         if (num2 == 4)
@@ -547,7 +547,7 @@ namespace GHNamespaceJ
                     _int8 = _int7;
                 }
                 method_15();
-                var num3 = class820.method_11(Int12);
+                int num3 = class820.method_11(Int12);
                 if (Int12 >= 0 && num3 != Int12)
                 {
                     break;
@@ -580,7 +580,7 @@ namespace GHNamespaceJ
                 {
                     _class1010 = new Class101();
                 }
-                var num = 0;
+                int num = 0;
                 _class1010.method_0(num, 16);
                 class1011[0] = _class1010;
             }
@@ -608,16 +608,16 @@ namespace GHNamespaceJ
             }
             try
             {
-                var @string = Encoding.UTF8.GetString(byte1, num, 4);
+                string @string = Encoding.UTF8.GetString(byte1, num, 4);
                 if (@string.Equals("Xing") || @string.Equals("Info"))
                 {
                     _bool2 = true;
                     _int9 = -1;
                     _int11 = -1;
                     _int10 = -1;
-                    var array = new byte[100];
-                    var num2 = smethod_0(BitConverter.ToInt32(byte1, num + 4));
-                    var num3 = 8;
+                    byte[] array = new byte[100];
+                    int num2 = smethod_0(BitConverter.ToInt32(byte1, num + 4));
+                    int num3 = 8;
                     if ((num2 & 1) != 0)
                     {
                         _int9 = smethod_0(BitConverter.ToInt32(byte1, num + num3));
@@ -657,16 +657,16 @@ namespace GHNamespaceJ
                     _int10 = smethod_1(BitConverter.ToInt16(byte1, num + 8));
                     _int11 = smethod_0(BitConverter.ToInt32(byte1, num + 10));
                     _int9 = smethod_0(BitConverter.ToInt32(byte1, num + 14));
-                    var array2 = new int[smethod_1(BitConverter.ToInt16(byte1, num + 18))];
-                    var num4 = smethod_1(BitConverter.ToInt16(byte1, num + 20));
-                    var num5 = smethod_1(BitConverter.ToInt16(byte1, num + 22));
-                    var num6 = smethod_1(BitConverter.ToInt16(byte1, num + 24));
-                    var num7 = 26;
+                    int[] array2 = new int[smethod_1(BitConverter.ToInt16(byte1, num + 18))];
+                    short num4 = smethod_1(BitConverter.ToInt16(byte1, num + 20));
+                    short num5 = smethod_1(BitConverter.ToInt16(byte1, num + 22));
+                    short num6 = smethod_1(BitConverter.ToInt16(byte1, num + 24));
+                    int num7 = 26;
                     switch (num5)
                     {
                         case 1:
                         {
-                            var i = 0;
+                                int i = 0;
                             while (i < array2.Length)
                             {
                                 array2[i] = byte1[num + num7] * num4;
@@ -677,7 +677,7 @@ namespace GHNamespaceJ
                         }
                         case 2:
                         {
-                            var j = 0;
+                                int j = 0;
                             while (j < array2.Length)
                             {
                                 array2[j] = smethod_1(BitConverter.ToInt16(byte1, num + num7)) * num4;
@@ -688,7 +688,7 @@ namespace GHNamespaceJ
                         }
                         case 3:
                         {
-                            var k = 0;
+                                int k = 0;
                             while (k < array2.Length)
                             {
                                 array2[k] = Struct8.smethod_0(Struct8.smethod_3(byte1, num + num7, true)) * num4;
@@ -699,7 +699,7 @@ namespace GHNamespaceJ
                         }
                         case 4:
                         {
-                            var l = 0;
+                                int l = 0;
                             while (l < array2.Length)
                             {
                                 array2[l] = smethod_0(BitConverter.ToInt32(byte1, num + num7)) * num4;
@@ -858,7 +858,7 @@ namespace GHNamespaceJ
         {
             if (_bool2)
             {
-                var num = _double0[method_4()] / method_7();
+                double num = _double0[method_4()] / method_7();
                 if (_enum30 == Enum3.Const0 || _enum30 == Enum3.Const2)
                 {
                     num /= 2.0;

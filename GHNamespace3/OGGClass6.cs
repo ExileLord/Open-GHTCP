@@ -59,13 +59,13 @@ namespace GHNamespace3
 
         public int method_2(Class67 class670)
         {
-            var oggClass5 = OggClass1.OggClass5;
+            GHNamespaceH.OggClass5 oggClass5 = OggClass1.OggClass5;
             OggClass3.method_4(class670.Byte0, class670.Int0, class670.Int1);
             if (OggClass3.method_6(1) != 0)
             {
                 return -1;
             }
-            var num = OggClass3.method_6(OggClass1.Int3);
+            int num = OggClass3.method_6(OggClass1.Int3);
             if (num == -1)
             {
                 return -1;
@@ -94,11 +94,11 @@ namespace GHNamespace3
             {
                 Float0 = new float[oggClass5.Int8][];
             }
-            for (var i = 0; i < oggClass5.Int8; i++)
+            for (int i = 0; i < oggClass5.Int8; i++)
             {
                 if (Float0[i] != null && Float0[i].Length >= Int3)
                 {
-                    for (var j = 0; j < Int3; j++)
+                    for (int j = 0; j < Int3; j++)
                     {
                         Float0[i][j] = 0f;
                     }
@@ -108,7 +108,7 @@ namespace GHNamespace3
                     Float0[i] = new float[Int3];
                 }
             }
-            var num2 = oggClass5.Int21[oggClass5.Class270[Int4].Int3];
+            int num2 = oggClass5.Int21[oggClass5.Class270[Int4].Int3];
             return Class34.Class340[num2].vmethod_3(this, OggClass1.Object1[Int4]);
         }
     }

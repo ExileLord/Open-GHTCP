@@ -51,17 +51,14 @@ namespace GHNamespace5
             {
                 throw new ArgumentException("Must support writing", "baseOutputStream");
             }
-            if (class1941 == null)
-            {
-                throw new ArgumentNullException("deflater");
-            }
+
             if (int0 <= 0)
             {
                 throw new ArgumentOutOfRangeException("bufferSize");
             }
             Stream0 = stream1;
             _byte0 = new byte[int0];
-            Class1940 = class1941;
+            Class1940 = class1941 ?? throw new ArgumentNullException("deflater");
         }
 
         public virtual void vmethod_0()
@@ -69,7 +66,7 @@ namespace GHNamespace5
             Class1940.method_3();
             while (!Class1940.method_4())
             {
-                var num = Class1940.method_9(_byte0, 0, _byte0.Length);
+                int num = Class1940.method_9(_byte0, 0, _byte0.Length);
                 if (num <= 0)
                 {
                     break;
@@ -119,8 +116,8 @@ namespace GHNamespace5
 
         public void method_4(string string1)
         {
-            var @class = new Class208();
-            var rgbKey = Class207.smethod_0(Class186.smethod_3(string1));
+            Class208 @class = new Class208();
+            byte[] rgbKey = Class207.smethod_0(Class186.smethod_3(string1));
             _icryptoTransform0 = @class.CreateEncryptor(rgbKey, null);
         }
 
@@ -128,7 +125,7 @@ namespace GHNamespace5
         {
             while (!Class1940.method_5())
             {
-                var num = Class1940.method_9(_byte0, 0, _byte0.Length);
+                int num = Class1940.method_9(_byte0, 0, _byte0.Length);
                 if (num <= 0)
                 {
                     break;

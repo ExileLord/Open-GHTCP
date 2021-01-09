@@ -47,7 +47,7 @@ namespace GHNamespaceL
             }
             _int0 -= _int1;
             _int1 = 0;
-            var num = _byte1.Length - _int0;
+            int num = _byte1.Length - _int0;
             num = _stream0.Read(_byte1, _int0, num);
             if (num <= 0)
             {
@@ -82,14 +82,14 @@ namespace GHNamespaceL
             {
                 return;
             }
-            var num = _int2 & 7;
+            int num = _int2 & 7;
             if (num != 0)
             {
-                var num2 = Math.Min(8 - num, int5);
+                int num2 = Math.Min(8 - num, int5);
                 vmethod_10(num2);
                 int5 -= num2;
             }
-            var num3 = int5 / 8;
+            int num3 = int5 / 8;
             if (num3 > 0)
             {
                 vmethod_15(null, num3);
@@ -107,7 +107,7 @@ namespace GHNamespaceL
             {
                 method_0();
             }
-            var result = (((int) _byte1[_int1] & 128 >> _int2) != 0) ? 1 : 0;
+            int result = (((int) _byte1[_int1] & 128 >> _int2) != 0) ? 1 : 0;
             _int2++;
             if (_int2 == 8)
             {
@@ -181,8 +181,8 @@ namespace GHNamespaceL
 
         public virtual int vmethod_10(int int5)
         {
-            var num = 0;
-            for (var i = 0; i < int5; i++)
+            int num = 0;
+            for (int i = 0; i < int5; i++)
             {
                 num = vmethod_7(num);
             }
@@ -191,8 +191,8 @@ namespace GHNamespaceL
 
         public virtual int vmethod_11(int int5)
         {
-            var num = 0;
-            for (var i = 0; i < int5; i++)
+            int num = 0;
+            for (int i = 0; i < int5; i++)
             {
                 num = vmethod_8(num, i);
             }
@@ -205,12 +205,12 @@ namespace GHNamespaceL
             {
                 return 0;
             }
-            var num = 0;
-            for (var i = 0; i < int5; i++)
+            int num = 0;
+            for (int i = 0; i < int5; i++)
             {
                 num = vmethod_7(num);
             }
-            var num2 = 32 - int5;
+            int num2 = 32 - int5;
             int num3;
             if (num2 != 0)
             {
@@ -227,8 +227,8 @@ namespace GHNamespaceL
 
         public virtual long vmethod_13(int int5)
         {
-            var num = 0L;
-            for (var i = 0; i < int5; i++)
+            long num = 0L;
+            for (int i = 0; i < int5; i++)
             {
                 num = vmethod_9(num);
             }
@@ -237,8 +237,8 @@ namespace GHNamespaceL
 
         public virtual int vmethod_14()
         {
-            var num = vmethod_10(8);
-            var num2 = vmethod_10(8);
+            int num = vmethod_10(8);
+            int num2 = vmethod_10(8);
             num |= num2 << 8;
             num2 = vmethod_10(8);
             num |= num2 << 16;
@@ -248,10 +248,10 @@ namespace GHNamespaceL
 
         public virtual void vmethod_15(byte[] byte2, int int5)
         {
-            var num = int5;
+            int num = int5;
             while (int5 > 0)
             {
-                var num2 = Math.Min(int5, _int0 - _int1);
+                int num2 = Math.Min(int5, _int0 - _int1);
                 if (num2 == 0)
                 {
                     method_0();
@@ -272,10 +272,10 @@ namespace GHNamespaceL
 
         public virtual int vmethod_16()
         {
-            var num = 0;
+            int num = 0;
             while (true)
             {
-                var num2 = vmethod_6();
+                int num2 = vmethod_6();
                 if (num2 != 0)
                 {
                     break;
@@ -287,22 +287,22 @@ namespace GHNamespaceL
 
         public virtual void vmethod_17(int[] int5, int int6, int int7, int int8)
         {
-            var i = 0;
-            var num = 0;
-            var num2 = 0;
-            var num3 = 0;
-            var num4 = 0;
-            var num5 = 0;
+            int i = 0;
+            int num = 0;
+            int num2 = 0;
+            int num3 = 0;
+            int num4 = 0;
+            int num5 = 0;
             if (int7 == 0)
             {
                 return;
             }
-            var num6 = _int1;
+            int num6 = _int1;
             long num7 = _int1 * 8 + _int2;
             if (_int2 > 0)
             {
                 byte b2;
-                var b = b2 = _byte1[num6];
+                byte b = b2 = _byte1[num6];
                 num = _int2;
                 b = (byte) (b << (byte) num);
                 int num9;
@@ -314,7 +314,7 @@ namespace GHNamespaceL
                         {
                             goto IL_13D;
                         }
-                        var num8 = 0;
+                        int num8 = 0;
                         while ((b & Byte0) == 0)
                         {
                             b = (byte) (b << 1);
@@ -405,7 +405,7 @@ namespace GHNamespaceL
                 while (num6 < _int0 && i < int7)
                 {
                     byte b2;
-                    var b = b2 = _byte1[num6];
+                    byte b = b2 = _byte1[num6];
                     num = 0;
                     int num10;
                     while (true)
@@ -416,7 +416,7 @@ namespace GHNamespaceL
                             {
                                 goto IL_2EA;
                             }
-                            var num8 = 0;
+                            int num8 = 0;
                             while ((b & Byte0) == 0)
                             {
                                 b = (byte) (b << 1);
@@ -522,7 +522,7 @@ namespace GHNamespaceL
 
         public virtual int vmethod_18(Class152 class1520)
         {
-            var num = vmethod_10(8);
+            int num = vmethod_10(8);
             if (class1520 != null)
             {
                 class1520.vmethod_1((byte) num);
@@ -584,7 +584,7 @@ namespace GHNamespaceL
 
         public virtual long vmethod_19(Class152 class1520)
         {
-            var num = vmethod_10(8);
+            int num = vmethod_10(8);
             if (class1520 != null)
             {
                 class1520.vmethod_1((byte) num);

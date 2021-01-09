@@ -21,7 +21,7 @@ namespace GHNamespaceD
         [MethodImpl(MethodImplOptions.Synchronized)]
         public int method_0(float[] float1, int int3, OggClass3 oggClass3, int int4)
         {
-            var num = int4 / Int0;
+            int num = int4 / Int0;
             if (Int2.Length < num)
             {
                 Int2 = new int[num];
@@ -29,7 +29,7 @@ namespace GHNamespaceD
             int i;
             for (i = 0; i < num; i++)
             {
-                var num2 = method_4(oggClass3);
+                int num2 = method_4(oggClass3);
                 if (num2 == -1)
                 {
                     return -1;
@@ -37,10 +37,10 @@ namespace GHNamespaceD
                 Int2[i] = num2 * Int0;
             }
             i = 0;
-            var num3 = 0;
+            int num3 = 0;
             while (i < Int0)
             {
-                for (var j = 0; j < num; j++)
+                for (int j = 0; j < num; j++)
                 {
                     float1[int3 + num3 + j] += Float0[Int2[j] + i];
                 }
@@ -54,16 +54,16 @@ namespace GHNamespaceD
         {
             if (Int0 > 8)
             {
-                var i = 0;
+                int i = 0;
                 while (i < int4)
                 {
-                    var num = method_4(oggClass3);
+                    int num = method_4(oggClass3);
                     if (num == -1)
                     {
                         return -1;
                     }
-                    var num2 = num * Int0;
-                    var j = 0;
+                    int num2 = num * Int0;
+                    int j = 0;
                     while (j < Int0)
                     {
                         float1[int3 + i++] += Float0[num2 + j++];
@@ -72,17 +72,17 @@ namespace GHNamespaceD
             }
             else
             {
-                var i = 0;
+                int i = 0;
                 while (i < int4)
                 {
-                    var num = method_4(oggClass3);
+                    int num = method_4(oggClass3);
                     if (num == -1)
                     {
                         return -1;
                     }
-                    var num2 = num * Int0;
-                    var j = 0;
-                    for (var k = 0; k < Int0; k++)
+                    int num2 = num * Int0;
+                    int j = 0;
+                    for (int k = 0; k < Int0; k++)
                     {
                         float1[int3 + i++] += Float0[num2 + j++];
                     }
@@ -93,16 +93,16 @@ namespace GHNamespaceD
 
         public int method_2(float[] float1, int int3, OggClass3 oggClass3, int int4)
         {
-            var i = 0;
+            int i = 0;
             while (i < int4)
             {
-                var num = method_4(oggClass3);
+                int num = method_4(oggClass3);
                 if (num == -1)
                 {
                     return -1;
                 }
-                var num2 = num * Int0;
-                var j = 0;
+                int num2 = num * Int0;
+                int j = 0;
                 while (j < Int0)
                 {
                     float1[int3 + i++] = Float0[num2 + j++];
@@ -113,17 +113,17 @@ namespace GHNamespaceD
 
         public int method_3(float[][] float1, int int3, int int4, OggClass3 oggClass3, int int5)
         {
-            var num = 0;
-            var i = int3 / int4;
+            int num = 0;
+            int i = int3 / int4;
             while (i < (int3 + int5) / int4)
             {
-                var num2 = method_4(oggClass3);
+                int num2 = method_4(oggClass3);
                 if (num2 == -1)
                 {
                     return -1;
                 }
-                var num3 = num2 * Int0;
-                for (var j = 0; j < Int0; j++)
+                int num3 = num2 * Int0;
+                for (int j = 0; j < Int0; j++)
                 {
                     float1[num][i] += Float0[num3 + j];
                     num++;
@@ -139,13 +139,13 @@ namespace GHNamespaceD
 
         public int method_4(OggClass3 oggClass3)
         {
-            var num = 0;
-            var @class = OggData;
+            int num = 0;
+            OggData @class = OggData;
             if (@class == null)
             {
                 return num;
             }
-            var num2 = oggClass3.method_2(@class.Int2);
+            int num2 = oggClass3.method_2(@class.Int2);
             if (num2 >= 0)
             {
                 num = @class.Int0[num2];
@@ -194,20 +194,20 @@ namespace GHNamespaceD
 
         internal static int[] smethod_0(int[] numArray, int num)
         {
-            var numArray1 = new int[33];
-            var numArray2 = new int[num];
-            for (var i = 0; i < num; i++)
+            int[] numArray1 = new int[33];
+            int[] numArray2 = new int[num];
+            for (int i = 0; i < num; i++)
             {
-                var num1 = numArray[i];
+                int num1 = numArray[i];
                 if (num1 > 0)
                 {
-                    var num2 = numArray1[num1];
+                    int num2 = numArray1[num1];
                     if (num1 < 32 && num2 >> (num1 & 31) != 0)
                     {
                         return null;
                     }
                     numArray2[i] = num2;
-                    var num3 = num1;
+                    int num3 = num1;
                     while (true)
                     {
                         if (num3 <= 0)
@@ -230,17 +230,17 @@ namespace GHNamespaceD
                             break;
                         }
                     }
-                    for (var j = num1 + 1; j < 33 && (ulong) (numArray1[j] >> 1) == (ulong) num2; j++)
+                    for (int j = num1 + 1; j < 33 && (ulong) (numArray1[j] >> 1) == (ulong) num2; j++)
                     {
                         num2 = numArray1[j];
                         numArray1[j] = numArray1[j - 1] << 1;
                     }
                 }
             }
-            for (var k = 0; k < num; k++)
+            for (int k = 0; k < num; k++)
             {
-                var num4 = 0;
-                for (var l = 0; l < numArray[k]; l++)
+                int num4 = 0;
+                for (int l = 0; l < numArray[k]; l++)
                 {
                     num4 = num4 << 1;
                     num4 = num4 | numArray2[k] >> (l & 31) & 1;
@@ -252,21 +252,21 @@ namespace GHNamespaceD
 
         public OggData GetOggData()
         {
-            var num = 0;
-            var oggData = new OggData();
-            var array = oggData.Int3 = new int[Int1 * 2];
-            var array2 = oggData.Int4 = new int[Int1 * 2];
-            var array3 = smethod_0(OggClass2.Int2, OggClass2.Int1);
+            int num = 0;
+            OggData oggData = new OggData();
+            int[] array = oggData.Int3 = new int[Int1 * 2];
+            int[] array2 = oggData.Int4 = new int[Int1 * 2];
+            int[] array3 = smethod_0(OggClass2.Int2, OggClass2.Int1);
             if (array3 == null)
             {
                 return null;
             }
             oggData.Int5 = Int1 * 2;
-            for (var i = 0; i < Int1; i++)
+            for (int i = 0; i < Int1; i++)
             {
                 if (OggClass2.Int2[i] > 0)
                 {
-                    var num2 = 0;
+                    int num2 = 0;
                     int j;
                     for (j = 0; j < OggClass2.Int2[i] - 1; j++)
                     {
@@ -302,13 +302,13 @@ namespace GHNamespaceD
             {
                 oggData.Int2 = 5;
             }
-            var num3 = 1 << oggData.Int2;
+            int num3 = 1 << oggData.Int2;
             oggData.Int0 = new int[num3];
             oggData.Int1 = new int[num3];
-            for (var k = 0; k < num3; k++)
+            for (int k = 0; k < num3; k++)
             {
-                var num4 = 0;
-                var num5 = 0;
+                int num4 = 0;
+                int num5 = 0;
                 while (num5 < oggData.Int2 && (num4 > 0 || num5 == 0))
                 {
                     if ((k & 1 << num5) != 0)
@@ -330,7 +330,7 @@ namespace GHNamespaceD
         private void PrintArray(int[] array)
         {
             Console.Write("{");
-            foreach (var i in array)
+            foreach (int i in array)
             {
                 Console.Write(i + ", ");
             }
@@ -339,7 +339,7 @@ namespace GHNamespaceD
 
         public static int smethod_1(int int3)
         {
-            var num = 0;
+            int num = 0;
             while (int3 != 0)
             {
                 num++;

@@ -19,7 +19,7 @@ namespace GHNamespaceC
 
         public List<INterface12> List0;
 
-        public ZzPakNode2 Class3180; //Linked List?..
+        public ZzPakNode2 Class3180; //Linked List?
 
         public Dictionary<int, int[]> Dictionary0;
 
@@ -95,17 +95,17 @@ namespace GHNamespaceC
             {
                 throw new Exception("Pak File is empty!");
             }
-            var num = 0;
-            var num2 = Stream260.ReadInt();
+            int num = 0;
+            int num2 = Stream260.ReadInt();
             Stream260.ReverseEndianness = (Bool2 = (!QbSongClass1.ContainsKey(num2) ||
                                                     !QbSongClass1.GetDictString(num2).StartsWith(".")));
-            var @enum = (Enum35) Stream260.ReadIntAt(28);
+            Enum35 @enum = (Enum35) Stream260.ReadIntAt(28);
             Bool1 = ((@enum & Enum35.Flag3) == Enum35.Flag0);
             Int0 = Stream260.ReadIntAt(Bool1 ? 12 : 16,
                 Bool2 && (@enum & Enum35.Flag4) == Enum35.Flag0 && (@enum & Enum35.Flag5) == Enum35.Flag0);
             if (Bool4 && String0 != null)
             {
-                var text = KeyGenerator.GetFileName(String0);
+                string text = KeyGenerator.GetFileName(String0);
                 if (text.Contains("_song"))
                 {
                     QbSongClass1.GenerateSongTrackStuff(text.Substring(0, text.LastIndexOf("_song.pak")).ToLower());
@@ -117,9 +117,9 @@ namespace GHNamespaceC
             }
             while (true)
             {
-                var enum2 = (Enum35) Stream260.ReadIntAt(num + 28);
-                var flag = Bool2 && (enum2 & Enum35.Flag4) == Enum35.Flag0 && (enum2 & Enum35.Flag5) == Enum35.Flag0;
-                var int_ = Stream260.ReadIntAt(num, flag);
+                Enum35 enum2 = (Enum35) Stream260.ReadIntAt(num + 28);
+                bool flag = Bool2 && (enum2 & Enum35.Flag4) == Enum35.Flag0 && (enum2 & Enum35.Flag5) == Enum35.Flag0;
+                int int_ = Stream260.ReadIntAt(num, flag);
                 if (QbSongClass1.ContainsKey(int_))
                 {
                     if (QbSongClass1.GetDictString(int_).Equals(".last"))
@@ -131,17 +131,17 @@ namespace GHNamespaceC
                         break;
                     }
                 }
-                var int2 = Stream260.ReadInt(flag) + num;
-                var int3 = Stream260.ReadInt(flag);
-                var num3 = Stream260.ReadIntAt(num + (Bool1 ? 16 : 12), flag);
-                var num4 = Stream260.ReadIntAt(num + 20, flag);
-                var int4 = Stream260.ReadInt(flag);
+                int int2 = Stream260.ReadInt(flag) + num;
+                int int3 = Stream260.ReadInt(flag);
+                int num3 = Stream260.ReadIntAt(num + (Bool1 ? 16 : 12), flag);
+                int num4 = Stream260.ReadIntAt(num + 20, flag);
+                int int4 = Stream260.ReadInt(flag);
                 Stream260.Position += 4L;
                 if ((enum2 & Enum35.Flag3) != Enum35.Flag0)
                 {
                     Bool1 = false;
-                    var text2 = Stream260.ReadString(160);
-                    var num5 = text2.IndexOf('\0');
+                    string text2 = Stream260.ReadString(160);
+                    int num5 = text2.IndexOf('\0');
                     if (num5 >= 0)
                     {
                         text2 = text2.Substring(0, num5);
@@ -175,10 +175,10 @@ namespace GHNamespaceC
                     }
                     else
                     {
-                        var text3 = "abcdefghijklmnopqrstuvwxyz";
-                        for (var i = 0; i < text3.Length; i++)
+                        string text3 = "abcdefghijklmnopqrstuvwxyz";
+                        for (int i = 0; i < text3.Length; i++)
                         {
-                            var c = text3[i];
+                            char c = text3[i];
                             if (num3 == KeyGenerator.GetQbKey(c + text2, true))
                             {
                                 QbSongClass1.AddKeyToDictionary(c + text2);
@@ -229,7 +229,7 @@ namespace GHNamespaceC
             {
                 Nodes.Add(Class3170);
             }
-            var @interface = method_11(int1);
+            INterface12 @interface = method_11(int1);
             if (@interface == null)
             {
                 List0.Add(interface120);
@@ -250,14 +250,14 @@ namespace GHNamespaceC
 
         public bool method_7(string string2)
         {
-            var @interface = method_10(string2);
+            INterface12 @interface = method_10(string2);
             ((TreeNode) @interface).Remove();
             return @interface != null && List0.Remove(@interface);
         }
 
         public Class309 ZzGetNode1(string string2)
         {
-            var @interface = method_10(string2);
+            INterface12 @interface = method_10(string2);
             if (@interface == null)
             {
                 return null;
@@ -266,7 +266,7 @@ namespace GHNamespaceC
             {
                 return (Class309) method_15(@interface);
             }
-            var @class = @interface.imethod_20(new Class309());
+            Class309 @class = @interface.imethod_20(new Class309());
             if (Bool4)
             {
                 ((TreeNode) @interface).Remove();
@@ -281,7 +281,7 @@ namespace GHNamespaceC
 
         public Class328 method_9(string string2)
         {
-            var @interface = method_10(string2);
+            INterface12 @interface = method_10(string2);
             if (@interface == null)
             {
                 return null;
@@ -290,7 +290,7 @@ namespace GHNamespaceC
             {
                 return (Class328) method_15(@interface);
             }
-            var @class = @interface.imethod_20(new Class328());
+            Class328 @class = @interface.imethod_20(new Class328());
             if (Bool4)
             {
                 ((TreeNode) @interface).Remove();
@@ -310,7 +310,7 @@ namespace GHNamespaceC
 
         public INterface12 method_11(int int1)
         {
-            foreach (var current in List0)
+            foreach (INterface12 current in List0)
             {
                 if (current.imethod_7() == int1)
                 {
@@ -367,7 +367,7 @@ namespace GHNamespaceC
 
         public void method_16(string string2)
         {
-            var stream = method_17();
+            Stream26 stream = method_17();
             if (Stream260 != null && String0 == string2)
             {
                 Stream260.Close();
@@ -388,8 +388,8 @@ namespace GHNamespaceC
 
         public Stream26 method_17()
         {
-            var stream = new Stream26(Bool2);
-            var stream2 = new Stream26();
+            Stream26 stream = new Stream26(Bool2);
+            Stream26 stream2 = new Stream26();
             method_18(stream, stream2);
             stream.WriteByteArray(stream2.ReadEverything(), false);
             stream2.Dispose();
@@ -398,15 +398,15 @@ namespace GHNamespaceC
 
         private static int smethod_0(long long0, int int1)
         {
-            var num = 1 << int1;
-            var num2 = num - 1;
+            int num = 1 << int1;
+            int num2 = num - 1;
             return (int) (num - (long0 & num2) & num2);
         }
 
         public void method_18(Stream26 stream261, Stream26 stream262)
         {
-            var num = 0;
-            foreach (var current in List0)
+            int num = 0;
+            foreach (INterface12 current in List0)
             {
                 num += (((current.imethod_14() & Enum35.Flag3) == Enum35.Flag0 ||
                          !QbSongClass1.ContainsKey(current.imethod_7()))
@@ -421,13 +421,13 @@ namespace GHNamespaceC
             {
                 num += (Bool2 ? 64 : 48);
             }
-            var num2 = 0;
-            var list = new List<INterface12>();
-            foreach (var current2 in List0)
+            int num2 = 0;
+            List<INterface12> list = new List<INterface12>();
+            foreach (INterface12 current2 in List0)
             {
                 if (current2 is Class309 && (current2 as Class309).vmethod_8())
                 {
-                    var string_ = current2.imethod_9().Replace(".qb", ".qs");
+                    string string_ = current2.imethod_9().Replace(".qb", ".qs");
                     if (!Class3180.zzQbFileExists(string_))
                     {
                         if (!current2.imethod_18())
@@ -441,7 +441,7 @@ namespace GHNamespaceC
                     }
                     else
                     {
-                        var @interface = Class3180.method_10(string_);
+                        INterface12 @interface = Class3180.method_10(string_);
                         if (@interface.imethod_18() || ((Class328) @interface).Dictionary0 !=
                             (current2 as Class309).vmethod_10())
                         {
@@ -455,18 +455,18 @@ namespace GHNamespaceC
                 Class3180.List0.AddRange(list);
             }
             int num4;
-            foreach (var current3 in List0)
+            foreach (INterface12 current3 in List0)
             {
-                var flag = Bool2 && (current3.imethod_14() & Enum35.Flag4) == Enum35.Flag0 &&
+                bool flag = Bool2 && (current3.imethod_14() & Enum35.Flag4) == Enum35.Flag0 &&
                            (current3.imethod_14() & Enum35.Flag5) == Enum35.Flag0;
-                var num3 = current3.imethod_7();
+                int num3 = current3.imethod_7();
                 if (current3.imethod_4() != 0)
                 {
                     stream261.WriteInt(current3.imethod_4(), flag);
                 }
                 else
                 {
-                    var text = QbSongClass1.GetDictString(num3);
+                    string text = QbSongClass1.GetDictString(num3);
                     if (!Bool1 && !text.EndsWith(".qb.ngc") && !text.EndsWith(".qb.ps2"))
                     {
                         stream261.WriteInt(1270999134, flag);
@@ -501,11 +501,11 @@ namespace GHNamespaceC
                 stream261.WriteInt(current3.imethod_10(), flag);
                 stream261.WriteInt(current3.imethod_12(), flag);
                 stream261.WriteInt((int) current3.imethod_14(), false);
-                var flag2 = false;
+                bool flag2 = false;
                 if ((current3.imethod_14() & Enum35.Flag3) != Enum35.Flag0 && QbSongClass1.ContainsKey(num3))
                 {
                     flag2 = true;
-                    var text2 = QbSongClass1.GetDictString(num3);
+                    string text2 = QbSongClass1.GetDictString(num3);
                     if (!current3.imethod_6().EndsWith(".qb.ngc") && !current3.imethod_6().EndsWith(".qb.ps2"))
                     {
                         if (Bool1)

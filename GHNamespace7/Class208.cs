@@ -61,7 +61,7 @@ namespace GHNamespace7
         public override void GenerateKey()
         {
             _byte0 = new byte[12];
-            var random = new Random();
+            Random random = new Random();
             random.NextBytes(_byte0);
         }
 

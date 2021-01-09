@@ -24,10 +24,10 @@ namespace GHNamespaceB
             {
                 Nodes.Add(new TagValueNode(stream260.ReadInt()));
             }
-            var num = stream260.ReadInt();
+            int num = stream260.ReadInt();
             if (num != 0)
             {
-                var @class = (Parent is StructureHeaderNode)
+                AbstractTreeNode1 @class = (Parent is StructureHeaderNode)
                     ? (Parent as StructureHeaderNode).method_11(stream260.ReadIntAt(num))
                     : vmethod_12(stream260.ReadIntAt(num, true));
                 method_1().Nodes.Add(@class);
@@ -39,34 +39,33 @@ namespace GHNamespaceB
         {
             if (vmethod_8())
             {
-                var array = new byte[4];
+                byte[] array = new byte[4];
                 array[1] = 1;
                 array[2] = (byte) (vmethod_15() - 128);
                 stream260.WriteByteArray(array, false);
             }
             else
             {
-                var array2 = new byte[4];
+                byte[] array2 = new byte[4];
                 array2[1] = vmethod_15();
                 stream260.WriteByteArray(array2, false);
             }
             stream260.WriteInt(Int0);
             if (Nodes.Count != 0)
             {
-                var enumerator = Nodes.GetEnumerator();
+                System.Collections.IEnumerator enumerator = Nodes.GetEnumerator();
                 try
                 {
                     while (enumerator.MoveNext())
                     {
-                        var @class = (AbstractTreeNode2) enumerator.Current;
+                        AbstractTreeNode2 @class = (AbstractTreeNode2) enumerator.Current;
                         stream260.WriteByteArray(@class.vmethod_8());
                     }
                     goto IL_AA;
                 }
                 finally
                 {
-                    var disposable = enumerator as IDisposable;
-                    if (disposable != null)
+                    if (enumerator is IDisposable disposable)
                     {
                         disposable.Dispose();
                     }

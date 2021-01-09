@@ -56,7 +56,7 @@ namespace GHNamespace7
             Point point4;
             if (_listBox0.Sorted)
             {
-                var r = _listBox0.ClientRectangle;
+                Rectangle r = _listBox0.ClientRectangle;
                 r = _listBox0.RectangleToScreen(r);
                 point = new Point(r.Left, r.Top);
                 point2 = new Point(r.Left, r.Bottom);
@@ -90,7 +90,7 @@ namespace GHNamespace7
                 point3 = new Point(r.Left, r.Top + 1);
                 point4 = new Point(r.Right, r.Top + 1);
             }
-            var dC = Gdi.GetDC(IntPtr.Zero);
+            IntPtr dC = Gdi.GetDC(IntPtr.Zero);
             Gdi.SetROP2(dC, 6);
             Gdi.MoveToEx(dC, point.X, point.Y, IntPtr.Zero);
             Gdi.LineTo(dC, point2.X, point2.Y);

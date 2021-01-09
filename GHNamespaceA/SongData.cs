@@ -945,8 +945,10 @@ namespace GHNamespaceA
             Bool0 = true;
             EnableAudioButtons();
             _gh3Songlist0 = gh3Songlist1;
-            _timer0 = new Timer();
-            _timer0.Interval = 30;
+            _timer0 = new Timer
+            {
+                Interval = 30
+            };
             _timer0.Tick += timer_0_Tick;
         }
 
@@ -961,8 +963,10 @@ namespace GHNamespaceA
             Bool0 = true;
             EnableAudioButtons();
             _gh3Songlist0 = gh3Songlist1;
-            _timer0 = new Timer();
-            _timer0.Interval = 30;
+            _timer0 = new Timer
+            {
+                Interval = 30
+            };
             _timer0.Tick += timer_0_Tick;
         }
 
@@ -972,13 +976,15 @@ namespace GHNamespaceA
             _songNameTxt.Text = string0;
             _bool2 = true;
             _songNameTxt.Enabled = false;
-            _timer0 = new Timer();
-            _timer0.Interval = 30;
+            _timer0 = new Timer
+            {
+                Interval = 30
+            };
             _timer0.Tick += timer_0_Tick;
-            var arg710 = _audioCheckBox;
+            CheckBox arg710 = _audioCheckBox;
             Bool0 = bool6;
             arg710.Checked = bool6;
-            var arg860 = _chartCheckBox;
+            CheckBox arg860 = _chartCheckBox;
             Bool1 = bool7;
             arg860.Checked = bool7;
             EnableAudioButtons();
@@ -994,7 +1000,7 @@ namespace GHNamespaceA
             method_4("No Track");
             method_5("No Track");
             method_8(0);
-            foreach (var current in _qbcParser.NoteList.Keys)
+            foreach (string current in _qbcParser.NoteList.Keys)
             {
                 method_4(current);
             }
@@ -1033,10 +1039,10 @@ namespace GHNamespaceA
                 string text4 = null;
                 string text5 = null;
                 string text6 = null;
-                for (var i = 0; i < string1.Length; i++)
+                for (int i = 0; i < string1.Length; i++)
                 {
-                    var text7 = string1[i];
-                    var text8 = KeyGenerator.GetFileName(text7).ToLower();
+                    string text7 = string1[i];
+                    string text8 = KeyGenerator.GetFileName(text7).ToLower();
                     if (string1.Length > 4 && text8.Contains("coop"))
                     {
                         if (text5 == null && (text8.Contains("rhythm") || text8.Contains("bass")))
@@ -1065,10 +1071,7 @@ namespace GHNamespaceA
                         text3 = text7;
                     }
                 }
-                if (text == null)
-                {
-                    throw new Exception("File names did not follow format!");
-                }
+
                 if (text3 != null)
                 {
                     if (text2 != null)
@@ -1096,7 +1099,7 @@ namespace GHNamespaceA
                 {
                     _singleAudioBtn.Checked = true;
                 }
-                _guitarAudioTxt.Text = text;
+                _guitarAudioTxt.Text = text ?? throw new Exception("File names did not follow format!");
             }
             _previewSlider.method_18(Convert.ToInt32(AudioManager.GetAudioStream(_guitarAudioTxt.Text)
                 .vmethod_1()
@@ -1164,7 +1167,7 @@ namespace GHNamespaceA
 
         public Class250 method_1(ZzPakNode2 class3180, string string0)
         {
-            var dictionary = new Dictionary<string, Track<int, NotesAtOffset>>();
+            Dictionary<string, Track<int, NotesAtOffset>> dictionary = new Dictionary<string, Track<int, NotesAtOffset>>();
             if (!_easyGuitarBox.SelectedItem.Equals("No Track"))
             {
                 dictionary.Add("easy", _qbcParser.NoteList[(string) _easyGuitarBox.SelectedItem]);
@@ -1229,10 +1232,10 @@ namespace GHNamespaceA
             {
                 dictionary.Add("rhythmcoop_expert", _qbcParser.NoteList[(string) _expertCoop2Box.SelectedItem]);
             }
-            var class228 = method_2(_faceOffP1Box);
-            var class2282 = method_2(_faceOffP2Box);
-            var class2283 = method_2(_bossBattleP1Box);
-            var class2284 = method_2(_bossBattleP2Box);
+            Track<int, int> class228 = method_2(_faceOffP1Box);
+            Track<int, int> class2282 = method_2(_faceOffP2Box);
+            Track<int, int> class2283 = method_2(_bossBattleP1Box);
+            Track<int, int> class2284 = method_2(_bossBattleP2Box);
             _qbcParser.NoteList = dictionary;
             _qbcParser.Class2282 = class228;
             _qbcParser.Class2283 = class2282;
@@ -1463,8 +1466,8 @@ namespace GHNamespaceA
                     //Configures paks
                     if (fileName.EndsWith("_song.pak.xen"))
                     {
-                        var text2 = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
-                        using (var @class = new ZzPakNode2(fileName, false))
+                        string text2 = KeyGenerator.GetFileName(fileName).Replace("_song.pak.xen", "");
+                        using (ZzPakNode2 @class = new ZzPakNode2(fileName, false))
                         {
                             if (!@class.zzQbFileExists("songs\\" + text2 + ".mid.qb"))
                             {
@@ -1498,7 +1501,7 @@ namespace GHNamespaceA
                     Control arg12B0 = _autoConfigBtn;
                     _resetBtn.Enabled = true;
                     arg12B0.Enabled = true;
-                    foreach (var current in _qbcParser.NoteList.Keys)
+                    foreach (string current in _qbcParser.NoteList.Keys)
                     {
                         method_4(current);
                     }
@@ -1646,7 +1649,7 @@ namespace GHNamespaceA
 
         private void GuitarAudioBtn_Click(object sender, EventArgs e)
         {
-            var fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Audio track file.",
+            string fileName = KeyGenerator.OpenOrSaveFile("Select the Guitar Audio track file.",
                     "Any Supported Audio Formats|*.dat.xen;*.mp3;*.wav;*.ogg;*.flac|GH3 Audio Header file|*.dat.xen|MPEG Layer-3 Audio file|*.mp3|Waveform Audio file|*.wav|Ogg Vorbis Audio file|*.ogg|FLAC Audio File|*.flac",
                     true)
                 .ToLower();
@@ -1869,7 +1872,7 @@ namespace GHNamespaceA
         {
             try
             {
-                var list = new List<GenericAudioStream>();
+                List<GenericAudioStream> list = new List<GenericAudioStream>();
                 if (!_bandCoopTxt.Text.Equals(""))
                 {
                     list.Add(AudioManager.GetAudioStream(_bandCoopTxt.Text));
@@ -1896,7 +1899,7 @@ namespace GHNamespaceA
                 }
                 if (list.Count != 0)
                 {
-                    var stream = (list.Count == 1) ? list[0] : new Stream2(list.ToArray());
+                    GenericAudioStream stream = (list.Count == 1) ? list[0] : new Stream2(list.ToArray());
                     if (_audio != null)
                     {
                         _audio.Dispose();

@@ -12,7 +12,7 @@ namespace GHNamespaceB
 
         public override string GetText()
         {
-            var text = (Nodes.Count > 0) ? method_2(0).GetText() : "NULL";
+            string text = (Nodes.Count > 0) ? method_2(0).GetText() : "NULL";
             if (QbSongClass1.ContainsKey(Int0))
             {
                 return QbSongClass1.GetDictString(Int0) + " = " + text;
@@ -46,7 +46,7 @@ namespace GHNamespaceB
 
         public override object Clone()
         {
-            var @class = (ZzUnkNode260) base.Clone();
+            ZzUnkNode260 @class = (ZzUnkNode260) base.Clone();
             @class.Int0 = Int0;
             @class.Int1 = Int1;
             return @class;

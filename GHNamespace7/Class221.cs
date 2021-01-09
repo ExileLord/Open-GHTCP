@@ -28,10 +28,10 @@ namespace GHNamespace7
 
         public virtual bool vmethod_1(ICollection<T> icollection0)
         {
-            var result = false;
+            bool result = false;
             if (icollection0 != null)
             {
-                foreach (var current in icollection0)
+                foreach (T current in icollection0)
                 {
                     result = vmethod_0(current);
                 }

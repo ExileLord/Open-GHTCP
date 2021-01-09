@@ -37,7 +37,7 @@ namespace GHNamespaceG
         public void Dispose()
         {
             _stream0.Dispose();
-            for (var i = 0; i < _class3520.Length; i++)
+            for (int i = 0; i < _class3520.Length; i++)
             {
                 _class3520[i].Dispose();
             }

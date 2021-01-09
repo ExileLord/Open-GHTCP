@@ -11,8 +11,7 @@ namespace GHNamespaceA
         [STAThread]
         private static void Main(string[] args)
         {
-            bool flag;
-            var obj = new Mutex(true, "GHTCP", out flag);
+            Mutex obj = new Mutex(true, "GHTCP", out bool flag);
             if (!flag)
             {
                 MessageBox.Show("GH3 Control Panel+ is already running.");

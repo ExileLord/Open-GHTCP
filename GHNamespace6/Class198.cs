@@ -122,7 +122,7 @@ namespace GHNamespace6
                 IL_176:
                 while (_int9 < _int6)
                 {
-                    var num2 = class1870.method_0(3);
+                    int num2 = class1870.method_0(3);
                     if (num2 < 0)
                     {
                         return false;
@@ -137,8 +137,8 @@ namespace GHNamespace6
                 _int3 = 4;
                 goto IL_F4;
                 IL_2C:
-                var num3 = Int1[_int8];
-                var num4 = class1870.method_0(num3);
+                int num3 = Int1[_int8];
+                int num4 = class1870.method_0(num3);
                 if (num4 < 0)
                 {
                     return false;
@@ -191,14 +191,14 @@ namespace GHNamespace6
 
         public Class197 method_1()
         {
-            var destinationArray = new byte[_int4];
+            byte[] destinationArray = new byte[_int4];
             Array.Copy(_byte1, 0, destinationArray, 0, _int4);
             return new Class197(destinationArray);
         }
 
         public Class197 method_2()
         {
-            var destinationArray = new byte[_int5];
+            byte[] destinationArray = new byte[_int5];
             Array.Copy(_byte1, _int4, destinationArray, 0, _int5);
             return new Class197(destinationArray);
         }

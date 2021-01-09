@@ -94,7 +94,7 @@ namespace GHNamespace2
                     vmethod_2().Position = _long2;
                 }
                 int2 = (int) Math.Min(int2, method_0());
-                var num = _stream10.vmethod_3(intptr0, int2);
+                int num = _stream10.vmethod_3(intptr0, int2);
                 _long2 += num;
                 result = num;
             }
@@ -111,7 +111,7 @@ namespace GHNamespace2
                     vmethod_2().Position = _long2;
                 }
                 count = (int) Math.Min(count, method_0());
-                var num = _stream10.Read(buffer, offset, count);
+                int num = _stream10.Read(buffer, offset, count);
                 _long2 += num;
                 result = num;
             }
@@ -128,7 +128,7 @@ namespace GHNamespace2
                     vmethod_2().Position = _long2;
                 }
                 int3 = (int) Math.Min(int3, method_0() >> 2);
-                var num = _stream10.vmethod_4(float0, int2, int3);
+                int num = _stream10.vmethod_4(float0, int2, int3);
                 _long2 += (long) num << 2;
                 result = num;
             }
@@ -151,7 +151,7 @@ namespace GHNamespace2
                 }
                 else
                 {
-                    var array = _stream10.vmethod_5(int2);
+                    float[][] array = _stream10.vmethod_5(int2);
                     if (array != null && array.Length >= 1)
                     {
                         _long2 += (array[0].Length << 2) * array.Length;

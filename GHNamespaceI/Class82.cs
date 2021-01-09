@@ -182,8 +182,8 @@ namespace GHNamespaceI
 
         public bool method_8(int int7)
         {
-            var num = method_16(_byte4, 0, 4);
-            var int8 = (_byte4[0] << 24 & -16777216) | (_byte4[1] << 16 & 16711680) | (_byte4[2] << 8 & 65280) |
+            int num = method_16(_byte4, 0, 4);
+            int int8 = (_byte4[0] << 24 & -16777216) | (_byte4[1] << 16 & 16711680) | (_byte4[2] << 8 & 65280) |
                        _byte4[3] & 255;
             try
             {
@@ -192,8 +192,8 @@ namespace GHNamespaceI
             catch (IOException)
             {
             }
-            var result = false;
-            var num2 = num;
+            bool result = false;
+            int num2 = num;
             if (num2 != 0)
             {
                 if (num2 == 4)
@@ -210,12 +210,12 @@ namespace GHNamespaceI
 
         public int method_9(byte byte5)
         {
-            var num = method_16(_byte4, 0, 3);
+            int num = method_16(_byte4, 0, 3);
             if (num != 3)
             {
                 throw new BitstreamException(BitstreamError.StreamEof, null);
             }
-            var num2 = (_byte4[0] << 16 & 16711680) | (_byte4[1] << 8 & 65280) | _byte4[2] & 255;
+            int num2 = (_byte4[0] << 16 & 16711680) | (_byte4[1] << 8 & 65280) | _byte4[2] & 255;
             while (true)
             {
                 num2 <<= 8;
@@ -260,7 +260,7 @@ namespace GHNamespaceI
 
         public int method_11(int int7)
         {
-            var result = method_15(_byte3, 0, int7);
+            int result = method_15(_byte3, 0, int7);
             _int2 = int7;
             _int3 = -1;
             _int4 = -1;
@@ -269,15 +269,15 @@ namespace GHNamespaceI
 
         public void method_12()
         {
-            var num = 0;
-            var array = _byte3;
-            var num2 = _int2;
-            for (var i = 0; i < num2; i += 4)
+            int num = 0;
+            byte[] array = _byte3;
+            int num2 = _int2;
+            for (int i = 0; i < num2; i += 4)
             {
                 byte b = 0;
                 byte b2 = 0;
                 byte b3 = 0;
-                var b4 = array[i];
+                byte b4 = array[i];
                 if (i + 1 < num2)
                 {
                     b = array[i + 1];
@@ -298,7 +298,7 @@ namespace GHNamespaceI
 
         public int method_13(int int7)
         {
-            var num = _int4 + int7;
+            int num = _int4 + int7;
             if (_int3 < 0)
             {
                 _int3 = 0;
@@ -306,8 +306,8 @@ namespace GHNamespaceI
             int num4;
             if (num <= 32)
             {
-                var num2 = _int1[_int3];
-                var num3 = 32 - num;
+                int num2 = _int1[_int3];
+                int num3 = 32 - num;
                 num4 = (num2 >> num3 & _int6[int7]);
                 if ((_int4 += int7) == 32)
                 {
@@ -316,11 +316,11 @@ namespace GHNamespaceI
                 }
                 return num4;
             }
-            var num5 = _int1[_int3] & 65535;
+            int num5 = _int1[_int3] & 65535;
             _int3++;
-            var num6 = _int1[_int3] & -65536;
+            int num6 = _int1[_int3] & -65536;
             num4 = ((num5 << 16 & -65536) | (num6 >> 16 & 65535));
-            var num7 = 48 - num;
+            int num7 = 48 - num;
             num4 >>= num7;
             num4 &= _int6[int7];
             _int4 = num - 32;
@@ -335,12 +335,12 @@ namespace GHNamespaceI
 
         private int method_15(byte[] byte5, int int7, int int8)
         {
-            var num = 0;
+            int num = 0;
             try
             {
                 while (int8 > 0)
                 {
-                    var num2 = _class1060.method_1(byte5, int7, int8);
+                    int num2 = _class1060.method_1(byte5, int7, int8);
                     if (num2 == -1 || num2 == 0)
                     {
                         while (int8-- > 0)
@@ -363,12 +363,12 @@ namespace GHNamespaceI
 
         private int method_16(byte[] byte5, int int7, int int8)
         {
-            var num = 0;
+            int num = 0;
             try
             {
                 while (int8 > 0)
                 {
-                    var num2 = _class1060.method_1(byte5, int7, int8);
+                    int num2 = _class1060.method_1(byte5, int7, int8);
                     if (num2 == -1 || num2 == 0)
                     {
                         break;
@@ -387,8 +387,8 @@ namespace GHNamespaceI
 
         private void method_17(Stream stream0)
         {
-            var position = 0L;
-            var num = -1;
+            long position = 0L;
+            int num = -1;
             try
             {
                 position = stream0.Position;
@@ -423,8 +423,8 @@ namespace GHNamespaceI
 
         private static int smethod_0(Stream stream0)
         {
-            var array = new byte[4];
-            var num = -10;
+            byte[] array = new byte[4];
+            int num = -10;
             stream0.Read(array, 0, 3);
             if (array[0] == 73 && array[1] == 68 && array[2] == 51)
             {

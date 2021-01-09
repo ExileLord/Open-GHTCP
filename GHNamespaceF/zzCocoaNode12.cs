@@ -209,7 +209,7 @@ namespace GHNamespaceF
 
         public override object Clone()
         {
-            var @interface = (INterface12) base.Clone();
+            INterface12 @interface = (INterface12) base.Clone();
             @interface.imethod_1(_int0);
             @interface.imethod_3(_int1);
             @interface.imethod_5(_int2);

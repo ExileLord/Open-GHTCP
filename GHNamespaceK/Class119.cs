@@ -28,8 +28,7 @@ namespace GHNamespaceK
 
         public static IntPtr smethod_2()
         {
-            IntPtr result;
-            alGenSources(1, out result);
+            alGenSources(1, out IntPtr result);
             return result;
         }
 
@@ -52,8 +51,7 @@ namespace GHNamespaceK
 
         public static int smethod_4(IntPtr intptr0, Enum11 enum110)
         {
-            int result;
-            alGetSourcei(intptr0, enum110, out result);
+            alGetSourcei(intptr0, enum110, out int result);
             return result;
         }
 
@@ -93,8 +91,7 @@ namespace GHNamespaceK
 
         public static IntPtr smethod_6(IntPtr intptr0)
         {
-            IntPtr result;
-            alSourceUnqueueBuffers_1(intptr0, 1, out result);
+            alSourceUnqueueBuffers_1(intptr0, 1, out IntPtr result);
             return result;
         }
 
@@ -104,7 +101,7 @@ namespace GHNamespaceK
             {
                 throw new ArgumentOutOfRangeException("numEntries", "Must be greater than zero.");
             }
-            var array = new IntPtr[int0];
+            IntPtr[] array = new IntPtr[int0];
             alSourceUnqueueBuffers(intptr0, int0, array);
             return array;
         }
@@ -115,7 +112,7 @@ namespace GHNamespaceK
 
         public static IntPtr[] smethod_8(int int0)
         {
-            var array = new IntPtr[int0];
+            IntPtr[] array = new IntPtr[int0];
             alGenBuffers(array.Length, array);
             return array;
         }
@@ -150,7 +147,7 @@ namespace GHNamespaceK
                     {
                         case 1:
                         {
-                            var short_ = waveFormat0.short_2;
+                                short short_ = waveFormat0.short_2;
                             if (short_ == 8)
                             {
                                 return Enum12.Const0;
@@ -163,7 +160,7 @@ namespace GHNamespaceK
                         }
                         case 2:
                         {
-                            var short2 = waveFormat0.short_2;
+                                short short2 = waveFormat0.short_2;
                             if (short2 == 8)
                             {
                                 return Enum12.Const2;
@@ -181,7 +178,7 @@ namespace GHNamespaceK
                                 {
                                     case 4:
                                     {
-                                        var short3 = waveFormat0.short_2;
+                                            short short3 = waveFormat0.short_2;
                                         if (short3 == 8)
                                         {
                                             return Enum12.Const6;
@@ -198,7 +195,7 @@ namespace GHNamespaceK
                                     }
                                     case 5:
                                     {
-                                        var short4 = waveFormat0.short_2;
+                                            short short4 = waveFormat0.short_2;
                                         if (short4 == 8)
                                         {
                                             return Enum12.Const9;
@@ -215,7 +212,7 @@ namespace GHNamespaceK
                                     }
                                     case 6:
                                     {
-                                        var short5 = waveFormat0.short_2;
+                                            short short5 = waveFormat0.short_2;
                                         if (short5 == 8)
                                         {
                                             return Enum12.Const12;
@@ -232,7 +229,7 @@ namespace GHNamespaceK
                                     }
                                     case 7:
                                     {
-                                        var short6 = waveFormat0.short_2;
+                                            short short6 = waveFormat0.short_2;
                                         if (short6 == 8)
                                         {
                                             return Enum12.Const15;
@@ -249,7 +246,7 @@ namespace GHNamespaceK
                                     }
                                     case 8:
                                     {
-                                        var short7 = waveFormat0.short_2;
+                                            short short7 = waveFormat0.short_2;
                                         if (short7 == 8)
                                         {
                                             return Enum12.Const18;

@@ -183,19 +183,19 @@ namespace GHNamespaceJ
 
         private void method_0()
         {
-            for (var i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 _double9[i] = new double[18];
             }
-            for (var j = 0; j < 5; j++)
+            for (int j = 0; j < 5; j++)
             {
                 _byte1[j] = new byte[256];
             }
-            for (var k = 0; k < 5; k++)
+            for (int k = 0; k < 5; k++)
             {
                 _byte4[k] = new byte[256];
             }
-            for (var l = 0; l < 5; l++)
+            for (int l = 0; l < 5; l++)
             {
                 _int23[l] = new int[50];
             }
@@ -228,19 +228,19 @@ namespace GHNamespaceJ
             }
             Class1150.method_2(16);
             Class1150.method_2(16);
-            var num = Class1150.method_2(8);
-            var num2 = Class1150.method_2(8);
-            var num3 = Class1150.method_2(8);
-            var num4 = Int31[num2 >> 3];
-            var num5 = num3 >> 5;
+            int num = Class1150.method_2(8);
+            int num2 = Class1150.method_2(8);
+            int num3 = Class1150.method_2(8);
+            int num4 = Int31[num2 >> 3];
+            int num5 = num3 >> 5;
             Int1 = ((((num3 & 248) == 80) ? 10 : num5) | (((num3 & Int33[num5]) != 0) ? 16 : 0));
-            var num6 = num & 63;
+            int num6 = num & 63;
             if (num6 >= 38)
             {
                 throw new Ac3Exception("Unknown rate");
             }
             Int3 = Int32[num6 >> 1] * 1000 >> num4;
-            var num7 = num & 192;
+            int num7 = num & 192;
             if (num7 != 0)
             {
                 if (num7 != 64)
@@ -272,7 +272,7 @@ namespace GHNamespaceJ
             Class1150.method_2(32);
             _int5 = Class1150.method_2(3);
             Class1150.method_2(5);
-            var num = Class1150.method_2(5);
+            int num = Class1150.method_2(5);
             if (num >= Int31.Length)
             {
                 throw new FfMpegException("Illegal half rate");
@@ -300,7 +300,7 @@ namespace GHNamespaceJ
             _double7 *= 2.0;
             _double8 = _double7;
             Bool1 = false;
-            var flag = _int7 == 0;
+            bool flag = _int7 == 0;
             do
             {
                 Class1150.method_2(5);
@@ -328,30 +328,30 @@ namespace GHNamespaceJ
             }
             if (Class1150.vmethod_1())
             {
-                var num2 = Class1150.method_2(6);
+                int num2 = Class1150.method_2(6);
                 Class1150.vmethod_3(Class1150.vmethod_0() + num2 * 8);
             }
         }
 
         private void method_3()
         {
-            var num = Int35[_int7];
-            var array = new bool[5];
-            for (var i = 0; i < num; i++)
+            int num = Int35[_int7];
+            bool[] array = new bool[5];
+            for (int i = 0; i < num; i++)
             {
                 array[i] = Class1150.vmethod_1();
             }
-            var array2 = new bool[5];
-            for (var j = 0; j < num; j++)
+            bool[] array2 = new bool[5];
+            for (int j = 0; j < num; j++)
             {
                 array2[j] = Class1150.vmethod_1();
             }
-            var flag = _int7 == 0;
+            bool flag = _int7 == 0;
             do
             {
                 if (Class1150.vmethod_1())
                 {
-                    var num2 = method_8(8);
+                    int num2 = method_8(8);
                     if (Bool1)
                     {
                         _double8 = (((num2 & 31) | 32) << 13) * Double13[2 - (num2 >> 5)] * _double7;
@@ -363,7 +363,7 @@ namespace GHNamespaceJ
                 _int9 = 0;
                 if (Class1150.vmethod_1())
                 {
-                    for (var k = 0; k < num; k++)
+                    for (int k = 0; k < num; k++)
                     {
                         _int9 |= Class1150.method_2(1) << k;
                     }
@@ -376,8 +376,8 @@ namespace GHNamespaceJ
                             _bool2 = Class1150.vmethod_1();
                             break;
                     }
-                    var num3 = Class1150.method_2(4);
-                    var num4 = Class1150.method_2(4);
+                    int num3 = Class1150.method_2(4);
+                    int num4 = Class1150.method_2(4);
                     if (num4 + 3 - num3 < 0)
                     {
                         throw new Ac3Exception("Invalid values");
@@ -387,8 +387,8 @@ namespace GHNamespaceJ
                     _int12 = num3 * 12 + 37;
                     _int13 = num4 * 12 + 73;
                     _int14 = 0;
-                    var num5 = _int10;
-                    for (var l = 0; l < num5 - 1; l++)
+                    int num5 = _int10;
+                    for (int l = 0; l < num5 - 1; l++)
                     {
                         if (Class1150.vmethod_1())
                         {
@@ -400,17 +400,17 @@ namespace GHNamespaceJ
             }
             if (_int9 != 0)
             {
-                var flag2 = false;
-                for (var m = 0; m < num; m++)
+                bool flag2 = false;
+                for (int m = 0; m < num; m++)
                 {
                     if ((_int9 >> m & 1) != 0 && Class1150.vmethod_1())
                     {
                         flag2 = true;
-                        var num6 = 3 * Class1150.method_2(2);
-                        for (var n = 0; n < _int10; n++)
+                        int num6 = 3 * Class1150.method_2(2);
+                        for (int n = 0; n < _int10; n++)
                         {
-                            var num7 = Class1150.method_2(4);
-                            var num8 = Class1150.method_2(4);
+                            int num7 = Class1150.method_2(4);
+                            int num8 = Class1150.method_2(4);
                             if (num7 == 15)
                             {
                                 num8 <<= 14;
@@ -425,7 +425,7 @@ namespace GHNamespaceJ
                 }
                 if (_int7 == 2 && _bool2 && flag2)
                 {
-                    for (var num9 = 0; num9 < _int10; num9++)
+                    for (int num9 = 0; num9 < _int10; num9++)
                     {
                         if (Class1150.vmethod_1())
                         {
@@ -437,21 +437,21 @@ namespace GHNamespaceJ
             if (_int7 == 2 && Class1150.vmethod_1())
             {
                 _int15 = 0;
-                var num10 = (_int9 != 0) ? _int12 : 253;
-                var num11 = 0;
+                int num10 = (_int9 != 0) ? _int12 : 253;
+                int num11 = 0;
                 do
                 {
                     _int15 |= Class1150.method_2(1) << num11;
                 } while (Int37[num11++] < num10);
             }
-            var num12 = 0;
-            var num13 = 0;
+            int num12 = 0;
+            int num13 = 0;
             if (_int9 != 0)
             {
                 num12 = Class1150.method_2(2);
             }
-            var array3 = new int[5];
-            for (var num14 = 0; num14 < num; num14++)
+            int[] array3 = new int[5];
+            for (int num14 = 0; num14 < num; num14++)
             {
                 array3[num14] = Class1150.method_2(2);
             }
@@ -459,7 +459,7 @@ namespace GHNamespaceJ
             {
                 num13 = Class1150.method_2(1);
             }
-            for (var num15 = 0; num15 < num; num15++)
+            for (int num15 = 0; num15 < num; num15++)
             {
                 if (array3[num15] != 0)
                 {
@@ -469,7 +469,7 @@ namespace GHNamespaceJ
                     }
                     else
                     {
-                        var num16 = Class1150.method_2(6);
+                        int num16 = Class1150.method_2(6);
                         if (num16 > 60)
                         {
                             throw new Ac3Exception("chbwcod too large");
@@ -478,21 +478,21 @@ namespace GHNamespaceJ
                     }
                 }
             }
-            var num17 = 0;
+            int num17 = 0;
             if (num12 != 0)
             {
                 num17 = 64;
-                var int_ = (_int13 - _int12) / (3 << num12 - 1);
-                var byte_ = (byte) (Class1150.method_2(4) << 1);
+                int int_ = (_int13 - _int12) / (3 << num12 - 1);
+                byte byte_ = (byte) (Class1150.method_2(4) << 1);
                 method_13(num12, int_, byte_, _byte0, _int12);
             }
-            for (var num18 = 0; num18 < num; num18++)
+            for (int num18 = 0; num18 < num; num18++)
             {
                 if (array3[num18] != 0)
                 {
                     num17 |= 1 << num18;
-                    var num19 = 3 << array3[num18] - 1;
-                    var int2 = (_int16[num18] + num19 - 4) / num19;
+                    int num19 = 3 << array3[num18] - 1;
+                    int int2 = (_int16[num18] + num19 - 4) / num19;
                     _byte1[num18][0] = (byte) Class1150.method_2(4);
                     method_13(array3[num18], int2, _byte1[num18][0], _byte1[num18], 1);
                     Class1150.method_2(2);
@@ -517,7 +517,7 @@ namespace GHNamespaceJ
                 {
                     _int18 = Class1150.method_2(7);
                 }
-                for (var num20 = 0; num20 < num; num20++)
+                for (int num20 = 0; num20 < num; num20++)
                 {
                     _int21[num20] = Class1150.method_2(7);
                 }
@@ -539,7 +539,7 @@ namespace GHNamespaceJ
                 {
                     _int19 = Class1150.method_2(2);
                 }
-                for (var num21 = 0; num21 < num; num21++)
+                for (int num21 = 0; num21 < num; num21++)
                 {
                     _int22[num21] = Class1150.method_2(2);
                 }
@@ -547,7 +547,7 @@ namespace GHNamespaceJ
                 {
                     method_12(_int20);
                 }
-                for (var num22 = 0; num22 < num; num22++)
+                for (int num22 = 0; num22 < num; num22++)
                 {
                     if (_int22[num22] == 1)
                     {
@@ -559,18 +559,18 @@ namespace GHNamespaceJ
             {
                 if (method_5(num))
                 {
-                    for (var num23 = 0; num23 < _byte3.Length; num23++)
+                    for (int num23 = 0; num23 < _byte3.Length; num23++)
                     {
                         _byte3[num23] = 0;
                     }
-                    for (var num24 = 0; num24 < num; num24++)
+                    for (int num24 = 0; num24 < num; num24++)
                     {
-                        for (var num25 = 0; num25 < _byte4[num24].Length; num25++)
+                        for (int num25 = 0; num25 < _byte4[num24].Length; num25++)
                         {
                             _byte4[num24][num25] = 0;
                         }
                     }
-                    for (var num26 = 0; num26 < _byte5.Length; num26++)
+                    for (int num26 = 0; num26 < _byte5.Length; num26++)
                     {
                         _byte5[num26] = 0;
                     }
@@ -582,7 +582,7 @@ namespace GHNamespaceJ
                         method_4(_int18, _int19, _int20, _int11, _int12, _int13, _int28 << 8, _int29 << 8, _byte0,
                             _byte3);
                     }
-                    for (var num27 = 0; num27 < num; num27++)
+                    for (int num27 = 0; num27 < num; num27++)
                     {
                         if ((num17 & 1 << num27) != 0)
                         {
@@ -599,17 +599,17 @@ namespace GHNamespaceJ
             }
             if (Class1150.vmethod_1())
             {
-                var num28 = Class1150.method_2(9);
+                int num28 = Class1150.method_2(9);
                 Class1150.vmethod_3(Class1150.vmethod_0() + num28 * 8);
             }
-            var num29 = 256;
-            var array4 = new double[5];
+            int num29 = 256;
+            double[] array4 = new double[5];
             method_11(array4, _int7, _double8, _double5, _double6);
-            var flag3 = false;
+            bool flag3 = false;
             _class1130.Int0 = -1;
             _class1130.Int1 = -1;
             _class1130.Int2 = -1;
-            for (var num30 = 0; num30 < num; num30++)
+            for (int num30 = 0; num30 < num; num30++)
             {
                 method_7(_double10, num29 + 256 * num30, _byte1[num30], _byte4[num30], _class1130, array4[num30],
                     array2[num30], _int16[num30]);
@@ -634,10 +634,10 @@ namespace GHNamespaceJ
             }
             if (_int7 == 2)
             {
-                var num32 = 0;
-                var num31 = 13;
-                var num33 = (_int16[0] < _int16[1]) ? _int16[0] : _int16[1];
-                var num34 = _int15;
+                int num32 = 0;
+                int num31 = 13;
+                int num33 = (_int16[0] < _int16[1]) ? _int16[0] : _int16[1];
+                int num34 = _int15;
                 do
                 {
                     if ((num34 & 1) == 0)
@@ -648,15 +648,15 @@ namespace GHNamespaceJ
                     else
                     {
                         num34 >>= 1;
-                        var num35 = Int37[num32++];
+                        int num35 = Int37[num32++];
                         if (num35 > num33)
                         {
                             num35 = num33;
                         }
                         do
                         {
-                            var num36 = _double10[num29 + num31];
-                            var num37 = _double10[num29 + num31 + 256];
+                            double num36 = _double10[num29 + num31];
+                            double num37 = _double10[num29 + num31 + 256];
                             _double10[num29 + num31] = num36 + num37;
                             _double10[num29 + num31 + 256] = num36 - num37;
                         } while (++num31 < num35);
@@ -666,13 +666,13 @@ namespace GHNamespaceJ
             if (_bool0)
             {
                 method_7(_double10, num29 - 256, _byte2, _byte5, _class1130, 0.0, false, 7);
-                for (var num38 = 7; num38 < 256; num38++)
+                for (int num38 = 7; num38 < 256; num38++)
                 {
                     _double10[num29 - 256 + num38] = 0.0;
                 }
                 Class1100.vmethod_0(_double10, num29 - 256, num29 - 256 + 1536, Int0);
             }
-            var num39 = 0;
+            int num39 = 0;
             if (2 < num)
             {
                 num39 = 1;
@@ -702,7 +702,7 @@ namespace GHNamespaceJ
                     }
                     else
                     {
-                        for (var num31 = 0; num31 < 256; num31++)
+                        for (int num31 = 0; num31 < 256; num31++)
                         {
                             _double10[num29 + 256 * num39 + num31] = 0.0;
                         }
@@ -710,7 +710,7 @@ namespace GHNamespaceJ
                 }
                 return;
             }
-            var num40 = 0;
+            int num40 = 0;
             if (!_bool3)
             {
                 _bool3 = true;
@@ -732,24 +732,24 @@ namespace GHNamespaceJ
         private void method_4(int int45, int int46, int[] int47, int int48, int int49, int int50, int int51, int int52,
             byte[] byte10, byte[] byte11)
         {
-            var num = 63 + 20 * (_int17 >> 7 & 3) >> _int6;
-            var num2 = 128 + 128 * (int45 & 7);
-            var num3 = 15 + 2 * (_int17 >> 9) >> _int6;
-            var num4 = Int38[_int17 >> 5 & 3];
-            var num5 = Int39[_int17 >> 3 & 3];
-            var array = Int41[_int5];
+            int num = 63 + 20 * (_int17 >> 7 & 3) >> _int6;
+            int num2 = 128 + 128 * (int45 & 7);
+            int num3 = 15 + 2 * (_int17 >> 9) >> _int6;
+            int num4 = Int38[_int17 >> 5 & 3];
+            int num5 = Int39[_int17 >> 3 & 3];
+            int[] array = Int41[_int5];
             if (int46 == 2)
             {
                 int47 = Int42;
             }
-            var num6 = Int40[_int17 & 7];
-            var num7 = 960 - 64 * _int27 - 4 * (int45 >> 3) + num6;
+            int num6 = Int40[_int17 & 7];
+            int num7 = 960 - 64 * _int27 - 4 * (int45 >> 3) + num6;
             num6 >>= 5;
-            var i = int48;
-            var j = int49;
+            int i = int48;
+            int j = int49;
             if (int49 == 0)
             {
-                var k = 0;
+                int k = 0;
                 j = int50 - 1;
                 int num8;
                 while (true)
@@ -766,7 +766,7 @@ namespace GHNamespaceJ
                         }
                     }
                     num8 = 128 * byte10[i];
-                    var num9 = num8 + num2 + k;
+                    int num9 = num8 + num2 + k;
                     if (num8 > num5)
                     {
                         num9 -= num8 - num5 >> 2;
@@ -818,7 +818,7 @@ namespace GHNamespaceJ
                     {
                         int52 = num8 + num4;
                     }
-                    var num9 = (int51 + k < int52) ? (int51 + k) : int52;
+                    int num9 = (int51 + k < int52) ? (int51 + k) : int52;
                     if (num8 > num5)
                     {
                         num9 -= num8 - num5 >> 2;
@@ -858,7 +858,7 @@ namespace GHNamespaceJ
                     {
                         int52 = num8 + num4;
                     }
-                    var num9 = (int51 + k < int52) ? (int51 + k) : int52;
+                    int num9 = (int51 + k < int52) ? (int51 + k) : int52;
                     if (num8 > num5)
                     {
                         num9 -= num8 - num5 >> 2;
@@ -887,7 +887,7 @@ namespace GHNamespaceJ
                     {
                         int52 = num8 + num4;
                     }
-                    var num9 = (int51 + k < int52) ? (int51 + k) : int52;
+                    int num9 = (int51 + k < int52) ? (int51 + k) : int52;
                     if (num8 > num5)
                     {
                         num9 -= num8 - num5 >> 2;
@@ -906,13 +906,13 @@ namespace GHNamespaceJ
             }
             do
             {
-                var num10 = j;
-                var num11 = (Int43[i - 20] < int50) ? Int43[i - 20] : int50;
-                var num8 = 128 * byte10[j++];
+                int num10 = j;
+                int num11 = (Int43[i - 20] < int50) ? Int43[i - 20] : int50;
+                int num8 = 128 * byte10[j++];
                 while (j < num11)
                 {
-                    var num12 = 128 * byte10[j++];
-                    var num13 = num12 - num8;
+                    int num12 = 128 * byte10[j++];
+                    int num13 = num12 - num8;
                     switch (num13 >> 9)
                     {
                         case -6:
@@ -940,7 +940,7 @@ namespace GHNamespaceJ
                 {
                     int52 = num8 + num4;
                 }
-                var num9 = (int51 < int52) ? int51 : int52;
+                int num9 = (int51 < int52) ? int51 : int52;
                 if (num8 > num5)
                 {
                     num9 -= num8 - num5 >> 2;
@@ -965,7 +965,7 @@ namespace GHNamespaceJ
         {
             if (_int27 == 0 && (_int9 == 0 || _int18 >> 3 == 0) && (!_bool0 || _int24 >> 3 == 0))
             {
-                for (var i = 0; i < int45; i++)
+                for (int i = 0; i < int45; i++)
                 {
                     if (_int21[i] >> 3 != 0)
                     {
@@ -979,7 +979,7 @@ namespace GHNamespaceJ
 
         private int method_6()
         {
-            var num = Int34[_int30 >> 8] ^ _int30 << 8;
+            int num = Int34[_int30 >> 8] ^ _int30 << 8;
             if ((num & 32768) != 0)
             {
                 num |= -65536;
@@ -995,12 +995,12 @@ namespace GHNamespaceJ
         private void method_7(double[] double24, int int45, byte[] byte10, byte[] byte11, Class113 class1131,
             double double25, bool bool5, int int46)
         {
-            var array = new double[25];
-            for (var i = 0; i <= 24; i++)
+            double[] array = new double[25];
+            for (int i = 0; i <= 24; i++)
             {
                 array[i] = Double13[i] * double25;
             }
-            var j = 0;
+            int j = 0;
             while (j < int46)
             {
                 int num = byte11[j];
@@ -1014,7 +1014,7 @@ namespace GHNamespaceJ
                         }
                         else
                         {
-                            var num2 = Class1150.method_2(7);
+                            int num2 = Class1150.method_2(7);
                             class1131.Int2 = 0;
                             class1131.vmethod_2()[0] = Double22[num2];
                             double24[int45 + j] = Double21[num2] * array[byte10[j]];
@@ -1028,7 +1028,7 @@ namespace GHNamespaceJ
                         }
                         else
                         {
-                            var num3 = Class1150.method_2(7);
+                            int num3 = Class1150.method_2(7);
                             class1131.Int1 = 1;
                             class1131.vmethod_1()[0] = Double19[num3];
                             class1131.vmethod_1()[1] = Double18[num3];
@@ -1043,7 +1043,7 @@ namespace GHNamespaceJ
                         }
                         else
                         {
-                            var num4 = Class1150.method_2(5);
+                            int num4 = Class1150.method_2(5);
                             class1131.Int0 = 1;
                             class1131.vmethod_0()[0] = Double16[num4];
                             class1131.vmethod_0()[1] = Double15[num4];
@@ -1053,7 +1053,7 @@ namespace GHNamespaceJ
                     case 0:
                         if (bool5)
                         {
-                            var num5 = method_6();
+                            int num5 = method_6();
                             double24[int45 + j] = num5 * array[byte10[j]] * Double2;
                         }
                         else
@@ -1077,7 +1077,7 @@ namespace GHNamespaceJ
                 j++;
                 continue;
                 IL_216:
-                var num6 = method_8(num);
+                int num6 = method_8(num);
                 double24[int45 + j] = (num6 << 16 - num) * array[byte10[j]];
                 goto IL_275;
             }
@@ -1085,7 +1085,7 @@ namespace GHNamespaceJ
 
         private int method_8(int int45)
         {
-            var num = Class1150.method_2(int45);
+            int num = Class1150.method_2(int45);
             if ((num & 1 << int45 - 1) != 0)
             {
                 num |= -1 << int45;
@@ -1096,22 +1096,22 @@ namespace GHNamespaceJ
         private void method_9(int int45, double[] double24, double[] double25, int int46, Class113 class1131,
             bool[] bool5)
         {
-            var array = new double[5];
-            var array2 = _byte0;
-            var array3 = _byte3;
-            var num = 0;
-            var num2 = _int14;
-            var i = _int12;
+            double[] array = new double[5];
+            byte[] array2 = _byte0;
+            byte[] array3 = _byte3;
+            int num = 0;
+            int num2 = _int14;
+            int i = _int12;
             while (i < _int13)
             {
-                var num3 = i + 12;
+                int num3 = i + 12;
                 while ((num2 & 1) != 0)
                 {
                     num2 >>= 1;
                     num3 += 12;
                 }
                 num2 >>= 1;
-                for (var j = 0; j < int45; j++)
+                for (int j = 0; j < int45; j++)
                 {
                     array[j] = _double9[j][num] * double24[j];
                 }
@@ -1130,7 +1130,7 @@ namespace GHNamespaceJ
                             }
                             else
                             {
-                                var num6 = Class1150.method_2(7);
+                                int num6 = Class1150.method_2(7);
                                 class1131.Int2 = 0;
                                 class1131.vmethod_2()[0] = Double22[num6];
                                 num5 = Double21[num6];
@@ -1144,7 +1144,7 @@ namespace GHNamespaceJ
                             }
                             else
                             {
-                                var num7 = Class1150.method_2(7);
+                                int num7 = Class1150.method_2(7);
                                 class1131.Int1 = 1;
                                 class1131.vmethod_1()[0] = Double19[num7];
                                 class1131.vmethod_1()[1] = Double18[num7];
@@ -1159,7 +1159,7 @@ namespace GHNamespaceJ
                             }
                             else
                             {
-                                var num8 = Class1150.method_2(5);
+                                int num8 = Class1150.method_2(5);
                                 class1131.Int0 = 1;
                                 class1131.vmethod_0()[0] = Double16[num8];
                                 class1131.vmethod_0()[1] = Double15[num8];
@@ -1168,7 +1168,7 @@ namespace GHNamespaceJ
                             break;
                         case 0:
                             num5 = Double2 * Double13[array2[i]];
-                            for (var k = 0; k < int45; k++)
+                            for (int k = 0; k < int45; k++)
                             {
                                 if ((_int9 >> k & 1) != 0)
                                 {
@@ -1200,7 +1200,7 @@ namespace GHNamespaceJ
                     if (num4 != 0)
                     {
                         num5 *= Double13[array2[i]];
-                        for (var l = 0; l < int45; l++)
+                        for (int l = 0; l < int45; l++)
                         {
                             if ((_int9 >> l & 1) != 0)
                             {
@@ -1274,17 +1274,17 @@ namespace GHNamespaceJ
 
         private void method_12(int[] int45)
         {
-            for (var i = 0; i < int45.Length; i++)
+            for (int i = 0; i < int45.Length; i++)
             {
                 int45[i] = 0;
             }
-            var num = Class1150.method_2(3);
-            var num2 = 0;
+            int num = Class1150.method_2(3);
+            int num2 = 0;
             do
             {
                 num2 += Class1150.method_2(5);
-                var num3 = Class1150.method_2(4);
-                var num4 = Class1150.method_2(3);
+                int num3 = Class1150.method_2(4);
+                int num4 = Class1150.method_2(3);
                 num4 -= ((num4 < 4) ? 4 : 3);
                 while (num3-- != 0)
                 {
@@ -1297,7 +1297,7 @@ namespace GHNamespaceJ
         {
             while (int46-- != 0)
             {
-                var num = Class1150.method_2(7);
+                int num = Class1150.method_2(7);
                 byte10 += Byte6[num];
                 if ((255 & byte10) <= 24)
                 {
@@ -1375,7 +1375,7 @@ namespace GHNamespaceJ
         {
             try
             {
-                var num = byte10.Length;
+                int num = byte10.Length;
                 Class1150.vmethod_2(byte10, 0, num);
                 while (Class1150.method_1() > 56)
                 {
@@ -1392,7 +1392,7 @@ namespace GHNamespaceJ
                     {
                         break;
                     }
-                    var num2 = Class1150.vmethod_0();
+                    int num2 = Class1150.vmethod_0();
                     method_2();
                     while (Class1150.vmethod_0() - num2 < (Int4 - 7) * 8)
                     {

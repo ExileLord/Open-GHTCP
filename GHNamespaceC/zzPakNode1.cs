@@ -6,8 +6,7 @@ using GHNamespaceE;
 
 namespace GHNamespaceC
 {
-    //I'm not positive this has to do with pak files yet
-
+    // I'm not positive this has to do with pak files yet
     public class ZzPakNode1 : TreeNode
     {
         public bool Bool0;
@@ -39,7 +38,7 @@ namespace GHNamespaceC
 
         public void method_1<T>(string string0, T gparam0) where T : TreeNode
         {
-            var @class = string.IsNullOrEmpty(string0) ? this : method_2(KeyGenerator.smethod_10(string0));
+            ZzPakNode1 @class = string.IsNullOrEmpty(string0) ? this : method_2(KeyGenerator.smethod_10(string0));
             if (@class.Nodes.ContainsKey(gparam0.Text))
             {
                 @class.Nodes.RemoveByKey(gparam0.Text);
@@ -48,13 +47,13 @@ namespace GHNamespaceC
             if (gparam0 is INterface12)
             {
                 TreeNode treeNode = this;
-                var level = treeNode.Level;
+                int level = treeNode.Level;
                 while (level-- != 0)
                 {
                     treeNode = treeNode.Parent;
                 }
-                var class2 = treeNode as ZzPakNode2;
-                var @interface = class2.method_10(string0);
+                ZzPakNode2 class2 = treeNode as ZzPakNode2;
+                INterface12 @interface = class2.method_10(string0);
                 if (@interface == null)
                 {
                     class2.List0.Add(gparam0 as INterface12);
@@ -79,7 +78,7 @@ namespace GHNamespaceC
             {
                 return this;
             }
-            var list = new List<string>(string0.Split(new[]
+            List<string> list = new List<string>(string0.Split(new[]
             {
                 '\\',
                 '/'
@@ -109,7 +108,7 @@ namespace GHNamespaceC
             }
             if (!Nodes.ContainsKey(list0[0]) || !(Nodes[list0[0]] is ZzPakNode1))
             {
-                var @class = new ZzPakNode1(list0[0]);
+                ZzPakNode1 @class = new ZzPakNode1(list0[0]);
                 list0.RemoveAt(0);
                 Nodes.Add(@class);
                 return @class.method_3(list0);
@@ -118,7 +117,7 @@ namespace GHNamespaceC
             {
                 return (ZzPakNode1) Nodes[list0[0]];
             }
-            var key = list0[0];
+            string key = list0[0];
             list0.RemoveAt(0);
             return ((ZzPakNode1) Nodes[key]).method_3(list0);
         }

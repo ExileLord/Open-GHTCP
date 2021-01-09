@@ -116,7 +116,7 @@ namespace GHNamespaceJ
                 _int2 = 0;
                 _secondaryBuffer0.SetCurrentPosition(0);
                 method_4();
-                for (var i = 0; i < 5; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     method_7();
                 }
@@ -182,7 +182,7 @@ namespace GHNamespaceJ
 
         private int method_1()
         {
-            var playPosition = _secondaryBuffer0.PlayPosition;
+            int playPosition = _secondaryBuffer0.PlayPosition;
             if (playPosition >= _int2)
             {
                 return playPosition - _int2;
@@ -207,7 +207,7 @@ namespace GHNamespaceJ
 
         private void method_2(int int5)
         {
-            for (var i = 0; i < int5; i++)
+            for (int i = 0; i < int5; i++)
             {
                 _bufferPositionNotify0[i].Offset = (i + 1) * _int0 - 1;
                 _bufferPositionNotify0[i].EventNotifyHandle = _autoResetEvent0.SafeWaitHandle.DangerousGetHandle();
@@ -233,15 +233,17 @@ namespace GHNamespaceJ
             _bool2 = false;
             _int3 = 0;
             _int4 = 0;
-            _thread0 = new Thread(method_5);
-            _thread0.Name = "DataTransferThread";
-            _thread0.Priority = ThreadPriority.Highest;
+            _thread0 = new Thread(method_5)
+            {
+                Name = "DataTransferThread",
+                Priority = ThreadPriority.Highest
+            };
             _thread0.Start();
         }
 
         private void method_5()
         {
-            var num = 0;
+            int num = 0;
             while (_bool1)
             {
                 if (_bool2)
@@ -256,21 +258,21 @@ namespace GHNamespaceJ
                 }
             }
             Array.Clear(_byte0, 0, _byte0.Length);
-            var flag = true;
+            bool flag = true;
             while (flag)
             {
                 _autoResetEvent0.WaitOne(-1, true);
                 flag = method_6();
             }
-            var num2 = _int2 / _int0;
+            int num2 = _int2 / _int0;
             method_8();
-            var int_ = (int) (_long0 % _int1);
+            int int_ = (int) (_long0 % _int1);
             method_3(int_);
-            var flag2 = false;
+            bool flag2 = false;
             while (!flag2)
             {
                 _autoResetEvent0.WaitOne(-1, true);
-                var num3 = _secondaryBuffer0.PlayPosition / _int0;
+                int num3 = _secondaryBuffer0.PlayPosition / _int0;
                 if (!(flag2 = (num3 == num | num3 == num2)))
                 {
                     _int3++;
@@ -282,8 +284,8 @@ namespace GHNamespaceJ
 
         private bool method_6()
         {
-            var num = _int2 / _int0;
-            var num2 = _secondaryBuffer0.PlayPosition / _int0;
+            int num = _int2 / _int0;
+            int num2 = _secondaryBuffer0.PlayPosition / _int0;
             if (num != num2)
             {
                 return false;
@@ -294,7 +296,7 @@ namespace GHNamespaceJ
 
         private bool method_7()
         {
-            var num = _stream10.Read(_byte0, 0, _byte0.Length);
+            int num = _stream10.Read(_byte0, 0, _byte0.Length);
             _bool1 = (num > 0);
             _long0 += num;
             method_8();

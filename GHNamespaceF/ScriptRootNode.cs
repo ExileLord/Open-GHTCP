@@ -44,12 +44,12 @@ namespace GHNamespaceF
         {
             Int0 = stream260.ReadInt();
             Int1 = stream260.ReadInt();
-            var num = stream260.ReadInt();
+            int num = stream260.ReadInt();
             stream260.ReadInt();
             if (num != 0)
             {
                 stream260.Position = num;
-                var @class = new QbScriptNode();
+                QbScriptNode @class = new QbScriptNode();
                 Nodes.Add(@class);
                 @class.method_4(stream260);
             }
@@ -57,7 +57,7 @@ namespace GHNamespaceF
 
         public override void vmethod_14(Stream26 stream260)
         {
-            var array = new byte[4];
+            byte[] array = new byte[4];
             array[1] = (byte) (vmethod_7() ? 32 : 4);
             array[2] = 7;
             stream260.WriteByteArray(array, false);

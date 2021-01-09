@@ -37,10 +37,10 @@ namespace GHNamespace1
             get => _long1;
             set
             {
-                var num = value / (double) (WaveFormat0.int_0 * WaveFormat0.short_1);
-                for (var i = 0; i < _list0.Count; i++)
+                double num = value / (double) (WaveFormat0.int_0 * WaveFormat0.short_1);
+                for (int i = 0; i < _list0.Count; i++)
                 {
-                    var num2 = Convert.ToInt64(_list0[i].vmethod_0().int_0 * _list0[i].vmethod_0().short_1 * num);
+                    long num2 = Convert.ToInt64(_list0[i].vmethod_0().int_0 * _list0[i].vmethod_0().short_1 * num);
                     _list0[i].Position = ((_list0[i].Length < num2) ? _list0[i].Length : num2);
                 }
                 _long1 = value;
@@ -66,11 +66,11 @@ namespace GHNamespace1
             _bool0 = (stream10.Length == 1 && stream10[0].vmethod_0().short_0 == 1 && ushort0 < 2);
             _long1 = 0L;
             _long0 = stream10[0].Length;
-            var val = 0;
-            var num = 0;
-            for (var i = 0; i < stream10.Length; i++)
+            int val = 0;
+            int num = 0;
+            for (int i = 0; i < stream10.Length; i++)
             {
-                var stream = stream10[i];
+                GenericAudioStream stream = stream10[i];
                 val = Math.Max(val, stream.vmethod_0().int_0);
                 if (_bool1)
                 {
@@ -84,9 +84,9 @@ namespace GHNamespace1
             }
             WaveFormat0 = new WaveFormat(val,
                 (ushort0 != 0) ? ushort0 : Math.Min(num, smethod_0(_enum20) * (_bool1 ? stream10.Length : 1)));
-            for (var j = 0; j < stream10.Length; j++)
+            for (int j = 0; j < stream10.Length; j++)
             {
-                var stream2 = stream10[j];
+                GenericAudioStream stream2 = stream10[j];
                 _long0 = Math.Max(_long0,
                     Convert.ToInt64(
                         WaveFormat0.int_0 * WaveFormat0.short_1 * stream2.vmethod_1().TimeSpan0.TotalSeconds));
@@ -131,8 +131,8 @@ namespace GHNamespace1
         public override int vmethod_3(IntPtr intptr0, int int3)
         {
             int3 >>= 2;
-            var array = new float[int3];
-            var num = vmethod_4(array, 0, int3);
+            float[] array = new float[int3];
+            int num = vmethod_4(array, 0, int3);
             Marshal.Copy(array, 0, intptr0, num);
             return num << 2;
         }
@@ -143,8 +143,8 @@ namespace GHNamespace1
             {
                 return 0;
             }
-            var num = 0;
-            var int5 = (int) (_long1 >> 2);
+            int num = 0;
+            int int5 = (int) (_long1 >> 2);
             if (_bool0)
             {
                 num = _list0[0].vmethod_4(float0, int3, int4);
@@ -160,24 +160,24 @@ namespace GHNamespace1
                 _long1 += (long) num << 2;
                 return num;
             }
-            var array = vmethod_5(int4 / WaveFormat0.short_0);
+            float[][] array = vmethod_5(int4 / WaveFormat0.short_0);
             if (array == null)
             {
                 return 0;
             }
-            var array2 = array;
-            for (var i = 0; i < array2.Length; i++)
+            float[][] array2 = array;
+            for (int i = 0; i < array2.Length; i++)
             {
-                var array3 = array2[i];
+                float[] array3 = array2[i];
                 num = Math.Max(array3.Length, num);
             }
             num *= WaveFormat0.short_0;
-            var num2 = array.Length;
-            for (var j = 0; j < num2; j++)
+            int num2 = array.Length;
+            for (int j = 0; j < num2; j++)
             {
-                var array4 = array[j];
-                var k = 0;
-                var num3 = int3 + j;
+                float[] array4 = array[j];
+                int k = 0;
+                int num3 = int3 + j;
                 while (k < array4.Length)
                 {
                     float0[num3] = array4[k];
@@ -194,10 +194,10 @@ namespace GHNamespace1
             {
                 return null;
             }
-            var num = (int) (_long1 >> 2);
+            int num = (int) (_long1 >> 2);
             if (_bool0)
             {
-                var array = _list0[0].vmethod_5(int3);
+                float[][] array = _list0[0].vmethod_5(int3);
                 if (array == null)
                 {
                     _long1 = _long0;
@@ -210,11 +210,11 @@ namespace GHNamespace1
                 _long1 += array[0].Length * _int2;
                 return array;
             }
-            var num2 = 0;
-            var num3 = 0;
-            var list = new List<Class13>();
-            var list2 = new List<int>();
-            var i = 0;
+            int num2 = 0;
+            int num3 = 0;
+            List<Class13> list = new List<Class13>();
+            List<int> list2 = new List<int>();
+            int i = 0;
             while (i < _list0.Count)
             {
                 float[][] array2;
@@ -224,12 +224,12 @@ namespace GHNamespace1
                         .vmethod_5((int) (int3 * (_list0[i].vmethod_0().int_0 / (double) WaveFormat0.int_0)));
                     if (array2 != null)
                     {
-                        var float_ = _list0[i].vmethod_0().int_0 / (float) WaveFormat0.int_0;
-                        for (var j = 0; j < array2.Length; j++)
+                        float float_ = _list0[i].vmethod_0().int_0 / (float) WaveFormat0.int_0;
+                        for (int j = 0; j < array2.Length; j++)
                         {
                             if ((_enum20 & (Enum2) (1 << j)) != 0)
                             {
-                                var @class = new Class13(num / WaveFormat0.short_0, array2[j]);
+                                Class13 @class = new Class13(num / WaveFormat0.short_0, array2[j]);
                                 smethod_1(@class, float_);
                                 array2[j] = @class.Float0;
                             }
@@ -253,10 +253,10 @@ namespace GHNamespace1
                 {
                     if (array2.Length < WaveFormat0.short_0)
                     {
-                        var array3 = new float[WaveFormat0.short_0][];
+                        float[][] array3 = new float[WaveFormat0.short_0][];
                         Array.Copy(array2, array3, array2.Length);
-                        var k = array2.Length;
-                        var num4 = 0;
+                        int k = array2.Length;
+                        int num4 = 0;
                         while (k < array3.Length)
                         {
                             if ((_enum20 & (Enum2) (1 << k - array2.Length)) != 0)
@@ -271,7 +271,7 @@ namespace GHNamespace1
                     }
                     num3 = 0;
                 }
-                for (var l = 0; l < array2.Length; l++)
+                for (int l = 0; l < array2.Length; l++)
                 {
                     if ((_enum20 & (Enum2) (1 << l)) != 0)
                     {
@@ -286,8 +286,8 @@ namespace GHNamespace1
                             List<int> list3;
                             int index;
                             (list3 = list2)[index = num3] = list3[index] + 1;
-                            var class2 = list[num3];
-                            var class3 = new Class13(num / WaveFormat0.short_0, array2[l]);
+                            Class13 class2 = list[num3];
+                            Class13 class3 = new Class13(num / WaveFormat0.short_0, array2[l]);
                             if (num2 < array2[l].Length)
                             {
                                 smethod_2(class3, class2);
@@ -309,15 +309,15 @@ namespace GHNamespace1
                 _long1 = _long0;
                 return null;
             }
-            var num5 = 0;
+            int num5 = 0;
             while (num5 < list.Count && list2[num5] > 1)
             {
                 smethod_3(list[num5], 1f / list2[num5]);
                 num5++;
             }
             _class120.imethod_0(list.ToArray());
-            var array4 = new float[list.Count][];
-            for (var m = 0; m < array4.Length; m++)
+            float[][] array4 = new float[list.Count][];
+            for (int m = 0; m < array4.Length; m++)
             {
                 array4[m] = list[m].Float0;
             }
@@ -327,8 +327,8 @@ namespace GHNamespace1
 
         private static int smethod_0(Enum2 enum21)
         {
-            var num = 0;
-            for (var num2 = (int) enum21; num2 != 0; num2 &= num2 - 1)
+            int num = 0;
+            for (int num2 = (int) enum21; num2 != 0; num2 &= num2 - 1)
             {
                 num++;
             }
@@ -337,14 +337,14 @@ namespace GHNamespace1
 
         private static void smethod_1(Class13 class130, float float0)
         {
-            var float_ = class130.Float0;
-            var num = class130.method_0();
-            var num2 = class130.method_2();
-            var num3 = (int) (num2 / float0);
-            var array = new float[float_.Length - num2 + num3];
+            float[] float_ = class130.Float0;
+            int num = class130.method_0();
+            int num2 = class130.method_2();
+            int num3 = (int) (num2 / float0);
+            float[] array = new float[float_.Length - num2 + num3];
             Buffer.BlockCopy(float_, 0, array, 0, num << 2);
             double num4 = num;
-            var num5 = num;
+            int num5 = num;
             while (num5 < num + num3 && (int) num4 + 1 < float_.Length)
             {
                 array[num5] = Class15.smethod_2(float_, (float) num4);
@@ -357,14 +357,14 @@ namespace GHNamespace1
 
         private static void smethod_2(Class13 class130, Class13 class131)
         {
-            var num = class130.method_0();
-            var num2 = class130.method_2();
-            var num3 = class131.method_0();
+            int num = class130.method_0();
+            int num2 = class130.method_2();
+            int num3 = class131.method_0();
             if (class131.Bool0)
             {
                 try
                 {
-                    for (var i = 0; i < num2; i++)
+                    for (int i = 0; i < num2; i++)
                     {
                         class130.vmethod_3(class130.vmethod_4(num + i) + class131.vmethod_4(num3 + i), num + i);
                     }
@@ -377,12 +377,12 @@ namespace GHNamespace1
 
         private static void smethod_3(Class13 class130, float float0)
         {
-            var float_ = class130.Float0;
-            var num = class130.method_0();
-            var num2 = class130.method_2();
+            float[] float_ = class130.Float0;
+            int num = class130.method_0();
+            int num2 = class130.method_2();
             try
             {
-                for (var i = num; i < num + num2; i++)
+                for (int i = num; i < num + num2; i++)
                 {
                     float_[i] = class130.vmethod_1(i, float_[i], float0 * float_[i]);
                 }
@@ -397,8 +397,8 @@ namespace GHNamespace1
         public override int Read(byte[] buffer, int offset, int count)
         {
             count >>= 2;
-            var array = new float[count];
-            var num = vmethod_4(array, 0, count);
+            float[] array = new float[count];
+            int num = vmethod_4(array, 0, count);
             Buffer.BlockCopy(array, 0, buffer, offset, num);
             return num << 2;
         }
@@ -415,7 +415,7 @@ namespace GHNamespace1
 
         public override void Close()
         {
-            foreach (var current in _list0)
+            foreach (GenericAudioStream current in _list0)
             {
                 current.Close();
             }
@@ -427,7 +427,7 @@ namespace GHNamespace1
             if (disposing)
             {
                 _class120.Clear();
-                foreach (var current in _list0)
+                foreach (GenericAudioStream current in _list0)
                 {
                     current.Dispose();
                 }

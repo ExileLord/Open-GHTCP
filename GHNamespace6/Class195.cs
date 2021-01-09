@@ -5,9 +5,9 @@ namespace GHNamespace6
 {
     public class Class195 : IDisposable
     {
-        private string _string0 = string.Empty;
+        private readonly string _string0 = string.Empty;
 
-        private string _string1 = string.Empty;
+        private readonly string _string1 = string.Empty;
 
         private Stream21 _stream210;
 

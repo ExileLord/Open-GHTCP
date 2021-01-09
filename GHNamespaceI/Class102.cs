@@ -27,8 +27,8 @@ namespace GHNamespaceI
         public int method_1(int int5)
         {
             _int2 += int5;
-            var num = 0;
-            var num2 = _int3;
+            int num = 0;
+            int num2 = _int3;
             if (num2 + int5 < 32768)
             {
                 while (int5-- > 0)
@@ -53,14 +53,14 @@ namespace GHNamespaceI
         public int method_2()
         {
             _int2++;
-            var result = _int4[_int3];
+            int result = _int4[_int3];
             _int3 = (_int3 + 1 & Int0);
             return result;
         }
 
         public void method_3(int int5)
         {
-            var num = _int1;
+            int num = _int1;
             _int4[num++] = (int5 & 128);
             _int4[num++] = (int5 & 64);
             _int4[num++] = (int5 & 32);
@@ -89,7 +89,7 @@ namespace GHNamespaceI
 
         public void method_5(int int5)
         {
-            var num = int5 << 3;
+            int num = int5 << 3;
             _int2 -= num;
             _int3 -= num;
             if (_int3 < 0)

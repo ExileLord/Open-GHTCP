@@ -87,7 +87,7 @@ namespace GHNamespace4
 
         private int _int3;
 
-        private EventHandler _eventHandler0;
+        private readonly EventHandler _eventHandler0;
 
         public WaveOutput(GenericAudioStream stream11) : this(stream11, -1, 300)
         {
@@ -128,7 +128,7 @@ namespace GHNamespace4
                     Class162.Enum17.Const3), "waveOutOpen");
             _stream10.Position = vmethod_0();
             _class1580 = new Class158[5];
-            for (var i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 _class1580[i] = new Class158(_intptr0, _int0, _stream10, _object0);
             }
@@ -140,7 +140,7 @@ namespace GHNamespace4
             while (true)
             {
                 _autoResetEvent0.WaitOne();
-                var flag = true;
+                bool flag = true;
                 while (flag)
                 {
                     Class164 @class = null;
@@ -210,7 +210,7 @@ namespace GHNamespace4
         {
             if (enum160 == Class162.Enum16.Const1)
             {
-                var object_ = (Class158) ((GCHandle) struct660.Intptr1).Target;
+                Class158 object_ = (Class158) ((GCHandle) struct660.Intptr1).Target;
                 lock (_queue1)
                 {
                     _queue1.Enqueue(new Class164(Enum19.Const2, object_));
@@ -244,10 +244,7 @@ namespace GHNamespace4
         {
             SetStartingTimeBasedOnSomeValue(0);
             _stopwatch0.Reset();
-            if (_eventHandler0 != null)
-            {
-                _eventHandler0(this, EventArgs.Empty);
-            }
+            _eventHandler0?.Invoke(this, EventArgs.Empty);
         }
 
         public void DifferentStartPlaying()
@@ -273,7 +270,7 @@ namespace GHNamespace4
             if (!_bool0)
             {
                 _enum10 = AudioStatus.ShouldStartAudio;
-                for (var i = 0; i < 5; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     _class1580[i].method_1();
                 }
@@ -288,7 +285,7 @@ namespace GHNamespace4
             {
                 return;
             }
-            var num = vmethod_0();
+            int num = vmethod_0();
             StopPlaying();
             _stream10.Position = _int3 = num;
             _enum10 = AudioStatus.IsCurrentlyPlayingAudio;
@@ -335,7 +332,7 @@ namespace GHNamespace4
             }
             if (_class1580 != null)
             {
-                for (var i = 0; i < 5; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     _class1580[i].Dispose();
                 }
@@ -400,7 +397,7 @@ namespace GHNamespace4
         private void method_8(int int4)
         {
             WaitCallback waitCallback = null;
-            var @enum = _enum10;
+            AudioStatus @enum = _enum10;
             if (@enum == AudioStatus.IsCurrentlyPlayingAudio)
             {
                 StopPlaying();
@@ -412,26 +409,26 @@ namespace GHNamespace4
                 arg350.Position = int4;
                 if (@enum == AudioStatus.ShouldStartAudio)
                 {
-                    var count = _queue0.Count;
-                    var num = 1f / (_int0 * count / (float) GetWaveFormat().short_1);
-                    var num2 = 0f;
-                    var num3 = 1f;
+                    int count = _queue0.Count;
+                    float num = 1f / (_int0 * count / (float) GetWaveFormat().short_1);
+                    float num2 = 0f;
+                    float num3 = 1f;
                     if (GetWaveFormat().waveFormatTag_0 == WaveFormatTag.IeeeFloat)
                     {
-                        var array = new float[_int0 >> 2];
-                        using (var enumerator = _queue0.GetEnumerator())
+                        float[] array = new float[_int0 >> 2];
+                        using (Queue<Class158>.Enumerator enumerator = _queue0.GetEnumerator())
                         {
                             while (enumerator.MoveNext())
                             {
-                                var current = enumerator.Current;
-                                var array2 = current.method_3().method_1();
-                                var num4 = _stream10.vmethod_4(array, 0, array.Length);
+                                Class158 current = enumerator.Current;
+                                float[] array2 = current.method_3().method_1();
+                                int num4 = _stream10.vmethod_4(array, 0, array.Length);
                                 if (num4 == 0)
                                 {
                                     break;
                                 }
-                                var i = 0;
-                                var num5 = 0;
+                                int i = 0;
+                                int num5 = 0;
                                 while (i < num4)
                                 {
                                     array2[i] = num3 * array2[i] + num2 * array[i];
@@ -452,19 +449,19 @@ namespace GHNamespace4
                     }
                     if (GetWaveFormat().waveFormatTag_0 == WaveFormatTag.Pcm)
                     {
-                        using (var @class = new Class19(_int0))
+                        using (Class19 @class = new Class19(_int0))
                         {
-                            foreach (var current2 in _queue0)
+                            foreach (Class158 current2 in _queue0)
                             {
-                                var array3 = current2.method_3().method_2();
-                                var array4 = Class19.smethod_0(@class);
-                                var num6 = _stream10.vmethod_3(Class19.smethod_1(@class), _int0) >> 1;
+                                short[] array3 = current2.method_3().method_2();
+                                short[] array4 = Class19.smethod_0(@class);
+                                int num6 = _stream10.vmethod_3(Class19.smethod_1(@class), _int0) >> 1;
                                 if (num6 == 0)
                                 {
                                     break;
                                 }
-                                var j = 0;
-                                var num7 = 0;
+                                int j = 0;
+                                int num7 = 0;
                                 while (j < num6)
                                 {
                                     array3[j] = (short) (num3 * array3[j] + num2 * array4[j]);
@@ -511,9 +508,9 @@ namespace GHNamespace4
         public void SetVolume(float float1)
         {
             _float0 = float1;
-            var num = _float0;
-            var num2 = _float0;
-            var num3 = (int) (num * 65535f) + ((int) (num2 * 65535f) << 16);
+            float num = _float0;
+            float num2 = _float0;
+            int num3 = (int) (num * 65535f) + ((int) (num2 * 65535f) << 16);
             lock (_queue1)
             {
                 _queue1.Enqueue(new Class164(Enum19.Const5, num3));
@@ -559,8 +556,8 @@ namespace GHNamespace4
         private void method_11(object object1)
         {
             _bool1 = true;
-            var num = 0f;
-            var num2 = _float0;
+            float num = 0f;
+            float num2 = _float0;
             while (num < num2)
             {
                 SetVolume(num);
@@ -575,8 +572,8 @@ namespace GHNamespace4
         private void method_12(object object1)
         {
             _bool1 = true;
-            var num = 0f;
-            var num2 = _float0;
+            float num = 0f;
+            float num2 = _float0;
             while (num < num2)
             {
                 SetVolume(num);

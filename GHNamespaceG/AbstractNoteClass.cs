@@ -15,8 +15,8 @@ namespace GHNamespaceG
             {
                 return class3350.method_0() - class3351.method_0();
             }
-            var flag = ((MidiNote) class3350).method_5();
-            var flag2 = ((MidiNote) class3351).method_5();
+            bool flag = ((MidiNote) class3350).method_5();
+            bool flag2 = ((MidiNote) class3351).method_5();
             if (flag && !flag2)
             {
                 return 1;

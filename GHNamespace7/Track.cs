@@ -31,14 +31,14 @@ namespace GHNamespace7
             while (int0 <= int1)
             {
                 int2 = (int0 + int1) / 2;
-                var tKey = Keys[int2];
+                TKey tKey = Keys[int2];
                 if (tKey.CompareTo(offset) < 0)
                 {
                     int0 = int2 + 1;
                 }
                 else
                 {
-                    var tKey2 = Keys[int2];
+                    TKey tKey2 = Keys[int2];
                     if (tKey2.CompareTo(offset) <= 0)
                     {
                         return true;
@@ -53,9 +53,9 @@ namespace GHNamespace7
         //Not the problem
         public int method_1(TKey offset)
         {
-            var num = 0;
-            var num2 = Count - 1;
-            var num3 = 0;
+            int num = 0;
+            int num2 = Count - 1;
+            int num3 = 0;
             if (method_0(ref num, ref num2, ref num3, offset))
             {
             }
@@ -73,9 +73,9 @@ namespace GHNamespace7
 
         public int method_2(TKey offset)
         {
-            var num = 0;
-            var num2 = Count - 1;
-            var num3 = 0;
+            int num = 0;
+            int num2 = Count - 1;
+            int num3 = 0;
             num3 = (method_0(ref num, ref num2, ref num3, offset) ? num3 : num);
             if (num3 < Count)
             {
@@ -86,14 +86,14 @@ namespace GHNamespace7
 
         public int method_3(TKey gparam0, TKey gparam1)
         {
-            var num = 0;
-            var num2 = Count - 1;
-            var num3 = 0;
-            var num4 = method_0(ref num, ref num2, ref num3, gparam0) ? num3 : num;
+            int num = 0;
+            int num2 = Count - 1;
+            int num3 = 0;
+            int num4 = method_0(ref num, ref num2, ref num3, gparam0) ? num3 : num;
             num = num4;
             num2 = Count - 1;
             num3 = 0;
-            var num5 = method_0(ref num, ref num2, ref num3, gparam1) ? (num3 + 1) : num;
+            int num5 = method_0(ref num, ref num2, ref num3, gparam1) ? (num3 + 1) : num;
             return num5 - num4;
         }
 

@@ -10,7 +10,7 @@ namespace GHNamespace6
 
         private Stream _stream1;
 
-        private byte[] _byte0;
+        private readonly byte[] _byte0;
 
         private int _int0;
 
@@ -40,7 +40,7 @@ namespace GHNamespace6
             {
                 throw new TarException("Failed to read a record");
             }
-            var array = new byte[512];
+            byte[] array = new byte[512];
             Array.Copy(_byte0, _int0 * 512, array, 0, 512);
             _int0++;
             return array;
@@ -53,9 +53,9 @@ namespace GHNamespace6
                 throw new TarException("no input stream stream defined");
             }
             _int0 = 0;
-            var num = 0;
+            int num = 0;
             long num2;
-            for (var i = method_0(); i > 0; i -= (int) num2)
+            for (int i = method_0(); i > 0; i -= (int) num2)
             {
                 num2 = _stream0.Read(_byte0, num, i);
                 if (num2 <= 0L)
@@ -80,7 +80,7 @@ namespace GHNamespace6
             }
             if (byte1.Length != 512)
             {
-                var string_ = string.Format(
+                string string_ = string.Format(
                     "TarBuffer.WriteBlock - block to write has length '{0}' which is not the block size of '{1}'",
                     byte1.Length, 512);
                 throw new TarException(string_);
@@ -109,7 +109,7 @@ namespace GHNamespace6
             }
             if (int4 + 512 > byte1.Length)
             {
-                var string_ = string.Format(
+                string string_ = string.Format(
                     "TarBuffer.WriteBlock - record has length '{0}' with offset '{1}' which is less than the record size of '{2}'",
                     byte1.Length, int4, _int2);
                 throw new TarException(string_);
@@ -142,7 +142,7 @@ namespace GHNamespace6
             }
             if (_int0 > 0)
             {
-                var num = _int0 * 512;
+                int num = _int0 * 512;
                 Array.Clear(_byte0, num, method_0() - num);
                 method_6();
             }

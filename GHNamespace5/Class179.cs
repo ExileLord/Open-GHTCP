@@ -19,10 +19,9 @@ namespace GHNamespace5
         {
             public int Compare(object x, object y)
             {
-                var @class = x as Class181;
-                var class2 = y as Class181;
+                Class181 class2 = y as Class181;
                 int num;
-                if (@class == null)
+                if (!(x is Class181 @class))
                 {
                     if (class2 == null)
                     {
@@ -39,12 +38,12 @@ namespace GHNamespace5
                 }
                 else
                 {
-                    var num2 = (@class.method_1() == Enum28.Const0 || @class.method_1() == Enum28.Const1) ? 0 : 1;
-                    var num3 = (class2.method_1() == Enum28.Const0 || class2.method_1() == Enum28.Const1) ? 0 : 1;
+                    int num2 = (@class.method_1() == Enum28.Const0 || @class.method_1() == Enum28.Const1) ? 0 : 1;
+                    int num3 = (class2.method_1() == Enum28.Const0 || class2.method_1() == Enum28.Const1) ? 0 : 1;
                     num = num2 - num3;
                     if (num == 0)
                     {
-                        var num4 = @class.method_0().method_6() - class2.method_0().method_6();
+                        long num4 = @class.method_0().method_6() - class2.method_0().method_6();
                         if (num4 < 0L)
                         {
                             num = -1;
@@ -65,9 +64,9 @@ namespace GHNamespace5
 
         private class Class181
         {
-            private Class193 _class1930;
+            private readonly Class193 _class1930;
 
-            private Enum28 _enum280;
+            private readonly Enum28 _enum280;
 
             public Class193 method_0()
             {
@@ -108,13 +107,13 @@ namespace GHNamespace5
 
         private Stream _stream0;
 
-        private bool _bool1;
+        private readonly bool _bool1;
 
         private Class193[] _class1930;
 
-        private INterface9 _interface90 = new Class212();
+        private readonly INterface9 _interface90 = new Class212();
 
-        private string _string0 = string.Empty;
+        private readonly string _string0 = string.Empty;
 
         public Class193 this[int int1] => (Class193) _class1930[int1].Clone();
 

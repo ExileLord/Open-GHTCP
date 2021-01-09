@@ -96,7 +96,7 @@ namespace GHNamespace6
             }
             if (_long0 < Long1)
             {
-                var string_ = string.Format(
+                string string_ = string.Format(
                     "Entry closed at '{0}' before the '{1}' bytes specified in the header were written", _long0, Long1);
                 throw new TarException(string_);
             }
@@ -130,7 +130,7 @@ namespace GHNamespace6
             }
             if (_long0 + count > Long1)
             {
-                var message = string.Format("request to write '{0}' bytes exceeds size in header of '{1}' bytes", count,
+                string message = string.Format("request to write '{0}' bytes exceeds size in header of '{1}' bytes", count,
                     Long1);
                 throw new ArgumentOutOfRangeException("count", message);
             }
@@ -138,7 +138,7 @@ namespace GHNamespace6
             {
                 if (_int0 + count >= Byte0.Length)
                 {
-                    var num = Byte0.Length - _int0;
+                    int num = Byte0.Length - _int0;
                     Array.Copy(Byte1, 0, Byte0, 0, _int0);
                     Array.Copy(buffer, offset, Byte0, _int0, num);
                     Class2060.method_4(Byte0);
@@ -164,7 +164,7 @@ namespace GHNamespace6
                     return;
                 }
                 Class2060.method_5(buffer, offset);
-                var num2 = Byte0.Length;
+                int num2 = Byte0.Length;
                 _long0 += num2;
                 count -= num2;
                 offset += num2;

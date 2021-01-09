@@ -64,13 +64,13 @@ namespace GHNamespaceD
 
         public int method_2(int int5)
         {
-            var num = Int0[int5];
+            int num = Int0[int5];
             int5 += _int2;
             if (_int3 + 4 >= _int4 && _int3 + (int5 - 1) / 8 >= _int4)
             {
                 return -1;
             }
-            var num2 = (_byte0[_int1] & 255) >> _int2;
+            int num2 = (_byte0[_int1] & 255) >> _int2;
             if (int5 > 8)
             {
                 num2 |= (_byte0[_int1 + 1] & 255) << 8 - _int2;
@@ -109,7 +109,7 @@ namespace GHNamespaceD
 
         public void method_5(byte[] byte1, int int5)
         {
-            var num = 0;
+            int num = 0;
             while (int5-- != 0)
             {
                 byte1[num++] = (byte) method_6(8);
@@ -118,7 +118,7 @@ namespace GHNamespaceD
 
         public int method_6(int int5)
         {
-            var num = Int0[int5];
+            int num = Int0[int5];
             int5 += _int2;
             int num2;
             if (_int3 + 4 >= _int4)

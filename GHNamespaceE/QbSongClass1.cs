@@ -32,14 +32,14 @@ namespace GHNamespaceE
 
         public static void AddAllLinesToDictionary(Stream stream, bool useSecondDictionary = false)
         {
-            using (var streamReader = new StreamReader(stream))
+            using (StreamReader streamReader = new StreamReader(stream))
             {
                 string text;
                 while ((text = streamReader.ReadLine()) != null)
                 {
                     if (!text.Equals(""))
                     {
-                        var key = KeyGenerator.GetQbKey(text, true);
+                        int key = KeyGenerator.GetQbKey(text, true);
                         if (!KeyDict1.ContainsKey(key) && !KeyDict2.ContainsKey(key))
                         {
                             if (useSecondDictionary)
@@ -94,7 +94,7 @@ namespace GHNamespaceE
             {
                 return;
             }
-            var key = KeyGenerator.GetQbKey(str, true);
+            int key = KeyGenerator.GetQbKey(str, true);
             if (addToTheOtherDictionaryToo && !KeyDict2.ContainsKey(key))
             {
                 KeyDict2.Add(key, str);
@@ -109,7 +109,7 @@ namespace GHNamespaceE
         public static int AddKeyToDictionary(string qbName)
         {
             qbName = qbName.ToLower();
-            var key = KeyGenerator.GetQbKey(qbName, true);
+            int key = KeyGenerator.GetQbKey(qbName, true);
             if (!ContainsKey(key))
             {
                 KeyDict2.Add(key, qbName);
@@ -125,10 +125,10 @@ namespace GHNamespaceE
                 "_male_",
                 "_female_"
             };
-            for (var i = 0; i < singerTypes.Length; i++)
+            for (int i = 0; i < singerTypes.Length; i++)
             {
-                var singerGender = singerTypes[i];
-                for (var j = 1; j < 10; j++)
+                string singerGender = singerTypes[i];
+                for (int j = 1; j < 10; j++)
                 {
                     AddStringToDictionary(string.Concat("gh3_singer", singerGender, songName, "_", j));
                     AddStringToDictionary(string.Concat("gh3_singer", singerGender, songName, "_", j, "b"));
@@ -158,9 +158,9 @@ namespace GHNamespaceE
                 "drum_",
                 "aux_"
             };
-            for (var k = 0; k < array2.Length; k++)
+            for (int k = 0; k < array2.Length; k++)
             {
-                var text2 = array2[k];
+                string text2 = array2[k];
                 string[] array3 =
                 {
                     "easy",
@@ -168,9 +168,9 @@ namespace GHNamespaceE
                     "hard",
                     "expert"
                 };
-                for (var l = 0; l < array3.Length; l++)
+                for (int l = 0; l < array3.Length; l++)
                 {
-                    var text3 = array3[l];
+                    string text3 = array3[l];
                     AddStringToDictionary(songName + "_song_" + text2 + text3);
                     AddStringToDictionary(string.Concat(songName, "_", text2, text3, "_star"));
                     AddStringToDictionary(string.Concat(songName, "_", text2, text3, "_starbattlemode"));

@@ -16,8 +16,8 @@ namespace GHNamespace6
         {
             try
             {
-                var array = new byte[288];
-                var i = 0;
+                byte[] array = new byte[288];
+                int i = 0;
                 while (i < 144)
                 {
                     array[i++] = 8;
@@ -56,9 +56,9 @@ namespace GHNamespace6
 
         private void method_0(byte[] byte0)
         {
-            var array = new int[16];
-            var array2 = new int[16];
-            for (var i = 0; i < byte0.Length; i++)
+            int[] array = new int[16];
+            int[] array2 = new int[16];
+            for (int i = 0; i < byte0.Length; i++)
             {
                 int num = byte0[i];
                 if (num > 0)
@@ -66,33 +66,33 @@ namespace GHNamespace6
                     array[num]++;
                 }
             }
-            var num2 = 0;
-            var num3 = 512;
-            for (var j = 1; j <= 15; j++)
+            int num2 = 0;
+            int num3 = 512;
+            for (int j = 1; j <= 15; j++)
             {
                 array2[j] = num2;
                 num2 += array[j] << 16 - j;
                 if (j >= 10)
                 {
-                    var num4 = array2[j] & 130944;
-                    var num5 = num2 & 130944;
+                    int num4 = array2[j] & 130944;
+                    int num5 = num2 & 130944;
                     num3 += num5 - num4 >> 16 - j;
                 }
             }
             _short0 = new short[num3];
-            var num6 = 512;
-            for (var k = 15; k >= 10; k--)
+            int num6 = 512;
+            for (int k = 15; k >= 10; k--)
             {
-                var num7 = num2 & 130944;
+                int num7 = num2 & 130944;
                 num2 -= array[k] << 16 - k;
-                var num8 = num2 & 130944;
-                for (var l = num8; l < num7; l += 128)
+                int num8 = num2 & 130944;
+                for (int l = num8; l < num7; l += 128)
                 {
                     _short0[Class190.smethod_0(l)] = (short) (-num6 << 4 | k);
                     num6 += 1 << k - 9;
                 }
             }
-            for (var m = 0; m < byte0.Length; m++)
+            for (int m = 0; m < byte0.Length; m++)
             {
                 int num9 = byte0[m];
                 if (num9 != 0)
@@ -110,7 +110,7 @@ namespace GHNamespace6
                     else
                     {
                         int num11 = _short0[num10 & 511];
-                        var num12 = 1 << (num11 & 15);
+                        int num12 = 1 << (num11 & 15);
                         num11 = -(num11 >> 4);
                         do
                         {
@@ -134,15 +134,15 @@ namespace GHNamespace6
                     class1870.method_1(num2 & 15);
                     return num2 >> 4;
                 }
-                var num3 = -(num2 >> 4);
-                var int_ = num2 & 15;
+                int num3 = -(num2 >> 4);
+                int int_ = num2 & 15;
                 if ((num = class1870.method_0(int_)) >= 0)
                 {
                     num2 = _short0[num3 | num >> 9];
                     class1870.method_1(num2 & 15);
                     return num2 >> 4;
                 }
-                var num4 = class1870.method_2();
+                int num4 = class1870.method_2();
                 num = class1870.method_0(num4);
                 num2 = _short0[num3 | num >> 9];
                 if ((num2 & 15) <= num4)
@@ -154,7 +154,7 @@ namespace GHNamespace6
             }
             else
             {
-                var num5 = class1870.method_2();
+                int num5 = class1870.method_2();
                 num = class1870.method_0(num5);
                 int num2 = _short0[num];
                 if (num2 >= 0 && (num2 & 15) <= num5)

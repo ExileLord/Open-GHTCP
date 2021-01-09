@@ -65,7 +65,7 @@ namespace GHNamespace5
             {
                 method_8();
             }
-            var num = Class2010.method_10();
+            int num = Class2010.method_10();
             if (num != 33639248 && num != 101010256 && num != 84233040 && num != 117853008)
             {
                 if (num != 101075792)
@@ -78,19 +78,19 @@ namespace GHNamespace5
                     {
                         throw new ZipException("Wrong Local header signature: 0x" + string.Format("{0:X}", num));
                     }
-                    var int_ = (short) Class2010.method_9();
+                    short int_ = (short) Class2010.method_9();
                     _int1 = Class2010.method_9();
                     _int0 = Class2010.method_9();
-                    var num2 = (uint) Class2010.method_10();
-                    var num3 = Class2010.method_10();
+                    uint num2 = (uint) Class2010.method_10();
+                    int num3 = Class2010.method_10();
                     Long0 = Class2010.method_10();
                     _long1 = Class2010.method_10();
-                    var num4 = Class2010.method_9();
-                    var num5 = Class2010.method_9();
-                    var flag = (_int1 & 1) == 1;
-                    var array = new byte[num4];
+                    int num4 = Class2010.method_9();
+                    int num5 = Class2010.method_9();
+                    bool flag = (_int1 & 1) == 1;
+                    byte[] array = new byte[num4];
                     Class2010.method_5(array);
-                    var string_ = Class186.smethod_2(_int1, array);
+                    string string_ = Class186.smethod_2(_int1, array);
                     _class1930 = new Class193(string_, int_);
                     _class1930.method_5(_int1);
                     _class1930.method_28((Enum31) _int0);
@@ -120,7 +120,7 @@ namespace GHNamespace5
                     _class1930.method_18(num2);
                     if (num5 > 0)
                     {
-                        var array2 = new byte[num5];
+                        byte[] array2 = new byte[num5];
                         Class2010.method_5(array2);
                         _class1930.method_30(array2);
                     }
@@ -208,14 +208,14 @@ namespace GHNamespace5
             {
                 if ((_int1 & 8) != 0)
                 {
-                    var array = new byte[2048];
+                    byte[] array = new byte[2048];
                     while (Read(array, 0, array.Length) > 0)
                     {
                     }
                     return;
                 }
                 Long0 -= Class1960.method_12();
-                var expr67 = Class2010;
+                Class201 expr67 = Class2010;
                 expr67.method_2(expr67.method_1() + Class1960.method_13());
             }
             if (Class2010.method_1() > Long0 && Long0 >= 0L)
@@ -228,7 +228,7 @@ namespace GHNamespace5
                 Class2010.method_2(0);
                 while (Long0 != 0L)
                 {
-                    var num = (int) method_0(Long0 & 4294967295L);
+                    int num = (int) method_0(Long0 & 4294967295L);
                     if (num <= 0)
                     {
                         throw new ZipException("Zip archive ends early.");
@@ -241,7 +241,7 @@ namespace GHNamespace5
 
         public override int ReadByte()
         {
-            var array = new byte[1];
+            byte[] array = new byte[1];
             if (Read(array, 0, 1) <= 0)
             {
                 return -1;
@@ -272,10 +272,10 @@ namespace GHNamespace5
                 {
                     throw new ZipException("No password set.");
                 }
-                var @class = new Class208();
-                var rgbKey = Class207.smethod_0(Class186.smethod_3(_password));
+                Class208 @class = new Class208();
+                byte[] rgbKey = Class207.smethod_0(Class186.smethod_3(_password));
                 Class2010.method_12(@class.CreateDecryptor(rgbKey, null));
-                var array = new byte[12];
+                byte[] array = new byte[12];
                 Class2010.method_7(array, 0, 12);
                 if (array[11] != _class1930.method_2())
                 {
@@ -337,8 +337,8 @@ namespace GHNamespace5
             {
                 throw new ArgumentException("Offset + count exceeds buffer size");
             }
-            var flag = false;
-            var num = _int0;
+            bool flag = false;
+            int num = _int0;
             if (num != 0)
             {
                 if (num == 8)

@@ -22,18 +22,18 @@ namespace GHNamespaceL
 
         public Class140(Class144 class1440, byte[] byte0, Class122 class1220)
         {
-            var num = 0;
-            var num2 = 0;
-            var @class = new Class152(16);
-            var flag = class1220 != null && class1220.vmethod_2() != class1220.vmethod_1();
-            var flag2 = class1220 != null && class1220.vmethod_2() == class1220.vmethod_1();
+            int num = 0;
+            int num2 = 0;
+            Class152 @class = new Class152(16);
+            bool flag = class1220 != null && class1220.vmethod_2() != class1220.vmethod_1();
+            bool flag2 = class1220 != null && class1220.vmethod_2() == class1220.vmethod_1();
             @class.vmethod_1(byte0[0]);
             @class.vmethod_1(byte0[1]);
             if ((@class.vmethod_3(1) & 3) != 0)
             {
                 throw new BadHeaderException("Bad Magic Number: " + (@class.vmethod_3(1) & 255));
             }
-            for (var i = 0; i < 2; i++)
+            for (int i = 0; i < 2; i++)
             {
                 if (class1440.vmethod_11(8) == 255)
                 {
@@ -41,7 +41,7 @@ namespace GHNamespaceL
                 }
                 @class.vmethod_1((byte) class1440.vmethod_10(8));
             }
-            var num3 = @class.vmethod_3(2) >> 4 & 15;
+            int num3 = @class.vmethod_3(2) >> 4 & 15;
             switch (num3)
             {
                 case 0:
@@ -75,7 +75,7 @@ namespace GHNamespaceL
                     Int0 = 256 << num3 - 8;
                     break;
             }
-            var num4 = @class.vmethod_3(2) & 15;
+            int num4 = @class.vmethod_3(2) & 15;
             switch (num4)
             {
                 case 0:
@@ -121,7 +121,7 @@ namespace GHNamespaceL
                 case 15:
                     throw new BadHeaderException("Bad Sample Rate (" + num4 + ")");
             }
-            var num5 = @class.vmethod_3(3) >> 4 & 15;
+            int num5 = @class.vmethod_3(3) >> 4 & 15;
             if ((num5 & 8) != 0)
             {
                 Int2 = 2;
@@ -145,7 +145,7 @@ namespace GHNamespaceL
                 Int2 = num5 + 1;
                 Int3 = 0;
             }
-            var num6 = (@class.vmethod_3(3) & 14) >> 1;
+            int num6 = (@class.vmethod_3(3) & 14) >> 1;
             switch (num6)
             {
                 case 0:
@@ -197,11 +197,11 @@ namespace GHNamespaceL
             }
             if (num != 0)
             {
-                var num8 = class1440.vmethod_10(8);
+                int num8 = class1440.vmethod_10(8);
                 @class.vmethod_1((byte) num8);
                 if (num == 7)
                 {
-                    var num9 = class1440.vmethod_10(8);
+                    int num9 = class1440.vmethod_10(8);
                     @class.vmethod_1((byte) num9);
                     num8 = (num8 << 8 | num9);
                 }
@@ -209,11 +209,11 @@ namespace GHNamespaceL
             }
             if (num2 != 0)
             {
-                var num10 = class1440.vmethod_10(8);
+                int num10 = class1440.vmethod_10(8);
                 @class.vmethod_1((byte) num10);
                 if (num2 != 12)
                 {
-                    var num11 = class1440.vmethod_10(8);
+                    int num11 = class1440.vmethod_10(8);
                     @class.vmethod_1((byte) num11);
                     num10 = (num10 << 8 | num11);
                 }
@@ -230,7 +230,7 @@ namespace GHNamespaceL
                     Int1 = num10 * 10;
                 }
             }
-            var b = (byte) class1440.vmethod_10(8);
+            byte b = (byte) class1440.vmethod_10(8);
             if (Class149.smethod_0(@class.vmethod_2(), @class.vmethod_0()) != b)
             {
                 throw new BadHeaderException("STREAM_DECODER_ERROR_STATUS_BAD_HEADER");

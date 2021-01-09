@@ -74,7 +74,7 @@ namespace GHNamespace3
 
         private static int smethod_0(int int12)
         {
-            var num = 0;
+            int num = 0;
             while (int12 > 1)
             {
                 num++;
@@ -85,27 +85,27 @@ namespace GHNamespace3
 
         public static float[] smethod_1(int int12, int int13, int int14, int int15)
         {
-            var array = new float[int13];
+            float[] array = new float[int13];
             if (int12 == 0)
             {
-                var num = (int13 >> 2) - (int14 >> 1);
-                var num2 = int13 - (int13 >> 2) - (int15 >> 1);
-                for (var i = 0; i < int14; i++)
+                int num = (int13 >> 2) - (int14 >> 1);
+                int num2 = int13 - (int13 >> 2) - (int15 >> 1);
+                for (int i = 0; i < int14; i++)
                 {
-                    var num3 = (float) ((i + 0.5) / int14 * Float0 / 2.0);
+                    float num3 = (float) ((i + 0.5) / int14 * Float0 / 2.0);
                     num3 = (float) Math.Sin(num3);
                     num3 *= num3;
                     num3 *= (float) (Float0 / 2.0);
                     num3 = (float) Math.Sin(num3);
                     array[i + num] = num3;
                 }
-                for (var j = num + int14; j < num2; j++)
+                for (int j = num + int14; j < num2; j++)
                 {
                     array[j] = 1f;
                 }
-                for (var k = 0; k < int15; k++)
+                for (int k = 0; k < int15; k++)
                 {
-                    var num4 = (float) ((int15 - k - 0.5) / int15 * Float0 / 2.0);
+                    float num4 = (float) ((int15 - k - 0.5) / int15 * Float0 / 2.0);
                     num4 = (float) Math.Sin(num4);
                     num4 *= num4;
                     num4 *= (float) (Float0 / 2.0);
@@ -135,7 +135,7 @@ namespace GHNamespace3
             Float2[1][0][1] = new float[Int1][];
             Float2[1][1][0] = new float[Int1][];
             Float2[1][1][1] = new float[Int1][];
-            for (var i = 0; i < Int1; i++)
+            for (int i = 0; i < Int1; i++)
             {
                 Float2[0][0][0][i] = smethod_1(i, oggClass5.Int13[0], oggClass5.Int13[0] >> 1, oggClass5.Int13[0] >> 1);
                 Float2[1][0][0][i] = smethod_1(i, oggClass5.Int13[1], oggClass5.Int13[0] >> 1, oggClass5.Int13[0] >> 1);
@@ -144,14 +144,14 @@ namespace GHNamespace3
                 Float2[1][1][1][i] = smethod_1(i, oggClass5.Int13[1], oggClass5.Int13[1] >> 1, oggClass5.Int13[1] >> 1);
             }
             OggClass4 = new OggClass4[oggClass5.Int19];
-            for (var j = 0; j < oggClass5.Int19; j++)
+            for (int j = 0; j < oggClass5.Int19; j++)
             {
                 OggClass4[j] = new OggClass4();
                 OggClass4[j].method_6(oggClass5.OggClass2[j]);
             }
             _int4 = 8192;
             _float1 = new float[oggClass5.Int8][];
-            for (var k = 0; k < oggClass5.Int8; k++)
+            for (int k = 0; k < oggClass5.Int8; k++)
             {
                 _float1[k] = new float[_int4];
             }
@@ -160,10 +160,10 @@ namespace GHNamespace3
             _int11 = oggClass5.Int13[1] >> 1;
             _int5 = _int11;
             Object1 = new object[oggClass5.Int14];
-            for (var l = 0; l < oggClass5.Int14; l++)
+            for (int l = 0; l < oggClass5.Int14; l++)
             {
-                var num = oggClass5.Class270[l].Int3;
-                var num2 = oggClass5.Int21[num];
+                int num = oggClass5.Class270[l].Int3;
+                int num2 = oggClass5.Int21[num];
                 Object1[l] = Class34.Class340[num2].vmethod_1(this, oggClass5.Class270[l], oggClass5.Object0[num]);
             }
             return 0;
@@ -183,14 +183,14 @@ namespace GHNamespace3
         {
             if (_int11 > OggClass5.Int13[1] >> 1 && _int6 > 8192)
             {
-                var num = _int11 - (OggClass5.Int13[1] >> 1);
+                int num = _int11 - (OggClass5.Int13[1] >> 1);
                 num = ((_int6 < num) ? _int6 : num);
                 _int5 -= num;
                 _int11 -= num;
                 _int6 -= num;
                 if (num != 0)
                 {
-                    for (var i = 0; i < OggClass5.Int8; i++)
+                    for (int i = 0; i < OggClass5.Int8; i++)
                     {
                         Buffer.BlockCopy(_float1[i], num << 2, _float1[i], 0, _int5 << 2);
                     }
@@ -207,18 +207,18 @@ namespace GHNamespace3
                 _long0 = -1L;
             }
             Long1 = class710.Long1;
-            var num2 = OggClass5.Int13[_int9];
-            var num3 = _int11 + (OggClass5.Int13[_int8] >> 2) + (num2 >> 2);
-            var num4 = num3 - (num2 >> 1);
-            var num5 = num4 + num2;
-            var num6 = 0;
-            var num7 = 0;
+            int num2 = OggClass5.Int13[_int9];
+            int num3 = _int11 + (OggClass5.Int13[_int8] >> 2) + (num2 >> 2);
+            int num4 = num3 - (num2 >> 1);
+            int num5 = num4 + num2;
+            int num6 = 0;
+            int num7 = 0;
             if (num5 > _int4)
             {
                 _int4 = num5 + OggClass5.Int13[1];
-                for (var j = 0; j < OggClass5.Int8; j++)
+                for (int j = 0; j < OggClass5.Int8; j++)
                 {
-                    var array = new float[_int4];
+                    float[] array = new float[_int4];
                     Buffer.BlockCopy(_float1[j], 0, array, 0, _float1[j].Length << 2);
                     _float1[j] = array;
                 }
@@ -234,9 +234,9 @@ namespace GHNamespace3
                     num7 = num6 + (OggClass5.Int13[_int8] >> 1);
                     break;
             }
-            for (var k = 0; k < OggClass5.Int8; k++)
+            for (int k = 0; k < OggClass5.Int8; k++)
             {
-                var num8 = num4;
+                int num8 = num4;
                 int l;
                 for (l = num6; l < num7; l++)
                 {
@@ -282,19 +282,19 @@ namespace GHNamespace3
         {
             if (_int6 < _int11)
             {
-                var num = _float1.Length;
-                var num2 = _int11 - _int6;
-                var num3 = (int13 - int12) / num;
+                int num = _float1.Length;
+                int num2 = _int11 - _int6;
+                int num3 = (int13 - int12) / num;
                 if (num2 > num3)
                 {
                     num2 = num3;
                 }
-                var num4 = _int6 + num2;
-                for (var i = 0; i < _float1.Length; i++)
+                int num4 = _int6 + num2;
+                for (int i = 0; i < _float1.Length; i++)
                 {
-                    var array = _float1[i];
-                    var j = _int6;
-                    var num5 = int12 + i;
+                    float[] array = _float1[i];
+                    int j = _int6;
+                    int num5 = int12 + i;
                     while (j < num4)
                     {
                         float3[num5] = array[j];
@@ -311,12 +311,12 @@ namespace GHNamespace3
         {
             if (_int6 < _int11)
             {
-                var num = _int11 - _int6;
+                int num = _int11 - _int6;
                 if (num > int13 - int12)
                 {
                     num = int13 - int12;
                 }
-                for (var i = 0; i < OggClass5.Int8; i++)
+                for (int i = 0; i < OggClass5.Int8; i++)
                 {
                     Buffer.BlockCopy(_float1[i], _int6 << 2, float3[i], int12 << 2, num << 2);
                 }

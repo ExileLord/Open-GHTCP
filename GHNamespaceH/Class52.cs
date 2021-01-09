@@ -39,10 +39,10 @@ namespace GHNamespaceH
             }
             if (int6 > _int0 - _int1)
             {
-                var num = int6 + _int1 + 4096;
+                int num = int6 + _int1 + 4096;
                 if (Byte0 != null)
                 {
-                    var dst = new byte[num];
+                    byte[] dst = new byte[num];
                     Buffer.BlockCopy(Byte0, 0, dst, 0, Byte0.Length);
                     Byte0 = dst;
                 }
@@ -67,8 +67,8 @@ namespace GHNamespaceH
 
         public int method_3(Class48 class481)
         {
-            var num = _int2;
-            var num2 = _int1 - _int2;
+            int num = _int2;
+            int num2 = _int1 - _int2;
             if (_int4 == 0)
             {
                 if (num2 < 27)
@@ -79,12 +79,12 @@ namespace GHNamespaceH
                 {
                     if (Byte0[num + 3] == 83)
                     {
-                        var num3 = (Byte0[num + 26] & 255) + 27;
+                        int num3 = (Byte0[num + 26] & 255) + 27;
                         if (num2 < num3)
                         {
                             return 0;
                         }
-                        for (var i = 0; i < (Byte0[num + 26] & 255); i++)
+                        for (int i = 0; i < (Byte0[num + 26] & 255); i++)
                         {
                             _int5 += Byte0[num + 27 + i] & 255;
                         }
@@ -94,8 +94,8 @@ namespace GHNamespaceH
                 }
                 _int4 = 0;
                 _int5 = 0;
-                var num4 = 0;
-                for (var j = 0; j < num2 - 1; j++)
+                int num4 = 0;
+                for (int j = 0; j < num2 - 1; j++)
                 {
                     if (Byte0[num + 1 + j] == 79)
                     {
@@ -123,7 +123,7 @@ namespace GHNamespaceH
                 Byte0[num + 23] = 0;
                 Byte0[num + 24] = 0;
                 Byte0[num + 25] = 0;
-                var @class = _class480;
+                Class48 @class = _class480;
                 @class.Byte0 = Byte0;
                 @class.Int0 = num;
                 @class.Int1 = _int4;
@@ -141,8 +141,8 @@ namespace GHNamespaceH
                 Buffer.BlockCopy(_byte1, 0, Byte0, num + 22, 4);
                 _int4 = 0;
                 _int5 = 0;
-                var num4 = 0;
-                for (var k = 0; k < num2 - 1; k++)
+                int num4 = 0;
+                for (int k = 0; k < num2 - 1; k++)
                 {
                     if (Byte0[num + 1 + k] == 79)
                     {

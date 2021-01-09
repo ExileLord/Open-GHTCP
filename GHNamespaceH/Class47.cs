@@ -21,7 +21,7 @@ namespace GHNamespaceH
 
         public int method_1(OggClass3 class380)
         {
-            var num = class380.method_6(32);
+            int num = class380.method_6(32);
             if (num < 0)
             {
                 method_2();
@@ -37,9 +37,9 @@ namespace GHNamespaceH
             }
             Byte0 = new byte[Int2 + 1][];
             Int1 = new int[Int2 + 1];
-            for (var i = 0; i < Int2; i++)
+            for (int i = 0; i < Int2; i++)
             {
-                var num2 = class380.method_6(32);
+                int num2 = class380.method_6(32);
                 if (num2 < 0)
                 {
                     method_2();
@@ -59,7 +59,7 @@ namespace GHNamespaceH
 
         public void method_2()
         {
-            for (var i = 0; i < Int2; i++)
+            for (int i = 0; i < Int2; i++)
             {
                 Byte0[i] = null;
             }

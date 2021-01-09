@@ -10,7 +10,7 @@ namespace GHNamespaceL
             int int3) : base(class1401, int3)
         {
             _int1 = class1440.vmethod_12(int2);
-            for (var i = 0; i < class1401.Int0; i++)
+            for (int i = 0; i < class1401.Int0; i++)
             {
                 class1360.vmethod_0()[i] = _int1;
             }

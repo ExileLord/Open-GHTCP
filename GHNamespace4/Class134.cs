@@ -21,16 +21,16 @@ namespace GHNamespace4
         {
             _int3 = class1360.vmethod_2();
             _int1 = int6;
-            for (var i = 0; i < int6; i++)
+            for (int i = 0; i < int6; i++)
             {
                 _int2[i] = class1440.vmethod_12(int4);
             }
-            var num = class1440.vmethod_10(2);
-            var num2 = num;
+            int num = class1440.vmethod_10(2);
+            int num2 = num;
             if (num2 == 0)
             {
-                var int7 = class1440.vmethod_10(4);
-                var @class = new Class138();
+                int int7 = class1440.vmethod_10(4);
+                Class138 @class = new Class138();
                 _class1370 = @class;
                 @class.Int0 = int7;
                 @class.Class1430 = class1360.vmethod_1();
@@ -44,9 +44,9 @@ namespace GHNamespace4
 
         public override string ToString()
         {
-            var stringBuilder = new StringBuilder(string.Concat("FLACSubframe_Fixed: Order=", _int1, " PartitionOrder=",
+            StringBuilder stringBuilder = new StringBuilder(string.Concat("FLACSubframe_Fixed: Order=", _int1, " PartitionOrder=",
                 ((Class138) _class1370).Int0, " WastedBits=", Int0));
-            for (var i = 0; i < _int1; i++)
+            for (int i = 0; i < _int1; i++)
             {
                 stringBuilder.Append(string.Concat(" warmup[", i, "]=", _int2[i]));
             }

@@ -7,7 +7,6 @@ using GHNamespaceF;
 namespace GHNamespaceA
 {
     //This is probably the "speed boost" part of GHTCP
-
     public class ZzFxBoost : QbEditor
     {
         private readonly ZzPakNode2 _class3180;
@@ -17,7 +16,7 @@ namespace GHNamespaceA
         public ZzFxBoost(ZzPakNode2 class3181)
         {
             _class3180 = class3181;
-            var @class = ((StructureHeaderNode) _class3180.ZzGetNode1("scripts\\guitar\\guitar_events.qb")
+            StructItemQbKey @class = ((StructureHeaderNode) _class3180.ZzGetNode1("scripts\\guitar\\guitar_events.qb")
                 .zzFindNode(new StructItemQbKey("event", "star_power_on"))
                 .Parent).zzFindNode(new StructItemQbKey("scr"));
             _bool0 = (@class.method_8() == "guitarevent_starpoweron");
@@ -57,7 +56,7 @@ namespace GHNamespaceA
                 QbSongClass1.AddKeyToDictionary("guitarevent_multiplier4xon_spawned_original");
             @class.zzFindNode(new ScriptRootNode("first_gem_fx")).Int0 =
                 QbSongClass1.AddKeyToDictionary("first_gem_fx_original");
-            var class2 = @class.zzFindNode(new ScriptRootNode("hit_note_fx_empty"));
+            ScriptRootNode class2 = @class.zzFindNode(new ScriptRootNode("hit_note_fx_empty"));
             if (class2 != null)
             {
                 class2.Int0 = QbSongClass1.AddKeyToDictionary("hit_note_fx");

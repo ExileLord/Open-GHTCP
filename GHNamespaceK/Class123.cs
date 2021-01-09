@@ -30,12 +30,12 @@ namespace GHNamespaceK
 
         public Class123(Class144 class1440, int int8, bool bool1) : base(bool1)
         {
-            var num = 0;
+            int num = 0;
             _int0 = class1440.vmethod_10(32);
             num = 32;
             _int1 = class1440.vmethod_10(32);
             num = 64;
-            var array = new byte[_int1];
+            byte[] array = new byte[_int1];
             class1440.vmethod_15(array, _int1);
             num = 64 + _int1 * 8;
             _string0 = Encoding.UTF8.GetString(array);

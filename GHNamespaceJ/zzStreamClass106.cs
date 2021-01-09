@@ -31,8 +31,8 @@ namespace GHNamespaceJ
 
         public int method_1(byte[] byte1, int int2, int int3)
         {
-            var num = 0;
-            var flag = true;
+            int num = 0;
+            bool flag = true;
             while (num < int3 && flag)
             {
                 if (_int1 > 0)
@@ -43,10 +43,10 @@ namespace GHNamespaceJ
                 }
                 else
                 {
-                    var num2 = int3 - num;
-                    var num3 = _stream.Read(_buffer, 0, num2);
+                    int num2 = int3 - num;
+                    int num3 = _stream.Read(_buffer, 0, num2);
                     flag = (num3 >= num2);
-                    for (var i = 0; i < num3; i++)
+                    for (int i = 0; i < num3; i++)
                     {
                         _circBuffer.method_0(_buffer[i]);
                         byte1[int2 + num + i] = _buffer[i];

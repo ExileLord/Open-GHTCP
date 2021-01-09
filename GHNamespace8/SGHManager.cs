@@ -34,12 +34,11 @@ namespace GHNamespace8
 
         public void ImportSGH()
         {
-            byte[] byte_;
-            ZipManager.ExtractBytesFrom(_saveLocation, out byte_, "songs.info", "SGH9ZIP2PASS4MXKR");
-            var @class = new ZzGenericNode1("songs", KeyGenerator.smethod_8(byte_, "SNG4AES4KEY9MXKR"));
+            ZipManager.ExtractBytesFrom(_saveLocation, out byte[] byte_, "songs.info", "SGH9ZIP2PASS4MXKR");
+            ZzGenericNode1 @class = new ZzGenericNode1("songs", KeyGenerator.smethod_8(byte_, "SNG4AES4KEY9MXKR"));
             foreach (StructurePointerNode class302 in @class.Nodes)
             {
-                var gH3Song = new Gh3Song(class302) {Editable = true};
+                Gh3Song gH3Song = new Gh3Song(class302) {Editable = true};
                 _gh3SongList.method_0(gH3Song, _string0 != null);
             }
             ZipManager.ExtractBytesFrom(_saveLocation, out byte_, "setlist.info", "SGH9ZIP2PASS4MXKR");
@@ -47,11 +46,11 @@ namespace GHNamespace8
                 (StructureHeaderNode) new ZzGenericNode1("setlist", KeyGenerator.smethod_8(byte_, "SET4AES4KEY9MXKR"))
                     .Nodes[0], _gh3SongList));
             if (_string0 == null) return;
-            var list = new List<string>();
-            var list2 = new List<string>();
-            foreach (var current in SetlistToExport.Tiers)
+            List<string> list = new List<string>();
+            List<string> list2 = new List<string>();
+            foreach (GuitarHero.Tier.Gh3Tier current in SetlistToExport.Tiers)
             {
-                foreach (var current2 in current.Songs)
+                foreach (Gh3Song current2 in current.Songs)
                 {
                     if (!current2.Editable) continue;
                     list.Add(current2.Name + "_song.pak.xen");
@@ -67,15 +66,15 @@ namespace GHNamespace8
 
         public void method_1()
         {
-            var fileStreamList = new List<Stream>();
+            List<Stream> fileStreamList = new List<Stream>();
             Stream stream = new MemoryStream();
             KeyGenerator.smethod_1(new ZzGenericNode1("setlist", SetlistToExport.method_6()).method_8(), stream,
                 "SET4AES4KEY9MXKR");
-            var fileNameList = new List<string>();
-            var list3 = new List<StructurePointerNode>();
-            foreach (var current in SetlistToExport.Tiers)
+            List<string> fileNameList = new List<string>();
+            List<StructurePointerNode> list3 = new List<StructurePointerNode>();
+            foreach (GuitarHero.Tier.Gh3Tier current in SetlistToExport.Tiers)
             {
-                foreach (var current2 in current.Songs)
+                foreach (Gh3Song current2 in current.Songs)
                 {
                     if (current2.Editable)
                     {

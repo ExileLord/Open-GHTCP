@@ -73,7 +73,7 @@ namespace GHNamespaceK
 
         private void method_1()
         {
-            var flag = false;
+            bool flag = false;
             while (_enum10 != AudioStatus.ShouldStopAudio && !flag)
             {
                 if (_bool0)
@@ -83,7 +83,7 @@ namespace GHNamespaceK
                 }
                 if (_enum10 != AudioStatus.IsCurrentlyPlayingAudio)
                 {
-                    var num = 0;
+                    int num = 0;
                     int num2;
                     do
                     {
@@ -99,7 +99,7 @@ namespace GHNamespaceK
                     } while (num2 == 0);
                     while (num2-- != 0)
                     {
-                        var intPtr = Class119.smethod_6(_intptr1);
+                        IntPtr intPtr = Class119.smethod_6(_intptr1);
                         int num3;
                         lock (_stream10)
                         {
@@ -115,8 +115,7 @@ namespace GHNamespaceK
                         _stopwatch0.Reset();
                         _stopwatch0.Start();
                     }
-                    int num4;
-                    Class119.alGetSourcei(_intptr1, Enum11.Const5, out num4);
+                    Class119.alGetSourcei(_intptr1, Enum11.Const5, out int num4);
                     if (num4 <= 0)
                     {
                         break;
@@ -155,7 +154,7 @@ namespace GHNamespaceK
 
         public void SetStartingTimeBasedOnSomeValue(int int4)
         {
-            var @enum = _enum10;
+            AudioStatus @enum = _enum10;
             if (@enum != AudioStatus.ShouldStopAudio)
             {
                 StopPlaying();
@@ -204,10 +203,10 @@ namespace GHNamespaceK
                     {
                         Class119.smethod_6(_intptr1);
                     }
-                    var array = _intptr2;
-                    for (var i = 0; i < array.Length; i++)
+                        IntPtr[] array = _intptr2;
+                    for (int i = 0; i < array.Length; i++)
                     {
-                        var intPtr = array[i];
+                            IntPtr intPtr = array[i];
                         int num;
                         lock (_stream10)
                         {
@@ -284,8 +283,8 @@ namespace GHNamespaceK
         private void method_3(object object0)
         {
             _bool1 = true;
-            var num = 0f;
-            var num2 = _float0;
+            float num = 0f;
+            float num2 = _float0;
             while (num < num2)
             {
                 SetVolume(num);

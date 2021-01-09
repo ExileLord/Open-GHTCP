@@ -9,9 +9,9 @@ namespace GHNamespaceL
 
         public Class127(Class144 class1440, int int0, bool bool1) : base(bool1)
         {
-            var num = int0 / 18;
+            int num = int0 / 18;
             Class1420 = new Class142[num];
-            for (var i = 0; i < Class1420.Length; i++)
+            for (int i = 0; i < Class1420.Length; i++)
             {
                 Class1420[i] = new Class142(class1440);
             }
@@ -29,9 +29,9 @@ namespace GHNamespaceL
 
         public override string ToString()
         {
-            var stringBuilder = new StringBuilder();
+            StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("SeekTable: points=" + Class1420.Length + "\n");
-            for (var i = 0; i < Class1420.Length; i++)
+            for (int i = 0; i < Class1420.Length; i++)
             {
                 stringBuilder.Append("\tPoint " + Class1420[i] + "\n");
             }

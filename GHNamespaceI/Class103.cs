@@ -118,21 +118,21 @@ namespace GHNamespaceI
         public static int smethod_1(Class103 class1031, int[] int25, int[] int26, int[] int27, int[] int28,
             Class102 class1020)
         {
-            var num = 0;
-            var result = 1;
-            var num2 = -2147483648;
+            int num = 0;
+            int result = 1;
+            int num2 = -2147483648;
             if (class1031._int3 == null)
             {
                 return 2;
             }
             if (class1031._int4 == 0)
             {
-                var arg261 = 0;
+                int arg261 = 0;
                 int26[0] = 0;
                 int25[arg261] = 0;
                 return 0;
             }
-            var ile4 = false;
+            bool ile4 = false;
             for (;;)
             {
                 while (ile4 || class1031._int3[num, 0] != 0)
@@ -206,7 +206,7 @@ namespace GHNamespaceI
                         return result;
                     }
                 }
-                var num3 = class1031._int3[num, 1];
+                int num3 = class1031._int3[num, 1];
                 int25[0] = num3 >> 4;
                 int26[0] = (class1031._int3[num, 1] & 15);
                 result = 0;
@@ -218,7 +218,7 @@ namespace GHNamespaceI
         static Class103()
         {
             // Note: this type is marked as 'beforefieldinit'.
-            var array = new int[1, 2];
+            int[,] array = new int[1, 2];
             Int5 = array;
             Int6 = new[,]
             {
@@ -393,7 +393,7 @@ namespace GHNamespaceI
                     34
                 }
             };
-            var array2 = new int[1, 2];
+            int[,] array2 = new int[1, 2];
             Int9 = array2;
             Int10 = new[,]
             {
@@ -5090,7 +5090,7 @@ namespace GHNamespaceI
                     254
                 }
             };
-            var array3 = new int[1, 2];
+            int[,] array3 = new int[1, 2];
             Int19 = array3;
             Int20 = new[,]
             {

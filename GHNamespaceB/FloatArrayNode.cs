@@ -28,7 +28,7 @@ namespace GHNamespaceB
 
         public void method_11(IEnumerable<float> ienumerable0)
         {
-            foreach (var float_ in ienumerable0)
+            foreach (float float_ in ienumerable0)
             {
                 Nodes.Add(new FloatValueNode(float_));
             }

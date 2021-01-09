@@ -12,7 +12,7 @@ namespace GHNamespace1
 
         public virtual void imethod_0(Class13[] class130)
         {
-            foreach (var current in this)
+            foreach (INterface5 current in this)
             {
                 current.imethod_0(class130);
             }

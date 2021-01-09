@@ -265,7 +265,7 @@ namespace GHNamespaceL
         public static byte smethod_0(byte[] byte1, int int0)
         {
             byte b = 0;
-            for (var i = 0; i < int0; i++)
+            for (int i = 0; i < int0; i++)
             {
                 b = Byte0[(b ^ byte1[i]) & 255];
             }

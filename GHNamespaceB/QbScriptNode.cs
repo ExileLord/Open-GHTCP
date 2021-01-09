@@ -31,9 +31,9 @@ namespace GHNamespaceB
         public override void vmethod_13(Stream26 stream260)
         {
             Int0 = stream260.ReadInt();
-            var num = stream260.ReadInt();
-            var num2 = stream260.ReadInt();
-            var byte_ = stream260.ReadBytes(num2, false);
+            int num = stream260.ReadInt();
+            int num2 = stream260.ReadInt();
+            byte[] byte_ = stream260.ReadBytes(num2, false);
             if (num == num2)
             {
                 Byte0 = byte_;
@@ -49,7 +49,7 @@ namespace GHNamespaceB
         {
             stream260.WriteInt(Int0);
             stream260.WriteInt(Byte0.Length);
-            var array = new Class320().method_0(Byte0);
+            byte[] array = new Class320().method_0(Byte0);
             if (Byte0.Length <= array.Length)
             {
                 array = Byte0;
@@ -96,7 +96,7 @@ namespace GHNamespaceB
             int1 += 12;
             if (Byte0 != null)
             {
-                var array = new Class320().method_0(Byte0);
+                byte[] array = new Class320().method_0(Byte0);
                 if (Byte0.Length <= array.Length)
                 {
                     array = Byte0;
@@ -108,7 +108,7 @@ namespace GHNamespaceB
 
         public override object Clone()
         {
-            var @class = (QbScriptNode) base.Clone();
+            QbScriptNode @class = (QbScriptNode) base.Clone();
             @class.Int0 = Int0;
             @class.Byte0 = new byte[Byte0.Length];
             Buffer.BlockCopy(Byte0, 0, @class.Byte0, 0, Byte0.Length);

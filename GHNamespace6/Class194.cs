@@ -105,15 +105,15 @@ namespace GHNamespace6
 
         public int method_9(byte[] byte0, int int2, int int3)
         {
-            var num = int3;
+            int num = int3;
             if (_int1 == 127)
             {
                 throw new InvalidOperationException("Deflater closed");
             }
             if (_int1 < 16)
             {
-                var num2 = 30720;
-                var num3 = _int0 - 1 >> 1;
+                int num2 = 30720;
+                int num3 = _int0 - 1 >> 1;
                 if (num3 < 0 || num3 > 3)
                 {
                     num3 = 3;
@@ -127,7 +127,7 @@ namespace GHNamespace6
                 _class1890.method_6(num2);
                 if ((_int1 & 1) != 0)
                 {
-                    var num4 = _class1840.method_4();
+                    int num4 = _class1840.method_4();
                     _class1840.ResetAdler();
                     _class1890.method_6(num4 >> 16);
                     _class1890.method_6(num4 & 65535);
@@ -136,7 +136,7 @@ namespace GHNamespace6
             }
             while (true)
             {
-                var num5 = _class1890.method_8(byte0, int2, int3);
+                int num5 = _class1890.method_8(byte0, int2, int3);
                 int2 += num5;
                 _long0 += num5;
                 int3 -= num5;
@@ -154,7 +154,7 @@ namespace GHNamespace6
                     {
                         if (_int0 != 0)
                         {
-                            for (var i = 8 + (-_class1890.method_3() & 7); i > 0; i -= 10)
+                            for (int i = 8 + (-_class1890.method_3() & 7); i > 0; i -= 10)
                             {
                                 _class1890.method_5(2, 10);
                             }
@@ -166,7 +166,7 @@ namespace GHNamespace6
                         _class1890.method_4();
                         if (!_bool0)
                         {
-                            var num6 = _class1840.method_4();
+                            int num6 = _class1840.method_4();
                             _class1890.method_6(num6 >> 16);
                             _class1890.method_6(num6 & 65535);
                         }

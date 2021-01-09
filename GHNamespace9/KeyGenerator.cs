@@ -307,11 +307,11 @@ namespace GHNamespace9
             {
                 return;
             }
-            var rijndael = Rijndael.Create();
+            Rijndael rijndael = Rijndael.Create();
             rijndael.Key = byte1;
             rijndael.IV = byte2;
-            var cryptoStream = new CryptoStream(stream1, rijndael.CreateEncryptor(), CryptoStreamMode.Write);
-            var array = new byte[4096];
+            CryptoStream cryptoStream = new CryptoStream(stream1, rijndael.CreateEncryptor(), CryptoStreamMode.Write);
+            byte[] array = new byte[4096];
             int count;
             while ((count = stream0.Read(array, 0, array.Length)) > 0)
             {
@@ -322,13 +322,13 @@ namespace GHNamespace9
 
         public static void smethod_1(Stream stream0, Stream stream1, string string0)
         {
-            var passwordDeriveBytes = new PasswordDeriveBytes(string0, PwByteArray);
+            PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string0, PwByteArray);
             smethod_0(stream0, stream1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
         }
 
         public static byte[] smethod_2(Stream stream0, string string0)
         {
-            var memoryStream = new MemoryStream();
+            MemoryStream memoryStream = new MemoryStream();
             smethod_1(stream0, memoryStream, string0);
             return memoryStream.ToArray();
         }
@@ -339,11 +339,11 @@ namespace GHNamespace9
             {
                 return;
             }
-            var rijndael = Rijndael.Create();
+            Rijndael rijndael = Rijndael.Create();
             rijndael.Key = byte1;
             rijndael.IV = byte2;
-            var cryptoStream = new CryptoStream(stream1, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
-            var array = new byte[4096];
+            CryptoStream cryptoStream = new CryptoStream(stream1, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
+            byte[] array = new byte[4096];
             int count;
             while ((count = stream0.Read(array, 0, array.Length)) > 0)
             {
@@ -354,13 +354,13 @@ namespace GHNamespace9
 
         private static void CryptoMethod(Stream stream0, Stream stream1, string string0)
         {
-            var passwordDeriveBytes = new PasswordDeriveBytes(string0, PwByteArray);
+            PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string0, PwByteArray);
             CryptoMethod(stream0, stream1, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
         }
 
         public static byte[] CryptoMethod(Stream stream0, string string0)
         {
-            var memoryStream = new MemoryStream();
+            MemoryStream memoryStream = new MemoryStream();
             CryptoMethod(stream0, memoryStream, string0);
             return memoryStream.ToArray();
         }
@@ -371,23 +371,23 @@ namespace GHNamespace9
             {
                 return;
             }
-            var rijndael = Rijndael.Create();
+            Rijndael rijndael = Rijndael.Create();
             rijndael.Key = key;
             rijndael.IV = initializationVector;
-            var cryptoStream = new CryptoStream(stream0, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
+            CryptoStream cryptoStream = new CryptoStream(stream0, rijndael.CreateDecryptor(), CryptoStreamMode.Write);
             cryptoStream.Write(byte1, 0, byte1.Length);
             cryptoStream.Close();
         }
 
         public static void smethod_7(byte[] byte1, Stream stream0, string string0)
         {
-            var passwordDeriveBytes = new PasswordDeriveBytes(string0, PwByteArray);
+            PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(string0, PwByteArray);
             smethod_6(byte1, stream0, passwordDeriveBytes.GetBytes(32), passwordDeriveBytes.GetBytes(16));
         }
 
         public static byte[] smethod_8(byte[] byte1, string string0)
         {
-            var memoryStream = new MemoryStream();
+            MemoryStream memoryStream = new MemoryStream();
             smethod_7(byte1, memoryStream, string0);
             return memoryStream.ToArray();
         }
@@ -404,14 +404,14 @@ namespace GHNamespace9
 
         public static string smethod_10(string string0)
         {
-            var length = string0.LastIndexOfAny(new[] {'\\', '/'}) + 1;
+            int length = string0.LastIndexOfAny(new[] {'\\', '/'}) + 1;
             return string0.Substring(0, length);
         }
 
         public static string GetFileName(string path, int dotsInExtension)
         {
-            var i = path.LastIndexOfAny(new[] {'\\', '/'}) + 1;
-            var text = path.Substring(i);
+            int i = path.LastIndexOfAny(new[] {'\\', '/'}) + 1;
+            string text = path.Substring(i);
             try
             {
                 if (dotsInExtension == -1)
@@ -447,10 +447,10 @@ namespace GHNamespace9
             string result;
             try
             {
-                var text = string0.Substring(string0.IndexOf('.') + 1);
+                string text = string0.Substring(string0.IndexOf('.') + 1);
                 if (int0 != 0)
                 {
-                    var array = text.Split(new[]
+                    string[] array = text.Split(new[]
                     {
                         '.'
                     }, StringSplitOptions.RemoveEmptyEntries);
@@ -467,7 +467,7 @@ namespace GHNamespace9
 
         public static string OpenOrSaveFile(string title, string filter, bool isOpenDialog, string fileName = "")
         {
-            var fileDialog = isOpenDialog ? (FileDialog) new OpenFileDialog() : new SaveFileDialog();
+            FileDialog fileDialog = isOpenDialog ? (FileDialog) new OpenFileDialog() : new SaveFileDialog();
             fileDialog.Title = title;
             fileDialog.FileName = fileName;
             fileDialog.CheckPathExists = true;
@@ -485,13 +485,13 @@ namespace GHNamespace9
 
         public static List<string> CheckFile(string string0, string string1, bool bool2)
         {
-            var array = string1.Split(new[]
+            string[] array = string1.Split(new[]
             {
                 ';'
             }, StringSplitOptions.RemoveEmptyEntries);
-            var fileList = new List<string>();
-            var array2 = array;
-            foreach (var searchPattern in array2)
+            List<string> fileList = new List<string>();
+            string[] array2 = array;
+            foreach (string searchPattern in array2)
             {
                 fileList.AddRange(Directory.GetFiles(string0, searchPattern,
                     bool2 ? SearchOption.TopDirectoryOnly : SearchOption.AllDirectories));
@@ -532,8 +532,8 @@ namespace GHNamespace9
 
         public static int[] smethod_22(List<byte> list0)
         {
-            var array = new int[list0.Count / 4];
-            for (var i = 0; i < array.Length; i++)
+            int[] array = new int[list0.Count / 4];
+            for (int i = 0; i < array.Length; i++)
             {
                 array[i] = smethod_25(list0.GetRange(i * 4, 4).ToArray());
             }
@@ -551,7 +551,7 @@ namespace GHNamespace9
             {
                 return BytesToInt(byte1);
             }
-            var num = byte1.Length;
+            int num = byte1.Length;
             switch (num)
             {
                 case 2:
@@ -584,8 +584,8 @@ namespace GHNamespace9
         public static short BytesToShort(byte[] byte1)
         {
             short num = 0;
-            var num2 = Math.Min(2, byte1.Length);
-            for (var i = 0; i < num2; i++)
+            int num2 = Math.Min(2, byte1.Length);
+            for (int i = 0; i < num2; i++)
             {
                 num |= (short) (byte1[i] << 8 - 8 * i);
             }
@@ -594,9 +594,9 @@ namespace GHNamespace9
 
         public static int BytesToInt(byte[] byte1)
         {
-            var num = 0;
-            var num2 = Math.Min(4, byte1.Length);
-            for (var i = 0; i < num2; i++)
+            int num = 0;
+            int num2 = Math.Min(4, byte1.Length);
+            for (int i = 0; i < num2; i++)
             {
                 num |= byte1[i] << 24 - 8 * i;
             }
@@ -621,8 +621,8 @@ namespace GHNamespace9
 
         public static byte[] ReadBytes(Stream stream0)
         {
-            var binaryReader = new BinaryReader(stream0);
-            var result = binaryReader.ReadBytes((int) stream0.Length);
+            BinaryReader binaryReader = new BinaryReader(stream0);
+            byte[] result = binaryReader.ReadBytes((int) stream0.Length);
             binaryReader.Close();
             return result;
         }
@@ -648,7 +648,7 @@ namespace GHNamespace9
 
         public static string ValToPaddedHex(int val, int halfPadding)
         {
-            var text = val.ToString("x");
+            string text = val.ToString("x");
             while (text.Length < halfPadding * 2)
             {
                 text = "0" + text;
@@ -679,7 +679,7 @@ namespace GHNamespace9
             }
             stream.Position = 0L;
             ResetKey();
-            var array = new byte[4096];
+            byte[] array = new byte[4096];
             int int_;
             while ((int_ = stream.Read(array, 0, array.Length)) != 0)
             {
@@ -742,7 +742,7 @@ namespace GHNamespace9
 
         public static byte[] HashStream(HashAlgorithm hashAlgorithm0, Stream stream0)
         {
-            var result = hashAlgorithm0.ComputeHash(stream0);
+            byte[] result = hashAlgorithm0.ComputeHash(stream0);
             hashAlgorithm0.Clear();
             stream0.Close();
             return result;
@@ -765,13 +765,13 @@ namespace GHNamespace9
 
         public static void smethod_47(Stream stream0, Stream stream1)
         {
-            var count = 256;
-            var buffer = new byte[256];
+            int count = 256;
+            byte[] buffer = new byte[256];
             if (stream0.CanSeek && stream0.Position != 0L)
             {
                 stream0.Position = 0L;
             }
-            for (var i = stream0.Read(buffer, 0, count); i > 0; i = stream0.Read(buffer, 0, count))
+            for (int i = stream0.Read(buffer, 0, count); i > 0; i = stream0.Read(buffer, 0, count))
             {
                 stream1.Write(buffer, 0, i);
             }
@@ -786,7 +786,7 @@ namespace GHNamespace9
 
         public static Bitmap ScaleImageFixedRatio(Image image, int width, int height)
         {
-            var size = ScaleDimensions(image.Width, image.Height, width, height);
+            Size size = ScaleDimensions(image.Width, image.Height, width, height);
             return ScaleImage(image, size.Width, size.Height);
         }
 
@@ -797,19 +797,19 @@ namespace GHNamespace9
 
         public static Bitmap ScaleImage(Image image, int width, int height)
         {
-            var bitmap = new Bitmap(width, height, PixelFormat.Format32bppArgb);
-            var graphics = Graphics.FromImage(bitmap);
+            Bitmap bitmap = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+            Graphics graphics = Graphics.FromImage(bitmap);
             graphics.SmoothingMode = SmoothingMode.HighQuality;
             graphics.CompositingQuality = CompositingQuality.HighQuality;
             graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            var destRect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
+            Rectangle destRect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
             graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel);
             return bitmap;
         }
 
         private static Size ScaleDimensions(int width1, int height1, int width2, int height2)
         {
-            var num = ((decimal) height1) / width1;
+            decimal num = ((decimal) height1) / width1;
             if (height2 > width2)
             {
                 width2 = decimal.ToInt32(height2 / num);
@@ -839,14 +839,14 @@ namespace GHNamespace9
             {
                 return false;
             }
-            var enumerator = icollection0.GetEnumerator();
-            var enumerator2 = icollection1.GetEnumerator();
+            IEnumerator<T> enumerator = icollection0.GetEnumerator();
+            IEnumerator<T> enumerator2 = icollection1.GetEnumerator();
             enumerator.Reset();
             enumerator2.Reset();
-            var num = 0;
+            int num = 0;
             while (num < int0 && enumerator.MoveNext() && enumerator2.MoveNext())
             {
-                var current = enumerator.Current;
+                T current = enumerator.Current;
                 if (current.CompareTo(enumerator2.Current) != 0 ^ bool2)
                 {
                     return false;
@@ -858,11 +858,11 @@ namespace GHNamespace9
 
         public static void smethod_56(IList ilist0)
         {
-            var arrayList = new ArrayList(ilist0);
-            var num = 0;
+            ArrayList arrayList = new ArrayList(ilist0);
+            int num = 0;
             while (arrayList.Count != 0)
             {
-                var obj = arrayList[Random0.Next(0, arrayList.Count)];
+                object obj = arrayList[Random0.Next(0, arrayList.Count)];
                 ilist0[num++] = obj;
                 arrayList.Remove(obj);
             }

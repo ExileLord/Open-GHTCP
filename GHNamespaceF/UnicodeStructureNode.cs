@@ -61,8 +61,8 @@ namespace GHNamespaceF
         public override void vmethod_13(Stream26 stream260)
         {
             Int0 = stream260.ReadInt();
-            var num = stream260.ReadInt();
-            var num2 = stream260.ReadInt();
+            int num = stream260.ReadInt();
+            int num2 = stream260.ReadInt();
             if (num != 0)
             {
                 Nodes.Add(new UnicodeValueNode(stream260.ReadUnicodeStringAt(num)));
@@ -70,7 +70,7 @@ namespace GHNamespaceF
             }
             if (num2 != 0)
             {
-                var @class = (Parent is StructureHeaderNode)
+                AbstractTreeNode1 @class = (Parent is StructureHeaderNode)
                     ? (Parent as StructureHeaderNode).method_11(stream260.ReadIntAt(num2))
                     : vmethod_12(stream260.ReadIntAt(num2, true));
                 method_1().Nodes.Add(@class);
@@ -82,19 +82,19 @@ namespace GHNamespaceF
         {
             if (vmethod_8())
             {
-                var array = new byte[4];
+                byte[] array = new byte[4];
                 array[1] = 1;
                 array[2] = 4;
                 stream260.WriteByteArray(array, false);
             }
             else
             {
-                var array2 = new byte[4];
+                byte[] array2 = new byte[4];
                 array2[1] = (vmethod_7() ? (byte) 132 : (byte) 9);
                 stream260.WriteByteArray(array2, false);
             }
             stream260.WriteInt(Int0);
-            var int_ = (int) stream260.Position + 4;
+            int int_ = (int) stream260.Position + 4;
             if (Nodes.Count != 0)
             {
                 stream260.WriteInt((int) stream260.Position + 8);
@@ -107,7 +107,7 @@ namespace GHNamespaceF
             {
                 stream260.WriteInt(0);
             }
-            var num = (int) stream260.Position;
+            int num = (int) stream260.Position;
             if (method_1().Nodes.IndexOf(this) < method_1().Nodes.Count - 1)
             {
                 stream260.WriteIntAt(int_, num);

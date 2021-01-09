@@ -7,7 +7,7 @@ namespace GHNamespaceM
     {
         private readonly Enum18 _enum180;
 
-        private string _string0;
+        private readonly string _string0;
 
         public Exception4(Enum18 enum181, string string1) : base(smethod_0(enum181, string1))
         {

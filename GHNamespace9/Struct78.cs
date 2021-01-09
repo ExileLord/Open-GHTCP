@@ -21,8 +21,8 @@ namespace GHNamespace9
 
         public float method_0()
         {
-            var num = Float0;
-            var num2 = Float1;
+            float num = Float0;
+            float num2 = Float1;
             return (float) Math.Sqrt(num * num + num2 * num2);
         }
 
@@ -38,9 +38,8 @@ namespace GHNamespace9
 
         public override bool Equals(object obj)
         {
-            if (obj is Struct78)
+            if (obj is Struct78 struct78)
             {
-                var struct78 = (Struct78) obj;
                 return smethod_0(this, struct78);
             }
             return false;

@@ -21,7 +21,7 @@ namespace GHNamespace9
                     base[int0] = value;
                     if (int0 > 0)
                     {
-                        var t = base[int0 - 1];
+                        T t = base[int0 - 1];
                         if (t.CompareTo(value) > 0)
                         {
                             goto IL_54;
@@ -66,8 +66,8 @@ namespace GHNamespace9
             {
                 if (_bool1)
                 {
-                    var num = method_3(gparam0);
-                    var num2 = (num >= 0) ? num : (-num - 1);
+                    int num = method_3(gparam0);
+                    int num2 = (num >= 0) ? num : (-num - 1);
                     if (num2 >= Count)
                     {
                         Add(gparam0);
@@ -99,7 +99,7 @@ namespace GHNamespace9
             {
                 for (i = BinarySearch(gparam0); i > 0; i--)
                 {
-                    var t = base[i - 1];
+                    T t = base[i - 1];
                     if (!t.Equals(gparam0))
                     {
                         break;
@@ -115,11 +115,11 @@ namespace GHNamespace9
 
         public override string ToString()
         {
-            var text = "{";
-            for (var i = 0; i < Count; i++)
+            string text = "{";
+            for (int i = 0; i < Count; i++)
             {
-                var arg370 = text;
-                var t = base[i];
+                string arg370 = text;
+                T t = base[i];
                 text = arg370 + t + ((i != Count - 1) ? "; " : "}");
             }
             return text;
@@ -127,14 +127,14 @@ namespace GHNamespace9
 
         public override bool Equals(object obj)
         {
-            var @class = (Fretbar<T>) obj;
+            Fretbar<T> @class = (Fretbar<T>) obj;
             if (@class.Count != Count)
             {
                 return false;
             }
-            for (var i = 0; i < Count; i++)
+            for (int i = 0; i < Count; i++)
             {
-                var t = @class[i];
+                T t = @class[i];
                 if (!t.Equals(this[i]))
                 {
                     return false;
@@ -179,14 +179,14 @@ namespace GHNamespace9
             while (int0 <= int1)
             {
                 int2 = (int0 + int1) / 2;
-                var t = base[int2];
+                T t = base[int2];
                 if (t.CompareTo(gparam0) < 0)
                 {
                     int0 = int2 + 1;
                 }
                 else
                 {
-                    var t2 = base[int2];
+                    T t2 = base[int2];
                     if (t2.CompareTo(gparam0) <= 0)
                     {
                         return true;
@@ -199,9 +199,9 @@ namespace GHNamespace9
 
         public int method_7(T gparam0)
         {
-            var num = 0;
-            var num2 = Count - 1;
-            var num3 = 0;
+            int num = 0;
+            int num2 = Count - 1;
+            int num3 = 0;
             num3 = (method_6(ref num, ref num2, ref num3, gparam0) ? num3 : num2);
             if (num3 >= 0)
             {

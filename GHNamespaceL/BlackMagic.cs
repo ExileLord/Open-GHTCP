@@ -4,30 +4,30 @@ namespace GHNamespaceL
     {
         public static void CopyArrayOffset(int[] source, int sourceSize, int int2, int[] destination, int offset)
         {
-            //This is black magic. Not sure what it's used for yet
+            // This is black magic. Not sure what it's used for yet
             switch (int2)
             {
                 case 0:
-                    for (var i = 0; i < sourceSize; i++)
+                    for (int i = 0; i < sourceSize; i++)
                     {
                         destination[i + offset] = source[i];
                     }
                     return;
                 case 1:
-                    for (var j = 0; j < sourceSize; j++)
+                    for (int j = 0; j < sourceSize; j++)
                     {
                         destination[j + offset] = source[j] + destination[j + offset - 1];
                     }
                     return;
                 case 2:
-                    for (var k = 0; k < sourceSize; k++)
+                    for (int k = 0; k < sourceSize; k++)
                     {
                         destination[k + offset] = source[k] + (destination[k + offset - 1] << 1) -
                                                   destination[k + offset - 2];
                     }
                     return;
                 case 3:
-                    for (var l = 0; l < sourceSize; l++)
+                    for (int l = 0; l < sourceSize; l++)
                     {
                         destination[l + offset] =
                             source[l] +
@@ -36,7 +36,7 @@ namespace GHNamespaceL
                     }
                     return;
                 case 4:
-                    for (var m = 0; m < sourceSize; m++)
+                    for (int m = 0; m < sourceSize; m++)
                     {
                         destination[m + offset] =
                             source[m] + (destination[m + offset - 1] + destination[m + offset - 3] << 2) -

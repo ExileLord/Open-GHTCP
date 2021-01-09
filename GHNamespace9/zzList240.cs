@@ -9,7 +9,7 @@ namespace GHNamespace9
         {
             public int Compare(object x, object y)
             {
-                var comparable = x as IComparable;
+                IComparable comparable = x as IComparable;
                 return comparable.CompareTo(y);
             }
         }
@@ -47,8 +47,8 @@ namespace GHNamespace9
                 {
                     if (method_0(value))
                     {
-                        var obj = (index > 0) ? _arrayList0[index - 1] : null;
-                        var obj2 = (index < Count - 1) ? _arrayList0[index + 1] : null;
+                        object obj = (index > 0) ? _arrayList0[index - 1] : null;
+                        object obj2 = (index < Count - 1) ? _arrayList0[index + 1] : null;
                         if ((obj != null && _icomparer0.Compare(obj, value) > 0) ||
                             (obj2 != null && _icomparer0.Compare(value, obj2) > 0))
                         {
@@ -84,13 +84,13 @@ namespace GHNamespace9
 
         public int Add(object value)
         {
-            var result = -1;
+            int result = -1;
             if (method_0(value))
             {
                 if (_bool2)
                 {
-                    var num = IndexOf(value);
-                    var num2 = (num >= 0) ? num : (-num - 1);
+                    int num = IndexOf(value);
+                    int num2 = (num >= 0) ? num : (-num - 1);
                     if (num2 >= Count)
                     {
                         _arrayList0.Add(value);
@@ -148,8 +148,8 @@ namespace GHNamespace9
             {
                 if (method_0(value))
                 {
-                    var obj = _arrayList0[index];
-                    var obj2 = (index > 0) ? _arrayList0[index - 1] : null;
+                    object obj = _arrayList0[index];
+                    object obj2 = (index > 0) ? _arrayList0[index - 1] : null;
                     if ((obj2 != null && _icomparer0.Compare(obj2, value) > 0) ||
                         (obj != null && _icomparer0.Compare(value, obj) > 0))
                     {
@@ -200,8 +200,8 @@ namespace GHNamespace9
 
         public override string ToString()
         {
-            var text = "{";
-            for (var i = 0; i < _arrayList0.Count; i++)
+            string text = "{";
+            for (int i = 0; i < _arrayList0.Count; i++)
             {
                 text = text + _arrayList0[i] + ((i != _arrayList0.Count - 1) ? "; " : "}");
             }
@@ -210,12 +210,12 @@ namespace GHNamespace9
 
         public override bool Equals(object obj)
         {
-            var @class = (ZzList240) obj;
+            ZzList240 @class = (ZzList240) obj;
             if (@class.Count != Count)
             {
                 return false;
             }
-            for (var i = 0; i < Count; i++)
+            for (int i = 0; i < Count; i++)
             {
                 if (!@class[i].Equals(this[i]))
                 {

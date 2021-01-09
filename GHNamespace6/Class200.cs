@@ -43,11 +43,11 @@ namespace GHNamespace6
             {
                 throw new ArgumentOutOfRangeException("count", "exceeds buffer size");
             }
-            var num = _uint0 & 65535u;
-            var num2 = _uint0 >> 16;
+            uint num = _uint0 & 65535u;
+            uint num2 = _uint0 >> 16;
             while (int1 > 0)
             {
-                var num3 = 3800;
+                int num3 = 3800;
                 if (3800 > int1)
                 {
                     num3 = int1;

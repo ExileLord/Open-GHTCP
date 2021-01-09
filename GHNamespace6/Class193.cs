@@ -39,7 +39,7 @@ namespace GHNamespace6
 
         private byte[] _byte0;
 
-        private string _string1;
+        private readonly string _string1;
 
         private int _int1;
 
@@ -134,7 +134,7 @@ namespace GHNamespace6
 
         private bool method_9(int int2)
         {
-            var result = false;
+            bool result = false;
             if ((byte) (_enum320 & Enum32.Flag5) != 0 && (method_10() == 0 || method_10() == 10) &&
                 (method_8() & int2) == int2)
             {
@@ -154,7 +154,7 @@ namespace GHNamespace6
             {
                 return _ushort1;
             }
-            var result = 10;
+            int result = 10;
             if (method_16())
             {
                 result = 45;
@@ -199,7 +199,7 @@ namespace GHNamespace6
             bool result;
             if (!(result = _bool0))
             {
-                var num = _ulong1;
+                ulong num = _ulong1;
                 if (_ushort1 == 0 && method_0())
                 {
                     num += 12uL;
@@ -231,12 +231,12 @@ namespace GHNamespace6
 
         public void method_19(DateTime dateTime0)
         {
-            var num = (uint) dateTime0.Year;
-            var num2 = (uint) dateTime0.Month;
-            var num3 = (uint) dateTime0.Day;
-            var num4 = (uint) dateTime0.Hour;
-            var num5 = (uint) dateTime0.Minute;
-            var num6 = (uint) dateTime0.Second;
+            uint num = (uint) dateTime0.Year;
+            uint num2 = (uint) dateTime0.Month;
+            uint num3 = (uint) dateTime0.Day;
+            uint num4 = (uint) dateTime0.Hour;
+            uint num5 = (uint) dateTime0.Minute;
+            uint num6 = (uint) dateTime0.Second;
             if (num < 1980u)
             {
                 num = 1980u;
@@ -344,7 +344,7 @@ namespace GHNamespace6
 
         public void method_31(bool bool1)
         {
-            var @class = new Class202(_byte0);
+            Class202 @class = new Class202(_byte0);
             if (@class.method_6(1))
             {
                 if ((_ushort1 & 255) < 45)
@@ -382,13 +382,13 @@ namespace GHNamespace6
                 @class.method_15();
                 while (@class.method_5() >= 4)
                 {
-                    var num = @class.method_16();
-                    var num2 = @class.method_16();
+                    int num = @class.method_16();
+                    int num2 = @class.method_16();
                     if (num == 1)
                     {
                         if (num2 >= 24)
                         {
-                            var fileTime = @class.method_14();
+                            long fileTime = @class.method_14();
                             @class.method_14();
                             @class.method_14();
                             method_19(DateTime.FromFileTime(fileTime));
@@ -401,11 +401,11 @@ namespace GHNamespace6
             }
             else if (@class.method_6(21589))
             {
-                var num3 = @class.method_3();
-                var num4 = @class.method_17();
+                int num3 = @class.method_3();
+                int num4 = @class.method_17();
                 if ((num4 & 1) != 0 && num3 >= 5)
                 {
-                    var seconds = @class.method_15();
+                    int seconds = @class.method_15();
                     method_19((new DateTime(1970, 1, 1, 0, 0, 0).ToUniversalTime() + new TimeSpan(0, 0, 0, seconds, 0))
                         .ToLocalTime());
                 }
@@ -419,7 +419,7 @@ namespace GHNamespace6
 
         public bool method_33()
         {
-            var length = _string0.Length;
+            int length = _string0.Length;
             int arg410;
             if (length > 0)
             {
@@ -440,7 +440,7 @@ namespace GHNamespace6
 
         public object Clone()
         {
-            var @class = (Class193) MemberwiseClone();
+            Class193 @class = (Class193) MemberwiseClone();
             if (_byte0 != null)
             {
                 @class._byte0 = new byte[_byte0.Length];

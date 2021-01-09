@@ -41,7 +41,7 @@ namespace GHNamespace2
         {
             get
             {
-                var position = _stream10.Position;
+                long position = _stream10.Position;
                 if (!_bool0)
                 {
                     return position;
@@ -155,9 +155,9 @@ namespace GHNamespace2
 
         private int method_0(byte[] byte0, int int4, int int5)
         {
-            var array = new byte[int5 << 2];
-            var num = _stream10.Read(array, 0, array.Length);
-            var i = 0;
+            byte[] array = new byte[int5 << 2];
+            int num = _stream10.Read(array, 0, array.Length);
+            int i = 0;
             while (i < num)
             {
                 byte0[int4] = Class11.smethod_12(BitConverter.ToInt32(byte0, i));
@@ -169,9 +169,9 @@ namespace GHNamespace2
 
         private int method_1(byte[] byte0, int int4, int int5)
         {
-            var array = new byte[int5 + int5 + int5];
-            var num = _stream10.Read(array, 0, array.Length);
-            var i = 0;
+            byte[] array = new byte[int5 + int5 + int5];
+            int num = _stream10.Read(array, 0, array.Length);
+            int i = 0;
             while (i < num)
             {
                 byte0[int4] = Class11.smethod_8(Struct8.smethod_2(byte0, i));
@@ -183,9 +183,9 @@ namespace GHNamespace2
 
         private int method_2(byte[] byte0, int int4, int int5)
         {
-            var array = new byte[int5 << 1];
-            var num = _stream10.Read(array, 0, array.Length);
-            var i = 0;
+            byte[] array = new byte[int5 << 1];
+            int num = _stream10.Read(array, 0, array.Length);
+            int i = 0;
             while (i < num)
             {
                 byte0[int4] = Class11.smethod_4(BitConverter.ToInt16(byte0, i));
@@ -242,9 +242,9 @@ namespace GHNamespace2
 
         private int method_3(byte[] byte0, int int4, int int5)
         {
-            var array = new byte[(int) (int5 / _double0)];
-            var num = _stream10.Read(array, 0, array.Length);
-            var i = 0;
+            byte[] array = new byte[(int) (int5 / _double0)];
+            int num = _stream10.Read(array, 0, array.Length);
+            int i = 0;
             while (i < num)
             {
                 Buffer.BlockCopy(_delegate00(array, i), 0, byte0, int4, _int3);
@@ -256,9 +256,9 @@ namespace GHNamespace2
 
         private int method_4(byte[] byte0, int int4, int int5)
         {
-            var array = new float[int5 >> 2];
-            var num = _stream10.vmethod_4(array, 0, array.Length);
-            var i = 0;
+            float[] array = new float[int5 >> 2];
+            int num = _stream10.vmethod_4(array, 0, array.Length);
+            int i = 0;
             while (i < num)
             {
                 Buffer.BlockCopy(BitConverter.GetBytes(Class11.smethod_25(array[i])), 0, byte0, int4, 4);
@@ -270,9 +270,9 @@ namespace GHNamespace2
 
         private int method_5(byte[] byte0, int int4, int int5)
         {
-            var array = new float[int5 / 3];
-            var num = _stream10.vmethod_4(array, 0, array.Length);
-            var i = 0;
+            float[] array = new float[int5 / 3];
+            int num = _stream10.vmethod_4(array, 0, array.Length);
+            int i = 0;
             while (i < num)
             {
                 Buffer.BlockCopy(Struct8.smethod_4(Class11.smethod_23(array[i])), 0, byte0, int4, 3);
@@ -284,9 +284,9 @@ namespace GHNamespace2
 
         private int method_6(byte[] byte0, int int4, int int5)
         {
-            var array = new float[int5 >> 1];
-            var num = _stream10.vmethod_4(array, 0, array.Length);
-            var i = 0;
+            float[] array = new float[int5 >> 1];
+            int num = _stream10.vmethod_4(array, 0, array.Length);
+            int i = 0;
             while (i < num)
             {
                 Buffer.BlockCopy(BitConverter.GetBytes(Class11.smethod_21(array[i])), 0, byte0, int4, 2);
@@ -298,9 +298,9 @@ namespace GHNamespace2
 
         private int method_7(byte[] byte0, int int4, int int5)
         {
-            var array = new float[int5];
-            var num = _stream10.vmethod_4(array, 0, array.Length);
-            var i = 0;
+            float[] array = new float[int5];
+            int num = _stream10.vmethod_4(array, 0, array.Length);
+            int i = 0;
             while (i < num)
             {
                 byte0[int4] = Class11.smethod_17(array[i]);
@@ -322,8 +322,8 @@ namespace GHNamespace2
 
         public override int vmethod_3(IntPtr intptr0, int int4)
         {
-            var array = new byte[int4];
-            var num = Read(array, 0, int4);
+            byte[] array = new byte[int4];
+            int num = Read(array, 0, int4);
             Marshal.Copy(array, 0, intptr0, num);
             return num;
         }

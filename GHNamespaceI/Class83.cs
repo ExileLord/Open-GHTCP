@@ -28,9 +28,9 @@ namespace GHNamespaceI
 
         public int method_0(double double1)
         {
-            var num = 0;
-            var num2 = 0;
-            var num3 = 0.0;
+            int num = 0;
+            int num2 = 0;
+            double num3 = 0.0;
             if (_byte0 == null)
             {
                 while (num3 <= double1)

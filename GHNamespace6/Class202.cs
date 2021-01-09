@@ -77,8 +77,8 @@ namespace GHNamespace6
             _int1 = _byte0.Length;
             _int2 = 0;
             _int0 = 0;
-            var num = _int1;
-            var num2 = int3 - 1;
+            int num = _int1;
+            int num2 = int3 - 1;
             while (num2 != int3 && _int0 < _byte0.Length - 3)
             {
                 num2 = method_20();
@@ -103,12 +103,12 @@ namespace GHNamespace6
             {
                 throw new ArgumentOutOfRangeException("headerID");
             }
-            var num = (byte1 == null) ? 0 : byte1.Length;
+            int num = (byte1 == null) ? 0 : byte1.Length;
             if (num > 65535)
             {
                 throw new ArgumentOutOfRangeException("fieldData", "exceeds maximum length");
             }
-            var num2 = _byte0.Length + num + 4;
+            int num2 = _byte0.Length + num + 4;
             if (method_6(int3))
             {
                 num2 -= method_3() + 4;
@@ -118,9 +118,9 @@ namespace GHNamespace6
                 throw new ZipException("Data exceeds maximum length");
             }
             method_13(int3);
-            var array = new byte[num2];
+            byte[] array = new byte[num2];
             _byte0.CopyTo(array, 0);
-            var index = _byte0.Length;
+            int index = _byte0.Length;
             _byte0 = array;
             method_21(ref index, int3);
             method_21(ref index, num);
@@ -137,7 +137,7 @@ namespace GHNamespace6
 
         public void method_9(int int3)
         {
-            var byte_ = _memoryStream0.ToArray();
+            byte[] byte_ = _memoryStream0.ToArray();
             _memoryStream0 = null;
             method_7(int3, byte_);
         }
@@ -162,14 +162,14 @@ namespace GHNamespace6
 
         public bool method_13(int int3)
         {
-            var result = false;
+            bool result = false;
             if (method_6(int3))
             {
                 result = true;
-                var num = _int1 - 4;
-                var destinationArray = new byte[_byte0.Length - (method_3() + 4)];
+                int num = _int1 - 4;
+                byte[] destinationArray = new byte[_byte0.Length - (method_3() + 4)];
                 Array.Copy(_byte0, 0, destinationArray, 0, num);
-                var num2 = num + method_3() + 4;
+                int num2 = num + method_3() + 4;
                 Array.Copy(_byte0, num2, destinationArray, num, _byte0.Length - num2);
                 _byte0 = destinationArray;
             }
@@ -185,7 +185,7 @@ namespace GHNamespace6
         public int method_15()
         {
             method_19(4);
-            var result = _byte0[_int0] + (_byte0[_int0 + 1] << 8) + (_byte0[_int0 + 2] << 16) +
+            int result = _byte0[_int0] + (_byte0[_int0 + 1] << 8) + (_byte0[_int0 + 2] << 16) +
                          (_byte0[_int0 + 3] << 24);
             _int0 += 4;
             return result;
@@ -194,14 +194,14 @@ namespace GHNamespace6
         public int method_16()
         {
             method_19(2);
-            var result = _byte0[_int0] + (_byte0[_int0 + 1] << 8);
+            int result = _byte0[_int0] + (_byte0[_int0 + 1] << 8);
             _int0 += 2;
             return result;
         }
 
         public int method_17()
         {
-            var result = -1;
+            int result = -1;
             if (_int0 < _byte0.Length && _int1 + _int2 > _int0)
             {
                 result = _byte0[_int0];
@@ -234,7 +234,7 @@ namespace GHNamespace6
             {
                 throw new ZipException("End of extra data");
             }
-            var result = _byte0[_int0] + (_byte0[_int0 + 1] << 8);
+            int result = _byte0[_int0] + (_byte0[_int0 + 1] << 8);
             _int0 += 2;
             return result;
         }

@@ -26,7 +26,7 @@ namespace GHNamespaceC
         public byte[] method_0(byte[] byte1)
         {
             MemoryStream memoryStream2;
-            using (var memoryStream = new MemoryStream(byte1))
+            using (MemoryStream memoryStream = new MemoryStream(byte1))
             {
                 MemoryStream memoryStream3;
                 memoryStream2 = (memoryStream3 = new MemoryStream());
@@ -55,29 +55,29 @@ namespace GHNamespaceC
             {
                 throw new IOException("Output stream is not writable.");
             }
-            var num = Int0 - Int1;
-            var num2 = 0;
-            var num3 = 1;
-            var array = new byte[17];
+            int num = Int0 - Int1;
+            int num2 = 0;
+            int num3 = 1;
+            byte[] array = new byte[17];
             byte b = 1;
-            var num4 = stream0.Length - stream0.Position;
-            for (var i = Int0 + 1; i <= Int0 + 256; i++)
+            long num4 = stream0.Length - stream0.Position;
+            for (int i = Int0 + 1; i <= Int0 + 256; i++)
             {
                 _int6[i] = Int0;
             }
-            for (var i = 0; i < Int0; i++)
+            for (int i = 0; i < Int0; i++)
             {
                 _int7[i] = Int0;
             }
             array[0] = 0;
-            for (var i = num2; i < _byte0.Length; i++)
+            for (int i = num2; i < _byte0.Length; i++)
             {
                 _byte0[i] = 32;
             }
             int j;
             for (j = 0; j < Int1; j++)
             {
-                var exprC0 = num4;
+                long exprC0 = num4;
                 num4 = exprC0 - 1L;
                 if (exprC0 <= 0L)
                 {
@@ -85,7 +85,7 @@ namespace GHNamespaceC
                 }
                 _byte0[num + j] = (byte) stream0.ReadByte();
             }
-            for (var i = 1; i <= Int1; i++)
+            for (int i = 1; i <= Int1; i++)
             {
                 method_2(num - i);
             }
@@ -99,8 +99,8 @@ namespace GHNamespaceC
                 if (_int4 <= Int2)
                 {
                     _int4 = 1;
-                    var expr136Cp0 = array;
-                    var expr136Cp1 = 0;
+                    byte[] expr136Cp0 = array;
+                    int expr136Cp1 = 0;
                     expr136Cp0[expr136Cp1] |= b;
                     array[num3++] = _byte0[num];
                 }
@@ -117,14 +117,14 @@ namespace GHNamespaceC
                         stream1.WriteByte(array[i]);
                     }
                     array[0] = 0;
-                    var arg_1Bc0 = 1;
+                    int arg_1Bc0 = 1;
                     b = 1;
                     num3 = arg_1Bc0;
                 }
-                var num5 = _int4;
+                int num5 = _int4;
                 for (i = 0; i < num5; i++)
                 {
-                    var expr_1Cc = num4;
+                    long expr_1Cc = num4;
                     num4 = expr_1Cc - 1L;
                     if (expr_1Cc <= 0L)
                     {
@@ -153,7 +153,7 @@ namespace GHNamespaceC
             } while (j > 0);
             if (num3 > 1)
             {
-                for (var i = 0; i < num3; i++)
+                for (int i = 0; i < num3; i++)
                 {
                     stream1.WriteByte(array[i]);
                 }
@@ -162,8 +162,8 @@ namespace GHNamespaceC
 
         private void method_2(int int8)
         {
-            var num = 1;
-            var num2 = Int0 + 1 + _byte0[int8];
+            int num = 1;
+            int num2 = Int0 + 1 + _byte0[int8];
             _int6[int8] = (_int5[int8] = Int0);
             _int4 = 0;
             while (true)
@@ -184,7 +184,7 @@ namespace GHNamespaceC
                     }
                     num2 = _int5[num2];
                 }
-                var num3 = 1;
+                int num3 = 1;
                 while (num3 < Int1 && (num = _byte0[int8 + num3] - _byte0[num2 + num3]) == 0)
                 {
                     num3++;
@@ -269,7 +269,7 @@ namespace GHNamespaceC
         public byte[] method_4(byte[] byte1)
         {
             MemoryStream memoryStream2;
-            using (var memoryStream = new MemoryStream(byte1))
+            using (MemoryStream memoryStream = new MemoryStream(byte1))
             {
                 MemoryStream memoryStream3;
                 memoryStream2 = (memoryStream3 = new MemoryStream());
@@ -298,10 +298,10 @@ namespace GHNamespaceC
             {
                 throw new IOException("Output stream is not writable.");
             }
-            var num = Int0 - Int1;
-            var num2 = 0;
-            var num3 = stream0.Length - stream0.Position;
-            for (var i = 0; i < _byte0.Length; i++)
+            int num = Int0 - Int1;
+            int num2 = 0;
+            long num3 = stream0.Length - stream0.Position;
+            for (int i = 0; i < _byte0.Length; i++)
             {
                 _byte0[i] = 32;
             }
@@ -325,7 +325,7 @@ namespace GHNamespaceC
                     int num5 = (byte) stream0.ReadByte();
                     num4 |= (num5 & 240) << 4;
                     num5 = (num5 & 15) + Int2;
-                    for (var j = 0; j <= num5; j++)
+                    for (int j = 0; j <= num5; j++)
                     {
                         stream1.WriteByte(_byte0[num++] = _byte0[num4 + j & Int0 - 1]);
                         num &= Int0 - 1;

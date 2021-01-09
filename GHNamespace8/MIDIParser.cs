@@ -68,7 +68,7 @@ namespace GHNamespace8
 
         private MidiReader _midiReader;
 
-        private readonly List<string> _uselessEvents = new List<string>();
+        private readonly List<string> _animationEvents = new List<string>();
 
         public MidiParser(string fileLocation)
         {
@@ -77,7 +77,7 @@ namespace GHNamespace8
 
         public ChartParser LoadMidi()
         {
-            var name = "";
+            string name = "";
             name = name + new FileInfo(_fileLocation).Name + ":\n";
             try
             {
@@ -87,7 +87,7 @@ namespace GHNamespace8
             {
                 throw new IOException(name + "Unknown Error: Could not parse MIDI sequence.");
             }
-            foreach (var current in _midiReader.GetMidiLineList())
+            foreach (MidiLine current in _midiReader.GetMidiLineList())
             {
                 if (current.method_2().Equals("PART GUITAR"))
                 {
@@ -107,7 +107,7 @@ namespace GHNamespace8
             {
                 throw new IOException(name + "PART GUITAR not found. No chart created.");
             }
-            var chartParser = new ChartParser();
+            ChartParser chartParser = new ChartParser();
             _bpmInterpreter = chartParser.BpmInterpreter;
             _sectionInterpreter = chartParser.SectionInterpreter;
             chartParser.DifficultyWithNotes.Add("EasySingle", _easySingle);
@@ -135,7 +135,7 @@ namespace GHNamespace8
             object obj = name;
             name = string.Concat(obj, "NumTracks = ", _midiReader.GetMidiLineList().Count, "\n");
             method_1(_midiReader.GetMidiLineList()[0]);
-            foreach (var midiLine in _midiReader.GetMidiLineList())
+            foreach (MidiLine midiLine in _midiReader.GetMidiLineList())
             {
                 if (midiLine.method_2().Equals("PART GUITAR"))
                 {
@@ -187,12 +187,11 @@ namespace GHNamespace8
         private void method_1(MidiLine class3530)
         {
             _songTitle = class3530.method_2();
-            foreach (var current in class3530.method_0())
+            foreach (AbstractNoteClass current in class3530.method_0())
             {
-                var num = Convert.ToInt32(current.method_0() * _resolution);
-                if (current is ZzNote1)
+                int num = Convert.ToInt32(current.method_0() * _resolution);
+                if (current is ZzNote1 @class)
                 {
-                    var @class = (ZzNote1) current;
                     if (!_isEvents && @class.method_2() == ZzNote1.Enum37.Const0)
                     {
                         method_4(4, num, "section " + @class.method_1());
@@ -200,41 +199,40 @@ namespace GHNamespace8
                 }
                 else if (current is BpmNote1)
                 {
-                    var num2 = ((BpmNote1) current).method_1();
+                    int num2 = ((BpmNote1)current).method_1();
                     _bpmInterpreter.BpmList.Add(num, Convert.ToInt32(Math.Floor(60000000.0 / num2 * 1000.0)));
                 }
                 else if (current is ZzNote338)
                 {
-                    _bpmInterpreter.TsList.Add(num, ((ZzNote338) current).method_1());
+                    _bpmInterpreter.TsList.Add(num, ((ZzNote338)current).method_1());
                 }
             }
         }
 
         private void GetNotes(MidiLine midiLine, int difficulty)
         {
-            var array = new bool[midiLine.method_0().Count];
-            var list = midiLine.method_0();
-            for (var i = 0; i < list.Count; i++)
+            bool[] array = new bool[midiLine.method_0().Count];
+            List<AbstractNoteClass> list = midiLine.method_0();
+            for (int i = 0; i < list.Count; i++)
             {
                 if (!array[i])
                 {
-                    var num = Convert.ToInt32(list[i].method_0() * _resolution);
-                    if (list[i] is MidiNote)
+                    int num = Convert.ToInt32(list[i].method_0() * _resolution);
+                    if (list[i] is MidiNote midiNote)
                     {
-                        var midiNote = (MidiNote) list[i];
                         if (midiNote.method_5())
                         {
-                            var j = -1;
-                            var num2 = i + 1;
+                            int j = -1;
+                            int num2 = i + 1;
                             while (j < 0)
                             {
                                 if (num2 == midiLine.method_0().Count)
                                 {
                                     break;
                                 }
-                                if (list[num2] is MidiNote && ((MidiNote) list[num2]).method_4() == midiNote.method_4())
+                                if (list[num2] is MidiNote && ((MidiNote)list[num2]).method_4() == midiNote.method_4())
                                 {
-                                    if (((MidiNote) list[num2]).method_5())
+                                    if (((MidiNote)list[num2]).method_5())
                                     {
                                         j = Convert.ToInt32(list[num2].method_0() * _resolution);
                                         array[num2] = true;
@@ -246,7 +244,7 @@ namespace GHNamespace8
                                 }
                                 num2++;
                             }
-                            var num3 = Convert.ToInt32(j - num);
+                            int num3 = Convert.ToInt32(j - num);
                             if (num3 <= 160)
                             {
                                 num3 = 0;
@@ -254,11 +252,10 @@ namespace GHNamespace8
                             method_3(difficulty, num, midiNote, num3);
                         }
                     }
-                    else if (list[i] is ZzNote1)
+                    else if (list[i] is ZzNote1 class2)
                     {
-                        var class2 = (ZzNote1) list[i];
-                        var list2 = method_5(difficulty - 4);
-                        var text = class2.method_1();
+                        List<string> list2 = method_5(difficulty - 4);
+                        string text = class2.method_1();
                         if (text.StartsWith("["))
                         {
                             text = text.Substring(1, text.Length - 2);
@@ -355,7 +352,7 @@ namespace GHNamespace8
                     noteEvenInterpreter.NoteList[int1].NoteValues[(int) midiNote.method_3()] = true;
                     return;
                 }
-                var array = new bool[32];
+                bool[] array = new bool[32];
                 array[(int) midiNote.method_3()] = true;
                 noteEvenInterpreter.NoteList.Add(int1, new NotesAtOffset(array, int2));
             }
@@ -474,54 +471,54 @@ namespace GHNamespace8
 
         private List<string> method_5(int int0)
         {
-            if (_uselessEvents.Count == 0)
+            if (_animationEvents.Count == 0)
             {
-                _uselessEvents.Add("lighting (chase)");
-                _uselessEvents.Add("lighting (strobe)");
-                _uselessEvents.Add("lighting (color1)");
-                _uselessEvents.Add("lighting (color2)");
-                _uselessEvents.Add("lighting (sweep)");
-                _uselessEvents.Add("crowd_lighters_fast");
-                _uselessEvents.Add("crowd_lighters_off");
-                _uselessEvents.Add("crowd_lighters_slow");
-                _uselessEvents.Add("crowd_half_tempo");
-                _uselessEvents.Add("crowd_normal_tempo");
-                _uselessEvents.Add("crowd_double_tempo");
-                _uselessEvents.Add("band_jump");
-                _uselessEvents.Add("sync_head_bang");
-                _uselessEvents.Add("sync_wag");
-                _uselessEvents.Add("lighting ()");
-                _uselessEvents.Add("lighting (flare)");
-                _uselessEvents.Add("lighting (blackout)");
-                _uselessEvents.Add("music_start");
-                _uselessEvents.Add("verse");
-                _uselessEvents.Add("chorus");
-                _uselessEvents.Add("solo");
-                _uselessEvents.Add("end");
-                _uselessEvents.Add("idle");
-                _uselessEvents.Add("play");
-                _uselessEvents.Add("solo_on");
-                _uselessEvents.Add("solo_off");
-                _uselessEvents.Add("wail_on");
-                _uselessEvents.Add("wail_off");
-                _uselessEvents.Add("drum_on");
-                _uselessEvents.Add("drum_off");
-                _uselessEvents.Add("sing_on");
-                _uselessEvents.Add("sing_off");
-                _uselessEvents.Add("bass_on");
-                _uselessEvents.Add("bass_off");
-                _uselessEvents.Add("gtr_on");
-                _uselessEvents.Add("gtr_off");
-                _uselessEvents.Add("ow_face_on");
-                _uselessEvents.Add("ow_face_off");
-                _uselessEvents.Add("half_tempo");
-                _uselessEvents.Add("normal_tempo");
-                _uselessEvents.Add("half_time");
-                _uselessEvents.Add("double_time");
-                _uselessEvents.Add("allbeat");
-                _uselessEvents.Add("nobeat");
+                _animationEvents.Add("lighting (chase)");
+                _animationEvents.Add("lighting (strobe)");
+                _animationEvents.Add("lighting (color1)");
+                _animationEvents.Add("lighting (color2)");
+                _animationEvents.Add("lighting (sweep)");
+                _animationEvents.Add("crowd_lighters_fast");
+                _animationEvents.Add("crowd_lighters_off");
+                _animationEvents.Add("crowd_lighters_slow");
+                _animationEvents.Add("crowd_half_tempo");
+                _animationEvents.Add("crowd_normal_tempo");
+                _animationEvents.Add("crowd_double_tempo");
+                _animationEvents.Add("band_jump");
+                _animationEvents.Add("sync_head_bang");
+                _animationEvents.Add("sync_wag");
+                _animationEvents.Add("lighting ()");
+                _animationEvents.Add("lighting (flare)");
+                _animationEvents.Add("lighting (blackout)");
+                _animationEvents.Add("music_start");
+                _animationEvents.Add("verse");
+                _animationEvents.Add("chorus");
+                _animationEvents.Add("solo");
+                _animationEvents.Add("end");
+                _animationEvents.Add("idle");
+                _animationEvents.Add("play");
+                _animationEvents.Add("solo_on");
+                _animationEvents.Add("solo_off");
+                _animationEvents.Add("wail_on");
+                _animationEvents.Add("wail_off");
+                _animationEvents.Add("drum_on");
+                _animationEvents.Add("drum_off");
+                _animationEvents.Add("sing_on");
+                _animationEvents.Add("sing_off");
+                _animationEvents.Add("bass_on");
+                _animationEvents.Add("bass_off");
+                _animationEvents.Add("gtr_on");
+                _animationEvents.Add("gtr_off");
+                _animationEvents.Add("ow_face_on");
+                _animationEvents.Add("ow_face_off");
+                _animationEvents.Add("half_tempo");
+                _animationEvents.Add("normal_tempo");
+                _animationEvents.Add("half_time");
+                _animationEvents.Add("double_time");
+                _animationEvents.Add("allbeat");
+                _animationEvents.Add("nobeat");
             }
-            return _uselessEvents;
+            return _animationEvents;
         }
     }
 }

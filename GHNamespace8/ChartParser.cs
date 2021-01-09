@@ -40,8 +40,8 @@ namespace GHNamespace8
 
         public ChartParser(string fileName, bool nothing)
         {
-            var list = new List<string>();
-            var stringReader = new StringReader(fileName);
+            List<string> list = new List<string>();
+            StringReader stringReader = new StringReader(fileName);
             string bracketItems = null;
             string bracketItemsWithBrackets;
             while ((bracketItemsWithBrackets = stringReader.ReadLine()) != null)
@@ -66,20 +66,20 @@ namespace GHNamespace8
                         if (a == "Song")
                         {
                             Gh3SongInfo.Editable = true;
-                            using (var enumerator = list.GetEnumerator())
+                            using (List<string>.Enumerator enumerator = list.GetEnumerator())
                             {
                                 while (enumerator.MoveNext())
                                 {
-                                    var current = enumerator.Current;
-                                    var array = current.Split(new[]
+                                    string current = enumerator.Current;
+                                    string[] array = current.Split(new[]
                                     {
                                         '\t',
                                         '='
                                     }, StringSplitOptions.RemoveEmptyEntries);
                                     if (array.Length > 1)
                                     {
-                                        var text3 = array[0].Trim().ToLower();
-                                        var text4 = array[1].Trim().Replace("\"", "");
+                                        string text3 = array[0].Trim().ToLower();
+                                        string text4 = array[1].Trim().Replace("\"", "");
                                         string key;
                                         switch (key = text3)
                                         {
@@ -191,8 +191,8 @@ namespace GHNamespace8
 
         public ChartParser(string fileName)
         {
-            var list = new List<string>();
-            var streamReader = File.OpenText(fileName);
+            List<string> list = new List<string>();
+            StreamReader streamReader = File.OpenText(fileName);
             string bracketItems = null;
             string bracketItemsWithBrackets;
             while ((bracketItemsWithBrackets = streamReader.ReadLine()) != null)
@@ -217,20 +217,20 @@ namespace GHNamespace8
                         if (a == "Song")
                         {
                             Gh3SongInfo.Editable = true;
-                            using (var enumerator = list.GetEnumerator())
+                            using (List<string>.Enumerator enumerator = list.GetEnumerator())
                             {
                                 while (enumerator.MoveNext())
                                 {
-                                    var current = enumerator.Current;
-                                    var array = current.Split(new[]
+                                    string current = enumerator.Current;
+                                    string[] array = current.Split(new[]
                                     {
                                         '\t',
                                         '='
                                     }, StringSplitOptions.RemoveEmptyEntries);
                                     if (array.Length > 1)
                                     {
-                                        var text3 = array[0].Trim().ToLower();
-                                        var text4 = array[1].Trim().Replace("\"", "");
+                                        string text3 = array[0].Trim().ToLower();
+                                        string text4 = array[1].Trim().Replace("\"", "");
                                         string key;
                                         switch (key = text3)
                                         {
@@ -355,9 +355,9 @@ namespace GHNamespace8
                 "Hard",
                 "Expert"
             };
-            for (var i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                var str = array[i];
+                string str = array[i];
                 if (DifficultyWithNotes.ContainsKey(str + "Single"))
                 {
                     DifficultyWithNotes.Add(str + "SingleGuitar", DifficultyWithNotes[str + "Single"]);
@@ -377,8 +377,8 @@ namespace GHNamespace8
                     DifficultyWithNotes.Remove(str + "DoubleBass");
                 }
             }
-            var list = new List<string>(DifficultyWithNotes.Keys);
-            foreach (var current in list)
+            List<string> list = new List<string>(DifficultyWithNotes.Keys);
+            foreach (string current in list)
             {
                 if (DifficultyWithNotes[current].NoteList.Count == 0)
                 {
@@ -398,7 +398,7 @@ namespace GHNamespace8
         public void ChartCreator(string fileLocation, Gh3Song song)
         {
             Gh3SongInfo = song;
-            var streamWriter = new StreamWriter(fileLocation);
+            StreamWriter streamWriter = new StreamWriter(fileLocation);
             streamWriter.WriteLine("[Song]");
             streamWriter.WriteLine("{");
             streamWriter.WriteLine("\tName = \"" + Gh3SongInfo.Title + "\"");
@@ -430,8 +430,8 @@ namespace GHNamespace8
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[SyncTrack]");
             streamWriter.WriteLine("{");
-            var list = new List<int>(BpmInterpreter.TsList.Keys);
-            foreach (var current in BpmInterpreter.BpmList.Keys)
+            List<int> list = new List<int>(BpmInterpreter.TsList.Keys);
+            foreach (int current in BpmInterpreter.BpmList.Keys)
             {
                 if (!list.Contains(current))
                 {
@@ -439,7 +439,7 @@ namespace GHNamespace8
                 }
             }
             list.Sort();
-            foreach (var current2 in list)
+            foreach (int current2 in list)
             {
                 if (BpmInterpreter.BpmList.ContainsKey(current2))
                 {
@@ -454,7 +454,7 @@ namespace GHNamespace8
             streamWriter.WriteLine("[Events]");
             streamWriter.WriteLine("{");
             list = new List<int>(SectionInterpreter.SectionList.Keys);
-            foreach (var current3 in SectionInterpreter.OtherList.Keys)
+            foreach (int current3 in SectionInterpreter.OtherList.Keys)
             {
                 if (!list.Contains(current3))
                 {
@@ -462,7 +462,7 @@ namespace GHNamespace8
                 }
             }
             list.Sort();
-            foreach (var current4 in list)
+            foreach (int current4 in list)
             {
                 if (SectionInterpreter.SectionList.ContainsKey(current4))
                 {
@@ -471,8 +471,8 @@ namespace GHNamespace8
                 }
                 if (SectionInterpreter.OtherList.ContainsKey(current4))
                 {
-                    var list2 = SectionInterpreter.OtherList[current4];
-                    foreach (var current5 in list2)
+                    List<string> list2 = SectionInterpreter.OtherList[current4];
+                    foreach (string current5 in list2)
                     {
                         streamWriter.WriteLine(string.Concat("\t", current4, " = E \"", current5, "\""));
                     }
@@ -487,76 +487,76 @@ namespace GHNamespace8
                 "Hard",
                 "Expert"
             };
-            for (var i = 0; i < difficulties.Length; i++)
+            for (int i = 0; i < difficulties.Length; i++)
             {
-                var str = difficulties[i];
+                string str = difficulties[i];
                 string[] array2 =
                 {
                     "Single",
                     "Double"
                 };
-                for (var j = 0; j < array2.Length; j++)
+                for (int j = 0; j < array2.Length; j++)
                 {
-                    var str2 = array2[j];
+                    string str2 = array2[j];
                     string[] array3 =
                     {
                         "Guitar",
                         "Rhythm"
                     };
-                    for (var k = 0; k < array3.Length; k++)
+                    for (int k = 0; k < array3.Length; k++)
                     {
-                        var str3 = array3[k];
+                        string str3 = array3[k];
                         if (DifficultyWithNotes.ContainsKey(str + str2 + str3))
                         {
-                            var text = str + str2 + str3;
-                            var printText = ConvertDbcName("[" + text + "]");
-                            var @class = DifficultyWithNotes[text];
+                            string text = str + str2 + str3;
+                            string printText = ConvertDbcName("[" + text + "]");
+                            NoteEventInterpreter @class = DifficultyWithNotes[text];
                             streamWriter.WriteLine(printText);
                             streamWriter.WriteLine("{");
                             list = new List<int>(@class.NoteList.Keys);
-                            foreach (var current6 in @class.Class2282.Keys)
+                            foreach (int current6 in @class.Class2282.Keys)
                             {
                                 if (!list.Contains(current6))
                                 {
                                     list.Add(current6);
                                 }
                             }
-                            foreach (var current7 in @class.Class2283.Keys)
+                            foreach (int current7 in @class.Class2283.Keys)
                             {
                                 if (!list.Contains(current7))
                                 {
                                     list.Add(current7);
                                 }
                             }
-                            foreach (var current8 in @class.Class2281.Keys)
+                            foreach (int current8 in @class.Class2281.Keys)
                             {
                                 if (!list.Contains(current8))
                                 {
                                     list.Add(current8);
                                 }
                             }
-                            foreach (var current9 in @class.Class2284.Keys)
+                            foreach (int current9 in @class.Class2284.Keys)
                             {
                                 if (!list.Contains(current9))
                                 {
                                     list.Add(current9);
                                 }
                             }
-                            foreach (var current10 in @class.Class2285.Keys)
+                            foreach (int current10 in @class.Class2285.Keys)
                             {
                                 if (!list.Contains(current10))
                                 {
                                     list.Add(current10);
                                 }
                             }
-                            foreach (var current11 in @class.Class2286.Keys)
+                            foreach (int current11 in @class.Class2286.Keys)
                             {
                                 if (!list.Contains(current11))
                                 {
                                     list.Add(current11);
                                 }
                             }
-                            foreach (var current12 in @class.EventList.Keys)
+                            foreach (int current12 in @class.EventList.Keys)
                             {
                                 if (!list.Contains(current12))
                                 {
@@ -564,20 +564,20 @@ namespace GHNamespace8
                                 }
                             }
                             list.Sort();
-                            foreach (var current13 in list)
+                            foreach (int current13 in list)
                             {
                                 if (@class.EventList.ContainsKey(current13))
                                 {
-                                    var list2 = @class.EventList[current13];
-                                    foreach (var current14 in list2)
+                                    List<string> list2 = @class.EventList[current13];
+                                    foreach (string current14 in list2)
                                     {
                                         streamWriter.WriteLine(string.Concat("\t", current13, " = E ", current14));
                                     }
                                 }
                                 if (@class.NoteList.ContainsKey(current13))
                                 {
-                                    var class2 = @class.NoteList[current13];
-                                    for (var l = 0; l < class2.NoteValues.Length; l++)
+                                    NotesAtOffset class2 = @class.NoteList[current13];
+                                    for (int l = 0; l < class2.NoteValues.Length; l++)
                                     {
                                         if (class2.NoteValues[l])
                                         {
@@ -626,20 +626,20 @@ namespace GHNamespace8
                     "Drums",
                     "Keyboard"
                 };
-                for (var j = 0; j < array2.Length; j++)
+                for (int j = 0; j < array2.Length; j++)
                 {
-                    var str4 = array2[j];
+                    string str4 = array2[j];
                     if (InstrumentList.ContainsKey(str + str4))
                     {
-                        var text2 = str + str4;
-                        var class3 = InstrumentList[text2];
+                        string text2 = str + str4;
+                        InstrumentType class3 = InstrumentList[text2];
                         streamWriter.WriteLine("[" + text2 + "]");
                         streamWriter.WriteLine("{");
                         list = new List<int>(class3.Keys);
                         list.Sort();
-                        foreach (var current15 in list)
+                        foreach (int current15 in list)
                         {
-                            foreach (var current16 in class3[current15])
+                            foreach (string current16 in class3[current15])
                             {
                                 streamWriter.WriteLine(string.Concat("\t", current15, " = E ", current16));
                             }
@@ -667,7 +667,7 @@ namespace GHNamespace8
                 "[EasySingleBass]", "[MediumSingleBass]", "[HardSingleBass]", "[ExpertSingleBass]",
                 "[EasyDoubleBass]", "[MediumDoubleBass]", "[HardDoubleBass]", "[ExpertDoubleBass]"
             };
-            for (var i = 0; i < dbcTypes.Length; i++)
+            for (int i = 0; i < dbcTypes.Length; i++)
             {
                 if (name.Equals(dbcTypes[i]))
                 {
@@ -680,7 +680,7 @@ namespace GHNamespace8
         public void DbcCreator(string fileLocation, Gh3Song gH3Song)
         {
             Gh3SongInfo = gH3Song;
-            var streamWriter = new StreamWriter(fileLocation);
+            StreamWriter streamWriter = new StreamWriter(fileLocation);
             streamWriter.WriteLine("[Song]");
             streamWriter.WriteLine("{");
             streamWriter.WriteLine("\tName = \"" + Gh3SongInfo.Title + "\"");
@@ -712,8 +712,8 @@ namespace GHNamespace8
             streamWriter.WriteLine("}");
             streamWriter.WriteLine("[SyncTrack]");
             streamWriter.WriteLine("{");
-            var list = new List<int>(BpmInterpreter.TsList.Keys);
-            foreach (var current in BpmInterpreter.BpmList.Keys)
+            List<int> list = new List<int>(BpmInterpreter.TsList.Keys);
+            foreach (int current in BpmInterpreter.BpmList.Keys)
             {
                 if (!list.Contains(current))
                 {
@@ -721,7 +721,7 @@ namespace GHNamespace8
                 }
             }
             list.Sort();
-            foreach (var current2 in list)
+            foreach (int current2 in list)
             {
                 if (BpmInterpreter.BpmList.ContainsKey(current2))
                 {
@@ -736,7 +736,7 @@ namespace GHNamespace8
             streamWriter.WriteLine("[Events]");
             streamWriter.WriteLine("{");
             list = new List<int>(SectionInterpreter.SectionList.Keys);
-            foreach (var current3 in SectionInterpreter.OtherList.Keys)
+            foreach (int current3 in SectionInterpreter.OtherList.Keys)
             {
                 if (!list.Contains(current3))
                 {
@@ -744,7 +744,7 @@ namespace GHNamespace8
                 }
             }
             list.Sort();
-            foreach (var current4 in list)
+            foreach (int current4 in list)
             {
                 if (SectionInterpreter.SectionList.ContainsKey(current4))
                 {
@@ -753,8 +753,8 @@ namespace GHNamespace8
                 }
                 if (SectionInterpreter.OtherList.ContainsKey(current4))
                 {
-                    var list2 = SectionInterpreter.OtherList[current4];
-                    foreach (var current5 in list2)
+                    List<string> list2 = SectionInterpreter.OtherList[current4];
+                    foreach (string current5 in list2)
                     {
                         streamWriter.WriteLine(string.Concat("\t", current4, " = E \"", current5, "\""));
                     }
@@ -769,75 +769,75 @@ namespace GHNamespace8
                 "Hard",
                 "Expert"
             };
-            for (var i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                var str = array[i];
+                string str = array[i];
                 string[] array2 =
                 {
                     "Single",
                     "Double"
                 };
-                for (var j = 0; j < array2.Length; j++)
+                for (int j = 0; j < array2.Length; j++)
                 {
-                    var str2 = array2[j];
+                    string str2 = array2[j];
                     string[] array3 =
                     {
                         "Guitar",
                         "Rhythm"
                     };
-                    for (var k = 0; k < array3.Length; k++)
+                    for (int k = 0; k < array3.Length; k++)
                     {
-                        var str3 = array3[k];
+                        string str3 = array3[k];
                         if (DifficultyWithNotes.ContainsKey(str + str2 + str3))
                         {
-                            var text = str + str2 + str3;
-                            var @class = DifficultyWithNotes[text];
+                            string text = str + str2 + str3;
+                            NoteEventInterpreter @class = DifficultyWithNotes[text];
                             streamWriter.WriteLine("[" + text + "]");
                             streamWriter.WriteLine("{");
                             list = new List<int>(@class.NoteList.Keys);
-                            foreach (var current6 in @class.Class2282.Keys)
+                            foreach (int current6 in @class.Class2282.Keys)
                             {
                                 if (!list.Contains(current6))
                                 {
                                     list.Add(current6);
                                 }
                             }
-                            foreach (var current7 in @class.Class2283.Keys)
+                            foreach (int current7 in @class.Class2283.Keys)
                             {
                                 if (!list.Contains(current7))
                                 {
                                     list.Add(current7);
                                 }
                             }
-                            foreach (var current8 in @class.Class2281.Keys)
+                            foreach (int current8 in @class.Class2281.Keys)
                             {
                                 if (!list.Contains(current8))
                                 {
                                     list.Add(current8);
                                 }
                             }
-                            foreach (var current9 in @class.Class2284.Keys)
+                            foreach (int current9 in @class.Class2284.Keys)
                             {
                                 if (!list.Contains(current9))
                                 {
                                     list.Add(current9);
                                 }
                             }
-                            foreach (var current10 in @class.Class2285.Keys)
+                            foreach (int current10 in @class.Class2285.Keys)
                             {
                                 if (!list.Contains(current10))
                                 {
                                     list.Add(current10);
                                 }
                             }
-                            foreach (var current11 in @class.Class2286.Keys)
+                            foreach (int current11 in @class.Class2286.Keys)
                             {
                                 if (!list.Contains(current11))
                                 {
                                     list.Add(current11);
                                 }
                             }
-                            foreach (var current12 in @class.EventList.Keys)
+                            foreach (int current12 in @class.EventList.Keys)
                             {
                                 if (!list.Contains(current12))
                                 {
@@ -845,20 +845,20 @@ namespace GHNamespace8
                                 }
                             }
                             list.Sort();
-                            foreach (var current13 in list)
+                            foreach (int current13 in list)
                             {
                                 if (@class.EventList.ContainsKey(current13))
                                 {
-                                    var list2 = @class.EventList[current13];
-                                    foreach (var current14 in list2)
+                                    List<string> list2 = @class.EventList[current13];
+                                    foreach (string current14 in list2)
                                     {
                                         streamWriter.WriteLine(string.Concat("\t", current13, " = E ", current14));
                                     }
                                 }
                                 if (@class.NoteList.ContainsKey(current13))
                                 {
-                                    var class2 = @class.NoteList[current13];
-                                    for (var l = 0; l < class2.NoteValues.Length; l++)
+                                    NotesAtOffset class2 = @class.NoteList[current13];
+                                    for (int l = 0; l < class2.NoteValues.Length; l++)
                                     {
                                         if (class2.NoteValues[l])
                                         {
@@ -907,20 +907,20 @@ namespace GHNamespace8
                     "Drums",
                     "Keyboard"
                 };
-                for (var j = 0; j < array2.Length; j++)
+                for (int j = 0; j < array2.Length; j++)
                 {
-                    var str4 = array2[j];
+                    string str4 = array2[j];
                     if (InstrumentList.ContainsKey(str + str4))
                     {
-                        var text2 = str + str4;
-                        var class3 = InstrumentList[text2];
+                        string text2 = str + str4;
+                        InstrumentType class3 = InstrumentList[text2];
                         streamWriter.WriteLine("[" + text2 + "]");
                         streamWriter.WriteLine("{");
                         list = new List<int>(class3.Keys);
                         list.Sort();
-                        foreach (var current15 in list)
+                        foreach (int current15 in list)
                         {
-                            foreach (var current16 in class3[current15])
+                            foreach (string current16 in class3[current15])
                             {
                                 streamWriter.WriteLine(string.Concat("\t", current15, " = E ", current16));
                             }
@@ -934,8 +934,8 @@ namespace GHNamespace8
 
         private int CalculateOffset(int offsetInMs)
         {
-            var bpmIndex = BpmInterpreter.BpmList.method_1(offsetInMs);
-            var test = Convert.ToInt32(125000m * (_bpmMsTracker[bpmIndex] +
+            int bpmIndex = BpmInterpreter.BpmList.method_1(offsetInMs);
+            int test = Convert.ToInt32(125000m * (_bpmMsTracker[bpmIndex] +
                                                   (offsetInMs - (decimal) BpmInterpreter.BpmList.Keys[bpmIndex]) /
                                                   BpmInterpreter.BpmList.Values[bpmIndex]));
             return test;
@@ -943,17 +943,17 @@ namespace GHNamespace8
 
         public QbcParser ConvertToQbc()
         {
-            var @class = new QbcParser(Gh3SongInfo);
+            QbcParser @class = new QbcParser(Gh3SongInfo);
             Track<int, int> track = null;
             Track<int, int> class3 = null;
-            var largestOffset = 0;
+            int largestOffset = 0;
             //Checks if there are any difficulties
             if (DifficultyWithNotes.Count == 0)
             {
                 throw new Exception("Chart file is empty and cannot be parsed to QB.");
             }
             //Finds the largest offset
-            foreach (var notes in DifficultyWithNotes.Values)
+            foreach (NoteEventInterpreter notes in DifficultyWithNotes.Values)
             {
                 largestOffset = Math.Max(largestOffset,
                     notes.NoteList.Keys[notes.NoteList.Count - 1] +
@@ -962,10 +962,12 @@ namespace GHNamespace8
             largestOffset = ((SectionInterpreter.OtherList.Count == 0)
                 ? largestOffset
                 : Math.Max(largestOffset, SectionInterpreter.OtherList.Keys[SectionInterpreter.OtherList.Count - 1]));
-            _bpmMsTracker = new Track<int, decimal>();
-            _bpmMsTracker.Add(0, 0m);
+            _bpmMsTracker = new Track<int, decimal>
+            {
+                { 0, 0m }
+            };
             //Adds BPMS to local list
-            for (var i = 1; i < BpmInterpreter.BpmList.Count; i++)
+            for (int i = 1; i < BpmInterpreter.BpmList.Count; i++)
             {
                 _bpmMsTracker.Add(i,
                     _bpmMsTracker[i - 1] + (BpmInterpreter.BpmList.Keys[i] - BpmInterpreter.BpmList.Keys[i - 1]) /
@@ -976,17 +978,17 @@ namespace GHNamespace8
                 "Single",
                 "Double"
             };
-            for (var j = 0; j < array.Length; j++)
+            for (int j = 0; j < array.Length; j++)
             {
-                var text = array[j];
+                string text = array[j];
                 string[] array2 =
                 {
                     "Guitar",
                     "Rhythm"
                 };
-                for (var k = 0; k < array2.Length; k++)
+                for (int k = 0; k < array2.Length; k++)
                 {
-                    var text2 = array2[k];
+                    string text2 = array2[k];
                     string[] array3 =
                     {
                         "Easy",
@@ -994,14 +996,14 @@ namespace GHNamespace8
                         "Hard",
                         "Expert"
                     };
-                    for (var l = 0; l < array3.Length; l++)
+                    for (int l = 0; l < array3.Length; l++)
                     {
-                        var text3 = array3[l];
-                        var difficulty = (text2.ToLower() + ((text == "Double") ? "coop" : "") + "_" + text3.ToLower())
+                        string text3 = array3[l];
+                        string difficulty = (text2.ToLower() + ((text == "Double") ? "coop" : "") + "_" + text3.ToLower())
                             .Replace("guitar_", "");
                         if (DifficultyWithNotes.ContainsKey(text3 + text + text2))
                         {
-                            var noteEventInterpreter = DifficultyWithNotes[text3 + text + text2];
+                            NoteEventInterpreter noteEventInterpreter = DifficultyWithNotes[text3 + text + text2];
                             if (noteEventInterpreter.NoteList.Count != 0)
                             {
                                 @class.NoteList.Add(difficulty, new Track<int, NotesAtOffset>());
@@ -1033,7 +1035,7 @@ namespace GHNamespace8
             }
             method_6(@class.Class2282, track);
             method_6(@class.Class2283, class3);
-            foreach (var current2 in BpmInterpreter.TsList.Keys)
+            foreach (int current2 in BpmInterpreter.TsList.Keys)
             {
                 @class.TsList.Add(CalculateOffset(current2), new[]
                 {
@@ -1041,14 +1043,14 @@ namespace GHNamespace8
                     4
                 });
             }
-            var num2 = (int) Math.Ceiling(largestOffset / (double) Constant480);
-            for (var m = 0; m <= num2; m++)
+            int num2 = (int) Math.Ceiling(largestOffset / (double) Constant480);
+            for (int m = 0; m <= num2; m++)
             {
                 @class.FretbarList.method_1(CalculateOffset(m * Constant480));
             }
             @class.FretbarList[0] = @class.FretbarList[1] - 4;
             @class.Int0 = 1;
-            foreach (var current3 in SectionInterpreter.SectionList.Keys)
+            foreach (int current3 in SectionInterpreter.SectionList.Keys)
             {
                 @class.Class2281.Add(CalculateOffset(current3), SectionInterpreter.SectionList[current3]);
             }
@@ -1060,15 +1062,15 @@ namespace GHNamespace8
 
         private void method_4(Track<int, NotesAtOffset> class2281, Track<int, NotesAtOffset> class2282)
         {
-            foreach (var current in class2282.Keys)
+            foreach (int current in class2282.Keys)
             {
-                var num = CalculateOffset(current);
-                var int_ = (class2282[current].SustainLength == 0)
+                int num = CalculateOffset(current);
+                int int_ = (class2282[current].SustainLength == 0)
                     ? 1
                     : (CalculateOffset(current + class2282[current].SustainLength) - num);
                 if (class2281.ContainsKey(num))
                 {
-                    for (var i = 0; i < 32; i++)
+                    for (int i = 0; i < 32; i++)
                     {
                         if (class2282[current].NoteValues[i])
                         {
@@ -1085,17 +1087,17 @@ namespace GHNamespace8
 
         private void method_5(Track<int, int[]> difficulty, Track<int, int> sp, Track<int, NotesAtOffset> notes)
         {
-            foreach (var current in sp.Keys)
+            foreach (int current in sp.Keys)
             {
-                var num = CalculateOffset(current);
-                var num2 = 0;
+                int num = CalculateOffset(current);
+                int num2 = 0;
                 if (sp[current] == 0)
                 {
                     num2 = 1;
                 }
                 else
                 {
-                    var num4 = 0;
+                    int num4 = 0;
                     if ((sp.Keys[sp.method_1(current + sp[current])] > current))
                     {
                         num4 = notes.Keys[notes.method_1(sp.Keys[sp.method_1(current + sp[current])] - 1)];
@@ -1104,7 +1106,7 @@ namespace GHNamespace8
                     {
                         num4 = (current + sp[current]);
                     }
-                    var num3 = CalculateOffset(num4);
+                    int num3 = CalculateOffset(num4);
                     //int num3 = this.method_2((sp.Keys[sp.method_1(current + sp[current])] > current) ? notes.Keys[notes.method_1(sp.Keys[sp.method_1(current + sp[current])] - 1)] : (current + sp[current]));
                     num2 = (num3 - num);
                 }
@@ -1123,10 +1125,10 @@ namespace GHNamespace8
             {
                 return;
             }
-            foreach (var current in class2282.Keys)
+            foreach (int current in class2282.Keys)
             {
-                var num = CalculateOffset(current);
-                var value = (class2282[current] == 0) ? 1 : (CalculateOffset(current + class2282[current]) - num);
+                int num = CalculateOffset(current);
+                int value = (class2282[current] == 0) ? 1 : (CalculateOffset(current + class2282[current]) - num);
                 class2281.Add(num, value);
             }
         }

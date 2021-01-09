@@ -24,7 +24,7 @@ namespace GHNamespaceB
 
         public override string GetText()
         {
-            var str = (Nodes.Count > 0) ? method_2(0).GetText() : "NULL";
+            string str = (Nodes.Count > 0) ? method_2(0).GetText() : "NULL";
             if (QbSongClass1.ContainsKey(Int0))
             {
                 return QbSongClass1.GetDictString(Int0) + " = " + str;
@@ -43,7 +43,7 @@ namespace GHNamespaceB
 
         public override object Clone()
         {
-            var @class = (ZzUnkNode294) base.Clone();
+            ZzUnkNode294 @class = (ZzUnkNode294) base.Clone();
             @class.Int0 = Int0;
             return @class;
         }

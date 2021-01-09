@@ -6,7 +6,7 @@ using GHNamespaceF;
 
 namespace GHNamespaceA
 {
-    public static class zzEmbeddedResourceDB
+    public static class ZzEmbeddedResourceDB
     {
         public static string GameName = "GH3";
 

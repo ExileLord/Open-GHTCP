@@ -8,7 +8,6 @@ using GHNamespaceF;
 namespace GHNamespaceA
 {
     //Changes default high score names + a few other things like mem card limit
-
     public class QbDatabaseInitialModifier : QbEditor
     {
         private readonly ZzPakNode2 _pakNode;
@@ -53,11 +52,11 @@ namespace GHNamespaceA
             };
             KeyGenerator.smethod_56(array);
             Console.WriteLine("Randomized Names:");
-            var num = 0;
+            int num = 0;
             while (num < 5 && !_qbDatabaseAlreadyEdited)
             {
                 Console.WriteLine(array[num]);
-                var class2 = @class.zzFindNode(new UnicodeStructureNode("name" + (num + 1)));
+                UnicodeStructureNode class2 = @class.zzFindNode(new UnicodeStructureNode("name" + (num + 1)));
                 if (class2.method_8().Equals(_bool1 ? array3[num] : array2[num]))
                 {
                     class2.method_9(array[num]);
@@ -98,9 +97,9 @@ namespace GHNamespaceA
             {
                 ZzGenericNode1 class4 = _pakNode.ZzGetNode1("scripts\\guitar\\menu\\menu_setlist.qb");
                 Console.WriteLine("Changing Setlist Scroller.");
-                zzEmbeddedResourceDB.unpackQbScriptTo(class4.zzFindNode(new ScriptRootNode("setlist_scroll")));
+                ZzEmbeddedResourceDB.unpackQbScriptTo(class4.zzFindNode(new ScriptRootNode("setlist_scroll")));
                 Console.WriteLine("Changing Tier Name Display.");
-                zzEmbeddedResourceDB.unpackQbScriptTo(class4.zzFindNode(new ScriptRootNode("create_sl_assets")));
+                ZzEmbeddedResourceDB.unpackQbScriptTo(class4.zzFindNode(new ScriptRootNode("create_sl_assets")));
             }
             if (!_qbDatabaseAlreadyEdited)
             {

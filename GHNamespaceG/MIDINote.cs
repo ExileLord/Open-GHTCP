@@ -45,7 +45,7 @@ namespace GHNamespaceG
                 return MidiNoteMask.Invalid;
             }
             //Gets note type
-            var num = (_midiMask - 60) % 12;
+            int num = (_midiMask - 60) % 12;
             if (Enum.IsDefined(typeof(MidiNoteMask), num))
             {
                 return (MidiNoteMask) num;
@@ -59,7 +59,7 @@ namespace GHNamespaceG
             {
                 return Fret.Invalid;
             }
-            var @enum = (Fret) ((_midiMask - 60) % 12);
+            Fret @enum = (Fret) ((_midiMask - 60) % 12);
             if (@enum >= Fret.Green && @enum <= Fret.Orange)
             {
                 return @enum;

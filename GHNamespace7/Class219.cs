@@ -61,7 +61,7 @@ namespace GHNamespace7
             {
                 return;
             }
-            var rect = new Rectangle(0, 0, method_0(), method_1());
+            Rectangle rect = new Rectangle(0, 0, method_0(), method_1());
             _bitmapData0 = method_3().LockBits(rect, ImageLockMode.ReadWrite, method_3().PixelFormat);
             _intptr0 = _bitmapData0.Scan0;
             _byte0 = new byte[method_0() * method_1() * (method_2() ? 4 : 3)];
@@ -105,14 +105,14 @@ namespace GHNamespace7
             }
             if (method_2())
             {
-                var num = (int3 * method_0() + int2) * 4;
+                int num = (int3 * method_0() + int2) * 4;
                 _byte0[num] = color0.B;
                 _byte0[num + 1] = color0.G;
                 _byte0[num + 2] = color0.R;
                 _byte0[num + 3] = color0.A;
                 return;
             }
-            var num2 = (int3 * method_0() + int2) * 3;
+            int num2 = (int3 * method_0() + int2) * 3;
             _byte0[num2] = color0.B;
             _byte0[num2 + 1] = color0.G;
             _byte0[num2 + 2] = color0.R;

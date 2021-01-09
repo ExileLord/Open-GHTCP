@@ -2,7 +2,7 @@ namespace GHNamespaceL
 {
     public class Class150
     {
-        //Appears to be a qb int array (like for a song)
+        // Appears to be a qb int array (like for a song)
         private static readonly short[] Short0 =
         {
             0,

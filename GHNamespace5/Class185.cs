@@ -11,8 +11,8 @@ namespace GHNamespace5
 
         static Class185()
         {
-            var invalidPathChars = Path.GetInvalidPathChars();
-            var num = invalidPathChars.Length + 2;
+            char[] invalidPathChars = Path.GetInvalidPathChars();
+            int num = invalidPathChars.Length + 2;
             Char1 = new char[num];
             Array.Copy(invalidPathChars, 0, Char1, 0, invalidPathChars.Length);
             Char1[num - 1] = '*';

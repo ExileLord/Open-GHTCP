@@ -4,7 +4,7 @@ namespace GHNamespaceL
     {
         public static int smethod_0(int int0)
         {
-            var num = 0;
+            int num = 0;
             while ((int0 >>= 1) != 0)
             {
                 num++;

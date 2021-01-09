@@ -57,8 +57,7 @@ namespace GHNamespace9
         protected override void OnSubscribeControlEvents(Control control)
         {
             base.OnSubscribeControlEvents(control);
-            var trackBar = control as TrackBar;
-            if (trackBar != null)
+            if (control is TrackBar trackBar)
             {
                 trackBar.ValueChanged += method_6;
             }
@@ -67,8 +66,7 @@ namespace GHNamespace9
         protected override void OnUnsubscribeControlEvents(Control control)
         {
             base.OnUnsubscribeControlEvents(control);
-            var trackBar = control as TrackBar;
-            if (trackBar != null)
+            if (control is TrackBar trackBar)
             {
                 trackBar.ValueChanged -= method_6;
             }
@@ -76,20 +74,17 @@ namespace GHNamespace9
 
         private void method_6(object sender, EventArgs e)
         {
-            if (_eventHandler0 != null)
-            {
-                _eventHandler0(sender, e);
-            }
+            _eventHandler0?.Invoke(sender, e);
         }
 
         public void method_7(EventHandler eventHandler1)
         {
-            var eventHandler = _eventHandler0;
+            EventHandler eventHandler = _eventHandler0;
             EventHandler eventHandler2;
             do
             {
                 eventHandler2 = eventHandler;
-                var value = (EventHandler) Delegate.Combine(eventHandler2, eventHandler1);
+                EventHandler value = (EventHandler) Delegate.Combine(eventHandler2, eventHandler1);
                 eventHandler = Interlocked.CompareExchange(ref _eventHandler0, value, eventHandler2);
             } while (eventHandler != eventHandler2);
         }

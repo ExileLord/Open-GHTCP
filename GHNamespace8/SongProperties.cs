@@ -198,7 +198,7 @@ namespace GHNamespace8
             }
             if (_aeroGroupBox.Enabled)
             {
-                var gHaSong = (GhaSong) _song;
+                GhaSong gHaSong = (GhaSong) _song;
                 _coveredTxt.Text = gHaSong.CoveredBy;
                 _singAnimPakTxt.Text = gHaSong.SingerAnimPak;
                 _bandBox.SelectedItem = gHaSong.Band;
@@ -280,12 +280,11 @@ namespace GHNamespace8
                     _song.Boss = "boss_tommorello_props";
                 }
             }
-            if (_song is GhaSong)
+            if (_song is GhaSong song)
             {
-                var song = (GhaSong) _song;
                 song.CoveredBy = _coveredTxt.Text;
                 song.SingerAnimPak = _singAnimPakTxt.Text;
-                song.Band = (string) _bandBox.SelectedItem;
+                song.Band = (string)_bandBox.SelectedItem;
                 _bpm8NoteBox.Value = song.ThinFretbar_8NoteParamsHighBpm;
                 _aeroGuitaristBox.Checked = song.GuitaristChecksum;
                 _perryMicBox.Checked = song.PerryMicStand;
@@ -381,8 +380,8 @@ namespace GHNamespace8
             _yearTxt.Size = new Size(156, 20);
             _yearTxt.TabIndex = 2;
             _offsetBox.Location = new Point(130, 175);
-            var arg_2Ea0 = _offsetBox;
-            var array = new int[4];
+            NumericUpDown arg_2Ea0 = _offsetBox;
+            int[] array = new int[4];
             array[0] = 30000;
             arg_2Ea0.Maximum = new decimal(array);
             _offsetBox.Minimum = new decimal(new[]
@@ -519,8 +518,8 @@ namespace GHNamespace8
                 131072
             });
             _bandVolBox.Location = new Point(130, 124);
-            var argA560 = _bandVolBox;
-            var array2 = new int[4];
+            NumericUpDown argA560 = _bandVolBox;
+            int[] array2 = new int[4];
             array2[0] = 5;
             argA560.Maximum = new decimal(array2);
             _bandVolBox.Minimum = new decimal(new[]
@@ -551,8 +550,8 @@ namespace GHNamespace8
                 131072
             });
             _guitarVolBox.Location = new Point(130, 99);
-            var argBb00 = _guitarVolBox;
-            var array3 = new int[4];
+            NumericUpDown argBb00 = _guitarVolBox;
+            int[] array3 = new int[4];
             array3[0] = 5;
             argBb00.Maximum = new decimal(array3);
             _guitarVolBox.Minimum = new decimal(new[]
@@ -583,8 +582,8 @@ namespace GHNamespace8
                 131072
             });
             _hammerOnBox.Location = new Point(130, 150);
-            var argD0C0 = _hammerOnBox;
-            var array4 = new int[4];
+            NumericUpDown argD0C0 = _hammerOnBox;
+            int[] array4 = new int[4];
             array4[0] = 5;
             argD0C0.Maximum = new decimal(array4);
             _hammerOnBox.Minimum = new decimal(new[]
@@ -864,13 +863,13 @@ namespace GHNamespace8
             _label15.TabIndex = 36;
             _label15.Text = "Covered By:";
             _label15.TextAlign = ContentAlignment.MiddleCenter;
-            var arg_1D9F0 = _bpm8NoteBox;
-            var array5 = new int[4];
+            NumericUpDown arg_1D9F0 = _bpm8NoteBox;
+            int[] array5 = new int[4];
             array5[0] = 5;
             arg_1D9F0.Increment = new decimal(array5);
             _bpm8NoteBox.Location = new Point(127, 71);
-            var arg_1Dd60 = _bpm8NoteBox;
-            var array6 = new int[4];
+            NumericUpDown arg_1Dd60 = _bpm8NoteBox;
+            int[] array6 = new int[4];
             array6[0] = 500;
             arg_1Dd60.Maximum = new decimal(array6);
             _bpm8NoteBox.Minimum = new decimal(new[]

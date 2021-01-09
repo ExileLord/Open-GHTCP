@@ -6,8 +6,8 @@ namespace GHNamespaceD
     {
         public override int vmethod_3(OggClass6 class710, object object0, float[][] float0, int[] int1, int int2)
         {
-            var num = 0;
-            for (var i = 0; i < int2; i++)
+            int num = 0;
+            for (int i = 0; i < int2; i++)
             {
                 if (int1[i] != 0)
                 {
