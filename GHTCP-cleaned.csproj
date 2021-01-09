@@ -517,16 +517,13 @@
     <Compile Include="GHTCP.Delegates\Delegate97.cs" />
     <Compile Include="GHTCP.Delegates\Delegate98.cs" />
     <Compile Include="GHTCP.Delegates\Delegate99.cs" />
-    <Compile Include="GHTCP.Properties\Settings.cs" />
     <Compile Include="GuitarHero.Setlist\GH3Setlist.cs" />
     <Compile Include="GuitarHero.Songlist\GH3Song.cs" />
     <Compile Include="GuitarHero.Songlist\GH3Songlist.cs" />
     <Compile Include="GuitarHero.Songlist\GHASong.cs" />
     <Compile Include="GuitarHero.Tier\GH3Tier.cs" />
     <Compile Include="GuitarHero\GHLink.cs" />
-    <Compile Include="HarmonixTools.Properties\Settings.cs" />
     <Compile Include="MidiConverter\Midi2Chart.cs" />
-    <Compile Include="NeversoftTools.Properties\Settings.cs" />
     <Compile Include="NeversoftTools.Texture.DDS\IMGPixelFormat.cs" />
     <Compile Include="GHNamespace1\QBModifiedCheck.cs" />
     <Compile Include="GHNamespace1\Class1.cs" />
@@ -997,17 +994,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SharpAudio.ADI.DSound.Properties\Settings.cs" />
-    <Compile Include="SharpAudio.ADI.OpenAL.Properties\Settings.cs" />
     <Compile Include="SharpAudio.ADI.OpenAL\AlcError.cs" />
     <Compile Include="SharpAudio.ADI.OpenAL\Vector3.cs" />
-    <Compile Include="SharpAudio.ADI.WinMM.Properties\Settings.cs" />
     <Compile Include="SharpAudio.ASC.Ac3.Decoding\AC3Exception.cs" />
-    <Compile Include="SharpAudio.ASC.Ac3.Properties\Settings.cs" />
     <Compile Include="SharpAudio.ASC.Flac.LibFlac.frame\BadHeaderException.cs" />
     <Compile Include="SharpAudio.ASC.Flac.LibFlac\FrameDecodeException.cs" />
-    <Compile Include="SharpAudio.ASC.Flac.Properties\Settings.cs" />
-    <Compile Include="SharpAudio.ASC.Fsb.Properties\Settings.cs" />
     <Compile Include="SharpAudio.ASC.Mp3.Decoding\BitstreamError.cs" />
     <Compile Include="SharpAudio.ASC.Mp3.Decoding\BitstreamException.cs" />
     <Compile Include="SharpAudio.ASC.Mp3.Decoding\CircularByteBuffer.cs" />
@@ -1022,18 +1013,10 @@
     <Compile Include="SharpAudio.ASC.Mp3.Lame\MP3.cs" />
     <Compile Include="SharpAudio.ASC.Mp3.Lame\MpegMode.cs" />
     <Compile Include="SharpAudio.ASC.Mp3.Lame\VbrMethod.cs" />
-    <Compile Include="SharpAudio.ASC.Mp3.Properties\Settings.cs" />
-    <Compile Include="SharpAudio.ASC.Mp3.Properties\Settings2.cs" />
-    <Compile Include="SharpAudio.ASC.Ogg.Properties\Settings.cs" />
-    <Compile Include="SharpAudio.ASC.Wav.Properties\Settings.cs" />
     <Compile Include="SharpAudio.ASC\AudioConfig.cs" />
     <Compile Include="SharpAudio.ASC\WaveFormat.cs" />
     <Compile Include="SharpAudio.ASC\WaveFormatTag.cs" />
-    <Compile Include="SharpAudio.Library.Properties\Settings.cs" />
-    <Compile Include="SharpAudio.Properties\Settings.cs" />
-    <Compile Include="SharpAudio.Properties\Settings2.cs" />
     <Compile Include="SystemTools.LowLevelHook\ModKeys.cs" />
-    <Compile Include="SystemTools.Properties\Settings.cs" />
     <Compile Include="SystemTools\BitList.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1072,11 +1055,9 @@
     <EmbeddedResource Include="GHTCP.FileDB.QBS.GHA.setup_globaltags" />
     <EmbeddedResource Include="GHTCP.FileDB.QBS.GHA.setup_songtags" />
     <EmbeddedResource Include="GHTCP.FileDB.QBS.GHA.start_gem_scroller" />
-    <EmbeddedResource Include="GHTCP.Properties\Resources.resources" />
     <EmbeddedResource Include="GHTCP.RestoreSystem.RestoreView.resources" />
     <EmbeddedResource Include="GHTCP.Save.SaveControl.resources" />
     <EmbeddedResource Include="GHTCP.Songlist.ListManagement.resources" />
-    <EmbeddedResource Include="HarmonixTools.Properties\Resources.resources" />
     <EmbeddedResource Include="NeversoftTools.CqCode.CqEditor.resources" />
     <EmbeddedResource Include="NeversoftTools.CqCode.Rules.Cq.syn" />
     <EmbeddedResource Include="NeversoftTools.CqCode.Rules.GH3PC.syn" />
@@ -1092,7 +1073,6 @@
     <EmbeddedResource Include="NeversoftTools.NSTreeView.NSExplorer.resources" />
     <EmbeddedResource Include="NeversoftTools.NSTreeView.nstags.aes" />
     <EmbeddedResource Include="NeversoftTools.NSTreeView.treeresources" />
-    <EmbeddedResource Include="NeversoftTools.Properties\Resources.resources" />
     <EmbeddedResource Include="GHNamespace7\ViewLog.resources" />
     <EmbeddedResource Include="GHNamespace8\Disclaimer.resources" />
     <EmbeddedResource Include="GHNamespace8\LoadGameSettings.resources" />
@@ -1118,23 +1098,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SharpAudio.ADI.DSound.Properties\Resources.resources" />
-    <EmbeddedResource Include="SharpAudio.ADI.OpenAL.Properties\Resources.resources" />
-    <EmbeddedResource Include="SharpAudio.ADI.WinMM.Properties\Resources.resources" />
-    <EmbeddedResource Include="SharpAudio.ASC.Ac3.Properties\Resources.resources" />
-    <EmbeddedResource Include="SharpAudio.ASC.Flac.Properties\Resources.resources" />
-    <EmbeddedResource Include="SharpAudio.ASC.Fsb.Properties\Resources.resources" />
     <EmbeddedResource Include="SharpAudio.ASC.Mp3.Lame\EditMp3Writer.resources" />
-    <EmbeddedResource Include="SharpAudio.ASC.Mp3.Properties\Resources.resources" />
-    <EmbeddedResource Include="SharpAudio.ASC.Ogg.Properties\Resources.resources" />
-    <EmbeddedResource Include="SharpAudio.ASC.Wav.Properties\Resources.resources" />
     <EmbeddedResource Include="SharpAudio.ASC\Wav.EditFormat.resources" />
     <EmbeddedResource Include="SharpAudio.ASC\Wav.EditWaveWriter.resources" />
     <EmbeddedResource Include="SharpAudio.GuiPlayer.resources" />
-    <EmbeddedResource Include="SharpAudio.Library.Properties\Resources.resources" />
-    <EmbeddedResource Include="SharpAudio.Properties\Resources.resources" />
     <EmbeddedResource Include="SharpAudio.SharpPlayer.resources" />
-    <EmbeddedResource Include="SystemTools.Properties\Resources.resources" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
