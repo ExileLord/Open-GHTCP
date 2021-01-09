@@ -829,11 +829,8 @@
     <Compile Include="GHNamespaceG\AbstractNoteClass.cs" />
     <Compile Include="GHNamespaceG\MIDINote.cs" />
     <Compile Include="GHNamespaceG\zzNote1.cs" />
-    <Compile Include="GHNamespaceG\UnusedStreamClass.cs" />
     <Compile Include="GHNamespaceG\EmptyAbstractClass1.cs" />
     <Compile Include="GHNamespaceG\StreamClass1.cs" />
-    <Compile Include="GHNamespaceG\UnusedStreamClass2.cs" />
-    <Compile Include="GHNamespaceG\UnusedProccessOrThreadClass.cs" />
     <Compile Include="GHNamespaceG\Class346.cs" />
     <Compile Include="GHNamespaceG\ByteFiddler.cs" />
     <Compile Include="GHNamespaceG\Class349.cs" />
