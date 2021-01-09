@@ -563,7 +563,6 @@
     <Compile Include="GHNamespace4\Class134.cs" />
     <Compile Include="GHNamespace4\Class135.cs" />
     <Compile Include="GHNamespace4\Class152.cs" />
-    <Compile Include="GHNamespace4\Class153.cs" />
     <Compile Include="GHNamespace4\Class154.cs" />
     <Compile Include="GHNamespace4\MP3Output.cs" />
     <Compile Include="GHNamespace4\Class156.cs" />
@@ -837,7 +836,6 @@
     <Compile Include="GHNamespaceG\MIDINoteMask.cs" />
     <Compile Include="GHNamespaceG\EmptyInterface1.cs" />
     <Compile Include="GHNamespaceG\zzPairKeyDictionary.cs" />
-    <Compile Include="GHNamespaceD\Class20.cs" />
     <Compile Include="GHNamespaceD\OGGClass4.cs" />
     <Compile Include="GHNamespaceD\OGGData.cs" />
     <Compile Include="GHNamespaceD\Class23.cs" />
@@ -882,7 +880,6 @@
     <Compile Include="GHNamespaceI\Class103.cs" />
     <Compile Include="GHNamespaceI\Class46.cs" />
     <Compile Include="GHNamespaceI\Class78.cs" />
-    <Compile Include="GHNamespaceI\Class79.cs" />
     <Compile Include="GHNamespaceI\Class80.cs" />
     <Compile Include="GHNamespaceI\zzSoundClass81.cs" />
     <Compile Include="GHNamespaceI\Class82.cs" />
@@ -901,7 +898,6 @@
     <Compile Include="GHNamespaceJ\Class105.cs" />
     <Compile Include="GHNamespaceJ\zzStreamClass106.cs" />
     <Compile Include="GHNamespaceJ\zzSoundClass.cs" />
-    <Compile Include="GHNamespaceJ\Class108.cs" />
     <Compile Include="GHNamespaceJ\OGGOutput.cs" />
     <Compile Include="GHNamespaceJ\Class110.cs" />
     <Compile Include="GHNamespaceJ\AC3Class1.cs" />
@@ -909,7 +905,6 @@
     <Compile Include="GHNamespaceJ\Class113.cs" />
     <Compile Include="GHNamespaceJ\Class114.cs" />
     <Compile Include="GHNamespaceJ\Class115.cs" />
-    <Compile Include="GHNamespaceJ\Class116.cs" />
     <Compile Include="GHNamespaceJ\Enum6.cs" />
     <Compile Include="GHNamespaceJ\Enum7.cs" />
     <Compile Include="GHNamespaceJ\Enum8.cs" />
@@ -960,9 +955,7 @@
     <Compile Include="GHNamespaceM\StreamHelper.cs" />
     <Compile Include="GHNamespaceM\FSBClass1.cs" />
     <Compile Include="GHNamespaceM\Class168.cs" />
-    <Compile Include="GHNamespaceM\Class169.cs" />
     <Compile Include="GHNamespaceM\AudioManager.cs" />
-    <Compile Include="GHNamespaceM\Class171.cs" />
     <Compile Include="GHNamespaceM\Class172.cs" />
     <Compile Include="GHNamespaceM\Class175.cs" />
     <Compile Include="GHNamespaceM\Class176.cs" />
