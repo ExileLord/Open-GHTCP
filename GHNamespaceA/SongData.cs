@@ -1354,6 +1354,18 @@ namespace GHNamespaceA
         private void method_7()
         {
             _expertGuitarBox.SelectedItem = (_hardGuitarBox.SelectedItem =
+                (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "guitarcoop_easy")));
+            _expertGuitarBox.SelectedItem = (_hardGuitarBox.SelectedItem =
+                (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "guitarcoop_medium")));
+            _expertGuitarBox.SelectedItem = (_hardGuitarBox.SelectedItem =
+                (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "guitarcoop_hard")));
+            _expertGuitarBox.SelectedItem = (_hardGuitarBox.SelectedItem =
+                (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "guitarcoop_expert")));
+            _hardGuitarBox.SelectedItem = (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "guitarcoop_hard"));
+            _mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "guitarcoop_medium");
+            _easyGuitarBox.SelectedItem = "guitarcoop_easy";
+
+            _expertGuitarBox.SelectedItem = (_hardGuitarBox.SelectedItem =
                 (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "easy")));
             _expertGuitarBox.SelectedItem = (_hardGuitarBox.SelectedItem =
                 (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "medium")));
@@ -1361,9 +1373,37 @@ namespace GHNamespaceA
                 (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "hard")));
             _expertGuitarBox.SelectedItem = (_hardGuitarBox.SelectedItem =
                 (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "expert")));
-            _hardGuitarBox.SelectedItem = (_mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "hard"));
+            _hardGuitarBox.SelectedItem = (_mediumGuitarBox.SelectedItem =
+                (_easyGuitarBox.SelectedItem = "hard"));
             _mediumGuitarBox.SelectedItem = (_easyGuitarBox.SelectedItem = "medium");
             _easyGuitarBox.SelectedItem = "easy";
+
+            _expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem =
+                (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "guitarcoop_easy")));
+            _expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem =
+                (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "guitarcoop_medium")));
+            _expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem =
+                (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "guitarcoop_hard")));
+            _expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem =
+                (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "guitarcoop_expert")));
+            _hardRhythmBox.SelectedItem =
+                (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "guitarcoop_hard"));
+            _mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "guitarcoop_medium");
+            _easyRhythmBox.SelectedItem = "guitarcoop_easy";
+
+            _expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem =
+                (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythmcoop_easy")));
+            _expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem =
+                (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythmcoop_medium")));
+            _expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem =
+                (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythmcoop_hard")));
+            _expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem =
+                (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythmcoop_expert")));
+            _hardRhythmBox.SelectedItem =
+                (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythmcoop_hard"));
+            _mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythmcoop_medium");
+            _easyRhythmBox.SelectedItem = "rhythmcoop_easy";
+
             _expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem =
                 (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythm_easy")));
             _expertRhythmBox.SelectedItem = (_hardRhythmBox.SelectedItem =
@@ -1376,7 +1416,9 @@ namespace GHNamespaceA
                 (_mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythm_hard"));
             _mediumRhythmBox.SelectedItem = (_easyRhythmBox.SelectedItem = "rhythm_medium");
             _easyRhythmBox.SelectedItem = "rhythm_easy";
-            _expertCoopBox.SelectedItem = (_hardCoopBox.SelectedItem =
+
+            // Import charts as Single Guitar + Single Rhythm by default for more compatibility
+            /*_expertCoopBox.SelectedItem = (_hardCoopBox.SelectedItem =
                 (_mediumCoopBox.SelectedItem = (_easyCoopBox.SelectedItem = "guitarcoop_easy")));
             _expertCoopBox.SelectedItem = (_hardCoopBox.SelectedItem =
                 (_mediumCoopBox.SelectedItem = (_easyCoopBox.SelectedItem = "guitarcoop_medium")));
@@ -1387,6 +1429,7 @@ namespace GHNamespaceA
             _hardCoopBox.SelectedItem = (_mediumCoopBox.SelectedItem = (_easyCoopBox.SelectedItem = "guitarcoop_hard"));
             _mediumCoopBox.SelectedItem = (_easyCoopBox.SelectedItem = "guitarcoop_medium");
             _easyCoopBox.SelectedItem = "guitarcoop_easy";
+
             _expertCoop2Box.SelectedItem = (_hardCoop2Box.SelectedItem =
                 (_mediumCoop2Box.SelectedItem = (_easyCoop2Box.SelectedItem = "rhythmcoop_easy")));
             _expertCoop2Box.SelectedItem = (_hardCoop2Box.SelectedItem =
@@ -1398,7 +1441,8 @@ namespace GHNamespaceA
             _hardCoop2Box.SelectedItem = (_mediumCoop2Box.SelectedItem =
                 (_easyCoop2Box.SelectedItem = "rhythmcoop_hard"));
             _mediumCoop2Box.SelectedItem = (_easyCoop2Box.SelectedItem = "rhythmcoop_medium");
-            _easyCoop2Box.SelectedItem = "rhythmcoop_easy";
+            _easyCoop2Box.SelectedItem = "rhythmcoop_easy";*/
+
             _faceOffP1Box.SelectedItem = "faceoffp1";
             _faceOffP2Box.SelectedItem = "faceoffp2";
             _bossBattleP1Box.SelectedItem = "bossbattlep1";
