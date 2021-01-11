@@ -141,7 +141,7 @@ namespace GHNamespace8
             _artistTxt.Text = _song.Artist;
             _yearTxt.Text = _song.Year;
             _chkOriginal.Checked = _song.OriginalArtist;
-            _chkRhythm.Checked = !_song.NoRhythmTrack;
+            _chkRhythm.Checked = true; // !_song.NoRhythmTrack
             _chkKeyboard.Checked = _song.Keyboard;
             _chkCoop.Checked = _song.UseCoopNotetracks;
             _rBtnBass.Checked = !(_rBtnRhythm.Checked = _song.NotBass);
