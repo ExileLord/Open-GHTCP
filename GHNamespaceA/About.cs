@@ -20,7 +20,7 @@ namespace GHNamespaceA
 
         private Label _labelCopyright;
 
-        private Label _labelCompanyName;
+        private Label _labelContributors;
 
         private TextBox _textBoxDescription;
 
@@ -33,7 +33,7 @@ namespace GHNamespaceA
             _labelProductName.Text = method_2();
             _labelVersion.Text = string.Format("Version {0}", method_1());
             _labelCopyright.Text = method_3();
-            _labelCompanyName.Text = method_4();
+            _labelContributors.Text = method_4();
         }
 
         public string method_0()
@@ -106,7 +106,7 @@ namespace GHNamespaceA
             _labelProductName = new Label();
             _labelVersion = new Label();
             _labelCopyright = new Label();
-            _labelCompanyName = new Label();
+            _labelContributors = new Label();
             _textBoxDescription = new TextBox();
             _okButton = new Button();
             _tableLayoutPanel.SuspendLayout();
@@ -119,7 +119,7 @@ namespace GHNamespaceA
             _tableLayoutPanel.Controls.Add(_labelProductName, 1, 0);
             _tableLayoutPanel.Controls.Add(_labelVersion, 1, 1);
             _tableLayoutPanel.Controls.Add(_labelCopyright, 1, 2);
-            _tableLayoutPanel.Controls.Add(_labelCompanyName, 1, 3);
+            _tableLayoutPanel.Controls.Add(_labelContributors, 1, 3);
             _tableLayoutPanel.Controls.Add(_textBoxDescription, 1, 4);
             _tableLayoutPanel.Controls.Add(_okButton, 1, 5);
             _tableLayoutPanel.Dock = DockStyle.Fill;
@@ -170,18 +170,18 @@ namespace GHNamespaceA
             _labelCopyright.TabIndex = 21;
             _labelCopyright.Text = "Copyright";
             _labelCopyright.TextAlign = ContentAlignment.MiddleLeft;
-            _labelCompanyName.Dock = DockStyle.Fill;
-            _labelCompanyName.Location = new Point(143, 78);
-            _labelCompanyName.Margin = new Padding(6, 0, 3, 0);
-            _labelCompanyName.MaximumSize = new Size(0, 17);
-            _labelCompanyName.Name = "_labelCompanyName";
-            _labelCompanyName.Size = new Size(271, 17);
-            _labelCompanyName.TabIndex = 22;
-            _labelCompanyName.Text = "Company Name";
-            _labelCompanyName.TextAlign = ContentAlignment.MiddleLeft;
+            _labelContributors.Dock = DockStyle.Fill;
+            _labelContributors.Location = new Point(143, 78);
+            _labelContributors.Margin = new Padding(6, 0, 3, 0);
+            _labelContributors.MaximumSize = new Size(0, 170);
+            _labelContributors.Name = "_labelContributors";
+            _labelContributors.Size = new Size(271, 17);
+            _labelContributors.TabIndex = 22;
+            _labelContributors.Text = "Plus Version";
+            _labelContributors.TextAlign = ContentAlignment.MiddleLeft;
             _textBoxDescription.Dock = DockStyle.Fill;
-            _textBoxDescription.Location = new Point(143, 107);
-            _textBoxDescription.Margin = new Padding(6, 3, 3, 3);
+            _textBoxDescription.Location = new Point(143, 110);
+            _textBoxDescription.Margin = new Padding(6, 6, 3, 3);
             _textBoxDescription.Multiline = true;
             _textBoxDescription.Name = "_textBoxDescription";
             _textBoxDescription.ReadOnly = true;
